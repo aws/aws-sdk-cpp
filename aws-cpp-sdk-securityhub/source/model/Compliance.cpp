@@ -30,13 +30,15 @@ namespace Model
 
 Compliance::Compliance() : 
     m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_relatedRequirementsHasBeenSet(false)
 {
 }
 
 Compliance::Compliance(JsonView jsonValue) : 
     m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_relatedRequirementsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,16 @@ Compliance& Compliance::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RelatedRequirements"))
+  {
+    Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
+    for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
+    {
+      m_relatedRequirements.push_back(relatedRequirementsJsonList[relatedRequirementsIndex].AsString());
+    }
+    m_relatedRequirementsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +72,17 @@ JsonValue Compliance::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ComplianceStatusMapper::GetNameForComplianceStatus(m_status));
+  }
+
+  if(m_relatedRequirementsHasBeenSet)
+  {
+   Array<JsonValue> relatedRequirementsJsonList(m_relatedRequirements.size());
+   for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
+   {
+     relatedRequirementsJsonList[relatedRequirementsIndex].AsString(m_relatedRequirements[relatedRequirementsIndex]);
+   }
+   payload.WithArray("RelatedRequirements", std::move(relatedRequirementsJsonList));
+
   }
 
   return payload;

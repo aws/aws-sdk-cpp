@@ -91,39 +91,92 @@ namespace Model
 
     /**
      * Required when you use QVBR rate control mode. That is, when you specify
-     * qvbrSettings within h264Settings. Specify the target quality level for this
-     * output, from 1 to 10. Use higher numbers for greater quality. Level 10 results
-     * in nearly lossless compression. The quality level for most broadcast-quality
-     * transcodes is between 6 and 9.
+     * qvbrSettings within h264Settings. Specify the general target quality level for
+     * this output, from 1 to 10. Use higher numbers for greater quality. Level 10
+     * results in nearly lossless compression. The quality level for most
+     * broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value
+     * between whole numbers, also provide a value for the setting
+     * qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      */
     inline int GetQvbrQualityLevel() const{ return m_qvbrQualityLevel; }
 
     /**
      * Required when you use QVBR rate control mode. That is, when you specify
-     * qvbrSettings within h264Settings. Specify the target quality level for this
-     * output, from 1 to 10. Use higher numbers for greater quality. Level 10 results
-     * in nearly lossless compression. The quality level for most broadcast-quality
-     * transcodes is between 6 and 9.
+     * qvbrSettings within h264Settings. Specify the general target quality level for
+     * this output, from 1 to 10. Use higher numbers for greater quality. Level 10
+     * results in nearly lossless compression. The quality level for most
+     * broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value
+     * between whole numbers, also provide a value for the setting
+     * qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      */
     inline bool QvbrQualityLevelHasBeenSet() const { return m_qvbrQualityLevelHasBeenSet; }
 
     /**
      * Required when you use QVBR rate control mode. That is, when you specify
-     * qvbrSettings within h264Settings. Specify the target quality level for this
-     * output, from 1 to 10. Use higher numbers for greater quality. Level 10 results
-     * in nearly lossless compression. The quality level for most broadcast-quality
-     * transcodes is between 6 and 9.
+     * qvbrSettings within h264Settings. Specify the general target quality level for
+     * this output, from 1 to 10. Use higher numbers for greater quality. Level 10
+     * results in nearly lossless compression. The quality level for most
+     * broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value
+     * between whole numbers, also provide a value for the setting
+     * qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      */
     inline void SetQvbrQualityLevel(int value) { m_qvbrQualityLevelHasBeenSet = true; m_qvbrQualityLevel = value; }
 
     /**
      * Required when you use QVBR rate control mode. That is, when you specify
-     * qvbrSettings within h264Settings. Specify the target quality level for this
-     * output, from 1 to 10. Use higher numbers for greater quality. Level 10 results
-     * in nearly lossless compression. The quality level for most broadcast-quality
-     * transcodes is between 6 and 9.
+     * qvbrSettings within h264Settings. Specify the general target quality level for
+     * this output, from 1 to 10. Use higher numbers for greater quality. Level 10
+     * results in nearly lossless compression. The quality level for most
+     * broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value
+     * between whole numbers, also provide a value for the setting
+     * qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
      */
     inline H264QvbrSettings& WithQvbrQualityLevel(int value) { SetQvbrQualityLevel(value); return *this;}
+
+
+    /**
+     * Optional. Specify a value here to set the QVBR quality to a level that is
+     * between whole numbers. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     * MediaConvert rounds your QVBR quality level to the nearest third of a whole
+     * number. For example, if you set qvbrQualityLevel to 7 and you set
+     * qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
+     */
+    inline double GetQvbrQualityLevelFineTune() const{ return m_qvbrQualityLevelFineTune; }
+
+    /**
+     * Optional. Specify a value here to set the QVBR quality to a level that is
+     * between whole numbers. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     * MediaConvert rounds your QVBR quality level to the nearest third of a whole
+     * number. For example, if you set qvbrQualityLevel to 7 and you set
+     * qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
+     */
+    inline bool QvbrQualityLevelFineTuneHasBeenSet() const { return m_qvbrQualityLevelFineTuneHasBeenSet; }
+
+    /**
+     * Optional. Specify a value here to set the QVBR quality to a level that is
+     * between whole numbers. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     * MediaConvert rounds your QVBR quality level to the nearest third of a whole
+     * number. For example, if you set qvbrQualityLevel to 7 and you set
+     * qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
+     */
+    inline void SetQvbrQualityLevelFineTune(double value) { m_qvbrQualityLevelFineTuneHasBeenSet = true; m_qvbrQualityLevelFineTune = value; }
+
+    /**
+     * Optional. Specify a value here to set the QVBR quality to a level that is
+     * between whole numbers. For example, if you want your QVBR quality level to be
+     * 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+     * MediaConvert rounds your QVBR quality level to the nearest third of a whole
+     * number. For example, if you set qvbrQualityLevel to 7 and you set
+     * qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
+     */
+    inline H264QvbrSettings& WithQvbrQualityLevelFineTune(double value) { SetQvbrQualityLevelFineTune(value); return *this;}
 
   private:
 
@@ -132,6 +185,9 @@ namespace Model
 
     int m_qvbrQualityLevel;
     bool m_qvbrQualityLevelHasBeenSet;
+
+    double m_qvbrQualityLevelFineTune;
+    bool m_qvbrQualityLevelFineTuneHasBeenSet;
   };
 
 } // namespace Model

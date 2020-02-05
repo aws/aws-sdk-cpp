@@ -51,44 +51,37 @@ namespace Model
 
 
     /**
-     * <p>ARN of a <code>Config</code>
-         </p>
+     * <p>ARN of a <code>Config</code> </p>
      */
     inline const Aws::String& GetConfigArn() const{ return m_configArn; }
 
     /**
-     * <p>ARN of a <code>Config</code>
-         </p>
+     * <p>ARN of a <code>Config</code> </p>
      */
     inline void SetConfigArn(const Aws::String& value) { m_configArn = value; }
 
     /**
-     * <p>ARN of a <code>Config</code>
-         </p>
+     * <p>ARN of a <code>Config</code> </p>
      */
     inline void SetConfigArn(Aws::String&& value) { m_configArn = std::move(value); }
 
     /**
-     * <p>ARN of a <code>Config</code>
-         </p>
+     * <p>ARN of a <code>Config</code> </p>
      */
     inline void SetConfigArn(const char* value) { m_configArn.assign(value); }
 
     /**
-     * <p>ARN of a <code>Config</code>
-         </p>
+     * <p>ARN of a <code>Config</code> </p>
      */
     inline GetConfigResult& WithConfigArn(const Aws::String& value) { SetConfigArn(value); return *this;}
 
     /**
-     * <p>ARN of a <code>Config</code>
-         </p>
+     * <p>ARN of a <code>Config</code> </p>
      */
     inline GetConfigResult& WithConfigArn(Aws::String&& value) { SetConfigArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of a <code>Config</code>
-         </p>
+     * <p>ARN of a <code>Config</code> </p>
      */
     inline GetConfigResult& WithConfigArn(const char* value) { SetConfigArn(value); return *this;}
 

@@ -15,16 +15,23 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/securityhub/model/AwsCodeBuildProjectDetails.h>
 #include <aws/securityhub/model/AwsCloudFrontDistributionDetails.h>
 #include <aws/securityhub/model/AwsEc2InstanceDetails.h>
+#include <aws/securityhub/model/AwsEc2NetworkInterfaceDetails.h>
+#include <aws/securityhub/model/AwsEc2SecurityGroupDetails.h>
 #include <aws/securityhub/model/AwsElbv2LoadBalancerDetails.h>
+#include <aws/securityhub/model/AwsElasticsearchDomainDetails.h>
 #include <aws/securityhub/model/AwsS3BucketDetails.h>
 #include <aws/securityhub/model/AwsIamAccessKeyDetails.h>
 #include <aws/securityhub/model/AwsIamRoleDetails.h>
 #include <aws/securityhub/model/AwsKmsKeyDetails.h>
 #include <aws/securityhub/model/AwsLambdaFunctionDetails.h>
+#include <aws/securityhub/model/AwsLambdaLayerVersionDetails.h>
+#include <aws/securityhub/model/AwsRdsDbInstanceDetails.h>
 #include <aws/securityhub/model/AwsSnsTopicDetails.h>
 #include <aws/securityhub/model/AwsSqsQueueDetails.h>
+#include <aws/securityhub/model/AwsWafWebAclDetails.h>
 #include <aws/securityhub/model/ContainerDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -46,8 +53,15 @@ namespace Model
 {
 
   /**
-   * <p>Additional details about a resource related to a finding.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Additional details about a resource related to a finding.</p> <p>To provide
+   * the details, use the object that corresponds to the resource type. For example,
+   * if the resource type is <code>AwsEc2Instance</code>, then you use the
+   * <code>AwsEc2Instance</code> object to provide the details.</p> <p>If the
+   * type-specific object does not contain all of the fields you want to populate,
+   * then you use the <code>Other</code> object to populate those additional
+   * fields.</p> <p>You also use the <code>Other</code> object to populate the
+   * details when the selected type does not have a corresponding
+   * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ResourceDetails">AWS
    * API Reference</a></p>
    */
@@ -58,6 +72,37 @@ namespace Model
     ResourceDetails(Aws::Utils::Json::JsonView jsonValue);
     ResourceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Details for an AWS CodeBuild project.</p>
+     */
+    inline const AwsCodeBuildProjectDetails& GetAwsCodeBuildProject() const{ return m_awsCodeBuildProject; }
+
+    /**
+     * <p>Details for an AWS CodeBuild project.</p>
+     */
+    inline bool AwsCodeBuildProjectHasBeenSet() const { return m_awsCodeBuildProjectHasBeenSet; }
+
+    /**
+     * <p>Details for an AWS CodeBuild project.</p>
+     */
+    inline void SetAwsCodeBuildProject(const AwsCodeBuildProjectDetails& value) { m_awsCodeBuildProjectHasBeenSet = true; m_awsCodeBuildProject = value; }
+
+    /**
+     * <p>Details for an AWS CodeBuild project.</p>
+     */
+    inline void SetAwsCodeBuildProject(AwsCodeBuildProjectDetails&& value) { m_awsCodeBuildProjectHasBeenSet = true; m_awsCodeBuildProject = std::move(value); }
+
+    /**
+     * <p>Details for an AWS CodeBuild project.</p>
+     */
+    inline ResourceDetails& WithAwsCodeBuildProject(const AwsCodeBuildProjectDetails& value) { SetAwsCodeBuildProject(value); return *this;}
+
+    /**
+     * <p>Details for an AWS CodeBuild project.</p>
+     */
+    inline ResourceDetails& WithAwsCodeBuildProject(AwsCodeBuildProjectDetails&& value) { SetAwsCodeBuildProject(std::move(value)); return *this;}
 
 
     /**
@@ -123,6 +168,68 @@ namespace Model
 
 
     /**
+     * <p>Details for an AWS EC2 network interface.</p>
+     */
+    inline const AwsEc2NetworkInterfaceDetails& GetAwsEc2NetworkInterface() const{ return m_awsEc2NetworkInterface; }
+
+    /**
+     * <p>Details for an AWS EC2 network interface.</p>
+     */
+    inline bool AwsEc2NetworkInterfaceHasBeenSet() const { return m_awsEc2NetworkInterfaceHasBeenSet; }
+
+    /**
+     * <p>Details for an AWS EC2 network interface.</p>
+     */
+    inline void SetAwsEc2NetworkInterface(const AwsEc2NetworkInterfaceDetails& value) { m_awsEc2NetworkInterfaceHasBeenSet = true; m_awsEc2NetworkInterface = value; }
+
+    /**
+     * <p>Details for an AWS EC2 network interface.</p>
+     */
+    inline void SetAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails&& value) { m_awsEc2NetworkInterfaceHasBeenSet = true; m_awsEc2NetworkInterface = std::move(value); }
+
+    /**
+     * <p>Details for an AWS EC2 network interface.</p>
+     */
+    inline ResourceDetails& WithAwsEc2NetworkInterface(const AwsEc2NetworkInterfaceDetails& value) { SetAwsEc2NetworkInterface(value); return *this;}
+
+    /**
+     * <p>Details for an AWS EC2 network interface.</p>
+     */
+    inline ResourceDetails& WithAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails&& value) { SetAwsEc2NetworkInterface(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details for an EC2 security group.</p>
+     */
+    inline const AwsEc2SecurityGroupDetails& GetAwsEc2SecurityGroup() const{ return m_awsEc2SecurityGroup; }
+
+    /**
+     * <p>Details for an EC2 security group.</p>
+     */
+    inline bool AwsEc2SecurityGroupHasBeenSet() const { return m_awsEc2SecurityGroupHasBeenSet; }
+
+    /**
+     * <p>Details for an EC2 security group.</p>
+     */
+    inline void SetAwsEc2SecurityGroup(const AwsEc2SecurityGroupDetails& value) { m_awsEc2SecurityGroupHasBeenSet = true; m_awsEc2SecurityGroup = value; }
+
+    /**
+     * <p>Details for an EC2 security group.</p>
+     */
+    inline void SetAwsEc2SecurityGroup(AwsEc2SecurityGroupDetails&& value) { m_awsEc2SecurityGroupHasBeenSet = true; m_awsEc2SecurityGroup = std::move(value); }
+
+    /**
+     * <p>Details for an EC2 security group.</p>
+     */
+    inline ResourceDetails& WithAwsEc2SecurityGroup(const AwsEc2SecurityGroupDetails& value) { SetAwsEc2SecurityGroup(value); return *this;}
+
+    /**
+     * <p>Details for an EC2 security group.</p>
+     */
+    inline ResourceDetails& WithAwsEc2SecurityGroup(AwsEc2SecurityGroupDetails&& value) { SetAwsEc2SecurityGroup(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about a load balancer.</p>
      */
     inline const AwsElbv2LoadBalancerDetails& GetAwsElbv2LoadBalancer() const{ return m_awsElbv2LoadBalancer; }
@@ -151,6 +258,37 @@ namespace Model
      * <p>Details about a load balancer.</p>
      */
     inline ResourceDetails& WithAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetails&& value) { SetAwsElbv2LoadBalancer(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details for an Elasticsearch domain.</p>
+     */
+    inline const AwsElasticsearchDomainDetails& GetAwsElasticsearchDomain() const{ return m_awsElasticsearchDomain; }
+
+    /**
+     * <p>Details for an Elasticsearch domain.</p>
+     */
+    inline bool AwsElasticsearchDomainHasBeenSet() const { return m_awsElasticsearchDomainHasBeenSet; }
+
+    /**
+     * <p>Details for an Elasticsearch domain.</p>
+     */
+    inline void SetAwsElasticsearchDomain(const AwsElasticsearchDomainDetails& value) { m_awsElasticsearchDomainHasBeenSet = true; m_awsElasticsearchDomain = value; }
+
+    /**
+     * <p>Details for an Elasticsearch domain.</p>
+     */
+    inline void SetAwsElasticsearchDomain(AwsElasticsearchDomainDetails&& value) { m_awsElasticsearchDomainHasBeenSet = true; m_awsElasticsearchDomain = std::move(value); }
+
+    /**
+     * <p>Details for an Elasticsearch domain.</p>
+     */
+    inline ResourceDetails& WithAwsElasticsearchDomain(const AwsElasticsearchDomainDetails& value) { SetAwsElasticsearchDomain(value); return *this;}
+
+    /**
+     * <p>Details for an Elasticsearch domain.</p>
+     */
+    inline ResourceDetails& WithAwsElasticsearchDomain(AwsElasticsearchDomainDetails&& value) { SetAwsElasticsearchDomain(std::move(value)); return *this;}
 
 
     /**
@@ -309,6 +447,68 @@ namespace Model
 
 
     /**
+     * <p>Details for a Lambda layer version.</p>
+     */
+    inline const AwsLambdaLayerVersionDetails& GetAwsLambdaLayerVersion() const{ return m_awsLambdaLayerVersion; }
+
+    /**
+     * <p>Details for a Lambda layer version.</p>
+     */
+    inline bool AwsLambdaLayerVersionHasBeenSet() const { return m_awsLambdaLayerVersionHasBeenSet; }
+
+    /**
+     * <p>Details for a Lambda layer version.</p>
+     */
+    inline void SetAwsLambdaLayerVersion(const AwsLambdaLayerVersionDetails& value) { m_awsLambdaLayerVersionHasBeenSet = true; m_awsLambdaLayerVersion = value; }
+
+    /**
+     * <p>Details for a Lambda layer version.</p>
+     */
+    inline void SetAwsLambdaLayerVersion(AwsLambdaLayerVersionDetails&& value) { m_awsLambdaLayerVersionHasBeenSet = true; m_awsLambdaLayerVersion = std::move(value); }
+
+    /**
+     * <p>Details for a Lambda layer version.</p>
+     */
+    inline ResourceDetails& WithAwsLambdaLayerVersion(const AwsLambdaLayerVersionDetails& value) { SetAwsLambdaLayerVersion(value); return *this;}
+
+    /**
+     * <p>Details for a Lambda layer version.</p>
+     */
+    inline ResourceDetails& WithAwsLambdaLayerVersion(AwsLambdaLayerVersionDetails&& value) { SetAwsLambdaLayerVersion(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details for an RDS database instance.</p>
+     */
+    inline const AwsRdsDbInstanceDetails& GetAwsRdsDbInstance() const{ return m_awsRdsDbInstance; }
+
+    /**
+     * <p>Details for an RDS database instance.</p>
+     */
+    inline bool AwsRdsDbInstanceHasBeenSet() const { return m_awsRdsDbInstanceHasBeenSet; }
+
+    /**
+     * <p>Details for an RDS database instance.</p>
+     */
+    inline void SetAwsRdsDbInstance(const AwsRdsDbInstanceDetails& value) { m_awsRdsDbInstanceHasBeenSet = true; m_awsRdsDbInstance = value; }
+
+    /**
+     * <p>Details for an RDS database instance.</p>
+     */
+    inline void SetAwsRdsDbInstance(AwsRdsDbInstanceDetails&& value) { m_awsRdsDbInstanceHasBeenSet = true; m_awsRdsDbInstance = std::move(value); }
+
+    /**
+     * <p>Details for an RDS database instance.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbInstance(const AwsRdsDbInstanceDetails& value) { SetAwsRdsDbInstance(value); return *this;}
+
+    /**
+     * <p>Details for an RDS database instance.</p>
+     */
+    inline ResourceDetails& WithAwsRdsDbInstance(AwsRdsDbInstanceDetails&& value) { SetAwsRdsDbInstance(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about an SNS topic.</p>
      */
     inline const AwsSnsTopicDetails& GetAwsSnsTopic() const{ return m_awsSnsTopic; }
@@ -371,6 +571,37 @@ namespace Model
 
 
     /**
+     * <p>Details for a WAF WebACL.</p>
+     */
+    inline const AwsWafWebAclDetails& GetAwsWafWebAcl() const{ return m_awsWafWebAcl; }
+
+    /**
+     * <p>Details for a WAF WebACL.</p>
+     */
+    inline bool AwsWafWebAclHasBeenSet() const { return m_awsWafWebAclHasBeenSet; }
+
+    /**
+     * <p>Details for a WAF WebACL.</p>
+     */
+    inline void SetAwsWafWebAcl(const AwsWafWebAclDetails& value) { m_awsWafWebAclHasBeenSet = true; m_awsWafWebAcl = value; }
+
+    /**
+     * <p>Details for a WAF WebACL.</p>
+     */
+    inline void SetAwsWafWebAcl(AwsWafWebAclDetails&& value) { m_awsWafWebAclHasBeenSet = true; m_awsWafWebAcl = std::move(value); }
+
+    /**
+     * <p>Details for a WAF WebACL.</p>
+     */
+    inline ResourceDetails& WithAwsWafWebAcl(const AwsWafWebAclDetails& value) { SetAwsWafWebAcl(value); return *this;}
+
+    /**
+     * <p>Details for a WAF WebACL.</p>
+     */
+    inline ResourceDetails& WithAwsWafWebAcl(AwsWafWebAclDetails&& value) { SetAwsWafWebAcl(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about a container resource related to a finding.</p>
      */
     inline const ContainerDetails& GetContainer() const{ return m_container; }
@@ -402,71 +633,165 @@ namespace Model
 
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetOther() const{ return m_other; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline bool OtherHasBeenSet() const { return m_otherHasBeenSet; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline void SetOther(const Aws::Map<Aws::String, Aws::String>& value) { m_otherHasBeenSet = true; m_other = value; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline void SetOther(Aws::Map<Aws::String, Aws::String>&& value) { m_otherHasBeenSet = true; m_other = std::move(value); }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& WithOther(const Aws::Map<Aws::String, Aws::String>& value) { SetOther(value); return *this;}
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& WithOther(Aws::Map<Aws::String, Aws::String>&& value) { SetOther(std::move(value)); return *this;}
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& AddOther(const Aws::String& key, const Aws::String& value) { m_otherHasBeenSet = true; m_other.emplace(key, value); return *this; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& AddOther(Aws::String&& key, const Aws::String& value) { m_otherHasBeenSet = true; m_other.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& AddOther(const Aws::String& key, Aws::String&& value) { m_otherHasBeenSet = true; m_other.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& AddOther(Aws::String&& key, Aws::String&& value) { m_otherHasBeenSet = true; m_other.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& AddOther(const char* key, Aws::String&& value) { m_otherHasBeenSet = true; m_other.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& AddOther(Aws::String&& key, const char* value) { m_otherHasBeenSet = true; m_other.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Details about a resource that doesn't have a specific type defined.</p>
+     * <p>Details about a resource that are not available in a type-specific details
+     * object. Use the <code>Other</code> object in the following cases.</p> <ul> <li>
+     * <p>The type-specific object does not contain all of the fields that you want to
+     * populate. In this case, first use the type-specific object to populate those
+     * fields. Use the <code>Other</code> object to populate the fields that are
+     * missing from the type-specific object.</p> </li> <li> <p>The resource type does
+     * not have a corresponding object. This includes resources for which the type is
+     * <code>Other</code>. </p> </li> </ul>
      */
     inline ResourceDetails& AddOther(const char* key, const char* value) { m_otherHasBeenSet = true; m_other.emplace(key, value); return *this; }
 
   private:
+
+    AwsCodeBuildProjectDetails m_awsCodeBuildProject;
+    bool m_awsCodeBuildProjectHasBeenSet;
 
     AwsCloudFrontDistributionDetails m_awsCloudFrontDistribution;
     bool m_awsCloudFrontDistributionHasBeenSet;
@@ -474,8 +799,17 @@ namespace Model
     AwsEc2InstanceDetails m_awsEc2Instance;
     bool m_awsEc2InstanceHasBeenSet;
 
+    AwsEc2NetworkInterfaceDetails m_awsEc2NetworkInterface;
+    bool m_awsEc2NetworkInterfaceHasBeenSet;
+
+    AwsEc2SecurityGroupDetails m_awsEc2SecurityGroup;
+    bool m_awsEc2SecurityGroupHasBeenSet;
+
     AwsElbv2LoadBalancerDetails m_awsElbv2LoadBalancer;
     bool m_awsElbv2LoadBalancerHasBeenSet;
+
+    AwsElasticsearchDomainDetails m_awsElasticsearchDomain;
+    bool m_awsElasticsearchDomainHasBeenSet;
 
     AwsS3BucketDetails m_awsS3Bucket;
     bool m_awsS3BucketHasBeenSet;
@@ -492,11 +826,20 @@ namespace Model
     AwsLambdaFunctionDetails m_awsLambdaFunction;
     bool m_awsLambdaFunctionHasBeenSet;
 
+    AwsLambdaLayerVersionDetails m_awsLambdaLayerVersion;
+    bool m_awsLambdaLayerVersionHasBeenSet;
+
+    AwsRdsDbInstanceDetails m_awsRdsDbInstance;
+    bool m_awsRdsDbInstanceHasBeenSet;
+
     AwsSnsTopicDetails m_awsSnsTopic;
     bool m_awsSnsTopicHasBeenSet;
 
     AwsSqsQueueDetails m_awsSqsQueue;
     bool m_awsSqsQueueHasBeenSet;
+
+    AwsWafWebAclDetails m_awsWafWebAcl;
+    bool m_awsWafWebAclHasBeenSet;
 
     ContainerDetails m_container;
     bool m_containerHasBeenSet;

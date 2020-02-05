@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -45,6 +46,52 @@ namespace Model
     SatelliteListItem(Aws::Utils::Json::JsonView jsonValue);
     SatelliteListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGroundStations() const{ return m_groundStations; }
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline bool GroundStationsHasBeenSet() const { return m_groundStationsHasBeenSet; }
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline void SetGroundStations(const Aws::Vector<Aws::String>& value) { m_groundStationsHasBeenSet = true; m_groundStations = value; }
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline void SetGroundStations(Aws::Vector<Aws::String>&& value) { m_groundStationsHasBeenSet = true; m_groundStations = std::move(value); }
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline SatelliteListItem& WithGroundStations(const Aws::Vector<Aws::String>& value) { SetGroundStations(value); return *this;}
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline SatelliteListItem& WithGroundStations(Aws::Vector<Aws::String>&& value) { SetGroundStations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline SatelliteListItem& AddGroundStations(const Aws::String& value) { m_groundStationsHasBeenSet = true; m_groundStations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline SatelliteListItem& AddGroundStations(Aws::String&& value) { m_groundStationsHasBeenSet = true; m_groundStations.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
+     */
+    inline SatelliteListItem& AddGroundStations(const char* value) { m_groundStationsHasBeenSet = true; m_groundStations.push_back(value); return *this; }
 
 
     /**
@@ -110,46 +157,49 @@ namespace Model
 
 
     /**
-     * <p>ID of a satellite.</p>
+     * <p>UUID of a satellite.</p>
      */
     inline const Aws::String& GetSatelliteId() const{ return m_satelliteId; }
 
     /**
-     * <p>ID of a satellite.</p>
+     * <p>UUID of a satellite.</p>
      */
     inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
 
     /**
-     * <p>ID of a satellite.</p>
+     * <p>UUID of a satellite.</p>
      */
     inline void SetSatelliteId(const Aws::String& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = value; }
 
     /**
-     * <p>ID of a satellite.</p>
+     * <p>UUID of a satellite.</p>
      */
     inline void SetSatelliteId(Aws::String&& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = std::move(value); }
 
     /**
-     * <p>ID of a satellite.</p>
+     * <p>UUID of a satellite.</p>
      */
     inline void SetSatelliteId(const char* value) { m_satelliteIdHasBeenSet = true; m_satelliteId.assign(value); }
 
     /**
-     * <p>ID of a satellite.</p>
+     * <p>UUID of a satellite.</p>
      */
     inline SatelliteListItem& WithSatelliteId(const Aws::String& value) { SetSatelliteId(value); return *this;}
 
     /**
-     * <p>ID of a satellite.</p>
+     * <p>UUID of a satellite.</p>
      */
     inline SatelliteListItem& WithSatelliteId(Aws::String&& value) { SetSatelliteId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of a satellite.</p>
+     * <p>UUID of a satellite.</p>
      */
     inline SatelliteListItem& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
 
   private:
+
+    Aws::Vector<Aws::String> m_groundStations;
+    bool m_groundStationsHasBeenSet;
 
     int m_noradSatelliteID;
     bool m_noradSatelliteIDHasBeenSet;

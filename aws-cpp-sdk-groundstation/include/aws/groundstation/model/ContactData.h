@@ -383,6 +383,47 @@ namespace Model
 
 
     /**
+     * <p>Region of a contact.</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>Region of a contact.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>Region of a contact.</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>Region of a contact.</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>Region of a contact.</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>Region of a contact.</p>
+     */
+    inline ContactData& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>Region of a contact.</p>
+     */
+    inline ContactData& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Region of a contact.</p>
+     */
+    inline ContactData& WithRegion(const char* value) { SetRegion(value); return *this;}
+
+
+    /**
      * <p>ARN of a satellite.</p>
      */
     inline const Aws::String& GetSatelliteArn() const{ return m_satelliteArn; }
@@ -547,6 +588,9 @@ namespace Model
 
     Aws::Utils::DateTime m_prePassStartTime;
     bool m_prePassStartTimeHasBeenSet;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet;
 
     Aws::String m_satelliteArn;
     bool m_satelliteArnHasBeenSet;

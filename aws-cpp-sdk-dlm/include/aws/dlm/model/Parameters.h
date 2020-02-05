@@ -32,9 +32,9 @@ namespace Model
 {
 
   /**
-   * <p>Optional parameters that can be added to the policy. The set of valid
-   * parameters depends on the combination of <code>policyType</code> and
-   * <code>resourceType</code> values.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies optional parameters to add to a policy. The set of valid parameters
+   * depends on the combination of policy type and resource type.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Parameters">AWS API
    * Reference</a></p>
    */
@@ -48,34 +48,34 @@ namespace Model
 
 
     /**
-     * <p>When executing an EBS Snapshot Management – Instance policy, execute all
-     * CreateSnapshots calls with the <code>excludeBootVolume</code> set to the
-     * supplied field. Defaults to false. Only valid for EBS Snapshot Management –
-     * Instance policies.</p>
+     * <p>[EBS Snapshot Management – Instance policies only] Indicates whether to
+     * exclude the root volume from snapshots created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
+     * The default is false.</p>
      */
     inline bool GetExcludeBootVolume() const{ return m_excludeBootVolume; }
 
     /**
-     * <p>When executing an EBS Snapshot Management – Instance policy, execute all
-     * CreateSnapshots calls with the <code>excludeBootVolume</code> set to the
-     * supplied field. Defaults to false. Only valid for EBS Snapshot Management –
-     * Instance policies.</p>
+     * <p>[EBS Snapshot Management – Instance policies only] Indicates whether to
+     * exclude the root volume from snapshots created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
+     * The default is false.</p>
      */
     inline bool ExcludeBootVolumeHasBeenSet() const { return m_excludeBootVolumeHasBeenSet; }
 
     /**
-     * <p>When executing an EBS Snapshot Management – Instance policy, execute all
-     * CreateSnapshots calls with the <code>excludeBootVolume</code> set to the
-     * supplied field. Defaults to false. Only valid for EBS Snapshot Management –
-     * Instance policies.</p>
+     * <p>[EBS Snapshot Management – Instance policies only] Indicates whether to
+     * exclude the root volume from snapshots created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
+     * The default is false.</p>
      */
     inline void SetExcludeBootVolume(bool value) { m_excludeBootVolumeHasBeenSet = true; m_excludeBootVolume = value; }
 
     /**
-     * <p>When executing an EBS Snapshot Management – Instance policy, execute all
-     * CreateSnapshots calls with the <code>excludeBootVolume</code> set to the
-     * supplied field. Defaults to false. Only valid for EBS Snapshot Management –
-     * Instance policies.</p>
+     * <p>[EBS Snapshot Management – Instance policies only] Indicates whether to
+     * exclude the root volume from snapshots created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html">CreateSnapshots</a>.
+     * The default is false.</p>
      */
     inline Parameters& WithExcludeBootVolume(bool value) { SetExcludeBootVolume(value); return *this;}
 

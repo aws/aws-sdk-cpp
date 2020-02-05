@@ -33,7 +33,8 @@ CreateVpcEndpointRequest::CreateVpcEndpointRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_privateDnsEnabled(false),
-    m_privateDnsEnabledHasBeenSet(false)
+    m_privateDnsEnabledHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,16 @@ Aws::String CreateVpcEndpointRequest::SerializePayload() const
   if(m_privateDnsEnabledHasBeenSet)
   {
     ss << "PrivateDnsEnabled=" << std::boolalpha << m_privateDnsEnabled << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

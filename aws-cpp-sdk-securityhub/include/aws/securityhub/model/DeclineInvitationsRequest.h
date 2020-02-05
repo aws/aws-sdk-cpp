@@ -44,56 +44,56 @@ namespace Model
 
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline DeclineInvitationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline DeclineInvitationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline DeclineInvitationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline DeclineInvitationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of account IDs that specify the accounts that invitations to Security
-     * Hub are declined from.</p>
+     * <p>The list of account IDs for the accounts from which to decline the
+     * invitations to Security Hub.</p>
      */
     inline DeclineInvitationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 

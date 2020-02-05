@@ -48,32 +48,32 @@ namespace Model
 
 
     /**
-     * <p>Parameters for a <code>Config</code>.</p>
+     * <p>Parameters of a <code>Config</code>.</p>
      */
     inline const ConfigTypeData& GetConfigData() const{ return m_configData; }
 
     /**
-     * <p>Parameters for a <code>Config</code>.</p>
+     * <p>Parameters of a <code>Config</code>.</p>
      */
     inline bool ConfigDataHasBeenSet() const { return m_configDataHasBeenSet; }
 
     /**
-     * <p>Parameters for a <code>Config</code>.</p>
+     * <p>Parameters of a <code>Config</code>.</p>
      */
     inline void SetConfigData(const ConfigTypeData& value) { m_configDataHasBeenSet = true; m_configData = value; }
 
     /**
-     * <p>Parameters for a <code>Config</code>.</p>
+     * <p>Parameters of a <code>Config</code>.</p>
      */
     inline void SetConfigData(ConfigTypeData&& value) { m_configDataHasBeenSet = true; m_configData = std::move(value); }
 
     /**
-     * <p>Parameters for a <code>Config</code>.</p>
+     * <p>Parameters of a <code>Config</code>.</p>
      */
     inline UpdateConfigRequest& WithConfigData(const ConfigTypeData& value) { SetConfigData(value); return *this;}
 
     /**
-     * <p>Parameters for a <code>Config</code>.</p>
+     * <p>Parameters of a <code>Config</code>.</p>
      */
     inline UpdateConfigRequest& WithConfigData(ConfigTypeData&& value) { SetConfigData(std::move(value)); return *this;}
 

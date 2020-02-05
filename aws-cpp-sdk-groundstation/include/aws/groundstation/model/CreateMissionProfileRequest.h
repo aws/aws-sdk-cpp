@@ -48,25 +48,25 @@ namespace Model
 
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
+     * <p>Amount of time after a contact ends that you���d like to receive a CloudWatch
      * event indicating the pass has finished.</p>
      */
     inline int GetContactPostPassDurationSeconds() const{ return m_contactPostPassDurationSeconds; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
+     * <p>Amount of time after a contact ends that you���d like to receive a CloudWatch
      * event indicating the pass has finished.</p>
      */
     inline bool ContactPostPassDurationSecondsHasBeenSet() const { return m_contactPostPassDurationSecondsHasBeenSet; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
+     * <p>Amount of time after a contact ends that you���d like to receive a CloudWatch
      * event indicating the pass has finished.</p>
      */
     inline void SetContactPostPassDurationSeconds(int value) { m_contactPostPassDurationSecondsHasBeenSet = true; m_contactPostPassDurationSeconds = value; }
 
     /**
-     * <p>Amount of time after a contact ends that you’d like to receive a CloudWatch
+     * <p>Amount of time after a contact ends that you���d like to receive a CloudWatch
      * event indicating the pass has finished.</p>
      */
     inline CreateMissionProfileRequest& WithContactPostPassDurationSeconds(int value) { SetContactPostPassDurationSeconds(value); return *this;}
@@ -98,58 +98,50 @@ namespace Model
 
 
     /**
-     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a from
-     * <code>Config</code> and a to 
-         <code>Config</code>.</p>
+     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+     * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::String>>& GetDataflowEdges() const{ return m_dataflowEdges; }
 
     /**
-     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a from
-     * <code>Config</code> and a to 
-         <code>Config</code>.</p>
+     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+     * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
     inline bool DataflowEdgesHasBeenSet() const { return m_dataflowEdgesHasBeenSet; }
 
     /**
-     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a from
-     * <code>Config</code> and a to 
-         <code>Config</code>.</p>
+     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+     * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
     inline void SetDataflowEdges(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges = value; }
 
     /**
-     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a from
-     * <code>Config</code> and a to 
-         <code>Config</code>.</p>
+     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+     * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
     inline void SetDataflowEdges(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges = std::move(value); }
 
     /**
-     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a from
-     * <code>Config</code> and a to 
-         <code>Config</code>.</p>
+     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+     * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
     inline CreateMissionProfileRequest& WithDataflowEdges(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetDataflowEdges(value); return *this;}
 
     /**
-     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a from
-     * <code>Config</code> and a to 
-         <code>Config</code>.</p>
+     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+     * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
     inline CreateMissionProfileRequest& WithDataflowEdges(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetDataflowEdges(std::move(value)); return *this;}
 
     /**
-     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a from
-     * <code>Config</code> and a to 
-         <code>Config</code>.</p>
+     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+     * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
     inline CreateMissionProfileRequest& AddDataflowEdges(const Aws::Vector<Aws::String>& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges.push_back(value); return *this; }
 
     /**
-     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a from
-     * <code>Config</code> and a to 
-         <code>Config</code>.</p>
+     * <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+     * <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
      */
     inline CreateMissionProfileRequest& AddDataflowEdges(Aws::Vector<Aws::String>&& value) { m_dataflowEdgesHasBeenSet = true; m_dataflowEdges.push_back(std::move(value)); return *this; }
 

@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Hub resource retrieved.</p>
+     * <p>The ARN of the Hub resource that was retrieved.</p>
      */
     inline const Aws::String& GetHubArn() const{ return m_hubArn; }
 
     /**
-     * <p>The ARN of the Hub resource retrieved.</p>
+     * <p>The ARN of the Hub resource that was retrieved.</p>
      */
     inline void SetHubArn(const Aws::String& value) { m_hubArn = value; }
 
     /**
-     * <p>The ARN of the Hub resource retrieved.</p>
+     * <p>The ARN of the Hub resource that was retrieved.</p>
      */
     inline void SetHubArn(Aws::String&& value) { m_hubArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Hub resource retrieved.</p>
+     * <p>The ARN of the Hub resource that was retrieved.</p>
      */
     inline void SetHubArn(const char* value) { m_hubArn.assign(value); }
 
     /**
-     * <p>The ARN of the Hub resource retrieved.</p>
+     * <p>The ARN of the Hub resource that was retrieved.</p>
      */
     inline DescribeHubResult& WithHubArn(const Aws::String& value) { SetHubArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Hub resource retrieved.</p>
+     * <p>The ARN of the Hub resource that was retrieved.</p>
      */
     inline DescribeHubResult& WithHubArn(Aws::String&& value) { SetHubArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Hub resource retrieved.</p>
+     * <p>The ARN of the Hub resource that was retrieved.</p>
      */
     inline DescribeHubResult& WithHubArn(const char* value) { SetHubArn(value); return *this;}
 

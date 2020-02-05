@@ -48,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>ID of a ground station.</p>
+     * <p>UUID of a ground station.</p>
      */
     inline const Aws::String& GetGroundStationId() const{ return m_groundStationId; }
 
     /**
-     * <p>ID of a ground station.</p>
+     * <p>UUID of a ground station.</p>
      */
     inline bool GroundStationIdHasBeenSet() const { return m_groundStationIdHasBeenSet; }
 
     /**
-     * <p>ID of a ground station.</p>
+     * <p>UUID of a ground station.</p>
      */
     inline void SetGroundStationId(const Aws::String& value) { m_groundStationIdHasBeenSet = true; m_groundStationId = value; }
 
     /**
-     * <p>ID of a ground station.</p>
+     * <p>UUID of a ground station.</p>
      */
     inline void SetGroundStationId(Aws::String&& value) { m_groundStationIdHasBeenSet = true; m_groundStationId = std::move(value); }
 
     /**
-     * <p>ID of a ground station.</p>
+     * <p>UUID of a ground station.</p>
      */
     inline void SetGroundStationId(const char* value) { m_groundStationIdHasBeenSet = true; m_groundStationId.assign(value); }
 
     /**
-     * <p>ID of a ground station.</p>
+     * <p>UUID of a ground station.</p>
      */
     inline GroundStationData& WithGroundStationId(const Aws::String& value) { SetGroundStationId(value); return *this;}
 
     /**
-     * <p>ID of a ground station.</p>
+     * <p>UUID of a ground station.</p>
      */
     inline GroundStationData& WithGroundStationId(Aws::String&& value) { SetGroundStationId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of a ground station.</p>
+     * <p>UUID of a ground station.</p>
      */
     inline GroundStationData& WithGroundStationId(const char* value) { SetGroundStationId(value); return *this;}
 

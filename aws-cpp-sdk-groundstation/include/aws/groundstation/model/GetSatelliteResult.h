@@ -15,9 +15,8 @@
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -50,55 +49,44 @@ namespace Model
 
 
     /**
-     * <p>When a satellite was created.</p>
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
+    inline const Aws::Vector<Aws::String>& GetGroundStations() const{ return m_groundStations; }
 
     /**
-     * <p>When a satellite was created.</p>
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreated = value; }
+    inline void SetGroundStations(const Aws::Vector<Aws::String>& value) { m_groundStations = value; }
 
     /**
-     * <p>When a satellite was created.</p>
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreated = std::move(value); }
+    inline void SetGroundStations(Aws::Vector<Aws::String>&& value) { m_groundStations = std::move(value); }
 
     /**
-     * <p>When a satellite was created.</p>
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline GetSatelliteResult& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
+    inline GetSatelliteResult& WithGroundStations(const Aws::Vector<Aws::String>& value) { SetGroundStations(value); return *this;}
 
     /**
-     * <p>When a satellite was created.</p>
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline GetSatelliteResult& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
-
-
-    /**
-     * <p>When a satellite was last updated.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline GetSatelliteResult& WithGroundStations(Aws::Vector<Aws::String>&& value) { SetGroundStations(std::move(value)); return *this;}
 
     /**
-     * <p>When a satellite was last updated.</p>
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdated = value; }
+    inline GetSatelliteResult& AddGroundStations(const Aws::String& value) { m_groundStations.push_back(value); return *this; }
 
     /**
-     * <p>When a satellite was last updated.</p>
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdated = std::move(value); }
+    inline GetSatelliteResult& AddGroundStations(Aws::String&& value) { m_groundStations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>When a satellite was last updated.</p>
+     * <p>A list of ground stations to which the satellite is on-boarded.</p>
      */
-    inline GetSatelliteResult& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-
-    /**
-     * <p>When a satellite was last updated.</p>
-     */
-    inline GetSatelliteResult& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    inline GetSatelliteResult& AddGroundStations(const char* value) { m_groundStations.push_back(value); return *this; }
 
 
     /**
@@ -188,80 +176,15 @@ namespace Model
      */
     inline GetSatelliteResult& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
 
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags assigned to a satellite.</p>
-     */
-    inline GetSatelliteResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
-
   private:
 
-    Aws::Utils::DateTime m_dateCreated;
-
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Vector<Aws::String> m_groundStations;
 
     int m_noradSatelliteID;
 
     Aws::String m_satelliteArn;
 
     Aws::String m_satelliteId;
-
-    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

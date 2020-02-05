@@ -39,9 +39,8 @@ namespace Model
 {
 
   /**
-   * <p>Object containing the parameters for a <code>Config</code>.</p>
-        
-   * <p>See the subtype definitions for what each type of <code>Config</code>
+   * <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the
+   * subtype definitions for what each type of <code>Config</code>
    * contains.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ConfigTypeData">AWS
    * API Reference</a></p>
@@ -235,55 +234,49 @@ namespace Model
 
 
     /**
-     * <p>Information about an uplink echo <code>Config</code>.</p>
-        
-     * <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the
-     * specified <code>AntennaUplinkConfigArn</code>, are used when this
+     * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
+     * the <code>AntennaUplinkConfig</code>, corresponding to the specified
+     * <code>AntennaUplinkConfigArn</code>, are used when this
      * <code>UplinkEchoConfig</code> is used in a contact.</p>
      */
     inline const UplinkEchoConfig& GetUplinkEchoConfig() const{ return m_uplinkEchoConfig; }
 
     /**
-     * <p>Information about an uplink echo <code>Config</code>.</p>
-        
-     * <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the
-     * specified <code>AntennaUplinkConfigArn</code>, are used when this
+     * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
+     * the <code>AntennaUplinkConfig</code>, corresponding to the specified
+     * <code>AntennaUplinkConfigArn</code>, are used when this
      * <code>UplinkEchoConfig</code> is used in a contact.</p>
      */
     inline bool UplinkEchoConfigHasBeenSet() const { return m_uplinkEchoConfigHasBeenSet; }
 
     /**
-     * <p>Information about an uplink echo <code>Config</code>.</p>
-        
-     * <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the
-     * specified <code>AntennaUplinkConfigArn</code>, are used when this
+     * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
+     * the <code>AntennaUplinkConfig</code>, corresponding to the specified
+     * <code>AntennaUplinkConfigArn</code>, are used when this
      * <code>UplinkEchoConfig</code> is used in a contact.</p>
      */
     inline void SetUplinkEchoConfig(const UplinkEchoConfig& value) { m_uplinkEchoConfigHasBeenSet = true; m_uplinkEchoConfig = value; }
 
     /**
-     * <p>Information about an uplink echo <code>Config</code>.</p>
-        
-     * <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the
-     * specified <code>AntennaUplinkConfigArn</code>, are used when this
+     * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
+     * the <code>AntennaUplinkConfig</code>, corresponding to the specified
+     * <code>AntennaUplinkConfigArn</code>, are used when this
      * <code>UplinkEchoConfig</code> is used in a contact.</p>
      */
     inline void SetUplinkEchoConfig(UplinkEchoConfig&& value) { m_uplinkEchoConfigHasBeenSet = true; m_uplinkEchoConfig = std::move(value); }
 
     /**
-     * <p>Information about an uplink echo <code>Config</code>.</p>
-        
-     * <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the
-     * specified <code>AntennaUplinkConfigArn</code>, are used when this
+     * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
+     * the <code>AntennaUplinkConfig</code>, corresponding to the specified
+     * <code>AntennaUplinkConfigArn</code>, are used when this
      * <code>UplinkEchoConfig</code> is used in a contact.</p>
      */
     inline ConfigTypeData& WithUplinkEchoConfig(const UplinkEchoConfig& value) { SetUplinkEchoConfig(value); return *this;}
 
     /**
-     * <p>Information about an uplink echo <code>Config</code>.</p>
-        
-     * <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the
-     * specified <code>AntennaUplinkConfigArn</code>, are used when this
+     * <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from
+     * the <code>AntennaUplinkConfig</code>, corresponding to the specified
+     * <code>AntennaUplinkConfigArn</code>, are used when this
      * <code>UplinkEchoConfig</code> is used in a contact.</p>
      */
     inline ConfigTypeData& WithUplinkEchoConfig(UplinkEchoConfig&& value) { SetUplinkEchoConfig(std::move(value)); return *this;}

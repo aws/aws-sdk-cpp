@@ -76,37 +76,37 @@ namespace Model
 
 
     /**
-     * <p>The list of the findings that failed to import.</p>
+     * <p>The list of findings that failed to import.</p>
      */
     inline const Aws::Vector<ImportFindingsError>& GetFailedFindings() const{ return m_failedFindings; }
 
     /**
-     * <p>The list of the findings that failed to import.</p>
+     * <p>The list of findings that failed to import.</p>
      */
     inline void SetFailedFindings(const Aws::Vector<ImportFindingsError>& value) { m_failedFindings = value; }
 
     /**
-     * <p>The list of the findings that failed to import.</p>
+     * <p>The list of findings that failed to import.</p>
      */
     inline void SetFailedFindings(Aws::Vector<ImportFindingsError>&& value) { m_failedFindings = std::move(value); }
 
     /**
-     * <p>The list of the findings that failed to import.</p>
+     * <p>The list of findings that failed to import.</p>
      */
     inline BatchImportFindingsResult& WithFailedFindings(const Aws::Vector<ImportFindingsError>& value) { SetFailedFindings(value); return *this;}
 
     /**
-     * <p>The list of the findings that failed to import.</p>
+     * <p>The list of findings that failed to import.</p>
      */
     inline BatchImportFindingsResult& WithFailedFindings(Aws::Vector<ImportFindingsError>&& value) { SetFailedFindings(std::move(value)); return *this;}
 
     /**
-     * <p>The list of the findings that failed to import.</p>
+     * <p>The list of findings that failed to import.</p>
      */
     inline BatchImportFindingsResult& AddFailedFindings(const ImportFindingsError& value) { m_failedFindings.push_back(value); return *this; }
 
     /**
-     * <p>The list of the findings that failed to import.</p>
+     * <p>The list of findings that failed to import.</p>
      */
     inline BatchImportFindingsResult& AddFailedFindings(ImportFindingsError&& value) { m_failedFindings.push_back(std::move(value)); return *this; }
 

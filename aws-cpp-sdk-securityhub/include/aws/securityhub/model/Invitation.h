@@ -170,42 +170,50 @@ namespace Model
 
 
     /**
-     * <p>The current status of the association between member and master accounts.</p>
+     * <p>The current status of the association between the member and master
+     * accounts.</p>
      */
     inline const Aws::String& GetMemberStatus() const{ return m_memberStatus; }
 
     /**
-     * <p>The current status of the association between member and master accounts.</p>
+     * <p>The current status of the association between the member and master
+     * accounts.</p>
      */
     inline bool MemberStatusHasBeenSet() const { return m_memberStatusHasBeenSet; }
 
     /**
-     * <p>The current status of the association between member and master accounts.</p>
+     * <p>The current status of the association between the member and master
+     * accounts.</p>
      */
     inline void SetMemberStatus(const Aws::String& value) { m_memberStatusHasBeenSet = true; m_memberStatus = value; }
 
     /**
-     * <p>The current status of the association between member and master accounts.</p>
+     * <p>The current status of the association between the member and master
+     * accounts.</p>
      */
     inline void SetMemberStatus(Aws::String&& value) { m_memberStatusHasBeenSet = true; m_memberStatus = std::move(value); }
 
     /**
-     * <p>The current status of the association between member and master accounts.</p>
+     * <p>The current status of the association between the member and master
+     * accounts.</p>
      */
     inline void SetMemberStatus(const char* value) { m_memberStatusHasBeenSet = true; m_memberStatus.assign(value); }
 
     /**
-     * <p>The current status of the association between member and master accounts.</p>
+     * <p>The current status of the association between the member and master
+     * accounts.</p>
      */
     inline Invitation& WithMemberStatus(const Aws::String& value) { SetMemberStatus(value); return *this;}
 
     /**
-     * <p>The current status of the association between member and master accounts.</p>
+     * <p>The current status of the association between the member and master
+     * accounts.</p>
      */
     inline Invitation& WithMemberStatus(Aws::String&& value) { SetMemberStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of the association between member and master accounts.</p>
+     * <p>The current status of the association between the member and master
+     * accounts.</p>
      */
     inline Invitation& WithMemberStatus(const char* value) { SetMemberStatus(value); return *this;}
 

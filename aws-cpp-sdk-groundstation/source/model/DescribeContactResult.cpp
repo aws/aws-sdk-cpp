@@ -94,6 +94,12 @@ DescribeContactResult& DescribeContactResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("region"))
+  {
+    m_region = jsonValue.GetString("region");
+
+  }
+
   if(jsonValue.ValueExists("satelliteArn"))
   {
     m_satelliteArn = jsonValue.GetString("satelliteArn");

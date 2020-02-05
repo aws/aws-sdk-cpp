@@ -29,6 +29,7 @@ namespace Model
     AVAILABLE,
     AWS_CANCELLED,
     CANCELLED,
+    CANCELLING,
     COMPLETED,
     FAILED,
     FAILED_TO_SCHEDULE,

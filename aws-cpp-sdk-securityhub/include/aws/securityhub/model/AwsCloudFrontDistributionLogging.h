@@ -132,50 +132,50 @@ namespace Model
 
 
     /**
-     * <p>An optional string that you want CloudFront to prefix to the access log
-     * filenames for this distribution.</p>
+     * <p>An optional string that you want CloudFront to use as a prefix to the access
+     * log filenames for this distribution.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>An optional string that you want CloudFront to prefix to the access log
-     * filenames for this distribution.</p>
+     * <p>An optional string that you want CloudFront to use as a prefix to the access
+     * log filenames for this distribution.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>An optional string that you want CloudFront to prefix to the access log
-     * filenames for this distribution.</p>
+     * <p>An optional string that you want CloudFront to use as a prefix to the access
+     * log filenames for this distribution.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>An optional string that you want CloudFront to prefix to the access log
-     * filenames for this distribution.</p>
+     * <p>An optional string that you want CloudFront to use as a prefix to the access
+     * log filenames for this distribution.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>An optional string that you want CloudFront to prefix to the access log
-     * filenames for this distribution.</p>
+     * <p>An optional string that you want CloudFront to use as a prefix to the access
+     * log filenames for this distribution.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>An optional string that you want CloudFront to prefix to the access log
-     * filenames for this distribution.</p>
+     * <p>An optional string that you want CloudFront to use as a prefix to the access
+     * log filenames for this distribution.</p>
      */
     inline AwsCloudFrontDistributionLogging& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>An optional string that you want CloudFront to prefix to the access log
-     * filenames for this distribution.</p>
+     * <p>An optional string that you want CloudFront to use as a prefix to the access
+     * log filenames for this distribution.</p>
      */
     inline AwsCloudFrontDistributionLogging& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>An optional string that you want CloudFront to prefix to the access log
-     * filenames for this distribution.</p>
+     * <p>An optional string that you want CloudFront to use as a prefix to the access
+     * log filenames for this distribution.</p>
      */
     inline AwsCloudFrontDistributionLogging& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

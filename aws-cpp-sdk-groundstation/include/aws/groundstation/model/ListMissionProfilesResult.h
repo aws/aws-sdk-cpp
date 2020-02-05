@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>List of mission profiles</p>
+     * <p>List of mission profiles.</p>
      */
     inline const Aws::Vector<MissionProfileListItem>& GetMissionProfileList() const{ return m_missionProfileList; }
 
     /**
-     * <p>List of mission profiles</p>
+     * <p>List of mission profiles.</p>
      */
     inline void SetMissionProfileList(const Aws::Vector<MissionProfileListItem>& value) { m_missionProfileList = value; }
 
     /**
-     * <p>List of mission profiles</p>
+     * <p>List of mission profiles.</p>
      */
     inline void SetMissionProfileList(Aws::Vector<MissionProfileListItem>&& value) { m_missionProfileList = std::move(value); }
 
     /**
-     * <p>List of mission profiles</p>
+     * <p>List of mission profiles.</p>
      */
     inline ListMissionProfilesResult& WithMissionProfileList(const Aws::Vector<MissionProfileListItem>& value) { SetMissionProfileList(value); return *this;}
 
     /**
-     * <p>List of mission profiles</p>
+     * <p>List of mission profiles.</p>
      */
     inline ListMissionProfilesResult& WithMissionProfileList(Aws::Vector<MissionProfileListItem>&& value) { SetMissionProfileList(std::move(value)); return *this;}
 
     /**
-     * <p>List of mission profiles</p>
+     * <p>List of mission profiles.</p>
      */
     inline ListMissionProfilesResult& AddMissionProfileList(const MissionProfileListItem& value) { m_missionProfileList.push_back(value); return *this; }
 
     /**
-     * <p>List of mission profiles</p>
+     * <p>List of mission profiles.</p>
      */
     inline ListMissionProfilesResult& AddMissionProfileList(MissionProfileListItem&& value) { m_missionProfileList.push_back(std::move(value)); return *this; }
 

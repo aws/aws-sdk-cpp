@@ -88,10 +88,54 @@ namespace Model
      */
     inline DataflowEndpointConfig& WithDataflowEndpointName(const char* value) { SetDataflowEndpointName(value); return *this;}
 
+
+    /**
+     * <p>Region of a dataflow endpoint.</p>
+     */
+    inline const Aws::String& GetDataflowEndpointRegion() const{ return m_dataflowEndpointRegion; }
+
+    /**
+     * <p>Region of a dataflow endpoint.</p>
+     */
+    inline bool DataflowEndpointRegionHasBeenSet() const { return m_dataflowEndpointRegionHasBeenSet; }
+
+    /**
+     * <p>Region of a dataflow endpoint.</p>
+     */
+    inline void SetDataflowEndpointRegion(const Aws::String& value) { m_dataflowEndpointRegionHasBeenSet = true; m_dataflowEndpointRegion = value; }
+
+    /**
+     * <p>Region of a dataflow endpoint.</p>
+     */
+    inline void SetDataflowEndpointRegion(Aws::String&& value) { m_dataflowEndpointRegionHasBeenSet = true; m_dataflowEndpointRegion = std::move(value); }
+
+    /**
+     * <p>Region of a dataflow endpoint.</p>
+     */
+    inline void SetDataflowEndpointRegion(const char* value) { m_dataflowEndpointRegionHasBeenSet = true; m_dataflowEndpointRegion.assign(value); }
+
+    /**
+     * <p>Region of a dataflow endpoint.</p>
+     */
+    inline DataflowEndpointConfig& WithDataflowEndpointRegion(const Aws::String& value) { SetDataflowEndpointRegion(value); return *this;}
+
+    /**
+     * <p>Region of a dataflow endpoint.</p>
+     */
+    inline DataflowEndpointConfig& WithDataflowEndpointRegion(Aws::String&& value) { SetDataflowEndpointRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Region of a dataflow endpoint.</p>
+     */
+    inline DataflowEndpointConfig& WithDataflowEndpointRegion(const char* value) { SetDataflowEndpointRegion(value); return *this;}
+
   private:
 
     Aws::String m_dataflowEndpointName;
     bool m_dataflowEndpointNameHasBeenSet;
+
+    Aws::String m_dataflowEndpointRegion;
+    bool m_dataflowEndpointRegionHasBeenSet;
   };
 
 } // namespace Model

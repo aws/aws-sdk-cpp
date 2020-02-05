@@ -42,7 +42,7 @@ namespace Model
   /**
    * <p>A collection of attributes that are applied to all active Security
    * Hub-aggregated findings and that result in a subset of findings that are
-   * included in this insight. </p><p><h3>See Also:</h3>   <a
+   * included in this insight.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters">AWS
    * API Reference</a></p>
    */
@@ -646,121 +646,121 @@ namespace Model
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline const Aws::Vector<NumberFilter>& GetConfidence() const{ return m_confidence; }
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline void SetConfidence(const Aws::Vector<NumberFilter>& value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline void SetConfidence(Aws::Vector<NumberFilter>&& value) { m_confidenceHasBeenSet = true; m_confidence = std::move(value); }
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline AwsSecurityFindingFilters& WithConfidence(const Aws::Vector<NumberFilter>& value) { SetConfidence(value); return *this;}
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline AwsSecurityFindingFilters& WithConfidence(Aws::Vector<NumberFilter>&& value) { SetConfidence(std::move(value)); return *this;}
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline AwsSecurityFindingFilters& AddConfidence(const NumberFilter& value) { m_confidenceHasBeenSet = true; m_confidence.push_back(value); return *this; }
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline AwsSecurityFindingFilters& AddConfidence(NumberFilter&& value) { m_confidenceHasBeenSet = true; m_confidence.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline const Aws::Vector<NumberFilter>& GetCriticality() const{ return m_criticality; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline void SetCriticality(const Aws::Vector<NumberFilter>& value) { m_criticalityHasBeenSet = true; m_criticality = value; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline void SetCriticality(Aws::Vector<NumberFilter>&& value) { m_criticalityHasBeenSet = true; m_criticality = std::move(value); }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFindingFilters& WithCriticality(const Aws::Vector<NumberFilter>& value) { SetCriticality(value); return *this;}
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFindingFilters& WithCriticality(Aws::Vector<NumberFilter>&& value) { SetCriticality(std::move(value)); return *this;}
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFindingFilters& AddCriticality(const NumberFilter& value) { m_criticalityHasBeenSet = true; m_criticality.push_back(value); return *this; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFindingFilters& AddCriticality(NumberFilter&& value) { m_criticalityHasBeenSet = true; m_criticality.push_back(std::move(value)); return *this; }
 
@@ -2019,247 +2019,247 @@ namespace Model
 
 
     /**
-     * <p>The type of a threat intel indicator.</p>
+     * <p>The type of a threat intelligence indicator.</p>
      */
     inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorType() const{ return m_threatIntelIndicatorType; }
 
     /**
-     * <p>The type of a threat intel indicator.</p>
+     * <p>The type of a threat intelligence indicator.</p>
      */
     inline bool ThreatIntelIndicatorTypeHasBeenSet() const { return m_threatIntelIndicatorTypeHasBeenSet; }
 
     /**
-     * <p>The type of a threat intel indicator.</p>
+     * <p>The type of a threat intelligence indicator.</p>
      */
     inline void SetThreatIntelIndicatorType(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType = value; }
 
     /**
-     * <p>The type of a threat intel indicator.</p>
+     * <p>The type of a threat intelligence indicator.</p>
      */
     inline void SetThreatIntelIndicatorType(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType = std::move(value); }
 
     /**
-     * <p>The type of a threat intel indicator.</p>
+     * <p>The type of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorType(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorType(value); return *this;}
 
     /**
-     * <p>The type of a threat intel indicator.</p>
+     * <p>The type of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorType(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of a threat intel indicator.</p>
+     * <p>The type of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorType(const StringFilter& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType.push_back(value); return *this; }
 
     /**
-     * <p>The type of a threat intel indicator.</p>
+     * <p>The type of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorType(StringFilter&& value) { m_threatIntelIndicatorTypeHasBeenSet = true; m_threatIntelIndicatorType.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The value of a threat intel indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p>
      */
     inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorValue() const{ return m_threatIntelIndicatorValue; }
 
     /**
-     * <p>The value of a threat intel indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p>
      */
     inline bool ThreatIntelIndicatorValueHasBeenSet() const { return m_threatIntelIndicatorValueHasBeenSet; }
 
     /**
-     * <p>The value of a threat intel indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p>
      */
     inline void SetThreatIntelIndicatorValue(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue = value; }
 
     /**
-     * <p>The value of a threat intel indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p>
      */
     inline void SetThreatIntelIndicatorValue(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue = std::move(value); }
 
     /**
-     * <p>The value of a threat intel indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorValue(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorValue(value); return *this;}
 
     /**
-     * <p>The value of a threat intel indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorValue(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value of a threat intel indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorValue(const StringFilter& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue.push_back(value); return *this; }
 
     /**
-     * <p>The value of a threat intel indicator.</p>
+     * <p>The value of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorValue(StringFilter&& value) { m_threatIntelIndicatorValueHasBeenSet = true; m_threatIntelIndicatorValue.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The category of a threat intel indicator.</p>
+     * <p>The category of a threat intelligence indicator.</p>
      */
     inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorCategory() const{ return m_threatIntelIndicatorCategory; }
 
     /**
-     * <p>The category of a threat intel indicator.</p>
+     * <p>The category of a threat intelligence indicator.</p>
      */
     inline bool ThreatIntelIndicatorCategoryHasBeenSet() const { return m_threatIntelIndicatorCategoryHasBeenSet; }
 
     /**
-     * <p>The category of a threat intel indicator.</p>
+     * <p>The category of a threat intelligence indicator.</p>
      */
     inline void SetThreatIntelIndicatorCategory(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory = value; }
 
     /**
-     * <p>The category of a threat intel indicator.</p>
+     * <p>The category of a threat intelligence indicator.</p>
      */
     inline void SetThreatIntelIndicatorCategory(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory = std::move(value); }
 
     /**
-     * <p>The category of a threat intel indicator.</p>
+     * <p>The category of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorCategory(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorCategory(value); return *this;}
 
     /**
-     * <p>The category of a threat intel indicator.</p>
+     * <p>The category of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorCategory(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorCategory(std::move(value)); return *this;}
 
     /**
-     * <p>The category of a threat intel indicator.</p>
+     * <p>The category of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorCategory(const StringFilter& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory.push_back(value); return *this; }
 
     /**
-     * <p>The category of a threat intel indicator.</p>
+     * <p>The category of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorCategory(StringFilter&& value) { m_threatIntelIndicatorCategoryHasBeenSet = true; m_threatIntelIndicatorCategory.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
      */
     inline const Aws::Vector<DateFilter>& GetThreatIntelIndicatorLastObservedAt() const{ return m_threatIntelIndicatorLastObservedAt; }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
      */
     inline bool ThreatIntelIndicatorLastObservedAtHasBeenSet() const { return m_threatIntelIndicatorLastObservedAtHasBeenSet; }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
      */
     inline void SetThreatIntelIndicatorLastObservedAt(const Aws::Vector<DateFilter>& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt = value; }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
      */
     inline void SetThreatIntelIndicatorLastObservedAt(Aws::Vector<DateFilter>&& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt = std::move(value); }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorLastObservedAt(const Aws::Vector<DateFilter>& value) { SetThreatIntelIndicatorLastObservedAt(value); return *this;}
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorLastObservedAt(Aws::Vector<DateFilter>&& value) { SetThreatIntelIndicatorLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorLastObservedAt(const DateFilter& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt.push_back(value); return *this; }
 
     /**
-     * <p>The date/time of the last observation of a threat intel indicator.</p>
+     * <p>The date/time of the last observation of a threat intelligence indicator.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorLastObservedAt(DateFilter&& value) { m_threatIntelIndicatorLastObservedAtHasBeenSet = true; m_threatIntelIndicatorLastObservedAt.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intelligence.</p>
      */
     inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorSource() const{ return m_threatIntelIndicatorSource; }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intelligence.</p>
      */
     inline bool ThreatIntelIndicatorSourceHasBeenSet() const { return m_threatIntelIndicatorSourceHasBeenSet; }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intelligence.</p>
      */
     inline void SetThreatIntelIndicatorSource(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource = value; }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intelligence.</p>
      */
     inline void SetThreatIntelIndicatorSource(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource = std::move(value); }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intelligence.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorSource(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorSource(value); return *this;}
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intelligence.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorSource(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorSource(std::move(value)); return *this;}
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intelligence.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorSource(const StringFilter& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource.push_back(value); return *this; }
 
     /**
-     * <p>The source of the threat intel.</p>
+     * <p>The source of the threat intelligence.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorSource(StringFilter&& value) { m_threatIntelIndicatorSourceHasBeenSet = true; m_threatIntelIndicatorSource.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL for more details from the source of the threat intelligence.</p>
      */
     inline const Aws::Vector<StringFilter>& GetThreatIntelIndicatorSourceUrl() const{ return m_threatIntelIndicatorSourceUrl; }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL for more details from the source of the threat intelligence.</p>
      */
     inline bool ThreatIntelIndicatorSourceUrlHasBeenSet() const { return m_threatIntelIndicatorSourceUrlHasBeenSet; }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL for more details from the source of the threat intelligence.</p>
      */
     inline void SetThreatIntelIndicatorSourceUrl(const Aws::Vector<StringFilter>& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl = value; }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL for more details from the source of the threat intelligence.</p>
      */
     inline void SetThreatIntelIndicatorSourceUrl(Aws::Vector<StringFilter>&& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl = std::move(value); }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL for more details from the source of the threat intelligence.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorSourceUrl(const Aws::Vector<StringFilter>& value) { SetThreatIntelIndicatorSourceUrl(value); return *this;}
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL for more details from the source of the threat intelligence.</p>
      */
     inline AwsSecurityFindingFilters& WithThreatIntelIndicatorSourceUrl(Aws::Vector<StringFilter>&& value) { SetThreatIntelIndicatorSourceUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL for more details from the source of the threat intelligence.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorSourceUrl(const StringFilter& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl.push_back(value); return *this; }
 
     /**
-     * <p>The URL for more details from the source of the threat intel.</p>
+     * <p>The URL for more details from the source of the threat intelligence.</p>
      */
     inline AwsSecurityFindingFilters& AddThreatIntelIndicatorSourceUrl(StringFilter&& value) { m_threatIntelIndicatorSourceUrlHasBeenSet = true; m_threatIntelIndicatorSourceUrl.push_back(std::move(value)); return *this; }
 
@@ -2806,42 +2806,42 @@ namespace Model
 
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>The date and time the instance was launched.</p>
      */
     inline const Aws::Vector<DateFilter>& GetResourceAwsEc2InstanceLaunchedAt() const{ return m_resourceAwsEc2InstanceLaunchedAt; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>The date and time the instance was launched.</p>
      */
     inline bool ResourceAwsEc2InstanceLaunchedAtHasBeenSet() const { return m_resourceAwsEc2InstanceLaunchedAtHasBeenSet; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>The date and time the instance was launched.</p>
      */
     inline void SetResourceAwsEc2InstanceLaunchedAt(const Aws::Vector<DateFilter>& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt = value; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>The date and time the instance was launched.</p>
      */
     inline void SetResourceAwsEc2InstanceLaunchedAt(Aws::Vector<DateFilter>&& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt = std::move(value); }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>The date and time the instance was launched.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceLaunchedAt(const Aws::Vector<DateFilter>& value) { SetResourceAwsEc2InstanceLaunchedAt(value); return *this;}
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>The date and time the instance was launched.</p>
      */
     inline AwsSecurityFindingFilters& WithResourceAwsEc2InstanceLaunchedAt(Aws::Vector<DateFilter>&& value) { SetResourceAwsEc2InstanceLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>The date and time the instance was launched.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceLaunchedAt(const DateFilter& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt.push_back(value); return *this; }
 
     /**
-     * <p>The date/time the instance was launched.</p>
+     * <p>The date and time the instance was launched.</p>
      */
     inline AwsSecurityFindingFilters& AddResourceAwsEc2InstanceLaunchedAt(DateFilter&& value) { m_resourceAwsEc2InstanceLaunchedAtHasBeenSet = true; m_resourceAwsEc2InstanceLaunchedAt.push_back(std::move(value)); return *this; }
 

@@ -35,7 +35,6 @@ namespace Model
 
   /**
    * <p>Object that determines whether tracking should be used during a contact
-     
    * executed with this <code>Config</code> in the mission profile.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/TrackingConfig">AWS

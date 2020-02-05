@@ -88,284 +88,229 @@ namespace Model
 
     /**
      * <p>The start date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format) For example,
-     * "1970-01-01T00:00:00Z."</p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
 
     /**
      * <p>The start date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format) For example,
-     * "1970-01-01T00:00:00Z."</p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
      * <p>The start date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format) For example,
-     * "1970-01-01T00:00:00Z."</p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
      * <p>The start date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format) For example,
-     * "1970-01-01T00:00:00Z."</p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
     inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
      * <p>The start date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format) For example,
-     * "1970-01-01T00:00:00Z."</p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
     inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
 
     /**
      * <p>The start date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format) For example,
-     * "1970-01-01T00:00:00Z."</p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
     inline QueryForecastRequest& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
 
     /**
      * <p>The start date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format) For example,
-     * "1970-01-01T00:00:00Z."</p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
     inline QueryForecastRequest& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
 
     /**
      * <p>The start date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format) For example,
-     * "1970-01-01T00:00:00Z."</p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.</p>
      */
     inline QueryForecastRequest& WithStartDate(const char* value) { SetStartDate(value); return *this;}
 
 
     /**
      * <p>The end date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format). For example, "1970-01-01T00:00:00Z."
-     * </p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
 
     /**
      * <p>The end date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format). For example, "1970-01-01T00:00:00Z."
-     * </p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>The end date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format). For example, "1970-01-01T00:00:00Z."
-     * </p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
      * <p>The end date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format). For example, "1970-01-01T00:00:00Z."
-     * </p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
     inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
      * <p>The end date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format). For example, "1970-01-01T00:00:00Z."
-     * </p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
     inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
 
     /**
      * <p>The end date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format). For example, "1970-01-01T00:00:00Z."
-     * </p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
     inline QueryForecastRequest& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
 
     /**
      * <p>The end date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format). For example, "1970-01-01T00:00:00Z."
-     * </p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
     inline QueryForecastRequest& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
 
     /**
      * <p>The end date for the forecast. Specify the date using this format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z' (ISO 8601 format). For example, "1970-01-01T00:00:00Z."
-     * </p>
+     * yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00. </p>
      */
     inline QueryForecastRequest& WithEndDate(const char* value) { SetEndDate(value); return *this;}
 
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline void SetFilters(const Aws::Map<Aws::String, Aws::String>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline void SetFilters(Aws::Map<Aws::String, Aws::String>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& WithFilters(const Aws::Map<Aws::String, Aws::String>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& WithFilters(Aws::Map<Aws::String, Aws::String>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& AddFilters(const Aws::String& key, const Aws::String& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& AddFilters(Aws::String&& key, const Aws::String& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& AddFilters(const Aws::String& key, Aws::String&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& AddFilters(Aws::String&& key, Aws::String&& value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& AddFilters(const char* key, Aws::String&& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& AddFilters(Aws::String&& key, const char* value) { m_filtersHasBeenSet = true; m_filters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The filtering criteria to apply when retrieving the forecast. For
-     * example:</p> <ul> <li> <p>To get a forecast for a specific item specify the
-     * following:</p> <p> <code>{"item_id" : "client_1"}</code> </p> </li> </ul> <ul>
-     * <li> <p>To get a forecast for a specific item sold in a specific location,
-     * specify the following:</p> <p> <code>{"item_id" : "client_1", "location" :
-     * "ny"}</code> </p> </li> </ul> <ul> <li> <p>To get a forecast for all blue items
-     * sold in a specific location, specify the following:</p> <p> <code>{ "location" :
-     * "ny", "color":"blue"}</code> </p> </li> </ul> <p>To get the full forecast, use
-     * the operation.</p>
+     * <p>The filtering criteria to apply when retrieving the forecast. For example, to
+     * get the forecast for <code>client_21</code> in the electricity usage dataset,
+     * specify the following:</p> <p> <code>{"item_id" : "client_21"}</code> </p> <p>To
+     * get the full forecast, use the <a
+     * href="https://docs.aws.amazon.com/en_us/forecast/latest/dg/API_CreateForecastExportJob.html">CreateForecastExportJob</a>
+     * operation.</p>
      */
     inline QueryForecastRequest& AddFilters(const char* key, const char* value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 

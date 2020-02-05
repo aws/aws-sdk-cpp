@@ -33,6 +33,7 @@ namespace Aws
         static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
         static const int AWS_CANCELLED_HASH = HashingUtils::HashString("AWS_CANCELLED");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int FAILED_TO_SCHEDULE_HASH = HashingUtils::HashString("FAILED_TO_SCHEDULE");
@@ -57,6 +58,10 @@ namespace Aws
           else if (hashCode == CANCELLED_HASH)
           {
             return ContactStatus::CANCELLED;
+          }
+          else if (hashCode == CANCELLING_HASH)
+          {
+            return ContactStatus::CANCELLING;
           }
           else if (hashCode == COMPLETED_HASH)
           {
@@ -110,6 +115,8 @@ namespace Aws
             return "AWS_CANCELLED";
           case ContactStatus::CANCELLED:
             return "CANCELLED";
+          case ContactStatus::CANCELLING:
+            return "CANCELLING";
           case ContactStatus::COMPLETED:
             return "COMPLETED";
           case ContactStatus::FAILED:

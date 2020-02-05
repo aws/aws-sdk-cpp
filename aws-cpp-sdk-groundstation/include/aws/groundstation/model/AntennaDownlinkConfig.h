@@ -34,9 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about how AWS Ground Station should configure an
-         antenna
-   * for downlink during a contact.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about how AWS Ground Station should configure an antenna for
+   * downlink during a contact.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/AntennaDownlinkConfig">AWS
    * API Reference</a></p>
    */

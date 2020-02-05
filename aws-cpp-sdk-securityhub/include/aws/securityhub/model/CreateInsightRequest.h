@@ -86,43 +86,43 @@ namespace Model
 
     /**
      * <p>One or more attributes used to filter the findings included in the insight.
-     * Only findings that match the criteria defined in the filters are included in the
-     * insight.</p>
+     * The insight only includes findings that match the criteria defined in the
+     * filters.</p>
      */
     inline const AwsSecurityFindingFilters& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more attributes used to filter the findings included in the insight.
-     * Only findings that match the criteria defined in the filters are included in the
-     * insight.</p>
+     * The insight only includes findings that match the criteria defined in the
+     * filters.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more attributes used to filter the findings included in the insight.
-     * Only findings that match the criteria defined in the filters are included in the
-     * insight.</p>
+     * The insight only includes findings that match the criteria defined in the
+     * filters.</p>
      */
     inline void SetFilters(const AwsSecurityFindingFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more attributes used to filter the findings included in the insight.
-     * Only findings that match the criteria defined in the filters are included in the
-     * insight.</p>
+     * The insight only includes findings that match the criteria defined in the
+     * filters.</p>
      */
     inline void SetFilters(AwsSecurityFindingFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more attributes used to filter the findings included in the insight.
-     * Only findings that match the criteria defined in the filters are included in the
-     * insight.</p>
+     * The insight only includes findings that match the criteria defined in the
+     * filters.</p>
      */
     inline CreateInsightRequest& WithFilters(const AwsSecurityFindingFilters& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more attributes used to filter the findings included in the insight.
-     * Only findings that match the criteria defined in the filters are included in the
-     * insight.</p>
+     * The insight only includes findings that match the criteria defined in the
+     * filters.</p>
      */
     inline CreateInsightRequest& WithFilters(AwsSecurityFindingFilters&& value) { SetFilters(std::move(value)); return *this;}
 

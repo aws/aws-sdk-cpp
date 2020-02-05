@@ -57,7 +57,8 @@ enum class GroundStationErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DEPENDENCY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INVALID_PARAMETER
+  INVALID_PARAMETER,
+  RESOURCE_LIMIT_EXCEEDED
 };
 namespace GroundStationErrorMapper
 {

@@ -624,61 +624,61 @@ namespace Model
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline int GetConfidence() const{ return m_confidence; }
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline void SetConfidence(int value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
      * <p>A finding's confidence. Confidence is defined as the likelihood that a
      * finding accurately identifies the behavior or issue that it was intended to
-     * identify. Confidence is scored on a 0-100 basis using a ratio scale, where 0
-     * means zero percent confidence and 100 means 100 percent confidence.</p>
+     * identify.</p> <p>Confidence is scored on a 0-100 basis using a ratio scale,
+     * where 0 means zero percent confidence and 100 means 100 percent confidence.</p>
      */
     inline AwsSecurityFinding& WithConfidence(int value) { SetConfidence(value); return *this;}
 
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline int GetCriticality() const{ return m_criticality; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline void SetCriticality(int value) { m_criticalityHasBeenSet = true; m_criticality = value; }
 
     /**
      * <p>The level of importance assigned to the resources associated with the
-     * finding. A score of 0 means that the underlying resources have no criticality,
-     * and a score of 100 is reserved for the most critical resources.</p>
+     * finding.</p> <p>A score of 0 means that the underlying resources have no
+     * criticality, and a score of 100 is reserved for the most critical resources.</p>
      */
     inline AwsSecurityFinding& WithCriticality(int value) { SetCriticality(value); return *this;}
 
@@ -1136,42 +1136,42 @@ namespace Model
 
 
     /**
-     * <p>Threat intel details related to a finding.</p>
+     * <p>Threat intelligence details related to a finding.</p>
      */
     inline const Aws::Vector<ThreatIntelIndicator>& GetThreatIntelIndicators() const{ return m_threatIntelIndicators; }
 
     /**
-     * <p>Threat intel details related to a finding.</p>
+     * <p>Threat intelligence details related to a finding.</p>
      */
     inline bool ThreatIntelIndicatorsHasBeenSet() const { return m_threatIntelIndicatorsHasBeenSet; }
 
     /**
-     * <p>Threat intel details related to a finding.</p>
+     * <p>Threat intelligence details related to a finding.</p>
      */
     inline void SetThreatIntelIndicators(const Aws::Vector<ThreatIntelIndicator>& value) { m_threatIntelIndicatorsHasBeenSet = true; m_threatIntelIndicators = value; }
 
     /**
-     * <p>Threat intel details related to a finding.</p>
+     * <p>Threat intelligence details related to a finding.</p>
      */
     inline void SetThreatIntelIndicators(Aws::Vector<ThreatIntelIndicator>&& value) { m_threatIntelIndicatorsHasBeenSet = true; m_threatIntelIndicators = std::move(value); }
 
     /**
-     * <p>Threat intel details related to a finding.</p>
+     * <p>Threat intelligence details related to a finding.</p>
      */
     inline AwsSecurityFinding& WithThreatIntelIndicators(const Aws::Vector<ThreatIntelIndicator>& value) { SetThreatIntelIndicators(value); return *this;}
 
     /**
-     * <p>Threat intel details related to a finding.</p>
+     * <p>Threat intelligence details related to a finding.</p>
      */
     inline AwsSecurityFinding& WithThreatIntelIndicators(Aws::Vector<ThreatIntelIndicator>&& value) { SetThreatIntelIndicators(std::move(value)); return *this;}
 
     /**
-     * <p>Threat intel details related to a finding.</p>
+     * <p>Threat intelligence details related to a finding.</p>
      */
     inline AwsSecurityFinding& AddThreatIntelIndicators(const ThreatIntelIndicator& value) { m_threatIntelIndicatorsHasBeenSet = true; m_threatIntelIndicators.push_back(value); return *this; }
 
     /**
-     * <p>Threat intel details related to a finding.</p>
+     * <p>Threat intelligence details related to a finding.</p>
      */
     inline AwsSecurityFinding& AddThreatIntelIndicators(ThreatIntelIndicator&& value) { m_threatIntelIndicatorsHasBeenSet = true; m_threatIntelIndicators.push_back(std::move(value)); return *this; }
 

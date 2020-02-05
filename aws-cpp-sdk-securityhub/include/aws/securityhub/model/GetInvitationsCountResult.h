@@ -42,19 +42,19 @@ namespace Model
 
     /**
      * <p>The number of all membership invitations sent to this Security Hub member
-     * account, not including the currently accepted invitation. </p>
+     * account, not including the currently accepted invitation.</p>
      */
     inline int GetInvitationsCount() const{ return m_invitationsCount; }
 
     /**
      * <p>The number of all membership invitations sent to this Security Hub member
-     * account, not including the currently accepted invitation. </p>
+     * account, not including the currently accepted invitation.</p>
      */
     inline void SetInvitationsCount(int value) { m_invitationsCount = value; }
 
     /**
      * <p>The number of all membership invitations sent to this Security Hub member
-     * account, not including the currently accepted invitation. </p>
+     * account, not including the currently accepted invitation.</p>
      */
     inline GetInvitationsCountResult& WithInvitationsCount(int value) { SetInvitationsCount(value); return *this;}
 

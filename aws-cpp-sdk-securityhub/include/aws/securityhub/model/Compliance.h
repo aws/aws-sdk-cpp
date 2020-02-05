@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/ComplianceStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -43,8 +45,11 @@ namespace Model
    * is not supported given your configuration.</p> </li> <li> <p>
    * <code>FAILED</code> - Compliance check failed for at least one evaluated
    * resource.</p> </li> <li> <p> <code>NOT_AVAILABLE</code> - Check could not be
-   * performed due to a service outage or API error.</p> </li> </ul> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * performed due to a service outage, API error, or because the result of the AWS
+   * Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation
+   * result was <code> NOT_APPLICABLE</code>, then after 3 days, Security Hub
+   * automatically archives the finding.</p> </li> </ul> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Compliance">AWS
    * API Reference</a></p>
    */
@@ -87,10 +92,59 @@ namespace Model
      */
     inline Compliance& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRelatedRequirements() const{ return m_relatedRequirements; }
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline bool RelatedRequirementsHasBeenSet() const { return m_relatedRequirementsHasBeenSet; }
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline void SetRelatedRequirements(const Aws::Vector<Aws::String>& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = value; }
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline void SetRelatedRequirements(Aws::Vector<Aws::String>&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = std::move(value); }
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline Compliance& WithRelatedRequirements(const Aws::Vector<Aws::String>& value) { SetRelatedRequirements(value); return *this;}
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline Compliance& WithRelatedRequirements(Aws::Vector<Aws::String>&& value) { SetRelatedRequirements(std::move(value)); return *this;}
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline Compliance& AddRelatedRequirements(const Aws::String& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(value); return *this; }
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline Compliance& AddRelatedRequirements(Aws::String&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>List of requirements that are related to a standards control.</p>
+     */
+    inline Compliance& AddRelatedRequirements(const char* value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(value); return *this; }
+
   private:
 
     ComplianceStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::Vector<Aws::String> m_relatedRequirements;
+    bool m_relatedRequirementsHasBeenSet;
   };
 
 } // namespace Model

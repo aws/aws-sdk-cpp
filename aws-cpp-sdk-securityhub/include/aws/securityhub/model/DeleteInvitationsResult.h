@@ -44,44 +44,44 @@ namespace Model
 
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * invitations weren't deleted for.</p>
+     * <p>The list of AWS accounts for which the invitations were not deleted. For each
+     * account, the list includes the account ID and the email address.</p>
      */
     inline const Aws::Vector<Result>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * invitations weren't deleted for.</p>
+     * <p>The list of AWS accounts for which the invitations were not deleted. For each
+     * account, the list includes the account ID and the email address.</p>
      */
     inline void SetUnprocessedAccounts(const Aws::Vector<Result>& value) { m_unprocessedAccounts = value; }
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * invitations weren't deleted for.</p>
+     * <p>The list of AWS accounts for which the invitations were not deleted. For each
+     * account, the list includes the account ID and the email address.</p>
      */
     inline void SetUnprocessedAccounts(Aws::Vector<Result>&& value) { m_unprocessedAccounts = std::move(value); }
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * invitations weren't deleted for.</p>
+     * <p>The list of AWS accounts for which the invitations were not deleted. For each
+     * account, the list includes the account ID and the email address.</p>
      */
     inline DeleteInvitationsResult& WithUnprocessedAccounts(const Aws::Vector<Result>& value) { SetUnprocessedAccounts(value); return *this;}
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * invitations weren't deleted for.</p>
+     * <p>The list of AWS accounts for which the invitations were not deleted. For each
+     * account, the list includes the account ID and the email address.</p>
      */
     inline DeleteInvitationsResult& WithUnprocessedAccounts(Aws::Vector<Result>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * invitations weren't deleted for.</p>
+     * <p>The list of AWS accounts for which the invitations were not deleted. For each
+     * account, the list includes the account ID and the email address.</p>
      */
     inline DeleteInvitationsResult& AddUnprocessedAccounts(const Result& value) { m_unprocessedAccounts.push_back(value); return *this; }
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * invitations weren't deleted for.</p>
+     * <p>The list of AWS accounts for which the invitations were not deleted. For each
+     * account, the list includes the account ID and the email address.</p>
      */
     inline DeleteInvitationsResult& AddUnprocessedAccounts(Result&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
 

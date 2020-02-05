@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>ID of a dataflow endpoint group.</p>
+     * <p>UUID of a dataflow endpoint group.</p>
      */
     inline const Aws::String& GetDataflowEndpointGroupId() const{ return m_dataflowEndpointGroupId; }
 
     /**
-     * <p>ID of a dataflow endpoint group.</p>
+     * <p>UUID of a dataflow endpoint group.</p>
      */
     inline void SetDataflowEndpointGroupId(const Aws::String& value) { m_dataflowEndpointGroupId = value; }
 
     /**
-     * <p>ID of a dataflow endpoint group.</p>
+     * <p>UUID of a dataflow endpoint group.</p>
      */
     inline void SetDataflowEndpointGroupId(Aws::String&& value) { m_dataflowEndpointGroupId = std::move(value); }
 
     /**
-     * <p>ID of a dataflow endpoint group.</p>
+     * <p>UUID of a dataflow endpoint group.</p>
      */
     inline void SetDataflowEndpointGroupId(const char* value) { m_dataflowEndpointGroupId.assign(value); }
 
     /**
-     * <p>ID of a dataflow endpoint group.</p>
+     * <p>UUID of a dataflow endpoint group.</p>
      */
     inline CreateDataflowEndpointGroupResult& WithDataflowEndpointGroupId(const Aws::String& value) { SetDataflowEndpointGroupId(value); return *this;}
 
     /**
-     * <p>ID of a dataflow endpoint group.</p>
+     * <p>UUID of a dataflow endpoint group.</p>
      */
     inline CreateDataflowEndpointGroupResult& WithDataflowEndpointGroupId(Aws::String&& value) { SetDataflowEndpointGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of a dataflow endpoint group.</p>
+     * <p>UUID of a dataflow endpoint group.</p>
      */
     inline CreateDataflowEndpointGroupResult& WithDataflowEndpointGroupId(const char* value) { SetDataflowEndpointGroupId(value); return *this;}
 

@@ -51,42 +51,74 @@ namespace Model
 
 
     /**
-     * <p>The type of the resource that details are provided for.</p>
+     * <p>The type of the resource that details are provided for. If possible, set
+     * <code>Type</code> to one of the supported resource types. For example, if the
+     * resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the resource that details are provided for.</p>
+     * <p>The type of the resource that details are provided for. If possible, set
+     * <code>Type</code> to one of the supported resource types. For example, if the
+     * resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the resource that details are provided for.</p>
+     * <p>The type of the resource that details are provided for. If possible, set
+     * <code>Type</code> to one of the supported resource types. For example, if the
+     * resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the resource that details are provided for.</p>
+     * <p>The type of the resource that details are provided for. If possible, set
+     * <code>Type</code> to one of the supported resource types. For example, if the
+     * resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the resource that details are provided for.</p>
+     * <p>The type of the resource that details are provided for. If possible, set
+     * <code>Type</code> to one of the supported resource types. For example, if the
+     * resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of the resource that details are provided for.</p>
+     * <p>The type of the resource that details are provided for. If possible, set
+     * <code>Type</code> to one of the supported resource types. For example, if the
+     * resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
      */
     inline Resource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the resource that details are provided for.</p>
+     * <p>The type of the resource that details are provided for. If possible, set
+     * <code>Type</code> to one of the supported resource types. For example, if the
+     * resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
      */
     inline Resource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the resource that details are provided for.</p>
+     * <p>The type of the resource that details are provided for. If possible, set
+     * <code>Type</code> to one of the supported resource types. For example, if the
+     * resource is an EC2 instance, then set <code>Type</code> to
+     * <code>AwsEc2Instance</code>.</p> <p>If the resource does not match any of the
+     * provided types, then set <code>Type</code> to <code>Other</code>. </p>
      */
     inline Resource& WithType(const char* value) { SetType(value); return *this;}
 

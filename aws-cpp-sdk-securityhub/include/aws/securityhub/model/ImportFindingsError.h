@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Includes details of the list of the findings that can't be
+   * <p>Includes details of the list of the findings that cannot be
    * imported.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ImportFindingsError">AWS
    * API Reference</a></p>

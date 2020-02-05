@@ -324,50 +324,66 @@ namespace Model
 
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format
-     * Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment.
+     * The service adds this string between the name modifier and segment index number.
+     * You can use format identifiers in the string. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
     inline const Aws::String& GetSegmentModifier() const{ return m_segmentModifier; }
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format
-     * Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment.
+     * The service adds this string between the name modifier and segment index number.
+     * You can use format identifiers in the string. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
     inline bool SegmentModifierHasBeenSet() const { return m_segmentModifierHasBeenSet; }
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format
-     * Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment.
+     * The service adds this string between the name modifier and segment index number.
+     * You can use format identifiers in the string. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
     inline void SetSegmentModifier(const Aws::String& value) { m_segmentModifierHasBeenSet = true; m_segmentModifier = value; }
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format
-     * Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment.
+     * The service adds this string between the name modifier and segment index number.
+     * You can use format identifiers in the string. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
     inline void SetSegmentModifier(Aws::String&& value) { m_segmentModifierHasBeenSet = true; m_segmentModifier = std::move(value); }
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format
-     * Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment.
+     * The service adds this string between the name modifier and segment index number.
+     * You can use format identifiers in the string. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
     inline void SetSegmentModifier(const char* value) { m_segmentModifierHasBeenSet = true; m_segmentModifier.assign(value); }
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format
-     * Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment.
+     * The service adds this string between the name modifier and segment index number.
+     * You can use format identifiers in the string. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
     inline HlsSettings& WithSegmentModifier(const Aws::String& value) { SetSegmentModifier(value); return *this;}
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format
-     * Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment.
+     * The service adds this string between the name modifier and segment index number.
+     * You can use format identifiers in the string. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
     inline HlsSettings& WithSegmentModifier(Aws::String&& value) { SetSegmentModifier(std::move(value)); return *this;}
 
     /**
-     * String concatenated to end of segment filenames. Accepts "Format
-     * Identifiers":#format_identifier_parameters.
+     * Use this setting to add an identifying string to the filename of each segment.
+     * The service adds this string between the name modifier and segment index number.
+     * You can use format identifiers in the string. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/using-variables-in-your-job-settings.html
      */
     inline HlsSettings& WithSegmentModifier(const char* value) { SetSegmentModifier(value); return *this;}
 

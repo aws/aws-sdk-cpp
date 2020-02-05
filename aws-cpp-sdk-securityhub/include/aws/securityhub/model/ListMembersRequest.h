@@ -49,132 +49,140 @@ namespace Model
 
 
     /**
-     * <p>Specifies which member accounts the response includes based on their
+     * <p>Specifies which member accounts to include in the response based on their
      * relationship status with the master account. The default value is
-     * <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>,
-     * the response includes member accounts whose relationship status with the master
-     * is set to <code>ENABLED</code> or <code>DISABLED</code>. If
-     * <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes
-     * all existing member accounts. </p>
+     * <code>TRUE</code>.</p> <p>If <code>onlyAssociated</code> is set to
+     * <code>TRUE</code>, the response includes member accounts whose relationship
+     * status with the master is set to <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p> <p>If <code>onlyAssociated</code> is set to
+     * <code>FALSE</code>, the response includes all existing member accounts. </p>
      */
     inline bool GetOnlyAssociated() const{ return m_onlyAssociated; }
 
     /**
-     * <p>Specifies which member accounts the response includes based on their
+     * <p>Specifies which member accounts to include in the response based on their
      * relationship status with the master account. The default value is
-     * <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>,
-     * the response includes member accounts whose relationship status with the master
-     * is set to <code>ENABLED</code> or <code>DISABLED</code>. If
-     * <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes
-     * all existing member accounts. </p>
+     * <code>TRUE</code>.</p> <p>If <code>onlyAssociated</code> is set to
+     * <code>TRUE</code>, the response includes member accounts whose relationship
+     * status with the master is set to <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p> <p>If <code>onlyAssociated</code> is set to
+     * <code>FALSE</code>, the response includes all existing member accounts. </p>
      */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
 
     /**
-     * <p>Specifies which member accounts the response includes based on their
+     * <p>Specifies which member accounts to include in the response based on their
      * relationship status with the master account. The default value is
-     * <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>,
-     * the response includes member accounts whose relationship status with the master
-     * is set to <code>ENABLED</code> or <code>DISABLED</code>. If
-     * <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes
-     * all existing member accounts. </p>
+     * <code>TRUE</code>.</p> <p>If <code>onlyAssociated</code> is set to
+     * <code>TRUE</code>, the response includes member accounts whose relationship
+     * status with the master is set to <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p> <p>If <code>onlyAssociated</code> is set to
+     * <code>FALSE</code>, the response includes all existing member accounts. </p>
      */
     inline void SetOnlyAssociated(bool value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
 
     /**
-     * <p>Specifies which member accounts the response includes based on their
+     * <p>Specifies which member accounts to include in the response based on their
      * relationship status with the master account. The default value is
-     * <code>TRUE</code>. If <code>onlyAssociated</code> is set to <code>TRUE</code>,
-     * the response includes member accounts whose relationship status with the master
-     * is set to <code>ENABLED</code> or <code>DISABLED</code>. If
-     * <code>onlyAssociated</code> is set to <code>FALSE</code>, the response includes
-     * all existing member accounts. </p>
+     * <code>TRUE</code>.</p> <p>If <code>onlyAssociated</code> is set to
+     * <code>TRUE</code>, the response includes member accounts whose relationship
+     * status with the master is set to <code>ENABLED</code> or
+     * <code>DISABLED</code>.</p> <p>If <code>onlyAssociated</code> is set to
+     * <code>FALSE</code>, the response includes all existing member accounts. </p>
      */
     inline ListMembersRequest& WithOnlyAssociated(bool value) { SetOnlyAssociated(value); return *this;}
 
 
     /**
-     * <p>The maximum number of items that you want in the response. </p>
+     * <p>The maximum number of items to return in the response. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items that you want in the response. </p>
+     * <p>The maximum number of items to return in the response. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of items that you want in the response. </p>
+     * <p>The maximum number of items to return in the response. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items that you want in the response. </p>
+     * <p>The maximum number of items to return in the response. </p>
      */
     inline ListMembersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>Paginates results. Set the value of this parameter to <code>NULL</code> on
-     * your first call to the <code>ListMembers</code> operation. For subsequent calls
-     * to the operation, fill <code>nextToken</code> in the request with the value of
-     * <code>nextToken</code> from the previous response to continue listing data. </p>
+     * <p>Paginates results. On your first call to the <code>ListMembers</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, to continue listing data, set <code>nextToken</code> in
+     * the request to the value of <code>nextToken</code> from the previous
+     * response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to <code>NULL</code> on
-     * your first call to the <code>ListMembers</code> operation. For subsequent calls
-     * to the operation, fill <code>nextToken</code> in the request with the value of
-     * <code>nextToken</code> from the previous response to continue listing data. </p>
+     * <p>Paginates results. On your first call to the <code>ListMembers</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, to continue listing data, set <code>nextToken</code> in
+     * the request to the value of <code>nextToken</code> from the previous
+     * response.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to <code>NULL</code> on
-     * your first call to the <code>ListMembers</code> operation. For subsequent calls
-     * to the operation, fill <code>nextToken</code> in the request with the value of
-     * <code>nextToken</code> from the previous response to continue listing data. </p>
+     * <p>Paginates results. On your first call to the <code>ListMembers</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, to continue listing data, set <code>nextToken</code> in
+     * the request to the value of <code>nextToken</code> from the previous
+     * response.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to <code>NULL</code> on
-     * your first call to the <code>ListMembers</code> operation. For subsequent calls
-     * to the operation, fill <code>nextToken</code> in the request with the value of
-     * <code>nextToken</code> from the previous response to continue listing data. </p>
+     * <p>Paginates results. On your first call to the <code>ListMembers</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, to continue listing data, set <code>nextToken</code> in
+     * the request to the value of <code>nextToken</code> from the previous
+     * response.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to <code>NULL</code> on
-     * your first call to the <code>ListMembers</code> operation. For subsequent calls
-     * to the operation, fill <code>nextToken</code> in the request with the value of
-     * <code>nextToken</code> from the previous response to continue listing data. </p>
+     * <p>Paginates results. On your first call to the <code>ListMembers</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, to continue listing data, set <code>nextToken</code> in
+     * the request to the value of <code>nextToken</code> from the previous
+     * response.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Paginates results. Set the value of this parameter to <code>NULL</code> on
-     * your first call to the <code>ListMembers</code> operation. For subsequent calls
-     * to the operation, fill <code>nextToken</code> in the request with the value of
-     * <code>nextToken</code> from the previous response to continue listing data. </p>
+     * <p>Paginates results. On your first call to the <code>ListMembers</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, to continue listing data, set <code>nextToken</code> in
+     * the request to the value of <code>nextToken</code> from the previous
+     * response.</p>
      */
     inline ListMembersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Paginates results. Set the value of this parameter to <code>NULL</code> on
-     * your first call to the <code>ListMembers</code> operation. For subsequent calls
-     * to the operation, fill <code>nextToken</code> in the request with the value of
-     * <code>nextToken</code> from the previous response to continue listing data. </p>
+     * <p>Paginates results. On your first call to the <code>ListMembers</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, to continue listing data, set <code>nextToken</code> in
+     * the request to the value of <code>nextToken</code> from the previous
+     * response.</p>
      */
     inline ListMembersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Paginates results. Set the value of this parameter to <code>NULL</code> on
-     * your first call to the <code>ListMembers</code> operation. For subsequent calls
-     * to the operation, fill <code>nextToken</code> in the request with the value of
-     * <code>nextToken</code> from the previous response to continue listing data. </p>
+     * <p>Paginates results. On your first call to the <code>ListMembers</code>
+     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
+     * calls to the operation, to continue listing data, set <code>nextToken</code> in
+     * the request to the value of <code>nextToken</code> from the previous
+     * response.</p>
      */
     inline ListMembersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -39,6 +39,7 @@ ContactData::ContactData() :
     m_missionProfileArnHasBeenSet(false),
     m_postPassEndTimeHasBeenSet(false),
     m_prePassStartTimeHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_satelliteArnHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -56,6 +57,7 @@ ContactData::ContactData(JsonView jsonValue) :
     m_missionProfileArnHasBeenSet(false),
     m_postPassEndTimeHasBeenSet(false),
     m_prePassStartTimeHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_satelliteArnHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -126,6 +128,13 @@ ContactData& ContactData::operator =(JsonView jsonValue)
     m_prePassStartTime = jsonValue.GetDouble("prePassStartTime");
 
     m_prePassStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("region"))
+  {
+    m_region = jsonValue.GetString("region");
+
+    m_regionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("satelliteArn"))
@@ -207,6 +216,12 @@ JsonValue ContactData::Jsonize() const
   if(m_prePassStartTimeHasBeenSet)
   {
    payload.WithDouble("prePassStartTime", m_prePassStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("region", m_region);
+
   }
 
   if(m_satelliteArnHasBeenSet)

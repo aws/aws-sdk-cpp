@@ -44,120 +44,129 @@ namespace Model
 
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStandardsSubscriptionArns() const{ return m_standardsSubscriptionArns; }
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline bool StandardsSubscriptionArnsHasBeenSet() const { return m_standardsSubscriptionArnsHasBeenSet; }
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline void SetStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = value; }
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline void SetStandardsSubscriptionArns(Aws::Vector<Aws::String>&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns = std::move(value); }
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline GetEnabledStandardsRequest& WithStandardsSubscriptionArns(const Aws::Vector<Aws::String>& value) { SetStandardsSubscriptionArns(value); return *this;}
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline GetEnabledStandardsRequest& WithStandardsSubscriptionArns(Aws::Vector<Aws::String>&& value) { SetStandardsSubscriptionArns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(const Aws::String& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(value); return *this; }
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(Aws::String&& value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of the standards subscription ARNs for the standards to retrieve.</p>
+     * <p>The list of the standards subscription ARNs for the standards to
+     * retrieve.</p>
      */
     inline GetEnabledStandardsRequest& AddStandardsSubscriptionArns(const char* value) { m_standardsSubscriptionArnsHasBeenSet = true; m_standardsSubscriptionArns.push_back(value); return *this; }
 
 
     /**
      * <p>Paginates results. On your first call to the <code>GetEnabledStandards</code>
-     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
-     * calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing
-     * data.</p>
+     * operation, set the value of this parameter to <code>NULL</code>.</p> <p>For
+     * subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>nextToken</code>
+     * from the previous response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>Paginates results. On your first call to the <code>GetEnabledStandards</code>
-     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
-     * calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing
-     * data.</p>
+     * operation, set the value of this parameter to <code>NULL</code>.</p> <p>For
+     * subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>nextToken</code>
+     * from the previous response.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Paginates results. On your first call to the <code>GetEnabledStandards</code>
-     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
-     * calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing
-     * data.</p>
+     * operation, set the value of this parameter to <code>NULL</code>.</p> <p>For
+     * subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>nextToken</code>
+     * from the previous response.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>Paginates results. On your first call to the <code>GetEnabledStandards</code>
-     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
-     * calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing
-     * data.</p>
+     * operation, set the value of this parameter to <code>NULL</code>.</p> <p>For
+     * subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>nextToken</code>
+     * from the previous response.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>Paginates results. On your first call to the <code>GetEnabledStandards</code>
-     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
-     * calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing
-     * data.</p>
+     * operation, set the value of this parameter to <code>NULL</code>.</p> <p>For
+     * subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>nextToken</code>
+     * from the previous response.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>Paginates results. On your first call to the <code>GetEnabledStandards</code>
-     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
-     * calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing
-     * data.</p>
+     * operation, set the value of this parameter to <code>NULL</code>.</p> <p>For
+     * subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>nextToken</code>
+     * from the previous response.</p>
      */
     inline GetEnabledStandardsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>Paginates results. On your first call to the <code>GetEnabledStandards</code>
-     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
-     * calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing
-     * data.</p>
+     * operation, set the value of this parameter to <code>NULL</code>.</p> <p>For
+     * subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>nextToken</code>
+     * from the previous response.</p>
      */
     inline GetEnabledStandardsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>Paginates results. On your first call to the <code>GetEnabledStandards</code>
-     * operation, set the value of this parameter to <code>NULL</code>. For subsequent
-     * calls to the operation, fill <code>nextToken</code> in the request with the
-     * value of <code>nextToken</code> from the previous response to continue listing
-     * data.</p>
+     * operation, set the value of this parameter to <code>NULL</code>.</p> <p>For
+     * subsequent calls to the operation, to continue listing data, set
+     * <code>nextToken</code> in the request to the value of <code>nextToken</code>
+     * from the previous response.</p>
      */
     inline GetEnabledStandardsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

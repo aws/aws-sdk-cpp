@@ -49,58 +49,66 @@ namespace Model
 
 
     /**
-     * <p>The state code. The initial state of the load balancer is provisioning. After
-     * the load balancer is fully set up and ready to route traffic, its state is
-     * active. If the load balancer could not be set up, its state is failed. </p>
+     * <p>The state code. The initial state of the load balancer is provisioning.</p>
+     * <p>After the load balancer is fully set up and ready to route traffic, its state
+     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
+     * </p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
-     * <p>The state code. The initial state of the load balancer is provisioning. After
-     * the load balancer is fully set up and ready to route traffic, its state is
-     * active. If the load balancer could not be set up, its state is failed. </p>
+     * <p>The state code. The initial state of the load balancer is provisioning.</p>
+     * <p>After the load balancer is fully set up and ready to route traffic, its state
+     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
+     * </p>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
-     * <p>The state code. The initial state of the load balancer is provisioning. After
-     * the load balancer is fully set up and ready to route traffic, its state is
-     * active. If the load balancer could not be set up, its state is failed. </p>
+     * <p>The state code. The initial state of the load balancer is provisioning.</p>
+     * <p>After the load balancer is fully set up and ready to route traffic, its state
+     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
+     * </p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
-     * <p>The state code. The initial state of the load balancer is provisioning. After
-     * the load balancer is fully set up and ready to route traffic, its state is
-     * active. If the load balancer could not be set up, its state is failed. </p>
+     * <p>The state code. The initial state of the load balancer is provisioning.</p>
+     * <p>After the load balancer is fully set up and ready to route traffic, its state
+     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
+     * </p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
-     * <p>The state code. The initial state of the load balancer is provisioning. After
-     * the load balancer is fully set up and ready to route traffic, its state is
-     * active. If the load balancer could not be set up, its state is failed. </p>
+     * <p>The state code. The initial state of the load balancer is provisioning.</p>
+     * <p>After the load balancer is fully set up and ready to route traffic, its state
+     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
+     * </p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
-     * <p>The state code. The initial state of the load balancer is provisioning. After
-     * the load balancer is fully set up and ready to route traffic, its state is
-     * active. If the load balancer could not be set up, its state is failed. </p>
+     * <p>The state code. The initial state of the load balancer is provisioning.</p>
+     * <p>After the load balancer is fully set up and ready to route traffic, its state
+     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
+     * </p>
      */
     inline LoadBalancerState& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The state code. The initial state of the load balancer is provisioning. After
-     * the load balancer is fully set up and ready to route traffic, its state is
-     * active. If the load balancer could not be set up, its state is failed. </p>
+     * <p>The state code. The initial state of the load balancer is provisioning.</p>
+     * <p>After the load balancer is fully set up and ready to route traffic, its state
+     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
+     * </p>
      */
     inline LoadBalancerState& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
-     * <p>The state code. The initial state of the load balancer is provisioning. After
-     * the load balancer is fully set up and ready to route traffic, its state is
-     * active. If the load balancer could not be set up, its state is failed. </p>
+     * <p>The state code. The initial state of the load balancer is provisioning.</p>
+     * <p>After the load balancer is fully set up and ready to route traffic, its state
+     * is active.</p> <p>If the load balancer could not be set up, its state is failed.
+     * </p>
      */
     inline LoadBalancerState& WithCode(const char* value) { SetCode(value); return *this;}
 

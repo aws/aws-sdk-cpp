@@ -29,12 +29,14 @@ namespace Model
 {
 
 DataflowEndpointConfig::DataflowEndpointConfig() : 
-    m_dataflowEndpointNameHasBeenSet(false)
+    m_dataflowEndpointNameHasBeenSet(false),
+    m_dataflowEndpointRegionHasBeenSet(false)
 {
 }
 
 DataflowEndpointConfig::DataflowEndpointConfig(JsonView jsonValue) : 
-    m_dataflowEndpointNameHasBeenSet(false)
+    m_dataflowEndpointNameHasBeenSet(false),
+    m_dataflowEndpointRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ DataflowEndpointConfig& DataflowEndpointConfig::operator =(JsonView jsonValue)
     m_dataflowEndpointNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dataflowEndpointRegion"))
+  {
+    m_dataflowEndpointRegion = jsonValue.GetString("dataflowEndpointRegion");
+
+    m_dataflowEndpointRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue DataflowEndpointConfig::Jsonize() const
   if(m_dataflowEndpointNameHasBeenSet)
   {
    payload.WithString("dataflowEndpointName", m_dataflowEndpointName);
+
+  }
+
+  if(m_dataflowEndpointRegionHasBeenSet)
+  {
+   payload.WithString("dataflowEndpointRegion", m_dataflowEndpointRegion);
 
   }
 

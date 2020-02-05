@@ -29,6 +29,7 @@ namespace Model
 {
 
 SatelliteListItem::SatelliteListItem() : 
+    m_groundStationsHasBeenSet(false),
     m_noradSatelliteID(0),
     m_noradSatelliteIDHasBeenSet(false),
     m_satelliteArnHasBeenSet(false),
@@ -37,6 +38,7 @@ SatelliteListItem::SatelliteListItem() :
 }
 
 SatelliteListItem::SatelliteListItem(JsonView jsonValue) : 
+    m_groundStationsHasBeenSet(false),
     m_noradSatelliteID(0),
     m_noradSatelliteIDHasBeenSet(false),
     m_satelliteArnHasBeenSet(false),
@@ -47,6 +49,16 @@ SatelliteListItem::SatelliteListItem(JsonView jsonValue) :
 
 SatelliteListItem& SatelliteListItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("groundStations"))
+  {
+    Array<JsonView> groundStationsJsonList = jsonValue.GetArray("groundStations");
+    for(unsigned groundStationsIndex = 0; groundStationsIndex < groundStationsJsonList.GetLength(); ++groundStationsIndex)
+    {
+      m_groundStations.push_back(groundStationsJsonList[groundStationsIndex].AsString());
+    }
+    m_groundStationsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("noradSatelliteID"))
   {
     m_noradSatelliteID = jsonValue.GetInteger("noradSatelliteID");
@@ -74,6 +86,17 @@ SatelliteListItem& SatelliteListItem::operator =(JsonView jsonValue)
 JsonValue SatelliteListItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_groundStationsHasBeenSet)
+  {
+   Array<JsonValue> groundStationsJsonList(m_groundStations.size());
+   for(unsigned groundStationsIndex = 0; groundStationsIndex < groundStationsJsonList.GetLength(); ++groundStationsIndex)
+   {
+     groundStationsJsonList[groundStationsIndex].AsString(m_groundStations[groundStationsIndex]);
+   }
+   payload.WithArray("groundStations", std::move(groundStationsJsonList));
+
+  }
 
   if(m_noradSatelliteIDHasBeenSet)
   {

@@ -45,68 +45,101 @@ namespace Model
 
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline const Aws::Map<Aws::String, FailureInfo>& GetFailedResourcesMap() const{ return m_failedResourcesMap; }
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline void SetFailedResourcesMap(const Aws::Map<Aws::String, FailureInfo>& value) { m_failedResourcesMap = value; }
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline void SetFailedResourcesMap(Aws::Map<Aws::String, FailureInfo>&& value) { m_failedResourcesMap = std::move(value); }
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline TagResourcesResult& WithFailedResourcesMap(const Aws::Map<Aws::String, FailureInfo>& value) { SetFailedResourcesMap(value); return *this;}
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline TagResourcesResult& WithFailedResourcesMap(Aws::Map<Aws::String, FailureInfo>&& value) { SetFailedResourcesMap(std::move(value)); return *this;}
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline TagResourcesResult& AddFailedResourcesMap(const Aws::String& key, const FailureInfo& value) { m_failedResourcesMap.emplace(key, value); return *this; }
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline TagResourcesResult& AddFailedResourcesMap(Aws::String&& key, const FailureInfo& value) { m_failedResourcesMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline TagResourcesResult& AddFailedResourcesMap(const Aws::String& key, FailureInfo&& value) { m_failedResourcesMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline TagResourcesResult& AddFailedResourcesMap(Aws::String&& key, FailureInfo&& value) { m_failedResourcesMap.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline TagResourcesResult& AddFailedResourcesMap(const char* key, FailureInfo&& value) { m_failedResourcesMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Details of resources that could not be tagged. An error code, status code,
-     * and error message are returned for each failed item.</p>
+     * <p>A map containing a key-value pair for each failed item that couldn't be
+     * tagged. The key is the ARN of the failed resource. The value is a
+     * <code>FailureInfo</code> object that contains an error code, a status code, and
+     * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
+     * empty.</p>
      */
     inline TagResourcesResult& AddFailedResourcesMap(const char* key, const FailureInfo& value) { m_failedResourcesMap.emplace(key, value); return *this; }
 

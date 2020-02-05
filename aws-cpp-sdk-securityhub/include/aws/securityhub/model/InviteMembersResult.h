@@ -44,44 +44,44 @@ namespace Model
 
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * couldn't be processed. </p>
+     * <p>The list of AWS accounts that could not be processed. For each account, the
+     * list includes the account ID and the email address.</p>
      */
     inline const Aws::Vector<Result>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * couldn't be processed. </p>
+     * <p>The list of AWS accounts that could not be processed. For each account, the
+     * list includes the account ID and the email address.</p>
      */
     inline void SetUnprocessedAccounts(const Aws::Vector<Result>& value) { m_unprocessedAccounts = value; }
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * couldn't be processed. </p>
+     * <p>The list of AWS accounts that could not be processed. For each account, the
+     * list includes the account ID and the email address.</p>
      */
     inline void SetUnprocessedAccounts(Aws::Vector<Result>&& value) { m_unprocessedAccounts = std::move(value); }
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * couldn't be processed. </p>
+     * <p>The list of AWS accounts that could not be processed. For each account, the
+     * list includes the account ID and the email address.</p>
      */
     inline InviteMembersResult& WithUnprocessedAccounts(const Aws::Vector<Result>& value) { SetUnprocessedAccounts(value); return *this;}
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * couldn't be processed. </p>
+     * <p>The list of AWS accounts that could not be processed. For each account, the
+     * list includes the account ID and the email address.</p>
      */
     inline InviteMembersResult& WithUnprocessedAccounts(Aws::Vector<Result>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * couldn't be processed. </p>
+     * <p>The list of AWS accounts that could not be processed. For each account, the
+     * list includes the account ID and the email address.</p>
      */
     inline InviteMembersResult& AddUnprocessedAccounts(const Result& value) { m_unprocessedAccounts.push_back(value); return *this; }
 
     /**
-     * <p>A list of account ID and email address pairs of the AWS accounts that
-     * couldn't be processed. </p>
+     * <p>The list of AWS accounts that could not be processed. For each account, the
+     * list includes the account ID and the email address.</p>
      */
     inline InviteMembersResult& AddUnprocessedAccounts(Result&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
 

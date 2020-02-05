@@ -120,6 +120,47 @@ namespace Model
      */
     inline ListGroundStationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+     */
+    inline const Aws::String& GetSatelliteId() const{ return m_satelliteId; }
+
+    /**
+     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+     */
+    inline bool SatelliteIdHasBeenSet() const { return m_satelliteIdHasBeenSet; }
+
+    /**
+     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+     */
+    inline void SetSatelliteId(const Aws::String& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = value; }
+
+    /**
+     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+     */
+    inline void SetSatelliteId(Aws::String&& value) { m_satelliteIdHasBeenSet = true; m_satelliteId = std::move(value); }
+
+    /**
+     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+     */
+    inline void SetSatelliteId(const char* value) { m_satelliteIdHasBeenSet = true; m_satelliteId.assign(value); }
+
+    /**
+     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+     */
+    inline ListGroundStationsRequest& WithSatelliteId(const Aws::String& value) { SetSatelliteId(value); return *this;}
+
+    /**
+     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+     */
+    inline ListGroundStationsRequest& WithSatelliteId(Aws::String&& value) { SetSatelliteId(std::move(value)); return *this;}
+
+    /**
+     * <p>Satellite ID to retrieve on-boarded ground stations.</p>
+     */
+    inline ListGroundStationsRequest& WithSatelliteId(const char* value) { SetSatelliteId(value); return *this;}
+
   private:
 
     int m_maxResults;
@@ -127,6 +168,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_satelliteId;
+    bool m_satelliteIdHasBeenSet;
   };
 
 } // namespace Model

@@ -44,49 +44,49 @@ namespace Model
 
 
     /**
-     * <p>A list of ARNs for the resources that represent your subscriptions to
+     * <p>The list of ARNs for the resources that represent your subscriptions to
      * products. </p>
      */
     inline const Aws::Vector<Aws::String>& GetProductSubscriptions() const{ return m_productSubscriptions; }
 
     /**
-     * <p>A list of ARNs for the resources that represent your subscriptions to
+     * <p>The list of ARNs for the resources that represent your subscriptions to
      * products. </p>
      */
     inline void SetProductSubscriptions(const Aws::Vector<Aws::String>& value) { m_productSubscriptions = value; }
 
     /**
-     * <p>A list of ARNs for the resources that represent your subscriptions to
+     * <p>The list of ARNs for the resources that represent your subscriptions to
      * products. </p>
      */
     inline void SetProductSubscriptions(Aws::Vector<Aws::String>&& value) { m_productSubscriptions = std::move(value); }
 
     /**
-     * <p>A list of ARNs for the resources that represent your subscriptions to
+     * <p>The list of ARNs for the resources that represent your subscriptions to
      * products. </p>
      */
     inline ListEnabledProductsForImportResult& WithProductSubscriptions(const Aws::Vector<Aws::String>& value) { SetProductSubscriptions(value); return *this;}
 
     /**
-     * <p>A list of ARNs for the resources that represent your subscriptions to
+     * <p>The list of ARNs for the resources that represent your subscriptions to
      * products. </p>
      */
     inline ListEnabledProductsForImportResult& WithProductSubscriptions(Aws::Vector<Aws::String>&& value) { SetProductSubscriptions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of ARNs for the resources that represent your subscriptions to
+     * <p>The list of ARNs for the resources that represent your subscriptions to
      * products. </p>
      */
     inline ListEnabledProductsForImportResult& AddProductSubscriptions(const Aws::String& value) { m_productSubscriptions.push_back(value); return *this; }
 
     /**
-     * <p>A list of ARNs for the resources that represent your subscriptions to
+     * <p>The list of ARNs for the resources that represent your subscriptions to
      * products. </p>
      */
     inline ListEnabledProductsForImportResult& AddProductSubscriptions(Aws::String&& value) { m_productSubscriptions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of ARNs for the resources that represent your subscriptions to
+     * <p>The list of ARNs for the resources that represent your subscriptions to
      * products. </p>
      */
     inline ListEnabledProductsForImportResult& AddProductSubscriptions(const char* value) { m_productSubscriptions.push_back(value); return *this; }

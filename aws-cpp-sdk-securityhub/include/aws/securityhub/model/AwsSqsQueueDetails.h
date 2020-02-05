@@ -164,49 +164,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of maxReceiveCount is exceeded. </p>
+     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline const Aws::String& GetDeadLetterTargetArn() const{ return m_deadLetterTargetArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of maxReceiveCount is exceeded. </p>
+     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline bool DeadLetterTargetArnHasBeenSet() const { return m_deadLetterTargetArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of maxReceiveCount is exceeded. </p>
+     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline void SetDeadLetterTargetArn(const Aws::String& value) { m_deadLetterTargetArnHasBeenSet = true; m_deadLetterTargetArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of maxReceiveCount is exceeded. </p>
+     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline void SetDeadLetterTargetArn(Aws::String&& value) { m_deadLetterTargetArnHasBeenSet = true; m_deadLetterTargetArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of maxReceiveCount is exceeded. </p>
+     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline void SetDeadLetterTargetArn(const char* value) { m_deadLetterTargetArnHasBeenSet = true; m_deadLetterTargetArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of maxReceiveCount is exceeded. </p>
+     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline AwsSqsQueueDetails& WithDeadLetterTargetArn(const Aws::String& value) { SetDeadLetterTargetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of maxReceiveCount is exceeded. </p>
+     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline AwsSqsQueueDetails& WithDeadLetterTargetArn(Aws::String&& value) { SetDeadLetterTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS
-     * moves messages after the value of maxReceiveCount is exceeded. </p>
+     * moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
      */
     inline AwsSqsQueueDetails& WithDeadLetterTargetArn(const char* value) { SetDeadLetterTargetArn(value); return *this;}
 

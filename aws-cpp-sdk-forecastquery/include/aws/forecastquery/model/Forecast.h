@@ -52,86 +52,86 @@ namespace Model
 
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<DataPoint>>& GetPredictions() const{ return m_predictions; }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline bool PredictionsHasBeenSet() const { return m_predictionsHasBeenSet; }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline void SetPredictions(const Aws::Map<Aws::String, Aws::Vector<DataPoint>>& value) { m_predictionsHasBeenSet = true; m_predictions = value; }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline void SetPredictions(Aws::Map<Aws::String, Aws::Vector<DataPoint>>&& value) { m_predictionsHasBeenSet = true; m_predictions = std::move(value); }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline Forecast& WithPredictions(const Aws::Map<Aws::String, Aws::Vector<DataPoint>>& value) { SetPredictions(value); return *this;}
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline Forecast& WithPredictions(Aws::Map<Aws::String, Aws::Vector<DataPoint>>&& value) { SetPredictions(std::move(value)); return *this;}
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline Forecast& AddPredictions(const Aws::String& key, const Aws::Vector<DataPoint>& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(key, value); return *this; }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline Forecast& AddPredictions(Aws::String&& key, const Aws::Vector<DataPoint>& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline Forecast& AddPredictions(const Aws::String& key, Aws::Vector<DataPoint>&& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline Forecast& AddPredictions(Aws::String&& key, Aws::Vector<DataPoint>&& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline Forecast& AddPredictions(const char* key, Aws::Vector<DataPoint>&& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The forecast.</p> <p>The <i>string</i> of the string to array map is one of
-     * the following values:</p> <ul> <li> <p>mean</p> </li> <li> <p>p10</p> </li> <li>
-     * <p>p50</p> </li> <li> <p>p90</p> </li> </ul>
+     * <p>The forecast.</p> <p>The <i>string</i> of the string-to-array map is one of
+     * the following values:</p> <ul> <li> <p>p10</p> </li> <li> <p>p50</p> </li> <li>
+     * <p>p90</p> </li> </ul>
      */
     inline Forecast& AddPredictions(const char* key, const Aws::Vector<DataPoint>& value) { m_predictionsHasBeenSet = true; m_predictions.emplace(key, value); return *this; }
 

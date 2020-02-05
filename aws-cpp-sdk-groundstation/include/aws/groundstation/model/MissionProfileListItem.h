@@ -89,42 +89,42 @@ namespace Model
 
 
     /**
-     * <p>ID of a mission profile.</p>
+     * <p>UUID of a mission profile.</p>
      */
     inline const Aws::String& GetMissionProfileId() const{ return m_missionProfileId; }
 
     /**
-     * <p>ID of a mission profile.</p>
+     * <p>UUID of a mission profile.</p>
      */
     inline bool MissionProfileIdHasBeenSet() const { return m_missionProfileIdHasBeenSet; }
 
     /**
-     * <p>ID of a mission profile.</p>
+     * <p>UUID of a mission profile.</p>
      */
     inline void SetMissionProfileId(const Aws::String& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = value; }
 
     /**
-     * <p>ID of a mission profile.</p>
+     * <p>UUID of a mission profile.</p>
      */
     inline void SetMissionProfileId(Aws::String&& value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId = std::move(value); }
 
     /**
-     * <p>ID of a mission profile.</p>
+     * <p>UUID of a mission profile.</p>
      */
     inline void SetMissionProfileId(const char* value) { m_missionProfileIdHasBeenSet = true; m_missionProfileId.assign(value); }
 
     /**
-     * <p>ID of a mission profile.</p>
+     * <p>UUID of a mission profile.</p>
      */
     inline MissionProfileListItem& WithMissionProfileId(const Aws::String& value) { SetMissionProfileId(value); return *this;}
 
     /**
-     * <p>ID of a mission profile.</p>
+     * <p>UUID of a mission profile.</p>
      */
     inline MissionProfileListItem& WithMissionProfileId(Aws::String&& value) { SetMissionProfileId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of a mission profile.</p>
+     * <p>UUID of a mission profile.</p>
      */
     inline MissionProfileListItem& WithMissionProfileId(const char* value) { SetMissionProfileId(value); return *this;}
 

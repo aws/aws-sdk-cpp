@@ -40,7 +40,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a schedule.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a backup schedule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Schedule">AWS API
    * Reference</a></p>
    */

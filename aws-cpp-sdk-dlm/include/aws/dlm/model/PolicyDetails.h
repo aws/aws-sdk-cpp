@@ -54,38 +54,38 @@ namespace Model
 
 
     /**
-     * <p>This field determines the valid target resource types and actions a policy
-     * can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>
+     * <p>The valid target resource types and actions a policy can manage. The default
+     * is EBS_SNAPSHOT_MANAGEMENT.</p>
      */
     inline const PolicyTypeValues& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>This field determines the valid target resource types and actions a policy
-     * can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>
+     * <p>The valid target resource types and actions a policy can manage. The default
+     * is EBS_SNAPSHOT_MANAGEMENT.</p>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>This field determines the valid target resource types and actions a policy
-     * can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>
+     * <p>The valid target resource types and actions a policy can manage. The default
+     * is EBS_SNAPSHOT_MANAGEMENT.</p>
      */
     inline void SetPolicyType(const PolicyTypeValues& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>This field determines the valid target resource types and actions a policy
-     * can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>
+     * <p>The valid target resource types and actions a policy can manage. The default
+     * is EBS_SNAPSHOT_MANAGEMENT.</p>
      */
     inline void SetPolicyType(PolicyTypeValues&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>This field determines the valid target resource types and actions a policy
-     * can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>
+     * <p>The valid target resource types and actions a policy can manage. The default
+     * is EBS_SNAPSHOT_MANAGEMENT.</p>
      */
     inline PolicyDetails& WithPolicyType(const PolicyTypeValues& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>This field determines the valid target resource types and actions a policy
-     * can manage. This field defaults to EBS_SNAPSHOT_MANAGEMENT if not present.</p>
+     * <p>The valid target resource types and actions a policy can manage. The default
+     * is EBS_SNAPSHOT_MANAGEMENT.</p>
      */
     inline PolicyDetails& WithPolicyType(PolicyTypeValues&& value) { SetPolicyType(std::move(value)); return *this;}
 
@@ -214,32 +214,32 @@ namespace Model
 
 
     /**
-     * <p>A set of optional parameters that can be provided by the policy. </p>
+     * <p>A set of optional parameters for the policy. </p>
      */
     inline const Parameters& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>A set of optional parameters that can be provided by the policy. </p>
+     * <p>A set of optional parameters for the policy. </p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>A set of optional parameters that can be provided by the policy. </p>
+     * <p>A set of optional parameters for the policy. </p>
      */
     inline void SetParameters(const Parameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>A set of optional parameters that can be provided by the policy. </p>
+     * <p>A set of optional parameters for the policy. </p>
      */
     inline void SetParameters(Parameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>A set of optional parameters that can be provided by the policy. </p>
+     * <p>A set of optional parameters for the policy. </p>
      */
     inline PolicyDetails& WithParameters(const Parameters& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>A set of optional parameters that can be provided by the policy. </p>
+     * <p>A set of optional parameters for the policy. </p>
      */
     inline PolicyDetails& WithParameters(Parameters&& value) { SetParameters(std::move(value)); return *this;}
 

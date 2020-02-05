@@ -145,21 +145,23 @@ namespace Model
    * CodeBuild</p> </li> <li> <p>AWS CodeCommit</p> </li> <li> <p>AWS
    * CodePipeline</p> </li> <li> <p>AWS CodeStar</p> </li> <li> <p>Amazon Cognito
    * Identity</p> </li> <li> <p>Amazon Cognito User Pools</p> </li> <li> <p>Amazon
-   * Comprehend</p> </li> <li> <p>AWS Config</p> </li> <li> <p>AWS Data Pipeline</p>
-   * </li> <li> <p>AWS Database Migration Service</p> </li> <li> <p>AWS DataSync</p>
+   * Comprehend</p> </li> <li> <p>AWS Config</p> </li> <li> <p>AWS Data Exchange</p>
+   * </li> <li> <p>AWS Data Pipeline</p> </li> <li> <p>AWS Database Migration
+   * Service</p> </li> <li> <p>AWS DataSync</p> </li> <li> <p>AWS Device Farm</p>
    * </li> <li> <p>AWS Direct Connect</p> </li> <li> <p>AWS Directory Service</p>
    * </li> <li> <p>Amazon DynamoDB</p> </li> <li> <p>Amazon EBS</p> </li> <li>
    * <p>Amazon EC2</p> </li> <li> <p>Amazon ECR</p> </li> <li> <p>Amazon ECS</p>
-   * </li> <li> <p>AWS Elastic Beanstalk</p> </li> <li> <p>Amazon Elastic File
-   * System</p> </li> <li> <p>Elastic Load Balancing</p> </li> <li> <p>Amazon
-   * ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p> </li> <li> <p>AWS
-   * Elemental MediaLive</p> </li> <li> <p>AWS Elemental MediaPackage</p> </li> <li>
-   * <p>AWS Elemental MediaTailor</p> </li> <li> <p>Amazon EMR</p> </li> <li>
-   * <p>Amazon FSx</p> </li> <li> <p>Amazon S3 Glacier</p> </li> <li> <p>AWS Glue</p>
-   * </li> <li> <p>Amazon GuardDuty</p> </li> <li> <p>Amazon Inspector</p> </li> <li>
-   * <p>AWS IoT Analytics</p> </li> <li> <p>AWS IoT Core</p> </li> <li> <p>AWS IoT
-   * Device Defender</p> </li> <li> <p>AWS IoT Device Management</p> </li> <li>
-   * <p>AWS IoT Events</p> </li> <li> <p>AWS IoT Greengrass</p> </li> <li> <p>AWS Key
+   * </li> <li> <p>Amazon EKS</p> </li> <li> <p>AWS Elastic Beanstalk</p> </li> <li>
+   * <p>Amazon Elastic File System</p> </li> <li> <p>Elastic Load Balancing</p> </li>
+   * <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch Service</p>
+   * </li> <li> <p>AWS Elemental MediaLive</p> </li> <li> <p>AWS Elemental
+   * MediaPackage</p> </li> <li> <p>AWS Elemental MediaTailor</p> </li> <li>
+   * <p>Amazon EMR</p> </li> <li> <p>Amazon FSx</p> </li> <li> <p>Amazon S3
+   * Glacier</p> </li> <li> <p>AWS Glue</p> </li> <li> <p>Amazon GuardDuty</p> </li>
+   * <li> <p>Amazon Inspector</p> </li> <li> <p>AWS IoT Analytics</p> </li> <li>
+   * <p>AWS IoT Core</p> </li> <li> <p>AWS IoT Device Defender</p> </li> <li> <p>AWS
+   * IoT Device Management</p> </li> <li> <p>AWS IoT Events</p> </li> <li> <p>AWS IoT
+   * Greengrass</p> </li> <li> <p>AWS IoT 1-Click</p> </li> <li> <p>AWS Key
    * Management Service</p> </li> <li> <p>Amazon Kinesis</p> </li> <li> <p>Amazon
    * Kinesis Data Analytics</p> </li> <li> <p>Amazon Kinesis Data Firehose</p> </li>
    * <li> <p>AWS Lambda</p> </li> <li> <p>AWS License Manager</p> </li> <li>
@@ -173,10 +175,10 @@ namespace Model
    * <li> <p>Amazon SageMaker</p> </li> <li> <p>AWS Secrets Manager</p> </li> <li>
    * <p>AWS Security Hub</p> </li> <li> <p>AWS Service Catalog</p> </li> <li>
    * <p>Amazon Simple Notification Service (SNS)</p> </li> <li> <p>Amazon Simple
-   * Queue Service (SQS)</p> </li> <li> <p>AWS Step Functions</p> </li> <li> <p>AWS
-   * Storage Gateway</p> </li> <li> <p>AWS Systems Manager</p> </li> <li> <p>AWS
-   * Transfer for SFTP</p> </li> <li> <p>Amazon VPC</p> </li> <li> <p>Amazon
-   * WorkSpaces</p> </li> </ul>
+   * Queue Service (SQS)</p> </li> <li> <p>Amazon Simple Workflow Service</p> </li>
+   * <li> <p>AWS Step Functions</p> </li> <li> <p>AWS Storage Gateway</p> </li> <li>
+   * <p>AWS Systems Manager</p> </li> <li> <p>AWS Transfer for SFTP</p> </li> <li>
+   * <p>Amazon VPC</p> </li> <li> <p>Amazon WorkSpaces</p> </li> </ul>
    */
   class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient : public Aws::Client::AWSJsonClient
   {

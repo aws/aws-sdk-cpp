@@ -175,29 +175,25 @@ namespace Model
 
     /**
      * Content measuring above this level will be corrected to the target level.
-     * Content measuring below this level will not be corrected. Gating only applies
-     * when not using real_time_correction.
+     * Content measuring below this level will not be corrected.
      */
     inline int GetCorrectionGateLevel() const{ return m_correctionGateLevel; }
 
     /**
      * Content measuring above this level will be corrected to the target level.
-     * Content measuring below this level will not be corrected. Gating only applies
-     * when not using real_time_correction.
+     * Content measuring below this level will not be corrected.
      */
     inline bool CorrectionGateLevelHasBeenSet() const { return m_correctionGateLevelHasBeenSet; }
 
     /**
      * Content measuring above this level will be corrected to the target level.
-     * Content measuring below this level will not be corrected. Gating only applies
-     * when not using real_time_correction.
+     * Content measuring below this level will not be corrected.
      */
     inline void SetCorrectionGateLevel(int value) { m_correctionGateLevelHasBeenSet = true; m_correctionGateLevel = value; }
 
     /**
      * Content measuring above this level will be corrected to the target level.
-     * Content measuring below this level will not be corrected. Gating only applies
-     * when not using real_time_correction.
+     * Content measuring below this level will not be corrected.
      */
     inline AudioNormalizationSettings& WithCorrectionGateLevel(int value) { SetCorrectionGateLevel(value); return *this;}
 

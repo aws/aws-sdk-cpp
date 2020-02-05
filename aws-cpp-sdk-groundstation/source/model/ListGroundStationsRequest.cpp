@@ -28,7 +28,8 @@ using namespace Aws::Http;
 ListGroundStationsRequest::ListGroundStationsRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_satelliteIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,13 @@ void ListGroundStationsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_satelliteIdHasBeenSet)
+    {
+      ss << m_satelliteId;
+      uri.AddQueryStringParameter("satelliteId", ss.str());
       ss.str("");
     }
 
