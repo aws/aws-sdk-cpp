@@ -334,6 +334,31 @@ namespace Model
      */
     inline CreateGraphqlApiRequest& AddAdditionalAuthenticationProviders(AdditionalAuthenticationProvider&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <code>GraphqlApi</code>.</p>
+     */
+    inline bool GetXrayEnabled() const{ return m_xrayEnabled; }
+
+    /**
+     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <code>GraphqlApi</code>.</p>
+     */
+    inline bool XrayEnabledHasBeenSet() const { return m_xrayEnabledHasBeenSet; }
+
+    /**
+     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <code>GraphqlApi</code>.</p>
+     */
+    inline void SetXrayEnabled(bool value) { m_xrayEnabledHasBeenSet = true; m_xrayEnabled = value; }
+
+    /**
+     * <p>A flag indicating whether to enable X-Ray tracing for the
+     * <code>GraphqlApi</code>.</p>
+     */
+    inline CreateGraphqlApiRequest& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -356,6 +381,9 @@ namespace Model
 
     Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
     bool m_additionalAuthenticationProvidersHasBeenSet;
+
+    bool m_xrayEnabled;
+    bool m_xrayEnabledHasBeenSet;
   };
 
 } // namespace Model

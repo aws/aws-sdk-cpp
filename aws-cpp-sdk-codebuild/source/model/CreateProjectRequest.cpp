@@ -43,7 +43,8 @@ CreateProjectRequest::CreateProjectRequest() :
     m_vpcConfigHasBeenSet(false),
     m_badgeEnabled(false),
     m_badgeEnabledHasBeenSet(false),
-    m_logsConfigHasBeenSet(false)
+    m_logsConfigHasBeenSet(false),
+    m_fileSystemLocationsHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,17 @@ Aws::String CreateProjectRequest::SerializePayload() const
   if(m_logsConfigHasBeenSet)
   {
    payload.WithObject("logsConfig", m_logsConfig.Jsonize());
+
+  }
+
+  if(m_fileSystemLocationsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
+   for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
+   {
+     fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
+   }
+   payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
 
   }
 

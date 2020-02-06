@@ -33,6 +33,12 @@ namespace AppSync
 namespace Model
 {
 
+  /**
+   * <p>The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA
+   * as the Conflict Handler.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LambdaConflictHandlerConfig">AWS
+   * API Reference</a></p>
+   */
   class AWS_APPSYNC_API LambdaConflictHandlerConfig
   {
   public:

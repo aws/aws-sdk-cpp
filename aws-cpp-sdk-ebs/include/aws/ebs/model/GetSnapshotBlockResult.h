@@ -76,37 +76,37 @@ namespace Model
 
 
     /**
-     * <p>The checksum generated for the block.</p>
+     * <p>The checksum generated for the block, which is Base64 encoded.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
 
     /**
-     * <p>The checksum generated for the block.</p>
+     * <p>The checksum generated for the block, which is Base64 encoded.</p>
      */
     inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
 
     /**
-     * <p>The checksum generated for the block.</p>
+     * <p>The checksum generated for the block, which is Base64 encoded.</p>
      */
     inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
 
     /**
-     * <p>The checksum generated for the block.</p>
+     * <p>The checksum generated for the block, which is Base64 encoded.</p>
      */
     inline void SetChecksum(const char* value) { m_checksum.assign(value); }
 
     /**
-     * <p>The checksum generated for the block.</p>
+     * <p>The checksum generated for the block, which is Base64 encoded.</p>
      */
     inline GetSnapshotBlockResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
 
     /**
-     * <p>The checksum generated for the block.</p>
+     * <p>The checksum generated for the block, which is Base64 encoded.</p>
      */
     inline GetSnapshotBlockResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
 
     /**
-     * <p>The checksum generated for the block.</p>
+     * <p>The checksum generated for the block, which is Base64 encoded.</p>
      */
     inline GetSnapshotBlockResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 

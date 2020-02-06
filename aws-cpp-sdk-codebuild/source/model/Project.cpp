@@ -52,7 +52,8 @@ Project::Project() :
     m_webhookHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_badgeHasBeenSet(false),
-    m_logsConfigHasBeenSet(false)
+    m_logsConfigHasBeenSet(false),
+    m_fileSystemLocationsHasBeenSet(false)
 {
 }
 
@@ -80,7 +81,8 @@ Project::Project(JsonView jsonValue) :
     m_webhookHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_badgeHasBeenSet(false),
-    m_logsConfigHasBeenSet(false)
+    m_logsConfigHasBeenSet(false),
+    m_fileSystemLocationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -253,6 +255,16 @@ Project& Project::operator =(JsonView jsonValue)
     m_logsConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fileSystemLocations"))
+  {
+    Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
+    for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
+    {
+      m_fileSystemLocations.push_back(fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject());
+    }
+    m_fileSystemLocationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -407,6 +419,17 @@ JsonValue Project::Jsonize() const
   if(m_logsConfigHasBeenSet)
   {
    payload.WithObject("logsConfig", m_logsConfig.Jsonize());
+
+  }
+
+  if(m_fileSystemLocationsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
+   for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
+   {
+     fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
+   }
+   payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
 
   }
 

@@ -82,27 +82,27 @@ namespace Model
 
 
     /**
-     * <p>The time when the <code>block token</code> expires.</p>
+     * <p>The time when the <code>BlockToken</code> expires.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
 
     /**
-     * <p>The time when the <code>block token</code> expires.</p>
+     * <p>The time when the <code>BlockToken</code> expires.</p>
      */
     inline void SetExpiryTime(const Aws::Utils::DateTime& value) { m_expiryTime = value; }
 
     /**
-     * <p>The time when the <code>block token</code> expires.</p>
+     * <p>The time when the <code>BlockToken</code> expires.</p>
      */
     inline void SetExpiryTime(Aws::Utils::DateTime&& value) { m_expiryTime = std::move(value); }
 
     /**
-     * <p>The time when the <code>block token</code> expires.</p>
+     * <p>The time when the <code>BlockToken</code> expires.</p>
      */
     inline ListSnapshotBlocksResult& WithExpiryTime(const Aws::Utils::DateTime& value) { SetExpiryTime(value); return *this;}
 
     /**
-     * <p>The time when the <code>block token</code> expires.</p>
+     * <p>The time when the <code>BlockToken</code> expires.</p>
      */
     inline ListSnapshotBlocksResult& WithExpiryTime(Aws::Utils::DateTime&& value) { SetExpiryTime(std::move(value)); return *this;}
 

@@ -91,86 +91,86 @@ namespace Model
 
     /**
      * <p>The block index of the block from which to get data.</p> <p>Obtain the
-     * <code>block index</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline int GetBlockIndex() const{ return m_blockIndex; }
 
     /**
      * <p>The block index of the block from which to get data.</p> <p>Obtain the
-     * <code>block index</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline bool BlockIndexHasBeenSet() const { return m_blockIndexHasBeenSet; }
 
     /**
      * <p>The block index of the block from which to get data.</p> <p>Obtain the
-     * <code>block index</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline void SetBlockIndex(int value) { m_blockIndexHasBeenSet = true; m_blockIndex = value; }
 
     /**
      * <p>The block index of the block from which to get data.</p> <p>Obtain the
-     * <code>block index</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline GetSnapshotBlockRequest& WithBlockIndex(int value) { SetBlockIndex(value); return *this;}
 
 
     /**
      * <p>The block token of the block from which to get data.</p> <p>Obtain the
-     * <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline const Aws::String& GetBlockToken() const{ return m_blockToken; }
 
     /**
      * <p>The block token of the block from which to get data.</p> <p>Obtain the
-     * <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline bool BlockTokenHasBeenSet() const { return m_blockTokenHasBeenSet; }
 
     /**
      * <p>The block token of the block from which to get data.</p> <p>Obtain the
-     * <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline void SetBlockToken(const Aws::String& value) { m_blockTokenHasBeenSet = true; m_blockToken = value; }
 
     /**
      * <p>The block token of the block from which to get data.</p> <p>Obtain the
-     * <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline void SetBlockToken(Aws::String&& value) { m_blockTokenHasBeenSet = true; m_blockToken = std::move(value); }
 
     /**
      * <p>The block token of the block from which to get data.</p> <p>Obtain the
-     * <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline void SetBlockToken(const char* value) { m_blockTokenHasBeenSet = true; m_blockToken.assign(value); }
 
     /**
      * <p>The block token of the block from which to get data.</p> <p>Obtain the
-     * <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline GetSnapshotBlockRequest& WithBlockToken(const Aws::String& value) { SetBlockToken(value); return *this;}
 
     /**
      * <p>The block token of the block from which to get data.</p> <p>Obtain the
-     * <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline GetSnapshotBlockRequest& WithBlockToken(Aws::String&& value) { SetBlockToken(std::move(value)); return *this;}
 
     /**
      * <p>The block token of the block from which to get data.</p> <p>Obtain the
-     * <code>block token</code> by running the <code>list changed blocks</code> or
-     * <code>list snapshot blocks</code> operations.</p>
+     * <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+     * <code>ListSnapshotBlocks</code> operations.</p>
      */
     inline GetSnapshotBlockRequest& WithBlockToken(const char* value) { SetBlockToken(value); return *this;}
 

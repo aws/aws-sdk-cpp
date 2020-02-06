@@ -44,6 +44,8 @@ Image::Image() :
     m_ownerIdHasBeenSet(false),
     m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
+    m_platformDetailsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false),
     m_productCodesHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
     m_state(ImageState::NOT_SET),
@@ -81,6 +83,8 @@ Image::Image(const XmlNode& xmlNode) :
     m_ownerIdHasBeenSet(false),
     m_platform(PlatformValues::NOT_SET),
     m_platformHasBeenSet(false),
+    m_platformDetailsHasBeenSet(false),
+    m_usageOperationHasBeenSet(false),
     m_productCodesHasBeenSet(false),
     m_ramdiskIdHasBeenSet(false),
     m_state(ImageState::NOT_SET),
@@ -164,6 +168,18 @@ Image& Image::operator =(const XmlNode& xmlNode)
     {
       m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
       m_platformHasBeenSet = true;
+    }
+    XmlNode platformDetailsNode = resultNode.FirstChild("platformDetails");
+    if(!platformDetailsNode.IsNull())
+    {
+      m_platformDetails = Aws::Utils::Xml::DecodeEscapedXmlText(platformDetailsNode.GetText());
+      m_platformDetailsHasBeenSet = true;
+    }
+    XmlNode usageOperationNode = resultNode.FirstChild("usageOperation");
+    if(!usageOperationNode.IsNull())
+    {
+      m_usageOperation = Aws::Utils::Xml::DecodeEscapedXmlText(usageOperationNode.GetText());
+      m_usageOperationHasBeenSet = true;
     }
     XmlNode productCodesNode = resultNode.FirstChild("productCodes");
     if(!productCodesNode.IsNull())
@@ -325,6 +341,16 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
   }
 
+  if(m_platformDetailsHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlatformDetails=" << StringUtils::URLEncode(m_platformDetails.c_str()) << "&";
+  }
+
+  if(m_usageOperationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
+  }
+
   if(m_productCodesHasBeenSet)
   {
       unsigned productCodesIdx = 1;
@@ -459,6 +485,14 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_platformHasBeenSet)
   {
       oStream << location << ".Platform=" << PlatformValuesMapper::GetNameForPlatformValues(m_platform) << "&";
+  }
+  if(m_platformDetailsHasBeenSet)
+  {
+      oStream << location << ".PlatformDetails=" << StringUtils::URLEncode(m_platformDetails.c_str()) << "&";
+  }
+  if(m_usageOperationHasBeenSet)
+  {
+      oStream << location << ".UsageOperation=" << StringUtils::URLEncode(m_usageOperation.c_str()) << "&";
   }
   if(m_productCodesHasBeenSet)
   {

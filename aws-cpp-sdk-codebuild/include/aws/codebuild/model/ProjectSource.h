@@ -150,7 +150,7 @@ namespace Model
      * because AWS CodePipeline uses the settings in a pipeline's source action instead
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
-     * and the build spec (for example,
+     * and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
      * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
      * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
@@ -160,7 +160,7 @@ namespace Model
      * example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
-     * clone URL to the repository that contains the source and the build spec. You
+     * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      * console to start creating a build project. When you use the console to connect
      * (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for
@@ -172,12 +172,12 @@ namespace Model
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
-     * the build spec. You must connect your AWS account to your Bitbucket account. Use
-     * the AWS CodeBuild console to start creating a build project. When you use the
-     * console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm
-     * access to your account</b> page, choose <b>Grant access</b>. (After you have
-     * connected to your Bitbucket account, you do not need to finish creating the
-     * build project. You can leave the AWS CodeBuild console.) To instruct AWS
+     * the buildspec file. You must connect your AWS account to your Bitbucket account.
+     * Use the AWS CodeBuild console to start creating a build project. When you use
+     * the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     * you have connected to your Bitbucket account, you do not need to finish creating
+     * the build project. You can leave the AWS CodeBuild console.) To instruct AWS
      * CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
      * </li> </ul>
@@ -192,7 +192,7 @@ namespace Model
      * because AWS CodePipeline uses the settings in a pipeline's source action instead
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
-     * and the build spec (for example,
+     * and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
      * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
      * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
@@ -202,7 +202,7 @@ namespace Model
      * example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
-     * clone URL to the repository that contains the source and the build spec. You
+     * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      * console to start creating a build project. When you use the console to connect
      * (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for
@@ -214,12 +214,12 @@ namespace Model
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
-     * the build spec. You must connect your AWS account to your Bitbucket account. Use
-     * the AWS CodeBuild console to start creating a build project. When you use the
-     * console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm
-     * access to your account</b> page, choose <b>Grant access</b>. (After you have
-     * connected to your Bitbucket account, you do not need to finish creating the
-     * build project. You can leave the AWS CodeBuild console.) To instruct AWS
+     * the buildspec file. You must connect your AWS account to your Bitbucket account.
+     * Use the AWS CodeBuild console to start creating a build project. When you use
+     * the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     * you have connected to your Bitbucket account, you do not need to finish creating
+     * the build project. You can leave the AWS CodeBuild console.) To instruct AWS
      * CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
      * </li> </ul>
@@ -234,7 +234,7 @@ namespace Model
      * because AWS CodePipeline uses the settings in a pipeline's source action instead
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
-     * and the build spec (for example,
+     * and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
      * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
      * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
@@ -244,7 +244,7 @@ namespace Model
      * example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
-     * clone URL to the repository that contains the source and the build spec. You
+     * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      * console to start creating a build project. When you use the console to connect
      * (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for
@@ -256,12 +256,12 @@ namespace Model
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
-     * the build spec. You must connect your AWS account to your Bitbucket account. Use
-     * the AWS CodeBuild console to start creating a build project. When you use the
-     * console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm
-     * access to your account</b> page, choose <b>Grant access</b>. (After you have
-     * connected to your Bitbucket account, you do not need to finish creating the
-     * build project. You can leave the AWS CodeBuild console.) To instruct AWS
+     * the buildspec file. You must connect your AWS account to your Bitbucket account.
+     * Use the AWS CodeBuild console to start creating a build project. When you use
+     * the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     * you have connected to your Bitbucket account, you do not need to finish creating
+     * the build project. You can leave the AWS CodeBuild console.) To instruct AWS
      * CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
      * </li> </ul>
@@ -276,7 +276,7 @@ namespace Model
      * because AWS CodePipeline uses the settings in a pipeline's source action instead
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
-     * and the build spec (for example,
+     * and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
      * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
      * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
@@ -286,7 +286,7 @@ namespace Model
      * example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
-     * clone URL to the repository that contains the source and the build spec. You
+     * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      * console to start creating a build project. When you use the console to connect
      * (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for
@@ -298,12 +298,12 @@ namespace Model
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
-     * the build spec. You must connect your AWS account to your Bitbucket account. Use
-     * the AWS CodeBuild console to start creating a build project. When you use the
-     * console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm
-     * access to your account</b> page, choose <b>Grant access</b>. (After you have
-     * connected to your Bitbucket account, you do not need to finish creating the
-     * build project. You can leave the AWS CodeBuild console.) To instruct AWS
+     * the buildspec file. You must connect your AWS account to your Bitbucket account.
+     * Use the AWS CodeBuild console to start creating a build project. When you use
+     * the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     * you have connected to your Bitbucket account, you do not need to finish creating
+     * the build project. You can leave the AWS CodeBuild console.) To instruct AWS
      * CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
      * </li> </ul>
@@ -318,7 +318,7 @@ namespace Model
      * because AWS CodePipeline uses the settings in a pipeline's source action instead
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
-     * and the build spec (for example,
+     * and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
      * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
      * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
@@ -328,7 +328,7 @@ namespace Model
      * example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
-     * clone URL to the repository that contains the source and the build spec. You
+     * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      * console to start creating a build project. When you use the console to connect
      * (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for
@@ -340,12 +340,12 @@ namespace Model
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
-     * the build spec. You must connect your AWS account to your Bitbucket account. Use
-     * the AWS CodeBuild console to start creating a build project. When you use the
-     * console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm
-     * access to your account</b> page, choose <b>Grant access</b>. (After you have
-     * connected to your Bitbucket account, you do not need to finish creating the
-     * build project. You can leave the AWS CodeBuild console.) To instruct AWS
+     * the buildspec file. You must connect your AWS account to your Bitbucket account.
+     * Use the AWS CodeBuild console to start creating a build project. When you use
+     * the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     * you have connected to your Bitbucket account, you do not need to finish creating
+     * the build project. You can leave the AWS CodeBuild console.) To instruct AWS
      * CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
      * </li> </ul>
@@ -360,7 +360,7 @@ namespace Model
      * because AWS CodePipeline uses the settings in a pipeline's source action instead
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
-     * and the build spec (for example,
+     * and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
      * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
      * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
@@ -370,7 +370,7 @@ namespace Model
      * example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
-     * clone URL to the repository that contains the source and the build spec. You
+     * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      * console to start creating a build project. When you use the console to connect
      * (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for
@@ -382,12 +382,12 @@ namespace Model
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
-     * the build spec. You must connect your AWS account to your Bitbucket account. Use
-     * the AWS CodeBuild console to start creating a build project. When you use the
-     * console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm
-     * access to your account</b> page, choose <b>Grant access</b>. (After you have
-     * connected to your Bitbucket account, you do not need to finish creating the
-     * build project. You can leave the AWS CodeBuild console.) To instruct AWS
+     * the buildspec file. You must connect your AWS account to your Bitbucket account.
+     * Use the AWS CodeBuild console to start creating a build project. When you use
+     * the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     * you have connected to your Bitbucket account, you do not need to finish creating
+     * the build project. You can leave the AWS CodeBuild console.) To instruct AWS
      * CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
      * </li> </ul>
@@ -402,7 +402,7 @@ namespace Model
      * because AWS CodePipeline uses the settings in a pipeline's source action instead
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
-     * and the build spec (for example,
+     * and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
      * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
      * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
@@ -412,7 +412,7 @@ namespace Model
      * example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
-     * clone URL to the repository that contains the source and the build spec. You
+     * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      * console to start creating a build project. When you use the console to connect
      * (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for
@@ -424,12 +424,12 @@ namespace Model
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
-     * the build spec. You must connect your AWS account to your Bitbucket account. Use
-     * the AWS CodeBuild console to start creating a build project. When you use the
-     * console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm
-     * access to your account</b> page, choose <b>Grant access</b>. (After you have
-     * connected to your Bitbucket account, you do not need to finish creating the
-     * build project. You can leave the AWS CodeBuild console.) To instruct AWS
+     * the buildspec file. You must connect your AWS account to your Bitbucket account.
+     * Use the AWS CodeBuild console to start creating a build project. When you use
+     * the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     * you have connected to your Bitbucket account, you do not need to finish creating
+     * the build project. You can leave the AWS CodeBuild console.) To instruct AWS
      * CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
      * </li> </ul>
@@ -444,7 +444,7 @@ namespace Model
      * because AWS CodePipeline uses the settings in a pipeline's source action instead
      * of this value.</p> </li> <li> <p>For source code in an AWS CodeCommit
      * repository, the HTTPS clone URL to the repository that contains the source code
-     * and the build spec (for example,
+     * and the buildspec file (for example,
      * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i>
      * </code>).</p> </li> <li> <p>For source code in an Amazon Simple Storage Service
      * (Amazon S3) input bucket, one of the following. </p> <ul> <li> <p> The path to
@@ -454,7 +454,7 @@ namespace Model
      * example, <code>
      * <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
      * </p> </li> </ul> </li> <li> <p>For source code in a GitHub repository, the HTTPS
-     * clone URL to the repository that contains the source and the build spec. You
+     * clone URL to the repository that contains the source and the buildspec file. You
      * must connect your AWS account to your GitHub account. Use the AWS CodeBuild
      * console to start creating a build project. When you use the console to connect
      * (or reconnect) with GitHub, on the GitHub <b>Authorize application</b> page, for
@@ -466,12 +466,12 @@ namespace Model
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
-     * the build spec. You must connect your AWS account to your Bitbucket account. Use
-     * the AWS CodeBuild console to start creating a build project. When you use the
-     * console to connect (or reconnect) with Bitbucket, on the Bitbucket <b>Confirm
-     * access to your account</b> page, choose <b>Grant access</b>. (After you have
-     * connected to your Bitbucket account, you do not need to finish creating the
-     * build project. You can leave the AWS CodeBuild console.) To instruct AWS
+     * the buildspec file. You must connect your AWS account to your Bitbucket account.
+     * Use the AWS CodeBuild console to start creating a build project. When you use
+     * the console to connect (or reconnect) with Bitbucket, on the Bitbucket
+     * <b>Confirm access to your account</b> page, choose <b>Grant access</b>. (After
+     * you have connected to your Bitbucket account, you do not need to finish creating
+     * the build project. You can leave the AWS CodeBuild console.) To instruct AWS
      * CodeBuild to use this connection, in the <code>source</code> object, set the
      * <code>auth</code> object's <code>type</code> value to <code>OAUTH</code>.</p>
      * </li> </ul>
@@ -538,58 +538,122 @@ namespace Model
 
 
     /**
-     * <p>The build spec declaration to use for the builds in this build project.</p>
-     * <p>If this value is not specified, a build spec must be included along with the
-     * source code to be built.</p>
+     * <p>The buildspec file declaration to use for the builds in this build
+     * project.</p> <p> If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same AWS Region as the build project.
+     * Specify the buildspec file using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
+     * File Name and Storage Location</a>. </p>
      */
     inline const Aws::String& GetBuildspec() const{ return m_buildspec; }
 
     /**
-     * <p>The build spec declaration to use for the builds in this build project.</p>
-     * <p>If this value is not specified, a build spec must be included along with the
-     * source code to be built.</p>
+     * <p>The buildspec file declaration to use for the builds in this build
+     * project.</p> <p> If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same AWS Region as the build project.
+     * Specify the buildspec file using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
+     * File Name and Storage Location</a>. </p>
      */
     inline bool BuildspecHasBeenSet() const { return m_buildspecHasBeenSet; }
 
     /**
-     * <p>The build spec declaration to use for the builds in this build project.</p>
-     * <p>If this value is not specified, a build spec must be included along with the
-     * source code to be built.</p>
+     * <p>The buildspec file declaration to use for the builds in this build
+     * project.</p> <p> If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same AWS Region as the build project.
+     * Specify the buildspec file using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
+     * File Name and Storage Location</a>. </p>
      */
     inline void SetBuildspec(const Aws::String& value) { m_buildspecHasBeenSet = true; m_buildspec = value; }
 
     /**
-     * <p>The build spec declaration to use for the builds in this build project.</p>
-     * <p>If this value is not specified, a build spec must be included along with the
-     * source code to be built.</p>
+     * <p>The buildspec file declaration to use for the builds in this build
+     * project.</p> <p> If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same AWS Region as the build project.
+     * Specify the buildspec file using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
+     * File Name and Storage Location</a>. </p>
      */
     inline void SetBuildspec(Aws::String&& value) { m_buildspecHasBeenSet = true; m_buildspec = std::move(value); }
 
     /**
-     * <p>The build spec declaration to use for the builds in this build project.</p>
-     * <p>If this value is not specified, a build spec must be included along with the
-     * source code to be built.</p>
+     * <p>The buildspec file declaration to use for the builds in this build
+     * project.</p> <p> If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same AWS Region as the build project.
+     * Specify the buildspec file using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
+     * File Name and Storage Location</a>. </p>
      */
     inline void SetBuildspec(const char* value) { m_buildspecHasBeenSet = true; m_buildspec.assign(value); }
 
     /**
-     * <p>The build spec declaration to use for the builds in this build project.</p>
-     * <p>If this value is not specified, a build spec must be included along with the
-     * source code to be built.</p>
+     * <p>The buildspec file declaration to use for the builds in this build
+     * project.</p> <p> If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same AWS Region as the build project.
+     * Specify the buildspec file using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
+     * File Name and Storage Location</a>. </p>
      */
     inline ProjectSource& WithBuildspec(const Aws::String& value) { SetBuildspec(value); return *this;}
 
     /**
-     * <p>The build spec declaration to use for the builds in this build project.</p>
-     * <p>If this value is not specified, a build spec must be included along with the
-     * source code to be built.</p>
+     * <p>The buildspec file declaration to use for the builds in this build
+     * project.</p> <p> If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same AWS Region as the build project.
+     * Specify the buildspec file using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
+     * File Name and Storage Location</a>. </p>
      */
     inline ProjectSource& WithBuildspec(Aws::String&& value) { SetBuildspec(std::move(value)); return *this;}
 
     /**
-     * <p>The build spec declaration to use for the builds in this build project.</p>
-     * <p>If this value is not specified, a build spec must be included along with the
-     * source code to be built.</p>
+     * <p>The buildspec file declaration to use for the builds in this build
+     * project.</p> <p> If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same AWS Region as the build project.
+     * Specify the buildspec file using its ARN (for example,
+     * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
+     * not provided or is set to an empty string, the source code must contain a
+     * buildspec file in its root directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
+     * File Name and Storage Location</a>. </p>
      */
     inline ProjectSource& WithBuildspec(const char* value) { SetBuildspec(value); return *this;}
 

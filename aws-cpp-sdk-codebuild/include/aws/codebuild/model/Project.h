@@ -28,6 +28,7 @@
 #include <aws/codebuild/model/LogsConfig.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/Tag.h>
+#include <aws/codebuild/model/ProjectFileSystemLocation.h>
 #include <utility>
 
 namespace Aws
@@ -1082,6 +1083,79 @@ namespace Model
      */
     inline Project& WithLogsConfig(LogsConfig&& value) { SetLogsConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild
+     * build project. A <code>ProjectFileSystemLocation</code> object specifies the
+     * <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+     * <code>mountPoint</code>, and <code>type</code> of a file system created using
+     * Amazon Elastic File System. </p>
+     */
+    inline const Aws::Vector<ProjectFileSystemLocation>& GetFileSystemLocations() const{ return m_fileSystemLocations; }
+
+    /**
+     * <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild
+     * build project. A <code>ProjectFileSystemLocation</code> object specifies the
+     * <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+     * <code>mountPoint</code>, and <code>type</code> of a file system created using
+     * Amazon Elastic File System. </p>
+     */
+    inline bool FileSystemLocationsHasBeenSet() const { return m_fileSystemLocationsHasBeenSet; }
+
+    /**
+     * <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild
+     * build project. A <code>ProjectFileSystemLocation</code> object specifies the
+     * <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+     * <code>mountPoint</code>, and <code>type</code> of a file system created using
+     * Amazon Elastic File System. </p>
+     */
+    inline void SetFileSystemLocations(const Aws::Vector<ProjectFileSystemLocation>& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations = value; }
+
+    /**
+     * <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild
+     * build project. A <code>ProjectFileSystemLocation</code> object specifies the
+     * <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+     * <code>mountPoint</code>, and <code>type</code> of a file system created using
+     * Amazon Elastic File System. </p>
+     */
+    inline void SetFileSystemLocations(Aws::Vector<ProjectFileSystemLocation>&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations = std::move(value); }
+
+    /**
+     * <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild
+     * build project. A <code>ProjectFileSystemLocation</code> object specifies the
+     * <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+     * <code>mountPoint</code>, and <code>type</code> of a file system created using
+     * Amazon Elastic File System. </p>
+     */
+    inline Project& WithFileSystemLocations(const Aws::Vector<ProjectFileSystemLocation>& value) { SetFileSystemLocations(value); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild
+     * build project. A <code>ProjectFileSystemLocation</code> object specifies the
+     * <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+     * <code>mountPoint</code>, and <code>type</code> of a file system created using
+     * Amazon Elastic File System. </p>
+     */
+    inline Project& WithFileSystemLocations(Aws::Vector<ProjectFileSystemLocation>&& value) { SetFileSystemLocations(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild
+     * build project. A <code>ProjectFileSystemLocation</code> object specifies the
+     * <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+     * <code>mountPoint</code>, and <code>type</code> of a file system created using
+     * Amazon Elastic File System. </p>
+     */
+    inline Project& AddFileSystemLocations(const ProjectFileSystemLocation& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(value); return *this; }
+
+    /**
+     * <p> An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild
+     * build project. A <code>ProjectFileSystemLocation</code> object specifies the
+     * <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+     * <code>mountPoint</code>, and <code>type</code> of a file system created using
+     * Amazon Elastic File System. </p>
+     */
+    inline Project& AddFileSystemLocations(ProjectFileSystemLocation&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -1149,6 +1223,9 @@ namespace Model
 
     LogsConfig m_logsConfig;
     bool m_logsConfigHasBeenSet;
+
+    Aws::Vector<ProjectFileSystemLocation> m_fileSystemLocations;
+    bool m_fileSystemLocationsHasBeenSet;
   };
 
 } // namespace Model

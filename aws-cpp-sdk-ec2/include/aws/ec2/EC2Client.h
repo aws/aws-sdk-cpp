@@ -17027,19 +17027,19 @@ namespace Model
          * distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
          * Server (SLES), use the EC2 billing product code associated with an AMI to verify
          * the subscription status for package updates. To create a new AMI for operating
-         * systems that require a billing product code, do the following:</p> <ol> <li>
-         * <p>Launch an instance from an existing AMI with that billing product code.</p>
-         * </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create a new AMI from
-         * the instance using <a>CreateImage</a> to preserve the billing product code
-         * association.</p> </li> </ol> <p>If you purchase a Reserved Instance to apply to
-         * an On-Demand Instance that was launched from an AMI with a billing product code,
-         * make sure that the Reserved Instance has the matching billing product code. If
-         * you purchase a Reserved Instance without the matching billing product code, the
-         * Reserved Instance will not be applied to the On-Demand Instance. </p> <p>If
-         * needed, you can deregister an AMI at any time. Any modifications you make to an
-         * AMI backed by an instance store volume invalidates its registration. If you make
-         * changes to an image, deregister the previous image and register the new
-         * image.</p><p><h3>See Also:</h3>   <a
+         * systems that require a billing product code, instead of instead of registering
+         * the AMI, do the following to preserve the billing product code association:</p>
+         * <ol> <li> <p>Launch an instance from an existing AMI with that billing product
+         * code.</p> </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI
+         * from the instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a
+         * Reserved Instance to apply to an On-Demand Instance that was launched from an
+         * AMI with a billing product code, make sure that the Reserved Instance has the
+         * matching billing product code. If you purchase a Reserved Instance without the
+         * matching billing product code, the Reserved Instance will not be applied to the
+         * On-Demand Instance. </p> <p>If needed, you can deregister an AMI at any time.
+         * Any modifications you make to an AMI backed by an instance store volume
+         * invalidates its registration. If you make changes to an image, deregister the
+         * previous image and register the new image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          */
@@ -17064,19 +17064,19 @@ namespace Model
          * distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
          * Server (SLES), use the EC2 billing product code associated with an AMI to verify
          * the subscription status for package updates. To create a new AMI for operating
-         * systems that require a billing product code, do the following:</p> <ol> <li>
-         * <p>Launch an instance from an existing AMI with that billing product code.</p>
-         * </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create a new AMI from
-         * the instance using <a>CreateImage</a> to preserve the billing product code
-         * association.</p> </li> </ol> <p>If you purchase a Reserved Instance to apply to
-         * an On-Demand Instance that was launched from an AMI with a billing product code,
-         * make sure that the Reserved Instance has the matching billing product code. If
-         * you purchase a Reserved Instance without the matching billing product code, the
-         * Reserved Instance will not be applied to the On-Demand Instance. </p> <p>If
-         * needed, you can deregister an AMI at any time. Any modifications you make to an
-         * AMI backed by an instance store volume invalidates its registration. If you make
-         * changes to an image, deregister the previous image and register the new
-         * image.</p><p><h3>See Also:</h3>   <a
+         * systems that require a billing product code, instead of instead of registering
+         * the AMI, do the following to preserve the billing product code association:</p>
+         * <ol> <li> <p>Launch an instance from an existing AMI with that billing product
+         * code.</p> </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI
+         * from the instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a
+         * Reserved Instance to apply to an On-Demand Instance that was launched from an
+         * AMI with a billing product code, make sure that the Reserved Instance has the
+         * matching billing product code. If you purchase a Reserved Instance without the
+         * matching billing product code, the Reserved Instance will not be applied to the
+         * On-Demand Instance. </p> <p>If needed, you can deregister an AMI at any time.
+         * Any modifications you make to an AMI backed by an instance store volume
+         * invalidates its registration. If you make changes to an image, deregister the
+         * previous image and register the new image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          *
@@ -17103,19 +17103,19 @@ namespace Model
          * distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
          * Server (SLES), use the EC2 billing product code associated with an AMI to verify
          * the subscription status for package updates. To create a new AMI for operating
-         * systems that require a billing product code, do the following:</p> <ol> <li>
-         * <p>Launch an instance from an existing AMI with that billing product code.</p>
-         * </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create a new AMI from
-         * the instance using <a>CreateImage</a> to preserve the billing product code
-         * association.</p> </li> </ol> <p>If you purchase a Reserved Instance to apply to
-         * an On-Demand Instance that was launched from an AMI with a billing product code,
-         * make sure that the Reserved Instance has the matching billing product code. If
-         * you purchase a Reserved Instance without the matching billing product code, the
-         * Reserved Instance will not be applied to the On-Demand Instance. </p> <p>If
-         * needed, you can deregister an AMI at any time. Any modifications you make to an
-         * AMI backed by an instance store volume invalidates its registration. If you make
-         * changes to an image, deregister the previous image and register the new
-         * image.</p><p><h3>See Also:</h3>   <a
+         * systems that require a billing product code, instead of instead of registering
+         * the AMI, do the following to preserve the billing product code association:</p>
+         * <ol> <li> <p>Launch an instance from an existing AMI with that billing product
+         * code.</p> </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI
+         * from the instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a
+         * Reserved Instance to apply to an On-Demand Instance that was launched from an
+         * AMI with a billing product code, make sure that the Reserved Instance has the
+         * matching billing product code. If you purchase a Reserved Instance without the
+         * matching billing product code, the Reserved Instance will not be applied to the
+         * On-Demand Instance. </p> <p>If needed, you can deregister an AMI at any time.
+         * Any modifications you make to an AMI backed by an instance store volume
+         * invalidates its registration. If you make changes to an image, deregister the
+         * previous image and register the new image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          *

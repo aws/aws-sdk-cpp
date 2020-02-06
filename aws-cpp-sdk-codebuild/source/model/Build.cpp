@@ -62,7 +62,8 @@ Build::Build() :
     m_networkInterfaceHasBeenSet(false),
     m_encryptionKeyHasBeenSet(false),
     m_exportedEnvironmentVariablesHasBeenSet(false),
-    m_reportArnsHasBeenSet(false)
+    m_reportArnsHasBeenSet(false),
+    m_fileSystemLocationsHasBeenSet(false)
 {
 }
 
@@ -100,7 +101,8 @@ Build::Build(JsonView jsonValue) :
     m_networkInterfaceHasBeenSet(false),
     m_encryptionKeyHasBeenSet(false),
     m_exportedEnvironmentVariablesHasBeenSet(false),
-    m_reportArnsHasBeenSet(false)
+    m_reportArnsHasBeenSet(false),
+    m_fileSystemLocationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -328,6 +330,16 @@ Build& Build::operator =(JsonView jsonValue)
     m_reportArnsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fileSystemLocations"))
+  {
+    Array<JsonView> fileSystemLocationsJsonList = jsonValue.GetArray("fileSystemLocations");
+    for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
+    {
+      m_fileSystemLocations.push_back(fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject());
+    }
+    m_fileSystemLocationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -533,6 +545,17 @@ JsonValue Build::Jsonize() const
      reportArnsJsonList[reportArnsIndex].AsString(m_reportArns[reportArnsIndex]);
    }
    payload.WithArray("reportArns", std::move(reportArnsJsonList));
+
+  }
+
+  if(m_fileSystemLocationsHasBeenSet)
+  {
+   Array<JsonValue> fileSystemLocationsJsonList(m_fileSystemLocations.size());
+   for(unsigned fileSystemLocationsIndex = 0; fileSystemLocationsIndex < fileSystemLocationsJsonList.GetLength(); ++fileSystemLocationsIndex)
+   {
+     fileSystemLocationsJsonList[fileSystemLocationsIndex].AsObject(m_fileSystemLocations[fileSystemLocationsIndex].Jsonize());
+   }
+   payload.WithArray("fileSystemLocations", std::move(fileSystemLocationsJsonList));
 
   }
 

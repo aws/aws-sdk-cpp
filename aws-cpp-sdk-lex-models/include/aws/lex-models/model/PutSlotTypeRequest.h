@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lex-models/model/SlotValueSelectionStrategy.h>
 #include <aws/lex-models/model/EnumerationValue.h>
+#include <aws/lex-models/model/SlotTypeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -496,6 +497,112 @@ namespace Model
      */
     inline PutSlotTypeRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
 
+
+    /**
+     * <p>The built-in slot type used as the parent of the slot type. When you define a
+     * parent slot type, the new slot type has all of the same configuration as the
+     * parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+     */
+    inline const Aws::String& GetParentSlotTypeSignature() const{ return m_parentSlotTypeSignature; }
+
+    /**
+     * <p>The built-in slot type used as the parent of the slot type. When you define a
+     * parent slot type, the new slot type has all of the same configuration as the
+     * parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+     */
+    inline bool ParentSlotTypeSignatureHasBeenSet() const { return m_parentSlotTypeSignatureHasBeenSet; }
+
+    /**
+     * <p>The built-in slot type used as the parent of the slot type. When you define a
+     * parent slot type, the new slot type has all of the same configuration as the
+     * parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+     */
+    inline void SetParentSlotTypeSignature(const Aws::String& value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature = value; }
+
+    /**
+     * <p>The built-in slot type used as the parent of the slot type. When you define a
+     * parent slot type, the new slot type has all of the same configuration as the
+     * parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+     */
+    inline void SetParentSlotTypeSignature(Aws::String&& value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature = std::move(value); }
+
+    /**
+     * <p>The built-in slot type used as the parent of the slot type. When you define a
+     * parent slot type, the new slot type has all of the same configuration as the
+     * parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+     */
+    inline void SetParentSlotTypeSignature(const char* value) { m_parentSlotTypeSignatureHasBeenSet = true; m_parentSlotTypeSignature.assign(value); }
+
+    /**
+     * <p>The built-in slot type used as the parent of the slot type. When you define a
+     * parent slot type, the new slot type has all of the same configuration as the
+     * parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+     */
+    inline PutSlotTypeRequest& WithParentSlotTypeSignature(const Aws::String& value) { SetParentSlotTypeSignature(value); return *this;}
+
+    /**
+     * <p>The built-in slot type used as the parent of the slot type. When you define a
+     * parent slot type, the new slot type has all of the same configuration as the
+     * parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+     */
+    inline PutSlotTypeRequest& WithParentSlotTypeSignature(Aws::String&& value) { SetParentSlotTypeSignature(std::move(value)); return *this;}
+
+    /**
+     * <p>The built-in slot type used as the parent of the slot type. When you define a
+     * parent slot type, the new slot type has all of the same configuration as the
+     * parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+     */
+    inline PutSlotTypeRequest& WithParentSlotTypeSignature(const char* value) { SetParentSlotTypeSignature(value); return *this;}
+
+
+    /**
+     * <p>Configuration information that extends the parent built-in slot type. The
+     * configuration is added to the settings for the parent slot type.</p>
+     */
+    inline const Aws::Vector<SlotTypeConfiguration>& GetSlotTypeConfigurations() const{ return m_slotTypeConfigurations; }
+
+    /**
+     * <p>Configuration information that extends the parent built-in slot type. The
+     * configuration is added to the settings for the parent slot type.</p>
+     */
+    inline bool SlotTypeConfigurationsHasBeenSet() const { return m_slotTypeConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Configuration information that extends the parent built-in slot type. The
+     * configuration is added to the settings for the parent slot type.</p>
+     */
+    inline void SetSlotTypeConfigurations(const Aws::Vector<SlotTypeConfiguration>& value) { m_slotTypeConfigurationsHasBeenSet = true; m_slotTypeConfigurations = value; }
+
+    /**
+     * <p>Configuration information that extends the parent built-in slot type. The
+     * configuration is added to the settings for the parent slot type.</p>
+     */
+    inline void SetSlotTypeConfigurations(Aws::Vector<SlotTypeConfiguration>&& value) { m_slotTypeConfigurationsHasBeenSet = true; m_slotTypeConfigurations = std::move(value); }
+
+    /**
+     * <p>Configuration information that extends the parent built-in slot type. The
+     * configuration is added to the settings for the parent slot type.</p>
+     */
+    inline PutSlotTypeRequest& WithSlotTypeConfigurations(const Aws::Vector<SlotTypeConfiguration>& value) { SetSlotTypeConfigurations(value); return *this;}
+
+    /**
+     * <p>Configuration information that extends the parent built-in slot type. The
+     * configuration is added to the settings for the parent slot type.</p>
+     */
+    inline PutSlotTypeRequest& WithSlotTypeConfigurations(Aws::Vector<SlotTypeConfiguration>&& value) { SetSlotTypeConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Configuration information that extends the parent built-in slot type. The
+     * configuration is added to the settings for the parent slot type.</p>
+     */
+    inline PutSlotTypeRequest& AddSlotTypeConfigurations(const SlotTypeConfiguration& value) { m_slotTypeConfigurationsHasBeenSet = true; m_slotTypeConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Configuration information that extends the parent built-in slot type. The
+     * configuration is added to the settings for the parent slot type.</p>
+     */
+    inline PutSlotTypeRequest& AddSlotTypeConfigurations(SlotTypeConfiguration&& value) { m_slotTypeConfigurationsHasBeenSet = true; m_slotTypeConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -515,6 +622,12 @@ namespace Model
 
     bool m_createVersion;
     bool m_createVersionHasBeenSet;
+
+    Aws::String m_parentSlotTypeSignature;
+    bool m_parentSlotTypeSignatureHasBeenSet;
+
+    Aws::Vector<SlotTypeConfiguration> m_slotTypeConfigurations;
+    bool m_slotTypeConfigurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -39,7 +39,9 @@ GraphqlApi::GraphqlApi() :
     m_arnHasBeenSet(false),
     m_urisHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_additionalAuthenticationProvidersHasBeenSet(false)
+    m_additionalAuthenticationProvidersHasBeenSet(false),
+    m_xrayEnabled(false),
+    m_xrayEnabledHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ GraphqlApi::GraphqlApi(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_urisHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_additionalAuthenticationProvidersHasBeenSet(false)
+    m_additionalAuthenticationProvidersHasBeenSet(false),
+    m_xrayEnabled(false),
+    m_xrayEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +144,13 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
     m_additionalAuthenticationProvidersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("xrayEnabled"))
+  {
+    m_xrayEnabled = jsonValue.GetBool("xrayEnabled");
+
+    m_xrayEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -218,6 +229,12 @@ JsonValue GraphqlApi::Jsonize() const
      additionalAuthenticationProvidersJsonList[additionalAuthenticationProvidersIndex].AsObject(m_additionalAuthenticationProviders[additionalAuthenticationProvidersIndex].Jsonize());
    }
    payload.WithArray("additionalAuthenticationProviders", std::move(additionalAuthenticationProvidersJsonList));
+
+  }
+
+  if(m_xrayEnabledHasBeenSet)
+  {
+   payload.WithBool("xrayEnabled", m_xrayEnabled);
 
   }
 

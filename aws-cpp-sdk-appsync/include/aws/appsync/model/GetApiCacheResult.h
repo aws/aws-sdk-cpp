@@ -48,19 +48,29 @@ namespace Model
     GetApiCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The <code>ApiCache</code> object.</p>
+     */
     inline const ApiCache& GetApiCache() const{ return m_apiCache; }
 
-    
+    /**
+     * <p>The <code>ApiCache</code> object.</p>
+     */
     inline void SetApiCache(const ApiCache& value) { m_apiCache = value; }
 
-    
+    /**
+     * <p>The <code>ApiCache</code> object.</p>
+     */
     inline void SetApiCache(ApiCache&& value) { m_apiCache = std::move(value); }
 
-    
+    /**
+     * <p>The <code>ApiCache</code> object.</p>
+     */
     inline GetApiCacheResult& WithApiCache(const ApiCache& value) { SetApiCache(value); return *this;}
 
-    
+    /**
+     * <p>The <code>ApiCache</code> object.</p>
+     */
     inline GetApiCacheResult& WithApiCache(ApiCache&& value) { SetApiCache(std::move(value)); return *this;}
 
   private:

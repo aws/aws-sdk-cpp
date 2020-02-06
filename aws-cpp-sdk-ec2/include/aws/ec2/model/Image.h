@@ -403,6 +403,168 @@ namespace Model
 
 
     /**
+     * <p>The platform details associated with the billing code of the AMI. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetPlatformDetails() const{ return m_platformDetails; }
+
+    /**
+     * <p>The platform details associated with the billing code of the AMI. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline bool PlatformDetailsHasBeenSet() const { return m_platformDetailsHasBeenSet; }
+
+    /**
+     * <p>The platform details associated with the billing code of the AMI. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetPlatformDetails(const Aws::String& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = value; }
+
+    /**
+     * <p>The platform details associated with the billing code of the AMI. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetPlatformDetails(Aws::String&& value) { m_platformDetailsHasBeenSet = true; m_platformDetails = std::move(value); }
+
+    /**
+     * <p>The platform details associated with the billing code of the AMI. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetPlatformDetails(const char* value) { m_platformDetailsHasBeenSet = true; m_platformDetails.assign(value); }
+
+    /**
+     * <p>The platform details associated with the billing code of the AMI. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline Image& WithPlatformDetails(const Aws::String& value) { SetPlatformDetails(value); return *this;}
+
+    /**
+     * <p>The platform details associated with the billing code of the AMI. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline Image& WithPlatformDetails(Aws::String&& value) { SetPlatformDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>The platform details associated with the billing code of the AMI. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline Image& WithPlatformDetails(const char* value) { SetPlatformDetails(value); return *this;}
+
+
+    /**
+     * <p>The operation of the Amazon EC2 instance and the billing code associated with
+     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+     * column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
+
+    /**
+     * <p>The operation of the Amazon EC2 instance and the billing code associated with
+     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+     * column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
+
+    /**
+     * <p>The operation of the Amazon EC2 instance and the billing code associated with
+     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+     * column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
+
+    /**
+     * <p>The operation of the Amazon EC2 instance and the billing code associated with
+     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+     * column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
+
+    /**
+     * <p>The operation of the Amazon EC2 instance and the billing code associated with
+     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+     * column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
+
+    /**
+     * <p>The operation of the Amazon EC2 instance and the billing code associated with
+     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+     * column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline Image& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
+
+    /**
+     * <p>The operation of the Amazon EC2 instance and the billing code associated with
+     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+     * column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline Image& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
+
+    /**
+     * <p>The operation of the Amazon EC2 instance and the billing code associated with
+     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+     * column on your AWS Cost and Usage Report. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline Image& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
+
+
+    /**
      * <p>Any product codes associated with the AMI.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
@@ -1018,6 +1180,12 @@ namespace Model
 
     PlatformValues m_platform;
     bool m_platformHasBeenSet;
+
+    Aws::String m_platformDetails;
+    bool m_platformDetailsHasBeenSet;
+
+    Aws::String m_usageOperation;
+    bool m_usageOperationHasBeenSet;
 
     Aws::Vector<ProductCode> m_productCodes;
     bool m_productCodesHasBeenSet;

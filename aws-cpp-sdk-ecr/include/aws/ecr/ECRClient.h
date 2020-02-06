@@ -251,22 +251,30 @@ namespace Model
 
 
         /**
-         * <p>Check the availability of multiple image layers in a specified registry and
-         * repository.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it
-         * is not intended for general use by customers for pulling and pushing images. In
-         * most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Checks the availability of one or more image layers in a repository.</p>
+         * <p>When an image is pushed to a repository, each image layer is checked to
+         * verify if it has been uploaded before. If it is, then the image layer is
+         * skipped.</p> <p>When an image is pulled from a repository, each image layer is
+         * checked once to verify it is available to be pulled.</p> <note> <p>This
+         * operation is used by the Amazon ECR proxy, and it is not intended for general
+         * use by customers for pulling and pushing images. In most cases, you should use
+         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchCheckLayerAvailabilityOutcome BatchCheckLayerAvailability(const Model::BatchCheckLayerAvailabilityRequest& request) const;
 
         /**
-         * <p>Check the availability of multiple image layers in a specified registry and
-         * repository.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it
-         * is not intended for general use by customers for pulling and pushing images. In
-         * most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Checks the availability of one or more image layers in a repository.</p>
+         * <p>When an image is pushed to a repository, each image layer is checked to
+         * verify if it has been uploaded before. If it is, then the image layer is
+         * skipped.</p> <p>When an image is pulled from a repository, each image layer is
+         * checked once to verify it is available to be pulled.</p> <note> <p>This
+         * operation is used by the Amazon ECR proxy, and it is not intended for general
+         * use by customers for pulling and pushing images. In most cases, you should use
+         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          *
@@ -275,11 +283,15 @@ namespace Model
         virtual Model::BatchCheckLayerAvailabilityOutcomeCallable BatchCheckLayerAvailabilityCallable(const Model::BatchCheckLayerAvailabilityRequest& request) const;
 
         /**
-         * <p>Check the availability of multiple image layers in a specified registry and
-         * repository.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it
-         * is not intended for general use by customers for pulling and pushing images. In
-         * most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Checks the availability of one or more image layers in a repository.</p>
+         * <p>When an image is pushed to a repository, each image layer is checked to
+         * verify if it has been uploaded before. If it is, then the image layer is
+         * skipped.</p> <p>When an image is pulled from a repository, each image layer is
+         * checked once to verify it is available to be pulled.</p> <note> <p>This
+         * operation is used by the Amazon ECR proxy, and it is not intended for general
+         * use by customers for pulling and pushing images. In most cases, you should use
+         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchCheckLayerAvailability">AWS
          * API Reference</a></p>
          *
@@ -288,24 +300,24 @@ namespace Model
         virtual void BatchCheckLayerAvailabilityAsync(const Model::BatchCheckLayerAvailabilityRequest& request, const BatchCheckLayerAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a list of specified images within a specified repository. Images are
-         * specified with either <code>imageTag</code> or <code>imageDigest</code>.</p>
-         * <p>You can remove a tag from an image by specifying the image's tag in your
-         * request. When you remove the last tag from an image, the image is deleted from
-         * your repository.</p> <p>You can completely delete an image (and all of its tags)
-         * by specifying the image's digest in your request.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a list of specified images within a repository. Images are specified
+         * with either an <code>imageTag</code> or <code>imageDigest</code>.</p> <p>You can
+         * remove a tag from an image by specifying the image's tag in your request. When
+         * you remove the last tag from an image, the image is deleted from your
+         * repository.</p> <p>You can completely delete an image (and all of its tags) by
+         * specifying the image's digest in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchDeleteImageOutcome BatchDeleteImage(const Model::BatchDeleteImageRequest& request) const;
 
         /**
-         * <p>Deletes a list of specified images within a specified repository. Images are
-         * specified with either <code>imageTag</code> or <code>imageDigest</code>.</p>
-         * <p>You can remove a tag from an image by specifying the image's tag in your
-         * request. When you remove the last tag from an image, the image is deleted from
-         * your repository.</p> <p>You can completely delete an image (and all of its tags)
-         * by specifying the image's digest in your request.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a list of specified images within a repository. Images are specified
+         * with either an <code>imageTag</code> or <code>imageDigest</code>.</p> <p>You can
+         * remove a tag from an image by specifying the image's tag in your request. When
+         * you remove the last tag from an image, the image is deleted from your
+         * repository.</p> <p>You can completely delete an image (and all of its tags) by
+         * specifying the image's digest in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">AWS
          * API Reference</a></p>
          *
@@ -314,12 +326,12 @@ namespace Model
         virtual Model::BatchDeleteImageOutcomeCallable BatchDeleteImageCallable(const Model::BatchDeleteImageRequest& request) const;
 
         /**
-         * <p>Deletes a list of specified images within a specified repository. Images are
-         * specified with either <code>imageTag</code> or <code>imageDigest</code>.</p>
-         * <p>You can remove a tag from an image by specifying the image's tag in your
-         * request. When you remove the last tag from an image, the image is deleted from
-         * your repository.</p> <p>You can completely delete an image (and all of its tags)
-         * by specifying the image's digest in your request.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a list of specified images within a repository. Images are specified
+         * with either an <code>imageTag</code> or <code>imageDigest</code>.</p> <p>You can
+         * remove a tag from an image by specifying the image's tag in your request. When
+         * you remove the last tag from an image, the image is deleted from your
+         * repository.</p> <p>You can completely delete an image (and all of its tags) by
+         * specifying the image's digest in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchDeleteImage">AWS
          * API Reference</a></p>
          *
@@ -328,18 +340,20 @@ namespace Model
         virtual void BatchDeleteImageAsync(const Model::BatchDeleteImageRequest& request, const BatchDeleteImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets detailed information for specified images within a specified repository.
-         * Images are specified with either <code>imageTag</code> or
-         * <code>imageDigest</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets detailed information for an image. Images are specified with either an
+         * <code>imageTag</code> or <code>imageDigest</code>.</p> <p>When an image is
+         * pulled, the BatchGetImage API is called once to retrieve the image
+         * manifest.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetImageOutcome BatchGetImage(const Model::BatchGetImageRequest& request) const;
 
         /**
-         * <p>Gets detailed information for specified images within a specified repository.
-         * Images are specified with either <code>imageTag</code> or
-         * <code>imageDigest</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets detailed information for an image. Images are specified with either an
+         * <code>imageTag</code> or <code>imageDigest</code>.</p> <p>When an image is
+         * pulled, the BatchGetImage API is called once to retrieve the image
+         * manifest.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">AWS
          * API Reference</a></p>
          *
@@ -348,9 +362,10 @@ namespace Model
         virtual Model::BatchGetImageOutcomeCallable BatchGetImageCallable(const Model::BatchGetImageRequest& request) const;
 
         /**
-         * <p>Gets detailed information for specified images within a specified repository.
-         * Images are specified with either <code>imageTag</code> or
-         * <code>imageDigest</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets detailed information for an image. Images are specified with either an
+         * <code>imageTag</code> or <code>imageDigest</code>.</p> <p>When an image is
+         * pulled, the BatchGetImage API is called once to retrieve the image
+         * manifest.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage">AWS
          * API Reference</a></p>
          *
@@ -362,10 +377,12 @@ namespace Model
          * <p>Informs Amazon ECR that the image layer upload has completed for a specified
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
-         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
-         * for general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
+         * new image layer to verify that the upload has completed.</p> <note> <p>This
+         * operation is used by the Amazon ECR proxy, and it is not intended for general
+         * use by customers for pulling and pushing images. In most cases, you should use
+         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
          */
@@ -375,10 +392,12 @@ namespace Model
          * <p>Informs Amazon ECR that the image layer upload has completed for a specified
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
-         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
-         * for general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
+         * new image layer to verify that the upload has completed.</p> <note> <p>This
+         * operation is used by the Amazon ECR proxy, and it is not intended for general
+         * use by customers for pulling and pushing images. In most cases, you should use
+         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
          *
@@ -390,10 +409,12 @@ namespace Model
          * <p>Informs Amazon ECR that the image layer upload has completed for a specified
          * registry, repository name, and upload ID. You can optionally provide a
          * <code>sha256</code> digest of the image layer for data validation purposes.</p>
-         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
-         * for general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>When an image is pushed, the CompleteLayerUpload API is called once per each
+         * new image layer to verify that the upload has completed.</p> <note> <p>This
+         * operation is used by the Amazon ECR proxy, and it is not intended for general
+         * use by customers for pulling and pushing images. In most cases, you should use
+         * the <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload">AWS
          * API Reference</a></p>
          *
@@ -402,8 +423,7 @@ namespace Model
         virtual void CompleteLayerUploadAsync(const Model::CompleteLayerUploadRequest& request, const CompleteLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where
-         * users can push and pull Docker images. For more information, see <a
+         * <p>Creates a repository. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
          * ECR Repositories</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -413,8 +433,7 @@ namespace Model
         virtual Model::CreateRepositoryOutcome CreateRepository(const Model::CreateRepositoryRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where
-         * users can push and pull Docker images. For more information, see <a
+         * <p>Creates a repository. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
          * ECR Repositories</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -426,8 +445,7 @@ namespace Model
         virtual Model::CreateRepositoryOutcomeCallable CreateRepositoryCallable(const Model::CreateRepositoryRequest& request) const;
 
         /**
-         * <p>Creates an Amazon Elastic Container Registry (Amazon ECR) repository, where
-         * users can push and pull Docker images. For more information, see <a
+         * <p>Creates a repository. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon
          * ECR Repositories</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -439,14 +457,16 @@ namespace Model
         virtual void CreateRepositoryAsync(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the lifecycle policy associated with the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteLifecyclePolicyOutcome DeleteLifecyclePolicy(const Model::DeleteLifecyclePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the lifecycle policy associated with the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">AWS
          * API Reference</a></p>
          *
@@ -455,7 +475,8 @@ namespace Model
         virtual Model::DeleteLifecyclePolicyOutcomeCallable DeleteLifecyclePolicyCallable(const Model::DeleteLifecyclePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the lifecycle policy associated with the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy">AWS
          * API Reference</a></p>
          *
@@ -464,18 +485,18 @@ namespace Model
         virtual void DeleteLifecyclePolicyAsync(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing image repository. If a repository contains images, you
-         * must use the <code>force</code> option to delete it.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a repository. If the repository contains images, you must either
+         * delete all images in the repository or use the <code>force</code> option to
+         * delete the repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRepositoryOutcome DeleteRepository(const Model::DeleteRepositoryRequest& request) const;
 
         /**
-         * <p>Deletes an existing image repository. If a repository contains images, you
-         * must use the <code>force</code> option to delete it.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a repository. If the repository contains images, you must either
+         * delete all images in the repository or use the <code>force</code> option to
+         * delete the repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">AWS
          * API Reference</a></p>
          *
@@ -484,9 +505,9 @@ namespace Model
         virtual Model::DeleteRepositoryOutcomeCallable DeleteRepositoryCallable(const Model::DeleteRepositoryRequest& request) const;
 
         /**
-         * <p>Deletes an existing image repository. If a repository contains images, you
-         * must use the <code>force</code> option to delete it.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a repository. If the repository contains images, you must either
+         * delete all images in the repository or use the <code>force</code> option to
+         * delete the repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository">AWS
          * API Reference</a></p>
          *
@@ -495,16 +516,16 @@ namespace Model
         virtual void DeleteRepositoryAsync(const Model::DeleteRepositoryRequest& request, const DeleteRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the repository policy from a specified repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the repository policy associated with the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRepositoryPolicyOutcome DeleteRepositoryPolicy(const Model::DeleteRepositoryPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the repository policy from a specified repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the repository policy associated with the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">AWS
          * API Reference</a></p>
          *
@@ -513,8 +534,8 @@ namespace Model
         virtual Model::DeleteRepositoryPolicyOutcomeCallable DeleteRepositoryPolicyCallable(const Model::DeleteRepositoryPolicyRequest& request) const;
 
         /**
-         * <p>Deletes the repository policy from a specified repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the repository policy associated with the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepositoryPolicy">AWS
          * API Reference</a></p>
          *
@@ -523,16 +544,16 @@ namespace Model
         virtual void DeleteRepositoryPolicyAsync(const Model::DeleteRepositoryPolicyRequest& request, const DeleteRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the image scan findings for the specified image.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the scan findings for the specified image.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImageScanFindingsOutcome DescribeImageScanFindings(const Model::DescribeImageScanFindingsRequest& request) const;
 
         /**
-         * <p>Describes the image scan findings for the specified image.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the scan findings for the specified image.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">AWS
          * API Reference</a></p>
          *
@@ -541,8 +562,8 @@ namespace Model
         virtual Model::DescribeImageScanFindingsOutcomeCallable DescribeImageScanFindingsCallable(const Model::DescribeImageScanFindingsRequest& request) const;
 
         /**
-         * <p>Describes the image scan findings for the specified image.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the scan findings for the specified image.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImageScanFindings">AWS
          * API Reference</a></p>
          *
@@ -551,24 +572,24 @@ namespace Model
         virtual void DescribeImageScanFindingsAsync(const Model::DescribeImageScanFindingsRequest& request, const DescribeImageScanFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns metadata about the images in a repository, including image size,
-         * image tags, and creation date.</p> <note> <p>Beginning with Docker version 1.9,
-         * the Docker client compresses image layers before pushing them to a V2 Docker
-         * registry. The output of the <code>docker images</code> command shows the
-         * uncompressed image size, so it may return a larger image size than the image
-         * sizes returned by <a>DescribeImages</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * with Docker version 1.9, the Docker client compresses image layers before
+         * pushing them to a V2 Docker registry. The output of the <code>docker
+         * images</code> command shows the uncompressed image size, so it may return a
+         * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Returns metadata about the images in a repository, including image size,
-         * image tags, and creation date.</p> <note> <p>Beginning with Docker version 1.9,
-         * the Docker client compresses image layers before pushing them to a V2 Docker
-         * registry. The output of the <code>docker images</code> command shows the
-         * uncompressed image size, so it may return a larger image size than the image
-         * sizes returned by <a>DescribeImages</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * with Docker version 1.9, the Docker client compresses image layers before
+         * pushing them to a V2 Docker registry. The output of the <code>docker
+         * images</code> command shows the uncompressed image size, so it may return a
+         * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -577,12 +598,12 @@ namespace Model
         virtual Model::DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request) const;
 
         /**
-         * <p>Returns metadata about the images in a repository, including image size,
-         * image tags, and creation date.</p> <note> <p>Beginning with Docker version 1.9,
-         * the Docker client compresses image layers before pushing them to a V2 Docker
-         * registry. The output of the <code>docker images</code> command shows the
-         * uncompressed image size, so it may return a larger image size than the image
-         * sizes returned by <a>DescribeImages</a>.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Returns metadata about the images in a repository.</p> <note> <p>Beginning
+         * with Docker version 1.9, the Docker client compresses image layers before
+         * pushing them to a V2 Docker registry. The output of the <code>docker
+         * images</code> command shows the uncompressed image size, so it may return a
+         * larger image size than the image sizes returned by <a>DescribeImages</a>.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DescribeImages">AWS
          * API Reference</a></p>
          *
@@ -616,28 +637,34 @@ namespace Model
         virtual void DescribeRepositoriesAsync(const Model::DescribeRepositoriesRequest& request, const DescribeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a token that is valid for a specified registry for 12 hours. This
-         * command allows you to use the <code>docker</code> CLI to push and pull images
-         * with Amazon ECR. If you do not specify a registry, the default registry is
-         * assumed.</p> <p>The <code>authorizationToken</code> returned for each registry
-         * specified is a base64 encoded string that can be decoded and used in a
-         * <code>docker login</code> command to authenticate to a registry. The AWS CLI
-         * offers an <code>aws ecr get-login</code> command that simplifies the login
-         * process.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an authorization token. An authorization token represents your IAM
+         * authentication credentials and can be used to access any Amazon ECR registry
+         * that your IAM principal has access to. The authorization token is valid for 12
+         * hours.</p> <p>The <code>authorizationToken</code> returned is a base64 encoded
+         * string that can be decoded and used in a <code>docker login</code> command to
+         * authenticate to a registry. The AWS CLI offers an
+         * <code>get-login-password</code> command that simplifies the login process. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
+         * Authentication</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAuthorizationTokenOutcome GetAuthorizationToken(const Model::GetAuthorizationTokenRequest& request) const;
 
         /**
-         * <p>Retrieves a token that is valid for a specified registry for 12 hours. This
-         * command allows you to use the <code>docker</code> CLI to push and pull images
-         * with Amazon ECR. If you do not specify a registry, the default registry is
-         * assumed.</p> <p>The <code>authorizationToken</code> returned for each registry
-         * specified is a base64 encoded string that can be decoded and used in a
-         * <code>docker login</code> command to authenticate to a registry. The AWS CLI
-         * offers an <code>aws ecr get-login</code> command that simplifies the login
-         * process.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an authorization token. An authorization token represents your IAM
+         * authentication credentials and can be used to access any Amazon ECR registry
+         * that your IAM principal has access to. The authorization token is valid for 12
+         * hours.</p> <p>The <code>authorizationToken</code> returned is a base64 encoded
+         * string that can be decoded and used in a <code>docker login</code> command to
+         * authenticate to a registry. The AWS CLI offers an
+         * <code>get-login-password</code> command that simplifies the login process. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
+         * Authentication</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">AWS
          * API Reference</a></p>
          *
@@ -646,14 +673,17 @@ namespace Model
         virtual Model::GetAuthorizationTokenOutcomeCallable GetAuthorizationTokenCallable(const Model::GetAuthorizationTokenRequest& request) const;
 
         /**
-         * <p>Retrieves a token that is valid for a specified registry for 12 hours. This
-         * command allows you to use the <code>docker</code> CLI to push and pull images
-         * with Amazon ECR. If you do not specify a registry, the default registry is
-         * assumed.</p> <p>The <code>authorizationToken</code> returned for each registry
-         * specified is a base64 encoded string that can be decoded and used in a
-         * <code>docker login</code> command to authenticate to a registry. The AWS CLI
-         * offers an <code>aws ecr get-login</code> command that simplifies the login
-         * process.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an authorization token. An authorization token represents your IAM
+         * authentication credentials and can be used to access any Amazon ECR registry
+         * that your IAM principal has access to. The authorization token is valid for 12
+         * hours.</p> <p>The <code>authorizationToken</code> returned is a base64 encoded
+         * string that can be decoded and used in a <code>docker login</code> command to
+         * authenticate to a registry. The AWS CLI offers an
+         * <code>get-login-password</code> command that simplifies the login process. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
+         * Authentication</a> in the <i>Amazon Elastic Container Registry User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetAuthorizationToken">AWS
          * API Reference</a></p>
          *
@@ -664,10 +694,11 @@ namespace Model
         /**
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
-         * image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is
-         * not intended for general use by customers for pulling and pushing images. In
-         * most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
+         * once per image layer.</p> <note> <p>This operation is used by the Amazon ECR
+         * proxy, and it is not intended for general use by customers for pulling and
+         * pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          */
@@ -676,10 +707,11 @@ namespace Model
         /**
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
-         * image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is
-         * not intended for general use by customers for pulling and pushing images. In
-         * most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
+         * once per image layer.</p> <note> <p>This operation is used by the Amazon ECR
+         * proxy, and it is not intended for general use by customers for pulling and
+         * pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          *
@@ -690,10 +722,11 @@ namespace Model
         /**
          * <p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image
          * layer. You can only get URLs for image layers that are referenced in an
-         * image.</p> <note> <p>This operation is used by the Amazon ECR proxy, and it is
-         * not intended for general use by customers for pulling and pushing images. In
-         * most cases, you should use the <code>docker</code> CLI to pull, tag, and push
-         * images.</p> </note><p><h3>See Also:</h3>   <a
+         * image.</p> <p>When an image is pulled, the GetDownloadUrlForLayer API is called
+         * once per image layer.</p> <note> <p>This operation is used by the Amazon ECR
+         * proxy, and it is not intended for general use by customers for pulling and
+         * pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer">AWS
          * API Reference</a></p>
          *
@@ -702,14 +735,16 @@ namespace Model
         virtual void GetDownloadUrlForLayerAsync(const Model::GetDownloadUrlForLayerRequest& request, const GetDownloadUrlForLayerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the lifecycle policy for the specified repository.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::GetLifecyclePolicyOutcome GetLifecyclePolicy(const Model::GetLifecyclePolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the lifecycle policy for the specified repository.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">AWS
          * API Reference</a></p>
          *
@@ -718,7 +753,8 @@ namespace Model
         virtual Model::GetLifecyclePolicyOutcomeCallable GetLifecyclePolicyCallable(const Model::GetLifecyclePolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the specified lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the lifecycle policy for the specified repository.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy">AWS
          * API Reference</a></p>
          *
@@ -727,16 +763,16 @@ namespace Model
         virtual void GetLifecyclePolicyAsync(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the results of the specified lifecycle policy preview
-         * request.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the results of the lifecycle policy preview request for the
+         * specified repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">AWS
          * API Reference</a></p>
          */
         virtual Model::GetLifecyclePolicyPreviewOutcome GetLifecyclePolicyPreview(const Model::GetLifecyclePolicyPreviewRequest& request) const;
 
         /**
-         * <p>Retrieves the results of the specified lifecycle policy preview
-         * request.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the results of the lifecycle policy preview request for the
+         * specified repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">AWS
          * API Reference</a></p>
          *
@@ -745,8 +781,8 @@ namespace Model
         virtual Model::GetLifecyclePolicyPreviewOutcomeCallable GetLifecyclePolicyPreviewCallable(const Model::GetLifecyclePolicyPreviewRequest& request) const;
 
         /**
-         * <p>Retrieves the results of the specified lifecycle policy preview
-         * request.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the results of the lifecycle policy preview request for the
+         * specified repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview">AWS
          * API Reference</a></p>
          *
@@ -755,7 +791,7 @@ namespace Model
         virtual void GetLifecyclePolicyPreviewAsync(const Model::GetLifecyclePolicyPreviewRequest& request, const GetLifecyclePolicyPreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the repository policy for a specified repository.</p><p><h3>See
+         * <p>Retrieves the repository policy for the specified repository.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">AWS
          * API Reference</a></p>
@@ -763,7 +799,7 @@ namespace Model
         virtual Model::GetRepositoryPolicyOutcome GetRepositoryPolicy(const Model::GetRepositoryPolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the repository policy for a specified repository.</p><p><h3>See
+         * <p>Retrieves the repository policy for the specified repository.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">AWS
          * API Reference</a></p>
@@ -773,7 +809,7 @@ namespace Model
         virtual Model::GetRepositoryPolicyOutcomeCallable GetRepositoryPolicyCallable(const Model::GetRepositoryPolicyRequest& request) const;
 
         /**
-         * <p>Retrieves the repository policy for a specified repository.</p><p><h3>See
+         * <p>Retrieves the repository policy for the specified repository.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetRepositoryPolicy">AWS
          * API Reference</a></p>
@@ -783,7 +819,10 @@ namespace Model
         virtual void GetRepositoryPolicyAsync(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Notify Amazon ECR that you intend to upload an image layer.</p> <note>
+         * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
+         * image is pushed, the InitiateLayerUpload API is called once per image layer that
+         * has not already been uploaded. Whether an image layer has been uploaded before
+         * is determined by the <a>BatchCheckLayerAvailability</a> API action.</p> <note>
          * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
          * general use by customers for pulling and pushing images. In most cases, you
          * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
@@ -794,7 +833,10 @@ namespace Model
         virtual Model::InitiateLayerUploadOutcome InitiateLayerUpload(const Model::InitiateLayerUploadRequest& request) const;
 
         /**
-         * <p>Notify Amazon ECR that you intend to upload an image layer.</p> <note>
+         * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
+         * image is pushed, the InitiateLayerUpload API is called once per image layer that
+         * has not already been uploaded. Whether an image layer has been uploaded before
+         * is determined by the <a>BatchCheckLayerAvailability</a> API action.</p> <note>
          * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
          * general use by customers for pulling and pushing images. In most cases, you
          * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
@@ -807,7 +849,10 @@ namespace Model
         virtual Model::InitiateLayerUploadOutcomeCallable InitiateLayerUploadCallable(const Model::InitiateLayerUploadRequest& request) const;
 
         /**
-         * <p>Notify Amazon ECR that you intend to upload an image layer.</p> <note>
+         * <p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an
+         * image is pushed, the InitiateLayerUpload API is called once per image layer that
+         * has not already been uploaded. Whether an image layer has been uploaded before
+         * is determined by the <a>BatchCheckLayerAvailability</a> API action.</p> <note>
          * <p>This operation is used by the Amazon ECR proxy, and it is not intended for
          * general use by customers for pulling and pushing images. In most cases, you
          * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
@@ -820,26 +865,28 @@ namespace Model
         virtual void InitiateLayerUploadAsync(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the image IDs for a given repository.</p> <p>You can filter images
-         * based on whether or not they are tagged by setting the <code>tagStatus</code>
-         * parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can
-         * filter your results to return only <code>UNTAGGED</code> images and then pipe
-         * that result to a <a>BatchDeleteImage</a> operation to delete them. Or, you can
-         * filter your results to return only <code>TAGGED</code> images to list all of the
-         * tags in your repository.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the image IDs for the specified repository.</p> <p>You can filter
+         * images based on whether or not they are tagged by using the
+         * <code>tagStatus</code> filter and specifying either <code>TAGGED</code>,
+         * <code>UNTAGGED</code> or <code>ANY</code>. For example, you can filter your
+         * results to return only <code>UNTAGGED</code> images and then pipe that result to
+         * a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your
+         * results to return only <code>TAGGED</code> images to list all of the tags in
+         * your repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">AWS API
          * Reference</a></p>
          */
         virtual Model::ListImagesOutcome ListImages(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p>Lists all the image IDs for a given repository.</p> <p>You can filter images
-         * based on whether or not they are tagged by setting the <code>tagStatus</code>
-         * parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can
-         * filter your results to return only <code>UNTAGGED</code> images and then pipe
-         * that result to a <a>BatchDeleteImage</a> operation to delete them. Or, you can
-         * filter your results to return only <code>TAGGED</code> images to list all of the
-         * tags in your repository.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the image IDs for the specified repository.</p> <p>You can filter
+         * images based on whether or not they are tagged by using the
+         * <code>tagStatus</code> filter and specifying either <code>TAGGED</code>,
+         * <code>UNTAGGED</code> or <code>ANY</code>. For example, you can filter your
+         * results to return only <code>UNTAGGED</code> images and then pipe that result to
+         * a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your
+         * results to return only <code>TAGGED</code> images to list all of the tags in
+         * your repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">AWS API
          * Reference</a></p>
          *
@@ -848,13 +895,14 @@ namespace Model
         virtual Model::ListImagesOutcomeCallable ListImagesCallable(const Model::ListImagesRequest& request) const;
 
         /**
-         * <p>Lists all the image IDs for a given repository.</p> <p>You can filter images
-         * based on whether or not they are tagged by setting the <code>tagStatus</code>
-         * parameter to <code>TAGGED</code> or <code>UNTAGGED</code>. For example, you can
-         * filter your results to return only <code>UNTAGGED</code> images and then pipe
-         * that result to a <a>BatchDeleteImage</a> operation to delete them. Or, you can
-         * filter your results to return only <code>TAGGED</code> images to list all of the
-         * tags in your repository.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the image IDs for the specified repository.</p> <p>You can filter
+         * images based on whether or not they are tagged by using the
+         * <code>tagStatus</code> filter and specifying either <code>TAGGED</code>,
+         * <code>UNTAGGED</code> or <code>ANY</code>. For example, you can filter your
+         * results to return only <code>UNTAGGED</code> images and then pipe that result to
+         * a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your
+         * results to return only <code>TAGGED</code> images to list all of the tags in
+         * your repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ListImages">AWS API
          * Reference</a></p>
          *
@@ -889,10 +937,12 @@ namespace Model
 
         /**
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
-         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
-         * for general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>When an image is pushed and all new image layers have been uploaded, the
+         * PutImage API is called once to create or update the image manifest and tags
+         * associated with the image.</p> <note> <p>This operation is used by the Amazon
+         * ECR proxy, and it is not intended for general use by customers for pulling and
+         * pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          */
@@ -900,10 +950,12 @@ namespace Model
 
         /**
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
-         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
-         * for general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>When an image is pushed and all new image layers have been uploaded, the
+         * PutImage API is called once to create or update the image manifest and tags
+         * associated with the image.</p> <note> <p>This operation is used by the Amazon
+         * ECR proxy, and it is not intended for general use by customers for pulling and
+         * pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          *
@@ -913,10 +965,12 @@ namespace Model
 
         /**
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
-         * <note> <p>This operation is used by the Amazon ECR proxy, and it is not intended
-         * for general use by customers for pulling and pushing images. In most cases, you
-         * should use the <code>docker</code> CLI to pull, tag, and push images.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * <p>When an image is pushed and all new image layers have been uploaded, the
+         * PutImage API is called once to create or update the image manifest and tags
+         * associated with the image.</p> <note> <p>This operation is used by the Amazon
+         * ECR proxy, and it is not intended for general use by customers for pulling and
+         * pushing images. In most cases, you should use the <code>docker</code> CLI to
+         * pull, tag, and push images.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage">AWS API
          * Reference</a></p>
          *
@@ -925,16 +979,16 @@ namespace Model
         virtual void PutImageAsync(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the image scanning configuration for a repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the image scanning configuration for the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutImageScanningConfigurationOutcome PutImageScanningConfiguration(const Model::PutImageScanningConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the image scanning configuration for a repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the image scanning configuration for the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
          * API Reference</a></p>
          *
@@ -943,8 +997,8 @@ namespace Model
         virtual Model::PutImageScanningConfigurationOutcomeCallable PutImageScanningConfigurationCallable(const Model::PutImageScanningConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the image scanning configuration for a repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the image scanning configuration for the specified
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImageScanningConfiguration">AWS
          * API Reference</a></p>
          *
@@ -953,9 +1007,8 @@ namespace Model
         virtual void PutImageScanningConfigurationAsync(const Model::PutImageScanningConfigurationRequest& request, const PutImageScanningConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the image tag mutability settings for a repository. When a repository
-         * is configured with tag immutability, all image tags within the repository will
-         * be prevented them from being overwritten. For more information, see <a
+         * <p>Updates the image tag mutability settings for the specified repository. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
          * Tag Mutability</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -965,9 +1018,8 @@ namespace Model
         virtual Model::PutImageTagMutabilityOutcome PutImageTagMutability(const Model::PutImageTagMutabilityRequest& request) const;
 
         /**
-         * <p>Updates the image tag mutability settings for a repository. When a repository
-         * is configured with tag immutability, all image tags within the repository will
-         * be prevented them from being overwritten. For more information, see <a
+         * <p>Updates the image tag mutability settings for the specified repository. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
          * Tag Mutability</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -979,9 +1031,8 @@ namespace Model
         virtual Model::PutImageTagMutabilityOutcomeCallable PutImageTagMutabilityCallable(const Model::PutImageTagMutabilityRequest& request) const;
 
         /**
-         * <p>Updates the image tag mutability settings for a repository. When a repository
-         * is configured with tag immutability, all image tags within the repository will
-         * be prevented them from being overwritten. For more information, see <a
+         * <p>Updates the image tag mutability settings for the specified repository. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image
          * Tag Mutability</a> in the <i>Amazon Elastic Container Registry User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -993,8 +1044,8 @@ namespace Model
         virtual void PutImageTagMutabilityAsync(const Model::PutImageTagMutabilityRequest& request, const PutImageTagMutabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
-         * syntax, see <a
+         * <p>Creates or updates the lifecycle policy for the specified repository. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
          * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
@@ -1003,8 +1054,8 @@ namespace Model
         virtual Model::PutLifecyclePolicyOutcome PutLifecyclePolicy(const Model::PutLifecyclePolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
-         * syntax, see <a
+         * <p>Creates or updates the lifecycle policy for the specified repository. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
          * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
@@ -1015,8 +1066,8 @@ namespace Model
         virtual Model::PutLifecyclePolicyOutcomeCallable PutLifecyclePolicyCallable(const Model::PutLifecyclePolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a lifecycle policy. For information about lifecycle policy
-         * syntax, see <a
+         * <p>Creates or updates the lifecycle policy for the specified repository. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle
          * Policy Template</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy">AWS
@@ -1027,7 +1078,7 @@ namespace Model
         virtual void PutLifecyclePolicyAsync(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Applies a repository policy on a specified repository to control access
+         * <p>Applies a repository policy to the specified repository to control access
          * permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
          * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
@@ -1038,7 +1089,7 @@ namespace Model
         virtual Model::SetRepositoryPolicyOutcome SetRepositoryPolicy(const Model::SetRepositoryPolicyRequest& request) const;
 
         /**
-         * <p>Applies a repository policy on a specified repository to control access
+         * <p>Applies a repository policy to the specified repository to control access
          * permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
          * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
@@ -1051,7 +1102,7 @@ namespace Model
         virtual Model::SetRepositoryPolicyOutcomeCallable SetRepositoryPolicyCallable(const Model::SetRepositoryPolicyRequest& request) const;
 
         /**
-         * <p>Applies a repository policy on a specified repository to control access
+         * <p>Applies a repository policy to the specified repository to control access
          * permissions. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicies.html">Amazon
          * ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User
@@ -1104,16 +1155,18 @@ namespace Model
         virtual void StartImageScanAsync(const Model::StartImageScanRequest& request, const StartImageScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a preview of the specified lifecycle policy. This allows you to see
-         * the results before creating the lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a preview of a lifecycle policy for the specified repository. This
+         * allows you to see the results before associating the lifecycle policy with the
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">AWS
          * API Reference</a></p>
          */
         virtual Model::StartLifecyclePolicyPreviewOutcome StartLifecyclePolicyPreview(const Model::StartLifecyclePolicyPreviewRequest& request) const;
 
         /**
-         * <p>Starts a preview of the specified lifecycle policy. This allows you to see
-         * the results before creating the lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a preview of a lifecycle policy for the specified repository. This
+         * allows you to see the results before associating the lifecycle policy with the
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">AWS
          * API Reference</a></p>
          *
@@ -1122,8 +1175,9 @@ namespace Model
         virtual Model::StartLifecyclePolicyPreviewOutcomeCallable StartLifecyclePolicyPreviewCallable(const Model::StartLifecyclePolicyPreviewRequest& request) const;
 
         /**
-         * <p>Starts a preview of the specified lifecycle policy. This allows you to see
-         * the results before creating the lifecycle policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a preview of a lifecycle policy for the specified repository. This
+         * allows you to see the results before associating the lifecycle policy with the
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview">AWS
          * API Reference</a></p>
          *
@@ -1188,9 +1242,12 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is
-         * used by the Amazon ECR proxy, and it is not intended for general use by
-         * customers for pulling and pushing images. In most cases, you should use the
+         * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
+         * each new image layer is uploaded in parts. The maximum size of each image layer
+         * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
+         * once per each new image layer part.</p> <note> <p>This operation is used by the
+         * Amazon ECR proxy, and it is not intended for general use by customers for
+         * pulling and pushing images. In most cases, you should use the
          * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS
@@ -1199,9 +1256,12 @@ namespace Model
         virtual Model::UploadLayerPartOutcome UploadLayerPart(const Model::UploadLayerPartRequest& request) const;
 
         /**
-         * <p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is
-         * used by the Amazon ECR proxy, and it is not intended for general use by
-         * customers for pulling and pushing images. In most cases, you should use the
+         * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
+         * each new image layer is uploaded in parts. The maximum size of each image layer
+         * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
+         * once per each new image layer part.</p> <note> <p>This operation is used by the
+         * Amazon ECR proxy, and it is not intended for general use by customers for
+         * pulling and pushing images. In most cases, you should use the
          * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS
@@ -1212,9 +1272,12 @@ namespace Model
         virtual Model::UploadLayerPartOutcomeCallable UploadLayerPartCallable(const Model::UploadLayerPartRequest& request) const;
 
         /**
-         * <p>Uploads an image layer part to Amazon ECR.</p> <note> <p>This operation is
-         * used by the Amazon ECR proxy, and it is not intended for general use by
-         * customers for pulling and pushing images. In most cases, you should use the
+         * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
+         * each new image layer is uploaded in parts. The maximum size of each image layer
+         * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
+         * once per each new image layer part.</p> <note> <p>This operation is used by the
+         * Amazon ECR proxy, and it is not intended for general use by customers for
+         * pulling and pushing images. In most cases, you should use the
          * <code>docker</code> CLI to pull, tag, and push images.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart">AWS

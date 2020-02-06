@@ -58,56 +58,56 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
-     * the credentials only if they exist in your current region. </p> </note>
+     * the credentials only if they exist in your current AWS Region. </p> </note>
      */
     inline const Aws::String& GetCredential() const{ return m_credential; }
 
     /**
      * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
-     * the credentials only if they exist in your current region. </p> </note>
+     * the credentials only if they exist in your current AWS Region. </p> </note>
      */
     inline bool CredentialHasBeenSet() const { return m_credentialHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
-     * the credentials only if they exist in your current region. </p> </note>
+     * the credentials only if they exist in your current AWS Region. </p> </note>
      */
     inline void SetCredential(const Aws::String& value) { m_credentialHasBeenSet = true; m_credential = value; }
 
     /**
      * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
-     * the credentials only if they exist in your current region. </p> </note>
+     * the credentials only if they exist in your current AWS Region. </p> </note>
      */
     inline void SetCredential(Aws::String&& value) { m_credentialHasBeenSet = true; m_credential = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
-     * the credentials only if they exist in your current region. </p> </note>
+     * the credentials only if they exist in your current AWS Region. </p> </note>
      */
     inline void SetCredential(const char* value) { m_credentialHasBeenSet = true; m_credential.assign(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
-     * the credentials only if they exist in your current region. </p> </note>
+     * the credentials only if they exist in your current AWS Region. </p> </note>
      */
     inline RegistryCredential& WithCredential(const Aws::String& value) { SetCredential(value); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
-     * the credentials only if they exist in your current region. </p> </note>
+     * the credentials only if they exist in your current AWS Region. </p> </note>
      */
     inline RegistryCredential& WithCredential(Aws::String&& value) { SetCredential(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) or name of credentials created using AWS
      * Secrets Manager. </p> <note> <p> The <code>credential</code> can use the name of
-     * the credentials only if they exist in your current region. </p> </note>
+     * the credentials only if they exist in your current AWS Region. </p> </note>
      */
     inline RegistryCredential& WithCredential(const char* value) { SetCredential(value); return *this;}
 

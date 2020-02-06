@@ -35,6 +35,11 @@ namespace AppSync
 namespace Model
 {
 
+  /**
+   * <p>The <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ApiCache">AWS
+   * API Reference</a></p>
+   */
   class AWS_APPSYNC_API ApiCache
   {
   public:

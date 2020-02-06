@@ -30,7 +30,9 @@ PutSlotTypeRequest::PutSlotTypeRequest() :
     m_valueSelectionStrategy(SlotValueSelectionStrategy::NOT_SET),
     m_valueSelectionStrategyHasBeenSet(false),
     m_createVersion(false),
-    m_createVersionHasBeenSet(false)
+    m_createVersionHasBeenSet(false),
+    m_parentSlotTypeSignatureHasBeenSet(false),
+    m_slotTypeConfigurationsHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,23 @@ Aws::String PutSlotTypeRequest::SerializePayload() const
   if(m_createVersionHasBeenSet)
   {
    payload.WithBool("createVersion", m_createVersion);
+
+  }
+
+  if(m_parentSlotTypeSignatureHasBeenSet)
+  {
+   payload.WithString("parentSlotTypeSignature", m_parentSlotTypeSignature);
+
+  }
+
+  if(m_slotTypeConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> slotTypeConfigurationsJsonList(m_slotTypeConfigurations.size());
+   for(unsigned slotTypeConfigurationsIndex = 0; slotTypeConfigurationsIndex < slotTypeConfigurationsJsonList.GetLength(); ++slotTypeConfigurationsIndex)
+   {
+     slotTypeConfigurationsJsonList[slotTypeConfigurationsIndex].AsObject(m_slotTypeConfigurations[slotTypeConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("slotTypeConfigurations", std::move(slotTypeConfigurationsJsonList));
 
   }
 

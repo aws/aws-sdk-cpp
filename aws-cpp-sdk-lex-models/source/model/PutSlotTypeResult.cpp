@@ -99,6 +99,21 @@ PutSlotTypeResult& PutSlotTypeResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("parentSlotTypeSignature"))
+  {
+    m_parentSlotTypeSignature = jsonValue.GetString("parentSlotTypeSignature");
+
+  }
+
+  if(jsonValue.ValueExists("slotTypeConfigurations"))
+  {
+    Array<JsonView> slotTypeConfigurationsJsonList = jsonValue.GetArray("slotTypeConfigurations");
+    for(unsigned slotTypeConfigurationsIndex = 0; slotTypeConfigurationsIndex < slotTypeConfigurationsJsonList.GetLength(); ++slotTypeConfigurationsIndex)
+    {
+      m_slotTypeConfigurations.push_back(slotTypeConfigurationsJsonList[slotTypeConfigurationsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

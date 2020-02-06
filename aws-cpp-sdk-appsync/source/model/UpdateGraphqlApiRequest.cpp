@@ -30,7 +30,9 @@ UpdateGraphqlApiRequest::UpdateGraphqlApiRequest() :
     m_authenticationTypeHasBeenSet(false),
     m_userPoolConfigHasBeenSet(false),
     m_openIDConnectConfigHasBeenSet(false),
-    m_additionalAuthenticationProvidersHasBeenSet(false)
+    m_additionalAuthenticationProvidersHasBeenSet(false),
+    m_xrayEnabled(false),
+    m_xrayEnabledHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,12 @@ Aws::String UpdateGraphqlApiRequest::SerializePayload() const
      additionalAuthenticationProvidersJsonList[additionalAuthenticationProvidersIndex].AsObject(m_additionalAuthenticationProviders[additionalAuthenticationProvidersIndex].Jsonize());
    }
    payload.WithArray("additionalAuthenticationProviders", std::move(additionalAuthenticationProvidersJsonList));
+
+  }
+
+  if(m_xrayEnabledHasBeenSet)
+  {
+   payload.WithBool("xrayEnabled", m_xrayEnabled);
 
   }
 

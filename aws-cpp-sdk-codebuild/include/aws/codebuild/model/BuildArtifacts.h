@@ -219,32 +219,32 @@ namespace Model
 
 
     /**
-     * <p> If this flag is set, a name specified in the build spec file overrides the
-     * artifact name. The name specified in a build spec file is calculated at build
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */
     inline bool GetOverrideArtifactName() const{ return m_overrideArtifactName; }
 
     /**
-     * <p> If this flag is set, a name specified in the build spec file overrides the
-     * artifact name. The name specified in a build spec file is calculated at build
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */
     inline bool OverrideArtifactNameHasBeenSet() const { return m_overrideArtifactNameHasBeenSet; }
 
     /**
-     * <p> If this flag is set, a name specified in the build spec file overrides the
-     * artifact name. The name specified in a build spec file is calculated at build
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */
     inline void SetOverrideArtifactName(bool value) { m_overrideArtifactNameHasBeenSet = true; m_overrideArtifactName = value; }
 
     /**
-     * <p> If this flag is set, a name specified in the build spec file overrides the
-     * artifact name. The name specified in a build spec file is calculated at build
+     * <p> If this flag is set, a name specified in the buildspec file overrides the
+     * artifact name. The name specified in a buildspec file is calculated at build
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */

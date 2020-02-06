@@ -71,115 +71,115 @@ namespace Model
 
 
     /**
-     * <p>The block token for the block index of the <code>first snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation. This value is
-     * absent if the first snapshot does not have the changed block that is on the
-     * second snapshot.</p>
+     * <p>The block token for the block index of the <code>FirstSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation. This value is absent
+     * if the first snapshot does not have the changed block that is on the second
+     * snapshot.</p>
      */
     inline const Aws::String& GetFirstBlockToken() const{ return m_firstBlockToken; }
 
     /**
-     * <p>The block token for the block index of the <code>first snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation. This value is
-     * absent if the first snapshot does not have the changed block that is on the
-     * second snapshot.</p>
+     * <p>The block token for the block index of the <code>FirstSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation. This value is absent
+     * if the first snapshot does not have the changed block that is on the second
+     * snapshot.</p>
      */
     inline bool FirstBlockTokenHasBeenSet() const { return m_firstBlockTokenHasBeenSet; }
 
     /**
-     * <p>The block token for the block index of the <code>first snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation. This value is
-     * absent if the first snapshot does not have the changed block that is on the
-     * second snapshot.</p>
+     * <p>The block token for the block index of the <code>FirstSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation. This value is absent
+     * if the first snapshot does not have the changed block that is on the second
+     * snapshot.</p>
      */
     inline void SetFirstBlockToken(const Aws::String& value) { m_firstBlockTokenHasBeenSet = true; m_firstBlockToken = value; }
 
     /**
-     * <p>The block token for the block index of the <code>first snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation. This value is
-     * absent if the first snapshot does not have the changed block that is on the
-     * second snapshot.</p>
+     * <p>The block token for the block index of the <code>FirstSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation. This value is absent
+     * if the first snapshot does not have the changed block that is on the second
+     * snapshot.</p>
      */
     inline void SetFirstBlockToken(Aws::String&& value) { m_firstBlockTokenHasBeenSet = true; m_firstBlockToken = std::move(value); }
 
     /**
-     * <p>The block token for the block index of the <code>first snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation. This value is
-     * absent if the first snapshot does not have the changed block that is on the
-     * second snapshot.</p>
+     * <p>The block token for the block index of the <code>FirstSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation. This value is absent
+     * if the first snapshot does not have the changed block that is on the second
+     * snapshot.</p>
      */
     inline void SetFirstBlockToken(const char* value) { m_firstBlockTokenHasBeenSet = true; m_firstBlockToken.assign(value); }
 
     /**
-     * <p>The block token for the block index of the <code>first snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation. This value is
-     * absent if the first snapshot does not have the changed block that is on the
-     * second snapshot.</p>
+     * <p>The block token for the block index of the <code>FirstSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation. This value is absent
+     * if the first snapshot does not have the changed block that is on the second
+     * snapshot.</p>
      */
     inline ChangedBlock& WithFirstBlockToken(const Aws::String& value) { SetFirstBlockToken(value); return *this;}
 
     /**
-     * <p>The block token for the block index of the <code>first snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation. This value is
-     * absent if the first snapshot does not have the changed block that is on the
-     * second snapshot.</p>
+     * <p>The block token for the block index of the <code>FirstSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation. This value is absent
+     * if the first snapshot does not have the changed block that is on the second
+     * snapshot.</p>
      */
     inline ChangedBlock& WithFirstBlockToken(Aws::String&& value) { SetFirstBlockToken(std::move(value)); return *this;}
 
     /**
-     * <p>The block token for the block index of the <code>first snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation. This value is
-     * absent if the first snapshot does not have the changed block that is on the
-     * second snapshot.</p>
+     * <p>The block token for the block index of the <code>FirstSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation. This value is absent
+     * if the first snapshot does not have the changed block that is on the second
+     * snapshot.</p>
      */
     inline ChangedBlock& WithFirstBlockToken(const char* value) { SetFirstBlockToken(value); return *this;}
 
 
     /**
-     * <p>The block token for the block index of the <code>second snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation.</p>
+     * <p>The block token for the block index of the <code>SecondSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
     inline const Aws::String& GetSecondBlockToken() const{ return m_secondBlockToken; }
 
     /**
-     * <p>The block token for the block index of the <code>second snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation.</p>
+     * <p>The block token for the block index of the <code>SecondSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
     inline bool SecondBlockTokenHasBeenSet() const { return m_secondBlockTokenHasBeenSet; }
 
     /**
-     * <p>The block token for the block index of the <code>second snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation.</p>
+     * <p>The block token for the block index of the <code>SecondSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
     inline void SetSecondBlockToken(const Aws::String& value) { m_secondBlockTokenHasBeenSet = true; m_secondBlockToken = value; }
 
     /**
-     * <p>The block token for the block index of the <code>second snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation.</p>
+     * <p>The block token for the block index of the <code>SecondSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
     inline void SetSecondBlockToken(Aws::String&& value) { m_secondBlockTokenHasBeenSet = true; m_secondBlockToken = std::move(value); }
 
     /**
-     * <p>The block token for the block index of the <code>second snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation.</p>
+     * <p>The block token for the block index of the <code>SecondSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
     inline void SetSecondBlockToken(const char* value) { m_secondBlockTokenHasBeenSet = true; m_secondBlockToken.assign(value); }
 
     /**
-     * <p>The block token for the block index of the <code>second snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation.</p>
+     * <p>The block token for the block index of the <code>SecondSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
     inline ChangedBlock& WithSecondBlockToken(const Aws::String& value) { SetSecondBlockToken(value); return *this;}
 
     /**
-     * <p>The block token for the block index of the <code>second snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation.</p>
+     * <p>The block token for the block index of the <code>SecondSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
     inline ChangedBlock& WithSecondBlockToken(Aws::String&& value) { SetSecondBlockToken(std::move(value)); return *this;}
 
     /**
-     * <p>The block token for the block index of the <code>second snapshot ID</code>
-     * specified in the <code>list changed blocks</code> operation.</p>
+     * <p>The block token for the block index of the <code>SecondSnapshotId</code>
+     * specified in the <code>ListChangedBlocks</code> operation.</p>
      */
     inline ChangedBlock& WithSecondBlockToken(const char* value) { SetSecondBlockToken(value); return *this;}
 
