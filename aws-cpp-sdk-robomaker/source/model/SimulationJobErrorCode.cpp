@@ -44,10 +44,14 @@ namespace Aws
         static const int InvalidBundleRobotApplication_HASH = HashingUtils::HashString("InvalidBundleRobotApplication");
         static const int InvalidBundleSimulationApplication_HASH = HashingUtils::HashString("InvalidBundleSimulationApplication");
         static const int InvalidS3Resource_HASH = HashingUtils::HashString("InvalidS3Resource");
+        static const int LimitExceeded_HASH = HashingUtils::HashString("LimitExceeded");
         static const int MismatchedEtag_HASH = HashingUtils::HashString("MismatchedEtag");
         static const int RobotApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("RobotApplicationVersionMismatchedEtag");
         static const int SimulationApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("SimulationApplicationVersionMismatchedEtag");
         static const int ResourceNotFound_HASH = HashingUtils::HashString("ResourceNotFound");
+        static const int RequestThrottled_HASH = HashingUtils::HashString("RequestThrottled");
+        static const int BatchTimedOut_HASH = HashingUtils::HashString("BatchTimedOut");
+        static const int BatchCanceled_HASH = HashingUtils::HashString("BatchCanceled");
         static const int InvalidInput_HASH = HashingUtils::HashString("InvalidInput");
         static const int WrongRegionS3Bucket_HASH = HashingUtils::HashString("WrongRegionS3Bucket");
         static const int WrongRegionS3Output_HASH = HashingUtils::HashString("WrongRegionS3Output");
@@ -114,6 +118,10 @@ namespace Aws
           {
             return SimulationJobErrorCode::InvalidS3Resource;
           }
+          else if (hashCode == LimitExceeded_HASH)
+          {
+            return SimulationJobErrorCode::LimitExceeded;
+          }
           else if (hashCode == MismatchedEtag_HASH)
           {
             return SimulationJobErrorCode::MismatchedEtag;
@@ -129,6 +137,18 @@ namespace Aws
           else if (hashCode == ResourceNotFound_HASH)
           {
             return SimulationJobErrorCode::ResourceNotFound;
+          }
+          else if (hashCode == RequestThrottled_HASH)
+          {
+            return SimulationJobErrorCode::RequestThrottled;
+          }
+          else if (hashCode == BatchTimedOut_HASH)
+          {
+            return SimulationJobErrorCode::BatchTimedOut;
+          }
+          else if (hashCode == BatchCanceled_HASH)
+          {
+            return SimulationJobErrorCode::BatchCanceled;
           }
           else if (hashCode == InvalidInput_HASH)
           {
@@ -192,6 +212,8 @@ namespace Aws
             return "InvalidBundleSimulationApplication";
           case SimulationJobErrorCode::InvalidS3Resource:
             return "InvalidS3Resource";
+          case SimulationJobErrorCode::LimitExceeded:
+            return "LimitExceeded";
           case SimulationJobErrorCode::MismatchedEtag:
             return "MismatchedEtag";
           case SimulationJobErrorCode::RobotApplicationVersionMismatchedEtag:
@@ -200,6 +222,12 @@ namespace Aws
             return "SimulationApplicationVersionMismatchedEtag";
           case SimulationJobErrorCode::ResourceNotFound:
             return "ResourceNotFound";
+          case SimulationJobErrorCode::RequestThrottled:
+            return "RequestThrottled";
+          case SimulationJobErrorCode::BatchTimedOut:
+            return "BatchTimedOut";
+          case SimulationJobErrorCode::BatchCanceled:
+            return "BatchCanceled";
           case SimulationJobErrorCode::InvalidInput:
             return "InvalidInput";
           case SimulationJobErrorCode::WrongRegionS3Bucket:

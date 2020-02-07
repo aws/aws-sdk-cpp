@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p> Define and configure the outputs AMIs of the pipeline. </p><p><h3>See
+   * <p> Define and configure the output AMIs of the pipeline. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/AmiDistributionConfiguration">AWS
    * API Reference</a></p>
@@ -133,67 +133,67 @@ namespace Model
 
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAmiTags() const{ return m_amiTags; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline bool AmiTagsHasBeenSet() const { return m_amiTagsHasBeenSet; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline void SetAmiTags(const Aws::Map<Aws::String, Aws::String>& value) { m_amiTagsHasBeenSet = true; m_amiTags = value; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline void SetAmiTags(Aws::Map<Aws::String, Aws::String>&& value) { m_amiTagsHasBeenSet = true; m_amiTags = std::move(value); }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& WithAmiTags(const Aws::Map<Aws::String, Aws::String>& value) { SetAmiTags(value); return *this;}
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& WithAmiTags(Aws::Map<Aws::String, Aws::String>&& value) { SetAmiTags(std::move(value)); return *this;}
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(const Aws::String& key, const Aws::String& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(key, value); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(Aws::String&& key, const Aws::String& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(const Aws::String& key, Aws::String&& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(Aws::String&& key, Aws::String&& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(const char* key, Aws::String&& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(Aws::String&& key, const char* value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this region. </p>
+     * <p> The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(const char* key, const char* value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(key, value); return *this; }
 

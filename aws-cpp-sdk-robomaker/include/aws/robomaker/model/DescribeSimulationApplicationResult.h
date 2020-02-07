@@ -220,27 +220,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the robot software suite.</p>
+     * <p>Information about the robot software suite (ROS distribution).</p>
      */
     inline const RobotSoftwareSuite& GetRobotSoftwareSuite() const{ return m_robotSoftwareSuite; }
 
     /**
-     * <p>Information about the robot software suite.</p>
+     * <p>Information about the robot software suite (ROS distribution).</p>
      */
     inline void SetRobotSoftwareSuite(const RobotSoftwareSuite& value) { m_robotSoftwareSuite = value; }
 
     /**
-     * <p>Information about the robot software suite.</p>
+     * <p>Information about the robot software suite (ROS distribution).</p>
      */
     inline void SetRobotSoftwareSuite(RobotSoftwareSuite&& value) { m_robotSoftwareSuite = std::move(value); }
 
     /**
-     * <p>Information about the robot software suite.</p>
+     * <p>Information about the robot software suite (ROS distribution).</p>
      */
     inline DescribeSimulationApplicationResult& WithRobotSoftwareSuite(const RobotSoftwareSuite& value) { SetRobotSoftwareSuite(value); return *this;}
 
     /**
-     * <p>Information about the robot software suite.</p>
+     * <p>Information about the robot software suite (ROS distribution).</p>
      */
     inline DescribeSimulationApplicationResult& WithRobotSoftwareSuite(RobotSoftwareSuite&& value) { SetRobotSoftwareSuite(std::move(value)); return *this;}
 

@@ -24,6 +24,7 @@
 #include <aws/robomaker/model/BatchDescribeSimulationJobResult.h>
 #include <aws/robomaker/model/CancelDeploymentJobResult.h>
 #include <aws/robomaker/model/CancelSimulationJobResult.h>
+#include <aws/robomaker/model/CancelSimulationJobBatchResult.h>
 #include <aws/robomaker/model/CreateDeploymentJobResult.h>
 #include <aws/robomaker/model/CreateFleetResult.h>
 #include <aws/robomaker/model/CreateRobotResult.h>
@@ -43,15 +44,18 @@
 #include <aws/robomaker/model/DescribeRobotApplicationResult.h>
 #include <aws/robomaker/model/DescribeSimulationApplicationResult.h>
 #include <aws/robomaker/model/DescribeSimulationJobResult.h>
+#include <aws/robomaker/model/DescribeSimulationJobBatchResult.h>
 #include <aws/robomaker/model/ListDeploymentJobsResult.h>
 #include <aws/robomaker/model/ListFleetsResult.h>
 #include <aws/robomaker/model/ListRobotApplicationsResult.h>
 #include <aws/robomaker/model/ListRobotsResult.h>
 #include <aws/robomaker/model/ListSimulationApplicationsResult.h>
+#include <aws/robomaker/model/ListSimulationJobBatchesResult.h>
 #include <aws/robomaker/model/ListSimulationJobsResult.h>
 #include <aws/robomaker/model/ListTagsForResourceResult.h>
 #include <aws/robomaker/model/RegisterRobotResult.h>
 #include <aws/robomaker/model/RestartSimulationJobResult.h>
+#include <aws/robomaker/model/StartSimulationJobBatchResult.h>
 #include <aws/robomaker/model/SyncDeploymentJobResult.h>
 #include <aws/robomaker/model/TagResourceResult.h>
 #include <aws/robomaker/model/UntagResourceResult.h>
@@ -99,6 +103,7 @@ namespace Model
         class BatchDescribeSimulationJobRequest;
         class CancelDeploymentJobRequest;
         class CancelSimulationJobRequest;
+        class CancelSimulationJobBatchRequest;
         class CreateDeploymentJobRequest;
         class CreateFleetRequest;
         class CreateRobotRequest;
@@ -118,15 +123,18 @@ namespace Model
         class DescribeRobotApplicationRequest;
         class DescribeSimulationApplicationRequest;
         class DescribeSimulationJobRequest;
+        class DescribeSimulationJobBatchRequest;
         class ListDeploymentJobsRequest;
         class ListFleetsRequest;
         class ListRobotApplicationsRequest;
         class ListRobotsRequest;
         class ListSimulationApplicationsRequest;
+        class ListSimulationJobBatchesRequest;
         class ListSimulationJobsRequest;
         class ListTagsForResourceRequest;
         class RegisterRobotRequest;
         class RestartSimulationJobRequest;
+        class StartSimulationJobBatchRequest;
         class SyncDeploymentJobRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -136,6 +144,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchDescribeSimulationJobResult, Aws::Client::AWSError<RoboMakerErrors>> BatchDescribeSimulationJobOutcome;
         typedef Aws::Utils::Outcome<CancelDeploymentJobResult, Aws::Client::AWSError<RoboMakerErrors>> CancelDeploymentJobOutcome;
         typedef Aws::Utils::Outcome<CancelSimulationJobResult, Aws::Client::AWSError<RoboMakerErrors>> CancelSimulationJobOutcome;
+        typedef Aws::Utils::Outcome<CancelSimulationJobBatchResult, Aws::Client::AWSError<RoboMakerErrors>> CancelSimulationJobBatchOutcome;
         typedef Aws::Utils::Outcome<CreateDeploymentJobResult, Aws::Client::AWSError<RoboMakerErrors>> CreateDeploymentJobOutcome;
         typedef Aws::Utils::Outcome<CreateFleetResult, Aws::Client::AWSError<RoboMakerErrors>> CreateFleetOutcome;
         typedef Aws::Utils::Outcome<CreateRobotResult, Aws::Client::AWSError<RoboMakerErrors>> CreateRobotOutcome;
@@ -155,15 +164,18 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeRobotApplicationResult, Aws::Client::AWSError<RoboMakerErrors>> DescribeRobotApplicationOutcome;
         typedef Aws::Utils::Outcome<DescribeSimulationApplicationResult, Aws::Client::AWSError<RoboMakerErrors>> DescribeSimulationApplicationOutcome;
         typedef Aws::Utils::Outcome<DescribeSimulationJobResult, Aws::Client::AWSError<RoboMakerErrors>> DescribeSimulationJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeSimulationJobBatchResult, Aws::Client::AWSError<RoboMakerErrors>> DescribeSimulationJobBatchOutcome;
         typedef Aws::Utils::Outcome<ListDeploymentJobsResult, Aws::Client::AWSError<RoboMakerErrors>> ListDeploymentJobsOutcome;
         typedef Aws::Utils::Outcome<ListFleetsResult, Aws::Client::AWSError<RoboMakerErrors>> ListFleetsOutcome;
         typedef Aws::Utils::Outcome<ListRobotApplicationsResult, Aws::Client::AWSError<RoboMakerErrors>> ListRobotApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListRobotsResult, Aws::Client::AWSError<RoboMakerErrors>> ListRobotsOutcome;
         typedef Aws::Utils::Outcome<ListSimulationApplicationsResult, Aws::Client::AWSError<RoboMakerErrors>> ListSimulationApplicationsOutcome;
+        typedef Aws::Utils::Outcome<ListSimulationJobBatchesResult, Aws::Client::AWSError<RoboMakerErrors>> ListSimulationJobBatchesOutcome;
         typedef Aws::Utils::Outcome<ListSimulationJobsResult, Aws::Client::AWSError<RoboMakerErrors>> ListSimulationJobsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<RoboMakerErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RegisterRobotResult, Aws::Client::AWSError<RoboMakerErrors>> RegisterRobotOutcome;
         typedef Aws::Utils::Outcome<RestartSimulationJobResult, Aws::Client::AWSError<RoboMakerErrors>> RestartSimulationJobOutcome;
+        typedef Aws::Utils::Outcome<StartSimulationJobBatchResult, Aws::Client::AWSError<RoboMakerErrors>> StartSimulationJobBatchOutcome;
         typedef Aws::Utils::Outcome<SyncDeploymentJobResult, Aws::Client::AWSError<RoboMakerErrors>> SyncDeploymentJobOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<RoboMakerErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<RoboMakerErrors>> UntagResourceOutcome;
@@ -173,6 +185,7 @@ namespace Model
         typedef std::future<BatchDescribeSimulationJobOutcome> BatchDescribeSimulationJobOutcomeCallable;
         typedef std::future<CancelDeploymentJobOutcome> CancelDeploymentJobOutcomeCallable;
         typedef std::future<CancelSimulationJobOutcome> CancelSimulationJobOutcomeCallable;
+        typedef std::future<CancelSimulationJobBatchOutcome> CancelSimulationJobBatchOutcomeCallable;
         typedef std::future<CreateDeploymentJobOutcome> CreateDeploymentJobOutcomeCallable;
         typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
         typedef std::future<CreateRobotOutcome> CreateRobotOutcomeCallable;
@@ -192,15 +205,18 @@ namespace Model
         typedef std::future<DescribeRobotApplicationOutcome> DescribeRobotApplicationOutcomeCallable;
         typedef std::future<DescribeSimulationApplicationOutcome> DescribeSimulationApplicationOutcomeCallable;
         typedef std::future<DescribeSimulationJobOutcome> DescribeSimulationJobOutcomeCallable;
+        typedef std::future<DescribeSimulationJobBatchOutcome> DescribeSimulationJobBatchOutcomeCallable;
         typedef std::future<ListDeploymentJobsOutcome> ListDeploymentJobsOutcomeCallable;
         typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
         typedef std::future<ListRobotApplicationsOutcome> ListRobotApplicationsOutcomeCallable;
         typedef std::future<ListRobotsOutcome> ListRobotsOutcomeCallable;
         typedef std::future<ListSimulationApplicationsOutcome> ListSimulationApplicationsOutcomeCallable;
+        typedef std::future<ListSimulationJobBatchesOutcome> ListSimulationJobBatchesOutcomeCallable;
         typedef std::future<ListSimulationJobsOutcome> ListSimulationJobsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterRobotOutcome> RegisterRobotOutcomeCallable;
         typedef std::future<RestartSimulationJobOutcome> RestartSimulationJobOutcomeCallable;
+        typedef std::future<StartSimulationJobBatchOutcome> StartSimulationJobBatchOutcomeCallable;
         typedef std::future<SyncDeploymentJobOutcome> SyncDeploymentJobOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -213,6 +229,7 @@ namespace Model
     typedef std::function<void(const RoboMakerClient*, const Model::BatchDescribeSimulationJobRequest&, const Model::BatchDescribeSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeSimulationJobResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::CancelDeploymentJobRequest&, const Model::CancelDeploymentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDeploymentJobResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::CancelSimulationJobRequest&, const Model::CancelSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSimulationJobResponseReceivedHandler;
+    typedef std::function<void(const RoboMakerClient*, const Model::CancelSimulationJobBatchRequest&, const Model::CancelSimulationJobBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelSimulationJobBatchResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::CreateDeploymentJobRequest&, const Model::CreateDeploymentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentJobResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::CreateRobotRequest&, const Model::CreateRobotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRobotResponseReceivedHandler;
@@ -232,15 +249,18 @@ namespace Model
     typedef std::function<void(const RoboMakerClient*, const Model::DescribeRobotApplicationRequest&, const Model::DescribeRobotApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRobotApplicationResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::DescribeSimulationApplicationRequest&, const Model::DescribeSimulationApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSimulationApplicationResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::DescribeSimulationJobRequest&, const Model::DescribeSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSimulationJobResponseReceivedHandler;
+    typedef std::function<void(const RoboMakerClient*, const Model::DescribeSimulationJobBatchRequest&, const Model::DescribeSimulationJobBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSimulationJobBatchResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListDeploymentJobsRequest&, const Model::ListDeploymentJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeploymentJobsResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListRobotApplicationsRequest&, const Model::ListRobotApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRobotApplicationsResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListRobotsRequest&, const Model::ListRobotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRobotsResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListSimulationApplicationsRequest&, const Model::ListSimulationApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSimulationApplicationsResponseReceivedHandler;
+    typedef std::function<void(const RoboMakerClient*, const Model::ListSimulationJobBatchesRequest&, const Model::ListSimulationJobBatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSimulationJobBatchesResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListSimulationJobsRequest&, const Model::ListSimulationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSimulationJobsResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::RegisterRobotRequest&, const Model::RegisterRobotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterRobotResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::RestartSimulationJobRequest&, const Model::RestartSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestartSimulationJobResponseReceivedHandler;
+    typedef std::function<void(const RoboMakerClient*, const Model::StartSimulationJobBatchRequest&, const Model::StartSimulationJobBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSimulationJobBatchResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::SyncDeploymentJobRequest&, const Model::SyncDeploymentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SyncDeploymentJobResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -353,6 +373,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CancelSimulationJobAsync(const Model::CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels a simulation job batch. When you cancel a simulation job batch, you
+         * are also cancelling all of the active simulation jobs created as part of the
+         * batch. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelSimulationJobBatchOutcome CancelSimulationJobBatch(const Model::CancelSimulationJobBatchRequest& request) const;
+
+        /**
+         * <p>Cancels a simulation job batch. When you cancel a simulation job batch, you
+         * are also cancelling all of the active simulation jobs created as part of the
+         * batch. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelSimulationJobBatchOutcomeCallable CancelSimulationJobBatchCallable(const Model::CancelSimulationJobBatchRequest& request) const;
+
+        /**
+         * <p>Cancels a simulation job batch. When you cancel a simulation job batch, you
+         * are also cancelling all of the active simulation jobs created as part of the
+         * batch. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CancelSimulationJobBatch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelSimulationJobBatchAsync(const Model::CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deploys a specific version of a robot application to robots in a fleet.</p>
@@ -863,9 +914,33 @@ namespace Model
         virtual void DescribeSimulationJobAsync(const Model::DescribeSimulationJobRequest& request, const DescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a simulation job batch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSimulationJobBatchOutcome DescribeSimulationJobBatch(const Model::DescribeSimulationJobBatchRequest& request) const;
+
+        /**
+         * <p>Describes a simulation job batch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeSimulationJobBatchOutcomeCallable DescribeSimulationJobBatchCallable(const Model::DescribeSimulationJobBatchRequest& request) const;
+
+        /**
+         * <p>Describes a simulation job batch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/DescribeSimulationJobBatch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeSimulationJobBatchAsync(const Model::DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          */
@@ -873,8 +948,7 @@ namespace Model
 
         /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          *
@@ -884,8 +958,7 @@ namespace Model
 
         /**
          * <p>Returns a list of deployment jobs for a fleet. You can optionally provide
-         * filters to retrieve specific deployment jobs. </p> <note> <p> </p>
-         * </note><p><h3>See Also:</h3>   <a
+         * filters to retrieve specific deployment jobs. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListDeploymentJobs">AWS
          * API Reference</a></p>
          *
@@ -1006,6 +1079,34 @@ namespace Model
         virtual void ListSimulationApplicationsAsync(const Model::ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list simulation job batches. You can optionally provide filters to
+         * retrieve specific simulation batch jobs. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSimulationJobBatchesOutcome ListSimulationJobBatches(const Model::ListSimulationJobBatchesRequest& request) const;
+
+        /**
+         * <p>Returns a list simulation job batches. You can optionally provide filters to
+         * retrieve specific simulation batch jobs. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSimulationJobBatchesOutcomeCallable ListSimulationJobBatchesCallable(const Model::ListSimulationJobBatchesRequest& request) const;
+
+        /**
+         * <p>Returns a list simulation job batches. You can optionally provide filters to
+         * retrieve specific simulation batch jobs. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobBatches">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSimulationJobBatchesAsync(const Model::ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of simulation jobs. You can optionally provide filters to
          * retrieve specific simulation jobs. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListSimulationJobs">AWS
@@ -1107,6 +1208,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RestartSimulationJobAsync(const Model::RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts a new simulation job batch. The batch is defined using one or more
+         * <code>SimulationJobRequest</code> objects. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSimulationJobBatchOutcome StartSimulationJobBatch(const Model::StartSimulationJobBatchRequest& request) const;
+
+        /**
+         * <p>Starts a new simulation job batch. The batch is defined using one or more
+         * <code>SimulationJobRequest</code> objects. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartSimulationJobBatchOutcomeCallable StartSimulationJobBatchCallable(const Model::StartSimulationJobBatchRequest& request) const;
+
+        /**
+         * <p>Starts a new simulation job batch. The batch is defined using one or more
+         * <code>SimulationJobRequest</code> objects. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/StartSimulationJobBatch">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartSimulationJobBatchAsync(const Model::StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Syncrhonizes robots in a fleet to the latest deployment. This is helpful if
@@ -1273,6 +1402,7 @@ namespace Model
         void BatchDescribeSimulationJobAsyncHelper(const Model::BatchDescribeSimulationJobRequest& request, const BatchDescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelDeploymentJobAsyncHelper(const Model::CancelDeploymentJobRequest& request, const CancelDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelSimulationJobAsyncHelper(const Model::CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelSimulationJobBatchAsyncHelper(const Model::CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDeploymentJobAsyncHelper(const Model::CreateDeploymentJobRequest& request, const CreateDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFleetAsyncHelper(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRobotAsyncHelper(const Model::CreateRobotRequest& request, const CreateRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1292,15 +1422,18 @@ namespace Model
         void DescribeRobotApplicationAsyncHelper(const Model::DescribeRobotApplicationRequest& request, const DescribeRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSimulationApplicationAsyncHelper(const Model::DescribeSimulationApplicationRequest& request, const DescribeSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSimulationJobAsyncHelper(const Model::DescribeSimulationJobRequest& request, const DescribeSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeSimulationJobBatchAsyncHelper(const Model::DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeploymentJobsAsyncHelper(const Model::ListDeploymentJobsRequest& request, const ListDeploymentJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFleetsAsyncHelper(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRobotApplicationsAsyncHelper(const Model::ListRobotApplicationsRequest& request, const ListRobotApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRobotsAsyncHelper(const Model::ListRobotsRequest& request, const ListRobotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSimulationApplicationsAsyncHelper(const Model::ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSimulationJobBatchesAsyncHelper(const Model::ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSimulationJobsAsyncHelper(const Model::ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterRobotAsyncHelper(const Model::RegisterRobotRequest& request, const RegisterRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestartSimulationJobAsyncHelper(const Model::RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartSimulationJobBatchAsyncHelper(const Model::StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SyncDeploymentJobAsyncHelper(const Model::SyncDeploymentJobRequest& request, const SyncDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

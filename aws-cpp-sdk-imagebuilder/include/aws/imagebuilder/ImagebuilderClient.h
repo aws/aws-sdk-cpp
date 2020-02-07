@@ -278,17 +278,10 @@ namespace Model
     typedef std::function<void(const ImagebuilderClient*, const Model::UpdateInfrastructureConfigurationRequest&, const Model::UpdateInfrastructureConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInfrastructureConfigurationResponseReceivedHandler;
 
   /**
-   * <p> Amazon Elastic Compute Cloud Image Builder provides a one-stop-shop to
-   * automate the image management processes. You configure an automated pipeline
-   * that creates images for use on AWS. As software updates become available, Image
-   * Builder automatically produces a new image based on a customizable schedule and
-   * distributes it to stipulated AWS Regions after running tests on it. With the
-   * Image Builder, organizations can capture their internal or industry-specific
-   * compliance policies as a vetted template that can be consistently applied to
-   * every new image. Built-in integration with AWS Organizations provides customers
-   * with a centralized way to enforce image distribution and access policies across
-   * their AWS accounts and Regions. Image Builder supports multiple image format
-   * AMIs on AWS.</p>
+   * <p>EC2 Image Builder is a fully managed AWS service that makes it easier to
+   * automate the creation, management, and deployment of customized, secure, and
+   * up-to-date “golden” server images that are pre-installed and pre-configured with
+   * software and settings to meet specific IT standards.</p>
    */
   class AWS_IMAGEBUILDER_API ImagebuilderClient : public Aws::Client::AWSJsonClient
   {
@@ -320,7 +313,7 @@ namespace Model
 
 
         /**
-         * <p>CancelImageCreation cancels the creation of Image. This operation may only be
+         * <p>CancelImageCreation cancels the creation of Image. This operation can only be
          * used on images in a non-terminal state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelImageCreation">AWS
          * API Reference</a></p>
@@ -328,7 +321,7 @@ namespace Model
         virtual Model::CancelImageCreationOutcome CancelImageCreation(const Model::CancelImageCreationRequest& request) const;
 
         /**
-         * <p>CancelImageCreation cancels the creation of Image. This operation may only be
+         * <p>CancelImageCreation cancels the creation of Image. This operation can only be
          * used on images in a non-terminal state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelImageCreation">AWS
          * API Reference</a></p>
@@ -338,7 +331,7 @@ namespace Model
         virtual Model::CancelImageCreationOutcomeCallable CancelImageCreationCallable(const Model::CancelImageCreationRequest& request) const;
 
         /**
-         * <p>CancelImageCreation cancels the creation of Image. This operation may only be
+         * <p>CancelImageCreation cancels the creation of Image. This operation can only be
          * used on images in a non-terminal state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelImageCreation">AWS
          * API Reference</a></p>
@@ -348,7 +341,7 @@ namespace Model
         virtual void CancelImageCreationAsync(const Model::CancelImageCreationRequest& request, const CancelImageCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new component that can be used to build, validate, test and assess
+         * <p>Creates a new component that can be used to build, validate, test, and assess
          * your image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">AWS
          * API Reference</a></p>
@@ -356,7 +349,7 @@ namespace Model
         virtual Model::CreateComponentOutcome CreateComponent(const Model::CreateComponentRequest& request) const;
 
         /**
-         * <p>Creates a new component that can be used to build, validate, test and assess
+         * <p>Creates a new component that can be used to build, validate, test, and assess
          * your image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">AWS
          * API Reference</a></p>
@@ -366,7 +359,7 @@ namespace Model
         virtual Model::CreateComponentOutcomeCallable CreateComponentCallable(const Model::CreateComponentRequest& request) const;
 
         /**
-         * <p>Creates a new component that can be used to build, validate, test and assess
+         * <p>Creates a new component that can be used to build, validate, test, and assess
          * your image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateComponent">AWS
          * API Reference</a></p>
@@ -376,7 +369,7 @@ namespace Model
         virtual void CreateComponentAsync(const Model::CreateComponentRequest& request, const CreateComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Creates a new distribution configuration. Distribution configurations define
+         * <p>Creates a new distribution configuration. Distribution configurations define
          * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">AWS
          * API Reference</a></p>
@@ -384,7 +377,7 @@ namespace Model
         virtual Model::CreateDistributionConfigurationOutcome CreateDistributionConfiguration(const Model::CreateDistributionConfigurationRequest& request) const;
 
         /**
-         * <p> Creates a new distribution configuration. Distribution configurations define
+         * <p>Creates a new distribution configuration. Distribution configurations define
          * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">AWS
          * API Reference</a></p>
@@ -394,7 +387,7 @@ namespace Model
         virtual Model::CreateDistributionConfigurationOutcomeCallable CreateDistributionConfigurationCallable(const Model::CreateDistributionConfigurationRequest& request) const;
 
         /**
-         * <p> Creates a new distribution configuration. Distribution configurations define
+         * <p>Creates a new distribution configuration. Distribution configurations define
          * and configure the outputs of your pipeline. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateDistributionConfiguration">AWS
          * API Reference</a></p>
@@ -463,16 +456,16 @@ namespace Model
         virtual void CreateImagePipelineAsync(const Model::CreateImagePipelineRequest& request, const CreateImagePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Creates a new image recipe. Image Recipes defines how images are configured,
-         * tested and assessed. </p><p><h3>See Also:</h3>   <a
+         * <p> Creates a new image recipe. Image recipes define how images are configured,
+         * tested, and assessed. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateImageRecipeOutcome CreateImageRecipe(const Model::CreateImageRecipeRequest& request) const;
 
         /**
-         * <p> Creates a new image recipe. Image Recipes defines how images are configured,
-         * tested and assessed. </p><p><h3>See Also:</h3>   <a
+         * <p> Creates a new image recipe. Image recipes define how images are configured,
+         * tested, and assessed. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">AWS
          * API Reference</a></p>
          *
@@ -481,8 +474,8 @@ namespace Model
         virtual Model::CreateImageRecipeOutcomeCallable CreateImageRecipeCallable(const Model::CreateImageRecipeRequest& request) const;
 
         /**
-         * <p> Creates a new image recipe. Image Recipes defines how images are configured,
-         * tested and assessed. </p><p><h3>See Also:</h3>   <a
+         * <p> Creates a new image recipe. Image recipes define how images are configured,
+         * tested, and assessed. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">AWS
          * API Reference</a></p>
          *
@@ -872,14 +865,14 @@ namespace Model
         virtual void GetImageRecipePolicyAsync(const Model::GetImageRecipePolicyRequest& request, const GetImageRecipePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets a infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetInfrastructureConfigurationOutcome GetInfrastructureConfiguration(const Model::GetInfrastructureConfigurationRequest& request) const;
 
         /**
-         * <p> Gets a infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -888,7 +881,7 @@ namespace Model
         virtual Model::GetInfrastructureConfigurationOutcomeCallable GetInfrastructureConfigurationCallable(const Model::GetInfrastructureConfigurationRequest& request) const;
 
         /**
-         * <p> Gets a infrastructure configuration. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets an infrastructure configuration. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">AWS
          * API Reference</a></p>
          *
@@ -897,7 +890,7 @@ namespace Model
         virtual void GetInfrastructureConfigurationAsync(const Model::GetInfrastructureConfigurationRequest& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Imports a component and transforms its data into a component document.
+         * <p>Imports a component and transforms its data into a component document.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">AWS
          * API Reference</a></p>
@@ -905,7 +898,7 @@ namespace Model
         virtual Model::ImportComponentOutcome ImportComponent(const Model::ImportComponentRequest& request) const;
 
         /**
-         * <p> Imports a component and transforms its data into a component document.
+         * <p>Imports a component and transforms its data into a component document.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">AWS
          * API Reference</a></p>
@@ -915,7 +908,7 @@ namespace Model
         virtual Model::ImportComponentOutcomeCallable ImportComponentCallable(const Model::ImportComponentRequest& request) const;
 
         /**
-         * <p> Imports a component and transforms its data into a component document.
+         * <p>Imports a component and transforms its data into a component document.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImportComponent">AWS
          * API Reference</a></p>
@@ -953,7 +946,7 @@ namespace Model
         virtual void ListComponentBuildVersionsAsync(const Model::ListComponentBuildVersionsRequest& request, const ListComponentBuildVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns the list of component build versions for the specified semantic
+         * <p>Returns the list of component build versions for the specified semantic
          * version. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>
@@ -961,7 +954,7 @@ namespace Model
         virtual Model::ListComponentsOutcome ListComponents(const Model::ListComponentsRequest& request) const;
 
         /**
-         * <p> Returns the list of component build versions for the specified semantic
+         * <p>Returns the list of component build versions for the specified semantic
          * version. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>
@@ -971,7 +964,7 @@ namespace Model
         virtual Model::ListComponentsOutcomeCallable ListComponentsCallable(const Model::ListComponentsRequest& request) const;
 
         /**
-         * <p> Returns the list of component build versions for the specified semantic
+         * <p>Returns the list of component build versions for the specified semantic
          * version. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListComponents">AWS
          * API Reference</a></p>

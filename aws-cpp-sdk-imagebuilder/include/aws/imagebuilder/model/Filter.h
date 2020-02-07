@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p> </p><p><h3>See Also:</h3>   <a
+   * <p> A filter name and value pair that is used to return a more specific list of
+   * results from a list operation. Filters can be used to match a set of resources
+   * by specific criteria, such as tags, attributes, or IDs. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Filter">AWS
    * API Reference</a></p>
    */
@@ -49,88 +52,88 @@ namespace Model
 
 
     /**
-     * <p> </p>
+     * <p> The name of the filter. Filter names are case-sensitive. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> </p>
+     * <p> The name of the filter. Filter names are case-sensitive. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p> The name of the filter. Filter names are case-sensitive. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> </p>
+     * <p> The name of the filter. Filter names are case-sensitive. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The name of the filter. Filter names are case-sensitive. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> </p>
+     * <p> The name of the filter. Filter names are case-sensitive. </p>
      */
     inline Filter& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The name of the filter. Filter names are case-sensitive. </p>
      */
     inline Filter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The name of the filter. Filter names are case-sensitive. </p>
      */
     inline Filter& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline Filter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline Filter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline Filter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline Filter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> </p>
+     * <p> The filter values. Filter values are case-sensitive. </p>
      */
     inline Filter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

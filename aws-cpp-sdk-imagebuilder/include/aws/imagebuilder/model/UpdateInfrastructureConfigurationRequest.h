@@ -47,49 +47,49 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * wish to update. </p>
+     * want to update. </p>
      */
     inline const Aws::String& GetInfrastructureConfigurationArn() const{ return m_infrastructureConfigurationArn; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * wish to update. </p>
+     * want to update. </p>
      */
     inline bool InfrastructureConfigurationArnHasBeenSet() const { return m_infrastructureConfigurationArnHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * wish to update. </p>
+     * want to update. </p>
      */
     inline void SetInfrastructureConfigurationArn(const Aws::String& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = value; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * wish to update. </p>
+     * want to update. </p>
      */
     inline void SetInfrastructureConfigurationArn(Aws::String&& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * wish to update. </p>
+     * want to update. </p>
      */
     inline void SetInfrastructureConfigurationArn(const char* value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn.assign(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * wish to update. </p>
+     * want to update. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(const Aws::String& value) { SetInfrastructureConfigurationArn(value); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * wish to update. </p>
+     * want to update. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(Aws::String&& value) { SetInfrastructureConfigurationArn(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * wish to update. </p>
+     * want to update. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(const char* value) { SetInfrastructureConfigurationArn(value); return *this;}
 
@@ -136,64 +136,64 @@ namespace Model
 
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The instance types of the infrastructure configuration. You may specify one
-     * or more instance types to use for this build, the service will pick one of these
+     * <p> The instance types of the infrastructure configuration. You can specify one
+     * or more instance types to use for this build. The service will pick one of these
      * instance types based on availability. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
@@ -376,83 +376,83 @@ namespace Model
 
 
     /**
-     * <p> The key pair of the infrastructure configuration. This can be used to log
-     * onto and debug the instance used to create your image. </p>
+     * <p> The key pair of the infrastructure configuration. This can be used to log on
+     * to and debug the instance used to create your image. </p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
 
     /**
-     * <p> The key pair of the infrastructure configuration. This can be used to log
-     * onto and debug the instance used to create your image. </p>
+     * <p> The key pair of the infrastructure configuration. This can be used to log on
+     * to and debug the instance used to create your image. </p>
      */
     inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
 
     /**
-     * <p> The key pair of the infrastructure configuration. This can be used to log
-     * onto and debug the instance used to create your image. </p>
+     * <p> The key pair of the infrastructure configuration. This can be used to log on
+     * to and debug the instance used to create your image. </p>
      */
     inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
-     * <p> The key pair of the infrastructure configuration. This can be used to log
-     * onto and debug the instance used to create your image. </p>
+     * <p> The key pair of the infrastructure configuration. This can be used to log on
+     * to and debug the instance used to create your image. </p>
      */
     inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
-     * <p> The key pair of the infrastructure configuration. This can be used to log
-     * onto and debug the instance used to create your image. </p>
+     * <p> The key pair of the infrastructure configuration. This can be used to log on
+     * to and debug the instance used to create your image. </p>
      */
     inline void SetKeyPair(const char* value) { m_keyPairHasBeenSet = true; m_keyPair.assign(value); }
 
     /**
-     * <p> The key pair of the infrastructure configuration. This can be used to log
-     * onto and debug the instance used to create your image. </p>
+     * <p> The key pair of the infrastructure configuration. This can be used to log on
+     * to and debug the instance used to create your image. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithKeyPair(const Aws::String& value) { SetKeyPair(value); return *this;}
 
     /**
-     * <p> The key pair of the infrastructure configuration. This can be used to log
-     * onto and debug the instance used to create your image. </p>
+     * <p> The key pair of the infrastructure configuration. This can be used to log on
+     * to and debug the instance used to create your image. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
-     * <p> The key pair of the infrastructure configuration. This can be used to log
-     * onto and debug the instance used to create your image. </p>
+     * <p> The key pair of the infrastructure configuration. This can be used to log on
+     * to and debug the instance used to create your image. </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 
 
     /**
      * <p> The terminate instance on failure setting of the infrastructure
-     * configuration. Set to false if you wish for Image Builder to retain the instance
-     * used to configure your AMI in the event that the build or test phase of your
-     * workflow failed. </p>
+     * configuration. Set to false if you want Image Builder to retain the instance
+     * used to configure your AMI if the build or test phase of your workflow fails.
+     * </p>
      */
     inline bool GetTerminateInstanceOnFailure() const{ return m_terminateInstanceOnFailure; }
 
     /**
      * <p> The terminate instance on failure setting of the infrastructure
-     * configuration. Set to false if you wish for Image Builder to retain the instance
-     * used to configure your AMI in the event that the build or test phase of your
-     * workflow failed. </p>
+     * configuration. Set to false if you want Image Builder to retain the instance
+     * used to configure your AMI if the build or test phase of your workflow fails.
+     * </p>
      */
     inline bool TerminateInstanceOnFailureHasBeenSet() const { return m_terminateInstanceOnFailureHasBeenSet; }
 
     /**
      * <p> The terminate instance on failure setting of the infrastructure
-     * configuration. Set to false if you wish for Image Builder to retain the instance
-     * used to configure your AMI in the event that the build or test phase of your
-     * workflow failed. </p>
+     * configuration. Set to false if you want Image Builder to retain the instance
+     * used to configure your AMI if the build or test phase of your workflow fails.
+     * </p>
      */
     inline void SetTerminateInstanceOnFailure(bool value) { m_terminateInstanceOnFailureHasBeenSet = true; m_terminateInstanceOnFailure = value; }
 
     /**
      * <p> The terminate instance on failure setting of the infrastructure
-     * configuration. Set to false if you wish for Image Builder to retain the instance
-     * used to configure your AMI in the event that the build or test phase of your
-     * workflow failed. </p>
+     * configuration. Set to false if you want Image Builder to retain the instance
+     * used to configure your AMI if the build or test phase of your workflow fails.
+     * </p>
      */
     inline UpdateInfrastructureConfigurationRequest& WithTerminateInstanceOnFailure(bool value) { SetTerminateInstanceOnFailure(value); return *this;}
 

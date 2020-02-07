@@ -51,443 +51,443 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastruction configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastruction configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastruction configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastruction configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastruction configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastruction configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastruction configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastruction configuration.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The name of the infrastruction configuration.</p>
+     * <p>The name of the infrastructure configuration.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the infrastruction configuration.</p>
+     * <p>The name of the infrastructure configuration.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the infrastruction configuration.</p>
+     * <p>The name of the infrastructure configuration.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the infrastruction configuration.</p>
+     * <p>The name of the infrastructure configuration.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the infrastruction configuration.</p>
+     * <p>The name of the infrastructure configuration.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the infrastruction configuration.</p>
+     * <p>The name of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the infrastruction configuration.</p>
+     * <p>The name of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the infrastruction configuration.</p>
+     * <p>The name of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The description of the infrastruction configuration.</p>
+     * <p>The description of the infrastructure configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the infrastruction configuration.</p>
+     * <p>The description of the infrastructure configuration.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the infrastruction configuration.</p>
+     * <p>The description of the infrastructure configuration.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the infrastruction configuration.</p>
+     * <p>The description of the infrastructure configuration.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the infrastruction configuration.</p>
+     * <p>The description of the infrastructure configuration.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the infrastruction configuration.</p>
+     * <p>The description of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the infrastruction configuration.</p>
+     * <p>The description of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the infrastruction configuration.</p>
+     * <p>The description of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The instance types of the infrastruction configuration.</p>
+     * <p>The instance types of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
 
     /**
-     * <p>The instance profile of the infrastruction configuration.</p>
+     * <p>The instance profile of the infrastructure configuration.</p>
      */
     inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
 
     /**
-     * <p>The instance profile of the infrastruction configuration.</p>
+     * <p>The instance profile of the infrastructure configuration.</p>
      */
     inline bool InstanceProfileNameHasBeenSet() const { return m_instanceProfileNameHasBeenSet; }
 
     /**
-     * <p>The instance profile of the infrastruction configuration.</p>
+     * <p>The instance profile of the infrastructure configuration.</p>
      */
     inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
 
     /**
-     * <p>The instance profile of the infrastruction configuration.</p>
+     * <p>The instance profile of the infrastructure configuration.</p>
      */
     inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = std::move(value); }
 
     /**
-     * <p>The instance profile of the infrastruction configuration.</p>
+     * <p>The instance profile of the infrastructure configuration.</p>
      */
     inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
 
     /**
-     * <p>The instance profile of the infrastruction configuration.</p>
+     * <p>The instance profile of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
 
     /**
-     * <p>The instance profile of the infrastruction configuration.</p>
+     * <p>The instance profile of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(std::move(value)); return *this;}
 
     /**
-     * <p>The instance profile of the infrastruction configuration.</p>
+     * <p>The instance profile of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
 
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The security group IDs of the infrastruction configuration.</p>
+     * <p>The security group IDs of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The subnet ID of the infrastruction configuration.</p>
+     * <p>The subnet ID of the infrastructure configuration.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The subnet ID of the infrastruction configuration.</p>
+     * <p>The subnet ID of the infrastructure configuration.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The subnet ID of the infrastruction configuration.</p>
+     * <p>The subnet ID of the infrastructure configuration.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The subnet ID of the infrastruction configuration.</p>
+     * <p>The subnet ID of the infrastructure configuration.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The subnet ID of the infrastruction configuration.</p>
+     * <p>The subnet ID of the infrastructure configuration.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The subnet ID of the infrastruction configuration.</p>
+     * <p>The subnet ID of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The subnet ID of the infrastruction configuration.</p>
+     * <p>The subnet ID of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The subnet ID of the infrastruction configuration.</p>
+     * <p>The subnet ID of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
 
     /**
-     * <p>The logging configuration of the infrastruction configuration.</p>
+     * <p>The logging configuration of the infrastructure configuration.</p>
      */
     inline const Logging& GetLogging() const{ return m_logging; }
 
     /**
-     * <p>The logging configuration of the infrastruction configuration.</p>
+     * <p>The logging configuration of the infrastructure configuration.</p>
      */
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
 
     /**
-     * <p>The logging configuration of the infrastruction configuration.</p>
+     * <p>The logging configuration of the infrastructure configuration.</p>
      */
     inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
 
     /**
-     * <p>The logging configuration of the infrastruction configuration.</p>
+     * <p>The logging configuration of the infrastructure configuration.</p>
      */
     inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
 
     /**
-     * <p>The logging configuration of the infrastruction configuration.</p>
+     * <p>The logging configuration of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithLogging(const Logging& value) { SetLogging(value); return *this;}
 
     /**
-     * <p>The logging configuration of the infrastruction configuration.</p>
+     * <p>The logging configuration of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
 
 
     /**
-     * <p>The EC2 key pair of the infrastruction configuration.</p>
+     * <p>The EC2 key pair of the infrastructure configuration.</p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
 
     /**
-     * <p>The EC2 key pair of the infrastruction configuration.</p>
+     * <p>The EC2 key pair of the infrastructure configuration.</p>
      */
     inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
 
     /**
-     * <p>The EC2 key pair of the infrastruction configuration.</p>
+     * <p>The EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
-     * <p>The EC2 key pair of the infrastruction configuration.</p>
+     * <p>The EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(Aws::String&& value) { m_keyPairHasBeenSet = true; m_keyPair = std::move(value); }
 
     /**
-     * <p>The EC2 key pair of the infrastruction configuration.</p>
+     * <p>The EC2 key pair of the infrastructure configuration.</p>
      */
     inline void SetKeyPair(const char* value) { m_keyPairHasBeenSet = true; m_keyPair.assign(value); }
 
     /**
-     * <p>The EC2 key pair of the infrastruction configuration.</p>
+     * <p>The EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(const Aws::String& value) { SetKeyPair(value); return *this;}
 
     /**
-     * <p>The EC2 key pair of the infrastruction configuration.</p>
+     * <p>The EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(Aws::String&& value) { SetKeyPair(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 key pair of the infrastruction configuration.</p>
+     * <p>The EC2 key pair of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithKeyPair(const char* value) { SetKeyPair(value); return *this;}
 
 
     /**
-     * <p>The terminate instance on failure configuration of the infrastruction
+     * <p>The terminate instance on failure configuration of the infrastructure
      * configuration.</p>
      */
     inline bool GetTerminateInstanceOnFailure() const{ return m_terminateInstanceOnFailure; }
 
     /**
-     * <p>The terminate instance on failure configuration of the infrastruction
+     * <p>The terminate instance on failure configuration of the infrastructure
      * configuration.</p>
      */
     inline bool TerminateInstanceOnFailureHasBeenSet() const { return m_terminateInstanceOnFailureHasBeenSet; }
 
     /**
-     * <p>The terminate instance on failure configuration of the infrastruction
+     * <p>The terminate instance on failure configuration of the infrastructure
      * configuration.</p>
      */
     inline void SetTerminateInstanceOnFailure(bool value) { m_terminateInstanceOnFailureHasBeenSet = true; m_terminateInstanceOnFailure = value; }
 
     /**
-     * <p>The terminate instance on failure configuration of the infrastruction
+     * <p>The terminate instance on failure configuration of the infrastructure
      * configuration.</p>
      */
     inline InfrastructureConfiguration& WithTerminateInstanceOnFailure(bool value) { SetTerminateInstanceOnFailure(value); return *this;}
 
 
     /**
-     * <p>The SNS Topic Amazon Resource Name (ARN) of the infrastruction
+     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
      * configuration.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
 
     /**
-     * <p>The SNS Topic Amazon Resource Name (ARN) of the infrastruction
+     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
      * configuration.</p>
      */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
-     * <p>The SNS Topic Amazon Resource Name (ARN) of the infrastruction
+     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
      * configuration.</p>
      */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
-     * <p>The SNS Topic Amazon Resource Name (ARN) of the infrastruction
+     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
      * configuration.</p>
      */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
 
     /**
-     * <p>The SNS Topic Amazon Resource Name (ARN) of the infrastruction
+     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
      * configuration.</p>
      */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
 
     /**
-     * <p>The SNS Topic Amazon Resource Name (ARN) of the infrastruction
+     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
      * configuration.</p>
      */
     inline InfrastructureConfiguration& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
 
     /**
-     * <p>The SNS Topic Amazon Resource Name (ARN) of the infrastruction
+     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
      * configuration.</p>
      */
     inline InfrastructureConfiguration& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
 
     /**
-     * <p>The SNS Topic Amazon Resource Name (ARN) of the infrastruction
+     * <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure
      * configuration.</p>
      */
     inline InfrastructureConfiguration& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
@@ -576,67 +576,67 @@ namespace Model
 
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The tags of the infrastruction configuration.</p>
+     * <p>The tags of the infrastructure configuration.</p>
      */
     inline InfrastructureConfiguration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

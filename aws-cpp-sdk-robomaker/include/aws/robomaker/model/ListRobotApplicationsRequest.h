@@ -90,9 +90,7 @@ namespace Model
      * <code>ListRobotApplications</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * value. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -101,9 +99,7 @@ namespace Model
      * <code>ListRobotApplications</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * value. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -112,9 +108,7 @@ namespace Model
      * <code>ListRobotApplications</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * value. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -123,9 +117,7 @@ namespace Model
      * <code>ListRobotApplications</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * value. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -134,9 +126,7 @@ namespace Model
      * <code>ListRobotApplications</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * value. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -145,9 +135,7 @@ namespace Model
      * <code>ListRobotApplications</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * value. </p>
      */
     inline ListRobotApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -156,9 +144,7 @@ namespace Model
      * <code>ListRobotApplications</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * value. </p>
      */
     inline ListRobotApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -167,62 +153,56 @@ namespace Model
      * <code>ListRobotApplications</code> request where <code>maxResults</code> was
      * used and the results exceeded the value of that parameter. Pagination continues
      * from the end of the previous results that returned the <code>nextToken</code>
-     * value. </p> <note> <p>This token should be treated as an opaque identifier that
-     * is only used to retrieve the next items in a list and not for other programmatic
-     * purposes.</p> </note>
+     * value. </p>
      */
     inline ListRobotApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of deployment job results returned by
-     * <code>ListRobotApplications</code> in paginated output. When this parameter is
-     * used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListRobotApplications</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListRobotApplications</code> returns up to 100
-     * results and a <code>nextToken</code> value if applicable. </p>
+     * <p>When this parameter is used, <code>ListRobotApplications</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListRobotApplications</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter is not used, then
+     * <code>ListRobotApplications</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of deployment job results returned by
-     * <code>ListRobotApplications</code> in paginated output. When this parameter is
-     * used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListRobotApplications</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListRobotApplications</code> returns up to 100
-     * results and a <code>nextToken</code> value if applicable. </p>
+     * <p>When this parameter is used, <code>ListRobotApplications</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListRobotApplications</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter is not used, then
+     * <code>ListRobotApplications</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of deployment job results returned by
-     * <code>ListRobotApplications</code> in paginated output. When this parameter is
-     * used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListRobotApplications</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListRobotApplications</code> returns up to 100
-     * results and a <code>nextToken</code> value if applicable. </p>
+     * <p>When this parameter is used, <code>ListRobotApplications</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListRobotApplications</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter is not used, then
+     * <code>ListRobotApplications</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of deployment job results returned by
-     * <code>ListRobotApplications</code> in paginated output. When this parameter is
-     * used, <code>ListRobotApplications</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response element.
-     * The remaining results of the initial request can be seen by sending another
-     * <code>ListRobotApplications</code> request with the returned
-     * <code>nextToken</code> value. This value can be between 1 and 100. If this
-     * parameter is not used, then <code>ListRobotApplications</code> returns up to 100
-     * results and a <code>nextToken</code> value if applicable. </p>
+     * <p>When this parameter is used, <code>ListRobotApplications</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListRobotApplications</code>
+     * request with the returned <code>nextToken</code> value. This value can be
+     * between 1 and 100. If this parameter is not used, then
+     * <code>ListRobotApplications</code> returns up to 100 results and a
+     * <code>nextToken</code> value if applicable. </p>
      */
     inline ListRobotApplicationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>EBS specific block device mapping specifications.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Amazon EBS-specific block device mapping specifications.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/EbsInstanceBlockDeviceSpecification">AWS
    * API Reference</a></p>
    */

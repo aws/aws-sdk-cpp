@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>A high level overview a distribution configuration.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>A high-level overview of a distribution configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DistributionConfigurationSummary">AWS
    * API Reference</a></p>
    */

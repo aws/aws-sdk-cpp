@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p> The region of the EC2 AMI. </p>
+     * <p> The AWS Region of the EC2 AMI. </p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p> The region of the EC2 AMI. </p>
+     * <p> The AWS Region of the EC2 AMI. </p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p> The region of the EC2 AMI. </p>
+     * <p> The AWS Region of the EC2 AMI. </p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p> The region of the EC2 AMI. </p>
+     * <p> The AWS Region of the EC2 AMI. </p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p> The region of the EC2 AMI. </p>
+     * <p> The AWS Region of the EC2 AMI. </p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p> The region of the EC2 AMI. </p>
+     * <p> The AWS Region of the EC2 AMI. </p>
      */
     inline Ami& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p> The region of the EC2 AMI. </p>
+     * <p> The AWS Region of the EC2 AMI. </p>
      */
     inline Ami& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p> The region of the EC2 AMI. </p>
+     * <p> The AWS Region of the EC2 AMI. </p>
      */
     inline Ami& WithRegion(const char* value) { SetRegion(value); return *this;}
 

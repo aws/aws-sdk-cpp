@@ -192,27 +192,32 @@ namespace Model
 
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribution) used by the robot
+     * application.</p>
      */
     inline const RobotSoftwareSuite& GetRobotSoftwareSuite() const{ return m_robotSoftwareSuite; }
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribution) used by the robot
+     * application.</p>
      */
     inline void SetRobotSoftwareSuite(const RobotSoftwareSuite& value) { m_robotSoftwareSuite = value; }
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribution) used by the robot
+     * application.</p>
      */
     inline void SetRobotSoftwareSuite(RobotSoftwareSuite&& value) { m_robotSoftwareSuite = std::move(value); }
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribution) used by the robot
+     * application.</p>
      */
     inline CreateRobotApplicationResult& WithRobotSoftwareSuite(const RobotSoftwareSuite& value) { SetRobotSoftwareSuite(value); return *this;}
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribution) used by the robot
+     * application.</p>
      */
     inline CreateRobotApplicationResult& WithRobotSoftwareSuite(RobotSoftwareSuite&& value) { SetRobotSoftwareSuite(std::move(value)); return *this;}
 

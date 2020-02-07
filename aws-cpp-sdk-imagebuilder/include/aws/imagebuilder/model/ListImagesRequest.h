@@ -46,91 +46,91 @@ namespace Model
 
 
     /**
-     * <p> The owner defines whose images you wish to list. By default this request
-     * will only show images owned by your account. You may use this field to specify
-     * if you wish to view images owned by yourself, Amazon, or those images that have
-     * been shared with you by other customers. </p>
+     * <p> The owner defines which images you want to list. By default, this request
+     * will only show images owned by your account. You can use this field to specify
+     * if you want to view images owned by yourself, by Amazon, or those images that
+     * have been shared with you by other customers. </p>
      */
     inline const Ownership& GetOwner() const{ return m_owner; }
 
     /**
-     * <p> The owner defines whose images you wish to list. By default this request
-     * will only show images owned by your account. You may use this field to specify
-     * if you wish to view images owned by yourself, Amazon, or those images that have
-     * been shared with you by other customers. </p>
+     * <p> The owner defines which images you want to list. By default, this request
+     * will only show images owned by your account. You can use this field to specify
+     * if you want to view images owned by yourself, by Amazon, or those images that
+     * have been shared with you by other customers. </p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p> The owner defines whose images you wish to list. By default this request
-     * will only show images owned by your account. You may use this field to specify
-     * if you wish to view images owned by yourself, Amazon, or those images that have
-     * been shared with you by other customers. </p>
+     * <p> The owner defines which images you want to list. By default, this request
+     * will only show images owned by your account. You can use this field to specify
+     * if you want to view images owned by yourself, by Amazon, or those images that
+     * have been shared with you by other customers. </p>
      */
     inline void SetOwner(const Ownership& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p> The owner defines whose images you wish to list. By default this request
-     * will only show images owned by your account. You may use this field to specify
-     * if you wish to view images owned by yourself, Amazon, or those images that have
-     * been shared with you by other customers. </p>
+     * <p> The owner defines which images you want to list. By default, this request
+     * will only show images owned by your account. You can use this field to specify
+     * if you want to view images owned by yourself, by Amazon, or those images that
+     * have been shared with you by other customers. </p>
      */
     inline void SetOwner(Ownership&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p> The owner defines whose images you wish to list. By default this request
-     * will only show images owned by your account. You may use this field to specify
-     * if you wish to view images owned by yourself, Amazon, or those images that have
-     * been shared with you by other customers. </p>
+     * <p> The owner defines which images you want to list. By default, this request
+     * will only show images owned by your account. You can use this field to specify
+     * if you want to view images owned by yourself, by Amazon, or those images that
+     * have been shared with you by other customers. </p>
      */
     inline ListImagesRequest& WithOwner(const Ownership& value) { SetOwner(value); return *this;}
 
     /**
-     * <p> The owner defines whose images you wish to list. By default this request
-     * will only show images owned by your account. You may use this field to specify
-     * if you wish to view images owned by yourself, Amazon, or those images that have
-     * been shared with you by other customers. </p>
+     * <p> The owner defines which images you want to list. By default, this request
+     * will only show images owned by your account. You can use this field to specify
+     * if you want to view images owned by yourself, by Amazon, or those images that
+     * have been shared with you by other customers. </p>
      */
     inline ListImagesRequest& WithOwner(Ownership&& value) { SetOwner(std::move(value)); return *this;}
 
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImagesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImagesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

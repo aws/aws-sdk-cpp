@@ -45,91 +45,91 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image whose build versions you wish to
+     * <p> The Amazon Resource Name (ARN) of the image whose build versions you want to
      * retrieve. </p>
      */
     inline const Aws::String& GetImageVersionArn() const{ return m_imageVersionArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image whose build versions you wish to
+     * <p> The Amazon Resource Name (ARN) of the image whose build versions you want to
      * retrieve. </p>
      */
     inline bool ImageVersionArnHasBeenSet() const { return m_imageVersionArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image whose build versions you wish to
+     * <p> The Amazon Resource Name (ARN) of the image whose build versions you want to
      * retrieve. </p>
      */
     inline void SetImageVersionArn(const Aws::String& value) { m_imageVersionArnHasBeenSet = true; m_imageVersionArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image whose build versions you wish to
+     * <p> The Amazon Resource Name (ARN) of the image whose build versions you want to
      * retrieve. </p>
      */
     inline void SetImageVersionArn(Aws::String&& value) { m_imageVersionArnHasBeenSet = true; m_imageVersionArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image whose build versions you wish to
+     * <p> The Amazon Resource Name (ARN) of the image whose build versions you want to
      * retrieve. </p>
      */
     inline void SetImageVersionArn(const char* value) { m_imageVersionArnHasBeenSet = true; m_imageVersionArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image whose build versions you wish to
+     * <p> The Amazon Resource Name (ARN) of the image whose build versions you want to
      * retrieve. </p>
      */
     inline ListImageBuildVersionsRequest& WithImageVersionArn(const Aws::String& value) { SetImageVersionArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image whose build versions you wish to
+     * <p> The Amazon Resource Name (ARN) of the image whose build versions you want to
      * retrieve. </p>
      */
     inline ListImageBuildVersionsRequest& WithImageVersionArn(Aws::String&& value) { SetImageVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image whose build versions you wish to
+     * <p> The Amazon Resource Name (ARN) of the image whose build versions you want to
      * retrieve. </p>
      */
     inline ListImageBuildVersionsRequest& WithImageVersionArn(const char* value) { SetImageVersionArn(value); return *this;}
 
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImageBuildVersionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImageBuildVersionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImageBuildVersionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImageBuildVersionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

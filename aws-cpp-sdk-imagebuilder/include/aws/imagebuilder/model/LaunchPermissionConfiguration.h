@@ -35,7 +35,11 @@ namespace Model
 {
 
   /**
-   * <p> </p><p><h3>See Also:</h3>   <a
+   * <p>Describes the configuration for a launch permission. The launch permission
+   * modification request is sent to the <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2
+   * ModifyImageAttribute</a> API on behalf of the user for each Region they have
+   * selected to distribute the AMI.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchPermissionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -49,93 +53,93 @@ namespace Model
 
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> </p>
+     * <p> The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroups() const{ return m_userGroups; }
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline void SetUserGroups(const Aws::Vector<Aws::String>& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline void SetUserGroups(Aws::Vector<Aws::String>&& value) { m_userGroupsHasBeenSet = true; m_userGroups = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline LaunchPermissionConfiguration& WithUserGroups(const Aws::Vector<Aws::String>& value) { SetUserGroups(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline LaunchPermissionConfiguration& WithUserGroups(Aws::Vector<Aws::String>&& value) { SetUserGroups(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline LaunchPermissionConfiguration& AddUserGroups(const Aws::String& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline LaunchPermissionConfiguration& AddUserGroups(Aws::String&& value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> </p>
+     * <p>The name of the group. </p>
      */
     inline LaunchPermissionConfiguration& AddUserGroups(const char* value) { m_userGroupsHasBeenSet = true; m_userGroups.push_back(value); return *this; }
 

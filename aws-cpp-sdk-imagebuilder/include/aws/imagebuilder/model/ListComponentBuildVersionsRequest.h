@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p> The component version arn whose versions you wish to list. </p>
+     * <p> The component version Amazon Resource Name (ARN) whose versions you want to
+     * list. </p>
      */
     inline const Aws::String& GetComponentVersionArn() const{ return m_componentVersionArn; }
 
     /**
-     * <p> The component version arn whose versions you wish to list. </p>
+     * <p> The component version Amazon Resource Name (ARN) whose versions you want to
+     * list. </p>
      */
     inline bool ComponentVersionArnHasBeenSet() const { return m_componentVersionArnHasBeenSet; }
 
     /**
-     * <p> The component version arn whose versions you wish to list. </p>
+     * <p> The component version Amazon Resource Name (ARN) whose versions you want to
+     * list. </p>
      */
     inline void SetComponentVersionArn(const Aws::String& value) { m_componentVersionArnHasBeenSet = true; m_componentVersionArn = value; }
 
     /**
-     * <p> The component version arn whose versions you wish to list. </p>
+     * <p> The component version Amazon Resource Name (ARN) whose versions you want to
+     * list. </p>
      */
     inline void SetComponentVersionArn(Aws::String&& value) { m_componentVersionArnHasBeenSet = true; m_componentVersionArn = std::move(value); }
 
     /**
-     * <p> The component version arn whose versions you wish to list. </p>
+     * <p> The component version Amazon Resource Name (ARN) whose versions you want to
+     * list. </p>
      */
     inline void SetComponentVersionArn(const char* value) { m_componentVersionArnHasBeenSet = true; m_componentVersionArn.assign(value); }
 
     /**
-     * <p> The component version arn whose versions you wish to list. </p>
+     * <p> The component version Amazon Resource Name (ARN) whose versions you want to
+     * list. </p>
      */
     inline ListComponentBuildVersionsRequest& WithComponentVersionArn(const Aws::String& value) { SetComponentVersionArn(value); return *this;}
 
     /**
-     * <p> The component version arn whose versions you wish to list. </p>
+     * <p> The component version Amazon Resource Name (ARN) whose versions you want to
+     * list. </p>
      */
     inline ListComponentBuildVersionsRequest& WithComponentVersionArn(Aws::String&& value) { SetComponentVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p> The component version arn whose versions you wish to list. </p>
+     * <p> The component version Amazon Resource Name (ARN) whose versions you want to
+     * list. </p>
      */
     inline ListComponentBuildVersionsRequest& WithComponentVersionArn(const char* value) { SetComponentVersionArn(value); return *this;}
 

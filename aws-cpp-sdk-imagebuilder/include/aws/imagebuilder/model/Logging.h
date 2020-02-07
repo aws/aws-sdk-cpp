@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p> Logging configuration defines where Image Builder uploads your logs
-   * to.</p><p><h3>See Also:</h3>   <a
+   * <p>Logging configuration defines where Image Builder uploads your
+   * logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Logging">AWS
    * API Reference</a></p>
    */
@@ -49,32 +49,32 @@ namespace Model
 
 
     /**
-     * <p>The S3 logging configuration.</p>
+     * <p>The Amazon S3 logging configuration.</p>
      */
     inline const S3Logs& GetS3Logs() const{ return m_s3Logs; }
 
     /**
-     * <p>The S3 logging configuration.</p>
+     * <p>The Amazon S3 logging configuration.</p>
      */
     inline bool S3LogsHasBeenSet() const { return m_s3LogsHasBeenSet; }
 
     /**
-     * <p>The S3 logging configuration.</p>
+     * <p>The Amazon S3 logging configuration.</p>
      */
     inline void SetS3Logs(const S3Logs& value) { m_s3LogsHasBeenSet = true; m_s3Logs = value; }
 
     /**
-     * <p>The S3 logging configuration.</p>
+     * <p>The Amazon S3 logging configuration.</p>
      */
     inline void SetS3Logs(S3Logs&& value) { m_s3LogsHasBeenSet = true; m_s3Logs = std::move(value); }
 
     /**
-     * <p>The S3 logging configuration.</p>
+     * <p>The Amazon S3 logging configuration.</p>
      */
     inline Logging& WithS3Logs(const S3Logs& value) { SetS3Logs(value); return *this;}
 
     /**
-     * <p>The S3 logging configuration.</p>
+     * <p>The Amazon S3 logging configuration.</p>
      */
     inline Logging& WithS3Logs(S3Logs&& value) { SetS3Logs(std::move(value)); return *this;}
 

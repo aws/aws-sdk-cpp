@@ -43,115 +43,115 @@ namespace Model
 
 
     /**
-     * <p>CThe request ID that uniquely identifies this request.</p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
-     * <p>CThe request ID that uniquely identifies this request.</p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
 
     /**
-     * <p>CThe request ID that uniquely identifies this request.</p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
 
     /**
-     * <p>CThe request ID that uniquely identifies this request.</p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
 
     /**
-     * <p>CThe request ID that uniquely identifies this request.</p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline CreateComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
-     * <p>CThe request ID that uniquely identifies this request.</p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline CreateComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>CThe request ID that uniquely identifies this request.</p>
+     * <p>The request ID that uniquely identifies this request.</p>
      */
     inline CreateComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
 
     /**
-     * <p>CThe idempotency token used to make this request idempotent.</p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>CThe idempotency token used to make this request idempotent.</p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
 
     /**
-     * <p>CThe idempotency token used to make this request idempotent.</p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
     /**
-     * <p>CThe idempotency token used to make this request idempotent.</p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
 
     /**
-     * <p>CThe idempotency token used to make this request idempotent.</p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateComponentResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>CThe idempotency token used to make this request idempotent.</p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateComponentResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>CThe idempotency token used to make this request idempotent.</p>
+     * <p>The idempotency token used to make this request idempotent.</p>
      */
     inline CreateComponentResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>CThe Amazon Resource Name (ARN) of the component that was created by this
+     * <p>The Amazon Resource Name (ARN) of the component that was created by this
      * request.</p>
      */
     inline const Aws::String& GetComponentBuildVersionArn() const{ return m_componentBuildVersionArn; }
 
     /**
-     * <p>CThe Amazon Resource Name (ARN) of the component that was created by this
+     * <p>The Amazon Resource Name (ARN) of the component that was created by this
      * request.</p>
      */
     inline void SetComponentBuildVersionArn(const Aws::String& value) { m_componentBuildVersionArn = value; }
 
     /**
-     * <p>CThe Amazon Resource Name (ARN) of the component that was created by this
+     * <p>The Amazon Resource Name (ARN) of the component that was created by this
      * request.</p>
      */
     inline void SetComponentBuildVersionArn(Aws::String&& value) { m_componentBuildVersionArn = std::move(value); }
 
     /**
-     * <p>CThe Amazon Resource Name (ARN) of the component that was created by this
+     * <p>The Amazon Resource Name (ARN) of the component that was created by this
      * request.</p>
      */
     inline void SetComponentBuildVersionArn(const char* value) { m_componentBuildVersionArn.assign(value); }
 
     /**
-     * <p>CThe Amazon Resource Name (ARN) of the component that was created by this
+     * <p>The Amazon Resource Name (ARN) of the component that was created by this
      * request.</p>
      */
     inline CreateComponentResult& WithComponentBuildVersionArn(const Aws::String& value) { SetComponentBuildVersionArn(value); return *this;}
 
     /**
-     * <p>CThe Amazon Resource Name (ARN) of the component that was created by this
+     * <p>The Amazon Resource Name (ARN) of the component that was created by this
      * request.</p>
      */
     inline CreateComponentResult& WithComponentBuildVersionArn(Aws::String&& value) { SetComponentBuildVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>CThe Amazon Resource Name (ARN) of the component that was created by this
+     * <p>The Amazon Resource Name (ARN) of the component that was created by this
      * request.</p>
      */
     inline CreateComponentResult& WithComponentBuildVersionArn(const char* value) { SetComponentBuildVersionArn(value); return *this;}

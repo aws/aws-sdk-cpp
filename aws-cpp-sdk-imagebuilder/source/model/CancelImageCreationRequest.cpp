@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CancelImageCreationRequest::CancelImageCreationRequest() : 
     m_imageBuildVersionArnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 

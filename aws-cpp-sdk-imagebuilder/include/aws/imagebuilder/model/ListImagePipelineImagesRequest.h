@@ -45,91 +45,91 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you wish
+     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you want
      * to view. </p>
      */
     inline const Aws::String& GetImagePipelineArn() const{ return m_imagePipelineArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you wish
+     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you want
      * to view. </p>
      */
     inline bool ImagePipelineArnHasBeenSet() const { return m_imagePipelineArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you wish
+     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you want
      * to view. </p>
      */
     inline void SetImagePipelineArn(const Aws::String& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you wish
+     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you want
      * to view. </p>
      */
     inline void SetImagePipelineArn(Aws::String&& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you wish
+     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you want
      * to view. </p>
      */
     inline void SetImagePipelineArn(const char* value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you wish
+     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you want
      * to view. </p>
      */
     inline ListImagePipelineImagesRequest& WithImagePipelineArn(const Aws::String& value) { SetImagePipelineArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you wish
+     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you want
      * to view. </p>
      */
     inline ListImagePipelineImagesRequest& WithImagePipelineArn(Aws::String&& value) { SetImagePipelineArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you wish
+     * <p> The Amazon Resource Name (ARN) of the image pipeline whose images you want
      * to view. </p>
      */
     inline ListImagePipelineImagesRequest& WithImagePipelineArn(const char* value) { SetImagePipelineArn(value); return *this;}
 
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImagePipelineImagesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImagePipelineImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImagePipelineImagesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p> </p>
+     * <p> The filters. </p>
      */
     inline ListImagePipelineImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

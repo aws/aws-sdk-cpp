@@ -67,22 +67,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum time in minutes that tests are permitted to run for.</p>
+     * <p>The maximum time in minutes that tests are permitted to run.</p>
      */
     inline int GetTimeoutMinutes() const{ return m_timeoutMinutes; }
 
     /**
-     * <p>The maximum time in minutes that tests are permitted to run for.</p>
+     * <p>The maximum time in minutes that tests are permitted to run.</p>
      */
     inline bool TimeoutMinutesHasBeenSet() const { return m_timeoutMinutesHasBeenSet; }
 
     /**
-     * <p>The maximum time in minutes that tests are permitted to run for.</p>
+     * <p>The maximum time in minutes that tests are permitted to run.</p>
      */
     inline void SetTimeoutMinutes(int value) { m_timeoutMinutesHasBeenSet = true; m_timeoutMinutes = value; }
 
     /**
-     * <p>The maximum time in minutes that tests are permitted to run for.</p>
+     * <p>The maximum time in minutes that tests are permitted to run.</p>
      */
     inline ImageTestsConfiguration& WithTimeoutMinutes(int value) { SetTimeoutMinutes(value); return *this;}
 

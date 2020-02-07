@@ -91,32 +91,32 @@ namespace Model
 
 
     /**
-     * <p>Use to manage EBS specific configuration for this mapping.</p>
+     * <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
      */
     inline const EbsInstanceBlockDeviceSpecification& GetEbs() const{ return m_ebs; }
 
     /**
-     * <p>Use to manage EBS specific configuration for this mapping.</p>
+     * <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
      */
     inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
 
     /**
-     * <p>Use to manage EBS specific configuration for this mapping.</p>
+     * <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
      */
     inline void SetEbs(const EbsInstanceBlockDeviceSpecification& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
     /**
-     * <p>Use to manage EBS specific configuration for this mapping.</p>
+     * <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
      */
     inline void SetEbs(EbsInstanceBlockDeviceSpecification&& value) { m_ebsHasBeenSet = true; m_ebs = std::move(value); }
 
     /**
-     * <p>Use to manage EBS specific configuration for this mapping.</p>
+     * <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
      */
     inline InstanceBlockDeviceMapping& WithEbs(const EbsInstanceBlockDeviceSpecification& value) { SetEbs(value); return *this;}
 
     /**
-     * <p>Use to manage EBS specific configuration for this mapping.</p>
+     * <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
      */
     inline InstanceBlockDeviceMapping& WithEbs(EbsInstanceBlockDeviceSpecification&& value) { SetEbs(std::move(value)); return *this;}
 

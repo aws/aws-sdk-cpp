@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p> Image state shows the images status and the reason for that status.
+   * <p> Image state shows the image status and the reason for that status.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageState">AWS
    * API Reference</a></p>

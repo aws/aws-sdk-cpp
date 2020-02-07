@@ -134,50 +134,46 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of deployment job results returned by
-     * <code>ListFleets</code> in paginated output. When this parameter is used,
-     * <code>ListFleets</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results
-     * of the initial request can be seen by sending another <code>ListFleets</code>
-     * request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then <code>ListFleets</code>
-     * returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+     * <p>When this parameter is used, <code>ListFleets</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListFleets</code> request with the
+     * returned <code>nextToken</code> value. This value can be between 1 and 200. If
+     * this parameter is not used, then <code>ListFleets</code> returns up to 200
+     * results and a <code>nextToken</code> value if applicable. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of deployment job results returned by
-     * <code>ListFleets</code> in paginated output. When this parameter is used,
-     * <code>ListFleets</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results
-     * of the initial request can be seen by sending another <code>ListFleets</code>
-     * request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then <code>ListFleets</code>
-     * returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+     * <p>When this parameter is used, <code>ListFleets</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListFleets</code> request with the
+     * returned <code>nextToken</code> value. This value can be between 1 and 200. If
+     * this parameter is not used, then <code>ListFleets</code> returns up to 200
+     * results and a <code>nextToken</code> value if applicable. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of deployment job results returned by
-     * <code>ListFleets</code> in paginated output. When this parameter is used,
-     * <code>ListFleets</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results
-     * of the initial request can be seen by sending another <code>ListFleets</code>
-     * request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then <code>ListFleets</code>
-     * returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+     * <p>When this parameter is used, <code>ListFleets</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListFleets</code> request with the
+     * returned <code>nextToken</code> value. This value can be between 1 and 200. If
+     * this parameter is not used, then <code>ListFleets</code> returns up to 200
+     * results and a <code>nextToken</code> value if applicable. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of deployment job results returned by
-     * <code>ListFleets</code> in paginated output. When this parameter is used,
-     * <code>ListFleets</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results
-     * of the initial request can be seen by sending another <code>ListFleets</code>
-     * request with the returned <code>nextToken</code> value. This value can be
-     * between 1 and 100. If this parameter is not used, then <code>ListFleets</code>
-     * returns up to 100 results and a <code>nextToken</code> value if applicable. </p>
+     * <p>When this parameter is used, <code>ListFleets</code> only returns
+     * <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListFleets</code> request with the
+     * returned <code>nextToken</code> value. This value can be between 1 and 200. If
+     * this parameter is not used, then <code>ListFleets</code> returns up to 200
+     * results and a <code>nextToken</code> value if applicable. </p>
      */
     inline ListFleetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

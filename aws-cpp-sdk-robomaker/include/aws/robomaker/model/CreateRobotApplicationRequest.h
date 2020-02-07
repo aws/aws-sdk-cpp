@@ -129,32 +129,38 @@ namespace Model
 
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribuition) used by the robot
+     * application.</p>
      */
     inline const RobotSoftwareSuite& GetRobotSoftwareSuite() const{ return m_robotSoftwareSuite; }
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribuition) used by the robot
+     * application.</p>
      */
     inline bool RobotSoftwareSuiteHasBeenSet() const { return m_robotSoftwareSuiteHasBeenSet; }
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribuition) used by the robot
+     * application.</p>
      */
     inline void SetRobotSoftwareSuite(const RobotSoftwareSuite& value) { m_robotSoftwareSuiteHasBeenSet = true; m_robotSoftwareSuite = value; }
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribuition) used by the robot
+     * application.</p>
      */
     inline void SetRobotSoftwareSuite(RobotSoftwareSuite&& value) { m_robotSoftwareSuiteHasBeenSet = true; m_robotSoftwareSuite = std::move(value); }
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribuition) used by the robot
+     * application.</p>
      */
     inline CreateRobotApplicationRequest& WithRobotSoftwareSuite(const RobotSoftwareSuite& value) { SetRobotSoftwareSuite(value); return *this;}
 
     /**
-     * <p>The robot software suite used by the robot application.</p>
+     * <p>The robot software suite (ROS distribuition) used by the robot
+     * application.</p>
      */
     inline CreateRobotApplicationRequest& WithRobotSoftwareSuite(RobotSoftwareSuite&& value) { SetRobotSoftwareSuite(std::move(value)); return *this;}
 

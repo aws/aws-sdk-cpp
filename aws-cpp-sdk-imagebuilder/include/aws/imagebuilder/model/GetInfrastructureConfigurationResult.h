@@ -36,7 +36,7 @@ namespace imagebuilder
 namespace Model
 {
   /**
-   * <p> GetInfrastructureConfiguration response object. </p><p><h3>See Also:</h3>  
+   * <p>GetInfrastructureConfiguration response object. </p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfigurationResponse">AWS
    * API Reference</a></p>

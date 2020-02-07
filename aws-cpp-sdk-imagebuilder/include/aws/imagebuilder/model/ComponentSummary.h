@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A high level summary of a component.</p><p><h3>See Also:</h3>   <a
+   * <p>A high-level summary of a component.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentSummary">AWS
    * API Reference</a></p>
    */

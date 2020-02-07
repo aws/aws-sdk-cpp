@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>A high level overview of a component semantic version.</p><p><h3>See
+   * <p>A high-level overview of a component semantic version.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentVersion">AWS
    * API Reference</a></p>

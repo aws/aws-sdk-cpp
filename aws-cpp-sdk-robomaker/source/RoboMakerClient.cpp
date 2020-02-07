@@ -33,6 +33,7 @@
 #include <aws/robomaker/model/BatchDescribeSimulationJobRequest.h>
 #include <aws/robomaker/model/CancelDeploymentJobRequest.h>
 #include <aws/robomaker/model/CancelSimulationJobRequest.h>
+#include <aws/robomaker/model/CancelSimulationJobBatchRequest.h>
 #include <aws/robomaker/model/CreateDeploymentJobRequest.h>
 #include <aws/robomaker/model/CreateFleetRequest.h>
 #include <aws/robomaker/model/CreateRobotRequest.h>
@@ -52,15 +53,18 @@
 #include <aws/robomaker/model/DescribeRobotApplicationRequest.h>
 #include <aws/robomaker/model/DescribeSimulationApplicationRequest.h>
 #include <aws/robomaker/model/DescribeSimulationJobRequest.h>
+#include <aws/robomaker/model/DescribeSimulationJobBatchRequest.h>
 #include <aws/robomaker/model/ListDeploymentJobsRequest.h>
 #include <aws/robomaker/model/ListFleetsRequest.h>
 #include <aws/robomaker/model/ListRobotApplicationsRequest.h>
 #include <aws/robomaker/model/ListRobotsRequest.h>
 #include <aws/robomaker/model/ListSimulationApplicationsRequest.h>
+#include <aws/robomaker/model/ListSimulationJobBatchesRequest.h>
 #include <aws/robomaker/model/ListSimulationJobsRequest.h>
 #include <aws/robomaker/model/ListTagsForResourceRequest.h>
 #include <aws/robomaker/model/RegisterRobotRequest.h>
 #include <aws/robomaker/model/RestartSimulationJobRequest.h>
+#include <aws/robomaker/model/StartSimulationJobBatchRequest.h>
 #include <aws/robomaker/model/SyncDeploymentJobRequest.h>
 #include <aws/robomaker/model/TagResourceRequest.h>
 #include <aws/robomaker/model/UntagResourceRequest.h>
@@ -242,6 +246,41 @@ void RoboMakerClient::CancelSimulationJobAsync(const CancelSimulationJobRequest&
 void RoboMakerClient::CancelSimulationJobAsyncHelper(const CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CancelSimulationJob(request), context);
+}
+
+CancelSimulationJobBatchOutcome RoboMakerClient::CancelSimulationJobBatch(const CancelSimulationJobBatchRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/cancelSimulationJobBatch";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelSimulationJobBatchOutcome(CancelSimulationJobBatchResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelSimulationJobBatchOutcome(outcome.GetError());
+  }
+}
+
+CancelSimulationJobBatchOutcomeCallable RoboMakerClient::CancelSimulationJobBatchCallable(const CancelSimulationJobBatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelSimulationJobBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelSimulationJobBatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::CancelSimulationJobBatchAsync(const CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelSimulationJobBatchAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::CancelSimulationJobBatchAsyncHelper(const CancelSimulationJobBatchRequest& request, const CancelSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelSimulationJobBatch(request), context);
 }
 
 CreateDeploymentJobOutcome RoboMakerClient::CreateDeploymentJob(const CreateDeploymentJobRequest& request) const
@@ -909,6 +948,41 @@ void RoboMakerClient::DescribeSimulationJobAsyncHelper(const DescribeSimulationJ
   handler(this, request, DescribeSimulationJob(request), context);
 }
 
+DescribeSimulationJobBatchOutcome RoboMakerClient::DescribeSimulationJobBatch(const DescribeSimulationJobBatchRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describeSimulationJobBatch";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSimulationJobBatchOutcome(DescribeSimulationJobBatchResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSimulationJobBatchOutcome(outcome.GetError());
+  }
+}
+
+DescribeSimulationJobBatchOutcomeCallable RoboMakerClient::DescribeSimulationJobBatchCallable(const DescribeSimulationJobBatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSimulationJobBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSimulationJobBatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::DescribeSimulationJobBatchAsync(const DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSimulationJobBatchAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::DescribeSimulationJobBatchAsyncHelper(const DescribeSimulationJobBatchRequest& request, const DescribeSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSimulationJobBatch(request), context);
+}
+
 ListDeploymentJobsOutcome RoboMakerClient::ListDeploymentJobs(const ListDeploymentJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1084,6 +1158,41 @@ void RoboMakerClient::ListSimulationApplicationsAsyncHelper(const ListSimulation
   handler(this, request, ListSimulationApplications(request), context);
 }
 
+ListSimulationJobBatchesOutcome RoboMakerClient::ListSimulationJobBatches(const ListSimulationJobBatchesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listSimulationJobBatches";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListSimulationJobBatchesOutcome(ListSimulationJobBatchesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSimulationJobBatchesOutcome(outcome.GetError());
+  }
+}
+
+ListSimulationJobBatchesOutcomeCallable RoboMakerClient::ListSimulationJobBatchesCallable(const ListSimulationJobBatchesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSimulationJobBatchesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSimulationJobBatches(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::ListSimulationJobBatchesAsync(const ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSimulationJobBatchesAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::ListSimulationJobBatchesAsyncHelper(const ListSimulationJobBatchesRequest& request, const ListSimulationJobBatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSimulationJobBatches(request), context);
+}
+
 ListSimulationJobsOutcome RoboMakerClient::ListSimulationJobs(const ListSimulationJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1228,6 +1337,41 @@ void RoboMakerClient::RestartSimulationJobAsync(const RestartSimulationJobReques
 void RoboMakerClient::RestartSimulationJobAsyncHelper(const RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestartSimulationJob(request), context);
+}
+
+StartSimulationJobBatchOutcome RoboMakerClient::StartSimulationJobBatch(const StartSimulationJobBatchRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/startSimulationJobBatch";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartSimulationJobBatchOutcome(StartSimulationJobBatchResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartSimulationJobBatchOutcome(outcome.GetError());
+  }
+}
+
+StartSimulationJobBatchOutcomeCallable RoboMakerClient::StartSimulationJobBatchCallable(const StartSimulationJobBatchRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartSimulationJobBatchOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartSimulationJobBatch(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RoboMakerClient::StartSimulationJobBatchAsync(const StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartSimulationJobBatchAsyncHelper( request, handler, context ); } );
+}
+
+void RoboMakerClient::StartSimulationJobBatchAsyncHelper(const StartSimulationJobBatchRequest& request, const StartSimulationJobBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartSimulationJobBatch(request), context);
 }
 
 SyncDeploymentJobOutcome RoboMakerClient::SyncDeploymentJob(const SyncDeploymentJobRequest& request) const

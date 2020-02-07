@@ -87,277 +87,317 @@ namespace Model
 
 
     /**
-     * <p>The semantic version of the component. This version to follow the semantic
-     * version syntax. i.e. major.minor.patch. This could be versioned like software
-     * 2.0.1 or date like 2019.12.01.</p>
+     * <p>The semantic version of the component. This version follows the semantic
+     * version syntax. For example, major.minor.patch. This could be versioned like
+     * software (2.0.1) or like a date (2019.12.01).</p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
-     * <p>The semantic version of the component. This version to follow the semantic
-     * version syntax. i.e. major.minor.patch. This could be versioned like software
-     * 2.0.1 or date like 2019.12.01.</p>
+     * <p>The semantic version of the component. This version follows the semantic
+     * version syntax. For example, major.minor.patch. This could be versioned like
+     * software (2.0.1) or like a date (2019.12.01).</p>
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
-     * <p>The semantic version of the component. This version to follow the semantic
-     * version syntax. i.e. major.minor.patch. This could be versioned like software
-     * 2.0.1 or date like 2019.12.01.</p>
+     * <p>The semantic version of the component. This version follows the semantic
+     * version syntax. For example, major.minor.patch. This could be versioned like
+     * software (2.0.1) or like a date (2019.12.01).</p>
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
-     * <p>The semantic version of the component. This version to follow the semantic
-     * version syntax. i.e. major.minor.patch. This could be versioned like software
-     * 2.0.1 or date like 2019.12.01.</p>
+     * <p>The semantic version of the component. This version follows the semantic
+     * version syntax. For example, major.minor.patch. This could be versioned like
+     * software (2.0.1) or like a date (2019.12.01).</p>
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
     /**
-     * <p>The semantic version of the component. This version to follow the semantic
-     * version syntax. i.e. major.minor.patch. This could be versioned like software
-     * 2.0.1 or date like 2019.12.01.</p>
+     * <p>The semantic version of the component. This version follows the semantic
+     * version syntax. For example, major.minor.patch. This could be versioned like
+     * software (2.0.1) or like a date (2019.12.01).</p>
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
     /**
-     * <p>The semantic version of the component. This version to follow the semantic
-     * version syntax. i.e. major.minor.patch. This could be versioned like software
-     * 2.0.1 or date like 2019.12.01.</p>
+     * <p>The semantic version of the component. This version follows the semantic
+     * version syntax. For example, major.minor.patch. This could be versioned like
+     * software (2.0.1) or like a date (2019.12.01).</p>
      */
     inline CreateComponentRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
-     * <p>The semantic version of the component. This version to follow the semantic
-     * version syntax. i.e. major.minor.patch. This could be versioned like software
-     * 2.0.1 or date like 2019.12.01.</p>
+     * <p>The semantic version of the component. This version follows the semantic
+     * version syntax. For example, major.minor.patch. This could be versioned like
+     * software (2.0.1) or like a date (2019.12.01).</p>
      */
     inline CreateComponentRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The semantic version of the component. This version to follow the semantic
-     * version syntax. i.e. major.minor.patch. This could be versioned like software
-     * 2.0.1 or date like 2019.12.01.</p>
+     * <p>The semantic version of the component. This version follows the semantic
+     * version syntax. For example, major.minor.patch. This could be versioned like
+     * software (2.0.1) or like a date (2019.12.01).</p>
      */
     inline CreateComponentRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
 
     /**
-     * <p>CThe description of the component. Describes the contents of the
+     * <p>The description of the component. Describes the contents of the
      * component.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>CThe description of the component. Describes the contents of the
+     * <p>The description of the component. Describes the contents of the
      * component.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>CThe description of the component. Describes the contents of the
+     * <p>The description of the component. Describes the contents of the
      * component.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>CThe description of the component. Describes the contents of the
+     * <p>The description of the component. Describes the contents of the
      * component.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>CThe description of the component. Describes the contents of the
+     * <p>The description of the component. Describes the contents of the
      * component.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>CThe description of the component. Describes the contents of the
+     * <p>The description of the component. Describes the contents of the
      * component.</p>
      */
     inline CreateComponentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>CThe description of the component. Describes the contents of the
+     * <p>The description of the component. Describes the contents of the
      * component.</p>
      */
     inline CreateComponentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>CThe description of the component. Describes the contents of the
+     * <p>The description of the component. Describes the contents of the
      * component.</p>
      */
     inline CreateComponentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>CThe change description of the component. Describes what change has been made
-     * in this version. In other words what makes this version different from other
-     * versions of this component.</p>
+     * <p>The change description of the component. Describes what change has been made
+     * in this version, or what makes this version different from other versions of
+     * this component.</p>
      */
     inline const Aws::String& GetChangeDescription() const{ return m_changeDescription; }
 
     /**
-     * <p>CThe change description of the component. Describes what change has been made
-     * in this version. In other words what makes this version different from other
-     * versions of this component.</p>
+     * <p>The change description of the component. Describes what change has been made
+     * in this version, or what makes this version different from other versions of
+     * this component.</p>
      */
     inline bool ChangeDescriptionHasBeenSet() const { return m_changeDescriptionHasBeenSet; }
 
     /**
-     * <p>CThe change description of the component. Describes what change has been made
-     * in this version. In other words what makes this version different from other
-     * versions of this component.</p>
+     * <p>The change description of the component. Describes what change has been made
+     * in this version, or what makes this version different from other versions of
+     * this component.</p>
      */
     inline void SetChangeDescription(const Aws::String& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = value; }
 
     /**
-     * <p>CThe change description of the component. Describes what change has been made
-     * in this version. In other words what makes this version different from other
-     * versions of this component.</p>
+     * <p>The change description of the component. Describes what change has been made
+     * in this version, or what makes this version different from other versions of
+     * this component.</p>
      */
     inline void SetChangeDescription(Aws::String&& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = std::move(value); }
 
     /**
-     * <p>CThe change description of the component. Describes what change has been made
-     * in this version. In other words what makes this version different from other
-     * versions of this component.</p>
+     * <p>The change description of the component. Describes what change has been made
+     * in this version, or what makes this version different from other versions of
+     * this component.</p>
      */
     inline void SetChangeDescription(const char* value) { m_changeDescriptionHasBeenSet = true; m_changeDescription.assign(value); }
 
     /**
-     * <p>CThe change description of the component. Describes what change has been made
-     * in this version. In other words what makes this version different from other
-     * versions of this component.</p>
+     * <p>The change description of the component. Describes what change has been made
+     * in this version, or what makes this version different from other versions of
+     * this component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(const Aws::String& value) { SetChangeDescription(value); return *this;}
 
     /**
-     * <p>CThe change description of the component. Describes what change has been made
-     * in this version. In other words what makes this version different from other
-     * versions of this component.</p>
+     * <p>The change description of the component. Describes what change has been made
+     * in this version, or what makes this version different from other versions of
+     * this component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(Aws::String&& value) { SetChangeDescription(std::move(value)); return *this;}
 
     /**
-     * <p>CThe change description of the component. Describes what change has been made
-     * in this version. In other words what makes this version different from other
-     * versions of this component.</p>
+     * <p>The change description of the component. Describes what change has been made
+     * in this version, or what makes this version different from other versions of
+     * this component.</p>
      */
     inline CreateComponentRequest& WithChangeDescription(const char* value) { SetChangeDescription(value); return *this;}
 
 
     /**
-     * <p>CThe platform of the component.</p>
+     * <p>The platform of the component.</p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>CThe platform of the component.</p>
+     * <p>The platform of the component.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>CThe platform of the component.</p>
+     * <p>The platform of the component.</p>
      */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>CThe platform of the component.</p>
+     * <p>The platform of the component.</p>
      */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>CThe platform of the component.</p>
+     * <p>The platform of the component.</p>
      */
     inline CreateComponentRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>CThe platform of the component.</p>
+     * <p>The platform of the component.</p>
      */
     inline CreateComponentRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 
 
     /**
-     * <p>CThe data of the component.</p>
+     * <p>The data of the component. Used to specify the data inline. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the
+     * component.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
 
     /**
-     * <p>CThe data of the component.</p>
+     * <p>The data of the component. Used to specify the data inline. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the
+     * component.</p>
      */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
-     * <p>CThe data of the component.</p>
+     * <p>The data of the component. Used to specify the data inline. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the
+     * component.</p>
      */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * <p>CThe data of the component.</p>
+     * <p>The data of the component. Used to specify the data inline. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the
+     * component.</p>
      */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * <p>CThe data of the component.</p>
+     * <p>The data of the component. Used to specify the data inline. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the
+     * component.</p>
      */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
 
     /**
-     * <p>CThe data of the component.</p>
+     * <p>The data of the component. Used to specify the data inline. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the
+     * component.</p>
      */
     inline CreateComponentRequest& WithData(const Aws::String& value) { SetData(value); return *this;}
 
     /**
-     * <p>CThe data of the component.</p>
+     * <p>The data of the component. Used to specify the data inline. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the
+     * component.</p>
      */
     inline CreateComponentRequest& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
 
     /**
-     * <p>CThe data of the component.</p>
+     * <p>The data of the component. Used to specify the data inline. Either
+     * <code>data</code> or <code>uri</code> can be used to specify the data within the
+     * component.</p>
      */
     inline CreateComponentRequest& WithData(const char* value) { SetData(value); return *this;}
 
 
     /**
-     * <p>CThe uri of the component.</p>
+     * <p>The uri of the component. Must be an S3 URL and the requester must have
+     * permission to access the S3 bucket. If you use S3, you can specify component
+     * content up to your service quota. Either <code>data</code> or <code>uri</code>
+     * can be used to specify the data within the component.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
 
     /**
-     * <p>CThe uri of the component.</p>
+     * <p>The uri of the component. Must be an S3 URL and the requester must have
+     * permission to access the S3 bucket. If you use S3, you can specify component
+     * content up to your service quota. Either <code>data</code> or <code>uri</code>
+     * can be used to specify the data within the component.</p>
      */
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
 
     /**
-     * <p>CThe uri of the component.</p>
+     * <p>The uri of the component. Must be an S3 URL and the requester must have
+     * permission to access the S3 bucket. If you use S3, you can specify component
+     * content up to your service quota. Either <code>data</code> or <code>uri</code>
+     * can be used to specify the data within the component.</p>
      */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
-     * <p>CThe uri of the component.</p>
+     * <p>The uri of the component. Must be an S3 URL and the requester must have
+     * permission to access the S3 bucket. If you use S3, you can specify component
+     * content up to your service quota. Either <code>data</code> or <code>uri</code>
+     * can be used to specify the data within the component.</p>
      */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
 
     /**
-     * <p>CThe uri of the component.</p>
+     * <p>The uri of the component. Must be an S3 URL and the requester must have
+     * permission to access the S3 bucket. If you use S3, you can specify component
+     * content up to your service quota. Either <code>data</code> or <code>uri</code>
+     * can be used to specify the data within the component.</p>
      */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
 
     /**
-     * <p>CThe uri of the component.</p>
+     * <p>The uri of the component. Must be an S3 URL and the requester must have
+     * permission to access the S3 bucket. If you use S3, you can specify component
+     * content up to your service quota. Either <code>data</code> or <code>uri</code>
+     * can be used to specify the data within the component.</p>
      */
     inline CreateComponentRequest& WithUri(const Aws::String& value) { SetUri(value); return *this;}
 
     /**
-     * <p>CThe uri of the component.</p>
+     * <p>The uri of the component. Must be an S3 URL and the requester must have
+     * permission to access the S3 bucket. If you use S3, you can specify component
+     * content up to your service quota. Either <code>data</code> or <code>uri</code>
+     * can be used to specify the data within the component.</p>
      */
     inline CreateComponentRequest& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
 
     /**
-     * <p>CThe uri of the component.</p>
+     * <p>The uri of the component. Must be an S3 URL and the requester must have
+     * permission to access the S3 bucket. If you use S3, you can specify component
+     * content up to your service quota. Either <code>data</code> or <code>uri</code>
+     * can be used to specify the data within the component.</p>
      */
     inline CreateComponentRequest& WithUri(const char* value) { SetUri(value); return *this;}
 
@@ -404,108 +444,108 @@ namespace Model
 
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>CThe tags of the component.</p>
+     * <p>The tags of the component.</p>
      */
     inline CreateComponentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>CThe idempotency token of the component.</p>
+     * <p>The idempotency token of the component.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>CThe idempotency token of the component.</p>
+     * <p>The idempotency token of the component.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>CThe idempotency token of the component.</p>
+     * <p>The idempotency token of the component.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>CThe idempotency token of the component.</p>
+     * <p>The idempotency token of the component.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>CThe idempotency token of the component.</p>
+     * <p>The idempotency token of the component.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>CThe idempotency token of the component.</p>
+     * <p>The idempotency token of the component.</p>
      */
     inline CreateComponentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>CThe idempotency token of the component.</p>
+     * <p>The idempotency token of the component.</p>
      */
     inline CreateComponentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>CThe idempotency token of the component.</p>
+     * <p>The idempotency token of the component.</p>
      */
     inline CreateComponentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
