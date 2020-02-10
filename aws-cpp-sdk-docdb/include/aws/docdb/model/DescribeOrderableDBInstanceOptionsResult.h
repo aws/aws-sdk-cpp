@@ -52,37 +52,37 @@ namespace Model
 
 
     /**
-     * <p>The options that are available for a particular orderable DB instance.</p>
+     * <p>The options that are available for a particular orderable instance.</p>
      */
     inline const Aws::Vector<OrderableDBInstanceOption>& GetOrderableDBInstanceOptions() const{ return m_orderableDBInstanceOptions; }
 
     /**
-     * <p>The options that are available for a particular orderable DB instance.</p>
+     * <p>The options that are available for a particular orderable instance.</p>
      */
     inline void SetOrderableDBInstanceOptions(const Aws::Vector<OrderableDBInstanceOption>& value) { m_orderableDBInstanceOptions = value; }
 
     /**
-     * <p>The options that are available for a particular orderable DB instance.</p>
+     * <p>The options that are available for a particular orderable instance.</p>
      */
     inline void SetOrderableDBInstanceOptions(Aws::Vector<OrderableDBInstanceOption>&& value) { m_orderableDBInstanceOptions = std::move(value); }
 
     /**
-     * <p>The options that are available for a particular orderable DB instance.</p>
+     * <p>The options that are available for a particular orderable instance.</p>
      */
     inline DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(const Aws::Vector<OrderableDBInstanceOption>& value) { SetOrderableDBInstanceOptions(value); return *this;}
 
     /**
-     * <p>The options that are available for a particular orderable DB instance.</p>
+     * <p>The options that are available for a particular orderable instance.</p>
      */
     inline DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(Aws::Vector<OrderableDBInstanceOption>&& value) { SetOrderableDBInstanceOptions(std::move(value)); return *this;}
 
     /**
-     * <p>The options that are available for a particular orderable DB instance.</p>
+     * <p>The options that are available for a particular orderable instance.</p>
      */
     inline DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(const OrderableDBInstanceOption& value) { m_orderableDBInstanceOptions.push_back(value); return *this; }
 
     /**
-     * <p>The options that are available for a particular orderable DB instance.</p>
+     * <p>The options that are available for a particular orderable instance.</p>
      */
     inline DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(OrderableDBInstanceOption&& value) { m_orderableDBInstanceOptions.push_back(std::move(value)); return *this; }
 

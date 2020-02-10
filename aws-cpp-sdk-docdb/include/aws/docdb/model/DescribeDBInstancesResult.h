@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p>Detailed information about one or more DB instances. </p>
+     * <p>Detailed information about one or more instances. </p>
      */
     inline const Aws::Vector<DBInstance>& GetDBInstances() const{ return m_dBInstances; }
 
     /**
-     * <p>Detailed information about one or more DB instances. </p>
+     * <p>Detailed information about one or more instances. </p>
      */
     inline void SetDBInstances(const Aws::Vector<DBInstance>& value) { m_dBInstances = value; }
 
     /**
-     * <p>Detailed information about one or more DB instances. </p>
+     * <p>Detailed information about one or more instances. </p>
      */
     inline void SetDBInstances(Aws::Vector<DBInstance>&& value) { m_dBInstances = std::move(value); }
 
     /**
-     * <p>Detailed information about one or more DB instances. </p>
+     * <p>Detailed information about one or more instances. </p>
      */
     inline DescribeDBInstancesResult& WithDBInstances(const Aws::Vector<DBInstance>& value) { SetDBInstances(value); return *this;}
 
     /**
-     * <p>Detailed information about one or more DB instances. </p>
+     * <p>Detailed information about one or more instances. </p>
      */
     inline DescribeDBInstancesResult& WithDBInstances(Aws::Vector<DBInstance>&& value) { SetDBInstances(std::move(value)); return *this;}
 
     /**
-     * <p>Detailed information about one or more DB instances. </p>
+     * <p>Detailed information about one or more instances. </p>
      */
     inline DescribeDBInstancesResult& AddDBInstances(const DBInstance& value) { m_dBInstances.push_back(value); return *this; }
 
     /**
-     * <p>Detailed information about one or more DB instances. </p>
+     * <p>Detailed information about one or more instances. </p>
      */
     inline DescribeDBInstancesResult& AddDBInstances(DBInstance&& value) { m_dBInstances.push_back(std::move(value)); return *this; }
 

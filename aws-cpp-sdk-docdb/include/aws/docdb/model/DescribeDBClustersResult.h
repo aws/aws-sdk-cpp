@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p>A list of DB clusters.</p>
+     * <p>A list of clusters.</p>
      */
     inline const Aws::Vector<DBCluster>& GetDBClusters() const{ return m_dBClusters; }
 
     /**
-     * <p>A list of DB clusters.</p>
+     * <p>A list of clusters.</p>
      */
     inline void SetDBClusters(const Aws::Vector<DBCluster>& value) { m_dBClusters = value; }
 
     /**
-     * <p>A list of DB clusters.</p>
+     * <p>A list of clusters.</p>
      */
     inline void SetDBClusters(Aws::Vector<DBCluster>&& value) { m_dBClusters = std::move(value); }
 
     /**
-     * <p>A list of DB clusters.</p>
+     * <p>A list of clusters.</p>
      */
     inline DescribeDBClustersResult& WithDBClusters(const Aws::Vector<DBCluster>& value) { SetDBClusters(value); return *this;}
 
     /**
-     * <p>A list of DB clusters.</p>
+     * <p>A list of clusters.</p>
      */
     inline DescribeDBClustersResult& WithDBClusters(Aws::Vector<DBCluster>&& value) { SetDBClusters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DB clusters.</p>
+     * <p>A list of clusters.</p>
      */
     inline DescribeDBClustersResult& AddDBClusters(const DBCluster& value) { m_dBClusters.push_back(value); return *this; }
 
     /**
-     * <p>A list of DB clusters.</p>
+     * <p>A list of clusters.</p>
      */
     inline DescribeDBClustersResult& AddDBClusters(DBCluster&& value) { m_dBClusters.push_back(std::move(value)); return *this; }
 

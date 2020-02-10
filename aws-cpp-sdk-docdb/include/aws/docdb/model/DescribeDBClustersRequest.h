@@ -53,64 +53,64 @@ namespace Model
   public:
 
     /**
-     * <p>The user-provided DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
+     * <p>The user-provided cluster identifier. If this parameter is specified,
+     * information from only the specific cluster is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The user-provided DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
+     * <p>The user-provided cluster identifier. If this parameter is specified,
+     * information from only the specific cluster is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The user-provided DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
+     * <p>The user-provided cluster identifier. If this parameter is specified,
+     * information from only the specific cluster is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The user-provided DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
+     * <p>The user-provided cluster identifier. If this parameter is specified,
+     * information from only the specific cluster is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The user-provided DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
+     * <p>The user-provided cluster identifier. If this parameter is specified,
+     * information from only the specific cluster is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The user-provided DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
+     * <p>The user-provided cluster identifier. If this parameter is specified,
+     * information from only the specific cluster is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The user-provided DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
+     * <p>The user-provided cluster identifier. If this parameter is specified,
+     * information from only the specific cluster is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
     inline DescribeDBClustersRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The user-provided DB cluster identifier. If this parameter is specified,
-     * information from only the specific DB cluster is returned. This parameter isn't
+     * <p>The user-provided cluster identifier. If this parameter is specified,
+     * information from only the specific cluster is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match an
      * existing <code>DBClusterIdentifier</code>.</p> </li> </ul>
      */
@@ -118,73 +118,73 @@ namespace Model
 
 
     /**
-     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
-     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
-     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * <p>A filter that specifies one or more clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the clusters identified by these ARNs.</p> </li>
      * </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
-     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
-     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * <p>A filter that specifies one or more clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the clusters identified by these ARNs.</p> </li>
      * </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
-     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
-     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * <p>A filter that specifies one or more clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the clusters identified by these ARNs.</p> </li>
      * </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
-     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
-     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * <p>A filter that specifies one or more clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the clusters identified by these ARNs.</p> </li>
      * </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
-     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
-     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * <p>A filter that specifies one or more clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the clusters identified by these ARNs.</p> </li>
      * </ul>
      */
     inline DescribeDBClustersRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
-     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
-     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * <p>A filter that specifies one or more clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the clusters identified by these ARNs.</p> </li>
      * </ul>
      */
     inline DescribeDBClustersRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
-     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
-     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * <p>A filter that specifies one or more clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the clusters identified by these ARNs.</p> </li>
      * </ul>
      */
     inline DescribeDBClustersRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>A filter that specifies one or more DB clusters to describe.</p> <p>Supported
-     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
-     * identifiers and DB cluster Amazon Resource Names (ARNs). The results list only
-     * includes information about the DB clusters identified by these ARNs.</p> </li>
+     * <p>A filter that specifies one or more clusters to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list only
+     * includes information about the clusters identified by these ARNs.</p> </li>
      * </ul>
      */
     inline DescribeDBClustersRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }

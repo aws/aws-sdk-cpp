@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p>A list of DB cluster parameter groups.</p>
+     * <p>A list of cluster parameter groups.</p>
      */
     inline const Aws::Vector<DBClusterParameterGroup>& GetDBClusterParameterGroups() const{ return m_dBClusterParameterGroups; }
 
     /**
-     * <p>A list of DB cluster parameter groups.</p>
+     * <p>A list of cluster parameter groups.</p>
      */
     inline void SetDBClusterParameterGroups(const Aws::Vector<DBClusterParameterGroup>& value) { m_dBClusterParameterGroups = value; }
 
     /**
-     * <p>A list of DB cluster parameter groups.</p>
+     * <p>A list of cluster parameter groups.</p>
      */
     inline void SetDBClusterParameterGroups(Aws::Vector<DBClusterParameterGroup>&& value) { m_dBClusterParameterGroups = std::move(value); }
 
     /**
-     * <p>A list of DB cluster parameter groups.</p>
+     * <p>A list of cluster parameter groups.</p>
      */
     inline DescribeDBClusterParameterGroupsResult& WithDBClusterParameterGroups(const Aws::Vector<DBClusterParameterGroup>& value) { SetDBClusterParameterGroups(value); return *this;}
 
     /**
-     * <p>A list of DB cluster parameter groups.</p>
+     * <p>A list of cluster parameter groups.</p>
      */
     inline DescribeDBClusterParameterGroupsResult& WithDBClusterParameterGroups(Aws::Vector<DBClusterParameterGroup>&& value) { SetDBClusterParameterGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A list of DB cluster parameter groups.</p>
+     * <p>A list of cluster parameter groups.</p>
      */
     inline DescribeDBClusterParameterGroupsResult& AddDBClusterParameterGroups(const DBClusterParameterGroup& value) { m_dBClusterParameterGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of DB cluster parameter groups.</p>
+     * <p>A list of cluster parameter groups.</p>
      */
     inline DescribeDBClusterParameterGroupsResult& AddDBClusterParameterGroups(DBClusterParameterGroup&& value) { m_dBClusterParameterGroups.push_back(std::move(value)); return *this; }
 

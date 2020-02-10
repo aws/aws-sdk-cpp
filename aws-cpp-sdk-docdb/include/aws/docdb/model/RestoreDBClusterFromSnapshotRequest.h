@@ -108,80 +108,80 @@ namespace Model
 
 
     /**
-     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
-     * snapshot. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The
-     * first character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * <p>The name of the cluster to create from the snapshot or cluster snapshot. This
+     * parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
-     * snapshot. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The
-     * first character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * <p>The name of the cluster to create from the snapshot or cluster snapshot. This
+     * parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
-     * snapshot. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The
-     * first character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * <p>The name of the cluster to create from the snapshot or cluster snapshot. This
+     * parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
-     * snapshot. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The
-     * first character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * <p>The name of the cluster to create from the snapshot or cluster snapshot. This
+     * parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
-     * snapshot. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The
-     * first character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * <p>The name of the cluster to create from the snapshot or cluster snapshot. This
+     * parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
-     * snapshot. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The
-     * first character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * <p>The name of the cluster to create from the snapshot or cluster snapshot. This
+     * parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
-     * snapshot. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The
-     * first character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * <p>The name of the cluster to create from the snapshot or cluster snapshot. This
+     * parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB cluster to create from the DB snapshot or DB cluster
-     * snapshot. This parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The
-     * first character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
+     * <p>The name of the cluster to create from the snapshot or cluster snapshot. This
+     * parameter isn't case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must
+     * contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first
+     * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <p>Example:
      * <code>my-snapshot-id</code> </p>
      */
@@ -189,495 +189,475 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
-     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
-     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing snapshot.</p> </li> </ul>
+     * <p>The identifier for the snapshot or cluster snapshot to restore from.</p>
+     * <p>You can use either the name or the Amazon Resource Name (ARN) to specify a
+     * cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * snapshot.</p> </li> </ul>
      */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
 
     /**
-     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
-     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
-     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing snapshot.</p> </li> </ul>
+     * <p>The identifier for the snapshot or cluster snapshot to restore from.</p>
+     * <p>You can use either the name or the Amazon Resource Name (ARN) to specify a
+     * cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * snapshot.</p> </li> </ul>
      */
     inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
-     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
-     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing snapshot.</p> </li> </ul>
+     * <p>The identifier for the snapshot or cluster snapshot to restore from.</p>
+     * <p>You can use either the name or the Amazon Resource Name (ARN) to specify a
+     * cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * snapshot.</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
-     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
-     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
-     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing snapshot.</p> </li> </ul>
+     * <p>The identifier for the snapshot or cluster snapshot to restore from.</p>
+     * <p>You can use either the name or the Amazon Resource Name (ARN) to specify a
+     * cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * snapshot.</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
-     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
-     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing snapshot.</p> </li> </ul>
+     * <p>The identifier for the snapshot or cluster snapshot to restore from.</p>
+     * <p>You can use either the name or the Amazon Resource Name (ARN) to specify a
+     * cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * snapshot.</p> </li> </ul>
      */
     inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /**
-     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
-     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
-     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing snapshot.</p> </li> </ul>
+     * <p>The identifier for the snapshot or cluster snapshot to restore from.</p>
+     * <p>You can use either the name or the Amazon Resource Name (ARN) to specify a
+     * cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * snapshot.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
-     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
-     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing snapshot.</p> </li> </ul>
+     * <p>The identifier for the snapshot or cluster snapshot to restore from.</p>
+     * <p>You can use either the name or the Amazon Resource Name (ARN) to specify a
+     * cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * snapshot.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the DB snapshot or DB cluster snapshot to restore
-     * from.</p> <p>You can use either the name or the Amazon Resource Name (ARN) to
-     * specify a DB cluster snapshot. However, you can use only the ARN to specify a DB
-     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an
-     * existing snapshot.</p> </li> </ul>
+     * <p>The identifier for the snapshot or cluster snapshot to restore from.</p>
+     * <p>You can use either the name or the Amazon Resource Name (ARN) to specify a
+     * cluster snapshot. However, you can use only the ARN to specify a snapshot.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing
+     * snapshot.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 
 
     /**
-     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
-     * as source.</p> <p>Constraint: Must be compatible with the engine of the
-     * source.</p>
+     * <p>The database engine to use for the new cluster.</p> <p>Default: The same as
+     * source.</p> <p>Constraint: Must be compatible with the engine of the source.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
-     * as source.</p> <p>Constraint: Must be compatible with the engine of the
-     * source.</p>
+     * <p>The database engine to use for the new cluster.</p> <p>Default: The same as
+     * source.</p> <p>Constraint: Must be compatible with the engine of the source.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
-     * as source.</p> <p>Constraint: Must be compatible with the engine of the
-     * source.</p>
+     * <p>The database engine to use for the new cluster.</p> <p>Default: The same as
+     * source.</p> <p>Constraint: Must be compatible with the engine of the source.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
-     * as source.</p> <p>Constraint: Must be compatible with the engine of the
-     * source.</p>
+     * <p>The database engine to use for the new cluster.</p> <p>Default: The same as
+     * source.</p> <p>Constraint: Must be compatible with the engine of the source.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
-     * as source.</p> <p>Constraint: Must be compatible with the engine of the
-     * source.</p>
+     * <p>The database engine to use for the new cluster.</p> <p>Default: The same as
+     * source.</p> <p>Constraint: Must be compatible with the engine of the source.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
-     * as source.</p> <p>Constraint: Must be compatible with the engine of the
-     * source.</p>
+     * <p>The database engine to use for the new cluster.</p> <p>Default: The same as
+     * source.</p> <p>Constraint: Must be compatible with the engine of the source.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
-     * as source.</p> <p>Constraint: Must be compatible with the engine of the
-     * source.</p>
+     * <p>The database engine to use for the new cluster.</p> <p>Default: The same as
+     * source.</p> <p>Constraint: Must be compatible with the engine of the source.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The database engine to use for the new DB cluster.</p> <p>Default: The same
-     * as source.</p> <p>Constraint: Must be compatible with the engine of the
-     * source.</p>
+     * <p>The database engine to use for the new cluster.</p> <p>Default: The same as
+     * source.</p> <p>Constraint: Must be compatible with the engine of the source.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
-     * <p>The version of the database engine to use for the new DB cluster.</p>
+     * <p>The version of the database engine to use for the new cluster.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version of the database engine to use for the new DB cluster.</p>
+     * <p>The version of the database engine to use for the new cluster.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version of the database engine to use for the new DB cluster.</p>
+     * <p>The version of the database engine to use for the new cluster.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version of the database engine to use for the new DB cluster.</p>
+     * <p>The version of the database engine to use for the new cluster.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version of the database engine to use for the new DB cluster.</p>
+     * <p>The version of the database engine to use for the new cluster.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version of the database engine to use for the new DB cluster.</p>
+     * <p>The version of the database engine to use for the new cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version of the database engine to use for the new DB cluster.</p>
+     * <p>The version of the database engine to use for the new cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the database engine to use for the new DB cluster.</p>
+     * <p>The version of the database engine to use for the new cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
 
     /**
-     * <p>The port number on which the new DB cluster accepts connections.</p>
+     * <p>The port number on which the new cluster accepts connections.</p>
      * <p>Constraints: Must be a value from <code>1150</code> to
-     * <code>65535</code>.</p> <p>Default: The same port as the original DB
-     * cluster.</p>
+     * <code>65535</code>.</p> <p>Default: The same port as the original cluster.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port number on which the new DB cluster accepts connections.</p>
+     * <p>The port number on which the new cluster accepts connections.</p>
      * <p>Constraints: Must be a value from <code>1150</code> to
-     * <code>65535</code>.</p> <p>Default: The same port as the original DB
-     * cluster.</p>
+     * <code>65535</code>.</p> <p>Default: The same port as the original cluster.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port number on which the new DB cluster accepts connections.</p>
+     * <p>The port number on which the new cluster accepts connections.</p>
      * <p>Constraints: Must be a value from <code>1150</code> to
-     * <code>65535</code>.</p> <p>Default: The same port as the original DB
-     * cluster.</p>
+     * <code>65535</code>.</p> <p>Default: The same port as the original cluster.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port number on which the new DB cluster accepts connections.</p>
+     * <p>The port number on which the new cluster accepts connections.</p>
      * <p>Constraints: Must be a value from <code>1150</code> to
-     * <code>65535</code>.</p> <p>Default: The same port as the original DB
-     * cluster.</p>
+     * <code>65535</code>.</p> <p>Default: The same port as the original cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: If provided, must match the name of an existing
-     * <code>DBSubnetGroup</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>The name of the subnet group to use for the new cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: If provided, must match the name of an existing
-     * <code>DBSubnetGroup</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>The name of the subnet group to use for the new cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: If provided, must match the name of an existing
-     * <code>DBSubnetGroup</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>The name of the subnet group to use for the new cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: If provided, must match the name of an existing
-     * <code>DBSubnetGroup</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>The name of the subnet group to use for the new cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: If provided, must match the name of an existing
-     * <code>DBSubnetGroup</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>The name of the subnet group to use for the new cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: If provided, must match the name of an existing
-     * <code>DBSubnetGroup</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>The name of the subnet group to use for the new cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: If provided, must match the name of an existing
-     * <code>DBSubnetGroup</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>The name of the subnet group to use for the new cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB subnet group to use for the new DB cluster.</p>
-     * <p>Constraints: If provided, must match the name of an existing
-     * <code>DBSubnetGroup</code>.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>The name of the subnet group to use for the new cluster.</p> <p>Constraints:
+     * If provided, must match the name of an existing <code>DBSubnetGroup</code>.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of virtual private cloud (VPC) security groups that the new DB cluster
+     * <p>A list of virtual private cloud (VPC) security groups that the new cluster
      * will belong to.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The tags to be assigned to the restored DB cluster.</p>
+     * <p>The tags to be assigned to the restored cluster.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to be assigned to the restored DB cluster.</p>
+     * <p>The tags to be assigned to the restored cluster.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to be assigned to the restored DB cluster.</p>
+     * <p>The tags to be assigned to the restored cluster.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to be assigned to the restored DB cluster.</p>
+     * <p>The tags to be assigned to the restored cluster.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to be assigned to the restored DB cluster.</p>
+     * <p>The tags to be assigned to the restored cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to be assigned to the restored DB cluster.</p>
+     * <p>The tags to be assigned to the restored cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to be assigned to the restored DB cluster.</p>
+     * <p>The tags to be assigned to the restored cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags to be assigned to the restored DB cluster.</p>
+     * <p>The tags to be assigned to the restored cluster.</p>
      */
     inline RestoreDBClusterFromSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * a DB snapshot or DB cluster snapshot.</p> <p>The AWS KMS key identifier is the
-     * Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used
-     * to encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
-     * the ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
-     * is encrypted, then the restored DB cluster is encrypted using the AWS KMS key
-     * that was used to encrypt the DB snapshot or the DB cluster snapshot.</p> </li>
-     * <li> <p>If the DB snapshot or the DB cluster snapshot in
-     * <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul>
+     * <p>The AWS KMS key identifier to use when restoring an encrypted cluster from a
+     * DB snapshot or cluster snapshot.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new cluster, then you can use the AWS KMS key alias instead of the
+     * ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored cluster is encrypted using the AWS KMS key that was
+     * used to encrypt the snapshot or the cluster snapshot.</p> </li> <li> <p>If the
+     * snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * a DB snapshot or DB cluster snapshot.</p> <p>The AWS KMS key identifier is the
-     * Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used
-     * to encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
-     * the ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
-     * is encrypted, then the restored DB cluster is encrypted using the AWS KMS key
-     * that was used to encrypt the DB snapshot or the DB cluster snapshot.</p> </li>
-     * <li> <p>If the DB snapshot or the DB cluster snapshot in
-     * <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul>
+     * <p>The AWS KMS key identifier to use when restoring an encrypted cluster from a
+     * DB snapshot or cluster snapshot.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new cluster, then you can use the AWS KMS key alias instead of the
+     * ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored cluster is encrypted using the AWS KMS key that was
+     * used to encrypt the snapshot or the cluster snapshot.</p> </li> <li> <p>If the
+     * snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * a DB snapshot or DB cluster snapshot.</p> <p>The AWS KMS key identifier is the
-     * Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used
-     * to encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
-     * the ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
-     * is encrypted, then the restored DB cluster is encrypted using the AWS KMS key
-     * that was used to encrypt the DB snapshot or the DB cluster snapshot.</p> </li>
-     * <li> <p>If the DB snapshot or the DB cluster snapshot in
-     * <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul>
+     * <p>The AWS KMS key identifier to use when restoring an encrypted cluster from a
+     * DB snapshot or cluster snapshot.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new cluster, then you can use the AWS KMS key alias instead of the
+     * ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored cluster is encrypted using the AWS KMS key that was
+     * used to encrypt the snapshot or the cluster snapshot.</p> </li> <li> <p>If the
+     * snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * a DB snapshot or DB cluster snapshot.</p> <p>The AWS KMS key identifier is the
-     * Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used
-     * to encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
-     * the ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
-     * is encrypted, then the restored DB cluster is encrypted using the AWS KMS key
-     * that was used to encrypt the DB snapshot or the DB cluster snapshot.</p> </li>
-     * <li> <p>If the DB snapshot or the DB cluster snapshot in
-     * <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul>
+     * <p>The AWS KMS key identifier to use when restoring an encrypted cluster from a
+     * DB snapshot or cluster snapshot.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new cluster, then you can use the AWS KMS key alias instead of the
+     * ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored cluster is encrypted using the AWS KMS key that was
+     * used to encrypt the snapshot or the cluster snapshot.</p> </li> <li> <p>If the
+     * snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * a DB snapshot or DB cluster snapshot.</p> <p>The AWS KMS key identifier is the
-     * Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used
-     * to encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
-     * the ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
-     * is encrypted, then the restored DB cluster is encrypted using the AWS KMS key
-     * that was used to encrypt the DB snapshot or the DB cluster snapshot.</p> </li>
-     * <li> <p>If the DB snapshot or the DB cluster snapshot in
-     * <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul>
+     * <p>The AWS KMS key identifier to use when restoring an encrypted cluster from a
+     * DB snapshot or cluster snapshot.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new cluster, then you can use the AWS KMS key alias instead of the
+     * ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored cluster is encrypted using the AWS KMS key that was
+     * used to encrypt the snapshot or the cluster snapshot.</p> </li> <li> <p>If the
+     * snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * a DB snapshot or DB cluster snapshot.</p> <p>The AWS KMS key identifier is the
-     * Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used
-     * to encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
-     * the ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
-     * is encrypted, then the restored DB cluster is encrypted using the AWS KMS key
-     * that was used to encrypt the DB snapshot or the DB cluster snapshot.</p> </li>
-     * <li> <p>If the DB snapshot or the DB cluster snapshot in
-     * <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul>
+     * <p>The AWS KMS key identifier to use when restoring an encrypted cluster from a
+     * DB snapshot or cluster snapshot.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new cluster, then you can use the AWS KMS key alias instead of the
+     * ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored cluster is encrypted using the AWS KMS key that was
+     * used to encrypt the snapshot or the cluster snapshot.</p> </li> <li> <p>If the
+     * snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * a DB snapshot or DB cluster snapshot.</p> <p>The AWS KMS key identifier is the
-     * Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used
-     * to encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
-     * the ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
-     * is encrypted, then the restored DB cluster is encrypted using the AWS KMS key
-     * that was used to encrypt the DB snapshot or the DB cluster snapshot.</p> </li>
-     * <li> <p>If the DB snapshot or the DB cluster snapshot in
-     * <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul>
+     * <p>The AWS KMS key identifier to use when restoring an encrypted cluster from a
+     * DB snapshot or cluster snapshot.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new cluster, then you can use the AWS KMS key alias instead of the
+     * ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored cluster is encrypted using the AWS KMS key that was
+     * used to encrypt the snapshot or the cluster snapshot.</p> </li> <li> <p>If the
+     * snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier to use when restoring an encrypted DB cluster from
-     * a DB snapshot or DB cluster snapshot.</p> <p>The AWS KMS key identifier is the
-     * Amazon Resource Name (ARN) for the AWS KMS encryption key. If you are restoring
-     * a DB cluster with the same AWS account that owns the AWS KMS encryption key used
-     * to encrypt the new DB cluster, then you can use the AWS KMS key alias instead of
-     * the ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for
-     * the <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li>
-     * <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code>
-     * is encrypted, then the restored DB cluster is encrypted using the AWS KMS key
-     * that was used to encrypt the DB snapshot or the DB cluster snapshot.</p> </li>
-     * <li> <p>If the DB snapshot or the DB cluster snapshot in
-     * <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster
-     * is not encrypted.</p> </li> </ul>
+     * <p>The AWS KMS key identifier to use when restoring an encrypted cluster from a
+     * DB snapshot or cluster snapshot.</p> <p>The AWS KMS key identifier is the Amazon
+     * Resource Name (ARN) for the AWS KMS encryption key. If you are restoring a
+     * cluster with the same AWS account that owns the AWS KMS encryption key used to
+     * encrypt the new cluster, then you can use the AWS KMS key alias instead of the
+     * ARN for the AWS KMS encryption key.</p> <p>If you do not specify a value for the
+     * <code>KmsKeyId</code> parameter, then the following occurs:</p> <ul> <li> <p>If
+     * the snapshot or cluster snapshot in <code>SnapshotIdentifier</code> is
+     * encrypted, then the restored cluster is encrypted using the AWS KMS key that was
+     * used to encrypt the snapshot or the cluster snapshot.</p> </li> <li> <p>If the
+     * snapshot or the cluster snapshot in <code>SnapshotIdentifier</code> is not
+     * encrypted, then the restored DB cluster is not encrypted.</p> </li> </ul>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

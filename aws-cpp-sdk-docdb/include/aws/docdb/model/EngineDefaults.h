@@ -54,50 +54,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the DB cluster parameter group family to return the engine
-     * parameter information for.</p>
+     * <p>The name of the cluster parameter group family to return the engine parameter
+     * information for.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
 
     /**
-     * <p>The name of the DB cluster parameter group family to return the engine
-     * parameter information for.</p>
+     * <p>The name of the cluster parameter group family to return the engine parameter
+     * information for.</p>
      */
     inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
     /**
-     * <p>The name of the DB cluster parameter group family to return the engine
-     * parameter information for.</p>
+     * <p>The name of the cluster parameter group family to return the engine parameter
+     * information for.</p>
      */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
-     * <p>The name of the DB cluster parameter group family to return the engine
-     * parameter information for.</p>
+     * <p>The name of the cluster parameter group family to return the engine parameter
+     * information for.</p>
      */
     inline void SetDBParameterGroupFamily(Aws::String&& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = std::move(value); }
 
     /**
-     * <p>The name of the DB cluster parameter group family to return the engine
-     * parameter information for.</p>
+     * <p>The name of the cluster parameter group family to return the engine parameter
+     * information for.</p>
      */
     inline void SetDBParameterGroupFamily(const char* value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily.assign(value); }
 
     /**
-     * <p>The name of the DB cluster parameter group family to return the engine
-     * parameter information for.</p>
+     * <p>The name of the cluster parameter group family to return the engine parameter
+     * information for.</p>
      */
     inline EngineDefaults& WithDBParameterGroupFamily(const Aws::String& value) { SetDBParameterGroupFamily(value); return *this;}
 
     /**
-     * <p>The name of the DB cluster parameter group family to return the engine
-     * parameter information for.</p>
+     * <p>The name of the cluster parameter group family to return the engine parameter
+     * information for.</p>
      */
     inline EngineDefaults& WithDBParameterGroupFamily(Aws::String&& value) { SetDBParameterGroupFamily(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB cluster parameter group family to return the engine
-     * parameter information for.</p>
+     * <p>The name of the cluster parameter group family to return the engine parameter
+     * information for.</p>
      */
     inline EngineDefaults& WithDBParameterGroupFamily(const char* value) { SetDBParameterGroupFamily(value); return *this;}
 
@@ -160,42 +160,42 @@ namespace Model
 
 
     /**
-     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     * <p>The parameters of a particular cluster parameter group family.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     * <p>The parameters of a particular cluster parameter group family.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     * <p>The parameters of a particular cluster parameter group family.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     * <p>The parameters of a particular cluster parameter group family.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     * <p>The parameters of a particular cluster parameter group family.</p>
      */
     inline EngineDefaults& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     * <p>The parameters of a particular cluster parameter group family.</p>
      */
     inline EngineDefaults& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     * <p>The parameters of a particular cluster parameter group family.</p>
      */
     inline EngineDefaults& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
-     * <p>The parameters of a particular DB cluster parameter group family.</p>
+     * <p>The parameters of a particular cluster parameter group family.</p>
      */
     inline EngineDefaults& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 

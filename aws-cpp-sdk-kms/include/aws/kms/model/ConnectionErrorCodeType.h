@@ -33,7 +33,8 @@ namespace Model
     INSUFFICIENT_CLOUDHSM_HSMS,
     USER_LOCKED_OUT,
     USER_NOT_FOUND,
-    USER_LOGGED_IN
+    USER_LOGGED_IN,
+    SUBNET_NOT_FOUND
   };
 
 namespace ConnectionErrorCodeTypeMapper

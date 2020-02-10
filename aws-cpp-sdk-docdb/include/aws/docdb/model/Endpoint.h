@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Network information for accessing a DB cluster or DB instance. Client
-   * programs must specify a valid endpoint to access these Amazon DocumentDB
+   * <p>Network information for accessing a cluster or instance. Client programs must
+   * specify a valid endpoint to access these Amazon DocumentDB
    * resources.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/Endpoint">AWS API
    * Reference</a></p>
@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the DNS address of the DB instance.</p>
+     * <p>Specifies the DNS address of the instance.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
-     * <p>Specifies the DNS address of the DB instance.</p>
+     * <p>Specifies the DNS address of the instance.</p>
      */
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
 
     /**
-     * <p>Specifies the DNS address of the DB instance.</p>
+     * <p>Specifies the DNS address of the instance.</p>
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
-     * <p>Specifies the DNS address of the DB instance.</p>
+     * <p>Specifies the DNS address of the instance.</p>
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
-     * <p>Specifies the DNS address of the DB instance.</p>
+     * <p>Specifies the DNS address of the instance.</p>
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
-     * <p>Specifies the DNS address of the DB instance.</p>
+     * <p>Specifies the DNS address of the instance.</p>
      */
     inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
-     * <p>Specifies the DNS address of the DB instance.</p>
+     * <p>Specifies the DNS address of the instance.</p>
      */
     inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the DNS address of the DB instance.</p>
+     * <p>Specifies the DNS address of the instance.</p>
      */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 

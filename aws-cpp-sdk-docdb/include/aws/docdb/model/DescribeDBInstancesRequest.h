@@ -54,7 +54,7 @@ namespace Model
 
     /**
      * <p>The user-provided instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
+     * information from only the specific instance is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the
      * identifier of an existing <code>DBInstance</code>.</p> </li> </ul>
      */
@@ -62,7 +62,7 @@ namespace Model
 
     /**
      * <p>The user-provided instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
+     * information from only the specific instance is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the
      * identifier of an existing <code>DBInstance</code>.</p> </li> </ul>
      */
@@ -70,7 +70,7 @@ namespace Model
 
     /**
      * <p>The user-provided instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
+     * information from only the specific instance is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the
      * identifier of an existing <code>DBInstance</code>.</p> </li> </ul>
      */
@@ -78,7 +78,7 @@ namespace Model
 
     /**
      * <p>The user-provided instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
+     * information from only the specific instance is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the
      * identifier of an existing <code>DBInstance</code>.</p> </li> </ul>
      */
@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>The user-provided instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
+     * information from only the specific instance is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the
      * identifier of an existing <code>DBInstance</code>.</p> </li> </ul>
      */
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>The user-provided instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
+     * information from only the specific instance is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the
      * identifier of an existing <code>DBInstance</code>.</p> </li> </ul>
      */
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The user-provided instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
+     * information from only the specific instance is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the
      * identifier of an existing <code>DBInstance</code>.</p> </li> </ul>
      */
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>The user-provided instance identifier. If this parameter is specified,
-     * information from only the specific DB instance is returned. This parameter isn't
+     * information from only the specific instance is returned. This parameter isn't
      * case sensitive.</p> <p>Constraints:</p> <ul> <li> <p>If provided, must match the
      * identifier of an existing <code>DBInstance</code>.</p> </li> </ul>
      */
@@ -118,98 +118,98 @@ namespace Model
 
 
     /**
-     * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list includes only the information about the DB instances that are associated
-     * with the DB clusters that are identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only the information about the DB instances that
-     * are identified by these ARNs.</p> </li> </ul>
+     * <p>A filter that specifies one or more instances to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list includes
+     * only the information about the instances that are associated with the clusters
+     * that are identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only the information about the instances that are
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list includes only the information about the DB instances that are associated
-     * with the DB clusters that are identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only the information about the DB instances that
-     * are identified by these ARNs.</p> </li> </ul>
+     * <p>A filter that specifies one or more instances to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list includes
+     * only the information about the instances that are associated with the clusters
+     * that are identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only the information about the instances that are
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list includes only the information about the DB instances that are associated
-     * with the DB clusters that are identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only the information about the DB instances that
-     * are identified by these ARNs.</p> </li> </ul>
+     * <p>A filter that specifies one or more instances to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list includes
+     * only the information about the instances that are associated with the clusters
+     * that are identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only the information about the instances that are
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list includes only the information about the DB instances that are associated
-     * with the DB clusters that are identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only the information about the DB instances that
-     * are identified by these ARNs.</p> </li> </ul>
+     * <p>A filter that specifies one or more instances to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list includes
+     * only the information about the instances that are associated with the clusters
+     * that are identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only the information about the instances that are
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list includes only the information about the DB instances that are associated
-     * with the DB clusters that are identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only the information about the DB instances that
-     * are identified by these ARNs.</p> </li> </ul>
+     * <p>A filter that specifies one or more instances to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list includes
+     * only the information about the instances that are associated with the clusters
+     * that are identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only the information about the instances that are
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list includes only the information about the DB instances that are associated
-     * with the DB clusters that are identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only the information about the DB instances that
-     * are identified by these ARNs.</p> </li> </ul>
+     * <p>A filter that specifies one or more instances to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list includes
+     * only the information about the instances that are associated with the clusters
+     * that are identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only the information about the instances that are
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list includes only the information about the DB instances that are associated
-     * with the DB clusters that are identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only the information about the DB instances that
-     * are identified by these ARNs.</p> </li> </ul>
+     * <p>A filter that specifies one or more instances to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list includes
+     * only the information about the instances that are associated with the clusters
+     * that are identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only the information about the instances that are
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>A filter that specifies one or more DB instances to describe.</p>
-     * <p>Supported filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB
-     * cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results
-     * list includes only the information about the DB instances that are associated
-     * with the DB clusters that are identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only the information about the DB instances that
-     * are identified by these ARNs.</p> </li> </ul>
+     * <p>A filter that specifies one or more instances to describe.</p> <p>Supported
+     * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts cluster
+     * identifiers and cluster Amazon Resource Names (ARNs). The results list includes
+     * only the information about the instances that are associated with the clusters
+     * that are identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only the information about the instances that are
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline DescribeDBInstancesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

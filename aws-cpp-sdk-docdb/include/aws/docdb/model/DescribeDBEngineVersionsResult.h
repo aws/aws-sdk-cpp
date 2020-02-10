@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p>Detailed information about one or more DB engine versions.</p>
+     * <p>Detailed information about one or more engine versions.</p>
      */
     inline const Aws::Vector<DBEngineVersion>& GetDBEngineVersions() const{ return m_dBEngineVersions; }
 
     /**
-     * <p>Detailed information about one or more DB engine versions.</p>
+     * <p>Detailed information about one or more engine versions.</p>
      */
     inline void SetDBEngineVersions(const Aws::Vector<DBEngineVersion>& value) { m_dBEngineVersions = value; }
 
     /**
-     * <p>Detailed information about one or more DB engine versions.</p>
+     * <p>Detailed information about one or more engine versions.</p>
      */
     inline void SetDBEngineVersions(Aws::Vector<DBEngineVersion>&& value) { m_dBEngineVersions = std::move(value); }
 
     /**
-     * <p>Detailed information about one or more DB engine versions.</p>
+     * <p>Detailed information about one or more engine versions.</p>
      */
     inline DescribeDBEngineVersionsResult& WithDBEngineVersions(const Aws::Vector<DBEngineVersion>& value) { SetDBEngineVersions(value); return *this;}
 
     /**
-     * <p>Detailed information about one or more DB engine versions.</p>
+     * <p>Detailed information about one or more engine versions.</p>
      */
     inline DescribeDBEngineVersionsResult& WithDBEngineVersions(Aws::Vector<DBEngineVersion>&& value) { SetDBEngineVersions(std::move(value)); return *this;}
 
     /**
-     * <p>Detailed information about one or more DB engine versions.</p>
+     * <p>Detailed information about one or more engine versions.</p>
      */
     inline DescribeDBEngineVersionsResult& AddDBEngineVersions(const DBEngineVersion& value) { m_dBEngineVersions.push_back(value); return *this; }
 
     /**
-     * <p>Detailed information about one or more DB engine versions.</p>
+     * <p>Detailed information about one or more engine versions.</p>
      */
     inline DescribeDBEngineVersionsResult& AddDBEngineVersions(DBEngineVersion&& value) { m_dBEngineVersions.push_back(std::move(value)); return *this; }
 

@@ -96,96 +96,96 @@ namespace Model
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
      * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list includes only pending maintenance
-     * actions for the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only pending maintenance actions for the DB
-     * instances identified by these ARNs.</p> </li> </ul>
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon
+     * Resource Names (ARNs). The results list includes only pending maintenance
+     * actions for the clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only pending maintenance actions for the DB instances
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
      * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list includes only pending maintenance
-     * actions for the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only pending maintenance actions for the DB
-     * instances identified by these ARNs.</p> </li> </ul>
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon
+     * Resource Names (ARNs). The results list includes only pending maintenance
+     * actions for the clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only pending maintenance actions for the DB instances
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
      * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list includes only pending maintenance
-     * actions for the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only pending maintenance actions for the DB
-     * instances identified by these ARNs.</p> </li> </ul>
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon
+     * Resource Names (ARNs). The results list includes only pending maintenance
+     * actions for the clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only pending maintenance actions for the DB instances
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
      * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list includes only pending maintenance
-     * actions for the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only pending maintenance actions for the DB
-     * instances identified by these ARNs.</p> </li> </ul>
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon
+     * Resource Names (ARNs). The results list includes only pending maintenance
+     * actions for the clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only pending maintenance actions for the DB instances
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
      * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list includes only pending maintenance
-     * actions for the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only pending maintenance actions for the DB
-     * instances identified by these ARNs.</p> </li> </ul>
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon
+     * Resource Names (ARNs). The results list includes only pending maintenance
+     * actions for the clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only pending maintenance actions for the DB instances
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline DescribePendingMaintenanceActionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
      * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list includes only pending maintenance
-     * actions for the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only pending maintenance actions for the DB
-     * instances identified by these ARNs.</p> </li> </ul>
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon
+     * Resource Names (ARNs). The results list includes only pending maintenance
+     * actions for the clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only pending maintenance actions for the DB instances
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline DescribePendingMaintenanceActionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
      * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list includes only pending maintenance
-     * actions for the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only pending maintenance actions for the DB
-     * instances identified by these ARNs.</p> </li> </ul>
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon
+     * Resource Names (ARNs). The results list includes only pending maintenance
+     * actions for the clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only pending maintenance actions for the DB instances
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline DescribePendingMaintenanceActionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
      * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
-     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
-     * Amazon Resource Names (ARNs). The results list includes only pending maintenance
-     * actions for the DB clusters identified by these ARNs.</p> </li> <li> <p>
-     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance
-     * ARNs. The results list includes only pending maintenance actions for the DB
-     * instances identified by these ARNs.</p> </li> </ul>
+     * <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon
+     * Resource Names (ARNs). The results list includes only pending maintenance
+     * actions for the clusters identified by these ARNs.</p> </li> <li> <p>
+     * <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs.
+     * The results list includes only pending maintenance actions for the DB instances
+     * identified by these ARNs.</p> </li> </ul>
      */
     inline DescribePendingMaintenanceActionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

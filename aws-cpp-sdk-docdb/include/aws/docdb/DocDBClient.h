@@ -385,16 +385,14 @@ namespace Model
         virtual void ApplyPendingMaintenanceActionAsync(const Model::ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies the specified DB cluster parameter group.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Copies the specified cluster parameter group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CopyDBClusterParameterGroupOutcome CopyDBClusterParameterGroup(const Model::CopyDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Copies the specified DB cluster parameter group.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Copies the specified cluster parameter group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -403,8 +401,7 @@ namespace Model
         virtual Model::CopyDBClusterParameterGroupOutcomeCallable CopyDBClusterParameterGroupCallable(const Model::CopyDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Copies the specified DB cluster parameter group.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Copies the specified cluster parameter group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -413,26 +410,26 @@ namespace Model
         virtual void CopyDBClusterParameterGroupAsync(const Model::CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from
-         * a shared manual DB cluster snapshot,
-         * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name
-         * (ARN) of the shared DB cluster snapshot.</p> <p>To cancel the copy operation
-         * after it is in progress, delete the target DB cluster snapshot identified by
-         * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is
-         * in the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
+         * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
+         * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
+         * cancel the copy operation after it is in progress, delete the target cluster
+         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
+         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::CopyDBClusterSnapshotOutcome CopyDBClusterSnapshot(const Model::CopyDBClusterSnapshotRequest& request) const;
 
         /**
-         * <p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from
-         * a shared manual DB cluster snapshot,
-         * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name
-         * (ARN) of the shared DB cluster snapshot.</p> <p>To cancel the copy operation
-         * after it is in progress, delete the target DB cluster snapshot identified by
-         * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is
-         * in the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
+         * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
+         * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
+         * cancel the copy operation after it is in progress, delete the target cluster
+         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
+         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -441,13 +438,13 @@ namespace Model
         virtual Model::CopyDBClusterSnapshotOutcomeCallable CopyDBClusterSnapshotCallable(const Model::CopyDBClusterSnapshotRequest& request) const;
 
         /**
-         * <p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from
-         * a shared manual DB cluster snapshot,
-         * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name
-         * (ARN) of the shared DB cluster snapshot.</p> <p>To cancel the copy operation
-         * after it is in progress, delete the target DB cluster snapshot identified by
-         * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is
-         * in the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
+         * <p>Copies a snapshot of a cluster.</p> <p>To copy a cluster snapshot from a
+         * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
+         * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.</p> <p>To
+         * cancel the copy operation after it is in progress, delete the target cluster
+         * snapshot identified by <code>TargetDBClusterSnapshotIdentifier</code> while that
+         * DB cluster snapshot is in the <i>copying</i> status.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -456,14 +453,14 @@ namespace Model
         virtual void CopyDBClusterSnapshotAsync(const Model::CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon DocumentDB DB cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Amazon DocumentDB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDBClusterOutcome CreateDBCluster(const Model::CreateDBClusterRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon DocumentDB DB cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Amazon DocumentDB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          *
@@ -472,7 +469,7 @@ namespace Model
         virtual Model::CreateDBClusterOutcomeCallable CreateDBClusterCallable(const Model::CreateDBClusterRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon DocumentDB DB cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Amazon DocumentDB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          *
@@ -481,46 +478,46 @@ namespace Model
         virtual void CreateDBClusterAsync(const Model::CreateDBClusterRequest& request, const CreateDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DB cluster parameter group.</p> <p>Parameters in a DB cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A DB
-         * cluster parameter group is initially created with the default parameters for the
-         * database engine used by instances in the DB cluster. To provide custom values
-         * for any of the parameters, you must modify the group after you create it. After
-         * you create a DB cluster parameter group, you must associate it with your DB
-         * cluster. For the new DB cluster parameter group and associated settings to take
-         * effect, you must then reboot the DB instances in the DB cluster without
-         * failover.</p> <important> <p>After you create a DB cluster parameter group, you
-         * should wait at least 5 minutes before creating your first DB cluster that uses
-         * that DB cluster parameter group as the default parameter group. This allows
-         * Amazon DocumentDB to fully complete the create action before the DB cluster
-         * parameter group is used as the default for a new DB cluster. This step is
-         * especially important for parameters that are critical when creating the default
-         * database for a DB cluster, such as the character set for the default database
-         * defined by the <code>character_set_database</code> parameter.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
+         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group is initially created with the default parameters for the
+         * database engine used by instances in the cluster. To provide custom values for
+         * any of the parameters, you must modify the group after you create it. After you
+         * create a DB cluster parameter group, you must associate it with your cluster.
+         * For the new DB cluster parameter group and associated settings to take effect,
+         * you must then reboot the instances in the cluster without failover.</p>
+         * <important> <p>After you create a cluster parameter group, you should wait at
+         * least 5 minutes before creating your first cluster that uses that cluster
+         * parameter group as the default parameter group. This allows Amazon DocumentDB to
+         * fully complete the create action before the cluster parameter group is used as
+         * the default for a new cluster. This step is especially important for parameters
+         * that are critical when creating the default database for a cluster, such as the
+         * character set for the default database defined by the
+         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDBClusterParameterGroupOutcome CreateDBClusterParameterGroup(const Model::CreateDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Creates a new DB cluster parameter group.</p> <p>Parameters in a DB cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A DB
-         * cluster parameter group is initially created with the default parameters for the
-         * database engine used by instances in the DB cluster. To provide custom values
-         * for any of the parameters, you must modify the group after you create it. After
-         * you create a DB cluster parameter group, you must associate it with your DB
-         * cluster. For the new DB cluster parameter group and associated settings to take
-         * effect, you must then reboot the DB instances in the DB cluster without
-         * failover.</p> <important> <p>After you create a DB cluster parameter group, you
-         * should wait at least 5 minutes before creating your first DB cluster that uses
-         * that DB cluster parameter group as the default parameter group. This allows
-         * Amazon DocumentDB to fully complete the create action before the DB cluster
-         * parameter group is used as the default for a new DB cluster. This step is
-         * especially important for parameters that are critical when creating the default
-         * database for a DB cluster, such as the character set for the default database
-         * defined by the <code>character_set_database</code> parameter.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
+         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group is initially created with the default parameters for the
+         * database engine used by instances in the cluster. To provide custom values for
+         * any of the parameters, you must modify the group after you create it. After you
+         * create a DB cluster parameter group, you must associate it with your cluster.
+         * For the new DB cluster parameter group and associated settings to take effect,
+         * you must then reboot the instances in the cluster without failover.</p>
+         * <important> <p>After you create a cluster parameter group, you should wait at
+         * least 5 minutes before creating your first cluster that uses that cluster
+         * parameter group as the default parameter group. This allows Amazon DocumentDB to
+         * fully complete the create action before the cluster parameter group is used as
+         * the default for a new cluster. This step is especially important for parameters
+         * that are critical when creating the default database for a cluster, such as the
+         * character set for the default database defined by the
+         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -529,23 +526,23 @@ namespace Model
         virtual Model::CreateDBClusterParameterGroupOutcomeCallable CreateDBClusterParameterGroupCallable(const Model::CreateDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Creates a new DB cluster parameter group.</p> <p>Parameters in a DB cluster
-         * parameter group apply to all of the instances in a DB cluster.</p> <p>A DB
-         * cluster parameter group is initially created with the default parameters for the
-         * database engine used by instances in the DB cluster. To provide custom values
-         * for any of the parameters, you must modify the group after you create it. After
-         * you create a DB cluster parameter group, you must associate it with your DB
-         * cluster. For the new DB cluster parameter group and associated settings to take
-         * effect, you must then reboot the DB instances in the DB cluster without
-         * failover.</p> <important> <p>After you create a DB cluster parameter group, you
-         * should wait at least 5 minutes before creating your first DB cluster that uses
-         * that DB cluster parameter group as the default parameter group. This allows
-         * Amazon DocumentDB to fully complete the create action before the DB cluster
-         * parameter group is used as the default for a new DB cluster. This step is
-         * especially important for parameters that are critical when creating the default
-         * database for a DB cluster, such as the character set for the default database
-         * defined by the <code>character_set_database</code> parameter.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <p>Creates a new cluster parameter group.</p> <p>Parameters in a cluster
+         * parameter group apply to all of the instances in a DB cluster.</p> <p>A cluster
+         * parameter group is initially created with the default parameters for the
+         * database engine used by instances in the cluster. To provide custom values for
+         * any of the parameters, you must modify the group after you create it. After you
+         * create a DB cluster parameter group, you must associate it with your cluster.
+         * For the new DB cluster parameter group and associated settings to take effect,
+         * you must then reboot the instances in the cluster without failover.</p>
+         * <important> <p>After you create a cluster parameter group, you should wait at
+         * least 5 minutes before creating your first cluster that uses that cluster
+         * parameter group as the default parameter group. This allows Amazon DocumentDB to
+         * fully complete the create action before the cluster parameter group is used as
+         * the default for a new cluster. This step is especially important for parameters
+         * that are critical when creating the default database for a cluster, such as the
+         * character set for the default database defined by the
+         * <code>character_set_database</code> parameter.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -554,14 +551,14 @@ namespace Model
         virtual void CreateDBClusterParameterGroupAsync(const Model::CreateDBClusterParameterGroupRequest& request, const CreateDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a snapshot of a DB cluster. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a cluster. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDBClusterSnapshotOutcome CreateDBClusterSnapshot(const Model::CreateDBClusterSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a snapshot of a DB cluster. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a cluster. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -570,7 +567,7 @@ namespace Model
         virtual Model::CreateDBClusterSnapshotOutcomeCallable CreateDBClusterSnapshotCallable(const Model::CreateDBClusterSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a snapshot of a DB cluster. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a snapshot of a cluster. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -579,14 +576,14 @@ namespace Model
         virtual void CreateDBClusterSnapshotAsync(const Model::CreateDBClusterSnapshotRequest& request, const CreateDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DB instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDBInstanceOutcome CreateDBInstance(const Model::CreateDBInstanceRequest& request) const;
 
         /**
-         * <p>Creates a new DB instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBInstance">AWS
          * API Reference</a></p>
          *
@@ -595,7 +592,7 @@ namespace Model
         virtual Model::CreateDBInstanceOutcomeCallable CreateDBInstanceCallable(const Model::CreateDBInstanceRequest& request) const;
 
         /**
-         * <p>Creates a new DB instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBInstance">AWS
          * API Reference</a></p>
          *
@@ -604,18 +601,16 @@ namespace Model
         virtual void CreateDBInstanceAsync(const Model::CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DB subnet group. DB subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
+         * at least two Availability Zones in the AWS Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDBSubnetGroupOutcome CreateDBSubnetGroup(const Model::CreateDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Creates a new DB subnet group. DB subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
+         * at least two Availability Zones in the AWS Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -624,9 +619,8 @@ namespace Model
         virtual Model::CreateDBSubnetGroupOutcomeCallable CreateDBSubnetGroupCallable(const Model::CreateDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Creates a new DB subnet group. DB subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
+         * at least two Availability Zones in the AWS Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -635,20 +629,20 @@ namespace Model
         virtual void CreateDBSubnetGroupAsync(const Model::CreateDBSubnetGroupRequest& request, const CreateDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a previously provisioned DB cluster. When you delete a DB cluster,
-         * all automated backups for that DB cluster are deleted and can't be recovered.
-         * Manual DB cluster snapshots of the specified DB cluster are not deleted.</p>
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned cluster. When you delete a cluster, all
+         * automated backups for that cluster are deleted and can't be recovered. Manual DB
+         * cluster snapshots of the specified cluster are not deleted.</p> <p/><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDBClusterOutcome DeleteDBCluster(const Model::DeleteDBClusterRequest& request) const;
 
         /**
-         * <p>Deletes a previously provisioned DB cluster. When you delete a DB cluster,
-         * all automated backups for that DB cluster are deleted and can't be recovered.
-         * Manual DB cluster snapshots of the specified DB cluster are not deleted.</p>
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned cluster. When you delete a cluster, all
+         * automated backups for that cluster are deleted and can't be recovered. Manual DB
+         * cluster snapshots of the specified cluster are not deleted.</p> <p/><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          *
@@ -657,10 +651,10 @@ namespace Model
         virtual Model::DeleteDBClusterOutcomeCallable DeleteDBClusterCallable(const Model::DeleteDBClusterRequest& request) const;
 
         /**
-         * <p>Deletes a previously provisioned DB cluster. When you delete a DB cluster,
-         * all automated backups for that DB cluster are deleted and can't be recovered.
-         * Manual DB cluster snapshots of the specified DB cluster are not deleted.</p>
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned cluster. When you delete a cluster, all
+         * automated backups for that cluster are deleted and can't be recovered. Manual DB
+         * cluster snapshots of the specified cluster are not deleted.</p> <p/><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          *
@@ -669,18 +663,16 @@ namespace Model
         virtual void DeleteDBClusterAsync(const Model::DeleteDBClusterRequest& request, const DeleteDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified DB cluster parameter group. The DB cluster parameter
-         * group to be deleted can't be associated with any DB clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a specified cluster parameter group. The cluster parameter group to
+         * be deleted can't be associated with any clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterParameterGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDBClusterParameterGroupOutcome DeleteDBClusterParameterGroup(const Model::DeleteDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified DB cluster parameter group. The DB cluster parameter
-         * group to be deleted can't be associated with any DB clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a specified cluster parameter group. The cluster parameter group to
+         * be deleted can't be associated with any clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -689,9 +681,8 @@ namespace Model
         virtual Model::DeleteDBClusterParameterGroupOutcomeCallable DeleteDBClusterParameterGroupCallable(const Model::DeleteDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified DB cluster parameter group. The DB cluster parameter
-         * group to be deleted can't be associated with any DB clusters.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a specified cluster parameter group. The cluster parameter group to
+         * be deleted can't be associated with any clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -700,8 +691,8 @@ namespace Model
         virtual void DeleteDBClusterParameterGroupAsync(const Model::DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
+         * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
+         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
          * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
@@ -710,8 +701,8 @@ namespace Model
         virtual Model::DeleteDBClusterSnapshotOutcome DeleteDBClusterSnapshot(const Model::DeleteDBClusterSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
+         * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
+         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
          * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
@@ -722,8 +713,8 @@ namespace Model
         virtual Model::DeleteDBClusterSnapshotOutcomeCallable DeleteDBClusterSnapshotCallable(const Model::DeleteDBClusterSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes a DB cluster snapshot. If the snapshot is being copied, the copy
-         * operation is terminated.</p> <note> <p>The DB cluster snapshot must be in the
+         * <p>Deletes a cluster snapshot. If the snapshot is being copied, the copy
+         * operation is terminated.</p> <note> <p>The cluster snapshot must be in the
          * <code>available</code> state to be deleted.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBClusterSnapshot">AWS
@@ -734,14 +725,14 @@ namespace Model
         virtual void DeleteDBClusterSnapshotAsync(const Model::DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a previously provisioned DB instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDBInstanceOutcome DeleteDBInstance(const Model::DeleteDBInstanceRequest& request) const;
 
         /**
-         * <p>Deletes a previously provisioned DB instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -750,7 +741,7 @@ namespace Model
         virtual Model::DeleteDBInstanceOutcomeCallable DeleteDBInstanceCallable(const Model::DeleteDBInstanceRequest& request) const;
 
         /**
-         * <p>Deletes a previously provisioned DB instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -759,7 +750,7 @@ namespace Model
         virtual void DeleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
+         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
          * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
@@ -768,7 +759,7 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcome DeleteDBSubnetGroup(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
+         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
          * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
@@ -779,7 +770,7 @@ namespace Model
         virtual Model::DeleteDBSubnetGroupOutcomeCallable DeleteDBSubnetGroupCallable(const Model::DeleteDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Deletes a DB subnet group.</p> <note> <p>The specified database subnet group
+         * <p>Deletes a subnet group.</p> <note> <p>The specified database subnet group
          * must not be associated with any DB instances.</p> </note><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBSubnetGroup">AWS
@@ -791,7 +782,11 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * RDS for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this AWS account. For certain management features such as cluster
+         * and instance lifecycle management, Amazon DocumentDB leverages operational
+         * technology that is shared with Amazon RDS and Amazon Neptune. Use the
+         * <code>filterName=engine,Values=docdb</code> filter parameter to return only
+         * Amazon DocumentDB clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          */
@@ -799,7 +794,11 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * RDS for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this AWS account. For certain management features such as cluster
+         * and instance lifecycle management, Amazon DocumentDB leverages operational
+         * technology that is shared with Amazon RDS and Amazon Neptune. Use the
+         * <code>filterName=engine,Values=docdb</code> filter parameter to return only
+         * Amazon DocumentDB clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          *
@@ -809,7 +808,11 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * RDS for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this AWS account. For certain management features such as cluster
+         * and instance lifecycle management, Amazon DocumentDB leverages operational
+         * technology that is shared with Amazon RDS and Amazon Neptune. Use the
+         * <code>filterName=engine,Values=docdb</code> filter parameter to return only
+         * Amazon DocumentDB clusters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          *
@@ -820,7 +823,7 @@ namespace Model
         /**
          * <p>Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
          * <code>DBClusterParameterGroupName</code> parameter is specified, the list
-         * contains only the description of the specified DB cluster parameter group.
+         * contains only the description of the specified cluster parameter group.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
@@ -830,7 +833,7 @@ namespace Model
         /**
          * <p>Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
          * <code>DBClusterParameterGroupName</code> parameter is specified, the list
-         * contains only the description of the specified DB cluster parameter group.
+         * contains only the description of the specified cluster parameter group.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
@@ -842,7 +845,7 @@ namespace Model
         /**
          * <p>Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a
          * <code>DBClusterParameterGroupName</code> parameter is specified, the list
-         * contains only the description of the specified DB cluster parameter group.
+         * contains only the description of the specified cluster parameter group.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameterGroups">AWS
          * API Reference</a></p>
@@ -852,7 +855,7 @@ namespace Model
         virtual void DescribeDBClusterParameterGroupsAsync(const Model::DescribeDBClusterParameterGroupsRequest& request, const DescribeDBClusterParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the detailed parameter list for a particular DB cluster parameter
+         * <p>Returns the detailed parameter list for a particular cluster parameter
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameters">AWS
          * API Reference</a></p>
@@ -860,7 +863,7 @@ namespace Model
         virtual Model::DescribeDBClusterParametersOutcome DescribeDBClusterParameters(const Model::DescribeDBClusterParametersRequest& request) const;
 
         /**
-         * <p>Returns the detailed parameter list for a particular DB cluster parameter
+         * <p>Returns the detailed parameter list for a particular cluster parameter
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameters">AWS
          * API Reference</a></p>
@@ -870,7 +873,7 @@ namespace Model
         virtual Model::DescribeDBClusterParametersOutcomeCallable DescribeDBClusterParametersCallable(const Model::DescribeDBClusterParametersRequest& request) const;
 
         /**
-         * <p>Returns the detailed parameter list for a particular DB cluster parameter
+         * <p>Returns the detailed parameter list for a particular cluster parameter
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterParameters">AWS
          * API Reference</a></p>
@@ -880,28 +883,28 @@ namespace Model
         virtual void DescribeDBClusterParametersAsync(const Model::DescribeDBClusterParametersRequest& request, const DescribeDBClusterParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of DB cluster snapshot attribute names and values for a manual
-         * DB cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
+         * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
+         * cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
          * <code>DescribeDBClusterSnapshotAttributes</code> returns the
          * <code>restore</code> attribute and a list of IDs for the AWS accounts that are
-         * authorized to copy or restore the manual DB cluster snapshot. If
-         * <code>all</code> is included in the list of values for the <code>restore</code>
-         * attribute, then the manual DB cluster snapshot is public and can be copied or
-         * restored by all AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
+         * is included in the list of values for the <code>restore</code> attribute, then
+         * the manual cluster snapshot is public and can be copied or restored by all AWS
+         * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDBClusterSnapshotAttributesOutcome DescribeDBClusterSnapshotAttributes(const Model::DescribeDBClusterSnapshotAttributesRequest& request) const;
 
         /**
-         * <p>Returns a list of DB cluster snapshot attribute names and values for a manual
-         * DB cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
+         * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
+         * cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
          * <code>DescribeDBClusterSnapshotAttributes</code> returns the
          * <code>restore</code> attribute and a list of IDs for the AWS accounts that are
-         * authorized to copy or restore the manual DB cluster snapshot. If
-         * <code>all</code> is included in the list of values for the <code>restore</code>
-         * attribute, then the manual DB cluster snapshot is public and can be copied or
-         * restored by all AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
+         * is included in the list of values for the <code>restore</code> attribute, then
+         * the manual cluster snapshot is public and can be copied or restored by all AWS
+         * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
          *
@@ -910,14 +913,14 @@ namespace Model
         virtual Model::DescribeDBClusterSnapshotAttributesOutcomeCallable DescribeDBClusterSnapshotAttributesCallable(const Model::DescribeDBClusterSnapshotAttributesRequest& request) const;
 
         /**
-         * <p>Returns a list of DB cluster snapshot attribute names and values for a manual
-         * DB cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
+         * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
+         * cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
          * <code>DescribeDBClusterSnapshotAttributes</code> returns the
          * <code>restore</code> attribute and a list of IDs for the AWS accounts that are
-         * authorized to copy or restore the manual DB cluster snapshot. If
-         * <code>all</code> is included in the list of values for the <code>restore</code>
-         * attribute, then the manual DB cluster snapshot is public and can be copied or
-         * restored by all AWS accounts.</p><p><h3>See Also:</h3>   <a
+         * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
+         * is included in the list of values for the <code>restore</code> attribute, then
+         * the manual cluster snapshot is public and can be copied or restored by all AWS
+         * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
          *
@@ -926,7 +929,7 @@ namespace Model
         virtual void DescribeDBClusterSnapshotAttributesAsync(const Model::DescribeDBClusterSnapshotAttributesRequest& request, const DescribeDBClusterSnapshotAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about DB cluster snapshots. This API operation supports
+         * <p>Returns information about cluster snapshots. This API operation supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
@@ -934,7 +937,7 @@ namespace Model
         virtual Model::DescribeDBClusterSnapshotsOutcome DescribeDBClusterSnapshots(const Model::DescribeDBClusterSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns information about DB cluster snapshots. This API operation supports
+         * <p>Returns information about cluster snapshots. This API operation supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
@@ -944,7 +947,7 @@ namespace Model
         virtual Model::DescribeDBClusterSnapshotsOutcomeCallable DescribeDBClusterSnapshotsCallable(const Model::DescribeDBClusterSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns information about DB cluster snapshots. This API operation supports
+         * <p>Returns information about cluster snapshots. This API operation supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshots">AWS
          * API Reference</a></p>
@@ -954,7 +957,7 @@ namespace Model
         virtual void DescribeDBClusterSnapshotsAsync(const Model::DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about provisioned Amazon DocumentDB DB clusters. This API
+         * <p>Returns information about provisioned Amazon DocumentDB clusters. This API
          * operation supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
@@ -962,7 +965,7 @@ namespace Model
         virtual Model::DescribeDBClustersOutcome DescribeDBClusters(const Model::DescribeDBClustersRequest& request) const;
 
         /**
-         * <p>Returns information about provisioned Amazon DocumentDB DB clusters. This API
+         * <p>Returns information about provisioned Amazon DocumentDB clusters. This API
          * operation supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
@@ -972,7 +975,7 @@ namespace Model
         virtual Model::DescribeDBClustersOutcomeCallable DescribeDBClustersCallable(const Model::DescribeDBClustersRequest& request) const;
 
         /**
-         * <p>Returns information about provisioned Amazon DocumentDB DB clusters. This API
+         * <p>Returns information about provisioned Amazon DocumentDB clusters. This API
          * operation supports pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
@@ -982,14 +985,14 @@ namespace Model
         virtual void DescribeDBClustersAsync(const Model::DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the available DB engines.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the available engines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBEngineVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDBEngineVersionsOutcome DescribeDBEngineVersions(const Model::DescribeDBEngineVersionsRequest& request) const;
 
         /**
-         * <p>Returns a list of the available DB engines.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the available engines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBEngineVersions">AWS
          * API Reference</a></p>
          *
@@ -998,7 +1001,7 @@ namespace Model
         virtual Model::DescribeDBEngineVersionsOutcomeCallable DescribeDBEngineVersionsCallable(const Model::DescribeDBEngineVersionsRequest& request) const;
 
         /**
-         * <p>Returns a list of the available DB engines.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of the available engines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBEngineVersions">AWS
          * API Reference</a></p>
          *
@@ -1125,9 +1128,9 @@ namespace Model
         virtual void DescribeEventCategoriesAsync(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns events related to DB instances, DB security groups, DB snapshots, and
-         * DB parameter groups for the past 14 days. You can obtain events specific to a
-         * particular DB instance, DB security group, DB snapshot, or DB parameter group by
+         * <p>Returns events related to instances, security groups, snapshots, and DB
+         * parameter groups for the past 14 days. You can obtain events specific to a
+         * particular DB instance, security group, snapshot, or parameter group by
          * providing the name as a parameter. By default, the events of the past hour are
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEvents">AWS
@@ -1136,9 +1139,9 @@ namespace Model
         virtual Model::DescribeEventsOutcome DescribeEvents(const Model::DescribeEventsRequest& request) const;
 
         /**
-         * <p>Returns events related to DB instances, DB security groups, DB snapshots, and
-         * DB parameter groups for the past 14 days. You can obtain events specific to a
-         * particular DB instance, DB security group, DB snapshot, or DB parameter group by
+         * <p>Returns events related to instances, security groups, snapshots, and DB
+         * parameter groups for the past 14 days. You can obtain events specific to a
+         * particular DB instance, security group, snapshot, or parameter group by
          * providing the name as a parameter. By default, the events of the past hour are
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEvents">AWS
@@ -1149,9 +1152,9 @@ namespace Model
         virtual Model::DescribeEventsOutcomeCallable DescribeEventsCallable(const Model::DescribeEventsRequest& request) const;
 
         /**
-         * <p>Returns events related to DB instances, DB security groups, DB snapshots, and
-         * DB parameter groups for the past 14 days. You can obtain events specific to a
-         * particular DB instance, DB security group, DB snapshot, or DB parameter group by
+         * <p>Returns events related to instances, security groups, snapshots, and DB
+         * parameter groups for the past 14 days. You can obtain events specific to a
+         * particular DB instance, security group, snapshot, or parameter group by
          * providing the name as a parameter. By default, the events of the past hour are
          * returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEvents">AWS
@@ -1162,7 +1165,7 @@ namespace Model
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of orderable DB instance options for the specified
+         * <p>Returns a list of orderable instance options for the specified
          * engine.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeOrderableDBInstanceOptions">AWS
          * API Reference</a></p>
@@ -1170,7 +1173,7 @@ namespace Model
         virtual Model::DescribeOrderableDBInstanceOptionsOutcome DescribeOrderableDBInstanceOptions(const Model::DescribeOrderableDBInstanceOptionsRequest& request) const;
 
         /**
-         * <p>Returns a list of orderable DB instance options for the specified
+         * <p>Returns a list of orderable instance options for the specified
          * engine.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeOrderableDBInstanceOptions">AWS
          * API Reference</a></p>
@@ -1180,7 +1183,7 @@ namespace Model
         virtual Model::DescribeOrderableDBInstanceOptionsOutcomeCallable DescribeOrderableDBInstanceOptionsCallable(const Model::DescribeOrderableDBInstanceOptionsRequest& request) const;
 
         /**
-         * <p>Returns a list of orderable DB instance options for the specified
+         * <p>Returns a list of orderable instance options for the specified
          * engine.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeOrderableDBInstanceOptions">AWS
          * API Reference</a></p>
@@ -1190,16 +1193,16 @@ namespace Model
         virtual void DescribeOrderableDBInstanceOptionsAsync(const Model::DescribeOrderableDBInstanceOptionsRequest& request, const DescribeOrderableDBInstanceOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of resources (for example, DB instances) that have at least
-         * one pending maintenance action.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of resources (for example, instances) that have at least one
+         * pending maintenance action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribePendingMaintenanceActions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribePendingMaintenanceActionsOutcome DescribePendingMaintenanceActions(const Model::DescribePendingMaintenanceActionsRequest& request) const;
 
         /**
-         * <p>Returns a list of resources (for example, DB instances) that have at least
-         * one pending maintenance action.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of resources (for example, instances) that have at least one
+         * pending maintenance action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribePendingMaintenanceActions">AWS
          * API Reference</a></p>
          *
@@ -1208,8 +1211,8 @@ namespace Model
         virtual Model::DescribePendingMaintenanceActionsOutcomeCallable DescribePendingMaintenanceActionsCallable(const Model::DescribePendingMaintenanceActionsRequest& request) const;
 
         /**
-         * <p>Returns a list of resources (for example, DB instances) that have at least
-         * one pending maintenance action.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of resources (for example, instances) that have at least one
+         * pending maintenance action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribePendingMaintenanceActions">AWS
          * API Reference</a></p>
          *
@@ -1218,26 +1221,24 @@ namespace Model
         virtual void DescribePendingMaintenanceActionsAsync(const Model::DescribePendingMaintenanceActionsRequest& request, const DescribePendingMaintenanceActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the Amazon DocumentDB replicas (read-only instances) in the DB
-         * cluster to be the primary instance (the cluster writer).</p> <p>If the primary
-         * instance fails, Amazon DocumentDB automatically fails over to an Amazon
-         * DocumentDB replica, if one exists. You can force a failover when you want to
-         * simulate a failure of a primary instance for testing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Forces a failover for a cluster.</p> <p>A failover for a cluster promotes one
+         * of the Amazon DocumentDB replicas (read-only instances) in the cluster to be the
+         * primary instance (the cluster writer).</p> <p>If the primary instance fails,
+         * Amazon DocumentDB automatically fails over to an Amazon DocumentDB replica, if
+         * one exists. You can force a failover when you want to simulate a failure of a
+         * primary instance for testing.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::FailoverDBClusterOutcome FailoverDBCluster(const Model::FailoverDBClusterRequest& request) const;
 
         /**
-         * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the Amazon DocumentDB replicas (read-only instances) in the DB
-         * cluster to be the primary instance (the cluster writer).</p> <p>If the primary
-         * instance fails, Amazon DocumentDB automatically fails over to an Amazon
-         * DocumentDB replica, if one exists. You can force a failover when you want to
-         * simulate a failure of a primary instance for testing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Forces a failover for a cluster.</p> <p>A failover for a cluster promotes one
+         * of the Amazon DocumentDB replicas (read-only instances) in the cluster to be the
+         * primary instance (the cluster writer).</p> <p>If the primary instance fails,
+         * Amazon DocumentDB automatically fails over to an Amazon DocumentDB replica, if
+         * one exists. You can force a failover when you want to simulate a failure of a
+         * primary instance for testing.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          *
@@ -1246,13 +1247,12 @@ namespace Model
         virtual Model::FailoverDBClusterOutcomeCallable FailoverDBClusterCallable(const Model::FailoverDBClusterRequest& request) const;
 
         /**
-         * <p>Forces a failover for a DB cluster.</p> <p>A failover for a DB cluster
-         * promotes one of the Amazon DocumentDB replicas (read-only instances) in the DB
-         * cluster to be the primary instance (the cluster writer).</p> <p>If the primary
-         * instance fails, Amazon DocumentDB automatically fails over to an Amazon
-         * DocumentDB replica, if one exists. You can force a failover when you want to
-         * simulate a failure of a primary instance for testing.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Forces a failover for a cluster.</p> <p>A failover for a cluster promotes one
+         * of the Amazon DocumentDB replicas (read-only instances) in the cluster to be the
+         * primary instance (the cluster writer).</p> <p>If the primary instance fails,
+         * Amazon DocumentDB automatically fails over to an Amazon DocumentDB replica, if
+         * one exists. You can force a failover when you want to simulate a failure of a
+         * primary instance for testing.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/FailoverDBCluster">AWS
          * API Reference</a></p>
          *
@@ -1289,7 +1289,7 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies a setting for an Amazon DocumentDB DB cluster. You can change one or
+         * <p>Modifies a setting for an Amazon DocumentDB cluster. You can change one or
          * more database configuration parameters by specifying these parameters and the
          * new values in the request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBCluster">AWS
@@ -1298,7 +1298,7 @@ namespace Model
         virtual Model::ModifyDBClusterOutcome ModifyDBCluster(const Model::ModifyDBClusterRequest& request) const;
 
         /**
-         * <p>Modifies a setting for an Amazon DocumentDB DB cluster. You can change one or
+         * <p>Modifies a setting for an Amazon DocumentDB cluster. You can change one or
          * more database configuration parameters by specifying these parameters and the
          * new values in the request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBCluster">AWS
@@ -1309,7 +1309,7 @@ namespace Model
         virtual Model::ModifyDBClusterOutcomeCallable ModifyDBClusterCallable(const Model::ModifyDBClusterRequest& request) const;
 
         /**
-         * <p>Modifies a setting for an Amazon DocumentDB DB cluster. You can change one or
+         * <p>Modifies a setting for an Amazon DocumentDB cluster. You can change one or
          * more database configuration parameters by specifying these parameters and the
          * new values in the request. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBCluster">AWS
@@ -1320,19 +1320,19 @@ namespace Model
         virtual void ModifyDBClusterAsync(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
+         * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
          * parameters can be modified in a single request. </p> <note> <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
          * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a DB cluster parameter group, you should wait at
-         * least 5 minutes before creating your first DB cluster that uses that DB cluster
+         * <important> <p>After you create a cluster parameter group, you should wait at
+         * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
-         * default for a new DB cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a DB cluster, such as
-         * the character set for the default database defined by the
+         * default for a new cluster. This step is especially important for parameters that
+         * are critical when creating the default database for a cluster, such as the
+         * character set for the default database defined by the
          * <code>character_set_database</code> parameter.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
@@ -1341,19 +1341,19 @@ namespace Model
         virtual Model::ModifyDBClusterParameterGroupOutcome ModifyDBClusterParameterGroup(const Model::ModifyDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
+         * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
          * parameters can be modified in a single request. </p> <note> <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
          * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a DB cluster parameter group, you should wait at
-         * least 5 minutes before creating your first DB cluster that uses that DB cluster
+         * <important> <p>After you create a cluster parameter group, you should wait at
+         * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
-         * default for a new DB cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a DB cluster, such as
-         * the character set for the default database defined by the
+         * default for a new cluster. This step is especially important for parameters that
+         * are critical when creating the default database for a cluster, such as the
+         * character set for the default database defined by the
          * <code>character_set_database</code> parameter.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
@@ -1364,19 +1364,19 @@ namespace Model
         virtual Model::ModifyDBClusterParameterGroupOutcomeCallable ModifyDBClusterParameterGroupCallable(const Model::ModifyDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p> Modifies the parameters of a DB cluster parameter group. To modify more than
+         * <p> Modifies the parameters of a cluster parameter group. To modify more than
          * one parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
          * parameters can be modified in a single request. </p> <note> <p>Changes to
          * dynamic parameters are applied immediately. Changes to static parameters require
          * a reboot or maintenance window before the change can take effect.</p> </note>
-         * <important> <p>After you create a DB cluster parameter group, you should wait at
-         * least 5 minutes before creating your first DB cluster that uses that DB cluster
+         * <important> <p>After you create a cluster parameter group, you should wait at
+         * least 5 minutes before creating your first cluster that uses that cluster
          * parameter group as the default parameter group. This allows Amazon DocumentDB to
          * fully complete the create action before the parameter group is used as the
-         * default for a new DB cluster. This step is especially important for parameters
-         * that are critical when creating the default database for a DB cluster, such as
-         * the character set for the default database defined by the
+         * default for a new cluster. This step is especially important for parameters that
+         * are critical when creating the default database for a cluster, such as the
+         * character set for the default database defined by the
          * <code>character_set_database</code> parameter.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterParameterGroup">AWS
@@ -1388,18 +1388,18 @@ namespace Model
 
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
-         * manual DB cluster snapshot.</p> <p>To share a manual DB cluster snapshot with
-         * other AWS accounts, specify <code>restore</code> as the
-         * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to
-         * add a list of IDs of the AWS accounts that are authorized to restore the manual
-         * DB cluster snapshot. Use the value <code>all</code> to make the manual DB
-         * cluster snapshot public, which means that it can be copied or restored by all
-         * AWS accounts. Do not add the <code>all</code> value for any manual DB cluster
-         * snapshots that contain private information that you don't want available to all
-         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
-         * but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
+         * manual DB cluster snapshot.</p> <p>To share a manual cluster snapshot with other
+         * AWS accounts, specify <code>restore</code> as the <code>AttributeName</code>,
+         * and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+         * accounts that are authorized to restore the manual cluster snapshot. Use the
+         * value <code>all</code> to make the manual cluster snapshot public, which means
+         * that it can be copied or restored by all AWS accounts. Do not add the
+         * <code>all</code> value for any manual DB cluster snapshots that contain private
+         * information that you don't want available to all AWS accounts. If a manual
+         * cluster snapshot is encrypted, it can be shared, but only by specifying a list
+         * of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
+         * can't use <code>all</code> as a value for that parameter in this
+         * case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -1407,18 +1407,18 @@ namespace Model
 
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
-         * manual DB cluster snapshot.</p> <p>To share a manual DB cluster snapshot with
-         * other AWS accounts, specify <code>restore</code> as the
-         * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to
-         * add a list of IDs of the AWS accounts that are authorized to restore the manual
-         * DB cluster snapshot. Use the value <code>all</code> to make the manual DB
-         * cluster snapshot public, which means that it can be copied or restored by all
-         * AWS accounts. Do not add the <code>all</code> value for any manual DB cluster
-         * snapshots that contain private information that you don't want available to all
-         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
-         * but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
+         * manual DB cluster snapshot.</p> <p>To share a manual cluster snapshot with other
+         * AWS accounts, specify <code>restore</code> as the <code>AttributeName</code>,
+         * and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+         * accounts that are authorized to restore the manual cluster snapshot. Use the
+         * value <code>all</code> to make the manual cluster snapshot public, which means
+         * that it can be copied or restored by all AWS accounts. Do not add the
+         * <code>all</code> value for any manual DB cluster snapshots that contain private
+         * information that you don't want available to all AWS accounts. If a manual
+         * cluster snapshot is encrypted, it can be shared, but only by specifying a list
+         * of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
+         * can't use <code>all</code> as a value for that parameter in this
+         * case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -1428,18 +1428,18 @@ namespace Model
 
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
-         * manual DB cluster snapshot.</p> <p>To share a manual DB cluster snapshot with
-         * other AWS accounts, specify <code>restore</code> as the
-         * <code>AttributeName</code>, and use the <code>ValuesToAdd</code> parameter to
-         * add a list of IDs of the AWS accounts that are authorized to restore the manual
-         * DB cluster snapshot. Use the value <code>all</code> to make the manual DB
-         * cluster snapshot public, which means that it can be copied or restored by all
-         * AWS accounts. Do not add the <code>all</code> value for any manual DB cluster
-         * snapshots that contain private information that you don't want available to all
-         * AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared,
-         * but only by specifying a list of authorized AWS account IDs for the
-         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
+         * manual DB cluster snapshot.</p> <p>To share a manual cluster snapshot with other
+         * AWS accounts, specify <code>restore</code> as the <code>AttributeName</code>,
+         * and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+         * accounts that are authorized to restore the manual cluster snapshot. Use the
+         * value <code>all</code> to make the manual cluster snapshot public, which means
+         * that it can be copied or restored by all AWS accounts. Do not add the
+         * <code>all</code> value for any manual DB cluster snapshots that contain private
+         * information that you don't want available to all AWS accounts. If a manual
+         * cluster snapshot is encrypted, it can be shared, but only by specifying a list
+         * of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
+         * can't use <code>all</code> as a value for that parameter in this
+         * case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -1448,7 +1448,7 @@ namespace Model
         virtual void ModifyDBClusterSnapshotAttributeAsync(const Model::ModifyDBClusterSnapshotAttributeRequest& request, const ModifyDBClusterSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies settings for a DB instance. You can change one or more database
+         * <p>Modifies settings for an instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
          * the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBInstance">AWS
@@ -1457,7 +1457,7 @@ namespace Model
         virtual Model::ModifyDBInstanceOutcome ModifyDBInstance(const Model::ModifyDBInstanceRequest& request) const;
 
         /**
-         * <p>Modifies settings for a DB instance. You can change one or more database
+         * <p>Modifies settings for an instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
          * the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBInstance">AWS
@@ -1468,7 +1468,7 @@ namespace Model
         virtual Model::ModifyDBInstanceOutcomeCallable ModifyDBInstanceCallable(const Model::ModifyDBInstanceRequest& request) const;
 
         /**
-         * <p>Modifies settings for a DB instance. You can change one or more database
+         * <p>Modifies settings for an instance. You can change one or more database
          * configuration parameters by specifying these parameters and the new values in
          * the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBInstance">AWS
@@ -1479,8 +1479,8 @@ namespace Model
         virtual void ModifyDBInstanceAsync(const Model::ModifyDBInstanceRequest& request, const ModifyDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing DB subnet group. DB subnet groups must contain at least
-         * one subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
+         * <p>Modifies an existing subnet group. subnet groups must contain at least one
+         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1488,8 +1488,8 @@ namespace Model
         virtual Model::ModifyDBSubnetGroupOutcome ModifyDBSubnetGroup(const Model::ModifyDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Modifies an existing DB subnet group. DB subnet groups must contain at least
-         * one subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
+         * <p>Modifies an existing subnet group. subnet groups must contain at least one
+         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1499,8 +1499,8 @@ namespace Model
         virtual Model::ModifyDBSubnetGroupOutcomeCallable ModifyDBSubnetGroupCallable(const Model::ModifyDBSubnetGroupRequest& request) const;
 
         /**
-         * <p>Modifies an existing DB subnet group. DB subnet groups must contain at least
-         * one subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
+         * <p>Modifies an existing subnet group. subnet groups must contain at least one
+         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1510,26 +1510,26 @@ namespace Model
         virtual void ModifyDBSubnetGroupAsync(const Model::ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>You might need to reboot your DB instance, usually for maintenance reasons.
-         * For example, if you make certain changes, or if you change the DB cluster
-         * parameter group that is associated with the DB instance, you must reboot the
-         * instance for the changes to take effect. </p> <p>Rebooting a DB instance
-         * restarts the database engine service. Rebooting a DB instance results in a
-         * momentary outage, during which the DB instance status is set to
-         * <i>rebooting</i>. </p><p><h3>See Also:</h3>   <a
+         * <p>You might need to reboot your instance, usually for maintenance reasons. For
+         * example, if you make certain changes, or if you change the cluster parameter
+         * group that is associated with the instance, you must reboot the instance for the
+         * changes to take effect. </p> <p>Rebooting an instance restarts the database
+         * engine service. Rebooting an instance results in a momentary outage, during
+         * which the instance status is set to <i>rebooting</i>. </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::RebootDBInstanceOutcome RebootDBInstance(const Model::RebootDBInstanceRequest& request) const;
 
         /**
-         * <p>You might need to reboot your DB instance, usually for maintenance reasons.
-         * For example, if you make certain changes, or if you change the DB cluster
-         * parameter group that is associated with the DB instance, you must reboot the
-         * instance for the changes to take effect. </p> <p>Rebooting a DB instance
-         * restarts the database engine service. Rebooting a DB instance results in a
-         * momentary outage, during which the DB instance status is set to
-         * <i>rebooting</i>. </p><p><h3>See Also:</h3>   <a
+         * <p>You might need to reboot your instance, usually for maintenance reasons. For
+         * example, if you make certain changes, or if you change the cluster parameter
+         * group that is associated with the instance, you must reboot the instance for the
+         * changes to take effect. </p> <p>Rebooting an instance restarts the database
+         * engine service. Rebooting an instance results in a momentary outage, during
+         * which the instance status is set to <i>rebooting</i>. </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1538,13 +1538,13 @@ namespace Model
         virtual Model::RebootDBInstanceOutcomeCallable RebootDBInstanceCallable(const Model::RebootDBInstanceRequest& request) const;
 
         /**
-         * <p>You might need to reboot your DB instance, usually for maintenance reasons.
-         * For example, if you make certain changes, or if you change the DB cluster
-         * parameter group that is associated with the DB instance, you must reboot the
-         * instance for the changes to take effect. </p> <p>Rebooting a DB instance
-         * restarts the database engine service. Rebooting a DB instance results in a
-         * momentary outage, during which the DB instance status is set to
-         * <i>rebooting</i>. </p><p><h3>See Also:</h3>   <a
+         * <p>You might need to reboot your instance, usually for maintenance reasons. For
+         * example, if you make certain changes, or if you change the cluster parameter
+         * group that is associated with the instance, you must reboot the instance for the
+         * changes to take effect. </p> <p>Rebooting an instance restarts the database
+         * engine service. Rebooting an instance results in a momentary outage, during
+         * which the instance status is set to <i>rebooting</i>. </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RebootDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1581,9 +1581,9 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Modifies the parameters of a DB cluster parameter group to the default
-         * value. To reset specific parameters, submit a list of the following:
-         * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
+         * <p> Modifies the parameters of a cluster parameter group to the default value.
+         * To reset specific parameters, submit a list of the following:
+         * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire
          * cluster parameter group, specify the <code>DBClusterParameterGroupName</code>
          * and <code>ResetAllParameters</code> parameters. </p> <p> When you reset the
          * entire group, dynamic parameters are updated immediately and static parameters
@@ -1595,9 +1595,9 @@ namespace Model
         virtual Model::ResetDBClusterParameterGroupOutcome ResetDBClusterParameterGroup(const Model::ResetDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p> Modifies the parameters of a DB cluster parameter group to the default
-         * value. To reset specific parameters, submit a list of the following:
-         * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
+         * <p> Modifies the parameters of a cluster parameter group to the default value.
+         * To reset specific parameters, submit a list of the following:
+         * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire
          * cluster parameter group, specify the <code>DBClusterParameterGroupName</code>
          * and <code>ResetAllParameters</code> parameters. </p> <p> When you reset the
          * entire group, dynamic parameters are updated immediately and static parameters
@@ -1611,9 +1611,9 @@ namespace Model
         virtual Model::ResetDBClusterParameterGroupOutcomeCallable ResetDBClusterParameterGroupCallable(const Model::ResetDBClusterParameterGroupRequest& request) const;
 
         /**
-         * <p> Modifies the parameters of a DB cluster parameter group to the default
-         * value. To reset specific parameters, submit a list of the following:
-         * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB
+         * <p> Modifies the parameters of a cluster parameter group to the default value.
+         * To reset specific parameters, submit a list of the following:
+         * <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire
          * cluster parameter group, specify the <code>DBClusterParameterGroupName</code>
          * and <code>ResetAllParameters</code> parameters. </p> <p> When you reset the
          * entire group, dynamic parameters are updated immediately and static parameters
@@ -1627,12 +1627,12 @@ namespace Model
         virtual void ResetDBClusterParameterGroupAsync(const Model::ResetDBClusterParameterGroupRequest& request, const ResetDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
-         * a DB snapshot is specified, the target DB cluster is created from the source DB
-         * snapshot with a default configuration and default security group.</p> <p>If a DB
-         * cluster snapshot is specified, the target DB cluster is created from the source
-         * DB cluster restore point with the same configuration as the original source DB
-         * cluster, except that the new DB cluster is created with the default security
+         * <p>Creates a new cluster from a snapshot or cluster snapshot.</p> <p>If a
+         * snapshot is specified, the target cluster is created from the source DB snapshot
+         * with a default configuration and default security group.</p> <p>If a cluster
+         * snapshot is specified, the target cluster is created from the source cluster
+         * restore point with the same configuration as the original source DB cluster,
+         * except that the new cluster is created with the default security
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
@@ -1640,12 +1640,12 @@ namespace Model
         virtual Model::RestoreDBClusterFromSnapshotOutcome RestoreDBClusterFromSnapshot(const Model::RestoreDBClusterFromSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
-         * a DB snapshot is specified, the target DB cluster is created from the source DB
-         * snapshot with a default configuration and default security group.</p> <p>If a DB
-         * cluster snapshot is specified, the target DB cluster is created from the source
-         * DB cluster restore point with the same configuration as the original source DB
-         * cluster, except that the new DB cluster is created with the default security
+         * <p>Creates a new cluster from a snapshot or cluster snapshot.</p> <p>If a
+         * snapshot is specified, the target cluster is created from the source DB snapshot
+         * with a default configuration and default security group.</p> <p>If a cluster
+         * snapshot is specified, the target cluster is created from the source cluster
+         * restore point with the same configuration as the original source DB cluster,
+         * except that the new cluster is created with the default security
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
@@ -1655,12 +1655,12 @@ namespace Model
         virtual Model::RestoreDBClusterFromSnapshotOutcomeCallable RestoreDBClusterFromSnapshotCallable(const Model::RestoreDBClusterFromSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
-         * a DB snapshot is specified, the target DB cluster is created from the source DB
-         * snapshot with a default configuration and default security group.</p> <p>If a DB
-         * cluster snapshot is specified, the target DB cluster is created from the source
-         * DB cluster restore point with the same configuration as the original source DB
-         * cluster, except that the new DB cluster is created with the default security
+         * <p>Creates a new cluster from a snapshot or cluster snapshot.</p> <p>If a
+         * snapshot is specified, the target cluster is created from the source DB snapshot
+         * with a default configuration and default security group.</p> <p>If a cluster
+         * snapshot is specified, the target cluster is created from the source cluster
+         * restore point with the same configuration as the original source DB cluster,
+         * except that the new cluster is created with the default security
          * group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
@@ -1670,24 +1670,24 @@ namespace Model
         virtual void RestoreDBClusterFromSnapshotAsync(const Model::RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any
+         * <p>Restores a cluster to an arbitrary point in time. Users can restore to any
          * point in time before <code>LatestRestorableTime</code> for up to
-         * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
-         * the source DB cluster with the same configuration as the original DB cluster,
-         * except that the new DB cluster is created with the default DB security group.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>BackupRetentionPeriod</code> days. The target cluster is created from the
+         * source cluster with the same configuration as the original cluster, except that
+         * the new cluster is created with the default security group. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          */
         virtual Model::RestoreDBClusterToPointInTimeOutcome RestoreDBClusterToPointInTime(const Model::RestoreDBClusterToPointInTimeRequest& request) const;
 
         /**
-         * <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any
+         * <p>Restores a cluster to an arbitrary point in time. Users can restore to any
          * point in time before <code>LatestRestorableTime</code> for up to
-         * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
-         * the source DB cluster with the same configuration as the original DB cluster,
-         * except that the new DB cluster is created with the default DB security group.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>BackupRetentionPeriod</code> days. The target cluster is created from the
+         * source cluster with the same configuration as the original cluster, except that
+         * the new cluster is created with the default security group. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          *
@@ -1696,12 +1696,12 @@ namespace Model
         virtual Model::RestoreDBClusterToPointInTimeOutcomeCallable RestoreDBClusterToPointInTimeCallable(const Model::RestoreDBClusterToPointInTimeRequest& request) const;
 
         /**
-         * <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any
+         * <p>Restores a cluster to an arbitrary point in time. Users can restore to any
          * point in time before <code>LatestRestorableTime</code> for up to
-         * <code>BackupRetentionPeriod</code> days. The target DB cluster is created from
-         * the source DB cluster with the same configuration as the original DB cluster,
-         * except that the new DB cluster is created with the default DB security group.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>BackupRetentionPeriod</code> days. The target cluster is created from the
+         * source cluster with the same configuration as the original cluster, except that
+         * the new cluster is created with the default security group. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RestoreDBClusterToPointInTime">AWS
          * API Reference</a></p>
          *

@@ -88,27 +88,77 @@ namespace Model
 
 
     /**
-     * <p>The cryptographic signature that was generated for the message.</p>
+     * <p>The cryptographic signature that was generated for the message. </p> <ul>
+     * <li> <p>When used with the supported RSA signing algorithms, the encoding of
+     * this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1
+     * in RFC 8017</a>.</p> </li> <li> <p>When used with the
+     * <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
+     * <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded
+     * object as defined by ANS X9.62–2005 and <a
+     * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
+     * 2.2.3</a>. This is the most commonly used signature format and is appropriate
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetSignature() const{ return m_signature; }
 
     /**
-     * <p>The cryptographic signature that was generated for the message.</p>
+     * <p>The cryptographic signature that was generated for the message. </p> <ul>
+     * <li> <p>When used with the supported RSA signing algorithms, the encoding of
+     * this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1
+     * in RFC 8017</a>.</p> </li> <li> <p>When used with the
+     * <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
+     * <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded
+     * object as defined by ANS X9.62–2005 and <a
+     * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
+     * 2.2.3</a>. This is the most commonly used signature format and is appropriate
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetSignature(const Aws::Utils::ByteBuffer& value) { m_signature = value; }
 
     /**
-     * <p>The cryptographic signature that was generated for the message.</p>
+     * <p>The cryptographic signature that was generated for the message. </p> <ul>
+     * <li> <p>When used with the supported RSA signing algorithms, the encoding of
+     * this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1
+     * in RFC 8017</a>.</p> </li> <li> <p>When used with the
+     * <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
+     * <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded
+     * object as defined by ANS X9.62–2005 and <a
+     * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
+     * 2.2.3</a>. This is the most commonly used signature format and is appropriate
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetSignature(Aws::Utils::ByteBuffer&& value) { m_signature = std::move(value); }
 
     /**
-     * <p>The cryptographic signature that was generated for the message.</p>
+     * <p>The cryptographic signature that was generated for the message. </p> <ul>
+     * <li> <p>When used with the supported RSA signing algorithms, the encoding of
+     * this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1
+     * in RFC 8017</a>.</p> </li> <li> <p>When used with the
+     * <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
+     * <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded
+     * object as defined by ANS X9.62–2005 and <a
+     * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
+     * 2.2.3</a>. This is the most commonly used signature format and is appropriate
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline SignResult& WithSignature(const Aws::Utils::ByteBuffer& value) { SetSignature(value); return *this;}
 
     /**
-     * <p>The cryptographic signature that was generated for the message.</p>
+     * <p>The cryptographic signature that was generated for the message. </p> <ul>
+     * <li> <p>When used with the supported RSA signing algorithms, the encoding of
+     * this value is defined by <a href="https://tools.ietf.org/html/rfc8017">PKCS #1
+     * in RFC 8017</a>.</p> </li> <li> <p>When used with the
+     * <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or
+     * <code>ECDSA_SHA_512</code> signing algorithms, this value is a DER-encoded
+     * object as defined by ANS X9.62–2005 and <a
+     * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section
+     * 2.2.3</a>. This is the most commonly used signature format and is appropriate
+     * for most uses. </p> </li> </ul> <p>When you use the HTTP API or the AWS CLI, the
+     * value is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline SignResult& WithSignature(Aws::Utils::ByteBuffer&& value) { SetSignature(std::move(value)); return *this;}
 

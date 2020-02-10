@@ -244,42 +244,42 @@ namespace Model
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
+     * message or message digest. The default value, RAW, indicates a message. To
      * indicate a message digest, enter <code>DIGEST</code>.</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
+     * message or message digest. The default value, RAW, indicates a message. To
      * indicate a message digest, enter <code>DIGEST</code>.</p>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
+     * message or message digest. The default value, RAW, indicates a message. To
      * indicate a message digest, enter <code>DIGEST</code>.</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
+     * message or message digest. The default value, RAW, indicates a message. To
      * indicate a message digest, enter <code>DIGEST</code>.</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
+     * message or message digest. The default value, RAW, indicates a message. To
      * indicate a message digest, enter <code>DIGEST</code>.</p>
      */
     inline SignRequest& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
+     * message or message digest. The default value, RAW, indicates a message. To
      * indicate a message digest, enter <code>DIGEST</code>.</p>
      */
     inline SignRequest& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}

@@ -53,122 +53,122 @@ namespace Model
   public:
 
     /**
-     * <p>The DB instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>The instance identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
-     * <p>The DB instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>The instance identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>mydbinstance</code> </p>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
-     * <p>The DB instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>The instance identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
-     * <p>The DB instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>The instance identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
-     * <p>The DB instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>The instance identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
-     * <p>The DB instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>The instance identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>mydbinstance</code> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
-     * <p>The DB instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>The instance identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>mydbinstance</code> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The DB instance identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>The instance identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>mydbinstance</code> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
 
     /**
-     * <p>The compute and memory capacity of the DB instance; for example,
+     * <p>The compute and memory capacity of the instance; for example,
      * <code>db.r5.large</code>. </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance; for example,
+     * <p>The compute and memory capacity of the instance; for example,
      * <code>db.r5.large</code>. </p>
      */
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance; for example,
+     * <p>The compute and memory capacity of the instance; for example,
      * <code>db.r5.large</code>. </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
-     * <p>The compute and memory capacity of the DB instance; for example,
+     * <p>The compute and memory capacity of the instance; for example,
      * <code>db.r5.large</code>. </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance; for example,
+     * <p>The compute and memory capacity of the instance; for example,
      * <code>db.r5.large</code>. </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
 
     /**
-     * <p>The compute and memory capacity of the DB instance; for example,
+     * <p>The compute and memory capacity of the instance; for example,
      * <code>db.r5.large</code>. </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance; for example,
+     * <p>The compute and memory capacity of the instance; for example,
      * <code>db.r5.large</code>. </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
 
     /**
-     * <p>The compute and memory capacity of the DB instance; for example,
+     * <p>The compute and memory capacity of the instance; for example,
      * <code>db.r5.large</code>. </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
@@ -224,7 +224,7 @@ namespace Model
 
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
      * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the
@@ -234,7 +234,7 @@ namespace Model
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
      * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the
@@ -244,7 +244,7 @@ namespace Model
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
      * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the
@@ -254,7 +254,7 @@ namespace Model
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
      * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the
@@ -264,7 +264,7 @@ namespace Model
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
      * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the
@@ -274,7 +274,7 @@ namespace Model
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
      * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the
@@ -284,7 +284,7 @@ namespace Model
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
      * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the
@@ -294,7 +294,7 @@ namespace Model
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon EC2 Availability Zone that the DB instance is created in.</p>
+     * <p> The Amazon EC2 Availability Zone that the instance is created in.</p>
      * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
      * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
      * <code>AvailabilityZone</code> parameter can't be specified if the
@@ -386,116 +386,116 @@ namespace Model
 
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the DB
+     * <p>Indicates that minor engine upgrades are applied automatically to the
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the DB
+     * <p>Indicates that minor engine upgrades are applied automatically to the
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the DB
+     * <p>Indicates that minor engine upgrades are applied automatically to the
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the DB
+     * <p>Indicates that minor engine upgrades are applied automatically to the
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
     inline CreateDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
 
     /**
-     * <p>The tags to be assigned to the DB instance. You can assign up to 10 tags to
-     * an instance.</p>
+     * <p>The tags to be assigned to the instance. You can assign up to 10 tags to an
+     * instance.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to be assigned to the DB instance. You can assign up to 10 tags to
-     * an instance.</p>
+     * <p>The tags to be assigned to the instance. You can assign up to 10 tags to an
+     * instance.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to be assigned to the DB instance. You can assign up to 10 tags to
-     * an instance.</p>
+     * <p>The tags to be assigned to the instance. You can assign up to 10 tags to an
+     * instance.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to be assigned to the DB instance. You can assign up to 10 tags to
-     * an instance.</p>
+     * <p>The tags to be assigned to the instance. You can assign up to 10 tags to an
+     * instance.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to be assigned to the DB instance. You can assign up to 10 tags to
-     * an instance.</p>
+     * <p>The tags to be assigned to the instance. You can assign up to 10 tags to an
+     * instance.</p>
      */
     inline CreateDBInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to be assigned to the DB instance. You can assign up to 10 tags to
-     * an instance.</p>
+     * <p>The tags to be assigned to the instance. You can assign up to 10 tags to an
+     * instance.</p>
      */
     inline CreateDBInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to be assigned to the DB instance. You can assign up to 10 tags to
-     * an instance.</p>
+     * <p>The tags to be assigned to the instance. You can assign up to 10 tags to an
+     * instance.</p>
      */
     inline CreateDBInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags to be assigned to the DB instance. You can assign up to 10 tags to
-     * an instance.</p>
+     * <p>The tags to be assigned to the instance. You can assign up to 10 tags to an
+     * instance.</p>
      */
     inline CreateDBInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>The identifier of the cluster that the instance will belong to.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>The identifier of the cluster that the instance will belong to.</p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>The identifier of the cluster that the instance will belong to.</p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>The identifier of the cluster that the instance will belong to.</p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>The identifier of the cluster that the instance will belong to.</p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>The identifier of the cluster that the instance will belong to.</p>
      */
     inline CreateDBInstanceRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>The identifier of the cluster that the instance will belong to.</p>
      */
     inline CreateDBInstanceRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the DB cluster that the instance will belong to.</p>
+     * <p>The identifier of the cluster that the instance will belong to.</p>
      */
     inline CreateDBInstanceRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 

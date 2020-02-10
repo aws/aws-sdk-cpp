@@ -52,37 +52,37 @@ namespace Model
 
 
     /**
-     * <p>Provides a list of parameters for the DB cluster parameter group.</p>
+     * <p>Provides a list of parameters for the cluster parameter group.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Provides a list of parameters for the DB cluster parameter group.</p>
+     * <p>Provides a list of parameters for the cluster parameter group.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
 
     /**
-     * <p>Provides a list of parameters for the DB cluster parameter group.</p>
+     * <p>Provides a list of parameters for the cluster parameter group.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
 
     /**
-     * <p>Provides a list of parameters for the DB cluster parameter group.</p>
+     * <p>Provides a list of parameters for the cluster parameter group.</p>
      */
     inline DescribeDBClusterParametersResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Provides a list of parameters for the DB cluster parameter group.</p>
+     * <p>Provides a list of parameters for the cluster parameter group.</p>
      */
     inline DescribeDBClusterParametersResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Provides a list of parameters for the DB cluster parameter group.</p>
+     * <p>Provides a list of parameters for the cluster parameter group.</p>
      */
     inline DescribeDBClusterParametersResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
     /**
-     * <p>Provides a list of parameters for the DB cluster parameter group.</p>
+     * <p>Provides a list of parameters for the cluster parameter group.</p>
      */
     inline DescribeDBClusterParametersResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 

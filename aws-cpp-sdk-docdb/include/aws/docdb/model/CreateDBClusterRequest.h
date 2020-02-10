@@ -52,56 +52,56 @@ namespace Model
   public:
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline CreateDBClusterRequest& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline CreateDBClusterRequest& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of Amazon EC2 Availability Zones that instances in the DB cluster can
-     * be created in.</p>
+     * <p>A list of Amazon EC2 Availability Zones that instances in the cluster can be
+     * created in.</p>
      */
     inline CreateDBClusterRequest& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
@@ -136,274 +136,266 @@ namespace Model
 
 
     /**
-     * <p>The DB cluster identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
-     * <p>The DB cluster identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster</code> </p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The DB cluster identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster</code> </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
-     * <p>The DB cluster identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster</code> </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The DB cluster identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster</code> </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
-     * <p>The DB cluster identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The DB cluster identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The DB cluster identifier. This parameter is stored as a lowercase
-     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p>
-     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster</code> </p>
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or
+     * hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster.</p>
+     * <p> The name of the cluster parameter group to associate with this cluster.</p>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster.</p>
+     * <p> The name of the cluster parameter group to associate with this cluster.</p>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster.</p>
+     * <p> The name of the cluster parameter group to associate with this cluster.</p>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster.</p>
+     * <p> The name of the cluster parameter group to associate with this cluster.</p>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster.</p>
+     * <p> The name of the cluster parameter group to associate with this cluster.</p>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster.</p>
+     * <p> The name of the cluster parameter group to associate with this cluster.</p>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster.</p>
+     * <p> The name of the cluster parameter group to associate with this cluster.</p>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the DB cluster parameter group to associate with this DB
-     * cluster.</p>
+     * <p> The name of the cluster parameter group to associate with this cluster.</p>
      */
     inline CreateDBClusterRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline CreateDBClusterRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline CreateDBClusterRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline CreateDBClusterRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline CreateDBClusterRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+     * <p>A list of EC2 VPC security groups to associate with this cluster.</p>
      */
     inline CreateDBClusterRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
-     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
-     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>A subnet group to associate with this cluster.</p> <p>Constraints: Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
-     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
-     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>A subnet group to associate with this cluster.</p> <p>Constraints: Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
-     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
-     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>A subnet group to associate with this cluster.</p> <p>Constraints: Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
-     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
-     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>A subnet group to associate with this cluster.</p> <p>Constraints: Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
-     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
-     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>A subnet group to associate with this cluster.</p> <p>Constraints: Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
-     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
-     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>A subnet group to associate with this cluster.</p> <p>Constraints: Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
-     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
-     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>A subnet group to associate with this cluster.</p> <p>Constraints: Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>A DB subnet group to associate with this DB cluster.</p> <p>Constraints: Must
-     * match the name of an existing <code>DBSubnetGroup</code>. Must not be
-     * default.</p> <p>Example: <code>mySubnetgroup</code> </p>
+     * <p>A subnet group to associate with this cluster.</p> <p>Constraints: Must match
+     * the name of an existing <code>DBSubnetGroup</code>. Must not be default.</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
      */
     inline CreateDBClusterRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
 
 
     /**
-     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * <p>The name of the database engine to be used for this cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * <p>The name of the database engine to be used for this cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * <p>The name of the database engine to be used for this cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * <p>The name of the database engine to be used for this cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * <p>The name of the database engine to be used for this cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * <p>The name of the database engine to be used for this cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
     inline CreateDBClusterRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * <p>The name of the database engine to be used for this cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
     inline CreateDBClusterRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
+     * <p>The name of the database engine to be used for this cluster.</p> <p>Valid
      * values: <code>docdb</code> </p>
      */
     inline CreateDBClusterRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
@@ -451,32 +443,28 @@ namespace Model
 
 
     /**
-     * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p>
+     * <p>The port number on which the instances in the cluster accept connections.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p>
+     * <p>The port number on which the instances in the cluster accept connections.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p>
+     * <p>The port number on which the instances in the cluster accept connections.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port number on which the instances in the DB cluster accept
-     * connections.</p>
+     * <p>The port number on which the instances in the cluster accept connections.</p>
      */
     inline CreateDBClusterRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <p>The name of the master user for the cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
@@ -484,7 +472,7 @@ namespace Model
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <p>The name of the master user for the cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
@@ -492,7 +480,7 @@ namespace Model
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <p>The name of the master user for the cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
@@ -500,7 +488,7 @@ namespace Model
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <p>The name of the master user for the cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
@@ -508,7 +496,7 @@ namespace Model
     inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <p>The name of the master user for the cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
@@ -516,7 +504,7 @@ namespace Model
     inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <p>The name of the master user for the cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
@@ -524,7 +512,7 @@ namespace Model
     inline CreateDBClusterRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <p>The name of the master user for the cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
@@ -532,7 +520,7 @@ namespace Model
     inline CreateDBClusterRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the master user for the DB cluster.</p> <p>Constraints:</p> <ul>
+     * <p>The name of the master user for the cluster.</p> <p>Constraints:</p> <ul>
      * <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot be a reserved word for the
      * chosen database engine.</p> </li> </ul>
@@ -776,74 +764,74 @@ namespace Model
 
 
     /**
-     * <p>The tags to be assigned to the DB cluster.</p>
+     * <p>The tags to be assigned to the cluster.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to be assigned to the DB cluster.</p>
+     * <p>The tags to be assigned to the cluster.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to be assigned to the DB cluster.</p>
+     * <p>The tags to be assigned to the cluster.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to be assigned to the DB cluster.</p>
+     * <p>The tags to be assigned to the cluster.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to be assigned to the DB cluster.</p>
+     * <p>The tags to be assigned to the cluster.</p>
      */
     inline CreateDBClusterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to be assigned to the DB cluster.</p>
+     * <p>The tags to be assigned to the cluster.</p>
      */
     inline CreateDBClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to be assigned to the DB cluster.</p>
+     * <p>The tags to be assigned to the cluster.</p>
      */
     inline CreateDBClusterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags to be assigned to the DB cluster.</p>
+     * <p>The tags to be assigned to the cluster.</p>
      */
     inline CreateDBClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>Specifies whether the cluster is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>Specifies whether the cluster is encrypted.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>Specifies whether the cluster is encrypted.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the DB cluster is encrypted.</p>
+     * <p>Specifies whether the cluster is encrypted.</p>
      */
     inline CreateDBClusterRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
-     * If you are creating a DB cluster using the same AWS account that owns the AWS
-     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
-     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
-     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
+     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
+     * you are creating a cluster using the same AWS account that owns the AWS KMS
+     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
+     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
+     * encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
      * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
@@ -852,19 +840,19 @@ namespace Model
      * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a replica of an
-     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * KMS key ID that is valid in the destination AWS Region. This key is used to
      * encrypt the replica in that AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
-     * If you are creating a DB cluster using the same AWS account that owns the AWS
-     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
-     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
-     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
+     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
+     * you are creating a cluster using the same AWS account that owns the AWS KMS
+     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
+     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
+     * encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
      * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
@@ -873,19 +861,19 @@ namespace Model
      * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a replica of an
-     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * KMS key ID that is valid in the destination AWS Region. This key is used to
      * encrypt the replica in that AWS Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
-     * If you are creating a DB cluster using the same AWS account that owns the AWS
-     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
-     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
-     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
+     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
+     * you are creating a cluster using the same AWS account that owns the AWS KMS
+     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
+     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
+     * encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
      * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
@@ -894,19 +882,19 @@ namespace Model
      * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a replica of an
-     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * KMS key ID that is valid in the destination AWS Region. This key is used to
      * encrypt the replica in that AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
-     * If you are creating a DB cluster using the same AWS account that owns the AWS
-     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
-     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
-     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
+     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
+     * you are creating a cluster using the same AWS account that owns the AWS KMS
+     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
+     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
+     * encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
      * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
@@ -915,19 +903,19 @@ namespace Model
      * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a replica of an
-     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * KMS key ID that is valid in the destination AWS Region. This key is used to
      * encrypt the replica in that AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
-     * If you are creating a DB cluster using the same AWS account that owns the AWS
-     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
-     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
-     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
+     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
+     * you are creating a cluster using the same AWS account that owns the AWS KMS
+     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
+     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
+     * encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
      * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
@@ -936,19 +924,19 @@ namespace Model
      * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a replica of an
-     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * KMS key ID that is valid in the destination AWS Region. This key is used to
      * encrypt the replica in that AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
-     * If you are creating a DB cluster using the same AWS account that owns the AWS
-     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
-     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
-     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
+     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
+     * you are creating a cluster using the same AWS account that owns the AWS KMS
+     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
+     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
+     * encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
      * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
@@ -957,19 +945,19 @@ namespace Model
      * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a replica of an
-     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * KMS key ID that is valid in the destination AWS Region. This key is used to
      * encrypt the replica in that AWS Region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
-     * If you are creating a DB cluster using the same AWS account that owns the AWS
-     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
-     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
-     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
+     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
+     * you are creating a cluster using the same AWS account that owns the AWS KMS
+     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
+     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
+     * encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
      * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
@@ -978,19 +966,19 @@ namespace Model
      * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a replica of an
-     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * KMS key ID that is valid in the destination AWS Region. This key is used to
      * encrypt the replica in that AWS Region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB cluster.</p> <p>The AWS KMS
-     * key identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key.
-     * If you are creating a DB cluster using the same AWS account that owns the AWS
-     * KMS encryption key that is used to encrypt the new DB cluster, you can use the
-     * AWS KMS key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If
-     * an encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
+     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
+     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
+     * you are creating a cluster using the same AWS account that owns the AWS KMS
+     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
+     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
+     * encryption key is not specified in <code>KmsKeyId</code>:</p> <ul> <li> <p>If
      * <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then
      * Amazon DocumentDB uses the encryption key that is used to encrypt the source.
      * Otherwise, Amazon DocumentDB uses your default encryption key. </p> </li> <li>
@@ -999,8 +987,8 @@ namespace Model
      * uses your default encryption key.</p> </li> </ul> <p>AWS KMS creates the default
      * encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.</p> <p>If you create a replica of an
-     * encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to
+     * encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
+     * KMS key ID that is valid in the destination AWS Region. This key is used to
      * encrypt the replica in that AWS Region.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}

@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p>Provides a list of DB cluster snapshots.</p>
+     * <p>Provides a list of cluster snapshots.</p>
      */
     inline const Aws::Vector<DBClusterSnapshot>& GetDBClusterSnapshots() const{ return m_dBClusterSnapshots; }
 
     /**
-     * <p>Provides a list of DB cluster snapshots.</p>
+     * <p>Provides a list of cluster snapshots.</p>
      */
     inline void SetDBClusterSnapshots(const Aws::Vector<DBClusterSnapshot>& value) { m_dBClusterSnapshots = value; }
 
     /**
-     * <p>Provides a list of DB cluster snapshots.</p>
+     * <p>Provides a list of cluster snapshots.</p>
      */
     inline void SetDBClusterSnapshots(Aws::Vector<DBClusterSnapshot>&& value) { m_dBClusterSnapshots = std::move(value); }
 
     /**
-     * <p>Provides a list of DB cluster snapshots.</p>
+     * <p>Provides a list of cluster snapshots.</p>
      */
     inline DescribeDBClusterSnapshotsResult& WithDBClusterSnapshots(const Aws::Vector<DBClusterSnapshot>& value) { SetDBClusterSnapshots(value); return *this;}
 
     /**
-     * <p>Provides a list of DB cluster snapshots.</p>
+     * <p>Provides a list of cluster snapshots.</p>
      */
     inline DescribeDBClusterSnapshotsResult& WithDBClusterSnapshots(Aws::Vector<DBClusterSnapshot>&& value) { SetDBClusterSnapshots(std::move(value)); return *this;}
 
     /**
-     * <p>Provides a list of DB cluster snapshots.</p>
+     * <p>Provides a list of cluster snapshots.</p>
      */
     inline DescribeDBClusterSnapshotsResult& AddDBClusterSnapshots(const DBClusterSnapshot& value) { m_dBClusterSnapshots.push_back(value); return *this; }
 
     /**
-     * <p>Provides a list of DB cluster snapshots.</p>
+     * <p>Provides a list of cluster snapshots.</p>
      */
     inline DescribeDBClusterSnapshotsResult& AddDBClusterSnapshots(DBClusterSnapshot&& value) { m_dBClusterSnapshots.push_back(std::move(value)); return *this; }
 

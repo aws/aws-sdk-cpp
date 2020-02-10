@@ -51,66 +51,66 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
-     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
-     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default cluster parameter group.</p> </li> <li> <p>Cannot
+     * be associated with any clusters.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
-     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
-     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default cluster parameter group.</p> </li> <li> <p>Cannot
+     * be associated with any clusters.</p> </li> </ul>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
-     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
-     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default cluster parameter group.</p> </li> <li> <p>Cannot
+     * be associated with any clusters.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
-     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
-     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default cluster parameter group.</p> </li> <li> <p>Cannot
+     * be associated with any clusters.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
-     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
-     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
-     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default cluster parameter group.</p> </li> <li> <p>Cannot
+     * be associated with any clusters.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
-     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
-     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default cluster parameter group.</p> </li> <li> <p>Cannot
+     * be associated with any clusters.</p> </li> </ul>
      */
     inline DeleteDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
-     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
-     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default cluster parameter group.</p> </li> <li> <p>Cannot
+     * be associated with any clusters.</p> </li> </ul>
      */
     inline DeleteDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Must be the name of an existing DB cluster parameter group.</p> </li> <li>
-     * <p>You can't delete a default DB cluster parameter group.</p> </li> <li>
-     * <p>Cannot be associated with any DB clusters.</p> </li> </ul>
+     * <p>The name of the cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be the name of an existing cluster parameter group.</p> </li> <li>
+     * <p>You can't delete a default cluster parameter group.</p> </li> <li> <p>Cannot
+     * be associated with any clusters.</p> </li> </ul>
      */
     inline DeleteDBClusterParameterGroupRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 

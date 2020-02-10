@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides a list of status information for a DB instance.</p><p><h3>See
+   * <p>Provides a list of status information for an instance.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBInstanceStatusInfo">AWS
    * API Reference</a></p>
@@ -117,56 +117,56 @@ namespace Model
 
 
     /**
-     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * <p>Status of the instance. For a <code>StatusType</code> of read replica, the
      * values can be <code>replicating</code>, error, <code>stopped</code>, or
      * <code>terminated</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * <p>Status of the instance. For a <code>StatusType</code> of read replica, the
      * values can be <code>replicating</code>, error, <code>stopped</code>, or
      * <code>terminated</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * <p>Status of the instance. For a <code>StatusType</code> of read replica, the
      * values can be <code>replicating</code>, error, <code>stopped</code>, or
      * <code>terminated</code>.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * <p>Status of the instance. For a <code>StatusType</code> of read replica, the
      * values can be <code>replicating</code>, error, <code>stopped</code>, or
      * <code>terminated</code>.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * <p>Status of the instance. For a <code>StatusType</code> of read replica, the
      * values can be <code>replicating</code>, error, <code>stopped</code>, or
      * <code>terminated</code>.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * <p>Status of the instance. For a <code>StatusType</code> of read replica, the
      * values can be <code>replicating</code>, error, <code>stopped</code>, or
      * <code>terminated</code>.</p>
      */
     inline DBInstanceStatusInfo& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * <p>Status of the instance. For a <code>StatusType</code> of read replica, the
      * values can be <code>replicating</code>, error, <code>stopped</code>, or
      * <code>terminated</code>.</p>
      */
     inline DBInstanceStatusInfo& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Status of the DB instance. For a <code>StatusType</code> of read replica, the
+     * <p>Status of the instance. For a <code>StatusType</code> of read replica, the
      * values can be <code>replicating</code>, error, <code>stopped</code>, or
      * <code>terminated</code>.</p>
      */

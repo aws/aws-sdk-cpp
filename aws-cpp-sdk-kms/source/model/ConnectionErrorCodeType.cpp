@@ -38,6 +38,7 @@ namespace Aws
         static const int USER_LOCKED_OUT_HASH = HashingUtils::HashString("USER_LOCKED_OUT");
         static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("USER_NOT_FOUND");
         static const int USER_LOGGED_IN_HASH = HashingUtils::HashString("USER_LOGGED_IN");
+        static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SUBNET_NOT_FOUND");
 
 
         ConnectionErrorCodeType GetConnectionErrorCodeTypeForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return ConnectionErrorCodeType::USER_LOGGED_IN;
           }
+          else if (hashCode == SUBNET_NOT_FOUND_HASH)
+          {
+            return ConnectionErrorCodeType::SUBNET_NOT_FOUND;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +110,8 @@ namespace Aws
             return "USER_NOT_FOUND";
           case ConnectionErrorCodeType::USER_LOGGED_IN:
             return "USER_LOGGED_IN";
+          case ConnectionErrorCodeType::SUBNET_NOT_FOUND:
+            return "SUBNET_NOT_FOUND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

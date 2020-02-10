@@ -53,56 +53,56 @@ namespace Model
   public:
 
     /**
-     * <p>The name of a specific DB cluster parameter group to return details for.</p>
+     * <p>The name of a specific cluster parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an existing
      * <code>DBClusterParameterGroup</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p>The name of a specific DB cluster parameter group to return details for.</p>
+     * <p>The name of a specific cluster parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an existing
      * <code>DBClusterParameterGroup</code>.</p> </li> </ul>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of a specific DB cluster parameter group to return details for.</p>
+     * <p>The name of a specific cluster parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an existing
      * <code>DBClusterParameterGroup</code>.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p>The name of a specific DB cluster parameter group to return details for.</p>
+     * <p>The name of a specific cluster parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an existing
      * <code>DBClusterParameterGroup</code>.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
-     * <p>The name of a specific DB cluster parameter group to return details for.</p>
+     * <p>The name of a specific cluster parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an existing
      * <code>DBClusterParameterGroup</code>.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p>The name of a specific DB cluster parameter group to return details for.</p>
+     * <p>The name of a specific cluster parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an existing
      * <code>DBClusterParameterGroup</code>.</p> </li> </ul>
      */
     inline DescribeDBClusterParameterGroupsRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>The name of a specific DB cluster parameter group to return details for.</p>
+     * <p>The name of a specific cluster parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an existing
      * <code>DBClusterParameterGroup</code>.</p> </li> </ul>
      */
     inline DescribeDBClusterParameterGroupsRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a specific DB cluster parameter group to return details for.</p>
+     * <p>The name of a specific cluster parameter group to return details for.</p>
      * <p>Constraints:</p> <ul> <li> <p>If provided, must match the name of an existing
      * <code>DBClusterParameterGroup</code>.</p> </li> </ul>
      */

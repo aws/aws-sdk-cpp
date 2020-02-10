@@ -36,8 +36,7 @@ namespace DocDB
 namespace Model
 {
   /**
-   * <p>Contains the name of a DB cluster parameter group.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains the name of a cluster parameter group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DBClusterParameterGroupNameMessage">AWS
    * API Reference</a></p>
    */
@@ -50,7 +49,7 @@ namespace Model
 
 
     /**
-     * <p>The name of a DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The name of a cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be from 1 to 255 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <note> <p>This value is stored
@@ -59,7 +58,7 @@ namespace Model
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
-     * <p>The name of a DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The name of a cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be from 1 to 255 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <note> <p>This value is stored
@@ -68,7 +67,7 @@ namespace Model
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupName = value; }
 
     /**
-     * <p>The name of a DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The name of a cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be from 1 to 255 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <note> <p>This value is stored
@@ -77,7 +76,7 @@ namespace Model
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupName = std::move(value); }
 
     /**
-     * <p>The name of a DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The name of a cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be from 1 to 255 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <note> <p>This value is stored
@@ -86,7 +85,7 @@ namespace Model
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupName.assign(value); }
 
     /**
-     * <p>The name of a DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The name of a cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be from 1 to 255 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <note> <p>This value is stored
@@ -95,7 +94,7 @@ namespace Model
     inline ModifyDBClusterParameterGroupResult& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
-     * <p>The name of a DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The name of a cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be from 1 to 255 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <note> <p>This value is stored
@@ -104,7 +103,7 @@ namespace Model
     inline ModifyDBClusterParameterGroupResult& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a DB cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
+     * <p>The name of a cluster parameter group.</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be from 1 to 255 letters or numbers.</p> </li> <li> <p>The first
      * character must be a letter.</p> </li> <li> <p>Cannot end with a hyphen or
      * contain two consecutive hyphens.</p> </li> </ul> <note> <p>This value is stored

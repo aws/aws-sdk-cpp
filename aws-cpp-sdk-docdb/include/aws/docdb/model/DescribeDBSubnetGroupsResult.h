@@ -102,37 +102,37 @@ namespace Model
 
 
     /**
-     * <p>Detailed information about one or more DB subnet groups.</p>
+     * <p>Detailed information about one or more subnet groups.</p>
      */
     inline const Aws::Vector<DBSubnetGroup>& GetDBSubnetGroups() const{ return m_dBSubnetGroups; }
 
     /**
-     * <p>Detailed information about one or more DB subnet groups.</p>
+     * <p>Detailed information about one or more subnet groups.</p>
      */
     inline void SetDBSubnetGroups(const Aws::Vector<DBSubnetGroup>& value) { m_dBSubnetGroups = value; }
 
     /**
-     * <p>Detailed information about one or more DB subnet groups.</p>
+     * <p>Detailed information about one or more subnet groups.</p>
      */
     inline void SetDBSubnetGroups(Aws::Vector<DBSubnetGroup>&& value) { m_dBSubnetGroups = std::move(value); }
 
     /**
-     * <p>Detailed information about one or more DB subnet groups.</p>
+     * <p>Detailed information about one or more subnet groups.</p>
      */
     inline DescribeDBSubnetGroupsResult& WithDBSubnetGroups(const Aws::Vector<DBSubnetGroup>& value) { SetDBSubnetGroups(value); return *this;}
 
     /**
-     * <p>Detailed information about one or more DB subnet groups.</p>
+     * <p>Detailed information about one or more subnet groups.</p>
      */
     inline DescribeDBSubnetGroupsResult& WithDBSubnetGroups(Aws::Vector<DBSubnetGroup>&& value) { SetDBSubnetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>Detailed information about one or more DB subnet groups.</p>
+     * <p>Detailed information about one or more subnet groups.</p>
      */
     inline DescribeDBSubnetGroupsResult& AddDBSubnetGroups(const DBSubnetGroup& value) { m_dBSubnetGroups.push_back(value); return *this; }
 
     /**
-     * <p>Detailed information about one or more DB subnet groups.</p>
+     * <p>Detailed information about one or more subnet groups.</p>
      */
     inline DescribeDBSubnetGroupsResult& AddDBSubnetGroups(DBSubnetGroup&& value) { m_dBSubnetGroups.push_back(std::move(value)); return *this; }
 
