@@ -132,42 +132,66 @@ namespace Model
 
 
     /**
-     * <p>The ID of the subnet in which to launch the instances.</p>
+     * <p>The IDs of the subnets in which to launch the instances. Separate multiple
+     * subnet IDs using commas (for example, <code>subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
+     * have only one subnet ID.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances.</p>
+     * <p>The IDs of the subnets in which to launch the instances. Separate multiple
+     * subnet IDs using commas (for example, <code>subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
+     * have only one subnet ID.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances.</p>
+     * <p>The IDs of the subnets in which to launch the instances. Separate multiple
+     * subnet IDs using commas (for example, <code>subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
+     * have only one subnet ID.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances.</p>
+     * <p>The IDs of the subnets in which to launch the instances. Separate multiple
+     * subnet IDs using commas (for example, <code>subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
+     * have only one subnet ID.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances.</p>
+     * <p>The IDs of the subnets in which to launch the instances. Separate multiple
+     * subnet IDs using commas (for example, <code>subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
+     * have only one subnet ID.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>The ID of the subnet in which to launch the instances.</p>
+     * <p>The IDs of the subnets in which to launch the instances. Separate multiple
+     * subnet IDs using commas (for example, <code>subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
+     * have only one subnet ID.</p>
      */
     inline FleetLaunchTemplateOverridesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>The ID of the subnet in which to launch the instances.</p>
+     * <p>The IDs of the subnets in which to launch the instances. Separate multiple
+     * subnet IDs using commas (for example, <code>subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
+     * have only one subnet ID.</p>
      */
     inline FleetLaunchTemplateOverridesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the subnet in which to launch the instances.</p>
+     * <p>The IDs of the subnets in which to launch the instances. Separate multiple
+     * subnet IDs using commas (for example, <code>subnet-1234abcdeexample1,
+     * subnet-0987cdef6example2</code>). A request of type <code>instant</code> can
+     * have only one subnet ID.</p>
      */
     inline FleetLaunchTemplateOverridesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 

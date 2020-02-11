@@ -38,6 +38,7 @@ StackInstanceSummary::StackInstanceSummary() :
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
+    m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
     m_lastDriftCheckTimestampHasBeenSet(false)
@@ -52,6 +53,7 @@ StackInstanceSummary::StackInstanceSummary(const XmlNode& xmlNode) :
     m_status(StackInstanceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
+    m_organizationalUnitIdHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
     m_lastDriftCheckTimestampHasBeenSet(false)
@@ -100,6 +102,12 @@ StackInstanceSummary& StackInstanceSummary::operator =(const XmlNode& xmlNode)
     {
       m_statusReason = Aws::Utils::Xml::DecodeEscapedXmlText(statusReasonNode.GetText());
       m_statusReasonHasBeenSet = true;
+    }
+    XmlNode organizationalUnitIdNode = resultNode.FirstChild("OrganizationalUnitId");
+    if(!organizationalUnitIdNode.IsNull())
+    {
+      m_organizationalUnitId = Aws::Utils::Xml::DecodeEscapedXmlText(organizationalUnitIdNode.GetText());
+      m_organizationalUnitIdHasBeenSet = true;
     }
     XmlNode driftStatusNode = resultNode.FirstChild("DriftStatus");
     if(!driftStatusNode.IsNull())
@@ -150,6 +158,11 @@ void StackInstanceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
   }
 
+  if(m_organizationalUnitIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OrganizationalUnitId=" << StringUtils::URLEncode(m_organizationalUnitId.c_str()) << "&";
+  }
+
   if(m_driftStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DriftStatus=" << StackDriftStatusMapper::GetNameForStackDriftStatus(m_driftStatus) << "&";
@@ -187,6 +200,10 @@ void StackInstanceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_statusReasonHasBeenSet)
   {
       oStream << location << ".StatusReason=" << StringUtils::URLEncode(m_statusReason.c_str()) << "&";
+  }
+  if(m_organizationalUnitIdHasBeenSet)
+  {
+      oStream << location << ".OrganizationalUnitId=" << StringUtils::URLEncode(m_organizationalUnitId.c_str()) << "&";
   }
   if(m_driftStatusHasBeenSet)
   {

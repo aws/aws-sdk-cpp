@@ -62,15 +62,18 @@ namespace Model
      * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
      * volume was created.</p> </li> <li> <p> <code>encrypted</code> - Indicates
      * whether the volume is encrypted (<code>true</code> | <code>false</code>)</p>
-     * </li> <li> <p> <code>size</code> - The size of the volume, in GiB.</p> </li>
-     * <li> <p> <code>snapshot-id</code> - The snapshot from which the volume was
-     * created.</p> </li> <li> <p> <code>status</code> - The status of the volume
-     * (<code>creating</code> | <code>available</code> | <code>in-use</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * </li> <li> <p> <code>fast-restored</code> - Indicates whether the volume was
+     * created from a snapshot that is enabled for fast snapshot restore
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p> <code>size</code> -
+     * The size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> -
+     * The snapshot from which the volume was created.</p> </li> <li> <p>
+     * <code>status</code> - The status of the volume (<code>creating</code> |
+     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -97,15 +100,18 @@ namespace Model
      * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
      * volume was created.</p> </li> <li> <p> <code>encrypted</code> - Indicates
      * whether the volume is encrypted (<code>true</code> | <code>false</code>)</p>
-     * </li> <li> <p> <code>size</code> - The size of the volume, in GiB.</p> </li>
-     * <li> <p> <code>snapshot-id</code> - The snapshot from which the volume was
-     * created.</p> </li> <li> <p> <code>status</code> - The status of the volume
-     * (<code>creating</code> | <code>available</code> | <code>in-use</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * </li> <li> <p> <code>fast-restored</code> - Indicates whether the volume was
+     * created from a snapshot that is enabled for fast snapshot restore
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p> <code>size</code> -
+     * The size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> -
+     * The snapshot from which the volume was created.</p> </li> <li> <p>
+     * <code>status</code> - The status of the volume (<code>creating</code> |
+     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -132,15 +138,18 @@ namespace Model
      * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
      * volume was created.</p> </li> <li> <p> <code>encrypted</code> - Indicates
      * whether the volume is encrypted (<code>true</code> | <code>false</code>)</p>
-     * </li> <li> <p> <code>size</code> - The size of the volume, in GiB.</p> </li>
-     * <li> <p> <code>snapshot-id</code> - The snapshot from which the volume was
-     * created.</p> </li> <li> <p> <code>status</code> - The status of the volume
-     * (<code>creating</code> | <code>available</code> | <code>in-use</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * </li> <li> <p> <code>fast-restored</code> - Indicates whether the volume was
+     * created from a snapshot that is enabled for fast snapshot restore
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p> <code>size</code> -
+     * The size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> -
+     * The snapshot from which the volume was created.</p> </li> <li> <p>
+     * <code>status</code> - The status of the volume (<code>creating</code> |
+     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -167,15 +176,18 @@ namespace Model
      * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
      * volume was created.</p> </li> <li> <p> <code>encrypted</code> - Indicates
      * whether the volume is encrypted (<code>true</code> | <code>false</code>)</p>
-     * </li> <li> <p> <code>size</code> - The size of the volume, in GiB.</p> </li>
-     * <li> <p> <code>snapshot-id</code> - The snapshot from which the volume was
-     * created.</p> </li> <li> <p> <code>status</code> - The status of the volume
-     * (<code>creating</code> | <code>available</code> | <code>in-use</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * </li> <li> <p> <code>fast-restored</code> - Indicates whether the volume was
+     * created from a snapshot that is enabled for fast snapshot restore
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p> <code>size</code> -
+     * The size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> -
+     * The snapshot from which the volume was created.</p> </li> <li> <p>
+     * <code>status</code> - The status of the volume (<code>creating</code> |
+     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -202,15 +214,18 @@ namespace Model
      * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
      * volume was created.</p> </li> <li> <p> <code>encrypted</code> - Indicates
      * whether the volume is encrypted (<code>true</code> | <code>false</code>)</p>
-     * </li> <li> <p> <code>size</code> - The size of the volume, in GiB.</p> </li>
-     * <li> <p> <code>snapshot-id</code> - The snapshot from which the volume was
-     * created.</p> </li> <li> <p> <code>status</code> - The status of the volume
-     * (<code>creating</code> | <code>available</code> | <code>in-use</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * </li> <li> <p> <code>fast-restored</code> - Indicates whether the volume was
+     * created from a snapshot that is enabled for fast snapshot restore
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p> <code>size</code> -
+     * The size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> -
+     * The snapshot from which the volume was created.</p> </li> <li> <p>
+     * <code>status</code> - The status of the volume (<code>creating</code> |
+     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -237,15 +252,18 @@ namespace Model
      * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
      * volume was created.</p> </li> <li> <p> <code>encrypted</code> - Indicates
      * whether the volume is encrypted (<code>true</code> | <code>false</code>)</p>
-     * </li> <li> <p> <code>size</code> - The size of the volume, in GiB.</p> </li>
-     * <li> <p> <code>snapshot-id</code> - The snapshot from which the volume was
-     * created.</p> </li> <li> <p> <code>status</code> - The status of the volume
-     * (<code>creating</code> | <code>available</code> | <code>in-use</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * </li> <li> <p> <code>fast-restored</code> - Indicates whether the volume was
+     * created from a snapshot that is enabled for fast snapshot restore
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p> <code>size</code> -
+     * The size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> -
+     * The snapshot from which the volume was created.</p> </li> <li> <p>
+     * <code>status</code> - The status of the volume (<code>creating</code> |
+     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -272,15 +290,18 @@ namespace Model
      * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
      * volume was created.</p> </li> <li> <p> <code>encrypted</code> - Indicates
      * whether the volume is encrypted (<code>true</code> | <code>false</code>)</p>
-     * </li> <li> <p> <code>size</code> - The size of the volume, in GiB.</p> </li>
-     * <li> <p> <code>snapshot-id</code> - The snapshot from which the volume was
-     * created.</p> </li> <li> <p> <code>status</code> - The status of the volume
-     * (<code>creating</code> | <code>available</code> | <code>in-use</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * </li> <li> <p> <code>fast-restored</code> - Indicates whether the volume was
+     * created from a snapshot that is enabled for fast snapshot restore
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p> <code>size</code> -
+     * The size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> -
+     * The snapshot from which the volume was created.</p> </li> <li> <p>
+     * <code>status</code> - The status of the volume (<code>creating</code> |
+     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a
@@ -307,15 +328,18 @@ namespace Model
      * created.</p> </li> <li> <p> <code>create-time</code> - The time stamp when the
      * volume was created.</p> </li> <li> <p> <code>encrypted</code> - Indicates
      * whether the volume is encrypted (<code>true</code> | <code>false</code>)</p>
-     * </li> <li> <p> <code>size</code> - The size of the volume, in GiB.</p> </li>
-     * <li> <p> <code>snapshot-id</code> - The snapshot from which the volume was
-     * created.</p> </li> <li> <p> <code>status</code> - The status of the volume
-     * (<code>creating</code> | <code>available</code> | <code>in-use</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>error</code>).</p> </li>
-     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
-     * assigned to the resource. Use the tag key in the filter name and the tag value
-     * as the filter value. For example, to find all resources that have a tag with the
-     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * </li> <li> <p> <code>fast-restored</code> - Indicates whether the volume was
+     * created from a snapshot that is enabled for fast snapshot restore
+     * (<code>true</code> | <code>false</code>).</p> </li> <li> <p> <code>size</code> -
+     * The size of the volume, in GiB.</p> </li> <li> <p> <code>snapshot-id</code> -
+     * The snapshot from which the volume was created.</p> </li> <li> <p>
+     * <code>status</code> - The status of the volume (<code>creating</code> |
+     * <code>available</code> | <code>in-use</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>error</code>).</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
      * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
      * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
      * the resource. Use this filter to find all resources assigned a tag with a

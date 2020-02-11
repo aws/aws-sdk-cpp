@@ -28,6 +28,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/UserPoolAddOnsType.h>
+#include <aws/cognito-idp/model/UsernameConfigurationType.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
@@ -902,6 +903,55 @@ namespace Model
 
 
     /**
+     * <p>You can choose to set case sensitivity on the username input for the selected
+     * sign-in option. For example, when this is set to <code>False</code>, users will
+     * be able to sign in using either "username" or "Username". This configuration is
+     * immutable once it has been set. For more information, see .</p>
+     */
+    inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
+
+    /**
+     * <p>You can choose to set case sensitivity on the username input for the selected
+     * sign-in option. For example, when this is set to <code>False</code>, users will
+     * be able to sign in using either "username" or "Username". This configuration is
+     * immutable once it has been set. For more information, see .</p>
+     */
+    inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }
+
+    /**
+     * <p>You can choose to set case sensitivity on the username input for the selected
+     * sign-in option. For example, when this is set to <code>False</code>, users will
+     * be able to sign in using either "username" or "Username". This configuration is
+     * immutable once it has been set. For more information, see .</p>
+     */
+    inline void SetUsernameConfiguration(const UsernameConfigurationType& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = value; }
+
+    /**
+     * <p>You can choose to set case sensitivity on the username input for the selected
+     * sign-in option. For example, when this is set to <code>False</code>, users will
+     * be able to sign in using either "username" or "Username". This configuration is
+     * immutable once it has been set. For more information, see .</p>
+     */
+    inline void SetUsernameConfiguration(UsernameConfigurationType&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::move(value); }
+
+    /**
+     * <p>You can choose to set case sensitivity on the username input for the selected
+     * sign-in option. For example, when this is set to <code>False</code>, users will
+     * be able to sign in using either "username" or "Username". This configuration is
+     * immutable once it has been set. For more information, see .</p>
+     */
+    inline CreateUserPoolRequest& WithUsernameConfiguration(const UsernameConfigurationType& value) { SetUsernameConfiguration(value); return *this;}
+
+    /**
+     * <p>You can choose to set case sensitivity on the username input for the selected
+     * sign-in option. For example, when this is set to <code>False</code>, users will
+     * be able to sign in using either "username" or "Username". This configuration is
+     * immutable once it has been set. For more information, see .</p>
+     */
+    inline CreateUserPoolRequest& WithUsernameConfiguration(UsernameConfigurationType&& value) { SetUsernameConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Use this setting to define which verified available method a user can use to
      * recover their password when they call <code>ForgotPassword</code>. It allows you
      * to define a preferred method when a user has more than one method available.
@@ -1043,6 +1093,9 @@ namespace Model
 
     UserPoolAddOnsType m_userPoolAddOns;
     bool m_userPoolAddOnsHasBeenSet;
+
+    UsernameConfigurationType m_usernameConfiguration;
+    bool m_usernameConfigurationHasBeenSet;
 
     AccountRecoverySettingType m_accountRecoverySetting;
     bool m_accountRecoverySettingHasBeenSet;

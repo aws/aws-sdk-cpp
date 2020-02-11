@@ -19,6 +19,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cloudformation/model/StackSetOperationPreferences.h>
+#include <aws/cloudformation/model/DeploymentTargets.h>
+#include <aws/cloudformation/model/PermissionModels.h>
+#include <aws/cloudformation/model/AutoDeployment.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -1270,6 +1273,255 @@ namespace Model
 
 
     /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts in
+     * which to update associated stack instances.</p> <p>To update all the stack
+     * instances associated with this stack set, do not specify
+     * <code>DeploymentTargets</code> or <code>Regions</code>.</p> <p>If the stack set
+     * update includes changes to the template (that is, if <code>TemplateBody</code>
+     * or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS
+     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
+     * prior to updating the stack instances in the specified accounts and Regions. If
+     * the stack set update does not include changes to the template or parameters, AWS
+     * CloudFormation updates the stack instances in the specified accounts and
+     * Regions, while leaving all other stack instances with their existing stack
+     * instance status.</p>
+     */
+    inline const DeploymentTargets& GetDeploymentTargets() const{ return m_deploymentTargets; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts in
+     * which to update associated stack instances.</p> <p>To update all the stack
+     * instances associated with this stack set, do not specify
+     * <code>DeploymentTargets</code> or <code>Regions</code>.</p> <p>If the stack set
+     * update includes changes to the template (that is, if <code>TemplateBody</code>
+     * or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS
+     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
+     * prior to updating the stack instances in the specified accounts and Regions. If
+     * the stack set update does not include changes to the template or parameters, AWS
+     * CloudFormation updates the stack instances in the specified accounts and
+     * Regions, while leaving all other stack instances with their existing stack
+     * instance status.</p>
+     */
+    inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts in
+     * which to update associated stack instances.</p> <p>To update all the stack
+     * instances associated with this stack set, do not specify
+     * <code>DeploymentTargets</code> or <code>Regions</code>.</p> <p>If the stack set
+     * update includes changes to the template (that is, if <code>TemplateBody</code>
+     * or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS
+     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
+     * prior to updating the stack instances in the specified accounts and Regions. If
+     * the stack set update does not include changes to the template or parameters, AWS
+     * CloudFormation updates the stack instances in the specified accounts and
+     * Regions, while leaving all other stack instances with their existing stack
+     * instance status.</p>
+     */
+    inline void SetDeploymentTargets(const DeploymentTargets& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = value; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts in
+     * which to update associated stack instances.</p> <p>To update all the stack
+     * instances associated with this stack set, do not specify
+     * <code>DeploymentTargets</code> or <code>Regions</code>.</p> <p>If the stack set
+     * update includes changes to the template (that is, if <code>TemplateBody</code>
+     * or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS
+     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
+     * prior to updating the stack instances in the specified accounts and Regions. If
+     * the stack set update does not include changes to the template or parameters, AWS
+     * CloudFormation updates the stack instances in the specified accounts and
+     * Regions, while leaving all other stack instances with their existing stack
+     * instance status.</p>
+     */
+    inline void SetDeploymentTargets(DeploymentTargets&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::move(value); }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts in
+     * which to update associated stack instances.</p> <p>To update all the stack
+     * instances associated with this stack set, do not specify
+     * <code>DeploymentTargets</code> or <code>Regions</code>.</p> <p>If the stack set
+     * update includes changes to the template (that is, if <code>TemplateBody</code>
+     * or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS
+     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
+     * prior to updating the stack instances in the specified accounts and Regions. If
+     * the stack set update does not include changes to the template or parameters, AWS
+     * CloudFormation updates the stack instances in the specified accounts and
+     * Regions, while leaving all other stack instances with their existing stack
+     * instance status.</p>
+     */
+    inline UpdateStackSetRequest& WithDeploymentTargets(const DeploymentTargets& value) { SetDeploymentTargets(value); return *this;}
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts in
+     * which to update associated stack instances.</p> <p>To update all the stack
+     * instances associated with this stack set, do not specify
+     * <code>DeploymentTargets</code> or <code>Regions</code>.</p> <p>If the stack set
+     * update includes changes to the template (that is, if <code>TemplateBody</code>
+     * or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS
+     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
+     * prior to updating the stack instances in the specified accounts and Regions. If
+     * the stack set update does not include changes to the template or parameters, AWS
+     * CloudFormation updates the stack instances in the specified accounts and
+     * Regions, while leaving all other stack instances with their existing stack
+     * instance status.</p>
+     */
+    inline UpdateStackSetRequest& WithDeploymentTargets(DeploymentTargets&& value) { SetDeploymentTargets(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created.
+     * You cannot modify <code>PermissionModel</code> if there are stack instances
+     * associated with your stack set.</p> <ul> <li> <p>With <code>self-managed</code>
+     * permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline const PermissionModels& GetPermissionModel() const{ return m_permissionModel; }
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created.
+     * You cannot modify <code>PermissionModel</code> if there are stack instances
+     * associated with your stack set.</p> <ul> <li> <p>With <code>self-managed</code>
+     * permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created.
+     * You cannot modify <code>PermissionModel</code> if there are stack instances
+     * associated with your stack set.</p> <ul> <li> <p>With <code>self-managed</code>
+     * permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline void SetPermissionModel(const PermissionModels& value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created.
+     * You cannot modify <code>PermissionModel</code> if there are stack instances
+     * associated with your stack set.</p> <ul> <li> <p>With <code>self-managed</code>
+     * permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline void SetPermissionModel(PermissionModels&& value) { m_permissionModelHasBeenSet = true; m_permissionModel = std::move(value); }
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created.
+     * You cannot modify <code>PermissionModel</code> if there are stack instances
+     * associated with your stack set.</p> <ul> <li> <p>With <code>self-managed</code>
+     * permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline UpdateStackSetRequest& WithPermissionModel(const PermissionModels& value) { SetPermissionModel(value); return *this;}
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created.
+     * You cannot modify <code>PermissionModel</code> if there are stack instances
+     * associated with your stack set.</p> <ul> <li> <p>With <code>self-managed</code>
+     * permissions, you must create the administrator and execution roles required to
+     * deploy to target accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline UpdateStackSetRequest& WithPermissionModel(PermissionModels&& value) { SetPermissionModel(std::move(value)); return *this;}
+
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
+     * automatically deploys to AWS Organizations accounts that are added to a target
+     * organization or organizational unit (OU).</p> <p>If you specify
+     * <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     * <code>Regions</code>.</p>
+     */
+    inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
+     * automatically deploys to AWS Organizations accounts that are added to a target
+     * organization or organizational unit (OU).</p> <p>If you specify
+     * <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     * <code>Regions</code>.</p>
+     */
+    inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
+     * automatically deploys to AWS Organizations accounts that are added to a target
+     * organization or organizational unit (OU).</p> <p>If you specify
+     * <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     * <code>Regions</code>.</p>
+     */
+    inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
+     * automatically deploys to AWS Organizations accounts that are added to a target
+     * organization or organizational unit (OU).</p> <p>If you specify
+     * <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     * <code>Regions</code>.</p>
+     */
+    inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
+     * automatically deploys to AWS Organizations accounts that are added to a target
+     * organization or organizational unit (OU).</p> <p>If you specify
+     * <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     * <code>Regions</code>.</p>
+     */
+    inline UpdateStackSetRequest& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] Describes whether StackSets
+     * automatically deploys to AWS Organizations accounts that are added to a target
+     * organization or organizational unit (OU).</p> <p>If you specify
+     * <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or
+     * <code>Regions</code>.</p>
+     */
+    inline UpdateStackSetRequest& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
+
+
+    /**
      * <p>The unique ID for this stack set operation. </p> <p>The operation ID also
      * functions as an idempotency token, to ensure that AWS CloudFormation performs
      * the stack set operation only once, even if you retry the request multiple times.
@@ -1367,155 +1619,155 @@ namespace Model
 
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline UpdateStackSetRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline UpdateStackSetRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline UpdateStackSetRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline UpdateStackSetRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The accounts in which to update associated stack instances. If you specify
-     * accounts, you must also specify the regions in which to update stack set
-     * instances.</p> <p>To update <i>all</i> the stack instances associated with this
-     * stack set, do not specify the <code>Accounts</code> or <code>Regions</code>
-     * properties.</p> <p>If the stack set update includes changes to the template
-     * (that is, if the <code>TemplateBody</code> or <code>TemplateURL</code>
-     * properties are specified), or the <code>Parameters</code> property, AWS
-     * CloudFormation marks all stack instances with a status of <code>OUTDATED</code>
-     * prior to updating the stack instances in the specified accounts and regions. If
-     * the stack set update does not include changes to the template or parameters, AWS
-     * CloudFormation updates the stack instances in the specified accounts and
-     * regions, while leaving all other stack instances with their existing stack
-     * instance status. </p>
+     * <p>[Self-managed permissions] The accounts in which to update associated stack
+     * instances. If you specify accounts, you must also specify the regions in which
+     * to update stack set instances.</p> <p>To update <i>all</i> the stack instances
+     * associated with this stack set, do not specify the <code>Accounts</code> or
+     * <code>Regions</code> properties.</p> <p>If the stack set update includes changes
+     * to the template (that is, if the <code>TemplateBody</code> or
+     * <code>TemplateURL</code> properties are specified), or the
+     * <code>Parameters</code> property, AWS CloudFormation marks all stack instances
+     * with a status of <code>OUTDATED</code> prior to updating the stack instances in
+     * the specified accounts and regions. If the stack set update does not include
+     * changes to the template or parameters, AWS CloudFormation updates the stack
+     * instances in the specified accounts and regions, while leaving all other stack
+     * instances with their existing stack instance status. </p>
      */
     inline UpdateStackSetRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
@@ -1707,6 +1959,15 @@ namespace Model
 
     Aws::String m_executionRoleName;
     bool m_executionRoleNameHasBeenSet;
+
+    DeploymentTargets m_deploymentTargets;
+    bool m_deploymentTargetsHasBeenSet;
+
+    PermissionModels m_permissionModel;
+    bool m_permissionModelHasBeenSet;
+
+    AutoDeployment m_autoDeployment;
+    bool m_autoDeploymentHasBeenSet;
 
     Aws::String m_operationId;
     bool m_operationIdHasBeenSet;

@@ -35,6 +35,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int STOPPED_HASH = HashingUtils::HashString("STOPPED");
+        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
 
 
         StackSetOperationStatus GetStackSetOperationStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return StackSetOperationStatus::STOPPED;
           }
+          else if (hashCode == QUEUED_HASH)
+          {
+            return StackSetOperationStatus::QUEUED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "STOPPING";
           case StackSetOperationStatus::STOPPED:
             return "STOPPED";
+          case StackSetOperationStatus::QUEUED:
+            return "QUEUED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

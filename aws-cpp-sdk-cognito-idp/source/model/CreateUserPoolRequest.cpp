@@ -43,6 +43,7 @@ CreateUserPoolRequest::CreateUserPoolRequest() :
     m_adminCreateUserConfigHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_userPoolAddOnsHasBeenSet(false),
+    m_usernameConfigurationHasBeenSet(false),
     m_accountRecoverySettingHasBeenSet(false)
 {
 }
@@ -186,6 +187,12 @@ Aws::String CreateUserPoolRequest::SerializePayload() const
   if(m_userPoolAddOnsHasBeenSet)
   {
    payload.WithObject("UserPoolAddOns", m_userPoolAddOns.Jsonize());
+
+  }
+
+  if(m_usernameConfigurationHasBeenSet)
+  {
+   payload.WithObject("UsernameConfiguration", m_usernameConfiguration.Jsonize());
 
   }
 

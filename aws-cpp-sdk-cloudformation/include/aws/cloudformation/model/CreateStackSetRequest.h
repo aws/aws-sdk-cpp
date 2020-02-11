@@ -18,6 +18,8 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/PermissionModels.h>
+#include <aws/cloudformation/model/AutoDeployment.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -1061,6 +1063,158 @@ namespace Model
 
 
     /**
+     * <p>Describes how the IAM roles required for stack set operations are created. By
+     * default, <code>SELF-MANAGED</code> is specified.</p> <ul> <li> <p>With
+     * <code>self-managed</code> permissions, you must create the administrator and
+     * execution roles required to deploy to target accounts. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline const PermissionModels& GetPermissionModel() const{ return m_permissionModel; }
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created. By
+     * default, <code>SELF-MANAGED</code> is specified.</p> <ul> <li> <p>With
+     * <code>self-managed</code> permissions, you must create the administrator and
+     * execution roles required to deploy to target accounts. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created. By
+     * default, <code>SELF-MANAGED</code> is specified.</p> <ul> <li> <p>With
+     * <code>self-managed</code> permissions, you must create the administrator and
+     * execution roles required to deploy to target accounts. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline void SetPermissionModel(const PermissionModels& value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created. By
+     * default, <code>SELF-MANAGED</code> is specified.</p> <ul> <li> <p>With
+     * <code>self-managed</code> permissions, you must create the administrator and
+     * execution roles required to deploy to target accounts. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline void SetPermissionModel(PermissionModels&& value) { m_permissionModelHasBeenSet = true; m_permissionModel = std::move(value); }
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created. By
+     * default, <code>SELF-MANAGED</code> is specified.</p> <ul> <li> <p>With
+     * <code>self-managed</code> permissions, you must create the administrator and
+     * execution roles required to deploy to target accounts. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline CreateStackSetRequest& WithPermissionModel(const PermissionModels& value) { SetPermissionModel(value); return *this;}
+
+    /**
+     * <p>Describes how the IAM roles required for stack set operations are created. By
+     * default, <code>SELF-MANAGED</code> is specified.</p> <ul> <li> <p>With
+     * <code>self-managed</code> permissions, you must create the administrator and
+     * execution roles required to deploy to target accounts. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+     * Self-Managed Stack Set Permissions</a>.</p> </li> <li> <p>With
+     * <code>service-managed</code> permissions, StackSets automatically creates the
+     * IAM roles required to deploy to accounts managed by AWS Organizations. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+     * Service-Managed Stack Set Permissions</a>.</p> </li> </ul>
+     */
+    inline CreateStackSetRequest& WithPermissionModel(PermissionModels&& value) { SetPermissionModel(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to the target organization or organizational unit (OU).
+     * Specify only if <code>PermissionModel</code> is
+     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
+     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     */
+    inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
+
+    /**
+     * <p>Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to the target organization or organizational unit (OU).
+     * Specify only if <code>PermissionModel</code> is
+     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
+     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     */
+    inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
+
+    /**
+     * <p>Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to the target organization or organizational unit (OU).
+     * Specify only if <code>PermissionModel</code> is
+     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
+     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     */
+    inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
+
+    /**
+     * <p>Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to the target organization or organizational unit (OU).
+     * Specify only if <code>PermissionModel</code> is
+     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
+     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     */
+    inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
+
+    /**
+     * <p>Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to the target organization or organizational unit (OU).
+     * Specify only if <code>PermissionModel</code> is
+     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
+     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     */
+    inline CreateStackSetRequest& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
+
+    /**
+     * <p>Describes whether StackSets automatically deploys to AWS Organizations
+     * accounts that are added to the target organization or organizational unit (OU).
+     * Specify only if <code>PermissionModel</code> is
+     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
+     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     */
+    inline CreateStackSetRequest& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
+
+
+    /**
      * <p>A unique identifier for this <code>CreateStackSet</code> request. Specify
      * this token if you plan to retry requests so that AWS CloudFormation knows that
      * you're not attempting to create another stack set with the same name. You might
@@ -1168,6 +1322,12 @@ namespace Model
 
     Aws::String m_executionRoleName;
     bool m_executionRoleNameHasBeenSet;
+
+    PermissionModels m_permissionModel;
+    bool m_permissionModelHasBeenSet;
+
+    AutoDeployment m_autoDeployment;
+    bool m_autoDeploymentHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;

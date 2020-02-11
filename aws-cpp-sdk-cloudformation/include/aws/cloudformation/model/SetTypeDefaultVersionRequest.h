@@ -49,137 +49,143 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify <code>TypeName</code> or
-     * <code>Arn</code>.</p>
+     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
+     * and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify <code>TypeName</code> or
-     * <code>Arn</code>.</p>
+     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
+     * and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify <code>TypeName</code> or
-     * <code>Arn</code>.</p>
+     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
+     * and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify <code>TypeName</code> or
-     * <code>Arn</code>.</p>
+     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
+     * and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify <code>TypeName</code> or
-     * <code>Arn</code>.</p>
+     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
+     * and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify <code>TypeName</code> or
-     * <code>Arn</code>.</p>
+     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
+     * and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline SetTypeDefaultVersionRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify <code>TypeName</code> or
-     * <code>Arn</code>.</p>
+     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
+     * and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline SetTypeDefaultVersionRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type for which you want version summary
-     * information.</p> <p>Conditional: You must specify <code>TypeName</code> or
-     * <code>Arn</code>.</p>
+     * information.</p> <p>Conditional: You must specify either <code>TypeName</code>
+     * and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline SetTypeDefaultVersionRequest& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The kind of type.</p>
+     * <p>The kind of type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const RegistryType& GetType() const{ return m_type; }
 
     /**
-     * <p>The kind of type.</p>
+     * <p>The kind of type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The kind of type.</p>
+     * <p>The kind of type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The kind of type.</p>
+     * <p>The kind of type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The kind of type.</p>
+     * <p>The kind of type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline SetTypeDefaultVersionRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The kind of type.</p>
+     * <p>The kind of type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline SetTypeDefaultVersionRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline SetTypeDefaultVersionRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline SetTypeDefaultVersionRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline SetTypeDefaultVersionRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 

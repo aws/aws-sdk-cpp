@@ -36,7 +36,8 @@ StackSetOperationResultSummary::StackSetOperationResultSummary() :
     m_status(StackSetOperationResultStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
-    m_accountGateResultHasBeenSet(false)
+    m_accountGateResultHasBeenSet(false),
+    m_organizationalUnitIdHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ StackSetOperationResultSummary::StackSetOperationResultSummary(const XmlNode& xm
     m_status(StackSetOperationResultStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
-    m_accountGateResultHasBeenSet(false)
+    m_accountGateResultHasBeenSet(false),
+    m_organizationalUnitIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -87,6 +89,12 @@ StackSetOperationResultSummary& StackSetOperationResultSummary::operator =(const
       m_accountGateResult = accountGateResultNode;
       m_accountGateResultHasBeenSet = true;
     }
+    XmlNode organizationalUnitIdNode = resultNode.FirstChild("OrganizationalUnitId");
+    if(!organizationalUnitIdNode.IsNull())
+    {
+      m_organizationalUnitId = Aws::Utils::Xml::DecodeEscapedXmlText(organizationalUnitIdNode.GetText());
+      m_organizationalUnitIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -121,6 +129,11 @@ void StackSetOperationResultSummary::OutputToStream(Aws::OStream& oStream, const
       m_accountGateResult.OutputToStream(oStream, accountGateResultLocationAndMemberSs.str().c_str());
   }
 
+  if(m_organizationalUnitIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OrganizationalUnitId=" << StringUtils::URLEncode(m_organizationalUnitId.c_str()) << "&";
+  }
+
 }
 
 void StackSetOperationResultSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -146,6 +159,10 @@ void StackSetOperationResultSummary::OutputToStream(Aws::OStream& oStream, const
       Aws::String accountGateResultLocationAndMember(location);
       accountGateResultLocationAndMember += ".AccountGateResult";
       m_accountGateResult.OutputToStream(oStream, accountGateResultLocationAndMember.c_str());
+  }
+  if(m_organizationalUnitIdHasBeenSet)
+  {
+      oStream << location << ".OrganizationalUnitId=" << StringUtils::URLEncode(m_organizationalUnitId.c_str()) << "&";
   }
 }
 

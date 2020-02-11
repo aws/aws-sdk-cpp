@@ -64,7 +64,8 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData() :
     m_instanceInterruptionBehaviorHasBeenSet(false),
     m_loadBalancersConfigHasBeenSet(false),
     m_instancePoolsToUseCount(0),
-    m_instancePoolsToUseCountHasBeenSet(false)
+    m_instancePoolsToUseCountHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -102,7 +103,8 @@ SpotFleetRequestConfigData::SpotFleetRequestConfigData(const XmlNode& xmlNode) :
     m_instanceInterruptionBehaviorHasBeenSet(false),
     m_loadBalancersConfigHasBeenSet(false),
     m_instancePoolsToUseCount(0),
-    m_instancePoolsToUseCountHasBeenSet(false)
+    m_instancePoolsToUseCountHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -257,6 +259,18 @@ SpotFleetRequestConfigData& SpotFleetRequestConfigData::operator =(const XmlNode
       m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancePoolsToUseCountNode.GetText()).c_str()).c_str());
       m_instancePoolsToUseCountHasBeenSet = true;
     }
+    XmlNode tagSpecificationsNode = resultNode.FirstChild("TagSpecification");
+    if(!tagSpecificationsNode.IsNull())
+    {
+      XmlNode tagSpecificationsMember = tagSpecificationsNode.FirstChild("item");
+      while(!tagSpecificationsMember.IsNull())
+      {
+        m_tagSpecifications.push_back(tagSpecificationsMember);
+        tagSpecificationsMember = tagSpecificationsMember.NextNode("item");
+      }
+
+      m_tagSpecificationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -388,6 +402,17 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
       oStream << location << index << locationValue << ".InstancePoolsToUseCount=" << m_instancePoolsToUseCount << "&";
   }
 
+  if(m_tagSpecificationsHasBeenSet)
+  {
+      unsigned tagSpecificationsIdx = 1;
+      for(auto& item : m_tagSpecifications)
+      {
+        Aws::StringStream tagSpecificationsSs;
+        tagSpecificationsSs << location << index << locationValue << ".TagSpecification." << tagSpecificationsIdx++;
+        item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
+      }
+  }
+
 }
 
 void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -493,6 +518,16 @@ void SpotFleetRequestConfigData::OutputToStream(Aws::OStream& oStream, const cha
   if(m_instancePoolsToUseCountHasBeenSet)
   {
       oStream << location << ".InstancePoolsToUseCount=" << m_instancePoolsToUseCount << "&";
+  }
+  if(m_tagSpecificationsHasBeenSet)
+  {
+      unsigned tagSpecificationsIdx = 1;
+      for(auto& item : m_tagSpecifications)
+      {
+        Aws::StringStream tagSpecificationsSs;
+        tagSpecificationsSs << location <<  ".TagSpecification." << tagSpecificationsIdx++;
+        item.OutputToStream(oStream, tagSpecificationsSs.str().c_str());
+      }
   }
 }
 

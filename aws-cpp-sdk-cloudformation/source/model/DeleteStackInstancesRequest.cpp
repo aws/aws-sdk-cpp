@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 DeleteStackInstancesRequest::DeleteStackInstancesRequest() : 
     m_stackSetNameHasBeenSet(false),
     m_accountsHasBeenSet(false),
+    m_deploymentTargetsHasBeenSet(false),
     m_regionsHasBeenSet(false),
     m_operationPreferencesHasBeenSet(false),
     m_retainStacks(false),
@@ -50,6 +51,11 @@ Aws::String DeleteStackInstancesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       accountsCount++;
     }
+  }
+
+  if(m_deploymentTargetsHasBeenSet)
+  {
+    m_deploymentTargets.OutputToStream(ss, "DeploymentTargets");
   }
 
   if(m_regionsHasBeenSet)

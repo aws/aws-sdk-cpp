@@ -30,6 +30,9 @@ CreateStackSetRequest::CreateStackSetRequest() :
     m_tagsHasBeenSet(false),
     m_administrationRoleARNHasBeenSet(false),
     m_executionRoleNameHasBeenSet(false),
+    m_permissionModel(PermissionModels::NOT_SET),
+    m_permissionModelHasBeenSet(false),
+    m_autoDeploymentHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
@@ -98,6 +101,16 @@ Aws::String CreateStackSetRequest::SerializePayload() const
   if(m_executionRoleNameHasBeenSet)
   {
     ss << "ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
+  }
+
+  if(m_permissionModelHasBeenSet)
+  {
+    ss << "PermissionModel=" << PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel) << "&";
+  }
+
+  if(m_autoDeploymentHasBeenSet)
+  {
+    m_autoDeployment.OutputToStream(ss, "AutoDeployment");
   }
 
   if(m_clientRequestTokenHasBeenSet)

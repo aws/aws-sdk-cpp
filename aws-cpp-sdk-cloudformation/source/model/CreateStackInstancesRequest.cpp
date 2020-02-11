@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 CreateStackInstancesRequest::CreateStackInstancesRequest() : 
     m_stackSetNameHasBeenSet(false),
     m_accountsHasBeenSet(false),
+    m_deploymentTargetsHasBeenSet(false),
     m_regionsHasBeenSet(false),
     m_parameterOverridesHasBeenSet(false),
     m_operationPreferencesHasBeenSet(false),
@@ -49,6 +50,11 @@ Aws::String CreateStackInstancesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       accountsCount++;
     }
+  }
+
+  if(m_deploymentTargetsHasBeenSet)
+  {
+    m_deploymentTargets.OutputToStream(ss, "DeploymentTargets");
   }
 
   if(m_regionsHasBeenSet)

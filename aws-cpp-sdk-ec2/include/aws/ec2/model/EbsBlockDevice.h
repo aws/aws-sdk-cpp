@@ -420,7 +420,7 @@ namespace Model
      * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
      * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>.</p>
+     * Instance Types</a>.</p> <p>This parameter is not returned by .</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -436,7 +436,7 @@ namespace Model
      * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
      * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>.</p>
+     * Instance Types</a>.</p> <p>This parameter is not returned by .</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -452,7 +452,7 @@ namespace Model
      * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
      * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>.</p>
+     * Instance Types</a>.</p> <p>This parameter is not returned by .</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -468,7 +468,7 @@ namespace Model
      * <p>Encrypted volumes can only be attached to instances that support Amazon EBS
      * encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
-     * Instance Types</a>.</p>
+     * Instance Types</a>.</p> <p>This parameter is not returned by .</p>
      */
     inline EbsBlockDevice& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

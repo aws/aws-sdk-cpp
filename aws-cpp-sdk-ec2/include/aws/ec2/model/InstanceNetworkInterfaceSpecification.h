@@ -354,42 +354,58 @@ namespace Model
 
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
+     * omit this parameter because you can’t specify a network interface ID in a launch
+     * specification.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
+     * omit this parameter because you can’t specify a network interface ID in a launch
+     * specification.</p>
      */
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
+     * omit this parameter because you can’t specify a network interface ID in a launch
+     * specification.</p>
      */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
+     * omit this parameter because you can’t specify a network interface ID in a launch
+     * specification.</p>
      */
     inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
+     * omit this parameter because you can’t specify a network interface ID in a launch
+     * specification.</p>
      */
     inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
+     * omit this parameter because you can’t specify a network interface ID in a launch
+     * specification.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
+     * omit this parameter because you can’t specify a network interface ID in a launch
+     * specification.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the network interface.</p>
+     * <p>The ID of the network interface.</p> <p>If you are creating a Spot Fleet,
+     * omit this parameter because you can’t specify a network interface ID in a launch
+     * specification.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
 

@@ -50,166 +50,186 @@ namespace Model
 
     /**
      * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p>
+     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const RegistryType& GetType() const{ return m_type; }
 
     /**
      * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p>
+     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p>
+     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(const RegistryType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p>
+     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetType(RegistryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p>
+     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithType(const RegistryType& value) { SetType(value); return *this;}
 
     /**
      * <p>The kind of type.</p> <p>Currently the only valid value is
-     * <code>RESOURCE</code>.</p>
+     * <code>RESOURCE</code>.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithType(RegistryType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the type.</p> <p>Conditional: You must specify
-     * <code>TypeName</code> or <code>Arn</code>.</p>
+     * <p>The name of the type.</p> <p>Conditional: You must specify either
+     * <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
-     * specify <code>TypeName</code> or <code>Arn</code>.</p>
+     * specify either <code>TypeName</code> and <code>Type</code>, or
+     * <code>Arn</code>.</p>
      */
     inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
-     * specify <code>TypeName</code> or <code>Arn</code>.</p>
+     * specify either <code>TypeName</code> and <code>Type</code>, or
+     * <code>Arn</code>.</p>
      */
     inline bool TypeArnHasBeenSet() const { return m_typeArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
-     * specify <code>TypeName</code> or <code>Arn</code>.</p>
+     * specify either <code>TypeName</code> and <code>Type</code>, or
+     * <code>Arn</code>.</p>
      */
     inline void SetTypeArn(const Aws::String& value) { m_typeArnHasBeenSet = true; m_typeArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
-     * specify <code>TypeName</code> or <code>Arn</code>.</p>
+     * specify either <code>TypeName</code> and <code>Type</code>, or
+     * <code>Arn</code>.</p>
      */
     inline void SetTypeArn(Aws::String&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
-     * specify <code>TypeName</code> or <code>Arn</code>.</p>
+     * specify either <code>TypeName</code> and <code>Type</code>, or
+     * <code>Arn</code>.</p>
      */
     inline void SetTypeArn(const char* value) { m_typeArnHasBeenSet = true; m_typeArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
-     * specify <code>TypeName</code> or <code>Arn</code>.</p>
+     * specify either <code>TypeName</code> and <code>Type</code>, or
+     * <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
-     * specify <code>TypeName</code> or <code>Arn</code>.</p>
+     * specify either <code>TypeName</code> and <code>Type</code>, or
+     * <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the type.</p> <p>Conditional: You must
-     * specify <code>TypeName</code> or <code>Arn</code>.</p>
+     * specify either <code>TypeName</code> and <code>Type</code>, or
+     * <code>Arn</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithTypeArn(const char* value) { SetTypeArn(value); return *this;}
 
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the type registration request.</p> <p>The default is
+     * <code>IN_PROGRESS</code>.</p>
      */
     inline const RegistrationStatus& GetRegistrationStatusFilter() const{ return m_registrationStatusFilter; }
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the type registration request.</p> <p>The default is
+     * <code>IN_PROGRESS</code>.</p>
      */
     inline bool RegistrationStatusFilterHasBeenSet() const { return m_registrationStatusFilterHasBeenSet; }
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the type registration request.</p> <p>The default is
+     * <code>IN_PROGRESS</code>.</p>
      */
     inline void SetRegistrationStatusFilter(const RegistrationStatus& value) { m_registrationStatusFilterHasBeenSet = true; m_registrationStatusFilter = value; }
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the type registration request.</p> <p>The default is
+     * <code>IN_PROGRESS</code>.</p>
      */
     inline void SetRegistrationStatusFilter(RegistrationStatus&& value) { m_registrationStatusFilterHasBeenSet = true; m_registrationStatusFilter = std::move(value); }
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the type registration request.</p> <p>The default is
+     * <code>IN_PROGRESS</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithRegistrationStatusFilter(const RegistrationStatus& value) { SetRegistrationStatusFilter(value); return *this;}
 
     /**
-     * <p>The current status of the type registration request.</p>
+     * <p>The current status of the type registration request.</p> <p>The default is
+     * <code>IN_PROGRESS</code>.</p>
      */
     inline ListTypeRegistrationsRequest& WithRegistrationStatusFilter(RegistrationStatus&& value) { SetRegistrationStatusFilter(std::move(value)); return *this;}
 

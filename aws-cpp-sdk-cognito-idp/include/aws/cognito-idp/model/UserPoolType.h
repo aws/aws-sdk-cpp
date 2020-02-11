@@ -29,6 +29,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/UserPoolAddOnsType.h>
+#include <aws/cognito-idp/model/UsernameConfigurationType.h>
 #include <aws/cognito-idp/model/AccountRecoverySettingType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
@@ -1220,6 +1221,55 @@ namespace Model
 
 
     /**
+     * <p>You can choose to enable case sensitivity on the username input for the
+     * selected sign-in option. For example, when this is set to <code>False</code>,
+     * users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .</p>
+     */
+    inline const UsernameConfigurationType& GetUsernameConfiguration() const{ return m_usernameConfiguration; }
+
+    /**
+     * <p>You can choose to enable case sensitivity on the username input for the
+     * selected sign-in option. For example, when this is set to <code>False</code>,
+     * users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .</p>
+     */
+    inline bool UsernameConfigurationHasBeenSet() const { return m_usernameConfigurationHasBeenSet; }
+
+    /**
+     * <p>You can choose to enable case sensitivity on the username input for the
+     * selected sign-in option. For example, when this is set to <code>False</code>,
+     * users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .</p>
+     */
+    inline void SetUsernameConfiguration(const UsernameConfigurationType& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = value; }
+
+    /**
+     * <p>You can choose to enable case sensitivity on the username input for the
+     * selected sign-in option. For example, when this is set to <code>False</code>,
+     * users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .</p>
+     */
+    inline void SetUsernameConfiguration(UsernameConfigurationType&& value) { m_usernameConfigurationHasBeenSet = true; m_usernameConfiguration = std::move(value); }
+
+    /**
+     * <p>You can choose to enable case sensitivity on the username input for the
+     * selected sign-in option. For example, when this is set to <code>False</code>,
+     * users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .</p>
+     */
+    inline UserPoolType& WithUsernameConfiguration(const UsernameConfigurationType& value) { SetUsernameConfiguration(value); return *this;}
+
+    /**
+     * <p>You can choose to enable case sensitivity on the username input for the
+     * selected sign-in option. For example, when this is set to <code>False</code>,
+     * users will be able to sign in using either "username" or "Username". This
+     * configuration is immutable once it has been set. For more information, see .</p>
+     */
+    inline UserPoolType& WithUsernameConfiguration(UsernameConfigurationType&& value) { SetUsernameConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the user pool.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -1411,6 +1461,9 @@ namespace Model
 
     UserPoolAddOnsType m_userPoolAddOns;
     bool m_userPoolAddOnsHasBeenSet;
+
+    UsernameConfigurationType m_usernameConfiguration;
+    bool m_usernameConfigurationHasBeenSet;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;

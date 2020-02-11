@@ -166,80 +166,288 @@ namespace Model
 
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProviderDetails() const{ return m_providerDetails; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline bool ProviderDetailsHasBeenSet() const { return m_providerDetailsHasBeenSet; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline void SetProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = value; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline void SetProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = std::move(value); }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& WithProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetProviderDetails(value); return *this;}
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& WithProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetProviderDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const Aws::String& key, const Aws::String& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, const Aws::String& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const Aws::String& key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const char* key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The identity provider details, such as <code>MetadataURL</code> and
-     * <code>MetadataFile</code>.</p>
+     * <p>The identity provider details. The following list describes the provider
+     * detail keys for each identity provider type.</p> <ul> <li> <p>For Google,
+     * Facebook and Login with Amazon:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>client_secret</p> </li> <li> <p>authorize_scopes</p> </li> </ul> </li> <li>
+     * <p>For Sign in with Apple:</p> <ul> <li> <p>client_id</p> </li> <li>
+     * <p>team_id</p> </li> <li> <p>key_id</p> </li> <li> <p>private_key</p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For OIDC providers:</p> <ul>
+     * <li> <p>client_id</p> </li> <li> <p>client_secret</p> </li> <li>
+     * <p>attributes_request_method</p> </li> <li> <p>oidc_issuer</p> </li> <li>
+     * <p>authorize_scopes</p> </li> <li> <p>authorize_url <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li> <p>token_url
+     * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
+     * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
+     * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
+     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
+     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
+     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
+     * </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const char* key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 

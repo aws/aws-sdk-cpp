@@ -11313,7 +11313,7 @@ namespace Model
          * of the snapshot granted create volume permissions to a specific AWS account.</p>
          * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
          * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
-         * returned can be modified by specifying snapshot IDs, snapshot owners, or AWS
+         * returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS
          * accounts with create volume permissions. If no options are specified, Amazon EC2
          * returns all snapshots for which you have create volume permissions.</p> <p>If
          * you specify one or more snapshot IDs, only snapshots that have the specified IDs
@@ -11334,7 +11334,9 @@ namespace Model
          * <code>MaxResults</code> value, then that number of results is returned along
          * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS snapshots, see <a
+         * <p>To get the state of fast snapshot restores for a snapshot, use
+         * <a>DescribeFastSnapshotRestores</a>.</p> <p>For more information about EBS
+         * snapshots, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -11355,7 +11357,7 @@ namespace Model
          * of the snapshot granted create volume permissions to a specific AWS account.</p>
          * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
          * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
-         * returned can be modified by specifying snapshot IDs, snapshot owners, or AWS
+         * returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS
          * accounts with create volume permissions. If no options are specified, Amazon EC2
          * returns all snapshots for which you have create volume permissions.</p> <p>If
          * you specify one or more snapshot IDs, only snapshots that have the specified IDs
@@ -11376,7 +11378,9 @@ namespace Model
          * <code>MaxResults</code> value, then that number of results is returned along
          * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS snapshots, see <a
+         * <p>To get the state of fast snapshot restores for a snapshot, use
+         * <a>DescribeFastSnapshotRestores</a>.</p> <p>For more information about EBS
+         * snapshots, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -11399,7 +11403,7 @@ namespace Model
          * of the snapshot granted create volume permissions to a specific AWS account.</p>
          * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
          * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
-         * returned can be modified by specifying snapshot IDs, snapshot owners, or AWS
+         * returned can be filtered by specifying snapshot IDs, snapshot owners, or AWS
          * accounts with create volume permissions. If no options are specified, Amazon EC2
          * returns all snapshots for which you have create volume permissions.</p> <p>If
          * you specify one or more snapshot IDs, only snapshots that have the specified IDs
@@ -11420,7 +11424,9 @@ namespace Model
          * <code>MaxResults</code> value, then that number of results is returned along
          * with a <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
-         * <p>For more information about EBS snapshots, see <a
+         * <p>To get the state of fast snapshot restores for a snapshot, use
+         * <a>DescribeFastSnapshotRestores</a>.</p> <p>For more information about EBS
+         * snapshots, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -13480,8 +13486,11 @@ namespace Model
          * Availability Zones.</p> <p>You get the full benefit of fast snapshot restores
          * after they enter the <code>enabled</code> state. To get the current state of
          * fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast
-         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
+         * EBS Fast Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">AWS
          * API Reference</a></p>
          */
@@ -13492,8 +13501,11 @@ namespace Model
          * Availability Zones.</p> <p>You get the full benefit of fast snapshot restores
          * after they enter the <code>enabled</code> state. To get the current state of
          * fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast
-         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
+         * EBS Fast Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">AWS
          * API Reference</a></p>
          *
@@ -13506,8 +13518,11 @@ namespace Model
          * Availability Zones.</p> <p>You get the full benefit of fast snapshot restores
          * after they enter the <code>enabled</code> state. To get the current state of
          * fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast
-         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
+         * EBS Fast Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">AWS
          * API Reference</a></p>
          *
@@ -17027,19 +17042,23 @@ namespace Model
          * distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
          * Server (SLES), use the EC2 billing product code associated with an AMI to verify
          * the subscription status for package updates. To create a new AMI for operating
-         * systems that require a billing product code, instead of instead of registering
-         * the AMI, do the following to preserve the billing product code association:</p>
-         * <ol> <li> <p>Launch an instance from an existing AMI with that billing product
-         * code.</p> </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI
-         * from the instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a
-         * Reserved Instance to apply to an On-Demand Instance that was launched from an
-         * AMI with a billing product code, make sure that the Reserved Instance has the
-         * matching billing product code. If you purchase a Reserved Instance without the
-         * matching billing product code, the Reserved Instance will not be applied to the
-         * On-Demand Instance. </p> <p>If needed, you can deregister an AMI at any time.
-         * Any modifications you make to an AMI backed by an instance store volume
-         * invalidates its registration. If you make changes to an image, deregister the
-         * previous image and register the new image.</p><p><h3>See Also:</h3>   <a
+         * systems that require a billing product code, instead of registering the AMI, do
+         * the following to preserve the billing product code association:</p> <ol> <li>
+         * <p>Launch an instance from an existing AMI with that billing product code.</p>
+         * </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI from the
+         * instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a Reserved
+         * Instance to apply to an On-Demand Instance that was launched from an AMI with a
+         * billing product code, make sure that the Reserved Instance has the matching
+         * billing product code. If you purchase a Reserved Instance without the matching
+         * billing product code, the Reserved Instance will not be applied to the On-Demand
+         * Instance. For information about how to obtain the platform details and billing
+         * information of an AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+         * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any
+         * modifications you make to an AMI backed by an instance store volume invalidates
+         * its registration. If you make changes to an image, deregister the previous image
+         * and register the new image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          */
@@ -17064,19 +17083,23 @@ namespace Model
          * distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
          * Server (SLES), use the EC2 billing product code associated with an AMI to verify
          * the subscription status for package updates. To create a new AMI for operating
-         * systems that require a billing product code, instead of instead of registering
-         * the AMI, do the following to preserve the billing product code association:</p>
-         * <ol> <li> <p>Launch an instance from an existing AMI with that billing product
-         * code.</p> </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI
-         * from the instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a
-         * Reserved Instance to apply to an On-Demand Instance that was launched from an
-         * AMI with a billing product code, make sure that the Reserved Instance has the
-         * matching billing product code. If you purchase a Reserved Instance without the
-         * matching billing product code, the Reserved Instance will not be applied to the
-         * On-Demand Instance. </p> <p>If needed, you can deregister an AMI at any time.
-         * Any modifications you make to an AMI backed by an instance store volume
-         * invalidates its registration. If you make changes to an image, deregister the
-         * previous image and register the new image.</p><p><h3>See Also:</h3>   <a
+         * systems that require a billing product code, instead of registering the AMI, do
+         * the following to preserve the billing product code association:</p> <ol> <li>
+         * <p>Launch an instance from an existing AMI with that billing product code.</p>
+         * </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI from the
+         * instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a Reserved
+         * Instance to apply to an On-Demand Instance that was launched from an AMI with a
+         * billing product code, make sure that the Reserved Instance has the matching
+         * billing product code. If you purchase a Reserved Instance without the matching
+         * billing product code, the Reserved Instance will not be applied to the On-Demand
+         * Instance. For information about how to obtain the platform details and billing
+         * information of an AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+         * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any
+         * modifications you make to an AMI backed by an instance store volume invalidates
+         * its registration. If you make changes to an image, deregister the previous image
+         * and register the new image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          *
@@ -17103,19 +17126,23 @@ namespace Model
          * distributions, such as Red Hat Enterprise Linux (RHEL) and SUSE Linux Enterprise
          * Server (SLES), use the EC2 billing product code associated with an AMI to verify
          * the subscription status for package updates. To create a new AMI for operating
-         * systems that require a billing product code, instead of instead of registering
-         * the AMI, do the following to preserve the billing product code association:</p>
-         * <ol> <li> <p>Launch an instance from an existing AMI with that billing product
-         * code.</p> </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI
-         * from the instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a
-         * Reserved Instance to apply to an On-Demand Instance that was launched from an
-         * AMI with a billing product code, make sure that the Reserved Instance has the
-         * matching billing product code. If you purchase a Reserved Instance without the
-         * matching billing product code, the Reserved Instance will not be applied to the
-         * On-Demand Instance. </p> <p>If needed, you can deregister an AMI at any time.
-         * Any modifications you make to an AMI backed by an instance store volume
-         * invalidates its registration. If you make changes to an image, deregister the
-         * previous image and register the new image.</p><p><h3>See Also:</h3>   <a
+         * systems that require a billing product code, instead of registering the AMI, do
+         * the following to preserve the billing product code association:</p> <ol> <li>
+         * <p>Launch an instance from an existing AMI with that billing product code.</p>
+         * </li> <li> <p>Customize the instance.</p> </li> <li> <p>Create an AMI from the
+         * instance using <a>CreateImage</a>.</p> </li> </ol> <p>If you purchase a Reserved
+         * Instance to apply to an On-Demand Instance that was launched from an AMI with a
+         * billing product code, make sure that the Reserved Instance has the matching
+         * billing product code. If you purchase a Reserved Instance without the matching
+         * billing product code, the Reserved Instance will not be applied to the On-Demand
+         * Instance. For information about how to obtain the platform details and billing
+         * information of an AMI, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
+         * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p> <p>If needed, you can deregister an AMI at any time. Any
+         * modifications you make to an AMI backed by an instance store volume invalidates
+         * its registration. If you make changes to an image, deregister the previous image
+         * and register the new image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterImage">AWS
          * API Reference</a></p>
          *
@@ -17763,10 +17790,10 @@ namespace Model
          * you can specify that the Spot Fleet distribute the target capacity across the
          * Spot pools included in its launch specifications. By ensuring that the Spot
          * Instances in your Spot Fleet are in different Spot pools, you can improve the
-         * availability of your fleet.</p> <p>You can specify tags for the Spot Instances.
-         * You cannot tag other resource types in a Spot Fleet request because only the
-         * <code>instance</code> resource type is supported.</p> <p>For more information,
-         * see <a
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet and
+         * Spot Instances. You cannot tag other resource types in a Spot Fleet request
+         * because only the <code>spot-fleet-request</code> and <code>instance</code>
+         * resource types are supported.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -17788,10 +17815,10 @@ namespace Model
          * you can specify that the Spot Fleet distribute the target capacity across the
          * Spot pools included in its launch specifications. By ensuring that the Spot
          * Instances in your Spot Fleet are in different Spot pools, you can improve the
-         * availability of your fleet.</p> <p>You can specify tags for the Spot Instances.
-         * You cannot tag other resource types in a Spot Fleet request because only the
-         * <code>instance</code> resource type is supported.</p> <p>For more information,
-         * see <a
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet and
+         * Spot Instances. You cannot tag other resource types in a Spot Fleet request
+         * because only the <code>spot-fleet-request</code> and <code>instance</code>
+         * resource types are supported.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -17815,10 +17842,10 @@ namespace Model
          * you can specify that the Spot Fleet distribute the target capacity across the
          * Spot pools included in its launch specifications. By ensuring that the Spot
          * Instances in your Spot Fleet are in different Spot pools, you can improve the
-         * availability of your fleet.</p> <p>You can specify tags for the Spot Instances.
-         * You cannot tag other resource types in a Spot Fleet request because only the
-         * <code>instance</code> resource type is supported.</p> <p>For more information,
-         * see <a
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet and
+         * Spot Instances. You cannot tag other resource types in a Spot Fleet request
+         * because only the <code>spot-fleet-request</code> and <code>instance</code>
+         * resource types are supported.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -18774,9 +18801,9 @@ namespace Model
          * charges you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
-         * charges per second for instance usage.</p> <p>You can't start, stop, or
-         * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-         * instances. For information about using hibernation for Spot Instances, see <a
+         * charges per second for instance usage.</p> <p>You can't hibernate Spot
+         * Instances, and you can't stop or hibernate instance store-backed instances. For
+         * information about using hibernation for Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
@@ -18822,9 +18849,9 @@ namespace Model
          * charges you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
-         * charges per second for instance usage.</p> <p>You can't start, stop, or
-         * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-         * instances. For information about using hibernation for Spot Instances, see <a
+         * charges per second for instance usage.</p> <p>You can't hibernate Spot
+         * Instances, and you can't stop or hibernate instance store-backed instances. For
+         * information about using hibernation for Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
@@ -18872,9 +18899,9 @@ namespace Model
          * charges you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
-         * charges per second for instance usage.</p> <p>You can't start, stop, or
-         * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-         * instances. For information about using hibernation for Spot Instances, see <a
+         * charges per second for instance usage.</p> <p>You can't hibernate Spot
+         * Instances, and you can't stop or hibernate instance store-backed instances. For
+         * information about using hibernation for Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You

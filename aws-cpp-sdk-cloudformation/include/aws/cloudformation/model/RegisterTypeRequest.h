@@ -188,7 +188,13 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p>
+     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
+     * registering a resource provider type, CloudFormation must be able to access the
+     * S3 bucket which contains the schema handler package for that resource provider.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p> </note>
      */
     inline const Aws::String& GetSchemaHandlerPackage() const{ return m_schemaHandlerPackage; }
 
@@ -198,7 +204,13 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p>
+     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
+     * registering a resource provider type, CloudFormation must be able to access the
+     * S3 bucket which contains the schema handler package for that resource provider.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p> </note>
      */
     inline bool SchemaHandlerPackageHasBeenSet() const { return m_schemaHandlerPackageHasBeenSet; }
 
@@ -208,7 +220,13 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p>
+     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
+     * registering a resource provider type, CloudFormation must be able to access the
+     * S3 bucket which contains the schema handler package for that resource provider.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p> </note>
      */
     inline void SetSchemaHandlerPackage(const Aws::String& value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage = value; }
 
@@ -218,7 +236,13 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p>
+     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
+     * registering a resource provider type, CloudFormation must be able to access the
+     * S3 bucket which contains the schema handler package for that resource provider.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p> </note>
      */
     inline void SetSchemaHandlerPackage(Aws::String&& value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage = std::move(value); }
 
@@ -228,7 +252,13 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p>
+     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
+     * registering a resource provider type, CloudFormation must be able to access the
+     * S3 bucket which contains the schema handler package for that resource provider.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p> </note>
      */
     inline void SetSchemaHandlerPackage(const char* value) { m_schemaHandlerPackageHasBeenSet = true; m_schemaHandlerPackage.assign(value); }
 
@@ -238,7 +268,13 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p>
+     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
+     * registering a resource provider type, CloudFormation must be able to access the
+     * S3 bucket which contains the schema handler package for that resource provider.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p> </note>
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(const Aws::String& value) { SetSchemaHandlerPackage(value); return *this;}
 
@@ -248,7 +284,13 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p>
+     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
+     * registering a resource provider type, CloudFormation must be able to access the
+     * S3 bucket which contains the schema handler package for that resource provider.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p> </note>
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(Aws::String&& value) { SetSchemaHandlerPackage(std::move(value)); return *this;}
 
@@ -258,7 +300,13 @@ namespace Model
      * register.</p> <p>For information on generating a schema handler package for the
      * type you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
-     * in the <i>CloudFormation CLI User Guide</i>.</p>
+     * in the <i>CloudFormation CLI User Guide</i>.</p> <note> <p>As part of
+     * registering a resource provider type, CloudFormation must be able to access the
+     * S3 bucket which contains the schema handler package for that resource provider.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
+     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation
+     * User Guide</i>.</p> </note>
      */
     inline RegisterTypeRequest& WithSchemaHandlerPackage(const char* value) { SetSchemaHandlerPackage(value); return *this;}
 

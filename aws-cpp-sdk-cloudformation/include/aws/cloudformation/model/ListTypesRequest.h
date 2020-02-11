@@ -55,7 +55,8 @@ namespace Model
      * The type is only visible and usable within the account in which it is
      * registered. Currently, AWS CloudFormation marks any types you create as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
+     * default is <code>PRIVATE</code>.</p>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
 
@@ -65,7 +66,8 @@ namespace Model
      * The type is only visible and usable within the account in which it is
      * registered. Currently, AWS CloudFormation marks any types you create as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
+     * default is <code>PRIVATE</code>.</p>
      */
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
 
@@ -75,7 +77,8 @@ namespace Model
      * The type is only visible and usable within the account in which it is
      * registered. Currently, AWS CloudFormation marks any types you create as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
+     * default is <code>PRIVATE</code>.</p>
      */
     inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
 
@@ -85,7 +88,8 @@ namespace Model
      * The type is only visible and usable within the account in which it is
      * registered. Currently, AWS CloudFormation marks any types you create as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
+     * default is <code>PRIVATE</code>.</p>
      */
     inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
 
@@ -95,7 +99,8 @@ namespace Model
      * The type is only visible and usable within the account in which it is
      * registered. Currently, AWS CloudFormation marks any types you create as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
+     * default is <code>PRIVATE</code>.</p>
      */
     inline ListTypesRequest& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
 
@@ -105,7 +110,8 @@ namespace Model
      * The type is only visible and usable within the account in which it is
      * registered. Currently, AWS CloudFormation marks any types you create as
      * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
-     * publically visible and usable within any Amazon account.</p> </li> </ul>
+     * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
+     * default is <code>PRIVATE</code>.</p>
      */
     inline ListTypesRequest& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
 

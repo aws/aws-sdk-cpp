@@ -405,7 +405,7 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
      * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -414,7 +414,7 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
      * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -423,7 +423,7 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
      * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -432,7 +432,7 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
      * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -441,7 +441,7 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
      * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -450,7 +450,7 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
      * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -459,7 +459,7 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
      * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -468,7 +468,7 @@ namespace Model
     /**
      * <p>The platform details associated with the billing code of the AMI. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Obtaining
      * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -476,90 +476,106 @@ namespace Model
 
 
     /**
-     * <p>The operation of the Amazon EC2 instance and the billing code associated with
-     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * <p>The operation of the Amazon EC2 instance and the billing code that is
+     * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetUsageOperation() const{ return m_usageOperation; }
 
     /**
-     * <p>The operation of the Amazon EC2 instance and the billing code associated with
-     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * <p>The operation of the Amazon EC2 instance and the billing code that is
+     * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline bool UsageOperationHasBeenSet() const { return m_usageOperationHasBeenSet; }
 
     /**
-     * <p>The operation of the Amazon EC2 instance and the billing code associated with
-     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * <p>The operation of the Amazon EC2 instance and the billing code that is
+     * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline void SetUsageOperation(const Aws::String& value) { m_usageOperationHasBeenSet = true; m_usageOperation = value; }
 
     /**
-     * <p>The operation of the Amazon EC2 instance and the billing code associated with
-     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * <p>The operation of the Amazon EC2 instance and the billing code that is
+     * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline void SetUsageOperation(Aws::String&& value) { m_usageOperationHasBeenSet = true; m_usageOperation = std::move(value); }
 
     /**
-     * <p>The operation of the Amazon EC2 instance and the billing code associated with
-     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * <p>The operation of the Amazon EC2 instance and the billing code that is
+     * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline void SetUsageOperation(const char* value) { m_usageOperationHasBeenSet = true; m_usageOperation.assign(value); }
 
     /**
-     * <p>The operation of the Amazon EC2 instance and the billing code associated with
-     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * <p>The operation of the Amazon EC2 instance and the billing code that is
+     * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline Image& WithUsageOperation(const Aws::String& value) { SetUsageOperation(value); return *this;}
 
     /**
-     * <p>The operation of the Amazon EC2 instance and the billing code associated with
-     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * <p>The operation of the Amazon EC2 instance and the billing code that is
+     * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline Image& WithUsageOperation(Aws::String&& value) { SetUsageOperation(std::move(value)); return *this;}
 
     /**
-     * <p>The operation of the Amazon EC2 instance and the billing code associated with
-     * the AMI. <code>usageOperation</code> corresponds to the <a
+     * <p>The operation of the Amazon EC2 instance and the billing code that is
+     * associated with the AMI. <code>usageOperation</code> corresponds to the <a
      * href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
-     * column on your AWS Cost and Usage Report. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info.html">AMI
-     * Billing Information</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * column on your AWS Cost and Usage Report and in the <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">AWS
+     * Price List API</a>. For the list of <code>UsageOperation</code> codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html#billing-info">Platform
+     * Details and Usage Operation Billing Codes</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline Image& WithUsageOperation(const char* value) { SetUsageOperation(value); return *this;}
 

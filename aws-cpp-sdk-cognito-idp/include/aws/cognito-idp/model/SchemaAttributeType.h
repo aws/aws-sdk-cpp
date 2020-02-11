@@ -124,22 +124,54 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the attribute type is developer only.</p>
+     * <note> <p>We recommend that you use <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
+     * in the user pool client to control how attributes can be mutated for new use
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * <p>Specifies whether the attribute type is developer only. This attribute can
+     * only be modified by an administrator. Users will not be able to modify this
+     * attribute using their access token. For example,
+     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be
+     * updated using the API.</p>
      */
     inline bool GetDeveloperOnlyAttribute() const{ return m_developerOnlyAttribute; }
 
     /**
-     * <p>Specifies whether the attribute type is developer only.</p>
+     * <note> <p>We recommend that you use <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
+     * in the user pool client to control how attributes can be mutated for new use
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * <p>Specifies whether the attribute type is developer only. This attribute can
+     * only be modified by an administrator. Users will not be able to modify this
+     * attribute using their access token. For example,
+     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be
+     * updated using the API.</p>
      */
     inline bool DeveloperOnlyAttributeHasBeenSet() const { return m_developerOnlyAttributeHasBeenSet; }
 
     /**
-     * <p>Specifies whether the attribute type is developer only.</p>
+     * <note> <p>We recommend that you use <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
+     * in the user pool client to control how attributes can be mutated for new use
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * <p>Specifies whether the attribute type is developer only. This attribute can
+     * only be modified by an administrator. Users will not be able to modify this
+     * attribute using their access token. For example,
+     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be
+     * updated using the API.</p>
      */
     inline void SetDeveloperOnlyAttribute(bool value) { m_developerOnlyAttributeHasBeenSet = true; m_developerOnlyAttribute = value; }
 
     /**
-     * <p>Specifies whether the attribute type is developer only.</p>
+     * <note> <p>We recommend that you use <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
+     * in the user pool client to control how attributes can be mutated for new use
+     * cases instead of using <code>DeveloperOnlyAttribute</code>.</p> </note>
+     * <p>Specifies whether the attribute type is developer only. This attribute can
+     * only be modified by an administrator. Users will not be able to modify this
+     * attribute using their access token. For example,
+     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be
+     * updated using the API.</p>
      */
     inline SchemaAttributeType& WithDeveloperOnlyAttribute(bool value) { SetDeveloperOnlyAttribute(value); return *this;}
 

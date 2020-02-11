@@ -82,32 +82,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether IPv6 support is enabled.</p>
+     * <p>Indicates whether IPv6 support is disabled.</p>
      */
     inline const Ipv6SupportValue& GetIpv6Support() const{ return m_ipv6Support; }
 
     /**
-     * <p>Indicates whether IPv6 support is enabled.</p>
+     * <p>Indicates whether IPv6 support is disabled.</p>
      */
     inline bool Ipv6SupportHasBeenSet() const { return m_ipv6SupportHasBeenSet; }
 
     /**
-     * <p>Indicates whether IPv6 support is enabled.</p>
+     * <p>Indicates whether IPv6 support is disabled.</p>
      */
     inline void SetIpv6Support(const Ipv6SupportValue& value) { m_ipv6SupportHasBeenSet = true; m_ipv6Support = value; }
 
     /**
-     * <p>Indicates whether IPv6 support is enabled.</p>
+     * <p>Indicates whether IPv6 support is disabled.</p>
      */
     inline void SetIpv6Support(Ipv6SupportValue&& value) { m_ipv6SupportHasBeenSet = true; m_ipv6Support = std::move(value); }
 
     /**
-     * <p>Indicates whether IPv6 support is enabled.</p>
+     * <p>Indicates whether IPv6 support is disabled.</p>
      */
     inline TransitGatewayVpcAttachmentOptions& WithIpv6Support(const Ipv6SupportValue& value) { SetIpv6Support(value); return *this;}
 
     /**
-     * <p>Indicates whether IPv6 support is enabled.</p>
+     * <p>Indicates whether IPv6 support is disabled.</p>
      */
     inline TransitGatewayVpcAttachmentOptions& WithIpv6Support(Ipv6SupportValue&& value) { SetIpv6Support(std::move(value)); return *this;}
 

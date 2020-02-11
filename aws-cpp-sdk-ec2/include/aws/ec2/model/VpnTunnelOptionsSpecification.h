@@ -42,7 +42,7 @@ namespace Model
 {
 
   /**
-   * <p>The tunnel options for a VPN connection.</p><p><h3>See Also:</h3>   <a
+   * <p>The tunnel options for a single VPN tunnel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/VpnTunnelOptionsSpecification">AWS
    * API Reference</a></p>
    */

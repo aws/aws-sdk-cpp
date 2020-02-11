@@ -610,8 +610,9 @@ namespace Model
         /**
          * <p>Creates stack instances for the specified accounts, within the specified
          * regions. A stack instance refers to a stack in a specific account and region.
-         * <code>Accounts</code> and <code>Regions</code> are required parameters—you must
-         * specify at least one account and one region. </p><p><h3>See Also:</h3>   <a
+         * You must specify at least one value for either <code>Accounts</code> or
+         * <code>DeploymentTargets</code>, and you must specify at least one value for
+         * <code>Regions</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">AWS
          * API Reference</a></p>
          */
@@ -620,8 +621,9 @@ namespace Model
         /**
          * <p>Creates stack instances for the specified accounts, within the specified
          * regions. A stack instance refers to a stack in a specific account and region.
-         * <code>Accounts</code> and <code>Regions</code> are required parameters—you must
-         * specify at least one account and one region. </p><p><h3>See Also:</h3>   <a
+         * You must specify at least one value for either <code>Accounts</code> or
+         * <code>DeploymentTargets</code>, and you must specify at least one value for
+         * <code>Regions</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">AWS
          * API Reference</a></p>
          *
@@ -632,8 +634,9 @@ namespace Model
         /**
          * <p>Creates stack instances for the specified accounts, within the specified
          * regions. A stack instance refers to a stack in a specific account and region.
-         * <code>Accounts</code> and <code>Regions</code> are required parameters—you must
-         * specify at least one account and one region. </p><p><h3>See Also:</h3>   <a
+         * You must specify at least one value for either <code>Accounts</code> or
+         * <code>DeploymentTargets</code>, and you must specify at least one value for
+         * <code>Regions</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackInstances">AWS
          * API Reference</a></p>
          *
@@ -2163,16 +2166,16 @@ namespace Model
         virtual void ListStacksAsync(const Model::ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of registration tokens for the specified type.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of registration tokens for the specified
+         * type(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTypeRegistrationsOutcome ListTypeRegistrations(const Model::ListTypeRegistrationsRequest& request) const;
 
         /**
-         * <p>Returns a list of registration tokens for the specified type.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of registration tokens for the specified
+         * type(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
          * API Reference</a></p>
          *
@@ -2181,8 +2184,8 @@ namespace Model
         virtual Model::ListTypeRegistrationsOutcomeCallable ListTypeRegistrationsCallable(const Model::ListTypeRegistrationsRequest& request) const;
 
         /**
-         * <p>Returns a list of registration tokens for the specified type.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of registration tokens for the specified
+         * type(s).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
          * API Reference</a></p>
          *
@@ -2288,11 +2291,11 @@ namespace Model
          * <li> <p>Making the resource type available for use in your account</p> </li>
          * </ul> <p>For more information on how to develop types and ready them for
          * registeration, see <a
-         * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
-         * Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once you have
-         * initiated a registration request using <code> <a>RegisterType</a> </code>, you
-         * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
+         * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once
+         * you have initiated a registration request using <code> <a>RegisterType</a>
+         * </code>, you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor
+         * the progress of the registration request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
          * API Reference</a></p>
          */
@@ -2306,11 +2309,11 @@ namespace Model
          * <li> <p>Making the resource type available for use in your account</p> </li>
          * </ul> <p>For more information on how to develop types and ready them for
          * registeration, see <a
-         * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
-         * Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once you have
-         * initiated a registration request using <code> <a>RegisterType</a> </code>, you
-         * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
+         * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once
+         * you have initiated a registration request using <code> <a>RegisterType</a>
+         * </code>, you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor
+         * the progress of the registration request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
          * API Reference</a></p>
          *
@@ -2326,11 +2329,11 @@ namespace Model
          * <li> <p>Making the resource type available for use in your account</p> </li>
          * </ul> <p>For more information on how to develop types and ready them for
          * registeration, see <a
-         * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
-         * Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once you have
-         * initiated a registration request using <code> <a>RegisterType</a> </code>, you
-         * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating
+         * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once
+         * you have initiated a registration request using <code> <a>RegisterType</a>
+         * </code>, you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor
+         * the progress of the registration request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
          * API Reference</a></p>
          *

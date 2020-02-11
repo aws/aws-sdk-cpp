@@ -43,7 +43,11 @@ StackSet::StackSet() :
     m_stackSetARNHasBeenSet(false),
     m_administrationRoleARNHasBeenSet(false),
     m_executionRoleNameHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false)
+    m_stackSetDriftDetectionDetailsHasBeenSet(false),
+    m_autoDeploymentHasBeenSet(false),
+    m_permissionModel(PermissionModels::NOT_SET),
+    m_permissionModelHasBeenSet(false),
+    m_organizationalUnitIdsHasBeenSet(false)
 {
 }
 
@@ -60,7 +64,11 @@ StackSet::StackSet(const XmlNode& xmlNode) :
     m_stackSetARNHasBeenSet(false),
     m_administrationRoleARNHasBeenSet(false),
     m_executionRoleNameHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false)
+    m_stackSetDriftDetectionDetailsHasBeenSet(false),
+    m_autoDeploymentHasBeenSet(false),
+    m_permissionModel(PermissionModels::NOT_SET),
+    m_permissionModelHasBeenSet(false),
+    m_organizationalUnitIdsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -161,6 +169,30 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
       m_stackSetDriftDetectionDetails = stackSetDriftDetectionDetailsNode;
       m_stackSetDriftDetectionDetailsHasBeenSet = true;
     }
+    XmlNode autoDeploymentNode = resultNode.FirstChild("AutoDeployment");
+    if(!autoDeploymentNode.IsNull())
+    {
+      m_autoDeployment = autoDeploymentNode;
+      m_autoDeploymentHasBeenSet = true;
+    }
+    XmlNode permissionModelNode = resultNode.FirstChild("PermissionModel");
+    if(!permissionModelNode.IsNull())
+    {
+      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()).c_str());
+      m_permissionModelHasBeenSet = true;
+    }
+    XmlNode organizationalUnitIdsNode = resultNode.FirstChild("OrganizationalUnitIds");
+    if(!organizationalUnitIdsNode.IsNull())
+    {
+      XmlNode organizationalUnitIdsMember = organizationalUnitIdsNode.FirstChild("member");
+      while(!organizationalUnitIdsMember.IsNull())
+      {
+        m_organizationalUnitIds.push_back(organizationalUnitIdsMember.GetText());
+        organizationalUnitIdsMember = organizationalUnitIdsMember.NextNode("member");
+      }
+
+      m_organizationalUnitIdsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -246,6 +278,27 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       m_stackSetDriftDetectionDetails.OutputToStream(oStream, stackSetDriftDetectionDetailsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_autoDeploymentHasBeenSet)
+  {
+      Aws::StringStream autoDeploymentLocationAndMemberSs;
+      autoDeploymentLocationAndMemberSs << location << index << locationValue << ".AutoDeployment";
+      m_autoDeployment.OutputToStream(oStream, autoDeploymentLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_permissionModelHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PermissionModel=" << PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel) << "&";
+  }
+
+  if(m_organizationalUnitIdsHasBeenSet)
+  {
+      unsigned organizationalUnitIdsIdx = 1;
+      for(auto& item : m_organizationalUnitIds)
+      {
+        oStream << location << index << locationValue << ".OrganizationalUnitIds.member." << organizationalUnitIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -315,6 +368,24 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String stackSetDriftDetectionDetailsLocationAndMember(location);
       stackSetDriftDetectionDetailsLocationAndMember += ".StackSetDriftDetectionDetails";
       m_stackSetDriftDetectionDetails.OutputToStream(oStream, stackSetDriftDetectionDetailsLocationAndMember.c_str());
+  }
+  if(m_autoDeploymentHasBeenSet)
+  {
+      Aws::String autoDeploymentLocationAndMember(location);
+      autoDeploymentLocationAndMember += ".AutoDeployment";
+      m_autoDeployment.OutputToStream(oStream, autoDeploymentLocationAndMember.c_str());
+  }
+  if(m_permissionModelHasBeenSet)
+  {
+      oStream << location << ".PermissionModel=" << PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel) << "&";
+  }
+  if(m_organizationalUnitIdsHasBeenSet)
+  {
+      unsigned organizationalUnitIdsIdx = 1;
+      for(auto& item : m_organizationalUnitIds)
+      {
+        oStream << location << ".OrganizationalUnitIds.member." << organizationalUnitIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 }
 

@@ -44,6 +44,7 @@ StackSetOperation::StackSetOperation() :
     m_executionRoleNameHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
+    m_deploymentTargetsHasBeenSet(false),
     m_stackSetDriftDetectionDetailsHasBeenSet(false)
 {
 }
@@ -62,6 +63,7 @@ StackSetOperation::StackSetOperation(const XmlNode& xmlNode) :
     m_executionRoleNameHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_endTimestampHasBeenSet(false),
+    m_deploymentTargetsHasBeenSet(false),
     m_stackSetDriftDetectionDetailsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -133,6 +135,12 @@ StackSetOperation& StackSetOperation::operator =(const XmlNode& xmlNode)
       m_endTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_endTimestampHasBeenSet = true;
     }
+    XmlNode deploymentTargetsNode = resultNode.FirstChild("DeploymentTargets");
+    if(!deploymentTargetsNode.IsNull())
+    {
+      m_deploymentTargets = deploymentTargetsNode;
+      m_deploymentTargetsHasBeenSet = true;
+    }
     XmlNode stackSetDriftDetectionDetailsNode = resultNode.FirstChild("StackSetDriftDetectionDetails");
     if(!stackSetDriftDetectionDetailsNode.IsNull())
     {
@@ -198,6 +206,13 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_deploymentTargetsHasBeenSet)
+  {
+      Aws::StringStream deploymentTargetsLocationAndMemberSs;
+      deploymentTargetsLocationAndMemberSs << location << index << locationValue << ".DeploymentTargets";
+      m_deploymentTargets.OutputToStream(oStream, deploymentTargetsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_stackSetDriftDetectionDetailsHasBeenSet)
   {
       Aws::StringStream stackSetDriftDetectionDetailsLocationAndMemberSs;
@@ -250,6 +265,12 @@ void StackSetOperation::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_endTimestampHasBeenSet)
   {
       oStream << location << ".EndTimestamp=" << StringUtils::URLEncode(m_endTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_deploymentTargetsHasBeenSet)
+  {
+      Aws::String deploymentTargetsLocationAndMember(location);
+      deploymentTargetsLocationAndMember += ".DeploymentTargets";
+      m_deploymentTargets.OutputToStream(oStream, deploymentTargetsLocationAndMember.c_str());
   }
   if(m_stackSetDriftDetectionDetailsHasBeenSet)
   {

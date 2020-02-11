@@ -36,6 +36,9 @@ StackSetSummary::StackSetSummary() :
     m_descriptionHasBeenSet(false),
     m_status(StackSetStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_autoDeploymentHasBeenSet(false),
+    m_permissionModel(PermissionModels::NOT_SET),
+    m_permissionModelHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
     m_lastDriftCheckTimestampHasBeenSet(false)
@@ -48,6 +51,9 @@ StackSetSummary::StackSetSummary(const XmlNode& xmlNode) :
     m_descriptionHasBeenSet(false),
     m_status(StackSetStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_autoDeploymentHasBeenSet(false),
+    m_permissionModel(PermissionModels::NOT_SET),
+    m_permissionModelHasBeenSet(false),
     m_driftStatus(StackDriftStatus::NOT_SET),
     m_driftStatusHasBeenSet(false),
     m_lastDriftCheckTimestampHasBeenSet(false)
@@ -84,6 +90,18 @@ StackSetSummary& StackSetSummary::operator =(const XmlNode& xmlNode)
     {
       m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
+    }
+    XmlNode autoDeploymentNode = resultNode.FirstChild("AutoDeployment");
+    if(!autoDeploymentNode.IsNull())
+    {
+      m_autoDeployment = autoDeploymentNode;
+      m_autoDeploymentHasBeenSet = true;
+    }
+    XmlNode permissionModelNode = resultNode.FirstChild("PermissionModel");
+    if(!permissionModelNode.IsNull())
+    {
+      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()).c_str());
+      m_permissionModelHasBeenSet = true;
     }
     XmlNode driftStatusNode = resultNode.FirstChild("DriftStatus");
     if(!driftStatusNode.IsNull())
@@ -124,6 +142,18 @@ void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".Status=" << StackSetStatusMapper::GetNameForStackSetStatus(m_status) << "&";
   }
 
+  if(m_autoDeploymentHasBeenSet)
+  {
+      Aws::StringStream autoDeploymentLocationAndMemberSs;
+      autoDeploymentLocationAndMemberSs << location << index << locationValue << ".AutoDeployment";
+      m_autoDeployment.OutputToStream(oStream, autoDeploymentLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_permissionModelHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PermissionModel=" << PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel) << "&";
+  }
+
   if(m_driftStatusHasBeenSet)
   {
       oStream << location << index << locationValue << ".DriftStatus=" << StackDriftStatusMapper::GetNameForStackDriftStatus(m_driftStatus) << "&";
@@ -153,6 +183,16 @@ void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StackSetStatusMapper::GetNameForStackSetStatus(m_status) << "&";
+  }
+  if(m_autoDeploymentHasBeenSet)
+  {
+      Aws::String autoDeploymentLocationAndMember(location);
+      autoDeploymentLocationAndMember += ".AutoDeployment";
+      m_autoDeployment.OutputToStream(oStream, autoDeploymentLocationAndMember.c_str());
+  }
+  if(m_permissionModelHasBeenSet)
+  {
+      oStream << location << ".PermissionModel=" << PermissionModelsMapper::GetNameForPermissionModels(m_permissionModel) << "&";
   }
   if(m_driftStatusHasBeenSet)
   {

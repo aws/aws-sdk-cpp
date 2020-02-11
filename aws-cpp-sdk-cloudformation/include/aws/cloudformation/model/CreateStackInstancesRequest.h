@@ -18,6 +18,7 @@
 #include <aws/cloudformation/CloudFormationRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/DeploymentTargets.h>
 #include <aws/cloudformation/model/StackSetOperationPreferences.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <utility>
@@ -100,58 +101,119 @@ namespace Model
 
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline CreateStackInstancesRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline CreateStackInstancesRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline CreateStackInstancesRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline CreateStackInstancesRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of one or more AWS accounts that you want to create stack instances
-     * in the specified region(s) for.</p>
+     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
+     * want to create stack instances in the specified region(s) for.</p> <p>You can
+     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+     * both.</p>
      */
     inline CreateStackInstancesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
+     * which to create stack instances in the specified Regions.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+     */
+    inline const DeploymentTargets& GetDeploymentTargets() const{ return m_deploymentTargets; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
+     * which to create stack instances in the specified Regions.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+     */
+    inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
+     * which to create stack instances in the specified Regions.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+     */
+    inline void SetDeploymentTargets(const DeploymentTargets& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = value; }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
+     * which to create stack instances in the specified Regions.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+     */
+    inline void SetDeploymentTargets(DeploymentTargets&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::move(value); }
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
+     * which to create stack instances in the specified Regions.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+     */
+    inline CreateStackInstancesRequest& WithDeploymentTargets(const DeploymentTargets& value) { SetDeploymentTargets(value); return *this;}
+
+    /**
+     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts for
+     * which to create stack instances in the specified Regions.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+     */
+    inline CreateStackInstancesRequest& WithDeploymentTargets(DeploymentTargets&& value) { SetDeploymentTargets(std::move(value)); return *this;}
 
 
     /**
@@ -536,6 +598,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_accounts;
     bool m_accountsHasBeenSet;
+
+    DeploymentTargets m_deploymentTargets;
+    bool m_deploymentTargetsHasBeenSet;
 
     Aws::Vector<Aws::String> m_regions;
     bool m_regionsHasBeenSet;

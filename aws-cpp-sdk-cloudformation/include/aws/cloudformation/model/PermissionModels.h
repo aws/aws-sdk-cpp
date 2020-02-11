@@ -23,23 +23,19 @@ namespace CloudFormation
 {
 namespace Model
 {
-  enum class StackSetOperationStatus
+  enum class PermissionModels
   {
     NOT_SET,
-    RUNNING,
-    SUCCEEDED,
-    FAILED,
-    STOPPING,
-    STOPPED,
-    QUEUED
+    SERVICE_MANAGED,
+    SELF_MANAGED
   };
 
-namespace StackSetOperationStatusMapper
+namespace PermissionModelsMapper
 {
-AWS_CLOUDFORMATION_API StackSetOperationStatus GetStackSetOperationStatusForName(const Aws::String& name);
+AWS_CLOUDFORMATION_API PermissionModels GetPermissionModelsForName(const Aws::String& name);
 
-AWS_CLOUDFORMATION_API Aws::String GetNameForStackSetOperationStatus(StackSetOperationStatus value);
-} // namespace StackSetOperationStatusMapper
+AWS_CLOUDFORMATION_API Aws::String GetNameForPermissionModels(PermissionModels value);
+} // namespace PermissionModelsMapper
 } // namespace Model
 } // namespace CloudFormation
 } // namespace Aws

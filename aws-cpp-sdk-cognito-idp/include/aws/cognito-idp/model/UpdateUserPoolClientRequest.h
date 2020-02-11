@@ -778,155 +778,204 @@ namespace Model
 
 
     /**
-     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-     * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p>
+     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
+     * grant flow, which provides an authorization code as the response. This code can
+     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
+     * <code>implicit</code> to specify that the client should get the access token
+     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
+     * <code>client_credentials</code> to specify that the client should get the access
+     * token (and, optionally, ID token, based on scopes) from the token endpoint using
+     * a combination of client and client_secret.</p>
      */
     inline const Aws::Vector<OAuthFlowType>& GetAllowedOAuthFlows() const{ return m_allowedOAuthFlows; }
 
     /**
-     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-     * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p>
+     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
+     * grant flow, which provides an authorization code as the response. This code can
+     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
+     * <code>implicit</code> to specify that the client should get the access token
+     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
+     * <code>client_credentials</code> to specify that the client should get the access
+     * token (and, optionally, ID token, based on scopes) from the token endpoint using
+     * a combination of client and client_secret.</p>
      */
     inline bool AllowedOAuthFlowsHasBeenSet() const { return m_allowedOAuthFlowsHasBeenSet; }
 
     /**
-     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-     * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p>
+     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
+     * grant flow, which provides an authorization code as the response. This code can
+     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
+     * <code>implicit</code> to specify that the client should get the access token
+     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
+     * <code>client_credentials</code> to specify that the client should get the access
+     * token (and, optionally, ID token, based on scopes) from the token endpoint using
+     * a combination of client and client_secret.</p>
      */
     inline void SetAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = value; }
 
     /**
-     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-     * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p>
+     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
+     * grant flow, which provides an authorization code as the response. This code can
+     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
+     * <code>implicit</code> to specify that the client should get the access token
+     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
+     * <code>client_credentials</code> to specify that the client should get the access
+     * token (and, optionally, ID token, based on scopes) from the token endpoint using
+     * a combination of client and client_secret.</p>
      */
     inline void SetAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows = std::move(value); }
 
     /**
-     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-     * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p>
+     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
+     * grant flow, which provides an authorization code as the response. This code can
+     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
+     * <code>implicit</code> to specify that the client should get the access token
+     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
+     * <code>client_credentials</code> to specify that the client should get the access
+     * token (and, optionally, ID token, based on scopes) from the token endpoint using
+     * a combination of client and client_secret.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlows(const Aws::Vector<OAuthFlowType>& value) { SetAllowedOAuthFlows(value); return *this;}
 
     /**
-     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-     * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p>
+     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
+     * grant flow, which provides an authorization code as the response. This code can
+     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
+     * <code>implicit</code> to specify that the client should get the access token
+     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
+     * <code>client_credentials</code> to specify that the client should get the access
+     * token (and, optionally, ID token, based on scopes) from the token endpoint using
+     * a combination of client and client_secret.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlows(Aws::Vector<OAuthFlowType>&& value) { SetAllowedOAuthFlows(std::move(value)); return *this;}
 
     /**
-     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-     * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p>
+     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
+     * grant flow, which provides an authorization code as the response. This code can
+     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
+     * <code>implicit</code> to specify that the client should get the access token
+     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
+     * <code>client_credentials</code> to specify that the client should get the access
+     * token (and, optionally, ID token, based on scopes) from the token endpoint using
+     * a combination of client and client_secret.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthFlows(const OAuthFlowType& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(value); return *this; }
 
     /**
-     * <p>Set to <code>code</code> to initiate a code grant flow, which provides an
-     * authorization code as the response. This code can be exchanged for access tokens
-     * with the token endpoint.</p>
+     * <p>The allowed OAuth flows.</p> <p>Set to <code>code</code> to initiate a code
+     * grant flow, which provides an authorization code as the response. This code can
+     * be exchanged for access tokens with the token endpoint.</p> <p>Set to
+     * <code>implicit</code> to specify that the client should get the access token
+     * (and, optionally, ID token, based on scopes) directly.</p> <p>Set to
+     * <code>client_credentials</code> to specify that the client should get the access
+     * token (and, optionally, ID token, based on scopes) from the token endpoint using
+     * a combination of client and client_secret.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthFlows(OAuthFlowType&& value) { m_allowedOAuthFlowsHasBeenSet = true; m_allowedOAuthFlows.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedOAuthScopes() const{ return m_allowedOAuthScopes; }
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline bool AllowedOAuthScopesHasBeenSet() const { return m_allowedOAuthScopesHasBeenSet; }
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline void SetAllowedOAuthScopes(const Aws::Vector<Aws::String>& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = value; }
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline void SetAllowedOAuthScopes(Aws::Vector<Aws::String>&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes = std::move(value); }
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthScopes(const Aws::Vector<Aws::String>& value) { SetAllowedOAuthScopes(value); return *this;}
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthScopes(Aws::Vector<Aws::String>&& value) { SetAllowedOAuthScopes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthScopes(const Aws::String& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(value); return *this; }
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthScopes(Aws::String&& value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of allowed <code>OAuth</code> scopes. Currently supported values are
-     * <code>"phone"</code>, <code>"email"</code>, <code>"openid"</code>, and
-     * <code>"Cognito"</code>. In addition to these values, custom scopes created in
-     * Resource Servers are also supported.</p>
+     * <p>The allowed OAuth scopes. Possible values provided by OAuth are:
+     * <code>phone</code>, <code>email</code>, <code>openid</code>, and
+     * <code>profile</code>. Possible values provided by AWS are:
+     * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource
+     * Servers are also supported.</p>
      */
     inline UpdateUserPoolClientRequest& AddAllowedOAuthScopes(const char* value) { m_allowedOAuthScopesHasBeenSet = true; m_allowedOAuthScopes.push_back(value); return *this; }
 
 
     /**
-     * <p>Set to TRUE if the client is allowed to follow the OAuth protocol when
+     * <p>Set to true if the client is allowed to follow the OAuth protocol when
      * interacting with Cognito user pools.</p>
      */
     inline bool GetAllowedOAuthFlowsUserPoolClient() const{ return m_allowedOAuthFlowsUserPoolClient; }
 
     /**
-     * <p>Set to TRUE if the client is allowed to follow the OAuth protocol when
+     * <p>Set to true if the client is allowed to follow the OAuth protocol when
      * interacting with Cognito user pools.</p>
      */
     inline bool AllowedOAuthFlowsUserPoolClientHasBeenSet() const { return m_allowedOAuthFlowsUserPoolClientHasBeenSet; }
 
     /**
-     * <p>Set to TRUE if the client is allowed to follow the OAuth protocol when
+     * <p>Set to true if the client is allowed to follow the OAuth protocol when
      * interacting with Cognito user pools.</p>
      */
     inline void SetAllowedOAuthFlowsUserPoolClient(bool value) { m_allowedOAuthFlowsUserPoolClientHasBeenSet = true; m_allowedOAuthFlowsUserPoolClient = value; }
 
     /**
-     * <p>Set to TRUE if the client is allowed to follow the OAuth protocol when
+     * <p>Set to true if the client is allowed to follow the OAuth protocol when
      * interacting with Cognito user pools.</p>
      */
     inline UpdateUserPoolClientRequest& WithAllowedOAuthFlowsUserPoolClient(bool value) { SetAllowedOAuthFlowsUserPoolClient(value); return *this;}
@@ -988,7 +1037,7 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After January 1st 2020, the value of
+     * </li> </ul> <note> <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
      * newly created user pool clients if no value is provided.</p> </note>
      */
@@ -1013,7 +1062,7 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After January 1st 2020, the value of
+     * </li> </ul> <note> <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
      * newly created user pool clients if no value is provided.</p> </note>
      */
@@ -1038,7 +1087,7 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After January 1st 2020, the value of
+     * </li> </ul> <note> <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
      * newly created user pool clients if no value is provided.</p> </note>
      */
@@ -1063,7 +1112,7 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After January 1st 2020, the value of
+     * </li> </ul> <note> <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
      * newly created user pool clients if no value is provided.</p> </note>
      */
@@ -1088,7 +1137,7 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After January 1st 2020, the value of
+     * </li> </ul> <note> <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
      * newly created user pool clients if no value is provided.</p> </note>
      */
@@ -1113,7 +1162,7 @@ namespace Model
      * <a>RespondToAuthChallenge</a> </p> </li> <li> <p> <a>ForgotPassword</a> </p>
      * </li> <li> <p> <a>ConfirmForgotPassword</a> </p> </li> <li> <p>
      * <a>ConfirmSignUp</a> </p> </li> <li> <p> <a>ResendConfirmationCode</a> </p>
-     * </li> </ul> <note> <p>After January 1st 2020, the value of
+     * </li> </ul> <note> <p>After February 15th 2020, the value of
      * <code>PreventUserExistenceErrors</code> will default to <code>ENABLED</code> for
      * newly created user pool clients if no value is provided.</p> </note>
      */
