@@ -27,6 +27,7 @@
 #include <aws/es/model/AdvancedOptionsStatus.h>
 #include <aws/es/model/LogPublishingOptionsStatus.h>
 #include <aws/es/model/DomainEndpointOptionsStatus.h>
+#include <aws/es/model/AdvancedSecurityOptionsStatus.h>
 #include <utility>
 
 namespace Aws
@@ -501,6 +502,37 @@ namespace Model
      */
     inline ElasticsearchDomainConfig& WithDomainEndpointOptions(DomainEndpointOptionsStatus&& value) { SetDomainEndpointOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+     */
+    inline const AdvancedSecurityOptionsStatus& GetAdvancedSecurityOptions() const{ return m_advancedSecurityOptions; }
+
+    /**
+     * <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+     */
+    inline bool AdvancedSecurityOptionsHasBeenSet() const { return m_advancedSecurityOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+     */
+    inline void SetAdvancedSecurityOptions(const AdvancedSecurityOptionsStatus& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = value; }
+
+    /**
+     * <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+     */
+    inline void SetAdvancedSecurityOptions(AdvancedSecurityOptionsStatus&& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = std::move(value); }
+
+    /**
+     * <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+     */
+    inline ElasticsearchDomainConfig& WithAdvancedSecurityOptions(const AdvancedSecurityOptionsStatus& value) { SetAdvancedSecurityOptions(value); return *this;}
+
+    /**
+     * <p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>
+     */
+    inline ElasticsearchDomainConfig& WithAdvancedSecurityOptions(AdvancedSecurityOptionsStatus&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
+
   private:
 
     ElasticsearchVersionStatus m_elasticsearchVersion;
@@ -538,6 +570,9 @@ namespace Model
 
     DomainEndpointOptionsStatus m_domainEndpointOptions;
     bool m_domainEndpointOptionsHasBeenSet;
+
+    AdvancedSecurityOptionsStatus m_advancedSecurityOptions;
+    bool m_advancedSecurityOptionsHasBeenSet;
   };
 
 } // namespace Model

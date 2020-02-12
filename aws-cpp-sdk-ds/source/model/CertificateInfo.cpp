@@ -32,7 +32,8 @@ CertificateInfo::CertificateInfo() :
     m_certificateIdHasBeenSet(false),
     m_commonNameHasBeenSet(false),
     m_state(CertificateState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_expiryDateTimeHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ CertificateInfo::CertificateInfo(JsonView jsonValue) :
     m_certificateIdHasBeenSet(false),
     m_commonNameHasBeenSet(false),
     m_state(CertificateState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_expiryDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ CertificateInfo& CertificateInfo::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExpiryDateTime"))
+  {
+    m_expiryDateTime = jsonValue.GetDouble("ExpiryDateTime");
+
+    m_expiryDateTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -90,6 +99,11 @@ JsonValue CertificateInfo::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("State", CertificateStateMapper::GetNameForCertificateState(m_state));
+  }
+
+  if(m_expiryDateTimeHasBeenSet)
+  {
+   payload.WithDouble("ExpiryDateTime", m_expiryDateTime.SecondsWithMSPrecision());
   }
 
   return payload;

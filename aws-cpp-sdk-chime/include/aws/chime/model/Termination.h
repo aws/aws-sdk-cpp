@@ -50,25 +50,25 @@ namespace Model
 
 
     /**
-     * <p>The limit on calls per second. Max value based on account service limit.
+     * <p>The limit on calls per second. Max value based on account service quota.
      * Default value of 1.</p>
      */
     inline int GetCpsLimit() const{ return m_cpsLimit; }
 
     /**
-     * <p>The limit on calls per second. Max value based on account service limit.
+     * <p>The limit on calls per second. Max value based on account service quota.
      * Default value of 1.</p>
      */
     inline bool CpsLimitHasBeenSet() const { return m_cpsLimitHasBeenSet; }
 
     /**
-     * <p>The limit on calls per second. Max value based on account service limit.
+     * <p>The limit on calls per second. Max value based on account service quota.
      * Default value of 1.</p>
      */
     inline void SetCpsLimit(int value) { m_cpsLimitHasBeenSet = true; m_cpsLimit = value; }
 
     /**
-     * <p>The limit on calls per second. Max value based on account service limit.
+     * <p>The limit on calls per second. Max value based on account service quota.
      * Default value of 1.</p>
      */
     inline Termination& WithCpsLimit(int value) { SetCpsLimit(value); return *this;}

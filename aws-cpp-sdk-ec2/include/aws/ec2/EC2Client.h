@@ -2437,7 +2437,8 @@ namespace Model
          * type. For information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
-         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
+         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          */
@@ -2452,7 +2453,8 @@ namespace Model
          * type. For information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
-         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
+         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -2469,7 +2471,8 @@ namespace Model
          * type. For information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
-         * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Compute Cloud User Guide</i>.</p> <p>You must specify either the IPv6 addresses
+         * or the IPv6 address count in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
          * API Reference</a></p>
          *
@@ -2494,7 +2497,8 @@ namespace Model
          * <p>Remapping an IP address is an asynchronous operation. When you move an IP
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
-         * confirm that the remapping is complete.</p><p><h3>See Also:</h3>   <a
+         * confirm that the remapping is complete.</p> <p>You must specify either the IP
+         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          */
@@ -2517,7 +2521,8 @@ namespace Model
          * <p>Remapping an IP address is an asynchronous operation. When you move an IP
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
-         * confirm that the remapping is complete.</p><p><h3>See Also:</h3>   <a
+         * confirm that the remapping is complete.</p> <p>You must specify either the IP
+         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *
@@ -2542,7 +2547,8 @@ namespace Model
          * <p>Remapping an IP address is an asynchronous operation. When you move an IP
          * address from one network interface to another, check
          * <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to
-         * confirm that the remapping is complete.</p><p><h3>See Also:</h3>   <a
+         * confirm that the remapping is complete.</p> <p>You must specify either the IP
+         * addresses or the IP address count in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">AWS
          * API Reference</a></p>
          *

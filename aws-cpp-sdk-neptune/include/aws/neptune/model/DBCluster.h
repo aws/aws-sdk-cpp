@@ -1644,26 +1644,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * <p>Indicates whether or not the DB cluster has deletion protection enabled. The
+     * database can't be deleted when deletion protection is enabled.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * <p>Indicates whether or not the DB cluster has deletion protection enabled. The
+     * database can't be deleted when deletion protection is enabled.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * <p>Indicates whether or not the DB cluster has deletion protection enabled. The
+     * database can't be deleted when deletion protection is enabled.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB cluster has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * <p>Indicates whether or not the DB cluster has deletion protection enabled. The
+     * database can't be deleted when deletion protection is enabled.</p>
      */
     inline DBCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

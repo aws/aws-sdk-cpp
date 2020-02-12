@@ -118,7 +118,11 @@ namespace Model
      * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
      * identifiers and DB cluster Amazon Resource Names (ARNs). The results list will
      * only include information about the DB clusters identified by these ARNs.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>engine</code> - Accepts an engine name (such as
+     * <code>neptune</code>), and restricts the results list to DB clusters created by
+     * that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI
+     * and filter so that only Neptune DB clusters are returned, you could use the
+     * following command:</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -127,7 +131,11 @@ namespace Model
      * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
      * identifiers and DB cluster Amazon Resource Names (ARNs). The results list will
      * only include information about the DB clusters identified by these ARNs.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>engine</code> - Accepts an engine name (such as
+     * <code>neptune</code>), and restricts the results list to DB clusters created by
+     * that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI
+     * and filter so that only Neptune DB clusters are returned, you could use the
+     * following command:</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -136,7 +144,11 @@ namespace Model
      * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
      * identifiers and DB cluster Amazon Resource Names (ARNs). The results list will
      * only include information about the DB clusters identified by these ARNs.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>engine</code> - Accepts an engine name (such as
+     * <code>neptune</code>), and restricts the results list to DB clusters created by
+     * that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI
+     * and filter so that only Neptune DB clusters are returned, you could use the
+     * following command:</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -145,7 +157,11 @@ namespace Model
      * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
      * identifiers and DB cluster Amazon Resource Names (ARNs). The results list will
      * only include information about the DB clusters identified by these ARNs.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>engine</code> - Accepts an engine name (such as
+     * <code>neptune</code>), and restricts the results list to DB clusters created by
+     * that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI
+     * and filter so that only Neptune DB clusters are returned, you could use the
+     * following command:</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -154,7 +170,11 @@ namespace Model
      * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
      * identifiers and DB cluster Amazon Resource Names (ARNs). The results list will
      * only include information about the DB clusters identified by these ARNs.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>engine</code> - Accepts an engine name (such as
+     * <code>neptune</code>), and restricts the results list to DB clusters created by
+     * that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI
+     * and filter so that only Neptune DB clusters are returned, you could use the
+     * following command:</p>
      */
     inline DescribeDBClustersRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -163,7 +183,11 @@ namespace Model
      * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
      * identifiers and DB cluster Amazon Resource Names (ARNs). The results list will
      * only include information about the DB clusters identified by these ARNs.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>engine</code> - Accepts an engine name (such as
+     * <code>neptune</code>), and restricts the results list to DB clusters created by
+     * that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI
+     * and filter so that only Neptune DB clusters are returned, you could use the
+     * following command:</p>
      */
     inline DescribeDBClustersRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -172,7 +196,11 @@ namespace Model
      * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
      * identifiers and DB cluster Amazon Resource Names (ARNs). The results list will
      * only include information about the DB clusters identified by these ARNs.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>engine</code> - Accepts an engine name (such as
+     * <code>neptune</code>), and restricts the results list to DB clusters created by
+     * that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI
+     * and filter so that only Neptune DB clusters are returned, you could use the
+     * following command:</p>
      */
     inline DescribeDBClustersRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -181,7 +209,11 @@ namespace Model
      * filters:</p> <ul> <li> <p> <code>db-cluster-id</code> - Accepts DB cluster
      * identifiers and DB cluster Amazon Resource Names (ARNs). The results list will
      * only include information about the DB clusters identified by these ARNs.</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>engine</code> - Accepts an engine name (such as
+     * <code>neptune</code>), and restricts the results list to DB clusters created by
+     * that engine.</p> </li> </ul> <p>For example, to invoke this API from the AWS CLI
+     * and filter so that only Neptune DB clusters are returned, you could use the
+     * following command:</p>
      */
     inline DescribeDBClustersRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

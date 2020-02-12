@@ -87,6 +87,8 @@
 #include <aws/neptune/model/ResetDBParameterGroupRequest.h>
 #include <aws/neptune/model/RestoreDBClusterFromSnapshotRequest.h>
 #include <aws/neptune/model/RestoreDBClusterToPointInTimeRequest.h>
+#include <aws/neptune/model/StartDBClusterRequest.h>
+#include <aws/neptune/model/StopDBClusterRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -2164,6 +2166,76 @@ void NeptuneClient::RestoreDBClusterToPointInTimeAsync(const RestoreDBClusterToP
 void NeptuneClient::RestoreDBClusterToPointInTimeAsyncHelper(const RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreDBClusterToPointInTime(request), context);
+}
+
+StartDBClusterOutcome NeptuneClient::StartDBCluster(const StartDBClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartDBClusterOutcome(StartDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartDBClusterOutcome(outcome.GetError());
+  }
+}
+
+StartDBClusterOutcomeCallable NeptuneClient::StartDBClusterCallable(const StartDBClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDBClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDBCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::StartDBClusterAsync(const StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartDBClusterAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::StartDBClusterAsyncHelper(const StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartDBCluster(request), context);
+}
+
+StopDBClusterOutcome NeptuneClient::StopDBCluster(const StopDBClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StopDBClusterOutcome(StopDBClusterResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopDBClusterOutcome(outcome.GetError());
+  }
+}
+
+StopDBClusterOutcomeCallable NeptuneClient::StopDBClusterCallable(const StopDBClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopDBClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDBCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void NeptuneClient::StopDBClusterAsync(const StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopDBClusterAsyncHelper( request, handler, context ); } );
+}
+
+void NeptuneClient::StopDBClusterAsyncHelper(const StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopDBCluster(request), context);
 }
 
 

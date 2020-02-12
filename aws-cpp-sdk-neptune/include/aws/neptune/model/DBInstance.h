@@ -2110,26 +2110,34 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * <p>Indicates whether or not the DB instance has deletion protection enabled. The
+     * instance can't be deleted when deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * <p>Indicates whether or not the DB instance has deletion protection enabled. The
+     * instance can't be deleted when deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * <p>Indicates whether or not the DB instance has deletion protection enabled. The
+     * instance can't be deleted when deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>Indicates if the DB instance has deletion protection enabled. The database
-     * can't be deleted when deletion protection is enabled. </p>
+     * <p>Indicates whether or not the DB instance has deletion protection enabled. The
+     * instance can't be deleted when deletion protection is enabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p>
      */
     inline DBInstance& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

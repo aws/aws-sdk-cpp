@@ -87,44 +87,38 @@ namespace Model
 
 
     /**
-     * <p>The type of LDAP security that the customer wants to enable. The security can
-     * be either server or client, but currently only the default <code>Client</code>
-     * is supported.</p>
+     * <p>The type of LDAP security to enable. Currently only the value
+     * <code>Client</code> is supported.</p>
      */
     inline const LDAPSType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of LDAP security that the customer wants to enable. The security can
-     * be either server or client, but currently only the default <code>Client</code>
-     * is supported.</p>
+     * <p>The type of LDAP security to enable. Currently only the value
+     * <code>Client</code> is supported.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of LDAP security that the customer wants to enable. The security can
-     * be either server or client, but currently only the default <code>Client</code>
-     * is supported.</p>
+     * <p>The type of LDAP security to enable. Currently only the value
+     * <code>Client</code> is supported.</p>
      */
     inline void SetType(const LDAPSType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of LDAP security that the customer wants to enable. The security can
-     * be either server or client, but currently only the default <code>Client</code>
-     * is supported.</p>
+     * <p>The type of LDAP security to enable. Currently only the value
+     * <code>Client</code> is supported.</p>
      */
     inline void SetType(LDAPSType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of LDAP security that the customer wants to enable. The security can
-     * be either server or client, but currently only the default <code>Client</code>
-     * is supported.</p>
+     * <p>The type of LDAP security to enable. Currently only the value
+     * <code>Client</code> is supported.</p>
      */
     inline DisableLDAPSRequest& WithType(const LDAPSType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of LDAP security that the customer wants to enable. The security can
-     * be either server or client, but currently only the default <code>Client</code>
-     * is supported.</p>
+     * <p>The type of LDAP security to enable. Currently only the value
+     * <code>Client</code> is supported.</p>
      */
     inline DisableLDAPSRequest& WithType(LDAPSType&& value) { SetType(std::move(value)); return *this;}
 

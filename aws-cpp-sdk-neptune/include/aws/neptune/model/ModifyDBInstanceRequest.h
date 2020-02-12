@@ -1867,28 +1867,36 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p>
+     * default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p>
      */
     inline ModifyDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

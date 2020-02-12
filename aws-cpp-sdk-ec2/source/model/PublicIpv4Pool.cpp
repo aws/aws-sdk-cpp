@@ -37,7 +37,8 @@ PublicIpv4Pool::PublicIpv4Pool() :
     m_totalAddressCount(0),
     m_totalAddressCountHasBeenSet(false),
     m_totalAvailableAddressCount(0),
-    m_totalAvailableAddressCountHasBeenSet(false)
+    m_totalAvailableAddressCountHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ PublicIpv4Pool::PublicIpv4Pool(const XmlNode& xmlNode) :
     m_totalAddressCount(0),
     m_totalAddressCountHasBeenSet(false),
     m_totalAvailableAddressCount(0),
-    m_totalAvailableAddressCountHasBeenSet(false)
+    m_totalAvailableAddressCountHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +97,18 @@ PublicIpv4Pool& PublicIpv4Pool::operator =(const XmlNode& xmlNode)
       m_totalAvailableAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalAvailableAddressCountNode.GetText()).c_str()).c_str());
       m_totalAvailableAddressCountHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -133,6 +147,17 @@ void PublicIpv4Pool::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".TotalAvailableAddressCount=" << m_totalAvailableAddressCount << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void PublicIpv4Pool::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -162,6 +187,16 @@ void PublicIpv4Pool::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_totalAvailableAddressCountHasBeenSet)
   {
       oStream << location << ".TotalAvailableAddressCount=" << m_totalAvailableAddressCount << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

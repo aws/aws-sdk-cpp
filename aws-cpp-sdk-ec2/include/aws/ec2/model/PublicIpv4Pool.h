@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/PublicIpv4PoolRange.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -215,6 +216,47 @@ namespace Model
      */
     inline PublicIpv4Pool& WithTotalAvailableAddressCount(int value) { SetTotalAvailableAddressCount(value); return *this;}
 
+
+    /**
+     * <p>Any tags for the address pool.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags for the address pool.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags for the address pool.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags for the address pool.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags for the address pool.</p>
+     */
+    inline PublicIpv4Pool& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags for the address pool.</p>
+     */
+    inline PublicIpv4Pool& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags for the address pool.</p>
+     */
+    inline PublicIpv4Pool& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags for the address pool.</p>
+     */
+    inline PublicIpv4Pool& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_poolId;
@@ -231,6 +273,9 @@ namespace Model
 
     int m_totalAvailableAddressCount;
     bool m_totalAvailableAddressCountHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

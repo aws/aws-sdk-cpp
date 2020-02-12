@@ -2041,40 +2041,40 @@ namespace Model
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p> <p>You can enable or disable
-     * deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
-     * deletion protection is enabled for the DB cluster. </p>
+     * default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p> <p>DB instances in a DB cluster can be deleted even when
+     * deletion protection is enabled in their parent DB cluster.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p> <p>You can enable or disable
-     * deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
-     * deletion protection is enabled for the DB cluster. </p>
+     * default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p> <p>DB instances in a DB cluster can be deleted even when
+     * deletion protection is enabled in their parent DB cluster.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p> <p>You can enable or disable
-     * deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
-     * deletion protection is enabled for the DB cluster. </p>
+     * default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p> <p>DB instances in a DB cluster can be deleted even when
+     * deletion protection is enabled in their parent DB cluster.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
      * <p>A value that indicates whether the DB instance has deletion protection
      * enabled. The database can't be deleted when deletion protection is enabled. By
-     * default, deletion protection is disabled. </p> <p>You can enable or disable
-     * deletion protection for the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
-     * deletion protection is enabled for the DB cluster. </p>
+     * default, deletion protection is disabled. See <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-instances-delete.html">Deleting
+     * a DB Instance</a>.</p> <p>DB instances in a DB cluster can be deleted even when
+     * deletion protection is enabled in their parent DB cluster.</p>
      */
     inline CreateDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

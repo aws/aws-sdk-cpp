@@ -425,6 +425,72 @@ namespace Model
 
 
     /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetNonOverridableArguments() const{ return m_nonOverridableArguments; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline bool NonOverridableArgumentsHasBeenSet() const { return m_nonOverridableArgumentsHasBeenSet; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline void SetNonOverridableArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments = value; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline void SetNonOverridableArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments = std::move(value); }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& WithNonOverridableArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetNonOverridableArguments(value); return *this;}
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& WithNonOverridableArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetNonOverridableArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& AddNonOverridableArguments(const Aws::String& key, const Aws::String& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(key, value); return *this; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& AddNonOverridableArguments(Aws::String&& key, const Aws::String& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& AddNonOverridableArguments(const Aws::String& key, Aws::String&& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& AddNonOverridableArguments(Aws::String&& key, Aws::String&& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& AddNonOverridableArguments(const char* key, Aws::String&& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& AddNonOverridableArguments(Aws::String&& key, const char* value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     */
+    inline JobUpdate& AddNonOverridableArguments(const char* key, const char* value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The connections used for this job.</p>
      */
     inline const ConnectionsList& GetConnections() const{ return m_connections; }
@@ -865,6 +931,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_defaultArguments;
     bool m_defaultArgumentsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_nonOverridableArguments;
+    bool m_nonOverridableArgumentsHasBeenSet;
 
     ConnectionsList m_connections;
     bool m_connectionsHasBeenSet;

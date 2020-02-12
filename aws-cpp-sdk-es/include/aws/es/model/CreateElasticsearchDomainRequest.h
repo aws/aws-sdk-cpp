@@ -26,6 +26,7 @@
 #include <aws/es/model/NodeToNodeEncryptionOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/es/model/DomainEndpointOptions.h>
+#include <aws/es/model/AdvancedSecurityOptionsInput.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -724,6 +725,37 @@ namespace Model
      */
     inline CreateElasticsearchDomainRequest& WithDomainEndpointOptions(DomainEndpointOptions&& value) { SetDomainEndpointOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies advanced security options.</p>
+     */
+    inline const AdvancedSecurityOptionsInput& GetAdvancedSecurityOptions() const{ return m_advancedSecurityOptions; }
+
+    /**
+     * <p>Specifies advanced security options.</p>
+     */
+    inline bool AdvancedSecurityOptionsHasBeenSet() const { return m_advancedSecurityOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies advanced security options.</p>
+     */
+    inline void SetAdvancedSecurityOptions(const AdvancedSecurityOptionsInput& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = value; }
+
+    /**
+     * <p>Specifies advanced security options.</p>
+     */
+    inline void SetAdvancedSecurityOptions(AdvancedSecurityOptionsInput&& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = std::move(value); }
+
+    /**
+     * <p>Specifies advanced security options.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithAdvancedSecurityOptions(const AdvancedSecurityOptionsInput& value) { SetAdvancedSecurityOptions(value); return *this;}
+
+    /**
+     * <p>Specifies advanced security options.</p>
+     */
+    inline CreateElasticsearchDomainRequest& WithAdvancedSecurityOptions(AdvancedSecurityOptionsInput&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainName;
@@ -764,6 +796,9 @@ namespace Model
 
     DomainEndpointOptions m_domainEndpointOptions;
     bool m_domainEndpointOptionsHasBeenSet;
+
+    AdvancedSecurityOptionsInput m_advancedSecurityOptions;
+    bool m_advancedSecurityOptionsHasBeenSet;
   };
 
 } // namespace Model

@@ -36,6 +36,7 @@
 #include <aws/workmail/model/CreateGroupRequest.h>
 #include <aws/workmail/model/CreateResourceRequest.h>
 #include <aws/workmail/model/CreateUserRequest.h>
+#include <aws/workmail/model/DeleteAccessControlRuleRequest.h>
 #include <aws/workmail/model/DeleteAliasRequest.h>
 #include <aws/workmail/model/DeleteGroupRequest.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsRequest.h>
@@ -48,7 +49,9 @@
 #include <aws/workmail/model/DescribeUserRequest.h>
 #include <aws/workmail/model/DisassociateDelegateFromResourceRequest.h>
 #include <aws/workmail/model/DisassociateMemberFromGroupRequest.h>
+#include <aws/workmail/model/GetAccessControlEffectRequest.h>
 #include <aws/workmail/model/GetMailboxDetailsRequest.h>
+#include <aws/workmail/model/ListAccessControlRulesRequest.h>
 #include <aws/workmail/model/ListAliasesRequest.h>
 #include <aws/workmail/model/ListGroupMembersRequest.h>
 #include <aws/workmail/model/ListGroupsRequest.h>
@@ -58,6 +61,7 @@
 #include <aws/workmail/model/ListResourcesRequest.h>
 #include <aws/workmail/model/ListTagsForResourceRequest.h>
 #include <aws/workmail/model/ListUsersRequest.h>
+#include <aws/workmail/model/PutAccessControlRuleRequest.h>
 #include <aws/workmail/model/PutMailboxPermissionsRequest.h>
 #include <aws/workmail/model/RegisterToWorkMailRequest.h>
 #include <aws/workmail/model/ResetPasswordRequest.h>
@@ -347,6 +351,41 @@ void WorkMailClient::CreateUserAsync(const CreateUserRequest& request, const Cre
 void WorkMailClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateUser(request), context);
+}
+
+DeleteAccessControlRuleOutcome WorkMailClient::DeleteAccessControlRule(const DeleteAccessControlRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAccessControlRuleOutcome(DeleteAccessControlRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAccessControlRuleOutcome(outcome.GetError());
+  }
+}
+
+DeleteAccessControlRuleOutcomeCallable WorkMailClient::DeleteAccessControlRuleCallable(const DeleteAccessControlRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessControlRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessControlRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeleteAccessControlRuleAsync(const DeleteAccessControlRuleRequest& request, const DeleteAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessControlRuleAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DeleteAccessControlRuleAsyncHelper(const DeleteAccessControlRuleRequest& request, const DeleteAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAccessControlRule(request), context);
 }
 
 DeleteAliasOutcome WorkMailClient::DeleteAlias(const DeleteAliasRequest& request) const
@@ -769,6 +808,41 @@ void WorkMailClient::DisassociateMemberFromGroupAsyncHelper(const DisassociateMe
   handler(this, request, DisassociateMemberFromGroup(request), context);
 }
 
+GetAccessControlEffectOutcome WorkMailClient::GetAccessControlEffect(const GetAccessControlEffectRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAccessControlEffectOutcome(GetAccessControlEffectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAccessControlEffectOutcome(outcome.GetError());
+  }
+}
+
+GetAccessControlEffectOutcomeCallable WorkMailClient::GetAccessControlEffectCallable(const GetAccessControlEffectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAccessControlEffectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAccessControlEffect(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::GetAccessControlEffectAsync(const GetAccessControlEffectRequest& request, const GetAccessControlEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAccessControlEffectAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::GetAccessControlEffectAsyncHelper(const GetAccessControlEffectRequest& request, const GetAccessControlEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAccessControlEffect(request), context);
+}
+
 GetMailboxDetailsOutcome WorkMailClient::GetMailboxDetails(const GetMailboxDetailsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -802,6 +876,41 @@ void WorkMailClient::GetMailboxDetailsAsync(const GetMailboxDetailsRequest& requ
 void WorkMailClient::GetMailboxDetailsAsyncHelper(const GetMailboxDetailsRequest& request, const GetMailboxDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetMailboxDetails(request), context);
+}
+
+ListAccessControlRulesOutcome WorkMailClient::ListAccessControlRules(const ListAccessControlRulesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAccessControlRulesOutcome(ListAccessControlRulesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAccessControlRulesOutcome(outcome.GetError());
+  }
+}
+
+ListAccessControlRulesOutcomeCallable WorkMailClient::ListAccessControlRulesCallable(const ListAccessControlRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessControlRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccessControlRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::ListAccessControlRulesAsync(const ListAccessControlRulesRequest& request, const ListAccessControlRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessControlRulesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::ListAccessControlRulesAsyncHelper(const ListAccessControlRulesRequest& request, const ListAccessControlRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAccessControlRules(request), context);
 }
 
 ListAliasesOutcome WorkMailClient::ListAliases(const ListAliasesRequest& request) const
@@ -1117,6 +1226,41 @@ void WorkMailClient::ListUsersAsync(const ListUsersRequest& request, const ListU
 void WorkMailClient::ListUsersAsyncHelper(const ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUsers(request), context);
+}
+
+PutAccessControlRuleOutcome WorkMailClient::PutAccessControlRule(const PutAccessControlRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutAccessControlRuleOutcome(PutAccessControlRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutAccessControlRuleOutcome(outcome.GetError());
+  }
+}
+
+PutAccessControlRuleOutcomeCallable WorkMailClient::PutAccessControlRuleCallable(const PutAccessControlRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAccessControlRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccessControlRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::PutAccessControlRuleAsync(const PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAccessControlRuleAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::PutAccessControlRuleAsyncHelper(const PutAccessControlRuleRequest& request, const PutAccessControlRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAccessControlRule(request), context);
 }
 
 PutMailboxPermissionsOutcome WorkMailClient::PutMailboxPermissions(const PutMailboxPermissionsRequest& request) const

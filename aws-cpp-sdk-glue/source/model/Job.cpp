@@ -38,6 +38,7 @@ Job::Job() :
     m_executionPropertyHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_defaultArgumentsHasBeenSet(false),
+    m_nonOverridableArgumentsHasBeenSet(false),
     m_connectionsHasBeenSet(false),
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
@@ -65,6 +66,7 @@ Job::Job(JsonView jsonValue) :
     m_executionPropertyHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_defaultArgumentsHasBeenSet(false),
+    m_nonOverridableArgumentsHasBeenSet(false),
     m_connectionsHasBeenSet(false),
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
@@ -149,6 +151,16 @@ Job& Job::operator =(JsonView jsonValue)
       m_defaultArguments[defaultArgumentsItem.first] = defaultArgumentsItem.second.AsString();
     }
     m_defaultArgumentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NonOverridableArguments"))
+  {
+    Aws::Map<Aws::String, JsonView> nonOverridableArgumentsJsonMap = jsonValue.GetObject("NonOverridableArguments").GetAllObjects();
+    for(auto& nonOverridableArgumentsItem : nonOverridableArgumentsJsonMap)
+    {
+      m_nonOverridableArguments[nonOverridableArgumentsItem.first] = nonOverridableArgumentsItem.second.AsString();
+    }
+    m_nonOverridableArgumentsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Connections"))
@@ -275,6 +287,17 @@ JsonValue Job::Jsonize() const
      defaultArgumentsJsonMap.WithString(defaultArgumentsItem.first, defaultArgumentsItem.second);
    }
    payload.WithObject("DefaultArguments", std::move(defaultArgumentsJsonMap));
+
+  }
+
+  if(m_nonOverridableArgumentsHasBeenSet)
+  {
+   JsonValue nonOverridableArgumentsJsonMap;
+   for(auto& nonOverridableArgumentsItem : m_nonOverridableArguments)
+   {
+     nonOverridableArgumentsJsonMap.WithString(nonOverridableArgumentsItem.first, nonOverridableArgumentsItem.second);
+   }
+   payload.WithObject("NonOverridableArguments", std::move(nonOverridableArgumentsJsonMap));
 
   }
 

@@ -109,42 +109,130 @@ namespace Model
 
 
     /**
-     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     * <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+     * of an existing snapshot.</p> <p>After you restore a DB cluster using a
+     * <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB
+     * cluster. When you specify this property for an update, the DB cluster is not
+     * restored from the snapshot again, and the data in the database is not
+     * changed.</p> <p>However, if you don't specify the
+     * <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different
+     * from the previous snapshot restore property, the DB cluster is restored from the
+     * snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
+     * original DB cluster is deleted.</p>
      */
     inline const Aws::String& GetDBClusterSnapshotIdentifier() const{ return m_dBClusterSnapshotIdentifier; }
 
     /**
-     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     * <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+     * of an existing snapshot.</p> <p>After you restore a DB cluster using a
+     * <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB
+     * cluster. When you specify this property for an update, the DB cluster is not
+     * restored from the snapshot again, and the data in the database is not
+     * changed.</p> <p>However, if you don't specify the
+     * <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different
+     * from the previous snapshot restore property, the DB cluster is restored from the
+     * snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
+     * original DB cluster is deleted.</p>
      */
     inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
 
     /**
-     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     * <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+     * of an existing snapshot.</p> <p>After you restore a DB cluster using a
+     * <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB
+     * cluster. When you specify this property for an update, the DB cluster is not
+     * restored from the snapshot again, and the data in the database is not
+     * changed.</p> <p>However, if you don't specify the
+     * <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different
+     * from the previous snapshot restore property, the DB cluster is restored from the
+     * snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
+     * original DB cluster is deleted.</p>
      */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
-     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     * <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+     * of an existing snapshot.</p> <p>After you restore a DB cluster using a
+     * <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB
+     * cluster. When you specify this property for an update, the DB cluster is not
+     * restored from the snapshot again, and the data in the database is not
+     * changed.</p> <p>However, if you don't specify the
+     * <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different
+     * from the previous snapshot restore property, the DB cluster is restored from the
+     * snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
+     * original DB cluster is deleted.</p>
      */
     inline void SetDBClusterSnapshotIdentifier(Aws::String&& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = std::move(value); }
 
     /**
-     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     * <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+     * of an existing snapshot.</p> <p>After you restore a DB cluster using a
+     * <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB
+     * cluster. When you specify this property for an update, the DB cluster is not
+     * restored from the snapshot again, and the data in the database is not
+     * changed.</p> <p>However, if you don't specify the
+     * <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different
+     * from the previous snapshot restore property, the DB cluster is restored from the
+     * snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
+     * original DB cluster is deleted.</p>
      */
     inline void SetDBClusterSnapshotIdentifier(const char* value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier.assign(value); }
 
     /**
-     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     * <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+     * of an existing snapshot.</p> <p>After you restore a DB cluster using a
+     * <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB
+     * cluster. When you specify this property for an update, the DB cluster is not
+     * restored from the snapshot again, and the data in the database is not
+     * changed.</p> <p>However, if you don't specify the
+     * <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different
+     * from the previous snapshot restore property, the DB cluster is restored from the
+     * snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
+     * original DB cluster is deleted.</p>
      */
     inline DBClusterSnapshot& WithDBClusterSnapshotIdentifier(const Aws::String& value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 
     /**
-     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     * <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+     * of an existing snapshot.</p> <p>After you restore a DB cluster using a
+     * <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB
+     * cluster. When you specify this property for an update, the DB cluster is not
+     * restored from the snapshot again, and the data in the database is not
+     * changed.</p> <p>However, if you don't specify the
+     * <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different
+     * from the previous snapshot restore property, the DB cluster is restored from the
+     * snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
+     * original DB cluster is deleted.</p>
      */
     inline DBClusterSnapshot& WithDBClusterSnapshotIdentifier(Aws::String&& value) { SetDBClusterSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     * <p>Specifies the identifier for a DB cluster snapshot. Must match the identifier
+     * of an existing snapshot.</p> <p>After you restore a DB cluster using a
+     * <code>DBClusterSnapshotIdentifier</code>, you must specify the same
+     * <code>DBClusterSnapshotIdentifier</code> for any future updates to the DB
+     * cluster. When you specify this property for an update, the DB cluster is not
+     * restored from the snapshot again, and the data in the database is not
+     * changed.</p> <p>However, if you don't specify the
+     * <code>DBClusterSnapshotIdentifier</code>, an empty DB cluster is created, and
+     * the original DB cluster is deleted. If you specify a property that is different
+     * from the previous snapshot restore property, the DB cluster is restored from the
+     * snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
+     * original DB cluster is deleted.</p>
      */
     inline DBClusterSnapshot& WithDBClusterSnapshotIdentifier(const char* value) { SetDBClusterSnapshotIdentifier(value); return *this;}
 

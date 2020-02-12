@@ -17,6 +17,7 @@
 #include <aws/ds/DirectoryService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/CertificateState.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -161,6 +162,37 @@ namespace Model
      */
     inline CertificateInfo& WithState(CertificateState&& value) { SetState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The date and time when the certificate will expire.</p>
+     */
+    inline const Aws::Utils::DateTime& GetExpiryDateTime() const{ return m_expiryDateTime; }
+
+    /**
+     * <p>The date and time when the certificate will expire.</p>
+     */
+    inline bool ExpiryDateTimeHasBeenSet() const { return m_expiryDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the certificate will expire.</p>
+     */
+    inline void SetExpiryDateTime(const Aws::Utils::DateTime& value) { m_expiryDateTimeHasBeenSet = true; m_expiryDateTime = value; }
+
+    /**
+     * <p>The date and time when the certificate will expire.</p>
+     */
+    inline void SetExpiryDateTime(Aws::Utils::DateTime&& value) { m_expiryDateTimeHasBeenSet = true; m_expiryDateTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the certificate will expire.</p>
+     */
+    inline CertificateInfo& WithExpiryDateTime(const Aws::Utils::DateTime& value) { SetExpiryDateTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the certificate will expire.</p>
+     */
+    inline CertificateInfo& WithExpiryDateTime(Aws::Utils::DateTime&& value) { SetExpiryDateTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateId;
@@ -171,6 +203,9 @@ namespace Model
 
     CertificateState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::Utils::DateTime m_expiryDateTime;
+    bool m_expiryDateTimeHasBeenSet;
   };
 
 } // namespace Model

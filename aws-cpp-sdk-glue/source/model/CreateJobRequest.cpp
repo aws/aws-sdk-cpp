@@ -30,6 +30,7 @@ CreateJobRequest::CreateJobRequest() :
     m_executionPropertyHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_defaultArgumentsHasBeenSet(false),
+    m_nonOverridableArgumentsHasBeenSet(false),
     m_connectionsHasBeenSet(false),
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
@@ -96,6 +97,17 @@ Aws::String CreateJobRequest::SerializePayload() const
      defaultArgumentsJsonMap.WithString(defaultArgumentsItem.first, defaultArgumentsItem.second);
    }
    payload.WithObject("DefaultArguments", std::move(defaultArgumentsJsonMap));
+
+  }
+
+  if(m_nonOverridableArgumentsHasBeenSet)
+  {
+   JsonValue nonOverridableArgumentsJsonMap;
+   for(auto& nonOverridableArgumentsItem : m_nonOverridableArguments)
+   {
+     nonOverridableArgumentsJsonMap.WithString(nonOverridableArgumentsItem.first, nonOverridableArgumentsItem.second);
+   }
+   payload.WithObject("NonOverridableArguments", std::move(nonOverridableArgumentsJsonMap));
 
   }
 

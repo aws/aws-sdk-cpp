@@ -40,7 +40,8 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig() :
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false)
+    m_domainEndpointOptionsHasBeenSet(false),
+    m_advancedSecurityOptionsHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ElasticsearchDomainConfig::ElasticsearchDomainConfig(JsonView jsonValue) :
     m_nodeToNodeEncryptionOptionsHasBeenSet(false),
     m_advancedOptionsHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false)
+    m_domainEndpointOptionsHasBeenSet(false),
+    m_advancedSecurityOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +149,13 @@ ElasticsearchDomainConfig& ElasticsearchDomainConfig::operator =(JsonView jsonVa
     m_domainEndpointOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdvancedSecurityOptions"))
+  {
+    m_advancedSecurityOptions = jsonValue.GetObject("AdvancedSecurityOptions");
+
+    m_advancedSecurityOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +232,12 @@ JsonValue ElasticsearchDomainConfig::Jsonize() const
   if(m_domainEndpointOptionsHasBeenSet)
   {
    payload.WithObject("DomainEndpointOptions", m_domainEndpointOptions.Jsonize());
+
+  }
+
+  if(m_advancedSecurityOptionsHasBeenSet)
+  {
+   payload.WithObject("AdvancedSecurityOptions", m_advancedSecurityOptions.Jsonize());
 
   }
 

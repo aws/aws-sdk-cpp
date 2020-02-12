@@ -72,6 +72,8 @@
 #include <aws/neptune/model/ResetDBParameterGroupResult.h>
 #include <aws/neptune/model/RestoreDBClusterFromSnapshotResult.h>
 #include <aws/neptune/model/RestoreDBClusterToPointInTimeResult.h>
+#include <aws/neptune/model/StartDBClusterResult.h>
+#include <aws/neptune/model/StopDBClusterResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -175,6 +177,8 @@ namespace Model
         class ResetDBParameterGroupRequest;
         class RestoreDBClusterFromSnapshotRequest;
         class RestoreDBClusterToPointInTimeRequest;
+        class StartDBClusterRequest;
+        class StopDBClusterRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<NeptuneErrors>> AddRoleToDBClusterOutcome;
         typedef Aws::Utils::Outcome<AddSourceIdentifierToSubscriptionResult, Aws::Client::AWSError<NeptuneErrors>> AddSourceIdentifierToSubscriptionOutcome;
@@ -233,6 +237,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ResetDBParameterGroupResult, Aws::Client::AWSError<NeptuneErrors>> ResetDBParameterGroupOutcome;
         typedef Aws::Utils::Outcome<RestoreDBClusterFromSnapshotResult, Aws::Client::AWSError<NeptuneErrors>> RestoreDBClusterFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<RestoreDBClusterToPointInTimeResult, Aws::Client::AWSError<NeptuneErrors>> RestoreDBClusterToPointInTimeOutcome;
+        typedef Aws::Utils::Outcome<StartDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> StartDBClusterOutcome;
+        typedef Aws::Utils::Outcome<StopDBClusterResult, Aws::Client::AWSError<NeptuneErrors>> StopDBClusterOutcome;
 
         typedef std::future<AddRoleToDBClusterOutcome> AddRoleToDBClusterOutcomeCallable;
         typedef std::future<AddSourceIdentifierToSubscriptionOutcome> AddSourceIdentifierToSubscriptionOutcomeCallable;
@@ -291,6 +297,8 @@ namespace Model
         typedef std::future<ResetDBParameterGroupOutcome> ResetDBParameterGroupOutcomeCallable;
         typedef std::future<RestoreDBClusterFromSnapshotOutcome> RestoreDBClusterFromSnapshotOutcomeCallable;
         typedef std::future<RestoreDBClusterToPointInTimeOutcome> RestoreDBClusterToPointInTimeOutcomeCallable;
+        typedef std::future<StartDBClusterOutcome> StartDBClusterOutcomeCallable;
+        typedef std::future<StopDBClusterOutcome> StopDBClusterOutcomeCallable;
 } // namespace Model
 
   class NeptuneClient;
@@ -352,6 +360,8 @@ namespace Model
     typedef std::function<void(const NeptuneClient*, const Model::ResetDBParameterGroupRequest&, const Model::ResetDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::RestoreDBClusterFromSnapshotRequest&, const Model::RestoreDBClusterFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBClusterFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const NeptuneClient*, const Model::RestoreDBClusterToPointInTimeRequest&, const Model::RestoreDBClusterToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreDBClusterToPointInTimeResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::StartDBClusterRequest&, const Model::StartDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBClusterResponseReceivedHandler;
+    typedef std::function<void(const NeptuneClient*, const Model::StopDBClusterRequest&, const Model::StopDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBClusterResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Neptune</fullname> <p>Amazon Neptune is a fast, reliable,
@@ -558,8 +568,7 @@ namespace Model
          * <p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from
          * a shared manual DB cluster snapshot,
          * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name
-         * (ARN) of the shared DB cluster snapshot.</p> <p>You can't copy from one AWS
-         * Region to another.</p><p><h3>See Also:</h3>   <a
+         * (ARN) of the shared DB cluster snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          */
@@ -569,8 +578,7 @@ namespace Model
          * <p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from
          * a shared manual DB cluster snapshot,
          * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name
-         * (ARN) of the shared DB cluster snapshot.</p> <p>You can't copy from one AWS
-         * Region to another.</p><p><h3>See Also:</h3>   <a
+         * (ARN) of the shared DB cluster snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -582,8 +590,7 @@ namespace Model
          * <p>Copies a snapshot of a DB cluster.</p> <p>To copy a DB cluster snapshot from
          * a shared manual DB cluster snapshot,
          * <code>SourceDBClusterSnapshotIdentifier</code> must be the Amazon Resource Name
-         * (ARN) of the shared DB cluster snapshot.</p> <p>You can't copy from one AWS
-         * Region to another.</p><p><h3>See Also:</h3>   <a
+         * (ARN) of the shared DB cluster snapshot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CopyDBClusterSnapshot">AWS
          * API Reference</a></p>
          *
@@ -619,8 +626,12 @@ namespace Model
         /**
          * <p>Creates a new Amazon Neptune DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster or Amazon Neptune DB instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * Read Replica of another DB cluster or Amazon Neptune DB instance.</p> <p>Note
+         * that when you create a new cluster using <code>CreateDBCluster</code> directly,
+         * deletion protection is disabled by default (when you create a new production
+         * cluster in the console, deletion protection is enabled by default). You can only
+         * delete a DB cluster if its <code>DeletionProtection</code> field is set to
+         * <code>false</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          */
@@ -629,8 +640,12 @@ namespace Model
         /**
          * <p>Creates a new Amazon Neptune DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster or Amazon Neptune DB instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * Read Replica of another DB cluster or Amazon Neptune DB instance.</p> <p>Note
+         * that when you create a new cluster using <code>CreateDBCluster</code> directly,
+         * deletion protection is disabled by default (when you create a new production
+         * cluster in the console, deletion protection is enabled by default). You can only
+         * delete a DB cluster if its <code>DeletionProtection</code> field is set to
+         * <code>false</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          *
@@ -641,8 +656,12 @@ namespace Model
         /**
          * <p>Creates a new Amazon Neptune DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster or Amazon Neptune DB instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * Read Replica of another DB cluster or Amazon Neptune DB instance.</p> <p>Note
+         * that when you create a new cluster using <code>CreateDBCluster</code> directly,
+         * deletion protection is disabled by default (when you create a new production
+         * cluster in the console, deletion protection is enabled by default). You can only
+         * delete a DB cluster if its <code>DeletionProtection</code> field is set to
+         * <code>false</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CreateDBCluster">AWS
          * API Reference</a></p>
          *
@@ -969,7 +988,10 @@ namespace Model
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
          * you delete a DB cluster, all automated backups for that DB cluster are deleted
          * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
-         * are not deleted.</p><p><h3>See Also:</h3>   <a
+         * are not deleted.</p> <p>Note that the DB Cluster cannot be deleted if deletion
+         * protection is enabled. To delete it, you must first set its
+         * <code>DeletionProtection</code> field to <code>False</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          */
@@ -979,7 +1001,10 @@ namespace Model
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
          * you delete a DB cluster, all automated backups for that DB cluster are deleted
          * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
-         * are not deleted.</p><p><h3>See Also:</h3>   <a
+         * are not deleted.</p> <p>Note that the DB Cluster cannot be deleted if deletion
+         * protection is enabled. To delete it, you must first set its
+         * <code>DeletionProtection</code> field to <code>False</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          *
@@ -991,7 +1016,10 @@ namespace Model
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
          * you delete a DB cluster, all automated backups for that DB cluster are deleted
          * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
-         * are not deleted.</p><p><h3>See Also:</h3>   <a
+         * are not deleted.</p> <p>Note that the DB Cluster cannot be deleted if deletion
+         * protection is enabled. To delete it, you must first set its
+         * <code>DeletionProtection</code> field to <code>False</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBCluster">AWS
          * API Reference</a></p>
          *
@@ -1077,7 +1105,8 @@ namespace Model
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>You can't delete a DB instance if it is the only
-         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
+         * instance in the DB cluster, or if it has deletion protection
+         * enabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          */
@@ -1096,7 +1125,8 @@ namespace Model
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>You can't delete a DB instance if it is the only
-         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
+         * instance in the DB cluster, or if it has deletion protection
+         * enabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1117,7 +1147,8 @@ namespace Model
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when the <code>SkipFinalSnapshot</code> parameter is set to
          * <code>true</code>.</p> <p>You can't delete a DB instance if it is the only
-         * instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
+         * instance in the DB cluster, or if it has deletion protection
+         * enabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1358,16 +1389,18 @@ namespace Model
         virtual void DescribeDBClusterSnapshotsAsync(const Model::DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about provisioned DB clusters. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about provisioned DB clusters, and supports
+         * pagination.</p> <note> <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDBClustersOutcome DescribeDBClusters(const Model::DescribeDBClustersRequest& request) const;
 
         /**
-         * <p>Returns information about provisioned DB clusters. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about provisioned DB clusters, and supports
+         * pagination.</p> <note> <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -1376,8 +1409,9 @@ namespace Model
         virtual Model::DescribeDBClustersOutcomeCallable DescribeDBClustersCallable(const Model::DescribeDBClustersRequest& request) const;
 
         /**
-         * <p>Returns information about provisioned DB clusters. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about provisioned DB clusters, and supports
+         * pagination.</p> <note> <p>This operation can also return information for Amazon
+         * RDS clusters and Amazon DocDB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -1411,16 +1445,18 @@ namespace Model
         virtual void DescribeDBEngineVersionsAsync(const Model::DescribeDBEngineVersionsRequest& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about provisioned instances. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about provisioned instances, and supports pagination.</p>
+         * <note> <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest& request) const;
 
         /**
-         * <p>Returns information about provisioned instances. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about provisioned instances, and supports pagination.</p>
+         * <note> <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          *
@@ -1429,8 +1465,9 @@ namespace Model
         virtual Model::DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request) const;
 
         /**
-         * <p>Returns information about provisioned instances. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about provisioned instances, and supports pagination.</p>
+         * <note> <p>This operation can also return information for Amazon RDS instances
+         * and Amazon DocDB instances.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          *
@@ -2559,6 +2596,71 @@ namespace Model
          */
         virtual void RestoreDBClusterToPointInTimeAsync(const Model::RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Starts an Amazon Neptune DB cluster that was stopped using the AWS console,
+         * the AWS CLI stop-db-cluster command, or the StopDBCluster API.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDBClusterOutcome StartDBCluster(const Model::StartDBClusterRequest& request) const;
+
+        /**
+         * <p>Starts an Amazon Neptune DB cluster that was stopped using the AWS console,
+         * the AWS CLI stop-db-cluster command, or the StopDBCluster API.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartDBClusterOutcomeCallable StartDBClusterCallable(const Model::StartDBClusterRequest& request) const;
+
+        /**
+         * <p>Starts an Amazon Neptune DB cluster that was stopped using the AWS console,
+         * the AWS CLI stop-db-cluster command, or the StopDBCluster API.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StartDBCluster">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartDBClusterAsync(const Model::StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune
+         * retains the DB cluster's metadata, including its endpoints and DB parameter
+         * groups.</p> <p>Neptune also retains the transaction logs so you can do a
+         * point-in-time restore if necessary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopDBClusterOutcome StopDBCluster(const Model::StopDBClusterRequest& request) const;
+
+        /**
+         * <p>Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune
+         * retains the DB cluster's metadata, including its endpoints and DB parameter
+         * groups.</p> <p>Neptune also retains the transaction logs so you can do a
+         * point-in-time restore if necessary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopDBClusterOutcomeCallable StopDBClusterCallable(const Model::StopDBClusterRequest& request) const;
+
+        /**
+         * <p>Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune
+         * retains the DB cluster's metadata, including its endpoints and DB parameter
+         * groups.</p> <p>Neptune also retains the transaction logs so you can do a
+         * point-in-time restore if necessary.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/StopDBCluster">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopDBClusterAsync(const Model::StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
       
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
@@ -2620,6 +2722,8 @@ namespace Model
         void ResetDBParameterGroupAsyncHelper(const Model::ResetDBParameterGroupRequest& request, const ResetDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreDBClusterFromSnapshotAsyncHelper(const Model::RestoreDBClusterFromSnapshotRequest& request, const RestoreDBClusterFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreDBClusterToPointInTimeAsyncHelper(const Model::RestoreDBClusterToPointInTimeRequest& request, const RestoreDBClusterToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartDBClusterAsyncHelper(const Model::StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopDBClusterAsyncHelper(const Model::StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;

@@ -24,7 +24,8 @@ DescribePublicIpv4PoolsRequest::DescribePublicIpv4PoolsRequest() :
     m_poolIdsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ Aws::String DescribePublicIpv4PoolsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
     ss << "MaxResults=" << m_maxResults << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2016-11-15";
