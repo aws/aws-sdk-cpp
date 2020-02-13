@@ -31,16 +31,22 @@ namespace Model
 DashPackage::DashPackage() : 
     m_dashManifestsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_periodTriggersHasBeenSet(false),
     m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false)
+    m_segmentDurationSecondsHasBeenSet(false),
+    m_segmentTemplateFormat(SegmentTemplateFormat::NOT_SET),
+    m_segmentTemplateFormatHasBeenSet(false)
 {
 }
 
 DashPackage::DashPackage(JsonView jsonValue) : 
     m_dashManifestsHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_periodTriggersHasBeenSet(false),
     m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false)
+    m_segmentDurationSecondsHasBeenSet(false),
+    m_segmentTemplateFormat(SegmentTemplateFormat::NOT_SET),
+    m_segmentTemplateFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -64,11 +70,28 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_encryptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("periodTriggers"))
+  {
+    Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("periodTriggers");
+    for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
+    {
+      m_periodTriggers.push_back(__PeriodTriggersElementMapper::Get__PeriodTriggersElementForName(periodTriggersJsonList[periodTriggersIndex].AsString()));
+    }
+    m_periodTriggersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("segmentDurationSeconds"))
   {
     m_segmentDurationSeconds = jsonValue.GetInteger("segmentDurationSeconds");
 
     m_segmentDurationSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("segmentTemplateFormat"))
+  {
+    m_segmentTemplateFormat = SegmentTemplateFormatMapper::GetSegmentTemplateFormatForName(jsonValue.GetString("segmentTemplateFormat"));
+
+    m_segmentTemplateFormatHasBeenSet = true;
   }
 
   return *this;
@@ -95,10 +118,26 @@ JsonValue DashPackage::Jsonize() const
 
   }
 
+  if(m_periodTriggersHasBeenSet)
+  {
+   Array<JsonValue> periodTriggersJsonList(m_periodTriggers.size());
+   for(unsigned periodTriggersIndex = 0; periodTriggersIndex < periodTriggersJsonList.GetLength(); ++periodTriggersIndex)
+   {
+     periodTriggersJsonList[periodTriggersIndex].AsString(__PeriodTriggersElementMapper::GetNameFor__PeriodTriggersElement(m_periodTriggers[periodTriggersIndex]));
+   }
+   payload.WithArray("periodTriggers", std::move(periodTriggersJsonList));
+
+  }
+
   if(m_segmentDurationSecondsHasBeenSet)
   {
    payload.WithInteger("segmentDurationSeconds", m_segmentDurationSeconds);
 
+  }
+
+  if(m_segmentTemplateFormatHasBeenSet)
+  {
+   payload.WithString("segmentTemplateFormat", SegmentTemplateFormatMapper::GetNameForSegmentTemplateFormat(m_segmentTemplateFormat));
   }
 
   return payload;

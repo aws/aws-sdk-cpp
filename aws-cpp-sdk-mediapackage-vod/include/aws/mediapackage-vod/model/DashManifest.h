@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
+#include <aws/mediapackage-vod/model/ManifestLayout.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage-vod/model/Profile.h>
 #include <aws/mediapackage-vod/model/StreamSelection.h>
@@ -47,6 +48,55 @@ namespace Model
     DashManifest(Aws::Utils::Json::JsonView jsonValue);
     DashManifest& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline const ManifestLayout& GetManifestLayout() const{ return m_manifestLayout; }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline bool ManifestLayoutHasBeenSet() const { return m_manifestLayoutHasBeenSet; }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline void SetManifestLayout(const ManifestLayout& value) { m_manifestLayoutHasBeenSet = true; m_manifestLayout = value; }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline void SetManifestLayout(ManifestLayout&& value) { m_manifestLayoutHasBeenSet = true; m_manifestLayout = std::move(value); }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline DashManifest& WithManifestLayout(const ManifestLayout& value) { SetManifestLayout(value); return *this;}
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline DashManifest& WithManifestLayout(ManifestLayout&& value) { SetManifestLayout(std::move(value)); return *this;}
 
 
     /**
@@ -171,6 +221,9 @@ namespace Model
     inline DashManifest& WithStreamSelection(StreamSelection&& value) { SetStreamSelection(std::move(value)); return *this;}
 
   private:
+
+    ManifestLayout m_manifestLayout;
+    bool m_manifestLayoutHasBeenSet;
 
     Aws::String m_manifestName;
     bool m_manifestNameHasBeenSet;

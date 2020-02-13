@@ -17,7 +17,9 @@
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackage-vod/model/DashEncryption.h>
+#include <aws/mediapackage-vod/model/SegmentTemplateFormat.h>
 #include <aws/mediapackage-vod/model/DashManifest.h>
+#include <aws/mediapackage-vod/model/__PeriodTriggersElement.h>
 #include <utility>
 
 namespace Aws
@@ -111,6 +113,111 @@ namespace Model
 
 
     /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Asset contains SCTE-35 ad markers.
+
+     */
+    inline const Aws::Vector<__PeriodTriggersElement>& GetPeriodTriggers() const{ return m_periodTriggers; }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Asset contains SCTE-35 ad markers.
+
+     */
+    inline bool PeriodTriggersHasBeenSet() const { return m_periodTriggersHasBeenSet; }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Asset contains SCTE-35 ad markers.
+
+     */
+    inline void SetPeriodTriggers(const Aws::Vector<__PeriodTriggersElement>& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = value; }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Asset contains SCTE-35 ad markers.
+
+     */
+    inline void SetPeriodTriggers(Aws::Vector<__PeriodTriggersElement>&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = std::move(value); }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Asset contains SCTE-35 ad markers.
+
+     */
+    inline DashPackage& WithPeriodTriggers(const Aws::Vector<__PeriodTriggersElement>& value) { SetPeriodTriggers(value); return *this;}
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Asset contains SCTE-35 ad markers.
+
+     */
+    inline DashPackage& WithPeriodTriggers(Aws::Vector<__PeriodTriggersElement>&& value) { SetPeriodTriggers(std::move(value)); return *this;}
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Asset contains SCTE-35 ad markers.
+
+     */
+    inline DashPackage& AddPeriodTriggers(const __PeriodTriggersElement& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(value); return *this; }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Asset contains SCTE-35 ad markers.
+
+     */
+    inline DashPackage& AddPeriodTriggers(__PeriodTriggersElement&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * Duration (in seconds) of each segment. Actual segments will be
 rounded to the
      * nearest multiple of the source segment duration.
@@ -142,6 +249,67 @@ rounded to the
      */
     inline DashPackage& WithSegmentDurationSeconds(int value) { SetSegmentDurationSeconds(value); return *this;}
 
+
+    /**
+     * Determines the type of SegmentTemplate included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
+     */
+    inline const SegmentTemplateFormat& GetSegmentTemplateFormat() const{ return m_segmentTemplateFormat; }
+
+    /**
+     * Determines the type of SegmentTemplate included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
+     */
+    inline bool SegmentTemplateFormatHasBeenSet() const { return m_segmentTemplateFormatHasBeenSet; }
+
+    /**
+     * Determines the type of SegmentTemplate included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
+     */
+    inline void SetSegmentTemplateFormat(const SegmentTemplateFormat& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = value; }
+
+    /**
+     * Determines the type of SegmentTemplate included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
+     */
+    inline void SetSegmentTemplateFormat(SegmentTemplateFormat&& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = std::move(value); }
+
+    /**
+     * Determines the type of SegmentTemplate included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
+     */
+    inline DashPackage& WithSegmentTemplateFormat(const SegmentTemplateFormat& value) { SetSegmentTemplateFormat(value); return *this;}
+
+    /**
+     * Determines the type of SegmentTemplate included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs. When set to NUMBER_WITH_DURATION, only a duration is included
+     * in each SegmentTemplate, with $Number$ media URLs.
+     */
+    inline DashPackage& WithSegmentTemplateFormat(SegmentTemplateFormat&& value) { SetSegmentTemplateFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<DashManifest> m_dashManifests;
@@ -150,8 +318,14 @@ rounded to the
     DashEncryption m_encryption;
     bool m_encryptionHasBeenSet;
 
+    Aws::Vector<__PeriodTriggersElement> m_periodTriggers;
+    bool m_periodTriggersHasBeenSet;
+
     int m_segmentDurationSeconds;
     bool m_segmentDurationSecondsHasBeenSet;
+
+    SegmentTemplateFormat m_segmentTemplateFormat;
+    bool m_segmentTemplateFormatHasBeenSet;
   };
 
 } // namespace Model

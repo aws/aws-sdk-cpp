@@ -29,6 +29,8 @@ namespace Model
 {
 
 DashManifest::DashManifest() : 
+    m_manifestLayout(ManifestLayout::NOT_SET),
+    m_manifestLayoutHasBeenSet(false),
     m_manifestNameHasBeenSet(false),
     m_minBufferTimeSeconds(0),
     m_minBufferTimeSecondsHasBeenSet(false),
@@ -39,6 +41,8 @@ DashManifest::DashManifest() :
 }
 
 DashManifest::DashManifest(JsonView jsonValue) : 
+    m_manifestLayout(ManifestLayout::NOT_SET),
+    m_manifestLayoutHasBeenSet(false),
     m_manifestNameHasBeenSet(false),
     m_minBufferTimeSeconds(0),
     m_minBufferTimeSecondsHasBeenSet(false),
@@ -51,6 +55,13 @@ DashManifest::DashManifest(JsonView jsonValue) :
 
 DashManifest& DashManifest::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("manifestLayout"))
+  {
+    m_manifestLayout = ManifestLayoutMapper::GetManifestLayoutForName(jsonValue.GetString("manifestLayout"));
+
+    m_manifestLayoutHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("manifestName"))
   {
     m_manifestName = jsonValue.GetString("manifestName");
@@ -85,6 +96,11 @@ DashManifest& DashManifest::operator =(JsonView jsonValue)
 JsonValue DashManifest::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_manifestLayoutHasBeenSet)
+  {
+   payload.WithString("manifestLayout", ManifestLayoutMapper::GetNameForManifestLayout(m_manifestLayout));
+  }
 
   if(m_manifestNameHasBeenSet)
   {
