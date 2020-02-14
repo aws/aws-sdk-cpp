@@ -257,6 +257,25 @@ namespace Model
 
 
     /**
+     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
+     * break.</p>
+     */
+    inline int GetPersonalizationThresholdSeconds() const{ return m_personalizationThresholdSeconds; }
+
+    /**
+     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
+     * break.</p>
+     */
+    inline void SetPersonalizationThresholdSeconds(int value) { m_personalizationThresholdSeconds = value; }
+
+    /**
+     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
+     * break.</p>
+     */
+    inline PutPlaybackConfigurationResult& WithPersonalizationThresholdSeconds(int value) { SetPersonalizationThresholdSeconds(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) for the playback configuration. </p>
      */
     inline const Aws::String& GetPlaybackConfigurationArn() const{ return m_playbackConfigurationArn; }
@@ -622,6 +641,8 @@ namespace Model
     LivePreRollConfiguration m_livePreRollConfiguration;
 
     Aws::String m_name;
+
+    int m_personalizationThresholdSeconds;
 
     Aws::String m_playbackConfigurationArn;
 

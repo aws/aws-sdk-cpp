@@ -33,7 +33,8 @@ CreateVolumeResponse::CreateVolumeResponse() :
     m_state(VolumeState::NOT_SET),
     m_iops(0),
     m_volumeType(VolumeType::NOT_SET),
-    m_fastRestored(false)
+    m_fastRestored(false),
+    m_multiAttachEnabled(false)
 {
 }
 
@@ -43,7 +44,8 @@ CreateVolumeResponse::CreateVolumeResponse(const Aws::AmazonWebServiceResult<Xml
     m_state(VolumeState::NOT_SET),
     m_iops(0),
     m_volumeType(VolumeType::NOT_SET),
-    m_fastRestored(false)
+    m_fastRestored(false),
+    m_multiAttachEnabled(false)
 {
   *this = result;
 }
@@ -141,6 +143,11 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     if(!fastRestoredNode.IsNull())
     {
       m_fastRestored = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fastRestoredNode.GetText()).c_str()).c_str());
+    }
+    XmlNode multiAttachEnabledNode = resultNode.FirstChild("multiAttachEnabled");
+    if(!multiAttachEnabledNode.IsNull())
+    {
+      m_multiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAttachEnabledNode.GetText()).c_str()).c_str());
     }
   }
 

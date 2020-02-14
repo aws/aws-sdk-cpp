@@ -21,6 +21,7 @@
 #include <aws/ec2/model/VolumeStatusInfo.h>
 #include <aws/ec2/model/VolumeStatusAction.h>
 #include <aws/ec2/model/VolumeStatusEvent.h>
+#include <aws/ec2/model/VolumeStatusAttachmentStatus.h>
 #include <utility>
 
 namespace Aws
@@ -288,6 +289,47 @@ namespace Model
      */
     inline VolumeStatusItem& WithVolumeStatus(VolumeStatusInfo&& value) { SetVolumeStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the instances to which the volume is attached.</p>
+     */
+    inline const Aws::Vector<VolumeStatusAttachmentStatus>& GetAttachmentStatuses() const{ return m_attachmentStatuses; }
+
+    /**
+     * <p>Information about the instances to which the volume is attached.</p>
+     */
+    inline bool AttachmentStatusesHasBeenSet() const { return m_attachmentStatusesHasBeenSet; }
+
+    /**
+     * <p>Information about the instances to which the volume is attached.</p>
+     */
+    inline void SetAttachmentStatuses(const Aws::Vector<VolumeStatusAttachmentStatus>& value) { m_attachmentStatusesHasBeenSet = true; m_attachmentStatuses = value; }
+
+    /**
+     * <p>Information about the instances to which the volume is attached.</p>
+     */
+    inline void SetAttachmentStatuses(Aws::Vector<VolumeStatusAttachmentStatus>&& value) { m_attachmentStatusesHasBeenSet = true; m_attachmentStatuses = std::move(value); }
+
+    /**
+     * <p>Information about the instances to which the volume is attached.</p>
+     */
+    inline VolumeStatusItem& WithAttachmentStatuses(const Aws::Vector<VolumeStatusAttachmentStatus>& value) { SetAttachmentStatuses(value); return *this;}
+
+    /**
+     * <p>Information about the instances to which the volume is attached.</p>
+     */
+    inline VolumeStatusItem& WithAttachmentStatuses(Aws::Vector<VolumeStatusAttachmentStatus>&& value) { SetAttachmentStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the instances to which the volume is attached.</p>
+     */
+    inline VolumeStatusItem& AddAttachmentStatuses(const VolumeStatusAttachmentStatus& value) { m_attachmentStatusesHasBeenSet = true; m_attachmentStatuses.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the instances to which the volume is attached.</p>
+     */
+    inline VolumeStatusItem& AddAttachmentStatuses(VolumeStatusAttachmentStatus&& value) { m_attachmentStatusesHasBeenSet = true; m_attachmentStatuses.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<VolumeStatusAction> m_actions;
@@ -307,6 +349,9 @@ namespace Model
 
     VolumeStatusInfo m_volumeStatus;
     bool m_volumeStatusHasBeenSet;
+
+    Aws::Vector<VolumeStatusAttachmentStatus> m_attachmentStatuses;
+    bool m_attachmentStatusesHasBeenSet;
   };
 
 } // namespace Model

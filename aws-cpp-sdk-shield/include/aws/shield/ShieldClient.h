@@ -23,6 +23,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/shield/model/AssociateDRTLogBucketResult.h>
 #include <aws/shield/model/AssociateDRTRoleResult.h>
+#include <aws/shield/model/AssociateHealthCheckResult.h>
 #include <aws/shield/model/CreateProtectionResult.h>
 #include <aws/shield/model/CreateSubscriptionResult.h>
 #include <aws/shield/model/DeleteProtectionResult.h>
@@ -33,6 +34,7 @@
 #include <aws/shield/model/DescribeSubscriptionResult.h>
 #include <aws/shield/model/DisassociateDRTLogBucketResult.h>
 #include <aws/shield/model/DisassociateDRTRoleResult.h>
+#include <aws/shield/model/DisassociateHealthCheckResult.h>
 #include <aws/shield/model/GetSubscriptionStateResult.h>
 #include <aws/shield/model/ListAttacksResult.h>
 #include <aws/shield/model/ListProtectionsResult.h>
@@ -79,6 +81,7 @@ namespace Model
 {
         class AssociateDRTLogBucketRequest;
         class AssociateDRTRoleRequest;
+        class AssociateHealthCheckRequest;
         class CreateProtectionRequest;
         class CreateSubscriptionRequest;
         class DeleteProtectionRequest;
@@ -89,6 +92,7 @@ namespace Model
         class DescribeSubscriptionRequest;
         class DisassociateDRTLogBucketRequest;
         class DisassociateDRTRoleRequest;
+        class DisassociateHealthCheckRequest;
         class GetSubscriptionStateRequest;
         class ListAttacksRequest;
         class ListProtectionsRequest;
@@ -97,6 +101,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AssociateDRTLogBucketResult, Aws::Client::AWSError<ShieldErrors>> AssociateDRTLogBucketOutcome;
         typedef Aws::Utils::Outcome<AssociateDRTRoleResult, Aws::Client::AWSError<ShieldErrors>> AssociateDRTRoleOutcome;
+        typedef Aws::Utils::Outcome<AssociateHealthCheckResult, Aws::Client::AWSError<ShieldErrors>> AssociateHealthCheckOutcome;
         typedef Aws::Utils::Outcome<CreateProtectionResult, Aws::Client::AWSError<ShieldErrors>> CreateProtectionOutcome;
         typedef Aws::Utils::Outcome<CreateSubscriptionResult, Aws::Client::AWSError<ShieldErrors>> CreateSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DeleteProtectionResult, Aws::Client::AWSError<ShieldErrors>> DeleteProtectionOutcome;
@@ -107,6 +112,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeSubscriptionResult, Aws::Client::AWSError<ShieldErrors>> DescribeSubscriptionOutcome;
         typedef Aws::Utils::Outcome<DisassociateDRTLogBucketResult, Aws::Client::AWSError<ShieldErrors>> DisassociateDRTLogBucketOutcome;
         typedef Aws::Utils::Outcome<DisassociateDRTRoleResult, Aws::Client::AWSError<ShieldErrors>> DisassociateDRTRoleOutcome;
+        typedef Aws::Utils::Outcome<DisassociateHealthCheckResult, Aws::Client::AWSError<ShieldErrors>> DisassociateHealthCheckOutcome;
         typedef Aws::Utils::Outcome<GetSubscriptionStateResult, Aws::Client::AWSError<ShieldErrors>> GetSubscriptionStateOutcome;
         typedef Aws::Utils::Outcome<ListAttacksResult, Aws::Client::AWSError<ShieldErrors>> ListAttacksOutcome;
         typedef Aws::Utils::Outcome<ListProtectionsResult, Aws::Client::AWSError<ShieldErrors>> ListProtectionsOutcome;
@@ -115,6 +121,7 @@ namespace Model
 
         typedef std::future<AssociateDRTLogBucketOutcome> AssociateDRTLogBucketOutcomeCallable;
         typedef std::future<AssociateDRTRoleOutcome> AssociateDRTRoleOutcomeCallable;
+        typedef std::future<AssociateHealthCheckOutcome> AssociateHealthCheckOutcomeCallable;
         typedef std::future<CreateProtectionOutcome> CreateProtectionOutcomeCallable;
         typedef std::future<CreateSubscriptionOutcome> CreateSubscriptionOutcomeCallable;
         typedef std::future<DeleteProtectionOutcome> DeleteProtectionOutcomeCallable;
@@ -125,6 +132,7 @@ namespace Model
         typedef std::future<DescribeSubscriptionOutcome> DescribeSubscriptionOutcomeCallable;
         typedef std::future<DisassociateDRTLogBucketOutcome> DisassociateDRTLogBucketOutcomeCallable;
         typedef std::future<DisassociateDRTRoleOutcome> DisassociateDRTRoleOutcomeCallable;
+        typedef std::future<DisassociateHealthCheckOutcome> DisassociateHealthCheckOutcomeCallable;
         typedef std::future<GetSubscriptionStateOutcome> GetSubscriptionStateOutcomeCallable;
         typedef std::future<ListAttacksOutcome> ListAttacksOutcomeCallable;
         typedef std::future<ListProtectionsOutcome> ListProtectionsOutcomeCallable;
@@ -136,6 +144,7 @@ namespace Model
 
     typedef std::function<void(const ShieldClient*, const Model::AssociateDRTLogBucketRequest&, const Model::AssociateDRTLogBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDRTLogBucketResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::AssociateDRTRoleRequest&, const Model::AssociateDRTRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDRTRoleResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::AssociateHealthCheckRequest&, const Model::AssociateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateHealthCheckResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::CreateProtectionRequest&, const Model::CreateProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProtectionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::CreateSubscriptionRequest&, const Model::CreateSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DeleteProtectionRequest&, const Model::DeleteProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProtectionResponseReceivedHandler;
@@ -146,6 +155,7 @@ namespace Model
     typedef std::function<void(const ShieldClient*, const Model::DescribeSubscriptionRequest&, const Model::DescribeSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTLogBucketRequest&, const Model::DisassociateDRTLogBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTLogBucketResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::DisassociateDRTRoleRequest&, const Model::DisassociateDRTRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDRTRoleResponseReceivedHandler;
+    typedef std::function<void(const ShieldClient*, const Model::DisassociateHealthCheckRequest&, const Model::DisassociateHealthCheckOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateHealthCheckResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::GetSubscriptionStateRequest&, const Model::GetSubscriptionStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionStateResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListAttacksRequest&, const Model::ListAttacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttacksResponseReceivedHandler;
     typedef std::function<void(const ShieldClient*, const Model::ListProtectionsRequest&, const Model::ListProtectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProtectionsResponseReceivedHandler;
@@ -350,6 +360,55 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateDRTRoleAsync(const Model::AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds health-based detection to the Shield Advanced protection for a resource.
+         * Shield Advanced health-based detection uses the health of your AWS resource to
+         * improve responsiveness and accuracy in attack detection and mitigation. </p>
+         * <p>You define the health check in Route 53 and then associate it with your
+         * Shield Advanced protection. For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
+         * Advanced Health-Based Detection</a> in the <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS
+         * Shield Developer Guide</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateHealthCheckOutcome AssociateHealthCheck(const Model::AssociateHealthCheckRequest& request) const;
+
+        /**
+         * <p>Adds health-based detection to the Shield Advanced protection for a resource.
+         * Shield Advanced health-based detection uses the health of your AWS resource to
+         * improve responsiveness and accuracy in attack detection and mitigation. </p>
+         * <p>You define the health check in Route 53 and then associate it with your
+         * Shield Advanced protection. For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
+         * Advanced Health-Based Detection</a> in the <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS
+         * Shield Developer Guide</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateHealthCheckOutcomeCallable AssociateHealthCheckCallable(const Model::AssociateHealthCheckRequest& request) const;
+
+        /**
+         * <p>Adds health-based detection to the Shield Advanced protection for a resource.
+         * Shield Advanced health-based detection uses the health of your AWS resource to
+         * improve responsiveness and accuracy in attack detection and mitigation. </p>
+         * <p>You define the health check in Route 53 and then associate it with your
+         * Shield Advanced protection. For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
+         * Advanced Health-Based Detection</a> in the <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS
+         * Shield Developer Guide</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateHealthCheck">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateHealthCheckAsync(const Model::AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
@@ -743,6 +802,58 @@ namespace Model
         virtual void DisassociateDRTRoleAsync(const Model::DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes health-based detection from the Shield Advanced protection for a
+         * resource. Shield Advanced health-based detection uses the health of your AWS
+         * resource to improve responsiveness and accuracy in attack detection and
+         * mitigation. </p> <p>You define the health check in Route 53 and then associate
+         * or disassociate it with your Shield Advanced protection. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
+         * Advanced Health-Based Detection</a> in the <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS
+         * Shield Developer Guide</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateHealthCheckOutcome DisassociateHealthCheck(const Model::DisassociateHealthCheckRequest& request) const;
+
+        /**
+         * <p>Removes health-based detection from the Shield Advanced protection for a
+         * resource. Shield Advanced health-based detection uses the health of your AWS
+         * resource to improve responsiveness and accuracy in attack detection and
+         * mitigation. </p> <p>You define the health check in Route 53 and then associate
+         * or disassociate it with your Shield Advanced protection. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
+         * Advanced Health-Based Detection</a> in the <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS
+         * Shield Developer Guide</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateHealthCheckOutcomeCallable DisassociateHealthCheckCallable(const Model::DisassociateHealthCheckRequest& request) const;
+
+        /**
+         * <p>Removes health-based detection from the Shield Advanced protection for a
+         * resource. Shield Advanced health-based detection uses the health of your AWS
+         * resource to improve responsiveness and accuracy in attack detection and
+         * mitigation. </p> <p>You define the health check in Route 53 and then associate
+         * or disassociate it with your Shield Advanced protection. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield
+         * Advanced Health-Based Detection</a> in the <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS
+         * Shield Developer Guide</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisassociateHealthCheck">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateHealthCheckAsync(const Model::DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or
          * <code>Inactive</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/GetSubscriptionState">AWS
@@ -891,6 +1002,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateDRTLogBucketAsyncHelper(const Model::AssociateDRTLogBucketRequest& request, const AssociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateDRTRoleAsyncHelper(const Model::AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateHealthCheckAsyncHelper(const Model::AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProtectionAsyncHelper(const Model::CreateProtectionRequest& request, const CreateProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSubscriptionAsyncHelper(const Model::CreateSubscriptionRequest& request, const CreateSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProtectionAsyncHelper(const Model::DeleteProtectionRequest& request, const DeleteProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -901,6 +1013,7 @@ namespace Model
         void DescribeSubscriptionAsyncHelper(const Model::DescribeSubscriptionRequest& request, const DescribeSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDRTLogBucketAsyncHelper(const Model::DisassociateDRTLogBucketRequest& request, const DisassociateDRTLogBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDRTRoleAsyncHelper(const Model::DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateHealthCheckAsyncHelper(const Model::DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSubscriptionStateAsyncHelper(const Model::GetSubscriptionStateRequest& request, const GetSubscriptionStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttacksAsyncHelper(const Model::ListAttacksRequest& request, const ListAttacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProtectionsAsyncHelper(const Model::ListProtectionsRequest& request, const ListProtectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

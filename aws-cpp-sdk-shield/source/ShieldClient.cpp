@@ -32,6 +32,7 @@
 #include <aws/shield/ShieldErrorMarshaller.h>
 #include <aws/shield/model/AssociateDRTLogBucketRequest.h>
 #include <aws/shield/model/AssociateDRTRoleRequest.h>
+#include <aws/shield/model/AssociateHealthCheckRequest.h>
 #include <aws/shield/model/CreateProtectionRequest.h>
 #include <aws/shield/model/CreateSubscriptionRequest.h>
 #include <aws/shield/model/DeleteProtectionRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/shield/model/DescribeSubscriptionRequest.h>
 #include <aws/shield/model/DisassociateDRTLogBucketRequest.h>
 #include <aws/shield/model/DisassociateDRTRoleRequest.h>
+#include <aws/shield/model/DisassociateHealthCheckRequest.h>
 #include <aws/shield/model/GetSubscriptionStateRequest.h>
 #include <aws/shield/model/ListAttacksRequest.h>
 #include <aws/shield/model/ListProtectionsRequest.h>
@@ -188,6 +190,41 @@ void ShieldClient::AssociateDRTRoleAsync(const AssociateDRTRoleRequest& request,
 void ShieldClient::AssociateDRTRoleAsyncHelper(const AssociateDRTRoleRequest& request, const AssociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateDRTRole(request), context);
+}
+
+AssociateHealthCheckOutcome ShieldClient::AssociateHealthCheck(const AssociateHealthCheckRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateHealthCheckOutcome(AssociateHealthCheckResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateHealthCheckOutcome(outcome.GetError());
+  }
+}
+
+AssociateHealthCheckOutcomeCallable ShieldClient::AssociateHealthCheckCallable(const AssociateHealthCheckRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateHealthCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateHealthCheck(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::AssociateHealthCheckAsync(const AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateHealthCheckAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::AssociateHealthCheckAsyncHelper(const AssociateHealthCheckRequest& request, const AssociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateHealthCheck(request), context);
 }
 
 CreateProtectionOutcome ShieldClient::CreateProtection(const CreateProtectionRequest& request) const
@@ -538,6 +575,41 @@ void ShieldClient::DisassociateDRTRoleAsync(const DisassociateDRTRoleRequest& re
 void ShieldClient::DisassociateDRTRoleAsyncHelper(const DisassociateDRTRoleRequest& request, const DisassociateDRTRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateDRTRole(request), context);
+}
+
+DisassociateHealthCheckOutcome ShieldClient::DisassociateHealthCheck(const DisassociateHealthCheckRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateHealthCheckOutcome(DisassociateHealthCheckResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateHealthCheckOutcome(outcome.GetError());
+  }
+}
+
+DisassociateHealthCheckOutcomeCallable ShieldClient::DisassociateHealthCheckCallable(const DisassociateHealthCheckRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateHealthCheckOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateHealthCheck(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ShieldClient::DisassociateHealthCheckAsync(const DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateHealthCheckAsyncHelper( request, handler, context ); } );
+}
+
+void ShieldClient::DisassociateHealthCheckAsyncHelper(const DisassociateHealthCheckRequest& request, const DisassociateHealthCheckResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateHealthCheck(request), context);
 }
 
 GetSubscriptionStateOutcome ShieldClient::GetSubscriptionState(const GetSubscriptionStateRequest& request) const

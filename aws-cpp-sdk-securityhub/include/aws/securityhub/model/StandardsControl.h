@@ -19,6 +19,7 @@
 #include <aws/securityhub/model/ControlStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/securityhub/model/SeverityRating.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -346,49 +347,49 @@ namespace Model
 
     /**
      * <p>A link to remediation information for the control in the Security Hub user
-     * documentation</p>
+     * documentation.</p>
      */
     inline const Aws::String& GetRemediationUrl() const{ return m_remediationUrl; }
 
     /**
      * <p>A link to remediation information for the control in the Security Hub user
-     * documentation</p>
+     * documentation.</p>
      */
     inline bool RemediationUrlHasBeenSet() const { return m_remediationUrlHasBeenSet; }
 
     /**
      * <p>A link to remediation information for the control in the Security Hub user
-     * documentation</p>
+     * documentation.</p>
      */
     inline void SetRemediationUrl(const Aws::String& value) { m_remediationUrlHasBeenSet = true; m_remediationUrl = value; }
 
     /**
      * <p>A link to remediation information for the control in the Security Hub user
-     * documentation</p>
+     * documentation.</p>
      */
     inline void SetRemediationUrl(Aws::String&& value) { m_remediationUrlHasBeenSet = true; m_remediationUrl = std::move(value); }
 
     /**
      * <p>A link to remediation information for the control in the Security Hub user
-     * documentation</p>
+     * documentation.</p>
      */
     inline void SetRemediationUrl(const char* value) { m_remediationUrlHasBeenSet = true; m_remediationUrl.assign(value); }
 
     /**
      * <p>A link to remediation information for the control in the Security Hub user
-     * documentation</p>
+     * documentation.</p>
      */
     inline StandardsControl& WithRemediationUrl(const Aws::String& value) { SetRemediationUrl(value); return *this;}
 
     /**
      * <p>A link to remediation information for the control in the Security Hub user
-     * documentation</p>
+     * documentation.</p>
      */
     inline StandardsControl& WithRemediationUrl(Aws::String&& value) { SetRemediationUrl(std::move(value)); return *this;}
 
     /**
      * <p>A link to remediation information for the control in the Security Hub user
-     * documentation</p>
+     * documentation.</p>
      */
     inline StandardsControl& WithRemediationUrl(const char* value) { SetRemediationUrl(value); return *this;}
 
@@ -435,6 +436,52 @@ namespace Model
      */
     inline StandardsControl& WithSeverityRating(SeverityRating&& value) { SetSeverityRating(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRelatedRequirements() const{ return m_relatedRequirements; }
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline bool RelatedRequirementsHasBeenSet() const { return m_relatedRequirementsHasBeenSet; }
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline void SetRelatedRequirements(const Aws::Vector<Aws::String>& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = value; }
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline void SetRelatedRequirements(Aws::Vector<Aws::String>&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements = std::move(value); }
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline StandardsControl& WithRelatedRequirements(const Aws::Vector<Aws::String>& value) { SetRelatedRequirements(value); return *this;}
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline StandardsControl& WithRelatedRequirements(Aws::Vector<Aws::String>&& value) { SetRelatedRequirements(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline StandardsControl& AddRelatedRequirements(const Aws::String& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(value); return *this; }
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline StandardsControl& AddRelatedRequirements(Aws::String&& value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of requirements that are related to this control.</p>
+     */
+    inline StandardsControl& AddRelatedRequirements(const char* value) { m_relatedRequirementsHasBeenSet = true; m_relatedRequirements.push_back(value); return *this; }
+
   private:
 
     Aws::String m_standardsControlArn;
@@ -463,6 +510,9 @@ namespace Model
 
     SeverityRating m_severityRating;
     bool m_severityRatingHasBeenSet;
+
+    Aws::Vector<Aws::String> m_relatedRequirements;
+    bool m_relatedRequirementsHasBeenSet;
   };
 
 } // namespace Model

@@ -36,7 +36,8 @@ VolumeStatusItem::VolumeStatusItem() :
     m_outpostArnHasBeenSet(false),
     m_eventsHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false)
+    m_volumeStatusHasBeenSet(false),
+    m_attachmentStatusesHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ VolumeStatusItem::VolumeStatusItem(const XmlNode& xmlNode) :
     m_outpostArnHasBeenSet(false),
     m_eventsHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
-    m_volumeStatusHasBeenSet(false)
+    m_volumeStatusHasBeenSet(false),
+    m_attachmentStatusesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,18 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
       m_volumeStatus = volumeStatusNode;
       m_volumeStatusHasBeenSet = true;
     }
+    XmlNode attachmentStatusesNode = resultNode.FirstChild("attachmentStatuses");
+    if(!attachmentStatusesNode.IsNull())
+    {
+      XmlNode attachmentStatusesMember = attachmentStatusesNode.FirstChild("item");
+      while(!attachmentStatusesMember.IsNull())
+      {
+        m_attachmentStatuses.push_back(attachmentStatusesMember);
+        attachmentStatusesMember = attachmentStatusesMember.NextNode("item");
+      }
+
+      m_attachmentStatusesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -156,6 +170,17 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_volumeStatus.OutputToStream(oStream, volumeStatusLocationAndMemberSs.str().c_str());
   }
 
+  if(m_attachmentStatusesHasBeenSet)
+  {
+      unsigned attachmentStatusesIdx = 1;
+      for(auto& item : m_attachmentStatuses)
+      {
+        Aws::StringStream attachmentStatusesSs;
+        attachmentStatusesSs << location << index << locationValue << ".AttachmentStatuses." << attachmentStatusesIdx++;
+        item.OutputToStream(oStream, attachmentStatusesSs.str().c_str());
+      }
+  }
+
 }
 
 void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -197,6 +222,16 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String volumeStatusLocationAndMember(location);
       volumeStatusLocationAndMember += ".VolumeStatus";
       m_volumeStatus.OutputToStream(oStream, volumeStatusLocationAndMember.c_str());
+  }
+  if(m_attachmentStatusesHasBeenSet)
+  {
+      unsigned attachmentStatusesIdx = 1;
+      for(auto& item : m_attachmentStatuses)
+      {
+        Aws::StringStream attachmentStatusesSs;
+        attachmentStatusesSs << location <<  ".AttachmentStatuses." << attachmentStatusesIdx++;
+        item.OutputToStream(oStream, attachmentStatusesSs.str().c_str());
+      }
   }
 }
 

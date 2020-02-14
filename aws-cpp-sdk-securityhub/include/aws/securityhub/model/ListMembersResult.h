@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>The token that is required for pagination.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token that is required for pagination.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The token that is required for pagination.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The token that is required for pagination.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The token that is required for pagination.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline ListMembersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token that is required for pagination.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline ListMembersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token that is required for pagination.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline ListMembersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

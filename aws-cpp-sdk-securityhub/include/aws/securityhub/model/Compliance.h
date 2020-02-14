@@ -37,9 +37,9 @@ namespace Model
 
   /**
    * <p>Exclusive to findings that are generated as the result of a check run against
-   * a specific rule in a supported standard (for example, CIS AWS Foundations).
-   * Contains compliance-related finding details.</p> <p>Values include the
-   * following:</p> <ul> <li> <p>Allowed values are the following:</p> <ul> <li> <p>
+   * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
+   * compliance-related finding details.</p> <p>Values include the following:</p>
+   * <ul> <li> <p>Allowed values are the following:</p> <ul> <li> <p>
    * <code>PASSED</code> - Compliance check passed for all evaluated resources.</p>
    * </li> <li> <p> <code>WARNING</code> - Some information is missing or this check
    * is not supported given your configuration.</p> </li> <li> <p>

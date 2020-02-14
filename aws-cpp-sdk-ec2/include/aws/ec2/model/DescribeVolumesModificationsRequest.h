@@ -137,74 +137,90 @@ namespace Model
 
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code>,
-     * <code>modification-state</code>, <code>target-size</code>,
-     * <code>target-iops</code>, <code>target-volume-type</code>,
-     * <code>original-size</code>, <code>original-iops</code>,
-     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     * <p>The filters. Supported filters: <code>volume-id</code> |
+     * <code>modification-state</code> | <code>target-size</code> |
+     * <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> |
+     * <code>original-volume-type</code> | <code>start-time</code> |
+     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code>,
-     * <code>modification-state</code>, <code>target-size</code>,
-     * <code>target-iops</code>, <code>target-volume-type</code>,
-     * <code>original-size</code>, <code>original-iops</code>,
-     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     * <p>The filters. Supported filters: <code>volume-id</code> |
+     * <code>modification-state</code> | <code>target-size</code> |
+     * <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> |
+     * <code>original-volume-type</code> | <code>start-time</code> |
+     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * </p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code>,
-     * <code>modification-state</code>, <code>target-size</code>,
-     * <code>target-iops</code>, <code>target-volume-type</code>,
-     * <code>original-size</code>, <code>original-iops</code>,
-     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     * <p>The filters. Supported filters: <code>volume-id</code> |
+     * <code>modification-state</code> | <code>target-size</code> |
+     * <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> |
+     * <code>original-volume-type</code> | <code>start-time</code> |
+     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * </p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code>,
-     * <code>modification-state</code>, <code>target-size</code>,
-     * <code>target-iops</code>, <code>target-volume-type</code>,
-     * <code>original-size</code>, <code>original-iops</code>,
-     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     * <p>The filters. Supported filters: <code>volume-id</code> |
+     * <code>modification-state</code> | <code>target-size</code> |
+     * <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> |
+     * <code>original-volume-type</code> | <code>start-time</code> |
+     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * </p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code>,
-     * <code>modification-state</code>, <code>target-size</code>,
-     * <code>target-iops</code>, <code>target-volume-type</code>,
-     * <code>original-size</code>, <code>original-iops</code>,
-     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     * <p>The filters. Supported filters: <code>volume-id</code> |
+     * <code>modification-state</code> | <code>target-size</code> |
+     * <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> |
+     * <code>original-volume-type</code> | <code>start-time</code> |
+     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * </p>
      */
     inline DescribeVolumesModificationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code>,
-     * <code>modification-state</code>, <code>target-size</code>,
-     * <code>target-iops</code>, <code>target-volume-type</code>,
-     * <code>original-size</code>, <code>original-iops</code>,
-     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     * <p>The filters. Supported filters: <code>volume-id</code> |
+     * <code>modification-state</code> | <code>target-size</code> |
+     * <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> |
+     * <code>original-volume-type</code> | <code>start-time</code> |
+     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * </p>
      */
     inline DescribeVolumesModificationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code>,
-     * <code>modification-state</code>, <code>target-size</code>,
-     * <code>target-iops</code>, <code>target-volume-type</code>,
-     * <code>original-size</code>, <code>original-iops</code>,
-     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     * <p>The filters. Supported filters: <code>volume-id</code> |
+     * <code>modification-state</code> | <code>target-size</code> |
+     * <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> |
+     * <code>original-volume-type</code> | <code>start-time</code> |
+     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * </p>
      */
     inline DescribeVolumesModificationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>The filters. Supported filters: <code>volume-id</code>,
-     * <code>modification-state</code>, <code>target-size</code>,
-     * <code>target-iops</code>, <code>target-volume-type</code>,
-     * <code>original-size</code>, <code>original-iops</code>,
-     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     * <p>The filters. Supported filters: <code>volume-id</code> |
+     * <code>modification-state</code> | <code>target-size</code> |
+     * <code>target-iops</code> | <code>target-volume-type</code> |
+     * <code>original-size</code> | <code>original-iops</code> |
+     * <code>original-volume-type</code> | <code>start-time</code> |
+     * <code>originalMultiAttachEnabled</code> | <code>targetMultiAttachEnabled</code>.
+     * </p>
      */
     inline DescribeVolumesModificationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

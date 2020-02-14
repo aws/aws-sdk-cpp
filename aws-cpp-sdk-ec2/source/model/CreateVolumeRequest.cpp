@@ -35,7 +35,9 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_volumeTypeHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_multiAttachEnabled(false),
+    m_multiAttachEnabledHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,11 @@ Aws::String CreateVolumeRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_multiAttachEnabledHasBeenSet)
+  {
+    ss << "MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
   }
 
   ss << "Version=2016-11-15";

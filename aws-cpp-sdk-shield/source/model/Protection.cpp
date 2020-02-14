@@ -31,14 +31,16 @@ namespace Model
 Protection::Protection() : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_healthCheckIdsHasBeenSet(false)
 {
 }
 
 Protection::Protection(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_healthCheckIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,16 @@ Protection& Protection::operator =(JsonView jsonValue)
     m_resourceArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HealthCheckIds"))
+  {
+    Array<JsonView> healthCheckIdsJsonList = jsonValue.GetArray("HealthCheckIds");
+    for(unsigned healthCheckIdsIndex = 0; healthCheckIdsIndex < healthCheckIdsJsonList.GetLength(); ++healthCheckIdsIndex)
+    {
+      m_healthCheckIds.push_back(healthCheckIdsJsonList[healthCheckIdsIndex].AsString());
+    }
+    m_healthCheckIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +100,17 @@ JsonValue Protection::Jsonize() const
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  if(m_healthCheckIdsHasBeenSet)
+  {
+   Array<JsonValue> healthCheckIdsJsonList(m_healthCheckIds.size());
+   for(unsigned healthCheckIdsIndex = 0; healthCheckIdsIndex < healthCheckIdsJsonList.GetLength(); ++healthCheckIdsIndex)
+   {
+     healthCheckIdsJsonList[healthCheckIdsIndex].AsString(m_healthCheckIds[healthCheckIdsIndex]);
+   }
+   payload.WithArray("HealthCheckIds", std::move(healthCheckIdsJsonList));
 
   }
 

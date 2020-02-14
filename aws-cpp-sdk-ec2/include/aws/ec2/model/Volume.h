@@ -610,6 +610,27 @@ namespace Model
     inline Volume& WithFastRestored(bool value) { SetFastRestored(value); return *this;}
 
 
+    /**
+     * <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
+     */
+    inline bool GetMultiAttachEnabled() const{ return m_multiAttachEnabled; }
+
+    /**
+     * <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
+     */
+    inline bool MultiAttachEnabledHasBeenSet() const { return m_multiAttachEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
+     */
+    inline void SetMultiAttachEnabled(bool value) { m_multiAttachEnabledHasBeenSet = true; m_multiAttachEnabled = value; }
+
+    /**
+     * <p>Indicates whether Amazon EBS Multi-Attach is enabled.</p>
+     */
+    inline Volume& WithMultiAttachEnabled(bool value) { SetMultiAttachEnabled(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -671,6 +692,9 @@ namespace Model
 
     bool m_fastRestored;
     bool m_fastRestoredHasBeenSet;
+
+    bool m_multiAttachEnabled;
+    bool m_multiAttachEnabledHasBeenSet;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;

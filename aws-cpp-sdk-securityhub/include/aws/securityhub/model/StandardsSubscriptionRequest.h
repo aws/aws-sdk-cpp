@@ -49,74 +49,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the standard that you want to enable.</p> <important> <p>In this
-     * release, Security Hub only supports the CIS AWS Foundations standard. </p>
-     * <p>Its ARN is
-     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
-     * </important>
+     * <p>The ARN of the standard that you want to enable. To view the list of
+     * available standards and their ARNs, use the <code> <a>DescribeStandards</a>
+     * </code> operation.</p>
      */
     inline const Aws::String& GetStandardsArn() const{ return m_standardsArn; }
 
     /**
-     * <p>The ARN of the standard that you want to enable.</p> <important> <p>In this
-     * release, Security Hub only supports the CIS AWS Foundations standard. </p>
-     * <p>Its ARN is
-     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
-     * </important>
+     * <p>The ARN of the standard that you want to enable. To view the list of
+     * available standards and their ARNs, use the <code> <a>DescribeStandards</a>
+     * </code> operation.</p>
      */
     inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the standard that you want to enable.</p> <important> <p>In this
-     * release, Security Hub only supports the CIS AWS Foundations standard. </p>
-     * <p>Its ARN is
-     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
-     * </important>
+     * <p>The ARN of the standard that you want to enable. To view the list of
+     * available standards and their ARNs, use the <code> <a>DescribeStandards</a>
+     * </code> operation.</p>
      */
     inline void SetStandardsArn(const Aws::String& value) { m_standardsArnHasBeenSet = true; m_standardsArn = value; }
 
     /**
-     * <p>The ARN of the standard that you want to enable.</p> <important> <p>In this
-     * release, Security Hub only supports the CIS AWS Foundations standard. </p>
-     * <p>Its ARN is
-     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
-     * </important>
+     * <p>The ARN of the standard that you want to enable. To view the list of
+     * available standards and their ARNs, use the <code> <a>DescribeStandards</a>
+     * </code> operation.</p>
      */
     inline void SetStandardsArn(Aws::String&& value) { m_standardsArnHasBeenSet = true; m_standardsArn = std::move(value); }
 
     /**
-     * <p>The ARN of the standard that you want to enable.</p> <important> <p>In this
-     * release, Security Hub only supports the CIS AWS Foundations standard. </p>
-     * <p>Its ARN is
-     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
-     * </important>
+     * <p>The ARN of the standard that you want to enable. To view the list of
+     * available standards and their ARNs, use the <code> <a>DescribeStandards</a>
+     * </code> operation.</p>
      */
     inline void SetStandardsArn(const char* value) { m_standardsArnHasBeenSet = true; m_standardsArn.assign(value); }
 
     /**
-     * <p>The ARN of the standard that you want to enable.</p> <important> <p>In this
-     * release, Security Hub only supports the CIS AWS Foundations standard. </p>
-     * <p>Its ARN is
-     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
-     * </important>
+     * <p>The ARN of the standard that you want to enable. To view the list of
+     * available standards and their ARNs, use the <code> <a>DescribeStandards</a>
+     * </code> operation.</p>
      */
     inline StandardsSubscriptionRequest& WithStandardsArn(const Aws::String& value) { SetStandardsArn(value); return *this;}
 
     /**
-     * <p>The ARN of the standard that you want to enable.</p> <important> <p>In this
-     * release, Security Hub only supports the CIS AWS Foundations standard. </p>
-     * <p>Its ARN is
-     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
-     * </important>
+     * <p>The ARN of the standard that you want to enable. To view the list of
+     * available standards and their ARNs, use the <code> <a>DescribeStandards</a>
+     * </code> operation.</p>
      */
     inline StandardsSubscriptionRequest& WithStandardsArn(Aws::String&& value) { SetStandardsArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the standard that you want to enable.</p> <important> <p>In this
-     * release, Security Hub only supports the CIS AWS Foundations standard. </p>
-     * <p>Its ARN is
-     * <code>arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0</code>.</p>
-     * </important>
+     * <p>The ARN of the standard that you want to enable. To view the list of
+     * available standards and their ARNs, use the <code> <a>DescribeStandards</a>
+     * </code> operation.</p>
      */
     inline StandardsSubscriptionRequest& WithStandardsArn(const char* value) { SetStandardsArn(value); return *this;}
 

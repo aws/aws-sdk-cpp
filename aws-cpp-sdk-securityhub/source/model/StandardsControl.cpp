@@ -39,7 +39,8 @@ StandardsControl::StandardsControl() :
     m_descriptionHasBeenSet(false),
     m_remediationUrlHasBeenSet(false),
     m_severityRating(SeverityRating::NOT_SET),
-    m_severityRatingHasBeenSet(false)
+    m_severityRatingHasBeenSet(false),
+    m_relatedRequirementsHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ StandardsControl::StandardsControl(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_remediationUrlHasBeenSet(false),
     m_severityRating(SeverityRating::NOT_SET),
-    m_severityRatingHasBeenSet(false)
+    m_severityRatingHasBeenSet(false),
+    m_relatedRequirementsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,16 @@ StandardsControl& StandardsControl::operator =(JsonView jsonValue)
     m_severityRatingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RelatedRequirements"))
+  {
+    Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
+    for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
+    {
+      m_relatedRequirements.push_back(relatedRequirementsJsonList[relatedRequirementsIndex].AsString());
+    }
+    m_relatedRequirementsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +192,17 @@ JsonValue StandardsControl::Jsonize() const
   if(m_severityRatingHasBeenSet)
   {
    payload.WithString("SeverityRating", SeverityRatingMapper::GetNameForSeverityRating(m_severityRating));
+  }
+
+  if(m_relatedRequirementsHasBeenSet)
+  {
+   Array<JsonValue> relatedRequirementsJsonList(m_relatedRequirements.size());
+   for(unsigned relatedRequirementsIndex = 0; relatedRequirementsIndex < relatedRequirementsJsonList.GetLength(); ++relatedRequirementsIndex)
+   {
+     relatedRequirementsJsonList[relatedRequirementsIndex].AsString(m_relatedRequirements[relatedRequirementsIndex]);
+   }
+   payload.WithArray("RelatedRequirements", std::move(relatedRequirementsJsonList));
+
   }
 
   return payload;

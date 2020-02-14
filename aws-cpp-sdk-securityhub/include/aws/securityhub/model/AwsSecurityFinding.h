@@ -1227,43 +1227,43 @@ namespace Model
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard (for example, CIS AWS
-     * Foundations). Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported standard, such as CIS AWS
+     * Foundations. Contains compliance-related finding details.</p>
      */
     inline const Compliance& GetCompliance() const{ return m_compliance; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard (for example, CIS AWS
-     * Foundations). Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported standard, such as CIS AWS
+     * Foundations. Contains compliance-related finding details.</p>
      */
     inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard (for example, CIS AWS
-     * Foundations). Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported standard, such as CIS AWS
+     * Foundations. Contains compliance-related finding details.</p>
      */
     inline void SetCompliance(const Compliance& value) { m_complianceHasBeenSet = true; m_compliance = value; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard (for example, CIS AWS
-     * Foundations). Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported standard, such as CIS AWS
+     * Foundations. Contains compliance-related finding details.</p>
      */
     inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard (for example, CIS AWS
-     * Foundations). Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported standard, such as CIS AWS
+     * Foundations. Contains compliance-related finding details.</p>
      */
     inline AwsSecurityFinding& WithCompliance(const Compliance& value) { SetCompliance(value); return *this;}
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard (for example, CIS AWS
-     * Foundations). Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported standard, such as CIS AWS
+     * Foundations. Contains compliance-related finding details.</p>
      */
     inline AwsSecurityFinding& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 

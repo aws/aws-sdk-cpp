@@ -45,6 +45,7 @@
 #include <aws/securityhub/model/DescribeActionTargetsRequest.h>
 #include <aws/securityhub/model/DescribeHubRequest.h>
 #include <aws/securityhub/model/DescribeProductsRequest.h>
+#include <aws/securityhub/model/DescribeStandardsRequest.h>
 #include <aws/securityhub/model/DescribeStandardsControlsRequest.h>
 #include <aws/securityhub/model/DisableImportFindingsForProductRequest.h>
 #include <aws/securityhub/model/DisableSecurityHubRequest.h>
@@ -678,6 +679,41 @@ void SecurityHubClient::DescribeProductsAsync(const DescribeProductsRequest& req
 void SecurityHubClient::DescribeProductsAsyncHelper(const DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeProducts(request), context);
+}
+
+DescribeStandardsOutcome SecurityHubClient::DescribeStandards(const DescribeStandardsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/standards";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeStandardsOutcome(DescribeStandardsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeStandardsOutcome(outcome.GetError());
+  }
+}
+
+DescribeStandardsOutcomeCallable SecurityHubClient::DescribeStandardsCallable(const DescribeStandardsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStandardsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStandards(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::DescribeStandardsAsync(const DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStandardsAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::DescribeStandardsAsyncHelper(const DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStandards(request), context);
 }
 
 DescribeStandardsControlsOutcome SecurityHubClient::DescribeStandardsControls(const DescribeStandardsControlsRequest& request) const

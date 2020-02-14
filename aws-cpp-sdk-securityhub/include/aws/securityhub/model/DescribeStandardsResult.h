@@ -17,7 +17,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/securityhub/model/Invitation.h>
+#include <aws/securityhub/model/Standard.h>
 #include <utility>
 
 namespace Aws
@@ -36,48 +36,48 @@ namespace SecurityHub
 {
 namespace Model
 {
-  class AWS_SECURITYHUB_API ListInvitationsResult
+  class AWS_SECURITYHUB_API DescribeStandardsResult
   {
   public:
-    ListInvitationsResult();
-    ListInvitationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListInvitationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStandardsResult();
+    DescribeStandardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeStandardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>The details of the invitations returned by the operation.</p>
+     * <p>A list of available standards.</p>
      */
-    inline const Aws::Vector<Invitation>& GetInvitations() const{ return m_invitations; }
+    inline const Aws::Vector<Standard>& GetStandards() const{ return m_standards; }
 
     /**
-     * <p>The details of the invitations returned by the operation.</p>
+     * <p>A list of available standards.</p>
      */
-    inline void SetInvitations(const Aws::Vector<Invitation>& value) { m_invitations = value; }
+    inline void SetStandards(const Aws::Vector<Standard>& value) { m_standards = value; }
 
     /**
-     * <p>The details of the invitations returned by the operation.</p>
+     * <p>A list of available standards.</p>
      */
-    inline void SetInvitations(Aws::Vector<Invitation>&& value) { m_invitations = std::move(value); }
+    inline void SetStandards(Aws::Vector<Standard>&& value) { m_standards = std::move(value); }
 
     /**
-     * <p>The details of the invitations returned by the operation.</p>
+     * <p>A list of available standards.</p>
      */
-    inline ListInvitationsResult& WithInvitations(const Aws::Vector<Invitation>& value) { SetInvitations(value); return *this;}
+    inline DescribeStandardsResult& WithStandards(const Aws::Vector<Standard>& value) { SetStandards(value); return *this;}
 
     /**
-     * <p>The details of the invitations returned by the operation.</p>
+     * <p>A list of available standards.</p>
      */
-    inline ListInvitationsResult& WithInvitations(Aws::Vector<Invitation>&& value) { SetInvitations(std::move(value)); return *this;}
+    inline DescribeStandardsResult& WithStandards(Aws::Vector<Standard>&& value) { SetStandards(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the invitations returned by the operation.</p>
+     * <p>A list of available standards.</p>
      */
-    inline ListInvitationsResult& AddInvitations(const Invitation& value) { m_invitations.push_back(value); return *this; }
+    inline DescribeStandardsResult& AddStandards(const Standard& value) { m_standards.push_back(value); return *this; }
 
     /**
-     * <p>The details of the invitations returned by the operation.</p>
+     * <p>A list of available standards.</p>
      */
-    inline ListInvitationsResult& AddInvitations(Invitation&& value) { m_invitations.push_back(std::move(value)); return *this; }
+    inline DescribeStandardsResult& AddStandards(Standard&& value) { m_standards.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -103,21 +103,21 @@ namespace Model
     /**
      * <p>The pagination token to use to request the next page of results.</p>
      */
-    inline ListInvitationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline DescribeStandardsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The pagination token to use to request the next page of results.</p>
      */
-    inline ListInvitationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline DescribeStandardsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The pagination token to use to request the next page of results.</p>
      */
-    inline ListInvitationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline DescribeStandardsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::Vector<Invitation> m_invitations;
+    Aws::Vector<Standard> m_standards;
 
     Aws::String m_nextToken;
   };

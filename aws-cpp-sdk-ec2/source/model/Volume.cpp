@@ -51,6 +51,8 @@ Volume::Volume() :
     m_volumeTypeHasBeenSet(false),
     m_fastRestored(false),
     m_fastRestoredHasBeenSet(false),
+    m_multiAttachEnabled(false),
+    m_multiAttachEnabledHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -76,6 +78,8 @@ Volume::Volume(const XmlNode& xmlNode) :
     m_volumeTypeHasBeenSet(false),
     m_fastRestored(false),
     m_fastRestoredHasBeenSet(false),
+    m_multiAttachEnabled(false),
+    m_multiAttachEnabledHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -183,6 +187,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_fastRestored = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fastRestoredNode.GetText()).c_str()).c_str());
       m_fastRestoredHasBeenSet = true;
     }
+    XmlNode multiAttachEnabledNode = resultNode.FirstChild("multiAttachEnabled");
+    if(!multiAttachEnabledNode.IsNull())
+    {
+      m_multiAttachEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiAttachEnabledNode.GetText()).c_str()).c_str());
+      m_multiAttachEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -272,6 +282,11 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".FastRestored=" << std::boolalpha << m_fastRestored << "&";
   }
 
+  if(m_multiAttachEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -350,6 +365,10 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_fastRestoredHasBeenSet)
   {
       oStream << location << ".FastRestored=" << std::boolalpha << m_fastRestored << "&";
+  }
+  if(m_multiAttachEnabledHasBeenSet)
+  {
+      oStream << location << ".MultiAttachEnabled=" << std::boolalpha << m_multiAttachEnabled << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

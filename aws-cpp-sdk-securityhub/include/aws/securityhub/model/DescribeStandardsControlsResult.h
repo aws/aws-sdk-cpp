@@ -81,51 +81,37 @@ namespace Model
 
 
     /**
-     * <p>If there are more compliance standards control remaining in the results, then
-     * this is the pagination token to use to request the next page of compliance
-     * standard controls.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If there are more compliance standards control remaining in the results, then
-     * this is the pagination token to use to request the next page of compliance
-     * standard controls.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If there are more compliance standards control remaining in the results, then
-     * this is the pagination token to use to request the next page of compliance
-     * standard controls.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If there are more compliance standards control remaining in the results, then
-     * this is the pagination token to use to request the next page of compliance
-     * standard controls.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If there are more compliance standards control remaining in the results, then
-     * this is the pagination token to use to request the next page of compliance
-     * standard controls.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline DescribeStandardsControlsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If there are more compliance standards control remaining in the results, then
-     * this is the pagination token to use to request the next page of compliance
-     * standard controls.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline DescribeStandardsControlsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If there are more compliance standards control remaining in the results, then
-     * this is the pagination token to use to request the next page of compliance
-     * standard controls.</p>
+     * <p>The pagination token to use to request the next page of results.</p>
      */
     inline DescribeStandardsControlsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

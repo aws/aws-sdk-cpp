@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPlaybackConfigurationResult::GetPlaybackConfigurationResult()
+GetPlaybackConfigurationResult::GetPlaybackConfigurationResult() : 
+    m_personalizationThresholdSeconds(0)
 {
 }
 
-GetPlaybackConfigurationResult::GetPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetPlaybackConfigurationResult::GetPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_personalizationThresholdSeconds(0)
 {
   *this = result;
 }
@@ -71,6 +73,12 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
+
+  }
+
+  if(jsonValue.ValueExists("PersonalizationThresholdSeconds"))
+  {
+    m_personalizationThresholdSeconds = jsonValue.GetInteger("PersonalizationThresholdSeconds");
 
   }
 

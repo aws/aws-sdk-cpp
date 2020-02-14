@@ -40,6 +40,8 @@ PlaybackConfiguration::PlaybackConfiguration() :
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
+    m_personalizationThresholdSeconds(0),
+    m_personalizationThresholdSecondsHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
 }
@@ -56,6 +58,8 @@ PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) :
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
+    m_personalizationThresholdSeconds(0),
+    m_personalizationThresholdSecondsHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
   *this = jsonValue;
@@ -143,6 +147,13 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_transcodeProfileNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PersonalizationThresholdSeconds"))
+  {
+    m_personalizationThresholdSeconds = jsonValue.GetInteger("PersonalizationThresholdSeconds");
+
+    m_personalizationThresholdSecondsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VideoContentSourceUrl"))
   {
     m_videoContentSourceUrl = jsonValue.GetString("VideoContentSourceUrl");
@@ -225,6 +236,12 @@ JsonValue PlaybackConfiguration::Jsonize() const
   if(m_transcodeProfileNameHasBeenSet)
   {
    payload.WithString("TranscodeProfileName", m_transcodeProfileName);
+
+  }
+
+  if(m_personalizationThresholdSecondsHasBeenSet)
+  {
+   payload.WithInteger("PersonalizationThresholdSeconds", m_personalizationThresholdSeconds);
 
   }
 

@@ -36,6 +36,7 @@
 #include <aws/securityhub/model/DescribeActionTargetsResult.h>
 #include <aws/securityhub/model/DescribeHubResult.h>
 #include <aws/securityhub/model/DescribeProductsResult.h>
+#include <aws/securityhub/model/DescribeStandardsResult.h>
 #include <aws/securityhub/model/DescribeStandardsControlsResult.h>
 #include <aws/securityhub/model/DisableImportFindingsForProductResult.h>
 #include <aws/securityhub/model/DisableSecurityHubResult.h>
@@ -115,6 +116,7 @@ namespace Model
         class DescribeActionTargetsRequest;
         class DescribeHubRequest;
         class DescribeProductsRequest;
+        class DescribeStandardsRequest;
         class DescribeStandardsControlsRequest;
         class DisableImportFindingsForProductRequest;
         class DisableSecurityHubRequest;
@@ -156,6 +158,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeActionTargetsResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeActionTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeHubResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeHubOutcome;
         typedef Aws::Utils::Outcome<DescribeProductsResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeProductsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStandardsResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeStandardsOutcome;
         typedef Aws::Utils::Outcome<DescribeStandardsControlsResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeStandardsControlsOutcome;
         typedef Aws::Utils::Outcome<DisableImportFindingsForProductResult, Aws::Client::AWSError<SecurityHubErrors>> DisableImportFindingsForProductOutcome;
         typedef Aws::Utils::Outcome<DisableSecurityHubResult, Aws::Client::AWSError<SecurityHubErrors>> DisableSecurityHubOutcome;
@@ -197,6 +200,7 @@ namespace Model
         typedef std::future<DescribeActionTargetsOutcome> DescribeActionTargetsOutcomeCallable;
         typedef std::future<DescribeHubOutcome> DescribeHubOutcomeCallable;
         typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
+        typedef std::future<DescribeStandardsOutcome> DescribeStandardsOutcomeCallable;
         typedef std::future<DescribeStandardsControlsOutcome> DescribeStandardsControlsOutcomeCallable;
         typedef std::future<DisableImportFindingsForProductOutcome> DisableImportFindingsForProductOutcomeCallable;
         typedef std::future<DisableSecurityHubOutcome> DisableSecurityHubOutcomeCallable;
@@ -241,6 +245,7 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::DescribeActionTargetsRequest&, const Model::DescribeActionTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActionTargetsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DescribeHubRequest&, const Model::DescribeHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHubResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DescribeProductsRequest&, const Model::DescribeProductsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductsResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::DescribeStandardsRequest&, const Model::DescribeStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStandardsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DescribeStandardsControlsRequest&, const Model::DescribeStandardsControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStandardsControlsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisableImportFindingsForProductRequest&, const Model::DisableImportFindingsForProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImportFindingsForProductResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisableSecurityHubRequest&, const Model::DisableSecurityHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSecurityHubResponseReceivedHandler;
@@ -270,8 +275,8 @@ namespace Model
   /**
    * <p>Security Hub provides you with a comprehensive view of the security state of
    * your AWS environment and resources. It also provides you with the compliance
-   * status of your environment based on CIS AWS Foundations compliance checks.
-   * Security Hub collects security data from AWS accounts, services, and integrated
+   * status of your environment based on controls from supported standards. Security
+   * Hub collects security data from AWS accounts, services, and integrated
    * third-party products and helps you analyze security trends in your environment
    * to identify the highest priority security issues. For more information about
    * Security Hub, see the <i> <a
@@ -282,18 +287,18 @@ namespace Model
    * configuration or settings change that results from the operation is applied only
    * to that Region. To make the same change in other Regions, execute the same
    * command for each Region to apply the change to.</p> <p>For example, if your
-   * Region is set to <code>us-west-2</code>, when you use <code>CreateMembers</code>
-   * to add a member account to Security Hub, the association of the member account
-   * with the master account is created only in the <code>us-west-2</code> Region.
-   * Security Hub must be enabled for the member account in the same Region that the
-   * invitation was sent from.</p> <p>The following throttling limits apply to using
-   * Security Hub API operations.</p> <ul> <li> <p> <code>GetFindings</code> -
-   * <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
-   * requests per second.</p> </li> <li> <p> <code>UpdateFindings</code> -
-   * <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
-   * requests per second.</p> </li> <li> <p>All other operations -
-   * <code>RateLimit</code> of 10 request per second. <code>BurstLimit</code> of 30
-   * requests per second.</p> </li> </ul>
+   * Region is set to <code>us-west-2</code>, when you use <code>
+   * <a>CreateMembers</a> </code> to add a member account to Security Hub, the
+   * association of the member account with the master account is created only in the
+   * <code>us-west-2</code> Region. Security Hub must be enabled for the member
+   * account in the same Region that the invitation was sent from.</p> <p>The
+   * following throttling limits apply to using Security Hub API operations.</p> <ul>
+   * <li> <p> <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3
+   * requests per second. <code>BurstLimit</code> of 6 requests per second.</p> </li>
+   * <li> <p> <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1
+   * request per second. <code>BurstLimit</code> of 5 requests per second.</p> </li>
+   * <li> <p>All other operations - <code>RateLimit</code> of 10 requests per second.
+   * <code>BurstLimit</code> of 30 requests per second.</p> </li> </ul>
    */
   class AWS_SECURITYHUB_API SecurityHubClient : public Aws::Client::AWSJsonClient
   {
@@ -364,8 +369,9 @@ namespace Model
         /**
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-         * Supported in AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
          */
@@ -374,8 +380,9 @@ namespace Model
         /**
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-         * Supported in AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
          *
@@ -386,8 +393,9 @@ namespace Model
         /**
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-         * Supported in AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
          * API Reference</a></p>
          *
@@ -396,22 +404,24 @@ namespace Model
         virtual void BatchDisableStandardsAsync(const Model::BatchDisableStandardsRequest& request, const BatchDisableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables the standards specified by the provided
-         * <code>standardsArn</code>.</p> <p>In this release, only CIS AWS Foundations
-         * standards are supported.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-         * Supported in AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
+         * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
+         * operation.</p> <p>For more information, see the <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchEnableStandardsOutcome BatchEnableStandards(const Model::BatchEnableStandardsRequest& request) const;
 
         /**
-         * <p>Enables the standards specified by the provided
-         * <code>standardsArn</code>.</p> <p>In this release, only CIS AWS Foundations
-         * standards are supported.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-         * Supported in AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
+         * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
+         * operation.</p> <p>For more information, see the <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
          * API Reference</a></p>
          *
@@ -420,11 +430,12 @@ namespace Model
         virtual Model::BatchEnableStandardsOutcomeCallable BatchEnableStandardsCallable(const Model::BatchEnableStandardsRequest& request) const;
 
         /**
-         * <p>Enables the standards specified by the provided
-         * <code>standardsArn</code>.</p> <p>In this release, only CIS AWS Foundations
-         * standards are supported.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Standards
-         * Supported in AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
+         * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
+         * operation.</p> <p>For more information, see the <a
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
          * API Reference</a></p>
          *
@@ -538,18 +549,19 @@ namespace Model
          * <p>Creates a member association in Security Hub between the specified accounts
          * and the account used to make the request, which is the master account. To
          * successfully create a member, you must use this action from an account that
-         * already has Security Hub enabled. To enable Security Hub, you can use the
-         * <a>EnableSecurityHub</a> operation.</p> <p>After you use
+         * already has Security Hub enabled. To enable Security Hub, you can use the <code>
+         * <a>EnableSecurityHub</a> </code> operation.</p> <p>After you use
          * <code>CreateMembers</code> to create member account associations in Security
-         * Hub, you must use the <a>InviteMembers</a> operation to invite the accounts to
-         * enable Security Hub and become member accounts in Security Hub.</p> <p>If the
-         * account owner accepts the invitation, the account becomes a member account in
-         * Security Hub, and a permission policy is added that permits the master account
-         * to view the findings generated in the member account. When Security Hub is
-         * enabled in the invited account, findings start to be sent to both the member and
-         * master accounts.</p> <p>To remove the association between the master and member
-         * accounts, use the <a>DisassociateFromMasterAccount</a> or
-         * <a>DisassociateMembers</a> operation.</p><p><h3>See Also:</h3>   <a
+         * Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
+         * the accounts to enable Security Hub and become member accounts in Security
+         * Hub.</p> <p>If the account owner accepts the invitation, the account becomes a
+         * member account in Security Hub, and a permission policy is added that permits
+         * the master account to view the findings generated in the member account. When
+         * Security Hub is enabled in the invited account, findings start to be sent to
+         * both the member and master accounts.</p> <p>To remove the association between
+         * the master and member accounts, use the <code>
+         * <a>DisassociateFromMasterAccount</a> </code> or <code>
+         * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          */
@@ -559,18 +571,19 @@ namespace Model
          * <p>Creates a member association in Security Hub between the specified accounts
          * and the account used to make the request, which is the master account. To
          * successfully create a member, you must use this action from an account that
-         * already has Security Hub enabled. To enable Security Hub, you can use the
-         * <a>EnableSecurityHub</a> operation.</p> <p>After you use
+         * already has Security Hub enabled. To enable Security Hub, you can use the <code>
+         * <a>EnableSecurityHub</a> </code> operation.</p> <p>After you use
          * <code>CreateMembers</code> to create member account associations in Security
-         * Hub, you must use the <a>InviteMembers</a> operation to invite the accounts to
-         * enable Security Hub and become member accounts in Security Hub.</p> <p>If the
-         * account owner accepts the invitation, the account becomes a member account in
-         * Security Hub, and a permission policy is added that permits the master account
-         * to view the findings generated in the member account. When Security Hub is
-         * enabled in the invited account, findings start to be sent to both the member and
-         * master accounts.</p> <p>To remove the association between the master and member
-         * accounts, use the <a>DisassociateFromMasterAccount</a> or
-         * <a>DisassociateMembers</a> operation.</p><p><h3>See Also:</h3>   <a
+         * Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
+         * the accounts to enable Security Hub and become member accounts in Security
+         * Hub.</p> <p>If the account owner accepts the invitation, the account becomes a
+         * member account in Security Hub, and a permission policy is added that permits
+         * the master account to view the findings generated in the member account. When
+         * Security Hub is enabled in the invited account, findings start to be sent to
+         * both the member and master accounts.</p> <p>To remove the association between
+         * the master and member accounts, use the <code>
+         * <a>DisassociateFromMasterAccount</a> </code> or <code>
+         * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -582,18 +595,19 @@ namespace Model
          * <p>Creates a member association in Security Hub between the specified accounts
          * and the account used to make the request, which is the master account. To
          * successfully create a member, you must use this action from an account that
-         * already has Security Hub enabled. To enable Security Hub, you can use the
-         * <a>EnableSecurityHub</a> operation.</p> <p>After you use
+         * already has Security Hub enabled. To enable Security Hub, you can use the <code>
+         * <a>EnableSecurityHub</a> </code> operation.</p> <p>After you use
          * <code>CreateMembers</code> to create member account associations in Security
-         * Hub, you must use the <a>InviteMembers</a> operation to invite the accounts to
-         * enable Security Hub and become member accounts in Security Hub.</p> <p>If the
-         * account owner accepts the invitation, the account becomes a member account in
-         * Security Hub, and a permission policy is added that permits the master account
-         * to view the findings generated in the member account. When Security Hub is
-         * enabled in the invited account, findings start to be sent to both the member and
-         * master accounts.</p> <p>To remove the association between the master and member
-         * accounts, use the <a>DisassociateFromMasterAccount</a> or
-         * <a>DisassociateMembers</a> operation.</p><p><h3>See Also:</h3>   <a
+         * Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
+         * the accounts to enable Security Hub and become member accounts in Security
+         * Hub.</p> <p>If the account owner accepts the invitation, the account becomes a
+         * member account in Security Hub, and a permission policy is added that permits
+         * the master account to view the findings generated in the member account. When
+         * Security Hub is enabled in the invited account, findings start to be sent to
+         * both the member and master accounts.</p> <p>To remove the association between
+         * the master and member accounts, use the <code>
+         * <a>DisassociateFromMasterAccount</a> </code> or <code>
+         * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -835,6 +849,37 @@ namespace Model
         virtual void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the available standards in Security Hub.</p> <p>For each
+         * standard, the results include the standard ARN, the name, and a description.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStandardsOutcome DescribeStandards(const Model::DescribeStandardsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the available standards in Security Hub.</p> <p>For each
+         * standard, the results include the standard ARN, the name, and a description.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStandardsOutcomeCallable DescribeStandardsCallable(const Model::DescribeStandardsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the available standards in Security Hub.</p> <p>For each
+         * standard, the results include the standard ARN, the name, and a description.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStandardsAsync(const Model::DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of compliance standards controls.</p> <p>For each control, the
          * results include information about whether it is currently enabled, the severity,
          * and a link to remediation information.</p><p><h3>See Also:</h3>   <a
@@ -1040,12 +1085,18 @@ namespace Model
 
         /**
          * <p>Enables Security Hub for your account in the current Region or the Region you
-         * specify in the request.</p> <p>Enabling Security Hub also enables the CIS AWS
-         * Foundations standard.</p> <p>When you enable Security Hub, you grant to Security
-         * Hub the permissions necessary to gather findings from AWS Config, Amazon
-         * GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>To learn more, see <a
+         * specify in the request.</p> <p>When you enable Security Hub, you grant to
+         * Security Hub the permissions necessary to gather findings from AWS Config,
+         * Amazon GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>When you use the
+         * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
+         * automatically enable the CIS AWS Foundations standard. You do not enable the
+         * Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a
+         * standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To
+         * disable a standard, use the <code> <a>BatchDisableStandards</a> </code>
+         * operation.</p> <p>To learn more, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-         * Up AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          */
@@ -1053,12 +1104,18 @@ namespace Model
 
         /**
          * <p>Enables Security Hub for your account in the current Region or the Region you
-         * specify in the request.</p> <p>Enabling Security Hub also enables the CIS AWS
-         * Foundations standard.</p> <p>When you enable Security Hub, you grant to Security
-         * Hub the permissions necessary to gather findings from AWS Config, Amazon
-         * GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>To learn more, see <a
+         * specify in the request.</p> <p>When you enable Security Hub, you grant to
+         * Security Hub the permissions necessary to gather findings from AWS Config,
+         * Amazon GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>When you use the
+         * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
+         * automatically enable the CIS AWS Foundations standard. You do not enable the
+         * Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a
+         * standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To
+         * disable a standard, use the <code> <a>BatchDisableStandards</a> </code>
+         * operation.</p> <p>To learn more, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-         * Up AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          *
@@ -1068,12 +1125,18 @@ namespace Model
 
         /**
          * <p>Enables Security Hub for your account in the current Region or the Region you
-         * specify in the request.</p> <p>Enabling Security Hub also enables the CIS AWS
-         * Foundations standard.</p> <p>When you enable Security Hub, you grant to Security
-         * Hub the permissions necessary to gather findings from AWS Config, Amazon
-         * GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>To learn more, see <a
+         * specify in the request.</p> <p>When you enable Security Hub, you grant to
+         * Security Hub the permissions necessary to gather findings from AWS Config,
+         * Amazon GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>When you use the
+         * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
+         * automatically enable the CIS AWS Foundations standard. You do not enable the
+         * Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a
+         * standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To
+         * disable a standard, use the <code> <a>BatchDisableStandards</a> </code>
+         * operation.</p> <p>To learn more, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
-         * Up AWS Security Hub</a>.</p><p><h3>See Also:</h3>   <a
+         * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableSecurityHub">AWS
          * API Reference</a></p>
          *
@@ -1283,11 +1346,11 @@ namespace Model
         /**
          * <p>Invites other AWS accounts to become member accounts for the Security Hub
          * master account that the invitation is sent from.</p> <p>Before you can use this
-         * action to invite a member, you must first use the <a>CreateMembers</a> action to
-         * create the member account in Security Hub.</p> <p>When the account owner accepts
-         * the invitation to become a member account and enables Security Hub, the master
-         * account can view the findings generated from the member account.</p><p><h3>See
-         * Also:</h3>   <a
+         * action to invite a member, you must first use the <code> <a>CreateMembers</a>
+         * </code> action to create the member account in Security Hub.</p> <p>When the
+         * account owner accepts the invitation to become a member account and enables
+         * Security Hub, the master account can view the findings generated from the member
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">AWS
          * API Reference</a></p>
          */
@@ -1296,11 +1359,11 @@ namespace Model
         /**
          * <p>Invites other AWS accounts to become member accounts for the Security Hub
          * master account that the invitation is sent from.</p> <p>Before you can use this
-         * action to invite a member, you must first use the <a>CreateMembers</a> action to
-         * create the member account in Security Hub.</p> <p>When the account owner accepts
-         * the invitation to become a member account and enables Security Hub, the master
-         * account can view the findings generated from the member account.</p><p><h3>See
-         * Also:</h3>   <a
+         * action to invite a member, you must first use the <code> <a>CreateMembers</a>
+         * </code> action to create the member account in Security Hub.</p> <p>When the
+         * account owner accepts the invitation to become a member account and enables
+         * Security Hub, the master account can view the findings generated from the member
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">AWS
          * API Reference</a></p>
          *
@@ -1311,11 +1374,11 @@ namespace Model
         /**
          * <p>Invites other AWS accounts to become member accounts for the Security Hub
          * master account that the invitation is sent from.</p> <p>Before you can use this
-         * action to invite a member, you must first use the <a>CreateMembers</a> action to
-         * create the member account in Security Hub.</p> <p>When the account owner accepts
-         * the invitation to become a member account and enables Security Hub, the master
-         * account can view the findings generated from the member account.</p><p><h3>See
-         * Also:</h3>   <a
+         * action to invite a member, you must first use the <code> <a>CreateMembers</a>
+         * </code> action to create the member account in Security Hub.</p> <p>When the
+         * account owner accepts the invitation to become a member account and enables
+         * Security Hub, the master account can view the findings generated from the member
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">AWS
          * API Reference</a></p>
          *
@@ -1622,6 +1685,7 @@ namespace Model
         void DescribeActionTargetsAsyncHelper(const Model::DescribeActionTargetsRequest& request, const DescribeActionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHubAsyncHelper(const Model::DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductsAsyncHelper(const Model::DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStandardsAsyncHelper(const Model::DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStandardsControlsAsyncHelper(const Model::DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableImportFindingsForProductAsyncHelper(const Model::DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableSecurityHubAsyncHelper(const Model::DisableSecurityHubRequest& request, const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

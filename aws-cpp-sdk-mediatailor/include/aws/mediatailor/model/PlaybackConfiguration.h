@@ -616,6 +616,31 @@ namespace Model
 
 
     /**
+     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
+     * break.</p>
+     */
+    inline int GetPersonalizationThresholdSeconds() const{ return m_personalizationThresholdSeconds; }
+
+    /**
+     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
+     * break.</p>
+     */
+    inline bool PersonalizationThresholdSecondsHasBeenSet() const { return m_personalizationThresholdSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
+     * break.</p>
+     */
+    inline void SetPersonalizationThresholdSeconds(int value) { m_personalizationThresholdSecondsHasBeenSet = true; m_personalizationThresholdSeconds = value; }
+
+    /**
+     * <p>The maximum duration of underfilled ad time (in seconds) allowed in an ad
+     * break.</p>
+     */
+    inline PlaybackConfiguration& WithPersonalizationThresholdSeconds(int value) { SetPersonalizationThresholdSeconds(value); return *this;}
+
+
+    /**
      * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
@@ -697,6 +722,9 @@ namespace Model
 
     Aws::String m_transcodeProfileName;
     bool m_transcodeProfileNameHasBeenSet;
+
+    int m_personalizationThresholdSeconds;
+    bool m_personalizationThresholdSecondsHasBeenSet;
 
     Aws::String m_videoContentSourceUrl;
     bool m_videoContentSourceUrlHasBeenSet;

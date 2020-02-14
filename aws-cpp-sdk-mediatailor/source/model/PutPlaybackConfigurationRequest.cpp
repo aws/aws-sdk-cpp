@@ -28,6 +28,8 @@ PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() :
     m_dashConfigurationHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_personalizationThresholdSeconds(0),
+    m_personalizationThresholdSecondsHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
@@ -66,6 +68,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_personalizationThresholdSecondsHasBeenSet)
+  {
+   payload.WithInteger("PersonalizationThresholdSeconds", m_personalizationThresholdSeconds);
 
   }
 
