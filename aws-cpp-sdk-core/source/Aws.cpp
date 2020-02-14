@@ -13,6 +13,7 @@
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/net/Net.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
+#include <aws/core/internal/AWSHttpResourceClient.h>
 
 namespace Aws
 {
@@ -101,12 +102,14 @@ namespace Aws
         hooks.free_fn = Aws::Free;
         cJSON_InitHooks(&hooks);
         Aws::Net::InitNetwork();
+        Aws::Internal::InitEC2MetadataClient();
         Aws::Monitoring::InitMonitoring(options.monitoringOptions.customizedMonitoringFactory_create_fn);
     }
 
     void ShutdownAPI(const SDKOptions& options)
     {
         Aws::Monitoring::CleanupMonitoring();
+        Aws::Internal::CleanupEC2MetadataClient();
         Aws::Net::CleanupNetwork();
         Aws::CleanupEnumOverflowContainer();
         Aws::Http::CleanupHttp();
