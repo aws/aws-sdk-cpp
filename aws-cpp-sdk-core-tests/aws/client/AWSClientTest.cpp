@@ -27,6 +27,7 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
 #include <aws/core/platform/Environment.h>
+#include <aws/core/auth/AWSCredentialsProvider.h>
 #include <fstream>
 #include <thread>
 
@@ -37,6 +38,9 @@ using namespace Aws::Http::Standard;
 
 using Aws::Utils::DateTime;
 using Aws::Utils::DateFormat;
+using namespace Aws::Auth;
+using namespace Aws::Http;
+using namespace Aws::Http::Standard;
 
 static const char ALLOCATION_TAG[] = "AWSClientTest";
 
@@ -142,24 +146,28 @@ protected:
 class AWSConfigTestSuite : public ::testing::Test
 {
 protected:
-    Aws::String m_storedAwsConfigFileEnvVar;
+    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
 
     void SetUp()
     {
-        m_storedAwsConfigFileEnvVar = Aws::Environment::GetEnv("AWS_CONFIG_FILE");
+        m_environment.emplace_back("AWS_CONFIG_FILE", Aws::Environment::GetEnv("AWS_CONFIG_FILE"));
+        m_environment.emplace_back("AWS_EC2_METADATA_DISABLED", Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED"));
         auto profileDirectory = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
         Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
     }
 
     void TearDown()
     {
-        if(m_storedAwsConfigFileEnvVar.empty())
+        for(const auto& iter : m_environment)
         {
-            Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
-        }
-        else
-        {
-            Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_storedAwsConfigFileEnvVar.c_str(), 1/*override*/);
+            if(iter.second.empty())
+            {
+                Aws::Environment::UnSetEnv(iter.first);
+            }
+            else
+            {
+                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1/*override*/);
+            }
         }
      }
 };
@@ -497,6 +505,7 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentProfile)
     ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
     Aws::String configFileName = ss.str();
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1/*overwrite*/);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1);
 
     Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
     configFileNew << "[Dijkstra]" << std::endl;
@@ -511,6 +520,7 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentProfile)
     EXPECT_STREQ("default", config.profileName.c_str());
 
     // cleanup
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
     Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 }
@@ -518,11 +528,13 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentProfile)
 TEST_F(AWSConfigTestSuite, TestClientConfigurationWithNonExistentConfigFile)
 {
     Aws::Environment::SetEnv("AWS_CONFIG_FILE", "WhatAreTheChances", 1/*overwrite*/);
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1);
     Aws::Config::ReloadCachedConfigFile();
 
     Aws::Client::ClientConfiguration config("default");
     EXPECT_EQ(Aws::Region::US_EAST_1, config.region);
     EXPECT_STREQ("default", config.profileName.c_str());
+    Aws::Environment::UnSetEnv("AWS_EC2_METADATA_DISABLED");
     Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
 }
 
@@ -549,4 +561,161 @@ TEST_F(AWSConfigTestSuite, TestClientConfigurationSetsRegionToProfile)
     // cleanup
     Aws::Environment::UnSetEnv("AWS_CONFIG_FILE");
     Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+class AWSRegionTest : public ::testing::Test
+{
+public:
+    void SetUp()
+    {
+        SaveEnvironmentVariable("AWS_CONFIG_FILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_PROFILE");
+        SaveEnvironmentVariable("AWS_PROFILE");
+        SaveEnvironmentVariable("AWS_DEFAULT_REGION");
+        SaveEnvironmentVariable("AWS_REGION");
+        SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
+
+        Aws::StringStream ss;
+        ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
+        m_configFileName = ss.str();
+        Aws::Environment::SetEnv("AWS_CONFIG_FILE", m_configFileName.c_str(), 1);
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_PROFILE");
+        Aws::Environment::UnSetEnv("AWS_PROFILE");
+        Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
+        Aws::Environment::UnSetEnv("AWS_REGION");
+
+        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+    }
+
+    void TearDown()
+    {
+        RestoreEnvironmentVariables();
+    }
+
+    void SaveEnvironmentVariable(const char* variableName)
+    {
+        m_environment.emplace_back(variableName, Aws::Environment::GetEnv(variableName));
+    }
+
+    void RestoreEnvironmentVariables()
+    {
+        for(const auto& iter : m_environment)
+        {
+            if(iter.second.empty())
+            {
+                Aws::Environment::UnSetEnv(iter.first);
+            }
+            else
+            {
+                Aws::Environment::SetEnv(iter.first, iter.second.c_str(), 1);
+            }
+        }
+    }
+
+    Aws::Vector<std::pair<const char*, Aws::String>> m_environment;
+    Aws::String m_configFileName;
+    std::shared_ptr<MockHttpClient> mockHttpClient;
+    std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory;
+};
+
+TEST_F(AWSRegionTest, TestResolveRegionFromEnvironment)
+{
+    Aws::Environment::SetEnv("AWS_DEFAULT_REGION", "my-test-non-existing-region", 1);
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << "[default]" << std::endl;
+    configFile << "region = cn-north-1" << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    Aws::Client::ClientConfiguration config;
+    ASSERT_STREQ("my-test-non-existing-region", config.region.c_str());
+
+    Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
+    Aws::Environment::SetEnv("AWS_REGION", "my-test-another-non-existing-region", 1);
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    Aws::Client::ClientConfiguration anotherConfig;
+    ASSERT_STREQ("my-test-another-non-existing-region", anotherConfig.region.c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSRegionTest, TestResolveRegionFromConfigFile)
+{
+    Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
+    Aws::Environment::UnSetEnv("AWS_REGION");
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << "[default]" << std::endl;
+    configFile << "region = my-test-non-existing-region-blah" << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    Aws::Client::ClientConfiguration config;
+    ASSERT_STREQ("my-test-non-existing-region-blah", config.region.c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
+
+TEST_F(AWSRegionTest, TestResolveRegionFromEC2InstanceMetadata)
+{
+    mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
+    mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
+    mockHttpClientFactory->SetClient(mockHttpClient);
+    SetHttpClientFactory(mockHttpClientFactory);
+
+    // Region provider is initiated during Aws::Init(), after settting mock http client,
+    // we need to re-initiate it.
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Internal::InitEC2MetadataClient();
+
+    Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
+    Aws::Environment::UnSetEnv("AWS_REGION");
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << "[default]" << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
+    std::shared_ptr<HttpRequest> regionRequest = CreateHttpRequest(URI("http://169.254.169.254/latest/meta-data/placement/availability-zone"),
+            HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    std::shared_ptr<StandardHttpResponse> regionResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, regionRequest);
+    regionResponse->SetResponseCode(HttpResponseCode::OK);
+    regionResponse->GetResponseBody() << "us-west-123";
+    mockHttpClient->Reset();
+    mockHttpClient->AddResponseToReturn(regionResponse);
+
+    Aws::Client::ClientConfiguration config;
+    ASSERT_STREQ("us-west-123", config.region.c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+
+    // Reset Http client factory, and reset region provider to use normal http client.
+    mockHttpClient = nullptr;
+    mockHttpClientFactory = nullptr;
+    CleanupHttp();
+    InitHttp();
+    Aws::Internal::CleanupEC2MetadataClient();
+    Aws::Internal::InitEC2MetadataClient();
+}
+
+TEST_F(AWSRegionTest, TestResolveDefaultRegion)
+{
+    Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
+    Aws::Environment::UnSetEnv("AWS_REGION");
+    Aws::Environment::SetEnv("AWS_EC2_METADATA_DISABLED", "true", 1);
+    Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFile << "[default]" << std::endl;
+    configFile.close();
+
+    Aws::Config::ReloadCachedConfigFile();
+
+    Aws::Client::ClientConfiguration config;
+    ASSERT_STREQ("us-east-1", config.region.c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }

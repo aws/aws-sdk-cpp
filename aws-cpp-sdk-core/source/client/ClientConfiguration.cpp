@@ -48,7 +48,6 @@ AWS_CORE_API Aws::String ComputeUserAgentString()
 ClientConfiguration::ClientConfiguration() :
     userAgent(ComputeUserAgentString()),
     scheme(Aws::Http::Scheme::HTTPS),
-    region(Region::US_EAST_1),
     useDualStack(false),
     maxConnections(25),
     httpRequestTimeoutMs(0),
@@ -115,6 +114,41 @@ ClientConfiguration::ClientConfiguration() :
     {
         retryStrategy = Aws::MakeShared<DefaultRetryStrategy>(CLIENT_CONFIG_TAG);
     }
+
+    // Automatically determine the AWS region from environment variables, configuration file and EC2 metadata.
+    region = Aws::Environment::GetEnv("AWS_DEFAULT_REGION");
+    if (!region.empty())
+    {
+        return;
+    }
+
+    region = Aws::Environment::GetEnv("AWS_REGION");
+    if (!region.empty())
+    {
+        return;
+    }
+
+    region = Aws::Config::GetCachedConfigValue("region");
+    if (!region.empty())
+    {
+        return;
+    }
+
+    if (Aws::Utils::StringUtils::ToLower(Aws::Environment::GetEnv("AWS_EC2_METADATA_DISABLED").c_str()) != "true")
+    {
+        auto client = Aws::Internal::GetEC2MetadataClient();
+        if (client)
+        {
+            region = client->GetCurrentRegion();
+        }
+    }
+
+    if (!region.empty())
+    {
+        return;
+    }
+
+    region = Aws::String(Aws::Region::US_EAST_1);
 }
 
 ClientConfiguration::ClientConfiguration(const char* profileName) : ClientConfiguration()

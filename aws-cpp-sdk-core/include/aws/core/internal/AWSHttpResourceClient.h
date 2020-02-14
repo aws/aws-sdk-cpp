@@ -150,7 +150,12 @@ namespace Aws
             mutable std::recursive_mutex m_tokenMutex;
             mutable Aws::String m_token;
             mutable bool m_tokenRequired;
+            mutable Aws::String m_region;
         };
+
+        void AWS_CORE_API InitEC2MetadataClient();
+        void AWS_CORE_API CleanupEC2MetadataClient();
+        std::shared_ptr<EC2MetadataClient> AWS_CORE_API GetEC2MetadataClient();
 
         /**
          * Derived class to support retrieving of ECS Credentials
