@@ -17,6 +17,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/rekognition/model/Image.h>
+#include <aws/rekognition/model/DetectTextFilters.h>
 #include <utility>
 
 namespace Aws
@@ -98,10 +99,50 @@ namespace Model
      */
     inline DetectTextRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Optional parameters that let you set the criteria that the text must meet to
+     * be included in your response.</p>
+     */
+    inline const DetectTextFilters& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Optional parameters that let you set the criteria that the text must meet to
+     * be included in your response.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>Optional parameters that let you set the criteria that the text must meet to
+     * be included in your response.</p>
+     */
+    inline void SetFilters(const DetectTextFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
+
+    /**
+     * <p>Optional parameters that let you set the criteria that the text must meet to
+     * be included in your response.</p>
+     */
+    inline void SetFilters(DetectTextFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
+
+    /**
+     * <p>Optional parameters that let you set the criteria that the text must meet to
+     * be included in your response.</p>
+     */
+    inline DetectTextRequest& WithFilters(const DetectTextFilters& value) { SetFilters(value); return *this;}
+
+    /**
+     * <p>Optional parameters that let you set the criteria that the text must meet to
+     * be included in your response.</p>
+     */
+    inline DetectTextRequest& WithFilters(DetectTextFilters&& value) { SetFilters(std::move(value)); return *this;}
+
   private:
 
     Image m_image;
     bool m_imageHasBeenSet;
+
+    DetectTextFilters m_filters;
+    bool m_filtersHasBeenSet;
   };
 
 } // namespace Model

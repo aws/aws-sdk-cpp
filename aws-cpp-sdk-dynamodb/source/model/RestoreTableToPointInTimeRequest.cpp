@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RestoreTableToPointInTimeRequest::RestoreTableToPointInTimeRequest() : 
+    m_sourceTableArnHasBeenSet(false),
     m_sourceTableNameHasBeenSet(false),
     m_targetTableNameHasBeenSet(false),
     m_useLatestRestorableTime(false),
@@ -32,13 +33,20 @@ RestoreTableToPointInTimeRequest::RestoreTableToPointInTimeRequest() :
     m_billingModeOverrideHasBeenSet(false),
     m_globalSecondaryIndexOverrideHasBeenSet(false),
     m_localSecondaryIndexOverrideHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false)
+    m_provisionedThroughputOverrideHasBeenSet(false),
+    m_sSESpecificationOverrideHasBeenSet(false)
 {
 }
 
 Aws::String RestoreTableToPointInTimeRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_sourceTableArnHasBeenSet)
+  {
+   payload.WithString("SourceTableArn", m_sourceTableArn);
+
+  }
 
   if(m_sourceTableNameHasBeenSet)
   {
@@ -93,6 +101,12 @@ Aws::String RestoreTableToPointInTimeRequest::SerializePayload() const
   if(m_provisionedThroughputOverrideHasBeenSet)
   {
    payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
+
+  }
+
+  if(m_sSESpecificationOverrideHasBeenSet)
+  {
+   payload.WithObject("SSESpecificationOverride", m_sSESpecificationOverride.Jsonize());
 
   }
 

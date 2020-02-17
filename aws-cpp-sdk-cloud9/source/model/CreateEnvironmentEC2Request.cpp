@@ -30,7 +30,8 @@ CreateEnvironmentEC2Request::CreateEnvironmentEC2Request() :
     m_subnetIdHasBeenSet(false),
     m_automaticStopTimeMinutes(0),
     m_automaticStopTimeMinutesHasBeenSet(false),
-    m_ownerArnHasBeenSet(false)
+    m_ownerArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,17 @@ Aws::String CreateEnvironmentEC2Request::SerializePayload() const
   if(m_ownerArnHasBeenSet)
   {
    payload.WithString("ownerArn", m_ownerArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

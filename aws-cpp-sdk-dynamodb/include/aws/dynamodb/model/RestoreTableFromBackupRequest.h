@@ -20,6 +20,7 @@
 #include <aws/dynamodb/model/BillingMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
+#include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndex.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
 #include <utility>
@@ -306,6 +307,37 @@ namespace Model
      */
     inline RestoreTableFromBackupRequest& WithProvisionedThroughputOverride(ProvisionedThroughput&& value) { SetProvisionedThroughputOverride(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline const SSESpecification& GetSSESpecificationOverride() const{ return m_sSESpecificationOverride; }
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline bool SSESpecificationOverrideHasBeenSet() const { return m_sSESpecificationOverrideHasBeenSet; }
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline void SetSSESpecificationOverride(const SSESpecification& value) { m_sSESpecificationOverrideHasBeenSet = true; m_sSESpecificationOverride = value; }
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline void SetSSESpecificationOverride(SSESpecification&& value) { m_sSESpecificationOverrideHasBeenSet = true; m_sSESpecificationOverride = std::move(value); }
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithSSESpecificationOverride(const SSESpecification& value) { SetSSESpecificationOverride(value); return *this;}
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline RestoreTableFromBackupRequest& WithSSESpecificationOverride(SSESpecification&& value) { SetSSESpecificationOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetTableName;
@@ -325,6 +357,9 @@ namespace Model
 
     ProvisionedThroughput m_provisionedThroughputOverride;
     bool m_provisionedThroughputOverrideHasBeenSet;
+
+    SSESpecification m_sSESpecificationOverride;
+    bool m_sSESpecificationOverrideHasBeenSet;
   };
 
 } // namespace Model

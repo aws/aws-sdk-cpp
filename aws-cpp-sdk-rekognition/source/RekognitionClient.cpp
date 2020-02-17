@@ -54,6 +54,7 @@
 #include <aws/rekognition/model/GetFaceSearchRequest.h>
 #include <aws/rekognition/model/GetLabelDetectionRequest.h>
 #include <aws/rekognition/model/GetPersonTrackingRequest.h>
+#include <aws/rekognition/model/GetTextDetectionRequest.h>
 #include <aws/rekognition/model/IndexFacesRequest.h>
 #include <aws/rekognition/model/ListCollectionsRequest.h>
 #include <aws/rekognition/model/ListFacesRequest.h>
@@ -69,6 +70,7 @@
 #include <aws/rekognition/model/StartPersonTrackingRequest.h>
 #include <aws/rekognition/model/StartProjectVersionRequest.h>
 #include <aws/rekognition/model/StartStreamProcessorRequest.h>
+#include <aws/rekognition/model/StartTextDetectionRequest.h>
 #include <aws/rekognition/model/StopProjectVersionRequest.h>
 #include <aws/rekognition/model/StopStreamProcessorRequest.h>
 
@@ -984,6 +986,41 @@ void RekognitionClient::GetPersonTrackingAsyncHelper(const GetPersonTrackingRequ
   handler(this, request, GetPersonTracking(request), context);
 }
 
+GetTextDetectionOutcome RekognitionClient::GetTextDetection(const GetTextDetectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetTextDetectionOutcome(GetTextDetectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTextDetectionOutcome(outcome.GetError());
+  }
+}
+
+GetTextDetectionOutcomeCallable RekognitionClient::GetTextDetectionCallable(const GetTextDetectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTextDetectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTextDetection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::GetTextDetectionAsync(const GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTextDetectionAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::GetTextDetectionAsyncHelper(const GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTextDetection(request), context);
+}
+
 IndexFacesOutcome RekognitionClient::IndexFaces(const IndexFacesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1507,6 +1544,41 @@ void RekognitionClient::StartStreamProcessorAsync(const StartStreamProcessorRequ
 void RekognitionClient::StartStreamProcessorAsyncHelper(const StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartStreamProcessor(request), context);
+}
+
+StartTextDetectionOutcome RekognitionClient::StartTextDetection(const StartTextDetectionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartTextDetectionOutcome(StartTextDetectionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartTextDetectionOutcome(outcome.GetError());
+  }
+}
+
+StartTextDetectionOutcomeCallable RekognitionClient::StartTextDetectionCallable(const StartTextDetectionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartTextDetectionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartTextDetection(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::StartTextDetectionAsync(const StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartTextDetectionAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::StartTextDetectionAsyncHelper(const StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartTextDetection(request), context);
 }
 
 StopProjectVersionOutcome RekognitionClient::StopProjectVersion(const StopProjectVersionRequest& request) const

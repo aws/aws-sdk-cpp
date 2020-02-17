@@ -25,9 +25,9 @@ AssociateVpcCidrBlockRequest::AssociateVpcCidrBlockRequest() :
     m_amazonProvidedIpv6CidrBlockHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false),
     m_ipv6PoolHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false)
+    m_ipv6CidrBlockHasBeenSet(false)
 {
 }
 
@@ -50,6 +50,11 @@ Aws::String AssociateVpcCidrBlockRequest::SerializePayload() const
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_ipv6CidrBlockNetworkBorderGroupHasBeenSet)
+  {
+    ss << "Ipv6CidrBlockNetworkBorderGroup=" << StringUtils::URLEncode(m_ipv6CidrBlockNetworkBorderGroup.c_str()) << "&";
+  }
+
   if(m_ipv6PoolHasBeenSet)
   {
     ss << "Ipv6Pool=" << StringUtils::URLEncode(m_ipv6Pool.c_str()) << "&";
@@ -58,11 +63,6 @@ Aws::String AssociateVpcCidrBlockRequest::SerializePayload() const
   if(m_ipv6CidrBlockHasBeenSet)
   {
     ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
-  }
-
-  if(m_ipv6CidrBlockNetworkBorderGroupHasBeenSet)
-  {
-    ss << "Ipv6CidrBlockNetworkBorderGroup=" << StringUtils::URLEncode(m_ipv6CidrBlockNetworkBorderGroup.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

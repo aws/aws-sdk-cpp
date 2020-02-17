@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/TextDetection.h>
 #include <utility>
 
@@ -78,9 +79,47 @@ namespace Model
      */
     inline DetectTextResult& AddTextDetections(TextDetection&& value) { m_textDetections.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The model version used to detect text.</p>
+     */
+    inline const Aws::String& GetTextModelVersion() const{ return m_textModelVersion; }
+
+    /**
+     * <p>The model version used to detect text.</p>
+     */
+    inline void SetTextModelVersion(const Aws::String& value) { m_textModelVersion = value; }
+
+    /**
+     * <p>The model version used to detect text.</p>
+     */
+    inline void SetTextModelVersion(Aws::String&& value) { m_textModelVersion = std::move(value); }
+
+    /**
+     * <p>The model version used to detect text.</p>
+     */
+    inline void SetTextModelVersion(const char* value) { m_textModelVersion.assign(value); }
+
+    /**
+     * <p>The model version used to detect text.</p>
+     */
+    inline DetectTextResult& WithTextModelVersion(const Aws::String& value) { SetTextModelVersion(value); return *this;}
+
+    /**
+     * <p>The model version used to detect text.</p>
+     */
+    inline DetectTextResult& WithTextModelVersion(Aws::String&& value) { SetTextModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The model version used to detect text.</p>
+     */
+    inline DetectTextResult& WithTextModelVersion(const char* value) { SetTextModelVersion(value); return *this;}
+
   private:
 
     Aws::Vector<TextDetection> m_textDetections;
+
+    Aws::String m_textModelVersion;
   };
 
 } // namespace Model

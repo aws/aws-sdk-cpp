@@ -155,6 +155,19 @@ namespace Model
      */
     inline EnableVgwRoutePropagationRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
 
+
+    
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    
+    inline EnableVgwRoutePropagationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
   private:
 
     Aws::String m_gatewayId;
@@ -162,6 +175,9 @@ namespace Model
 
     Aws::String m_routeTableId;
     bool m_routeTableIdHasBeenSet;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
   };
 
 } // namespace Model

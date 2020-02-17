@@ -17,6 +17,8 @@
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/cloud9/Cloud9Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloud9/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -378,6 +380,55 @@ namespace Model
      */
     inline CreateEnvironmentEC2Request& WithOwnerArn(const char* value) { SetOwnerArn(value); return *this;}
 
+
+    /**
+     * <p>An array of key-value pairs that will be associated with the new AWS Cloud9
+     * development environment.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of key-value pairs that will be associated with the new AWS Cloud9
+     * development environment.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An array of key-value pairs that will be associated with the new AWS Cloud9
+     * development environment.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>An array of key-value pairs that will be associated with the new AWS Cloud9
+     * development environment.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>An array of key-value pairs that will be associated with the new AWS Cloud9
+     * development environment.</p>
+     */
+    inline CreateEnvironmentEC2Request& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>An array of key-value pairs that will be associated with the new AWS Cloud9
+     * development environment.</p>
+     */
+    inline CreateEnvironmentEC2Request& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of key-value pairs that will be associated with the new AWS Cloud9
+     * development environment.</p>
+     */
+    inline CreateEnvironmentEC2Request& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>An array of key-value pairs that will be associated with the new AWS Cloud9
+     * development environment.</p>
+     */
+    inline CreateEnvironmentEC2Request& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -400,6 +451,9 @@ namespace Model
 
     Aws::String m_ownerArn;
     bool m_ownerArnHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

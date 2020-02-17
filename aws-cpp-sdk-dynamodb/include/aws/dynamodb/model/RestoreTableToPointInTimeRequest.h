@@ -21,6 +21,7 @@
 #include <aws/dynamodb/model/BillingMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
+#include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndex.h>
 #include <aws/dynamodb/model/LocalSecondaryIndex.h>
 #include <utility>
@@ -48,6 +49,55 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>The DynamoDB table that will be restored. This value is an Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline const Aws::String& GetSourceTableArn() const{ return m_sourceTableArn; }
+
+    /**
+     * <p>The DynamoDB table that will be restored. This value is an Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline bool SourceTableArnHasBeenSet() const { return m_sourceTableArnHasBeenSet; }
+
+    /**
+     * <p>The DynamoDB table that will be restored. This value is an Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline void SetSourceTableArn(const Aws::String& value) { m_sourceTableArnHasBeenSet = true; m_sourceTableArn = value; }
+
+    /**
+     * <p>The DynamoDB table that will be restored. This value is an Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline void SetSourceTableArn(Aws::String&& value) { m_sourceTableArnHasBeenSet = true; m_sourceTableArn = std::move(value); }
+
+    /**
+     * <p>The DynamoDB table that will be restored. This value is an Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline void SetSourceTableArn(const char* value) { m_sourceTableArnHasBeenSet = true; m_sourceTableArn.assign(value); }
+
+    /**
+     * <p>The DynamoDB table that will be restored. This value is an Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline RestoreTableToPointInTimeRequest& WithSourceTableArn(const Aws::String& value) { SetSourceTableArn(value); return *this;}
+
+    /**
+     * <p>The DynamoDB table that will be restored. This value is an Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline RestoreTableToPointInTimeRequest& WithSourceTableArn(Aws::String&& value) { SetSourceTableArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The DynamoDB table that will be restored. This value is an Amazon Resource
+     * Name (ARN).</p>
+     */
+    inline RestoreTableToPointInTimeRequest& WithSourceTableArn(const char* value) { SetSourceTableArn(value); return *this;}
 
 
     /**
@@ -367,7 +417,41 @@ namespace Model
      */
     inline RestoreTableToPointInTimeRequest& WithProvisionedThroughputOverride(ProvisionedThroughput&& value) { SetProvisionedThroughputOverride(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline const SSESpecification& GetSSESpecificationOverride() const{ return m_sSESpecificationOverride; }
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline bool SSESpecificationOverrideHasBeenSet() const { return m_sSESpecificationOverrideHasBeenSet; }
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline void SetSSESpecificationOverride(const SSESpecification& value) { m_sSESpecificationOverrideHasBeenSet = true; m_sSESpecificationOverride = value; }
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline void SetSSESpecificationOverride(SSESpecification&& value) { m_sSESpecificationOverrideHasBeenSet = true; m_sSESpecificationOverride = std::move(value); }
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline RestoreTableToPointInTimeRequest& WithSSESpecificationOverride(const SSESpecification& value) { SetSSESpecificationOverride(value); return *this;}
+
+    /**
+     * <p>The new server-side encryption settings for the restored table.</p>
+     */
+    inline RestoreTableToPointInTimeRequest& WithSSESpecificationOverride(SSESpecification&& value) { SetSSESpecificationOverride(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_sourceTableArn;
+    bool m_sourceTableArnHasBeenSet;
 
     Aws::String m_sourceTableName;
     bool m_sourceTableNameHasBeenSet;
@@ -392,6 +476,9 @@ namespace Model
 
     ProvisionedThroughput m_provisionedThroughputOverride;
     bool m_provisionedThroughputOverrideHasBeenSet;
+
+    SSESpecification m_sSESpecificationOverride;
+    bool m_sSESpecificationOverrideHasBeenSet;
   };
 
 } // namespace Model

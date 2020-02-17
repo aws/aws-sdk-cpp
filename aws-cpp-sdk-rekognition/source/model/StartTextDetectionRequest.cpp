@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/rekognition/model/DetectTextRequest.h>
+#include <aws/rekognition/model/StartTextDetectionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,19 +22,40 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectTextRequest::DetectTextRequest() : 
-    m_imageHasBeenSet(false),
+StartTextDetectionRequest::StartTextDetectionRequest() : 
+    m_videoHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false),
+    m_notificationChannelHasBeenSet(false),
+    m_jobTagHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
 
-Aws::String DetectTextRequest::SerializePayload() const
+Aws::String StartTextDetectionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_imageHasBeenSet)
+  if(m_videoHasBeenSet)
   {
-   payload.WithObject("Image", m_image.Jsonize());
+   payload.WithObject("Video", m_video.Jsonize());
+
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+   payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_notificationChannelHasBeenSet)
+  {
+   payload.WithObject("NotificationChannel", m_notificationChannel.Jsonize());
+
+  }
+
+  if(m_jobTagHasBeenSet)
+  {
+   payload.WithString("JobTag", m_jobTag);
 
   }
 
@@ -47,10 +68,10 @@ Aws::String DetectTextRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DetectTextRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection StartTextDetectionRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.DetectText"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.StartTextDetection"));
   return headers;
 
 }

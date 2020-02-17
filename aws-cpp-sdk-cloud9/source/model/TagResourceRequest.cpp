@@ -13,44 +13,49 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/rekognition/model/DetectTextRequest.h>
+#include <aws/cloud9/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
-using namespace Aws::Rekognition::Model;
+using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectTextRequest::DetectTextRequest() : 
-    m_imageHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceARNHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String DetectTextRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_imageHasBeenSet)
+  if(m_resourceARNHasBeenSet)
   {
-   payload.WithObject("Image", m_image.Jsonize());
+   payload.WithString("ResourceARN", m_resourceARN);
 
   }
 
-  if(m_filtersHasBeenSet)
+  if(m_tagsHasBeenSet)
   {
-   payload.WithObject("Filters", m_filters.Jsonize());
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DetectTextRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.DetectText"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCloud9WorkspaceManagementService.TagResource"));
   return headers;
 
 }

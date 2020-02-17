@@ -13,44 +13,37 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/rekognition/model/DetectTextRequest.h>
+#include <aws/cloud9/model/ListTagsForResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
-using namespace Aws::Rekognition::Model;
+using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectTextRequest::DetectTextRequest() : 
-    m_imageHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+ListTagsForResourceRequest::ListTagsForResourceRequest() : 
+    m_resourceARNHasBeenSet(false)
 {
 }
 
-Aws::String DetectTextRequest::SerializePayload() const
+Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_imageHasBeenSet)
+  if(m_resourceARNHasBeenSet)
   {
-   payload.WithObject("Image", m_image.Jsonize());
-
-  }
-
-  if(m_filtersHasBeenSet)
-  {
-   payload.WithObject("Filters", m_filters.Jsonize());
+   payload.WithString("ResourceARN", m_resourceARN);
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DetectTextRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection ListTagsForResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.DetectText"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AWSCloud9WorkspaceManagementService.ListTagsForResource"));
   return headers;
 
 }

@@ -92,28 +92,28 @@ namespace Model
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 70. 0 is the lowest confidence. 100 is the highest
+     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
      * confidence.</p>
      */
     inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 70. 0 is the lowest confidence. 100 is the highest
+     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
      * confidence.</p>
      */
     inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 70. 0 is the lowest confidence. 100 is the highest
+     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
      * confidence.</p>
      */
     inline void SetFaceMatchThreshold(double value) { m_faceMatchThresholdHasBeenSet = true; m_faceMatchThreshold = value; }
 
     /**
      * <p>Minimum face match confidence score that must be met to return a result for a
-     * recognized face. Default is 70. 0 is the lowest confidence. 100 is the highest
+     * recognized face. Default is 80. 0 is the lowest confidence. 100 is the highest
      * confidence.</p>
      */
     inline FaceSearchSettings& WithFaceMatchThreshold(double value) { SetFaceMatchThreshold(value); return *this;}

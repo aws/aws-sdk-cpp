@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/rekognition/model/DetectTextRequest.h>
+#include <aws/rekognition/model/GetTextDetectionRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,35 +22,43 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectTextRequest::DetectTextRequest() : 
-    m_imageHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+GetTextDetectionRequest::GetTextDetectionRequest() : 
+    m_jobIdHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
-Aws::String DetectTextRequest::SerializePayload() const
+Aws::String GetTextDetectionRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_imageHasBeenSet)
+  if(m_jobIdHasBeenSet)
   {
-   payload.WithObject("Image", m_image.Jsonize());
+   payload.WithString("JobId", m_jobId);
 
   }
 
-  if(m_filtersHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   payload.WithObject("Filters", m_filters.Jsonize());
+   payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+   payload.WithString("NextToken", m_nextToken);
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection DetectTextRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection GetTextDetectionRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.DetectText"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.GetTextDetection"));
   return headers;
 
 }

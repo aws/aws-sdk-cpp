@@ -86,22 +86,42 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of table names to return.</p>
+     * <p>The maximum number of table names to return, if the parameter is not
+     * specified DynamoDB defaults to 100.</p> <p>If the number of global tables
+     * DynamoDB finds reaches this limit, it stops the operation and returns the table
+     * names collected up to that point, with a table name in the
+     * <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to
+     * the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of table names to return.</p>
+     * <p>The maximum number of table names to return, if the parameter is not
+     * specified DynamoDB defaults to 100.</p> <p>If the number of global tables
+     * DynamoDB finds reaches this limit, it stops the operation and returns the table
+     * names collected up to that point, with a table name in the
+     * <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to
+     * the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>The maximum number of table names to return.</p>
+     * <p>The maximum number of table names to return, if the parameter is not
+     * specified DynamoDB defaults to 100.</p> <p>If the number of global tables
+     * DynamoDB finds reaches this limit, it stops the operation and returns the table
+     * names collected up to that point, with a table name in the
+     * <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to
+     * the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of table names to return.</p>
+     * <p>The maximum number of table names to return, if the parameter is not
+     * specified DynamoDB defaults to 100.</p> <p>If the number of global tables
+     * DynamoDB finds reaches this limit, it stops the operation and returns the table
+     * names collected up to that point, with a table name in the
+     * <code>LastEvaluatedGlobalTableName</code> to apply in a subsequent operation to
+     * the <code>ExclusiveStartGlobalTableName</code> parameter.</p>
      */
     inline ListGlobalTablesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

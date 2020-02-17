@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/rekognition/model/DetectTextResult.h>
+#include <aws/cloud9/model/ListTagsForResourceResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -21,36 +21,30 @@
 
 #include <utility>
 
-using namespace Aws::Rekognition::Model;
+using namespace Aws::Cloud9::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectTextResult::DetectTextResult()
+ListTagsForResourceResult::ListTagsForResourceResult()
 {
 }
 
-DetectTextResult::DetectTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-DetectTextResult& DetectTextResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("TextDetections"))
+  if(jsonValue.ValueExists("Tags"))
   {
-    Array<JsonView> textDetectionsJsonList = jsonValue.GetArray("TextDetections");
-    for(unsigned textDetectionsIndex = 0; textDetectionsIndex < textDetectionsJsonList.GetLength(); ++textDetectionsIndex)
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
     {
-      m_textDetections.push_back(textDetectionsJsonList[textDetectionsIndex].AsObject());
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("TextModelVersion"))
-  {
-    m_textModelVersion = jsonValue.GetString("TextModelVersion");
-
   }
 
 

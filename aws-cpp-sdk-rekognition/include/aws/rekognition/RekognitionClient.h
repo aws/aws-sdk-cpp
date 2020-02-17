@@ -45,6 +45,7 @@
 #include <aws/rekognition/model/GetFaceSearchResult.h>
 #include <aws/rekognition/model/GetLabelDetectionResult.h>
 #include <aws/rekognition/model/GetPersonTrackingResult.h>
+#include <aws/rekognition/model/GetTextDetectionResult.h>
 #include <aws/rekognition/model/IndexFacesResult.h>
 #include <aws/rekognition/model/ListCollectionsResult.h>
 #include <aws/rekognition/model/ListFacesResult.h>
@@ -60,6 +61,7 @@
 #include <aws/rekognition/model/StartPersonTrackingResult.h>
 #include <aws/rekognition/model/StartProjectVersionResult.h>
 #include <aws/rekognition/model/StartStreamProcessorResult.h>
+#include <aws/rekognition/model/StartTextDetectionResult.h>
 #include <aws/rekognition/model/StopProjectVersionResult.h>
 #include <aws/rekognition/model/StopStreamProcessorResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -125,6 +127,7 @@ namespace Model
         class GetFaceSearchRequest;
         class GetLabelDetectionRequest;
         class GetPersonTrackingRequest;
+        class GetTextDetectionRequest;
         class IndexFacesRequest;
         class ListCollectionsRequest;
         class ListFacesRequest;
@@ -140,6 +143,7 @@ namespace Model
         class StartPersonTrackingRequest;
         class StartProjectVersionRequest;
         class StartStreamProcessorRequest;
+        class StartTextDetectionRequest;
         class StopProjectVersionRequest;
         class StopStreamProcessorRequest;
 
@@ -167,6 +171,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetFaceSearchResult, Aws::Client::AWSError<RekognitionErrors>> GetFaceSearchOutcome;
         typedef Aws::Utils::Outcome<GetLabelDetectionResult, Aws::Client::AWSError<RekognitionErrors>> GetLabelDetectionOutcome;
         typedef Aws::Utils::Outcome<GetPersonTrackingResult, Aws::Client::AWSError<RekognitionErrors>> GetPersonTrackingOutcome;
+        typedef Aws::Utils::Outcome<GetTextDetectionResult, Aws::Client::AWSError<RekognitionErrors>> GetTextDetectionOutcome;
         typedef Aws::Utils::Outcome<IndexFacesResult, Aws::Client::AWSError<RekognitionErrors>> IndexFacesOutcome;
         typedef Aws::Utils::Outcome<ListCollectionsResult, Aws::Client::AWSError<RekognitionErrors>> ListCollectionsOutcome;
         typedef Aws::Utils::Outcome<ListFacesResult, Aws::Client::AWSError<RekognitionErrors>> ListFacesOutcome;
@@ -182,6 +187,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartPersonTrackingResult, Aws::Client::AWSError<RekognitionErrors>> StartPersonTrackingOutcome;
         typedef Aws::Utils::Outcome<StartProjectVersionResult, Aws::Client::AWSError<RekognitionErrors>> StartProjectVersionOutcome;
         typedef Aws::Utils::Outcome<StartStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> StartStreamProcessorOutcome;
+        typedef Aws::Utils::Outcome<StartTextDetectionResult, Aws::Client::AWSError<RekognitionErrors>> StartTextDetectionOutcome;
         typedef Aws::Utils::Outcome<StopProjectVersionResult, Aws::Client::AWSError<RekognitionErrors>> StopProjectVersionOutcome;
         typedef Aws::Utils::Outcome<StopStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> StopStreamProcessorOutcome;
 
@@ -209,6 +215,7 @@ namespace Model
         typedef std::future<GetFaceSearchOutcome> GetFaceSearchOutcomeCallable;
         typedef std::future<GetLabelDetectionOutcome> GetLabelDetectionOutcomeCallable;
         typedef std::future<GetPersonTrackingOutcome> GetPersonTrackingOutcomeCallable;
+        typedef std::future<GetTextDetectionOutcome> GetTextDetectionOutcomeCallable;
         typedef std::future<IndexFacesOutcome> IndexFacesOutcomeCallable;
         typedef std::future<ListCollectionsOutcome> ListCollectionsOutcomeCallable;
         typedef std::future<ListFacesOutcome> ListFacesOutcomeCallable;
@@ -224,6 +231,7 @@ namespace Model
         typedef std::future<StartPersonTrackingOutcome> StartPersonTrackingOutcomeCallable;
         typedef std::future<StartProjectVersionOutcome> StartProjectVersionOutcomeCallable;
         typedef std::future<StartStreamProcessorOutcome> StartStreamProcessorOutcomeCallable;
+        typedef std::future<StartTextDetectionOutcome> StartTextDetectionOutcomeCallable;
         typedef std::future<StopProjectVersionOutcome> StopProjectVersionOutcomeCallable;
         typedef std::future<StopStreamProcessorOutcome> StopStreamProcessorOutcomeCallable;
 } // namespace Model
@@ -254,6 +262,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::GetFaceSearchRequest&, const Model::GetFaceSearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceSearchResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetLabelDetectionRequest&, const Model::GetLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLabelDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetPersonTrackingRequest&, const Model::GetPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPersonTrackingResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::GetTextDetectionRequest&, const Model::GetTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTextDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::IndexFacesRequest&, const Model::IndexFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IndexFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListCollectionsRequest&, const Model::ListCollectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollectionsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::ListFacesRequest&, const Model::ListFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFacesResponseReceivedHandler;
@@ -269,6 +278,7 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::StartPersonTrackingRequest&, const Model::StartPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPersonTrackingResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartProjectVersionRequest&, const Model::StartProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartStreamProcessorRequest&, const Model::StartStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamProcessorResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::StartTextDetectionRequest&, const Model::StartTextDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTextDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StopProjectVersionRequest&, const Model::StopProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StopStreamProcessorRequest&, const Model::StopStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamProcessorResponseReceivedHandler;
 
@@ -1012,11 +1022,12 @@ namespace Model
          * non-frontal or obscured faces, the algorithm might not detect the faces or might
          * detect faces with lower confidence. </p> <p>You pass the input image either as
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
-         * If you use the to call Amazon Rekognition operations, passing image bytes is not
-         * supported. The image must be either a PNG or JPEG formatted file. </p> <note>
-         * <p>This is a stateless API operation. That is, the operation does not persist
-         * any data.</p> </note> <p>This operation requires permissions to perform the
-         * <code>rekognition:DetectFaces</code> action. </p><p><h3>See Also:</h3>   <a
+         * If you use the AWS CLI to call Amazon Rekognition operations, passing image
+         * bytes is not supported. The image must be either a PNG or JPEG formatted file.
+         * </p> <note> <p>This is a stateless API operation. That is, the operation does
+         * not persist any data.</p> </note> <p>This operation requires permissions to
+         * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
          * API Reference</a></p>
          */
@@ -1033,11 +1044,12 @@ namespace Model
          * non-frontal or obscured faces, the algorithm might not detect the faces or might
          * detect faces with lower confidence. </p> <p>You pass the input image either as
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
-         * If you use the to call Amazon Rekognition operations, passing image bytes is not
-         * supported. The image must be either a PNG or JPEG formatted file. </p> <note>
-         * <p>This is a stateless API operation. That is, the operation does not persist
-         * any data.</p> </note> <p>This operation requires permissions to perform the
-         * <code>rekognition:DetectFaces</code> action. </p><p><h3>See Also:</h3>   <a
+         * If you use the AWS CLI to call Amazon Rekognition operations, passing image
+         * bytes is not supported. The image must be either a PNG or JPEG formatted file.
+         * </p> <note> <p>This is a stateless API operation. That is, the operation does
+         * not persist any data.</p> </note> <p>This operation requires permissions to
+         * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
          * API Reference</a></p>
          *
@@ -1056,11 +1068,12 @@ namespace Model
          * non-frontal or obscured faces, the algorithm might not detect the faces or might
          * detect faces with lower confidence. </p> <p>You pass the input image either as
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
-         * If you use the to call Amazon Rekognition operations, passing image bytes is not
-         * supported. The image must be either a PNG or JPEG formatted file. </p> <note>
-         * <p>This is a stateless API operation. That is, the operation does not persist
-         * any data.</p> </note> <p>This operation requires permissions to perform the
-         * <code>rekognition:DetectFaces</code> action. </p><p><h3>See Also:</h3>   <a
+         * If you use the AWS CLI to call Amazon Rekognition operations, passing image
+         * bytes is not supported. The image must be either a PNG or JPEG formatted file.
+         * </p> <note> <p>This is a stateless API operation. That is, the operation does
+         * not persist any data.</p> </note> <p>This operation requires permissions to
+         * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
          * API Reference</a></p>
          *
@@ -2061,6 +2074,100 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPersonTrackingAsync(const Model::GetPersonTrackingRequest& request, const GetPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the text detection results of a Amazon Rekognition Video analysis
+         * started by <a>StartTextDetection</a>.</p> <p>Text detection with Amazon
+         * Rekognition Video is an asynchronous operation. You start text detection by
+         * calling <a>StartTextDetection</a> which returns a job identifier
+         * (<code>JobId</code>) When the text detection operation finishes, Amazon
+         * Rekognition publishes a completion status to the Amazon Simple Notification
+         * Service topic registered in the initial call to <code>StartTextDetection</code>.
+         * To get the results of the text detection operation, first check that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
+         * <code>GetTextDetection</code> and pass the job identifier (<code>JobId</code>)
+         * from the initial call of <code>StartLabelDetection</code>.</p> <p>
+         * <code>GetTextDetection</code> returns an array of detected text
+         * (<code>TextDetections</code>) sorted by the time the text was detected, up to 50
+         * words per frame of video.</p> <p>Each element of the array includes the detected
+         * text, the precentage confidence in the acuracy of the detected text, the time
+         * the text was detected, bounding box information for where the text was located,
+         * and unique identifiers for words and their lines.</p> <p>Use MaxResults
+         * parameter to limit the number of text detections returned. If there are more
+         * results than specified in <code>MaxResults</code>, the value of
+         * <code>NextToken</code> in the operation response contains a pagination token for
+         * getting the next set of results. To get the next page of results, call
+         * <code>GetTextDetection</code> and populate the <code>NextToken</code> request
+         * parameter with the token value returned from the previous call to
+         * <code>GetTextDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetTextDetection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTextDetectionOutcome GetTextDetection(const Model::GetTextDetectionRequest& request) const;
+
+        /**
+         * <p>Gets the text detection results of a Amazon Rekognition Video analysis
+         * started by <a>StartTextDetection</a>.</p> <p>Text detection with Amazon
+         * Rekognition Video is an asynchronous operation. You start text detection by
+         * calling <a>StartTextDetection</a> which returns a job identifier
+         * (<code>JobId</code>) When the text detection operation finishes, Amazon
+         * Rekognition publishes a completion status to the Amazon Simple Notification
+         * Service topic registered in the initial call to <code>StartTextDetection</code>.
+         * To get the results of the text detection operation, first check that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
+         * <code>GetTextDetection</code> and pass the job identifier (<code>JobId</code>)
+         * from the initial call of <code>StartLabelDetection</code>.</p> <p>
+         * <code>GetTextDetection</code> returns an array of detected text
+         * (<code>TextDetections</code>) sorted by the time the text was detected, up to 50
+         * words per frame of video.</p> <p>Each element of the array includes the detected
+         * text, the precentage confidence in the acuracy of the detected text, the time
+         * the text was detected, bounding box information for where the text was located,
+         * and unique identifiers for words and their lines.</p> <p>Use MaxResults
+         * parameter to limit the number of text detections returned. If there are more
+         * results than specified in <code>MaxResults</code>, the value of
+         * <code>NextToken</code> in the operation response contains a pagination token for
+         * getting the next set of results. To get the next page of results, call
+         * <code>GetTextDetection</code> and populate the <code>NextToken</code> request
+         * parameter with the token value returned from the previous call to
+         * <code>GetTextDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetTextDetection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTextDetectionOutcomeCallable GetTextDetectionCallable(const Model::GetTextDetectionRequest& request) const;
+
+        /**
+         * <p>Gets the text detection results of a Amazon Rekognition Video analysis
+         * started by <a>StartTextDetection</a>.</p> <p>Text detection with Amazon
+         * Rekognition Video is an asynchronous operation. You start text detection by
+         * calling <a>StartTextDetection</a> which returns a job identifier
+         * (<code>JobId</code>) When the text detection operation finishes, Amazon
+         * Rekognition publishes a completion status to the Amazon Simple Notification
+         * Service topic registered in the initial call to <code>StartTextDetection</code>.
+         * To get the results of the text detection operation, first check that the status
+         * value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call
+         * <code>GetTextDetection</code> and pass the job identifier (<code>JobId</code>)
+         * from the initial call of <code>StartLabelDetection</code>.</p> <p>
+         * <code>GetTextDetection</code> returns an array of detected text
+         * (<code>TextDetections</code>) sorted by the time the text was detected, up to 50
+         * words per frame of video.</p> <p>Each element of the array includes the detected
+         * text, the precentage confidence in the acuracy of the detected text, the time
+         * the text was detected, bounding box information for where the text was located,
+         * and unique identifiers for words and their lines.</p> <p>Use MaxResults
+         * parameter to limit the number of text detections returned. If there are more
+         * results than specified in <code>MaxResults</code>, the value of
+         * <code>NextToken</code> in the operation response contains a pagination token for
+         * getting the next set of results. To get the next page of results, call
+         * <code>GetTextDetection</code> and populate the <code>NextToken</code> request
+         * parameter with the token value returned from the previous call to
+         * <code>GetTextDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetTextDetection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTextDetectionAsync(const Model::GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects faces in the input image and adds them to the specified collection.
@@ -3131,6 +3238,64 @@ namespace Model
         virtual void StartStreamProcessorAsync(const Model::StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts asynchronous detection of text in a stored video.</p> <p>Amazon
+         * Rekognition Video can detect text in a video stored in an Amazon S3 bucket. Use
+         * <a>Video</a> to specify the bucket name and the filename of the video.
+         * <code>StartTextDetection</code> returns a job identifier (<code>JobId</code>)
+         * which you use to get the results of the operation. When text detection is
+         * finished, Amazon Rekognition Video publishes a completion status to the Amazon
+         * Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>To get the results of the text
+         * detection operation, first check that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetTextDetection</a> and
+         * pass the job identifier (<code>JobId</code>) from the initial call to
+         * <code>StartTextDetection</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartTextDetection">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartTextDetectionOutcome StartTextDetection(const Model::StartTextDetectionRequest& request) const;
+
+        /**
+         * <p>Starts asynchronous detection of text in a stored video.</p> <p>Amazon
+         * Rekognition Video can detect text in a video stored in an Amazon S3 bucket. Use
+         * <a>Video</a> to specify the bucket name and the filename of the video.
+         * <code>StartTextDetection</code> returns a job identifier (<code>JobId</code>)
+         * which you use to get the results of the operation. When text detection is
+         * finished, Amazon Rekognition Video publishes a completion status to the Amazon
+         * Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>To get the results of the text
+         * detection operation, first check that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetTextDetection</a> and
+         * pass the job identifier (<code>JobId</code>) from the initial call to
+         * <code>StartTextDetection</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartTextDetection">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartTextDetectionOutcomeCallable StartTextDetectionCallable(const Model::StartTextDetectionRequest& request) const;
+
+        /**
+         * <p>Starts asynchronous detection of text in a stored video.</p> <p>Amazon
+         * Rekognition Video can detect text in a video stored in an Amazon S3 bucket. Use
+         * <a>Video</a> to specify the bucket name and the filename of the video.
+         * <code>StartTextDetection</code> returns a job identifier (<code>JobId</code>)
+         * which you use to get the results of the operation. When text detection is
+         * finished, Amazon Rekognition Video publishes a completion status to the Amazon
+         * Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>.</p> <p>To get the results of the text
+         * detection operation, first check that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetTextDetection</a> and
+         * pass the job identifier (<code>JobId</code>) from the initial call to
+         * <code>StartTextDetection</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartTextDetection">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartTextDetectionAsync(const Model::StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops a running model. The operation might take a while to complete. To check
          * the current status, call <a>DescribeProjectVersions</a>. </p><p><h3>See
          * Also:</h3>   <a
@@ -3217,6 +3382,7 @@ namespace Model
         void GetFaceSearchAsyncHelper(const Model::GetFaceSearchRequest& request, const GetFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLabelDetectionAsyncHelper(const Model::GetLabelDetectionRequest& request, const GetLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPersonTrackingAsyncHelper(const Model::GetPersonTrackingRequest& request, const GetPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTextDetectionAsyncHelper(const Model::GetTextDetectionRequest& request, const GetTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void IndexFacesAsyncHelper(const Model::IndexFacesRequest& request, const IndexFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCollectionsAsyncHelper(const Model::ListCollectionsRequest& request, const ListCollectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFacesAsyncHelper(const Model::ListFacesRequest& request, const ListFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3232,6 +3398,7 @@ namespace Model
         void StartPersonTrackingAsyncHelper(const Model::StartPersonTrackingRequest& request, const StartPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartProjectVersionAsyncHelper(const Model::StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartStreamProcessorAsyncHelper(const Model::StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartTextDetectionAsyncHelper(const Model::StartTextDetectionRequest& request, const StartTextDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopProjectVersionAsyncHelper(const Model::StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopStreamProcessorAsyncHelper(const Model::StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

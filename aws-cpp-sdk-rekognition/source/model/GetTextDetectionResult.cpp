@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/rekognition/model/DetectTextResult.h>
+#include <aws/rekognition/model/GetTextDetectionResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,18 +26,38 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectTextResult::DetectTextResult()
+GetTextDetectionResult::GetTextDetectionResult() : 
+    m_jobStatus(VideoJobStatus::NOT_SET)
 {
 }
 
-DetectTextResult::DetectTextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetTextDetectionResult::GetTextDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_jobStatus(VideoJobStatus::NOT_SET)
 {
   *this = result;
 }
 
-DetectTextResult& DetectTextResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetTextDetectionResult& GetTextDetectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("JobStatus"))
+  {
+    m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("StatusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("StatusMessage");
+
+  }
+
+  if(jsonValue.ValueExists("VideoMetadata"))
+  {
+    m_videoMetadata = jsonValue.GetObject("VideoMetadata");
+
+  }
+
   if(jsonValue.ValueExists("TextDetections"))
   {
     Array<JsonView> textDetectionsJsonList = jsonValue.GetArray("TextDetections");
@@ -45,6 +65,12 @@ DetectTextResult& DetectTextResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_textDetections.push_back(textDetectionsJsonList[textDetectionsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("NextToken"))
+  {
+    m_nextToken = jsonValue.GetString("NextToken");
+
   }
 
   if(jsonValue.ValueExists("TextModelVersion"))

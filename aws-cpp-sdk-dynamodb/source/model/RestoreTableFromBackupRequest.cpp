@@ -29,7 +29,8 @@ RestoreTableFromBackupRequest::RestoreTableFromBackupRequest() :
     m_billingModeOverrideHasBeenSet(false),
     m_globalSecondaryIndexOverrideHasBeenSet(false),
     m_localSecondaryIndexOverrideHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false)
+    m_provisionedThroughputOverrideHasBeenSet(false),
+    m_sSESpecificationOverrideHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String RestoreTableFromBackupRequest::SerializePayload() const
   if(m_provisionedThroughputOverrideHasBeenSet)
   {
    payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
+
+  }
+
+  if(m_sSESpecificationOverrideHasBeenSet)
+  {
+   payload.WithObject("SSESpecificationOverride", m_sSESpecificationOverride.Jsonize());
 
   }
 

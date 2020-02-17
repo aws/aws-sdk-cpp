@@ -29,6 +29,9 @@
 #include <aws/cloud9/model/DescribeEnvironmentStatusResult.h>
 #include <aws/cloud9/model/DescribeEnvironmentsResult.h>
 #include <aws/cloud9/model/ListEnvironmentsResult.h>
+#include <aws/cloud9/model/ListTagsForResourceResult.h>
+#include <aws/cloud9/model/TagResourceResult.h>
+#include <aws/cloud9/model/UntagResourceResult.h>
 #include <aws/cloud9/model/UpdateEnvironmentResult.h>
 #include <aws/cloud9/model/UpdateEnvironmentMembershipResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -78,6 +81,9 @@ namespace Model
         class DescribeEnvironmentStatusRequest;
         class DescribeEnvironmentsRequest;
         class ListEnvironmentsRequest;
+        class ListTagsForResourceRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateEnvironmentRequest;
         class UpdateEnvironmentMembershipRequest;
 
@@ -89,6 +95,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeEnvironmentStatusResult, Aws::Client::AWSError<Cloud9Errors>> DescribeEnvironmentStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, Aws::Client::AWSError<Cloud9Errors>> DescribeEnvironmentsOutcome;
         typedef Aws::Utils::Outcome<ListEnvironmentsResult, Aws::Client::AWSError<Cloud9Errors>> ListEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<Cloud9Errors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<Cloud9Errors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<Cloud9Errors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Aws::Client::AWSError<Cloud9Errors>> UpdateEnvironmentOutcome;
         typedef Aws::Utils::Outcome<UpdateEnvironmentMembershipResult, Aws::Client::AWSError<Cloud9Errors>> UpdateEnvironmentMembershipOutcome;
 
@@ -100,6 +109,9 @@ namespace Model
         typedef std::future<DescribeEnvironmentStatusOutcome> DescribeEnvironmentStatusOutcomeCallable;
         typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
         typedef std::future<ListEnvironmentsOutcome> ListEnvironmentsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateEnvironmentOutcome> UpdateEnvironmentOutcomeCallable;
         typedef std::future<UpdateEnvironmentMembershipOutcome> UpdateEnvironmentMembershipOutcomeCallable;
 } // namespace Model
@@ -114,6 +126,9 @@ namespace Model
     typedef std::function<void(const Cloud9Client*, const Model::DescribeEnvironmentStatusRequest&, const Model::DescribeEnvironmentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEnvironmentStatusResponseReceivedHandler;
     typedef std::function<void(const Cloud9Client*, const Model::DescribeEnvironmentsRequest&, const Model::DescribeEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const Cloud9Client*, const Model::ListEnvironmentsRequest&, const Model::ListEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnvironmentsResponseReceivedHandler;
+    typedef std::function<void(const Cloud9Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const Cloud9Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const Cloud9Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const Cloud9Client*, const Model::UpdateEnvironmentRequest&, const Model::UpdateEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentResponseReceivedHandler;
     typedef std::function<void(const Cloud9Client*, const Model::UpdateEnvironmentMembershipRequest&, const Model::UpdateEnvironmentMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEnvironmentMembershipResponseReceivedHandler;
 
@@ -137,7 +152,10 @@ namespace Model
    * </li> <li> <p> <code>DescribeEnvironmentStatus</code>: Gets status information
    * for an environment.</p> </li> <li> <p> <code>ListEnvironments</code>: Gets a
    * list of environment identifiers.</p> </li> <li> <p>
-   * <code>UpdateEnvironment</code>: Changes the settings of an existing
+   * <code>ListTagsForResource</code>: Gets the tags for an environment.</p> </li>
+   * <li> <p> <code>TagResource</code>: Adds tags to an environment.</p> </li> <li>
+   * <p> <code>UntagResource</code>: Removes tags from an environment.</p> </li> <li>
+   * <p> <code>UpdateEnvironment</code>: Changes the settings of an existing
    * environment.</p> </li> <li> <p> <code>UpdateEnvironmentMembership</code>:
    * Changes the settings of an existing environment member for an environment.</p>
    * </li> </ul>
@@ -402,6 +420,96 @@ namespace Model
         virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a list of the tags associated with an AWS Cloud9 development
+         * environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Gets a list of the tags associated with an AWS Cloud9 development
+         * environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Gets a list of the tags associated with an AWS Cloud9 development
+         * environment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * that you add to an AWS Cloud9 environment by using this method will NOT be
+         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * that you add to an AWS Cloud9 environment by using this method will NOT be
+         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds tags to an AWS Cloud9 development environment.</p> <important> <p>Tags
+         * that you add to an AWS Cloud9 environment by using this method will NOT be
+         * automatically propagated to underlying resources.</p> </important><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from an AWS Cloud9 development environment.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from an AWS Cloud9 development environment.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from an AWS Cloud9 development environment.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes the settings of an existing AWS Cloud9 development
          * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UpdateEnvironment">AWS
@@ -469,6 +577,9 @@ namespace Model
         void DescribeEnvironmentStatusAsyncHelper(const Model::DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEnvironmentsAsyncHelper(const Model::DescribeEnvironmentsRequest& request, const DescribeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEnvironmentsAsyncHelper(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnvironmentAsyncHelper(const Model::UpdateEnvironmentRequest& request, const UpdateEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEnvironmentMembershipAsyncHelper(const Model::UpdateEnvironmentMembershipRequest& request, const UpdateEnvironmentMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
