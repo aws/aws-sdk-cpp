@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>An Active Directory Domain membership record associated with the DB
-   * instance.</p><p><h3>See Also:</h3>   <a
+   * <p>An Active Directory Domain membership record associated with the DB instance
+   * or cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DomainMembership">AWS
    * API Reference</a></p>
    */
@@ -92,50 +92,50 @@ namespace Model
 
 
     /**
-     * <p>The status of the DB instance's Active Directory Domain membership, such as
-     * joined, pending-join, failed etc).</p>
+     * <p>The status of the Active Directory Domain membership for the DB instance or
+     * cluster. Values include joined, pending-join, failed, and so on.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the DB instance's Active Directory Domain membership, such as
-     * joined, pending-join, failed etc).</p>
+     * <p>The status of the Active Directory Domain membership for the DB instance or
+     * cluster. Values include joined, pending-join, failed, and so on.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the DB instance's Active Directory Domain membership, such as
-     * joined, pending-join, failed etc).</p>
+     * <p>The status of the Active Directory Domain membership for the DB instance or
+     * cluster. Values include joined, pending-join, failed, and so on.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the DB instance's Active Directory Domain membership, such as
-     * joined, pending-join, failed etc).</p>
+     * <p>The status of the Active Directory Domain membership for the DB instance or
+     * cluster. Values include joined, pending-join, failed, and so on.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the DB instance's Active Directory Domain membership, such as
-     * joined, pending-join, failed etc).</p>
+     * <p>The status of the Active Directory Domain membership for the DB instance or
+     * cluster. Values include joined, pending-join, failed, and so on.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the DB instance's Active Directory Domain membership, such as
-     * joined, pending-join, failed etc).</p>
+     * <p>The status of the Active Directory Domain membership for the DB instance or
+     * cluster. Values include joined, pending-join, failed, and so on.</p>
      */
     inline DomainMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the DB instance's Active Directory Domain membership, such as
-     * joined, pending-join, failed etc).</p>
+     * <p>The status of the Active Directory Domain membership for the DB instance or
+     * cluster. Values include joined, pending-join, failed, and so on.</p>
      */
     inline DomainMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the DB instance's Active Directory Domain membership, such as
-     * joined, pending-join, failed etc).</p>
+     * <p>The status of the Active Directory Domain membership for the DB instance or
+     * cluster. Values include joined, pending-join, failed, and so on.</p>
      */
     inline DomainMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 

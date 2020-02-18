@@ -44,6 +44,8 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_allowMajorVersionUpgrade(false),
     m_allowMajorVersionUpgradeHasBeenSet(false),
     m_dBInstanceParameterGroupNameHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_domainIAMRoleNameHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
@@ -147,6 +149,16 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_dBInstanceParameterGroupNameHasBeenSet)
   {
     ss << "DBInstanceParameterGroupName=" << StringUtils::URLEncode(m_dBInstanceParameterGroupName.c_str()) << "&";
+  }
+
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
+
+  if(m_domainIAMRoleNameHasBeenSet)
+  {
+    ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
 
   if(m_scalingConfigurationHasBeenSet)

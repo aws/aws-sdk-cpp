@@ -96,7 +96,8 @@ DBCluster::DBCluster() :
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_crossAccountClone(false),
-    m_crossAccountCloneHasBeenSet(false)
+    m_crossAccountCloneHasBeenSet(false),
+    m_domainMembershipsHasBeenSet(false)
 {
 }
 
@@ -166,7 +167,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
     m_crossAccountClone(false),
-    m_crossAccountCloneHasBeenSet(false)
+    m_crossAccountCloneHasBeenSet(false),
+    m_domainMembershipsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -531,6 +533,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_crossAccountClone = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(crossAccountCloneNode.GetText()).c_str()).c_str());
       m_crossAccountCloneHasBeenSet = true;
     }
+    XmlNode domainMembershipsNode = resultNode.FirstChild("DomainMemberships");
+    if(!domainMembershipsNode.IsNull())
+    {
+      XmlNode domainMembershipsMember = domainMembershipsNode.FirstChild("DomainMembership");
+      while(!domainMembershipsMember.IsNull())
+      {
+        m_domainMemberships.push_back(domainMembershipsMember);
+        domainMembershipsMember = domainMembershipsMember.NextNode("DomainMembership");
+      }
+
+      m_domainMembershipsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -835,6 +849,17 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".CrossAccountClone=" << std::boolalpha << m_crossAccountClone << "&";
   }
 
+  if(m_domainMembershipsHasBeenSet)
+  {
+      unsigned domainMembershipsIdx = 1;
+      for(auto& item : m_domainMemberships)
+      {
+        Aws::StringStream domainMembershipsSs;
+        domainMembershipsSs << location << index << locationValue << ".DomainMembership." << domainMembershipsIdx++;
+        item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
+      }
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1084,6 +1109,16 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_crossAccountCloneHasBeenSet)
   {
       oStream << location << ".CrossAccountClone=" << std::boolalpha << m_crossAccountClone << "&";
+  }
+  if(m_domainMembershipsHasBeenSet)
+  {
+      unsigned domainMembershipsIdx = 1;
+      for(auto& item : m_domainMemberships)
+      {
+        Aws::StringStream domainMembershipsSs;
+        domainMembershipsSs << location <<  ".DomainMembership." << domainMembershipsIdx++;
+        item.OutputToStream(oStream, domainMembershipsSs.str().c_str());
+      }
   }
 }
 

@@ -592,6 +592,19 @@ namespace Model
      */
     inline ScalingPolicy& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline bool GetEnabled() const{ return m_enabled; }
+
+    
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    
+    inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
+
+    
+    inline ScalingPolicy& WithEnabled(bool value) { SetEnabled(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -635,6 +648,9 @@ namespace Model
 
     TargetTrackingConfiguration m_targetTrackingConfiguration;
     bool m_targetTrackingConfigurationHasBeenSet;
+
+    bool m_enabled;
+    bool m_enabledHasBeenSet;
   };
 
 } // namespace Model

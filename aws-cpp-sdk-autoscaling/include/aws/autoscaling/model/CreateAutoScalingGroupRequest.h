@@ -1475,25 +1475,41 @@ namespace Model
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
+     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
+     * 604800.</p>
      */
     inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
+     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
+     * 604800.</p>
      */
     inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
+     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
+     * 604800.</p>
      */
     inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
 
     /**
      * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     * service.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
+     * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
+     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
+     * 604800.</p>
      */
     inline CreateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
 

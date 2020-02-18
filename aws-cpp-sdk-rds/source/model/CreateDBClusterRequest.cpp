@@ -58,7 +58,9 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_enableHttpEndpoint(false),
     m_enableHttpEndpointHasBeenSet(false),
     m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false)
+    m_copyTagsToSnapshotHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_domainIAMRoleNameHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,16 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_copyTagsToSnapshotHasBeenSet)
   {
     ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
+
+  if(m_domainHasBeenSet)
+  {
+    ss << "Domain=" << StringUtils::URLEncode(m_domain.c_str()) << "&";
+  }
+
+  if(m_domainIAMRoleNameHasBeenSet)
+  {
+    ss << "DomainIAMRoleName=" << StringUtils::URLEncode(m_domainIAMRoleName.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -90,6 +90,47 @@ namespace Model
 
 
     /**
+     * <p>The audio fallback URL.</p>
+     */
+    inline const Aws::String& GetAudioFallbackUrl() const{ return m_audioFallbackUrl; }
+
+    /**
+     * <p>The audio fallback URL.</p>
+     */
+    inline bool AudioFallbackUrlHasBeenSet() const { return m_audioFallbackUrlHasBeenSet; }
+
+    /**
+     * <p>The audio fallback URL.</p>
+     */
+    inline void SetAudioFallbackUrl(const Aws::String& value) { m_audioFallbackUrlHasBeenSet = true; m_audioFallbackUrl = value; }
+
+    /**
+     * <p>The audio fallback URL.</p>
+     */
+    inline void SetAudioFallbackUrl(Aws::String&& value) { m_audioFallbackUrlHasBeenSet = true; m_audioFallbackUrl = std::move(value); }
+
+    /**
+     * <p>The audio fallback URL.</p>
+     */
+    inline void SetAudioFallbackUrl(const char* value) { m_audioFallbackUrlHasBeenSet = true; m_audioFallbackUrl.assign(value); }
+
+    /**
+     * <p>The audio fallback URL.</p>
+     */
+    inline MediaPlacement& WithAudioFallbackUrl(const Aws::String& value) { SetAudioFallbackUrl(value); return *this;}
+
+    /**
+     * <p>The audio fallback URL.</p>
+     */
+    inline MediaPlacement& WithAudioFallbackUrl(Aws::String&& value) { SetAudioFallbackUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The audio fallback URL.</p>
+     */
+    inline MediaPlacement& WithAudioFallbackUrl(const char* value) { SetAudioFallbackUrl(value); return *this;}
+
+
+    /**
      * <p>The screen data URL.</p>
      */
     inline const Aws::String& GetScreenDataUrl() const{ return m_screenDataUrl; }
@@ -297,6 +338,9 @@ namespace Model
 
     Aws::String m_audioHostUrl;
     bool m_audioHostUrlHasBeenSet;
+
+    Aws::String m_audioFallbackUrl;
+    bool m_audioFallbackUrlHasBeenSet;
 
     Aws::String m_screenDataUrl;
     bool m_screenDataUrlHasBeenSet;

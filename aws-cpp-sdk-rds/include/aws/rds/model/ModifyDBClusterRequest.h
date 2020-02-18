@@ -1187,6 +1187,112 @@ namespace Model
 
 
     /**
+     * <p>The Active Directory directory ID to move the DB cluster to. Specify
+     * <code>none</code> to remove the cluster from its current domain. The domain must
+     * be created prior to this operation. </p>
+     */
+    inline const Aws::String& GetDomain() const{ return m_domain; }
+
+    /**
+     * <p>The Active Directory directory ID to move the DB cluster to. Specify
+     * <code>none</code> to remove the cluster from its current domain. The domain must
+     * be created prior to this operation. </p>
+     */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The Active Directory directory ID to move the DB cluster to. Specify
+     * <code>none</code> to remove the cluster from its current domain. The domain must
+     * be created prior to this operation. </p>
+     */
+    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
+
+    /**
+     * <p>The Active Directory directory ID to move the DB cluster to. Specify
+     * <code>none</code> to remove the cluster from its current domain. The domain must
+     * be created prior to this operation. </p>
+     */
+    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
+
+    /**
+     * <p>The Active Directory directory ID to move the DB cluster to. Specify
+     * <code>none</code> to remove the cluster from its current domain. The domain must
+     * be created prior to this operation. </p>
+     */
+    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
+
+    /**
+     * <p>The Active Directory directory ID to move the DB cluster to. Specify
+     * <code>none</code> to remove the cluster from its current domain. The domain must
+     * be created prior to this operation. </p>
+     */
+    inline ModifyDBClusterRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
+
+    /**
+     * <p>The Active Directory directory ID to move the DB cluster to. Specify
+     * <code>none</code> to remove the cluster from its current domain. The domain must
+     * be created prior to this operation. </p>
+     */
+    inline ModifyDBClusterRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
+
+    /**
+     * <p>The Active Directory directory ID to move the DB cluster to. Specify
+     * <code>none</code> to remove the cluster from its current domain. The domain must
+     * be created prior to this operation. </p>
+     */
+    inline ModifyDBClusterRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline ModifyDBClusterRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline ModifyDBClusterRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
+    inline ModifyDBClusterRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+
+
+    /**
      * <p>The scaling properties of the DB cluster. You can only modify scaling
      * properties for DB clusters in <code>serverless</code> DB engine mode.</p>
      */
@@ -1381,6 +1487,12 @@ namespace Model
 
     Aws::String m_dBInstanceParameterGroupName;
     bool m_dBInstanceParameterGroupNameHasBeenSet;
+
+    Aws::String m_domain;
+    bool m_domainHasBeenSet;
+
+    Aws::String m_domainIAMRoleName;
+    bool m_domainIAMRoleNameHasBeenSet;
 
     ScalingConfiguration m_scalingConfiguration;
     bool m_scalingConfigurationHasBeenSet;

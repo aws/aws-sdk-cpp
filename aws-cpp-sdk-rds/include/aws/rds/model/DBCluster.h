@@ -26,6 +26,7 @@
 #include <aws/rds/model/DBClusterMember.h>
 #include <aws/rds/model/VpcSecurityGroupMembership.h>
 #include <aws/rds/model/DBClusterRole.h>
+#include <aws/rds/model/DomainMembership.h>
 #include <utility>
 
 namespace Aws
@@ -2233,6 +2234,55 @@ namespace Model
      */
     inline DBCluster& WithCrossAccountClone(bool value) { SetCrossAccountClone(value); return *this;}
 
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * cluster.</p>
+     */
+    inline const Aws::Vector<DomainMembership>& GetDomainMemberships() const{ return m_domainMemberships; }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * cluster.</p>
+     */
+    inline bool DomainMembershipsHasBeenSet() const { return m_domainMembershipsHasBeenSet; }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * cluster.</p>
+     */
+    inline void SetDomainMemberships(const Aws::Vector<DomainMembership>& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships = value; }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * cluster.</p>
+     */
+    inline void SetDomainMemberships(Aws::Vector<DomainMembership>&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships = std::move(value); }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * cluster.</p>
+     */
+    inline DBCluster& WithDomainMemberships(const Aws::Vector<DomainMembership>& value) { SetDomainMemberships(value); return *this;}
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * cluster.</p>
+     */
+    inline DBCluster& WithDomainMemberships(Aws::Vector<DomainMembership>&& value) { SetDomainMemberships(std::move(value)); return *this;}
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * cluster.</p>
+     */
+    inline DBCluster& AddDomainMemberships(const DomainMembership& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(value); return *this; }
+
+    /**
+     * <p>The Active Directory Domain membership records associated with the DB
+     * cluster.</p>
+     */
+    inline DBCluster& AddDomainMemberships(DomainMembership&& value) { m_domainMembershipsHasBeenSet = true; m_domainMemberships.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_allocatedStorage;
@@ -2387,6 +2437,9 @@ namespace Model
 
     bool m_crossAccountClone;
     bool m_crossAccountCloneHasBeenSet;
+
+    Aws::Vector<DomainMembership> m_domainMemberships;
+    bool m_domainMembershipsHasBeenSet;
   };
 
 } // namespace Model

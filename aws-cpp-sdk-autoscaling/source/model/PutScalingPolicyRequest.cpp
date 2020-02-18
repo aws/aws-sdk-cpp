@@ -37,7 +37,9 @@ PutScalingPolicyRequest::PutScalingPolicyRequest() :
     m_stepAdjustmentsHasBeenSet(false),
     m_estimatedInstanceWarmup(0),
     m_estimatedInstanceWarmupHasBeenSet(false),
-    m_targetTrackingConfigurationHasBeenSet(false)
+    m_targetTrackingConfigurationHasBeenSet(false),
+    m_enabled(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,11 @@ Aws::String PutScalingPolicyRequest::SerializePayload() const
   if(m_targetTrackingConfigurationHasBeenSet)
   {
     m_targetTrackingConfiguration.OutputToStream(ss, "TargetTrackingConfiguration");
+  }
+
+  if(m_enabledHasBeenSet)
+  {
+    ss << "Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
   ss << "Version=2011-01-01";

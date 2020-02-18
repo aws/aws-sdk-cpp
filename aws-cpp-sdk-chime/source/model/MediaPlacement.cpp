@@ -30,6 +30,7 @@ namespace Model
 
 MediaPlacement::MediaPlacement() : 
     m_audioHostUrlHasBeenSet(false),
+    m_audioFallbackUrlHasBeenSet(false),
     m_screenDataUrlHasBeenSet(false),
     m_screenSharingUrlHasBeenSet(false),
     m_screenViewingUrlHasBeenSet(false),
@@ -40,6 +41,7 @@ MediaPlacement::MediaPlacement() :
 
 MediaPlacement::MediaPlacement(JsonView jsonValue) : 
     m_audioHostUrlHasBeenSet(false),
+    m_audioFallbackUrlHasBeenSet(false),
     m_screenDataUrlHasBeenSet(false),
     m_screenSharingUrlHasBeenSet(false),
     m_screenViewingUrlHasBeenSet(false),
@@ -56,6 +58,13 @@ MediaPlacement& MediaPlacement::operator =(JsonView jsonValue)
     m_audioHostUrl = jsonValue.GetString("AudioHostUrl");
 
     m_audioHostUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AudioFallbackUrl"))
+  {
+    m_audioFallbackUrl = jsonValue.GetString("AudioFallbackUrl");
+
+    m_audioFallbackUrlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ScreenDataUrl"))
@@ -103,6 +112,12 @@ JsonValue MediaPlacement::Jsonize() const
   if(m_audioHostUrlHasBeenSet)
   {
    payload.WithString("AudioHostUrl", m_audioHostUrl);
+
+  }
+
+  if(m_audioFallbackUrlHasBeenSet)
+  {
+   payload.WithString("AudioFallbackUrl", m_audioFallbackUrl);
 
   }
 
