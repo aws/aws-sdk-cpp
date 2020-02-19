@@ -43,25 +43,39 @@ namespace Model
     DescribeServiceActionExecutionParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The parameters of the self-service action.</p>
+     */
     inline const Aws::Vector<ExecutionParameter>& GetServiceActionParameters() const{ return m_serviceActionParameters; }
 
-    
+    /**
+     * <p>The parameters of the self-service action.</p>
+     */
     inline void SetServiceActionParameters(const Aws::Vector<ExecutionParameter>& value) { m_serviceActionParameters = value; }
 
-    
+    /**
+     * <p>The parameters of the self-service action.</p>
+     */
     inline void SetServiceActionParameters(Aws::Vector<ExecutionParameter>&& value) { m_serviceActionParameters = std::move(value); }
 
-    
+    /**
+     * <p>The parameters of the self-service action.</p>
+     */
     inline DescribeServiceActionExecutionParametersResult& WithServiceActionParameters(const Aws::Vector<ExecutionParameter>& value) { SetServiceActionParameters(value); return *this;}
 
-    
+    /**
+     * <p>The parameters of the self-service action.</p>
+     */
     inline DescribeServiceActionExecutionParametersResult& WithServiceActionParameters(Aws::Vector<ExecutionParameter>&& value) { SetServiceActionParameters(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The parameters of the self-service action.</p>
+     */
     inline DescribeServiceActionExecutionParametersResult& AddServiceActionParameters(const ExecutionParameter& value) { m_serviceActionParameters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The parameters of the self-service action.</p>
+     */
     inline DescribeServiceActionExecutionParametersResult& AddServiceActionParameters(ExecutionParameter&& value) { m_serviceActionParameters.push_back(std::move(value)); return *this; }
 
   private:

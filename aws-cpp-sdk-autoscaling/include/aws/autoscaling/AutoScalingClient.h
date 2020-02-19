@@ -667,7 +667,7 @@ namespace Model
          * information about viewing this limit, see <a>DescribeAccountLimits</a>. For
          * information about updating this limit, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
@@ -680,7 +680,7 @@ namespace Model
          * information about viewing this limit, see <a>DescribeAccountLimits</a>. For
          * information about updating this limit, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
@@ -695,7 +695,7 @@ namespace Model
          * information about viewing this limit, see <a>DescribeAccountLimits</a>. For
          * information about updating this limit, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
@@ -710,7 +710,7 @@ namespace Model
          * see <a>DescribeAccountLimits</a>. For information about updating this limit, see
          * <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Amazon EC2 Auto Scaling User
@@ -726,7 +726,7 @@ namespace Model
          * see <a>DescribeAccountLimits</a>. For information about updating this limit, see
          * <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Amazon EC2 Auto Scaling User
@@ -744,7 +744,7 @@ namespace Model
          * see <a>DescribeAccountLimits</a>. For information about updating this limit, see
          * <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Amazon EC2 Auto Scaling User
@@ -1041,11 +1041,10 @@ namespace Model
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the current Amazon EC2 Auto Scaling resource limits for your AWS
-         * account.</p> <p>For information about requesting an increase in these limits,
-         * see <a
+         * <p>Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS
+         * account.</p> <p>For information about requesting an increase, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">AWS
          * API Reference</a></p>
@@ -1053,11 +1052,10 @@ namespace Model
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
-         * <p>Describes the current Amazon EC2 Auto Scaling resource limits for your AWS
-         * account.</p> <p>For information about requesting an increase in these limits,
-         * see <a
+         * <p>Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS
+         * account.</p> <p>For information about requesting an increase, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">AWS
          * API Reference</a></p>
@@ -1067,11 +1065,10 @@ namespace Model
         virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
-         * <p>Describes the current Amazon EC2 Auto Scaling resource limits for your AWS
-         * account.</p> <p>For information about requesting an increase in these limits,
-         * see <a
+         * <p>Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS
+         * account.</p> <p>For information about requesting an increase, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
-         * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
+         * EC2 Auto Scaling Service Quotas</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">AWS
          * API Reference</a></p>
@@ -2044,11 +2041,9 @@ namespace Model
         virtual void PutNotificationConfigurationAsync(const Model::PutNotificationConfigurationRequest& request, const PutNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates a scaling policy for an Auto Scaling group. To update an
-         * existing scaling policy, use the existing policy name and set the parameters to
-         * change. Any existing parameter not changed in an update to an existing policy is
-         * not changed in this update request.</p> <p>For more information about using
-         * scaling policies to scale your Auto Scaling group automatically, see <a
+         * <p>Creates or updates a scaling policy for an Auto Scaling group.</p> <p>For
+         * more information about using scaling policies to scale your Auto Scaling group
+         * automatically, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
          * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2058,11 +2053,9 @@ namespace Model
         virtual Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a scaling policy for an Auto Scaling group. To update an
-         * existing scaling policy, use the existing policy name and set the parameters to
-         * change. Any existing parameter not changed in an update to an existing policy is
-         * not changed in this update request.</p> <p>For more information about using
-         * scaling policies to scale your Auto Scaling group automatically, see <a
+         * <p>Creates or updates a scaling policy for an Auto Scaling group.</p> <p>For
+         * more information about using scaling policies to scale your Auto Scaling group
+         * automatically, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
          * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2074,11 +2067,9 @@ namespace Model
         virtual Model::PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a scaling policy for an Auto Scaling group. To update an
-         * existing scaling policy, use the existing policy name and set the parameters to
-         * change. Any existing parameter not changed in an update to an existing policy is
-         * not changed in this update request.</p> <p>For more information about using
-         * scaling policies to scale your Auto Scaling group automatically, see <a
+         * <p>Creates or updates a scaling policy for an Auto Scaling group.</p> <p>For
+         * more information about using scaling policies to scale your Auto Scaling group
+         * automatically, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
          * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2407,8 +2398,19 @@ namespace Model
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size.</p> <p>This call simply makes a termination request. The instance is not
-         * terminated immediately.</p><p><h3>See Also:</h3>   <a
+         * size. This call simply makes a termination request. The instance is not
+         * terminated immediately. When an instance is terminated, the instance status
+         * changes to <code>terminated</code>. You can't connect to or start an instance
+         * after you've terminated it.</p> <p>If you do not specify the option to decrement
+         * the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the
+         * ones that are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances
+         * instances across all Availability Zones. If you decrement the desired capacity,
+         * your Auto Scaling group can become unbalanced between Availability Zones. Amazon
+         * EC2 Auto Scaling tries to rebalance the group, and rebalancing might terminate
+         * instances in other zones. For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
+         * Activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">AWS
          * API Reference</a></p>
          */
@@ -2416,8 +2418,19 @@ namespace Model
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size.</p> <p>This call simply makes a termination request. The instance is not
-         * terminated immediately.</p><p><h3>See Also:</h3>   <a
+         * size. This call simply makes a termination request. The instance is not
+         * terminated immediately. When an instance is terminated, the instance status
+         * changes to <code>terminated</code>. You can't connect to or start an instance
+         * after you've terminated it.</p> <p>If you do not specify the option to decrement
+         * the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the
+         * ones that are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances
+         * instances across all Availability Zones. If you decrement the desired capacity,
+         * your Auto Scaling group can become unbalanced between Availability Zones. Amazon
+         * EC2 Auto Scaling tries to rebalance the group, and rebalancing might terminate
+         * instances in other zones. For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
+         * Activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">AWS
          * API Reference</a></p>
          *
@@ -2427,8 +2440,19 @@ namespace Model
 
         /**
          * <p>Terminates the specified instance and optionally adjusts the desired group
-         * size.</p> <p>This call simply makes a termination request. The instance is not
-         * terminated immediately.</p><p><h3>See Also:</h3>   <a
+         * size. This call simply makes a termination request. The instance is not
+         * terminated immediately. When an instance is terminated, the instance status
+         * changes to <code>terminated</code>. You can't connect to or start an instance
+         * after you've terminated it.</p> <p>If you do not specify the option to decrement
+         * the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the
+         * ones that are terminated. </p> <p>By default, Amazon EC2 Auto Scaling balances
+         * instances across all Availability Zones. If you decrement the desired capacity,
+         * your Auto Scaling group can become unbalanced between Availability Zones. Amazon
+         * EC2 Auto Scaling tries to rebalance the group, and rebalancing might terminate
+         * instances in other zones. For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-benefits.html#AutoScalingBehavior.InstanceUsage">Rebalancing
+         * Activities</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TerminateInstanceInAutoScalingGroup">AWS
          * API Reference</a></p>
          *

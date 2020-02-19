@@ -267,22 +267,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the product version is active.</p>
+     * <p>Indicates whether the product version is active.</p> <p>Inactive provisioning
+     * artifacts are invisible to end users. End users cannot launch or update a
+     * provisioned product from an inactive provisioning artifact.</p>
      */
     inline bool GetActive() const{ return m_active; }
 
     /**
-     * <p>Indicates whether the product version is active.</p>
+     * <p>Indicates whether the product version is active.</p> <p>Inactive provisioning
+     * artifacts are invisible to end users. End users cannot launch or update a
+     * provisioned product from an inactive provisioning artifact.</p>
      */
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
 
     /**
-     * <p>Indicates whether the product version is active.</p>
+     * <p>Indicates whether the product version is active.</p> <p>Inactive provisioning
+     * artifacts are invisible to end users. End users cannot launch or update a
+     * provisioned product from an inactive provisioning artifact.</p>
      */
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
 
     /**
-     * <p>Indicates whether the product version is active.</p>
+     * <p>Indicates whether the product version is active.</p> <p>Inactive provisioning
+     * artifacts are invisible to end users. End users cannot launch or update a
+     * provisioned product from an inactive provisioning artifact.</p>
      */
     inline UpdateProvisioningArtifactRequest& WithActive(bool value) { SetActive(value); return *this;}
 

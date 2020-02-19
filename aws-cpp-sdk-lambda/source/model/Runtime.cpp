@@ -48,6 +48,7 @@ namespace Aws
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
         static const int go1_x_HASH = HashingUtils::HashString("go1.x");
         static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
+        static const int ruby2_7_HASH = HashingUtils::HashString("ruby2.7");
         static const int provided_HASH = HashingUtils::HashString("provided");
 
 
@@ -126,6 +127,10 @@ namespace Aws
           {
             return Runtime::ruby2_5;
           }
+          else if (hashCode == ruby2_7_HASH)
+          {
+            return Runtime::ruby2_7;
+          }
           else if (hashCode == provided_HASH)
           {
             return Runtime::provided;
@@ -180,6 +185,8 @@ namespace Aws
             return "go1.x";
           case Runtime::ruby2_5:
             return "ruby2.5";
+          case Runtime::ruby2_7:
+            return "ruby2.7";
           case Runtime::provided:
             return "provided";
           default:

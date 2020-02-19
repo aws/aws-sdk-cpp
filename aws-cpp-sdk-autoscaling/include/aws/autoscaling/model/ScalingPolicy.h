@@ -593,16 +593,28 @@ namespace Model
     inline ScalingPolicy& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Indicates whether the policy is enabled (<code>true</code>) or disabled
+     * (<code>false</code>).</p>
+     */
     inline bool GetEnabled() const{ return m_enabled; }
 
-    
+    /**
+     * <p>Indicates whether the policy is enabled (<code>true</code>) or disabled
+     * (<code>false</code>).</p>
+     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
-    
+    /**
+     * <p>Indicates whether the policy is enabled (<code>true</code>) or disabled
+     * (<code>false</code>).</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
-    
+    /**
+     * <p>Indicates whether the policy is enabled (<code>true</code>) or disabled
+     * (<code>false</code>).</p>
+     */
     inline ScalingPolicy& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:

@@ -1061,8 +1061,8 @@ namespace Model
         virtual void GetFunctionAsync(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns details about the concurrency configuration for a function. To set a
-         * concurrency limit for a function, use
+         * <p>Returns details about the reserved concurrency configuration for a function.
+         * To set a concurrency limit for a function, use
          * <a>PutFunctionConcurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">AWS
          * API Reference</a></p>
@@ -1070,8 +1070,8 @@ namespace Model
         virtual Model::GetFunctionConcurrencyOutcome GetFunctionConcurrency(const Model::GetFunctionConcurrencyRequest& request) const;
 
         /**
-         * <p>Returns details about the concurrency configuration for a function. To set a
-         * concurrency limit for a function, use
+         * <p>Returns details about the reserved concurrency configuration for a function.
+         * To set a concurrency limit for a function, use
          * <a>PutFunctionConcurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">AWS
          * API Reference</a></p>
@@ -1081,8 +1081,8 @@ namespace Model
         virtual Model::GetFunctionConcurrencyOutcomeCallable GetFunctionConcurrencyCallable(const Model::GetFunctionConcurrencyRequest& request) const;
 
         /**
-         * <p>Returns details about the concurrency configuration for a function. To set a
-         * concurrency limit for a function, use
+         * <p>Returns details about the reserved concurrency configuration for a function.
+         * To set a concurrency limit for a function, use
          * <a>PutFunctionConcurrency</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConcurrency">AWS
          * API Reference</a></p>
@@ -1548,10 +1548,11 @@ namespace Model
 
         /**
          * <p>Returns a list of Lambda functions, with the version-specific configuration
-         * of each.</p> <p>Set <code>FunctionVersion</code> to <code>ALL</code> to include
-         * all published versions of each function in addition to the unpublished version.
-         * To get more information about a function or version, use
-         * <a>GetFunction</a>.</p><p><h3>See Also:</h3>   <a
+         * of each. Lambda returns up to 50 functions per call.</p> <p>Set
+         * <code>FunctionVersion</code> to <code>ALL</code> to include all published
+         * versions of each function in addition to the unpublished version. To get more
+         * information about a function or version, use <a>GetFunction</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
          */
@@ -1559,10 +1560,11 @@ namespace Model
 
         /**
          * <p>Returns a list of Lambda functions, with the version-specific configuration
-         * of each.</p> <p>Set <code>FunctionVersion</code> to <code>ALL</code> to include
-         * all published versions of each function in addition to the unpublished version.
-         * To get more information about a function or version, use
-         * <a>GetFunction</a>.</p><p><h3>See Also:</h3>   <a
+         * of each. Lambda returns up to 50 functions per call.</p> <p>Set
+         * <code>FunctionVersion</code> to <code>ALL</code> to include all published
+         * versions of each function in addition to the unpublished version. To get more
+         * information about a function or version, use <a>GetFunction</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
          *
@@ -1572,10 +1574,11 @@ namespace Model
 
         /**
          * <p>Returns a list of Lambda functions, with the version-specific configuration
-         * of each.</p> <p>Set <code>FunctionVersion</code> to <code>ALL</code> to include
-         * all published versions of each function in addition to the unpublished version.
-         * To get more information about a function or version, use
-         * <a>GetFunction</a>.</p><p><h3>See Also:</h3>   <a
+         * of each. Lambda returns up to 50 functions per call.</p> <p>Set
+         * <code>FunctionVersion</code> to <code>ALL</code> to include all published
+         * versions of each function in addition to the unpublished version. To get more
+         * information about a function or version, use <a>GetFunction</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS
          * API Reference</a></p>
          *
@@ -1728,7 +1731,8 @@ namespace Model
         /**
          * <p>Returns a list of <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
-         * with the version-specific configuration of each. </p><p><h3>See Also:</h3>   <a
+         * with the version-specific configuration of each. Lambda returns up to 50
+         * versions per call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
          * API Reference</a></p>
          */
@@ -1737,7 +1741,8 @@ namespace Model
         /**
          * <p>Returns a list of <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
-         * with the version-specific configuration of each. </p><p><h3>See Also:</h3>   <a
+         * with the version-specific configuration of each. Lambda returns up to 50
+         * versions per call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
          * API Reference</a></p>
          *
@@ -1748,7 +1753,8 @@ namespace Model
         /**
          * <p>Returns a list of <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>,
-         * with the version-specific configuration of each. </p><p><h3>See Also:</h3>   <a
+         * with the version-specific configuration of each. Lambda returns up to 50
+         * versions per call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">AWS
          * API Reference</a></p>
          *
@@ -1909,12 +1915,22 @@ namespace Model
         /**
          * <p>Configures options for <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
-         * invocation</a> on a function, version, or alias.</p> <p>By default, Lambda
-         * retries an asynchronous invocation twice if the function returns an error. It
-         * retains events in a queue for up to six hours. When an event fails all
-         * processing attempts or stays in the asynchronous invocation queue for too long,
-         * Lambda discards it. To retain discarded events, configure a dead-letter queue
-         * with <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * invocation</a> on a function, version, or alias. If a configuration already
+         * exists for a function, version, or alias, this operation overwrites it. If you
+         * exclude any settings, they are removed. To set one option without affecting
+         * existing settings for other options, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
+         * asynchronous invocation twice if the function returns an error. It retains
+         * events in a queue for up to six hours. When an event fails all processing
+         * attempts or stays in the asynchronous invocation queue for too long, Lambda
+         * discards it. To retain discarded events, configure a dead-letter queue with
+         * <a>UpdateFunctionConfiguration</a>.</p> <p>To send an invocation record to a
+         * queue, topic, function, or event bus, specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
+         * You can configure separate destinations for successful invocations (on-success)
+         * and events that fail all processing attempts (on-failure). You can configure
+         * destinations in addition to or instead of a dead-letter queue.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">AWS
          * API Reference</a></p>
          */
@@ -1923,12 +1939,22 @@ namespace Model
         /**
          * <p>Configures options for <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
-         * invocation</a> on a function, version, or alias.</p> <p>By default, Lambda
-         * retries an asynchronous invocation twice if the function returns an error. It
-         * retains events in a queue for up to six hours. When an event fails all
-         * processing attempts or stays in the asynchronous invocation queue for too long,
-         * Lambda discards it. To retain discarded events, configure a dead-letter queue
-         * with <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * invocation</a> on a function, version, or alias. If a configuration already
+         * exists for a function, version, or alias, this operation overwrites it. If you
+         * exclude any settings, they are removed. To set one option without affecting
+         * existing settings for other options, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
+         * asynchronous invocation twice if the function returns an error. It retains
+         * events in a queue for up to six hours. When an event fails all processing
+         * attempts or stays in the asynchronous invocation queue for too long, Lambda
+         * discards it. To retain discarded events, configure a dead-letter queue with
+         * <a>UpdateFunctionConfiguration</a>.</p> <p>To send an invocation record to a
+         * queue, topic, function, or event bus, specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
+         * You can configure separate destinations for successful invocations (on-success)
+         * and events that fail all processing attempts (on-failure). You can configure
+         * destinations in addition to or instead of a dead-letter queue.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">AWS
          * API Reference</a></p>
          *
@@ -1939,12 +1965,22 @@ namespace Model
         /**
          * <p>Configures options for <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
-         * invocation</a> on a function, version, or alias.</p> <p>By default, Lambda
-         * retries an asynchronous invocation twice if the function returns an error. It
-         * retains events in a queue for up to six hours. When an event fails all
-         * processing attempts or stays in the asynchronous invocation queue for too long,
-         * Lambda discards it. To retain discarded events, configure a dead-letter queue
-         * with <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * invocation</a> on a function, version, or alias. If a configuration already
+         * exists for a function, version, or alias, this operation overwrites it. If you
+         * exclude any settings, they are removed. To set one option without affecting
+         * existing settings for other options, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an
+         * asynchronous invocation twice if the function returns an error. It retains
+         * events in a queue for up to six hours. When an event fails all processing
+         * attempts or stays in the asynchronous invocation queue for too long, Lambda
+         * discards it. To retain discarded events, configure a dead-letter queue with
+         * <a>UpdateFunctionConfiguration</a>.</p> <p>To send an invocation record to a
+         * queue, topic, function, or event bus, specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
+         * You can configure separate destinations for successful invocations (on-success)
+         * and events that fail all processing attempts (on-failure). You can configure
+         * destinations in addition to or instead of a dead-letter queue.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">AWS
          * API Reference</a></p>
          *

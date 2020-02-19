@@ -1648,19 +1648,31 @@ namespace Model
         virtual void DescribeServiceActionAsync(const Model::DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Finds the default parameters for a specific self-service action on a specific
+         * provisioned product and returns a map of the results to the user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeServiceActionExecutionParametersOutcome DescribeServiceActionExecutionParameters(const Model::DescribeServiceActionExecutionParametersRequest& request) const;
 
         /**
-         * 
+         * <p>Finds the default parameters for a specific self-service action on a specific
+         * provisioned product and returns a map of the results to the user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeServiceActionExecutionParametersOutcomeCallable DescribeServiceActionExecutionParametersCallable(const Model::DescribeServiceActionExecutionParametersRequest& request) const;
 
         /**
-         * 
+         * <p>Finds the default parameters for a specific self-service action on a specific
+         * provisioned product and returns a map of the results to the user.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeServiceActionExecutionParameters">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */

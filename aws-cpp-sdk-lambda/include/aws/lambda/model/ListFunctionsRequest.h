@@ -209,26 +209,22 @@ namespace Model
 
 
     /**
-     * <p>Specify a value between 1 and 50 to limit the number of functions in the
-     * response.</p>
+     * <p>The maximum number of functions to return.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Specify a value between 1 and 50 to limit the number of functions in the
-     * response.</p>
+     * <p>The maximum number of functions to return.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>Specify a value between 1 and 50 to limit the number of functions in the
-     * response.</p>
+     * <p>The maximum number of functions to return.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Specify a value between 1 and 50 to limit the number of functions in the
-     * response.</p>
+     * <p>The maximum number of functions to return.</p>
      */
     inline ListFunctionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

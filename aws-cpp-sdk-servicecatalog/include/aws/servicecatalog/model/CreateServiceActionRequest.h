@@ -137,7 +137,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline const Aws::Map<ServiceActionDefinitionKey, Aws::String>& GetDefinition() const{ return m_definition; }
 
@@ -152,7 +154,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
 
@@ -167,7 +171,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline void SetDefinition(const Aws::Map<ServiceActionDefinitionKey, Aws::String>& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
@@ -182,7 +188,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline void SetDefinition(Aws::Map<ServiceActionDefinitionKey, Aws::String>&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
@@ -197,7 +205,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline CreateServiceActionRequest& WithDefinition(const Aws::Map<ServiceActionDefinitionKey, Aws::String>& value) { SetDefinition(value); return *this;}
 
@@ -212,7 +222,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline CreateServiceActionRequest& WithDefinition(Aws::Map<ServiceActionDefinitionKey, Aws::String>&& value) { SetDefinition(std::move(value)); return *this;}
 
@@ -227,7 +239,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline CreateServiceActionRequest& AddDefinition(const ServiceActionDefinitionKey& key, const Aws::String& value) { m_definitionHasBeenSet = true; m_definition.emplace(key, value); return *this; }
 
@@ -242,7 +256,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline CreateServiceActionRequest& AddDefinition(ServiceActionDefinitionKey&& key, const Aws::String& value) { m_definitionHasBeenSet = true; m_definition.emplace(std::move(key), value); return *this; }
 
@@ -257,7 +273,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline CreateServiceActionRequest& AddDefinition(const ServiceActionDefinitionKey& key, Aws::String&& value) { m_definitionHasBeenSet = true; m_definition.emplace(key, std::move(value)); return *this; }
 
@@ -272,7 +290,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline CreateServiceActionRequest& AddDefinition(ServiceActionDefinitionKey&& key, Aws::String&& value) { m_definitionHasBeenSet = true; m_definition.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -287,7 +307,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline CreateServiceActionRequest& AddDefinition(ServiceActionDefinitionKey&& key, const char* value) { m_definitionHasBeenSet = true; m_definition.emplace(std::move(key), value); return *this; }
 
@@ -302,7 +324,9 @@ namespace Model
      * reuse the provisioned product launch role, set to <code>"AssumeRole":
      * "LAUNCH_ROLE"</code>.</p> </dd> <dt>Parameters</dt> <dd> <p>The list of
      * parameters in JSON format.</p> <p>For example:
-     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code>.</p> </dd> </dl>
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TARGET\"}]</code> or
+     * <code>[{\"Name\":\"InstanceId\",\"Type\":\"TEXT_VALUE\"}]</code>.</p> </dd>
+     * </dl>
      */
     inline CreateServiceActionRequest& AddDefinition(const ServiceActionDefinitionKey& key, const char* value) { m_definitionHasBeenSet = true; m_definition.emplace(key, value); return *this; }
 

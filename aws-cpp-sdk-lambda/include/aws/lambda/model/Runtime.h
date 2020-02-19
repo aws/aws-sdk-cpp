@@ -44,6 +44,7 @@ namespace Model
     nodejs4_3_edge,
     go1_x,
     ruby2_5,
+    ruby2_7,
     provided
   };
 

@@ -195,22 +195,22 @@ namespace Model
 
 
     /**
-     * <p>Limit the number of versions that are returned.</p>
+     * <p>The maximum number of versions to return.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Limit the number of versions that are returned.</p>
+     * <p>The maximum number of versions to return.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>Limit the number of versions that are returned.</p>
+     * <p>The maximum number of versions to return.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Limit the number of versions that are returned.</p>
+     * <p>The maximum number of versions to return.</p>
      */
     inline ListVersionsByFunctionRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

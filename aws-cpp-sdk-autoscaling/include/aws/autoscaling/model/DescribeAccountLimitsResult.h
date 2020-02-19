@@ -43,39 +43,39 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of groups allowed for your AWS account. The default limit
-     * is 200 per AWS Region.</p>
+     * <p>The maximum number of groups allowed for your AWS account. The default is 200
+     * groups per AWS Region.</p>
      */
     inline int GetMaxNumberOfAutoScalingGroups() const{ return m_maxNumberOfAutoScalingGroups; }
 
     /**
-     * <p>The maximum number of groups allowed for your AWS account. The default limit
-     * is 200 per AWS Region.</p>
+     * <p>The maximum number of groups allowed for your AWS account. The default is 200
+     * groups per AWS Region.</p>
      */
     inline void SetMaxNumberOfAutoScalingGroups(int value) { m_maxNumberOfAutoScalingGroups = value; }
 
     /**
-     * <p>The maximum number of groups allowed for your AWS account. The default limit
-     * is 200 per AWS Region.</p>
+     * <p>The maximum number of groups allowed for your AWS account. The default is 200
+     * groups per AWS Region.</p>
      */
     inline DescribeAccountLimitsResult& WithMaxNumberOfAutoScalingGroups(int value) { SetMaxNumberOfAutoScalingGroups(value); return *this;}
 
 
     /**
      * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default limit is 200 per AWS Region.</p>
+     * default is 200 launch configurations per AWS Region.</p>
      */
     inline int GetMaxNumberOfLaunchConfigurations() const{ return m_maxNumberOfLaunchConfigurations; }
 
     /**
      * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default limit is 200 per AWS Region.</p>
+     * default is 200 launch configurations per AWS Region.</p>
      */
     inline void SetMaxNumberOfLaunchConfigurations(int value) { m_maxNumberOfLaunchConfigurations = value; }
 
     /**
      * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default limit is 200 per AWS Region.</p>
+     * default is 200 launch configurations per AWS Region.</p>
      */
     inline DescribeAccountLimitsResult& WithMaxNumberOfLaunchConfigurations(int value) { SetMaxNumberOfLaunchConfigurations(value); return *this;}
 

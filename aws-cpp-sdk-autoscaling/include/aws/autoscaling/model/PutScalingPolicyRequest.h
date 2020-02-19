@@ -689,16 +689,40 @@ namespace Model
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Indicates whether the scaling policy is enabled or disabled. The default is
+     * enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
+     * a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * User Guide</i>.</p>
+     */
     inline bool GetEnabled() const{ return m_enabled; }
 
-    
+    /**
+     * <p>Indicates whether the scaling policy is enabled or disabled. The default is
+     * enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
+     * a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * User Guide</i>.</p>
+     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
-    
+    /**
+     * <p>Indicates whether the scaling policy is enabled or disabled. The default is
+     * enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
+     * a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * User Guide</i>.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
-    
+    /**
+     * <p>Indicates whether the scaling policy is enabled or disabled. The default is
+     * enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling
+     * a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
+     * User Guide</i>.</p>
+     */
     inline PutScalingPolicyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
   private:

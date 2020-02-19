@@ -24,7 +24,11 @@ using namespace Aws::Utils;
 
 ListPortfolioAccessRequest::ListPortfolioAccessRequest() : 
     m_acceptLanguageHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false)
+    m_portfolioIdHasBeenSet(false),
+    m_organizationParentIdHasBeenSet(false),
+    m_pageTokenHasBeenSet(false),
+    m_pageSize(0),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -41,6 +45,24 @@ Aws::String ListPortfolioAccessRequest::SerializePayload() const
   if(m_portfolioIdHasBeenSet)
   {
    payload.WithString("PortfolioId", m_portfolioId);
+
+  }
+
+  if(m_organizationParentIdHasBeenSet)
+  {
+   payload.WithString("OrganizationParentId", m_organizationParentId);
+
+  }
+
+  if(m_pageTokenHasBeenSet)
+  {
+   payload.WithString("PageToken", m_pageToken);
+
+  }
+
+  if(m_pageSizeHasBeenSet)
+  {
+   payload.WithInteger("PageSize", m_pageSize);
 
   }
 
