@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int LINEAR_HASH = HashingUtils::HashString("LINEAR");
+        static const int EXPONENTIAL_HASH = HashingUtils::HashString("EXPONENTIAL");
 
 
         GrowthType GetGrowthTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == LINEAR_HASH)
           {
             return GrowthType::LINEAR;
+          }
+          else if (hashCode == EXPONENTIAL_HASH)
+          {
+            return GrowthType::EXPONENTIAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case GrowthType::LINEAR:
             return "LINEAR";
+          case GrowthType::EXPONENTIAL:
+            return "EXPONENTIAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

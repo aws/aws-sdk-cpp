@@ -31,6 +31,8 @@ namespace Aws
       {
 
         static const int Hrs_HASH = HashingUtils::HashString("Hrs");
+        static const int Lambda_GB_Second_HASH = HashingUtils::HashString("Lambda-GB-Second");
+        static const int Request_HASH = HashingUtils::HashString("Request");
 
 
         SavingsPlanRateUnit GetSavingsPlanRateUnitForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           if (hashCode == Hrs_HASH)
           {
             return SavingsPlanRateUnit::Hrs;
+          }
+          else if (hashCode == Lambda_GB_Second_HASH)
+          {
+            return SavingsPlanRateUnit::Lambda_GB_Second;
+          }
+          else if (hashCode == Request_HASH)
+          {
+            return SavingsPlanRateUnit::Request;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +66,10 @@ namespace Aws
           {
           case SavingsPlanRateUnit::Hrs:
             return "Hrs";
+          case SavingsPlanRateUnit::Lambda_GB_Second:
+            return "Lambda-GB-Second";
+          case SavingsPlanRateUnit::Request:
+            return "Request";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

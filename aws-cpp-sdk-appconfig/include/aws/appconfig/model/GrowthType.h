@@ -26,7 +26,8 @@ namespace Model
   enum class GrowthType
   {
     NOT_SET,
-    LINEAR
+    LINEAR,
+    EXPONENTIAL
   };
 
 namespace GrowthTypeMapper

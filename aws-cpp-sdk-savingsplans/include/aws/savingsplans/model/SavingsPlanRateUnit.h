@@ -26,7 +26,9 @@ namespace Model
   enum class SavingsPlanRateUnit
   {
     NOT_SET,
-    Hrs
+    Hrs,
+    Lambda_GB_Second,
+    Request
   };
 
 namespace SavingsPlanRateUnitMapper

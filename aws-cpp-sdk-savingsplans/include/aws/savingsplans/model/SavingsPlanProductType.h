@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     EC2,
-    Fargate
+    Fargate,
+    Lambda
   };
 
 namespace SavingsPlanProductTypeMapper

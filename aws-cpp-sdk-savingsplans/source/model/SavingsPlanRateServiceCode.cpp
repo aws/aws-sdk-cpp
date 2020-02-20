@@ -32,6 +32,7 @@ namespace Aws
 
         static const int AmazonEC2_HASH = HashingUtils::HashString("AmazonEC2");
         static const int AmazonECS_HASH = HashingUtils::HashString("AmazonECS");
+        static const int AWSLambda_HASH = HashingUtils::HashString("AWSLambda");
 
 
         SavingsPlanRateServiceCode GetSavingsPlanRateServiceCodeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == AmazonECS_HASH)
           {
             return SavingsPlanRateServiceCode::AmazonECS;
+          }
+          else if (hashCode == AWSLambda_HASH)
+          {
+            return SavingsPlanRateServiceCode::AWSLambda;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "AmazonEC2";
           case SavingsPlanRateServiceCode::AmazonECS:
             return "AmazonECS";
+          case SavingsPlanRateServiceCode::AWSLambda:
+            return "AWSLambda";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

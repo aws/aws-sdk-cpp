@@ -112,8 +112,8 @@ namespace Model
    * (for example, on Amazon EC2 instances). You commit to a consistent amount of
    * usage, in USD per hour, for a term of 1 or 3 years, and receive a lower price
    * for that usage. For more information, see the <a
-   * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Savings Plans
-   * User Guide</a>.</p>
+   * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS Savings
+   * Plans User Guide</a>.</p>
    */
   class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClient
   {
