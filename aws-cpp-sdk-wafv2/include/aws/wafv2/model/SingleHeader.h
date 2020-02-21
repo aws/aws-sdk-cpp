@@ -40,8 +40,9 @@ namespace Model
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
    * WAF Developer Guide</a>. </p> </note> <p>One of the headers in a web request,
    * identified by name, for example, <code>User-Agent</code> or
-   * <code>Referer</code>. This setting isn't case sensitive.</p><p><h3>See
-   * Also:</h3>   <a
+   * <code>Referer</code>. This setting isn't case sensitive.</p> <p>This is used
+   * only to indicate the web request component for AWS WAF to inspect, in the
+   * <a>FieldToMatch</a> specification. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SingleHeader">AWS
    * API Reference</a></p>
    */

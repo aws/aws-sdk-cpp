@@ -153,7 +153,7 @@ namespace Model
      * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
      * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
      * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more
+     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -166,7 +166,7 @@ namespace Model
      * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
      * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
      * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more
+     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -179,7 +179,7 @@ namespace Model
      * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
      * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
      * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more
+     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -192,7 +192,7 @@ namespace Model
      * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
      * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
      * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more
+     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -205,7 +205,7 @@ namespace Model
      * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
      * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
      * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more
+     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -218,7 +218,7 @@ namespace Model
      * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
      * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
      * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more
+     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -231,7 +231,7 @@ namespace Model
      * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
      * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
      * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more
+     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
@@ -244,7 +244,7 @@ namespace Model
      * <p>Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For
      * example, "<code>at(2016-03-04T17:27:00)</code>".</p> <p>Format of cron
      * expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-     * Year)</code>". For example, "<code>cron(0, 10, *, *, MON, *)</code>". For more
+     * Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>

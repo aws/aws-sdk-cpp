@@ -61,7 +61,8 @@ namespace Model
     RESOURCE_ARN,
     RESOURCE_TYPE,
     TAGS,
-    TAG_KEYS
+    TAG_KEYS,
+    METRIC_NAME
   };
 
 namespace ParameterExceptionFieldMapper

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int restore_cluster_HASH = HashingUtils::HashString("restore-cluster");
         static const int recommend_node_config_HASH = HashingUtils::HashString("recommend-node-config");
+        static const int resize_cluster_HASH = HashingUtils::HashString("resize-cluster");
 
 
         ActionType GetActionTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == recommend_node_config_HASH)
           {
             return ActionType::recommend_node_config;
+          }
+          else if (hashCode == resize_cluster_HASH)
+          {
+            return ActionType::resize_cluster;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "restore-cluster";
           case ActionType::recommend_node_config:
             return "recommend-node-config";
+          case ActionType::resize_cluster:
+            return "resize-cluster";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

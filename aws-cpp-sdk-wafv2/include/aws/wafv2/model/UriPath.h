@@ -38,7 +38,9 @@ namespace Model
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
    * WAF Developer Guide</a>. </p> </note> <p>The path component of the URI of a web
    * request. This is the part of a web request that identifies a resource, for
-   * example, <code>/images/daily-ad.jpg</code>.</p><p><h3>See Also:</h3>   <a
+   * example, <code>/images/daily-ad.jpg</code>.</p> <p>This is used only to indicate
+   * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
+   * specification. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UriPath">AWS API
    * Reference</a></p>
    */

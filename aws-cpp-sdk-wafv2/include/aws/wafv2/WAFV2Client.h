@@ -333,7 +333,7 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Associates a Web ACL with a regional
          * application resource, to protect the resource. A regional application can be an
          * Application Load Balancer (ALB) or an API Gateway stage. </p> <p>For AWS
-         * CloudFront, you can associate the Web ACL by providing the <code>Id</code> of
+         * CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of
          * the <a>WebACL</a> to the CloudFront API call <code>UpdateDistribution</code>.
          * For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
@@ -351,7 +351,7 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Associates a Web ACL with a regional
          * application resource, to protect the resource. A regional application can be an
          * Application Load Balancer (ALB) or an API Gateway stage. </p> <p>For AWS
-         * CloudFront, you can associate the Web ACL by providing the <code>Id</code> of
+         * CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of
          * the <a>WebACL</a> to the CloudFront API call <code>UpdateDistribution</code>.
          * For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
@@ -371,7 +371,7 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Associates a Web ACL with a regional
          * application resource, to protect the resource. A regional application can be an
          * Application Load Balancer (ALB) or an API Gateway stage. </p> <p>For AWS
-         * CloudFront, you can associate the Web ACL by providing the <code>Id</code> of
+         * CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of
          * the <a>WebACL</a> to the CloudFront API call <code>UpdateDistribution</code>.
          * For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
@@ -501,8 +501,10 @@ namespace Model
          * released in November, 2019. For information, including how to migrate your AWS
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p> </note> <p>Creates a <a>RegexPatternSet</a> per
-         * the specifications provided.</p><p><h3>See Also:</h3>   <a
+         * WAF Developer Guide</a>. </p> </note> <p>Creates a <a>RegexPatternSet</a>, which
+         * you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF
+         * inspect a web request component for the specified patterns.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">AWS
          * API Reference</a></p>
          */
@@ -513,8 +515,10 @@ namespace Model
          * released in November, 2019. For information, including how to migrate your AWS
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p> </note> <p>Creates a <a>RegexPatternSet</a> per
-         * the specifications provided.</p><p><h3>See Also:</h3>   <a
+         * WAF Developer Guide</a>. </p> </note> <p>Creates a <a>RegexPatternSet</a>, which
+         * you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF
+         * inspect a web request component for the specified patterns.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -527,8 +531,10 @@ namespace Model
          * released in November, 2019. For information, including how to migrate your AWS
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-         * WAF Developer Guide</a>. </p> </note> <p>Creates a <a>RegexPatternSet</a> per
-         * the specifications provided.</p><p><h3>See Also:</h3>   <a
+         * WAF Developer Guide</a>. </p> </note> <p>Creates a <a>RegexPatternSet</a>, which
+         * you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS WAF
+         * inspect a web request component for the specified patterns.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateRegexPatternSet">AWS
          * API Reference</a></p>
          *
@@ -906,8 +912,8 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Disassociates a Web ACL from a regional
          * application resource. A regional application can be an Application Load Balancer
          * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, you can disassociate
-         * the Web ACL by providing an empty <code>WebACLId</code> in the CloudFront API
-         * call <code>UpdateDistribution</code>. For information, see <a
+         * the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+         * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">AWS
@@ -923,8 +929,8 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Disassociates a Web ACL from a regional
          * application resource. A regional application can be an Application Load Balancer
          * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, you can disassociate
-         * the Web ACL by providing an empty <code>WebACLId</code> in the CloudFront API
-         * call <code>UpdateDistribution</code>. For information, see <a
+         * the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+         * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">AWS
@@ -942,8 +948,8 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Disassociates a Web ACL from a regional
          * application resource. A regional application can be an Application Load Balancer
          * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, you can disassociate
-         * the Web ACL by providing an empty <code>WebACLId</code> in the CloudFront API
-         * call <code>UpdateDistribution</code>. For information, see <a
+         * the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+         * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">AWS
@@ -1315,9 +1321,9 @@ namespace Model
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Retrieves an array of managed rule
-         * groups that are available for you to use. This list includes all AWS managed
-         * rule groups and the AWS Marketplace managed rule groups that you're subscribed
-         * to.</p><p><h3>See Also:</h3>   <a
+         * groups that are available for you to use. This list includes all AWS Managed
+         * Rules rule groups and the AWS Marketplace managed rule groups that you're
+         * subscribed to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          */
@@ -1329,9 +1335,9 @@ namespace Model
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Retrieves an array of managed rule
-         * groups that are available for you to use. This list includes all AWS managed
-         * rule groups and the AWS Marketplace managed rule groups that you're subscribed
-         * to.</p><p><h3>See Also:</h3>   <a
+         * groups that are available for you to use. This list includes all AWS Managed
+         * Rules rule groups and the AWS Marketplace managed rule groups that you're
+         * subscribed to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          *
@@ -1345,9 +1351,9 @@ namespace Model
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Retrieves an array of managed rule
-         * groups that are available for you to use. This list includes all AWS managed
-         * rule groups and the AWS Marketplace managed rule groups that you're subscribed
-         * to.</p><p><h3>See Also:</h3>   <a
+         * groups that are available for you to use. This list includes all AWS Managed
+         * Rules rule groups and the AWS Marketplace managed rule groups that you're
+         * subscribed to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAvailableManagedRuleGroups">AWS
          * API Reference</a></p>
          *

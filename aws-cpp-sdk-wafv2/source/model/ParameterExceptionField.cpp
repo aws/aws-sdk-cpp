@@ -66,6 +66,7 @@ namespace Aws
         static const int RESOURCE_TYPE_HASH = HashingUtils::HashString("RESOURCE_TYPE");
         static const int TAGS_HASH = HashingUtils::HashString("TAGS");
         static const int TAG_KEYS_HASH = HashingUtils::HashString("TAG_KEYS");
+        static const int METRIC_NAME_HASH = HashingUtils::HashString("METRIC_NAME");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -215,6 +216,10 @@ namespace Aws
           {
             return ParameterExceptionField::TAG_KEYS;
           }
+          else if (hashCode == METRIC_NAME_HASH)
+          {
+            return ParameterExceptionField::METRIC_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -301,6 +306,8 @@ namespace Aws
             return "TAGS";
           case ParameterExceptionField::TAG_KEYS:
             return "TAG_KEYS";
+          case ParameterExceptionField::METRIC_NAME:
+            return "METRIC_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

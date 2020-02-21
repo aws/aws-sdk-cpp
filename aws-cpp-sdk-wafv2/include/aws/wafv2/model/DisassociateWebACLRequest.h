@@ -47,112 +47,88 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web
      * ACL. </p> <p>The ARN must be in one of the following formats:</p> <ul> <li>
-     * <p>For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:
-     * <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-     * /<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Amazon API Gateway
-     * stage: <code>arn:aws:apigateway:<i>region</i>
-     * ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> </ul>
+     * <p>For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web
      * ACL. </p> <p>The ARN must be in one of the following formats:</p> <ul> <li>
-     * <p>For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:
-     * <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-     * /<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Amazon API Gateway
-     * stage: <code>arn:aws:apigateway:<i>region</i>
-     * ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> </ul>
+     * <p>For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web
      * ACL. </p> <p>The ARN must be in one of the following formats:</p> <ul> <li>
-     * <p>For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:
-     * <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-     * /<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Amazon API Gateway
-     * stage: <code>arn:aws:apigateway:<i>region</i>
-     * ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> </ul>
+     * <p>For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web
      * ACL. </p> <p>The ARN must be in one of the following formats:</p> <ul> <li>
-     * <p>For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:
-     * <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-     * /<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Amazon API Gateway
-     * stage: <code>arn:aws:apigateway:<i>region</i>
-     * ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> </ul>
+     * <p>For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web
      * ACL. </p> <p>The ARN must be in one of the following formats:</p> <ul> <li>
-     * <p>For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:
-     * <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-     * /<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Amazon API Gateway
-     * stage: <code>arn:aws:apigateway:<i>region</i>
-     * ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> </ul>
+     * <p>For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web
      * ACL. </p> <p>The ARN must be in one of the following formats:</p> <ul> <li>
-     * <p>For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:
-     * <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-     * /<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Amazon API Gateway
-     * stage: <code>arn:aws:apigateway:<i>region</i>
-     * ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> </ul>
+     * <p>For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
      */
     inline DisassociateWebACLRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web
      * ACL. </p> <p>The ARN must be in one of the following formats:</p> <ul> <li>
-     * <p>For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:
-     * <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-     * /<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Amazon API Gateway
-     * stage: <code>arn:aws:apigateway:<i>region</i>
-     * ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> </ul>
+     * <p>For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
      */
     inline DisassociateWebACLRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resource to disassociate from the web
      * ACL. </p> <p>The ARN must be in one of the following formats:</p> <ul> <li>
-     * <p>For a CloudFront distribution:
-     * <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-     * </code> </p> </li> <li> <p>For an Application Load Balancer:
-     * <code>arn:aws:elasticloadbalancing:
-     * <i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>
-     * /<i>load-balancer-id</i> </code> </p> </li> <li> <p>For an Amazon API Gateway
-     * stage: <code>arn:aws:apigateway:<i>region</i>
-     * ::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> </ul>
+     * <p>For an Application Load Balancer:
+     * <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon API Gateway stage:
+     * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+     * </code> </p> </li> </ul>
      */
     inline DisassociateWebACLRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

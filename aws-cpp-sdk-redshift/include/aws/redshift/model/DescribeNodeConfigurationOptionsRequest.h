@@ -53,7 +53,8 @@ namespace Model
      * <p>The action type to evaluate for possible node configurations. Specify
      * "restore-cluster" to get configuration combinations based on an existing
      * snapshot. Specify "recommend-node-config" to get configuration recommendations
-     * based on an existing cluster or snapshot. </p>
+     * based on an existing cluster or snapshot. Specify "resize-cluster" to get
+     * configuration combinations for elastic resize based on an existing cluster. </p>
      */
     inline const ActionType& GetActionType() const{ return m_actionType; }
 
@@ -61,7 +62,8 @@ namespace Model
      * <p>The action type to evaluate for possible node configurations. Specify
      * "restore-cluster" to get configuration combinations based on an existing
      * snapshot. Specify "recommend-node-config" to get configuration recommendations
-     * based on an existing cluster or snapshot. </p>
+     * based on an existing cluster or snapshot. Specify "resize-cluster" to get
+     * configuration combinations for elastic resize based on an existing cluster. </p>
      */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
 
@@ -69,7 +71,8 @@ namespace Model
      * <p>The action type to evaluate for possible node configurations. Specify
      * "restore-cluster" to get configuration combinations based on an existing
      * snapshot. Specify "recommend-node-config" to get configuration recommendations
-     * based on an existing cluster or snapshot. </p>
+     * based on an existing cluster or snapshot. Specify "resize-cluster" to get
+     * configuration combinations for elastic resize based on an existing cluster. </p>
      */
     inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
@@ -77,7 +80,8 @@ namespace Model
      * <p>The action type to evaluate for possible node configurations. Specify
      * "restore-cluster" to get configuration combinations based on an existing
      * snapshot. Specify "recommend-node-config" to get configuration recommendations
-     * based on an existing cluster or snapshot. </p>
+     * based on an existing cluster or snapshot. Specify "resize-cluster" to get
+     * configuration combinations for elastic resize based on an existing cluster. </p>
      */
     inline void SetActionType(ActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
 
@@ -85,7 +89,8 @@ namespace Model
      * <p>The action type to evaluate for possible node configurations. Specify
      * "restore-cluster" to get configuration combinations based on an existing
      * snapshot. Specify "recommend-node-config" to get configuration recommendations
-     * based on an existing cluster or snapshot. </p>
+     * based on an existing cluster or snapshot. Specify "resize-cluster" to get
+     * configuration combinations for elastic resize based on an existing cluster. </p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
 
@@ -93,7 +98,8 @@ namespace Model
      * <p>The action type to evaluate for possible node configurations. Specify
      * "restore-cluster" to get configuration combinations based on an existing
      * snapshot. Specify "recommend-node-config" to get configuration recommendations
-     * based on an existing cluster or snapshot. </p>
+     * based on an existing cluster or snapshot. Specify "resize-cluster" to get
+     * configuration combinations for elastic resize based on an existing cluster. </p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
 
