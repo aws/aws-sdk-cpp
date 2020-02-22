@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/Outcome.h>
 #include <aws/rekognition/model/CompareFacesResult.h>
 #include <aws/rekognition/model/CreateCollectionResult.h>
 #include <aws/rekognition/model/CreateProjectResult.h>
