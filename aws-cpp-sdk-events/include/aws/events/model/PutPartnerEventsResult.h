@@ -44,19 +44,19 @@ namespace Model
 
 
     /**
-     * <p>The number of events from this operation that couldn't be written to the
+     * <p>The number of events from this operation that could not be written to the
      * partner event bus.</p>
      */
     inline int GetFailedEntryCount() const{ return m_failedEntryCount; }
 
     /**
-     * <p>The number of events from this operation that couldn't be written to the
+     * <p>The number of events from this operation that could not be written to the
      * partner event bus.</p>
      */
     inline void SetFailedEntryCount(int value) { m_failedEntryCount = value; }
 
     /**
-     * <p>The number of events from this operation that couldn't be written to the
+     * <p>The number of events from this operation that could not be written to the
      * partner event bus.</p>
      */
     inline PutPartnerEventsResult& WithFailedEntryCount(int value) { SetFailedEntryCount(value); return *this;}

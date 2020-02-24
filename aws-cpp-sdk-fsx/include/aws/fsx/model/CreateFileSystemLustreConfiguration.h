@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/model/LustreDeploymentType.h>
 #include <utility>
 
 namespace Aws
@@ -337,7 +338,7 @@ namespace Model
      * the stripe count and maximum amount of data per file (in MiB) stored on a single
      * physical disk. The maximum number of disks that a single file can be striped
      * across is limited by the total number of disks that make up the file system.</p>
-     * <p>The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
+     * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
      * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
      */
     inline int GetImportedFileChunkSize() const{ return m_importedFileChunkSize; }
@@ -347,7 +348,7 @@ namespace Model
      * the stripe count and maximum amount of data per file (in MiB) stored on a single
      * physical disk. The maximum number of disks that a single file can be striped
      * across is limited by the total number of disks that make up the file system.</p>
-     * <p>The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
+     * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
      * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
      */
     inline bool ImportedFileChunkSizeHasBeenSet() const { return m_importedFileChunkSizeHasBeenSet; }
@@ -357,7 +358,7 @@ namespace Model
      * the stripe count and maximum amount of data per file (in MiB) stored on a single
      * physical disk. The maximum number of disks that a single file can be striped
      * across is limited by the total number of disks that make up the file system.</p>
-     * <p>The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
+     * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
      * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
      */
     inline void SetImportedFileChunkSize(int value) { m_importedFileChunkSizeHasBeenSet = true; m_importedFileChunkSize = value; }
@@ -367,10 +368,188 @@ namespace Model
      * the stripe count and maximum amount of data per file (in MiB) stored on a single
      * physical disk. The maximum number of disks that a single file can be striped
      * across is limited by the total number of disks that make up the file system.</p>
-     * <p>The chunk size default is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
+     * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
      * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>
      */
     inline CreateFileSystemLustreConfiguration& WithImportedFileChunkSize(int value) { SetImportedFileChunkSize(value); return *this;}
+
+
+    /**
+     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
+     * deployment types when you need temporary storage and shorter-term processing of
+     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
+     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
+     * workloads and encryption of data in transit. To learn more about deployment
+     * types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
+     * automatically enabled when you access a <code>SCRATCH_2</code> or
+     * <code>PERSISTENT_1</code> file system from Amazon EC2 instances that <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
+     * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
+     * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types is supported when accessed from
+     * supported instance types in supported AWS Regions. To learn more, <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+     * Data in Transit</a>.</p>
+     */
+    inline const LustreDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+
+    /**
+     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
+     * deployment types when you need temporary storage and shorter-term processing of
+     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
+     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
+     * workloads and encryption of data in transit. To learn more about deployment
+     * types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
+     * automatically enabled when you access a <code>SCRATCH_2</code> or
+     * <code>PERSISTENT_1</code> file system from Amazon EC2 instances that <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
+     * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
+     * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types is supported when accessed from
+     * supported instance types in supported AWS Regions. To learn more, <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+     * Data in Transit</a>.</p>
+     */
+    inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
+
+    /**
+     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
+     * deployment types when you need temporary storage and shorter-term processing of
+     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
+     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
+     * workloads and encryption of data in transit. To learn more about deployment
+     * types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
+     * automatically enabled when you access a <code>SCRATCH_2</code> or
+     * <code>PERSISTENT_1</code> file system from Amazon EC2 instances that <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
+     * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
+     * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types is supported when accessed from
+     * supported instance types in supported AWS Regions. To learn more, <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+     * Data in Transit</a>.</p>
+     */
+    inline void SetDeploymentType(const LustreDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+
+    /**
+     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
+     * deployment types when you need temporary storage and shorter-term processing of
+     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
+     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
+     * workloads and encryption of data in transit. To learn more about deployment
+     * types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
+     * automatically enabled when you access a <code>SCRATCH_2</code> or
+     * <code>PERSISTENT_1</code> file system from Amazon EC2 instances that <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
+     * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
+     * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types is supported when accessed from
+     * supported instance types in supported AWS Regions. To learn more, <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+     * Data in Transit</a>.</p>
+     */
+    inline void SetDeploymentType(LustreDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
+
+    /**
+     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
+     * deployment types when you need temporary storage and shorter-term processing of
+     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
+     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
+     * workloads and encryption of data in transit. To learn more about deployment
+     * types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
+     * automatically enabled when you access a <code>SCRATCH_2</code> or
+     * <code>PERSISTENT_1</code> file system from Amazon EC2 instances that <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
+     * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
+     * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types is supported when accessed from
+     * supported instance types in supported AWS Regions. To learn more, <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+     * Data in Transit</a>.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithDeploymentType(const LustreDeploymentType& value) { SetDeploymentType(value); return *this;}
+
+    /**
+     * <p>(Optional) Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code>
+     * deployment types when you need temporary storage and shorter-term processing of
+     * data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption
+     * of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
+     * <p>Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and
+     * workloads and encryption of data in transit. To learn more about deployment
+     * types, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html">
+     * FSx for Lustre Deployment Options</a>.</p> <p>Encryption of data in-transit is
+     * automatically enabled when you access a <code>SCRATCH_2</code> or
+     * <code>PERSISTENT_1</code> file system from Amazon EC2 instances that <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
+     * protection.html">support this feature</a>. (Default = <code>SCRATCH_1</code>)
+     * </p> <p>Encryption of data in-transit for <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types is supported when accessed from
+     * supported instance types in supported AWS Regions. To learn more, <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
+     * Data in Transit</a>.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithDeploymentType(LustreDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the
+     * amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB.
+     * File system throughput capacity is calculated by multiplying ﬁle system storage
+     * capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle
+     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of
+     * ﬁle system throughput. You pay for the amount of throughput that you provision.
+     * (Default = 200 MB/s/TiB) </p> <p>Valid values are 50, 100, 200.</p>
+     */
+    inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
+
+    /**
+     * <p> (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the
+     * amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB.
+     * File system throughput capacity is calculated by multiplying ﬁle system storage
+     * capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle
+     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of
+     * ﬁle system throughput. You pay for the amount of throughput that you provision.
+     * (Default = 200 MB/s/TiB) </p> <p>Valid values are 50, 100, 200.</p>
+     */
+    inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
+
+    /**
+     * <p> (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the
+     * amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB.
+     * File system throughput capacity is calculated by multiplying ﬁle system storage
+     * capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle
+     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of
+     * ﬁle system throughput. You pay for the amount of throughput that you provision.
+     * (Default = 200 MB/s/TiB) </p> <p>Valid values are 50, 100, 200.</p>
+     */
+    inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
+
+    /**
+     * <p> (Optional) For the <code>PERSISTENT_1</code> deployment type, describes the
+     * amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB.
+     * File system throughput capacity is calculated by multiplying ﬁle system storage
+     * capacity (TiB) by the PerUnitStorageThroughput (MB/s/TiB). For a 2.4 TiB ﬁle
+     * system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 120 MB/s of
+     * ﬁle system throughput. You pay for the amount of throughput that you provision.
+     * (Default = 200 MB/s/TiB) </p> <p>Valid values are 50, 100, 200.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
 
   private:
 
@@ -385,6 +564,12 @@ namespace Model
 
     int m_importedFileChunkSize;
     bool m_importedFileChunkSizeHasBeenSet;
+
+    LustreDeploymentType m_deploymentType;
+    bool m_deploymentTypeHasBeenSet;
+
+    int m_perUnitStorageThroughput;
+    bool m_perUnitStorageThroughputHasBeenSet;
   };
 
 } // namespace Model

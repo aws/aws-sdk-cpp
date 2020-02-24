@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>Sends information about the detector model instance and the event that
-   * triggered the action to a Kinesis Data Firehose delivery stream.</p><p><h3>See
-   * Also:</h3>   <a
+   * triggered the action to an Amazon Kinesis Data Firehose delivery
+   * stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/FirehoseAction">AWS
    * API Reference</a></p>
    */

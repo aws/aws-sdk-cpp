@@ -90,25 +90,25 @@ namespace Model
 
     /**
      * <p>The number of seconds until the timer expires. The minimum value is 60
-     * seconds to ensure accuracy.</p>
+     * seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
      */
     inline int GetSeconds() const{ return m_seconds; }
 
     /**
      * <p>The number of seconds until the timer expires. The minimum value is 60
-     * seconds to ensure accuracy.</p>
+     * seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
      */
     inline bool SecondsHasBeenSet() const { return m_secondsHasBeenSet; }
 
     /**
      * <p>The number of seconds until the timer expires. The minimum value is 60
-     * seconds to ensure accuracy.</p>
+     * seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
      */
     inline void SetSeconds(int value) { m_secondsHasBeenSet = true; m_seconds = value; }
 
     /**
      * <p>The number of seconds until the timer expires. The minimum value is 60
-     * seconds to ensure accuracy.</p>
+     * seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
      */
     inline SetTimerAction& WithSeconds(int value) { SetSeconds(value); return *this;}
 

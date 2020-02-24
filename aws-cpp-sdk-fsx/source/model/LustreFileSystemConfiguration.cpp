@@ -30,13 +30,23 @@ namespace Model
 
 LustreFileSystemConfiguration::LustreFileSystemConfiguration() : 
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_dataRepositoryConfigurationHasBeenSet(false)
+    m_dataRepositoryConfigurationHasBeenSet(false),
+    m_deploymentType(LustreDeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
+    m_perUnitStorageThroughput(0),
+    m_perUnitStorageThroughputHasBeenSet(false),
+    m_mountNameHasBeenSet(false)
 {
 }
 
 LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue) : 
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_dataRepositoryConfigurationHasBeenSet(false)
+    m_dataRepositoryConfigurationHasBeenSet(false),
+    m_deploymentType(LustreDeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
+    m_perUnitStorageThroughput(0),
+    m_perUnitStorageThroughputHasBeenSet(false),
+    m_mountNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +67,27 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_dataRepositoryConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeploymentType"))
+  {
+    m_deploymentType = LustreDeploymentTypeMapper::GetLustreDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
+
+    m_deploymentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PerUnitStorageThroughput"))
+  {
+    m_perUnitStorageThroughput = jsonValue.GetInteger("PerUnitStorageThroughput");
+
+    m_perUnitStorageThroughputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MountName"))
+  {
+    m_mountName = jsonValue.GetString("MountName");
+
+    m_mountNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +104,23 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   if(m_dataRepositoryConfigurationHasBeenSet)
   {
    payload.WithObject("DataRepositoryConfiguration", m_dataRepositoryConfiguration.Jsonize());
+
+  }
+
+  if(m_deploymentTypeHasBeenSet)
+  {
+   payload.WithString("DeploymentType", LustreDeploymentTypeMapper::GetNameForLustreDeploymentType(m_deploymentType));
+  }
+
+  if(m_perUnitStorageThroughputHasBeenSet)
+  {
+   payload.WithInteger("PerUnitStorageThroughput", m_perUnitStorageThroughput);
+
+  }
+
+  if(m_mountNameHasBeenSet)
+  {
+   payload.WithString("MountName", m_mountName);
 
   }
 

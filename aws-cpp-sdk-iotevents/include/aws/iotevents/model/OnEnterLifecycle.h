@@ -51,49 +51,49 @@ namespace Model
 
     /**
      * <p>Specifies the actions that are performed when the state is entered and the
-     * <code>"condition"</code> is TRUE.</p>
+     * <code>condition</code> is TRUE.</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
      * <p>Specifies the actions that are performed when the state is entered and the
-     * <code>"condition"</code> is TRUE.</p>
+     * <code>condition</code> is TRUE.</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p>Specifies the actions that are performed when the state is entered and the
-     * <code>"condition"</code> is TRUE.</p>
+     * <code>condition</code> is TRUE.</p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
      * <p>Specifies the actions that are performed when the state is entered and the
-     * <code>"condition"</code> is TRUE.</p>
+     * <code>condition</code> is TRUE.</p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
      * <p>Specifies the actions that are performed when the state is entered and the
-     * <code>"condition"</code> is TRUE.</p>
+     * <code>condition</code> is TRUE.</p>
      */
     inline OnEnterLifecycle& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
      * <p>Specifies the actions that are performed when the state is entered and the
-     * <code>"condition"</code> is TRUE.</p>
+     * <code>condition</code> is TRUE.</p>
      */
     inline OnEnterLifecycle& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the actions that are performed when the state is entered and the
-     * <code>"condition"</code> is TRUE.</p>
+     * <code>condition</code> is TRUE.</p>
      */
     inline OnEnterLifecycle& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
      * <p>Specifies the actions that are performed when the state is entered and the
-     * <code>"condition"</code> is TRUE.</p>
+     * <code>condition</code> is TRUE.</p>
      */
     inline OnEnterLifecycle& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 

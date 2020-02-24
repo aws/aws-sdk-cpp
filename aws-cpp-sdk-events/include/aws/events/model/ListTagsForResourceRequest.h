@@ -45,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the rule for which you want to view tags.</p>
+     * <p>The ARN of the EventBridge resource for which you want to view tags.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>The ARN of the rule for which you want to view tags.</p>
+     * <p>The ARN of the EventBridge resource for which you want to view tags.</p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the rule for which you want to view tags.</p>
+     * <p>The ARN of the EventBridge resource for which you want to view tags.</p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>The ARN of the rule for which you want to view tags.</p>
+     * <p>The ARN of the EventBridge resource for which you want to view tags.</p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>The ARN of the rule for which you want to view tags.</p>
+     * <p>The ARN of the EventBridge resource for which you want to view tags.</p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>The ARN of the rule for which you want to view tags.</p>
+     * <p>The ARN of the EventBridge resource for which you want to view tags.</p>
      */
     inline ListTagsForResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>The ARN of the rule for which you want to view tags.</p>
+     * <p>The ARN of the EventBridge resource for which you want to view tags.</p>
      */
     inline ListTagsForResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the rule for which you want to view tags.</p>
+     * <p>The ARN of the EventBridge resource for which you want to view tags.</p>
      */
     inline ListTagsForResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 

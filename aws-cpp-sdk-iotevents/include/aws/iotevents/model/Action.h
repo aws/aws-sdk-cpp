@@ -43,7 +43,7 @@ namespace Model
 {
 
   /**
-   * <p>An action to be performed when the <code>"condition"</code> is
+   * <p>An action to be performed when the <code>condition</code> is
    * TRUE.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/Action">AWS
    * API Reference</a></p>
@@ -287,38 +287,38 @@ namespace Model
 
 
     /**
-     * <p>Sends an IoT Events input, passing in information about the detector model
-     * instance and the event that triggered the action.</p>
+     * <p>Sends an AWS IoT Events input, passing in information about the detector
+     * model instance and the event that triggered the action.</p>
      */
     inline const IotEventsAction& GetIotEvents() const{ return m_iotEvents; }
 
     /**
-     * <p>Sends an IoT Events input, passing in information about the detector model
-     * instance and the event that triggered the action.</p>
+     * <p>Sends an AWS IoT Events input, passing in information about the detector
+     * model instance and the event that triggered the action.</p>
      */
     inline bool IotEventsHasBeenSet() const { return m_iotEventsHasBeenSet; }
 
     /**
-     * <p>Sends an IoT Events input, passing in information about the detector model
-     * instance and the event that triggered the action.</p>
+     * <p>Sends an AWS IoT Events input, passing in information about the detector
+     * model instance and the event that triggered the action.</p>
      */
     inline void SetIotEvents(const IotEventsAction& value) { m_iotEventsHasBeenSet = true; m_iotEvents = value; }
 
     /**
-     * <p>Sends an IoT Events input, passing in information about the detector model
-     * instance and the event that triggered the action.</p>
+     * <p>Sends an AWS IoT Events input, passing in information about the detector
+     * model instance and the event that triggered the action.</p>
      */
     inline void SetIotEvents(IotEventsAction&& value) { m_iotEventsHasBeenSet = true; m_iotEvents = std::move(value); }
 
     /**
-     * <p>Sends an IoT Events input, passing in information about the detector model
-     * instance and the event that triggered the action.</p>
+     * <p>Sends an AWS IoT Events input, passing in information about the detector
+     * model instance and the event that triggered the action.</p>
      */
     inline Action& WithIotEvents(const IotEventsAction& value) { SetIotEvents(value); return *this;}
 
     /**
-     * <p>Sends an IoT Events input, passing in information about the detector model
-     * instance and the event that triggered the action.</p>
+     * <p>Sends an AWS IoT Events input, passing in information about the detector
+     * model instance and the event that triggered the action.</p>
      */
     inline Action& WithIotEvents(IotEventsAction&& value) { SetIotEvents(std::move(value)); return *this;}
 
@@ -362,37 +362,37 @@ namespace Model
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
+     * triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
      */
     inline const FirehoseAction& GetFirehose() const{ return m_firehose; }
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
+     * triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
      */
     inline bool FirehoseHasBeenSet() const { return m_firehoseHasBeenSet; }
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
+     * triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
      */
     inline void SetFirehose(const FirehoseAction& value) { m_firehoseHasBeenSet = true; m_firehose = value; }
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
+     * triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
      */
     inline void SetFirehose(FirehoseAction&& value) { m_firehoseHasBeenSet = true; m_firehose = std::move(value); }
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
+     * triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
      */
     inline Action& WithFirehose(const FirehoseAction& value) { SetFirehose(value); return *this;}
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to a Kinesis Data Firehose delivery stream.</p>
+     * triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
      */
     inline Action& WithFirehose(FirehoseAction&& value) { SetFirehose(std::move(value)); return *this;}
 

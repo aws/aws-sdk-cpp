@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>Specifies the actions performed and the next state entered when a
-   * <code>"condition"</code> evaluates to TRUE.</p><p><h3>See Also:</h3>   <a
+   * <code>condition</code> evaluates to TRUE.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/TransitionEvent">AWS
    * API Reference</a></p>
    */
@@ -92,50 +92,50 @@ namespace Model
 
 
     /**
-     * <p>[Required] A Boolean expression that when TRUE causes the actions to be
-     * performed and the <code>"nextState"</code> to be entered.</p>
+     * <p>Required. A Boolean expression that when TRUE causes the actions to be
+     * performed and the <code>nextState</code> to be entered.</p>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
 
     /**
-     * <p>[Required] A Boolean expression that when TRUE causes the actions to be
-     * performed and the <code>"nextState"</code> to be entered.</p>
+     * <p>Required. A Boolean expression that when TRUE causes the actions to be
+     * performed and the <code>nextState</code> to be entered.</p>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
-     * <p>[Required] A Boolean expression that when TRUE causes the actions to be
-     * performed and the <code>"nextState"</code> to be entered.</p>
+     * <p>Required. A Boolean expression that when TRUE causes the actions to be
+     * performed and the <code>nextState</code> to be entered.</p>
      */
     inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
 
     /**
-     * <p>[Required] A Boolean expression that when TRUE causes the actions to be
-     * performed and the <code>"nextState"</code> to be entered.</p>
+     * <p>Required. A Boolean expression that when TRUE causes the actions to be
+     * performed and the <code>nextState</code> to be entered.</p>
      */
     inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
 
     /**
-     * <p>[Required] A Boolean expression that when TRUE causes the actions to be
-     * performed and the <code>"nextState"</code> to be entered.</p>
+     * <p>Required. A Boolean expression that when TRUE causes the actions to be
+     * performed and the <code>nextState</code> to be entered.</p>
      */
     inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
 
     /**
-     * <p>[Required] A Boolean expression that when TRUE causes the actions to be
-     * performed and the <code>"nextState"</code> to be entered.</p>
+     * <p>Required. A Boolean expression that when TRUE causes the actions to be
+     * performed and the <code>nextState</code> to be entered.</p>
      */
     inline TransitionEvent& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
 
     /**
-     * <p>[Required] A Boolean expression that when TRUE causes the actions to be
-     * performed and the <code>"nextState"</code> to be entered.</p>
+     * <p>Required. A Boolean expression that when TRUE causes the actions to be
+     * performed and the <code>nextState</code> to be entered.</p>
      */
     inline TransitionEvent& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
 
     /**
-     * <p>[Required] A Boolean expression that when TRUE causes the actions to be
-     * performed and the <code>"nextState"</code> to be entered.</p>
+     * <p>Required. A Boolean expression that when TRUE causes the actions to be
+     * performed and the <code>nextState</code> to be entered.</p>
      */
     inline TransitionEvent& WithCondition(const char* value) { SetCondition(value); return *this;}
 

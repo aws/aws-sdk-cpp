@@ -123,153 +123,153 @@ namespace Model
 
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutPartnerEventsRequestEntry& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutPartnerEventsRequestEntry& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutPartnerEventsRequestEntry& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutPartnerEventsRequestEntry& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>AWS resources, identified by Amazon Resource Name (ARN), that the event
-     * primarily concerns. Any number, including zero, can be present.</p>
+     * <p>AWS resources, identified by Amazon Resource Name (ARN), which the event
+     * primarily concerns. Any number, including zero, may be present.</p>
      */
     inline PutPartnerEventsRequestEntry& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
 
     /**
-     * <p>A free-form string used to decide which fields to expect in the event
+     * <p>A free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
     inline const Aws::String& GetDetailType() const{ return m_detailType; }
 
     /**
-     * <p>A free-form string used to decide which fields to expect in the event
+     * <p>A free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
     inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
 
     /**
-     * <p>A free-form string used to decide which fields to expect in the event
+     * <p>A free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
     inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
 
     /**
-     * <p>A free-form string used to decide which fields to expect in the event
+     * <p>A free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
     inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
 
     /**
-     * <p>A free-form string used to decide which fields to expect in the event
+     * <p>A free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
     inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
 
     /**
-     * <p>A free-form string used to decide which fields to expect in the event
+     * <p>A free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
 
     /**
-     * <p>A free-form string used to decide which fields to expect in the event
+     * <p>A free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
 
     /**
-     * <p>A free-form string used to decide which fields to expect in the event
+     * <p>A free-form string used to decide what fields to expect in the event
      * detail.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetailType(const char* value) { SetDetailType(value); return *this;}
 
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested subobjects.</p>
      */
     inline const Aws::String& GetDetail() const{ return m_detail; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested subobjects.</p>
      */
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested subobjects.</p>
      */
     inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested subobjects.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested subobjects.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
 
     /**
-     * <p>A valid JSON string. There is no other schema imposed. The JSON string can
+     * <p>A valid JSON string. There is no other schema imposed. The JSON string may
      * contain fields and nested subobjects.</p>
      */
     inline PutPartnerEventsRequestEntry& WithDetail(const char* value) { SetDetail(value); return *this;}

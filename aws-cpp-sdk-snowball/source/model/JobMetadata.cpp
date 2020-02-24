@@ -49,7 +49,8 @@ JobMetadata::JobMetadata() :
     m_dataTransferProgressHasBeenSet(false),
     m_jobLogInfoHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false)
+    m_forwardingAddressIdHasBeenSet(false),
+    m_taxDocumentsHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ JobMetadata::JobMetadata(JsonView jsonValue) :
     m_dataTransferProgressHasBeenSet(false),
     m_jobLogInfoHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false)
+    m_forwardingAddressIdHasBeenSet(false),
+    m_taxDocumentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +202,13 @@ JobMetadata& JobMetadata::operator =(JsonView jsonValue)
     m_forwardingAddressIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TaxDocuments"))
+  {
+    m_taxDocuments = jsonValue.GetObject("TaxDocuments");
+
+    m_taxDocumentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -301,6 +310,12 @@ JsonValue JobMetadata::Jsonize() const
   if(m_forwardingAddressIdHasBeenSet)
   {
    payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+
+  }
+
+  if(m_taxDocumentsHasBeenSet)
+  {
+   payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
 
   }
 

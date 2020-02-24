@@ -38,7 +38,8 @@ CreateJobRequest::CreateJobRequest() :
     m_clusterIdHasBeenSet(false),
     m_snowballType(SnowballType::NOT_SET),
     m_snowballTypeHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false)
+    m_forwardingAddressIdHasBeenSet(false),
+    m_taxDocumentsHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_forwardingAddressIdHasBeenSet)
   {
    payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+
+  }
+
+  if(m_taxDocumentsHasBeenSet)
+  {
+   payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
 
   }
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents an event that a partner tried to generate but
+   * <p>Represents an event that a partner tried to generate, but
    * failed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutPartnerEventsResultEntry">AWS
    * API Reference</a></p>

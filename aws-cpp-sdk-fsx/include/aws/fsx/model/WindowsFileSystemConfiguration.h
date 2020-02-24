@@ -630,7 +630,9 @@ namespace Model
      * backups. This value defaults to false. If it's set to true, all tags on the file
      * system are copied to all automatic backups and any user-initiated backups where
      * the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.</p>
+     * more tags, only the specified tags are copied to backups. If you specify one or
+     * more tags when creating a user-initiated backup, no tags are copied from the
+     * file system, regardless of this value.</p>
      */
     inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
 
@@ -639,7 +641,9 @@ namespace Model
      * backups. This value defaults to false. If it's set to true, all tags on the file
      * system are copied to all automatic backups and any user-initiated backups where
      * the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.</p>
+     * more tags, only the specified tags are copied to backups. If you specify one or
+     * more tags when creating a user-initiated backup, no tags are copied from the
+     * file system, regardless of this value.</p>
      */
     inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
 
@@ -648,7 +652,9 @@ namespace Model
      * backups. This value defaults to false. If it's set to true, all tags on the file
      * system are copied to all automatic backups and any user-initiated backups where
      * the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.</p>
+     * more tags, only the specified tags are copied to backups. If you specify one or
+     * more tags when creating a user-initiated backup, no tags are copied from the
+     * file system, regardless of this value.</p>
      */
     inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
 
@@ -657,7 +663,9 @@ namespace Model
      * backups. This value defaults to false. If it's set to true, all tags on the file
      * system are copied to all automatic backups and any user-initiated backups where
      * the user doesn't specify any tags. If this value is true, and you specify one or
-     * more tags, only the specified tags are copied to backups.</p>
+     * more tags, only the specified tags are copied to backups. If you specify one or
+     * more tags when creating a user-initiated backup, no tags are copied from the
+     * file system, regardless of this value.</p>
      */
     inline WindowsFileSystemConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
 

@@ -26,6 +26,7 @@
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/DataTransfer.h>
 #include <aws/snowball/model/JobLogs.h>
+#include <aws/snowball/model/TaxDocuments.h>
 #include <utility>
 
 namespace Aws
@@ -804,6 +805,43 @@ namespace Model
      */
     inline JobMetadata& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
+
+    /**
+     * <p>The metadata associated with the tax documents required in your AWS
+     * Region.</p>
+     */
+    inline const TaxDocuments& GetTaxDocuments() const{ return m_taxDocuments; }
+
+    /**
+     * <p>The metadata associated with the tax documents required in your AWS
+     * Region.</p>
+     */
+    inline bool TaxDocumentsHasBeenSet() const { return m_taxDocumentsHasBeenSet; }
+
+    /**
+     * <p>The metadata associated with the tax documents required in your AWS
+     * Region.</p>
+     */
+    inline void SetTaxDocuments(const TaxDocuments& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = value; }
+
+    /**
+     * <p>The metadata associated with the tax documents required in your AWS
+     * Region.</p>
+     */
+    inline void SetTaxDocuments(TaxDocuments&& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = std::move(value); }
+
+    /**
+     * <p>The metadata associated with the tax documents required in your AWS
+     * Region.</p>
+     */
+    inline JobMetadata& WithTaxDocuments(const TaxDocuments& value) { SetTaxDocuments(value); return *this;}
+
+    /**
+     * <p>The metadata associated with the tax documents required in your AWS
+     * Region.</p>
+     */
+    inline JobMetadata& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -856,6 +894,9 @@ namespace Model
 
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet;
+
+    TaxDocuments m_taxDocuments;
+    bool m_taxDocumentsHasBeenSet;
   };
 
 } // namespace Model

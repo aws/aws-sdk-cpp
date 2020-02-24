@@ -42,9 +42,9 @@ namespace Model
   /**
    * <p>Targets are the resources to be invoked when a rule is triggered. For a
    * complete list of services and resources that can be set as a target, see
-   * <a>PutTargets</a>.</p> <p>If you're setting the event bus of another account as
-   * the target and that account granted permission to your account through an
-   * organization instead of directly by the account ID, you must specify a
+   * <a>PutTargets</a>.</p> <p>If you are setting the event bus of another account as
+   * the target, and that account granted permission to your account through an
+   * organization instead of directly by the account ID, then you must specify a
    * <code>RoleArn</code> with proper permissions in the <code>Target</code>
    * structure. For more information, see <a
    * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
@@ -63,58 +63,42 @@ namespace Model
 
 
     /**
-     * <p>A name for the target. Use a string that will help you identify the target.
-     * Each target associated with a rule must have an <code>Id</code> unique for that
-     * rule.</p>
+     * <p>The ID of the target.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>A name for the target. Use a string that will help you identify the target.
-     * Each target associated with a rule must have an <code>Id</code> unique for that
-     * rule.</p>
+     * <p>The ID of the target.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>A name for the target. Use a string that will help you identify the target.
-     * Each target associated with a rule must have an <code>Id</code> unique for that
-     * rule.</p>
+     * <p>The ID of the target.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>A name for the target. Use a string that will help you identify the target.
-     * Each target associated with a rule must have an <code>Id</code> unique for that
-     * rule.</p>
+     * <p>The ID of the target.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>A name for the target. Use a string that will help you identify the target.
-     * Each target associated with a rule must have an <code>Id</code> unique for that
-     * rule.</p>
+     * <p>The ID of the target.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>A name for the target. Use a string that will help you identify the target.
-     * Each target associated with a rule must have an <code>Id</code> unique for that
-     * rule.</p>
+     * <p>The ID of the target.</p>
      */
     inline Target& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>A name for the target. Use a string that will help you identify the target.
-     * Each target associated with a rule must have an <code>Id</code> unique for that
-     * rule.</p>
+     * <p>The ID of the target.</p>
      */
     inline Target& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the target. Use a string that will help you identify the target.
-     * Each target associated with a rule must have an <code>Id</code> unique for that
-     * rule.</p>
+     * <p>The ID of the target.</p>
      */
     inline Target& WithId(const char* value) { SetId(value); return *this;}
 
@@ -391,43 +375,43 @@ namespace Model
 
 
     /**
-     * <p>The custom parameter that you can use to control the shard assignment when
-     * the target is a Kinesis data stream. If you don't include this parameter, the
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
      * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline const KinesisParameters& GetKinesisParameters() const{ return m_kinesisParameters; }
 
     /**
-     * <p>The custom parameter that you can use to control the shard assignment when
-     * the target is a Kinesis data stream. If you don't include this parameter, the
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
      * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline bool KinesisParametersHasBeenSet() const { return m_kinesisParametersHasBeenSet; }
 
     /**
-     * <p>The custom parameter that you can use to control the shard assignment when
-     * the target is a Kinesis data stream. If you don't include this parameter, the
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
      * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline void SetKinesisParameters(const KinesisParameters& value) { m_kinesisParametersHasBeenSet = true; m_kinesisParameters = value; }
 
     /**
-     * <p>The custom parameter that you can use to control the shard assignment when
-     * the target is a Kinesis data stream. If you don't include this parameter, the
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
      * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline void SetKinesisParameters(KinesisParameters&& value) { m_kinesisParametersHasBeenSet = true; m_kinesisParameters = std::move(value); }
 
     /**
-     * <p>The custom parameter that you can use to control the shard assignment when
-     * the target is a Kinesis data stream. If you don't include this parameter, the
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
      * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline Target& WithKinesisParameters(const KinesisParameters& value) { SetKinesisParameters(value); return *this;}
 
     /**
-     * <p>The custom parameter that you can use to control the shard assignment when
-     * the target is a Kinesis data stream. If you don't include this parameter, the
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
      * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline Target& WithKinesisParameters(KinesisParameters&& value) { SetKinesisParameters(std::move(value)); return *this;}
@@ -471,7 +455,7 @@ namespace Model
 
 
     /**
-     * <p>Contains the Amazon ECS task definition and task count to be used if the
+     * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
@@ -480,7 +464,7 @@ namespace Model
     inline const EcsParameters& GetEcsParameters() const{ return m_ecsParameters; }
 
     /**
-     * <p>Contains the Amazon ECS task definition and task count to be used if the
+     * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
@@ -489,7 +473,7 @@ namespace Model
     inline bool EcsParametersHasBeenSet() const { return m_ecsParametersHasBeenSet; }
 
     /**
-     * <p>Contains the Amazon ECS task definition and task count to be used if the
+     * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
@@ -498,7 +482,7 @@ namespace Model
     inline void SetEcsParameters(const EcsParameters& value) { m_ecsParametersHasBeenSet = true; m_ecsParameters = value; }
 
     /**
-     * <p>Contains the Amazon ECS task definition and task count to be used if the
+     * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
@@ -507,7 +491,7 @@ namespace Model
     inline void SetEcsParameters(EcsParameters&& value) { m_ecsParametersHasBeenSet = true; m_ecsParameters = std::move(value); }
 
     /**
-     * <p>Contains the Amazon ECS task definition and task count to be used if the
+     * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
@@ -516,7 +500,7 @@ namespace Model
     inline Target& WithEcsParameters(const EcsParameters& value) { SetEcsParameters(value); return *this;}
 
     /**
-     * <p>Contains the Amazon ECS task definition and task count to be used if the
+     * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task

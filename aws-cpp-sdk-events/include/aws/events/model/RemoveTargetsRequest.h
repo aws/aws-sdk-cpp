@@ -174,9 +174,9 @@ namespace Model
 
 
     /**
-     * <p>If this is a managed rule created by an AWS service on your behalf, you must
+     * <p>If this is a managed rule, created by an AWS service on your behalf, you must
      * specify <code>Force</code> as <code>True</code> to remove targets. This
-     * parameter is ignored for rules that aren't managed rules. You can check whether
+     * parameter is ignored for rules that are not managed rules. You can check whether
      * a rule is a managed rule by using <code>DescribeRule</code> or
      * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
      * response.</p>
@@ -184,9 +184,9 @@ namespace Model
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>If this is a managed rule created by an AWS service on your behalf, you must
+     * <p>If this is a managed rule, created by an AWS service on your behalf, you must
      * specify <code>Force</code> as <code>True</code> to remove targets. This
-     * parameter is ignored for rules that aren't managed rules. You can check whether
+     * parameter is ignored for rules that are not managed rules. You can check whether
      * a rule is a managed rule by using <code>DescribeRule</code> or
      * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
      * response.</p>
@@ -194,9 +194,9 @@ namespace Model
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p>If this is a managed rule created by an AWS service on your behalf, you must
+     * <p>If this is a managed rule, created by an AWS service on your behalf, you must
      * specify <code>Force</code> as <code>True</code> to remove targets. This
-     * parameter is ignored for rules that aren't managed rules. You can check whether
+     * parameter is ignored for rules that are not managed rules. You can check whether
      * a rule is a managed rule by using <code>DescribeRule</code> or
      * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
      * response.</p>
@@ -204,9 +204,9 @@ namespace Model
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>If this is a managed rule created by an AWS service on your behalf, you must
+     * <p>If this is a managed rule, created by an AWS service on your behalf, you must
      * specify <code>Force</code> as <code>True</code> to remove targets. This
-     * parameter is ignored for rules that aren't managed rules. You can check whether
+     * parameter is ignored for rules that are not managed rules. You can check whether
      * a rule is a managed rule by using <code>DescribeRule</code> or
      * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
      * response.</p>

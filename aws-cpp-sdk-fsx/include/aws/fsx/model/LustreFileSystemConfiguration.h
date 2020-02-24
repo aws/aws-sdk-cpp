@@ -17,6 +17,7 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/DataRepositoryConfiguration.h>
+#include <aws/fsx/model/LustreDeploymentType.h>
 #include <utility>
 
 namespace Aws
@@ -108,6 +109,147 @@ namespace Model
     
     inline LustreFileSystemConfiguration& WithDataRepositoryConfiguration(DataRepositoryConfiguration&& value) { SetDataRepositoryConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The deployment type of the FSX for Lustre file system.</p>
+     */
+    inline const LustreDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+
+    /**
+     * <p>The deployment type of the FSX for Lustre file system.</p>
+     */
+    inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
+
+    /**
+     * <p>The deployment type of the FSX for Lustre file system.</p>
+     */
+    inline void SetDeploymentType(const LustreDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+
+    /**
+     * <p>The deployment type of the FSX for Lustre file system.</p>
+     */
+    inline void SetDeploymentType(LustreDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
+
+    /**
+     * <p>The deployment type of the FSX for Lustre file system.</p>
+     */
+    inline LustreFileSystemConfiguration& WithDeploymentType(const LustreDeploymentType& value) { SetDeploymentType(value); return *this;}
+
+    /**
+     * <p>The deployment type of the FSX for Lustre file system.</p>
+     */
+    inline LustreFileSystemConfiguration& WithDeploymentType(LustreDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Per unit storage throughput represents the megabytes per second of read or
+     * write throughput per 1 tebibyte of storage provisioned. File system throughput
+     * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
+     * (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
+     * types. Valid values are 50, 100, 200. </p>
+     */
+    inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
+
+    /**
+     * <p> Per unit storage throughput represents the megabytes per second of read or
+     * write throughput per 1 tebibyte of storage provisioned. File system throughput
+     * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
+     * (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
+     * types. Valid values are 50, 100, 200. </p>
+     */
+    inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
+
+    /**
+     * <p> Per unit storage throughput represents the megabytes per second of read or
+     * write throughput per 1 tebibyte of storage provisioned. File system throughput
+     * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
+     * (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
+     * types. Valid values are 50, 100, 200. </p>
+     */
+    inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
+
+    /**
+     * <p> Per unit storage throughput represents the megabytes per second of read or
+     * write throughput per 1 tebibyte of storage provisioned. File system throughput
+     * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
+     * (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
+     * types. Valid values are 50, 100, 200. </p>
+     */
+    inline LustreFileSystemConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
+
+
+    /**
+     * <p>You use the <code>MountName</code> value when mounting the file system.</p>
+     * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
+     * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+     * deployment types, this value is a string that is unique within an AWS Region.
+     * </p>
+     */
+    inline const Aws::String& GetMountName() const{ return m_mountName; }
+
+    /**
+     * <p>You use the <code>MountName</code> value when mounting the file system.</p>
+     * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
+     * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+     * deployment types, this value is a string that is unique within an AWS Region.
+     * </p>
+     */
+    inline bool MountNameHasBeenSet() const { return m_mountNameHasBeenSet; }
+
+    /**
+     * <p>You use the <code>MountName</code> value when mounting the file system.</p>
+     * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
+     * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+     * deployment types, this value is a string that is unique within an AWS Region.
+     * </p>
+     */
+    inline void SetMountName(const Aws::String& value) { m_mountNameHasBeenSet = true; m_mountName = value; }
+
+    /**
+     * <p>You use the <code>MountName</code> value when mounting the file system.</p>
+     * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
+     * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+     * deployment types, this value is a string that is unique within an AWS Region.
+     * </p>
+     */
+    inline void SetMountName(Aws::String&& value) { m_mountNameHasBeenSet = true; m_mountName = std::move(value); }
+
+    /**
+     * <p>You use the <code>MountName</code> value when mounting the file system.</p>
+     * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
+     * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+     * deployment types, this value is a string that is unique within an AWS Region.
+     * </p>
+     */
+    inline void SetMountName(const char* value) { m_mountNameHasBeenSet = true; m_mountName.assign(value); }
+
+    /**
+     * <p>You use the <code>MountName</code> value when mounting the file system.</p>
+     * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
+     * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+     * deployment types, this value is a string that is unique within an AWS Region.
+     * </p>
+     */
+    inline LustreFileSystemConfiguration& WithMountName(const Aws::String& value) { SetMountName(value); return *this;}
+
+    /**
+     * <p>You use the <code>MountName</code> value when mounting the file system.</p>
+     * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
+     * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+     * deployment types, this value is a string that is unique within an AWS Region.
+     * </p>
+     */
+    inline LustreFileSystemConfiguration& WithMountName(Aws::String&& value) { SetMountName(std::move(value)); return *this;}
+
+    /**
+     * <p>You use the <code>MountName</code> value when mounting the file system.</p>
+     * <p>For the <code>SCRATCH_1</code> deployment type, this value is always
+     * "<code>fsx</code>". For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code>
+     * deployment types, this value is a string that is unique within an AWS Region.
+     * </p>
+     */
+    inline LustreFileSystemConfiguration& WithMountName(const char* value) { SetMountName(value); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -115,6 +257,15 @@ namespace Model
 
     DataRepositoryConfiguration m_dataRepositoryConfiguration;
     bool m_dataRepositoryConfigurationHasBeenSet;
+
+    LustreDeploymentType m_deploymentType;
+    bool m_deploymentTypeHasBeenSet;
+
+    int m_perUnitStorageThroughput;
+    bool m_perUnitStorageThroughputHasBeenSet;
+
+    Aws::String m_mountName;
+    bool m_mountNameHasBeenSet;
   };
 
 } // namespace Model

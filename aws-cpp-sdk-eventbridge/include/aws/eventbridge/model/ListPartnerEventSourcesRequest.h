@@ -144,29 +144,29 @@ namespace Model
 
     /**
      * <p>pecifying this limits the number of results returned by this operation. The
-     * operation also returns a <code>NextToken</code> that you can use in a subsequent
-     * operation to retrieve the next set of results.</p>
+     * operation also returns a NextToken which you can use in a subsequent operation
+     * to retrieve the next set of results.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>pecifying this limits the number of results returned by this operation. The
-     * operation also returns a <code>NextToken</code> that you can use in a subsequent
-     * operation to retrieve the next set of results.</p>
+     * operation also returns a NextToken which you can use in a subsequent operation
+     * to retrieve the next set of results.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>pecifying this limits the number of results returned by this operation. The
-     * operation also returns a <code>NextToken</code> that you can use in a subsequent
-     * operation to retrieve the next set of results.</p>
+     * operation also returns a NextToken which you can use in a subsequent operation
+     * to retrieve the next set of results.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>pecifying this limits the number of results returned by this operation. The
-     * operation also returns a <code>NextToken</code> that you can use in a subsequent
-     * operation to retrieve the next set of results.</p>
+     * operation also returns a NextToken which you can use in a subsequent operation
+     * to retrieve the next set of results.</p>
      */
     inline ListPartnerEventSourcesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

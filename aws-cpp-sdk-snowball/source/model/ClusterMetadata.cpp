@@ -45,7 +45,8 @@ ClusterMetadata::ClusterMetadata() :
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
     m_notificationHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false)
+    m_forwardingAddressIdHasBeenSet(false),
+    m_taxDocumentsHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ ClusterMetadata::ClusterMetadata(JsonView jsonValue) :
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
     m_notificationHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false)
+    m_forwardingAddressIdHasBeenSet(false),
+    m_taxDocumentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +166,13 @@ ClusterMetadata& ClusterMetadata::operator =(JsonView jsonValue)
     m_forwardingAddressIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TaxDocuments"))
+  {
+    m_taxDocuments = jsonValue.GetObject("TaxDocuments");
+
+    m_taxDocumentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -241,6 +250,12 @@ JsonValue ClusterMetadata::Jsonize() const
   if(m_forwardingAddressIdHasBeenSet)
   {
    payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+
+  }
+
+  if(m_taxDocumentsHasBeenSet)
+  {
+   payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
 
   }
 

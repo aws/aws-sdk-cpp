@@ -46,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the rule that you're removing tags from.</p>
+     * <p>The ARN of the EventBridge resource from which you are removing tags.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>The ARN of the rule that you're removing tags from.</p>
+     * <p>The ARN of the EventBridge resource from which you are removing tags.</p>
      */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the rule that you're removing tags from.</p>
+     * <p>The ARN of the EventBridge resource from which you are removing tags.</p>
      */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>The ARN of the rule that you're removing tags from.</p>
+     * <p>The ARN of the EventBridge resource from which you are removing tags.</p>
      */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>The ARN of the rule that you're removing tags from.</p>
+     * <p>The ARN of the EventBridge resource from which you are removing tags.</p>
      */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>The ARN of the rule that you're removing tags from.</p>
+     * <p>The ARN of the EventBridge resource from which you are removing tags.</p>
      */
     inline UntagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>The ARN of the rule that you're removing tags from.</p>
+     * <p>The ARN of the EventBridge resource from which you are removing tags.</p>
      */
     inline UntagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the rule that you're removing tags from.</p>
+     * <p>The ARN of the EventBridge resource from which you are removing tags.</p>
      */
     inline UntagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
 

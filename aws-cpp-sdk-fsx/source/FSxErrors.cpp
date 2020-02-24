@@ -44,6 +44,7 @@ static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServic
 static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
 static const int DATA_REPOSITORY_TASK_EXECUTING_HASH = HashingUtils::HashString("DataRepositoryTaskExecuting");
 static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
+static const int INVALID_PER_UNIT_STORAGE_THROUGHPUT_HASH = HashingUtils::HashString("InvalidPerUnitStorageThroughput");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
 static const int MISSING_FILE_SYSTEM_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileSystemConfiguration");
 
@@ -115,6 +116,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_IMPORT_PATH_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_IMPORT_PATH), false);
+  }
+  else if (hashCode == INVALID_PER_UNIT_STORAGE_THROUGHPUT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_PER_UNIT_STORAGE_THROUGHPUT), false);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {

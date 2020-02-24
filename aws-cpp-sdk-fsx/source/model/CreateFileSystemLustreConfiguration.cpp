@@ -33,7 +33,11 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() :
     m_importPathHasBeenSet(false),
     m_exportPathHasBeenSet(false),
     m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false)
+    m_importedFileChunkSizeHasBeenSet(false),
+    m_deploymentType(LustreDeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
+    m_perUnitStorageThroughput(0),
+    m_perUnitStorageThroughputHasBeenSet(false)
 {
 }
 
@@ -42,7 +46,11 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration(JsonVie
     m_importPathHasBeenSet(false),
     m_exportPathHasBeenSet(false),
     m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false)
+    m_importedFileChunkSizeHasBeenSet(false),
+    m_deploymentType(LustreDeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
+    m_perUnitStorageThroughput(0),
+    m_perUnitStorageThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +85,20 @@ CreateFileSystemLustreConfiguration& CreateFileSystemLustreConfiguration::operat
     m_importedFileChunkSizeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeploymentType"))
+  {
+    m_deploymentType = LustreDeploymentTypeMapper::GetLustreDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
+
+    m_deploymentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PerUnitStorageThroughput"))
+  {
+    m_perUnitStorageThroughput = jsonValue.GetInteger("PerUnitStorageThroughput");
+
+    m_perUnitStorageThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +127,17 @@ JsonValue CreateFileSystemLustreConfiguration::Jsonize() const
   if(m_importedFileChunkSizeHasBeenSet)
   {
    payload.WithInteger("ImportedFileChunkSize", m_importedFileChunkSize);
+
+  }
+
+  if(m_deploymentTypeHasBeenSet)
+  {
+   payload.WithString("DeploymentType", LustreDeploymentTypeMapper::GetNameForLustreDeploymentType(m_deploymentType));
+  }
+
+  if(m_perUnitStorageThroughputHasBeenSet)
+  {
+   payload.WithInteger("PerUnitStorageThroughput", m_perUnitStorageThroughput);
 
   }
 

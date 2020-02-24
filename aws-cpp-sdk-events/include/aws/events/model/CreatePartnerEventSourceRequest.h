@@ -118,50 +118,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the customer who is permitted to create a matching
-     * partner event bus for this partner event source.</p>
+     * <p>The AWS account ID that is permitted to create a matching partner event bus
+     * for this partner event source.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>The AWS account ID of the customer who is permitted to create a matching
-     * partner event bus for this partner event source.</p>
+     * <p>The AWS account ID that is permitted to create a matching partner event bus
+     * for this partner event source.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the customer who is permitted to create a matching
-     * partner event bus for this partner event source.</p>
+     * <p>The AWS account ID that is permitted to create a matching partner event bus
+     * for this partner event source.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>The AWS account ID of the customer who is permitted to create a matching
-     * partner event bus for this partner event source.</p>
+     * <p>The AWS account ID that is permitted to create a matching partner event bus
+     * for this partner event source.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the customer who is permitted to create a matching
-     * partner event bus for this partner event source.</p>
+     * <p>The AWS account ID that is permitted to create a matching partner event bus
+     * for this partner event source.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>The AWS account ID of the customer who is permitted to create a matching
-     * partner event bus for this partner event source.</p>
+     * <p>The AWS account ID that is permitted to create a matching partner event bus
+     * for this partner event source.</p>
      */
     inline CreatePartnerEventSourceRequest& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the customer who is permitted to create a matching
-     * partner event bus for this partner event source.</p>
+     * <p>The AWS account ID that is permitted to create a matching partner event bus
+     * for this partner event source.</p>
      */
     inline CreatePartnerEventSourceRequest& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the customer who is permitted to create a matching
-     * partner event bus for this partner event source.</p>
+     * <p>The AWS account ID that is permitted to create a matching partner event bus
+     * for this partner event source.</p>
      */
     inline CreatePartnerEventSourceRequest& WithAccount(const char* value) { SetAccount(value); return *this;}
 

@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateEventBusRequest::CreateEventBusRequest() : 
     m_nameHasBeenSet(false),
-    m_eventSourceNameHasBeenSet(false)
+    m_eventSourceNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String CreateEventBusRequest::SerializePayload() const
   if(m_eventSourceNameHasBeenSet)
   {
    payload.WithString("EventSourceName", m_eventSourceName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

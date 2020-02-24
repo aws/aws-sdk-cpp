@@ -23,6 +23,7 @@
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/SnowballType.h>
+#include <aws/snowball/model/TaxDocuments.h>
 #include <utility>
 
 namespace Aws
@@ -604,37 +605,55 @@ namespace Model
 
     /**
      * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
      * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
      * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
      * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
      * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline CreateJobRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
      * <p>The type of AWS Snowball device to use for this job. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * supported device type for cluster jobs is <code>EDGE</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
      */
     inline CreateJobRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
@@ -687,6 +706,37 @@ namespace Model
      */
     inline CreateJobRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
+
+    /**
+     * <p>The tax documents required in your AWS Region.</p>
+     */
+    inline const TaxDocuments& GetTaxDocuments() const{ return m_taxDocuments; }
+
+    /**
+     * <p>The tax documents required in your AWS Region.</p>
+     */
+    inline bool TaxDocumentsHasBeenSet() const { return m_taxDocumentsHasBeenSet; }
+
+    /**
+     * <p>The tax documents required in your AWS Region.</p>
+     */
+    inline void SetTaxDocuments(const TaxDocuments& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = value; }
+
+    /**
+     * <p>The tax documents required in your AWS Region.</p>
+     */
+    inline void SetTaxDocuments(TaxDocuments&& value) { m_taxDocumentsHasBeenSet = true; m_taxDocuments = std::move(value); }
+
+    /**
+     * <p>The tax documents required in your AWS Region.</p>
+     */
+    inline CreateJobRequest& WithTaxDocuments(const TaxDocuments& value) { SetTaxDocuments(value); return *this;}
+
+    /**
+     * <p>The tax documents required in your AWS Region.</p>
+     */
+    inline CreateJobRequest& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
+
   private:
 
     JobType m_jobType;
@@ -724,6 +774,9 @@ namespace Model
 
     Aws::String m_forwardingAddressId;
     bool m_forwardingAddressIdHasBeenSet;
+
+    TaxDocuments m_taxDocuments;
+    bool m_taxDocumentsHasBeenSet;
   };
 
 } // namespace Model

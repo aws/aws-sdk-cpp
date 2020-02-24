@@ -35,7 +35,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_shippingOption(ShippingOption::NOT_SET),
     m_shippingOptionHasBeenSet(false),
     m_notificationHasBeenSet(false),
-    m_forwardingAddressIdHasBeenSet(false)
+    m_forwardingAddressIdHasBeenSet(false),
+    m_taxDocumentsHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_forwardingAddressIdHasBeenSet)
   {
    payload.WithString("ForwardingAddressId", m_forwardingAddressId);
+
+  }
+
+  if(m_taxDocumentsHasBeenSet)
+  {
+   payload.WithObject("TaxDocuments", m_taxDocuments.Jsonize());
 
   }
 

@@ -149,8 +149,8 @@ namespace Model
 
   /**
    * <p>AWS IoT Events monitors your equipment or device fleets for failures or
-   * changes in operation, and triggers actions when such events occur. AWS IoT
-   * Events API commands enable you to create, read, update and delete inputs and
+   * changes in operation, and triggers actions when such events occur. You can use
+   * AWS IoT Events API commands to create, read, update, and delete inputs and
    * detector models, and to list their versions.</p>
    */
   class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient
@@ -286,7 +286,7 @@ namespace Model
         virtual void DeleteInputAsync(const Model::DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a detector model. If the <code>"version"</code> parameter is not
+         * <p>Describes a detector model. If the <code>version</code> parameter is not
          * specified, information about the latest version is returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">AWS
@@ -295,7 +295,7 @@ namespace Model
         virtual Model::DescribeDetectorModelOutcome DescribeDetectorModel(const Model::DescribeDetectorModelRequest& request) const;
 
         /**
-         * <p>Describes a detector model. If the <code>"version"</code> parameter is not
+         * <p>Describes a detector model. If the <code>version</code> parameter is not
          * specified, information about the latest version is returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">AWS
@@ -306,7 +306,7 @@ namespace Model
         virtual Model::DescribeDetectorModelOutcomeCallable DescribeDetectorModelCallable(const Model::DescribeDetectorModelRequest& request) const;
 
         /**
-         * <p>Describes a detector model. If the <code>"version"</code> parameter is not
+         * <p>Describes a detector model. If the <code>version</code> parameter is not
          * specified, information about the latest version is returned.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModel">AWS
@@ -480,10 +480,10 @@ namespace Model
 
         /**
          * <p>Sets or updates the AWS IoT Events logging options.</p> <p>If you update the
-         * value of any <code>"loggingOptions"</code> field, it takes up to one minute for
-         * the change to take effect. Also, if you change the policy attached to the role
-         * you specified in the <code>"roleArn"</code> field (for example, to correct an
-         * invalid policy) it takes up to five minutes for that change to take
+         * value of any <code>loggingOptions</code> field, it takes up to one minute for
+         * the change to take effect. If you change the policy attached to the role you
+         * specified in the <code>roleArn</code> field (for example, to correct an invalid
+         * policy), it takes up to five minutes for that change to take
          * effect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -492,10 +492,10 @@ namespace Model
 
         /**
          * <p>Sets or updates the AWS IoT Events logging options.</p> <p>If you update the
-         * value of any <code>"loggingOptions"</code> field, it takes up to one minute for
-         * the change to take effect. Also, if you change the policy attached to the role
-         * you specified in the <code>"roleArn"</code> field (for example, to correct an
-         * invalid policy) it takes up to five minutes for that change to take
+         * value of any <code>loggingOptions</code> field, it takes up to one minute for
+         * the change to take effect. If you change the policy attached to the role you
+         * specified in the <code>roleArn</code> field (for example, to correct an invalid
+         * policy), it takes up to five minutes for that change to take
          * effect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">AWS
          * API Reference</a></p>
@@ -506,10 +506,10 @@ namespace Model
 
         /**
          * <p>Sets or updates the AWS IoT Events logging options.</p> <p>If you update the
-         * value of any <code>"loggingOptions"</code> field, it takes up to one minute for
-         * the change to take effect. Also, if you change the policy attached to the role
-         * you specified in the <code>"roleArn"</code> field (for example, to correct an
-         * invalid policy) it takes up to five minutes for that change to take
+         * value of any <code>loggingOptions</code> field, it takes up to one minute for
+         * the change to take effect. If you change the policy attached to the role you
+         * specified in the <code>roleArn</code> field (for example, to correct an invalid
+         * policy), it takes up to five minutes for that change to take
          * effect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/PutLoggingOptions">AWS
          * API Reference</a></p>

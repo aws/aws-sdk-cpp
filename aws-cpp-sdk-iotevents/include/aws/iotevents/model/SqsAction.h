@@ -90,25 +90,25 @@ namespace Model
 
 
     /**
-     * <p>Set this to TRUE if you want the data to be Base-64 encoded before it is
+     * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
      * written to the queue. Otherwise, set this to FALSE.</p>
      */
     inline bool GetUseBase64() const{ return m_useBase64; }
 
     /**
-     * <p>Set this to TRUE if you want the data to be Base-64 encoded before it is
+     * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
      * written to the queue. Otherwise, set this to FALSE.</p>
      */
     inline bool UseBase64HasBeenSet() const { return m_useBase64HasBeenSet; }
 
     /**
-     * <p>Set this to TRUE if you want the data to be Base-64 encoded before it is
+     * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
      * written to the queue. Otherwise, set this to FALSE.</p>
      */
     inline void SetUseBase64(bool value) { m_useBase64HasBeenSet = true; m_useBase64 = value; }
 
     /**
-     * <p>Set this to TRUE if you want the data to be Base-64 encoded before it is
+     * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
      * written to the queue. Otherwise, set this to FALSE.</p>
      */
     inline SqsAction& WithUseBase64(bool value) { SetUseBase64(value); return *this;}
