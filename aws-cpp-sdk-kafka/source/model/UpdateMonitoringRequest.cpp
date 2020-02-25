@@ -27,7 +27,8 @@ UpdateMonitoringRequest::UpdateMonitoringRequest() :
     m_currentVersionHasBeenSet(false),
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false)
+    m_openMonitoringHasBeenSet(false),
+    m_loggingInfoHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,12 @@ Aws::String UpdateMonitoringRequest::SerializePayload() const
   if(m_openMonitoringHasBeenSet)
   {
    payload.WithObject("openMonitoring", m_openMonitoring.Jsonize());
+
+  }
+
+  if(m_loggingInfoHasBeenSet)
+  {
+   payload.WithObject("loggingInfo", m_loggingInfo.Jsonize());
 
   }
 

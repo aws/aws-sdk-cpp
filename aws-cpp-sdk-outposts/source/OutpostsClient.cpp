@@ -31,6 +31,8 @@
 #include <aws/outposts/OutpostsEndpoint.h>
 #include <aws/outposts/OutpostsErrorMarshaller.h>
 #include <aws/outposts/model/CreateOutpostRequest.h>
+#include <aws/outposts/model/DeleteOutpostRequest.h>
+#include <aws/outposts/model/DeleteSiteRequest.h>
 #include <aws/outposts/model/GetOutpostRequest.h>
 #include <aws/outposts/model/GetOutpostInstanceTypesRequest.h>
 #include <aws/outposts/model/ListOutpostsRequest.h>
@@ -141,6 +143,88 @@ void OutpostsClient::CreateOutpostAsync(const CreateOutpostRequest& request, con
 void OutpostsClient::CreateOutpostAsyncHelper(const CreateOutpostRequest& request, const CreateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateOutpost(request), context);
+}
+
+DeleteOutpostOutcome OutpostsClient::DeleteOutpost(const DeleteOutpostRequest& request) const
+{
+  if (!request.OutpostIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteOutpost", "Required field: OutpostId, is not set");
+    return DeleteOutpostOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/outposts/";
+  ss << request.GetOutpostId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteOutpostOutcome(DeleteOutpostResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteOutpostOutcome(outcome.GetError());
+  }
+}
+
+DeleteOutpostOutcomeCallable OutpostsClient::DeleteOutpostCallable(const DeleteOutpostRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteOutpostOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteOutpost(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OutpostsClient::DeleteOutpostAsync(const DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteOutpostAsyncHelper( request, handler, context ); } );
+}
+
+void OutpostsClient::DeleteOutpostAsyncHelper(const DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteOutpost(request), context);
+}
+
+DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) const
+{
+  if (!request.SiteIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSite", "Required field: SiteId, is not set");
+    return DeleteSiteOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SiteId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/sites/";
+  ss << request.GetSiteId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSiteOutcome(DeleteSiteResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteSiteOutcome(outcome.GetError());
+  }
+}
+
+DeleteSiteOutcomeCallable OutpostsClient::DeleteSiteCallable(const DeleteSiteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSiteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSite(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OutpostsClient::DeleteSiteAsync(const DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSiteAsyncHelper( request, handler, context ); } );
+}
+
+void OutpostsClient::DeleteSiteAsyncHelper(const DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSite(request), context);
 }
 
 GetOutpostOutcome OutpostsClient::GetOutpost(const GetOutpostRequest& request) const

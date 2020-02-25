@@ -54,7 +54,8 @@ namespace Model
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
-     * <code>U+007F-009F</code>)</p> </li> </ul>
+     * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
+     * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -64,7 +65,8 @@ namespace Model
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
-     * <code>U+007F-009F</code>)</p> </li> </ul>
+     * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
+     * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -74,7 +76,8 @@ namespace Model
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
-     * <code>U+007F-009F</code>)</p> </li> </ul>
+     * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
+     * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -84,7 +87,8 @@ namespace Model
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
-     * <code>U+007F-009F</code>)</p> </li> </ul>
+     * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
+     * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -94,7 +98,8 @@ namespace Model
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
-     * <code>U+007F-009F</code>)</p> </li> </ul>
+     * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
+     * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -104,7 +109,8 @@ namespace Model
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
-     * <code>U+007F-009F</code>)</p> </li> </ul>
+     * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
+     * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
     inline CreateStateMachineRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -114,7 +120,8 @@ namespace Model
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
-     * <code>U+007F-009F</code>)</p> </li> </ul>
+     * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
+     * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
     inline CreateStateMachineRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -124,7 +131,8 @@ namespace Model
      * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
      * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
      * <li> <p>control characters (<code>U+0000-001F</code>,
-     * <code>U+007F-009F</code>)</p> </li> </ul>
+     * <code>U+007F-009F</code>)</p> </li> </ul> <p>To enable logging with CloudWatch
+     * Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
      */
     inline CreateStateMachineRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -236,75 +244,99 @@ namespace Model
 
 
     /**
-     * <p>Determines whether a Standard or Express state machine is created. If not
-     * set, Standard is created.</p>
+     * <p>Determines whether a Standard or Express state machine is created. The
+     * default is <code>STANDARD</code>. You cannot update the <code>type</code> of a
+     * state machine once it has been created.</p>
      */
     inline const StateMachineType& GetType() const{ return m_type; }
 
     /**
-     * <p>Determines whether a Standard or Express state machine is created. If not
-     * set, Standard is created.</p>
+     * <p>Determines whether a Standard or Express state machine is created. The
+     * default is <code>STANDARD</code>. You cannot update the <code>type</code> of a
+     * state machine once it has been created.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Determines whether a Standard or Express state machine is created. If not
-     * set, Standard is created.</p>
+     * <p>Determines whether a Standard or Express state machine is created. The
+     * default is <code>STANDARD</code>. You cannot update the <code>type</code> of a
+     * state machine once it has been created.</p>
      */
     inline void SetType(const StateMachineType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Determines whether a Standard or Express state machine is created. If not
-     * set, Standard is created.</p>
+     * <p>Determines whether a Standard or Express state machine is created. The
+     * default is <code>STANDARD</code>. You cannot update the <code>type</code> of a
+     * state machine once it has been created.</p>
      */
     inline void SetType(StateMachineType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Determines whether a Standard or Express state machine is created. If not
-     * set, Standard is created.</p>
+     * <p>Determines whether a Standard or Express state machine is created. The
+     * default is <code>STANDARD</code>. You cannot update the <code>type</code> of a
+     * state machine once it has been created.</p>
      */
     inline CreateStateMachineRequest& WithType(const StateMachineType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Determines whether a Standard or Express state machine is created. If not
-     * set, Standard is created.</p>
+     * <p>Determines whether a Standard or Express state machine is created. The
+     * default is <code>STANDARD</code>. You cannot update the <code>type</code> of a
+     * state machine once it has been created.</p>
      */
     inline CreateStateMachineRequest& WithType(StateMachineType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p>
+     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
+     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
      */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p>
+     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
+     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
      */
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p>
+     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
+     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
      */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p>
+     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
+     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
      */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p>
+     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
+     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
      */
     inline CreateStateMachineRequest& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
      * <p>Defines what execution history events are logged and where they are
-     * logged.</p>
+     * logged.</p> <note> <p>By default, the <code>level</code> is set to
+     * <code>OFF</code>. For more information see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log
+     * Levels</a> in the AWS Step Functions User Guide.</p> </note>
      */
     inline CreateStateMachineRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 

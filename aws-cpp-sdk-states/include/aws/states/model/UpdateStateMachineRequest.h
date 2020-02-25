@@ -185,32 +185,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
+     * Logs options.</p>
      */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
-     * <p/>
+     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
+     * Logs options.</p>
      */
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
+     * Logs options.</p>
      */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
     /**
-     * <p/>
+     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
+     * Logs options.</p>
      */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
+     * Logs options.</p>
      */
     inline UpdateStateMachineRequest& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
+     * Logs options.</p>
      */
     inline UpdateStateMachineRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 

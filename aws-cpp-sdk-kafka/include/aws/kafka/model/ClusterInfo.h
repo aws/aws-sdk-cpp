@@ -23,6 +23,7 @@
 #include <aws/kafka/model/EncryptionInfo.h>
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/OpenMonitoring.h>
+#include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/ClusterState.h>
 #include <aws/kafka/model/StateInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -633,6 +634,25 @@ namespace Model
     inline ClusterInfo& WithOpenMonitoring(OpenMonitoring&& value) { SetOpenMonitoring(std::move(value)); return *this;}
 
 
+    
+    inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
+
+    
+    inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
+
+    
+    inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
+
+    
+    inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
+
+    
+    inline ClusterInfo& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
+
+    
+    inline ClusterInfo& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+
+
     /**
      * 
             <p>The number of broker nodes in the cluster.</p>
@@ -920,6 +940,9 @@ namespace Model
 
     OpenMonitoring m_openMonitoring;
     bool m_openMonitoringHasBeenSet;
+
+    LoggingInfo m_loggingInfo;
+    bool m_loggingInfoHasBeenSet;
 
     int m_numberOfBrokerNodes;
     bool m_numberOfBrokerNodesHasBeenSet;

@@ -19,6 +19,7 @@
 #include <aws/kafka/model/ConfigurationInfo.h>
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/OpenMonitoring.h>
+#include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 #include <utility>
 
@@ -288,6 +289,25 @@ namespace Model
      */
     inline MutableClusterInfo& WithOpenMonitoring(OpenMonitoring&& value) { SetOpenMonitoring(std::move(value)); return *this;}
 
+
+    
+    inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
+
+    
+    inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
+
+    
+    inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
+
+    
+    inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
+
+    
+    inline MutableClusterInfo& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
+
+    
+    inline MutableClusterInfo& WithLoggingInfo(LoggingInfo&& value) { SetLoggingInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
@@ -304,6 +324,9 @@ namespace Model
 
     OpenMonitoring m_openMonitoring;
     bool m_openMonitoringHasBeenSet;
+
+    LoggingInfo m_loggingInfo;
+    bool m_loggingInfoHasBeenSet;
   };
 
 } // namespace Model

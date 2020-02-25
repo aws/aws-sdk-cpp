@@ -22,6 +22,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/outposts/model/CreateOutpostResult.h>
+#include <aws/outposts/model/DeleteOutpostResult.h>
+#include <aws/outposts/model/DeleteSiteResult.h>
 #include <aws/outposts/model/GetOutpostResult.h>
 #include <aws/outposts/model/GetOutpostInstanceTypesResult.h>
 #include <aws/outposts/model/ListOutpostsResult.h>
@@ -66,18 +68,24 @@ namespace Outposts
 namespace Model
 {
         class CreateOutpostRequest;
+        class DeleteOutpostRequest;
+        class DeleteSiteRequest;
         class GetOutpostRequest;
         class GetOutpostInstanceTypesRequest;
         class ListOutpostsRequest;
         class ListSitesRequest;
 
         typedef Aws::Utils::Outcome<CreateOutpostResult, Aws::Client::AWSError<OutpostsErrors>> CreateOutpostOutcome;
+        typedef Aws::Utils::Outcome<DeleteOutpostResult, Aws::Client::AWSError<OutpostsErrors>> DeleteOutpostOutcome;
+        typedef Aws::Utils::Outcome<DeleteSiteResult, Aws::Client::AWSError<OutpostsErrors>> DeleteSiteOutcome;
         typedef Aws::Utils::Outcome<GetOutpostResult, Aws::Client::AWSError<OutpostsErrors>> GetOutpostOutcome;
         typedef Aws::Utils::Outcome<GetOutpostInstanceTypesResult, Aws::Client::AWSError<OutpostsErrors>> GetOutpostInstanceTypesOutcome;
         typedef Aws::Utils::Outcome<ListOutpostsResult, Aws::Client::AWSError<OutpostsErrors>> ListOutpostsOutcome;
         typedef Aws::Utils::Outcome<ListSitesResult, Aws::Client::AWSError<OutpostsErrors>> ListSitesOutcome;
 
         typedef std::future<CreateOutpostOutcome> CreateOutpostOutcomeCallable;
+        typedef std::future<DeleteOutpostOutcome> DeleteOutpostOutcomeCallable;
+        typedef std::future<DeleteSiteOutcome> DeleteSiteOutcomeCallable;
         typedef std::future<GetOutpostOutcome> GetOutpostOutcomeCallable;
         typedef std::future<GetOutpostInstanceTypesOutcome> GetOutpostInstanceTypesOutcomeCallable;
         typedef std::future<ListOutpostsOutcome> ListOutpostsOutcomeCallable;
@@ -87,6 +95,8 @@ namespace Model
   class OutpostsClient;
 
     typedef std::function<void(const OutpostsClient*, const Model::CreateOutpostRequest&, const Model::CreateOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateOutpostResponseReceivedHandler;
+    typedef std::function<void(const OutpostsClient*, const Model::DeleteOutpostRequest&, const Model::DeleteOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOutpostResponseReceivedHandler;
+    typedef std::function<void(const OutpostsClient*, const Model::DeleteSiteRequest&, const Model::DeleteSiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSiteResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetOutpostRequest&, const Model::GetOutpostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::GetOutpostInstanceTypesRequest&, const Model::GetOutpostInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOutpostInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const OutpostsClient*, const Model::ListOutpostsRequest&, const Model::ListOutpostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOutpostsResponseReceivedHandler;
@@ -153,6 +163,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateOutpostAsync(const Model::CreateOutpostRequest& request, const CreateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOutpostOutcome DeleteOutpost(const Model::DeleteOutpostRequest& request) const;
+
+        /**
+         * <p>Deletes the Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteOutpostOutcomeCallable DeleteOutpostCallable(const Model::DeleteOutpostRequest& request) const;
+
+        /**
+         * <p>Deletes the Outpost.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteOutpost">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteOutpostAsync(const Model::DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the site.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSiteOutcome DeleteSite(const Model::DeleteSiteRequest& request) const;
+
+        /**
+         * <p>Deletes the site.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSiteOutcomeCallable DeleteSiteCallable(const Model::DeleteSiteRequest& request) const;
+
+        /**
+         * <p>Deletes the site.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/DeleteSite">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSiteAsync(const Model::DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified Outpost.</p><p><h3>See Also:</h3>   <a
@@ -262,6 +322,8 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateOutpostAsyncHelper(const Model::CreateOutpostRequest& request, const CreateOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteOutpostAsyncHelper(const Model::DeleteOutpostRequest& request, const DeleteOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSiteAsyncHelper(const Model::DeleteSiteRequest& request, const DeleteSiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOutpostAsyncHelper(const Model::GetOutpostRequest& request, const GetOutpostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetOutpostInstanceTypesAsyncHelper(const Model::GetOutpostInstanceTypesRequest& request, const GetOutpostInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOutpostsAsyncHelper(const Model::ListOutpostsRequest& request, const ListOutpostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -68,6 +68,12 @@ DescribeStateMachineForExecutionResult& DescribeStateMachineForExecutionResult::
 
   }
 
+  if(jsonValue.ValueExists("loggingConfiguration"))
+  {
+    m_loggingConfiguration = jsonValue.GetObject("loggingConfiguration");
+
+  }
+
 
 
   return *this;

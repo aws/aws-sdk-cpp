@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch
+   * Logs options.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -81,82 +82,82 @@ namespace Model
 
 
     /**
-     * <p>Determines whether execution history data is included in your log. When set
-     * to <code>FALSE</code>, data is excluded.</p>
+     * <p>Determines whether execution data is included in your log. When set to
+     * <code>FALSE</code>, data is excluded.</p>
      */
     inline bool GetIncludeExecutionData() const{ return m_includeExecutionData; }
 
     /**
-     * <p>Determines whether execution history data is included in your log. When set
-     * to <code>FALSE</code>, data is excluded.</p>
+     * <p>Determines whether execution data is included in your log. When set to
+     * <code>FALSE</code>, data is excluded.</p>
      */
     inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
 
     /**
-     * <p>Determines whether execution history data is included in your log. When set
-     * to <code>FALSE</code>, data is excluded.</p>
+     * <p>Determines whether execution data is included in your log. When set to
+     * <code>FALSE</code>, data is excluded.</p>
      */
     inline void SetIncludeExecutionData(bool value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
 
     /**
-     * <p>Determines whether execution history data is included in your log. When set
-     * to <code>FALSE</code>, data is excluded.</p>
+     * <p>Determines whether execution data is included in your log. When set to
+     * <code>FALSE</code>, data is excluded.</p>
      */
     inline LoggingConfiguration& WithIncludeExecutionData(bool value) { SetIncludeExecutionData(value); return *this;}
 
 
     /**
-     * <p>An object that describes where your execution history events will be logged.
-     * Limited to size 1. Required, if your log level is not set to
+     * <p>An array of objects that describes where your execution history events will
+     * be logged. Limited to size 1. Required, if your log level is not set to
      * <code>OFF</code>.</p>
      */
     inline const Aws::Vector<LogDestination>& GetDestinations() const{ return m_destinations; }
 
     /**
-     * <p>An object that describes where your execution history events will be logged.
-     * Limited to size 1. Required, if your log level is not set to
+     * <p>An array of objects that describes where your execution history events will
+     * be logged. Limited to size 1. Required, if your log level is not set to
      * <code>OFF</code>.</p>
      */
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
-     * <p>An object that describes where your execution history events will be logged.
-     * Limited to size 1. Required, if your log level is not set to
+     * <p>An array of objects that describes where your execution history events will
+     * be logged. Limited to size 1. Required, if your log level is not set to
      * <code>OFF</code>.</p>
      */
     inline void SetDestinations(const Aws::Vector<LogDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
 
     /**
-     * <p>An object that describes where your execution history events will be logged.
-     * Limited to size 1. Required, if your log level is not set to
+     * <p>An array of objects that describes where your execution history events will
+     * be logged. Limited to size 1. Required, if your log level is not set to
      * <code>OFF</code>.</p>
      */
     inline void SetDestinations(Aws::Vector<LogDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
 
     /**
-     * <p>An object that describes where your execution history events will be logged.
-     * Limited to size 1. Required, if your log level is not set to
+     * <p>An array of objects that describes where your execution history events will
+     * be logged. Limited to size 1. Required, if your log level is not set to
      * <code>OFF</code>.</p>
      */
     inline LoggingConfiguration& WithDestinations(const Aws::Vector<LogDestination>& value) { SetDestinations(value); return *this;}
 
     /**
-     * <p>An object that describes where your execution history events will be logged.
-     * Limited to size 1. Required, if your log level is not set to
+     * <p>An array of objects that describes where your execution history events will
+     * be logged. Limited to size 1. Required, if your log level is not set to
      * <code>OFF</code>.</p>
      */
     inline LoggingConfiguration& WithDestinations(Aws::Vector<LogDestination>&& value) { SetDestinations(std::move(value)); return *this;}
 
     /**
-     * <p>An object that describes where your execution history events will be logged.
-     * Limited to size 1. Required, if your log level is not set to
+     * <p>An array of objects that describes where your execution history events will
+     * be logged. Limited to size 1. Required, if your log level is not set to
      * <code>OFF</code>.</p>
      */
     inline LoggingConfiguration& AddDestinations(const LogDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
 
     /**
-     * <p>An object that describes where your execution history events will be logged.
-     * Limited to size 1. Required, if your log level is not set to
+     * <p>An array of objects that describes where your execution history events will
+     * be logged. Limited to size 1. Required, if your log level is not set to
      * <code>OFF</code>.</p>
      */
     inline LoggingConfiguration& AddDestinations(LogDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }

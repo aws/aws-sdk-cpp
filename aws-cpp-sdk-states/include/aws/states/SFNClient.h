@@ -297,16 +297,20 @@ namespace Model
          * that can do work (<code>Task</code> states), determine to which states to
          * transition next (<code>Choice</code> states), stop an execution with an error
          * (<code>Fail</code> states), and so on. State machines are specified using a
-         * JSON-based, structured language.</p> <note> <p>This operation is eventually
-         * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note> <note> <p> <code>CreateStateMachine</code> is an
-         * idempotent API. Subsequent requests won’t create a duplicate resource if it was
-         * already created. <code>CreateStateMachine</code>'s idempotency check is based on
-         * the state machine <code>name</code> and <code>definition</code>. If a following
-         * request has a different <code>roleArn</code> or <code>tags</code>, Step
-         * Functions will ignore these differences and treat it as an idempotent request of
-         * the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
-         * be updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
+         * JSON-based, structured language. For more information, see <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+         * States Language</a> in the AWS Step Functions User Guide.</p> <note> <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p> </note> <note> <p>
+         * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t
+         * create a duplicate resource if it was already created.
+         * <code>CreateStateMachine</code>'s idempotency check is based on the state
+         * machine <code>name</code>, <code>definition</code>, <code>type</code>, and
+         * <code>LoggingConfiguration</code>. If a following request has a different
+         * <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
+         * differences and treat it as an idempotent request of the previous. In this case,
+         * <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+         * different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          */
@@ -317,16 +321,20 @@ namespace Model
          * that can do work (<code>Task</code> states), determine to which states to
          * transition next (<code>Choice</code> states), stop an execution with an error
          * (<code>Fail</code> states), and so on. State machines are specified using a
-         * JSON-based, structured language.</p> <note> <p>This operation is eventually
-         * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note> <note> <p> <code>CreateStateMachine</code> is an
-         * idempotent API. Subsequent requests won’t create a duplicate resource if it was
-         * already created. <code>CreateStateMachine</code>'s idempotency check is based on
-         * the state machine <code>name</code> and <code>definition</code>. If a following
-         * request has a different <code>roleArn</code> or <code>tags</code>, Step
-         * Functions will ignore these differences and treat it as an idempotent request of
-         * the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
-         * be updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
+         * JSON-based, structured language. For more information, see <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+         * States Language</a> in the AWS Step Functions User Guide.</p> <note> <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p> </note> <note> <p>
+         * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t
+         * create a duplicate resource if it was already created.
+         * <code>CreateStateMachine</code>'s idempotency check is based on the state
+         * machine <code>name</code>, <code>definition</code>, <code>type</code>, and
+         * <code>LoggingConfiguration</code>. If a following request has a different
+         * <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
+         * differences and treat it as an idempotent request of the previous. In this case,
+         * <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+         * different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          *
@@ -339,16 +347,20 @@ namespace Model
          * that can do work (<code>Task</code> states), determine to which states to
          * transition next (<code>Choice</code> states), stop an execution with an error
          * (<code>Fail</code> states), and so on. State machines are specified using a
-         * JSON-based, structured language.</p> <note> <p>This operation is eventually
-         * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note> <note> <p> <code>CreateStateMachine</code> is an
-         * idempotent API. Subsequent requests won’t create a duplicate resource if it was
-         * already created. <code>CreateStateMachine</code>'s idempotency check is based on
-         * the state machine <code>name</code> and <code>definition</code>. If a following
-         * request has a different <code>roleArn</code> or <code>tags</code>, Step
-         * Functions will ignore these differences and treat it as an idempotent request of
-         * the previous. In this case, <code>roleArn</code> and <code>tags</code> will not
-         * be updated, even if they are different.</p> </note><p><h3>See Also:</h3>   <a
+         * JSON-based, structured language. For more information, see <a
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+         * States Language</a> in the AWS Step Functions User Guide.</p> <note> <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p> </note> <note> <p>
+         * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t
+         * create a duplicate resource if it was already created.
+         * <code>CreateStateMachine</code>'s idempotency check is based on the state
+         * machine <code>name</code>, <code>definition</code>, <code>type</code>, and
+         * <code>LoggingConfiguration</code>. If a following request has a different
+         * <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
+         * differences and treat it as an idempotent request of the previous. In this case,
+         * <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+         * different.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          *
@@ -383,10 +395,11 @@ namespace Model
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation: It sets the state
-         * machine's status to <code>DELETING</code> and begins the deletion process. Each
-         * state machine execution is deleted the next time it makes a state
-         * transition.</p> <note> <p>The state machine itself is deleted after all
-         * executions are completed or deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * machine's status to <code>DELETING</code> and begins the deletion process. </p>
+         * <note> <p>For <code>EXPRESS</code>state machines, the deletion will happen
+         * eventually (usually less than a minute). Running executions may emit logs after
+         * <code>DeleteStateMachine</code> API is called.</p> </note><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
          * API Reference</a></p>
          */
@@ -394,10 +407,11 @@ namespace Model
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation: It sets the state
-         * machine's status to <code>DELETING</code> and begins the deletion process. Each
-         * state machine execution is deleted the next time it makes a state
-         * transition.</p> <note> <p>The state machine itself is deleted after all
-         * executions are completed or deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * machine's status to <code>DELETING</code> and begins the deletion process. </p>
+         * <note> <p>For <code>EXPRESS</code>state machines, the deletion will happen
+         * eventually (usually less than a minute). Running executions may emit logs after
+         * <code>DeleteStateMachine</code> API is called.</p> </note><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
          * API Reference</a></p>
          *
@@ -407,10 +421,11 @@ namespace Model
 
         /**
          * <p>Deletes a state machine. This is an asynchronous operation: It sets the state
-         * machine's status to <code>DELETING</code> and begins the deletion process. Each
-         * state machine execution is deleted the next time it makes a state
-         * transition.</p> <note> <p>The state machine itself is deleted after all
-         * executions are completed or deleted.</p> </note><p><h3>See Also:</h3>   <a
+         * machine's status to <code>DELETING</code> and begins the deletion process. </p>
+         * <note> <p>For <code>EXPRESS</code>state machines, the deletion will happen
+         * eventually (usually less than a minute). Running executions may emit logs after
+         * <code>DeleteStateMachine</code> API is called.</p> </note><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine">AWS
          * API Reference</a></p>
          *
@@ -452,7 +467,8 @@ namespace Model
         /**
          * <p>Describes an execution.</p> <note> <p>This operation is eventually
          * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * and changes.</p> </note> <p>This API action is not supported by
+         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">AWS
          * API Reference</a></p>
          */
@@ -461,7 +477,8 @@ namespace Model
         /**
          * <p>Describes an execution.</p> <note> <p>This operation is eventually
          * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * and changes.</p> </note> <p>This API action is not supported by
+         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">AWS
          * API Reference</a></p>
          *
@@ -472,7 +489,8 @@ namespace Model
         /**
          * <p>Describes an execution.</p> <note> <p>This operation is eventually
          * consistent. The results are best effort and may not reflect very recent updates
-         * and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * and changes.</p> </note> <p>This API action is not supported by
+         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution">AWS
          * API Reference</a></p>
          *
@@ -514,7 +532,8 @@ namespace Model
         /**
          * <p>Describes the state machine associated with a specific execution.</p> <note>
          * <p>This operation is eventually consistent. The results are best effort and may
-         * not reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>  
+         * not reflect very recent updates and changes.</p> </note> <p>This API action is
+         * not supported by <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">AWS
          * API Reference</a></p>
@@ -524,7 +543,8 @@ namespace Model
         /**
          * <p>Describes the state machine associated with a specific execution.</p> <note>
          * <p>This operation is eventually consistent. The results are best effort and may
-         * not reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>  
+         * not reflect very recent updates and changes.</p> </note> <p>This API action is
+         * not supported by <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">AWS
          * API Reference</a></p>
@@ -536,7 +556,8 @@ namespace Model
         /**
          * <p>Describes the state machine associated with a specific execution.</p> <note>
          * <p>This operation is eventually consistent. The results are best effort and may
-         * not reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>  
+         * not reflect very recent updates and changes.</p> </note> <p>This API action is
+         * not supported by <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution">AWS
          * API Reference</a></p>
@@ -615,7 +636,8 @@ namespace Model
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
          * Each pagination token expires after 24 hours. Using an expired pagination token
-         * will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See Also:</h3>   <a
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <p>This API action is not
+         * supported by <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
          * API Reference</a></p>
          */
@@ -630,7 +652,8 @@ namespace Model
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
          * Each pagination token expires after 24 hours. Using an expired pagination token
-         * will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See Also:</h3>   <a
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <p>This API action is not
+         * supported by <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
          * API Reference</a></p>
          *
@@ -647,7 +670,8 @@ namespace Model
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
          * Each pagination token expires after 24 hours. Using an expired pagination token
-         * will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See Also:</h3>   <a
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <p>This API action is not
+         * supported by <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
          * API Reference</a></p>
          *
@@ -710,7 +734,8 @@ namespace Model
          * arguments unchanged. Each pagination token expires after 24 hours. Using an
          * expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
          * <note> <p>This operation is eventually consistent. The results are best effort
-         * and may not reflect very recent updates and changes.</p> </note><p><h3>See
+         * and may not reflect very recent updates and changes.</p> </note> <p>This API
+         * action is not supported by <code>EXPRESS</code> state machines.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
          * API Reference</a></p>
@@ -726,7 +751,8 @@ namespace Model
          * arguments unchanged. Each pagination token expires after 24 hours. Using an
          * expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
          * <note> <p>This operation is eventually consistent. The results are best effort
-         * and may not reflect very recent updates and changes.</p> </note><p><h3>See
+         * and may not reflect very recent updates and changes.</p> </note> <p>This API
+         * action is not supported by <code>EXPRESS</code> state machines.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
          * API Reference</a></p>
@@ -744,7 +770,8 @@ namespace Model
          * arguments unchanged. Each pagination token expires after 24 hours. Using an
          * expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
          * <note> <p>This operation is eventually consistent. The results are best effort
-         * and may not reflect very recent updates and changes.</p> </note><p><h3>See
+         * and may not reflect very recent updates and changes.</p> </note> <p>This API
+         * action is not supported by <code>EXPRESS</code> state machines.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions">AWS
          * API Reference</a></p>
@@ -1015,14 +1042,16 @@ namespace Model
         virtual void StartExecutionAsync(const Model::StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops an execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops an execution.</p> <p>This API action is not supported by
+         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::StopExecutionOutcome StopExecution(const Model::StopExecutionRequest& request) const;
 
         /**
-         * <p>Stops an execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops an execution.</p> <p>This API action is not supported by
+         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
          * API Reference</a></p>
          *
@@ -1031,7 +1060,8 @@ namespace Model
         virtual Model::StopExecutionOutcomeCallable StopExecutionCallable(const Model::StopExecutionRequest& request) const;
 
         /**
-         * <p>Stops an execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops an execution.</p> <p>This API action is not supported by
+         * <code>EXPRESS</code> state machines.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution">AWS
          * API Reference</a></p>
          *
@@ -1114,11 +1144,12 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing state machine by modifying its <code>definition</code>
-         * and/or <code>roleArn</code>. Running executions will continue to use the
-         * previous <code>definition</code> and <code>roleArn</code>. You must include at
-         * least one of <code>definition</code> or <code>roleArn</code> or you will receive
-         * a <code>MissingRequiredParameter</code> error.</p> <note> <p>All
+         * <p>Updates an existing state machine by modifying its <code>definition</code>,
+         * <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions
+         * will continue to use the previous <code>definition</code> and
+         * <code>roleArn</code>. You must include at least one of <code>definition</code>
+         * or <code>roleArn</code> or you will receive a
+         * <code>MissingRequiredParameter</code> error.</p> <note> <p>All
          * <code>StartExecution</code> calls within a few seconds will use the updated
          * <code>definition</code> and <code>roleArn</code>. Executions started immediately
          * after calling <code>UpdateStateMachine</code> may use the previous state machine
@@ -1130,11 +1161,12 @@ namespace Model
         virtual Model::UpdateStateMachineOutcome UpdateStateMachine(const Model::UpdateStateMachineRequest& request) const;
 
         /**
-         * <p>Updates an existing state machine by modifying its <code>definition</code>
-         * and/or <code>roleArn</code>. Running executions will continue to use the
-         * previous <code>definition</code> and <code>roleArn</code>. You must include at
-         * least one of <code>definition</code> or <code>roleArn</code> or you will receive
-         * a <code>MissingRequiredParameter</code> error.</p> <note> <p>All
+         * <p>Updates an existing state machine by modifying its <code>definition</code>,
+         * <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions
+         * will continue to use the previous <code>definition</code> and
+         * <code>roleArn</code>. You must include at least one of <code>definition</code>
+         * or <code>roleArn</code> or you will receive a
+         * <code>MissingRequiredParameter</code> error.</p> <note> <p>All
          * <code>StartExecution</code> calls within a few seconds will use the updated
          * <code>definition</code> and <code>roleArn</code>. Executions started immediately
          * after calling <code>UpdateStateMachine</code> may use the previous state machine
@@ -1148,11 +1180,12 @@ namespace Model
         virtual Model::UpdateStateMachineOutcomeCallable UpdateStateMachineCallable(const Model::UpdateStateMachineRequest& request) const;
 
         /**
-         * <p>Updates an existing state machine by modifying its <code>definition</code>
-         * and/or <code>roleArn</code>. Running executions will continue to use the
-         * previous <code>definition</code> and <code>roleArn</code>. You must include at
-         * least one of <code>definition</code> or <code>roleArn</code> or you will receive
-         * a <code>MissingRequiredParameter</code> error.</p> <note> <p>All
+         * <p>Updates an existing state machine by modifying its <code>definition</code>,
+         * <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions
+         * will continue to use the previous <code>definition</code> and
+         * <code>roleArn</code>. You must include at least one of <code>definition</code>
+         * or <code>roleArn</code> or you will receive a
+         * <code>MissingRequiredParameter</code> error.</p> <note> <p>All
          * <code>StartExecution</code> calls within a few seconds will use the updated
          * <code>definition</code> and <code>roleArn</code>. Executions started immediately
          * after calling <code>UpdateStateMachine</code> may use the previous state machine

@@ -32,6 +32,7 @@ CreateClusterRequest::CreateClusterRequest() :
     m_enhancedMonitoringHasBeenSet(false),
     m_openMonitoringHasBeenSet(false),
     m_kafkaVersionHasBeenSet(false),
+    m_loggingInfoHasBeenSet(false),
     m_numberOfBrokerNodes(0),
     m_numberOfBrokerNodesHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -86,6 +87,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_kafkaVersionHasBeenSet)
   {
    payload.WithString("kafkaVersion", m_kafkaVersion);
+
+  }
+
+  if(m_loggingInfoHasBeenSet)
+  {
+   payload.WithObject("loggingInfo", m_loggingInfo.Jsonize());
 
   }
 

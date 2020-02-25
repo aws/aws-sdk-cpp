@@ -615,25 +615,39 @@ namespace Model
     inline DescribeSecretResult& AddVersionIdsToStages(const char* key, const Aws::Vector<Aws::String>& value) { m_versionIdsToStages.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>Returns the name of the service that created this secret.</p>
+     */
     inline const Aws::String& GetOwningService() const{ return m_owningService; }
 
-    
+    /**
+     * <p>Returns the name of the service that created this secret.</p>
+     */
     inline void SetOwningService(const Aws::String& value) { m_owningService = value; }
 
-    
+    /**
+     * <p>Returns the name of the service that created this secret.</p>
+     */
     inline void SetOwningService(Aws::String&& value) { m_owningService = std::move(value); }
 
-    
+    /**
+     * <p>Returns the name of the service that created this secret.</p>
+     */
     inline void SetOwningService(const char* value) { m_owningService.assign(value); }
 
-    
+    /**
+     * <p>Returns the name of the service that created this secret.</p>
+     */
     inline DescribeSecretResult& WithOwningService(const Aws::String& value) { SetOwningService(value); return *this;}
 
-    
+    /**
+     * <p>Returns the name of the service that created this secret.</p>
+     */
     inline DescribeSecretResult& WithOwningService(Aws::String&& value) { SetOwningService(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Returns the name of the service that created this secret.</p>
+     */
     inline DescribeSecretResult& WithOwningService(const char* value) { SetOwningService(value); return *this;}
 
   private:

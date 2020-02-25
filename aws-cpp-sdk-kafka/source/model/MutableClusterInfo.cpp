@@ -35,7 +35,8 @@ MutableClusterInfo::MutableClusterInfo() :
     m_numberOfBrokerNodesHasBeenSet(false),
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false)
+    m_openMonitoringHasBeenSet(false),
+    m_loggingInfoHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) :
     m_numberOfBrokerNodesHasBeenSet(false),
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false)
+    m_openMonitoringHasBeenSet(false),
+    m_loggingInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +93,13 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_openMonitoringHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("loggingInfo"))
+  {
+    m_loggingInfo = jsonValue.GetObject("loggingInfo");
+
+    m_loggingInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -129,6 +138,12 @@ JsonValue MutableClusterInfo::Jsonize() const
   if(m_openMonitoringHasBeenSet)
   {
    payload.WithObject("openMonitoring", m_openMonitoring.Jsonize());
+
+  }
+
+  if(m_loggingInfoHasBeenSet)
+  {
+   payload.WithObject("loggingInfo", m_loggingInfo.Jsonize());
 
   }
 

@@ -300,25 +300,25 @@ namespace Model
 
 
     /**
-     * <p>Indicated whether automatic, scheduled rotation is enabled for this
+     * <p>Indicates whether automatic, scheduled rotation is enabled for this
      * secret.</p>
      */
     inline bool GetRotationEnabled() const{ return m_rotationEnabled; }
 
     /**
-     * <p>Indicated whether automatic, scheduled rotation is enabled for this
+     * <p>Indicates whether automatic, scheduled rotation is enabled for this
      * secret.</p>
      */
     inline bool RotationEnabledHasBeenSet() const { return m_rotationEnabledHasBeenSet; }
 
     /**
-     * <p>Indicated whether automatic, scheduled rotation is enabled for this
+     * <p>Indicates whether automatic, scheduled rotation is enabled for this
      * secret.</p>
      */
     inline void SetRotationEnabled(bool value) { m_rotationEnabledHasBeenSet = true; m_rotationEnabled = value; }
 
     /**
-     * <p>Indicated whether automatic, scheduled rotation is enabled for this
+     * <p>Indicates whether automatic, scheduled rotation is enabled for this
      * secret.</p>
      */
     inline SecretListEntry& WithRotationEnabled(bool value) { SetRotationEnabled(value); return *this;}
@@ -744,28 +744,44 @@ namespace Model
     inline SecretListEntry& AddSecretVersionsToStages(const char* key, const Aws::Vector<Aws::String>& value) { m_secretVersionsToStagesHasBeenSet = true; m_secretVersionsToStages.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>Returns the name of the service that created the secret.</p>
+     */
     inline const Aws::String& GetOwningService() const{ return m_owningService; }
 
-    
+    /**
+     * <p>Returns the name of the service that created the secret.</p>
+     */
     inline bool OwningServiceHasBeenSet() const { return m_owningServiceHasBeenSet; }
 
-    
+    /**
+     * <p>Returns the name of the service that created the secret.</p>
+     */
     inline void SetOwningService(const Aws::String& value) { m_owningServiceHasBeenSet = true; m_owningService = value; }
 
-    
+    /**
+     * <p>Returns the name of the service that created the secret.</p>
+     */
     inline void SetOwningService(Aws::String&& value) { m_owningServiceHasBeenSet = true; m_owningService = std::move(value); }
 
-    
+    /**
+     * <p>Returns the name of the service that created the secret.</p>
+     */
     inline void SetOwningService(const char* value) { m_owningServiceHasBeenSet = true; m_owningService.assign(value); }
 
-    
+    /**
+     * <p>Returns the name of the service that created the secret.</p>
+     */
     inline SecretListEntry& WithOwningService(const Aws::String& value) { SetOwningService(value); return *this;}
 
-    
+    /**
+     * <p>Returns the name of the service that created the secret.</p>
+     */
     inline SecretListEntry& WithOwningService(Aws::String&& value) { SetOwningService(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Returns the name of the service that created the secret.</p>
+     */
     inline SecretListEntry& WithOwningService(const char* value) { SetOwningService(value); return *this;}
 
   private:
