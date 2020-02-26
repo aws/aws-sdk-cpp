@@ -1121,11 +1121,15 @@ namespace Model
          * request. Amazon SageMaker uses the endpoint to provision resources and deploy
          * models. You create the endpoint configuration with the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-         * API. </p> <note> <p> Use this API only for hosting models using Amazon SageMaker
-         * hosting services. </p> <p> You must not delete an <code>EndpointConfig</code> in
-         * use by an endpoint that is live or while the <code>UpdateEndpoint</code> or
-         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
-         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * API. </p> <p> Use this API to deploy models using Amazon SageMaker hosting
+         * services. </p> <p>For an example that calls this method when deploying a model
+         * to Amazon SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
+         * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
+         * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
+         * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
          * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
@@ -1134,14 +1138,11 @@ namespace Model
          * sets the status to <code>InService</code>. Amazon SageMaker can then process
          * incoming requests for inferences. To check the status of an endpoint, use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API.</p> <p>For an example, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1:
-         * Using the K-Means Algorithm Provided by Amazon SageMaker</a>. </p> <p>If any of
-         * the models hosted at this endpoint get model data from an Amazon S3 location,
-         * Amazon SageMaker uses AWS Security Token Service to download model artifacts
-         * from the S3 path you provided. AWS STS is activated in your IAM user account by
-         * default. If you previously deactivated AWS STS for a region, you need to
-         * reactivate AWS STS for that region. For more information, see <a
+         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
+         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
+         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
+         * user account by default. If you previously deactivated AWS STS for a region, you
+         * need to reactivate AWS STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1155,11 +1156,15 @@ namespace Model
          * request. Amazon SageMaker uses the endpoint to provision resources and deploy
          * models. You create the endpoint configuration with the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-         * API. </p> <note> <p> Use this API only for hosting models using Amazon SageMaker
-         * hosting services. </p> <p> You must not delete an <code>EndpointConfig</code> in
-         * use by an endpoint that is live or while the <code>UpdateEndpoint</code> or
-         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
-         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * API. </p> <p> Use this API to deploy models using Amazon SageMaker hosting
+         * services. </p> <p>For an example that calls this method when deploying a model
+         * to Amazon SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
+         * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
+         * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
+         * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
          * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
@@ -1168,14 +1173,11 @@ namespace Model
          * sets the status to <code>InService</code>. Amazon SageMaker can then process
          * incoming requests for inferences. To check the status of an endpoint, use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API.</p> <p>For an example, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1:
-         * Using the K-Means Algorithm Provided by Amazon SageMaker</a>. </p> <p>If any of
-         * the models hosted at this endpoint get model data from an Amazon S3 location,
-         * Amazon SageMaker uses AWS Security Token Service to download model artifacts
-         * from the S3 path you provided. AWS STS is activated in your IAM user account by
-         * default. If you previously deactivated AWS STS for a region, you need to
-         * reactivate AWS STS for that region. For more information, see <a
+         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
+         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
+         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
+         * user account by default. If you previously deactivated AWS STS for a region, you
+         * need to reactivate AWS STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1191,11 +1193,15 @@ namespace Model
          * request. Amazon SageMaker uses the endpoint to provision resources and deploy
          * models. You create the endpoint configuration with the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-         * API. </p> <note> <p> Use this API only for hosting models using Amazon SageMaker
-         * hosting services. </p> <p> You must not delete an <code>EndpointConfig</code> in
-         * use by an endpoint that is live or while the <code>UpdateEndpoint</code> or
-         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
-         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
+         * API. </p> <p> Use this API to deploy models using Amazon SageMaker hosting
+         * services. </p> <p>For an example that calls this method when deploying a model
+         * to Amazon SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
+         * is in use by an endpoint that is live or while the <code>UpdateEndpoint</code>
+         * or <code>CreateEndpoint</code> operations are being performed on the endpoint.
+         * To update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
          * </note> <p>The endpoint name must be unique within an AWS Region in your AWS
          * account. </p> <p>When it receives the request, Amazon SageMaker creates the
          * endpoint, launches the resources (ML compute instances), and deploys the
@@ -1204,14 +1210,11 @@ namespace Model
          * sets the status to <code>InService</code>. Amazon SageMaker can then process
          * incoming requests for inferences. To check the status of an endpoint, use the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API.</p> <p>For an example, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1.html">Exercise 1:
-         * Using the K-Means Algorithm Provided by Amazon SageMaker</a>. </p> <p>If any of
-         * the models hosted at this endpoint get model data from an Amazon S3 location,
-         * Amazon SageMaker uses AWS Security Token Service to download model artifacts
-         * from the S3 path you provided. AWS STS is activated in your IAM user account by
-         * default. If you previously deactivated AWS STS for a region, you need to
-         * reactivate AWS STS for that region. For more information, see <a
+         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
+         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
+         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
+         * user account by default. If you previously deactivated AWS STS for a region, you
+         * need to reactivate AWS STS for that region. For more information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1228,17 +1231,21 @@ namespace Model
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-         * API.</p> <note> <p> Use this API only if you want to use Amazon SageMaker
-         * hosting services to deploy models into production. </p> </note> <p>In the
-         * request, you define one or more <code>ProductionVariant</code>s, each of which
-         * identifies a model. Each <code>ProductionVariant</code> parameter also describes
-         * the resources that you want Amazon SageMaker to provision. This includes the
-         * number and type of ML compute instances to deploy. </p> <p>If you are hosting
-         * multiple models, you also assign a <code>VariantWeight</code> to specify how
-         * much traffic you want to allocate to each model. For example, suppose that you
-         * want to host two models, A and B, and you assign traffic weight 2 for model A
-         * and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to
-         * Model A, and one-third to model B. </p><p><h3>See Also:</h3>   <a
+         * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
+         * services to deploy models into production. </p> </note> <p>In the request, you
+         * define a <code>ProductionVariant</code>, for each model that you want to deploy.
+         * Each <code>ProductionVariant</code> parameter also describes the resources that
+         * you want Amazon SageMaker to provision. This includes the number and type of ML
+         * compute instances to deploy. </p> <p>If you are hosting multiple models, you
+         * also assign a <code>VariantWeight</code> to specify how much traffic you want to
+         * allocate to each model. For example, suppose that you want to host two models, A
+         * and B, and you assign traffic weight 2 for model A and 1 for model B. Amazon
+         * SageMaker distributes two-thirds of the traffic to Model A, and one-third to
+         * model B. </p> <p>For an example that calls this method when deploying a model to
+         * Amazon SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          */
@@ -1250,17 +1257,21 @@ namespace Model
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-         * API.</p> <note> <p> Use this API only if you want to use Amazon SageMaker
-         * hosting services to deploy models into production. </p> </note> <p>In the
-         * request, you define one or more <code>ProductionVariant</code>s, each of which
-         * identifies a model. Each <code>ProductionVariant</code> parameter also describes
-         * the resources that you want Amazon SageMaker to provision. This includes the
-         * number and type of ML compute instances to deploy. </p> <p>If you are hosting
-         * multiple models, you also assign a <code>VariantWeight</code> to specify how
-         * much traffic you want to allocate to each model. For example, suppose that you
-         * want to host two models, A and B, and you assign traffic weight 2 for model A
-         * and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to
-         * Model A, and one-third to model B. </p><p><h3>See Also:</h3>   <a
+         * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
+         * services to deploy models into production. </p> </note> <p>In the request, you
+         * define a <code>ProductionVariant</code>, for each model that you want to deploy.
+         * Each <code>ProductionVariant</code> parameter also describes the resources that
+         * you want Amazon SageMaker to provision. This includes the number and type of ML
+         * compute instances to deploy. </p> <p>If you are hosting multiple models, you
+         * also assign a <code>VariantWeight</code> to specify how much traffic you want to
+         * allocate to each model. For example, suppose that you want to host two models, A
+         * and B, and you assign traffic weight 2 for model A and 1 for model B. Amazon
+         * SageMaker distributes two-thirds of the traffic to Model A, and one-third to
+         * model B. </p> <p>For an example that calls this method when deploying a model to
+         * Amazon SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          *
@@ -1274,17 +1285,21 @@ namespace Model
          * using the <code>CreateModel</code> API, to deploy and the resources that you
          * want Amazon SageMaker to provision. Then you call the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
-         * API.</p> <note> <p> Use this API only if you want to use Amazon SageMaker
-         * hosting services to deploy models into production. </p> </note> <p>In the
-         * request, you define one or more <code>ProductionVariant</code>s, each of which
-         * identifies a model. Each <code>ProductionVariant</code> parameter also describes
-         * the resources that you want Amazon SageMaker to provision. This includes the
-         * number and type of ML compute instances to deploy. </p> <p>If you are hosting
-         * multiple models, you also assign a <code>VariantWeight</code> to specify how
-         * much traffic you want to allocate to each model. For example, suppose that you
-         * want to host two models, A and B, and you assign traffic weight 2 for model A
-         * and 1 for model B. Amazon SageMaker distributes two-thirds of the traffic to
-         * Model A, and one-third to model B. </p><p><h3>See Also:</h3>   <a
+         * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
+         * services to deploy models into production. </p> </note> <p>In the request, you
+         * define a <code>ProductionVariant</code>, for each model that you want to deploy.
+         * Each <code>ProductionVariant</code> parameter also describes the resources that
+         * you want Amazon SageMaker to provision. This includes the number and type of ML
+         * compute instances to deploy. </p> <p>If you are hosting multiple models, you
+         * also assign a <code>VariantWeight</code> to specify how much traffic you want to
+         * allocate to each model. For example, suppose that you want to host two models, A
+         * and B, and you assign traffic weight 2 for model A and 1 for model B. Amazon
+         * SageMaker distributes two-thirds of the traffic to Model A, and one-third to
+         * model B. </p> <p>For an example that calls this method when deploying a model to
+         * Amazon SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
          *
@@ -1557,26 +1572,30 @@ namespace Model
 
         /**
          * <p>Creates a model in Amazon SageMaker. In the request, you name the model and
-         * describe a primary container. For the primary container, you specify the docker
-         * image containing inference code, artifacts (from prior training), and custom
-         * environment map that the inference code uses when you deploy the model for
-         * predictions.</p> <p>Use this API to create a model if you want to use Amazon
+         * describe a primary container. For the primary container, you specify the Docker
+         * image that contains inference code, artifacts (from prior training), and a
+         * custom environment map that the inference code uses when you deploy the model
+         * for predictions.</p> <p>Use this API to create a model if you want to use Amazon
          * SageMaker hosting services or run a batch transform job.</p> <p>To host your
          * model, you create an endpoint configuration with the
          * <code>CreateEndpointConfig</code> API, and then create an endpoint with the
          * <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the
-         * containers that you defined for the model in the hosting environment. </p> <p>To
-         * run a batch transform using your model, you start a job with the
-         * <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and your
-         * dataset to get inferences which are then saved to a specified S3 location.</p>
-         * <p>In the <code>CreateModel</code> request, you must define a container with the
-         * <code>PrimaryContainer</code> parameter.</p> <p>In the request, you also provide
-         * an IAM role that Amazon SageMaker can assume to access model artifacts and
-         * docker image for deployment on ML compute hosting instances or for batch
-         * transform jobs. In addition, you also use the IAM role to manage permissions the
-         * inference code needs. For example, if the inference code access any other AWS
-         * resources, you grant necessary permissions via this role.</p><p><h3>See
-         * Also:</h3>   <a
+         * containers that you defined for the model in the hosting environment. </p>
+         * <p>For an example that calls this method when deploying a model to Amazon
+         * SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p> <p>To run a batch transform using your model, you start a job with
+         * the <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and
+         * your dataset to get inferences which are then saved to a specified S3
+         * location.</p> <p>In the <code>CreateModel</code> request, you must define a
+         * container with the <code>PrimaryContainer</code> parameter.</p> <p>In the
+         * request, you also provide an IAM role that Amazon SageMaker can assume to access
+         * model artifacts and docker image for deployment on ML compute hosting instances
+         * or for batch transform jobs. In addition, you also use the IAM role to manage
+         * permissions the inference code needs. For example, if the inference code access
+         * any other AWS resources, you grant necessary permissions via this
+         * role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          */
@@ -1584,26 +1603,30 @@ namespace Model
 
         /**
          * <p>Creates a model in Amazon SageMaker. In the request, you name the model and
-         * describe a primary container. For the primary container, you specify the docker
-         * image containing inference code, artifacts (from prior training), and custom
-         * environment map that the inference code uses when you deploy the model for
-         * predictions.</p> <p>Use this API to create a model if you want to use Amazon
+         * describe a primary container. For the primary container, you specify the Docker
+         * image that contains inference code, artifacts (from prior training), and a
+         * custom environment map that the inference code uses when you deploy the model
+         * for predictions.</p> <p>Use this API to create a model if you want to use Amazon
          * SageMaker hosting services or run a batch transform job.</p> <p>To host your
          * model, you create an endpoint configuration with the
          * <code>CreateEndpointConfig</code> API, and then create an endpoint with the
          * <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the
-         * containers that you defined for the model in the hosting environment. </p> <p>To
-         * run a batch transform using your model, you start a job with the
-         * <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and your
-         * dataset to get inferences which are then saved to a specified S3 location.</p>
-         * <p>In the <code>CreateModel</code> request, you must define a container with the
-         * <code>PrimaryContainer</code> parameter.</p> <p>In the request, you also provide
-         * an IAM role that Amazon SageMaker can assume to access model artifacts and
-         * docker image for deployment on ML compute hosting instances or for batch
-         * transform jobs. In addition, you also use the IAM role to manage permissions the
-         * inference code needs. For example, if the inference code access any other AWS
-         * resources, you grant necessary permissions via this role.</p><p><h3>See
-         * Also:</h3>   <a
+         * containers that you defined for the model in the hosting environment. </p>
+         * <p>For an example that calls this method when deploying a model to Amazon
+         * SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p> <p>To run a batch transform using your model, you start a job with
+         * the <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and
+         * your dataset to get inferences which are then saved to a specified S3
+         * location.</p> <p>In the <code>CreateModel</code> request, you must define a
+         * container with the <code>PrimaryContainer</code> parameter.</p> <p>In the
+         * request, you also provide an IAM role that Amazon SageMaker can assume to access
+         * model artifacts and docker image for deployment on ML compute hosting instances
+         * or for batch transform jobs. In addition, you also use the IAM role to manage
+         * permissions the inference code needs. For example, if the inference code access
+         * any other AWS resources, you grant necessary permissions via this
+         * role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          *
@@ -1613,26 +1636,30 @@ namespace Model
 
         /**
          * <p>Creates a model in Amazon SageMaker. In the request, you name the model and
-         * describe a primary container. For the primary container, you specify the docker
-         * image containing inference code, artifacts (from prior training), and custom
-         * environment map that the inference code uses when you deploy the model for
-         * predictions.</p> <p>Use this API to create a model if you want to use Amazon
+         * describe a primary container. For the primary container, you specify the Docker
+         * image that contains inference code, artifacts (from prior training), and a
+         * custom environment map that the inference code uses when you deploy the model
+         * for predictions.</p> <p>Use this API to create a model if you want to use Amazon
          * SageMaker hosting services or run a batch transform job.</p> <p>To host your
          * model, you create an endpoint configuration with the
          * <code>CreateEndpointConfig</code> API, and then create an endpoint with the
          * <code>CreateEndpoint</code> API. Amazon SageMaker then deploys all of the
-         * containers that you defined for the model in the hosting environment. </p> <p>To
-         * run a batch transform using your model, you start a job with the
-         * <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and your
-         * dataset to get inferences which are then saved to a specified S3 location.</p>
-         * <p>In the <code>CreateModel</code> request, you must define a container with the
-         * <code>PrimaryContainer</code> parameter.</p> <p>In the request, you also provide
-         * an IAM role that Amazon SageMaker can assume to access model artifacts and
-         * docker image for deployment on ML compute hosting instances or for batch
-         * transform jobs. In addition, you also use the IAM role to manage permissions the
-         * inference code needs. For example, if the inference code access any other AWS
-         * resources, you grant necessary permissions via this role.</p><p><h3>See
-         * Also:</h3>   <a
+         * containers that you defined for the model in the hosting environment. </p>
+         * <p>For an example that calls this method when deploying a model to Amazon
+         * SageMaker hosting services, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
+         * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
+         * 3)).</a> </p> <p>To run a batch transform using your model, you start a job with
+         * the <code>CreateTransformJob</code> API. Amazon SageMaker uses your model and
+         * your dataset to get inferences which are then saved to a specified S3
+         * location.</p> <p>In the <code>CreateModel</code> request, you must define a
+         * container with the <code>PrimaryContainer</code> parameter.</p> <p>In the
+         * request, you also provide an IAM role that Amazon SageMaker can assume to access
+         * model artifacts and docker image for deployment on ML compute hosting instances
+         * or for batch transform jobs. In addition, you also use the IAM role to manage
+         * permissions the inference code needs. For example, if the inference code access
+         * any other AWS resources, you grant necessary permissions via this
+         * role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS
          * API Reference</a></p>
          *
@@ -3755,7 +3782,11 @@ namespace Model
          * trials the component is associated with. Before you can delete a component, you
          * must disassociate the component from all trials it is associated with. To
          * associate a trial component with a trial, call the
-         * <a>AssociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * <a>AssociateTrialComponent</a> API.</p> <p>To get a list of the trials a
+         * component is associated with, use the <a>Search</a> API. Specify
+         * <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter.
+         * The list appears in the response under
+         * <code>Results.TrialComponent.Parents</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">AWS
          * API Reference</a></p>
          */
@@ -3766,7 +3797,11 @@ namespace Model
          * trials the component is associated with. Before you can delete a component, you
          * must disassociate the component from all trials it is associated with. To
          * associate a trial component with a trial, call the
-         * <a>AssociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * <a>AssociateTrialComponent</a> API.</p> <p>To get a list of the trials a
+         * component is associated with, use the <a>Search</a> API. Specify
+         * <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter.
+         * The list appears in the response under
+         * <code>Results.TrialComponent.Parents</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -3779,7 +3814,11 @@ namespace Model
          * trials the component is associated with. Before you can delete a component, you
          * must disassociate the component from all trials it is associated with. To
          * associate a trial component with a trial, call the
-         * <a>AssociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * <a>AssociateTrialComponent</a> API.</p> <p>To get a list of the trials a
+         * component is associated with, use the <a>Search</a> API. Specify
+         * <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter.
+         * The list appears in the response under
+         * <code>Results.TrialComponent.Parents</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -4610,9 +4649,11 @@ namespace Model
 
         /**
          * <p>Lists the trials in your account. Specify an experiment name to limit the
-         * list to the trials that are part of that experiment. The list can be filtered to
-         * show only trials that were created in a specific time range. The list can be
-         * sorted by trial name or creation time.</p><p><h3>See Also:</h3>   <a
+         * list to the trials that are part of that experiment. Specify a trial component
+         * name to limit the list to the trials that associated with that trial component.
+         * The list can be filtered to show only trials that were created in a specific
+         * time range. The list can be sorted by trial name or creation time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">AWS
          * API Reference</a></p>
          */
@@ -4620,9 +4661,11 @@ namespace Model
 
         /**
          * <p>Lists the trials in your account. Specify an experiment name to limit the
-         * list to the trials that are part of that experiment. The list can be filtered to
-         * show only trials that were created in a specific time range. The list can be
-         * sorted by trial name or creation time.</p><p><h3>See Also:</h3>   <a
+         * list to the trials that are part of that experiment. Specify a trial component
+         * name to limit the list to the trials that associated with that trial component.
+         * The list can be filtered to show only trials that were created in a specific
+         * time range. The list can be sorted by trial name or creation time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">AWS
          * API Reference</a></p>
          *
@@ -4632,9 +4675,11 @@ namespace Model
 
         /**
          * <p>Lists the trials in your account. Specify an experiment name to limit the
-         * list to the trials that are part of that experiment. The list can be filtered to
-         * show only trials that were created in a specific time range. The list can be
-         * sorted by trial name or creation time.</p><p><h3>See Also:</h3>   <a
+         * list to the trials that are part of that experiment. Specify a trial component
+         * name to limit the list to the trials that associated with that trial component.
+         * The list can be filtered to show only trials that were created in a specific
+         * time range. The list can be sorted by trial name or creation time.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">AWS
          * API Reference</a></p>
          *

@@ -17,6 +17,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/securityhub/model/IntegrationType.h>
 #include <utility>
 
 namespace Aws
@@ -259,6 +260,79 @@ namespace Model
 
 
     /**
+     * <p>The types of integration that the product supports. Available values are the
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
+     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
+     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
+     * integration receives findings from Security Hub.</p> </li> </ul>
+     */
+    inline const Aws::Vector<IntegrationType>& GetIntegrationTypes() const{ return m_integrationTypes; }
+
+    /**
+     * <p>The types of integration that the product supports. Available values are the
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
+     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
+     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
+     * integration receives findings from Security Hub.</p> </li> </ul>
+     */
+    inline bool IntegrationTypesHasBeenSet() const { return m_integrationTypesHasBeenSet; }
+
+    /**
+     * <p>The types of integration that the product supports. Available values are the
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
+     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
+     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
+     * integration receives findings from Security Hub.</p> </li> </ul>
+     */
+    inline void SetIntegrationTypes(const Aws::Vector<IntegrationType>& value) { m_integrationTypesHasBeenSet = true; m_integrationTypes = value; }
+
+    /**
+     * <p>The types of integration that the product supports. Available values are the
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
+     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
+     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
+     * integration receives findings from Security Hub.</p> </li> </ul>
+     */
+    inline void SetIntegrationTypes(Aws::Vector<IntegrationType>&& value) { m_integrationTypesHasBeenSet = true; m_integrationTypes = std::move(value); }
+
+    /**
+     * <p>The types of integration that the product supports. Available values are the
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
+     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
+     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
+     * integration receives findings from Security Hub.</p> </li> </ul>
+     */
+    inline Product& WithIntegrationTypes(const Aws::Vector<IntegrationType>& value) { SetIntegrationTypes(value); return *this;}
+
+    /**
+     * <p>The types of integration that the product supports. Available values are the
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
+     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
+     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
+     * integration receives findings from Security Hub.</p> </li> </ul>
+     */
+    inline Product& WithIntegrationTypes(Aws::Vector<IntegrationType>&& value) { SetIntegrationTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The types of integration that the product supports. Available values are the
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
+     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
+     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
+     * integration receives findings from Security Hub.</p> </li> </ul>
+     */
+    inline Product& AddIntegrationTypes(const IntegrationType& value) { m_integrationTypesHasBeenSet = true; m_integrationTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The types of integration that the product supports. Available values are the
+     * following.</p> <ul> <li> <p> <code>SEND_FINDINGS_TO_SECURITY_HUB</code> -
+     * Indicates that the integration sends findings to Security Hub.</p> </li> <li>
+     * <p> <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the
+     * integration receives findings from Security Hub.</p> </li> </ul>
+     */
+    inline Product& AddIntegrationTypes(IntegrationType&& value) { m_integrationTypesHasBeenSet = true; m_integrationTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The URL for the page that contains more information about the product.</p>
      */
     inline const Aws::String& GetMarketplaceUrl() const{ return m_marketplaceUrl; }
@@ -396,6 +470,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_categories;
     bool m_categoriesHasBeenSet;
+
+    Aws::Vector<IntegrationType> m_integrationTypes;
+    bool m_integrationTypesHasBeenSet;
 
     Aws::String m_marketplaceUrl;
     bool m_marketplaceUrlHasBeenSet;

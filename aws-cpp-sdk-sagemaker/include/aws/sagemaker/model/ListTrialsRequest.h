@@ -97,6 +97,55 @@ namespace Model
 
 
     /**
+     * <p>A filter that returns only trials that are associated with the specified
+     * trial component.</p>
+     */
+    inline const Aws::String& GetTrialComponentName() const{ return m_trialComponentName; }
+
+    /**
+     * <p>A filter that returns only trials that are associated with the specified
+     * trial component.</p>
+     */
+    inline bool TrialComponentNameHasBeenSet() const { return m_trialComponentNameHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only trials that are associated with the specified
+     * trial component.</p>
+     */
+    inline void SetTrialComponentName(const Aws::String& value) { m_trialComponentNameHasBeenSet = true; m_trialComponentName = value; }
+
+    /**
+     * <p>A filter that returns only trials that are associated with the specified
+     * trial component.</p>
+     */
+    inline void SetTrialComponentName(Aws::String&& value) { m_trialComponentNameHasBeenSet = true; m_trialComponentName = std::move(value); }
+
+    /**
+     * <p>A filter that returns only trials that are associated with the specified
+     * trial component.</p>
+     */
+    inline void SetTrialComponentName(const char* value) { m_trialComponentNameHasBeenSet = true; m_trialComponentName.assign(value); }
+
+    /**
+     * <p>A filter that returns only trials that are associated with the specified
+     * trial component.</p>
+     */
+    inline ListTrialsRequest& WithTrialComponentName(const Aws::String& value) { SetTrialComponentName(value); return *this;}
+
+    /**
+     * <p>A filter that returns only trials that are associated with the specified
+     * trial component.</p>
+     */
+    inline ListTrialsRequest& WithTrialComponentName(Aws::String&& value) { SetTrialComponentName(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter that returns only trials that are associated with the specified
+     * trial component.</p>
+     */
+    inline ListTrialsRequest& WithTrialComponentName(const char* value) { SetTrialComponentName(value); return *this;}
+
+
+    /**
      * <p>A filter that returns only trials created after the specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAfter() const{ return m_createdAfter; }
@@ -303,6 +352,9 @@ namespace Model
 
     Aws::String m_experimentName;
     bool m_experimentNameHasBeenSet;
+
+    Aws::String m_trialComponentName;
+    bool m_trialComponentNameHasBeenSet;
 
     Aws::Utils::DateTime m_createdAfter;
     bool m_createdAfterHasBeenSet;

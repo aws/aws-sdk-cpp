@@ -20,6 +20,7 @@
 #include <aws/transcribe/model/LanguageCode.h>
 #include <aws/transcribe/model/TranscriptionJobStatus.h>
 #include <aws/transcribe/model/OutputLocationType.h>
+#include <aws/transcribe/model/ContentRedaction.h>
 #include <utility>
 
 namespace Aws
@@ -381,6 +382,37 @@ namespace Model
      */
     inline TranscriptionJobSummary& WithOutputLocationType(OutputLocationType&& value) { SetOutputLocationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The content redaction settings of the transcription job.</p>
+     */
+    inline const ContentRedaction& GetContentRedaction() const{ return m_contentRedaction; }
+
+    /**
+     * <p>The content redaction settings of the transcription job.</p>
+     */
+    inline bool ContentRedactionHasBeenSet() const { return m_contentRedactionHasBeenSet; }
+
+    /**
+     * <p>The content redaction settings of the transcription job.</p>
+     */
+    inline void SetContentRedaction(const ContentRedaction& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = value; }
+
+    /**
+     * <p>The content redaction settings of the transcription job.</p>
+     */
+    inline void SetContentRedaction(ContentRedaction&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::move(value); }
+
+    /**
+     * <p>The content redaction settings of the transcription job.</p>
+     */
+    inline TranscriptionJobSummary& WithContentRedaction(const ContentRedaction& value) { SetContentRedaction(value); return *this;}
+
+    /**
+     * <p>The content redaction settings of the transcription job.</p>
+     */
+    inline TranscriptionJobSummary& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -406,6 +438,9 @@ namespace Model
 
     OutputLocationType m_outputLocationType;
     bool m_outputLocationTypeHasBeenSet;
+
+    ContentRedaction m_contentRedaction;
+    bool m_contentRedactionHasBeenSet;
   };
 
 } // namespace Model

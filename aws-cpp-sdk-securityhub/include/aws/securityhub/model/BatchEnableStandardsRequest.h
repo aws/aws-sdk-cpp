@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The list of standards compliance checks to enable.</p>
+     * <p>The list of standards checks to enable.</p>
      */
     inline const Aws::Vector<StandardsSubscriptionRequest>& GetStandardsSubscriptionRequests() const{ return m_standardsSubscriptionRequests; }
 
     /**
-     * <p>The list of standards compliance checks to enable.</p>
+     * <p>The list of standards checks to enable.</p>
      */
     inline bool StandardsSubscriptionRequestsHasBeenSet() const { return m_standardsSubscriptionRequestsHasBeenSet; }
 
     /**
-     * <p>The list of standards compliance checks to enable.</p>
+     * <p>The list of standards checks to enable.</p>
      */
     inline void SetStandardsSubscriptionRequests(const Aws::Vector<StandardsSubscriptionRequest>& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests = value; }
 
     /**
-     * <p>The list of standards compliance checks to enable.</p>
+     * <p>The list of standards checks to enable.</p>
      */
     inline void SetStandardsSubscriptionRequests(Aws::Vector<StandardsSubscriptionRequest>&& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests = std::move(value); }
 
     /**
-     * <p>The list of standards compliance checks to enable.</p>
+     * <p>The list of standards checks to enable.</p>
      */
     inline BatchEnableStandardsRequest& WithStandardsSubscriptionRequests(const Aws::Vector<StandardsSubscriptionRequest>& value) { SetStandardsSubscriptionRequests(value); return *this;}
 
     /**
-     * <p>The list of standards compliance checks to enable.</p>
+     * <p>The list of standards checks to enable.</p>
      */
     inline BatchEnableStandardsRequest& WithStandardsSubscriptionRequests(Aws::Vector<StandardsSubscriptionRequest>&& value) { SetStandardsSubscriptionRequests(std::move(value)); return *this;}
 
     /**
-     * <p>The list of standards compliance checks to enable.</p>
+     * <p>The list of standards checks to enable.</p>
      */
     inline BatchEnableStandardsRequest& AddStandardsSubscriptionRequests(const StandardsSubscriptionRequest& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests.push_back(value); return *this; }
 
     /**
-     * <p>The list of standards compliance checks to enable.</p>
+     * <p>The list of standards checks to enable.</p>
      */
     inline BatchEnableStandardsRequest& AddStandardsSubscriptionRequests(StandardsSubscriptionRequest&& value) { m_standardsSubscriptionRequestsHasBeenSet = true; m_standardsSubscriptionRequests.push_back(std::move(value)); return *this; }
 

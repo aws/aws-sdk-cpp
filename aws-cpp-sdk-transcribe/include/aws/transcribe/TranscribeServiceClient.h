@@ -314,8 +314,9 @@ namespace Model
          * <p>Returns information about a transcription job. To see the status of the job,
          * check the <code>TranscriptionJobStatus</code> field. If the status is
          * <code>COMPLETED</code>, the job is finished and you can find the results at the
-         * location specified in the <code>TranscriptionFileUri</code> field.</p><p><h3>See
-         * Also:</h3>   <a
+         * location specified in the <code>TranscriptFileUri</code> field. If you enable
+         * content redaction, the redacted transcript appears in
+         * <code>RedactedTranscriptFileUri</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">AWS
          * API Reference</a></p>
          */
@@ -325,8 +326,9 @@ namespace Model
          * <p>Returns information about a transcription job. To see the status of the job,
          * check the <code>TranscriptionJobStatus</code> field. If the status is
          * <code>COMPLETED</code>, the job is finished and you can find the results at the
-         * location specified in the <code>TranscriptionFileUri</code> field.</p><p><h3>See
-         * Also:</h3>   <a
+         * location specified in the <code>TranscriptFileUri</code> field. If you enable
+         * content redaction, the redacted transcript appears in
+         * <code>RedactedTranscriptFileUri</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">AWS
          * API Reference</a></p>
          *
@@ -338,8 +340,9 @@ namespace Model
          * <p>Returns information about a transcription job. To see the status of the job,
          * check the <code>TranscriptionJobStatus</code> field. If the status is
          * <code>COMPLETED</code>, the job is finished and you can find the results at the
-         * location specified in the <code>TranscriptionFileUri</code> field.</p><p><h3>See
-         * Also:</h3>   <a
+         * location specified in the <code>TranscriptFileUri</code> field. If you enable
+         * content redaction, the redacted transcript appears in
+         * <code>RedactedTranscriptFileUri</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetTranscriptionJob">AWS
          * API Reference</a></p>
          *

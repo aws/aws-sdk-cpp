@@ -34,6 +34,7 @@ Product::Product() :
     m_companyNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_categoriesHasBeenSet(false),
+    m_integrationTypesHasBeenSet(false),
     m_marketplaceUrlHasBeenSet(false),
     m_activationUrlHasBeenSet(false),
     m_productSubscriptionResourcePolicyHasBeenSet(false)
@@ -46,6 +47,7 @@ Product::Product(JsonView jsonValue) :
     m_companyNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_categoriesHasBeenSet(false),
+    m_integrationTypesHasBeenSet(false),
     m_marketplaceUrlHasBeenSet(false),
     m_activationUrlHasBeenSet(false),
     m_productSubscriptionResourcePolicyHasBeenSet(false)
@@ -91,6 +93,16 @@ Product& Product::operator =(JsonView jsonValue)
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsString());
     }
     m_categoriesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IntegrationTypes"))
+  {
+    Array<JsonView> integrationTypesJsonList = jsonValue.GetArray("IntegrationTypes");
+    for(unsigned integrationTypesIndex = 0; integrationTypesIndex < integrationTypesJsonList.GetLength(); ++integrationTypesIndex)
+    {
+      m_integrationTypes.push_back(IntegrationTypeMapper::GetIntegrationTypeForName(integrationTypesJsonList[integrationTypesIndex].AsString()));
+    }
+    m_integrationTypesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MarketplaceUrl"))
@@ -153,6 +165,17 @@ JsonValue Product::Jsonize() const
      categoriesJsonList[categoriesIndex].AsString(m_categories[categoriesIndex]);
    }
    payload.WithArray("Categories", std::move(categoriesJsonList));
+
+  }
+
+  if(m_integrationTypesHasBeenSet)
+  {
+   Array<JsonValue> integrationTypesJsonList(m_integrationTypes.size());
+   for(unsigned integrationTypesIndex = 0; integrationTypesIndex < integrationTypesJsonList.GetLength(); ++integrationTypesIndex)
+   {
+     integrationTypesJsonList[integrationTypesIndex].AsString(IntegrationTypeMapper::GetNameForIntegrationType(m_integrationTypes[integrationTypesIndex]));
+   }
+   payload.WithArray("IntegrationTypes", std::move(integrationTypesJsonList));
 
   }
 

@@ -551,37 +551,37 @@ namespace Model
 
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They’re
+     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They're
      * auto-inferred values, if not provided by you. If you do provide them, then
-     * they’ll be the same as provided.</p>
+     * they'll be the same as provided.</p>
      */
     inline const ResolvedAttributes& GetResolvedAttributes() const{ return m_resolvedAttributes; }
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They’re
+     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They're
      * auto-inferred values, if not provided by you. If you do provide them, then
-     * they’ll be the same as provided.</p>
+     * they'll be the same as provided.</p>
      */
     inline void SetResolvedAttributes(const ResolvedAttributes& value) { m_resolvedAttributes = value; }
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They’re
+     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They're
      * auto-inferred values, if not provided by you. If you do provide them, then
-     * they’ll be the same as provided.</p>
+     * they'll be the same as provided.</p>
      */
     inline void SetResolvedAttributes(ResolvedAttributes&& value) { m_resolvedAttributes = std::move(value); }
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They’re
+     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They're
      * auto-inferred values, if not provided by you. If you do provide them, then
-     * they’ll be the same as provided.</p>
+     * they'll be the same as provided.</p>
      */
     inline DescribeAutoMLJobResult& WithResolvedAttributes(const ResolvedAttributes& value) { SetResolvedAttributes(value); return *this;}
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They’re
+     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. They're
      * auto-inferred values, if not provided by you. If you do provide them, then
-     * they’ll be the same as provided.</p>
+     * they'll be the same as provided.</p>
      */
     inline DescribeAutoMLJobResult& WithResolvedAttributes(ResolvedAttributes&& value) { SetResolvedAttributes(std::move(value)); return *this;}
 

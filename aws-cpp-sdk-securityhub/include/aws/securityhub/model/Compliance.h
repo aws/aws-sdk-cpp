@@ -37,13 +37,13 @@ namespace Model
 
   /**
    * <p>Exclusive to findings that are generated as the result of a check run against
-   * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-   * compliance-related finding details.</p> <p>Values include the following:</p>
-   * <ul> <li> <p>Allowed values are the following:</p> <ul> <li> <p>
-   * <code>PASSED</code> - Compliance check passed for all evaluated resources.</p>
+   * a specific rule in a supported security standard, such as CIS AWS Foundations.
+   * Contains security standard-related finding details.</p> <p>Values include the
+   * following:</p> <ul> <li> <p>Allowed values are the following:</p> <ul> <li> <p>
+   * <code>PASSED</code> - Standards check passed for all evaluated resources.</p>
    * </li> <li> <p> <code>WARNING</code> - Some information is missing or this check
    * is not supported given your configuration.</p> </li> <li> <p>
-   * <code>FAILED</code> - Compliance check failed for at least one evaluated
+   * <code>FAILED</code> - Standards check failed for at least one evaluated
    * resource.</p> </li> <li> <p> <code>NOT_AVAILABLE</code> - Check could not be
    * performed due to a service outage, API error, or because the result of the AWS
    * Config evaluation was <code>NOT_APPLICABLE</code>. If the AWS Config evaluation
@@ -63,32 +63,32 @@ namespace Model
 
 
     /**
-     * <p>The result of a compliance check.</p>
+     * <p>The result of a standards check.</p>
      */
     inline const ComplianceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The result of a compliance check.</p>
+     * <p>The result of a standards check.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The result of a compliance check.</p>
+     * <p>The result of a standards check.</p>
      */
     inline void SetStatus(const ComplianceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The result of a compliance check.</p>
+     * <p>The result of a standards check.</p>
      */
     inline void SetStatus(ComplianceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The result of a compliance check.</p>
+     * <p>The result of a standards check.</p>
      */
     inline Compliance& WithStatus(const ComplianceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The result of a compliance check.</p>
+     * <p>The result of a standards check.</p>
      */
     inline Compliance& WithStatus(ComplianceStatus&& value) { SetStatus(std::move(value)); return *this;}
 

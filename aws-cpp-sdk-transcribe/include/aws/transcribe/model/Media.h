@@ -49,112 +49,96 @@ namespace Model
 
 
     /**
-     * <p>The S3 location of the input media file. The URI must be in the same region
-     * as the API endpoint that you are calling. The general form is:</p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * <p>The S3 object location of the input media file. The URI must be in the same
+     * region as the API endpoint that you are calling. The general form is:</p> <p>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p>
+     * <p>For example:</p> <p> <code>s3://examplebucket/example.mp4</code> </p> <p>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code> </p> <p>For more
+     * information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline const Aws::String& GetMediaFileUri() const{ return m_mediaFileUri; }
 
     /**
-     * <p>The S3 location of the input media file. The URI must be in the same region
-     * as the API endpoint that you are calling. The general form is:</p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * <p>The S3 object location of the input media file. The URI must be in the same
+     * region as the API endpoint that you are calling. The general form is:</p> <p>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p>
+     * <p>For example:</p> <p> <code>s3://examplebucket/example.mp4</code> </p> <p>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code> </p> <p>For more
+     * information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline bool MediaFileUriHasBeenSet() const { return m_mediaFileUriHasBeenSet; }
 
     /**
-     * <p>The S3 location of the input media file. The URI must be in the same region
-     * as the API endpoint that you are calling. The general form is:</p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * <p>The S3 object location of the input media file. The URI must be in the same
+     * region as the API endpoint that you are calling. The general form is:</p> <p>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p>
+     * <p>For example:</p> <p> <code>s3://examplebucket/example.mp4</code> </p> <p>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code> </p> <p>For more
+     * information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetMediaFileUri(const Aws::String& value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri = value; }
 
     /**
-     * <p>The S3 location of the input media file. The URI must be in the same region
-     * as the API endpoint that you are calling. The general form is:</p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * <p>The S3 object location of the input media file. The URI must be in the same
+     * region as the API endpoint that you are calling. The general form is:</p> <p>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p>
+     * <p>For example:</p> <p> <code>s3://examplebucket/example.mp4</code> </p> <p>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code> </p> <p>For more
+     * information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetMediaFileUri(Aws::String&& value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri = std::move(value); }
 
     /**
-     * <p>The S3 location of the input media file. The URI must be in the same region
-     * as the API endpoint that you are calling. The general form is:</p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * <p>The S3 object location of the input media file. The URI must be in the same
+     * region as the API endpoint that you are calling. The general form is:</p> <p>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p>
+     * <p>For example:</p> <p> <code>s3://examplebucket/example.mp4</code> </p> <p>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code> </p> <p>For more
+     * information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetMediaFileUri(const char* value) { m_mediaFileUriHasBeenSet = true; m_mediaFileUri.assign(value); }
 
     /**
-     * <p>The S3 location of the input media file. The URI must be in the same region
-     * as the API endpoint that you are calling. The general form is:</p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * <p>The S3 object location of the input media file. The URI must be in the same
+     * region as the API endpoint that you are calling. The general form is:</p> <p>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p>
+     * <p>For example:</p> <p> <code>s3://examplebucket/example.mp4</code> </p> <p>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code> </p> <p>For more
+     * information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline Media& WithMediaFileUri(const Aws::String& value) { SetMediaFileUri(value); return *this;}
 
     /**
-     * <p>The S3 location of the input media file. The URI must be in the same region
-     * as the API endpoint that you are calling. The general form is:</p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * <p>The S3 object location of the input media file. The URI must be in the same
+     * region as the API endpoint that you are calling. The general form is:</p> <p>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p>
+     * <p>For example:</p> <p> <code>s3://examplebucket/example.mp4</code> </p> <p>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code> </p> <p>For more
+     * information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline Media& WithMediaFileUri(Aws::String&& value) { SetMediaFileUri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 location of the input media file. The URI must be in the same region
-     * as the API endpoint that you are calling. The general form is:</p> <p> <code>
-     * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
-     * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/example.mp4</code> </p>
-     * <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/mediadocs/example.mp4</code>
-     * </p> <p>For more information about S3 object names, see <a
+     * <p>The S3 object location of the input media file. The URI must be in the same
+     * region as the API endpoint that you are calling. The general form is:</p> <p>
+     * <code> s3://&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt; </code> </p>
+     * <p>For example:</p> <p> <code>s3://examplebucket/example.mp4</code> </p> <p>
+     * <code>s3://examplebucket/mediadocs/example.mp4</code> </p> <p>For more
+     * information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */

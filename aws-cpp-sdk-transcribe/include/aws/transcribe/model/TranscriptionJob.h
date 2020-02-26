@@ -24,6 +24,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/transcribe/model/Settings.h>
 #include <aws/transcribe/model/JobExecutionSettings.h>
+#include <aws/transcribe/model/ContentRedaction.h>
 #include <utility>
 
 namespace Aws
@@ -694,6 +695,43 @@ namespace Model
      */
     inline TranscriptionJob& WithJobExecutionSettings(JobExecutionSettings&& value) { SetJobExecutionSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that describes content redaction settings for the transcription
+     * job.</p>
+     */
+    inline const ContentRedaction& GetContentRedaction() const{ return m_contentRedaction; }
+
+    /**
+     * <p>An object that describes content redaction settings for the transcription
+     * job.</p>
+     */
+    inline bool ContentRedactionHasBeenSet() const { return m_contentRedactionHasBeenSet; }
+
+    /**
+     * <p>An object that describes content redaction settings for the transcription
+     * job.</p>
+     */
+    inline void SetContentRedaction(const ContentRedaction& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = value; }
+
+    /**
+     * <p>An object that describes content redaction settings for the transcription
+     * job.</p>
+     */
+    inline void SetContentRedaction(ContentRedaction&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::move(value); }
+
+    /**
+     * <p>An object that describes content redaction settings for the transcription
+     * job.</p>
+     */
+    inline TranscriptionJob& WithContentRedaction(const ContentRedaction& value) { SetContentRedaction(value); return *this;}
+
+    /**
+     * <p>An object that describes content redaction settings for the transcription
+     * job.</p>
+     */
+    inline TranscriptionJob& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -734,6 +772,9 @@ namespace Model
 
     JobExecutionSettings m_jobExecutionSettings;
     bool m_jobExecutionSettingsHasBeenSet;
+
+    ContentRedaction m_contentRedaction;
+    bool m_contentRedactionHasBeenSet;
   };
 
 } // namespace Model

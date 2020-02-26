@@ -51,10 +51,10 @@ namespace Model
   /**
    * <p>Provides consistent format for the contents of the Security Hub-aggregated
    * findings. <code>AwsSecurityFinding</code> format enables you to share findings
-   * between AWS security services and third-party solutions, and compliance
+   * between AWS security services and third-party solutions, and security standards
    * checks.</p> <note> <p>A finding is a potential security issue generated either
    * by AWS services (Amazon GuardDuty, Amazon Inspector, and Amazon Macie) or by the
-   * integrated third-party solutions and compliance checks.</p> </note><p><h3>See
+   * integrated third-party solutions and standards checks.</p> </note><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFinding">AWS
    * API Reference</a></p>
@@ -1227,43 +1227,43 @@ namespace Model
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard, such as CIS AWS
-     * Foundations. Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported security standard, such as CIS
+     * AWS Foundations. Contains security standard-related finding details.</p>
      */
     inline const Compliance& GetCompliance() const{ return m_compliance; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard, such as CIS AWS
-     * Foundations. Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported security standard, such as CIS
+     * AWS Foundations. Contains security standard-related finding details.</p>
      */
     inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard, such as CIS AWS
-     * Foundations. Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported security standard, such as CIS
+     * AWS Foundations. Contains security standard-related finding details.</p>
      */
     inline void SetCompliance(const Compliance& value) { m_complianceHasBeenSet = true; m_compliance = value; }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard, such as CIS AWS
-     * Foundations. Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported security standard, such as CIS
+     * AWS Foundations. Contains security standard-related finding details.</p>
      */
     inline void SetCompliance(Compliance&& value) { m_complianceHasBeenSet = true; m_compliance = std::move(value); }
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard, such as CIS AWS
-     * Foundations. Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported security standard, such as CIS
+     * AWS Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFinding& WithCompliance(const Compliance& value) { SetCompliance(value); return *this;}
 
     /**
      * <p>This data type is exclusive to findings that are generated as the result of a
-     * check run against a specific rule in a supported standard, such as CIS AWS
-     * Foundations. Contains compliance-related finding details.</p>
+     * check run against a specific rule in a supported security standard, such as CIS
+     * AWS Foundations. Contains security standard-related finding details.</p>
      */
     inline AwsSecurityFinding& WithCompliance(Compliance&& value) { SetCompliance(std::move(value)); return *this;}
 

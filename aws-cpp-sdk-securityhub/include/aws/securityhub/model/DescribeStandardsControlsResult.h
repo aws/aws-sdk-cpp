@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>A list of compliance standards controls.</p>
+     * <p>A list of security standards controls.</p>
      */
     inline const Aws::Vector<StandardsControl>& GetControls() const{ return m_controls; }
 
     /**
-     * <p>A list of compliance standards controls.</p>
+     * <p>A list of security standards controls.</p>
      */
     inline void SetControls(const Aws::Vector<StandardsControl>& value) { m_controls = value; }
 
     /**
-     * <p>A list of compliance standards controls.</p>
+     * <p>A list of security standards controls.</p>
      */
     inline void SetControls(Aws::Vector<StandardsControl>&& value) { m_controls = std::move(value); }
 
     /**
-     * <p>A list of compliance standards controls.</p>
+     * <p>A list of security standards controls.</p>
      */
     inline DescribeStandardsControlsResult& WithControls(const Aws::Vector<StandardsControl>& value) { SetControls(value); return *this;}
 
     /**
-     * <p>A list of compliance standards controls.</p>
+     * <p>A list of security standards controls.</p>
      */
     inline DescribeStandardsControlsResult& WithControls(Aws::Vector<StandardsControl>&& value) { SetControls(std::move(value)); return *this;}
 
     /**
-     * <p>A list of compliance standards controls.</p>
+     * <p>A list of security standards controls.</p>
      */
     inline DescribeStandardsControlsResult& AddControls(const StandardsControl& value) { m_controls.push_back(value); return *this; }
 
     /**
-     * <p>A list of compliance standards controls.</p>
+     * <p>A list of security standards controls.</p>
      */
     inline DescribeStandardsControlsResult& AddControls(StandardsControl&& value) { m_controls.push_back(std::move(value)); return *this; }
 

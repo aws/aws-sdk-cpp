@@ -29,12 +29,14 @@ namespace Model
 {
 
 Transcript::Transcript() : 
-    m_transcriptFileUriHasBeenSet(false)
+    m_transcriptFileUriHasBeenSet(false),
+    m_redactedTranscriptFileUriHasBeenSet(false)
 {
 }
 
 Transcript::Transcript(JsonView jsonValue) : 
-    m_transcriptFileUriHasBeenSet(false)
+    m_transcriptFileUriHasBeenSet(false),
+    m_redactedTranscriptFileUriHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ Transcript& Transcript::operator =(JsonView jsonValue)
     m_transcriptFileUriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RedactedTranscriptFileUri"))
+  {
+    m_redactedTranscriptFileUri = jsonValue.GetString("RedactedTranscriptFileUri");
+
+    m_redactedTranscriptFileUriHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue Transcript::Jsonize() const
   if(m_transcriptFileUriHasBeenSet)
   {
    payload.WithString("TranscriptFileUri", m_transcriptFileUri);
+
+  }
+
+  if(m_redactedTranscriptFileUriHasBeenSet)
+  {
+   payload.WithString("RedactedTranscriptFileUri", m_redactedTranscriptFileUri);
 
   }
 

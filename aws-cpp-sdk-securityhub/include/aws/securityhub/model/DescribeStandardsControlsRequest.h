@@ -171,22 +171,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of compliance standard controls to return.</p>
+     * <p>The maximum number of security standard controls to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of compliance standard controls to return.</p>
+     * <p>The maximum number of security standard controls to return.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of compliance standard controls to return.</p>
+     * <p>The maximum number of security standard controls to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of compliance standard controls to return.</p>
+     * <p>The maximum number of security standard controls to return.</p>
      */
     inline DescribeStandardsControlsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

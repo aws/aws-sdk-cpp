@@ -114,42 +114,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. ‘y’.</p>
+     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
      */
     inline const Aws::String& GetTargetAttributeName() const{ return m_targetAttributeName; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. ‘y’.</p>
+     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
      */
     inline bool TargetAttributeNameHasBeenSet() const { return m_targetAttributeNameHasBeenSet; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. ‘y’.</p>
+     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
      */
     inline void SetTargetAttributeName(const Aws::String& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = value; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. ‘y’.</p>
+     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
      */
     inline void SetTargetAttributeName(Aws::String&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::move(value); }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. ‘y’.</p>
+     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
      */
     inline void SetTargetAttributeName(const char* value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName.assign(value); }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. ‘y’.</p>
+     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(const Aws::String& value) { SetTargetAttributeName(value); return *this;}
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. ‘y’.</p>
+     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(Aws::String&& value) { SetTargetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. ‘y’.</p>
+     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(const char* value) { SetTargetAttributeName(value); return *this;}
 

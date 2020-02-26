@@ -274,9 +274,9 @@ namespace Model
 
   /**
    * <p>Security Hub provides you with a comprehensive view of the security state of
-   * your AWS environment and resources. It also provides you with the compliance
-   * status of your environment based on controls from supported standards. Security
-   * Hub collects security data from AWS accounts, services, and integrated
+   * your AWS environment and resources. It also provides you with the readiness
+   * status of your environment based on controls from supported security standards.
+   * Security Hub collects security data from AWS accounts, services, and integrated
    * third-party products and helps you analyze security trends in your environment
    * to identify the highest priority security issues. For more information about
    * Security Hub, see the <i> <a
@@ -369,7 +369,7 @@ namespace Model
         /**
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
          * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
@@ -380,7 +380,7 @@ namespace Model
         /**
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
          * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
@@ -393,7 +393,7 @@ namespace Model
         /**
          * <p>Disables the standards specified by the provided
          * <code>StandardsSubscriptionArns</code>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
          * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards">AWS
@@ -407,7 +407,7 @@ namespace Model
          * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
          * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
          * operation.</p> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
          * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
@@ -419,7 +419,7 @@ namespace Model
          * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
          * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
          * operation.</p> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
          * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
@@ -433,7 +433,7 @@ namespace Model
          * <p>Enables the standards specified by the provided <code>StandardsArn</code>. To
          * obtain the ARN for a standard, use the <code> <a>DescribeStandards</a> </code>
          * operation.</p> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Compliance
+         * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html">Security
          * Standards</a> section of the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards">AWS
@@ -880,7 +880,7 @@ namespace Model
         virtual void DescribeStandardsAsync(const Model::DescribeStandardsRequest& request, const DescribeStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of compliance standards controls.</p> <p>For each control, the
+         * <p>Returns a list of security standards controls.</p> <p>For each control, the
          * results include information about whether it is currently enabled, the severity,
          * and a link to remediation information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">AWS
@@ -889,7 +889,7 @@ namespace Model
         virtual Model::DescribeStandardsControlsOutcome DescribeStandardsControls(const Model::DescribeStandardsControlsRequest& request) const;
 
         /**
-         * <p>Returns a list of compliance standards controls.</p> <p>For each control, the
+         * <p>Returns a list of security standards controls.</p> <p>For each control, the
          * results include information about whether it is currently enabled, the severity,
          * and a link to remediation information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">AWS
@@ -900,7 +900,7 @@ namespace Model
         virtual Model::DescribeStandardsControlsOutcomeCallable DescribeStandardsControlsCallable(const Model::DescribeStandardsControlsRequest& request) const;
 
         /**
-         * <p>Returns a list of compliance standards controls.</p> <p>For each control, the
+         * <p>Returns a list of security standards controls.</p> <p>For each control, the
          * results include information about whether it is currently enabled, the severity,
          * and a link to remediation information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">AWS
@@ -1639,16 +1639,16 @@ namespace Model
         virtual void UpdateInsightAsync(const Model::UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used to control whether an individual compliance standard control is enabled
-         * or disabled.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to control whether an individual security standard control is enabled or
+         * disabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateStandardsControlOutcome UpdateStandardsControl(const Model::UpdateStandardsControlRequest& request) const;
 
         /**
-         * <p>Used to control whether an individual compliance standard control is enabled
-         * or disabled.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to control whether an individual security standard control is enabled or
+         * disabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">AWS
          * API Reference</a></p>
          *
@@ -1657,8 +1657,8 @@ namespace Model
         virtual Model::UpdateStandardsControlOutcomeCallable UpdateStandardsControlCallable(const Model::UpdateStandardsControlRequest& request) const;
 
         /**
-         * <p>Used to control whether an individual compliance standard control is enabled
-         * or disabled.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to control whether an individual security standard control is enabled or
+         * disabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">AWS
          * API Reference</a></p>
          *

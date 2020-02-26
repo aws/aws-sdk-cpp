@@ -38,6 +38,7 @@
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/LicenseConfigurationRequest.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -1077,7 +1078,8 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
@@ -1085,7 +1087,8 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
@@ -1093,7 +1096,8 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
@@ -1101,7 +1105,8 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
@@ -1109,7 +1114,8 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
@@ -1117,7 +1123,8 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
@@ -1125,7 +1132,8 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
@@ -1133,7 +1141,8 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * the request. If you do not specify a client token, a randomly generated token is
+     * used for the request to ensure idempotency.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */

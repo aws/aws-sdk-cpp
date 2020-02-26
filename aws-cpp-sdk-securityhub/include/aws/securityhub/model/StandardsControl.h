@@ -38,8 +38,8 @@ namespace Model
 {
 
   /**
-   * <p>Details for an individual compliance standard control.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Details for an individual security standard control.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StandardsControl">AWS
    * API Reference</a></p>
    */
@@ -53,83 +53,83 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the compliance standard control.</p>
+     * <p>The ARN of the security standard control.</p>
      */
     inline const Aws::String& GetStandardsControlArn() const{ return m_standardsControlArn; }
 
     /**
-     * <p>The ARN of the compliance standard control.</p>
+     * <p>The ARN of the security standard control.</p>
      */
     inline bool StandardsControlArnHasBeenSet() const { return m_standardsControlArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the compliance standard control.</p>
+     * <p>The ARN of the security standard control.</p>
      */
     inline void SetStandardsControlArn(const Aws::String& value) { m_standardsControlArnHasBeenSet = true; m_standardsControlArn = value; }
 
     /**
-     * <p>The ARN of the compliance standard control.</p>
+     * <p>The ARN of the security standard control.</p>
      */
     inline void SetStandardsControlArn(Aws::String&& value) { m_standardsControlArnHasBeenSet = true; m_standardsControlArn = std::move(value); }
 
     /**
-     * <p>The ARN of the compliance standard control.</p>
+     * <p>The ARN of the security standard control.</p>
      */
     inline void SetStandardsControlArn(const char* value) { m_standardsControlArnHasBeenSet = true; m_standardsControlArn.assign(value); }
 
     /**
-     * <p>The ARN of the compliance standard control.</p>
+     * <p>The ARN of the security standard control.</p>
      */
     inline StandardsControl& WithStandardsControlArn(const Aws::String& value) { SetStandardsControlArn(value); return *this;}
 
     /**
-     * <p>The ARN of the compliance standard control.</p>
+     * <p>The ARN of the security standard control.</p>
      */
     inline StandardsControl& WithStandardsControlArn(Aws::String&& value) { SetStandardsControlArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the compliance standard control.</p>
+     * <p>The ARN of the security standard control.</p>
      */
     inline StandardsControl& WithStandardsControlArn(const char* value) { SetStandardsControlArn(value); return *this;}
 
 
     /**
-     * <p>The current status of the compliance standard control. Indicates whether the
+     * <p>The current status of the security standard control. Indicates whether the
      * control is enabled or disabled. Security Hub does not check against disabled
      * controls.</p>
      */
     inline const ControlStatus& GetControlStatus() const{ return m_controlStatus; }
 
     /**
-     * <p>The current status of the compliance standard control. Indicates whether the
+     * <p>The current status of the security standard control. Indicates whether the
      * control is enabled or disabled. Security Hub does not check against disabled
      * controls.</p>
      */
     inline bool ControlStatusHasBeenSet() const { return m_controlStatusHasBeenSet; }
 
     /**
-     * <p>The current status of the compliance standard control. Indicates whether the
+     * <p>The current status of the security standard control. Indicates whether the
      * control is enabled or disabled. Security Hub does not check against disabled
      * controls.</p>
      */
     inline void SetControlStatus(const ControlStatus& value) { m_controlStatusHasBeenSet = true; m_controlStatus = value; }
 
     /**
-     * <p>The current status of the compliance standard control. Indicates whether the
+     * <p>The current status of the security standard control. Indicates whether the
      * control is enabled or disabled. Security Hub does not check against disabled
      * controls.</p>
      */
     inline void SetControlStatus(ControlStatus&& value) { m_controlStatusHasBeenSet = true; m_controlStatus = std::move(value); }
 
     /**
-     * <p>The current status of the compliance standard control. Indicates whether the
+     * <p>The current status of the security standard control. Indicates whether the
      * control is enabled or disabled. Security Hub does not check against disabled
      * controls.</p>
      */
     inline StandardsControl& WithControlStatus(const ControlStatus& value) { SetControlStatus(value); return *this;}
 
     /**
-     * <p>The current status of the compliance standard control. Indicates whether the
+     * <p>The current status of the security standard control. Indicates whether the
      * control is enabled or disabled. Security Hub does not check against disabled
      * controls.</p>
      */
@@ -178,169 +178,169 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the status of the compliance standard control was most
+     * <p>The date and time that the status of the security standard control was most
      * recently updated.</p>
      */
     inline const Aws::Utils::DateTime& GetControlStatusUpdatedAt() const{ return m_controlStatusUpdatedAt; }
 
     /**
-     * <p>The date and time that the status of the compliance standard control was most
+     * <p>The date and time that the status of the security standard control was most
      * recently updated.</p>
      */
     inline bool ControlStatusUpdatedAtHasBeenSet() const { return m_controlStatusUpdatedAtHasBeenSet; }
 
     /**
-     * <p>The date and time that the status of the compliance standard control was most
+     * <p>The date and time that the status of the security standard control was most
      * recently updated.</p>
      */
     inline void SetControlStatusUpdatedAt(const Aws::Utils::DateTime& value) { m_controlStatusUpdatedAtHasBeenSet = true; m_controlStatusUpdatedAt = value; }
 
     /**
-     * <p>The date and time that the status of the compliance standard control was most
+     * <p>The date and time that the status of the security standard control was most
      * recently updated.</p>
      */
     inline void SetControlStatusUpdatedAt(Aws::Utils::DateTime&& value) { m_controlStatusUpdatedAtHasBeenSet = true; m_controlStatusUpdatedAt = std::move(value); }
 
     /**
-     * <p>The date and time that the status of the compliance standard control was most
+     * <p>The date and time that the status of the security standard control was most
      * recently updated.</p>
      */
     inline StandardsControl& WithControlStatusUpdatedAt(const Aws::Utils::DateTime& value) { SetControlStatusUpdatedAt(value); return *this;}
 
     /**
-     * <p>The date and time that the status of the compliance standard control was most
+     * <p>The date and time that the status of the security standard control was most
      * recently updated.</p>
      */
     inline StandardsControl& WithControlStatusUpdatedAt(Aws::Utils::DateTime&& value) { SetControlStatusUpdatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier of the compliance standard control.</p>
+     * <p>The identifier of the security standard control.</p>
      */
     inline const Aws::String& GetControlId() const{ return m_controlId; }
 
     /**
-     * <p>The identifier of the compliance standard control.</p>
+     * <p>The identifier of the security standard control.</p>
      */
     inline bool ControlIdHasBeenSet() const { return m_controlIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the compliance standard control.</p>
+     * <p>The identifier of the security standard control.</p>
      */
     inline void SetControlId(const Aws::String& value) { m_controlIdHasBeenSet = true; m_controlId = value; }
 
     /**
-     * <p>The identifier of the compliance standard control.</p>
+     * <p>The identifier of the security standard control.</p>
      */
     inline void SetControlId(Aws::String&& value) { m_controlIdHasBeenSet = true; m_controlId = std::move(value); }
 
     /**
-     * <p>The identifier of the compliance standard control.</p>
+     * <p>The identifier of the security standard control.</p>
      */
     inline void SetControlId(const char* value) { m_controlIdHasBeenSet = true; m_controlId.assign(value); }
 
     /**
-     * <p>The identifier of the compliance standard control.</p>
+     * <p>The identifier of the security standard control.</p>
      */
     inline StandardsControl& WithControlId(const Aws::String& value) { SetControlId(value); return *this;}
 
     /**
-     * <p>The identifier of the compliance standard control.</p>
+     * <p>The identifier of the security standard control.</p>
      */
     inline StandardsControl& WithControlId(Aws::String&& value) { SetControlId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the compliance standard control.</p>
+     * <p>The identifier of the security standard control.</p>
      */
     inline StandardsControl& WithControlId(const char* value) { SetControlId(value); return *this;}
 
 
     /**
-     * <p>The title of the compliance standard control.</p>
+     * <p>The title of the security standard control.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>The title of the compliance standard control.</p>
+     * <p>The title of the security standard control.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>The title of the compliance standard control.</p>
+     * <p>The title of the security standard control.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>The title of the compliance standard control.</p>
+     * <p>The title of the security standard control.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>The title of the compliance standard control.</p>
+     * <p>The title of the security standard control.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>The title of the compliance standard control.</p>
+     * <p>The title of the security standard control.</p>
      */
     inline StandardsControl& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>The title of the compliance standard control.</p>
+     * <p>The title of the security standard control.</p>
      */
     inline StandardsControl& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>The title of the compliance standard control.</p>
+     * <p>The title of the security standard control.</p>
      */
     inline StandardsControl& WithTitle(const char* value) { SetTitle(value); return *this;}
 
 
     /**
-     * <p>The longer description of the compliance standard control. Provides
-     * information about what the control is checking for.</p>
+     * <p>The longer description of the security standard control. Provides information
+     * about what the control is checking for.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The longer description of the compliance standard control. Provides
-     * information about what the control is checking for.</p>
+     * <p>The longer description of the security standard control. Provides information
+     * about what the control is checking for.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The longer description of the compliance standard control. Provides
-     * information about what the control is checking for.</p>
+     * <p>The longer description of the security standard control. Provides information
+     * about what the control is checking for.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The longer description of the compliance standard control. Provides
-     * information about what the control is checking for.</p>
+     * <p>The longer description of the security standard control. Provides information
+     * about what the control is checking for.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The longer description of the compliance standard control. Provides
-     * information about what the control is checking for.</p>
+     * <p>The longer description of the security standard control. Provides information
+     * about what the control is checking for.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The longer description of the compliance standard control. Provides
-     * information about what the control is checking for.</p>
+     * <p>The longer description of the security standard control. Provides information
+     * about what the control is checking for.</p>
      */
     inline StandardsControl& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The longer description of the compliance standard control. Provides
-     * information about what the control is checking for.</p>
+     * <p>The longer description of the security standard control. Provides information
+     * about what the control is checking for.</p>
      */
     inline StandardsControl& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The longer description of the compliance standard control. Provides
-     * information about what the control is checking for.</p>
+     * <p>The longer description of the security standard control. Provides information
+     * about what the control is checking for.</p>
      */
     inline StandardsControl& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -395,44 +395,44 @@ namespace Model
 
 
     /**
-     * <p>The severity of findings generated from this compliance standard control.</p>
+     * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the compliance issue is detected.</p>
+     * compromise AWS resources if the issue is detected.</p>
      */
     inline const SeverityRating& GetSeverityRating() const{ return m_severityRating; }
 
     /**
-     * <p>The severity of findings generated from this compliance standard control.</p>
+     * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the compliance issue is detected.</p>
+     * compromise AWS resources if the issue is detected.</p>
      */
     inline bool SeverityRatingHasBeenSet() const { return m_severityRatingHasBeenSet; }
 
     /**
-     * <p>The severity of findings generated from this compliance standard control.</p>
+     * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the compliance issue is detected.</p>
+     * compromise AWS resources if the issue is detected.</p>
      */
     inline void SetSeverityRating(const SeverityRating& value) { m_severityRatingHasBeenSet = true; m_severityRating = value; }
 
     /**
-     * <p>The severity of findings generated from this compliance standard control.</p>
+     * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the compliance issue is detected.</p>
+     * compromise AWS resources if the issue is detected.</p>
      */
     inline void SetSeverityRating(SeverityRating&& value) { m_severityRatingHasBeenSet = true; m_severityRating = std::move(value); }
 
     /**
-     * <p>The severity of findings generated from this compliance standard control.</p>
+     * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the compliance issue is detected.</p>
+     * compromise AWS resources if the issue is detected.</p>
      */
     inline StandardsControl& WithSeverityRating(const SeverityRating& value) { SetSeverityRating(value); return *this;}
 
     /**
-     * <p>The severity of findings generated from this compliance standard control.</p>
+     * <p>The severity of findings generated from this security standard control.</p>
      * <p>The finding severity is based on an assessment of how easy it would be to
-     * compromise AWS resources if the compliance issue is detected.</p>
+     * compromise AWS resources if the issue is detected.</p>
      */
     inline StandardsControl& WithSeverityRating(SeverityRating&& value) { SetSeverityRating(std::move(value)); return *this;}
 

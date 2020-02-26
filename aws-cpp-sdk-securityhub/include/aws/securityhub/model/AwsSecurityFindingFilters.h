@@ -3267,56 +3267,56 @@ namespace Model
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
      * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * compliance-related finding details.</p>
+     * security standard-related finding details.</p>
      */
     inline const Aws::Vector<StringFilter>& GetComplianceStatus() const{ return m_complianceStatus; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
      * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * compliance-related finding details.</p>
+     * security standard-related finding details.</p>
      */
     inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
      * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * compliance-related finding details.</p>
+     * security standard-related finding details.</p>
      */
     inline void SetComplianceStatus(const Aws::Vector<StringFilter>& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
      * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * compliance-related finding details.</p>
+     * security standard-related finding details.</p>
      */
     inline void SetComplianceStatus(Aws::Vector<StringFilter>&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = std::move(value); }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
      * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * compliance-related finding details.</p>
+     * security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& WithComplianceStatus(const Aws::Vector<StringFilter>& value) { SetComplianceStatus(value); return *this;}
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
      * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * compliance-related finding details.</p>
+     * security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& WithComplianceStatus(Aws::Vector<StringFilter>&& value) { SetComplianceStatus(std::move(value)); return *this;}
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
      * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * compliance-related finding details.</p>
+     * security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& AddComplianceStatus(const StringFilter& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(value); return *this; }
 
     /**
      * <p>Exclusive to findings that are generated as the result of a check run against
      * a specific rule in a supported standard, such as CIS AWS Foundations. Contains
-     * compliance-related finding details.</p>
+     * security standard-related finding details.</p>
      */
     inline AwsSecurityFindingFilters& AddComplianceStatus(StringFilter&& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus.push_back(std::move(value)); return *this; }
 

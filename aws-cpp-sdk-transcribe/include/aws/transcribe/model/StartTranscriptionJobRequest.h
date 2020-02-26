@@ -22,6 +22,7 @@
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/Settings.h>
 #include <aws/transcribe/model/JobExecutionSettings.h>
+#include <aws/transcribe/model/ContentRedaction.h>
 #include <utility>
 
 namespace Aws
@@ -242,11 +243,15 @@ namespace Model
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
-     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the
      * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The
-     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
-     * bucket. For more information, see <a
+     * operation returns this location in the <code>TranscriptFileUri</code> field. If
+     * you enable content redaction, the redacted transcript appears in
+     * <code>RedactedTranscriptFileUri</code>. If you enable content redaction and
+     * choose to output an unredacted transcript, that transcript's location still
+     * appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+     * permissions that allow Amazon Transcribe to put files in the bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
      * Service (KMS) key to encrypt the output of your transcription using the
@@ -262,11 +267,15 @@ namespace Model
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
-     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the
      * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The
-     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
-     * bucket. For more information, see <a
+     * operation returns this location in the <code>TranscriptFileUri</code> field. If
+     * you enable content redaction, the redacted transcript appears in
+     * <code>RedactedTranscriptFileUri</code>. If you enable content redaction and
+     * choose to output an unredacted transcript, that transcript's location still
+     * appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+     * permissions that allow Amazon Transcribe to put files in the bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
      * Service (KMS) key to encrypt the output of your transcription using the
@@ -282,11 +291,15 @@ namespace Model
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
-     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the
      * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The
-     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
-     * bucket. For more information, see <a
+     * operation returns this location in the <code>TranscriptFileUri</code> field. If
+     * you enable content redaction, the redacted transcript appears in
+     * <code>RedactedTranscriptFileUri</code>. If you enable content redaction and
+     * choose to output an unredacted transcript, that transcript's location still
+     * appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+     * permissions that allow Amazon Transcribe to put files in the bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
      * Service (KMS) key to encrypt the output of your transcription using the
@@ -302,11 +315,15 @@ namespace Model
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
-     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the
      * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The
-     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
-     * bucket. For more information, see <a
+     * operation returns this location in the <code>TranscriptFileUri</code> field. If
+     * you enable content redaction, the redacted transcript appears in
+     * <code>RedactedTranscriptFileUri</code>. If you enable content redaction and
+     * choose to output an unredacted transcript, that transcript's location still
+     * appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+     * permissions that allow Amazon Transcribe to put files in the bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
      * Service (KMS) key to encrypt the output of your transcription using the
@@ -322,11 +339,15 @@ namespace Model
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
-     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the
      * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The
-     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
-     * bucket. For more information, see <a
+     * operation returns this location in the <code>TranscriptFileUri</code> field. If
+     * you enable content redaction, the redacted transcript appears in
+     * <code>RedactedTranscriptFileUri</code>. If you enable content redaction and
+     * choose to output an unredacted transcript, that transcript's location still
+     * appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+     * permissions that allow Amazon Transcribe to put files in the bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
      * Service (KMS) key to encrypt the output of your transcription using the
@@ -342,11 +363,15 @@ namespace Model
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
-     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the
      * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The
-     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
-     * bucket. For more information, see <a
+     * operation returns this location in the <code>TranscriptFileUri</code> field. If
+     * you enable content redaction, the redacted transcript appears in
+     * <code>RedactedTranscriptFileUri</code>. If you enable content redaction and
+     * choose to output an unredacted transcript, that transcript's location still
+     * appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+     * permissions that allow Amazon Transcribe to put files in the bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
      * Service (KMS) key to encrypt the output of your transcription using the
@@ -362,11 +387,15 @@ namespace Model
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
-     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the
      * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The
-     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
-     * bucket. For more information, see <a
+     * operation returns this location in the <code>TranscriptFileUri</code> field. If
+     * you enable content redaction, the redacted transcript appears in
+     * <code>RedactedTranscriptFileUri</code>. If you enable content redaction and
+     * choose to output an unredacted transcript, that transcript's location still
+     * appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+     * permissions that allow Amazon Transcribe to put files in the bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
      * Service (KMS) key to encrypt the output of your transcription using the
@@ -382,11 +411,15 @@ namespace Model
 
     /**
      * <p>The location where the transcription is stored.</p> <p>If you set the
-     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcription in the
+     * <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the
      * specified S3 bucket. When you call the <a>GetTranscriptionJob</a> operation, the
-     * operation returns this location in the <code>TranscriptFileUri</code> field. The
-     * S3 bucket must have permissions that allow Amazon Transcribe to put files in the
-     * bucket. For more information, see <a
+     * operation returns this location in the <code>TranscriptFileUri</code> field. If
+     * you enable content redaction, the redacted transcript appears in
+     * <code>RedactedTranscriptFileUri</code>. If you enable content redaction and
+     * choose to output an unredacted transcript, that transcript's location still
+     * appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+     * permissions that allow Amazon Transcribe to put files in the bucket. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
      * Required for IAM User Roles</a>.</p> <p>You can specify an AWS Key Management
      * Service (KMS) key to encrypt the output of your transcription using the
@@ -639,6 +672,37 @@ namespace Model
      */
     inline StartTranscriptionJobRequest& WithJobExecutionSettings(JobExecutionSettings&& value) { SetJobExecutionSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that contains the request parameters for content redaction.</p>
+     */
+    inline const ContentRedaction& GetContentRedaction() const{ return m_contentRedaction; }
+
+    /**
+     * <p>An object that contains the request parameters for content redaction.</p>
+     */
+    inline bool ContentRedactionHasBeenSet() const { return m_contentRedactionHasBeenSet; }
+
+    /**
+     * <p>An object that contains the request parameters for content redaction.</p>
+     */
+    inline void SetContentRedaction(const ContentRedaction& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = value; }
+
+    /**
+     * <p>An object that contains the request parameters for content redaction.</p>
+     */
+    inline void SetContentRedaction(ContentRedaction&& value) { m_contentRedactionHasBeenSet = true; m_contentRedaction = std::move(value); }
+
+    /**
+     * <p>An object that contains the request parameters for content redaction.</p>
+     */
+    inline StartTranscriptionJobRequest& WithContentRedaction(const ContentRedaction& value) { SetContentRedaction(value); return *this;}
+
+    /**
+     * <p>An object that contains the request parameters for content redaction.</p>
+     */
+    inline StartTranscriptionJobRequest& WithContentRedaction(ContentRedaction&& value) { SetContentRedaction(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -667,6 +731,9 @@ namespace Model
 
     JobExecutionSettings m_jobExecutionSettings;
     bool m_jobExecutionSettingsHasBeenSet;
+
+    ContentRedaction m_contentRedaction;
+    bool m_contentRedactionHasBeenSet;
   };
 
 } // namespace Model

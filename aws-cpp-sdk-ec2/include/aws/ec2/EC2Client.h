@@ -17802,10 +17802,11 @@ namespace Model
          * you can specify that the Spot Fleet distribute the target capacity across the
          * Spot pools included in its launch specifications. By ensuring that the Spot
          * Instances in your Spot Fleet are in different Spot pools, you can improve the
-         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet and
-         * Spot Instances. You cannot tag other resource types in a Spot Fleet request
-         * because only the <code>spot-fleet-request</code> and <code>instance</code>
-         * resource types are supported.</p> <p>For more information, see <a
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet
+         * request and instances launched by the fleet. You cannot tag other resource types
+         * in a Spot Fleet request because only the <code>spot-fleet-request</code> and
+         * <code>instance</code> resource types are supported.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -17827,10 +17828,11 @@ namespace Model
          * you can specify that the Spot Fleet distribute the target capacity across the
          * Spot pools included in its launch specifications. By ensuring that the Spot
          * Instances in your Spot Fleet are in different Spot pools, you can improve the
-         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet and
-         * Spot Instances. You cannot tag other resource types in a Spot Fleet request
-         * because only the <code>spot-fleet-request</code> and <code>instance</code>
-         * resource types are supported.</p> <p>For more information, see <a
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet
+         * request and instances launched by the fleet. You cannot tag other resource types
+         * in a Spot Fleet request because only the <code>spot-fleet-request</code> and
+         * <code>instance</code> resource types are supported.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -17854,10 +17856,11 @@ namespace Model
          * you can specify that the Spot Fleet distribute the target capacity across the
          * Spot pools included in its launch specifications. By ensuring that the Spot
          * Instances in your Spot Fleet are in different Spot pools, you can improve the
-         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet and
-         * Spot Instances. You cannot tag other resource types in a Spot Fleet request
-         * because only the <code>spot-fleet-request</code> and <code>instance</code>
-         * resource types are supported.</p> <p>For more information, see <a
+         * availability of your fleet.</p> <p>You can specify tags for the Spot Fleet
+         * request and instances launched by the fleet. You cannot tag other resource types
+         * in a Spot Fleet request because only the <code>spot-fleet-request</code> and
+         * <code>instance</code> resource types are supported.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a

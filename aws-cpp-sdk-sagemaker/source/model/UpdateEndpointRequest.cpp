@@ -24,7 +24,10 @@ using namespace Aws::Utils;
 
 UpdateEndpointRequest::UpdateEndpointRequest() : 
     m_endpointNameHasBeenSet(false),
-    m_endpointConfigNameHasBeenSet(false)
+    m_endpointConfigNameHasBeenSet(false),
+    m_retainAllVariantProperties(false),
+    m_retainAllVariantPropertiesHasBeenSet(false),
+    m_excludeRetainedVariantPropertiesHasBeenSet(false)
 {
 }
 
@@ -41,6 +44,23 @@ Aws::String UpdateEndpointRequest::SerializePayload() const
   if(m_endpointConfigNameHasBeenSet)
   {
    payload.WithString("EndpointConfigName", m_endpointConfigName);
+
+  }
+
+  if(m_retainAllVariantPropertiesHasBeenSet)
+  {
+   payload.WithBool("RetainAllVariantProperties", m_retainAllVariantProperties);
+
+  }
+
+  if(m_excludeRetainedVariantPropertiesHasBeenSet)
+  {
+   Array<JsonValue> excludeRetainedVariantPropertiesJsonList(m_excludeRetainedVariantProperties.size());
+   for(unsigned excludeRetainedVariantPropertiesIndex = 0; excludeRetainedVariantPropertiesIndex < excludeRetainedVariantPropertiesJsonList.GetLength(); ++excludeRetainedVariantPropertiesIndex)
+   {
+     excludeRetainedVariantPropertiesJsonList[excludeRetainedVariantPropertiesIndex].AsObject(m_excludeRetainedVariantProperties[excludeRetainedVariantPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("ExcludeRetainedVariantProperties", std::move(excludeRetainedVariantPropertiesJsonList));
 
   }
 

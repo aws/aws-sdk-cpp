@@ -14,48 +14,28 @@
 */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace SageMaker
+namespace SecurityHub
 {
 namespace Model
 {
-  enum class TargetDevice
+  enum class IntegrationType
   {
     NOT_SET,
-    lambda,
-    ml_m4,
-    ml_m5,
-    ml_c4,
-    ml_c5,
-    ml_p2,
-    ml_p3,
-    ml_inf1,
-    jetson_tx1,
-    jetson_tx2,
-    jetson_nano,
-    jetson_xavier,
-    rasp3b,
-    imx8qm,
-    deeplens,
-    rk3399,
-    rk3288,
-    aisage,
-    sbe_c,
-    qcs605,
-    qcs603,
-    amba_cv22
+    SEND_FINDINGS_TO_SECURITY_HUB,
+    RECEIVE_FINDINGS_FROM_SECURITY_HUB
   };
 
-namespace TargetDeviceMapper
+namespace IntegrationTypeMapper
 {
-AWS_SAGEMAKER_API TargetDevice GetTargetDeviceForName(const Aws::String& name);
+AWS_SECURITYHUB_API IntegrationType GetIntegrationTypeForName(const Aws::String& name);
 
-AWS_SAGEMAKER_API Aws::String GetNameForTargetDevice(TargetDevice value);
-} // namespace TargetDeviceMapper
+AWS_SECURITYHUB_API Aws::String GetNameForIntegrationType(IntegrationType value);
+} // namespace IntegrationTypeMapper
 } // namespace Model
-} // namespace SageMaker
+} // namespace SecurityHub
 } // namespace Aws

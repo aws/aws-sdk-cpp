@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 ListTrialsRequest::ListTrialsRequest() : 
     m_experimentNameHasBeenSet(false),
+    m_trialComponentNameHasBeenSet(false),
     m_createdAfterHasBeenSet(false),
     m_createdBeforeHasBeenSet(false),
     m_sortBy(SortTrialsBy::NOT_SET),
@@ -43,6 +44,12 @@ Aws::String ListTrialsRequest::SerializePayload() const
   if(m_experimentNameHasBeenSet)
   {
    payload.WithString("ExperimentName", m_experimentName);
+
+  }
+
+  if(m_trialComponentNameHasBeenSet)
+  {
+   payload.WithString("TrialComponentName", m_trialComponentName);
 
   }
 

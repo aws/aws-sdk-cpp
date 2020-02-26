@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>A single private workforce, which is automatically created when you create
    * your first private work team. You can create one private work force in each AWS
-   * Region. By default, any workforce related API operation used in a specific
+   * Region. By default, any workforce-related API operation used in a specific
    * region will apply to the workforce created in that region. To learn how to
    * create a private workforce, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">Create
@@ -57,56 +57,56 @@ namespace Model
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline Workforce& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline Workforce& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline Workforce& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}

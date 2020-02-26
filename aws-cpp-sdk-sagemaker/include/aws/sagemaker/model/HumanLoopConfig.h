@@ -215,22 +215,34 @@ namespace Model
 
 
     /**
-     * <p>The number of human tasks.</p>
+     * <p>The number of distinct workers who will perform the same task on each object.
+     * For example, if <code>TaskCount</code> is set to <code>3</code> for an image
+     * classification labeling job, three workers will classify each input image.
+     * Increasing <code>TaskCount</code> can improve label accuracy.</p>
      */
     inline int GetTaskCount() const{ return m_taskCount; }
 
     /**
-     * <p>The number of human tasks.</p>
+     * <p>The number of distinct workers who will perform the same task on each object.
+     * For example, if <code>TaskCount</code> is set to <code>3</code> for an image
+     * classification labeling job, three workers will classify each input image.
+     * Increasing <code>TaskCount</code> can improve label accuracy.</p>
      */
     inline bool TaskCountHasBeenSet() const { return m_taskCountHasBeenSet; }
 
     /**
-     * <p>The number of human tasks.</p>
+     * <p>The number of distinct workers who will perform the same task on each object.
+     * For example, if <code>TaskCount</code> is set to <code>3</code> for an image
+     * classification labeling job, three workers will classify each input image.
+     * Increasing <code>TaskCount</code> can improve label accuracy.</p>
      */
     inline void SetTaskCount(int value) { m_taskCountHasBeenSet = true; m_taskCount = value; }
 
     /**
-     * <p>The number of human tasks.</p>
+     * <p>The number of distinct workers who will perform the same task on each object.
+     * For example, if <code>TaskCount</code> is set to <code>3</code> for an image
+     * classification labeling job, three workers will classify each input image.
+     * Increasing <code>TaskCount</code> can improve label accuracy.</p>
      */
     inline HumanLoopConfig& WithTaskCount(int value) { SetTaskCount(value); return *this;}
 

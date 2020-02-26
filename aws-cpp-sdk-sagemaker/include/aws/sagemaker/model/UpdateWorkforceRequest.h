@@ -47,56 +47,56 @@ namespace Model
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline UpdateWorkforceRequest& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline UpdateWorkforceRequest& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the private workforce whose access you want to restrict.
-     * <code>WorkforceName</code> is automatically set to <code>"default"</code> when a
+     * <code>WorkforceName</code> is automatically set to <code>default</code> when a
      * workforce is created and cannot be modified. </p>
      */
     inline UpdateWorkforceRequest& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}
@@ -105,48 +105,48 @@ namespace Model
     /**
      * <p>A list of one to four worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: 4
-     * CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
+     * Four CIDR values</p>
      */
     inline const SourceIpConfig& GetSourceIpConfig() const{ return m_sourceIpConfig; }
 
     /**
      * <p>A list of one to four worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: 4
-     * CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
+     * Four CIDR values</p>
      */
     inline bool SourceIpConfigHasBeenSet() const { return m_sourceIpConfigHasBeenSet; }
 
     /**
      * <p>A list of one to four worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: 4
-     * CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
+     * Four CIDR values</p>
      */
     inline void SetSourceIpConfig(const SourceIpConfig& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = value; }
 
     /**
      * <p>A list of one to four worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: 4
-     * CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
+     * Four CIDR values</p>
      */
     inline void SetSourceIpConfig(SourceIpConfig&& value) { m_sourceIpConfigHasBeenSet = true; m_sourceIpConfig = std::move(value); }
 
     /**
      * <p>A list of one to four worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: 4
-     * CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
+     * Four CIDR values</p>
      */
     inline UpdateWorkforceRequest& WithSourceIpConfig(const SourceIpConfig& value) { SetSourceIpConfig(value); return *this;}
 
     /**
      * <p>A list of one to four worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
-     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum: 4
-     * CIDR values</p>
+     * that can be used to access tasks assigned to this workforce.</p> <p>Maximum:
+     * Four CIDR values</p>
      */
     inline UpdateWorkforceRequest& WithSourceIpConfig(SourceIpConfig&& value) { SetSourceIpConfig(std::move(value)); return *this;}
 

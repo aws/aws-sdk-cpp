@@ -208,8 +208,8 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
-     * verification judgement for semantic segmentation labels based on annotations
-     * from individual workers.</p> <p>
+     * verification judgment for semantic segmentation labels based on annotations from
+     * individual workers.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -451,8 +451,8 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
-     * verification judgement for semantic segmentation labels based on annotations
-     * from individual workers.</p> <p>
+     * verification judgment for semantic segmentation labels based on annotations from
+     * individual workers.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -694,8 +694,8 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
-     * verification judgement for semantic segmentation labels based on annotations
-     * from individual workers.</p> <p>
+     * verification judgment for semantic segmentation labels based on annotations from
+     * individual workers.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -937,8 +937,8 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
-     * verification judgement for semantic segmentation labels based on annotations
-     * from individual workers.</p> <p>
+     * verification judgment for semantic segmentation labels based on annotations from
+     * individual workers.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -1180,8 +1180,8 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
-     * verification judgement for semantic segmentation labels based on annotations
-     * from individual workers.</p> <p>
+     * verification judgment for semantic segmentation labels based on annotations from
+     * individual workers.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -1423,8 +1423,8 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
-     * verification judgement for semantic segmentation labels based on annotations
-     * from individual workers.</p> <p>
+     * verification judgment for semantic segmentation labels based on annotations from
+     * individual workers.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -1666,8 +1666,8 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
-     * verification judgement for semantic segmentation labels based on annotations
-     * from individual workers.</p> <p>
+     * verification judgment for semantic segmentation labels based on annotations from
+     * individual workers.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>
@@ -1909,8 +1909,8 @@ namespace Model
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VerificationBoundingBox</code>
      * </p> </li> <li> <p> <i>Semantic segmentation verification</i> - Uses a variant
      * of the Expectation Maximization approach to estimate the true class of
-     * verification judgement for semantic segmentation labels based on annotations
-     * from individual workers.</p> <p>
+     * verification judgment for semantic segmentation labels based on annotations from
+     * individual workers.</p> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VerificationSemanticSegmentation</code>
      * </p> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VerificationSemanticSegmentation</code>

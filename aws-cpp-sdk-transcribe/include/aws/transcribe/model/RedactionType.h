@@ -14,48 +14,27 @@
 */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace SageMaker
+namespace TranscribeService
 {
 namespace Model
 {
-  enum class TargetDevice
+  enum class RedactionType
   {
     NOT_SET,
-    lambda,
-    ml_m4,
-    ml_m5,
-    ml_c4,
-    ml_c5,
-    ml_p2,
-    ml_p3,
-    ml_inf1,
-    jetson_tx1,
-    jetson_tx2,
-    jetson_nano,
-    jetson_xavier,
-    rasp3b,
-    imx8qm,
-    deeplens,
-    rk3399,
-    rk3288,
-    aisage,
-    sbe_c,
-    qcs605,
-    qcs603,
-    amba_cv22
+    PII
   };
 
-namespace TargetDeviceMapper
+namespace RedactionTypeMapper
 {
-AWS_SAGEMAKER_API TargetDevice GetTargetDeviceForName(const Aws::String& name);
+AWS_TRANSCRIBESERVICE_API RedactionType GetRedactionTypeForName(const Aws::String& name);
 
-AWS_SAGEMAKER_API Aws::String GetNameForTargetDevice(TargetDevice value);
-} // namespace TargetDeviceMapper
+AWS_TRANSCRIBESERVICE_API Aws::String GetNameForRedactionType(RedactionType value);
+} // namespace RedactionTypeMapper
 } // namespace Model
-} // namespace SageMaker
+} // namespace TranscribeService
 } // namespace Aws

@@ -34,7 +34,8 @@ StartTranscriptionJobRequest::StartTranscriptionJobRequest() :
     m_outputBucketNameHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
     m_settingsHasBeenSet(false),
-    m_jobExecutionSettingsHasBeenSet(false)
+    m_jobExecutionSettingsHasBeenSet(false),
+    m_contentRedactionHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,12 @@ Aws::String StartTranscriptionJobRequest::SerializePayload() const
   if(m_jobExecutionSettingsHasBeenSet)
   {
    payload.WithObject("JobExecutionSettings", m_jobExecutionSettings.Jsonize());
+
+  }
+
+  if(m_contentRedactionHasBeenSet)
+  {
+   payload.WithObject("ContentRedaction", m_contentRedaction.Jsonize());
 
   }
 
