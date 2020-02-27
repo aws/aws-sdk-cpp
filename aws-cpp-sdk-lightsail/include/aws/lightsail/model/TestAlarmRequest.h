@@ -1,0 +1,160 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/lightsail/Lightsail_EXPORTS.h>
+#include <aws/lightsail/LightsailRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/model/AlarmState.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Lightsail
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_LIGHTSAIL_API TestAlarmRequest : public LightsailRequest
+  {
+  public:
+    TestAlarmRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "TestAlarm"; }
+
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>The name of the alarm to test.</p>
+     */
+    inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
+
+    /**
+     * <p>The name of the alarm to test.</p>
+     */
+    inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
+
+    /**
+     * <p>The name of the alarm to test.</p>
+     */
+    inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
+
+    /**
+     * <p>The name of the alarm to test.</p>
+     */
+    inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
+
+    /**
+     * <p>The name of the alarm to test.</p>
+     */
+    inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
+
+    /**
+     * <p>The name of the alarm to test.</p>
+     */
+    inline TestAlarmRequest& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
+
+    /**
+     * <p>The name of the alarm to test.</p>
+     */
+    inline TestAlarmRequest& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the alarm to test.</p>
+     */
+    inline TestAlarmRequest& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+
+
+    /**
+     * <p>The alarm state to test.</p> <p>An alarm has the following possible states
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * The alarm has just started, the metric is not available, or not enough data is
+     * available for the metric to determine the alarm state.</p> </li> <li> <p>
+     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     */
+    inline const AlarmState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The alarm state to test.</p> <p>An alarm has the following possible states
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * The alarm has just started, the metric is not available, or not enough data is
+     * available for the metric to determine the alarm state.</p> </li> <li> <p>
+     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The alarm state to test.</p> <p>An alarm has the following possible states
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * The alarm has just started, the metric is not available, or not enough data is
+     * available for the metric to determine the alarm state.</p> </li> <li> <p>
+     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     */
+    inline void SetState(const AlarmState& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The alarm state to test.</p> <p>An alarm has the following possible states
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * The alarm has just started, the metric is not available, or not enough data is
+     * available for the metric to determine the alarm state.</p> </li> <li> <p>
+     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     */
+    inline void SetState(AlarmState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The alarm state to test.</p> <p>An alarm has the following possible states
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * The alarm has just started, the metric is not available, or not enough data is
+     * available for the metric to determine the alarm state.</p> </li> <li> <p>
+     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     */
+    inline TestAlarmRequest& WithState(const AlarmState& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The alarm state to test.</p> <p>An alarm has the following possible states
+     * that can be tested:</p> <ul> <li> <p> <code>ALARM</code> — The metric is outside
+     * of the defined threshold.</p> </li> <li> <p> <code>INSUFFICIENT_DATA</code> —
+     * The alarm has just started, the metric is not available, or not enough data is
+     * available for the metric to determine the alarm state.</p> </li> <li> <p>
+     * <code>OK</code> — The metric is within the defined threshold.</p> </li> </ul>
+     */
+    inline TestAlarmRequest& WithState(AlarmState&& value) { SetState(std::move(value)); return *this;}
+
+  private:
+
+    Aws::String m_alarmName;
+    bool m_alarmNameHasBeenSet;
+
+    AlarmState m_state;
+    bool m_stateHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Lightsail
+} // namespace Aws

@@ -44,6 +44,8 @@ namespace Aws
         static const int RelationalDatabaseSnapshot_HASH = HashingUtils::HashString("RelationalDatabaseSnapshot");
         static const int ExportSnapshotRecord_HASH = HashingUtils::HashString("ExportSnapshotRecord");
         static const int CloudFormationStackRecord_HASH = HashingUtils::HashString("CloudFormationStackRecord");
+        static const int Alarm_HASH = HashingUtils::HashString("Alarm");
+        static const int ContactMethod_HASH = HashingUtils::HashString("ContactMethod");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -105,6 +107,14 @@ namespace Aws
           {
             return ResourceType::CloudFormationStackRecord;
           }
+          else if (hashCode == Alarm_HASH)
+          {
+            return ResourceType::Alarm;
+          }
+          else if (hashCode == ContactMethod_HASH)
+          {
+            return ResourceType::ContactMethod;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -147,6 +157,10 @@ namespace Aws
             return "ExportSnapshotRecord";
           case ResourceType::CloudFormationStackRecord:
             return "CloudFormationStackRecord";
+          case ResourceType::Alarm:
+            return "Alarm";
+          case ResourceType::ContactMethod:
+            return "ContactMethod";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

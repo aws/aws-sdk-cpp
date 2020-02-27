@@ -72,7 +72,15 @@ namespace Model
     RebootRelationalDatabase,
     StopRelationalDatabase,
     EnableAddOn,
-    DisableAddOn
+    DisableAddOn,
+    PutAlarm,
+    GetAlarms,
+    DeleteAlarm,
+    TestAlarm,
+    CreateContactMethod,
+    GetContactMethods,
+    SendContactMethodVerification,
+    DeleteContactMethod
   };
 
 namespace OperationTypeMapper

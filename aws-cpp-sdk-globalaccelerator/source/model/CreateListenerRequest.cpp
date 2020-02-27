@@ -29,7 +29,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_protocolHasBeenSet(false),
     m_clientAffinity(ClientAffinity::NOT_SET),
     m_clientAffinityHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false)
+    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyTokenHasBeenSet(true)
 {
 }
 

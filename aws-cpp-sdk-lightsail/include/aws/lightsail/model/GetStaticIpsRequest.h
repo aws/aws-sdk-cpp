@@ -45,50 +45,66 @@ namespace Model
 
 
     /**
-     * <p>A token used for advancing to the next page of results from your get static
-     * IPs request.</p>
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetStaticIps</code> request. If your
+     * results are paginated, the response will return a next page token that you can
+     * specify as the page token in a subsequent request.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get static
-     * IPs request.</p>
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetStaticIps</code> request. If your
+     * results are paginated, the response will return a next page token that you can
+     * specify as the page token in a subsequent request.</p>
      */
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get static
-     * IPs request.</p>
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetStaticIps</code> request. If your
+     * results are paginated, the response will return a next page token that you can
+     * specify as the page token in a subsequent request.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get static
-     * IPs request.</p>
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetStaticIps</code> request. If your
+     * results are paginated, the response will return a next page token that you can
+     * specify as the page token in a subsequent request.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get static
-     * IPs request.</p>
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetStaticIps</code> request. If your
+     * results are paginated, the response will return a next page token that you can
+     * specify as the page token in a subsequent request.</p>
      */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get static
-     * IPs request.</p>
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetStaticIps</code> request. If your
+     * results are paginated, the response will return a next page token that you can
+     * specify as the page token in a subsequent request.</p>
      */
     inline GetStaticIpsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>A token used for advancing to the next page of results from your get static
-     * IPs request.</p>
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetStaticIps</code> request. If your
+     * results are paginated, the response will return a next page token that you can
+     * specify as the page token in a subsequent request.</p>
      */
     inline GetStaticIpsRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used for advancing to the next page of results from your get static
-     * IPs request.</p>
+     * <p>The token to advance to the next page of results from your request.</p> <p>To
+     * get a page token, perform an initial <code>GetStaticIps</code> request. If your
+     * results are paginated, the response will return a next page token that you can
+     * specify as the page token in a subsequent request.</p>
      */
     inline GetStaticIpsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 

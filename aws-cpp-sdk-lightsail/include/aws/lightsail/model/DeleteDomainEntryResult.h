@@ -43,32 +43,37 @@ namespace Model
 
 
     /**
-     * <p>An array of key-value pairs containing information about the results of your
-     * delete domain entry request.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline const Operation& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>An array of key-value pairs containing information about the results of your
-     * delete domain entry request.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline void SetOperation(const Operation& value) { m_operation = value; }
 
     /**
-     * <p>An array of key-value pairs containing information about the results of your
-     * delete domain entry request.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs containing information about the results of your
-     * delete domain entry request.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline DeleteDomainEntryResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs containing information about the results of your
-     * delete domain entry request.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline DeleteDomainEntryResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 

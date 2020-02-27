@@ -81,44 +81,65 @@ namespace Model
 
 
     /**
-     * <p>A token used for advancing to the next page of results from your get
-     * instances request.</p>
+     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * next page token is not returned if there are no more results to display.</p>
+     * <p>To get the next page of results, perform another <code>GetInstances</code>
+     * request and specify the next page token using the <code>pageToken</code>
+     * parameter.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get
-     * instances request.</p>
+     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * next page token is not returned if there are no more results to display.</p>
+     * <p>To get the next page of results, perform another <code>GetInstances</code>
+     * request and specify the next page token using the <code>pageToken</code>
+     * parameter.</p>
      */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get
-     * instances request.</p>
+     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * next page token is not returned if there are no more results to display.</p>
+     * <p>To get the next page of results, perform another <code>GetInstances</code>
+     * request and specify the next page token using the <code>pageToken</code>
+     * parameter.</p>
      */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get
-     * instances request.</p>
+     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * next page token is not returned if there are no more results to display.</p>
+     * <p>To get the next page of results, perform another <code>GetInstances</code>
+     * request and specify the next page token using the <code>pageToken</code>
+     * parameter.</p>
      */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
 
     /**
-     * <p>A token used for advancing to the next page of results from your get
-     * instances request.</p>
+     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * next page token is not returned if there are no more results to display.</p>
+     * <p>To get the next page of results, perform another <code>GetInstances</code>
+     * request and specify the next page token using the <code>pageToken</code>
+     * parameter.</p>
      */
     inline GetInstancesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
 
     /**
-     * <p>A token used for advancing to the next page of results from your get
-     * instances request.</p>
+     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * next page token is not returned if there are no more results to display.</p>
+     * <p>To get the next page of results, perform another <code>GetInstances</code>
+     * request and specify the next page token using the <code>pageToken</code>
+     * parameter.</p>
      */
     inline GetInstancesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used for advancing to the next page of results from your get
-     * instances request.</p>
+     * <p>The token to advance to the next page of resutls from your request.</p> <p>A
+     * next page token is not returned if there are no more results to display.</p>
+     * <p>To get the next page of results, perform another <code>GetInstances</code>
+     * request and specify the next page token using the <code>pageToken</code>
+     * parameter.</p>
      */
     inline GetInstancesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
 

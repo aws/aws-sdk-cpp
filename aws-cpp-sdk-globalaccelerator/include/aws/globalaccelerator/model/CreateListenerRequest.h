@@ -22,6 +22,7 @@
 #include <aws/globalaccelerator/model/ClientAffinity.h>
 #include <aws/globalaccelerator/model/PortRange.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

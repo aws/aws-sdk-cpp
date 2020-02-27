@@ -18,7 +18,10 @@
 #include <aws/globalaccelerator/GlobalAcceleratorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/globalaccelerator/model/IpAddressType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/globalaccelerator/model/Tag.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -134,6 +137,133 @@ namespace Model
 
 
     /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpAddresses() const{ return m_ipAddresses; }
+
+    /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
+
+    /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline void SetIpAddresses(const Aws::Vector<Aws::String>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
+
+    /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline void SetIpAddresses(Aws::Vector<Aws::String>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
+
+    /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& WithIpAddresses(const Aws::Vector<Aws::String>& value) { SetIpAddresses(value); return *this;}
+
+    /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& WithIpAddresses(Aws::Vector<Aws::String>&& value) { SetIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& AddIpAddresses(const Aws::String& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& AddIpAddresses(Aws::String&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Optionally, if you've added your own IP address pool to Global Accelerator,
+     * you can choose IP addresses from your own pool to use for the accelerator's
+     * static IP addresses. You can specify one or two addresses, separated by a comma.
+     * Do not include the /32 suffix.</p> <p>If you specify only one IP address from
+     * your IP address range, Global Accelerator assigns a second static IP address for
+     * the accelerator from the AWS IP address pool.</p> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * Your Own IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& AddIpAddresses(const char* value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
+
+
+    /**
      * <p>Indicates whether an accelerator is enabled. The value is true or false. The
      * default value is true. </p> <p>If the value is set to true, an accelerator
      * cannot be deleted. If set to false, the accelerator can be deleted.</p>
@@ -210,6 +340,71 @@ namespace Model
      */
     inline CreateAcceleratorRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
+    /**
+     * <p>Create tags for an accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Create tags for an accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Create tags for an accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Create tags for an accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Create tags for an accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Create tags for an accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Create tags for an accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Create tags for an accelerator.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+     * in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer
+     * Guide</i>.</p>
+     */
+    inline CreateAcceleratorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -218,11 +413,17 @@ namespace Model
     IpAddressType m_ipAddressType;
     bool m_ipAddressTypeHasBeenSet;
 
+    Aws::Vector<Aws::String> m_ipAddresses;
+    bool m_ipAddressesHasBeenSet;
+
     bool m_enabled;
     bool m_enabledHasBeenSet;
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

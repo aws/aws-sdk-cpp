@@ -43,27 +43,37 @@ namespace Model
 
 
     /**
-     * <p>Describes metadata about the operation you just executed.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline const Operation& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>Describes metadata about the operation you just executed.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline void SetOperation(const Operation& value) { m_operation = value; }
 
     /**
-     * <p>Describes metadata about the operation you just executed.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
 
     /**
-     * <p>Describes metadata about the operation you just executed.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline PutInstancePublicPortsResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>Describes metadata about the operation you just executed.</p>
+     * <p>An array of objects that describe the result of the action, such as the
+     * status of the request, the time stamp of the request, and the resources affected
+     * by the request.</p>
      */
     inline PutInstancePublicPortsResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
 

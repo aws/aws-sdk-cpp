@@ -38,6 +38,7 @@
 #include <aws/lightsail/model/CloseInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/CopySnapshotRequest.h>
 #include <aws/lightsail/model/CreateCloudFormationStackRequest.h>
+#include <aws/lightsail/model/CreateContactMethodRequest.h>
 #include <aws/lightsail/model/CreateDiskRequest.h>
 #include <aws/lightsail/model/CreateDiskFromSnapshotRequest.h>
 #include <aws/lightsail/model/CreateDiskSnapshotRequest.h>
@@ -52,7 +53,9 @@
 #include <aws/lightsail/model/CreateRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseFromSnapshotRequest.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotRequest.h>
+#include <aws/lightsail/model/DeleteAlarmRequest.h>
 #include <aws/lightsail/model/DeleteAutoSnapshotRequest.h>
+#include <aws/lightsail/model/DeleteContactMethodRequest.h>
 #include <aws/lightsail/model/DeleteDiskRequest.h>
 #include <aws/lightsail/model/DeleteDiskSnapshotRequest.h>
 #include <aws/lightsail/model/DeleteDomainRequest.h>
@@ -73,10 +76,12 @@
 #include <aws/lightsail/model/EnableAddOnRequest.h>
 #include <aws/lightsail/model/ExportSnapshotRequest.h>
 #include <aws/lightsail/model/GetActiveNamesRequest.h>
+#include <aws/lightsail/model/GetAlarmsRequest.h>
 #include <aws/lightsail/model/GetAutoSnapshotsRequest.h>
 #include <aws/lightsail/model/GetBlueprintsRequest.h>
 #include <aws/lightsail/model/GetBundlesRequest.h>
 #include <aws/lightsail/model/GetCloudFormationStackRecordsRequest.h>
+#include <aws/lightsail/model/GetContactMethodsRequest.h>
 #include <aws/lightsail/model/GetDiskRequest.h>
 #include <aws/lightsail/model/GetDiskSnapshotRequest.h>
 #include <aws/lightsail/model/GetDiskSnapshotsRequest.h>
@@ -120,15 +125,18 @@
 #include <aws/lightsail/model/IsVpcPeeredRequest.h>
 #include <aws/lightsail/model/OpenInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/PeerVpcRequest.h>
+#include <aws/lightsail/model/PutAlarmRequest.h>
 #include <aws/lightsail/model/PutInstancePublicPortsRequest.h>
 #include <aws/lightsail/model/RebootInstanceRequest.h>
 #include <aws/lightsail/model/RebootRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/ReleaseStaticIpRequest.h>
+#include <aws/lightsail/model/SendContactMethodVerificationRequest.h>
 #include <aws/lightsail/model/StartInstanceRequest.h>
 #include <aws/lightsail/model/StartRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/StopInstanceRequest.h>
 #include <aws/lightsail/model/StopRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/TagResourceRequest.h>
+#include <aws/lightsail/model/TestAlarmRequest.h>
 #include <aws/lightsail/model/UnpeerVpcRequest.h>
 #include <aws/lightsail/model/UntagResourceRequest.h>
 #include <aws/lightsail/model/UpdateDomainEntryRequest.h>
@@ -486,6 +494,41 @@ void LightsailClient::CreateCloudFormationStackAsync(const CreateCloudFormationS
 void LightsailClient::CreateCloudFormationStackAsyncHelper(const CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCloudFormationStack(request), context);
+}
+
+CreateContactMethodOutcome LightsailClient::CreateContactMethod(const CreateContactMethodRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateContactMethodOutcome(CreateContactMethodResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateContactMethodOutcome(outcome.GetError());
+  }
+}
+
+CreateContactMethodOutcomeCallable LightsailClient::CreateContactMethodCallable(const CreateContactMethodRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateContactMethodOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateContactMethod(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::CreateContactMethodAsync(const CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateContactMethodAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::CreateContactMethodAsyncHelper(const CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateContactMethod(request), context);
 }
 
 CreateDiskOutcome LightsailClient::CreateDisk(const CreateDiskRequest& request) const
@@ -978,6 +1021,41 @@ void LightsailClient::CreateRelationalDatabaseSnapshotAsyncHelper(const CreateRe
   handler(this, request, CreateRelationalDatabaseSnapshot(request), context);
 }
 
+DeleteAlarmOutcome LightsailClient::DeleteAlarm(const DeleteAlarmRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAlarmOutcome(DeleteAlarmResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAlarmOutcome(outcome.GetError());
+  }
+}
+
+DeleteAlarmOutcomeCallable LightsailClient::DeleteAlarmCallable(const DeleteAlarmRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAlarmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlarm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DeleteAlarmAsync(const DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlarmAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DeleteAlarmAsyncHelper(const DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAlarm(request), context);
+}
+
 DeleteAutoSnapshotOutcome LightsailClient::DeleteAutoSnapshot(const DeleteAutoSnapshotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1011,6 +1089,41 @@ void LightsailClient::DeleteAutoSnapshotAsync(const DeleteAutoSnapshotRequest& r
 void LightsailClient::DeleteAutoSnapshotAsyncHelper(const DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAutoSnapshot(request), context);
+}
+
+DeleteContactMethodOutcome LightsailClient::DeleteContactMethod(const DeleteContactMethodRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteContactMethodOutcome(DeleteContactMethodResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteContactMethodOutcome(outcome.GetError());
+  }
+}
+
+DeleteContactMethodOutcomeCallable LightsailClient::DeleteContactMethodCallable(const DeleteContactMethodRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteContactMethodOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteContactMethod(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::DeleteContactMethodAsync(const DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteContactMethodAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::DeleteContactMethodAsyncHelper(const DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteContactMethod(request), context);
 }
 
 DeleteDiskOutcome LightsailClient::DeleteDisk(const DeleteDiskRequest& request) const
@@ -1713,6 +1826,41 @@ void LightsailClient::GetActiveNamesAsyncHelper(const GetActiveNamesRequest& req
   handler(this, request, GetActiveNames(request), context);
 }
 
+GetAlarmsOutcome LightsailClient::GetAlarms(const GetAlarmsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAlarmsOutcome(GetAlarmsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAlarmsOutcome(outcome.GetError());
+  }
+}
+
+GetAlarmsOutcomeCallable LightsailClient::GetAlarmsCallable(const GetAlarmsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAlarmsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAlarms(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetAlarmsAsync(const GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAlarmsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetAlarmsAsyncHelper(const GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAlarms(request), context);
+}
+
 GetAutoSnapshotsOutcome LightsailClient::GetAutoSnapshots(const GetAutoSnapshotsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1851,6 +1999,41 @@ void LightsailClient::GetCloudFormationStackRecordsAsync(const GetCloudFormation
 void LightsailClient::GetCloudFormationStackRecordsAsyncHelper(const GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCloudFormationStackRecords(request), context);
+}
+
+GetContactMethodsOutcome LightsailClient::GetContactMethods(const GetContactMethodsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetContactMethodsOutcome(GetContactMethodsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetContactMethodsOutcome(outcome.GetError());
+  }
+}
+
+GetContactMethodsOutcomeCallable LightsailClient::GetContactMethodsCallable(const GetContactMethodsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContactMethodsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContactMethods(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetContactMethodsAsync(const GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetContactMethodsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetContactMethodsAsyncHelper(const GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContactMethods(request), context);
 }
 
 GetDiskOutcome LightsailClient::GetDisk(const GetDiskRequest& request) const
@@ -3358,6 +3541,41 @@ void LightsailClient::PeerVpcAsyncHelper(const PeerVpcRequest& request, const Pe
   handler(this, request, PeerVpc(request), context);
 }
 
+PutAlarmOutcome LightsailClient::PutAlarm(const PutAlarmRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutAlarmOutcome(PutAlarmResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutAlarmOutcome(outcome.GetError());
+  }
+}
+
+PutAlarmOutcomeCallable LightsailClient::PutAlarmCallable(const PutAlarmRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAlarmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAlarm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::PutAlarmAsync(const PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAlarmAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::PutAlarmAsyncHelper(const PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAlarm(request), context);
+}
+
 PutInstancePublicPortsOutcome LightsailClient::PutInstancePublicPorts(const PutInstancePublicPortsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3496,6 +3714,41 @@ void LightsailClient::ReleaseStaticIpAsync(const ReleaseStaticIpRequest& request
 void LightsailClient::ReleaseStaticIpAsyncHelper(const ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ReleaseStaticIp(request), context);
+}
+
+SendContactMethodVerificationOutcome LightsailClient::SendContactMethodVerification(const SendContactMethodVerificationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SendContactMethodVerificationOutcome(SendContactMethodVerificationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SendContactMethodVerificationOutcome(outcome.GetError());
+  }
+}
+
+SendContactMethodVerificationOutcomeCallable LightsailClient::SendContactMethodVerificationCallable(const SendContactMethodVerificationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendContactMethodVerificationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendContactMethodVerification(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::SendContactMethodVerificationAsync(const SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendContactMethodVerificationAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::SendContactMethodVerificationAsyncHelper(const SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendContactMethodVerification(request), context);
 }
 
 StartInstanceOutcome LightsailClient::StartInstance(const StartInstanceRequest& request) const
@@ -3671,6 +3924,41 @@ void LightsailClient::TagResourceAsync(const TagResourceRequest& request, const 
 void LightsailClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TagResource(request), context);
+}
+
+TestAlarmOutcome LightsailClient::TestAlarm(const TestAlarmRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TestAlarmOutcome(TestAlarmResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TestAlarmOutcome(outcome.GetError());
+  }
+}
+
+TestAlarmOutcomeCallable LightsailClient::TestAlarmCallable(const TestAlarmRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestAlarmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestAlarm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::TestAlarmAsync(const TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestAlarmAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::TestAlarmAsyncHelper(const TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestAlarm(request), context);
 }
 
 UnpeerVpcOutcome LightsailClient::UnpeerVpc(const UnpeerVpcRequest& request) const

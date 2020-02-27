@@ -21,6 +21,7 @@
 #include <aws/globalaccelerator/model/HealthCheckProtocol.h>
 #include <aws/globalaccelerator/model/EndpointConfiguration.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

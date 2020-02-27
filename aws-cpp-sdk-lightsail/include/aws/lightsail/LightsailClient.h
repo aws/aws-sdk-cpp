@@ -29,6 +29,7 @@
 #include <aws/lightsail/model/CloseInstancePublicPortsResult.h>
 #include <aws/lightsail/model/CopySnapshotResult.h>
 #include <aws/lightsail/model/CreateCloudFormationStackResult.h>
+#include <aws/lightsail/model/CreateContactMethodResult.h>
 #include <aws/lightsail/model/CreateDiskResult.h>
 #include <aws/lightsail/model/CreateDiskFromSnapshotResult.h>
 #include <aws/lightsail/model/CreateDiskSnapshotResult.h>
@@ -43,7 +44,9 @@
 #include <aws/lightsail/model/CreateRelationalDatabaseResult.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseFromSnapshotResult.h>
 #include <aws/lightsail/model/CreateRelationalDatabaseSnapshotResult.h>
+#include <aws/lightsail/model/DeleteAlarmResult.h>
 #include <aws/lightsail/model/DeleteAutoSnapshotResult.h>
+#include <aws/lightsail/model/DeleteContactMethodResult.h>
 #include <aws/lightsail/model/DeleteDiskResult.h>
 #include <aws/lightsail/model/DeleteDiskSnapshotResult.h>
 #include <aws/lightsail/model/DeleteDomainResult.h>
@@ -64,10 +67,12 @@
 #include <aws/lightsail/model/EnableAddOnResult.h>
 #include <aws/lightsail/model/ExportSnapshotResult.h>
 #include <aws/lightsail/model/GetActiveNamesResult.h>
+#include <aws/lightsail/model/GetAlarmsResult.h>
 #include <aws/lightsail/model/GetAutoSnapshotsResult.h>
 #include <aws/lightsail/model/GetBlueprintsResult.h>
 #include <aws/lightsail/model/GetBundlesResult.h>
 #include <aws/lightsail/model/GetCloudFormationStackRecordsResult.h>
+#include <aws/lightsail/model/GetContactMethodsResult.h>
 #include <aws/lightsail/model/GetDiskResult.h>
 #include <aws/lightsail/model/GetDiskSnapshotResult.h>
 #include <aws/lightsail/model/GetDiskSnapshotsResult.h>
@@ -111,15 +116,18 @@
 #include <aws/lightsail/model/IsVpcPeeredResult.h>
 #include <aws/lightsail/model/OpenInstancePublicPortsResult.h>
 #include <aws/lightsail/model/PeerVpcResult.h>
+#include <aws/lightsail/model/PutAlarmResult.h>
 #include <aws/lightsail/model/PutInstancePublicPortsResult.h>
 #include <aws/lightsail/model/RebootInstanceResult.h>
 #include <aws/lightsail/model/RebootRelationalDatabaseResult.h>
 #include <aws/lightsail/model/ReleaseStaticIpResult.h>
+#include <aws/lightsail/model/SendContactMethodVerificationResult.h>
 #include <aws/lightsail/model/StartInstanceResult.h>
 #include <aws/lightsail/model/StartRelationalDatabaseResult.h>
 #include <aws/lightsail/model/StopInstanceResult.h>
 #include <aws/lightsail/model/StopRelationalDatabaseResult.h>
 #include <aws/lightsail/model/TagResourceResult.h>
+#include <aws/lightsail/model/TestAlarmResult.h>
 #include <aws/lightsail/model/UnpeerVpcResult.h>
 #include <aws/lightsail/model/UntagResourceResult.h>
 #include <aws/lightsail/model/UpdateDomainEntryResult.h>
@@ -173,6 +181,7 @@ namespace Model
         class CloseInstancePublicPortsRequest;
         class CopySnapshotRequest;
         class CreateCloudFormationStackRequest;
+        class CreateContactMethodRequest;
         class CreateDiskRequest;
         class CreateDiskFromSnapshotRequest;
         class CreateDiskSnapshotRequest;
@@ -187,7 +196,9 @@ namespace Model
         class CreateRelationalDatabaseRequest;
         class CreateRelationalDatabaseFromSnapshotRequest;
         class CreateRelationalDatabaseSnapshotRequest;
+        class DeleteAlarmRequest;
         class DeleteAutoSnapshotRequest;
+        class DeleteContactMethodRequest;
         class DeleteDiskRequest;
         class DeleteDiskSnapshotRequest;
         class DeleteDomainRequest;
@@ -208,10 +219,12 @@ namespace Model
         class EnableAddOnRequest;
         class ExportSnapshotRequest;
         class GetActiveNamesRequest;
+        class GetAlarmsRequest;
         class GetAutoSnapshotsRequest;
         class GetBlueprintsRequest;
         class GetBundlesRequest;
         class GetCloudFormationStackRecordsRequest;
+        class GetContactMethodsRequest;
         class GetDiskRequest;
         class GetDiskSnapshotRequest;
         class GetDiskSnapshotsRequest;
@@ -255,15 +268,18 @@ namespace Model
         class IsVpcPeeredRequest;
         class OpenInstancePublicPortsRequest;
         class PeerVpcRequest;
+        class PutAlarmRequest;
         class PutInstancePublicPortsRequest;
         class RebootInstanceRequest;
         class RebootRelationalDatabaseRequest;
         class ReleaseStaticIpRequest;
+        class SendContactMethodVerificationRequest;
         class StartInstanceRequest;
         class StartRelationalDatabaseRequest;
         class StopInstanceRequest;
         class StopRelationalDatabaseRequest;
         class TagResourceRequest;
+        class TestAlarmRequest;
         class UnpeerVpcRequest;
         class UntagResourceRequest;
         class UpdateDomainEntryRequest;
@@ -279,6 +295,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CloseInstancePublicPortsResult, Aws::Client::AWSError<LightsailErrors>> CloseInstancePublicPortsOutcome;
         typedef Aws::Utils::Outcome<CopySnapshotResult, Aws::Client::AWSError<LightsailErrors>> CopySnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateCloudFormationStackResult, Aws::Client::AWSError<LightsailErrors>> CreateCloudFormationStackOutcome;
+        typedef Aws::Utils::Outcome<CreateContactMethodResult, Aws::Client::AWSError<LightsailErrors>> CreateContactMethodOutcome;
         typedef Aws::Utils::Outcome<CreateDiskResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskOutcome;
         typedef Aws::Utils::Outcome<CreateDiskFromSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskSnapshotOutcome;
@@ -293,7 +310,9 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> CreateRelationalDatabaseOutcome;
         typedef Aws::Utils::Outcome<CreateRelationalDatabaseFromSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateRelationalDatabaseFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateRelationalDatabaseSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateRelationalDatabaseSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteAlarmResult, Aws::Client::AWSError<LightsailErrors>> DeleteAlarmOutcome;
         typedef Aws::Utils::Outcome<DeleteAutoSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteAutoSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteContactMethodResult, Aws::Client::AWSError<LightsailErrors>> DeleteContactMethodOutcome;
         typedef Aws::Utils::Outcome<DeleteDiskResult, Aws::Client::AWSError<LightsailErrors>> DeleteDiskOutcome;
         typedef Aws::Utils::Outcome<DeleteDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> DeleteDiskSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteDomainResult, Aws::Client::AWSError<LightsailErrors>> DeleteDomainOutcome;
@@ -314,10 +333,12 @@ namespace Model
         typedef Aws::Utils::Outcome<EnableAddOnResult, Aws::Client::AWSError<LightsailErrors>> EnableAddOnOutcome;
         typedef Aws::Utils::Outcome<ExportSnapshotResult, Aws::Client::AWSError<LightsailErrors>> ExportSnapshotOutcome;
         typedef Aws::Utils::Outcome<GetActiveNamesResult, Aws::Client::AWSError<LightsailErrors>> GetActiveNamesOutcome;
+        typedef Aws::Utils::Outcome<GetAlarmsResult, Aws::Client::AWSError<LightsailErrors>> GetAlarmsOutcome;
         typedef Aws::Utils::Outcome<GetAutoSnapshotsResult, Aws::Client::AWSError<LightsailErrors>> GetAutoSnapshotsOutcome;
         typedef Aws::Utils::Outcome<GetBlueprintsResult, Aws::Client::AWSError<LightsailErrors>> GetBlueprintsOutcome;
         typedef Aws::Utils::Outcome<GetBundlesResult, Aws::Client::AWSError<LightsailErrors>> GetBundlesOutcome;
         typedef Aws::Utils::Outcome<GetCloudFormationStackRecordsResult, Aws::Client::AWSError<LightsailErrors>> GetCloudFormationStackRecordsOutcome;
+        typedef Aws::Utils::Outcome<GetContactMethodsResult, Aws::Client::AWSError<LightsailErrors>> GetContactMethodsOutcome;
         typedef Aws::Utils::Outcome<GetDiskResult, Aws::Client::AWSError<LightsailErrors>> GetDiskOutcome;
         typedef Aws::Utils::Outcome<GetDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> GetDiskSnapshotOutcome;
         typedef Aws::Utils::Outcome<GetDiskSnapshotsResult, Aws::Client::AWSError<LightsailErrors>> GetDiskSnapshotsOutcome;
@@ -361,15 +382,18 @@ namespace Model
         typedef Aws::Utils::Outcome<IsVpcPeeredResult, Aws::Client::AWSError<LightsailErrors>> IsVpcPeeredOutcome;
         typedef Aws::Utils::Outcome<OpenInstancePublicPortsResult, Aws::Client::AWSError<LightsailErrors>> OpenInstancePublicPortsOutcome;
         typedef Aws::Utils::Outcome<PeerVpcResult, Aws::Client::AWSError<LightsailErrors>> PeerVpcOutcome;
+        typedef Aws::Utils::Outcome<PutAlarmResult, Aws::Client::AWSError<LightsailErrors>> PutAlarmOutcome;
         typedef Aws::Utils::Outcome<PutInstancePublicPortsResult, Aws::Client::AWSError<LightsailErrors>> PutInstancePublicPortsOutcome;
         typedef Aws::Utils::Outcome<RebootInstanceResult, Aws::Client::AWSError<LightsailErrors>> RebootInstanceOutcome;
         typedef Aws::Utils::Outcome<RebootRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> RebootRelationalDatabaseOutcome;
         typedef Aws::Utils::Outcome<ReleaseStaticIpResult, Aws::Client::AWSError<LightsailErrors>> ReleaseStaticIpOutcome;
+        typedef Aws::Utils::Outcome<SendContactMethodVerificationResult, Aws::Client::AWSError<LightsailErrors>> SendContactMethodVerificationOutcome;
         typedef Aws::Utils::Outcome<StartInstanceResult, Aws::Client::AWSError<LightsailErrors>> StartInstanceOutcome;
         typedef Aws::Utils::Outcome<StartRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> StartRelationalDatabaseOutcome;
         typedef Aws::Utils::Outcome<StopInstanceResult, Aws::Client::AWSError<LightsailErrors>> StopInstanceOutcome;
         typedef Aws::Utils::Outcome<StopRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> StopRelationalDatabaseOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<LightsailErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TestAlarmResult, Aws::Client::AWSError<LightsailErrors>> TestAlarmOutcome;
         typedef Aws::Utils::Outcome<UnpeerVpcResult, Aws::Client::AWSError<LightsailErrors>> UnpeerVpcOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<LightsailErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainEntryResult, Aws::Client::AWSError<LightsailErrors>> UpdateDomainEntryOutcome;
@@ -385,6 +409,7 @@ namespace Model
         typedef std::future<CloseInstancePublicPortsOutcome> CloseInstancePublicPortsOutcomeCallable;
         typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
         typedef std::future<CreateCloudFormationStackOutcome> CreateCloudFormationStackOutcomeCallable;
+        typedef std::future<CreateContactMethodOutcome> CreateContactMethodOutcomeCallable;
         typedef std::future<CreateDiskOutcome> CreateDiskOutcomeCallable;
         typedef std::future<CreateDiskFromSnapshotOutcome> CreateDiskFromSnapshotOutcomeCallable;
         typedef std::future<CreateDiskSnapshotOutcome> CreateDiskSnapshotOutcomeCallable;
@@ -399,7 +424,9 @@ namespace Model
         typedef std::future<CreateRelationalDatabaseOutcome> CreateRelationalDatabaseOutcomeCallable;
         typedef std::future<CreateRelationalDatabaseFromSnapshotOutcome> CreateRelationalDatabaseFromSnapshotOutcomeCallable;
         typedef std::future<CreateRelationalDatabaseSnapshotOutcome> CreateRelationalDatabaseSnapshotOutcomeCallable;
+        typedef std::future<DeleteAlarmOutcome> DeleteAlarmOutcomeCallable;
         typedef std::future<DeleteAutoSnapshotOutcome> DeleteAutoSnapshotOutcomeCallable;
+        typedef std::future<DeleteContactMethodOutcome> DeleteContactMethodOutcomeCallable;
         typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
         typedef std::future<DeleteDiskSnapshotOutcome> DeleteDiskSnapshotOutcomeCallable;
         typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
@@ -420,10 +447,12 @@ namespace Model
         typedef std::future<EnableAddOnOutcome> EnableAddOnOutcomeCallable;
         typedef std::future<ExportSnapshotOutcome> ExportSnapshotOutcomeCallable;
         typedef std::future<GetActiveNamesOutcome> GetActiveNamesOutcomeCallable;
+        typedef std::future<GetAlarmsOutcome> GetAlarmsOutcomeCallable;
         typedef std::future<GetAutoSnapshotsOutcome> GetAutoSnapshotsOutcomeCallable;
         typedef std::future<GetBlueprintsOutcome> GetBlueprintsOutcomeCallable;
         typedef std::future<GetBundlesOutcome> GetBundlesOutcomeCallable;
         typedef std::future<GetCloudFormationStackRecordsOutcome> GetCloudFormationStackRecordsOutcomeCallable;
+        typedef std::future<GetContactMethodsOutcome> GetContactMethodsOutcomeCallable;
         typedef std::future<GetDiskOutcome> GetDiskOutcomeCallable;
         typedef std::future<GetDiskSnapshotOutcome> GetDiskSnapshotOutcomeCallable;
         typedef std::future<GetDiskSnapshotsOutcome> GetDiskSnapshotsOutcomeCallable;
@@ -467,15 +496,18 @@ namespace Model
         typedef std::future<IsVpcPeeredOutcome> IsVpcPeeredOutcomeCallable;
         typedef std::future<OpenInstancePublicPortsOutcome> OpenInstancePublicPortsOutcomeCallable;
         typedef std::future<PeerVpcOutcome> PeerVpcOutcomeCallable;
+        typedef std::future<PutAlarmOutcome> PutAlarmOutcomeCallable;
         typedef std::future<PutInstancePublicPortsOutcome> PutInstancePublicPortsOutcomeCallable;
         typedef std::future<RebootInstanceOutcome> RebootInstanceOutcomeCallable;
         typedef std::future<RebootRelationalDatabaseOutcome> RebootRelationalDatabaseOutcomeCallable;
         typedef std::future<ReleaseStaticIpOutcome> ReleaseStaticIpOutcomeCallable;
+        typedef std::future<SendContactMethodVerificationOutcome> SendContactMethodVerificationOutcomeCallable;
         typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
         typedef std::future<StartRelationalDatabaseOutcome> StartRelationalDatabaseOutcomeCallable;
         typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
         typedef std::future<StopRelationalDatabaseOutcome> StopRelationalDatabaseOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<TestAlarmOutcome> TestAlarmOutcomeCallable;
         typedef std::future<UnpeerVpcOutcome> UnpeerVpcOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDomainEntryOutcome> UpdateDomainEntryOutcomeCallable;
@@ -494,6 +526,7 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::CloseInstancePublicPortsRequest&, const Model::CloseInstancePublicPortsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CloseInstancePublicPortsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateCloudFormationStackRequest&, const Model::CreateCloudFormationStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCloudFormationStackResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateContactMethodRequest&, const Model::CreateContactMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactMethodResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskRequest&, const Model::CreateDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskFromSnapshotRequest&, const Model::CreateDiskFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskSnapshotRequest&, const Model::CreateDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskSnapshotResponseReceivedHandler;
@@ -508,7 +541,9 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::CreateRelationalDatabaseRequest&, const Model::CreateRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateRelationalDatabaseFromSnapshotRequest&, const Model::CreateRelationalDatabaseFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRelationalDatabaseFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateRelationalDatabaseSnapshotRequest&, const Model::CreateRelationalDatabaseSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRelationalDatabaseSnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteAlarmRequest&, const Model::DeleteAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlarmResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteAutoSnapshotRequest&, const Model::DeleteAutoSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAutoSnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::DeleteContactMethodRequest&, const Model::DeleteContactMethodOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactMethodResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDiskRequest&, const Model::DeleteDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDiskSnapshotRequest&, const Model::DeleteDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDiskSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
@@ -529,10 +564,12 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::EnableAddOnRequest&, const Model::EnableAddOnOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableAddOnResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::ExportSnapshotRequest&, const Model::ExportSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetActiveNamesRequest&, const Model::GetActiveNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetActiveNamesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetAlarmsRequest&, const Model::GetAlarmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAlarmsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetAutoSnapshotsRequest&, const Model::GetAutoSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoSnapshotsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetBlueprintsRequest&, const Model::GetBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlueprintsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetBundlesRequest&, const Model::GetBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBundlesResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetCloudFormationStackRecordsRequest&, const Model::GetCloudFormationStackRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFormationStackRecordsResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetContactMethodsRequest&, const Model::GetContactMethodsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactMethodsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskRequest&, const Model::GetDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotRequest&, const Model::GetDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotsRequest&, const Model::GetDiskSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotsResponseReceivedHandler;
@@ -576,15 +613,18 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::IsVpcPeeredRequest&, const Model::IsVpcPeeredOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IsVpcPeeredResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::OpenInstancePublicPortsRequest&, const Model::OpenInstancePublicPortsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > OpenInstancePublicPortsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::PeerVpcRequest&, const Model::PeerVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PeerVpcResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::PutAlarmRequest&, const Model::PutAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAlarmResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::PutInstancePublicPortsRequest&, const Model::PutInstancePublicPortsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInstancePublicPortsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::RebootInstanceRequest&, const Model::RebootInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::RebootRelationalDatabaseRequest&, const Model::RebootRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::ReleaseStaticIpRequest&, const Model::ReleaseStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReleaseStaticIpResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::SendContactMethodVerificationRequest&, const Model::SendContactMethodVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendContactMethodVerificationResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartInstanceRequest&, const Model::StartInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StartRelationalDatabaseRequest&, const Model::StartRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StopInstanceRequest&, const Model::StopInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StopRelationalDatabaseRequest&, const Model::StopRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::TestAlarmRequest&, const Model::TestAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestAlarmResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UnpeerVpcRequest&, const Model::UnpeerVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnpeerVpcResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateDomainEntryRequest&, const Model::UpdateDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainEntryResponseReceivedHandler;
@@ -755,12 +795,12 @@ namespace Model
          * TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
          * <p>Once you create and validate your certificate, you can attach it to your load
          * balancer. You can also use this API to rotate the certificates on your account.
-         * Use the <code>attach load balancer tls certificate</code> operation with the
+         * Use the <code>AttachLoadBalancerTlsCertificate</code> action with the
          * non-attached certificate, and it will replace the existing one and become the
-         * attached certificate.</p> <p>The <code>attach load balancer tls
-         * certificate</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by <code>load balancer name</code>. For more
-         * information, see the <a
+         * attached certificate.</p> <p>The <code>AttachLoadBalancerTlsCertificate</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by <code>load balancer name</code>. For more information,
+         * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
@@ -773,12 +813,12 @@ namespace Model
          * TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
          * <p>Once you create and validate your certificate, you can attach it to your load
          * balancer. You can also use this API to rotate the certificates on your account.
-         * Use the <code>attach load balancer tls certificate</code> operation with the
+         * Use the <code>AttachLoadBalancerTlsCertificate</code> action with the
          * non-attached certificate, and it will replace the existing one and become the
-         * attached certificate.</p> <p>The <code>attach load balancer tls
-         * certificate</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by <code>load balancer name</code>. For more
-         * information, see the <a
+         * attached certificate.</p> <p>The <code>AttachLoadBalancerTlsCertificate</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by <code>load balancer name</code>. For more information,
+         * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
@@ -793,12 +833,12 @@ namespace Model
          * TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
          * <p>Once you create and validate your certificate, you can attach it to your load
          * balancer. You can also use this API to rotate the certificates on your account.
-         * Use the <code>attach load balancer tls certificate</code> operation with the
+         * Use the <code>AttachLoadBalancerTlsCertificate</code> action with the
          * non-attached certificate, and it will replace the existing one and become the
-         * attached certificate.</p> <p>The <code>attach load balancer tls
-         * certificate</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by <code>load balancer name</code>. For more
-         * information, see the <a
+         * attached certificate.</p> <p>The <code>AttachLoadBalancerTlsCertificate</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by <code>load balancer name</code>. For more information,
+         * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
@@ -976,6 +1016,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCloudFormationStackAsync(const Model::CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an email or SMS text message contact method.</p> <p>A contact method
+         * is used to send you notifications about your Amazon Lightsail resources. You can
+         * add one email address and one mobile phone number contact method in each AWS
+         * Region. However, SMS text messaging is not supported in some AWS Regions, and
+         * SMS text messages cannot be sent to some countries/regions. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateContactMethodOutcome CreateContactMethod(const Model::CreateContactMethodRequest& request) const;
+
+        /**
+         * <p>Creates an email or SMS text message contact method.</p> <p>A contact method
+         * is used to send you notifications about your Amazon Lightsail resources. You can
+         * add one email address and one mobile phone number contact method in each AWS
+         * Region. However, SMS text messaging is not supported in some AWS Regions, and
+         * SMS text messages cannot be sent to some countries/regions. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateContactMethodOutcomeCallable CreateContactMethodCallable(const Model::CreateContactMethodRequest& request) const;
+
+        /**
+         * <p>Creates an email or SMS text message contact method.</p> <p>A contact method
+         * is used to send you notifications about your Amazon Lightsail resources. You can
+         * add one email address and one mobile phone number contact method in each AWS
+         * Region. However, SMS text messaging is not supported in some AWS Regions, and
+         * SMS text messages cannot be sent to some countries/regions. For more
+         * information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateContactMethod">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateContactMethodAsync(const Model::CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a block storage disk that can be attached to an Amazon Lightsail
@@ -1452,7 +1538,7 @@ namespace Model
         /**
          * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
          * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
-         * <code>create load balancer tls certificate</code> operation supports tag-based
+         * <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based
          * access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -1465,7 +1551,7 @@ namespace Model
         /**
          * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
          * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
-         * <code>create load balancer tls certificate</code> operation supports tag-based
+         * <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based
          * access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -1480,7 +1566,7 @@ namespace Model
         /**
          * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
          * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
-         * <code>create load balancer tls certificate</code> operation supports tag-based
+         * <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based
          * access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -1622,6 +1708,46 @@ namespace Model
         virtual void CreateRelationalDatabaseSnapshotAsync(const Model::CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an alarm.</p> <p>An alarm is used to monitor a single metric for one
+         * of your resources. When a metric condition is met, the alarm can notify you by
+         * email, SMS text message, and a banner displayed on the Amazon Lightsail console.
+         * For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAlarmOutcome DeleteAlarm(const Model::DeleteAlarmRequest& request) const;
+
+        /**
+         * <p>Deletes an alarm.</p> <p>An alarm is used to monitor a single metric for one
+         * of your resources. When a metric condition is met, the alarm can notify you by
+         * email, SMS text message, and a banner displayed on the Amazon Lightsail console.
+         * For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAlarmOutcomeCallable DeleteAlarmCallable(const Model::DeleteAlarmRequest& request) const;
+
+        /**
+         * <p>Deletes an alarm.</p> <p>An alarm is used to monitor a single metric for one
+         * of your resources. When a metric condition is met, the alarm can notify you by
+         * email, SMS text message, and a banner displayed on the Amazon Lightsail console.
+         * For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAlarm">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAlarmAsync(const Model::DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an automatic snapshot of an instance or disk. For more information,
          * see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
@@ -1654,6 +1780,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAutoSnapshotAsync(const Model::DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a contact method.</p> <p>A contact method is used to send you
+         * notifications about your Amazon Lightsail resources. You can add one email
+         * address and one mobile phone number contact method in each AWS Region. However,
+         * SMS text messaging is not supported in some AWS Regions, and SMS text messages
+         * cannot be sent to some countries/regions. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContactMethodOutcome DeleteContactMethod(const Model::DeleteContactMethodRequest& request) const;
+
+        /**
+         * <p>Deletes a contact method.</p> <p>A contact method is used to send you
+         * notifications about your Amazon Lightsail resources. You can add one email
+         * address and one mobile phone number contact method in each AWS Region. However,
+         * SMS text messaging is not supported in some AWS Regions, and SMS text messages
+         * cannot be sent to some countries/regions. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteContactMethodOutcomeCallable DeleteContactMethodCallable(const Model::DeleteContactMethodRequest& request) const;
+
+        /**
+         * <p>Deletes a contact method.</p> <p>A contact method is used to send you
+         * notifications about your Amazon Lightsail resources. You can add one email
+         * address and one mobile phone number contact method in each AWS Region. However,
+         * SMS text messaging is not supported in some AWS Regions, and SMS text messages
+         * cannot be sent to some countries/regions. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteContactMethod">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteContactMethodAsync(const Model::DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified block storage disk. The disk must be in the
@@ -2059,7 +2228,7 @@ namespace Model
 
         /**
          * <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
-         * <p>The <code>delete load balancer tls certificate</code> operation supports
+         * <p>The <code>DeleteLoadBalancerTlsCertificate</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -2071,7 +2240,7 @@ namespace Model
 
         /**
          * <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
-         * <p>The <code>delete load balancer tls certificate</code> operation supports
+         * <p>The <code>DeleteLoadBalancerTlsCertificate</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -2085,7 +2254,7 @@ namespace Model
 
         /**
          * <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
-         * <p>The <code>delete load balancer tls certificate</code> operation supports
+         * <p>The <code>DeleteLoadBalancerTlsCertificate</code> operation supports
          * tag-based access control via resource tags applied to the resource identified by
          * <code>load balancer name</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
@@ -2489,6 +2658,55 @@ namespace Model
         virtual void GetActiveNamesAsync(const Model::GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the configured alarms. Specify an alarm name in
+         * your request to return information about a specific alarm, or specify a
+         * monitored resource name to return information about all alarms for a specific
+         * resource.</p> <p>An alarm is used to monitor a single metric for one of your
+         * resources. When a metric condition is met, the alarm can notify you by email,
+         * SMS text message, and a banner displayed on the Amazon Lightsail console. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAlarmsOutcome GetAlarms(const Model::GetAlarmsRequest& request) const;
+
+        /**
+         * <p>Returns information about the configured alarms. Specify an alarm name in
+         * your request to return information about a specific alarm, or specify a
+         * monitored resource name to return information about all alarms for a specific
+         * resource.</p> <p>An alarm is used to monitor a single metric for one of your
+         * resources. When a metric condition is met, the alarm can notify you by email,
+         * SMS text message, and a banner displayed on the Amazon Lightsail console. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAlarmsOutcomeCallable GetAlarmsCallable(const Model::GetAlarmsRequest& request) const;
+
+        /**
+         * <p>Returns information about the configured alarms. Specify an alarm name in
+         * your request to return information about a specific alarm, or specify a
+         * monitored resource name to return information about all alarms for a specific
+         * resource.</p> <p>An alarm is used to monitor a single metric for one of your
+         * resources. When a metric condition is met, the alarm can notify you by email,
+         * SMS text message, and a banner displayed on the Amazon Lightsail console. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAlarms">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAlarmsAsync(const Model::GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the available automatic snapshots for an instance or disk. For more
          * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
@@ -2637,6 +2855,55 @@ namespace Model
         virtual void GetCloudFormationStackRecordsAsync(const Model::GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the configured contact methods. Specify a protocol
+         * in your request to return information about a specific contact method.</p> <p>A
+         * contact method is used to send you notifications about your Amazon Lightsail
+         * resources. You can add one email address and one mobile phone number contact
+         * method in each AWS Region. However, SMS text messaging is not supported in some
+         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContactMethodsOutcome GetContactMethods(const Model::GetContactMethodsRequest& request) const;
+
+        /**
+         * <p>Returns information about the configured contact methods. Specify a protocol
+         * in your request to return information about a specific contact method.</p> <p>A
+         * contact method is used to send you notifications about your Amazon Lightsail
+         * resources. You can add one email address and one mobile phone number contact
+         * method in each AWS Region. However, SMS text messaging is not supported in some
+         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContactMethodsOutcomeCallable GetContactMethodsCallable(const Model::GetContactMethodsRequest& request) const;
+
+        /**
+         * <p>Returns information about the configured contact methods. Specify a protocol
+         * in your request to return information about a specific contact method.</p> <p>A
+         * contact method is used to send you notifications about your Amazon Lightsail
+         * resources. You can add one email address and one mobile phone number contact
+         * method in each AWS Region. However, SMS text messaging is not supported in some
+         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetContactMethods">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContactMethodsAsync(const Model::GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a specific block storage disk.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisk">AWS
@@ -2694,10 +2961,7 @@ namespace Model
 
         /**
          * <p>Returns information about all block storage disk snapshots in your AWS
-         * account and region.</p> <p>If you are describing a long list of disk snapshots,
-         * you can paginate the output to make the list more manageable. You can use the
-         * pageToken and nextPageToken values to retrieve the next items in the
-         * list.</p><p><h3>See Also:</h3>   <a
+         * account and region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">AWS
          * API Reference</a></p>
          */
@@ -2705,10 +2969,7 @@ namespace Model
 
         /**
          * <p>Returns information about all block storage disk snapshots in your AWS
-         * account and region.</p> <p>If you are describing a long list of disk snapshots,
-         * you can paginate the output to make the list more manageable. You can use the
-         * pageToken and nextPageToken values to retrieve the next items in the
-         * list.</p><p><h3>See Also:</h3>   <a
+         * account and region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">AWS
          * API Reference</a></p>
          *
@@ -2718,10 +2979,7 @@ namespace Model
 
         /**
          * <p>Returns information about all block storage disk snapshots in your AWS
-         * account and region.</p> <p>If you are describing a long list of disk snapshots,
-         * you can paginate the output to make the list more manageable. You can use the
-         * pageToken and nextPageToken values to retrieve the next items in the
-         * list.</p><p><h3>See Also:</h3>   <a
+         * account and region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDiskSnapshots">AWS
          * API Reference</a></p>
          *
@@ -2731,10 +2989,7 @@ namespace Model
 
         /**
          * <p>Returns information about all block storage disks in your AWS account and
-         * region.</p> <p>If you are describing a long list of disks, you can paginate the
-         * output to make the list more manageable. You can use the pageToken and
-         * nextPageToken values to retrieve the next items in the list.</p><p><h3>See
-         * Also:</h3>   <a
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">AWS
          * API Reference</a></p>
          */
@@ -2742,10 +2997,7 @@ namespace Model
 
         /**
          * <p>Returns information about all block storage disks in your AWS account and
-         * region.</p> <p>If you are describing a long list of disks, you can paginate the
-         * output to make the list more manageable. You can use the pageToken and
-         * nextPageToken values to retrieve the next items in the list.</p><p><h3>See
-         * Also:</h3>   <a
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">AWS
          * API Reference</a></p>
          *
@@ -2755,10 +3007,7 @@ namespace Model
 
         /**
          * <p>Returns information about all block storage disks in your AWS account and
-         * region.</p> <p>If you are describing a long list of disks, you can paginate the
-         * output to make the list more manageable. You can use the pageToken and
-         * nextPageToken values to retrieve the next items in the list.</p><p><h3>See
-         * Also:</h3>   <a
+         * region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDisks">AWS
          * API Reference</a></p>
          *
@@ -3242,20 +3491,16 @@ namespace Model
         virtual void GetLoadBalancerTlsCertificatesAsync(const Model::GetLoadBalancerTlsCertificatesRequest& request, const GetLoadBalancerTlsCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about all load balancers in an account.</p> <p>If you are
-         * describing a long list of load balancers, you can paginate the output to make
-         * the list more manageable. You can use the pageToken and nextPageToken values to
-         * retrieve the next items in the list.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all load balancers in an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">AWS
          * API Reference</a></p>
          */
         virtual Model::GetLoadBalancersOutcome GetLoadBalancers(const Model::GetLoadBalancersRequest& request) const;
 
         /**
-         * <p>Returns information about all load balancers in an account.</p> <p>If you are
-         * describing a long list of load balancers, you can paginate the output to make
-         * the list more manageable. You can use the pageToken and nextPageToken values to
-         * retrieve the next items in the list.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all load balancers in an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">AWS
          * API Reference</a></p>
          *
@@ -3264,10 +3509,8 @@ namespace Model
         virtual Model::GetLoadBalancersOutcomeCallable GetLoadBalancersCallable(const Model::GetLoadBalancersRequest& request) const;
 
         /**
-         * <p>Returns information about all load balancers in an account.</p> <p>If you are
-         * describing a long list of load balancers, you can paginate the output to make
-         * the list more manageable. You can use the pageToken and nextPageToken values to
-         * retrieve the next items in the list.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all load balancers in an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetLoadBalancers">AWS
          * API Reference</a></p>
          *
@@ -3949,6 +4192,67 @@ namespace Model
         virtual void PeerVpcAsync(const Model::PeerVpcRequest& request, const PeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or updates an alarm, and associates it with the specified metric.</p>
+         * <p>An alarm is used to monitor a single metric for one of your resources. When a
+         * metric condition is met, the alarm can notify you by email, SMS text message,
+         * and a banner displayed on the Amazon Lightsail console. For more information,
+         * see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p> <p>When this action creates an alarm, the alarm
+         * state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then
+         * evaluated and its state is set appropriately. Any actions associated with the
+         * new state are then executed.</p> <p>When you update an existing alarm, its state
+         * is left unchanged, but the update completely overwrites the previous
+         * configuration of the alarm. The alarm is then evaluated with the updated
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAlarmOutcome PutAlarm(const Model::PutAlarmRequest& request) const;
+
+        /**
+         * <p>Creates or updates an alarm, and associates it with the specified metric.</p>
+         * <p>An alarm is used to monitor a single metric for one of your resources. When a
+         * metric condition is met, the alarm can notify you by email, SMS text message,
+         * and a banner displayed on the Amazon Lightsail console. For more information,
+         * see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p> <p>When this action creates an alarm, the alarm
+         * state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then
+         * evaluated and its state is set appropriately. Any actions associated with the
+         * new state are then executed.</p> <p>When you update an existing alarm, its state
+         * is left unchanged, but the update completely overwrites the previous
+         * configuration of the alarm. The alarm is then evaluated with the updated
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAlarmOutcomeCallable PutAlarmCallable(const Model::PutAlarmRequest& request) const;
+
+        /**
+         * <p>Creates or updates an alarm, and associates it with the specified metric.</p>
+         * <p>An alarm is used to monitor a single metric for one of your resources. When a
+         * metric condition is met, the alarm can notify you by email, SMS text message,
+         * and a banner displayed on the Amazon Lightsail console. For more information,
+         * see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p> <p>When this action creates an alarm, the alarm
+         * state is immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then
+         * evaluated and its state is set appropriately. Any actions associated with the
+         * new state are then executed.</p> <p>When you update an existing alarm, its state
+         * is left unchanged, but the update completely overwrites the previous
+         * configuration of the alarm. The alarm is then evaluated with the updated
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutAlarm">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAlarmAsync(const Model::PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
          * all ports for every protocol not included in the current request.</p> <p>The
          * <code>put instance public ports</code> operation supports tag-based access
@@ -4095,6 +4399,70 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ReleaseStaticIpAsync(const Model::ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Sends a verification request to an email contact method to ensure it’s owned
+         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * contact method is used to send you notifications about your Amazon Lightsail
+         * resources. You can add one email address and one mobile phone number contact
+         * method in each AWS Region. However, SMS text messaging is not supported in some
+         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
+         * method when you initially create it. Use this action to send another
+         * verification request if a previous verification request was deleted, or has
+         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * method until after it is verified, and confirmed as valid.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendContactMethodVerificationOutcome SendContactMethodVerification(const Model::SendContactMethodVerificationRequest& request) const;
+
+        /**
+         * <p>Sends a verification request to an email contact method to ensure it’s owned
+         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * contact method is used to send you notifications about your Amazon Lightsail
+         * resources. You can add one email address and one mobile phone number contact
+         * method in each AWS Region. However, SMS text messaging is not supported in some
+         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
+         * method when you initially create it. Use this action to send another
+         * verification request if a previous verification request was deleted, or has
+         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * method until after it is verified, and confirmed as valid.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendContactMethodVerificationOutcomeCallable SendContactMethodVerificationCallable(const Model::SendContactMethodVerificationRequest& request) const;
+
+        /**
+         * <p>Sends a verification request to an email contact method to ensure it’s owned
+         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * contact method is used to send you notifications about your Amazon Lightsail
+         * resources. You can add one email address and one mobile phone number contact
+         * method in each AWS Region. However, SMS text messaging is not supported in some
+         * AWS Regions, and SMS text messages cannot be sent to some countries/regions. For
+         * more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications
+         * in Amazon Lightsail</a>.</p> <p>A verification request is sent to the contact
+         * method when you initially create it. Use this action to send another
+         * verification request if a previous verification request was deleted, or has
+         * expired.</p> <important> <p>Notifications are not sent to an email contact
+         * method until after it is verified, and confirmed as valid.</p>
+         * </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SendContactMethodVerification">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendContactMethodVerificationAsync(const Model::SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
@@ -4343,6 +4711,55 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Tests an alarm by displaying a banner on the Amazon Lightsail console. If a
+         * notification trigger is configured for the specified alarm, the test also sends
+         * a notification to the notification protocol (<code>Email</code> and/or
+         * <code>SMS</code>) configured for the alarm.</p> <p>An alarm is used to monitor a
+         * single metric for one of your resources. When a metric condition is met, the
+         * alarm can notify you by email, SMS text message, and a banner displayed on the
+         * Amazon Lightsail console. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestAlarmOutcome TestAlarm(const Model::TestAlarmRequest& request) const;
+
+        /**
+         * <p>Tests an alarm by displaying a banner on the Amazon Lightsail console. If a
+         * notification trigger is configured for the specified alarm, the test also sends
+         * a notification to the notification protocol (<code>Email</code> and/or
+         * <code>SMS</code>) configured for the alarm.</p> <p>An alarm is used to monitor a
+         * single metric for one of your resources. When a metric condition is met, the
+         * alarm can notify you by email, SMS text message, and a banner displayed on the
+         * Amazon Lightsail console. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TestAlarmOutcomeCallable TestAlarmCallable(const Model::TestAlarmRequest& request) const;
+
+        /**
+         * <p>Tests an alarm by displaying a banner on the Amazon Lightsail console. If a
+         * notification trigger is configured for the specified alarm, the test also sends
+         * a notification to the notification protocol (<code>Email</code> and/or
+         * <code>SMS</code>) configured for the alarm.</p> <p>An alarm is used to monitor a
+         * single metric for one of your resources. When a metric condition is met, the
+         * alarm can notify you by email, SMS text message, and a banner displayed on the
+         * Amazon Lightsail console. For more information, see <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms
+         * in Amazon Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TestAlarm">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TestAlarmAsync(const Model::TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to unpeer the Lightsail VPC from the user's default
@@ -4617,6 +5034,7 @@ namespace Model
         void CloseInstancePublicPortsAsyncHelper(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCloudFormationStackAsyncHelper(const Model::CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateContactMethodAsyncHelper(const Model::CreateContactMethodRequest& request, const CreateContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskAsyncHelper(const Model::CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskFromSnapshotAsyncHelper(const Model::CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskSnapshotAsyncHelper(const Model::CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4631,7 +5049,9 @@ namespace Model
         void CreateRelationalDatabaseAsyncHelper(const Model::CreateRelationalDatabaseRequest& request, const CreateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRelationalDatabaseFromSnapshotAsyncHelper(const Model::CreateRelationalDatabaseFromSnapshotRequest& request, const CreateRelationalDatabaseFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRelationalDatabaseSnapshotAsyncHelper(const Model::CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAlarmAsyncHelper(const Model::DeleteAlarmRequest& request, const DeleteAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAutoSnapshotAsyncHelper(const Model::DeleteAutoSnapshotRequest& request, const DeleteAutoSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteContactMethodAsyncHelper(const Model::DeleteContactMethodRequest& request, const DeleteContactMethodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDiskAsyncHelper(const Model::DeleteDiskRequest& request, const DeleteDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDiskSnapshotAsyncHelper(const Model::DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4652,10 +5072,12 @@ namespace Model
         void EnableAddOnAsyncHelper(const Model::EnableAddOnRequest& request, const EnableAddOnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportSnapshotAsyncHelper(const Model::ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetActiveNamesAsyncHelper(const Model::GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAlarmsAsyncHelper(const Model::GetAlarmsRequest& request, const GetAlarmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAutoSnapshotsAsyncHelper(const Model::GetAutoSnapshotsRequest& request, const GetAutoSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlueprintsAsyncHelper(const Model::GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBundlesAsyncHelper(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCloudFormationStackRecordsAsyncHelper(const Model::GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContactMethodsAsyncHelper(const Model::GetContactMethodsRequest& request, const GetContactMethodsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskAsyncHelper(const Model::GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskSnapshotAsyncHelper(const Model::GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskSnapshotsAsyncHelper(const Model::GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4699,15 +5121,18 @@ namespace Model
         void IsVpcPeeredAsyncHelper(const Model::IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void OpenInstancePublicPortsAsyncHelper(const Model::OpenInstancePublicPortsRequest& request, const OpenInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PeerVpcAsyncHelper(const Model::PeerVpcRequest& request, const PeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAlarmAsyncHelper(const Model::PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutInstancePublicPortsAsyncHelper(const Model::PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootInstanceAsyncHelper(const Model::RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootRelationalDatabaseAsyncHelper(const Model::RebootRelationalDatabaseRequest& request, const RebootRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ReleaseStaticIpAsyncHelper(const Model::ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendContactMethodVerificationAsyncHelper(const Model::SendContactMethodVerificationRequest& request, const SendContactMethodVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartInstanceAsyncHelper(const Model::StartInstanceRequest& request, const StartInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartRelationalDatabaseAsyncHelper(const Model::StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInstanceAsyncHelper(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopRelationalDatabaseAsyncHelper(const Model::StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TestAlarmAsyncHelper(const Model::TestAlarmRequest& request, const TestAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnpeerVpcAsyncHelper(const Model::UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainEntryAsyncHelper(const Model::UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

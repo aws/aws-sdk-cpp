@@ -91,53 +91,309 @@ namespace Model
 
 
     /**
-     * <p>The metric name to get data about. </p>
+     * <p>The metric for which you want to return information.</p> <p>Valid instance
+     * metric names are listed below, along with the most useful
+     * <code>statistics</code> to include in your request, and the published
+     * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
+     * — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on
+     * the instance. Tools in your operating system can show a lower percentage than
+     * Lightsail when the instance is not allocated a full processor core.</p> <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+     * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * number of bytes received on all network interfaces by the instance. This metric
+     * identifies the volume of incoming network traffic to the instance. The number
+     * reported is the number of bytes received during the period. Because this metric
+     * is reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * number of bytes sent out on all network interfaces by the instance. This metric
+     * identifies the volume of outgoing network traffic from the instance. The number
+     * reported is the number of bytes sent during the period. Because this metric is
+     * reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * Reports whether the instance passed or failed both the instance status check and
+     * the system status check. This metric can be either 0 (passed) or 1 (failed).
+     * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * passed or failed the instance status check. This metric can be either 0 (passed)
+     * or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
+     * </b> — Reports whether the instance passed or failed the system status check.
+     * This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
+     * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
+     * published unit is <code>Count</code>.</p> </li> </ul>
      */
     inline const InstanceMetricName& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The metric name to get data about. </p>
+     * <p>The metric for which you want to return information.</p> <p>Valid instance
+     * metric names are listed below, along with the most useful
+     * <code>statistics</code> to include in your request, and the published
+     * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
+     * — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on
+     * the instance. Tools in your operating system can show a lower percentage than
+     * Lightsail when the instance is not allocated a full processor core.</p> <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+     * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * number of bytes received on all network interfaces by the instance. This metric
+     * identifies the volume of incoming network traffic to the instance. The number
+     * reported is the number of bytes received during the period. Because this metric
+     * is reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * number of bytes sent out on all network interfaces by the instance. This metric
+     * identifies the volume of outgoing network traffic from the instance. The number
+     * reported is the number of bytes sent during the period. Because this metric is
+     * reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * Reports whether the instance passed or failed both the instance status check and
+     * the system status check. This metric can be either 0 (passed) or 1 (failed).
+     * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * passed or failed the instance status check. This metric can be either 0 (passed)
+     * or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
+     * </b> — Reports whether the instance passed or failed the system status check.
+     * This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
+     * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
+     * published unit is <code>Count</code>.</p> </li> </ul>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p>The metric name to get data about. </p>
+     * <p>The metric for which you want to return information.</p> <p>Valid instance
+     * metric names are listed below, along with the most useful
+     * <code>statistics</code> to include in your request, and the published
+     * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
+     * — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on
+     * the instance. Tools in your operating system can show a lower percentage than
+     * Lightsail when the instance is not allocated a full processor core.</p> <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+     * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * number of bytes received on all network interfaces by the instance. This metric
+     * identifies the volume of incoming network traffic to the instance. The number
+     * reported is the number of bytes received during the period. Because this metric
+     * is reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * number of bytes sent out on all network interfaces by the instance. This metric
+     * identifies the volume of outgoing network traffic from the instance. The number
+     * reported is the number of bytes sent during the period. Because this metric is
+     * reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * Reports whether the instance passed or failed both the instance status check and
+     * the system status check. This metric can be either 0 (passed) or 1 (failed).
+     * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * passed or failed the instance status check. This metric can be either 0 (passed)
+     * or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
+     * </b> — Reports whether the instance passed or failed the system status check.
+     * This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
+     * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
+     * published unit is <code>Count</code>.</p> </li> </ul>
      */
     inline void SetMetricName(const InstanceMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The metric name to get data about. </p>
+     * <p>The metric for which you want to return information.</p> <p>Valid instance
+     * metric names are listed below, along with the most useful
+     * <code>statistics</code> to include in your request, and the published
+     * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
+     * — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on
+     * the instance. Tools in your operating system can show a lower percentage than
+     * Lightsail when the instance is not allocated a full processor core.</p> <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+     * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * number of bytes received on all network interfaces by the instance. This metric
+     * identifies the volume of incoming network traffic to the instance. The number
+     * reported is the number of bytes received during the period. Because this metric
+     * is reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * number of bytes sent out on all network interfaces by the instance. This metric
+     * identifies the volume of outgoing network traffic from the instance. The number
+     * reported is the number of bytes sent during the period. Because this metric is
+     * reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * Reports whether the instance passed or failed both the instance status check and
+     * the system status check. This metric can be either 0 (passed) or 1 (failed).
+     * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * passed or failed the instance status check. This metric can be either 0 (passed)
+     * or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
+     * </b> — Reports whether the instance passed or failed the system status check.
+     * This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
+     * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
+     * published unit is <code>Count</code>.</p> </li> </ul>
      */
     inline void SetMetricName(InstanceMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>The metric name to get data about. </p>
+     * <p>The metric for which you want to return information.</p> <p>Valid instance
+     * metric names are listed below, along with the most useful
+     * <code>statistics</code> to include in your request, and the published
+     * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
+     * — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on
+     * the instance. Tools in your operating system can show a lower percentage than
+     * Lightsail when the instance is not allocated a full processor core.</p> <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+     * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * number of bytes received on all network interfaces by the instance. This metric
+     * identifies the volume of incoming network traffic to the instance. The number
+     * reported is the number of bytes received during the period. Because this metric
+     * is reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * number of bytes sent out on all network interfaces by the instance. This metric
+     * identifies the volume of outgoing network traffic from the instance. The number
+     * reported is the number of bytes sent during the period. Because this metric is
+     * reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * Reports whether the instance passed or failed both the instance status check and
+     * the system status check. This metric can be either 0 (passed) or 1 (failed).
+     * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * passed or failed the instance status check. This metric can be either 0 (passed)
+     * or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
+     * </b> — Reports whether the instance passed or failed the system status check.
+     * This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
+     * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
+     * published unit is <code>Count</code>.</p> </li> </ul>
      */
     inline GetInstanceMetricDataRequest& WithMetricName(const InstanceMetricName& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The metric name to get data about. </p>
+     * <p>The metric for which you want to return information.</p> <p>Valid instance
+     * metric names are listed below, along with the most useful
+     * <code>statistics</code> to include in your request, and the published
+     * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
+     * — The percentage of allocated compute units that are currently in use on the
+     * instance. This metric identifies the processing power to run the applications on
+     * the instance. Tools in your operating system can show a lower percentage than
+     * Lightsail when the instance is not allocated a full processor core.</p> <p>
+     * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
+     * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * number of bytes received on all network interfaces by the instance. This metric
+     * identifies the volume of incoming network traffic to the instance. The number
+     * reported is the number of bytes received during the period. Because this metric
+     * is reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * number of bytes sent out on all network interfaces by the instance. This metric
+     * identifies the volume of outgoing network traffic from the instance. The number
+     * reported is the number of bytes sent during the period. Because this metric is
+     * reported in 5-minute intervals, divide the reported number by 300 to find
+     * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * Reports whether the instance passed or failed both the instance status check and
+     * the system status check. This metric can be either 0 (passed) or 1 (failed).
+     * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
+     * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
+     * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
+     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * passed or failed the instance status check. This metric can be either 0 (passed)
+     * or 1 (failed). This metric data is available in 1-minute (60 seconds)
+     * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
+     * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
+     * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
+     * </b> — Reports whether the instance passed or failed the system status check.
+     * This metric can be either 0 (passed) or 1 (failed). This metric data is
+     * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
+     * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
+     * published unit is <code>Count</code>.</p> </li> </ul>
      */
     inline GetInstanceMetricDataRequest& WithMetricName(InstanceMetricName&& value) { SetMetricName(std::move(value)); return *this;}
 
 
     /**
-     * <p>The granularity, in seconds, of the returned data points.</p>
+     * <p>The granularity, in seconds, of the returned data points.</p> <p>The
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     * <code>StatusCheckFailed_System</code> instance metric data is available in
+     * 1-minute (60 seconds) granularity. All other instance metric data is available
+     * in 5-minute (300 seconds) granularity.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The granularity, in seconds, of the returned data points.</p>
+     * <p>The granularity, in seconds, of the returned data points.</p> <p>The
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     * <code>StatusCheckFailed_System</code> instance metric data is available in
+     * 1-minute (60 seconds) granularity. All other instance metric data is available
+     * in 5-minute (300 seconds) granularity.</p>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
     /**
-     * <p>The granularity, in seconds, of the returned data points.</p>
+     * <p>The granularity, in seconds, of the returned data points.</p> <p>The
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     * <code>StatusCheckFailed_System</code> instance metric data is available in
+     * 1-minute (60 seconds) granularity. All other instance metric data is available
+     * in 5-minute (300 seconds) granularity.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The granularity, in seconds, of the returned data points.</p>
+     * <p>The granularity, in seconds, of the returned data points.</p> <p>The
+     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
+     * <code>StatusCheckFailed_System</code> instance metric data is available in
+     * 1-minute (60 seconds) granularity. All other instance metric data is available
+     * in 5-minute (300 seconds) granularity.</p>
      */
     inline GetInstanceMetricDataRequest& WithPeriod(int value) { SetPeriod(value); return *this;}
 
@@ -205,73 +461,197 @@ namespace Model
 
 
     /**
-     * <p>The unit. The list of valid values is below.</p>
+     * <p>The unit for the metric data request. Valid units depend on the metric data
+     * being required. For the valid units with each available metric, see the
+     * <code>metricName</code> parameter.</p>
      */
     inline const MetricUnit& GetUnit() const{ return m_unit; }
 
     /**
-     * <p>The unit. The list of valid values is below.</p>
+     * <p>The unit for the metric data request. Valid units depend on the metric data
+     * being required. For the valid units with each available metric, see the
+     * <code>metricName</code> parameter.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
-     * <p>The unit. The list of valid values is below.</p>
+     * <p>The unit for the metric data request. Valid units depend on the metric data
+     * being required. For the valid units with each available metric, see the
+     * <code>metricName</code> parameter.</p>
      */
     inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The unit. The list of valid values is below.</p>
+     * <p>The unit for the metric data request. Valid units depend on the metric data
+     * being required. For the valid units with each available metric, see the
+     * <code>metricName</code> parameter.</p>
      */
     inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
-     * <p>The unit. The list of valid values is below.</p>
+     * <p>The unit for the metric data request. Valid units depend on the metric data
+     * being required. For the valid units with each available metric, see the
+     * <code>metricName</code> parameter.</p>
      */
     inline GetInstanceMetricDataRequest& WithUnit(const MetricUnit& value) { SetUnit(value); return *this;}
 
     /**
-     * <p>The unit. The list of valid values is below.</p>
+     * <p>The unit for the metric data request. Valid units depend on the metric data
+     * being required. For the valid units with each available metric, see the
+     * <code>metricName</code> parameter.</p>
      */
     inline GetInstanceMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
 
 
     /**
-     * <p>The instance statistics. </p>
+     * <p>The statistic for the metric.</p> <p>The following statistics are
+     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * during the specified period. Use this value to determine low volumes of activity
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * All values submitted for the matching metric added together. You can use this
+     * statistic to determine the total volume of a metric.</p> </li> <li> <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * period. By comparing this statistic with the Minimum and Maximum values, you can
+     * determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum values. This comparison helps you to know when to increase
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * count, or number, of data points used for the statistical calculation.</p> </li>
+     * </ul>
      */
     inline const Aws::Vector<MetricStatistic>& GetStatistics() const{ return m_statistics; }
 
     /**
-     * <p>The instance statistics. </p>
+     * <p>The statistic for the metric.</p> <p>The following statistics are
+     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * during the specified period. Use this value to determine low volumes of activity
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * All values submitted for the matching metric added together. You can use this
+     * statistic to determine the total volume of a metric.</p> </li> <li> <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * period. By comparing this statistic with the Minimum and Maximum values, you can
+     * determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum values. This comparison helps you to know when to increase
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * count, or number, of data points used for the statistical calculation.</p> </li>
+     * </ul>
      */
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
 
     /**
-     * <p>The instance statistics. </p>
+     * <p>The statistic for the metric.</p> <p>The following statistics are
+     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * during the specified period. Use this value to determine low volumes of activity
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * All values submitted for the matching metric added together. You can use this
+     * statistic to determine the total volume of a metric.</p> </li> <li> <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * period. By comparing this statistic with the Minimum and Maximum values, you can
+     * determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum values. This comparison helps you to know when to increase
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * count, or number, of data points used for the statistical calculation.</p> </li>
+     * </ul>
      */
     inline void SetStatistics(const Aws::Vector<MetricStatistic>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
-     * <p>The instance statistics. </p>
+     * <p>The statistic for the metric.</p> <p>The following statistics are
+     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * during the specified period. Use this value to determine low volumes of activity
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * All values submitted for the matching metric added together. You can use this
+     * statistic to determine the total volume of a metric.</p> </li> <li> <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * period. By comparing this statistic with the Minimum and Maximum values, you can
+     * determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum values. This comparison helps you to know when to increase
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * count, or number, of data points used for the statistical calculation.</p> </li>
+     * </ul>
      */
     inline void SetStatistics(Aws::Vector<MetricStatistic>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
 
     /**
-     * <p>The instance statistics. </p>
+     * <p>The statistic for the metric.</p> <p>The following statistics are
+     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * during the specified period. Use this value to determine low volumes of activity
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * All values submitted for the matching metric added together. You can use this
+     * statistic to determine the total volume of a metric.</p> </li> <li> <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * period. By comparing this statistic with the Minimum and Maximum values, you can
+     * determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum values. This comparison helps you to know when to increase
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * count, or number, of data points used for the statistical calculation.</p> </li>
+     * </ul>
      */
     inline GetInstanceMetricDataRequest& WithStatistics(const Aws::Vector<MetricStatistic>& value) { SetStatistics(value); return *this;}
 
     /**
-     * <p>The instance statistics. </p>
+     * <p>The statistic for the metric.</p> <p>The following statistics are
+     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * during the specified period. Use this value to determine low volumes of activity
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * All values submitted for the matching metric added together. You can use this
+     * statistic to determine the total volume of a metric.</p> </li> <li> <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * period. By comparing this statistic with the Minimum and Maximum values, you can
+     * determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum values. This comparison helps you to know when to increase
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * count, or number, of data points used for the statistical calculation.</p> </li>
+     * </ul>
      */
     inline GetInstanceMetricDataRequest& WithStatistics(Aws::Vector<MetricStatistic>&& value) { SetStatistics(std::move(value)); return *this;}
 
     /**
-     * <p>The instance statistics. </p>
+     * <p>The statistic for the metric.</p> <p>The following statistics are
+     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * during the specified period. Use this value to determine low volumes of activity
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * All values submitted for the matching metric added together. You can use this
+     * statistic to determine the total volume of a metric.</p> </li> <li> <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * period. By comparing this statistic with the Minimum and Maximum values, you can
+     * determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum values. This comparison helps you to know when to increase
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * count, or number, of data points used for the statistical calculation.</p> </li>
+     * </ul>
      */
     inline GetInstanceMetricDataRequest& AddStatistics(const MetricStatistic& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
 
     /**
-     * <p>The instance statistics. </p>
+     * <p>The statistic for the metric.</p> <p>The following statistics are
+     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * during the specified period. Use this value to determine low volumes of activity
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * value observed during the specified period. Use this value to determine high
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * All values submitted for the matching metric added together. You can use this
+     * statistic to determine the total volume of a metric.</p> </li> <li> <p>
+     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * period. By comparing this statistic with the Minimum and Maximum values, you can
+     * determine the full scope of a metric and how close the average use is to the
+     * Minimum and Maximum values. This comparison helps you to know when to increase
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * count, or number, of data points used for the statistical calculation.</p> </li>
+     * </ul>
      */
     inline GetInstanceMetricDataRequest& AddStatistics(MetricStatistic&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
 

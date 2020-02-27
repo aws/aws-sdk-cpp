@@ -39,7 +39,9 @@ namespace Model
     RelationalDatabase,
     RelationalDatabaseSnapshot,
     ExportSnapshotRecord,
-    CloudFormationStackRecord
+    CloudFormationStackRecord,
+    Alarm,
+    ContactMethod
   };
 
 namespace ResourceTypeMapper
