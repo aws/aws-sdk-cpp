@@ -38,7 +38,8 @@ CreateMLTransformRequest::CreateMLTransformRequest() :
     m_timeout(0),
     m_timeoutHasBeenSet(false),
     m_maxRetries(0),
-    m_maxRetriesHasBeenSet(false)
+    m_maxRetriesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,17 @@ Aws::String CreateMLTransformRequest::SerializePayload() const
   if(m_maxRetriesHasBeenSet)
   {
    payload.WithInteger("MaxRetries", m_maxRetries);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

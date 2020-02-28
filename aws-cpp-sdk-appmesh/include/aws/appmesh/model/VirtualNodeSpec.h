@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/BackendDefaults.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appmesh/model/Logging.h>
 #include <aws/appmesh/model/ServiceDiscovery.h>
@@ -50,6 +51,37 @@ namespace Model
     VirtualNodeSpec(Aws::Utils::Json::JsonView jsonValue);
     VirtualNodeSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A reference to an object that represents the defaults for backends.</p>
+     */
+    inline const BackendDefaults& GetBackendDefaults() const{ return m_backendDefaults; }
+
+    /**
+     * <p>A reference to an object that represents the defaults for backends.</p>
+     */
+    inline bool BackendDefaultsHasBeenSet() const { return m_backendDefaultsHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents the defaults for backends.</p>
+     */
+    inline void SetBackendDefaults(const BackendDefaults& value) { m_backendDefaultsHasBeenSet = true; m_backendDefaults = value; }
+
+    /**
+     * <p>A reference to an object that represents the defaults for backends.</p>
+     */
+    inline void SetBackendDefaults(BackendDefaults&& value) { m_backendDefaultsHasBeenSet = true; m_backendDefaults = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents the defaults for backends.</p>
+     */
+    inline VirtualNodeSpec& WithBackendDefaults(const BackendDefaults& value) { SetBackendDefaults(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents the defaults for backends.</p>
+     */
+    inline VirtualNodeSpec& WithBackendDefaults(BackendDefaults&& value) { SetBackendDefaults(std::move(value)); return *this;}
 
 
     /**
@@ -102,56 +134,56 @@ namespace Model
 
 
     /**
-     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * <p>The listener that the virtual node is expected to receive inbound traffic
      * from.
          You can specify one listener.</p>
      */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
 
     /**
-     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * <p>The listener that the virtual node is expected to receive inbound traffic
      * from.
          You can specify one listener.</p>
      */
     inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
 
     /**
-     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * <p>The listener that the virtual node is expected to receive inbound traffic
      * from.
          You can specify one listener.</p>
      */
     inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
-     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * <p>The listener that the virtual node is expected to receive inbound traffic
      * from.
          You can specify one listener.</p>
      */
     inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
-     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * <p>The listener that the virtual node is expected to receive inbound traffic
      * from.
          You can specify one listener.</p>
      */
     inline VirtualNodeSpec& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
 
     /**
-     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * <p>The listener that the virtual node is expected to receive inbound traffic
      * from.
          You can specify one listener.</p>
      */
     inline VirtualNodeSpec& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
-     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * <p>The listener that the virtual node is expected to receive inbound traffic
      * from.
          You can specify one listener.</p>
      */
     inline VirtualNodeSpec& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /**
-     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * <p>The listener that the virtual node is expected to receive inbound traffic
      * from.
          You can specify one listener.</p>
      */
@@ -192,46 +224,67 @@ namespace Model
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
      * does not
-         expect ingress traffic, you can omit this parameter.</p>
+         expect ingress traffic, you can omit this parameter. If you
+     * specify a <code>listener</code>,
+         then you must specify service
+     * discovery information.</p>
      */
     inline const ServiceDiscovery& GetServiceDiscovery() const{ return m_serviceDiscovery; }
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
      * does not
-         expect ingress traffic, you can omit this parameter.</p>
+         expect ingress traffic, you can omit this parameter. If you
+     * specify a <code>listener</code>,
+         then you must specify service
+     * discovery information.</p>
      */
     inline bool ServiceDiscoveryHasBeenSet() const { return m_serviceDiscoveryHasBeenSet; }
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
      * does not
-         expect ingress traffic, you can omit this parameter.</p>
+         expect ingress traffic, you can omit this parameter. If you
+     * specify a <code>listener</code>,
+         then you must specify service
+     * discovery information.</p>
      */
     inline void SetServiceDiscovery(const ServiceDiscovery& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = value; }
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
      * does not
-         expect ingress traffic, you can omit this parameter.</p>
+         expect ingress traffic, you can omit this parameter. If you
+     * specify a <code>listener</code>,
+         then you must specify service
+     * discovery information.</p>
      */
     inline void SetServiceDiscovery(ServiceDiscovery&& value) { m_serviceDiscoveryHasBeenSet = true; m_serviceDiscovery = std::move(value); }
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
      * does not
-         expect ingress traffic, you can omit this parameter.</p>
+         expect ingress traffic, you can omit this parameter. If you
+     * specify a <code>listener</code>,
+         then you must specify service
+     * discovery information.</p>
      */
     inline VirtualNodeSpec& WithServiceDiscovery(const ServiceDiscovery& value) { SetServiceDiscovery(value); return *this;}
 
     /**
      * <p>The service discovery information for the virtual node. If your virtual node
      * does not
-         expect ingress traffic, you can omit this parameter.</p>
+         expect ingress traffic, you can omit this parameter. If you
+     * specify a <code>listener</code>,
+         then you must specify service
+     * discovery information.</p>
      */
     inline VirtualNodeSpec& WithServiceDiscovery(ServiceDiscovery&& value) { SetServiceDiscovery(std::move(value)); return *this;}
 
   private:
+
+    BackendDefaults m_backendDefaults;
+    bool m_backendDefaultsHasBeenSet;
 
     Aws::Vector<Backend> m_backends;
     bool m_backendsHasBeenSet;

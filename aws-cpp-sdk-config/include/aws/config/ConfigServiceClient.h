@@ -77,6 +77,7 @@
 #include <aws/config/model/PutRemediationConfigurationsResult.h>
 #include <aws/config/model/PutRemediationExceptionsResult.h>
 #include <aws/config/model/PutRetentionConfigurationResult.h>
+#include <aws/config/model/SelectAggregateResourceConfigResult.h>
 #include <aws/config/model/SelectResourceConfigResult.h>
 #include <aws/config/model/StartConfigRulesEvaluationResult.h>
 #include <aws/config/model/StartRemediationExecutionResult.h>
@@ -190,6 +191,7 @@ namespace Model
         class PutRemediationExceptionsRequest;
         class PutResourceConfigRequest;
         class PutRetentionConfigurationRequest;
+        class SelectAggregateResourceConfigRequest;
         class SelectResourceConfigRequest;
         class StartConfigRulesEvaluationRequest;
         class StartConfigurationRecorderRequest;
@@ -269,6 +271,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRemediationExceptionsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutResourceConfigOutcome;
         typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRetentionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<SelectAggregateResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> SelectAggregateResourceConfigOutcome;
         typedef Aws::Utils::Outcome<SelectResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> SelectResourceConfigOutcome;
         typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigRulesEvaluationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigurationRecorderOutcome;
@@ -348,6 +351,7 @@ namespace Model
         typedef std::future<PutRemediationExceptionsOutcome> PutRemediationExceptionsOutcomeCallable;
         typedef std::future<PutResourceConfigOutcome> PutResourceConfigOutcomeCallable;
         typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
+        typedef std::future<SelectAggregateResourceConfigOutcome> SelectAggregateResourceConfigOutcomeCallable;
         typedef std::future<SelectResourceConfigOutcome> SelectResourceConfigOutcomeCallable;
         typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
         typedef std::future<StartConfigurationRecorderOutcome> StartConfigurationRecorderOutcomeCallable;
@@ -430,6 +434,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationExceptionsRequest&, const Model::PutRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationExceptionsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutResourceConfigRequest&, const Model::PutResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRetentionConfigurationRequest&, const Model::PutRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::SelectAggregateResourceConfigRequest&, const Model::SelectAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectAggregateResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::SelectResourceConfigRequest&, const Model::SelectResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigurationRecorderRequest&, const Model::StartConfigurationRecorderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigurationRecorderResponseReceivedHandler;
@@ -3400,6 +3405,49 @@ namespace Model
         virtual void PutRetentionConfigurationAsync(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Accepts a structured query language (SQL) SELECT command and an aggregator to
+         * query configuration state of AWS resources across multiple accounts and regions,
+         * performs the corresponding search, and returns resource configurations matching
+         * the properties.</p> <p>For more information about query components, see the <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
+         * <b>Query Components</b> </a> section in the AWS Config Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SelectAggregateResourceConfigOutcome SelectAggregateResourceConfig(const Model::SelectAggregateResourceConfigRequest& request) const;
+
+        /**
+         * <p>Accepts a structured query language (SQL) SELECT command and an aggregator to
+         * query configuration state of AWS resources across multiple accounts and regions,
+         * performs the corresponding search, and returns resource configurations matching
+         * the properties.</p> <p>For more information about query components, see the <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
+         * <b>Query Components</b> </a> section in the AWS Config Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SelectAggregateResourceConfigOutcomeCallable SelectAggregateResourceConfigCallable(const Model::SelectAggregateResourceConfigRequest& request) const;
+
+        /**
+         * <p>Accepts a structured query language (SQL) SELECT command and an aggregator to
+         * query configuration state of AWS resources across multiple accounts and regions,
+         * performs the corresponding search, and returns resource configurations matching
+         * the properties.</p> <p>For more information about query components, see the <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
+         * <b>Query Components</b> </a> section in the AWS Config Developer
+         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SelectAggregateResourceConfigAsync(const Model::SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Accepts a structured query language (SQL) <code>SELECT</code> command,
          * performs the corresponding search, and returns resource configurations matching
          * the properties.</p> <p>For more information about query components, see the <a
@@ -3769,6 +3817,7 @@ namespace Model
         void PutRemediationExceptionsAsyncHelper(const Model::PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutResourceConfigAsyncHelper(const Model::PutResourceConfigRequest& request, const PutResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionConfigurationAsyncHelper(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SelectAggregateResourceConfigAsyncHelper(const Model::SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SelectResourceConfigAsyncHelper(const Model::SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigRulesEvaluationAsyncHelper(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigurationRecorderAsyncHelper(const Model::StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -18,8 +18,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker-a2i-runtime/model/HumanLoopStatus.h>
-#include <aws/sagemaker-a2i-runtime/model/HumanLoopInputContent.h>
-#include <aws/sagemaker-a2i-runtime/model/HumanLoopOutputContent.h>
+#include <aws/sagemaker-a2i-runtime/model/HumanLoopOutput.h>
 #include <utility>
 
 namespace Aws
@@ -47,29 +46,29 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when Amazon Augmented AI created the human loop.</p>
+     * <p>The creation time when Amazon Augmented AI created the human loop.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The timestamp when Amazon Augmented AI created the human loop.</p>
+     * <p>The creation time when Amazon Augmented AI created the human loop.</p>
      */
-    inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestamp = value; }
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
 
     /**
-     * <p>The timestamp when Amazon Augmented AI created the human loop.</p>
+     * <p>The creation time when Amazon Augmented AI created the human loop.</p>
      */
-    inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestamp = std::move(value); }
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
 
     /**
-     * <p>The timestamp when Amazon Augmented AI created the human loop.</p>
+     * <p>The creation time when Amazon Augmented AI created the human loop.</p>
      */
-    inline DescribeHumanLoopResult& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
+    inline DescribeHumanLoopResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The timestamp when Amazon Augmented AI created the human loop.</p>
+     * <p>The creation time when Amazon Augmented AI created the human loop.</p>
      */
-    inline DescribeHumanLoopResult& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
+    inline DescribeHumanLoopResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -286,59 +285,33 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about the human loop input.</p>
+     * <p>An object containing information about the output of the human loop.</p>
      */
-    inline const HumanLoopInputContent& GetHumanLoopInput() const{ return m_humanLoopInput; }
-
-    /**
-     * <p>An object containing information about the human loop input.</p>
-     */
-    inline void SetHumanLoopInput(const HumanLoopInputContent& value) { m_humanLoopInput = value; }
-
-    /**
-     * <p>An object containing information about the human loop input.</p>
-     */
-    inline void SetHumanLoopInput(HumanLoopInputContent&& value) { m_humanLoopInput = std::move(value); }
-
-    /**
-     * <p>An object containing information about the human loop input.</p>
-     */
-    inline DescribeHumanLoopResult& WithHumanLoopInput(const HumanLoopInputContent& value) { SetHumanLoopInput(value); return *this;}
-
-    /**
-     * <p>An object containing information about the human loop input.</p>
-     */
-    inline DescribeHumanLoopResult& WithHumanLoopInput(HumanLoopInputContent&& value) { SetHumanLoopInput(std::move(value)); return *this;}
-
+    inline const HumanLoopOutput& GetHumanLoopOutput() const{ return m_humanLoopOutput; }
 
     /**
      * <p>An object containing information about the output of the human loop.</p>
      */
-    inline const HumanLoopOutputContent& GetHumanLoopOutput() const{ return m_humanLoopOutput; }
+    inline void SetHumanLoopOutput(const HumanLoopOutput& value) { m_humanLoopOutput = value; }
 
     /**
      * <p>An object containing information about the output of the human loop.</p>
      */
-    inline void SetHumanLoopOutput(const HumanLoopOutputContent& value) { m_humanLoopOutput = value; }
+    inline void SetHumanLoopOutput(HumanLoopOutput&& value) { m_humanLoopOutput = std::move(value); }
 
     /**
      * <p>An object containing information about the output of the human loop.</p>
      */
-    inline void SetHumanLoopOutput(HumanLoopOutputContent&& value) { m_humanLoopOutput = std::move(value); }
+    inline DescribeHumanLoopResult& WithHumanLoopOutput(const HumanLoopOutput& value) { SetHumanLoopOutput(value); return *this;}
 
     /**
      * <p>An object containing information about the output of the human loop.</p>
      */
-    inline DescribeHumanLoopResult& WithHumanLoopOutput(const HumanLoopOutputContent& value) { SetHumanLoopOutput(value); return *this;}
-
-    /**
-     * <p>An object containing information about the output of the human loop.</p>
-     */
-    inline DescribeHumanLoopResult& WithHumanLoopOutput(HumanLoopOutputContent&& value) { SetHumanLoopOutput(std::move(value)); return *this;}
+    inline DescribeHumanLoopResult& WithHumanLoopOutput(HumanLoopOutput&& value) { SetHumanLoopOutput(std::move(value)); return *this;}
 
   private:
 
-    Aws::Utils::DateTime m_creationTimestamp;
+    Aws::Utils::DateTime m_creationTime;
 
     Aws::String m_failureReason;
 
@@ -352,9 +325,7 @@ namespace Model
 
     Aws::String m_flowDefinitionArn;
 
-    HumanLoopInputContent m_humanLoopInput;
-
-    HumanLoopOutputContent m_humanLoopOutput;
+    HumanLoopOutput m_humanLoopOutput;
   };
 
 } // namespace Model

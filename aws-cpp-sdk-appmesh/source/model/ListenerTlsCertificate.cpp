@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/sagemaker-a2i-runtime/model/HumanLoopActivationReason.h>
+#include <aws/appmesh/model/ListenerTlsCertificate.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -23,43 +23,56 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-namespace AugmentedAIRuntime
+namespace AppMesh
 {
 namespace Model
 {
 
-HumanLoopActivationReason::HumanLoopActivationReason() : 
-    m_conditionsMatched(false),
-    m_conditionsMatchedHasBeenSet(false)
+ListenerTlsCertificate::ListenerTlsCertificate() : 
+    m_acmHasBeenSet(false),
+    m_fileHasBeenSet(false)
 {
 }
 
-HumanLoopActivationReason::HumanLoopActivationReason(JsonView jsonValue) : 
-    m_conditionsMatched(false),
-    m_conditionsMatchedHasBeenSet(false)
+ListenerTlsCertificate::ListenerTlsCertificate(JsonView jsonValue) : 
+    m_acmHasBeenSet(false),
+    m_fileHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HumanLoopActivationReason& HumanLoopActivationReason::operator =(JsonView jsonValue)
+ListenerTlsCertificate& ListenerTlsCertificate::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ConditionsMatched"))
+  if(jsonValue.ValueExists("acm"))
   {
-    m_conditionsMatched = jsonValue.GetBool("ConditionsMatched");
+    m_acm = jsonValue.GetObject("acm");
 
-    m_conditionsMatchedHasBeenSet = true;
+    m_acmHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("file"))
+  {
+    m_file = jsonValue.GetObject("file");
+
+    m_fileHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue HumanLoopActivationReason::Jsonize() const
+JsonValue ListenerTlsCertificate::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_conditionsMatchedHasBeenSet)
+  if(m_acmHasBeenSet)
   {
-   payload.WithBool("ConditionsMatched", m_conditionsMatched);
+   payload.WithObject("acm", m_acm.Jsonize());
+
+  }
+
+  if(m_fileHasBeenSet)
+  {
+   payload.WithObject("file", m_file.Jsonize());
 
   }
 
@@ -67,5 +80,5 @@ JsonValue HumanLoopActivationReason::Jsonize() const
 }
 
 } // namespace Model
-} // namespace AugmentedAIRuntime
+} // namespace AppMesh
 } // namespace Aws

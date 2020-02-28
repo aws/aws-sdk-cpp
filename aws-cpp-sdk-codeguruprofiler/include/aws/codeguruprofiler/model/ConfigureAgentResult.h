@@ -35,7 +35,8 @@ namespace CodeGuruProfiler
 namespace Model
 {
   /**
-   * <p>Response for ConfigureAgent operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the configureAgentResponse.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgentResponse">AWS
    * API Reference</a></p>
    */
@@ -48,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the agent to use.</p>
+     * <p/>
      */
     inline const AgentConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The configuration for the agent to use.</p>
+     * <p/>
      */
     inline void SetConfiguration(const AgentConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>The configuration for the agent to use.</p>
+     * <p/>
      */
     inline void SetConfiguration(AgentConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>The configuration for the agent to use.</p>
+     * <p/>
      */
     inline ConfigureAgentResult& WithConfiguration(const AgentConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration for the agent to use.</p>
+     * <p/>
      */
     inline ConfigureAgentResult& WithConfiguration(AgentConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

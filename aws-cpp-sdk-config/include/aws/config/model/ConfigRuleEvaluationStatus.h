@@ -353,6 +353,25 @@ namespace Model
     inline ConfigRuleEvaluationStatus& WithFirstActivatedTime(Aws::Utils::DateTime&& value) { SetFirstActivatedTime(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::Utils::DateTime& GetLastDeactivatedTime() const{ return m_lastDeactivatedTime; }
+
+    
+    inline bool LastDeactivatedTimeHasBeenSet() const { return m_lastDeactivatedTimeHasBeenSet; }
+
+    
+    inline void SetLastDeactivatedTime(const Aws::Utils::DateTime& value) { m_lastDeactivatedTimeHasBeenSet = true; m_lastDeactivatedTime = value; }
+
+    
+    inline void SetLastDeactivatedTime(Aws::Utils::DateTime&& value) { m_lastDeactivatedTimeHasBeenSet = true; m_lastDeactivatedTime = std::move(value); }
+
+    
+    inline ConfigRuleEvaluationStatus& WithLastDeactivatedTime(const Aws::Utils::DateTime& value) { SetLastDeactivatedTime(value); return *this;}
+
+    
+    inline ConfigRuleEvaluationStatus& WithLastDeactivatedTime(Aws::Utils::DateTime&& value) { SetLastDeactivatedTime(std::move(value)); return *this;}
+
+
     /**
      * <p>The error code that AWS Config returned when the rule last failed.</p>
      */
@@ -496,6 +515,9 @@ namespace Model
 
     Aws::Utils::DateTime m_firstActivatedTime;
     bool m_firstActivatedTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_lastDeactivatedTime;
+    bool m_lastDeactivatedTimeHasBeenSet;
 
     Aws::String m_lastErrorCode;
     bool m_lastErrorCodeHasBeenSet;

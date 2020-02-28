@@ -44,12 +44,6 @@ StartHumanLoopResult& StartHumanLoopResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("HumanLoopActivationResults"))
-  {
-    m_humanLoopActivationResults = jsonValue.GetObject("HumanLoopActivationResults");
-
-  }
-
 
 
   return *this;

@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the policies.</p>
+     * <p>Information about the security policies.</p>
      */
     inline const Aws::Vector<SslPolicy>& GetSslPolicies() const{ return m_sslPolicies; }
 
     /**
-     * <p>Information about the policies.</p>
+     * <p>Information about the security policies.</p>
      */
     inline void SetSslPolicies(const Aws::Vector<SslPolicy>& value) { m_sslPolicies = value; }
 
     /**
-     * <p>Information about the policies.</p>
+     * <p>Information about the security policies.</p>
      */
     inline void SetSslPolicies(Aws::Vector<SslPolicy>&& value) { m_sslPolicies = std::move(value); }
 
     /**
-     * <p>Information about the policies.</p>
+     * <p>Information about the security policies.</p>
      */
     inline DescribeSSLPoliciesResult& WithSslPolicies(const Aws::Vector<SslPolicy>& value) { SetSslPolicies(value); return *this;}
 
     /**
-     * <p>Information about the policies.</p>
+     * <p>Information about the security policies.</p>
      */
     inline DescribeSSLPoliciesResult& WithSslPolicies(Aws::Vector<SslPolicy>&& value) { SetSslPolicies(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the policies.</p>
+     * <p>Information about the security policies.</p>
      */
     inline DescribeSSLPoliciesResult& AddSslPolicies(const SslPolicy& value) { m_sslPolicies.push_back(value); return *this; }
 
     /**
-     * <p>Information about the policies.</p>
+     * <p>Information about the security policies.</p>
      */
     inline DescribeSSLPoliciesResult& AddSslPolicies(SslPolicy&& value) { m_sslPolicies.push_back(std::move(value)); return *this; }
 

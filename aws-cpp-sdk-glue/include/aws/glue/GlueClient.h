@@ -110,6 +110,7 @@
 #include <aws/glue/model/ListCrawlersResult.h>
 #include <aws/glue/model/ListDevEndpointsResult.h>
 #include <aws/glue/model/ListJobsResult.h>
+#include <aws/glue/model/ListMLTransformsResult.h>
 #include <aws/glue/model/ListTriggersResult.h>
 #include <aws/glue/model/ListWorkflowsResult.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsResult.h>
@@ -272,6 +273,7 @@ namespace Model
         class ListCrawlersRequest;
         class ListDevEndpointsRequest;
         class ListJobsRequest;
+        class ListMLTransformsRequest;
         class ListTriggersRequest;
         class ListWorkflowsRequest;
         class PutDataCatalogEncryptionSettingsRequest;
@@ -396,6 +398,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListCrawlersResult, Aws::Client::AWSError<GlueErrors>> ListCrawlersOutcome;
         typedef Aws::Utils::Outcome<ListDevEndpointsResult, Aws::Client::AWSError<GlueErrors>> ListDevEndpointsOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<GlueErrors>> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListMLTransformsResult, Aws::Client::AWSError<GlueErrors>> ListMLTransformsOutcome;
         typedef Aws::Utils::Outcome<ListTriggersResult, Aws::Client::AWSError<GlueErrors>> ListTriggersOutcome;
         typedef Aws::Utils::Outcome<ListWorkflowsResult, Aws::Client::AWSError<GlueErrors>> ListWorkflowsOutcome;
         typedef Aws::Utils::Outcome<PutDataCatalogEncryptionSettingsResult, Aws::Client::AWSError<GlueErrors>> PutDataCatalogEncryptionSettingsOutcome;
@@ -520,6 +523,7 @@ namespace Model
         typedef std::future<ListCrawlersOutcome> ListCrawlersOutcomeCallable;
         typedef std::future<ListDevEndpointsOutcome> ListDevEndpointsOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<ListMLTransformsOutcome> ListMLTransformsOutcomeCallable;
         typedef std::future<ListTriggersOutcome> ListTriggersOutcomeCallable;
         typedef std::future<ListWorkflowsOutcome> ListWorkflowsOutcomeCallable;
         typedef std::future<PutDataCatalogEncryptionSettingsOutcome> PutDataCatalogEncryptionSettingsOutcomeCallable;
@@ -647,6 +651,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::ListCrawlersRequest&, const Model::ListCrawlersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCrawlersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListDevEndpointsRequest&, const Model::ListDevEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevEndpointsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const GlueClient*, const Model::ListMLTransformsRequest&, const Model::ListMLTransformsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMLTransformsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListTriggersRequest&, const Model::ListTriggersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTriggersResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::ListWorkflowsRequest&, const Model::ListWorkflowsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkflowsResponseReceivedHandler;
     typedef std::function<void(const GlueClient*, const Model::PutDataCatalogEncryptionSettingsRequest&, const Model::PutDataCatalogEncryptionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataCatalogEncryptionSettingsResponseReceivedHandler;
@@ -3418,6 +3423,46 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Retrieves a sortable, filterable list of existing AWS Glue machine learning
+         * transforms in this AWS account, or the resources with the specified tag. This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter of the responses so that tagged resources can be retrieved as a group. If
+         * you choose to use tag filtering, only resources with the tags are retrieved.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMLTransformsOutcome ListMLTransforms(const Model::ListMLTransformsRequest& request) const;
+
+        /**
+         * <p> Retrieves a sortable, filterable list of existing AWS Glue machine learning
+         * transforms in this AWS account, or the resources with the specified tag. This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter of the responses so that tagged resources can be retrieved as a group. If
+         * you choose to use tag filtering, only resources with the tags are retrieved.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMLTransformsOutcomeCallable ListMLTransformsCallable(const Model::ListMLTransformsRequest& request) const;
+
+        /**
+         * <p> Retrieves a sortable, filterable list of existing AWS Glue machine learning
+         * transforms in this AWS account, or the resources with the specified tag. This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter of the responses so that tagged resources can be retrieved as a group. If
+         * you choose to use tag filtering, only resources with the tags are retrieved.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMLTransformsAsync(const Model::ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the names of all trigger resources in this AWS account, or the
          * resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
@@ -4654,6 +4699,7 @@ namespace Model
         void ListCrawlersAsyncHelper(const Model::ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDevEndpointsAsyncHelper(const Model::ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMLTransformsAsyncHelper(const Model::ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTriggersAsyncHelper(const Model::ListTriggersRequest& request, const ListTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkflowsAsyncHelper(const Model::ListWorkflowsRequest& request, const ListWorkflowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDataCatalogEncryptionSettingsAsyncHelper(const Model::PutDataCatalogEncryptionSettingsRequest& request, const PutDataCatalogEncryptionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

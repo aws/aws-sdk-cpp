@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Periods of time used for aggregation of profiles, represented using ISO 8601
-   * format.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the profile time.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfileTime">AWS
    * API Reference</a></p>
    */

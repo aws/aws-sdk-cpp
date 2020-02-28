@@ -33,7 +33,8 @@ namespace CodeGuruProfiler
 namespace Model
 {
   /**
-   * <p>Response for PostAgentProfile operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the postAgentProfileResponse.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfileResponse">AWS
    * API Reference</a></p>
    */

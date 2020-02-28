@@ -37,6 +37,7 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus() :
     m_lastSuccessfulEvaluationTimeHasBeenSet(false),
     m_lastFailedEvaluationTimeHasBeenSet(false),
     m_firstActivatedTimeHasBeenSet(false),
+    m_lastDeactivatedTimeHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
     m_firstEvaluationStarted(false),
@@ -53,6 +54,7 @@ ConfigRuleEvaluationStatus::ConfigRuleEvaluationStatus(JsonView jsonValue) :
     m_lastSuccessfulEvaluationTimeHasBeenSet(false),
     m_lastFailedEvaluationTimeHasBeenSet(false),
     m_firstActivatedTimeHasBeenSet(false),
+    m_lastDeactivatedTimeHasBeenSet(false),
     m_lastErrorCodeHasBeenSet(false),
     m_lastErrorMessageHasBeenSet(false),
     m_firstEvaluationStarted(false),
@@ -117,6 +119,13 @@ ConfigRuleEvaluationStatus& ConfigRuleEvaluationStatus::operator =(JsonView json
     m_firstActivatedTime = jsonValue.GetDouble("FirstActivatedTime");
 
     m_firstActivatedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastDeactivatedTime"))
+  {
+    m_lastDeactivatedTime = jsonValue.GetDouble("LastDeactivatedTime");
+
+    m_lastDeactivatedTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastErrorCode"))
@@ -188,6 +197,11 @@ JsonValue ConfigRuleEvaluationStatus::Jsonize() const
   if(m_firstActivatedTimeHasBeenSet)
   {
    payload.WithDouble("FirstActivatedTime", m_firstActivatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastDeactivatedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastDeactivatedTime", m_lastDeactivatedTime.SecondsWithMSPrecision());
   }
 
   if(m_lastErrorCodeHasBeenSet)

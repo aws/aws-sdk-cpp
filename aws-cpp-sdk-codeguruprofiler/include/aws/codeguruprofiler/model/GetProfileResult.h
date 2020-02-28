@@ -30,7 +30,8 @@ namespace CodeGuruProfiler
 namespace Model
 {
   /**
-   * <p>Response for GetProfile operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the getProfileResponse.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfileResponse">AWS
    * API Reference</a></p>
    */
@@ -53,88 +54,99 @@ namespace Model
 
 
     /**
-     * <p>The content encoding of the profile in the payload.</p>
+     * <p>The content encoding of the profile.</p>
      */
     inline const Aws::String& GetContentEncoding() const{ return m_contentEncoding; }
 
     /**
-     * <p>The content encoding of the profile in the payload.</p>
+     * <p>The content encoding of the profile.</p>
      */
     inline void SetContentEncoding(const Aws::String& value) { m_contentEncoding = value; }
 
     /**
-     * <p>The content encoding of the profile in the payload.</p>
+     * <p>The content encoding of the profile.</p>
      */
     inline void SetContentEncoding(Aws::String&& value) { m_contentEncoding = std::move(value); }
 
     /**
-     * <p>The content encoding of the profile in the payload.</p>
+     * <p>The content encoding of the profile.</p>
      */
     inline void SetContentEncoding(const char* value) { m_contentEncoding.assign(value); }
 
     /**
-     * <p>The content encoding of the profile in the payload.</p>
+     * <p>The content encoding of the profile.</p>
      */
     inline GetProfileResult& WithContentEncoding(const Aws::String& value) { SetContentEncoding(value); return *this;}
 
     /**
-     * <p>The content encoding of the profile in the payload.</p>
+     * <p>The content encoding of the profile.</p>
      */
     inline GetProfileResult& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
 
     /**
-     * <p>The content encoding of the profile in the payload.</p>
+     * <p>The content encoding of the profile.</p>
      */
     inline GetProfileResult& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
 
 
     /**
-     * <p>The content type of the profile in the payload. Will be application/json or
-     * application/x-amzn-ion based on Accept header in the request.</p>
+     * <p>The content type of the profile in the payload. It is either
+     * <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
 
     /**
-     * <p>The content type of the profile in the payload. Will be application/json or
-     * application/x-amzn-ion based on Accept header in the request.</p>
+     * <p>The content type of the profile in the payload. It is either
+     * <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.</p>
      */
     inline void SetContentType(const Aws::String& value) { m_contentType = value; }
 
     /**
-     * <p>The content type of the profile in the payload. Will be application/json or
-     * application/x-amzn-ion based on Accept header in the request.</p>
+     * <p>The content type of the profile in the payload. It is either
+     * <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.</p>
      */
     inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
 
     /**
-     * <p>The content type of the profile in the payload. Will be application/json or
-     * application/x-amzn-ion based on Accept header in the request.</p>
+     * <p>The content type of the profile in the payload. It is either
+     * <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.</p>
      */
     inline void SetContentType(const char* value) { m_contentType.assign(value); }
 
     /**
-     * <p>The content type of the profile in the payload. Will be application/json or
-     * application/x-amzn-ion based on Accept header in the request.</p>
+     * <p>The content type of the profile in the payload. It is either
+     * <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.</p>
      */
     inline GetProfileResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
 
     /**
-     * <p>The content type of the profile in the payload. Will be application/json or
-     * application/x-amzn-ion based on Accept header in the request.</p>
+     * <p>The content type of the profile in the payload. It is either
+     * <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.</p>
      */
     inline GetProfileResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
 
     /**
-     * <p>The content type of the profile in the payload. Will be application/json or
-     * application/x-amzn-ion based on Accept header in the request.</p>
+     * <p>The content type of the profile in the payload. It is either
+     * <code>application/json</code> or the default
+     * <code>application/x-amzn-ion</code>.</p>
      */
     inline GetProfileResult& WithContentType(const char* value) { SetContentType(value); return *this;}
 
 
-    
+    /**
+     * <p>Information about the profile.</p>
+     */
     inline Aws::IOStream& GetProfile() { return m_profile.GetUnderlyingStream(); }
 
-    
+    /**
+     * <p>Information about the profile.</p>
+     */
     inline void ReplaceBody(Aws::IOStream* body) { m_profile = Aws::Utils::Stream::ResponseStream(body); }
 
   private:

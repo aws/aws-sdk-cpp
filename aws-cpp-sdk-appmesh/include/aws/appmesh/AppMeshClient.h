@@ -330,7 +330,11 @@ namespace Model
          <p>If your route matches
          * a request, you can distribute traffic to one or more target
          virtual
-         * nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
+         * nodes with relative weighting.</p>
+         <p>For more information about
+         * routes, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
          * API Reference</a></p>
          */
@@ -351,7 +355,11 @@ namespace Model
          <p>If your route matches
          * a request, you can distribute traffic to one or more target
          virtual
-         * nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
+         * nodes with relative weighting.</p>
+         <p>For more information about
+         * routes, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
          * API Reference</a></p>
          *
@@ -374,7 +382,11 @@ namespace Model
          <p>If your route matches
          * a request, you can distribute traffic to one or more target
          virtual
-         * nodes with relative weighting.</p><p><h3>See Also:</h3>   <a
+         * nodes with relative weighting.</p>
+         <p>For more information about
+         * routes, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/routes.html">Routes</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute">AWS
          * API Reference</a></p>
          *
@@ -420,7 +432,10 @@ namespace Model
               
          * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>
         
-         * </note><p><h3>See Also:</h3>   <a
+         * </note>
+         <p>For more information about virtual nodes, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual
+         * Nodes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">AWS
          * API Reference</a></p>
          */
@@ -464,7 +479,10 @@ namespace Model
               
          * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>
         
-         * </note><p><h3>See Also:</h3>   <a
+         * </note>
+         <p>For more information about virtual nodes, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual
+         * Nodes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">AWS
          * API Reference</a></p>
          *
@@ -510,7 +528,10 @@ namespace Model
               
          * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.</p>
         
-         * </note><p><h3>See Also:</h3>   <a
+         * </note>
+         <p>For more information about virtual nodes, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_nodes.html">Virtual
+         * Nodes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode">AWS
          * API Reference</a></p>
          *
@@ -529,8 +550,11 @@ namespace Model
          you create your
          * virtual router, create and associate routes for your virtual router that
        
-         * direct incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>  
-         * <a
+         * direct incoming requests to different virtual nodes.</p>
+         <p>For more
+         * information about virtual routers, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual
+         * Routers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
          * API Reference</a></p>
          */
@@ -547,8 +571,11 @@ namespace Model
          you create your
          * virtual router, create and associate routes for your virtual router that
        
-         * direct incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>  
-         * <a
+         * direct incoming requests to different virtual nodes.</p>
+         <p>For more
+         * information about virtual routers, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual
+         * Routers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
          * API Reference</a></p>
          *
@@ -567,8 +594,11 @@ namespace Model
          you create your
          * virtual router, create and associate routes for your virtual router that
        
-         * direct incoming requests to different virtual nodes.</p><p><h3>See Also:</h3>  
-         * <a
+         * direct incoming requests to different virtual nodes.</p>
+         <p>For more
+         * information about virtual routers, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_routers.html">Virtual
+         * Routers</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter">AWS
          * API Reference</a></p>
          *
@@ -587,8 +617,11 @@ namespace Model
          * requests are routed to the
          virtual node or virtual router that is
          * specified as the provider for the virtual
-         service.</p><p><h3>See
-         * Also:</h3>   <a
+         service.</p>
+         <p>For
+         * more information about virtual services, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual
+         * Services</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
          * API Reference</a></p>
          */
@@ -605,8 +638,11 @@ namespace Model
          * requests are routed to the
          virtual node or virtual router that is
          * specified as the provider for the virtual
-         service.</p><p><h3>See
-         * Also:</h3>   <a
+         service.</p>
+         <p>For
+         * more information about virtual services, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual
+         * Services</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
          * API Reference</a></p>
          *
@@ -625,8 +661,11 @@ namespace Model
          * requests are routed to the
          virtual node or virtual router that is
          * specified as the provider for the virtual
-         service.</p><p><h3>See
-         * Also:</h3>   <a
+         service.</p>
+         <p>For
+         * more information about virtual services, see <a
+         * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual_services.html">Virtual
+         * Services</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService">AWS
          * API Reference</a></p>
          *

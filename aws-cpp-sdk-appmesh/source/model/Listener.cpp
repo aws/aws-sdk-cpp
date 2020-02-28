@@ -30,13 +30,15 @@ namespace Model
 
 Listener::Listener() : 
     m_healthCheckHasBeenSet(false),
-    m_portMappingHasBeenSet(false)
+    m_portMappingHasBeenSet(false),
+    m_tlsHasBeenSet(false)
 {
 }
 
 Listener::Listener(JsonView jsonValue) : 
     m_healthCheckHasBeenSet(false),
-    m_portMappingHasBeenSet(false)
+    m_portMappingHasBeenSet(false),
+    m_tlsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ Listener& Listener::operator =(JsonView jsonValue)
     m_portMappingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tls"))
+  {
+    m_tls = jsonValue.GetObject("tls");
+
+    m_tlsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue Listener::Jsonize() const
   if(m_portMappingHasBeenSet)
   {
    payload.WithObject("portMapping", m_portMapping.Jsonize());
+
+  }
+
+  if(m_tlsHasBeenSet)
+  {
+   payload.WithObject("tls", m_tls.Jsonize());
 
   }
 

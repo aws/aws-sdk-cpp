@@ -56,7 +56,8 @@ enum class AugmentedAIRuntimeErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
 namespace AugmentedAIRuntimeErrorMapper

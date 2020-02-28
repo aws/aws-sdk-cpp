@@ -40,9 +40,9 @@ DescribeHumanLoopResult::DescribeHumanLoopResult(const Aws::AmazonWebServiceResu
 DescribeHumanLoopResult& DescribeHumanLoopResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CreationTimestamp"))
+  if(jsonValue.ValueExists("CreationTime"))
   {
-    m_creationTimestamp = jsonValue.GetDouble("CreationTimestamp");
+    m_creationTime = jsonValue.GetDouble("CreationTime");
 
   }
 
@@ -79,12 +79,6 @@ DescribeHumanLoopResult& DescribeHumanLoopResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("FlowDefinitionArn"))
   {
     m_flowDefinitionArn = jsonValue.GetString("FlowDefinitionArn");
-
-  }
-
-  if(jsonValue.ValueExists("HumanLoopInput"))
-  {
-    m_humanLoopInput = jsonValue.GetObject("HumanLoopInput");
 
   }
 

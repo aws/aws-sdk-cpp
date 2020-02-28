@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/sagemaker-a2i-runtime/model/HumanLoopInputContent.h>
+#include <aws/appmesh/model/ClientPolicy.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -23,41 +23,41 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-namespace AugmentedAIRuntime
+namespace AppMesh
 {
 namespace Model
 {
 
-HumanLoopInputContent::HumanLoopInputContent() : 
-    m_inputContentHasBeenSet(false)
+ClientPolicy::ClientPolicy() : 
+    m_tlsHasBeenSet(false)
 {
 }
 
-HumanLoopInputContent::HumanLoopInputContent(JsonView jsonValue) : 
-    m_inputContentHasBeenSet(false)
+ClientPolicy::ClientPolicy(JsonView jsonValue) : 
+    m_tlsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HumanLoopInputContent& HumanLoopInputContent::operator =(JsonView jsonValue)
+ClientPolicy& ClientPolicy::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("InputContent"))
+  if(jsonValue.ValueExists("tls"))
   {
-    m_inputContent = jsonValue.GetString("InputContent");
+    m_tls = jsonValue.GetObject("tls");
 
-    m_inputContentHasBeenSet = true;
+    m_tlsHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue HumanLoopInputContent::Jsonize() const
+JsonValue ClientPolicy::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_inputContentHasBeenSet)
+  if(m_tlsHasBeenSet)
   {
-   payload.WithString("InputContent", m_inputContent);
+   payload.WithObject("tls", m_tls.Jsonize());
 
   }
 
@@ -65,5 +65,5 @@ JsonValue HumanLoopInputContent::Jsonize() const
 }
 
 } // namespace Model
-} // namespace AugmentedAIRuntime
+} // namespace AppMesh
 } // namespace Aws

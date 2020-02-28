@@ -100,6 +100,7 @@
 #include <aws/config/model/PutRemediationExceptionsRequest.h>
 #include <aws/config/model/PutResourceConfigRequest.h>
 #include <aws/config/model/PutRetentionConfigurationRequest.h>
+#include <aws/config/model/SelectAggregateResourceConfigRequest.h>
 #include <aws/config/model/SelectResourceConfigRequest.h>
 #include <aws/config/model/StartConfigRulesEvaluationRequest.h>
 #include <aws/config/model/StartConfigurationRecorderRequest.h>
@@ -2661,6 +2662,41 @@ void ConfigServiceClient::PutRetentionConfigurationAsync(const PutRetentionConfi
 void ConfigServiceClient::PutRetentionConfigurationAsyncHelper(const PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutRetentionConfiguration(request), context);
+}
+
+SelectAggregateResourceConfigOutcome ConfigServiceClient::SelectAggregateResourceConfig(const SelectAggregateResourceConfigRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SelectAggregateResourceConfigOutcome(SelectAggregateResourceConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SelectAggregateResourceConfigOutcome(outcome.GetError());
+  }
+}
+
+SelectAggregateResourceConfigOutcomeCallable ConfigServiceClient::SelectAggregateResourceConfigCallable(const SelectAggregateResourceConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SelectAggregateResourceConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SelectAggregateResourceConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::SelectAggregateResourceConfigAsync(const SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SelectAggregateResourceConfigAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::SelectAggregateResourceConfigAsyncHelper(const SelectAggregateResourceConfigRequest& request, const SelectAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SelectAggregateResourceConfig(request), context);
 }
 
 SelectResourceConfigOutcome ConfigServiceClient::SelectResourceConfig(const SelectResourceConfigRequest& request) const

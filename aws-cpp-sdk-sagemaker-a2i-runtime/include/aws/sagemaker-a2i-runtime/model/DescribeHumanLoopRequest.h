@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the human loop.</p>
+     * <p>The unique name of the human loop.</p>
      */
     inline const Aws::String& GetHumanLoopName() const{ return m_humanLoopName; }
 
     /**
-     * <p>The name of the human loop.</p>
+     * <p>The unique name of the human loop.</p>
      */
     inline bool HumanLoopNameHasBeenSet() const { return m_humanLoopNameHasBeenSet; }
 
     /**
-     * <p>The name of the human loop.</p>
+     * <p>The unique name of the human loop.</p>
      */
     inline void SetHumanLoopName(const Aws::String& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = value; }
 
     /**
-     * <p>The name of the human loop.</p>
+     * <p>The unique name of the human loop.</p>
      */
     inline void SetHumanLoopName(Aws::String&& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = std::move(value); }
 
     /**
-     * <p>The name of the human loop.</p>
+     * <p>The unique name of the human loop.</p>
      */
     inline void SetHumanLoopName(const char* value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName.assign(value); }
 
     /**
-     * <p>The name of the human loop.</p>
+     * <p>The unique name of the human loop.</p>
      */
     inline DescribeHumanLoopRequest& WithHumanLoopName(const Aws::String& value) { SetHumanLoopName(value); return *this;}
 
     /**
-     * <p>The name of the human loop.</p>
+     * <p>The unique name of the human loop.</p>
      */
     inline DescribeHumanLoopRequest& WithHumanLoopName(Aws::String&& value) { SetHumanLoopName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the human loop.</p>
+     * <p>The unique name of the human loop.</p>
      */
     inline DescribeHumanLoopRequest& WithHumanLoopName(const char* value) { SetHumanLoopName(value); return *this;}
 

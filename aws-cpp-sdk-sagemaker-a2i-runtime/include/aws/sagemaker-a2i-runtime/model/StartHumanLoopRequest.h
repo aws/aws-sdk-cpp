@@ -17,8 +17,8 @@
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sagemaker-a2i-runtime/model/HumanLoopInputContent.h>
-#include <aws/sagemaker-a2i-runtime/model/HumanReviewDataAttributes.h>
+#include <aws/sagemaker-a2i-runtime/model/HumanLoopInput.h>
+#include <aws/sagemaker-a2i-runtime/model/HumanLoopDataAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>An object containing information about the human loop.</p>
      */
-    inline const HumanLoopInputContent& GetHumanLoopInput() const{ return m_humanLoopInput; }
+    inline const HumanLoopInput& GetHumanLoopInput() const{ return m_humanLoopInput; }
 
     /**
      * <p>An object containing information about the human loop.</p>
@@ -139,28 +139,28 @@ namespace Model
     /**
      * <p>An object containing information about the human loop.</p>
      */
-    inline void SetHumanLoopInput(const HumanLoopInputContent& value) { m_humanLoopInputHasBeenSet = true; m_humanLoopInput = value; }
+    inline void SetHumanLoopInput(const HumanLoopInput& value) { m_humanLoopInputHasBeenSet = true; m_humanLoopInput = value; }
 
     /**
      * <p>An object containing information about the human loop.</p>
      */
-    inline void SetHumanLoopInput(HumanLoopInputContent&& value) { m_humanLoopInputHasBeenSet = true; m_humanLoopInput = std::move(value); }
+    inline void SetHumanLoopInput(HumanLoopInput&& value) { m_humanLoopInputHasBeenSet = true; m_humanLoopInput = std::move(value); }
 
     /**
      * <p>An object containing information about the human loop.</p>
      */
-    inline StartHumanLoopRequest& WithHumanLoopInput(const HumanLoopInputContent& value) { SetHumanLoopInput(value); return *this;}
+    inline StartHumanLoopRequest& WithHumanLoopInput(const HumanLoopInput& value) { SetHumanLoopInput(value); return *this;}
 
     /**
      * <p>An object containing information about the human loop.</p>
      */
-    inline StartHumanLoopRequest& WithHumanLoopInput(HumanLoopInputContent&& value) { SetHumanLoopInput(std::move(value)); return *this;}
+    inline StartHumanLoopRequest& WithHumanLoopInput(HumanLoopInput&& value) { SetHumanLoopInput(std::move(value)); return *this;}
 
 
     /**
      * <p>Attributes of the data specified by the customer.</p>
      */
-    inline const HumanReviewDataAttributes& GetDataAttributes() const{ return m_dataAttributes; }
+    inline const HumanLoopDataAttributes& GetDataAttributes() const{ return m_dataAttributes; }
 
     /**
      * <p>Attributes of the data specified by the customer.</p>
@@ -170,22 +170,22 @@ namespace Model
     /**
      * <p>Attributes of the data specified by the customer.</p>
      */
-    inline void SetDataAttributes(const HumanReviewDataAttributes& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = value; }
+    inline void SetDataAttributes(const HumanLoopDataAttributes& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = value; }
 
     /**
      * <p>Attributes of the data specified by the customer.</p>
      */
-    inline void SetDataAttributes(HumanReviewDataAttributes&& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = std::move(value); }
+    inline void SetDataAttributes(HumanLoopDataAttributes&& value) { m_dataAttributesHasBeenSet = true; m_dataAttributes = std::move(value); }
 
     /**
      * <p>Attributes of the data specified by the customer.</p>
      */
-    inline StartHumanLoopRequest& WithDataAttributes(const HumanReviewDataAttributes& value) { SetDataAttributes(value); return *this;}
+    inline StartHumanLoopRequest& WithDataAttributes(const HumanLoopDataAttributes& value) { SetDataAttributes(value); return *this;}
 
     /**
      * <p>Attributes of the data specified by the customer.</p>
      */
-    inline StartHumanLoopRequest& WithDataAttributes(HumanReviewDataAttributes&& value) { SetDataAttributes(std::move(value)); return *this;}
+    inline StartHumanLoopRequest& WithDataAttributes(HumanLoopDataAttributes&& value) { SetDataAttributes(std::move(value)); return *this;}
 
   private:
 
@@ -195,10 +195,10 @@ namespace Model
     Aws::String m_flowDefinitionArn;
     bool m_flowDefinitionArnHasBeenSet;
 
-    HumanLoopInputContent m_humanLoopInput;
+    HumanLoopInput m_humanLoopInput;
     bool m_humanLoopInputHasBeenSet;
 
-    HumanReviewDataAttributes m_dataAttributes;
+    HumanLoopDataAttributes m_dataAttributes;
     bool m_dataAttributesHasBeenSet;
   };
 

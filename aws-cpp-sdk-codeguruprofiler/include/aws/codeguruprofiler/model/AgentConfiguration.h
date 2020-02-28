@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration for the agent to use.</p><p><h3>See Also:</h3>   <a
+   * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AgentConfiguration">AWS
    * API Reference</a></p>
    */
@@ -46,47 +46,43 @@ namespace Model
 
 
     /**
-     * <p>Specifies the period to follow the configuration (to profile or not) and call
-     * back to get a new configuration.</p>
+     * <p/>
      */
     inline int GetPeriodInSeconds() const{ return m_periodInSeconds; }
 
     /**
-     * <p>Specifies the period to follow the configuration (to profile or not) and call
-     * back to get a new configuration.</p>
+     * <p/>
      */
     inline bool PeriodInSecondsHasBeenSet() const { return m_periodInSecondsHasBeenSet; }
 
     /**
-     * <p>Specifies the period to follow the configuration (to profile or not) and call
-     * back to get a new configuration.</p>
+     * <p/>
      */
     inline void SetPeriodInSeconds(int value) { m_periodInSecondsHasBeenSet = true; m_periodInSeconds = value; }
 
     /**
-     * <p>Specifies the period to follow the configuration (to profile or not) and call
-     * back to get a new configuration.</p>
+     * <p/>
      */
     inline AgentConfiguration& WithPeriodInSeconds(int value) { SetPeriodInSeconds(value); return *this;}
 
 
     /**
-     * <p>Specifies if the profiling should be enabled by the agent.</p>
+     * <p/>
      */
     inline bool GetShouldProfile() const{ return m_shouldProfile; }
 
     /**
-     * <p>Specifies if the profiling should be enabled by the agent.</p>
+     * <p/>
      */
     inline bool ShouldProfileHasBeenSet() const { return m_shouldProfileHasBeenSet; }
 
     /**
-     * <p>Specifies if the profiling should be enabled by the agent.</p>
+     * <p/>
      */
     inline void SetShouldProfile(bool value) { m_shouldProfileHasBeenSet = true; m_shouldProfile = value; }
 
     /**
-     * <p>Specifies if the profiling should be enabled by the agent.</p>
+     * <p/>
      */
     inline AgentConfiguration& WithShouldProfile(bool value) { SetShouldProfile(value); return *this;}
 

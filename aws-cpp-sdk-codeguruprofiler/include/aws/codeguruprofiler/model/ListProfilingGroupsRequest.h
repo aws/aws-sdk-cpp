@@ -31,7 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Request for ListProfilingGroups operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the listProfilingGroupsRequest.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroupsRequest">AWS
    * API Reference</a></p>
    */
@@ -52,65 +53,157 @@ namespace Model
 
 
     /**
-     * <p>If set to true, returns the full description of the profiling groups instead
-     * of the names. Defaults to false.</p>
+     * <p>A Boolean value indicating whether to include a description.</p>
      */
     inline bool GetIncludeDescription() const{ return m_includeDescription; }
 
     /**
-     * <p>If set to true, returns the full description of the profiling groups instead
-     * of the names. Defaults to false.</p>
+     * <p>A Boolean value indicating whether to include a description.</p>
      */
     inline bool IncludeDescriptionHasBeenSet() const { return m_includeDescriptionHasBeenSet; }
 
     /**
-     * <p>If set to true, returns the full description of the profiling groups instead
-     * of the names. Defaults to false.</p>
+     * <p>A Boolean value indicating whether to include a description.</p>
      */
     inline void SetIncludeDescription(bool value) { m_includeDescriptionHasBeenSet = true; m_includeDescription = value; }
 
     /**
-     * <p>If set to true, returns the full description of the profiling groups instead
-     * of the names. Defaults to false.</p>
+     * <p>A Boolean value indicating whether to include a description.</p>
      */
     inline ListProfilingGroupsRequest& WithIncludeDescription(bool value) { SetIncludeDescription(value); return *this;}
 
 
-    
+    /**
+     * <p>The maximum number of profiling groups results returned by
+     * <code>ListProfilingGroups</code> in paginated output. When this parameter is
+     * used, <code>ListProfilingGroups</code> only returns <code>maxResults</code>
+     * results in a single page along with a <code>nextToken</code> response element.
+     * The remaining results of the initial request can be seen by sending another
+     * <code>ListProfilingGroups</code> request with the returned
+     * <code>nextToken</code> value. </p>
+     */
     inline int GetMaxResults() const{ return m_maxResults; }
 
-    
+    /**
+     * <p>The maximum number of profiling groups results returned by
+     * <code>ListProfilingGroups</code> in paginated output. When this parameter is
+     * used, <code>ListProfilingGroups</code> only returns <code>maxResults</code>
+     * results in a single page along with a <code>nextToken</code> response element.
+     * The remaining results of the initial request can be seen by sending another
+     * <code>ListProfilingGroups</code> request with the returned
+     * <code>nextToken</code> value. </p>
+     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
-    
+    /**
+     * <p>The maximum number of profiling groups results returned by
+     * <code>ListProfilingGroups</code> in paginated output. When this parameter is
+     * used, <code>ListProfilingGroups</code> only returns <code>maxResults</code>
+     * results in a single page along with a <code>nextToken</code> response element.
+     * The remaining results of the initial request can be seen by sending another
+     * <code>ListProfilingGroups</code> request with the returned
+     * <code>nextToken</code> value. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
-    
+    /**
+     * <p>The maximum number of profiling groups results returned by
+     * <code>ListProfilingGroups</code> in paginated output. When this parameter is
+     * used, <code>ListProfilingGroups</code> only returns <code>maxResults</code>
+     * results in a single page along with a <code>nextToken</code> response element.
+     * The remaining results of the initial request can be seen by sending another
+     * <code>ListProfilingGroups</code> request with the returned
+     * <code>nextToken</code> value. </p>
+     */
     inline ListProfilingGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
-    
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
-    
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
     inline ListProfilingGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
     inline ListProfilingGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListProfilingGroups</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * </p> <note> <p>This token should be treated as an opaque identifier that is only
+     * used to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
     inline ListProfilingGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

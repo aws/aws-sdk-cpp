@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The status of profiling of a profiling group.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the profiling status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ProfilingStatus">AWS
    * API Reference</a></p>
    */
@@ -49,100 +49,106 @@ namespace Model
 
 
     /**
-     * <p>Timestamp of when the last interaction of the agent with configureAgent API
-     * for orchestration.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * orchestrated.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestAgentOrchestratedAt() const{ return m_latestAgentOrchestratedAt; }
 
     /**
-     * <p>Timestamp of when the last interaction of the agent with configureAgent API
-     * for orchestration.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * orchestrated.</p>
      */
     inline bool LatestAgentOrchestratedAtHasBeenSet() const { return m_latestAgentOrchestratedAtHasBeenSet; }
 
     /**
-     * <p>Timestamp of when the last interaction of the agent with configureAgent API
-     * for orchestration.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * orchestrated.</p>
      */
     inline void SetLatestAgentOrchestratedAt(const Aws::Utils::DateTime& value) { m_latestAgentOrchestratedAtHasBeenSet = true; m_latestAgentOrchestratedAt = value; }
 
     /**
-     * <p>Timestamp of when the last interaction of the agent with configureAgent API
-     * for orchestration.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * orchestrated.</p>
      */
     inline void SetLatestAgentOrchestratedAt(Aws::Utils::DateTime&& value) { m_latestAgentOrchestratedAtHasBeenSet = true; m_latestAgentOrchestratedAt = std::move(value); }
 
     /**
-     * <p>Timestamp of when the last interaction of the agent with configureAgent API
-     * for orchestration.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * orchestrated.</p>
      */
     inline ProfilingStatus& WithLatestAgentOrchestratedAt(const Aws::Utils::DateTime& value) { SetLatestAgentOrchestratedAt(value); return *this;}
 
     /**
-     * <p>Timestamp of when the last interaction of the agent with configureAgent API
-     * for orchestration.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * orchestrated.</p>
      */
     inline ProfilingStatus& WithLatestAgentOrchestratedAt(Aws::Utils::DateTime&& value) { SetLatestAgentOrchestratedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Timestamp of when the latest agent profile was successfully reported.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * reported..</p>
      */
     inline const Aws::Utils::DateTime& GetLatestAgentProfileReportedAt() const{ return m_latestAgentProfileReportedAt; }
 
     /**
-     * <p>Timestamp of when the latest agent profile was successfully reported.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * reported..</p>
      */
     inline bool LatestAgentProfileReportedAtHasBeenSet() const { return m_latestAgentProfileReportedAtHasBeenSet; }
 
     /**
-     * <p>Timestamp of when the latest agent profile was successfully reported.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * reported..</p>
      */
     inline void SetLatestAgentProfileReportedAt(const Aws::Utils::DateTime& value) { m_latestAgentProfileReportedAtHasBeenSet = true; m_latestAgentProfileReportedAt = value; }
 
     /**
-     * <p>Timestamp of when the latest agent profile was successfully reported.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * reported..</p>
      */
     inline void SetLatestAgentProfileReportedAt(Aws::Utils::DateTime&& value) { m_latestAgentProfileReportedAtHasBeenSet = true; m_latestAgentProfileReportedAt = std::move(value); }
 
     /**
-     * <p>Timestamp of when the latest agent profile was successfully reported.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * reported..</p>
      */
     inline ProfilingStatus& WithLatestAgentProfileReportedAt(const Aws::Utils::DateTime& value) { SetLatestAgentProfileReportedAt(value); return *this;}
 
     /**
-     * <p>Timestamp of when the latest agent profile was successfully reported.</p>
+     * <p>The time, in milliseconds since the epoch, when the latest agent was
+     * reported..</p>
      */
     inline ProfilingStatus& WithLatestAgentProfileReportedAt(Aws::Utils::DateTime&& value) { SetLatestAgentProfileReportedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time range of latest aggregated profile available.</p>
+     * <p>The latest aggregated profile</p>
      */
     inline const AggregatedProfileTime& GetLatestAggregatedProfile() const{ return m_latestAggregatedProfile; }
 
     /**
-     * <p>The time range of latest aggregated profile available.</p>
+     * <p>The latest aggregated profile</p>
      */
     inline bool LatestAggregatedProfileHasBeenSet() const { return m_latestAggregatedProfileHasBeenSet; }
 
     /**
-     * <p>The time range of latest aggregated profile available.</p>
+     * <p>The latest aggregated profile</p>
      */
     inline void SetLatestAggregatedProfile(const AggregatedProfileTime& value) { m_latestAggregatedProfileHasBeenSet = true; m_latestAggregatedProfile = value; }
 
     /**
-     * <p>The time range of latest aggregated profile available.</p>
+     * <p>The latest aggregated profile</p>
      */
     inline void SetLatestAggregatedProfile(AggregatedProfileTime&& value) { m_latestAggregatedProfileHasBeenSet = true; m_latestAggregatedProfile = std::move(value); }
 
     /**
-     * <p>The time range of latest aggregated profile available.</p>
+     * <p>The latest aggregated profile</p>
      */
     inline ProfilingStatus& WithLatestAggregatedProfile(const AggregatedProfileTime& value) { SetLatestAggregatedProfile(value); return *this;}
 
     /**
-     * <p>The time range of latest aggregated profile available.</p>
+     * <p>The latest aggregated profile</p>
      */
     inline ProfilingStatus& WithLatestAggregatedProfile(AggregatedProfileTime&& value) { SetLatestAggregatedProfile(std::move(value)); return *this;}
 

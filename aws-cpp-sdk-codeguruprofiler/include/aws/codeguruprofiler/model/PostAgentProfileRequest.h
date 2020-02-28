@@ -33,7 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Request for PostAgentProfile operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the postAgentProfileRequest.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfileRequest">AWS
    * API Reference</a></p>
    */
@@ -52,76 +53,84 @@ namespace Model
 
 
     /**
-     * <p>Client generated token to deduplicate the agent profile during
-     * aggregation.</p>
+     * <p/>
      */
     inline const Aws::String& GetProfileToken() const{ return m_profileToken; }
 
     /**
-     * <p>Client generated token to deduplicate the agent profile during
-     * aggregation.</p>
+     * <p/>
      */
     inline bool ProfileTokenHasBeenSet() const { return m_profileTokenHasBeenSet; }
 
     /**
-     * <p>Client generated token to deduplicate the agent profile during
-     * aggregation.</p>
+     * <p/>
      */
     inline void SetProfileToken(const Aws::String& value) { m_profileTokenHasBeenSet = true; m_profileToken = value; }
 
     /**
-     * <p>Client generated token to deduplicate the agent profile during
-     * aggregation.</p>
+     * <p/>
      */
     inline void SetProfileToken(Aws::String&& value) { m_profileTokenHasBeenSet = true; m_profileToken = std::move(value); }
 
     /**
-     * <p>Client generated token to deduplicate the agent profile during
-     * aggregation.</p>
+     * <p/>
      */
     inline void SetProfileToken(const char* value) { m_profileTokenHasBeenSet = true; m_profileToken.assign(value); }
 
     /**
-     * <p>Client generated token to deduplicate the agent profile during
-     * aggregation.</p>
+     * <p/>
      */
     inline PostAgentProfileRequest& WithProfileToken(const Aws::String& value) { SetProfileToken(value); return *this;}
 
     /**
-     * <p>Client generated token to deduplicate the agent profile during
-     * aggregation.</p>
+     * <p/>
      */
     inline PostAgentProfileRequest& WithProfileToken(Aws::String&& value) { SetProfileToken(std::move(value)); return *this;}
 
     /**
-     * <p>Client generated token to deduplicate the agent profile during
-     * aggregation.</p>
+     * <p/>
      */
     inline PostAgentProfileRequest& WithProfileToken(const char* value) { SetProfileToken(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PostAgentProfileRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PostAgentProfileRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PostAgentProfileRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
 
   private:

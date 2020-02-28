@@ -29,6 +29,7 @@ namespace Model
 {
 
 VirtualNodeSpec::VirtualNodeSpec() : 
+    m_backendDefaultsHasBeenSet(false),
     m_backendsHasBeenSet(false),
     m_listenersHasBeenSet(false),
     m_loggingHasBeenSet(false),
@@ -37,6 +38,7 @@ VirtualNodeSpec::VirtualNodeSpec() :
 }
 
 VirtualNodeSpec::VirtualNodeSpec(JsonView jsonValue) : 
+    m_backendDefaultsHasBeenSet(false),
     m_backendsHasBeenSet(false),
     m_listenersHasBeenSet(false),
     m_loggingHasBeenSet(false),
@@ -47,6 +49,13 @@ VirtualNodeSpec::VirtualNodeSpec(JsonView jsonValue) :
 
 VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("backendDefaults"))
+  {
+    m_backendDefaults = jsonValue.GetObject("backendDefaults");
+
+    m_backendDefaultsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("backends"))
   {
     Array<JsonView> backendsJsonList = jsonValue.GetArray("backends");
@@ -87,6 +96,12 @@ VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
 JsonValue VirtualNodeSpec::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_backendDefaultsHasBeenSet)
+  {
+   payload.WithObject("backendDefaults", m_backendDefaults.Jsonize());
+
+  }
 
   if(m_backendsHasBeenSet)
   {

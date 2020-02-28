@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>The time range of an aggregated profile.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the time range of the latest available aggregated
+   * profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AggregatedProfileTime">AWS
    * API Reference</a></p>
    */
@@ -49,63 +50,63 @@ namespace Model
 
 
     /**
-     * <p>The aggregation period of the aggregated profile.</p>
+     * <p>The time period.</p>
      */
     inline const AggregationPeriod& GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The aggregation period of the aggregated profile.</p>
+     * <p>The time period.</p>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
     /**
-     * <p>The aggregation period of the aggregated profile.</p>
+     * <p>The time period.</p>
      */
     inline void SetPeriod(const AggregationPeriod& value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The aggregation period of the aggregated profile.</p>
+     * <p>The time period.</p>
      */
     inline void SetPeriod(AggregationPeriod&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
 
     /**
-     * <p>The aggregation period of the aggregated profile.</p>
+     * <p>The time period.</p>
      */
     inline AggregatedProfileTime& WithPeriod(const AggregationPeriod& value) { SetPeriod(value); return *this;}
 
     /**
-     * <p>The aggregation period of the aggregated profile.</p>
+     * <p>The time period.</p>
      */
     inline AggregatedProfileTime& WithPeriod(AggregationPeriod&& value) { SetPeriod(std::move(value)); return *this;}
 
 
     /**
-     * <p>The start time of the aggregated profile.</p>
+     * <p>The start time.</p>
      */
     inline const Aws::Utils::DateTime& GetStart() const{ return m_start; }
 
     /**
-     * <p>The start time of the aggregated profile.</p>
+     * <p>The start time.</p>
      */
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
-     * <p>The start time of the aggregated profile.</p>
+     * <p>The start time.</p>
      */
     inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
-     * <p>The start time of the aggregated profile.</p>
+     * <p>The start time.</p>
      */
     inline void SetStart(Aws::Utils::DateTime&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
 
     /**
-     * <p>The start time of the aggregated profile.</p>
+     * <p>The start time.</p>
      */
     inline AggregatedProfileTime& WithStart(const Aws::Utils::DateTime& value) { SetStart(value); return *this;}
 
     /**
-     * <p>The start time of the aggregated profile.</p>
+     * <p>The start time.</p>
      */
     inline AggregatedProfileTime& WithStart(Aws::Utils::DateTime&& value) { SetStart(std::move(value)); return *this;}
 

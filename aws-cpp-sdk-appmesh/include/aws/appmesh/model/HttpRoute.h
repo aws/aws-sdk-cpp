@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents an HTTP or HTTP2 route type.</p><p><h3>See
+   * <p>An object that represents an HTTP or HTTP/2 route type.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRoute">AWS
    * API Reference</a></p>

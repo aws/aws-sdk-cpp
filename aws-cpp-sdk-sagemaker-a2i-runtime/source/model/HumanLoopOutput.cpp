@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/sagemaker-a2i-runtime/model/HumanLoopOutputContent.h>
+#include <aws/sagemaker-a2i-runtime/model/HumanLoopOutput.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -28,18 +28,18 @@ namespace AugmentedAIRuntime
 namespace Model
 {
 
-HumanLoopOutputContent::HumanLoopOutputContent() : 
+HumanLoopOutput::HumanLoopOutput() : 
     m_outputS3UriHasBeenSet(false)
 {
 }
 
-HumanLoopOutputContent::HumanLoopOutputContent(JsonView jsonValue) : 
+HumanLoopOutput::HumanLoopOutput(JsonView jsonValue) : 
     m_outputS3UriHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HumanLoopOutputContent& HumanLoopOutputContent::operator =(JsonView jsonValue)
+HumanLoopOutput& HumanLoopOutput::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("OutputS3Uri"))
   {
@@ -51,7 +51,7 @@ HumanLoopOutputContent& HumanLoopOutputContent::operator =(JsonView jsonValue)
   return *this;
 }
 
-JsonValue HumanLoopOutputContent::Jsonize() const
+JsonValue HumanLoopOutput::Jsonize() const
 {
   JsonValue payload;
 

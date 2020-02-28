@@ -37,73 +37,73 @@ namespace Model
   /**
    * <p>Attributes of the data specified by the customer. Use these to describe the
    * data to be labeled.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanReviewDataAttributes">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopDataAttributes">AWS
    * API Reference</a></p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API HumanReviewDataAttributes
+  class AWS_AUGMENTEDAIRUNTIME_API HumanLoopDataAttributes
   {
   public:
-    HumanReviewDataAttributes();
-    HumanReviewDataAttributes(Aws::Utils::Json::JsonView jsonValue);
-    HumanReviewDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
+    HumanLoopDataAttributes();
+    HumanLoopDataAttributes(Aws::Utils::Json::JsonView jsonValue);
+    HumanLoopDataAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>Declares that your content is free of personally identifiable information or
-     * adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers
-     * that can view your task based on this information.</p>
+     * adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk
+     * workers who can view your task based on this information.</p>
      */
     inline const Aws::Vector<ContentClassifier>& GetContentClassifiers() const{ return m_contentClassifiers; }
 
     /**
      * <p>Declares that your content is free of personally identifiable information or
-     * adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers
-     * that can view your task based on this information.</p>
+     * adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk
+     * workers who can view your task based on this information.</p>
      */
     inline bool ContentClassifiersHasBeenSet() const { return m_contentClassifiersHasBeenSet; }
 
     /**
      * <p>Declares that your content is free of personally identifiable information or
-     * adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers
-     * that can view your task based on this information.</p>
+     * adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk
+     * workers who can view your task based on this information.</p>
      */
     inline void SetContentClassifiers(const Aws::Vector<ContentClassifier>& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers = value; }
 
     /**
      * <p>Declares that your content is free of personally identifiable information or
-     * adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers
-     * that can view your task based on this information.</p>
+     * adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk
+     * workers who can view your task based on this information.</p>
      */
     inline void SetContentClassifiers(Aws::Vector<ContentClassifier>&& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers = std::move(value); }
 
     /**
      * <p>Declares that your content is free of personally identifiable information or
-     * adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers
-     * that can view your task based on this information.</p>
+     * adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk
+     * workers who can view your task based on this information.</p>
      */
-    inline HumanReviewDataAttributes& WithContentClassifiers(const Aws::Vector<ContentClassifier>& value) { SetContentClassifiers(value); return *this;}
+    inline HumanLoopDataAttributes& WithContentClassifiers(const Aws::Vector<ContentClassifier>& value) { SetContentClassifiers(value); return *this;}
 
     /**
      * <p>Declares that your content is free of personally identifiable information or
-     * adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers
-     * that can view your task based on this information.</p>
+     * adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk
+     * workers who can view your task based on this information.</p>
      */
-    inline HumanReviewDataAttributes& WithContentClassifiers(Aws::Vector<ContentClassifier>&& value) { SetContentClassifiers(std::move(value)); return *this;}
+    inline HumanLoopDataAttributes& WithContentClassifiers(Aws::Vector<ContentClassifier>&& value) { SetContentClassifiers(std::move(value)); return *this;}
 
     /**
      * <p>Declares that your content is free of personally identifiable information or
-     * adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers
-     * that can view your task based on this information.</p>
+     * adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk
+     * workers who can view your task based on this information.</p>
      */
-    inline HumanReviewDataAttributes& AddContentClassifiers(const ContentClassifier& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(value); return *this; }
+    inline HumanLoopDataAttributes& AddContentClassifiers(const ContentClassifier& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(value); return *this; }
 
     /**
      * <p>Declares that your content is free of personally identifiable information or
-     * adult content. Amazon SageMaker may restrict the Amazon Mechanical Turk workers
-     * that can view your task based on this information.</p>
+     * adult content.</p> <p>Amazon SageMaker can restrict the Amazon Mechanical Turk
+     * workers who can view your task based on this information.</p>
      */
-    inline HumanReviewDataAttributes& AddContentClassifiers(ContentClassifier&& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(std::move(value)); return *this; }
+    inline HumanLoopDataAttributes& AddContentClassifiers(ContentClassifier&& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(std::move(value)); return *this; }
 
   private:
 

@@ -1,0 +1,105 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace AppMesh
+{
+namespace Model
+{
+
+  /**
+   * <p>An object that represents a TLS validation context trust for an AWS Certicate
+   * Manager (ACM) certificate.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TlsValidationContextAcmTrust">AWS
+   * API Reference</a></p>
+   */
+  class AWS_APPMESH_API TlsValidationContextAcmTrust
+  {
+  public:
+    TlsValidationContextAcmTrust();
+    TlsValidationContextAcmTrust(Aws::Utils::Json::JsonView jsonValue);
+    TlsValidationContextAcmTrust& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCertificateAuthorityArns() const{ return m_certificateAuthorityArns; }
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline bool CertificateAuthorityArnsHasBeenSet() const { return m_certificateAuthorityArnsHasBeenSet; }
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline void SetCertificateAuthorityArns(const Aws::Vector<Aws::String>& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns = value; }
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline void SetCertificateAuthorityArns(Aws::Vector<Aws::String>&& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns = std::move(value); }
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline TlsValidationContextAcmTrust& WithCertificateAuthorityArns(const Aws::Vector<Aws::String>& value) { SetCertificateAuthorityArns(value); return *this;}
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline TlsValidationContextAcmTrust& WithCertificateAuthorityArns(Aws::Vector<Aws::String>&& value) { SetCertificateAuthorityArns(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(const Aws::String& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(value); return *this; }
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(Aws::String&& value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>One or more ACM Amazon Resource Name (ARN)s.</p>
+     */
+    inline TlsValidationContextAcmTrust& AddCertificateAuthorityArns(const char* value) { m_certificateAuthorityArnsHasBeenSet = true; m_certificateAuthorityArns.push_back(value); return *this; }
+
+  private:
+
+    Aws::Vector<Aws::String> m_certificateAuthorityArns;
+    bool m_certificateAuthorityArnsHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace AppMesh
+} // namespace Aws

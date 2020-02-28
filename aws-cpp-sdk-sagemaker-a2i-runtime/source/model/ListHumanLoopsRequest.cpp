@@ -28,6 +28,7 @@ using namespace Aws::Http;
 ListHumanLoopsRequest::ListHumanLoopsRequest() : 
     m_creationTimeAfterHasBeenSet(false),
     m_creationTimeBeforeHasBeenSet(false),
+    m_flowDefinitionArnHasBeenSet(false),
     m_sortOrder(SortOrder::NOT_SET),
     m_sortOrderHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -55,6 +56,13 @@ void ListHumanLoopsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_creationTimeBefore.ToGmtString(DateFormat::RFC822);
       uri.AddQueryStringParameter("CreationTimeBefore", ss.str());
+      ss.str("");
+    }
+
+    if(m_flowDefinitionArnHasBeenSet)
+    {
+      ss << m_flowDefinitionArn;
+      uri.AddQueryStringParameter("FlowDefinitionArn", ss.str());
       ss.str("");
     }
 

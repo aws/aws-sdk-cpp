@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
+#include <aws/appmesh/model/ClientPolicy.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -46,6 +47,37 @@ namespace Model
     VirtualServiceBackend(Aws::Utils::Json::JsonView jsonValue);
     VirtualServiceBackend& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A reference to an object that represents the client policy for a backend.</p>
+     */
+    inline const ClientPolicy& GetClientPolicy() const{ return m_clientPolicy; }
+
+    /**
+     * <p>A reference to an object that represents the client policy for a backend.</p>
+     */
+    inline bool ClientPolicyHasBeenSet() const { return m_clientPolicyHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents the client policy for a backend.</p>
+     */
+    inline void SetClientPolicy(const ClientPolicy& value) { m_clientPolicyHasBeenSet = true; m_clientPolicy = value; }
+
+    /**
+     * <p>A reference to an object that represents the client policy for a backend.</p>
+     */
+    inline void SetClientPolicy(ClientPolicy&& value) { m_clientPolicyHasBeenSet = true; m_clientPolicy = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents the client policy for a backend.</p>
+     */
+    inline VirtualServiceBackend& WithClientPolicy(const ClientPolicy& value) { SetClientPolicy(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents the client policy for a backend.</p>
+     */
+    inline VirtualServiceBackend& WithClientPolicy(ClientPolicy&& value) { SetClientPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -89,6 +121,9 @@ namespace Model
     inline VirtualServiceBackend& WithVirtualServiceName(const char* value) { SetVirtualServiceName(value); return *this;}
 
   private:
+
+    ClientPolicy m_clientPolicy;
+    bool m_clientPolicyHasBeenSet;
 
     Aws::String m_virtualServiceName;
     bool m_virtualServiceNameHasBeenSet;

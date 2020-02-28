@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Request for DeleteProfilingGroup operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the deleteProfilingGroupRequest.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroupRequest">AWS
    * API Reference</a></p>
    */
@@ -45,28 +46,44 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The profiling group name to delete.</p>
+     */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
 
-    
+    /**
+     * <p>The profiling group name to delete.</p>
+     */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
 
-    
+    /**
+     * <p>The profiling group name to delete.</p>
+     */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
 
-    
+    /**
+     * <p>The profiling group name to delete.</p>
+     */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
 
-    
+    /**
+     * <p>The profiling group name to delete.</p>
+     */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
 
-    
+    /**
+     * <p>The profiling group name to delete.</p>
+     */
     inline DeleteProfilingGroupRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
 
-    
+    /**
+     * <p>The profiling group name to delete.</p>
+     */
     inline DeleteProfilingGroupRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The profiling group name to delete.</p>
+     */
     inline DeleteProfilingGroupRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
 
   private:

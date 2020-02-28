@@ -32,9 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration to orchestrate agents to create and report agent profiles of
-   * the profiling group. Agents are orchestrated if they follow the agent
-   * orchestration protocol.</p><p><h3>See Also:</h3>   <a
+   * <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/AgentOrchestrationConfig">AWS
    * API Reference</a></p>
    */
@@ -48,22 +46,22 @@ namespace Model
 
 
     /**
-     * <p>If the agents should be enabled to create and report profiles.</p>
+     * <p/>
      */
     inline bool GetProfilingEnabled() const{ return m_profilingEnabled; }
 
     /**
-     * <p>If the agents should be enabled to create and report profiles.</p>
+     * <p/>
      */
     inline bool ProfilingEnabledHasBeenSet() const { return m_profilingEnabledHasBeenSet; }
 
     /**
-     * <p>If the agents should be enabled to create and report profiles.</p>
+     * <p/>
      */
     inline void SetProfilingEnabled(bool value) { m_profilingEnabledHasBeenSet = true; m_profilingEnabled = value; }
 
     /**
-     * <p>If the agents should be enabled to create and report profiles.</p>
+     * <p/>
      */
     inline AgentOrchestrationConfig& WithProfilingEnabled(bool value) { SetProfilingEnabled(value); return *this;}
 

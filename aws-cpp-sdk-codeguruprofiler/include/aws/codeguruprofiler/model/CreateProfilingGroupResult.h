@@ -35,7 +35,8 @@ namespace CodeGuruProfiler
 namespace Model
 {
   /**
-   * <p>Response for CreateProfilingGroup operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the createProfilingGroupResponse.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroupResponse">AWS
    * API Reference</a></p>
    */
@@ -47,19 +48,29 @@ namespace Model
     CreateProfilingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Information about the new profiling group</p>
+     */
     inline const ProfilingGroupDescription& GetProfilingGroup() const{ return m_profilingGroup; }
 
-    
+    /**
+     * <p>Information about the new profiling group</p>
+     */
     inline void SetProfilingGroup(const ProfilingGroupDescription& value) { m_profilingGroup = value; }
 
-    
+    /**
+     * <p>Information about the new profiling group</p>
+     */
     inline void SetProfilingGroup(ProfilingGroupDescription&& value) { m_profilingGroup = std::move(value); }
 
-    
+    /**
+     * <p>Information about the new profiling group</p>
+     */
     inline CreateProfilingGroupResult& WithProfilingGroup(const ProfilingGroupDescription& value) { SetProfilingGroup(value); return *this;}
 
-    
+    /**
+     * <p>Information about the new profiling group</p>
+     */
     inline CreateProfilingGroupResult& WithProfilingGroup(ProfilingGroupDescription&& value) { SetProfilingGroup(std::move(value)); return *this;}
 
   private:

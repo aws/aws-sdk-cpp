@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/sagemaker-a2i-runtime/model/HumanReviewDataAttributes.h>
+#include <aws/sagemaker-a2i-runtime/model/HumanLoopDataAttributes.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -28,18 +28,18 @@ namespace AugmentedAIRuntime
 namespace Model
 {
 
-HumanReviewDataAttributes::HumanReviewDataAttributes() : 
+HumanLoopDataAttributes::HumanLoopDataAttributes() : 
     m_contentClassifiersHasBeenSet(false)
 {
 }
 
-HumanReviewDataAttributes::HumanReviewDataAttributes(JsonView jsonValue) : 
+HumanLoopDataAttributes::HumanLoopDataAttributes(JsonView jsonValue) : 
     m_contentClassifiersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-HumanReviewDataAttributes& HumanReviewDataAttributes::operator =(JsonView jsonValue)
+HumanLoopDataAttributes& HumanLoopDataAttributes::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ContentClassifiers"))
   {
@@ -54,7 +54,7 @@ HumanReviewDataAttributes& HumanReviewDataAttributes::operator =(JsonView jsonVa
   return *this;
 }
 
-JsonValue HumanReviewDataAttributes::Jsonize() const
+JsonValue HumanLoopDataAttributes::Jsonize() const
 {
   JsonValue payload;
 

@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Request for ConfigureAgent operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the configureAgentRequest.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgentRequest">AWS
    * API Reference</a></p>
    */
@@ -45,53 +46,85 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetFleetInstanceId() const{ return m_fleetInstanceId; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool FleetInstanceIdHasBeenSet() const { return m_fleetInstanceIdHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFleetInstanceId(const Aws::String& value) { m_fleetInstanceIdHasBeenSet = true; m_fleetInstanceId = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFleetInstanceId(Aws::String&& value) { m_fleetInstanceIdHasBeenSet = true; m_fleetInstanceId = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetFleetInstanceId(const char* value) { m_fleetInstanceIdHasBeenSet = true; m_fleetInstanceId.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ConfigureAgentRequest& WithFleetInstanceId(const Aws::String& value) { SetFleetInstanceId(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ConfigureAgentRequest& WithFleetInstanceId(Aws::String&& value) { SetFleetInstanceId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ConfigureAgentRequest& WithFleetInstanceId(const char* value) { SetFleetInstanceId(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ConfigureAgentRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ConfigureAgentRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ConfigureAgentRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
 
   private:

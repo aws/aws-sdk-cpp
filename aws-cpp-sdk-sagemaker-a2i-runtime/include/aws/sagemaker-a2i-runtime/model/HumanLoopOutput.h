@@ -36,73 +36,65 @@ namespace Model
   /**
    * <p>Information about where the human output will be stored.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopOutputContent">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopOutput">AWS
    * API Reference</a></p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API HumanLoopOutputContent
+  class AWS_AUGMENTEDAIRUNTIME_API HumanLoopOutput
   {
   public:
-    HumanLoopOutputContent();
-    HumanLoopOutputContent(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopOutputContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    HumanLoopOutput();
+    HumanLoopOutput(Aws::Utils::Json::JsonView jsonValue);
+    HumanLoopOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
      * <p>The location of the Amazon S3 object where Amazon Augmented AI stores your
-     * human loop output. The output is stored at the following location:
-     * <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.</p>
+     * human loop output.</p>
      */
     inline const Aws::String& GetOutputS3Uri() const{ return m_outputS3Uri; }
 
     /**
      * <p>The location of the Amazon S3 object where Amazon Augmented AI stores your
-     * human loop output. The output is stored at the following location:
-     * <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.</p>
+     * human loop output.</p>
      */
     inline bool OutputS3UriHasBeenSet() const { return m_outputS3UriHasBeenSet; }
 
     /**
      * <p>The location of the Amazon S3 object where Amazon Augmented AI stores your
-     * human loop output. The output is stored at the following location:
-     * <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.</p>
+     * human loop output.</p>
      */
     inline void SetOutputS3Uri(const Aws::String& value) { m_outputS3UriHasBeenSet = true; m_outputS3Uri = value; }
 
     /**
      * <p>The location of the Amazon S3 object where Amazon Augmented AI stores your
-     * human loop output. The output is stored at the following location:
-     * <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.</p>
+     * human loop output.</p>
      */
     inline void SetOutputS3Uri(Aws::String&& value) { m_outputS3UriHasBeenSet = true; m_outputS3Uri = std::move(value); }
 
     /**
      * <p>The location of the Amazon S3 object where Amazon Augmented AI stores your
-     * human loop output. The output is stored at the following location:
-     * <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.</p>
+     * human loop output.</p>
      */
     inline void SetOutputS3Uri(const char* value) { m_outputS3UriHasBeenSet = true; m_outputS3Uri.assign(value); }
 
     /**
      * <p>The location of the Amazon S3 object where Amazon Augmented AI stores your
-     * human loop output. The output is stored at the following location:
-     * <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.</p>
+     * human loop output.</p>
      */
-    inline HumanLoopOutputContent& WithOutputS3Uri(const Aws::String& value) { SetOutputS3Uri(value); return *this;}
+    inline HumanLoopOutput& WithOutputS3Uri(const Aws::String& value) { SetOutputS3Uri(value); return *this;}
 
     /**
      * <p>The location of the Amazon S3 object where Amazon Augmented AI stores your
-     * human loop output. The output is stored at the following location:
-     * <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.</p>
+     * human loop output.</p>
      */
-    inline HumanLoopOutputContent& WithOutputS3Uri(Aws::String&& value) { SetOutputS3Uri(std::move(value)); return *this;}
+    inline HumanLoopOutput& WithOutputS3Uri(Aws::String&& value) { SetOutputS3Uri(std::move(value)); return *this;}
 
     /**
      * <p>The location of the Amazon S3 object where Amazon Augmented AI stores your
-     * human loop output. The output is stored at the following location:
-     * <code>s3://S3OutputPath/HumanLoopName/CreationTime/output.json</code>.</p>
+     * human loop output.</p>
      */
-    inline HumanLoopOutputContent& WithOutputS3Uri(const char* value) { SetOutputS3Uri(value); return *this;}
+    inline HumanLoopOutput& WithOutputS3Uri(const char* value) { SetOutputS3Uri(value); return *this;}
 
   private:
 

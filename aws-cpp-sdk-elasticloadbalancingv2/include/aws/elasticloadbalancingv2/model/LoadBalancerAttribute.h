@@ -71,11 +71,13 @@ namespace Model
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
      * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
-     * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
-     * <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether
-     * cross-zone load balancing is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing
+     * requires that message header names contain only alphanumeric characters and
+     * hyphens.</p> </li> </ul> <p>The following attributes are supported by only
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone
+     * load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
@@ -101,11 +103,13 @@ namespace Model
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
      * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
-     * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
-     * <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether
-     * cross-zone load balancing is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing
+     * requires that message header names contain only alphanumeric characters and
+     * hyphens.</p> </li> </ul> <p>The following attributes are supported by only
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone
+     * load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> </ul>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
@@ -131,11 +135,13 @@ namespace Model
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
      * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
-     * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
-     * <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether
-     * cross-zone load balancing is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing
+     * requires that message header names contain only alphanumeric characters and
+     * hyphens.</p> </li> </ul> <p>The following attributes are supported by only
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone
+     * load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
@@ -161,11 +167,13 @@ namespace Model
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
      * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
-     * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
-     * <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether
-     * cross-zone load balancing is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing
+     * requires that message header names contain only alphanumeric characters and
+     * hyphens.</p> </li> </ul> <p>The following attributes are supported by only
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone
+     * load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
@@ -191,11 +199,13 @@ namespace Model
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
      * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
-     * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
-     * <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether
-     * cross-zone load balancing is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing
+     * requires that message header names contain only alphanumeric characters and
+     * hyphens.</p> </li> </ul> <p>The following attributes are supported by only
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone
+     * load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> </ul>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
@@ -221,11 +231,13 @@ namespace Model
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
      * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
-     * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
-     * <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether
-     * cross-zone load balancing is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing
+     * requires that message header names contain only alphanumeric characters and
+     * hyphens.</p> </li> </ul> <p>The following attributes are supported by only
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone
+     * load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
@@ -251,11 +263,13 @@ namespace Model
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
      * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
-     * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
-     * <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether
-     * cross-zone load balancing is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing
+     * requires that message header names contain only alphanumeric characters and
+     * hyphens.</p> </li> </ul> <p>The following attributes are supported by only
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone
+     * load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
@@ -281,11 +295,13 @@ namespace Model
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
      * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
-     * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
-     * <p> <code>load_balancing.cross_zone.enabled</code> - Indicates whether
-     * cross-zone load balancing is enabled. The value is <code>true</code> or
-     * <code>false</code>. The default is <code>false</code>.</p> </li> </ul>
+     * <code>false</code>. The default is <code>true</code>. Elastic Load Balancing
+     * requires that message header names contain only alphanumeric characters and
+     * hyphens.</p> </li> </ul> <p>The following attributes are supported by only
+     * Network Load Balancers:</p> <ul> <li> <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone
+     * load balancing is enabled. The value is <code>true</code> or <code>false</code>.
+     * The default is <code>false</code>.</p> </li> </ul>
      */
     inline LoadBalancerAttribute& WithKey(const char* value) { SetKey(value); return *this;}
 

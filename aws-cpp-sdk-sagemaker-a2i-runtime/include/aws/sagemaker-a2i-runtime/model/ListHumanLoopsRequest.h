@@ -17,8 +17,8 @@
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeRequest.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/sagemaker-a2i-runtime/model/SortOrder.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker-a2i-runtime/model/SortOrder.h>
 #include <utility>
 
 namespace Aws
@@ -51,77 +51,118 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The timestamp of the date when you want the human loops to begin.
-     * For example, <code>1551000000</code>.</p>
+     * <p>(Optional) The timestamp of the date when you want the human loops to begin
+     * in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
 
     /**
-     * <p>(Optional) The timestamp of the date when you want the human loops to begin.
-     * For example, <code>1551000000</code>.</p>
+     * <p>(Optional) The timestamp of the date when you want the human loops to begin
+     * in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
 
     /**
-     * <p>(Optional) The timestamp of the date when you want the human loops to begin.
-     * For example, <code>1551000000</code>.</p>
+     * <p>(Optional) The timestamp of the date when you want the human loops to begin
+     * in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
 
     /**
-     * <p>(Optional) The timestamp of the date when you want the human loops to begin.
-     * For example, <code>1551000000</code>.</p>
+     * <p>(Optional) The timestamp of the date when you want the human loops to begin
+     * in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
 
     /**
-     * <p>(Optional) The timestamp of the date when you want the human loops to begin.
-     * For example, <code>1551000000</code>.</p>
+     * <p>(Optional) The timestamp of the date when you want the human loops to begin
+     * in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline ListHumanLoopsRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
 
     /**
-     * <p>(Optional) The timestamp of the date when you want the human loops to begin.
-     * For example, <code>1551000000</code>.</p>
+     * <p>(Optional) The timestamp of the date when you want the human loops to begin
+     * in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline ListHumanLoopsRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
 
 
     /**
      * <p>(Optional) The timestamp of the date before which you want the human loops to
-     * begin. For example, <code>1550000000</code>.</p>
+     * begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
 
     /**
      * <p>(Optional) The timestamp of the date before which you want the human loops to
-     * begin. For example, <code>1550000000</code>.</p>
+     * begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
 
     /**
      * <p>(Optional) The timestamp of the date before which you want the human loops to
-     * begin. For example, <code>1550000000</code>.</p>
+     * begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
 
     /**
      * <p>(Optional) The timestamp of the date before which you want the human loops to
-     * begin. For example, <code>1550000000</code>.</p>
+     * begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
 
     /**
      * <p>(Optional) The timestamp of the date before which you want the human loops to
-     * begin. For example, <code>1550000000</code>.</p>
+     * begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline ListHumanLoopsRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
 
     /**
      * <p>(Optional) The timestamp of the date before which you want the human loops to
-     * begin. For example, <code>1550000000</code>.</p>
+     * begin in ISO 8601 format. For example, <code>2020-02-24</code>.</p>
      */
     inline ListHumanLoopsRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+     */
+    inline const Aws::String& GetFlowDefinitionArn() const{ return m_flowDefinitionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+     */
+    inline bool FlowDefinitionArnHasBeenSet() const { return m_flowDefinitionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+     */
+    inline void SetFlowDefinitionArn(const Aws::String& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+     */
+    inline void SetFlowDefinitionArn(Aws::String&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+     */
+    inline void SetFlowDefinitionArn(const char* value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+     */
+    inline ListHumanLoopsRequest& WithFlowDefinitionArn(const Aws::String& value) { SetFlowDefinitionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+     */
+    inline ListHumanLoopsRequest& WithFlowDefinitionArn(Aws::String&& value) { SetFlowDefinitionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a flow definition.</p>
+     */
+    inline ListHumanLoopsRequest& WithFlowDefinitionArn(const char* value) { SetFlowDefinitionArn(value); return *this;}
 
 
     /**
@@ -241,6 +282,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTimeBefore;
     bool m_creationTimeBeforeHasBeenSet;
+
+    Aws::String m_flowDefinitionArn;
+    bool m_flowDefinitionArnHasBeenSet;
 
     SortOrder m_sortOrder;
     bool m_sortOrderHasBeenSet;

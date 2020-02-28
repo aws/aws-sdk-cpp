@@ -50,16 +50,21 @@ namespace Model
 
 
     /**
-     * <p>The name of the attribute.</p> <p>The following attribute is supported by
+     * <p>The name of the attribute.</p> <p>The following attributes are supported by
      * both Application Load Balancers and Network Load Balancers:</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in
      * seconds, for Elastic Load Balancing to wait before changing the state of a
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
-     * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by Application Load Balancers if the target
-     * is not a Lambda function:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
+     * Lambda function, this attribute is not supported.</p> </li> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The type
+     * of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> </ul> <p>The following attributes are supported by
+     * Application Load Balancers if the target is not a Lambda function:</p> <ul> <li>
+     * <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
      * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
      * The default is <code>round_robin</code>.</p> </li> <li> <p>
@@ -67,11 +72,7 @@ namespace Model
      * which a newly registered target receives a linearly increasing share of the
      * traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     * mode is disabled by default.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
+     * mode is disabled by default.</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -93,16 +94,21 @@ namespace Model
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>The name of the attribute.</p> <p>The following attribute is supported by
+     * <p>The name of the attribute.</p> <p>The following attributes are supported by
      * both Application Load Balancers and Network Load Balancers:</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in
      * seconds, for Elastic Load Balancing to wait before changing the state of a
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
-     * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by Application Load Balancers if the target
-     * is not a Lambda function:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
+     * Lambda function, this attribute is not supported.</p> </li> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The type
+     * of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> </ul> <p>The following attributes are supported by
+     * Application Load Balancers if the target is not a Lambda function:</p> <ul> <li>
+     * <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
      * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
      * The default is <code>round_robin</code>.</p> </li> <li> <p>
@@ -110,11 +116,7 @@ namespace Model
      * which a newly registered target receives a linearly increasing share of the
      * traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     * mode is disabled by default.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
+     * mode is disabled by default.</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -136,16 +138,21 @@ namespace Model
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>The name of the attribute.</p> <p>The following attribute is supported by
+     * <p>The name of the attribute.</p> <p>The following attributes are supported by
      * both Application Load Balancers and Network Load Balancers:</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in
      * seconds, for Elastic Load Balancing to wait before changing the state of a
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
-     * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by Application Load Balancers if the target
-     * is not a Lambda function:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
+     * Lambda function, this attribute is not supported.</p> </li> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The type
+     * of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> </ul> <p>The following attributes are supported by
+     * Application Load Balancers if the target is not a Lambda function:</p> <ul> <li>
+     * <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
      * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
      * The default is <code>round_robin</code>.</p> </li> <li> <p>
@@ -153,11 +160,7 @@ namespace Model
      * which a newly registered target receives a linearly increasing share of the
      * traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     * mode is disabled by default.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
+     * mode is disabled by default.</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -179,16 +182,21 @@ namespace Model
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>The name of the attribute.</p> <p>The following attribute is supported by
+     * <p>The name of the attribute.</p> <p>The following attributes are supported by
      * both Application Load Balancers and Network Load Balancers:</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in
      * seconds, for Elastic Load Balancing to wait before changing the state of a
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
-     * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by Application Load Balancers if the target
-     * is not a Lambda function:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
+     * Lambda function, this attribute is not supported.</p> </li> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The type
+     * of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> </ul> <p>The following attributes are supported by
+     * Application Load Balancers if the target is not a Lambda function:</p> <ul> <li>
+     * <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
      * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
      * The default is <code>round_robin</code>.</p> </li> <li> <p>
@@ -196,11 +204,7 @@ namespace Model
      * which a newly registered target receives a linearly increasing share of the
      * traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     * mode is disabled by default.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
+     * mode is disabled by default.</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -222,16 +226,21 @@ namespace Model
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>The name of the attribute.</p> <p>The following attribute is supported by
+     * <p>The name of the attribute.</p> <p>The following attributes are supported by
      * both Application Load Balancers and Network Load Balancers:</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in
      * seconds, for Elastic Load Balancing to wait before changing the state of a
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
-     * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by Application Load Balancers if the target
-     * is not a Lambda function:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
+     * Lambda function, this attribute is not supported.</p> </li> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The type
+     * of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> </ul> <p>The following attributes are supported by
+     * Application Load Balancers if the target is not a Lambda function:</p> <ul> <li>
+     * <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
      * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
      * The default is <code>round_robin</code>.</p> </li> <li> <p>
@@ -239,11 +248,7 @@ namespace Model
      * which a newly registered target receives a linearly increasing share of the
      * traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     * mode is disabled by default.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
+     * mode is disabled by default.</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -265,16 +270,21 @@ namespace Model
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>The name of the attribute.</p> <p>The following attribute is supported by
+     * <p>The name of the attribute.</p> <p>The following attributes are supported by
      * both Application Load Balancers and Network Load Balancers:</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in
      * seconds, for Elastic Load Balancing to wait before changing the state of a
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
-     * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by Application Load Balancers if the target
-     * is not a Lambda function:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
+     * Lambda function, this attribute is not supported.</p> </li> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The type
+     * of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> </ul> <p>The following attributes are supported by
+     * Application Load Balancers if the target is not a Lambda function:</p> <ul> <li>
+     * <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
      * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
      * The default is <code>round_robin</code>.</p> </li> <li> <p>
@@ -282,11 +292,7 @@ namespace Model
      * which a newly registered target receives a linearly increasing share of the
      * traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     * mode is disabled by default.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
+     * mode is disabled by default.</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -308,16 +314,21 @@ namespace Model
     inline TargetGroupAttribute& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>The name of the attribute.</p> <p>The following attribute is supported by
+     * <p>The name of the attribute.</p> <p>The following attributes are supported by
      * both Application Load Balancers and Network Load Balancers:</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in
      * seconds, for Elastic Load Balancing to wait before changing the state of a
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
-     * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by Application Load Balancers if the target
-     * is not a Lambda function:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
+     * Lambda function, this attribute is not supported.</p> </li> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The type
+     * of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> </ul> <p>The following attributes are supported by
+     * Application Load Balancers if the target is not a Lambda function:</p> <ul> <li>
+     * <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
      * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
      * The default is <code>round_robin</code>.</p> </li> <li> <p>
@@ -325,11 +336,7 @@ namespace Model
      * which a newly registered target receives a linearly increasing share of the
      * traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     * mode is disabled by default.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
+     * mode is disabled by default.</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is
@@ -351,16 +358,21 @@ namespace Model
     inline TargetGroupAttribute& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the attribute.</p> <p>The following attribute is supported by
+     * <p>The name of the attribute.</p> <p>The following attributes are supported by
      * both Application Load Balancers and Network Load Balancers:</p> <ul> <li> <p>
      * <code>deregistration_delay.timeout_seconds</code> - The amount of time, in
      * seconds, for Elastic Load Balancing to wait before changing the state of a
      * deregistering target from <code>draining</code> to <code>unused</code>. The
      * range is 0-3600 seconds. The default value is 300 seconds. If the target is a
-     * Lambda function, this attribute is not supported.</p> </li> </ul> <p>The
-     * following attributes are supported by Application Load Balancers if the target
-     * is not a Lambda function:</p> <ul> <li> <p>
-     * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
+     * Lambda function, this attribute is not supported.</p> </li> <li> <p>
+     * <code>stickiness.enabled</code> - Indicates whether sticky sessions are enabled.
+     * The value is <code>true</code> or <code>false</code>. The default is
+     * <code>false</code>.</p> </li> <li> <p> <code>stickiness.type</code> - The type
+     * of sticky sessions. The possible values are <code>lb_cookie</code> for
+     * Application Load Balancers or <code>source_ip</code> for Network Load
+     * Balancers.</p> </li> </ul> <p>The following attributes are supported by
+     * Application Load Balancers if the target is not a Lambda function:</p> <ul> <li>
+     * <p> <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
      * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
      * The default is <code>round_robin</code>.</p> </li> <li> <p>
@@ -368,11 +380,7 @@ namespace Model
      * which a newly registered target receives a linearly increasing share of the
      * traffic to the target group. After this time period ends, the target receives
      * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start
-     * mode is disabled by default.</p> </li> <li> <p> <code>stickiness.enabled</code>
-     * - Indicates whether sticky sessions are enabled. The value is <code>true</code>
-     * or <code>false</code>. The default is <code>false</code>.</p> </li> <li> <p>
-     * <code>stickiness.type</code> - The type of sticky sessions. The possible value
-     * is <code>lb_cookie</code>.</p> </li> <li> <p>
+     * mode is disabled by default.</p> </li> <li> <p>
      * <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in
      * seconds, during which requests from a client should be routed to the same
      * target. After this time period expires, the load balancer-generated cookie is

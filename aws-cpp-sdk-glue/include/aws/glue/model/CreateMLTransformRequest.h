@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/TransformParameters.h>
 #include <aws/glue/model/WorkerType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/GlueTable.h>
 #include <utility>
 
@@ -716,6 +717,124 @@ namespace Model
      */
     inline CreateMLTransformRequest& WithMaxRetries(int value) { SetMaxRetries(value); return *this;}
 
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to use with this machine learning transform. You may use tags to
+     * limit access to the machine learning transform. For more information about tags
+     * in AWS Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateMLTransformRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -750,6 +869,9 @@ namespace Model
 
     int m_maxRetries;
     bool m_maxRetriesHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

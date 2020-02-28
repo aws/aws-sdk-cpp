@@ -29,11 +29,13 @@ namespace Model
 {
 
 VirtualServiceBackend::VirtualServiceBackend() : 
+    m_clientPolicyHasBeenSet(false),
     m_virtualServiceNameHasBeenSet(false)
 {
 }
 
 VirtualServiceBackend::VirtualServiceBackend(JsonView jsonValue) : 
+    m_clientPolicyHasBeenSet(false),
     m_virtualServiceNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +43,13 @@ VirtualServiceBackend::VirtualServiceBackend(JsonView jsonValue) :
 
 VirtualServiceBackend& VirtualServiceBackend::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("clientPolicy"))
+  {
+    m_clientPolicy = jsonValue.GetObject("clientPolicy");
+
+    m_clientPolicyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("virtualServiceName"))
   {
     m_virtualServiceName = jsonValue.GetString("virtualServiceName");
@@ -54,6 +63,12 @@ VirtualServiceBackend& VirtualServiceBackend::operator =(JsonView jsonValue)
 JsonValue VirtualServiceBackend::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_clientPolicyHasBeenSet)
+  {
+   payload.WithObject("clientPolicy", m_clientPolicy.Jsonize());
+
+  }
 
   if(m_virtualServiceNameHasBeenSet)
   {

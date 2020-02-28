@@ -71,6 +71,7 @@
 #include <aws/quicksight/model/ListUserGroupsResult.h>
 #include <aws/quicksight/model/ListUsersResult.h>
 #include <aws/quicksight/model/RegisterUserResult.h>
+#include <aws/quicksight/model/SearchDashboardsResult.h>
 #include <aws/quicksight/model/TagResourceResult.h>
 #include <aws/quicksight/model/UntagResourceResult.h>
 #include <aws/quicksight/model/UpdateDashboardResult.h>
@@ -175,6 +176,7 @@ namespace Model
         class ListUserGroupsRequest;
         class ListUsersRequest;
         class RegisterUserRequest;
+        class SearchDashboardsRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateDashboardRequest;
@@ -241,6 +243,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListUserGroupsResult, Aws::Client::AWSError<QuickSightErrors>> ListUserGroupsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<QuickSightErrors>> ListUsersOutcome;
         typedef Aws::Utils::Outcome<RegisterUserResult, Aws::Client::AWSError<QuickSightErrors>> RegisterUserOutcome;
+        typedef Aws::Utils::Outcome<SearchDashboardsResult, Aws::Client::AWSError<QuickSightErrors>> SearchDashboardsOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<QuickSightErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<QuickSightErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDashboardResult, Aws::Client::AWSError<QuickSightErrors>> UpdateDashboardOutcome;
@@ -307,6 +310,7 @@ namespace Model
         typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<RegisterUserOutcome> RegisterUserOutcomeCallable;
+        typedef std::future<SearchDashboardsOutcome> SearchDashboardsOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDashboardOutcome> UpdateDashboardOutcomeCallable;
@@ -376,6 +380,7 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::ListUserGroupsRequest&, const Model::ListUserGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::RegisterUserRequest&, const Model::RegisterUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterUserResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::SearchDashboardsRequest&, const Model::SearchDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDashboardsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDashboardRequest&, const Model::UpdateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDashboardResponseReceivedHandler;
@@ -1877,6 +1882,31 @@ namespace Model
         virtual void RegisterUserAsync(const Model::RegisterUserRequest& request, const RegisterUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Searchs for dashboards that belong to a user. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchDashboardsOutcome SearchDashboards(const Model::SearchDashboardsRequest& request) const;
+
+        /**
+         * <p>Searchs for dashboards that belong to a user. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchDashboardsOutcomeCallable SearchDashboardsCallable(const Model::SearchDashboardsRequest& request) const;
+
+        /**
+         * <p>Searchs for dashboards that belong to a user. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDashboards">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchDashboardsAsync(const Model::SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns one or more tags (key-value pairs) to the specified QuickSight
          * resource. </p> <p>Tags can help you organize and categorize your resources. You
          * can also use them to scope user permissions, by granting a user permission to
@@ -2371,6 +2401,7 @@ namespace Model
         void ListUserGroupsAsyncHelper(const Model::ListUserGroupsRequest& request, const ListUserGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterUserAsyncHelper(const Model::RegisterUserRequest& request, const RegisterUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchDashboardsAsyncHelper(const Model::SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDashboardAsyncHelper(const Model::UpdateDashboardRequest& request, const UpdateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

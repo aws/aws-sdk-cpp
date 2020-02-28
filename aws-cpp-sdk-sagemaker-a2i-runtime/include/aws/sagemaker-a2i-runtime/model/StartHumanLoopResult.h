@@ -16,7 +16,6 @@
 #pragma once
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sagemaker-a2i-runtime/model/HumanLoopActivationResults.h>
 #include <utility>
 
 namespace Aws
@@ -78,37 +77,9 @@ namespace Model
      */
     inline StartHumanLoopResult& WithHumanLoopArn(const char* value) { SetHumanLoopArn(value); return *this;}
 
-
-    /**
-     * <p>An object containing information about the human loop activation.</p>
-     */
-    inline const HumanLoopActivationResults& GetHumanLoopActivationResults() const{ return m_humanLoopActivationResults; }
-
-    /**
-     * <p>An object containing information about the human loop activation.</p>
-     */
-    inline void SetHumanLoopActivationResults(const HumanLoopActivationResults& value) { m_humanLoopActivationResults = value; }
-
-    /**
-     * <p>An object containing information about the human loop activation.</p>
-     */
-    inline void SetHumanLoopActivationResults(HumanLoopActivationResults&& value) { m_humanLoopActivationResults = std::move(value); }
-
-    /**
-     * <p>An object containing information about the human loop activation.</p>
-     */
-    inline StartHumanLoopResult& WithHumanLoopActivationResults(const HumanLoopActivationResults& value) { SetHumanLoopActivationResults(value); return *this;}
-
-    /**
-     * <p>An object containing information about the human loop activation.</p>
-     */
-    inline StartHumanLoopResult& WithHumanLoopActivationResults(HumanLoopActivationResults&& value) { SetHumanLoopActivationResults(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_humanLoopArn;
-
-    HumanLoopActivationResults m_humanLoopActivationResults;
   };
 
 } // namespace Model

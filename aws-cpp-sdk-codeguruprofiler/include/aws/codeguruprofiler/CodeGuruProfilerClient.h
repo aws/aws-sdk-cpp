@@ -113,7 +113,8 @@ namespace Model
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::UpdateProfilingGroupRequest&, const Model::UpdateProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfilingGroupResponseReceivedHandler;
 
   /**
-   * <p>Example service documentation.</p>
+   * <p>This section provides documentation for the Amazon CodeGuru Profiler API
+   * operations.</p>
    */
   class AWS_CODEGURUPROFILER_API CodeGuruProfilerClient : public Aws::Client::AWSJsonClient
   {
@@ -145,16 +146,14 @@ namespace Model
 
 
         /**
-         * <p>Provides the configuration to use for an agent of the profiling
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgent">AWS
          * API Reference</a></p>
          */
         virtual Model::ConfigureAgentOutcome ConfigureAgent(const Model::ConfigureAgentRequest& request) const;
 
         /**
-         * <p>Provides the configuration to use for an agent of the profiling
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgent">AWS
          * API Reference</a></p>
          *
@@ -163,8 +162,7 @@ namespace Model
         virtual Model::ConfigureAgentOutcomeCallable ConfigureAgentCallable(const Model::ConfigureAgentRequest& request) const;
 
         /**
-         * <p>Provides the configuration to use for an agent of the profiling
-         * group.</p><p><h3>See Also:</h3>   <a
+         * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ConfigureAgent">AWS
          * API Reference</a></p>
          *
@@ -173,14 +171,14 @@ namespace Model
         virtual void ConfigureAgentAsync(const Model::ConfigureAgentRequest& request, const ConfigureAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProfilingGroupOutcome CreateProfilingGroup(const Model::CreateProfilingGroupRequest& request) const;
 
         /**
-         * <p>Create a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroup">AWS
          * API Reference</a></p>
          *
@@ -189,7 +187,7 @@ namespace Model
         virtual Model::CreateProfilingGroupOutcomeCallable CreateProfilingGroupCallable(const Model::CreateProfilingGroupRequest& request) const;
 
         /**
-         * <p>Create a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/CreateProfilingGroup">AWS
          * API Reference</a></p>
          *
@@ -198,14 +196,14 @@ namespace Model
         virtual void CreateProfilingGroupAsync(const Model::CreateProfilingGroupRequest& request, const CreateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteProfilingGroupOutcome DeleteProfilingGroup(const Model::DeleteProfilingGroupRequest& request) const;
 
         /**
-         * <p>Delete a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroup">AWS
          * API Reference</a></p>
          *
@@ -214,7 +212,7 @@ namespace Model
         virtual Model::DeleteProfilingGroupOutcomeCallable DeleteProfilingGroupCallable(const Model::DeleteProfilingGroupRequest& request) const;
 
         /**
-         * <p>Delete a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroup">AWS
          * API Reference</a></p>
          *
@@ -223,14 +221,14 @@ namespace Model
         virtual void DeleteProfilingGroupAsync(const Model::DeleteProfilingGroupRequest& request, const DeleteProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DescribeProfilingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeProfilingGroupOutcome DescribeProfilingGroup(const Model::DescribeProfilingGroupRequest& request) const;
 
         /**
-         * <p>Describe a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DescribeProfilingGroup">AWS
          * API Reference</a></p>
          *
@@ -239,7 +237,7 @@ namespace Model
         virtual Model::DescribeProfilingGroupOutcomeCallable DescribeProfilingGroupCallable(const Model::DescribeProfilingGroupRequest& request) const;
 
         /**
-         * <p>Describe a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DescribeProfilingGroup">AWS
          * API Reference</a></p>
          *
@@ -248,28 +246,32 @@ namespace Model
         virtual void DescribeProfilingGroupAsync(const Model::DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get the aggregated profile of a profiling group for the specified time range.
-         * If the requested time range does not align with the available aggregated
-         * profiles, it will be expanded to attain alignment. If aggregated profiles are
+         * <p>Gets the aggregated profile of a profiling group for the specified time
+         * range. If the requested time range does not align with the available aggregated
+         * profiles, it is expanded to attain alignment. If aggregated profiles are
          * available only for part of the period requested, the profile is returned from
-         * the earliest available to the latest within the requested time range. For
-         * instance, if the requested time range is from 00:00 to 00:20 and the available
-         * profiles are from 00:15 to 00:25, then the returned profile will be from 00:15
-         * to 00:20.</p><p><h3>See Also:</h3>   <a
+         * the earliest available to the latest within the requested time range. </p>
+         * <p>For example, if the requested time range is from 00:00 to 00:20 and the
+         * available profiles are from 00:15 to 00:25, the returned profile will be from
+         * 00:15 to 00:20. </p> <p>You must specify exactly two of the following
+         * parameters: <code>startTime</code>, <code>period</code>, and
+         * <code>endTime</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::GetProfileOutcome GetProfile(const Model::GetProfileRequest& request) const;
 
         /**
-         * <p>Get the aggregated profile of a profiling group for the specified time range.
-         * If the requested time range does not align with the available aggregated
-         * profiles, it will be expanded to attain alignment. If aggregated profiles are
+         * <p>Gets the aggregated profile of a profiling group for the specified time
+         * range. If the requested time range does not align with the available aggregated
+         * profiles, it is expanded to attain alignment. If aggregated profiles are
          * available only for part of the period requested, the profile is returned from
-         * the earliest available to the latest within the requested time range. For
-         * instance, if the requested time range is from 00:00 to 00:20 and the available
-         * profiles are from 00:15 to 00:25, then the returned profile will be from 00:15
-         * to 00:20.</p><p><h3>See Also:</h3>   <a
+         * the earliest available to the latest within the requested time range. </p>
+         * <p>For example, if the requested time range is from 00:00 to 00:20 and the
+         * available profiles are from 00:15 to 00:25, the returned profile will be from
+         * 00:15 to 00:20. </p> <p>You must specify exactly two of the following
+         * parameters: <code>startTime</code>, <code>period</code>, and
+         * <code>endTime</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfile">AWS
          * API Reference</a></p>
          *
@@ -278,14 +280,16 @@ namespace Model
         virtual Model::GetProfileOutcomeCallable GetProfileCallable(const Model::GetProfileRequest& request) const;
 
         /**
-         * <p>Get the aggregated profile of a profiling group for the specified time range.
-         * If the requested time range does not align with the available aggregated
-         * profiles, it will be expanded to attain alignment. If aggregated profiles are
+         * <p>Gets the aggregated profile of a profiling group for the specified time
+         * range. If the requested time range does not align with the available aggregated
+         * profiles, it is expanded to attain alignment. If aggregated profiles are
          * available only for part of the period requested, the profile is returned from
-         * the earliest available to the latest within the requested time range. For
-         * instance, if the requested time range is from 00:00 to 00:20 and the available
-         * profiles are from 00:15 to 00:25, then the returned profile will be from 00:15
-         * to 00:20.</p><p><h3>See Also:</h3>   <a
+         * the earliest available to the latest within the requested time range. </p>
+         * <p>For example, if the requested time range is from 00:00 to 00:20 and the
+         * available profiles are from 00:15 to 00:25, the returned profile will be from
+         * 00:15 to 00:20. </p> <p>You must specify exactly two of the following
+         * parameters: <code>startTime</code>, <code>period</code>, and
+         * <code>endTime</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetProfile">AWS
          * API Reference</a></p>
          *
@@ -325,14 +329,14 @@ namespace Model
         virtual void ListProfileTimesAsync(const Model::ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List profiling groups in the account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists profiling groups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListProfilingGroupsOutcome ListProfilingGroups(const Model::ListProfilingGroupsRequest& request) const;
 
         /**
-         * <p>List profiling groups in the account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists profiling groups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups">AWS
          * API Reference</a></p>
          *
@@ -341,7 +345,7 @@ namespace Model
         virtual Model::ListProfilingGroupsOutcomeCallable ListProfilingGroupsCallable(const Model::ListProfilingGroupsRequest& request) const;
 
         /**
-         * <p>List profiling groups in the account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists profiling groups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/ListProfilingGroups">AWS
          * API Reference</a></p>
          *
@@ -350,16 +354,14 @@ namespace Model
         virtual void ListProfilingGroupsAsync(const Model::ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Submit profile collected by an agent belonging to a profiling group for
-         * aggregation.</p><p><h3>See Also:</h3>   <a
+         * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::PostAgentProfileOutcome PostAgentProfile(const Model::PostAgentProfileRequest& request) const;
 
         /**
-         * <p>Submit profile collected by an agent belonging to a profiling group for
-         * aggregation.</p><p><h3>See Also:</h3>   <a
+         * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfile">AWS
          * API Reference</a></p>
          *
@@ -368,8 +370,7 @@ namespace Model
         virtual Model::PostAgentProfileOutcomeCallable PostAgentProfileCallable(const Model::PostAgentProfileRequest& request) const;
 
         /**
-         * <p>Submit profile collected by an agent belonging to a profiling group for
-         * aggregation.</p><p><h3>See Also:</h3>   <a
+         * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PostAgentProfile">AWS
          * API Reference</a></p>
          *
@@ -378,14 +379,14 @@ namespace Model
         virtual void PostAgentProfileAsync(const Model::PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateProfilingGroupOutcome UpdateProfilingGroup(const Model::UpdateProfilingGroupRequest& request) const;
 
         /**
-         * <p>Update a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup">AWS
          * API Reference</a></p>
          *
@@ -394,7 +395,7 @@ namespace Model
         virtual Model::UpdateProfilingGroupOutcomeCallable UpdateProfilingGroupCallable(const Model::UpdateProfilingGroupRequest& request) const;
 
         /**
-         * <p>Update a profiling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup">AWS
          * API Reference</a></p>
          *

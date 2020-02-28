@@ -34,58 +34,67 @@ namespace Model
 {
 
   /**
-   * <p>An object containing the input.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopInputContent">AWS
+   * <p>An object containing the human loop input in JSON format.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/HumanLoopInput">AWS
    * API Reference</a></p>
    */
-  class AWS_AUGMENTEDAIRUNTIME_API HumanLoopInputContent
+  class AWS_AUGMENTEDAIRUNTIME_API HumanLoopInput
   {
   public:
-    HumanLoopInputContent();
-    HumanLoopInputContent(Aws::Utils::Json::JsonView jsonValue);
-    HumanLoopInputContent& operator=(Aws::Utils::Json::JsonView jsonValue);
+    HumanLoopInput();
+    HumanLoopInput(Aws::Utils::Json::JsonView jsonValue);
+    HumanLoopInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>Serialized input from the human loop.</p>
+     * <p>Serialized input from the human loop. The input must be a string
+     * representation of a file in JSON format.</p>
      */
     inline const Aws::String& GetInputContent() const{ return m_inputContent; }
 
     /**
-     * <p>Serialized input from the human loop.</p>
+     * <p>Serialized input from the human loop. The input must be a string
+     * representation of a file in JSON format.</p>
      */
     inline bool InputContentHasBeenSet() const { return m_inputContentHasBeenSet; }
 
     /**
-     * <p>Serialized input from the human loop.</p>
+     * <p>Serialized input from the human loop. The input must be a string
+     * representation of a file in JSON format.</p>
      */
     inline void SetInputContent(const Aws::String& value) { m_inputContentHasBeenSet = true; m_inputContent = value; }
 
     /**
-     * <p>Serialized input from the human loop.</p>
+     * <p>Serialized input from the human loop. The input must be a string
+     * representation of a file in JSON format.</p>
      */
     inline void SetInputContent(Aws::String&& value) { m_inputContentHasBeenSet = true; m_inputContent = std::move(value); }
 
     /**
-     * <p>Serialized input from the human loop.</p>
+     * <p>Serialized input from the human loop. The input must be a string
+     * representation of a file in JSON format.</p>
      */
     inline void SetInputContent(const char* value) { m_inputContentHasBeenSet = true; m_inputContent.assign(value); }
 
     /**
-     * <p>Serialized input from the human loop.</p>
+     * <p>Serialized input from the human loop. The input must be a string
+     * representation of a file in JSON format.</p>
      */
-    inline HumanLoopInputContent& WithInputContent(const Aws::String& value) { SetInputContent(value); return *this;}
+    inline HumanLoopInput& WithInputContent(const Aws::String& value) { SetInputContent(value); return *this;}
 
     /**
-     * <p>Serialized input from the human loop.</p>
+     * <p>Serialized input from the human loop. The input must be a string
+     * representation of a file in JSON format.</p>
      */
-    inline HumanLoopInputContent& WithInputContent(Aws::String&& value) { SetInputContent(std::move(value)); return *this;}
+    inline HumanLoopInput& WithInputContent(Aws::String&& value) { SetInputContent(std::move(value)); return *this;}
 
     /**
-     * <p>Serialized input from the human loop.</p>
+     * <p>Serialized input from the human loop. The input must be a string
+     * representation of a file in JSON format.</p>
      */
-    inline HumanLoopInputContent& WithInputContent(const char* value) { SetInputContent(value); return *this;}
+    inline HumanLoopInput& WithInputContent(const char* value) { SetInputContent(value); return *this;}
 
   private:
 

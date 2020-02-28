@@ -100,66 +100,66 @@ namespace Model
 
 
     /**
-     * <p>The destination path for the health check request. This is required only if
-     * the
-         specified protocol is HTTP. If the protocol is TCP, this parameter
-     * is ignored.</p>
+     * <p>The destination path for the health check request. This value is only used if
+     * the specified 
+         protocol is HTTP or HTTP/2. For any other protocol, this
+     * value is ignored.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The destination path for the health check request. This is required only if
-     * the
-         specified protocol is HTTP. If the protocol is TCP, this parameter
-     * is ignored.</p>
+     * <p>The destination path for the health check request. This value is only used if
+     * the specified 
+         protocol is HTTP or HTTP/2. For any other protocol, this
+     * value is ignored.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
-     * <p>The destination path for the health check request. This is required only if
-     * the
-         specified protocol is HTTP. If the protocol is TCP, this parameter
-     * is ignored.</p>
+     * <p>The destination path for the health check request. This value is only used if
+     * the specified 
+         protocol is HTTP or HTTP/2. For any other protocol, this
+     * value is ignored.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The destination path for the health check request. This is required only if
-     * the
-         specified protocol is HTTP. If the protocol is TCP, this parameter
-     * is ignored.</p>
+     * <p>The destination path for the health check request. This value is only used if
+     * the specified 
+         protocol is HTTP or HTTP/2. For any other protocol, this
+     * value is ignored.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The destination path for the health check request. This is required only if
-     * the
-         specified protocol is HTTP. If the protocol is TCP, this parameter
-     * is ignored.</p>
+     * <p>The destination path for the health check request. This value is only used if
+     * the specified 
+         protocol is HTTP or HTTP/2. For any other protocol, this
+     * value is ignored.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The destination path for the health check request. This is required only if
-     * the
-         specified protocol is HTTP. If the protocol is TCP, this parameter
-     * is ignored.</p>
+     * <p>The destination path for the health check request. This value is only used if
+     * the specified 
+         protocol is HTTP or HTTP/2. For any other protocol, this
+     * value is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The destination path for the health check request. This is required only if
-     * the
-         specified protocol is HTTP. If the protocol is TCP, this parameter
-     * is ignored.</p>
+     * <p>The destination path for the health check request. This value is only used if
+     * the specified 
+         protocol is HTTP or HTTP/2. For any other protocol, this
+     * value is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The destination path for the health check request. This is required only if
-     * the
-         specified protocol is HTTP. If the protocol is TCP, this parameter
-     * is ignored.</p>
+     * <p>The destination path for the health check request. This value is only used if
+     * the specified 
+         protocol is HTTP or HTTP/2. For any other protocol, this
+     * value is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -194,32 +194,50 @@ namespace Model
 
 
     /**
-     * <p>The protocol for the health check request.</p>
+     * <p>The protocol for the health check request. If you specify <code>grpc</code>,
+     * then your service must conform to the <a
+     * href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+     * Health Checking Protocol</a>.</p>
      */
     inline const PortProtocol& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol for the health check request.</p>
+     * <p>The protocol for the health check request. If you specify <code>grpc</code>,
+     * then your service must conform to the <a
+     * href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+     * Health Checking Protocol</a>.</p>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol for the health check request.</p>
+     * <p>The protocol for the health check request. If you specify <code>grpc</code>,
+     * then your service must conform to the <a
+     * href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+     * Health Checking Protocol</a>.</p>
      */
     inline void SetProtocol(const PortProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol for the health check request.</p>
+     * <p>The protocol for the health check request. If you specify <code>grpc</code>,
+     * then your service must conform to the <a
+     * href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+     * Health Checking Protocol</a>.</p>
      */
     inline void SetProtocol(PortProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol for the health check request.</p>
+     * <p>The protocol for the health check request. If you specify <code>grpc</code>,
+     * then your service must conform to the <a
+     * href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+     * Health Checking Protocol</a>.</p>
      */
     inline HealthCheckPolicy& WithProtocol(const PortProtocol& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol for the health check request.</p>
+     * <p>The protocol for the health check request. If you specify <code>grpc</code>,
+     * then your service must conform to the <a
+     * href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+     * Health Checking Protocol</a>.</p>
      */
     inline HealthCheckPolicy& WithProtocol(PortProtocol&& value) { SetProtocol(std::move(value)); return *this;}
 

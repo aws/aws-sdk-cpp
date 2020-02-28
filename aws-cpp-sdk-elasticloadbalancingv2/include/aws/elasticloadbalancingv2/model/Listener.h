@@ -229,58 +229,50 @@ namespace Model
 
 
     /**
-     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
-     * protocols are supported. The default is the current predefined security
-     * policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which protocols and
+     * ciphers are supported.</p>
      */
     inline const Aws::String& GetSslPolicy() const{ return m_sslPolicy; }
 
     /**
-     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
-     * protocols are supported. The default is the current predefined security
-     * policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which protocols and
+     * ciphers are supported.</p>
      */
     inline bool SslPolicyHasBeenSet() const { return m_sslPolicyHasBeenSet; }
 
     /**
-     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
-     * protocols are supported. The default is the current predefined security
-     * policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which protocols and
+     * ciphers are supported.</p>
      */
     inline void SetSslPolicy(const Aws::String& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
 
     /**
-     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
-     * protocols are supported. The default is the current predefined security
-     * policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which protocols and
+     * ciphers are supported.</p>
      */
     inline void SetSslPolicy(Aws::String&& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = std::move(value); }
 
     /**
-     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
-     * protocols are supported. The default is the current predefined security
-     * policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which protocols and
+     * ciphers are supported.</p>
      */
     inline void SetSslPolicy(const char* value) { m_sslPolicyHasBeenSet = true; m_sslPolicy.assign(value); }
 
     /**
-     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
-     * protocols are supported. The default is the current predefined security
-     * policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which protocols and
+     * ciphers are supported.</p>
      */
     inline Listener& WithSslPolicy(const Aws::String& value) { SetSslPolicy(value); return *this;}
 
     /**
-     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
-     * protocols are supported. The default is the current predefined security
-     * policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which protocols and
+     * ciphers are supported.</p>
      */
     inline Listener& WithSslPolicy(Aws::String&& value) { SetSslPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>[HTTPS or TLS listener] The security policy that defines which ciphers and
-     * protocols are supported. The default is the current predefined security
-     * policy.</p>
+     * <p>[HTTPS or TLS listener] The security policy that defines which protocols and
+     * ciphers are supported.</p>
      */
     inline Listener& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}
 

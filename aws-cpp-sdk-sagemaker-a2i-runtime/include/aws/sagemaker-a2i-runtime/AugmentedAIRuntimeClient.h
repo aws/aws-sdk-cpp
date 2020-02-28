@@ -117,11 +117,11 @@ namespace Model
    * Storage Service (Amazon S3). You can use Amazon CloudWatch Events to detect
    * human work results.</p> <p>You can find additional Augmented AI API
    * documentation in the following reference guides: <a
-   * href="https://aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon
+   * href="https://docs.aws.amazon.com/rekognition/latest/dg/API_Reference.html">Amazon
    * Rekognition</a>, <a
-   * href="https://aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_Reference.html">Amazon
    * SageMaker</a>, and <a
-   * href="https://aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon
+   * href="https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html">Amazon
    * Textract</a>.</p>
    */
   class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeClient : public Aws::Client::AWSJsonClient
@@ -210,16 +210,16 @@ namespace Model
         virtual void DescribeHumanLoopAsync(const Model::DescribeHumanLoopRequest& request, const DescribeHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about human loops, given the specified
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about human loops, given the specified parameters. If a
+         * human loop was deleted, it will not be included.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/ListHumanLoops">AWS
          * API Reference</a></p>
          */
         virtual Model::ListHumanLoopsOutcome ListHumanLoops(const Model::ListHumanLoopsRequest& request) const;
 
         /**
-         * <p>Returns information about human loops, given the specified
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about human loops, given the specified parameters. If a
+         * human loop was deleted, it will not be included.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/ListHumanLoops">AWS
          * API Reference</a></p>
          *
@@ -228,8 +228,8 @@ namespace Model
         virtual Model::ListHumanLoopsOutcomeCallable ListHumanLoopsCallable(const Model::ListHumanLoopsRequest& request) const;
 
         /**
-         * <p>Returns information about human loops, given the specified
-         * parameters.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about human loops, given the specified parameters. If a
+         * human loop was deleted, it will not be included.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/ListHumanLoops">AWS
          * API Reference</a></p>
          *

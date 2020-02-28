@@ -48,47 +48,56 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline DescribeTagsRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline DescribeTagsRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline DescribeTagsRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline DescribeTagsRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARN) of the resources. You can specify up to 20
+     * resources in a single call.</p>
      */
     inline DescribeTagsRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 

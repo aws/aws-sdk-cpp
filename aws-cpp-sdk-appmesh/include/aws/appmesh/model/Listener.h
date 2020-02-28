@@ -17,6 +17,7 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/appmesh/model/HealthCheckPolicy.h>
 #include <aws/appmesh/model/PortMapping.h>
+#include <aws/appmesh/model/ListenerTls.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +111,43 @@ namespace Model
      */
     inline Listener& WithPortMapping(PortMapping&& value) { SetPortMapping(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A reference to an object that represents the Transport Layer Security (TLS)
+     * properties for a listener.</p>
+     */
+    inline const ListenerTls& GetTls() const{ return m_tls; }
+
+    /**
+     * <p>A reference to an object that represents the Transport Layer Security (TLS)
+     * properties for a listener.</p>
+     */
+    inline bool TlsHasBeenSet() const { return m_tlsHasBeenSet; }
+
+    /**
+     * <p>A reference to an object that represents the Transport Layer Security (TLS)
+     * properties for a listener.</p>
+     */
+    inline void SetTls(const ListenerTls& value) { m_tlsHasBeenSet = true; m_tls = value; }
+
+    /**
+     * <p>A reference to an object that represents the Transport Layer Security (TLS)
+     * properties for a listener.</p>
+     */
+    inline void SetTls(ListenerTls&& value) { m_tlsHasBeenSet = true; m_tls = std::move(value); }
+
+    /**
+     * <p>A reference to an object that represents the Transport Layer Security (TLS)
+     * properties for a listener.</p>
+     */
+    inline Listener& WithTls(const ListenerTls& value) { SetTls(value); return *this;}
+
+    /**
+     * <p>A reference to an object that represents the Transport Layer Security (TLS)
+     * properties for a listener.</p>
+     */
+    inline Listener& WithTls(ListenerTls&& value) { SetTls(std::move(value)); return *this;}
+
   private:
 
     HealthCheckPolicy m_healthCheck;
@@ -117,6 +155,9 @@ namespace Model
 
     PortMapping m_portMapping;
     bool m_portMappingHasBeenSet;
+
+    ListenerTls m_tls;
+    bool m_tlsHasBeenSet;
   };
 
 } // namespace Model

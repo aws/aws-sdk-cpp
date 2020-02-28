@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents a GRPC route type.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that represents a gRPC route type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/GrpcRoute">AWS
    * API Reference</a></p>
    */

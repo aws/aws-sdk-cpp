@@ -33,7 +33,8 @@ namespace CodeGuruProfiler
 namespace Model
 {
   /**
-   * <p>Response for DeleteProfilingGroup operation.</p><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the deleteProfilingGroupResponse.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/DeleteProfilingGroupResponse">AWS
    * API Reference</a></p>
    */

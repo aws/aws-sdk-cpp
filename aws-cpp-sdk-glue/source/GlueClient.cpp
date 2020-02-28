@@ -119,6 +119,7 @@
 #include <aws/glue/model/ListCrawlersRequest.h>
 #include <aws/glue/model/ListDevEndpointsRequest.h>
 #include <aws/glue/model/ListJobsRequest.h>
+#include <aws/glue/model/ListMLTransformsRequest.h>
 #include <aws/glue/model/ListTriggersRequest.h>
 #include <aws/glue/model/ListWorkflowsRequest.h>
 #include <aws/glue/model/PutDataCatalogEncryptionSettingsRequest.h>
@@ -3339,6 +3340,41 @@ void GlueClient::ListJobsAsync(const ListJobsRequest& request, const ListJobsRes
 void GlueClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListJobs(request), context);
+}
+
+ListMLTransformsOutcome GlueClient::ListMLTransforms(const ListMLTransformsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListMLTransformsOutcome(ListMLTransformsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListMLTransformsOutcome(outcome.GetError());
+  }
+}
+
+ListMLTransformsOutcomeCallable GlueClient::ListMLTransformsCallable(const ListMLTransformsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMLTransformsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMLTransforms(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::ListMLTransformsAsync(const ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMLTransformsAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::ListMLTransformsAsyncHelper(const ListMLTransformsRequest& request, const ListMLTransformsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMLTransforms(request), context);
 }
 
 ListTriggersOutcome GlueClient::ListTriggers(const ListTriggersRequest& request) const
