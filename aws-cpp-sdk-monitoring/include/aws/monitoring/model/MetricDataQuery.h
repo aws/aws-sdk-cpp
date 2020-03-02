@@ -40,7 +40,7 @@ namespace Model
    * for those two operations.</p> <p>When used in <code>GetMetricData</code>, it
    * indicates the metric data to return, and whether this call is just retrieving a
    * batch set of data for one metric, or is performing a math expression on metric
-   * data. A single <code>GetMetricData</code> call can include up to 100
+   * data. A single <code>GetMetricData</code> call can include up to 500
    * <code>MetricDataQuery</code> structures.</p> <p>When used in
    * <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric
    * math expression. Each <code>MetricDataQuery</code> in the array specifies either
@@ -436,10 +436,7 @@ namespace Model
      * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      * 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
-     * 1 second</code>.</p> <p>If you are performing a <code>GetMetricData</code>
-     * operation, use this field only if you are specifying an <code>Expression</code>.
-     * Do not use this field when you are specifying a <code>MetricStat</code> in a
-     * <code>GetMetricData</code> operation.</p>
+     * 1 second</code>.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
@@ -450,10 +447,7 @@ namespace Model
      * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      * 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
-     * 1 second</code>.</p> <p>If you are performing a <code>GetMetricData</code>
-     * operation, use this field only if you are specifying an <code>Expression</code>.
-     * Do not use this field when you are specifying a <code>MetricStat</code> in a
-     * <code>GetMetricData</code> operation.</p>
+     * 1 second</code>.</p>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
@@ -464,10 +458,7 @@ namespace Model
      * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      * 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
-     * 1 second</code>.</p> <p>If you are performing a <code>GetMetricData</code>
-     * operation, use this field only if you are specifying an <code>Expression</code>.
-     * Do not use this field when you are specifying a <code>MetricStat</code> in a
-     * <code>GetMetricData</code> operation.</p>
+     * 1 second</code>.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
@@ -478,10 +469,7 @@ namespace Model
      * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      * 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
-     * 1 second</code>.</p> <p>If you are performing a <code>GetMetricData</code>
-     * operation, use this field only if you are specifying an <code>Expression</code>.
-     * Do not use this field when you are specifying a <code>MetricStat</code> in a
-     * <code>GetMetricData</code> operation.</p>
+     * 1 second</code>.</p>
      */
     inline MetricDataQuery& WithPeriod(int value) { SetPeriod(value); return *this;}
 

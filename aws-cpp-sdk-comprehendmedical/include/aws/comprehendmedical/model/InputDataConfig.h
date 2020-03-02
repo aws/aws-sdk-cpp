@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The input properties for an entities detection job</p><p><h3>See Also:</h3>  
+   * <p>The input properties for an entities detection job.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InputDataConfig">AWS
    * API Reference</a></p>

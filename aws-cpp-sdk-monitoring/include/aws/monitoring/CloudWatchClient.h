@@ -113,6 +113,7 @@ namespace Model
         class ListMetricsRequest;
         class ListTagsForResourceRequest;
         class PutAnomalyDetectorRequest;
+        class PutCompositeAlarmRequest;
         class PutDashboardRequest;
         class PutInsightRuleRequest;
         class PutMetricAlarmRequest;
@@ -143,6 +144,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CloudWatchErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutAnomalyDetectorResult, Aws::Client::AWSError<CloudWatchErrors>> PutAnomalyDetectorOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutCompositeAlarmOutcome;
         typedef Aws::Utils::Outcome<PutDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> PutDashboardOutcome;
         typedef Aws::Utils::Outcome<PutInsightRuleResult, Aws::Client::AWSError<CloudWatchErrors>> PutInsightRuleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
@@ -173,6 +175,7 @@ namespace Model
         typedef std::future<ListMetricsOutcome> ListMetricsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutAnomalyDetectorOutcome> PutAnomalyDetectorOutcomeCallable;
+        typedef std::future<PutCompositeAlarmOutcome> PutCompositeAlarmOutcomeCallable;
         typedef std::future<PutDashboardOutcome> PutDashboardOutcomeCallable;
         typedef std::future<PutInsightRuleOutcome> PutInsightRuleOutcomeCallable;
         typedef std::future<PutMetricAlarmOutcome> PutMetricAlarmOutcomeCallable;
@@ -206,6 +209,7 @@ namespace Model
     typedef std::function<void(const CloudWatchClient*, const Model::ListMetricsRequest&, const Model::ListMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMetricsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutAnomalyDetectorRequest&, const Model::PutAnomalyDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAnomalyDetectorResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchClient*, const Model::PutCompositeAlarmRequest&, const Model::PutCompositeAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCompositeAlarmResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutDashboardRequest&, const Model::PutDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDashboardResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutInsightRuleRequest&, const Model::PutInsightRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInsightRuleResponseReceivedHandler;
     typedef std::function<void(const CloudWatchClient*, const Model::PutMetricAlarmRequest&, const Model::PutMetricAlarmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricAlarmResponseReceivedHandler;
@@ -264,18 +268,44 @@ namespace Model
 
 
         /**
-         * <p>Deletes the specified alarms. You can delete up to 50 alarms in one
-         * operation. In the event of an error, no alarms are deleted.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified alarms. You can delete up to 100 alarms in one
+         * operation. However, this total can include no more than one composite alarm. For
+         * example, you could delete 99 metric alarms and one composite alarms with one
+         * operation, but you can't delete two composite alarms with one operation.</p> <p>
+         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * create a loop or cycle of composite alarms, where composite alarm A depends on
+         * composite alarm B, and composite alarm B also depends on composite alarm A. In
+         * this scenario, you can't delete any composite alarm that is part of the cycle
+         * because there is always still a composite alarm that depends on that alarm that
+         * you want to delete.</p> <p>To get out of such a situation, you must break the
+         * cycle by changing the rule of one of the composite alarms in the cycle to remove
+         * a dependency that creates the cycle. The simplest change to make to break a
+         * cycle is to change the <code>AlarmRule</code> of one of the alarms to
+         * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
+         * stops if CloudWatch detects a cycle in the evaluation path. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAlarmsOutcome DeleteAlarms(const Model::DeleteAlarmsRequest& request) const;
 
         /**
-         * <p>Deletes the specified alarms. You can delete up to 50 alarms in one
-         * operation. In the event of an error, no alarms are deleted.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified alarms. You can delete up to 100 alarms in one
+         * operation. However, this total can include no more than one composite alarm. For
+         * example, you could delete 99 metric alarms and one composite alarms with one
+         * operation, but you can't delete two composite alarms with one operation.</p> <p>
+         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * create a loop or cycle of composite alarms, where composite alarm A depends on
+         * composite alarm B, and composite alarm B also depends on composite alarm A. In
+         * this scenario, you can't delete any composite alarm that is part of the cycle
+         * because there is always still a composite alarm that depends on that alarm that
+         * you want to delete.</p> <p>To get out of such a situation, you must break the
+         * cycle by changing the rule of one of the composite alarms in the cycle to remove
+         * a dependency that creates the cycle. The simplest change to make to break a
+         * cycle is to change the <code>AlarmRule</code> of one of the alarms to
+         * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
+         * stops if CloudWatch detects a cycle in the evaluation path. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          *
@@ -284,9 +314,22 @@ namespace Model
         virtual Model::DeleteAlarmsOutcomeCallable DeleteAlarmsCallable(const Model::DeleteAlarmsRequest& request) const;
 
         /**
-         * <p>Deletes the specified alarms. You can delete up to 50 alarms in one
-         * operation. In the event of an error, no alarms are deleted.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified alarms. You can delete up to 100 alarms in one
+         * operation. However, this total can include no more than one composite alarm. For
+         * example, you could delete 99 metric alarms and one composite alarms with one
+         * operation, but you can't delete two composite alarms with one operation.</p> <p>
+         * In the event of an error, no alarms are deleted.</p> <note> <p>It is possible to
+         * create a loop or cycle of composite alarms, where composite alarm A depends on
+         * composite alarm B, and composite alarm B also depends on composite alarm A. In
+         * this scenario, you can't delete any composite alarm that is part of the cycle
+         * because there is always still a composite alarm that depends on that alarm that
+         * you want to delete.</p> <p>To get out of such a situation, you must break the
+         * cycle by changing the rule of one of the composite alarms in the cycle to remove
+         * a dependency that creates the cycle. The simplest change to make to break a
+         * cycle is to change the <code>AlarmRule</code> of one of the alarms to
+         * <code>False</code>. </p> <p>Additionally, the evaluation of composite alarms
+         * stops if CloudWatch detects a cycle in the evaluation path. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteAlarms">AWS
          * API Reference</a></p>
          *
@@ -390,8 +433,9 @@ namespace Model
         /**
          * <p>Retrieves the history for the specified alarm. You can filter the results by
          * date range or item type. If an alarm name is not specified, the histories for
-         * all alarms are returned.</p> <p>CloudWatch retains the history of an alarm even
-         * if you delete the alarm.</p><p><h3>See Also:</h3>   <a
+         * either all metric alarms or all composite alarms are returned.</p> <p>CloudWatch
+         * retains the history of an alarm even if you delete the alarm.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">AWS
          * API Reference</a></p>
          */
@@ -400,8 +444,9 @@ namespace Model
         /**
          * <p>Retrieves the history for the specified alarm. You can filter the results by
          * date range or item type. If an alarm name is not specified, the histories for
-         * all alarms are returned.</p> <p>CloudWatch retains the history of an alarm even
-         * if you delete the alarm.</p><p><h3>See Also:</h3>   <a
+         * either all metric alarms or all composite alarms are returned.</p> <p>CloudWatch
+         * retains the history of an alarm even if you delete the alarm.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">AWS
          * API Reference</a></p>
          *
@@ -412,8 +457,9 @@ namespace Model
         /**
          * <p>Retrieves the history for the specified alarm. You can filter the results by
          * date range or item type. If an alarm name is not specified, the histories for
-         * all alarms are returned.</p> <p>CloudWatch retains the history of an alarm even
-         * if you delete the alarm.</p><p><h3>See Also:</h3>   <a
+         * either all metric alarms or all composite alarms are returned.</p> <p>CloudWatch
+         * retains the history of an alarm even if you delete the alarm.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmHistory">AWS
          * API Reference</a></p>
          *
@@ -422,18 +468,18 @@ namespace Model
         virtual void DescribeAlarmHistoryAsync(const Model::DescribeAlarmHistoryRequest& request, const DescribeAlarmHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the specified alarms. If no alarms are specified, all alarms are
-         * returned. Alarms can be retrieved by using only a prefix for the alarm name, the
-         * alarm state, or a prefix for any action.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified alarms. You can filter the results by specifying a a
+         * prefix for the alarm name, the alarm state, or a prefix for any
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest& request) const;
 
         /**
-         * <p>Retrieves the specified alarms. If no alarms are specified, all alarms are
-         * returned. Alarms can be retrieved by using only a prefix for the alarm name, the
-         * alarm state, or a prefix for any action.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified alarms. You can filter the results by specifying a a
+         * prefix for the alarm name, the alarm state, or a prefix for any
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
          * API Reference</a></p>
          *
@@ -442,9 +488,9 @@ namespace Model
         virtual Model::DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request) const;
 
         /**
-         * <p>Retrieves the specified alarms. If no alarms are specified, all alarms are
-         * returned. Alarms can be retrieved by using only a prefix for the alarm name, the
-         * alarm state, or a prefix for any action.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the specified alarms. You can filter the results by specifying a a
+         * prefix for the alarm name, the alarm state, or a prefix for any
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarms">AWS
          * API Reference</a></p>
          *
@@ -795,7 +841,7 @@ namespace Model
         virtual void GetInsightRuleReportAsync(const Model::GetInsightRuleReportRequest& request, const GetInsightRuleReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 100
+         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 500
          * different metrics in a single request, with a total of as many as 100,800 data
          * points. You can also optionally perform math expressions on the values of the
          * returned statistics, to create new time series that represent new insights into
@@ -834,7 +880,7 @@ namespace Model
         virtual Model::GetMetricDataOutcome GetMetricData(const Model::GetMetricDataRequest& request) const;
 
         /**
-         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 100
+         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 500
          * different metrics in a single request, with a total of as many as 100,800 data
          * points. You can also optionally perform math expressions on the values of the
          * returned statistics, to create new time series that represent new insights into
@@ -875,7 +921,7 @@ namespace Model
         virtual Model::GetMetricDataOutcomeCallable GetMetricDataCallable(const Model::GetMetricDataRequest& request) const;
 
         /**
-         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 100
+         * <p>You can use the <code>GetMetricData</code> API to retrieve as many as 500
          * different metrics in a single request, with a total of as many as 100,800 data
          * points. You can also optionally perform math expressions on the values of the
          * returned statistics, to create new time series that represent new insights into
@@ -1144,28 +1190,38 @@ namespace Model
         virtual void ListDashboardsAsync(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the specified metrics. You can use the returned metrics with
-         * <a>GetMetricData</a> or <a>GetMetricStatistics</a> to obtain statistical
-         * data.</p> <p>Up to 500 results are returned for any one call. To retrieve
-         * additional results, use the returned token with subsequent calls.</p> <p>After
-         * you create a metric, allow up to fifteen minutes before the metric appears.
-         * Statistics about the metric, however, are available sooner using
-         * <a>GetMetricData</a> or <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3>  
+         * <p>List the specified metrics. You can use the returned metrics with <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+         * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
+         * call. To retrieve additional results, use the returned token with subsequent
+         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
+         * metric appears. Statistics about the metric, however, are available sooner using
          * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMetricsOutcome ListMetrics(const Model::ListMetricsRequest& request) const;
 
         /**
-         * <p>List the specified metrics. You can use the returned metrics with
-         * <a>GetMetricData</a> or <a>GetMetricStatistics</a> to obtain statistical
-         * data.</p> <p>Up to 500 results are returned for any one call. To retrieve
-         * additional results, use the returned token with subsequent calls.</p> <p>After
-         * you create a metric, allow up to fifteen minutes before the metric appears.
-         * Statistics about the metric, however, are available sooner using
-         * <a>GetMetricData</a> or <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3>  
+         * <p>List the specified metrics. You can use the returned metrics with <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+         * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
+         * call. To retrieve additional results, use the returned token with subsequent
+         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
+         * metric appears. Statistics about the metric, however, are available sooner using
          * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
          * API Reference</a></p>
          *
@@ -1174,14 +1230,19 @@ namespace Model
         virtual Model::ListMetricsOutcomeCallable ListMetricsCallable(const Model::ListMetricsRequest& request) const;
 
         /**
-         * <p>List the specified metrics. You can use the returned metrics with
-         * <a>GetMetricData</a> or <a>GetMetricStatistics</a> to obtain statistical
-         * data.</p> <p>Up to 500 results are returned for any one call. To retrieve
-         * additional results, use the returned token with subsequent calls.</p> <p>After
-         * you create a metric, allow up to fifteen minutes before the metric appears.
-         * Statistics about the metric, however, are available sooner using
-         * <a>GetMetricData</a> or <a>GetMetricStatistics</a>.</p><p><h3>See Also:</h3>  
+         * <p>List the specified metrics. You can use the returned metrics with <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+         * to obtain statistical data.</p> <p>Up to 500 results are returned for any one
+         * call. To retrieve additional results, use the returned token with subsequent
+         * calls.</p> <p>After you create a metric, allow up to fifteen minutes before the
+         * metric appears. Statistics about the metric, however, are available sooner using
          * <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetrics">AWS
          * API Reference</a></p>
          *
@@ -1253,6 +1314,115 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutAnomalyDetectorAsync(const Model::PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or updates a <i>composite alarm</i>. When you create a composite
+         * alarm, you specify a rule expression for the alarm that takes into account the
+         * alarm states of other alarms that you have created. The composite alarm goes
+         * into ALARM state only if all conditions of the rule are met.</p> <p>The alarms
+         * specified in a composite alarm's rule expression can include metric alarms and
+         * other composite alarms.</p> <p>Using composite alarms can reduce alarm noise.
+         * You can create multiple metric alarms, and also create a composite alarm and set
+         * up alerts only for the composite alarm. For example, you could create a
+         * composite alarm that goes into ALARM state only when more than one of the
+         * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
+         * actions that can be taken by composite alarms are notifying SNS topics.</p>
+         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         * composite alarm A depends on composite alarm B, and composite alarm B also
+         * depends on composite alarm A. In this scenario, you can't delete any composite
+         * alarm that is part of the cycle because there is always still a composite alarm
+         * that depends on that alarm that you want to delete.</p> <p>To get out of such a
+         * situation, you must break the cycle by changing the rule of one of the composite
+         * alarms in the cycle to remove a dependency that creates the cycle. The simplest
+         * change to make to break a cycle is to change the <code>AlarmRule</code> of one
+         * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
+         * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
+         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
+         * and its state is set appropriately. Any actions associated with the new state
+         * are then executed. For a composite alarm, this initial time after creation is
+         * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
+         * <p>When you update an existing alarm, its state is left unchanged, but the
+         * update completely overwrites the previous configuration of the
+         * alarm.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutCompositeAlarmOutcome PutCompositeAlarm(const Model::PutCompositeAlarmRequest& request) const;
+
+        /**
+         * <p>Creates or updates a <i>composite alarm</i>. When you create a composite
+         * alarm, you specify a rule expression for the alarm that takes into account the
+         * alarm states of other alarms that you have created. The composite alarm goes
+         * into ALARM state only if all conditions of the rule are met.</p> <p>The alarms
+         * specified in a composite alarm's rule expression can include metric alarms and
+         * other composite alarms.</p> <p>Using composite alarms can reduce alarm noise.
+         * You can create multiple metric alarms, and also create a composite alarm and set
+         * up alerts only for the composite alarm. For example, you could create a
+         * composite alarm that goes into ALARM state only when more than one of the
+         * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
+         * actions that can be taken by composite alarms are notifying SNS topics.</p>
+         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         * composite alarm A depends on composite alarm B, and composite alarm B also
+         * depends on composite alarm A. In this scenario, you can't delete any composite
+         * alarm that is part of the cycle because there is always still a composite alarm
+         * that depends on that alarm that you want to delete.</p> <p>To get out of such a
+         * situation, you must break the cycle by changing the rule of one of the composite
+         * alarms in the cycle to remove a dependency that creates the cycle. The simplest
+         * change to make to break a cycle is to change the <code>AlarmRule</code> of one
+         * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
+         * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
+         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
+         * and its state is set appropriately. Any actions associated with the new state
+         * are then executed. For a composite alarm, this initial time after creation is
+         * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
+         * <p>When you update an existing alarm, its state is left unchanged, but the
+         * update completely overwrites the previous configuration of the
+         * alarm.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutCompositeAlarmOutcomeCallable PutCompositeAlarmCallable(const Model::PutCompositeAlarmRequest& request) const;
+
+        /**
+         * <p>Creates or updates a <i>composite alarm</i>. When you create a composite
+         * alarm, you specify a rule expression for the alarm that takes into account the
+         * alarm states of other alarms that you have created. The composite alarm goes
+         * into ALARM state only if all conditions of the rule are met.</p> <p>The alarms
+         * specified in a composite alarm's rule expression can include metric alarms and
+         * other composite alarms.</p> <p>Using composite alarms can reduce alarm noise.
+         * You can create multiple metric alarms, and also create a composite alarm and set
+         * up alerts only for the composite alarm. For example, you could create a
+         * composite alarm that goes into ALARM state only when more than one of the
+         * underlying metric alarms are in ALARM state.</p> <p>Currently, the only alarm
+         * actions that can be taken by composite alarms are notifying SNS topics.</p>
+         * <note> <p>It is possible to create a loop or cycle of composite alarms, where
+         * composite alarm A depends on composite alarm B, and composite alarm B also
+         * depends on composite alarm A. In this scenario, you can't delete any composite
+         * alarm that is part of the cycle because there is always still a composite alarm
+         * that depends on that alarm that you want to delete.</p> <p>To get out of such a
+         * situation, you must break the cycle by changing the rule of one of the composite
+         * alarms in the cycle to remove a dependency that creates the cycle. The simplest
+         * change to make to break a cycle is to change the <code>AlarmRule</code> of one
+         * of the alarms to <code>False</code>. </p> <p>Additionally, the evaluation of
+         * composite alarms stops if CloudWatch detects a cycle in the evaluation path.
+         * </p> </note> <p>When this operation creates an alarm, the alarm state is
+         * immediately set to <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated
+         * and its state is set appropriately. Any actions associated with the new state
+         * are then executed. For a composite alarm, this initial time after creation is
+         * the only time that the alarm can be in <code>INSUFFICIENT_DATA</code> state.</p>
+         * <p>When you update an existing alarm, its state is left unchanged, but the
+         * update completely overwrites the previous configuration of the
+         * alarm.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutCompositeAlarm">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutCompositeAlarmAsync(const Model::PutCompositeAlarmRequest& request, const PutCompositeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a dashboard if it does not already exist, or updates an existing
@@ -1489,7 +1659,8 @@ namespace Model
          * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
          * data points with the specified metric. If the specified metric does not exist,
          * CloudWatch creates the metric. When CloudWatch creates a metric, it can take up
-         * to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p>
+         * to fifteen minutes for the metric to appear in calls to <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
          * <p>You can publish either individual data points in the <code>Value</code>
          * field, or arrays of values and the number of times each value occurred during
          * the period by using the <code>Values</code> and <code>Counts</code> fields in
@@ -1509,14 +1680,22 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
-         * they are submitted.</p> <p>CloudWatch needs raw data points to calculate
-         * percentile statistics. If you publish data using a statistic set instead, you
-         * can only retrieve percentile statistics for this data if one of the following
-         * conditions is true:</p> <ul> <li> <p>The <code>SampleCount</code> value of the
-         * statistic set is 1 and <code>Min</code>, <code>Max</code>, and <code>Sum</code>
-         * are all equal.</p> </li> <li> <p>The <code>Min</code> and <code>Max</code> are
-         * equal, and <code>Sum</code> is equal to <code>Min</code> multiplied by
+         * available for <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+         * from the time they are submitted. Data points with time stamps between 3 and 24
+         * hours ago can take as much as 2 hours to become available for for <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
+         * publish data using a statistic set instead, you can only retrieve percentile
+         * statistics for this data if one of the following conditions is true:</p> <ul>
+         * <li> <p>The <code>SampleCount</code> value of the statistic set is 1 and
+         * <code>Min</code>, <code>Max</code>, and <code>Sum</code> are all equal.</p>
+         * </li> <li> <p>The <code>Min</code> and <code>Max</code> are equal, and
+         * <code>Sum</code> is equal to <code>Min</code> multiplied by
          * <code>SampleCount</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
@@ -1527,7 +1706,8 @@ namespace Model
          * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
          * data points with the specified metric. If the specified metric does not exist,
          * CloudWatch creates the metric. When CloudWatch creates a metric, it can take up
-         * to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p>
+         * to fifteen minutes for the metric to appear in calls to <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
          * <p>You can publish either individual data points in the <code>Value</code>
          * field, or arrays of values and the number of times each value occurred during
          * the period by using the <code>Values</code> and <code>Counts</code> fields in
@@ -1547,14 +1727,22 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
-         * they are submitted.</p> <p>CloudWatch needs raw data points to calculate
-         * percentile statistics. If you publish data using a statistic set instead, you
-         * can only retrieve percentile statistics for this data if one of the following
-         * conditions is true:</p> <ul> <li> <p>The <code>SampleCount</code> value of the
-         * statistic set is 1 and <code>Min</code>, <code>Max</code>, and <code>Sum</code>
-         * are all equal.</p> </li> <li> <p>The <code>Min</code> and <code>Max</code> are
-         * equal, and <code>Sum</code> is equal to <code>Min</code> multiplied by
+         * available for <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+         * from the time they are submitted. Data points with time stamps between 3 and 24
+         * hours ago can take as much as 2 hours to become available for for <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
+         * publish data using a statistic set instead, you can only retrieve percentile
+         * statistics for this data if one of the following conditions is true:</p> <ul>
+         * <li> <p>The <code>SampleCount</code> value of the statistic set is 1 and
+         * <code>Min</code>, <code>Max</code>, and <code>Sum</code> are all equal.</p>
+         * </li> <li> <p>The <code>Min</code> and <code>Max</code> are equal, and
+         * <code>Sum</code> is equal to <code>Min</code> multiplied by
          * <code>SampleCount</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
@@ -1567,7 +1755,8 @@ namespace Model
          * <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the
          * data points with the specified metric. If the specified metric does not exist,
          * CloudWatch creates the metric. When CloudWatch creates a metric, it can take up
-         * to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p>
+         * to fifteen minutes for the metric to appear in calls to <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>
          * <p>You can publish either individual data points in the <code>Value</code>
          * field, or arrays of values and the number of times each value occurred during
          * the period by using the <code>Values</code> and <code>Counts</code> fields in
@@ -1587,14 +1776,22 @@ namespace Model
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
-         * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
-         * they are submitted.</p> <p>CloudWatch needs raw data points to calculate
-         * percentile statistics. If you publish data using a statistic set instead, you
-         * can only retrieve percentile statistics for this data if one of the following
-         * conditions is true:</p> <ul> <li> <p>The <code>SampleCount</code> value of the
-         * statistic set is 1 and <code>Min</code>, <code>Max</code>, and <code>Sum</code>
-         * are all equal.</p> </li> <li> <p>The <code>Min</code> and <code>Max</code> are
-         * equal, and <code>Sum</code> is equal to <code>Min</code> multiplied by
+         * available for <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>
+         * from the time they are submitted. Data points with time stamps between 3 and 24
+         * hours ago can take as much as 2 hours to become available for for <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.</p>
+         * <p>CloudWatch needs raw data points to calculate percentile statistics. If you
+         * publish data using a statistic set instead, you can only retrieve percentile
+         * statistics for this data if one of the following conditions is true:</p> <ul>
+         * <li> <p>The <code>SampleCount</code> value of the statistic set is 1 and
+         * <code>Min</code>, <code>Max</code>, and <code>Sum</code> are all equal.</p>
+         * </li> <li> <p>The <code>Min</code> and <code>Max</code> are equal, and
+         * <code>Sum</code> is equal to <code>Min</code> multiplied by
          * <code>SampleCount</code>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricData">AWS
          * API Reference</a></p>
@@ -1608,11 +1805,18 @@ namespace Model
          * state differs from the previous value, the action configured for the appropriate
          * state is invoked. For example, if your alarm is configured to send an Amazon SNS
          * message when an alarm is triggered, temporarily changing the alarm state to
-         * <code>ALARM</code> sends an SNS message. The alarm returns to its actual state
-         * (often within seconds). Because the alarm state change happens quickly, it is
-         * typically only visible in the alarm's <b>History</b> tab in the Amazon
-         * CloudWatch console or through <a>DescribeAlarmHistory</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>ALARM</code> sends an SNS message.</p> <p>Metric alarms returns to their
+         * actual state quickly, often within seconds. Because the metric alarm state
+         * change happens quickly, it is typically only visible in the alarm's
+         * <b>History</b> tab in the Amazon CloudWatch console or through <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
+         * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
+         * alarm is not guaranteed to return to its actual state. It will return to its
+         * actual state only once any of its children alarms change state. It is also
+         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
+         * Auto Scaling policies or application Auto Scaling policies, you must include
+         * information in the <code>StateReasonData</code> parameter to enable the policy
+         * to take the correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          */
@@ -1623,11 +1827,18 @@ namespace Model
          * state differs from the previous value, the action configured for the appropriate
          * state is invoked. For example, if your alarm is configured to send an Amazon SNS
          * message when an alarm is triggered, temporarily changing the alarm state to
-         * <code>ALARM</code> sends an SNS message. The alarm returns to its actual state
-         * (often within seconds). Because the alarm state change happens quickly, it is
-         * typically only visible in the alarm's <b>History</b> tab in the Amazon
-         * CloudWatch console or through <a>DescribeAlarmHistory</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>ALARM</code> sends an SNS message.</p> <p>Metric alarms returns to their
+         * actual state quickly, often within seconds. Because the metric alarm state
+         * change happens quickly, it is typically only visible in the alarm's
+         * <b>History</b> tab in the Amazon CloudWatch console or through <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
+         * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
+         * alarm is not guaranteed to return to its actual state. It will return to its
+         * actual state only once any of its children alarms change state. It is also
+         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
+         * Auto Scaling policies or application Auto Scaling policies, you must include
+         * information in the <code>StateReasonData</code> parameter to enable the policy
+         * to take the correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          *
@@ -1640,11 +1851,18 @@ namespace Model
          * state differs from the previous value, the action configured for the appropriate
          * state is invoked. For example, if your alarm is configured to send an Amazon SNS
          * message when an alarm is triggered, temporarily changing the alarm state to
-         * <code>ALARM</code> sends an SNS message. The alarm returns to its actual state
-         * (often within seconds). Because the alarm state change happens quickly, it is
-         * typically only visible in the alarm's <b>History</b> tab in the Amazon
-         * CloudWatch console or through <a>DescribeAlarmHistory</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>ALARM</code> sends an SNS message.</p> <p>Metric alarms returns to their
+         * actual state quickly, often within seconds. Because the metric alarm state
+         * change happens quickly, it is typically only visible in the alarm's
+         * <b>History</b> tab in the Amazon CloudWatch console or through <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html">DescribeAlarmHistory</a>.</p>
+         * <p>If you use <code>SetAlarmState</code> on a composite alarm, the composite
+         * alarm is not guaranteed to return to its actual state. It will return to its
+         * actual state only once any of its children alarms change state. It is also
+         * re-evaluated if you update its configuration.</p> <p>If an alarm triggers EC2
+         * Auto Scaling policies or application Auto Scaling policies, you must include
+         * information in the <code>StateReasonData</code> parameter to enable the policy
+         * to take the correct action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SetAlarmState">AWS
          * API Reference</a></p>
          *
@@ -1764,6 +1982,7 @@ namespace Model
         void ListMetricsAsyncHelper(const Model::ListMetricsRequest& request, const ListMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAnomalyDetectorAsyncHelper(const Model::PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutCompositeAlarmAsyncHelper(const Model::PutCompositeAlarmRequest& request, const PutCompositeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDashboardAsyncHelper(const Model::PutDashboardRequest& request, const PutDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutInsightRuleAsyncHelper(const Model::PutInsightRuleRequest& request, const PutInsightRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutMetricAlarmAsyncHelper(const Model::PutMetricAlarmRequest& request, const PutMetricAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

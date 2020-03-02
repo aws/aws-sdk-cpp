@@ -23,51 +23,34 @@ namespace ComprehendMedical
 {
 namespace Model
 {
-  enum class EntitySubType
+  enum class RelationshipType
   {
     NOT_SET,
-    NAME,
+    EVERY,
+    WITH_DOSAGE,
+    ADMINISTERED_VIA,
+    FOR,
+    NEGATIVE,
+    OVERLAP,
     DOSAGE,
     ROUTE_OR_MODE,
     FORM,
     FREQUENCY,
     DURATION,
-    GENERIC_NAME,
-    BRAND_NAME,
     STRENGTH,
     RATE,
     ACUITY,
-    TEST_NAME,
     TEST_VALUE,
     TEST_UNITS,
-    PROCEDURE_NAME,
-    TREATMENT_NAME,
-    DATE,
-    AGE,
-    CONTACT_POINT,
-    EMAIL,
-    IDENTIFIER,
-    URL,
-    ADDRESS,
-    PROFESSION,
-    SYSTEM_ORGAN_SITE,
-    DIRECTION,
-    QUALITY,
-    QUANTITY,
-    TIME_EXPRESSION,
-    TIME_TO_MEDICATION_NAME,
-    TIME_TO_DX_NAME,
-    TIME_TO_TEST_NAME,
-    TIME_TO_PROCEDURE_NAME,
-    TIME_TO_TREATMENT_NAME
+    DIRECTION
   };
 
-namespace EntitySubTypeMapper
+namespace RelationshipTypeMapper
 {
-AWS_COMPREHENDMEDICAL_API EntitySubType GetEntitySubTypeForName(const Aws::String& name);
+AWS_COMPREHENDMEDICAL_API RelationshipType GetRelationshipTypeForName(const Aws::String& name);
 
-AWS_COMPREHENDMEDICAL_API Aws::String GetNameForEntitySubType(EntitySubType value);
-} // namespace EntitySubTypeMapper
+AWS_COMPREHENDMEDICAL_API Aws::String GetNameForRelationshipType(RelationshipType value);
+} // namespace RelationshipTypeMapper
 } // namespace Model
 } // namespace ComprehendMedical
 } // namespace Aws

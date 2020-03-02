@@ -58,6 +58,12 @@ namespace Aws
         static const int DIRECTION_HASH = HashingUtils::HashString("DIRECTION");
         static const int QUALITY_HASH = HashingUtils::HashString("QUALITY");
         static const int QUANTITY_HASH = HashingUtils::HashString("QUANTITY");
+        static const int TIME_EXPRESSION_HASH = HashingUtils::HashString("TIME_EXPRESSION");
+        static const int TIME_TO_MEDICATION_NAME_HASH = HashingUtils::HashString("TIME_TO_MEDICATION_NAME");
+        static const int TIME_TO_DX_NAME_HASH = HashingUtils::HashString("TIME_TO_DX_NAME");
+        static const int TIME_TO_TEST_NAME_HASH = HashingUtils::HashString("TIME_TO_TEST_NAME");
+        static const int TIME_TO_PROCEDURE_NAME_HASH = HashingUtils::HashString("TIME_TO_PROCEDURE_NAME");
+        static const int TIME_TO_TREATMENT_NAME_HASH = HashingUtils::HashString("TIME_TO_TREATMENT_NAME");
 
 
         EntitySubType GetEntitySubTypeForName(const Aws::String& name)
@@ -175,6 +181,30 @@ namespace Aws
           {
             return EntitySubType::QUANTITY;
           }
+          else if (hashCode == TIME_EXPRESSION_HASH)
+          {
+            return EntitySubType::TIME_EXPRESSION;
+          }
+          else if (hashCode == TIME_TO_MEDICATION_NAME_HASH)
+          {
+            return EntitySubType::TIME_TO_MEDICATION_NAME;
+          }
+          else if (hashCode == TIME_TO_DX_NAME_HASH)
+          {
+            return EntitySubType::TIME_TO_DX_NAME;
+          }
+          else if (hashCode == TIME_TO_TEST_NAME_HASH)
+          {
+            return EntitySubType::TIME_TO_TEST_NAME;
+          }
+          else if (hashCode == TIME_TO_PROCEDURE_NAME_HASH)
+          {
+            return EntitySubType::TIME_TO_PROCEDURE_NAME;
+          }
+          else if (hashCode == TIME_TO_TREATMENT_NAME_HASH)
+          {
+            return EntitySubType::TIME_TO_TREATMENT_NAME;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -245,6 +275,18 @@ namespace Aws
             return "QUALITY";
           case EntitySubType::QUANTITY:
             return "QUANTITY";
+          case EntitySubType::TIME_EXPRESSION:
+            return "TIME_EXPRESSION";
+          case EntitySubType::TIME_TO_MEDICATION_NAME:
+            return "TIME_TO_MEDICATION_NAME";
+          case EntitySubType::TIME_TO_DX_NAME:
+            return "TIME_TO_DX_NAME";
+          case EntitySubType::TIME_TO_TEST_NAME:
+            return "TIME_TO_TEST_NAME";
+          case EntitySubType::TIME_TO_PROCEDURE_NAME:
+            return "TIME_TO_PROCEDURE_NAME";
+          case EntitySubType::TIME_TO_TREATMENT_NAME:
+            return "TIME_TO_TREATMENT_NAME";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

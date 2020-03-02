@@ -17,6 +17,7 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/monitoring/model/AlarmType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/monitoring/model/HistoryItemType.h>
 #include <utility>
@@ -90,6 +91,37 @@ namespace Model
      * <p>The descriptive name for the alarm.</p>
      */
     inline AlarmHistoryItem& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+
+
+    /**
+     * <p>The type of alarm, either metric alarm or composite alarm.</p>
+     */
+    inline const AlarmType& GetAlarmType() const{ return m_alarmType; }
+
+    /**
+     * <p>The type of alarm, either metric alarm or composite alarm.</p>
+     */
+    inline bool AlarmTypeHasBeenSet() const { return m_alarmTypeHasBeenSet; }
+
+    /**
+     * <p>The type of alarm, either metric alarm or composite alarm.</p>
+     */
+    inline void SetAlarmType(const AlarmType& value) { m_alarmTypeHasBeenSet = true; m_alarmType = value; }
+
+    /**
+     * <p>The type of alarm, either metric alarm or composite alarm.</p>
+     */
+    inline void SetAlarmType(AlarmType&& value) { m_alarmTypeHasBeenSet = true; m_alarmType = std::move(value); }
+
+    /**
+     * <p>The type of alarm, either metric alarm or composite alarm.</p>
+     */
+    inline AlarmHistoryItem& WithAlarmType(const AlarmType& value) { SetAlarmType(value); return *this;}
+
+    /**
+     * <p>The type of alarm, either metric alarm or composite alarm.</p>
+     */
+    inline AlarmHistoryItem& WithAlarmType(AlarmType&& value) { SetAlarmType(std::move(value)); return *this;}
 
 
     /**
@@ -239,6 +271,9 @@ namespace Model
 
     Aws::String m_alarmName;
     bool m_alarmNameHasBeenSet;
+
+    AlarmType m_alarmType;
+    bool m_alarmTypeHasBeenSet;
 
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;

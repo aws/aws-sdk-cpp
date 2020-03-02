@@ -40,7 +40,9 @@ namespace Model
    * rule contains multiple keys, then a unique contributor is a unique combination
    * of values from all the keys in the rule.</p> <p>If the rule contains a single
    * key, then each unique contributor is each unique value for this key.</p> <p>For
-   * more information, see <a>GetInsightRuleReport</a>.</p><p><h3>See Also:</h3>   <a
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRuleContributor">AWS
    * API Reference</a></p>
    */

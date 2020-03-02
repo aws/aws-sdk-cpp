@@ -23,6 +23,9 @@ using namespace Aws::Utils;
 DescribeAlarmsRequest::DescribeAlarmsRequest() : 
     m_alarmNamesHasBeenSet(false),
     m_alarmNamePrefixHasBeenSet(false),
+    m_alarmTypesHasBeenSet(false),
+    m_childrenOfAlarmNameHasBeenSet(false),
+    m_parentsOfAlarmNameHasBeenSet(false),
     m_stateValue(StateValue::NOT_SET),
     m_stateValueHasBeenSet(false),
     m_actionPrefixHasBeenSet(false),
@@ -50,6 +53,27 @@ Aws::String DescribeAlarmsRequest::SerializePayload() const
   if(m_alarmNamePrefixHasBeenSet)
   {
     ss << "AlarmNamePrefix=" << StringUtils::URLEncode(m_alarmNamePrefix.c_str()) << "&";
+  }
+
+  if(m_alarmTypesHasBeenSet)
+  {
+    unsigned alarmTypesCount = 1;
+    for(auto& item : m_alarmTypes)
+    {
+      ss << "AlarmTypes.member." << alarmTypesCount << "="
+          << StringUtils::URLEncode(AlarmTypeMapper::GetNameForAlarmType(item).c_str()) << "&";
+      alarmTypesCount++;
+    }
+  }
+
+  if(m_childrenOfAlarmNameHasBeenSet)
+  {
+    ss << "ChildrenOfAlarmName=" << StringUtils::URLEncode(m_childrenOfAlarmName.c_str()) << "&";
+  }
+
+  if(m_parentsOfAlarmNameHasBeenSet)
+  {
+    ss << "ParentsOfAlarmName=" << StringUtils::URLEncode(m_parentsOfAlarmName.c_str()) << "&";
   }
 
   if(m_stateValueHasBeenSet)

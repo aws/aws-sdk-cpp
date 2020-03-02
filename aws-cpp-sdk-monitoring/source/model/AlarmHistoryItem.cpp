@@ -32,6 +32,8 @@ namespace Model
 
 AlarmHistoryItem::AlarmHistoryItem() : 
     m_alarmNameHasBeenSet(false),
+    m_alarmType(AlarmType::NOT_SET),
+    m_alarmTypeHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_historyItemType(HistoryItemType::NOT_SET),
     m_historyItemTypeHasBeenSet(false),
@@ -42,6 +44,8 @@ AlarmHistoryItem::AlarmHistoryItem() :
 
 AlarmHistoryItem::AlarmHistoryItem(const XmlNode& xmlNode) : 
     m_alarmNameHasBeenSet(false),
+    m_alarmType(AlarmType::NOT_SET),
+    m_alarmTypeHasBeenSet(false),
     m_timestampHasBeenSet(false),
     m_historyItemType(HistoryItemType::NOT_SET),
     m_historyItemTypeHasBeenSet(false),
@@ -62,6 +66,12 @@ AlarmHistoryItem& AlarmHistoryItem::operator =(const XmlNode& xmlNode)
     {
       m_alarmName = Aws::Utils::Xml::DecodeEscapedXmlText(alarmNameNode.GetText());
       m_alarmNameHasBeenSet = true;
+    }
+    XmlNode alarmTypeNode = resultNode.FirstChild("AlarmType");
+    if(!alarmTypeNode.IsNull())
+    {
+      m_alarmType = AlarmTypeMapper::GetAlarmTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(alarmTypeNode.GetText()).c_str()).c_str());
+      m_alarmTypeHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
@@ -99,6 +109,11 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
   }
 
+  if(m_alarmTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AlarmType=" << AlarmTypeMapper::GetNameForAlarmType(m_alarmType) << "&";
+  }
+
   if(m_timestampHasBeenSet)
   {
       oStream << location << index << locationValue << ".Timestamp=" << StringUtils::URLEncode(m_timestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
@@ -126,6 +141,10 @@ void AlarmHistoryItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_alarmNameHasBeenSet)
   {
       oStream << location << ".AlarmName=" << StringUtils::URLEncode(m_alarmName.c_str()) << "&";
+  }
+  if(m_alarmTypeHasBeenSet)
+  {
+      oStream << location << ".AlarmType=" << AlarmTypeMapper::GetNameForAlarmType(m_alarmType) << "&";
   }
   if(m_timestampHasBeenSet)
   {

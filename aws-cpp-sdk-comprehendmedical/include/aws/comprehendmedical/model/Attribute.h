@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
 #include <aws/comprehendmedical/model/EntitySubType.h>
+#include <aws/comprehendmedical/model/RelationshipType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/comprehendmedical/model/EntityType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/comprehendmedical/model/Trait.h>
 #include <utility>
@@ -133,6 +135,49 @@ namespace Model
      * attribute is correctly related to this entity. </p>
      */
     inline Attribute& WithRelationshipScore(double value) { SetRelationshipScore(value); return *this;}
+
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship is <code>OVERLAP</code>, indicating that the entity occurred at the
+     * same time as the <code>Date_Expression</code>. </p>
+     */
+    inline const RelationshipType& GetRelationshipType() const{ return m_relationshipType; }
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship is <code>OVERLAP</code>, indicating that the entity occurred at the
+     * same time as the <code>Date_Expression</code>. </p>
+     */
+    inline bool RelationshipTypeHasBeenSet() const { return m_relationshipTypeHasBeenSet; }
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship is <code>OVERLAP</code>, indicating that the entity occurred at the
+     * same time as the <code>Date_Expression</code>. </p>
+     */
+    inline void SetRelationshipType(const RelationshipType& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = value; }
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship is <code>OVERLAP</code>, indicating that the entity occurred at the
+     * same time as the <code>Date_Expression</code>. </p>
+     */
+    inline void SetRelationshipType(RelationshipType&& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = std::move(value); }
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship is <code>OVERLAP</code>, indicating that the entity occurred at the
+     * same time as the <code>Date_Expression</code>. </p>
+     */
+    inline Attribute& WithRelationshipType(const RelationshipType& value) { SetRelationshipType(value); return *this;}
+
+    /**
+     * <p>The type of relationship between the entity and attribute. Type for the
+     * relationship is <code>OVERLAP</code>, indicating that the entity occurred at the
+     * same time as the <code>Date_Expression</code>. </p>
+     */
+    inline Attribute& WithRelationshipType(RelationshipType&& value) { SetRelationshipType(std::move(value)); return *this;}
 
 
     /**
@@ -256,6 +301,37 @@ namespace Model
 
 
     /**
+     * <p> The category of attribute. </p>
+     */
+    inline const EntityType& GetCategory() const{ return m_category; }
+
+    /**
+     * <p> The category of attribute. </p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p> The category of attribute. </p>
+     */
+    inline void SetCategory(const EntityType& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p> The category of attribute. </p>
+     */
+    inline void SetCategory(EntityType&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p> The category of attribute. </p>
+     */
+    inline Attribute& WithCategory(const EntityType& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p> The category of attribute. </p>
+     */
+    inline Attribute& WithCategory(EntityType&& value) { SetCategory(std::move(value)); return *this;}
+
+
+    /**
      * <p> Contextual information for this attribute. </p>
      */
     inline const Aws::Vector<Trait>& GetTraits() const{ return m_traits; }
@@ -306,6 +382,9 @@ namespace Model
     double m_relationshipScore;
     bool m_relationshipScoreHasBeenSet;
 
+    RelationshipType m_relationshipType;
+    bool m_relationshipTypeHasBeenSet;
+
     int m_id;
     bool m_idHasBeenSet;
 
@@ -317,6 +396,9 @@ namespace Model
 
     Aws::String m_text;
     bool m_textHasBeenSet;
+
+    EntityType m_category;
+    bool m_categoryHasBeenSet;
 
     Aws::Vector<Trait> m_traits;
     bool m_traitsHasBeenSet;

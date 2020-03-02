@@ -14,32 +14,28 @@
 */
 
 #pragma once
-#include <aws/comprehendmedical/ComprehendMedical_EXPORTS.h>
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace ComprehendMedical
+namespace CloudWatch
 {
 namespace Model
 {
-  enum class EntityType
+  enum class AlarmType
   {
     NOT_SET,
-    MEDICATION,
-    MEDICAL_CONDITION,
-    PROTECTED_HEALTH_INFORMATION,
-    TEST_TREATMENT_PROCEDURE,
-    ANATOMY,
-    TIME_EXPRESSION
+    CompositeAlarm,
+    MetricAlarm
   };
 
-namespace EntityTypeMapper
+namespace AlarmTypeMapper
 {
-AWS_COMPREHENDMEDICAL_API EntityType GetEntityTypeForName(const Aws::String& name);
+AWS_CLOUDWATCH_API AlarmType GetAlarmTypeForName(const Aws::String& name);
 
-AWS_COMPREHENDMEDICAL_API Aws::String GetNameForEntityType(EntityType value);
-} // namespace EntityTypeMapper
+AWS_CLOUDWATCH_API Aws::String GetNameForAlarmType(AlarmType value);
+} // namespace AlarmTypeMapper
 } // namespace Model
-} // namespace ComprehendMedical
+} // namespace CloudWatch
 } // namespace Aws

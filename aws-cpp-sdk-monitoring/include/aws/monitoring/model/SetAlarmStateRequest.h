@@ -170,41 +170,65 @@ namespace Model
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     * <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto
+     * Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses
+     * the information in this field to take the correct action.</p>
      */
     inline const Aws::String& GetStateReasonData() const{ return m_stateReasonData; }
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     * <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto
+     * Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses
+     * the information in this field to take the correct action.</p>
      */
     inline bool StateReasonDataHasBeenSet() const { return m_stateReasonDataHasBeenSet; }
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     * <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto
+     * Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses
+     * the information in this field to take the correct action.</p>
      */
     inline void SetStateReasonData(const Aws::String& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = value; }
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     * <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto
+     * Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses
+     * the information in this field to take the correct action.</p>
      */
     inline void SetStateReasonData(Aws::String&& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = std::move(value); }
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     * <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto
+     * Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses
+     * the information in this field to take the correct action.</p>
      */
     inline void SetStateReasonData(const char* value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData.assign(value); }
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     * <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto
+     * Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses
+     * the information in this field to take the correct action.</p>
      */
     inline SetAlarmStateRequest& WithStateReasonData(const Aws::String& value) { SetStateReasonData(value); return *this;}
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     * <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto
+     * Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses
+     * the information in this field to take the correct action.</p>
      */
     inline SetAlarmStateRequest& WithStateReasonData(Aws::String&& value) { SetStateReasonData(std::move(value)); return *this;}
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     * <p>For SNS or EC2 alarm actions, this is just informational. But for EC2 Auto
+     * Scaling or application Auto Scaling alarm actions, the Auto Scaling policy uses
+     * the information in this field to take the correct action.</p>
      */
     inline SetAlarmStateRequest& WithStateReasonData(const char* value) { SetStateReasonData(value); return *this;}
 

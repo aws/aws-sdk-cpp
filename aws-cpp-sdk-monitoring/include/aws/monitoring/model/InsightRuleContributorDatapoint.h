@@ -35,7 +35,10 @@ namespace Model
 
   /**
    * <p>One data point related to one contributor.</p> <p>For more information, see
-   * <a>GetInsightRuleReport</a> and <a>InsightRuleContributor</a>.</p><p><h3>See
+   * <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRuleContributorDatapoint">AWS
    * API Reference</a></p>

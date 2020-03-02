@@ -225,14 +225,15 @@ namespace Model
         /**
          * <p>Inspects the clinical text for a variety of medical entities and returns
          * specific information about them such as entity category, location, and
-         * confidence score on that information.</p> <p>The <code>DetectEntitiesV2</code>
-         * operation replaces the <a>DetectEntities</a> operation. This new action uses a
-         * different model for determining the entities in your medical text and changes
-         * the way that some entities are returned in the output. You should use the
-         * <code>DetectEntitiesV2</code> operation in all new applications.</p> <p>The
-         * <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and
-         * <code>Direction</code> entities as attributes instead of types. </p><p><h3>See
-         * Also:</h3>   <a
+         * confidence score on that information. Amazon Comprehend Medical only detects
+         * medical entities in English language texts.</p> <p>The
+         * <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a>
+         * operation. This new action uses a different model for determining the entities
+         * in your medical text and changes the way that some entities are returned in the
+         * output. You should use the <code>DetectEntitiesV2</code> operation in all new
+         * applications.</p> <p>The <code>DetectEntitiesV2</code> operation returns the
+         * <code>Acuity</code> and <code>Direction</code> entities as attributes instead of
+         * types. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntitiesV2">AWS
          * API Reference</a></p>
          */
@@ -241,14 +242,15 @@ namespace Model
         /**
          * <p>Inspects the clinical text for a variety of medical entities and returns
          * specific information about them such as entity category, location, and
-         * confidence score on that information.</p> <p>The <code>DetectEntitiesV2</code>
-         * operation replaces the <a>DetectEntities</a> operation. This new action uses a
-         * different model for determining the entities in your medical text and changes
-         * the way that some entities are returned in the output. You should use the
-         * <code>DetectEntitiesV2</code> operation in all new applications.</p> <p>The
-         * <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and
-         * <code>Direction</code> entities as attributes instead of types. </p><p><h3>See
-         * Also:</h3>   <a
+         * confidence score on that information. Amazon Comprehend Medical only detects
+         * medical entities in English language texts.</p> <p>The
+         * <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a>
+         * operation. This new action uses a different model for determining the entities
+         * in your medical text and changes the way that some entities are returned in the
+         * output. You should use the <code>DetectEntitiesV2</code> operation in all new
+         * applications.</p> <p>The <code>DetectEntitiesV2</code> operation returns the
+         * <code>Acuity</code> and <code>Direction</code> entities as attributes instead of
+         * types. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntitiesV2">AWS
          * API Reference</a></p>
          *
@@ -259,14 +261,15 @@ namespace Model
         /**
          * <p>Inspects the clinical text for a variety of medical entities and returns
          * specific information about them such as entity category, location, and
-         * confidence score on that information.</p> <p>The <code>DetectEntitiesV2</code>
-         * operation replaces the <a>DetectEntities</a> operation. This new action uses a
-         * different model for determining the entities in your medical text and changes
-         * the way that some entities are returned in the output. You should use the
-         * <code>DetectEntitiesV2</code> operation in all new applications.</p> <p>The
-         * <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and
-         * <code>Direction</code> entities as attributes instead of types. </p><p><h3>See
-         * Also:</h3>   <a
+         * confidence score on that information. Amazon Comprehend Medical only detects
+         * medical entities in English language texts.</p> <p>The
+         * <code>DetectEntitiesV2</code> operation replaces the <a>DetectEntities</a>
+         * operation. This new action uses a different model for determining the entities
+         * in your medical text and changes the way that some entities are returned in the
+         * output. You should use the <code>DetectEntitiesV2</code> operation in all new
+         * applications.</p> <p>The <code>DetectEntitiesV2</code> operation returns the
+         * <code>Acuity</code> and <code>Direction</code> entities as attributes instead of
+         * types. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntitiesV2">AWS
          * API Reference</a></p>
          *
@@ -276,8 +279,9 @@ namespace Model
 
         /**
          * <p> Inspects the clinical text for protected health information (PHI) entities
-         * and entity category, location, and confidence score on that
-         * information.</p><p><h3>See Also:</h3>   <a
+         * and returns the entity category, location, and confidence score for each entity.
+         * Amazon Comprehend Medical only detects entities in English language
+         * texts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">AWS
          * API Reference</a></p>
          */
@@ -285,8 +289,9 @@ namespace Model
 
         /**
          * <p> Inspects the clinical text for protected health information (PHI) entities
-         * and entity category, location, and confidence score on that
-         * information.</p><p><h3>See Also:</h3>   <a
+         * and returns the entity category, location, and confidence score for each entity.
+         * Amazon Comprehend Medical only detects entities in English language
+         * texts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">AWS
          * API Reference</a></p>
          *
@@ -296,8 +301,9 @@ namespace Model
 
         /**
          * <p> Inspects the clinical text for protected health information (PHI) entities
-         * and entity category, location, and confidence score on that
-         * information.</p><p><h3>See Also:</h3>   <a
+         * and returns the entity category, location, and confidence score for each entity.
+         * Amazon Comprehend Medical only detects entities in English language
+         * texts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectPHI">AWS
          * API Reference</a></p>
          *
@@ -308,7 +314,8 @@ namespace Model
         /**
          * <p>InferICD10CM detects medical conditions as entities listed in a patient
          * record and links those entities to normalized concept identifiers in the
-         * ICD-10-CM knowledge base from the Centers for Disease Control.</p><p><h3>See
+         * ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend
+         * Medical only detects medical entities in English language texts.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
          * API Reference</a></p>
@@ -318,7 +325,8 @@ namespace Model
         /**
          * <p>InferICD10CM detects medical conditions as entities listed in a patient
          * record and links those entities to normalized concept identifiers in the
-         * ICD-10-CM knowledge base from the Centers for Disease Control.</p><p><h3>See
+         * ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend
+         * Medical only detects medical entities in English language texts.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
          * API Reference</a></p>
@@ -330,7 +338,8 @@ namespace Model
         /**
          * <p>InferICD10CM detects medical conditions as entities listed in a patient
          * record and links those entities to normalized concept identifiers in the
-         * ICD-10-CM knowledge base from the Centers for Disease Control.</p><p><h3>See
+         * ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend
+         * Medical only detects medical entities in English language texts.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
          * API Reference</a></p>
@@ -342,7 +351,8 @@ namespace Model
         /**
          * <p>InferRxNorm detects medications as entities listed in a patient record and
          * links to the normalized concept identifiers in the RxNorm database from the
-         * National Library of Medicine.</p><p><h3>See Also:</h3>   <a
+         * National Library of Medicine. Amazon Comprehend Medical only detects medical
+         * entities in English language texts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
          * API Reference</a></p>
          */
@@ -351,7 +361,8 @@ namespace Model
         /**
          * <p>InferRxNorm detects medications as entities listed in a patient record and
          * links to the normalized concept identifiers in the RxNorm database from the
-         * National Library of Medicine.</p><p><h3>See Also:</h3>   <a
+         * National Library of Medicine. Amazon Comprehend Medical only detects medical
+         * entities in English language texts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
          * API Reference</a></p>
          *
@@ -362,7 +373,8 @@ namespace Model
         /**
          * <p>InferRxNorm detects medications as entities listed in a patient record and
          * links to the normalized concept identifiers in the RxNorm database from the
-         * National Library of Medicine.</p><p><h3>See Also:</h3>   <a
+         * National Library of Medicine. Amazon Comprehend Medical only detects medical
+         * entities in English language texts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
          * API Reference</a></p>
          *

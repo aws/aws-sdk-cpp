@@ -99,29 +99,29 @@ namespace Model
 
     /**
      * <p>The maximum number of results to return in one operation. The maximum value
-     * you can specify is 10.</p> <p>To retrieve the remaining results, make another
-     * call with the returned <code>NextToken</code> value. </p>
+     * that you can specify is 100.</p> <p>To retrieve the remaining results, make
+     * another call with the returned <code>NextToken</code> value. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to return in one operation. The maximum value
-     * you can specify is 10.</p> <p>To retrieve the remaining results, make another
-     * call with the returned <code>NextToken</code> value. </p>
+     * that you can specify is 100.</p> <p>To retrieve the remaining results, make
+     * another call with the returned <code>NextToken</code> value. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in one operation. The maximum value
-     * you can specify is 10.</p> <p>To retrieve the remaining results, make another
-     * call with the returned <code>NextToken</code> value. </p>
+     * that you can specify is 100.</p> <p>To retrieve the remaining results, make
+     * another call with the returned <code>NextToken</code> value. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in one operation. The maximum value
-     * you can specify is 10.</p> <p>To retrieve the remaining results, make another
-     * call with the returned <code>NextToken</code> value. </p>
+     * that you can specify is 100.</p> <p>To retrieve the remaining results, make
+     * another call with the returned <code>NextToken</code> value. </p>
      */
     inline DescribeAnomalyDetectorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

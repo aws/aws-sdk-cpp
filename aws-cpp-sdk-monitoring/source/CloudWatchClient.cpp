@@ -52,6 +52,7 @@
 #include <aws/monitoring/model/ListMetricsRequest.h>
 #include <aws/monitoring/model/ListTagsForResourceRequest.h>
 #include <aws/monitoring/model/PutAnomalyDetectorRequest.h>
+#include <aws/monitoring/model/PutCompositeAlarmRequest.h>
 #include <aws/monitoring/model/PutDashboardRequest.h>
 #include <aws/monitoring/model/PutInsightRuleRequest.h>
 #include <aws/monitoring/model/PutMetricAlarmRequest.h>
@@ -911,6 +912,41 @@ void CloudWatchClient::PutAnomalyDetectorAsync(const PutAnomalyDetectorRequest& 
 void CloudWatchClient::PutAnomalyDetectorAsyncHelper(const PutAnomalyDetectorRequest& request, const PutAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAnomalyDetector(request), context);
+}
+
+PutCompositeAlarmOutcome CloudWatchClient::PutCompositeAlarm(const PutCompositeAlarmRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return PutCompositeAlarmOutcome(NoResult());
+  }
+  else
+  {
+    return PutCompositeAlarmOutcome(outcome.GetError());
+  }
+}
+
+PutCompositeAlarmOutcomeCallable CloudWatchClient::PutCompositeAlarmCallable(const PutCompositeAlarmRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutCompositeAlarmOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutCompositeAlarm(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchClient::PutCompositeAlarmAsync(const PutCompositeAlarmRequest& request, const PutCompositeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutCompositeAlarmAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchClient::PutCompositeAlarmAsyncHelper(const PutCompositeAlarmRequest& request, const PutCompositeAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutCompositeAlarm(request), context);
 }
 
 PutDashboardOutcome CloudWatchClient::PutDashboard(const PutDashboardRequest& request) const

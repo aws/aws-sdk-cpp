@@ -114,64 +114,72 @@ namespace Model
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
      * widgets to include and their location on the dashboard. This parameter is
-     * required.</p> <p>For more information about the syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.</p>
+     * required.</p> <p>For more information about the syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>.</p>
      */
     inline const Aws::String& GetDashboardBody() const{ return m_dashboardBody; }
 
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
      * widgets to include and their location on the dashboard. This parameter is
-     * required.</p> <p>For more information about the syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.</p>
+     * required.</p> <p>For more information about the syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>.</p>
      */
     inline bool DashboardBodyHasBeenSet() const { return m_dashboardBodyHasBeenSet; }
 
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
      * widgets to include and their location on the dashboard. This parameter is
-     * required.</p> <p>For more information about the syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.</p>
+     * required.</p> <p>For more information about the syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>.</p>
      */
     inline void SetDashboardBody(const Aws::String& value) { m_dashboardBodyHasBeenSet = true; m_dashboardBody = value; }
 
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
      * widgets to include and their location on the dashboard. This parameter is
-     * required.</p> <p>For more information about the syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.</p>
+     * required.</p> <p>For more information about the syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>.</p>
      */
     inline void SetDashboardBody(Aws::String&& value) { m_dashboardBodyHasBeenSet = true; m_dashboardBody = std::move(value); }
 
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
      * widgets to include and their location on the dashboard. This parameter is
-     * required.</p> <p>For more information about the syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.</p>
+     * required.</p> <p>For more information about the syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>.</p>
      */
     inline void SetDashboardBody(const char* value) { m_dashboardBodyHasBeenSet = true; m_dashboardBody.assign(value); }
 
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
      * widgets to include and their location on the dashboard. This parameter is
-     * required.</p> <p>For more information about the syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.</p>
+     * required.</p> <p>For more information about the syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>.</p>
      */
     inline PutDashboardRequest& WithDashboardBody(const Aws::String& value) { SetDashboardBody(value); return *this;}
 
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
      * widgets to include and their location on the dashboard. This parameter is
-     * required.</p> <p>For more information about the syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.</p>
+     * required.</p> <p>For more information about the syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>.</p>
      */
     inline PutDashboardRequest& WithDashboardBody(Aws::String&& value) { SetDashboardBody(std::move(value)); return *this;}
 
     /**
      * <p>The detailed information about the dashboard in JSON format, including the
      * widgets to include and their location on the dashboard. This parameter is
-     * required.</p> <p>For more information about the syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>.</p>
+     * required.</p> <p>For more information about the syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>.</p>
      */
     inline PutDashboardRequest& WithDashboardBody(const char* value) { SetDashboardBody(value); return *this;}
 

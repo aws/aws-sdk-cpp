@@ -82,56 +82,63 @@ namespace Model
     /**
      * <p>The detailed information about the dashboard, including what widgets are
      * included and their location on the dashboard. For more information about the
-     * <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>. </p>
+     * <code>DashboardBody</code> syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>. </p>
      */
     inline const Aws::String& GetDashboardBody() const{ return m_dashboardBody; }
 
     /**
      * <p>The detailed information about the dashboard, including what widgets are
      * included and their location on the dashboard. For more information about the
-     * <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>. </p>
+     * <code>DashboardBody</code> syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>. </p>
      */
     inline void SetDashboardBody(const Aws::String& value) { m_dashboardBody = value; }
 
     /**
      * <p>The detailed information about the dashboard, including what widgets are
      * included and their location on the dashboard. For more information about the
-     * <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>. </p>
+     * <code>DashboardBody</code> syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>. </p>
      */
     inline void SetDashboardBody(Aws::String&& value) { m_dashboardBody = std::move(value); }
 
     /**
      * <p>The detailed information about the dashboard, including what widgets are
      * included and their location on the dashboard. For more information about the
-     * <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>. </p>
+     * <code>DashboardBody</code> syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>. </p>
      */
     inline void SetDashboardBody(const char* value) { m_dashboardBody.assign(value); }
 
     /**
      * <p>The detailed information about the dashboard, including what widgets are
      * included and their location on the dashboard. For more information about the
-     * <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>. </p>
+     * <code>DashboardBody</code> syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>. </p>
      */
     inline GetDashboardResult& WithDashboardBody(const Aws::String& value) { SetDashboardBody(value); return *this;}
 
     /**
      * <p>The detailed information about the dashboard, including what widgets are
      * included and their location on the dashboard. For more information about the
-     * <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>. </p>
+     * <code>DashboardBody</code> syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>. </p>
      */
     inline GetDashboardResult& WithDashboardBody(Aws::String&& value) { SetDashboardBody(std::move(value)); return *this;}
 
     /**
      * <p>The detailed information about the dashboard, including what widgets are
      * included and their location on the dashboard. For more information about the
-     * <code>DashboardBody</code> syntax, see
-     * <a>CloudWatch-Dashboard-Body-Structure</a>. </p>
+     * <code>DashboardBody</code> syntax, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
+     * Body Structure and Syntax</a>. </p>
      */
     inline GetDashboardResult& WithDashboardBody(const char* value) { SetDashboardBody(value); return *this;}
 

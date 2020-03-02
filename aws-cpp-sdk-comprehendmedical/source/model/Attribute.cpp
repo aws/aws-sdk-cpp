@@ -35,6 +35,8 @@ Attribute::Attribute() :
     m_scoreHasBeenSet(false),
     m_relationshipScore(0.0),
     m_relationshipScoreHasBeenSet(false),
+    m_relationshipType(RelationshipType::NOT_SET),
+    m_relationshipTypeHasBeenSet(false),
     m_id(0),
     m_idHasBeenSet(false),
     m_beginOffset(0),
@@ -42,6 +44,8 @@ Attribute::Attribute() :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_category(EntityType::NOT_SET),
+    m_categoryHasBeenSet(false),
     m_traitsHasBeenSet(false)
 {
 }
@@ -53,6 +57,8 @@ Attribute::Attribute(JsonView jsonValue) :
     m_scoreHasBeenSet(false),
     m_relationshipScore(0.0),
     m_relationshipScoreHasBeenSet(false),
+    m_relationshipType(RelationshipType::NOT_SET),
+    m_relationshipTypeHasBeenSet(false),
     m_id(0),
     m_idHasBeenSet(false),
     m_beginOffset(0),
@@ -60,6 +66,8 @@ Attribute::Attribute(JsonView jsonValue) :
     m_endOffset(0),
     m_endOffsetHasBeenSet(false),
     m_textHasBeenSet(false),
+    m_category(EntityType::NOT_SET),
+    m_categoryHasBeenSet(false),
     m_traitsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -88,6 +96,13 @@ Attribute& Attribute::operator =(JsonView jsonValue)
     m_relationshipScoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RelationshipType"))
+  {
+    m_relationshipType = RelationshipTypeMapper::GetRelationshipTypeForName(jsonValue.GetString("RelationshipType"));
+
+    m_relationshipTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetInteger("Id");
@@ -114,6 +129,13 @@ Attribute& Attribute::operator =(JsonView jsonValue)
     m_text = jsonValue.GetString("Text");
 
     m_textHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Category"))
+  {
+    m_category = EntityTypeMapper::GetEntityTypeForName(jsonValue.GetString("Category"));
+
+    m_categoryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Traits"))
@@ -150,6 +172,11 @@ JsonValue Attribute::Jsonize() const
 
   }
 
+  if(m_relationshipTypeHasBeenSet)
+  {
+   payload.WithString("RelationshipType", RelationshipTypeMapper::GetNameForRelationshipType(m_relationshipType));
+  }
+
   if(m_idHasBeenSet)
   {
    payload.WithInteger("Id", m_id);
@@ -172,6 +199,11 @@ JsonValue Attribute::Jsonize() const
   {
    payload.WithString("Text", m_text);
 
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("Category", EntityTypeMapper::GetNameForEntityType(m_category));
   }
 
   if(m_traitsHasBeenSet)

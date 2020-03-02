@@ -35,8 +35,9 @@ namespace Model
 
   /**
    * <p>One data point from the metric time series returned in a Contributor Insights
-   * rule report.</p> <p>For more information, see
-   * <a>GetInsightRuleReport</a>.</p><p><h3>See Also:</h3>   <a
+   * rule report.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRuleMetricDatapoint">AWS
    * API Reference</a></p>
    */

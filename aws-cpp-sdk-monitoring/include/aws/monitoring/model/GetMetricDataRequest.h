@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
-     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
@@ -60,7 +60,7 @@ namespace Model
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
-     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
-     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
-     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
-     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
-     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
-     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The metric queries to be returned. A single <code>GetMetricData</code> call
-     * can include as many as 100 <code>MetricDataQuery</code> structures. Each of
+     * can include as many as 500 <code>MetricDataQuery</code> structures. Each of
      * these structures can specify either a metric to retrieve, or a math expression
      * to perform on retrieved data. </p>
      */
