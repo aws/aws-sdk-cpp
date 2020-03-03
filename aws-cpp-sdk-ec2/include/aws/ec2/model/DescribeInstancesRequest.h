@@ -76,11 +76,10 @@ namespace Model
      * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
-     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li> <li> <p>
-     * <code>iam-instance-profile.arn</code> - The instance profile associated with the
-     * instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code> - The ID
-     * of the image used to launch the instance.</p> </li> <li> <p>
+     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
+     * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
+     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
+     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
      * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
@@ -256,11 +255,10 @@ namespace Model
      * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
-     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li> <li> <p>
-     * <code>iam-instance-profile.arn</code> - The instance profile associated with the
-     * instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code> - The ID
-     * of the image used to launch the instance.</p> </li> <li> <p>
+     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
+     * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
+     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
+     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
      * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
@@ -436,11 +434,10 @@ namespace Model
      * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
-     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li> <li> <p>
-     * <code>iam-instance-profile.arn</code> - The instance profile associated with the
-     * instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code> - The ID
-     * of the image used to launch the instance.</p> </li> <li> <p>
+     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
+     * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
+     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
+     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
      * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
@@ -616,11 +613,10 @@ namespace Model
      * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
-     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li> <li> <p>
-     * <code>iam-instance-profile.arn</code> - The instance profile associated with the
-     * instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code> - The ID
-     * of the image used to launch the instance.</p> </li> <li> <p>
+     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
+     * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
+     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
+     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
      * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
@@ -796,11 +792,10 @@ namespace Model
      * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
-     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li> <li> <p>
-     * <code>iam-instance-profile.arn</code> - The instance profile associated with the
-     * instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code> - The ID
-     * of the image used to launch the instance.</p> </li> <li> <p>
+     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
+     * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
+     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
+     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
      * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
@@ -976,11 +971,10 @@ namespace Model
      * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
-     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li> <li> <p>
-     * <code>iam-instance-profile.arn</code> - The instance profile associated with the
-     * instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code> - The ID
-     * of the image used to launch the instance.</p> </li> <li> <p>
+     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
+     * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
+     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
+     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
      * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
@@ -1156,11 +1150,10 @@ namespace Model
      * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
-     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li> <li> <p>
-     * <code>iam-instance-profile.arn</code> - The instance profile associated with the
-     * instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code> - The ID
-     * of the image used to launch the instance.</p> </li> <li> <p>
+     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
+     * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
+     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
+     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
      * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
@@ -1336,11 +1329,10 @@ namespace Model
      * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
-     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>). The value
-     * <code>xen</code> is used for both Xen and Nitro hypervisors.</p> </li> <li> <p>
-     * <code>iam-instance-profile.arn</code> - The instance profile associated with the
-     * instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code> - The ID
-     * of the image used to launch the instance.</p> </li> <li> <p>
+     * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
+     * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
+     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
+     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
      * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
      * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
      * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>

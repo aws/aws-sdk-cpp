@@ -66,6 +66,7 @@ namespace Aws
         static const int vpc_peering_connection_HASH = HashingUtils::HashString("vpc-peering-connection");
         static const int vpn_connection_HASH = HashingUtils::HashString("vpn-connection");
         static const int vpn_gateway_HASH = HashingUtils::HashString("vpn-gateway");
+        static const int vpc_flow_log_HASH = HashingUtils::HashString("vpc-flow-log");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -215,6 +216,10 @@ namespace Aws
           {
             return ResourceType::vpn_gateway;
           }
+          else if (hashCode == vpc_flow_log_HASH)
+          {
+            return ResourceType::vpc_flow_log;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -301,6 +306,8 @@ namespace Aws
             return "vpn-connection";
           case ResourceType::vpn_gateway:
             return "vpn-gateway";
+          case ResourceType::vpc_flow_log:
+            return "vpc-flow-log";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

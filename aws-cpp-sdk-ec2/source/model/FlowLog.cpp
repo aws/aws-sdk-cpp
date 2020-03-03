@@ -45,6 +45,7 @@ FlowLog::FlowLog() :
     m_logDestinationTypeHasBeenSet(false),
     m_logDestinationHasBeenSet(false),
     m_logFormatHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_maxAggregationInterval(0),
     m_maxAggregationIntervalHasBeenSet(false)
 {
@@ -65,6 +66,7 @@ FlowLog::FlowLog(const XmlNode& xmlNode) :
     m_logDestinationTypeHasBeenSet(false),
     m_logDestinationHasBeenSet(false),
     m_logFormatHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_maxAggregationInterval(0),
     m_maxAggregationIntervalHasBeenSet(false)
 {
@@ -149,6 +151,18 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
       m_logFormat = Aws::Utils::Xml::DecodeEscapedXmlText(logFormatNode.GetText());
       m_logFormatHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
     XmlNode maxAggregationIntervalNode = resultNode.FirstChild("maxAggregationInterval");
     if(!maxAggregationIntervalNode.IsNull())
     {
@@ -222,6 +236,17 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
   if(m_maxAggregationIntervalHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxAggregationInterval=" << m_maxAggregationInterval << "&";
@@ -278,6 +303,16 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_logFormatHasBeenSet)
   {
       oStream << location << ".LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
   if(m_maxAggregationIntervalHasBeenSet)
   {

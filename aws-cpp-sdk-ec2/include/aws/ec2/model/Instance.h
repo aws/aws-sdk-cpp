@@ -1079,38 +1079,32 @@ namespace Model
 
 
     /**
-     * <p>The hypervisor type of the instance. The value <code>xen</code> is used for
-     * both Xen and Nitro hypervisors.</p>
+     * <p>The hypervisor type of the instance.</p>
      */
     inline const HypervisorType& GetHypervisor() const{ return m_hypervisor; }
 
     /**
-     * <p>The hypervisor type of the instance. The value <code>xen</code> is used for
-     * both Xen and Nitro hypervisors.</p>
+     * <p>The hypervisor type of the instance.</p>
      */
     inline bool HypervisorHasBeenSet() const { return m_hypervisorHasBeenSet; }
 
     /**
-     * <p>The hypervisor type of the instance. The value <code>xen</code> is used for
-     * both Xen and Nitro hypervisors.</p>
+     * <p>The hypervisor type of the instance.</p>
      */
     inline void SetHypervisor(const HypervisorType& value) { m_hypervisorHasBeenSet = true; m_hypervisor = value; }
 
     /**
-     * <p>The hypervisor type of the instance. The value <code>xen</code> is used for
-     * both Xen and Nitro hypervisors.</p>
+     * <p>The hypervisor type of the instance.</p>
      */
     inline void SetHypervisor(HypervisorType&& value) { m_hypervisorHasBeenSet = true; m_hypervisor = std::move(value); }
 
     /**
-     * <p>The hypervisor type of the instance. The value <code>xen</code> is used for
-     * both Xen and Nitro hypervisors.</p>
+     * <p>The hypervisor type of the instance.</p>
      */
     inline Instance& WithHypervisor(const HypervisorType& value) { SetHypervisor(value); return *this;}
 
     /**
-     * <p>The hypervisor type of the instance. The value <code>xen</code> is used for
-     * both Xen and Nitro hypervisors.</p>
+     * <p>The hypervisor type of the instance.</p>
      */
     inline Instance& WithHypervisor(HypervisorType&& value) { SetHypervisor(std::move(value)); return *this;}
 

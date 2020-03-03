@@ -35,6 +35,7 @@ CreateFlowLogsRequest::CreateFlowLogsRequest() :
     m_logDestinationTypeHasBeenSet(false),
     m_logDestinationHasBeenSet(false),
     m_logFormatHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false),
     m_maxAggregationInterval(0),
     m_maxAggregationIntervalHasBeenSet(false)
 {
@@ -98,6 +99,16 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
   if(m_logFormatHasBeenSet)
   {
     ss << "LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   if(m_maxAggregationIntervalHasBeenSet)

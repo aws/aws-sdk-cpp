@@ -61,7 +61,8 @@ namespace Model
     vpc,
     vpc_peering_connection,
     vpn_connection,
-    vpn_gateway
+    vpn_gateway,
+    vpc_flow_log
   };
 
 namespace ResourceTypeMapper

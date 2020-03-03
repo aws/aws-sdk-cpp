@@ -1281,12 +1281,7 @@ namespace Model
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * template</a>. For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1298,12 +1293,7 @@ namespace Model
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * template</a>. For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1315,12 +1305,7 @@ namespace Model
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * template</a>. For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1332,12 +1317,7 @@ namespace Model
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * template</a>. For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1349,12 +1329,7 @@ namespace Model
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * template</a>. For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1366,12 +1341,7 @@ namespace Model
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * template</a>. For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1383,12 +1353,7 @@ namespace Model
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * template</a>. For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
@@ -1400,12 +1365,7 @@ namespace Model
      * the Spot Fleet request fails. To tag instances at launch, specify the tags in
      * the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
-     * template</a> (valid only if you use <code>LaunchTemplateConfigs</code>) or in
-     * the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetTagSpecification.html">
-     * <code>SpotFleetTagSpecification</code> </a> (valid only if you use
-     * <code>LaunchSpecifications</code>). For information about tagging after launch,
-     * see <a
+     * template</a>. For information about tagging after launch, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>.</p>
      */
