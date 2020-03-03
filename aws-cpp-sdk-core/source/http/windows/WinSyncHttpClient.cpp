@@ -322,7 +322,7 @@ void WinSyncHttpClient::MakeRequestInternal(HttpRequest& request,
         }
     }
 
-    if (!success && !IsRequestProcessingEnabled() || !ContinueRequest(request))
+    if (!success && (!IsRequestProcessingEnabled() || !ContinueRequest(request)))
     {
         response->SetClientErrorType(CoreErrors::USER_CANCELLED);
         response->SetClientErrorMessage("Request processing disabled or continuation cancelled by user's continuation handler.");

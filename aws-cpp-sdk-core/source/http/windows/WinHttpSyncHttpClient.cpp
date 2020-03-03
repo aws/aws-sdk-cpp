@@ -267,7 +267,7 @@ bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<H
     wmemset(contentTypeStr, 0, static_cast<size_t>(dwSize / sizeof(wchar_t)));
     
     WinHttpQueryHeaders(hHttpRequest, WINHTTP_QUERY_CONTENT_TYPE, nullptr, &contentTypeStr, &dwSize, 0);
-    if (contentTypeStr[0] != NULL)
+    if (contentTypeStr[0] != 0)
     {
         Aws::String contentStr = StringUtils::FromWString(contentTypeStr);
         response->SetContentType(contentStr);
@@ -298,7 +298,7 @@ bool WinHttpSyncHttpClient::DoQueryHeaders(void* hHttpRequest, std::shared_ptr<H
 
 bool WinHttpSyncHttpClient::DoSendRequest(void* hHttpRequest) const
 {
-    return (WinHttpSendRequest(hHttpRequest, NULL, NULL, 0, 0, 0, NULL) != 0);
+    return (WinHttpSendRequest(hHttpRequest, NULL, 0, 0, 0, 0, 0) != 0);
 }
 
 bool WinHttpSyncHttpClient::DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const

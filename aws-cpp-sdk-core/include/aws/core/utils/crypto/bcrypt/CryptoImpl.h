@@ -39,7 +39,14 @@ namespace Aws
     {
         namespace Crypto
         {
+            #ifdef __MINGW32__
+            #pragma GCC diagnostic push
+            #pragma GCC diagnostic ignored "-Wunused-variable"
+            #endif
             static const char* SecureRandom_BCrypt_Tag = "SecureRandom_BCrypt";
+            #ifdef __MINGW32__
+            #pragma GCC diagnostic pop
+            #endif
 
             class SecureRandomBytes_BCrypt : public SecureRandomBytes
             {
