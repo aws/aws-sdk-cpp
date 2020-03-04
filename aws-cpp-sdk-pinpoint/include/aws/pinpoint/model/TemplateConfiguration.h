@@ -142,32 +142,38 @@ namespace Model
 
 
     /**
-     * <p>The voice template to use for the message.</p>
+     * <p>The voice template to use for the message. This object isn't supported for
+     * campaigns.</p>
      */
     inline const Template& GetVoiceTemplate() const{ return m_voiceTemplate; }
 
     /**
-     * <p>The voice template to use for the message.</p>
+     * <p>The voice template to use for the message. This object isn't supported for
+     * campaigns.</p>
      */
     inline bool VoiceTemplateHasBeenSet() const { return m_voiceTemplateHasBeenSet; }
 
     /**
-     * <p>The voice template to use for the message.</p>
+     * <p>The voice template to use for the message. This object isn't supported for
+     * campaigns.</p>
      */
     inline void SetVoiceTemplate(const Template& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = value; }
 
     /**
-     * <p>The voice template to use for the message.</p>
+     * <p>The voice template to use for the message. This object isn't supported for
+     * campaigns.</p>
      */
     inline void SetVoiceTemplate(Template&& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = std::move(value); }
 
     /**
-     * <p>The voice template to use for the message.</p>
+     * <p>The voice template to use for the message. This object isn't supported for
+     * campaigns.</p>
      */
     inline TemplateConfiguration& WithVoiceTemplate(const Template& value) { SetVoiceTemplate(value); return *this;}
 
     /**
-     * <p>The voice template to use for the message.</p>
+     * <p>The voice template to use for the message. This object isn't supported for
+     * campaigns.</p>
      */
     inline TemplateConfiguration& WithVoiceTemplate(Template&& value) { SetVoiceTemplate(std::move(value)); return *this;}
 

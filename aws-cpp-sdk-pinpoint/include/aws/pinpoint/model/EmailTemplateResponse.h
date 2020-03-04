@@ -297,6 +297,55 @@ namespace Model
 
 
     /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline const Aws::String& GetRecommenderId() const{ return m_recommenderId; }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline bool RecommenderIdHasBeenSet() const { return m_recommenderIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline void SetRecommenderId(const Aws::String& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = value; }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline void SetRecommenderId(Aws::String&& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline void SetRecommenderId(const char* value) { m_recommenderIdHasBeenSet = true; m_recommenderId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline EmailTemplateResponse& WithRecommenderId(const Aws::String& value) { SetRecommenderId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline EmailTemplateResponse& WithRecommenderId(Aws::String&& value) { SetRecommenderId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline EmailTemplateResponse& WithRecommenderId(const char* value) { SetRecommenderId(value); return *this;}
+
+
+    /**
      * <p>The subject line, or title, that's used in email messages that are based on
      * the message template.</p>
      */
@@ -677,6 +726,9 @@ namespace Model
 
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
+    Aws::String m_recommenderId;
+    bool m_recommenderIdHasBeenSet;
 
     Aws::String m_subject;
     bool m_subjectHasBeenSet;

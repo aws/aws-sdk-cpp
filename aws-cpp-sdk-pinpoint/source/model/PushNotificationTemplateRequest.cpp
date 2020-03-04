@@ -35,6 +35,7 @@ PushNotificationTemplateRequest::PushNotificationTemplateRequest() :
     m_defaultHasBeenSet(false),
     m_defaultSubstitutionsHasBeenSet(false),
     m_gCMHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false)
 {
@@ -47,6 +48,7 @@ PushNotificationTemplateRequest::PushNotificationTemplateRequest(JsonView jsonVa
     m_defaultHasBeenSet(false),
     m_defaultSubstitutionsHasBeenSet(false),
     m_gCMHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false)
 {
@@ -95,6 +97,13 @@ PushNotificationTemplateRequest& PushNotificationTemplateRequest::operator =(Jso
     m_gCM = jsonValue.GetObject("GCM");
 
     m_gCMHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecommenderId"))
+  {
+    m_recommenderId = jsonValue.GetString("RecommenderId");
+
+    m_recommenderIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -154,6 +163,12 @@ JsonValue PushNotificationTemplateRequest::Jsonize() const
   if(m_gCMHasBeenSet)
   {
    payload.WithObject("GCM", m_gCM.Jsonize());
+
+  }
+
+  if(m_recommenderIdHasBeenSet)
+  {
+   payload.WithString("RecommenderId", m_recommenderId);
 
   }
 

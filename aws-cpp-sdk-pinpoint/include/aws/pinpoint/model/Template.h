@@ -104,10 +104,10 @@ namespace Model
      * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p> <p>If you don't specify a value for this property,
-     * Amazon Pinpoint uses the <i>active</i> version of the template. The
-     * <i>active</i> version is typically the version of a template that's been most
-     * recently reviewed and approved for use, depending on your workflow. It isn't
-     * necessarily the latest version of a template.</p>
+     * Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active
+     * version</i> is typically the version of a template that's been most recently
+     * reviewed and approved for use, depending on your workflow. It isn't necessarily
+     * the latest version of a template.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
@@ -118,10 +118,10 @@ namespace Model
      * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p> <p>If you don't specify a value for this property,
-     * Amazon Pinpoint uses the <i>active</i> version of the template. The
-     * <i>active</i> version is typically the version of a template that's been most
-     * recently reviewed and approved for use, depending on your workflow. It isn't
-     * necessarily the latest version of a template.</p>
+     * Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active
+     * version</i> is typically the version of a template that's been most recently
+     * reviewed and approved for use, depending on your workflow. It isn't necessarily
+     * the latest version of a template.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
@@ -132,10 +132,10 @@ namespace Model
      * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p> <p>If you don't specify a value for this property,
-     * Amazon Pinpoint uses the <i>active</i> version of the template. The
-     * <i>active</i> version is typically the version of a template that's been most
-     * recently reviewed and approved for use, depending on your workflow. It isn't
-     * necessarily the latest version of a template.</p>
+     * Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active
+     * version</i> is typically the version of a template that's been most recently
+     * reviewed and approved for use, depending on your workflow. It isn't necessarily
+     * the latest version of a template.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -146,10 +146,10 @@ namespace Model
      * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p> <p>If you don't specify a value for this property,
-     * Amazon Pinpoint uses the <i>active</i> version of the template. The
-     * <i>active</i> version is typically the version of a template that's been most
-     * recently reviewed and approved for use, depending on your workflow. It isn't
-     * necessarily the latest version of a template.</p>
+     * Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active
+     * version</i> is typically the version of a template that's been most recently
+     * reviewed and approved for use, depending on your workflow. It isn't necessarily
+     * the latest version of a template.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
@@ -160,10 +160,10 @@ namespace Model
      * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p> <p>If you don't specify a value for this property,
-     * Amazon Pinpoint uses the <i>active</i> version of the template. The
-     * <i>active</i> version is typically the version of a template that's been most
-     * recently reviewed and approved for use, depending on your workflow. It isn't
-     * necessarily the latest version of a template.</p>
+     * Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active
+     * version</i> is typically the version of a template that's been most recently
+     * reviewed and approved for use, depending on your workflow. It isn't necessarily
+     * the latest version of a template.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
@@ -174,10 +174,10 @@ namespace Model
      * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p> <p>If you don't specify a value for this property,
-     * Amazon Pinpoint uses the <i>active</i> version of the template. The
-     * <i>active</i> version is typically the version of a template that's been most
-     * recently reviewed and approved for use, depending on your workflow. It isn't
-     * necessarily the latest version of a template.</p>
+     * Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active
+     * version</i> is typically the version of a template that's been most recently
+     * reviewed and approved for use, depending on your workflow. It isn't necessarily
+     * the latest version of a template.</p>
      */
     inline Template& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
@@ -188,10 +188,10 @@ namespace Model
      * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p> <p>If you don't specify a value for this property,
-     * Amazon Pinpoint uses the <i>active</i> version of the template. The
-     * <i>active</i> version is typically the version of a template that's been most
-     * recently reviewed and approved for use, depending on your workflow. It isn't
-     * necessarily the latest version of a template.</p>
+     * Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active
+     * version</i> is typically the version of a template that's been most recently
+     * reviewed and approved for use, depending on your workflow. It isn't necessarily
+     * the latest version of a template.</p>
      */
     inline Template& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
@@ -202,10 +202,10 @@ namespace Model
      * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p> <p>If you don't specify a value for this property,
-     * Amazon Pinpoint uses the <i>active</i> version of the template. The
-     * <i>active</i> version is typically the version of a template that's been most
-     * recently reviewed and approved for use, depending on your workflow. It isn't
-     * necessarily the latest version of a template.</p>
+     * Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active
+     * version</i> is typically the version of a template that's been most recently
+     * reviewed and approved for use, depending on your workflow. It isn't necessarily
+     * the latest version of a template.</p>
      */
     inline Template& WithVersion(const char* value) { SetVersion(value); return *this;}
 

@@ -133,105 +133,118 @@ namespace Model
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>An object that maps custom attributes to attributes for the address and is
-     * attached to the message. For a push notification, this payload is added to the
-     * data.pinpoint object. For an email or text message, this payload is added to
-     * email/SMS delivery receipt event attributes.</p>
+     * attached to the message. Attribute names are case sensitive.</p> <p>For a push
+     * notification, this payload is added to the data.pinpoint object. For an email or
+     * text message, this payload is added to email/SMS delivery receipt event
+     * attributes.</p>
      */
     inline AddressConfiguration& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
 

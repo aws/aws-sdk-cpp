@@ -38,6 +38,7 @@ PushNotificationTemplateResponse::PushNotificationTemplateResponse() :
     m_defaultSubstitutionsHasBeenSet(false),
     m_gCMHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
@@ -57,6 +58,7 @@ PushNotificationTemplateResponse::PushNotificationTemplateResponse(JsonView json
     m_defaultSubstitutionsHasBeenSet(false),
     m_gCMHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
@@ -130,6 +132,13 @@ PushNotificationTemplateResponse& PushNotificationTemplateResponse::operator =(J
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
 
     m_lastModifiedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecommenderId"))
+  {
+    m_recommenderId = jsonValue.GetString("RecommenderId");
+
+    m_recommenderIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -228,6 +237,12 @@ JsonValue PushNotificationTemplateResponse::Jsonize() const
   if(m_lastModifiedDateHasBeenSet)
   {
    payload.WithString("LastModifiedDate", m_lastModifiedDate);
+
+  }
+
+  if(m_recommenderIdHasBeenSet)
+  {
+   payload.WithString("RecommenderId", m_recommenderId);
 
   }
 

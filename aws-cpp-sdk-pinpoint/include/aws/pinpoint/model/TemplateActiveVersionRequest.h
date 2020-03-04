@@ -49,80 +49,96 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the version of the message template to use as the
-     * active version of the template. If specified, this value must match the
-     * identifier for an existing template version. To retrieve a list of versions and
-     * version identifiers for a template, use the <link 
+     * <p>The version of the message template to use as the active version of the
+     * template. Valid values are: latest, for the most recent version of the template;
+     * or, the unique identifier for any existing version of the template. If you
+     * specify an identifier, the value must match the identifier for an existing
+     * template version. To retrieve a list of versions and version identifiers for a
+     * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>The unique identifier for the version of the message template to use as the
-     * active version of the template. If specified, this value must match the
-     * identifier for an existing template version. To retrieve a list of versions and
-     * version identifiers for a template, use the <link 
+     * <p>The version of the message template to use as the active version of the
+     * template. Valid values are: latest, for the most recent version of the template;
+     * or, the unique identifier for any existing version of the template. If you
+     * specify an identifier, the value must match the identifier for an existing
+     * template version. To retrieve a list of versions and version identifiers for a
+     * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the version of the message template to use as the
-     * active version of the template. If specified, this value must match the
-     * identifier for an existing template version. To retrieve a list of versions and
-     * version identifiers for a template, use the <link 
+     * <p>The version of the message template to use as the active version of the
+     * template. Valid values are: latest, for the most recent version of the template;
+     * or, the unique identifier for any existing version of the template. If you
+     * specify an identifier, the value must match the identifier for an existing
+     * template version. To retrieve a list of versions and version identifiers for a
+     * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>The unique identifier for the version of the message template to use as the
-     * active version of the template. If specified, this value must match the
-     * identifier for an existing template version. To retrieve a list of versions and
-     * version identifiers for a template, use the <link 
+     * <p>The version of the message template to use as the active version of the
+     * template. Valid values are: latest, for the most recent version of the template;
+     * or, the unique identifier for any existing version of the template. If you
+     * specify an identifier, the value must match the identifier for an existing
+     * template version. To retrieve a list of versions and version identifiers for a
+     * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>The unique identifier for the version of the message template to use as the
-     * active version of the template. If specified, this value must match the
-     * identifier for an existing template version. To retrieve a list of versions and
-     * version identifiers for a template, use the <link 
+     * <p>The version of the message template to use as the active version of the
+     * template. Valid values are: latest, for the most recent version of the template;
+     * or, the unique identifier for any existing version of the template. If you
+     * specify an identifier, the value must match the identifier for an existing
+     * template version. To retrieve a list of versions and version identifiers for a
+     * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>The unique identifier for the version of the message template to use as the
-     * active version of the template. If specified, this value must match the
-     * identifier for an existing template version. To retrieve a list of versions and
-     * version identifiers for a template, use the <link 
+     * <p>The version of the message template to use as the active version of the
+     * template. Valid values are: latest, for the most recent version of the template;
+     * or, the unique identifier for any existing version of the template. If you
+     * specify an identifier, the value must match the identifier for an existing
+     * template version. To retrieve a list of versions and version identifiers for a
+     * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */
     inline TemplateActiveVersionRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>The unique identifier for the version of the message template to use as the
-     * active version of the template. If specified, this value must match the
-     * identifier for an existing template version. To retrieve a list of versions and
-     * version identifiers for a template, use the <link 
+     * <p>The version of the message template to use as the active version of the
+     * template. Valid values are: latest, for the most recent version of the template;
+     * or, the unique identifier for any existing version of the template. If you
+     * specify an identifier, the value must match the identifier for an existing
+     * template version. To retrieve a list of versions and version identifiers for a
+     * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */
     inline TemplateActiveVersionRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the version of the message template to use as the
-     * active version of the template. If specified, this value must match the
-     * identifier for an existing template version. To retrieve a list of versions and
-     * version identifiers for a template, use the <link 
+     * <p>The version of the message template to use as the active version of the
+     * template. Valid values are: latest, for the most recent version of the template;
+     * or, the unique identifier for any existing version of the template. If you
+     * specify an identifier, the value must match the identifier for an existing
+     * template version. To retrieve a list of versions and version identifiers for a
+     * template, use the <link 
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */

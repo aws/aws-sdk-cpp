@@ -31,6 +31,7 @@ namespace Model
 EmailTemplateRequest::EmailTemplateRequest() : 
     m_defaultSubstitutionsHasBeenSet(false),
     m_htmlPartHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
@@ -41,6 +42,7 @@ EmailTemplateRequest::EmailTemplateRequest() :
 EmailTemplateRequest::EmailTemplateRequest(JsonView jsonValue) : 
     m_defaultSubstitutionsHasBeenSet(false),
     m_htmlPartHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
@@ -63,6 +65,13 @@ EmailTemplateRequest& EmailTemplateRequest::operator =(JsonView jsonValue)
     m_htmlPart = jsonValue.GetString("HtmlPart");
 
     m_htmlPartHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecommenderId"))
+  {
+    m_recommenderId = jsonValue.GetString("RecommenderId");
+
+    m_recommenderIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Subject"))
@@ -112,6 +121,12 @@ JsonValue EmailTemplateRequest::Jsonize() const
   if(m_htmlPartHasBeenSet)
   {
    payload.WithString("HtmlPart", m_htmlPart);
+
+  }
+
+  if(m_recommenderIdHasBeenSet)
+  {
+   payload.WithString("RecommenderId", m_recommenderId);
 
   }
 

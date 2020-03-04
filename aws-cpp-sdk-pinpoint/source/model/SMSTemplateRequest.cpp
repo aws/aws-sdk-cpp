@@ -31,6 +31,7 @@ namespace Model
 SMSTemplateRequest::SMSTemplateRequest() : 
     m_bodyHasBeenSet(false),
     m_defaultSubstitutionsHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false)
 {
@@ -39,6 +40,7 @@ SMSTemplateRequest::SMSTemplateRequest() :
 SMSTemplateRequest::SMSTemplateRequest(JsonView jsonValue) : 
     m_bodyHasBeenSet(false),
     m_defaultSubstitutionsHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false)
 {
@@ -59,6 +61,13 @@ SMSTemplateRequest& SMSTemplateRequest::operator =(JsonView jsonValue)
     m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
 
     m_defaultSubstitutionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecommenderId"))
+  {
+    m_recommenderId = jsonValue.GetString("RecommenderId");
+
+    m_recommenderIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -94,6 +103,12 @@ JsonValue SMSTemplateRequest::Jsonize() const
   if(m_defaultSubstitutionsHasBeenSet)
   {
    payload.WithString("DefaultSubstitutions", m_defaultSubstitutions);
+
+  }
+
+  if(m_recommenderIdHasBeenSet)
+  {
+   payload.WithString("RecommenderId", m_recommenderId);
 
   }
 

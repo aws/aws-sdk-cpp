@@ -770,93 +770,67 @@ namespace Model
 
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that identifies the tags that are
-     * associated with the journey. Each tag consists of a required tag key and an
-     * associated tag value.</p>
+     * <p>This object is not used or supported.</p>
      */
     inline JourneyResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

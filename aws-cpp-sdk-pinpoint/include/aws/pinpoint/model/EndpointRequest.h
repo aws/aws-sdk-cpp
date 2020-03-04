@@ -138,144 +138,168 @@ namespace Model
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline EndpointRequest& WithAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline EndpointRequest& WithAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline EndpointRequest& AddAttributes(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline EndpointRequest& AddAttributes(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline EndpointRequest& AddAttributes(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline EndpointRequest& AddAttributes(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline EndpointRequest& AddAttributes(const char* key, Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>One or more custom attributes that describe the endpoint by associating a
      * name with an array of values. For example, the value of a custom attribute named
-     * Interests might be: ["science", "music", "travel"]. You can use these attributes
-     * as filter criteria when you create segments.</p> <p>When you define the name of
-     * a custom attribute, avoid using the following characters: number sign (#), colon
+     * Interests might be: ["Science", "Music", "Travel"]. You can use these attributes
+     * as filter criteria when you create segments. Attribute names are case
+     * sensitive.</p> <p>An attribute name can contain up to 50 characters. An
+     * attribute value can contain up to 100 characters. When you define the name of a
+     * custom attribute, avoid using the following characters: number sign (#), colon
      * (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint
      * console can't display attribute names that contain these characters. This
-     * limitation doesn't apply to attribute values.</p>
+     * restriction doesn't apply to attribute values.</p>
      */
     inline EndpointRequest& AddAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

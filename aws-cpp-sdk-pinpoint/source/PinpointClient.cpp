@@ -37,6 +37,7 @@
 #include <aws/pinpoint/model/CreateImportJobRequest.h>
 #include <aws/pinpoint/model/CreateJourneyRequest.h>
 #include <aws/pinpoint/model/CreatePushTemplateRequest.h>
+#include <aws/pinpoint/model/CreateRecommenderConfigurationRequest.h>
 #include <aws/pinpoint/model/CreateSegmentRequest.h>
 #include <aws/pinpoint/model/CreateSmsTemplateRequest.h>
 #include <aws/pinpoint/model/CreateVoiceTemplateRequest.h>
@@ -55,6 +56,7 @@
 #include <aws/pinpoint/model/DeleteGcmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteJourneyRequest.h>
 #include <aws/pinpoint/model/DeletePushTemplateRequest.h>
+#include <aws/pinpoint/model/DeleteRecommenderConfigurationRequest.h>
 #include <aws/pinpoint/model/DeleteSegmentRequest.h>
 #include <aws/pinpoint/model/DeleteSmsChannelRequest.h>
 #include <aws/pinpoint/model/DeleteSmsTemplateRequest.h>
@@ -92,6 +94,8 @@
 #include <aws/pinpoint/model/GetJourneyExecutionActivityMetricsRequest.h>
 #include <aws/pinpoint/model/GetJourneyExecutionMetricsRequest.h>
 #include <aws/pinpoint/model/GetPushTemplateRequest.h>
+#include <aws/pinpoint/model/GetRecommenderConfigurationRequest.h>
+#include <aws/pinpoint/model/GetRecommenderConfigurationsRequest.h>
 #include <aws/pinpoint/model/GetSegmentRequest.h>
 #include <aws/pinpoint/model/GetSegmentExportJobsRequest.h>
 #include <aws/pinpoint/model/GetSegmentImportJobsRequest.h>
@@ -131,6 +135,7 @@
 #include <aws/pinpoint/model/UpdateJourneyRequest.h>
 #include <aws/pinpoint/model/UpdateJourneyStateRequest.h>
 #include <aws/pinpoint/model/UpdatePushTemplateRequest.h>
+#include <aws/pinpoint/model/UpdateRecommenderConfigurationRequest.h>
 #include <aws/pinpoint/model/UpdateSegmentRequest.h>
 #include <aws/pinpoint/model/UpdateSmsChannelRequest.h>
 #include <aws/pinpoint/model/UpdateSmsTemplateRequest.h>
@@ -495,6 +500,41 @@ void PinpointClient::CreatePushTemplateAsync(const CreatePushTemplateRequest& re
 void PinpointClient::CreatePushTemplateAsyncHelper(const CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreatePushTemplate(request), context);
+}
+
+CreateRecommenderConfigurationOutcome PinpointClient::CreateRecommenderConfiguration(const CreateRecommenderConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/recommenders";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateRecommenderConfigurationOutcome(CreateRecommenderConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateRecommenderConfigurationOutcome(outcome.GetError());
+  }
+}
+
+CreateRecommenderConfigurationOutcomeCallable PinpointClient::CreateRecommenderConfigurationCallable(const CreateRecommenderConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateRecommenderConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateRecommenderConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::CreateRecommenderConfigurationAsync(const CreateRecommenderConfigurationRequest& request, const CreateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateRecommenderConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::CreateRecommenderConfigurationAsyncHelper(const CreateRecommenderConfigurationRequest& request, const CreateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateRecommenderConfiguration(request), context);
 }
 
 CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& request) const
@@ -1268,6 +1308,47 @@ void PinpointClient::DeletePushTemplateAsync(const DeletePushTemplateRequest& re
 void PinpointClient::DeletePushTemplateAsyncHelper(const DeletePushTemplateRequest& request, const DeletePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePushTemplate(request), context);
+}
+
+DeleteRecommenderConfigurationOutcome PinpointClient::DeleteRecommenderConfiguration(const DeleteRecommenderConfigurationRequest& request) const
+{
+  if (!request.RecommenderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRecommenderConfiguration", "Required field: RecommenderId, is not set");
+    return DeleteRecommenderConfigurationOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/recommenders/";
+  ss << request.GetRecommenderId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRecommenderConfigurationOutcome(DeleteRecommenderConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRecommenderConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteRecommenderConfigurationOutcomeCallable PinpointClient::DeleteRecommenderConfigurationCallable(const DeleteRecommenderConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRecommenderConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRecommenderConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteRecommenderConfigurationAsync(const DeleteRecommenderConfigurationRequest& request, const DeleteRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRecommenderConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteRecommenderConfigurationAsyncHelper(const DeleteRecommenderConfigurationRequest& request, const DeleteRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRecommenderConfiguration(request), context);
 }
 
 DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& request) const
@@ -2936,6 +3017,82 @@ void PinpointClient::GetPushTemplateAsync(const GetPushTemplateRequest& request,
 void PinpointClient::GetPushTemplateAsyncHelper(const GetPushTemplateRequest& request, const GetPushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPushTemplate(request), context);
+}
+
+GetRecommenderConfigurationOutcome PinpointClient::GetRecommenderConfiguration(const GetRecommenderConfigurationRequest& request) const
+{
+  if (!request.RecommenderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRecommenderConfiguration", "Required field: RecommenderId, is not set");
+    return GetRecommenderConfigurationOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/recommenders/";
+  ss << request.GetRecommenderId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRecommenderConfigurationOutcome(GetRecommenderConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRecommenderConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetRecommenderConfigurationOutcomeCallable PinpointClient::GetRecommenderConfigurationCallable(const GetRecommenderConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRecommenderConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecommenderConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetRecommenderConfigurationAsync(const GetRecommenderConfigurationRequest& request, const GetRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRecommenderConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetRecommenderConfigurationAsyncHelper(const GetRecommenderConfigurationRequest& request, const GetRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRecommenderConfiguration(request), context);
+}
+
+GetRecommenderConfigurationsOutcome PinpointClient::GetRecommenderConfigurations(const GetRecommenderConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/recommenders";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRecommenderConfigurationsOutcome(GetRecommenderConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRecommenderConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+GetRecommenderConfigurationsOutcomeCallable PinpointClient::GetRecommenderConfigurationsCallable(const GetRecommenderConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRecommenderConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRecommenderConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetRecommenderConfigurationsAsync(const GetRecommenderConfigurationsRequest& request, const GetRecommenderConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRecommenderConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetRecommenderConfigurationsAsyncHelper(const GetRecommenderConfigurationsRequest& request, const GetRecommenderConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRecommenderConfigurations(request), context);
 }
 
 GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) const
@@ -4646,6 +4803,47 @@ void PinpointClient::UpdatePushTemplateAsync(const UpdatePushTemplateRequest& re
 void PinpointClient::UpdatePushTemplateAsyncHelper(const UpdatePushTemplateRequest& request, const UpdatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdatePushTemplate(request), context);
+}
+
+UpdateRecommenderConfigurationOutcome PinpointClient::UpdateRecommenderConfiguration(const UpdateRecommenderConfigurationRequest& request) const
+{
+  if (!request.RecommenderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRecommenderConfiguration", "Required field: RecommenderId, is not set");
+    return UpdateRecommenderConfigurationOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommenderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/recommenders/";
+  ss << request.GetRecommenderId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRecommenderConfigurationOutcome(UpdateRecommenderConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateRecommenderConfigurationOutcome(outcome.GetError());
+  }
+}
+
+UpdateRecommenderConfigurationOutcomeCallable PinpointClient::UpdateRecommenderConfigurationCallable(const UpdateRecommenderConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRecommenderConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRecommenderConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateRecommenderConfigurationAsync(const UpdateRecommenderConfigurationRequest& request, const UpdateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRecommenderConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateRecommenderConfigurationAsyncHelper(const UpdateRecommenderConfigurationRequest& request, const UpdateRecommenderConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRecommenderConfiguration(request), context);
 }
 
 UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& request) const

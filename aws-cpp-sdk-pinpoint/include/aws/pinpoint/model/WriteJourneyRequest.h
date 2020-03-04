@@ -59,7 +59,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline const Aws::Map<Aws::String, Activity>& GetActivities() const{ return m_activities; }
@@ -68,7 +68,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline bool ActivitiesHasBeenSet() const { return m_activitiesHasBeenSet; }
@@ -77,7 +77,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline void SetActivities(const Aws::Map<Aws::String, Activity>& value) { m_activitiesHasBeenSet = true; m_activities = value; }
@@ -86,7 +86,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline void SetActivities(Aws::Map<Aws::String, Activity>&& value) { m_activitiesHasBeenSet = true; m_activities = std::move(value); }
@@ -95,7 +95,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& WithActivities(const Aws::Map<Aws::String, Activity>& value) { SetActivities(value); return *this;}
@@ -104,7 +104,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& WithActivities(Aws::Map<Aws::String, Activity>&& value) { SetActivities(std::move(value)); return *this;}
@@ -113,7 +113,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& AddActivities(const Aws::String& key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, value); return *this; }
@@ -122,7 +122,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& AddActivities(Aws::String&& key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(std::move(key), value); return *this; }
@@ -131,7 +131,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& AddActivities(const Aws::String& key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, std::move(value)); return *this; }
@@ -140,7 +140,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& AddActivities(Aws::String&& key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(std::move(key), std::move(value)); return *this; }
@@ -149,7 +149,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& AddActivities(const char* key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, std::move(value)); return *this; }
@@ -158,7 +158,7 @@ namespace Model
      * <p>A map that contains a set of Activity objects, one object for each activity
      * in the journey. For each Activity object, the key is the unique identifier
      * (string) for an activity and the value is the settings for the activity. An
-     * activity identifier can contain a maximum of 128 characters. The characters must
+     * activity identifier can contain a maximum of 100 characters. The characters must
      * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& AddActivities(const char* key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, value); return *this; }
@@ -529,58 +529,58 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the first activity in the journey. An activity
-     * identifier can contain a maximum of 128 characters. The characters must be
-     * alphanumeric characters.</p>
+     * <p>The unique identifier for the first activity in the journey. The identifier
+     * for this activity can contain a maximum of 128 characters. The characters must
+     * be alphanumeric characters.</p>
      */
     inline const Aws::String& GetStartActivity() const{ return m_startActivity; }
 
     /**
-     * <p>The unique identifier for the first activity in the journey. An activity
-     * identifier can contain a maximum of 128 characters. The characters must be
-     * alphanumeric characters.</p>
+     * <p>The unique identifier for the first activity in the journey. The identifier
+     * for this activity can contain a maximum of 128 characters. The characters must
+     * be alphanumeric characters.</p>
      */
     inline bool StartActivityHasBeenSet() const { return m_startActivityHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the first activity in the journey. An activity
-     * identifier can contain a maximum of 128 characters. The characters must be
-     * alphanumeric characters.</p>
+     * <p>The unique identifier for the first activity in the journey. The identifier
+     * for this activity can contain a maximum of 128 characters. The characters must
+     * be alphanumeric characters.</p>
      */
     inline void SetStartActivity(const Aws::String& value) { m_startActivityHasBeenSet = true; m_startActivity = value; }
 
     /**
-     * <p>The unique identifier for the first activity in the journey. An activity
-     * identifier can contain a maximum of 128 characters. The characters must be
-     * alphanumeric characters.</p>
+     * <p>The unique identifier for the first activity in the journey. The identifier
+     * for this activity can contain a maximum of 128 characters. The characters must
+     * be alphanumeric characters.</p>
      */
     inline void SetStartActivity(Aws::String&& value) { m_startActivityHasBeenSet = true; m_startActivity = std::move(value); }
 
     /**
-     * <p>The unique identifier for the first activity in the journey. An activity
-     * identifier can contain a maximum of 128 characters. The characters must be
-     * alphanumeric characters.</p>
+     * <p>The unique identifier for the first activity in the journey. The identifier
+     * for this activity can contain a maximum of 128 characters. The characters must
+     * be alphanumeric characters.</p>
      */
     inline void SetStartActivity(const char* value) { m_startActivityHasBeenSet = true; m_startActivity.assign(value); }
 
     /**
-     * <p>The unique identifier for the first activity in the journey. An activity
-     * identifier can contain a maximum of 128 characters. The characters must be
-     * alphanumeric characters.</p>
+     * <p>The unique identifier for the first activity in the journey. The identifier
+     * for this activity can contain a maximum of 128 characters. The characters must
+     * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& WithStartActivity(const Aws::String& value) { SetStartActivity(value); return *this;}
 
     /**
-     * <p>The unique identifier for the first activity in the journey. An activity
-     * identifier can contain a maximum of 128 characters. The characters must be
-     * alphanumeric characters.</p>
+     * <p>The unique identifier for the first activity in the journey. The identifier
+     * for this activity can contain a maximum of 128 characters. The characters must
+     * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& WithStartActivity(Aws::String&& value) { SetStartActivity(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the first activity in the journey. An activity
-     * identifier can contain a maximum of 128 characters. The characters must be
-     * alphanumeric characters.</p>
+     * <p>The unique identifier for the first activity in the journey. The identifier
+     * for this activity can contain a maximum of 128 characters. The characters must
+     * be alphanumeric characters.</p>
      */
     inline WriteJourneyRequest& WithStartActivity(const char* value) { SetStartActivity(value); return *this;}
 

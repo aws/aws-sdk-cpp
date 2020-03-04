@@ -61,6 +61,7 @@ enum class PinpointErrors
   INTERNAL_SERVER_ERROR,
   METHOD_NOT_ALLOWED,
   NOT_FOUND,
+  PAYLOAD_TOO_LARGE,
   TOO_MANY_REQUESTS
 };
 namespace PinpointErrorMapper

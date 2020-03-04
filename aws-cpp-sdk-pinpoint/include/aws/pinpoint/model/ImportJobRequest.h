@@ -431,50 +431,50 @@ namespace Model
 
 
     /**
-     * <p>The custom name for the segment that's created by the import job, if the
-     * value of the DefineSegment property is true.</p>
+     * <p>A custom name for the segment that's created by the import job, if the value
+     * of the DefineSegment property is true.</p>
      */
     inline const Aws::String& GetSegmentName() const{ return m_segmentName; }
 
     /**
-     * <p>The custom name for the segment that's created by the import job, if the
-     * value of the DefineSegment property is true.</p>
+     * <p>A custom name for the segment that's created by the import job, if the value
+     * of the DefineSegment property is true.</p>
      */
     inline bool SegmentNameHasBeenSet() const { return m_segmentNameHasBeenSet; }
 
     /**
-     * <p>The custom name for the segment that's created by the import job, if the
-     * value of the DefineSegment property is true.</p>
+     * <p>A custom name for the segment that's created by the import job, if the value
+     * of the DefineSegment property is true.</p>
      */
     inline void SetSegmentName(const Aws::String& value) { m_segmentNameHasBeenSet = true; m_segmentName = value; }
 
     /**
-     * <p>The custom name for the segment that's created by the import job, if the
-     * value of the DefineSegment property is true.</p>
+     * <p>A custom name for the segment that's created by the import job, if the value
+     * of the DefineSegment property is true.</p>
      */
     inline void SetSegmentName(Aws::String&& value) { m_segmentNameHasBeenSet = true; m_segmentName = std::move(value); }
 
     /**
-     * <p>The custom name for the segment that's created by the import job, if the
-     * value of the DefineSegment property is true.</p>
+     * <p>A custom name for the segment that's created by the import job, if the value
+     * of the DefineSegment property is true.</p>
      */
     inline void SetSegmentName(const char* value) { m_segmentNameHasBeenSet = true; m_segmentName.assign(value); }
 
     /**
-     * <p>The custom name for the segment that's created by the import job, if the
-     * value of the DefineSegment property is true.</p>
+     * <p>A custom name for the segment that's created by the import job, if the value
+     * of the DefineSegment property is true.</p>
      */
     inline ImportJobRequest& WithSegmentName(const Aws::String& value) { SetSegmentName(value); return *this;}
 
     /**
-     * <p>The custom name for the segment that's created by the import job, if the
-     * value of the DefineSegment property is true.</p>
+     * <p>A custom name for the segment that's created by the import job, if the value
+     * of the DefineSegment property is true.</p>
      */
     inline ImportJobRequest& WithSegmentName(Aws::String&& value) { SetSegmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The custom name for the segment that's created by the import job, if the
-     * value of the DefineSegment property is true.</p>
+     * <p>A custom name for the segment that's created by the import job, if the value
+     * of the DefineSegment property is true.</p>
      */
     inline ImportJobRequest& WithSegmentName(const char* value) { SetSegmentName(value); return *this;}
 

@@ -196,6 +196,79 @@ namespace Model
 
 
     /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline const Aws::String& GetRecommenderId() const{ return m_recommenderId; }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline bool RecommenderIdHasBeenSet() const { return m_recommenderIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline void SetRecommenderId(const Aws::String& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = value; }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline void SetRecommenderId(Aws::String&& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline void SetRecommenderId(const char* value) { m_recommenderIdHasBeenSet = true; m_recommenderId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline EmailTemplateRequest& WithRecommenderId(const Aws::String& value) { SetRecommenderId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline EmailTemplateRequest& WithRecommenderId(Aws::String&& value) { SetRecommenderId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline EmailTemplateRequest& WithRecommenderId(const char* value) { SetRecommenderId(value); return *this;}
+
+
+    /**
      * <p>The subject line, or title, to use in email messages that are based on the
      * message template.</p>
      */
@@ -448,6 +521,9 @@ namespace Model
 
     Aws::String m_htmlPart;
     bool m_htmlPartHasBeenSet;
+
+    Aws::String m_recommenderId;
+    bool m_recommenderIdHasBeenSet;
 
     Aws::String m_subject;
     bool m_subjectHasBeenSet;

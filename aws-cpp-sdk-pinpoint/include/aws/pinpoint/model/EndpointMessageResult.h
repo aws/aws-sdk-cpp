@@ -100,7 +100,7 @@ namespace Model
      * message to the endpoint. Amazon Pinpoint won't attempt to send the message
      * again.</p></li>    <li><p>SUCCESSFUL - The message was successfully delivered to
      * the endpoint.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred.
-     * Amazon Pinpoint will attempt to deliver the message again later.</p></li>
+     * Amazon Pinpoint won't attempt to send the message again.</p></li>
      * <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message
      * to the endpoint.</p></li> <li><p>TIMEOUT - The message couldn't be sent within
      * the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
@@ -118,7 +118,7 @@ namespace Model
      * message to the endpoint. Amazon Pinpoint won't attempt to send the message
      * again.</p></li>    <li><p>SUCCESSFUL - The message was successfully delivered to
      * the endpoint.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred.
-     * Amazon Pinpoint will attempt to deliver the message again later.</p></li>
+     * Amazon Pinpoint won't attempt to send the message again.</p></li>
      * <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message
      * to the endpoint.</p></li> <li><p>TIMEOUT - The message couldn't be sent within
      * the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
@@ -136,7 +136,7 @@ namespace Model
      * message to the endpoint. Amazon Pinpoint won't attempt to send the message
      * again.</p></li>    <li><p>SUCCESSFUL - The message was successfully delivered to
      * the endpoint.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred.
-     * Amazon Pinpoint will attempt to deliver the message again later.</p></li>
+     * Amazon Pinpoint won't attempt to send the message again.</p></li>
      * <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message
      * to the endpoint.</p></li> <li><p>TIMEOUT - The message couldn't be sent within
      * the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
@@ -154,7 +154,7 @@ namespace Model
      * message to the endpoint. Amazon Pinpoint won't attempt to send the message
      * again.</p></li>    <li><p>SUCCESSFUL - The message was successfully delivered to
      * the endpoint.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred.
-     * Amazon Pinpoint will attempt to deliver the message again later.</p></li>
+     * Amazon Pinpoint won't attempt to send the message again.</p></li>
      * <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message
      * to the endpoint.</p></li> <li><p>TIMEOUT - The message couldn't be sent within
      * the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
@@ -172,7 +172,7 @@ namespace Model
      * message to the endpoint. Amazon Pinpoint won't attempt to send the message
      * again.</p></li>    <li><p>SUCCESSFUL - The message was successfully delivered to
      * the endpoint.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred.
-     * Amazon Pinpoint will attempt to deliver the message again later.</p></li>
+     * Amazon Pinpoint won't attempt to send the message again.</p></li>
      * <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message
      * to the endpoint.</p></li> <li><p>TIMEOUT - The message couldn't be sent within
      * the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error
@@ -190,7 +190,7 @@ namespace Model
      * message to the endpoint. Amazon Pinpoint won't attempt to send the message
      * again.</p></li>    <li><p>SUCCESSFUL - The message was successfully delivered to
      * the endpoint.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred.
-     * Amazon Pinpoint will attempt to deliver the message again later.</p></li>
+     * Amazon Pinpoint won't attempt to send the message again.</p></li>
      * <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message
      * to the endpoint.</p></li> <li><p>TIMEOUT - The message couldn't be sent within
      * the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error

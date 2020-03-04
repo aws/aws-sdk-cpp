@@ -288,50 +288,58 @@ namespace Model
 
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
-     * begin.</p>
+     * <p>The scheduled time when the campaign began or will begin. Valid values are:
+     * IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601
+     * format.</p>
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
-     * begin.</p>
+     * <p>The scheduled time when the campaign began or will begin. Valid values are:
+     * IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601
+     * format.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
-     * begin.</p>
+     * <p>The scheduled time when the campaign began or will begin. Valid values are:
+     * IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601
+     * format.</p>
      */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
-     * begin.</p>
+     * <p>The scheduled time when the campaign began or will begin. Valid values are:
+     * IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601
+     * format.</p>
      */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
-     * begin.</p>
+     * <p>The scheduled time when the campaign began or will begin. Valid values are:
+     * IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601
+     * format.</p>
      */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
-     * begin.</p>
+     * <p>The scheduled time when the campaign began or will begin. Valid values are:
+     * IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601
+     * format.</p>
      */
     inline Schedule& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
-     * begin.</p>
+     * <p>The scheduled time when the campaign began or will begin. Valid values are:
+     * IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601
+     * format.</p>
      */
     inline Schedule& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
-     * <p>The scheduled time, in ISO 8601 format, when the campaign began or will
-     * begin.</p>
+     * <p>The scheduled time when the campaign began or will begin. Valid values are:
+     * IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601
+     * format.</p>
      */
     inline Schedule& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 

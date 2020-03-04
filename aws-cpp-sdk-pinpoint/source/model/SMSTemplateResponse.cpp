@@ -34,6 +34,7 @@ SMSTemplateResponse::SMSTemplateResponse() :
     m_creationDateHasBeenSet(false),
     m_defaultSubstitutionsHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
@@ -49,6 +50,7 @@ SMSTemplateResponse::SMSTemplateResponse(JsonView jsonValue) :
     m_creationDateHasBeenSet(false),
     m_defaultSubstitutionsHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
+    m_recommenderIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
@@ -94,6 +96,13 @@ SMSTemplateResponse& SMSTemplateResponse::operator =(JsonView jsonValue)
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
 
     m_lastModifiedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RecommenderId"))
+  {
+    m_recommenderId = jsonValue.GetString("RecommenderId");
+
+    m_recommenderIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -168,6 +177,12 @@ JsonValue SMSTemplateResponse::Jsonize() const
   if(m_lastModifiedDateHasBeenSet)
   {
    payload.WithString("LastModifiedDate", m_lastModifiedDate);
+
+  }
+
+  if(m_recommenderIdHasBeenSet)
+  {
+   payload.WithString("RecommenderId", m_recommenderId);
 
   }
 

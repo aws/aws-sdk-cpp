@@ -344,6 +344,79 @@ namespace Model
 
 
     /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline const Aws::String& GetRecommenderId() const{ return m_recommenderId; }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline bool RecommenderIdHasBeenSet() const { return m_recommenderIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline void SetRecommenderId(const Aws::String& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = value; }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline void SetRecommenderId(Aws::String&& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline void SetRecommenderId(const char* value) { m_recommenderIdHasBeenSet = true; m_recommenderId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline PushNotificationTemplateRequest& WithRecommenderId(const Aws::String& value) { SetRecommenderId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline PushNotificationTemplateRequest& WithRecommenderId(Aws::String&& value) { SetRecommenderId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the recommender model to use for the message
+     * template. Amazon Pinpoint uses this value to determine how to retrieve and
+     * process data from a recommender model when it sends messages that use the
+     * template, if the template contains message variables for recommendation
+     * data.</p>
+     */
+    inline PushNotificationTemplateRequest& WithRecommenderId(const char* value) { SetRecommenderId(value); return *this;}
+
+
+    /**
      * <p>A string-to-string map of key-value pairs that defines the tags to associate
      * with the message template. Each tag consists of a required tag key and an
      * associated tag value.</p>
@@ -494,6 +567,9 @@ namespace Model
 
     AndroidPushNotificationTemplate m_gCM;
     bool m_gCMHasBeenSet;
+
+    Aws::String m_recommenderId;
+    bool m_recommenderIdHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

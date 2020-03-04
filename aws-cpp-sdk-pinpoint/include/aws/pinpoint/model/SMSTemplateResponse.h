@@ -297,6 +297,55 @@ namespace Model
 
 
     /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline const Aws::String& GetRecommenderId() const{ return m_recommenderId; }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline bool RecommenderIdHasBeenSet() const { return m_recommenderIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline void SetRecommenderId(const Aws::String& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = value; }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline void SetRecommenderId(Aws::String&& value) { m_recommenderIdHasBeenSet = true; m_recommenderId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline void SetRecommenderId(const char* value) { m_recommenderIdHasBeenSet = true; m_recommenderId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline SMSTemplateResponse& WithRecommenderId(const Aws::String& value) { SetRecommenderId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline SMSTemplateResponse& WithRecommenderId(Aws::String&& value) { SetRecommenderId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the recommender model that's used by the message
+     * template.</p>
+     */
+    inline SMSTemplateResponse& WithRecommenderId(const char* value) { SetRecommenderId(value); return *this;}
+
+
+    /**
      * <p>A string-to-string map of key-value pairs that identifies the tags that are
      * associated with the message template. Each tag consists of a required tag key
      * and an associated tag value.</p>
@@ -579,6 +628,9 @@ namespace Model
 
     Aws::String m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
+    Aws::String m_recommenderId;
+    bool m_recommenderIdHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

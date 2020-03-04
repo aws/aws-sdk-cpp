@@ -296,42 +296,42 @@ namespace Model
 
 
     /**
-     * <p>The custom name of the campaign.</p>
+     * <p>A custom name for the campaign.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The custom name of the campaign.</p>
+     * <p>A custom name for the campaign.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The custom name of the campaign.</p>
+     * <p>A custom name for the campaign.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The custom name of the campaign.</p>
+     * <p>A custom name for the campaign.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The custom name of the campaign.</p>
+     * <p>A custom name for the campaign.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The custom name of the campaign.</p>
+     * <p>A custom name for the campaign.</p>
      */
     inline WriteCampaignRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The custom name of the campaign.</p>
+     * <p>A custom name for the campaign.</p>
      */
     inline WriteCampaignRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The custom name of the campaign.</p>
+     * <p>A custom name for the campaign.</p>
      */
     inline WriteCampaignRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -602,42 +602,42 @@ namespace Model
 
 
     /**
-     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
+     * <p>A custom name for a variation of the campaign to use for A/B testing.</p>
      */
     inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
 
     /**
-     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
+     * <p>A custom name for a variation of the campaign to use for A/B testing.</p>
      */
     inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
 
     /**
-     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
+     * <p>A custom name for a variation of the campaign to use for A/B testing.</p>
      */
     inline void SetTreatmentName(const Aws::String& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = value; }
 
     /**
-     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
+     * <p>A custom name for a variation of the campaign to use for A/B testing.</p>
      */
     inline void SetTreatmentName(Aws::String&& value) { m_treatmentNameHasBeenSet = true; m_treatmentName = std::move(value); }
 
     /**
-     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
+     * <p>A custom name for a variation of the campaign to use for A/B testing.</p>
      */
     inline void SetTreatmentName(const char* value) { m_treatmentNameHasBeenSet = true; m_treatmentName.assign(value); }
 
     /**
-     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
+     * <p>A custom name for a variation of the campaign to use for A/B testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentName(const Aws::String& value) { SetTreatmentName(value); return *this;}
 
     /**
-     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
+     * <p>A custom name for a variation of the campaign to use for A/B testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentName(Aws::String&& value) { SetTreatmentName(std::move(value)); return *this;}
 
     /**
-     * <p>The custom name of a variation of the campaign to use for A/B testing.</p>
+     * <p>A custom name for a variation of the campaign to use for A/B testing.</p>
      */
     inline WriteCampaignRequest& WithTreatmentName(const char* value) { SetTreatmentName(value); return *this;}
 

@@ -30,6 +30,7 @@ namespace PinpointErrorMapper
 
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
+static const int PAYLOAD_TOO_LARGE_HASH = HashingUtils::HashString("PayloadTooLargeException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerErrorException");
@@ -47,6 +48,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FORBIDDEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::FORBIDDEN), false);
+  }
+  else if (hashCode == PAYLOAD_TOO_LARGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointErrors::PAYLOAD_TOO_LARGE), false);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
