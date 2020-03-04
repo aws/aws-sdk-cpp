@@ -279,7 +279,7 @@ endmacro(AWSSDK_LIB_DEPS)
 
 if (AWSSDK_FIND_COMPONENTS)
     #AWSSDK_LINK_LIBRARIES includes all the libraries (including dependencies) used by SDK and needed by customer application when doing linking.
-    #It only comes with COMPONENTS when doing find_package in customer application. e.g. find_package(AWSSDK REQUIRED COMPONENT s3 ec2)
+    #It only comes with COMPONENTS when doing find_package in customer application. e.g. find_package(AWSSDK REQUIRED COMPONENTS s3 ec2)
     #While SDK will resolve all the dependencies for customer application by doing find_package when COMPONENTS are specified,
     #there is no need to add those dependencies into AWSSDK_LINK_LIBRARIES. Dependencies in AWSSDK_LINK_LIBRARIES will also become a problem when
     #customer specified CMAKE_PREFIX_PATH and set it with non-default CMake search directories for dependencies when building SDK. In this case, when building customer
