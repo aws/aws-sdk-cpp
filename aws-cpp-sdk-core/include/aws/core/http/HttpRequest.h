@@ -26,8 +26,6 @@
 #include <memory>
 #include <functional>
 
-using namespace Aws::Monitoring;
-
 namespace Aws
 {
     namespace Http
@@ -517,12 +515,12 @@ namespace Aws
             /**
             * Sets the request metrics
             */
-            virtual void SetRequestMetrics(const HttpClientMetricsCollection& collection) { m_httpRequestMetrics = collection; }
+            virtual void SetRequestMetrics(const Aws::Monitoring::HttpClientMetricsCollection& collection) { m_httpRequestMetrics = collection; }
 
             /**
             * Gets the request metrics
             */
-            virtual const HttpClientMetricsCollection& GetRequestMetrics() const { return m_httpRequestMetrics; }
+            virtual const Aws::Monitoring::HttpClientMetricsCollection& GetRequestMetrics() const { return m_httpRequestMetrics; }
 
             /**
              * Returns the IP address of the remote host the request was made out to.
@@ -542,7 +540,7 @@ namespace Aws
             Aws::String m_signingRegion;
             Aws::String m_signingAccessKey;
             Aws::String m_resolvedRemoteHost;
-            HttpClientMetricsCollection m_httpRequestMetrics;
+            Aws::Monitoring::HttpClientMetricsCollection m_httpRequestMetrics;
         };
 
     } // namespace Http

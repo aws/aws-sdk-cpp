@@ -31,6 +31,11 @@
 #include <fstream>
 #include <thread>
 
+using namespace Aws;
+using namespace Aws::Client;
+using namespace Aws::Http;
+using namespace Aws::Http::Standard;
+
 using Aws::Utils::DateTime;
 using Aws::Utils::DateFormat;
 

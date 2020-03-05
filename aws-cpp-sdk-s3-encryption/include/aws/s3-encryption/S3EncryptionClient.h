@@ -23,39 +23,34 @@ namespace Aws
 {
     namespace S3Encryption
     {
-        using namespace Aws::S3;
-        using namespace Aws::Client;
-        using namespace Aws::Utils;
-        using namespace Aws::Utils::Crypto;
-
         struct AWS_S3ENCRYPTION_API S3EncryptionErrors
         {
             S3EncryptionErrors() = default;
-            S3EncryptionErrors(const CryptoErrors& error) :cryptoError(error), m_isS3Error(false) {}
-            S3EncryptionErrors(const S3Errors& error) :s3Error(error), m_isS3Error(true) {}
+            S3EncryptionErrors(const Aws::Utils::Crypto::CryptoErrors& error) :cryptoError(error), m_isS3Error(false) {}
+            S3EncryptionErrors(const Aws::S3::S3Errors& error) :s3Error(error), m_isS3Error(true) {}
 
             inline bool IsS3Error() const { return m_isS3Error; }
             inline bool IsCryptoError() const { return !m_isS3Error; }
 
             union {
-                CryptoErrors cryptoError;
-                S3Errors s3Error;
+                Aws::Utils::Crypto::CryptoErrors cryptoError;
+                Aws::S3::S3Errors s3Error;
             };
         private:
             bool m_isS3Error;
         };
 
         template<typename ERROR_TYPE>
-        AWSError<S3EncryptionErrors> BuildS3EncryptionError(const AWSError<ERROR_TYPE>& error)
+        Aws::Client::AWSError<S3EncryptionErrors> BuildS3EncryptionError(const Aws::Client::AWSError<ERROR_TYPE>& error)
         {
-            AWSError<S3EncryptionErrors> s3EncryptionError = AWSError<S3EncryptionErrors>(error.GetErrorType(), error.GetExceptionName(), error.GetMessage(), error.ShouldRetry());
+            Aws::Client::AWSError<S3EncryptionErrors> s3EncryptionError = Aws::Client::AWSError<S3EncryptionErrors>(error.GetErrorType(), error.GetExceptionName(), error.GetMessage(), error.ShouldRetry());
             s3EncryptionError.SetResponseCode(error.GetResponseCode());
             s3EncryptionError.SetResponseHeaders(error.GetResponseHeaders());
             return s3EncryptionError;
         }
 
-        typedef Aws::Utils::Outcome<Aws::S3::Model::PutObjectResult, AWSError<S3EncryptionErrors>> S3EncryptionPutObjectOutcome;
-        typedef Aws::Utils::Outcome<Aws::S3::Model::GetObjectResult, AWSError<S3EncryptionErrors>> S3EncryptionGetObjectOutcome;
+        typedef Aws::Utils::Outcome<Aws::S3::Model::PutObjectResult, Aws::Client::AWSError<S3EncryptionErrors>> S3EncryptionPutObjectOutcome;
+        typedef Aws::Utils::Outcome<Aws::S3::Model::GetObjectResult, Aws::Client::AWSError<S3EncryptionErrors>> S3EncryptionGetObjectOutcome;
 
         class AWS_S3ENCRYPTION_API S3EncryptionClient
         {
@@ -65,21 +60,21 @@ namespace Aws
             * the default client configuration will be used.
             */
             S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+                const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
             /*
             * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
             S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const Auth::AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
-            
+                const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
+
             /*
             * Initialize the S3 Encryption Client with encryption materials, crypto configuration, AWS credentials provider and a client configuration. If no client configuration is supplied,
             * the default client configuration will be used.
             */
             S3EncryptionClient(const std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials>& encryptionMaterials, const Aws::S3Encryption::CryptoConfiguration& cryptoConfig,
-                const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const Client::ClientConfiguration& clientConfiguration = Client::ClientConfiguration());
+                const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration());
 
             S3EncryptionClient(const S3EncryptionClient&) = delete;
             S3EncryptionClient& operator=(const S3EncryptionClient&) = delete;
@@ -102,7 +97,7 @@ namespace Aws
             */
             Aws::S3::Model::GetObjectOutcome GetInstructionFileObject(const Aws::S3::Model::GetObjectRequest& originalGetRequest) const;
 
-            Aws::UniquePtr<S3Client> m_s3Client;
+            Aws::UniquePtr<Aws::S3::S3Client> m_s3Client;
             Aws::S3Encryption::Modules::CryptoModuleFactory m_cryptoModuleFactory;
             std::shared_ptr<Aws::Utils::Crypto::EncryptionMaterials> m_encryptionMaterials;
             const Aws::S3Encryption::CryptoConfiguration m_cryptoConfig;

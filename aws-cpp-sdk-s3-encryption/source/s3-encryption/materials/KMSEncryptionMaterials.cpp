@@ -10,6 +10,7 @@
 
 using namespace Aws;
 using namespace Aws::Utils;
+using namespace Aws::Utils::Crypto;
 using namespace Aws::KMS;
 using namespace Aws::KMS::Model;
 using namespace Aws::Client;

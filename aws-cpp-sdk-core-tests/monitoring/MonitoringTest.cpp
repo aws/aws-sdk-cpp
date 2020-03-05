@@ -22,6 +22,9 @@
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/monitoring/DefaultMonitoring.h>
 
+using namespace Aws::Client;
+using namespace Aws::Http;
+using namespace Aws::Http::Standard;
 using namespace Aws::Monitoring;
 
 static const char ALLOCATION_TAG[] = "MonitoringTest";
@@ -86,7 +89,7 @@ public:
         MonitorOneAPICalledCounter[3] ++;
     }
 
-    void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, 
+    void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
         const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
     {
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
@@ -153,7 +156,7 @@ public:
         MonitorTwoAPICalledCounter[2] ++;
     }
 
-    void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName, 
+    void OnRequestRetry(const Aws::String& serviceName, const Aws::String& requestName,
         const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
     {
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
@@ -164,7 +167,7 @@ public:
         MonitorTwoAPICalledCounter[3] ++;
     }
 
-    void OnFinish(const Aws::String& serviceName, const Aws::String& requestName, 
+    void OnFinish(const Aws::String& serviceName, const Aws::String& requestName,
         const std::shared_ptr<const Aws::Http::HttpRequest>& request, void* context) const override
     {
         ASSERT_STREQ("MockAWSClient", serviceName.c_str());
@@ -202,7 +205,7 @@ protected:
         ClientConfiguration config;
         config.scheme = Scheme::HTTP;
         config.connectTimeoutMs = 30000;
-        config.requestTimeoutMs = 30000;           
+        config.requestTimeoutMs = 30000;
         auto countedRetryStrategy = Aws::MakeShared<CountedRetryStrategy>(ALLOCATION_TAG);
         config.retryStrategy = std::static_pointer_cast<DefaultRetryStrategy>(countedRetryStrategy);
 

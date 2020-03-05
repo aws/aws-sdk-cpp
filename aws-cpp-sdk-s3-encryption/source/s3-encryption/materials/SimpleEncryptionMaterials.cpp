@@ -18,6 +18,7 @@
 #include <aws/core/client/AWSError.h>
 
 using namespace Aws::Utils;
+using namespace Aws::Utils::Crypto;
 using namespace Aws::Client;
 using namespace Aws::S3Encryption;
 

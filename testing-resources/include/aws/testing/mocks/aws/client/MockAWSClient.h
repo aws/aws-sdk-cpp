@@ -28,36 +28,31 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
-using namespace Aws::Client;
-using namespace Aws::Http::Standard;
-using namespace Aws::Http;
-using namespace Aws;
-
-class AmazonWebServiceRequestMock : public AmazonWebServiceRequest
+class AmazonWebServiceRequestMock : public Aws::AmazonWebServiceRequest
 {
 public:
     AmazonWebServiceRequestMock() : m_shouldComputeMd5(false) { }
     std::shared_ptr<Aws::IOStream> GetBody() const override { return m_body; }
     void SetBody(const std::shared_ptr<Aws::IOStream>& body) { m_body = body; }
-    HeaderValueCollection GetHeaders() const override { return m_headers; }
-    void SetHeaders(const HeaderValueCollection& value) { m_headers = value; }
+    Aws::Http::HeaderValueCollection GetHeaders() const override { return m_headers; }
+    void SetHeaders(const Aws::Http::HeaderValueCollection& value) { m_headers = value; }
     bool ShouldComputeContentMd5() const override { return m_shouldComputeMd5; }
     void SetComputeContentMd5(bool value) { m_shouldComputeMd5 = value; }
     virtual const char* GetServiceRequestName() const override { return "AmazonWebServiceRequestMock"; }
 
 private:
     std::shared_ptr<Aws::IOStream> m_body;
-    HeaderValueCollection m_headers;
+    Aws::Http::HeaderValueCollection m_headers;
     bool m_shouldComputeMd5;
 };
 
-class CountedRetryStrategy : public DefaultRetryStrategy
+class CountedRetryStrategy : public Aws::Client::DefaultRetryStrategy
 {
 public:
     CountedRetryStrategy() : m_attemptedRetries(0), m_maxRetries(std::numeric_limits<int>::max()) {}
     CountedRetryStrategy(int maxRetires) : m_attemptedRetries(0), m_maxRetries(maxRetires <= 0 ? std::numeric_limits<int>::max() : maxRetires) {}
 
-    bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const override
+    bool ShouldRetry(const Aws::Client::AWSError<Aws::Client::CoreErrors>& error, long attemptedRetries) const override
     {
         if (attemptedRetries >= m_maxRetries)
         {
@@ -77,21 +72,21 @@ private:
     int m_maxRetries;
 };
 
-class MockAWSClient : AWSClient
+class MockAWSClient : Aws::Client::AWSClient
 {
 public:
-    MockAWSClient(const ClientConfiguration& config) : AWSClient(config,
-            Aws::MakeShared<AWSAuthV4Signer>("MockAWSClient",
+    MockAWSClient(const Aws::Client::ClientConfiguration& config) : AWSClient(config,
+            Aws::MakeShared<Aws::Client::AWSAuthV4Signer>("MockAWSClient",
                 Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>("MockAWSClient", GetMockAccessKey(),
                     GetMockSecretAccessKey()), "service", config.region.empty() ? Aws::Region::US_EAST_1 : config.region), nullptr) ,
         m_countedRetryStrategy(std::static_pointer_cast<CountedRetryStrategy>(config.retryStrategy)) { }
 
-    Aws::Client::HttpResponseOutcome MakeRequest(const AmazonWebServiceRequest& request)
+    Aws::Client::HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request)
     {
         m_countedRetryStrategy->ResetAttemptedRetriesCount();
-        const URI uri("domain.com/something");
-        const auto method = HttpMethod::HTTP_GET;
-        HttpResponseOutcome httpOutcome(AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
+        const Aws::Http::URI uri("domain.com/something");
+        const auto method = Aws::Http::HttpMethod::HTTP_GET;
+        Aws::Client::HttpResponseOutcome httpOutcome(AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
         return httpOutcome;
     }
 
@@ -107,15 +102,15 @@ public:
 
 protected:
     std::shared_ptr<CountedRetryStrategy> m_countedRetryStrategy;
-    AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<HttpResponse>& response) const override
+    Aws::Client::AWSError<Aws::Client::CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override
     {
         if (response->HasClientError())
         {
-            auto err = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
-            err.SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
+            auto err = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+            err.SetResponseCode(Aws::Http::HttpResponseCode::INTERNAL_SERVER_ERROR);
             return err;
         }
-        auto err = AWSError<CoreErrors>(CoreErrors::INVALID_ACTION, false);
+        auto err = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::INVALID_ACTION, false);
         err.SetResponseHeaders(response->GetHeaders());
         err.SetResponseCode(response->GetResponseCode());
         return err;
