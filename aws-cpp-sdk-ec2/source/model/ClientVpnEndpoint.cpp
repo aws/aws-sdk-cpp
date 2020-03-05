@@ -50,7 +50,9 @@ ClientVpnEndpoint::ClientVpnEndpoint() :
     m_serverCertificateArnHasBeenSet(false),
     m_authenticationOptionsHasBeenSet(false),
     m_connectionLogOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode) :
     m_serverCertificateArnHasBeenSet(false),
     m_authenticationOptionsHasBeenSet(false),
     m_connectionLogOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -199,6 +203,24 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode securityGroupIdsNode = resultNode.FirstChild("securityGroupIdSet");
+    if(!securityGroupIdsNode.IsNull())
+    {
+      XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      while(!securityGroupIdsMember.IsNull())
+      {
+        m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
+        securityGroupIdsMember = securityGroupIdsMember.NextNode("item");
+      }
+
+      m_securityGroupIdsHasBeenSet = true;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("vpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
+      m_vpcIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -306,6 +328,20 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       }
   }
 
+  if(m_securityGroupIdsHasBeenSet)
+  {
+      unsigned securityGroupIdsIdx = 1;
+      for(auto& item : m_securityGroupIds)
+      {
+        oStream << location << index << locationValue << ".SecurityGroupIdSet." << securityGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
 }
 
 void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -393,6 +429,18 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_securityGroupIdsHasBeenSet)
+  {
+      unsigned securityGroupIdsIdx = 1;
+      for(auto& item : m_securityGroupIds)
+      {
+        oStream << location << ".SecurityGroupIdSet." << securityGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 }
 

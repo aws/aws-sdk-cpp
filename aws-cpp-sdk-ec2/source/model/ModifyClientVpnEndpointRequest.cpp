@@ -31,7 +31,9 @@ ModifyClientVpnEndpointRequest::ModifyClientVpnEndpointRequest() :
     m_splitTunnel(false),
     m_splitTunnelHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,22 @@ Aws::String ModifyClientVpnEndpointRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_securityGroupIdsHasBeenSet)
+  {
+    unsigned securityGroupIdsCount = 1;
+    for(auto& item : m_securityGroupIds)
+    {
+      ss << "SecurityGroupId." << securityGroupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      securityGroupIdsCount++;
+    }
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

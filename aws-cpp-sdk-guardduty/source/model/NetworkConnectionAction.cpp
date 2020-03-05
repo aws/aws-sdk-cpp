@@ -34,6 +34,7 @@ NetworkConnectionAction::NetworkConnectionAction() :
     m_connectionDirectionHasBeenSet(false),
     m_localPortDetailsHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_localIpDetailsHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_remotePortDetailsHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ NetworkConnectionAction::NetworkConnectionAction(JsonView jsonValue) :
     m_connectionDirectionHasBeenSet(false),
     m_localPortDetailsHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_localIpDetailsHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false),
     m_remotePortDetailsHasBeenSet(false)
 {
@@ -79,6 +81,13 @@ NetworkConnectionAction& NetworkConnectionAction::operator =(JsonView jsonValue)
     m_protocol = jsonValue.GetString("protocol");
 
     m_protocolHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("localIpDetails"))
+  {
+    m_localIpDetails = jsonValue.GetObject("localIpDetails");
+
+    m_localIpDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("remoteIpDetails"))
@@ -123,6 +132,12 @@ JsonValue NetworkConnectionAction::Jsonize() const
   if(m_protocolHasBeenSet)
   {
    payload.WithString("protocol", m_protocol);
+
+  }
+
+  if(m_localIpDetailsHasBeenSet)
+  {
+   payload.WithObject("localIpDetails", m_localIpDetails.Jsonize());
 
   }
 

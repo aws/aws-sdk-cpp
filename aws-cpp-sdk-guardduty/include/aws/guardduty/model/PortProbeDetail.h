@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/LocalPortDetails.h>
+#include <aws/guardduty/model/LocalIpDetails.h>
 #include <aws/guardduty/model/RemoteIpDetails.h>
 #include <utility>
 
@@ -81,6 +82,37 @@ namespace Model
 
 
     /**
+     * <p>Local IP information of the connection.</p>
+     */
+    inline const LocalIpDetails& GetLocalIpDetails() const{ return m_localIpDetails; }
+
+    /**
+     * <p>Local IP information of the connection.</p>
+     */
+    inline bool LocalIpDetailsHasBeenSet() const { return m_localIpDetailsHasBeenSet; }
+
+    /**
+     * <p>Local IP information of the connection.</p>
+     */
+    inline void SetLocalIpDetails(const LocalIpDetails& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = value; }
+
+    /**
+     * <p>Local IP information of the connection.</p>
+     */
+    inline void SetLocalIpDetails(LocalIpDetails&& value) { m_localIpDetailsHasBeenSet = true; m_localIpDetails = std::move(value); }
+
+    /**
+     * <p>Local IP information of the connection.</p>
+     */
+    inline PortProbeDetail& WithLocalIpDetails(const LocalIpDetails& value) { SetLocalIpDetails(value); return *this;}
+
+    /**
+     * <p>Local IP information of the connection.</p>
+     */
+    inline PortProbeDetail& WithLocalIpDetails(LocalIpDetails&& value) { SetLocalIpDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>Remote IP information of the connection.</p>
      */
     inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
@@ -114,6 +146,9 @@ namespace Model
 
     LocalPortDetails m_localPortDetails;
     bool m_localPortDetailsHasBeenSet;
+
+    LocalIpDetails m_localIpDetails;
+    bool m_localIpDetailsHasBeenSet;
 
     RemoteIpDetails m_remoteIpDetails;
     bool m_remoteIpDetailsHasBeenSet;

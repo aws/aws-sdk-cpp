@@ -30,12 +30,14 @@ namespace Model
 
 PortProbeDetail::PortProbeDetail() : 
     m_localPortDetailsHasBeenSet(false),
+    m_localIpDetailsHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false)
 {
 }
 
 PortProbeDetail::PortProbeDetail(JsonView jsonValue) : 
     m_localPortDetailsHasBeenSet(false),
+    m_localIpDetailsHasBeenSet(false),
     m_remoteIpDetailsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +50,13 @@ PortProbeDetail& PortProbeDetail::operator =(JsonView jsonValue)
     m_localPortDetails = jsonValue.GetObject("localPortDetails");
 
     m_localPortDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("localIpDetails"))
+  {
+    m_localIpDetails = jsonValue.GetObject("localIpDetails");
+
+    m_localIpDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("remoteIpDetails"))
@@ -67,6 +76,12 @@ JsonValue PortProbeDetail::Jsonize() const
   if(m_localPortDetailsHasBeenSet)
   {
    payload.WithObject("localPortDetails", m_localPortDetails.Jsonize());
+
+  }
+
+  if(m_localIpDetailsHasBeenSet)
+  {
+   payload.WithObject("localIpDetails", m_localIpDetails.Jsonize());
 
   }
 

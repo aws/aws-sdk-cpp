@@ -2655,7 +2655,11 @@ namespace Model
          * subnet in a VPC. You can associate multiple subnets from the same VPC with a
          * Client VPN endpoint. You can associate only one subnet in each Availability
          * Zone. We recommend that you associate at least two subnets to provide
-         * Availability Zone redundancy.</p><p><h3>See Also:</h3>   <a
+         * Availability Zone redundancy.</p> <p>If you specified a VPC when you created the
+         * Client VPN endpoint or if you have previous subnet associations, the specified
+         * subnet must be in the same VPC. To specify a subnet that's in a different VPC,
+         * you must first modify the Client VPN endpoint (<a>ModifyClientVpnEndpoint</a>)
+         * and change the VPC that's associated with it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">AWS
          * API Reference</a></p>
          */
@@ -2666,7 +2670,11 @@ namespace Model
          * subnet in a VPC. You can associate multiple subnets from the same VPC with a
          * Client VPN endpoint. You can associate only one subnet in each Availability
          * Zone. We recommend that you associate at least two subnets to provide
-         * Availability Zone redundancy.</p><p><h3>See Also:</h3>   <a
+         * Availability Zone redundancy.</p> <p>If you specified a VPC when you created the
+         * Client VPN endpoint or if you have previous subnet associations, the specified
+         * subnet must be in the same VPC. To specify a subnet that's in a different VPC,
+         * you must first modify the Client VPN endpoint (<a>ModifyClientVpnEndpoint</a>)
+         * and change the VPC that's associated with it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">AWS
          * API Reference</a></p>
          *
@@ -2679,7 +2687,11 @@ namespace Model
          * subnet in a VPC. You can associate multiple subnets from the same VPC with a
          * Client VPN endpoint. You can associate only one subnet in each Availability
          * Zone. We recommend that you associate at least two subnets to provide
-         * Availability Zone redundancy.</p><p><h3>See Also:</h3>   <a
+         * Availability Zone redundancy.</p> <p>If you specified a VPC when you created the
+         * Client VPN endpoint or if you have previous subnet associations, the specified
+         * subnet must be in the same VPC. To specify a subnet that's in a different VPC,
+         * you must first modify the Client VPN endpoint (<a>ModifyClientVpnEndpoint</a>)
+         * and change the VPC that's associated with it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">AWS
          * API Reference</a></p>
          *
@@ -8164,22 +8176,20 @@ namespace Model
         virtual void DeleteVpnConnectionRouteAsync(const Model::DeleteVpnConnectionRouteRequest& request, const DeleteVpnConnectionRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified virtual private gateway. We recommend that before you
-         * delete a virtual private gateway, you detach it from the VPC and delete the VPN
-         * connection. Note that you don't need to delete the virtual private gateway if
-         * you plan to delete and recreate the VPN connection between your VPC and your
-         * network.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified virtual private gateway. You must first detach the
+         * virtual private gateway from the VPC. Note that you don't need to delete the
+         * virtual private gateway if you plan to delete and recreate the VPN connection
+         * between your VPC and your network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVpnGatewayOutcome DeleteVpnGateway(const Model::DeleteVpnGatewayRequest& request) const;
 
         /**
-         * <p>Deletes the specified virtual private gateway. We recommend that before you
-         * delete a virtual private gateway, you detach it from the VPC and delete the VPN
-         * connection. Note that you don't need to delete the virtual private gateway if
-         * you plan to delete and recreate the VPN connection between your VPC and your
-         * network.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified virtual private gateway. You must first detach the
+         * virtual private gateway from the VPC. Note that you don't need to delete the
+         * virtual private gateway if you plan to delete and recreate the VPN connection
+         * between your VPC and your network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -8188,11 +8198,10 @@ namespace Model
         virtual Model::DeleteVpnGatewayOutcomeCallable DeleteVpnGatewayCallable(const Model::DeleteVpnGatewayRequest& request) const;
 
         /**
-         * <p>Deletes the specified virtual private gateway. We recommend that before you
-         * delete a virtual private gateway, you detach it from the VPC and delete the VPN
-         * connection. Note that you don't need to delete the virtual private gateway if
-         * you plan to delete and recreate the VPN connection between your VPC and your
-         * network.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified virtual private gateway. You must first detach the
+         * virtual private gateway from the VPC. Note that you don't need to delete the
+         * virtual private gateway if you plan to delete and recreate the VPN connection
+         * between your VPC and your network.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnGateway">AWS
          * API Reference</a></p>
          *
@@ -14733,20 +14742,16 @@ namespace Model
         virtual void ModifyCapacityReservationAsync(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified Client VPN endpoint. You can only modify an endpoint's
-         * server certificate information, client connection logging information, DNS
-         * server, and description. Modifying the DNS server resets existing client
-         * connections.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified Client VPN endpoint. Modifying the DNS server resets
+         * existing client connections.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyClientVpnEndpointOutcome ModifyClientVpnEndpoint(const Model::ModifyClientVpnEndpointRequest& request) const;
 
         /**
-         * <p>Modifies the specified Client VPN endpoint. You can only modify an endpoint's
-         * server certificate information, client connection logging information, DNS
-         * server, and description. Modifying the DNS server resets existing client
-         * connections.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified Client VPN endpoint. Modifying the DNS server resets
+         * existing client connections.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">AWS
          * API Reference</a></p>
          *
@@ -14755,10 +14760,8 @@ namespace Model
         virtual Model::ModifyClientVpnEndpointOutcomeCallable ModifyClientVpnEndpointCallable(const Model::ModifyClientVpnEndpointRequest& request) const;
 
         /**
-         * <p>Modifies the specified Client VPN endpoint. You can only modify an endpoint's
-         * server certificate information, client connection logging information, DNS
-         * server, and description. Modifying the DNS server resets existing client
-         * connections.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the specified Client VPN endpoint. Modifying the DNS server resets
+         * existing client connections.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">AWS
          * API Reference</a></p>
          *
@@ -16549,9 +16552,9 @@ namespace Model
          * add the routes.</p> <p> If you deleted VPN static routes, you must add the
          * static routes to the transit gateway route table.</p> <p>After you perform this
          * operation, the AWS VPN endpoint's IP addresses on the AWS side and the tunnel
-         * options remain intact. Your s2slong; connection will be temporarily unavailable
-         * for approximately 10 minutes while we provision the new endpoints </p><p><h3>See
-         * Also:</h3>   <a
+         * options remain intact. Your AWS Site-to-Site VPN connection will be temporarily
+         * unavailable for a brief period while we provision the new
+         * endpoints.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">AWS
          * API Reference</a></p>
          */
@@ -16582,9 +16585,9 @@ namespace Model
          * add the routes.</p> <p> If you deleted VPN static routes, you must add the
          * static routes to the transit gateway route table.</p> <p>After you perform this
          * operation, the AWS VPN endpoint's IP addresses on the AWS side and the tunnel
-         * options remain intact. Your s2slong; connection will be temporarily unavailable
-         * for approximately 10 minutes while we provision the new endpoints </p><p><h3>See
-         * Also:</h3>   <a
+         * options remain intact. Your AWS Site-to-Site VPN connection will be temporarily
+         * unavailable for a brief period while we provision the new
+         * endpoints.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -16617,9 +16620,9 @@ namespace Model
          * add the routes.</p> <p> If you deleted VPN static routes, you must add the
          * static routes to the transit gateway route table.</p> <p>After you perform this
          * operation, the AWS VPN endpoint's IP addresses on the AWS side and the tunnel
-         * options remain intact. Your s2slong; connection will be temporarily unavailable
-         * for approximately 10 minutes while we provision the new endpoints </p><p><h3>See
-         * Also:</h3>   <a
+         * options remain intact. Your AWS Site-to-Site VPN connection will be temporarily
+         * unavailable for a brief period while we provision the new
+         * endpoints.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnection">AWS
          * API Reference</a></p>
          *

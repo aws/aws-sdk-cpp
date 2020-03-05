@@ -58,11 +58,13 @@ namespace Model
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
      * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>snapshot</code> |
-     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
-     * <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
+     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
+     * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>vpc-endpoint</code> (for
+     * interface VPC endpoints)| <code>vpc-endpoint-service</code> (for gateway VPC
+     * endpoints) | <code>volume</code> | <code>vpc-flow-log</code>.</p> <p>To tag a
      * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
@@ -74,11 +76,13 @@ namespace Model
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
      * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>snapshot</code> |
-     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
-     * <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
+     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
+     * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>vpc-endpoint</code> (for
+     * interface VPC endpoints)| <code>vpc-endpoint-service</code> (for gateway VPC
+     * endpoints) | <code>volume</code> | <code>vpc-flow-log</code>.</p> <p>To tag a
      * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
@@ -90,11 +94,13 @@ namespace Model
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
      * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>snapshot</code> |
-     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
-     * <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
+     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
+     * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>vpc-endpoint</code> (for
+     * interface VPC endpoints)| <code>vpc-endpoint-service</code> (for gateway VPC
+     * endpoints) | <code>volume</code> | <code>vpc-flow-log</code>.</p> <p>To tag a
      * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
@@ -106,11 +112,13 @@ namespace Model
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
      * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>snapshot</code> |
-     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
-     * <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
+     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
+     * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>vpc-endpoint</code> (for
+     * interface VPC endpoints)| <code>vpc-endpoint-service</code> (for gateway VPC
+     * endpoints) | <code>volume</code> | <code>vpc-flow-log</code>.</p> <p>To tag a
      * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
@@ -122,11 +130,13 @@ namespace Model
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
      * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>snapshot</code> |
-     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
-     * <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
+     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
+     * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>vpc-endpoint</code> (for
+     * interface VPC endpoints)| <code>vpc-endpoint-service</code> (for gateway VPC
+     * endpoints) | <code>volume</code> | <code>vpc-flow-log</code>.</p> <p>To tag a
      * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
@@ -138,11 +148,13 @@ namespace Model
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
      * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>placement-group</code> | <code>snapshot</code> |
-     * <code>traffic-mirror-filter</code> | <code>traffic-mirror-session</code> |
-     * <code>traffic-mirror-target</code> | <code>transit-gateway</code> |
-     * <code>transit-gateway-attachment</code> |
-     * <code>transit-gateway-route-table</code> | <code>volume</code>.</p> <p>To tag a
+     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
+     * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
+     * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
+     * <code>transit-gateway-route-table</code> | <code>vpc-endpoint</code> (for
+     * interface VPC endpoints)| <code>vpc-endpoint-service</code> (for gateway VPC
+     * endpoints) | <code>volume</code> | <code>vpc-flow-log</code>.</p> <p>To tag a
      * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */

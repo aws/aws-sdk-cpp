@@ -43,7 +43,8 @@ Cluster::Cluster() :
     m_certificateAuthorityHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_encryptionConfigHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_certificateAuthorityHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_encryptionConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +172,16 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("encryptionConfig"))
+  {
+    Array<JsonView> encryptionConfigJsonList = jsonValue.GetArray("encryptionConfig");
+    for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
+    {
+      m_encryptionConfig.push_back(encryptionConfigJsonList[encryptionConfigIndex].AsObject());
+    }
+    m_encryptionConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -261,6 +273,17 @@ JsonValue Cluster::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_encryptionConfigHasBeenSet)
+  {
+   Array<JsonValue> encryptionConfigJsonList(m_encryptionConfig.size());
+   for(unsigned encryptionConfigIndex = 0; encryptionConfigIndex < encryptionConfigJsonList.GetLength(); ++encryptionConfigIndex)
+   {
+     encryptionConfigJsonList[encryptionConfigIndex].AsObject(m_encryptionConfig[encryptionConfigIndex].Jsonize());
+   }
+   payload.WithArray("encryptionConfig", std::move(encryptionConfigJsonList));
 
   }
 

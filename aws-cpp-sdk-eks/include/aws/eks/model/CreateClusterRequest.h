@@ -20,6 +20,8 @@
 #include <aws/eks/model/VpcConfigRequest.h>
 #include <aws/eks/model/Logging.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/eks/model/EncryptionConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -513,6 +515,47 @@ namespace Model
      */
     inline CreateClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The encryption configuration for the cluster.</p>
+     */
+    inline const Aws::Vector<EncryptionConfig>& GetEncryptionConfig() const{ return m_encryptionConfig; }
+
+    /**
+     * <p>The encryption configuration for the cluster.</p>
+     */
+    inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
+
+    /**
+     * <p>The encryption configuration for the cluster.</p>
+     */
+    inline void SetEncryptionConfig(const Aws::Vector<EncryptionConfig>& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
+
+    /**
+     * <p>The encryption configuration for the cluster.</p>
+     */
+    inline void SetEncryptionConfig(Aws::Vector<EncryptionConfig>&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
+
+    /**
+     * <p>The encryption configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& WithEncryptionConfig(const Aws::Vector<EncryptionConfig>& value) { SetEncryptionConfig(value); return *this;}
+
+    /**
+     * <p>The encryption configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& WithEncryptionConfig(Aws::Vector<EncryptionConfig>&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+
+    /**
+     * <p>The encryption configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& AddEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig.push_back(value); return *this; }
+
+    /**
+     * <p>The encryption configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& AddEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -535,6 +578,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<EncryptionConfig> m_encryptionConfig;
+    bool m_encryptionConfigHasBeenSet;
   };
 
 } // namespace Model

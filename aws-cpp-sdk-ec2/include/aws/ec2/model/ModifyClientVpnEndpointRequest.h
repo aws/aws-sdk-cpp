@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ConnectionLogOptions.h>
 #include <aws/ec2/model/DnsServersOptionsModifyStructure.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -375,6 +376,93 @@ namespace Model
      */
     inline ModifyClientVpnEndpointRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of one or more security groups to apply to the target network.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the VPC to associate with the Client VPN endpoint.</p>
+     */
+    inline ModifyClientVpnEndpointRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -400,6 +488,12 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet;
+
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
   };
 
 } // namespace Model

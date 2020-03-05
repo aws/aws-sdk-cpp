@@ -37,7 +37,9 @@ CreateClientVpnEndpointRequest::CreateClientVpnEndpointRequest() :
     m_dryRunHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,22 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_securityGroupIdsHasBeenSet)
+  {
+    unsigned securityGroupIdsCount = 1;
+    for(auto& item : m_securityGroupIds)
+    {
+      ss << "SecurityGroupId." << securityGroupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      securityGroupIdsCount++;
+    }
+  }
+
+  if(m_vpcIdHasBeenSet)
+  {
+    ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";
