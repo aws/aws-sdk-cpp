@@ -36,6 +36,7 @@ InstanceDetails::InstanceDetails() :
     m_instanceIdHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_launchTimeHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_platformHasBeenSet(false),
@@ -52,6 +53,7 @@ InstanceDetails::InstanceDetails(JsonView jsonValue) :
     m_instanceIdHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_launchTimeHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_platformHasBeenSet(false),
@@ -110,6 +112,13 @@ InstanceDetails& InstanceDetails::operator =(JsonView jsonValue)
     m_instanceType = jsonValue.GetString("instanceType");
 
     m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("outpostArn"))
+  {
+    m_outpostArn = jsonValue.GetString("outpostArn");
+
+    m_outpostArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("launchTime"))
@@ -202,6 +211,12 @@ JsonValue InstanceDetails::Jsonize() const
   if(m_instanceTypeHasBeenSet)
   {
    payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+   payload.WithString("outpostArn", m_outpostArn);
 
   }
 

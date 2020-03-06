@@ -174,6 +174,87 @@ namespace Model
 
 
     /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then it's
+               the ID of the account that shared the mesh
+     * with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then it's
+               the ID of the account that shared the mesh
+     * with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then it's
+               the ID of the account that shared the mesh
+     * with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then it's
+               the ID of the account that shared the mesh
+     * with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then it's
+               the ID of the account that shared the mesh
+     * with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then it's
+               the ID of the account that shared the mesh
+     * with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline ListVirtualServicesRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then it's
+               the ID of the account that shared the mesh
+     * with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline ListVirtualServicesRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then it's
+               the ID of the account that shared the mesh
+     * with your account. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline ListVirtualServicesRequest& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
+
+
+    /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
          
      * <code>ListVirtualServices</code> request where <code>limit</code> was used and
@@ -276,6 +357,9 @@ namespace Model
 
     Aws::String m_meshName;
     bool m_meshNameHasBeenSet;
+
+    Aws::String m_meshOwner;
+    bool m_meshOwnerHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

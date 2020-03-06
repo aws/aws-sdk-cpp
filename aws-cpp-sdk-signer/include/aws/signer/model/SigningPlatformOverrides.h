@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/signer/Signer_EXPORTS.h>
 #include <aws/signer/model/SigningConfigurationOverrides.h>
+#include <aws/signer/model/ImageFormat.h>
 #include <utility>
 
 namespace Aws
@@ -84,10 +85,80 @@ namespace Model
      */
     inline SigningPlatformOverrides& WithSigningConfiguration(SigningConfigurationOverrides&& value) { SetSigningConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A signed image is a JSON object. When overriding the default signing platform
+     * configuration, a customer can select either of two signing formats,
+     * <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value,
+     * <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>,
+     * the signing image has the payload embedded in it. With
+     * <code>JSONDetached</code>, the payload is not be embedded in the signing
+     * image.</p>
+     */
+    inline const ImageFormat& GetSigningImageFormat() const{ return m_signingImageFormat; }
+
+    /**
+     * <p>A signed image is a JSON object. When overriding the default signing platform
+     * configuration, a customer can select either of two signing formats,
+     * <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value,
+     * <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>,
+     * the signing image has the payload embedded in it. With
+     * <code>JSONDetached</code>, the payload is not be embedded in the signing
+     * image.</p>
+     */
+    inline bool SigningImageFormatHasBeenSet() const { return m_signingImageFormatHasBeenSet; }
+
+    /**
+     * <p>A signed image is a JSON object. When overriding the default signing platform
+     * configuration, a customer can select either of two signing formats,
+     * <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value,
+     * <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>,
+     * the signing image has the payload embedded in it. With
+     * <code>JSONDetached</code>, the payload is not be embedded in the signing
+     * image.</p>
+     */
+    inline void SetSigningImageFormat(const ImageFormat& value) { m_signingImageFormatHasBeenSet = true; m_signingImageFormat = value; }
+
+    /**
+     * <p>A signed image is a JSON object. When overriding the default signing platform
+     * configuration, a customer can select either of two signing formats,
+     * <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value,
+     * <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>,
+     * the signing image has the payload embedded in it. With
+     * <code>JSONDetached</code>, the payload is not be embedded in the signing
+     * image.</p>
+     */
+    inline void SetSigningImageFormat(ImageFormat&& value) { m_signingImageFormatHasBeenSet = true; m_signingImageFormat = std::move(value); }
+
+    /**
+     * <p>A signed image is a JSON object. When overriding the default signing platform
+     * configuration, a customer can select either of two signing formats,
+     * <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value,
+     * <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>,
+     * the signing image has the payload embedded in it. With
+     * <code>JSONDetached</code>, the payload is not be embedded in the signing
+     * image.</p>
+     */
+    inline SigningPlatformOverrides& WithSigningImageFormat(const ImageFormat& value) { SetSigningImageFormat(value); return *this;}
+
+    /**
+     * <p>A signed image is a JSON object. When overriding the default signing platform
+     * configuration, a customer can select either of two signing formats,
+     * <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value,
+     * <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>,
+     * the signing image has the payload embedded in it. With
+     * <code>JSONDetached</code>, the payload is not be embedded in the signing
+     * image.</p>
+     */
+    inline SigningPlatformOverrides& WithSigningImageFormat(ImageFormat&& value) { SetSigningImageFormat(std::move(value)); return *this;}
+
   private:
 
     SigningConfigurationOverrides m_signingConfiguration;
     bool m_signingConfigurationHasBeenSet;
+
+    ImageFormat m_signingImageFormat;
+    bool m_signingImageFormatHasBeenSet;
   };
 
 } // namespace Model

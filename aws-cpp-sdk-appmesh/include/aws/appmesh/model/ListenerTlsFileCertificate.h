@@ -37,8 +37,8 @@ namespace Model
    * <p>An object that represents a local file certificate. The certificate must meet
    * specific requirements and you must have proxy authorization enabled. For more
    * information, see <a
-   * href="https://docs.aws.amazon.com//app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">TLS
-   * Encryption</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+   * Layer Security (TLS)</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTlsFileCertificate">AWS
    * API Reference</a></p>
    */

@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/SimulationJobRequest.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {

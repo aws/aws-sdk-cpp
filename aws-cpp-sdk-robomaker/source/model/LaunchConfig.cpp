@@ -32,7 +32,9 @@ LaunchConfig::LaunchConfig() :
     m_packageNameHasBeenSet(false),
     m_launchFileHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
-    m_portForwardingConfigHasBeenSet(false)
+    m_portForwardingConfigHasBeenSet(false),
+    m_streamUI(false),
+    m_streamUIHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ LaunchConfig::LaunchConfig(JsonView jsonValue) :
     m_packageNameHasBeenSet(false),
     m_launchFileHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
-    m_portForwardingConfigHasBeenSet(false)
+    m_portForwardingConfigHasBeenSet(false),
+    m_streamUI(false),
+    m_streamUIHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +82,13 @@ LaunchConfig& LaunchConfig::operator =(JsonView jsonValue)
     m_portForwardingConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("streamUI"))
+  {
+    m_streamUI = jsonValue.GetBool("streamUI");
+
+    m_streamUIHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +122,12 @@ JsonValue LaunchConfig::Jsonize() const
   if(m_portForwardingConfigHasBeenSet)
   {
    payload.WithObject("portForwardingConfig", m_portForwardingConfig.Jsonize());
+
+  }
+
+  if(m_streamUIHasBeenSet)
+  {
+   payload.WithBool("streamUI", m_streamUI);
 
   }
 

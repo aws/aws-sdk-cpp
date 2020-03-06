@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the signing configurations and parameters that is
+   * <p>Contains information about the signing configurations and parameters that are
    * used to perform a code signing job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningPlatform">AWS
    * API Reference</a></p>

@@ -14,29 +14,28 @@
 */
 
 #pragma once
-#include <aws/signer/Signer_EXPORTS.h>
+#include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace signer
+namespace EC2
 {
 namespace Model
 {
-  enum class ImageFormat
+  enum class ModifyAvailabilityZoneOptInStatus
   {
     NOT_SET,
-    JSON,
-    JSONEmbedded,
-    JSONDetached
+    opted_in,
+    not_opted_in
   };
 
-namespace ImageFormatMapper
+namespace ModifyAvailabilityZoneOptInStatusMapper
 {
-AWS_SIGNER_API ImageFormat GetImageFormatForName(const Aws::String& name);
+AWS_EC2_API ModifyAvailabilityZoneOptInStatus GetModifyAvailabilityZoneOptInStatusForName(const Aws::String& name);
 
-AWS_SIGNER_API Aws::String GetNameForImageFormat(ImageFormat value);
-} // namespace ImageFormatMapper
+AWS_EC2_API Aws::String GetNameForModifyAvailabilityZoneOptInStatus(ModifyAvailabilityZoneOptInStatus value);
+} // namespace ModifyAvailabilityZoneOptInStatusMapper
 } // namespace Model
-} // namespace signer
+} // namespace EC2
 } // namespace Aws

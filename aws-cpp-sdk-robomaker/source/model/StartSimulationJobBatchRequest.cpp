@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartSimulationJobBatchRequest::StartSimulationJobBatchRequest() : 
-    m_clientRequestTokenHasBeenSet(false),
+    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestTokenHasBeenSet(true),
     m_batchPolicyHasBeenSet(false),
     m_createSimulationJobRequestsHasBeenSet(false),
     m_tagsHasBeenSet(false)

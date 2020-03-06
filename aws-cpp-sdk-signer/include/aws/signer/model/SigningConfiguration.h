@@ -86,32 +86,32 @@ namespace Model
 
 
     /**
-     * <p>The hash algorithm options that are available for a a code signing job.</p>
+     * <p>The hash algorithm options that are available for a code signing job.</p>
      */
     inline const HashAlgorithmOptions& GetHashAlgorithmOptions() const{ return m_hashAlgorithmOptions; }
 
     /**
-     * <p>The hash algorithm options that are available for a a code signing job.</p>
+     * <p>The hash algorithm options that are available for a code signing job.</p>
      */
     inline bool HashAlgorithmOptionsHasBeenSet() const { return m_hashAlgorithmOptionsHasBeenSet; }
 
     /**
-     * <p>The hash algorithm options that are available for a a code signing job.</p>
+     * <p>The hash algorithm options that are available for a code signing job.</p>
      */
     inline void SetHashAlgorithmOptions(const HashAlgorithmOptions& value) { m_hashAlgorithmOptionsHasBeenSet = true; m_hashAlgorithmOptions = value; }
 
     /**
-     * <p>The hash algorithm options that are available for a a code signing job.</p>
+     * <p>The hash algorithm options that are available for a code signing job.</p>
      */
     inline void SetHashAlgorithmOptions(HashAlgorithmOptions&& value) { m_hashAlgorithmOptionsHasBeenSet = true; m_hashAlgorithmOptions = std::move(value); }
 
     /**
-     * <p>The hash algorithm options that are available for a a code signing job.</p>
+     * <p>The hash algorithm options that are available for a code signing job.</p>
      */
     inline SigningConfiguration& WithHashAlgorithmOptions(const HashAlgorithmOptions& value) { SetHashAlgorithmOptions(value); return *this;}
 
     /**
-     * <p>The hash algorithm options that are available for a a code signing job.</p>
+     * <p>The hash algorithm options that are available for a code signing job.</p>
      */
     inline SigningConfiguration& WithHashAlgorithmOptions(HashAlgorithmOptions&& value) { SetHashAlgorithmOptions(std::move(value)); return *this;}
 

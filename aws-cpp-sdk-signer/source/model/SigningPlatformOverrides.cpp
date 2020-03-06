@@ -29,12 +29,16 @@ namespace Model
 {
 
 SigningPlatformOverrides::SigningPlatformOverrides() : 
-    m_signingConfigurationHasBeenSet(false)
+    m_signingConfigurationHasBeenSet(false),
+    m_signingImageFormat(ImageFormat::NOT_SET),
+    m_signingImageFormatHasBeenSet(false)
 {
 }
 
 SigningPlatformOverrides::SigningPlatformOverrides(JsonView jsonValue) : 
-    m_signingConfigurationHasBeenSet(false)
+    m_signingConfigurationHasBeenSet(false),
+    m_signingImageFormat(ImageFormat::NOT_SET),
+    m_signingImageFormatHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +52,13 @@ SigningPlatformOverrides& SigningPlatformOverrides::operator =(JsonView jsonValu
     m_signingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("signingImageFormat"))
+  {
+    m_signingImageFormat = ImageFormatMapper::GetImageFormatForName(jsonValue.GetString("signingImageFormat"));
+
+    m_signingImageFormatHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -59,6 +70,11 @@ JsonValue SigningPlatformOverrides::Jsonize() const
   {
    payload.WithObject("signingConfiguration", m_signingConfiguration.Jsonize());
 
+  }
+
+  if(m_signingImageFormatHasBeenSet)
+  {
+   payload.WithString("signingImageFormat", ImageFormatMapper::GetNameForImageFormat(m_signingImageFormat));
   }
 
   return payload;

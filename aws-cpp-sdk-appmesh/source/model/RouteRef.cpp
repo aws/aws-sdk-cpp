@@ -31,6 +31,8 @@ namespace Model
 RouteRef::RouteRef() : 
     m_arnHasBeenSet(false),
     m_meshNameHasBeenSet(false),
+    m_meshOwnerHasBeenSet(false),
+    m_resourceOwnerHasBeenSet(false),
     m_routeNameHasBeenSet(false),
     m_virtualRouterNameHasBeenSet(false)
 {
@@ -39,6 +41,8 @@ RouteRef::RouteRef() :
 RouteRef::RouteRef(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_meshNameHasBeenSet(false),
+    m_meshOwnerHasBeenSet(false),
+    m_resourceOwnerHasBeenSet(false),
     m_routeNameHasBeenSet(false),
     m_virtualRouterNameHasBeenSet(false)
 {
@@ -59,6 +63,20 @@ RouteRef& RouteRef::operator =(JsonView jsonValue)
     m_meshName = jsonValue.GetString("meshName");
 
     m_meshNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("meshOwner"))
+  {
+    m_meshOwner = jsonValue.GetString("meshOwner");
+
+    m_meshOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceOwner"))
+  {
+    m_resourceOwner = jsonValue.GetString("resourceOwner");
+
+    m_resourceOwnerHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("routeName"))
@@ -91,6 +109,18 @@ JsonValue RouteRef::Jsonize() const
   if(m_meshNameHasBeenSet)
   {
    payload.WithString("meshName", m_meshName);
+
+  }
+
+  if(m_meshOwnerHasBeenSet)
+  {
+   payload.WithString("meshOwner", m_meshOwner);
+
+  }
+
+  if(m_resourceOwnerHasBeenSet)
+  {
+   payload.WithString("resourceOwner", m_resourceOwner);
 
   }
 

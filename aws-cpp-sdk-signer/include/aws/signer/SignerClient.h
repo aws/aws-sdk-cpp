@@ -576,9 +576,8 @@ namespace Model
         /**
          * <p>Adds one or more tags to a signing profile. Tags are labels that you can use
          * to identify and organize your AWS resources. Each tag consists of a key and an
-         * optional value. You specify the signing profile using its Amazon Resource Name
-         * (ARN). You specify the tag by using a key-value pair.</p><p><h3>See Also:</h3>  
-         * <a
+         * optional value. To specify the signing profile, use its Amazon Resource Name
+         * (ARN). To specify the tag, use a key-value pair.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">AWS
          * API Reference</a></p>
          */
@@ -587,9 +586,8 @@ namespace Model
         /**
          * <p>Adds one or more tags to a signing profile. Tags are labels that you can use
          * to identify and organize your AWS resources. Each tag consists of a key and an
-         * optional value. You specify the signing profile using its Amazon Resource Name
-         * (ARN). You specify the tag by using a key-value pair.</p><p><h3>See Also:</h3>  
-         * <a
+         * optional value. To specify the signing profile, use its Amazon Resource Name
+         * (ARN). To specify the tag, use a key-value pair.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">AWS
          * API Reference</a></p>
          *
@@ -600,9 +598,8 @@ namespace Model
         /**
          * <p>Adds one or more tags to a signing profile. Tags are labels that you can use
          * to identify and organize your AWS resources. Each tag consists of a key and an
-         * optional value. You specify the signing profile using its Amazon Resource Name
-         * (ARN). You specify the tag by using a key-value pair.</p><p><h3>See Also:</h3>  
-         * <a
+         * optional value. To specify the signing profile, use its Amazon Resource Name
+         * (ARN). To specify the tag, use a key-value pair.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource">AWS
          * API Reference</a></p>
          *
@@ -611,16 +608,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove one or more tags from a signing profile. Specify a list of tag keys to
-         * remove the tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from a signing profile. To remove the tags, specify
+         * a list of tag keys.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove one or more tags from a signing profile. Specify a list of tag keys to
-         * remove the tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from a signing profile. To remove the tags, specify
+         * a list of tag keys.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -629,8 +626,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove one or more tags from a signing profile. Specify a list of tag keys to
-         * remove the tags.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from a signing profile. To remove the tags, specify
+         * a list of tag keys.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource">AWS
          * API Reference</a></p>
          *

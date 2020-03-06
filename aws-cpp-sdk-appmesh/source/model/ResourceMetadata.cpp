@@ -32,6 +32,8 @@ ResourceMetadata::ResourceMetadata() :
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
+    m_meshOwnerHasBeenSet(false),
+    m_resourceOwnerHasBeenSet(false),
     m_uidHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
@@ -42,6 +44,8 @@ ResourceMetadata::ResourceMetadata(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
+    m_meshOwnerHasBeenSet(false),
+    m_resourceOwnerHasBeenSet(false),
     m_uidHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
@@ -70,6 +74,20 @@ ResourceMetadata& ResourceMetadata::operator =(JsonView jsonValue)
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
 
     m_lastUpdatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("meshOwner"))
+  {
+    m_meshOwner = jsonValue.GetString("meshOwner");
+
+    m_meshOwnerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceOwner"))
+  {
+    m_resourceOwner = jsonValue.GetString("resourceOwner");
+
+    m_resourceOwnerHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("uid"))
@@ -107,6 +125,18 @@ JsonValue ResourceMetadata::Jsonize() const
   if(m_lastUpdatedAtHasBeenSet)
   {
    payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_meshOwnerHasBeenSet)
+  {
+   payload.WithString("meshOwner", m_meshOwner);
+
+  }
+
+  if(m_resourceOwnerHasBeenSet)
+  {
+   payload.WithString("resourceOwner", m_resourceOwner);
+
   }
 
   if(m_uidHasBeenSet)

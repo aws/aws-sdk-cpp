@@ -1,0 +1,174 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/ModifyAvailabilityZoneOptInStatus.h>
+#include <utility>
+
+namespace Aws
+{
+namespace EC2
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_EC2_API ModifyAvailabilityZoneGroupRequest : public EC2Request
+  {
+  public:
+    ModifyAvailabilityZoneGroupRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "ModifyAvailabilityZoneGroup"; }
+
+    Aws::String SerializePayload() const override;
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
+
+    /**
+     * <p>The names of the Zone Group.</p>
+     */
+    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The names of the Zone Group.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The names of the Zone Group.</p>
+     */
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /**
+     * <p>The names of the Zone Group.</p>
+     */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+
+    /**
+     * <p>The names of the Zone Group.</p>
+     */
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+
+    /**
+     * <p>The names of the Zone Group.</p>
+     */
+    inline ModifyAvailabilityZoneGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /**
+     * <p>The names of the Zone Group.</p>
+     */
+    inline ModifyAvailabilityZoneGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The names of the Zone Group.</p>
+     */
+    inline ModifyAvailabilityZoneGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether to enable or disable Zone Group membership. The valid
+     * values are <code>opted-in</code>.</p>
+     */
+    inline const ModifyAvailabilityZoneOptInStatus& GetOptInStatus() const{ return m_optInStatus; }
+
+    /**
+     * <p>Indicates whether to enable or disable Zone Group membership. The valid
+     * values are <code>opted-in</code>.</p>
+     */
+    inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable or disable Zone Group membership. The valid
+     * values are <code>opted-in</code>.</p>
+     */
+    inline void SetOptInStatus(const ModifyAvailabilityZoneOptInStatus& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
+
+    /**
+     * <p>Indicates whether to enable or disable Zone Group membership. The valid
+     * values are <code>opted-in</code>.</p>
+     */
+    inline void SetOptInStatus(ModifyAvailabilityZoneOptInStatus&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
+
+    /**
+     * <p>Indicates whether to enable or disable Zone Group membership. The valid
+     * values are <code>opted-in</code>.</p>
+     */
+    inline ModifyAvailabilityZoneGroupRequest& WithOptInStatus(const ModifyAvailabilityZoneOptInStatus& value) { SetOptInStatus(value); return *this;}
+
+    /**
+     * <p>Indicates whether to enable or disable Zone Group membership. The valid
+     * values are <code>opted-in</code>.</p>
+     */
+    inline ModifyAvailabilityZoneGroupRequest& WithOptInStatus(ModifyAvailabilityZoneOptInStatus&& value) { SetOptInStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline ModifyAvailabilityZoneGroupRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+
+  private:
+
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
+
+    ModifyAvailabilityZoneOptInStatus m_optInStatus;
+    bool m_optInStatusHasBeenSet;
+
+    bool m_dryRun;
+    bool m_dryRunHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/signer/model/ImageFormat.h>
+#include <aws/ec2/model/ModifyAvailabilityZoneOptInStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -23,53 +23,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace signer
+  namespace EC2
   {
     namespace Model
     {
-      namespace ImageFormatMapper
+      namespace ModifyAvailabilityZoneOptInStatusMapper
       {
 
-        static const int JSON_HASH = HashingUtils::HashString("JSON");
-        static const int JSONEmbedded_HASH = HashingUtils::HashString("JSONEmbedded");
-        static const int JSONDetached_HASH = HashingUtils::HashString("JSONDetached");
+        static const int opted_in_HASH = HashingUtils::HashString("opted-in");
+        static const int not_opted_in_HASH = HashingUtils::HashString("not-opted-in");
 
 
-        ImageFormat GetImageFormatForName(const Aws::String& name)
+        ModifyAvailabilityZoneOptInStatus GetModifyAvailabilityZoneOptInStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == JSON_HASH)
+          if (hashCode == opted_in_HASH)
           {
-            return ImageFormat::JSON;
+            return ModifyAvailabilityZoneOptInStatus::opted_in;
           }
-          else if (hashCode == JSONEmbedded_HASH)
+          else if (hashCode == not_opted_in_HASH)
           {
-            return ImageFormat::JSONEmbedded;
-          }
-          else if (hashCode == JSONDetached_HASH)
-          {
-            return ImageFormat::JSONDetached;
+            return ModifyAvailabilityZoneOptInStatus::not_opted_in;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ImageFormat>(hashCode);
+            return static_cast<ModifyAvailabilityZoneOptInStatus>(hashCode);
           }
 
-          return ImageFormat::NOT_SET;
+          return ModifyAvailabilityZoneOptInStatus::NOT_SET;
         }
 
-        Aws::String GetNameForImageFormat(ImageFormat enumValue)
+        Aws::String GetNameForModifyAvailabilityZoneOptInStatus(ModifyAvailabilityZoneOptInStatus enumValue)
         {
           switch(enumValue)
           {
-          case ImageFormat::JSON:
-            return "JSON";
-          case ImageFormat::JSONEmbedded:
-            return "JSONEmbedded";
-          case ImageFormat::JSONDetached:
-            return "JSONDetached";
+          case ModifyAvailabilityZoneOptInStatus::opted_in:
+            return "opted-in";
+          case ModifyAvailabilityZoneOptInStatus::not_opted_in:
+            return "not-opted-in";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -81,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace ImageFormatMapper
+      } // namespace ModifyAvailabilityZoneOptInStatusMapper
     } // namespace Model
-  } // namespace signer
+  } // namespace EC2
 } // namespace Aws

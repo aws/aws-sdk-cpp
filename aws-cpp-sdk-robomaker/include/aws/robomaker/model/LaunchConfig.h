@@ -227,6 +227,43 @@ namespace Model
      */
     inline LaunchConfig& WithPortForwardingConfig(PortForwardingConfig&& value) { SetPortForwardingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Boolean indicating whether a streaming session will be configured for the
+     * application. If <code>True</code>, AWS RoboMaker will configure a connection so
+     * you can interact with your application as it is running in the simulation. You
+     * must configure and luanch the component. It must have a graphical user
+     * interface. </p>
+     */
+    inline bool GetStreamUI() const{ return m_streamUI; }
+
+    /**
+     * <p>Boolean indicating whether a streaming session will be configured for the
+     * application. If <code>True</code>, AWS RoboMaker will configure a connection so
+     * you can interact with your application as it is running in the simulation. You
+     * must configure and luanch the component. It must have a graphical user
+     * interface. </p>
+     */
+    inline bool StreamUIHasBeenSet() const { return m_streamUIHasBeenSet; }
+
+    /**
+     * <p>Boolean indicating whether a streaming session will be configured for the
+     * application. If <code>True</code>, AWS RoboMaker will configure a connection so
+     * you can interact with your application as it is running in the simulation. You
+     * must configure and luanch the component. It must have a graphical user
+     * interface. </p>
+     */
+    inline void SetStreamUI(bool value) { m_streamUIHasBeenSet = true; m_streamUI = value; }
+
+    /**
+     * <p>Boolean indicating whether a streaming session will be configured for the
+     * application. If <code>True</code>, AWS RoboMaker will configure a connection so
+     * you can interact with your application as it is running in the simulation. You
+     * must configure and luanch the component. It must have a graphical user
+     * interface. </p>
+     */
+    inline LaunchConfig& WithStreamUI(bool value) { SetStreamUI(value); return *this;}
+
   private:
 
     Aws::String m_packageName;
@@ -240,6 +277,9 @@ namespace Model
 
     PortForwardingConfig m_portForwardingConfig;
     bool m_portForwardingConfigHasBeenSet;
+
+    bool m_streamUI;
+    bool m_streamUIHasBeenSet;
   };
 
 } // namespace Model

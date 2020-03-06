@@ -25,6 +25,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace AppMesh
 {
 namespace Model
@@ -47,6 +51,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateRoute"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -153,6 +159,103 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
      * <p>The name of the service mesh to create the route in.</p>
      */
     inline CreateRouteRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
+
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then
+               the account that you specify must share the mesh
+     * with your account before you can create 
+             the resource in the
+     * service mesh. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then
+               the account that you specify must share the mesh
+     * with your account before you can create 
+             the resource in the
+     * service mesh. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then
+               the account that you specify must share the mesh
+     * with your account before you can create 
+             the resource in the
+     * service mesh. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then
+               the account that you specify must share the mesh
+     * with your account before you can create 
+             the resource in the
+     * service mesh. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then
+               the account that you specify must share the mesh
+     * with your account before you can create 
+             the resource in the
+     * service mesh. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then
+               the account that you specify must share the mesh
+     * with your account before you can create 
+             the resource in the
+     * service mesh. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline CreateRouteRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then
+               the account that you specify must share the mesh
+     * with your account before you can create 
+             the resource in the
+     * service mesh. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline CreateRouteRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS IAM account ID of the service mesh owner. If the account ID is not
+     * your own, then
+               the account that you specify must share the mesh
+     * with your account before you can create 
+             the resource in the
+     * service mesh. For more information about mesh sharing, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
+     * with Shared Meshes</a>.</p>
+     */
+    inline CreateRouteRequest& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
 
 
     /**
@@ -325,42 +428,66 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
 
     /**
-     * <p>The name of the virtual router in which to create the route.</p>
+     * <p>The name of the virtual router in which to create the route. If the virtual
+     * router is in a shared mesh,
+         then you must be the owner of the virtual
+     * router resource.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
 
     /**
-     * <p>The name of the virtual router in which to create the route.</p>
+     * <p>The name of the virtual router in which to create the route. If the virtual
+     * router is in a shared mesh,
+         then you must be the owner of the virtual
+     * router resource.</p>
      */
     inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
 
     /**
-     * <p>The name of the virtual router in which to create the route.</p>
+     * <p>The name of the virtual router in which to create the route. If the virtual
+     * router is in a shared mesh,
+         then you must be the owner of the virtual
+     * router resource.</p>
      */
     inline void SetVirtualRouterName(const Aws::String& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = value; }
 
     /**
-     * <p>The name of the virtual router in which to create the route.</p>
+     * <p>The name of the virtual router in which to create the route. If the virtual
+     * router is in a shared mesh,
+         then you must be the owner of the virtual
+     * router resource.</p>
      */
     inline void SetVirtualRouterName(Aws::String&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::move(value); }
 
     /**
-     * <p>The name of the virtual router in which to create the route.</p>
+     * <p>The name of the virtual router in which to create the route. If the virtual
+     * router is in a shared mesh,
+         then you must be the owner of the virtual
+     * router resource.</p>
      */
     inline void SetVirtualRouterName(const char* value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName.assign(value); }
 
     /**
-     * <p>The name of the virtual router in which to create the route.</p>
+     * <p>The name of the virtual router in which to create the route. If the virtual
+     * router is in a shared mesh,
+         then you must be the owner of the virtual
+     * router resource.</p>
      */
     inline CreateRouteRequest& WithVirtualRouterName(const Aws::String& value) { SetVirtualRouterName(value); return *this;}
 
     /**
-     * <p>The name of the virtual router in which to create the route.</p>
+     * <p>The name of the virtual router in which to create the route. If the virtual
+     * router is in a shared mesh,
+         then you must be the owner of the virtual
+     * router resource.</p>
      */
     inline CreateRouteRequest& WithVirtualRouterName(Aws::String&& value) { SetVirtualRouterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the virtual router in which to create the route.</p>
+     * <p>The name of the virtual router in which to create the route. If the virtual
+     * router is in a shared mesh,
+         then you must be the owner of the virtual
+     * router resource.</p>
      */
     inline CreateRouteRequest& WithVirtualRouterName(const char* value) { SetVirtualRouterName(value); return *this;}
 
@@ -371,6 +498,9 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     Aws::String m_meshName;
     bool m_meshNameHasBeenSet;
+
+    Aws::String m_meshOwner;
+    bool m_meshOwnerHasBeenSet;
 
     Aws::String m_routeName;
     bool m_routeNameHasBeenSet;

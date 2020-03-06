@@ -29,6 +29,7 @@ ListVirtualNodesRequest::ListVirtualNodesRequest() :
     m_limit(0),
     m_limitHasBeenSet(false),
     m_meshNameHasBeenSet(false),
+    m_meshOwnerHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -45,6 +46,13 @@ void ListVirtualNodesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_limit;
       uri.AddQueryStringParameter("limit", ss.str());
+      ss.str("");
+    }
+
+    if(m_meshOwnerHasBeenSet)
+    {
+      ss << m_meshOwner;
+      uri.AddQueryStringParameter("meshOwner", ss.str());
       ss.str("");
     }
 

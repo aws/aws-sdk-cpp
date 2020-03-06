@@ -38,10 +38,12 @@ namespace Aws
         static const int RobotDeploymentNoResponse_HASH = HashingUtils::HashString("RobotDeploymentNoResponse");
         static const int RobotAgentConnectionTimeout_HASH = HashingUtils::HashString("RobotAgentConnectionTimeout");
         static const int GreengrassDeploymentFailed_HASH = HashingUtils::HashString("GreengrassDeploymentFailed");
+        static const int InvalidGreengrassGroup_HASH = HashingUtils::HashString("InvalidGreengrassGroup");
         static const int MissingRobotArchitecture_HASH = HashingUtils::HashString("MissingRobotArchitecture");
         static const int MissingRobotApplicationArchitecture_HASH = HashingUtils::HashString("MissingRobotApplicationArchitecture");
         static const int MissingRobotDeploymentResource_HASH = HashingUtils::HashString("MissingRobotDeploymentResource");
         static const int GreengrassGroupVersionDoesNotExist_HASH = HashingUtils::HashString("GreengrassGroupVersionDoesNotExist");
+        static const int LambdaDeleted_HASH = HashingUtils::HashString("LambdaDeleted");
         static const int ExtractingBundleFailure_HASH = HashingUtils::HashString("ExtractingBundleFailure");
         static const int PreLaunchFileFailure_HASH = HashingUtils::HashString("PreLaunchFileFailure");
         static const int PostLaunchFileFailure_HASH = HashingUtils::HashString("PostLaunchFileFailure");
@@ -85,6 +87,10 @@ namespace Aws
           {
             return DeploymentJobErrorCode::GreengrassDeploymentFailed;
           }
+          else if (hashCode == InvalidGreengrassGroup_HASH)
+          {
+            return DeploymentJobErrorCode::InvalidGreengrassGroup;
+          }
           else if (hashCode == MissingRobotArchitecture_HASH)
           {
             return DeploymentJobErrorCode::MissingRobotArchitecture;
@@ -100,6 +106,10 @@ namespace Aws
           else if (hashCode == GreengrassGroupVersionDoesNotExist_HASH)
           {
             return DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist;
+          }
+          else if (hashCode == LambdaDeleted_HASH)
+          {
+            return DeploymentJobErrorCode::LambdaDeleted;
           }
           else if (hashCode == ExtractingBundleFailure_HASH)
           {
@@ -155,6 +165,8 @@ namespace Aws
             return "RobotAgentConnectionTimeout";
           case DeploymentJobErrorCode::GreengrassDeploymentFailed:
             return "GreengrassDeploymentFailed";
+          case DeploymentJobErrorCode::InvalidGreengrassGroup:
+            return "InvalidGreengrassGroup";
           case DeploymentJobErrorCode::MissingRobotArchitecture:
             return "MissingRobotArchitecture";
           case DeploymentJobErrorCode::MissingRobotApplicationArchitecture:
@@ -163,6 +175,8 @@ namespace Aws
             return "MissingRobotDeploymentResource";
           case DeploymentJobErrorCode::GreengrassGroupVersionDoesNotExist:
             return "GreengrassGroupVersionDoesNotExist";
+          case DeploymentJobErrorCode::LambdaDeleted:
+            return "LambdaDeleted";
           case DeploymentJobErrorCode::ExtractingBundleFailure:
             return "ExtractingBundleFailure";
           case DeploymentJobErrorCode::PreLaunchFileFailure:
