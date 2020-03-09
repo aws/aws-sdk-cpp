@@ -48,58 +48,66 @@ namespace Model
 
 
     /**
-     * <p>- The Amazon Resource Name (ARN) string that uniquely identifies the task.
-     * When this input parameter is specified the API will return only one result and
-     * ignore the values of the max-records and marker parameters. </p>
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When
+     * this input parameter is specified, the API returns only one result and ignore
+     * the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.
+     * </p>
      */
     inline const Aws::String& GetReplicationTaskArn() const{ return m_replicationTaskArn; }
 
     /**
-     * <p>- The Amazon Resource Name (ARN) string that uniquely identifies the task.
-     * When this input parameter is specified the API will return only one result and
-     * ignore the values of the max-records and marker parameters. </p>
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When
+     * this input parameter is specified, the API returns only one result and ignore
+     * the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.
+     * </p>
      */
     inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
 
     /**
-     * <p>- The Amazon Resource Name (ARN) string that uniquely identifies the task.
-     * When this input parameter is specified the API will return only one result and
-     * ignore the values of the max-records and marker parameters. </p>
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When
+     * this input parameter is specified, the API returns only one result and ignore
+     * the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.
+     * </p>
      */
     inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
 
     /**
-     * <p>- The Amazon Resource Name (ARN) string that uniquely identifies the task.
-     * When this input parameter is specified the API will return only one result and
-     * ignore the values of the max-records and marker parameters. </p>
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When
+     * this input parameter is specified, the API returns only one result and ignore
+     * the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.
+     * </p>
      */
     inline void SetReplicationTaskArn(Aws::String&& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = std::move(value); }
 
     /**
-     * <p>- The Amazon Resource Name (ARN) string that uniquely identifies the task.
-     * When this input parameter is specified the API will return only one result and
-     * ignore the values of the max-records and marker parameters. </p>
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When
+     * this input parameter is specified, the API returns only one result and ignore
+     * the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.
+     * </p>
      */
     inline void SetReplicationTaskArn(const char* value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn.assign(value); }
 
     /**
-     * <p>- The Amazon Resource Name (ARN) string that uniquely identifies the task.
-     * When this input parameter is specified the API will return only one result and
-     * ignore the values of the max-records and marker parameters. </p>
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When
+     * this input parameter is specified, the API returns only one result and ignore
+     * the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.
+     * </p>
      */
     inline DescribeReplicationTaskAssessmentResultsRequest& WithReplicationTaskArn(const Aws::String& value) { SetReplicationTaskArn(value); return *this;}
 
     /**
-     * <p>- The Amazon Resource Name (ARN) string that uniquely identifies the task.
-     * When this input parameter is specified the API will return only one result and
-     * ignore the values of the max-records and marker parameters. </p>
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When
+     * this input parameter is specified, the API returns only one result and ignore
+     * the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.
+     * </p>
      */
     inline DescribeReplicationTaskAssessmentResultsRequest& WithReplicationTaskArn(Aws::String&& value) { SetReplicationTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>- The Amazon Resource Name (ARN) string that uniquely identifies the task.
-     * When this input parameter is specified the API will return only one result and
-     * ignore the values of the max-records and marker parameters. </p>
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the task. When
+     * this input parameter is specified, the API returns only one result and ignore
+     * the values of the <code>MaxRecords</code> and <code>Marker</code> parameters.
+     * </p>
      */
     inline DescribeReplicationTaskAssessmentResultsRequest& WithReplicationTaskArn(const char* value) { SetReplicationTaskArn(value); return *this;}
 

@@ -54,6 +54,7 @@ Endpoint::Endpoint() :
     m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false),
     m_kinesisSettingsHasBeenSet(false),
+    m_kafkaSettingsHasBeenSet(false),
     m_elasticsearchSettingsHasBeenSet(false),
     m_redshiftSettingsHasBeenSet(false)
 {
@@ -85,6 +86,7 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false),
     m_kinesisSettingsHasBeenSet(false),
+    m_kafkaSettingsHasBeenSet(false),
     m_elasticsearchSettingsHasBeenSet(false),
     m_redshiftSettingsHasBeenSet(false)
 {
@@ -247,6 +249,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_kinesisSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KafkaSettings"))
+  {
+    m_kafkaSettings = jsonValue.GetObject("KafkaSettings");
+
+    m_kafkaSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ElasticsearchSettings"))
   {
     m_elasticsearchSettings = jsonValue.GetObject("ElasticsearchSettings");
@@ -395,6 +404,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_kinesisSettingsHasBeenSet)
   {
    payload.WithObject("KinesisSettings", m_kinesisSettings.Jsonize());
+
+  }
+
+  if(m_kafkaSettingsHasBeenSet)
+  {
+   payload.WithObject("KafkaSettings", m_kafkaSettings.Jsonize());
 
   }
 

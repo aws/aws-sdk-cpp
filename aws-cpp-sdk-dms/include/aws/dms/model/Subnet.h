@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>In response to a request by the <code>DescribeReplicationSubnetGroup</code>
+   * operation, this object identifies a subnet by its given Availability Zone,
+   * subnet identifier, and status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Subnet">AWS API
    * Reference</a></p>
    */

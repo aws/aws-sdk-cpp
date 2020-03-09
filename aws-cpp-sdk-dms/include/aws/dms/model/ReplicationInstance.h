@@ -39,7 +39,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides information that defines a replication instance.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationInstance">AWS
    * API Reference</a></p>
    */
@@ -466,28 +467,28 @@ namespace Model
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline ReplicationInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -799,49 +800,49 @@ namespace Model
 
 
     /**
-     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * <p>The Availability Zone of the standby replication instance in a Multi-AZ
      * deployment.</p>
      */
     inline const Aws::String& GetSecondaryAvailabilityZone() const{ return m_secondaryAvailabilityZone; }
 
     /**
-     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * <p>The Availability Zone of the standby replication instance in a Multi-AZ
      * deployment.</p>
      */
     inline bool SecondaryAvailabilityZoneHasBeenSet() const { return m_secondaryAvailabilityZoneHasBeenSet; }
 
     /**
-     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * <p>The Availability Zone of the standby replication instance in a Multi-AZ
      * deployment.</p>
      */
     inline void SetSecondaryAvailabilityZone(const Aws::String& value) { m_secondaryAvailabilityZoneHasBeenSet = true; m_secondaryAvailabilityZone = value; }
 
     /**
-     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * <p>The Availability Zone of the standby replication instance in a Multi-AZ
      * deployment.</p>
      */
     inline void SetSecondaryAvailabilityZone(Aws::String&& value) { m_secondaryAvailabilityZoneHasBeenSet = true; m_secondaryAvailabilityZone = std::move(value); }
 
     /**
-     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * <p>The Availability Zone of the standby replication instance in a Multi-AZ
      * deployment.</p>
      */
     inline void SetSecondaryAvailabilityZone(const char* value) { m_secondaryAvailabilityZoneHasBeenSet = true; m_secondaryAvailabilityZone.assign(value); }
 
     /**
-     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * <p>The Availability Zone of the standby replication instance in a Multi-AZ
      * deployment.</p>
      */
     inline ReplicationInstance& WithSecondaryAvailabilityZone(const Aws::String& value) { SetSecondaryAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * <p>The Availability Zone of the standby replication instance in a Multi-AZ
      * deployment.</p>
      */
     inline ReplicationInstance& WithSecondaryAvailabilityZone(Aws::String&& value) { SetSecondaryAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The availability zone of the standby replication instance in a Multi-AZ
+     * <p>The Availability Zone of the standby replication instance in a Multi-AZ
      * deployment.</p>
      */
     inline ReplicationInstance& WithSecondaryAvailabilityZone(const char* value) { SetSecondaryAvailabilityZone(value); return *this;}

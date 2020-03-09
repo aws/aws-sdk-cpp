@@ -36,7 +36,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>In response to the <code>DescribeOrderableReplicationInstances</code>
+   * operation, this object describes an available replication instance. This
+   * description includes the replication instance's type, engine version, and
+   * allocated storage.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/OrderableReplicationInstance">AWS
    * API Reference</a></p>
    */

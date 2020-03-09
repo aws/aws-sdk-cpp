@@ -21,6 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DescribeNatGatewaysRequest::DescribeNatGatewaysRequest() : 
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
@@ -33,6 +35,11 @@ Aws::String DescribeNatGatewaysRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DescribeNatGateways&";
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
   if(m_filterHasBeenSet)
   {
     unsigned filterCount = 1;

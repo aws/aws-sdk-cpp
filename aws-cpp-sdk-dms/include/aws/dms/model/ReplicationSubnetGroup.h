@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Describes a subnet group in response to a request by the
+   * <code>DescribeReplicationSubnetGroup</code> operation.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationSubnetGroup">AWS
    * API Reference</a></p>
    */

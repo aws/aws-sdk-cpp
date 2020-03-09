@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides the Amazon Resource Name (ARN) of the AWS Identity and Access
+   * Management (IAM) role used to define an Amazon DynamoDB target
+   * endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DynamoDbSettings">AWS
    * API Reference</a></p>
    */

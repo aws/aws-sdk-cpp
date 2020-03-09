@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides information that defines a MongoDB endpoint.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MongoDbSettings">AWS
    * API Reference</a></p>
    */
@@ -290,7 +291,7 @@ namespace Model
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
      * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting is not used when authType=No.</p>
+     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
      */
     inline const AuthMechanismValue& GetAuthMechanism() const{ return m_authMechanism; }
 
@@ -298,7 +299,7 @@ namespace Model
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
      * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting is not used when authType=No.</p>
+     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
      */
     inline bool AuthMechanismHasBeenSet() const { return m_authMechanismHasBeenSet; }
 
@@ -306,7 +307,7 @@ namespace Model
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
      * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting is not used when authType=No.</p>
+     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
      */
     inline void SetAuthMechanism(const AuthMechanismValue& value) { m_authMechanismHasBeenSet = true; m_authMechanism = value; }
 
@@ -314,7 +315,7 @@ namespace Model
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
      * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting is not used when authType=No.</p>
+     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
      */
     inline void SetAuthMechanism(AuthMechanismValue&& value) { m_authMechanismHasBeenSet = true; m_authMechanism = std::move(value); }
 
@@ -322,7 +323,7 @@ namespace Model
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
      * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting is not used when authType=No.</p>
+     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
      */
     inline MongoDbSettings& WithAuthMechanism(const AuthMechanismValue& value) { SetAuthMechanism(value); return *this;}
 
@@ -330,7 +331,7 @@ namespace Model
      * <p> The authentication mechanism you use to access the MongoDB source
      * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
      * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
-     * SCRAM_SHA_1. This setting is not used when authType=No.</p>
+     * SCRAM_SHA_1. This setting isn't used when authType=No.</p>
      */
     inline MongoDbSettings& WithAuthMechanism(AuthMechanismValue&& value) { SetAuthMechanism(std::move(value)); return *this;}
 
@@ -485,49 +486,49 @@ namespace Model
 
 
     /**
-     * <p> The MongoDB database name. This setting is not used when
+     * <p> The MongoDB database name. This setting isn't used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
     inline const Aws::String& GetAuthSource() const{ return m_authSource; }
 
     /**
-     * <p> The MongoDB database name. This setting is not used when
+     * <p> The MongoDB database name. This setting isn't used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
     inline bool AuthSourceHasBeenSet() const { return m_authSourceHasBeenSet; }
 
     /**
-     * <p> The MongoDB database name. This setting is not used when
+     * <p> The MongoDB database name. This setting isn't used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
     inline void SetAuthSource(const Aws::String& value) { m_authSourceHasBeenSet = true; m_authSource = value; }
 
     /**
-     * <p> The MongoDB database name. This setting is not used when
+     * <p> The MongoDB database name. This setting isn't used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
     inline void SetAuthSource(Aws::String&& value) { m_authSourceHasBeenSet = true; m_authSource = std::move(value); }
 
     /**
-     * <p> The MongoDB database name. This setting is not used when
+     * <p> The MongoDB database name. This setting isn't used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
     inline void SetAuthSource(const char* value) { m_authSourceHasBeenSet = true; m_authSource.assign(value); }
 
     /**
-     * <p> The MongoDB database name. This setting is not used when
+     * <p> The MongoDB database name. This setting isn't used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
     inline MongoDbSettings& WithAuthSource(const Aws::String& value) { SetAuthSource(value); return *this;}
 
     /**
-     * <p> The MongoDB database name. This setting is not used when
+     * <p> The MongoDB database name. This setting isn't used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
     inline MongoDbSettings& WithAuthSource(Aws::String&& value) { SetAuthSource(std::move(value)); return *this;}
 
     /**
-     * <p> The MongoDB database name. This setting is not used when
+     * <p> The MongoDB database name. This setting isn't used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
     inline MongoDbSettings& WithAuthSource(const char* value) { SetAuthSource(value); return *this;}

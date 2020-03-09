@@ -22,8 +22,12 @@ using namespace Aws::Utils;
 
 CreateNatGatewayRequest::CreateNatGatewayRequest() : 
     m_allocationIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -41,9 +45,24 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
   if(m_subnetIdHasBeenSet)
   {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

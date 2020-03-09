@@ -29,6 +29,8 @@ namespace Model
 {
 
 MultiplexProgramSettings::MultiplexProgramSettings() : 
+    m_preferredChannelPipeline(PreferredChannelPipeline::NOT_SET),
+    m_preferredChannelPipelineHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
     m_serviceDescriptorHasBeenSet(false),
@@ -37,6 +39,8 @@ MultiplexProgramSettings::MultiplexProgramSettings() :
 }
 
 MultiplexProgramSettings::MultiplexProgramSettings(JsonView jsonValue) : 
+    m_preferredChannelPipeline(PreferredChannelPipeline::NOT_SET),
+    m_preferredChannelPipelineHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
     m_serviceDescriptorHasBeenSet(false),
@@ -47,6 +51,13 @@ MultiplexProgramSettings::MultiplexProgramSettings(JsonView jsonValue) :
 
 MultiplexProgramSettings& MultiplexProgramSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("preferredChannelPipeline"))
+  {
+    m_preferredChannelPipeline = PreferredChannelPipelineMapper::GetPreferredChannelPipelineForName(jsonValue.GetString("preferredChannelPipeline"));
+
+    m_preferredChannelPipelineHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("programNumber"))
   {
     m_programNumber = jsonValue.GetInteger("programNumber");
@@ -74,6 +85,11 @@ MultiplexProgramSettings& MultiplexProgramSettings::operator =(JsonView jsonValu
 JsonValue MultiplexProgramSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_preferredChannelPipelineHasBeenSet)
+  {
+   payload.WithString("preferredChannelPipeline", PreferredChannelPipelineMapper::GetNameForPreferredChannelPipeline(m_preferredChannelPipeline));
+  }
 
   if(m_programNumberHasBeenSet)
   {

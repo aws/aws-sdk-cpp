@@ -52,56 +52,56 @@ namespace Model
 
     /**
      * <p>A customer-assigned name for the certificate. Identifiers must begin with a
-     * letter; must contain only ASCII letters, digits, and hyphens; and must not end
+     * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetCertificateIdentifier() const{ return m_certificateIdentifier; }
 
     /**
      * <p>A customer-assigned name for the certificate. Identifiers must begin with a
-     * letter; must contain only ASCII letters, digits, and hyphens; and must not end
+     * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
     inline bool CertificateIdentifierHasBeenSet() const { return m_certificateIdentifierHasBeenSet; }
 
     /**
      * <p>A customer-assigned name for the certificate. Identifiers must begin with a
-     * letter; must contain only ASCII letters, digits, and hyphens; and must not end
+     * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
      * <p>A customer-assigned name for the certificate. Identifiers must begin with a
-     * letter; must contain only ASCII letters, digits, and hyphens; and must not end
+     * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = std::move(value); }
 
     /**
      * <p>A customer-assigned name for the certificate. Identifiers must begin with a
-     * letter; must contain only ASCII letters, digits, and hyphens; and must not end
+     * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetCertificateIdentifier(const char* value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier.assign(value); }
 
     /**
      * <p>A customer-assigned name for the certificate. Identifiers must begin with a
-     * letter; must contain only ASCII letters, digits, and hyphens; and must not end
+     * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
     inline Certificate& WithCertificateIdentifier(const Aws::String& value) { SetCertificateIdentifier(value); return *this;}
 
     /**
      * <p>A customer-assigned name for the certificate. Identifiers must begin with a
-     * letter; must contain only ASCII letters, digits, and hyphens; and must not end
+     * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
     inline Certificate& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>A customer-assigned name for the certificate. Identifiers must begin with a
-     * letter; must contain only ASCII letters, digits, and hyphens; and must not end
+     * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
     inline Certificate& WithCertificateIdentifier(const char* value) { SetCertificateIdentifier(value); return *this;}

@@ -53,7 +53,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline const Aws::String& GetReplicationInstanceIdentifier() const{ return m_replicationInstanceIdentifier; }
@@ -62,7 +62,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline bool ReplicationInstanceIdentifierHasBeenSet() const { return m_replicationInstanceIdentifierHasBeenSet; }
@@ -71,7 +71,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(const Aws::String& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = value; }
@@ -80,7 +80,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(Aws::String&& value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier = std::move(value); }
@@ -89,7 +89,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline void SetReplicationInstanceIdentifier(const char* value) { m_replicationInstanceIdentifierHasBeenSet = true; m_replicationInstanceIdentifier.assign(value); }
@@ -98,7 +98,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceIdentifier(const Aws::String& value) { SetReplicationInstanceIdentifier(value); return *this;}
@@ -107,7 +107,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceIdentifier(Aws::String&& value) { SetReplicationInstanceIdentifier(std::move(value)); return *this;}
@@ -116,7 +116,7 @@ namespace Model
      * <p>The replication instance identifier. This parameter is stored as a lowercase
      * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63
      * alphanumeric characters or hyphens.</p> </li> <li> <p>First character must be a
-     * letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two consecutive
+     * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul> <p>Example: <code>myrepinstance</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithReplicationInstanceIdentifier(const char* value) { SetReplicationInstanceIdentifier(value); return *this;}
@@ -277,56 +277,56 @@ namespace Model
 
 
     /**
-     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's AWS
      * Region, for example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's AWS
      * Region, for example: <code>us-east-1d</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's AWS
      * Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's AWS
      * Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's AWS
      * Region, for example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's AWS
      * Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's AWS
      * Region, for example: <code>us-east-1d</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Availability Zone where the replication instance will be created. The
+     * <p>The Availability Zone where the replication instance will be created. The
      * default value is a random, system-chosen Availability Zone in the endpoint's AWS
      * Region, for example: <code>us-east-1d</code> </p>
      */
@@ -457,28 +457,28 @@ namespace Model
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline CreateReplicationInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -526,30 +526,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window. This parameter defaults to
-     * <code>true</code>.</p> <p>Default: <code>true</code> </p>
+     * <p>A value that indicates whether minor engine upgrades are applied
+     * automatically to the replication instance during the maintenance window. This
+     * parameter defaults to <code>true</code>.</p> <p>Default: <code>true</code> </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates whether minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window. This parameter defaults to
-     * <code>true</code>.</p> <p>Default: <code>true</code> </p>
+     * <p>A value that indicates whether minor engine upgrades are applied
+     * automatically to the replication instance during the maintenance window. This
+     * parameter defaults to <code>true</code>.</p> <p>Default: <code>true</code> </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates whether minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window. This parameter defaults to
-     * <code>true</code>.</p> <p>Default: <code>true</code> </p>
+     * <p>A value that indicates whether minor engine upgrades are applied
+     * automatically to the replication instance during the maintenance window. This
+     * parameter defaults to <code>true</code>.</p> <p>Default: <code>true</code> </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates whether minor engine upgrades will be applied automatically to the
-     * replication instance during the maintenance window. This parameter defaults to
-     * <code>true</code>.</p> <p>Default: <code>true</code> </p>
+     * <p>A value that indicates whether minor engine upgrades are applied
+     * automatically to the replication instance during the maintenance window. This
+     * parameter defaults to <code>true</code>.</p> <p>Default: <code>true</code> </p>
      */
     inline CreateReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 

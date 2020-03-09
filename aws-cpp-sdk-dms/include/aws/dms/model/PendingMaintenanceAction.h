@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Describes a maintenance action pending for an AWS DMS resource, including
+   * when and how it will be applied. This data type is a response element to the
+   * <code>DescribePendingMaintenanceActions</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/PendingMaintenanceAction">AWS
    * API Reference</a></p>
    */
@@ -98,48 +101,48 @@ namespace Model
 
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is to be applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline const Aws::Utils::DateTime& GetAutoAppliedAfterDate() const{ return m_autoAppliedAfterDate; }
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is to be applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline bool AutoAppliedAfterDateHasBeenSet() const { return m_autoAppliedAfterDateHasBeenSet; }
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is to be applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline void SetAutoAppliedAfterDate(const Aws::Utils::DateTime& value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = value; }
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is to be applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline void SetAutoAppliedAfterDate(Aws::Utils::DateTime&& value) { m_autoAppliedAfterDateHasBeenSet = true; m_autoAppliedAfterDate = std::move(value); }
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is to be applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
     inline PendingMaintenanceAction& WithAutoAppliedAfterDate(const Aws::Utils::DateTime& value) { SetAutoAppliedAfterDate(value); return *this;}
 
     /**
-     * <p>The date of the maintenance window when the action will be applied. The
-     * maintenance action will be applied to the resource during its first maintenance
+     * <p>The date of the maintenance window when the action is to be applied. The
+     * maintenance action is applied to the resource during its first maintenance
      * window after this date. If this date is specified, any
      * <code>next-maintenance</code> opt-in requests are ignored.</p>
      */
@@ -148,98 +151,90 @@ namespace Model
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline const Aws::Utils::DateTime& GetForcedApplyDate() const{ return m_forcedApplyDate; }
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline bool ForcedApplyDateHasBeenSet() const { return m_forcedApplyDateHasBeenSet; }
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline void SetForcedApplyDate(const Aws::Utils::DateTime& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = value; }
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline void SetForcedApplyDate(Aws::Utils::DateTime&& value) { m_forcedApplyDateHasBeenSet = true; m_forcedApplyDate = std::move(value); }
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline PendingMaintenanceAction& WithForcedApplyDate(const Aws::Utils::DateTime& value) { SetForcedApplyDate(value); return *this;}
 
     /**
      * <p>The date when the maintenance action will be automatically applied. The
-     * maintenance action will be applied to the resource on this date regardless of
-     * the maintenance window for the resource. If this date is specified, any
+     * maintenance action is applied to the resource on this date regardless of the
+     * maintenance window for the resource. If this date is specified, any
      * <code>immediate</code> opt-in requests are ignored.</p>
      */
     inline PendingMaintenanceAction& WithForcedApplyDate(Aws::Utils::DateTime&& value) { SetForcedApplyDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates the type of opt-in request that has been received for the
-     * resource.</p>
+     * <p>The type of opt-in request that has been received for the resource.</p>
      */
     inline const Aws::String& GetOptInStatus() const{ return m_optInStatus; }
 
     /**
-     * <p>Indicates the type of opt-in request that has been received for the
-     * resource.</p>
+     * <p>The type of opt-in request that has been received for the resource.</p>
      */
     inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
 
     /**
-     * <p>Indicates the type of opt-in request that has been received for the
-     * resource.</p>
+     * <p>The type of opt-in request that has been received for the resource.</p>
      */
     inline void SetOptInStatus(const Aws::String& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
 
     /**
-     * <p>Indicates the type of opt-in request that has been received for the
-     * resource.</p>
+     * <p>The type of opt-in request that has been received for the resource.</p>
      */
     inline void SetOptInStatus(Aws::String&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
 
     /**
-     * <p>Indicates the type of opt-in request that has been received for the
-     * resource.</p>
+     * <p>The type of opt-in request that has been received for the resource.</p>
      */
     inline void SetOptInStatus(const char* value) { m_optInStatusHasBeenSet = true; m_optInStatus.assign(value); }
 
     /**
-     * <p>Indicates the type of opt-in request that has been received for the
-     * resource.</p>
+     * <p>The type of opt-in request that has been received for the resource.</p>
      */
     inline PendingMaintenanceAction& WithOptInStatus(const Aws::String& value) { SetOptInStatus(value); return *this;}
 
     /**
-     * <p>Indicates the type of opt-in request that has been received for the
-     * resource.</p>
+     * <p>The type of opt-in request that has been received for the resource.</p>
      */
     inline PendingMaintenanceAction& WithOptInStatus(Aws::String&& value) { SetOptInStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the type of opt-in request that has been received for the
-     * resource.</p>
+     * <p>The type of opt-in request that has been received for the resource.</p>
      */
     inline PendingMaintenanceAction& WithOptInStatus(const char* value) { SetOptInStatus(value); return *this;}
 
@@ -247,10 +242,10 @@ namespace Model
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
      * resource. This date takes into account opt-in requests received from the
-     * <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This
-     * value is blank if an opt-in request has not been received and nothing has been
-     * specified as <code>AutoAppliedAfterDate</code> or
+     * <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter
+     * values. This value is blank if an opt-in request has not been received and
+     * nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetCurrentApplyDate() const{ return m_currentApplyDate; }
@@ -258,10 +253,10 @@ namespace Model
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
      * resource. This date takes into account opt-in requests received from the
-     * <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This
-     * value is blank if an opt-in request has not been received and nothing has been
-     * specified as <code>AutoAppliedAfterDate</code> or
+     * <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter
+     * values. This value is blank if an opt-in request has not been received and
+     * nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.</p>
      */
     inline bool CurrentApplyDateHasBeenSet() const { return m_currentApplyDateHasBeenSet; }
@@ -269,10 +264,10 @@ namespace Model
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
      * resource. This date takes into account opt-in requests received from the
-     * <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This
-     * value is blank if an opt-in request has not been received and nothing has been
-     * specified as <code>AutoAppliedAfterDate</code> or
+     * <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter
+     * values. This value is blank if an opt-in request has not been received and
+     * nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.</p>
      */
     inline void SetCurrentApplyDate(const Aws::Utils::DateTime& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = value; }
@@ -280,10 +275,10 @@ namespace Model
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
      * resource. This date takes into account opt-in requests received from the
-     * <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This
-     * value is blank if an opt-in request has not been received and nothing has been
-     * specified as <code>AutoAppliedAfterDate</code> or
+     * <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter
+     * values. This value is blank if an opt-in request has not been received and
+     * nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.</p>
      */
     inline void SetCurrentApplyDate(Aws::Utils::DateTime&& value) { m_currentApplyDateHasBeenSet = true; m_currentApplyDate = std::move(value); }
@@ -291,10 +286,10 @@ namespace Model
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
      * resource. This date takes into account opt-in requests received from the
-     * <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This
-     * value is blank if an opt-in request has not been received and nothing has been
-     * specified as <code>AutoAppliedAfterDate</code> or
+     * <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter
+     * values. This value is blank if an opt-in request has not been received and
+     * nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.</p>
      */
     inline PendingMaintenanceAction& WithCurrentApplyDate(const Aws::Utils::DateTime& value) { SetCurrentApplyDate(value); return *this;}
@@ -302,10 +297,10 @@ namespace Model
     /**
      * <p>The effective date when the pending maintenance action will be applied to the
      * resource. This date takes into account opt-in requests received from the
-     * <code>ApplyPendingMaintenanceAction</code> API, the
-     * <code>AutoAppliedAfterDate</code>, and the <code>ForcedApplyDate</code>. This
-     * value is blank if an opt-in request has not been received and nothing has been
-     * specified as <code>AutoAppliedAfterDate</code> or
+     * <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+     * <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter
+     * values. This value is blank if an opt-in request has not been received and
+     * nothing has been specified for <code>AutoAppliedAfterDate</code> or
      * <code>ForcedApplyDate</code>.</p>
      */
     inline PendingMaintenanceAction& WithCurrentApplyDate(Aws::Utils::DateTime&& value) { SetCurrentApplyDate(std::move(value)); return *this;}

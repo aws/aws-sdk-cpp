@@ -34,7 +34,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the values of pending modifications to a
+   * replication instance. This data type is an object of the
+   * <code>ReplicationInstance</code> user-defined data type. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationPendingModifiedValues">AWS
    * API Reference</a></p>
    */
@@ -131,28 +134,28 @@ namespace Model
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline ReplicationPendingModifiedValues& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}

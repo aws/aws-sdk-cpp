@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/PreferredChannelPipeline.h>
 #include <aws/medialive/model/MultiplexProgramServiceDescriptor.h>
 #include <aws/medialive/model/MultiplexVideoSettings.h>
 #include <utility>
@@ -46,6 +47,37 @@ namespace Model
     MultiplexProgramSettings(Aws::Utils::Json::JsonView jsonValue);
     MultiplexProgramSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     */
+    inline const PreferredChannelPipeline& GetPreferredChannelPipeline() const{ return m_preferredChannelPipeline; }
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     */
+    inline bool PreferredChannelPipelineHasBeenSet() const { return m_preferredChannelPipelineHasBeenSet; }
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     */
+    inline void SetPreferredChannelPipeline(const PreferredChannelPipeline& value) { m_preferredChannelPipelineHasBeenSet = true; m_preferredChannelPipeline = value; }
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     */
+    inline void SetPreferredChannelPipeline(PreferredChannelPipeline&& value) { m_preferredChannelPipelineHasBeenSet = true; m_preferredChannelPipeline = std::move(value); }
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     */
+    inline MultiplexProgramSettings& WithPreferredChannelPipeline(const PreferredChannelPipeline& value) { SetPreferredChannelPipeline(value); return *this;}
+
+    /**
+     * Indicates which pipeline is preferred by the multiplex for program ingest.
+     */
+    inline MultiplexProgramSettings& WithPreferredChannelPipeline(PreferredChannelPipeline&& value) { SetPreferredChannelPipeline(std::move(value)); return *this;}
 
 
     /**
@@ -131,6 +163,9 @@ namespace Model
     inline MultiplexProgramSettings& WithVideoSettings(MultiplexVideoSettings&& value) { SetVideoSettings(std::move(value)); return *this;}
 
   private:
+
+    PreferredChannelPipeline m_preferredChannelPipeline;
+    bool m_preferredChannelPipelineHasBeenSet;
 
     int m_programNumber;
     bool m_programNumberHasBeenSet;

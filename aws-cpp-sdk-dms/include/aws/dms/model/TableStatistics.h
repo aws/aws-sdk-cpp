@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides a collection of table statistics in response to a request by the
+   * <code>DescribeTableStatistics</code> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TableStatistics">AWS
    * API Reference</a></p>
    */
@@ -194,128 +195,215 @@ namespace Model
 
 
     /**
-     * <p>The Data Definition Language (DDL) used to build and modify the structure of
+     * <p>The data definition language (DDL) used to build and modify the structure of
      * your tables.</p>
      */
     inline long long GetDdls() const{ return m_ddls; }
 
     /**
-     * <p>The Data Definition Language (DDL) used to build and modify the structure of
+     * <p>The data definition language (DDL) used to build and modify the structure of
      * your tables.</p>
      */
     inline bool DdlsHasBeenSet() const { return m_ddlsHasBeenSet; }
 
     /**
-     * <p>The Data Definition Language (DDL) used to build and modify the structure of
+     * <p>The data definition language (DDL) used to build and modify the structure of
      * your tables.</p>
      */
     inline void SetDdls(long long value) { m_ddlsHasBeenSet = true; m_ddls = value; }
 
     /**
-     * <p>The Data Definition Language (DDL) used to build and modify the structure of
+     * <p>The data definition language (DDL) used to build and modify the structure of
      * your tables.</p>
      */
     inline TableStatistics& WithDdls(long long value) { SetDdls(value); return *this;}
 
 
     /**
-     * <p>The number of rows added during the Full Load operation.</p>
+     * <p>The number of rows added during the full load operation.</p>
      */
     inline long long GetFullLoadRows() const{ return m_fullLoadRows; }
 
     /**
-     * <p>The number of rows added during the Full Load operation.</p>
+     * <p>The number of rows added during the full load operation.</p>
      */
     inline bool FullLoadRowsHasBeenSet() const { return m_fullLoadRowsHasBeenSet; }
 
     /**
-     * <p>The number of rows added during the Full Load operation.</p>
+     * <p>The number of rows added during the full load operation.</p>
      */
     inline void SetFullLoadRows(long long value) { m_fullLoadRowsHasBeenSet = true; m_fullLoadRows = value; }
 
     /**
-     * <p>The number of rows added during the Full Load operation.</p>
+     * <p>The number of rows added during the full load operation.</p>
      */
     inline TableStatistics& WithFullLoadRows(long long value) { SetFullLoadRows(value); return *this;}
 
 
     /**
-     * <p>The number of rows that failed conditional checks during the Full Load
-     * operation (valid only for DynamoDB as a target migrations).</p>
+     * <p>The number of rows that failed conditional checks during the full load
+     * operation (valid only for migrations where DynamoDB is the target).</p>
      */
     inline long long GetFullLoadCondtnlChkFailedRows() const{ return m_fullLoadCondtnlChkFailedRows; }
 
     /**
-     * <p>The number of rows that failed conditional checks during the Full Load
-     * operation (valid only for DynamoDB as a target migrations).</p>
+     * <p>The number of rows that failed conditional checks during the full load
+     * operation (valid only for migrations where DynamoDB is the target).</p>
      */
     inline bool FullLoadCondtnlChkFailedRowsHasBeenSet() const { return m_fullLoadCondtnlChkFailedRowsHasBeenSet; }
 
     /**
-     * <p>The number of rows that failed conditional checks during the Full Load
-     * operation (valid only for DynamoDB as a target migrations).</p>
+     * <p>The number of rows that failed conditional checks during the full load
+     * operation (valid only for migrations where DynamoDB is the target).</p>
      */
     inline void SetFullLoadCondtnlChkFailedRows(long long value) { m_fullLoadCondtnlChkFailedRowsHasBeenSet = true; m_fullLoadCondtnlChkFailedRows = value; }
 
     /**
-     * <p>The number of rows that failed conditional checks during the Full Load
-     * operation (valid only for DynamoDB as a target migrations).</p>
+     * <p>The number of rows that failed conditional checks during the full load
+     * operation (valid only for migrations where DynamoDB is the target).</p>
      */
     inline TableStatistics& WithFullLoadCondtnlChkFailedRows(long long value) { SetFullLoadCondtnlChkFailedRows(value); return *this;}
 
 
     /**
-     * <p>The number of rows that failed to load during the Full Load operation (valid
-     * only for DynamoDB as a target migrations).</p>
+     * <p>The number of rows that failed to load during the full load operation (valid
+     * only for migrations where DynamoDB is the target).</p>
      */
     inline long long GetFullLoadErrorRows() const{ return m_fullLoadErrorRows; }
 
     /**
-     * <p>The number of rows that failed to load during the Full Load operation (valid
-     * only for DynamoDB as a target migrations).</p>
+     * <p>The number of rows that failed to load during the full load operation (valid
+     * only for migrations where DynamoDB is the target).</p>
      */
     inline bool FullLoadErrorRowsHasBeenSet() const { return m_fullLoadErrorRowsHasBeenSet; }
 
     /**
-     * <p>The number of rows that failed to load during the Full Load operation (valid
-     * only for DynamoDB as a target migrations).</p>
+     * <p>The number of rows that failed to load during the full load operation (valid
+     * only for migrations where DynamoDB is the target).</p>
      */
     inline void SetFullLoadErrorRows(long long value) { m_fullLoadErrorRowsHasBeenSet = true; m_fullLoadErrorRows = value; }
 
     /**
-     * <p>The number of rows that failed to load during the Full Load operation (valid
-     * only for DynamoDB as a target migrations).</p>
+     * <p>The number of rows that failed to load during the full load operation (valid
+     * only for migrations where DynamoDB is the target).</p>
      */
     inline TableStatistics& WithFullLoadErrorRows(long long value) { SetFullLoadErrorRows(value); return *this;}
 
 
     /**
-     * <p>The last time the table was updated.</p>
+     * <p>The time when the full load operation started.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFullLoadStartTime() const{ return m_fullLoadStartTime; }
+
+    /**
+     * <p>The time when the full load operation started.</p>
+     */
+    inline bool FullLoadStartTimeHasBeenSet() const { return m_fullLoadStartTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the full load operation started.</p>
+     */
+    inline void SetFullLoadStartTime(const Aws::Utils::DateTime& value) { m_fullLoadStartTimeHasBeenSet = true; m_fullLoadStartTime = value; }
+
+    /**
+     * <p>The time when the full load operation started.</p>
+     */
+    inline void SetFullLoadStartTime(Aws::Utils::DateTime&& value) { m_fullLoadStartTimeHasBeenSet = true; m_fullLoadStartTime = std::move(value); }
+
+    /**
+     * <p>The time when the full load operation started.</p>
+     */
+    inline TableStatistics& WithFullLoadStartTime(const Aws::Utils::DateTime& value) { SetFullLoadStartTime(value); return *this;}
+
+    /**
+     * <p>The time when the full load operation started.</p>
+     */
+    inline TableStatistics& WithFullLoadStartTime(Aws::Utils::DateTime&& value) { SetFullLoadStartTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time when the full load operation completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFullLoadEndTime() const{ return m_fullLoadEndTime; }
+
+    /**
+     * <p>The time when the full load operation completed.</p>
+     */
+    inline bool FullLoadEndTimeHasBeenSet() const { return m_fullLoadEndTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the full load operation completed.</p>
+     */
+    inline void SetFullLoadEndTime(const Aws::Utils::DateTime& value) { m_fullLoadEndTimeHasBeenSet = true; m_fullLoadEndTime = value; }
+
+    /**
+     * <p>The time when the full load operation completed.</p>
+     */
+    inline void SetFullLoadEndTime(Aws::Utils::DateTime&& value) { m_fullLoadEndTimeHasBeenSet = true; m_fullLoadEndTime = std::move(value); }
+
+    /**
+     * <p>The time when the full load operation completed.</p>
+     */
+    inline TableStatistics& WithFullLoadEndTime(const Aws::Utils::DateTime& value) { SetFullLoadEndTime(value); return *this;}
+
+    /**
+     * <p>The time when the full load operation completed.</p>
+     */
+    inline TableStatistics& WithFullLoadEndTime(Aws::Utils::DateTime&& value) { SetFullLoadEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A value that indicates if the table was reloaded (<code>true</code>) or
+     * loaded as part of a new full load operation (<code>false</code>).</p>
+     */
+    inline bool GetFullLoadReloaded() const{ return m_fullLoadReloaded; }
+
+    /**
+     * <p>A value that indicates if the table was reloaded (<code>true</code>) or
+     * loaded as part of a new full load operation (<code>false</code>).</p>
+     */
+    inline bool FullLoadReloadedHasBeenSet() const { return m_fullLoadReloadedHasBeenSet; }
+
+    /**
+     * <p>A value that indicates if the table was reloaded (<code>true</code>) or
+     * loaded as part of a new full load operation (<code>false</code>).</p>
+     */
+    inline void SetFullLoadReloaded(bool value) { m_fullLoadReloadedHasBeenSet = true; m_fullLoadReloaded = value; }
+
+    /**
+     * <p>A value that indicates if the table was reloaded (<code>true</code>) or
+     * loaded as part of a new full load operation (<code>false</code>).</p>
+     */
+    inline TableStatistics& WithFullLoadReloaded(bool value) { SetFullLoadReloaded(value); return *this;}
+
+
+    /**
+     * <p>The last time a table was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
 
     /**
-     * <p>The last time the table was updated.</p>
+     * <p>The last time a table was updated.</p>
      */
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
-     * <p>The last time the table was updated.</p>
+     * <p>The last time a table was updated.</p>
      */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
 
     /**
-     * <p>The last time the table was updated.</p>
+     * <p>The last time a table was updated.</p>
      */
     inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
 
     /**
-     * <p>The last time the table was updated.</p>
+     * <p>The last time a table was updated.</p>
      */
     inline TableStatistics& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
 
     /**
-     * <p>The last time the table was updated.</p>
+     * <p>The last time a table was updated.</p>
      */
     inline TableStatistics& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
@@ -420,151 +508,151 @@ namespace Model
 
 
     /**
-     * <p>The number of records that could not be validated.</p>
+     * <p>The number of records that couldn't be validated.</p>
      */
     inline long long GetValidationSuspendedRecords() const{ return m_validationSuspendedRecords; }
 
     /**
-     * <p>The number of records that could not be validated.</p>
+     * <p>The number of records that couldn't be validated.</p>
      */
     inline bool ValidationSuspendedRecordsHasBeenSet() const { return m_validationSuspendedRecordsHasBeenSet; }
 
     /**
-     * <p>The number of records that could not be validated.</p>
+     * <p>The number of records that couldn't be validated.</p>
      */
     inline void SetValidationSuspendedRecords(long long value) { m_validationSuspendedRecordsHasBeenSet = true; m_validationSuspendedRecords = value; }
 
     /**
-     * <p>The number of records that could not be validated.</p>
+     * <p>The number of records that couldn't be validated.</p>
      */
     inline TableStatistics& WithValidationSuspendedRecords(long long value) { SetValidationSuspendedRecords(value); return *this;}
 
 
     /**
-     * <p>The validation state of the table.</p> <p>The parameter can have the
-     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
-     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
-     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
-     * records in the table do not match between the source and target.</p> </li> <li>
-     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
-     * <li> <p>No primary key—The table could not be validated because it had no
-     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
-     * it was in an error state and some data was not migrated.</p> </li> <li>
-     * <p>Validated—All rows in the table were validated. If the table is updated, the
-     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
-     * validated because of an unexpected error.</p> </li> </ul>
+     * <p>The validation state of the table.</p> <p>This parameter can have the
+     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
+     * records - Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * validated because it's in an error state and some data wasn't migrated.</p>
+     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
+     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
      */
     inline const Aws::String& GetValidationState() const{ return m_validationState; }
 
     /**
-     * <p>The validation state of the table.</p> <p>The parameter can have the
-     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
-     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
-     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
-     * records in the table do not match between the source and target.</p> </li> <li>
-     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
-     * <li> <p>No primary key—The table could not be validated because it had no
-     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
-     * it was in an error state and some data was not migrated.</p> </li> <li>
-     * <p>Validated—All rows in the table were validated. If the table is updated, the
-     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
-     * validated because of an unexpected error.</p> </li> </ul>
+     * <p>The validation state of the table.</p> <p>This parameter can have the
+     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
+     * records - Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * validated because it's in an error state and some data wasn't migrated.</p>
+     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
+     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
      */
     inline bool ValidationStateHasBeenSet() const { return m_validationStateHasBeenSet; }
 
     /**
-     * <p>The validation state of the table.</p> <p>The parameter can have the
-     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
-     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
-     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
-     * records in the table do not match between the source and target.</p> </li> <li>
-     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
-     * <li> <p>No primary key—The table could not be validated because it had no
-     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
-     * it was in an error state and some data was not migrated.</p> </li> <li>
-     * <p>Validated—All rows in the table were validated. If the table is updated, the
-     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
-     * validated because of an unexpected error.</p> </li> </ul>
+     * <p>The validation state of the table.</p> <p>This parameter can have the
+     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
+     * records - Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * validated because it's in an error state and some data wasn't migrated.</p>
+     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
+     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
      */
     inline void SetValidationState(const Aws::String& value) { m_validationStateHasBeenSet = true; m_validationState = value; }
 
     /**
-     * <p>The validation state of the table.</p> <p>The parameter can have the
-     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
-     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
-     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
-     * records in the table do not match between the source and target.</p> </li> <li>
-     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
-     * <li> <p>No primary key—The table could not be validated because it had no
-     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
-     * it was in an error state and some data was not migrated.</p> </li> <li>
-     * <p>Validated—All rows in the table were validated. If the table is updated, the
-     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
-     * validated because of an unexpected error.</p> </li> </ul>
+     * <p>The validation state of the table.</p> <p>This parameter can have the
+     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
+     * records - Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * validated because it's in an error state and some data wasn't migrated.</p>
+     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
+     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
      */
     inline void SetValidationState(Aws::String&& value) { m_validationStateHasBeenSet = true; m_validationState = std::move(value); }
 
     /**
-     * <p>The validation state of the table.</p> <p>The parameter can have the
-     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
-     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
-     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
-     * records in the table do not match between the source and target.</p> </li> <li>
-     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
-     * <li> <p>No primary key—The table could not be validated because it had no
-     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
-     * it was in an error state and some data was not migrated.</p> </li> <li>
-     * <p>Validated—All rows in the table were validated. If the table is updated, the
-     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
-     * validated because of an unexpected error.</p> </li> </ul>
+     * <p>The validation state of the table.</p> <p>This parameter can have the
+     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
+     * records - Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * validated because it's in an error state and some data wasn't migrated.</p>
+     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
+     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
      */
     inline void SetValidationState(const char* value) { m_validationStateHasBeenSet = true; m_validationState.assign(value); }
 
     /**
-     * <p>The validation state of the table.</p> <p>The parameter can have the
-     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
-     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
-     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
-     * records in the table do not match between the source and target.</p> </li> <li>
-     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
-     * <li> <p>No primary key—The table could not be validated because it had no
-     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
-     * it was in an error state and some data was not migrated.</p> </li> <li>
-     * <p>Validated—All rows in the table were validated. If the table is updated, the
-     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
-     * validated because of an unexpected error.</p> </li> </ul>
+     * <p>The validation state of the table.</p> <p>This parameter can have the
+     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
+     * records - Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * validated because it's in an error state and some data wasn't migrated.</p>
+     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
+     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
      */
     inline TableStatistics& WithValidationState(const Aws::String& value) { SetValidationState(value); return *this;}
 
     /**
-     * <p>The validation state of the table.</p> <p>The parameter can have the
-     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
-     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
-     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
-     * records in the table do not match between the source and target.</p> </li> <li>
-     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
-     * <li> <p>No primary key—The table could not be validated because it had no
-     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
-     * it was in an error state and some data was not migrated.</p> </li> <li>
-     * <p>Validated—All rows in the table were validated. If the table is updated, the
-     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
-     * validated because of an unexpected error.</p> </li> </ul>
+     * <p>The validation state of the table.</p> <p>This parameter can have the
+     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
+     * records - Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * validated because it's in an error state and some data wasn't migrated.</p>
+     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
+     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
      */
     inline TableStatistics& WithValidationState(Aws::String&& value) { SetValidationState(std::move(value)); return *this;}
 
     /**
-     * <p>The validation state of the table.</p> <p>The parameter can have the
-     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
-     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
-     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
-     * records in the table do not match between the source and target.</p> </li> <li>
-     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
-     * <li> <p>No primary key—The table could not be validated because it had no
-     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
-     * it was in an error state and some data was not migrated.</p> </li> <li>
-     * <p>Validated—All rows in the table were validated. If the table is updated, the
-     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
-     * validated because of an unexpected error.</p> </li> </ul>
+     * <p>The validation state of the table.</p> <p>This parameter can have the
+     * following values:</p> <ul> <li> <p>Not enabled - Validation isn't enabled for
+     * the table in the migration task.</p> </li> <li> <p>Pending records - Some
+     * records in the table are waiting for validation.</p> </li> <li> <p>Mismatched
+     * records - Some records in the table don't match between the source and
+     * target.</p> </li> <li> <p>Suspended records - Some records in the table couldn't
+     * be validated.</p> </li> <li> <p>No primary key - The table couldn't be validated
+     * because it has no primary key.</p> </li> <li> <p>Table error - The table wasn't
+     * validated because it's in an error state and some data wasn't migrated.</p>
+     * </li> <li> <p>Validated - All rows in the table are validated. If the table is
+     * updated, the status can change from Validated.</p> </li> <li> <p>Error - The
+     * table couldn't be validated because of an unexpected error.</p> </li> </ul>
      */
     inline TableStatistics& WithValidationState(const char* value) { SetValidationState(value); return *this;}
 
@@ -637,6 +725,15 @@ namespace Model
 
     long long m_fullLoadErrorRows;
     bool m_fullLoadErrorRowsHasBeenSet;
+
+    Aws::Utils::DateTime m_fullLoadStartTime;
+    bool m_fullLoadStartTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_fullLoadEndTime;
+    bool m_fullLoadEndTimeHasBeenSet;
+
+    bool m_fullLoadReloaded;
+    bool m_fullLoadReloadedHasBeenSet;
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet;

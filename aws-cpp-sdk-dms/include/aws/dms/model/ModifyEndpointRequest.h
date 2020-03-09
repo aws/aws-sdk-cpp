@@ -24,6 +24,7 @@
 #include <aws/dms/model/DmsTransferSettings.h>
 #include <aws/dms/model/MongoDbSettings.h>
 #include <aws/dms/model/KinesisSettings.h>
+#include <aws/dms/model/KafkaSettings.h>
 #include <aws/dms/model/ElasticsearchSettings.h>
 #include <aws/dms/model/RedshiftSettings.h>
 #include <utility>
@@ -106,58 +107,58 @@ namespace Model
 
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline ModifyEndpointRequest& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline ModifyEndpointRequest& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline ModifyEndpointRequest& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 
@@ -201,65 +202,97 @@ namespace Model
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.</p>
+     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
+     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * and <code>"sqlserver"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.</p>
+     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
+     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * and <code>"sqlserver"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.</p>
+     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
+     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * and <code>"sqlserver"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.</p>
+     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
+     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * and <code>"sqlserver"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.</p>
+     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
+     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * and <code>"sqlserver"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.</p>
+     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
+     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * and <code>"sqlserver"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.</p>
+     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
+     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * and <code>"sqlserver"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
-     * EndpointType, include mysql, oracle, postgres, mariadb, aurora,
-     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and
-     * sqlserver.</p>
+     * EndpointType, include <code>"mysql"</code>, <code>"oracle"</code>,
+     * <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
+     * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>,
+     * <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
+     * <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * and <code>"sqlserver"</code>.</p>
      */
     inline ModifyEndpointRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -675,8 +708,8 @@ namespace Model
 
 
     /**
-     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see <a
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For
+     * information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
@@ -684,8 +717,8 @@ namespace Model
     inline const DynamoDbSettings& GetDynamoDbSettings() const{ return m_dynamoDbSettings; }
 
     /**
-     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see <a
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For
+     * information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
@@ -693,8 +726,8 @@ namespace Model
     inline bool DynamoDbSettingsHasBeenSet() const { return m_dynamoDbSettingsHasBeenSet; }
 
     /**
-     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see <a
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For
+     * information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
@@ -702,8 +735,8 @@ namespace Model
     inline void SetDynamoDbSettings(const DynamoDbSettings& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = value; }
 
     /**
-     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see <a
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For
+     * information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
@@ -711,8 +744,8 @@ namespace Model
     inline void SetDynamoDbSettings(DynamoDbSettings&& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = std::move(value); }
 
     /**
-     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see <a
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For
+     * information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
@@ -720,8 +753,8 @@ namespace Model
     inline ModifyEndpointRequest& WithDynamoDbSettings(const DynamoDbSettings& value) { SetDynamoDbSettings(value); return *this;}
 
     /**
-     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see <a
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For
+     * information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
@@ -787,84 +820,96 @@ namespace Model
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
-     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
-     * <p>compressionType - An optional parameter to use GZIP to compress the target
-     * files. Set to NONE (the default) or do not use to leave the files
-     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * - The AWS Identity and Access Management (IAM) role that has permission to
+     * access the Amazon S3 bucket.</p> </li> <li> <p>BucketName - The name of the S3
+     * bucket to use.</p> </li> <li> <p>compressionType - An optional parameter to use
+     * GZIP to compress the target files. Either set this parameter to NONE (the
+     * default) or don't use it to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax for these settings is as follows:
+     * <code>ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</code> </p> <p>JSON syntax for these
+     * settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName":
+     * "string", "CompressionType": "none"|"gzip" } </code> </p>
      */
     inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
-     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
-     * <p>compressionType - An optional parameter to use GZIP to compress the target
-     * files. Set to NONE (the default) or do not use to leave the files
-     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * - The AWS Identity and Access Management (IAM) role that has permission to
+     * access the Amazon S3 bucket.</p> </li> <li> <p>BucketName - The name of the S3
+     * bucket to use.</p> </li> <li> <p>compressionType - An optional parameter to use
+     * GZIP to compress the target files. Either set this parameter to NONE (the
+     * default) or don't use it to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax for these settings is as follows:
+     * <code>ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</code> </p> <p>JSON syntax for these
+     * settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName":
+     * "string", "CompressionType": "none"|"gzip" } </code> </p>
      */
     inline bool DmsTransferSettingsHasBeenSet() const { return m_dmsTransferSettingsHasBeenSet; }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
-     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
-     * <p>compressionType - An optional parameter to use GZIP to compress the target
-     * files. Set to NONE (the default) or do not use to leave the files
-     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * - The AWS Identity and Access Management (IAM) role that has permission to
+     * access the Amazon S3 bucket.</p> </li> <li> <p>BucketName - The name of the S3
+     * bucket to use.</p> </li> <li> <p>compressionType - An optional parameter to use
+     * GZIP to compress the target files. Either set this parameter to NONE (the
+     * default) or don't use it to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax for these settings is as follows:
+     * <code>ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</code> </p> <p>JSON syntax for these
+     * settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName":
+     * "string", "CompressionType": "none"|"gzip" } </code> </p>
      */
     inline void SetDmsTransferSettings(const DmsTransferSettings& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = value; }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
-     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
-     * <p>compressionType - An optional parameter to use GZIP to compress the target
-     * files. Set to NONE (the default) or do not use to leave the files
-     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * - The AWS Identity and Access Management (IAM) role that has permission to
+     * access the Amazon S3 bucket.</p> </li> <li> <p>BucketName - The name of the S3
+     * bucket to use.</p> </li> <li> <p>compressionType - An optional parameter to use
+     * GZIP to compress the target files. Either set this parameter to NONE (the
+     * default) or don't use it to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax for these settings is as follows:
+     * <code>ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</code> </p> <p>JSON syntax for these
+     * settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName":
+     * "string", "CompressionType": "none"|"gzip" } </code> </p>
      */
     inline void SetDmsTransferSettings(DmsTransferSettings&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::move(value); }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
-     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
-     * <p>compressionType - An optional parameter to use GZIP to compress the target
-     * files. Set to NONE (the default) or do not use to leave the files
-     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * - The AWS Identity and Access Management (IAM) role that has permission to
+     * access the Amazon S3 bucket.</p> </li> <li> <p>BucketName - The name of the S3
+     * bucket to use.</p> </li> <li> <p>compressionType - An optional parameter to use
+     * GZIP to compress the target files. Either set this parameter to NONE (the
+     * default) or don't use it to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax for these settings is as follows:
+     * <code>ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</code> </p> <p>JSON syntax for these
+     * settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName":
+     * "string", "CompressionType": "none"|"gzip" } </code> </p>
      */
     inline ModifyEndpointRequest& WithDmsTransferSettings(const DmsTransferSettings& value) { SetDmsTransferSettings(value); return *this;}
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
      * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
-     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
-     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
-     * <p>compressionType - An optional parameter to use GZIP to compress the target
-     * files. Set to NONE (the default) or do not use to leave the files
-     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
-     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * - The AWS Identity and Access Management (IAM) role that has permission to
+     * access the Amazon S3 bucket.</p> </li> <li> <p>BucketName - The name of the S3
+     * bucket to use.</p> </li> <li> <p>compressionType - An optional parameter to use
+     * GZIP to compress the target files. Either set this parameter to NONE (the
+     * default) or don't use it to leave the files uncompressed.</p> </li> </ul>
+     * <p>Shorthand syntax for these settings is as follows:
+     * <code>ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</code> </p> <p>JSON syntax for these
+     * settings is as follows: <code>{ "ServiceAccessRoleArn": "string", "BucketName":
+     * "string", "CompressionType": "none"|"gzip" } </code> </p>
      */
     inline ModifyEndpointRequest& WithDmsTransferSettings(DmsTransferSettings&& value) { SetDmsTransferSettings(std::move(value)); return *this;}
 
@@ -925,8 +970,8 @@ namespace Model
 
 
     /**
-     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
-     * For more information about the available settings, see <a
+     * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
+     * Streams. For information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
      * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
      * Database Migration User Guide.</i> </p>
@@ -934,8 +979,8 @@ namespace Model
     inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
 
     /**
-     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
-     * For more information about the available settings, see <a
+     * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
+     * Streams. For information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
      * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
      * Database Migration User Guide.</i> </p>
@@ -943,8 +988,8 @@ namespace Model
     inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
 
     /**
-     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
-     * For more information about the available settings, see <a
+     * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
+     * Streams. For information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
      * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
      * Database Migration User Guide.</i> </p>
@@ -952,8 +997,8 @@ namespace Model
     inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
 
     /**
-     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
-     * For more information about the available settings, see <a
+     * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
+     * Streams. For information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
      * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
      * Database Migration User Guide.</i> </p>
@@ -961,8 +1006,8 @@ namespace Model
     inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
 
     /**
-     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
-     * For more information about the available settings, see <a
+     * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
+     * Streams. For information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
      * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
      * Database Migration User Guide.</i> </p>
@@ -970,13 +1015,68 @@ namespace Model
     inline ModifyEndpointRequest& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
 
     /**
-     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
-     * For more information about the available settings, see <a
+     * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
+     * Streams. For information about other available settings, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
      * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
      * Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
+     */
+    inline const KafkaSettings& GetKafkaSettings() const{ return m_kafkaSettings; }
+
+    /**
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
+     */
+    inline bool KafkaSettingsHasBeenSet() const { return m_kafkaSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
+     */
+    inline void SetKafkaSettings(const KafkaSettings& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
+     */
+    inline void SetKafkaSettings(KafkaSettings&& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithKafkaSettings(const KafkaSettings& value) { SetKafkaSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
+     * about other available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
+     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithKafkaSettings(KafkaSettings&& value) { SetKafkaSettings(std::move(value)); return *this;}
 
 
     /**
@@ -1110,6 +1210,9 @@ namespace Model
 
     KinesisSettings m_kinesisSettings;
     bool m_kinesisSettingsHasBeenSet;
+
+    KafkaSettings m_kafkaSettings;
+    bool m_kafkaSettingsHasBeenSet;
 
     ElasticsearchSettings m_elasticsearchSettings;
     bool m_elasticsearchSettingsHasBeenSet;

@@ -36,7 +36,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides information that describes status of a schema at an endpoint
+   * specified by the <code>DescribeRefreshSchemaStatus</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/RefreshSchemasStatus">AWS
    * API Reference</a></p>
    */

@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides the name of the schema and table to be reloaded.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TableToReload">AWS
    * API Reference</a></p>
    */

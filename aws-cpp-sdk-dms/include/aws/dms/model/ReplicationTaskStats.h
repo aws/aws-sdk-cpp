@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>In response to a request by the <code>DescribeReplicationTasks</code>
+   * operation, this object provides a collection of statistics about a replication
+   * task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReplicationTaskStats">AWS
    * API Reference</a></p>
    */
@@ -285,32 +287,32 @@ namespace Model
 
 
     /**
-     * <p>The date the the replication task full load was started.</p>
+     * <p>The date the replication task full load was started.</p>
      */
     inline const Aws::Utils::DateTime& GetFullLoadStartDate() const{ return m_fullLoadStartDate; }
 
     /**
-     * <p>The date the the replication task full load was started.</p>
+     * <p>The date the replication task full load was started.</p>
      */
     inline bool FullLoadStartDateHasBeenSet() const { return m_fullLoadStartDateHasBeenSet; }
 
     /**
-     * <p>The date the the replication task full load was started.</p>
+     * <p>The date the replication task full load was started.</p>
      */
     inline void SetFullLoadStartDate(const Aws::Utils::DateTime& value) { m_fullLoadStartDateHasBeenSet = true; m_fullLoadStartDate = value; }
 
     /**
-     * <p>The date the the replication task full load was started.</p>
+     * <p>The date the replication task full load was started.</p>
      */
     inline void SetFullLoadStartDate(Aws::Utils::DateTime&& value) { m_fullLoadStartDateHasBeenSet = true; m_fullLoadStartDate = std::move(value); }
 
     /**
-     * <p>The date the the replication task full load was started.</p>
+     * <p>The date the replication task full load was started.</p>
      */
     inline ReplicationTaskStats& WithFullLoadStartDate(const Aws::Utils::DateTime& value) { SetFullLoadStartDate(value); return *this;}
 
     /**
-     * <p>The date the the replication task full load was started.</p>
+     * <p>The date the replication task full load was started.</p>
      */
     inline ReplicationTaskStats& WithFullLoadStartDate(Aws::Utils::DateTime&& value) { SetFullLoadStartDate(std::move(value)); return *this;}
 

@@ -359,28 +359,28 @@ namespace Model
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
      * <p> Specifies whether the replication instance is a Multi-AZ deployment. You
-     * cannot set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
+     * can't set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter
      * is set to <code>true</code>. </p>
      */
     inline ModifyReplicationInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -465,46 +465,50 @@ namespace Model
 
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * replication instance during the maintenance window. Changing this parameter does
-     * not result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and AWS DMS has enabled auto patching for that
-     * engine version. </p>
+     * <p>A value that indicates that minor version upgrades are applied automatically
+     * to the replication instance during the maintenance window. Changing this
+     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * The change is asynchronously applied as soon as possible. </p> <p>An outage does
+     * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
+     * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
+     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
+     * for the given engine version. </p> </li> </ul>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * replication instance during the maintenance window. Changing this parameter does
-     * not result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and AWS DMS has enabled auto patching for that
-     * engine version. </p>
+     * <p>A value that indicates that minor version upgrades are applied automatically
+     * to the replication instance during the maintenance window. Changing this
+     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * The change is asynchronously applied as soon as possible. </p> <p>An outage does
+     * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
+     * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
+     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
+     * for the given engine version. </p> </li> </ul>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * replication instance during the maintenance window. Changing this parameter does
-     * not result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and AWS DMS has enabled auto patching for that
-     * engine version. </p>
+     * <p>A value that indicates that minor version upgrades are applied automatically
+     * to the replication instance during the maintenance window. Changing this
+     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * The change is asynchronously applied as soon as possible. </p> <p>An outage does
+     * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
+     * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
+     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
+     * for the given engine version. </p> </li> </ul>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p> Indicates that minor version upgrades will be applied automatically to the
-     * replication instance during the maintenance window. Changing this parameter does
-     * not result in an outage except in the following case and the change is
-     * asynchronously applied as soon as possible. An outage will result if this
-     * parameter is set to <code>true</code> during the maintenance window, and a newer
-     * minor version is available, and AWS DMS has enabled auto patching for that
-     * engine version. </p>
+     * <p>A value that indicates that minor version upgrades are applied automatically
+     * to the replication instance during the maintenance window. Changing this
+     * parameter doesn't result in an outage, except in the case dsecribed following.
+     * The change is asynchronously applied as soon as possible. </p> <p>An outage does
+     * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
+     * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
+     * version is available. </p> </li> <li> <p>AWS DMS has enabled automatic patching
+     * for the given engine version. </p> </li> </ul>
      */
     inline ModifyReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 

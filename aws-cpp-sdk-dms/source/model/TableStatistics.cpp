@@ -45,6 +45,10 @@ TableStatistics::TableStatistics() :
     m_fullLoadCondtnlChkFailedRowsHasBeenSet(false),
     m_fullLoadErrorRows(0),
     m_fullLoadErrorRowsHasBeenSet(false),
+    m_fullLoadStartTimeHasBeenSet(false),
+    m_fullLoadEndTimeHasBeenSet(false),
+    m_fullLoadReloaded(false),
+    m_fullLoadReloadedHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_tableStateHasBeenSet(false),
     m_validationPendingRecords(0),
@@ -75,6 +79,10 @@ TableStatistics::TableStatistics(JsonView jsonValue) :
     m_fullLoadCondtnlChkFailedRowsHasBeenSet(false),
     m_fullLoadErrorRows(0),
     m_fullLoadErrorRowsHasBeenSet(false),
+    m_fullLoadStartTimeHasBeenSet(false),
+    m_fullLoadEndTimeHasBeenSet(false),
+    m_fullLoadReloaded(false),
+    m_fullLoadReloadedHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_tableStateHasBeenSet(false),
     m_validationPendingRecords(0),
@@ -152,6 +160,27 @@ TableStatistics& TableStatistics::operator =(JsonView jsonValue)
     m_fullLoadErrorRows = jsonValue.GetInt64("FullLoadErrorRows");
 
     m_fullLoadErrorRowsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FullLoadStartTime"))
+  {
+    m_fullLoadStartTime = jsonValue.GetDouble("FullLoadStartTime");
+
+    m_fullLoadStartTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FullLoadEndTime"))
+  {
+    m_fullLoadEndTime = jsonValue.GetDouble("FullLoadEndTime");
+
+    m_fullLoadEndTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FullLoadReloaded"))
+  {
+    m_fullLoadReloaded = jsonValue.GetBool("FullLoadReloaded");
+
+    m_fullLoadReloadedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastUpdateTime"))
@@ -261,6 +290,22 @@ JsonValue TableStatistics::Jsonize() const
   if(m_fullLoadErrorRowsHasBeenSet)
   {
    payload.WithInt64("FullLoadErrorRows", m_fullLoadErrorRows);
+
+  }
+
+  if(m_fullLoadStartTimeHasBeenSet)
+  {
+   payload.WithDouble("FullLoadStartTime", m_fullLoadStartTime.SecondsWithMSPrecision());
+  }
+
+  if(m_fullLoadEndTimeHasBeenSet)
+  {
+   payload.WithDouble("FullLoadEndTime", m_fullLoadEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_fullLoadReloadedHasBeenSet)
+  {
+   payload.WithBool("FullLoadReloaded", m_fullLoadReloaded);
 
   }
 

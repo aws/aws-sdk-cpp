@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Identifies the name and value of a source filter object used to limit the
+   * number and type of records transferred from your source to your
+   * target.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Filter">AWS API
    * Reference</a></p>
    */

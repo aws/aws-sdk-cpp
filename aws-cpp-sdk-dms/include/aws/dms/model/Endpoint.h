@@ -23,6 +23,7 @@
 #include <aws/dms/model/DmsTransferSettings.h>
 #include <aws/dms/model/MongoDbSettings.h>
 #include <aws/dms/model/KinesisSettings.h>
+#include <aws/dms/model/KafkaSettings.h>
 #include <aws/dms/model/ElasticsearchSettings.h>
 #include <aws/dms/model/RedshiftSettings.h>
 #include <utility>
@@ -43,7 +44,11 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Describes an endpoint of a database instance in response to operations such
+   * as the following:</p> <ul> <li> <p> <code>CreateEndpoint</code> </p> </li> <li>
+   * <p> <code>DescribeEndpoint</code> </p> </li> <li> <p>
+   * <code>DescribeEndpointTypes</code> </p> </li> <li> <p>
+   * <code>ModifyEndpoint</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Endpoint">AWS API
    * Reference</a></p>
    */
@@ -57,58 +62,58 @@ namespace Model
 
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline Endpoint& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline Endpoint& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The database endpoint identifier. Identifiers must begin with a letter and
+     * must contain only ASCII letters, digits, and hyphens. They can't end with a
+     * hyphen or contain two consecutive hyphens.</p>
      */
     inline Endpoint& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 
@@ -152,57 +157,97 @@ namespace Model
 
     /**
      * <p>The database engine name. Valid values, depending on the EndpointType,
-     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndpointType,
-     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.</p>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndpointType,
-     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.</p>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndpointType,
-     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.</p>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndpointType,
-     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.</p>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
      * <p>The database engine name. Valid values, depending on the EndpointType,
-     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.</p>
      */
     inline Endpoint& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
      * <p>The database engine name. Valid values, depending on the EndpointType,
-     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.</p>
      */
     inline Endpoint& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
      * <p>The database engine name. Valid values, depending on the EndpointType,
-     * include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift,
-     * s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.</p>
+     * include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+     * <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+     * <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
+     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
+     * <code>"sqlserver"</code>.</p>
      */
     inline Endpoint& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 
@@ -1044,40 +1089,77 @@ namespace Model
 
 
     /**
-     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * <p>The settings for the Amazon Kinesis target endpoint. For more information,
      * see the <code>KinesisSettings</code> structure.</p>
      */
     inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
 
     /**
-     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * <p>The settings for the Amazon Kinesis target endpoint. For more information,
      * see the <code>KinesisSettings</code> structure.</p>
      */
     inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
 
     /**
-     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * <p>The settings for the Amazon Kinesis target endpoint. For more information,
      * see the <code>KinesisSettings</code> structure.</p>
      */
     inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
 
     /**
-     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * <p>The settings for the Amazon Kinesis target endpoint. For more information,
      * see the <code>KinesisSettings</code> structure.</p>
      */
     inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
 
     /**
-     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * <p>The settings for the Amazon Kinesis target endpoint. For more information,
      * see the <code>KinesisSettings</code> structure.</p>
      */
     inline Endpoint& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
 
     /**
-     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * <p>The settings for the Amazon Kinesis target endpoint. For more information,
      * see the <code>KinesisSettings</code> structure.</p>
      */
     inline Endpoint& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Apache Kafka target endpoint. For more information, see
+     * the <code>KafkaSettings</code> structure.</p>
+     */
+    inline const KafkaSettings& GetKafkaSettings() const{ return m_kafkaSettings; }
+
+    /**
+     * <p>The settings for the Apache Kafka target endpoint. For more information, see
+     * the <code>KafkaSettings</code> structure.</p>
+     */
+    inline bool KafkaSettingsHasBeenSet() const { return m_kafkaSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the Apache Kafka target endpoint. For more information, see
+     * the <code>KafkaSettings</code> structure.</p>
+     */
+    inline void SetKafkaSettings(const KafkaSettings& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = value; }
+
+    /**
+     * <p>The settings for the Apache Kafka target endpoint. For more information, see
+     * the <code>KafkaSettings</code> structure.</p>
+     */
+    inline void SetKafkaSettings(KafkaSettings&& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Apache Kafka target endpoint. For more information, see
+     * the <code>KafkaSettings</code> structure.</p>
+     */
+    inline Endpoint& WithKafkaSettings(const KafkaSettings& value) { SetKafkaSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Apache Kafka target endpoint. For more information, see
+     * the <code>KafkaSettings</code> structure.</p>
+     */
+    inline Endpoint& WithKafkaSettings(KafkaSettings&& value) { SetKafkaSettings(std::move(value)); return *this;}
 
 
     /**
@@ -1214,6 +1296,9 @@ namespace Model
 
     KinesisSettings m_kinesisSettings;
     bool m_kinesisSettingsHasBeenSet;
+
+    KafkaSettings m_kafkaSettings;
+    bool m_kafkaSettingsHasBeenSet;
 
     ElasticsearchSettings m_elasticsearchSettings;
     bool m_elasticsearchSettingsHasBeenSet;

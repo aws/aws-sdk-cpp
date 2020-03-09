@@ -14,28 +14,29 @@
 */
 
 #pragma once
-#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace DatabaseMigrationService
+namespace MediaLive
 {
 namespace Model
 {
-  enum class MessageFormatValue
+  enum class PreferredChannelPipeline
   {
     NOT_SET,
-    json,
-    json_unformatted
+    CURRENTLY_ACTIVE,
+    PIPELINE_0,
+    PIPELINE_1
   };
 
-namespace MessageFormatValueMapper
+namespace PreferredChannelPipelineMapper
 {
-AWS_DATABASEMIGRATIONSERVICE_API MessageFormatValue GetMessageFormatValueForName(const Aws::String& name);
+AWS_MEDIALIVE_API PreferredChannelPipeline GetPreferredChannelPipelineForName(const Aws::String& name);
 
-AWS_DATABASEMIGRATIONSERVICE_API Aws::String GetNameForMessageFormatValue(MessageFormatValue value);
-} // namespace MessageFormatValueMapper
+AWS_MEDIALIVE_API Aws::String GetNameForPreferredChannelPipeline(PreferredChannelPipeline value);
+} // namespace PreferredChannelPipelineMapper
 } // namespace Model
-} // namespace DatabaseMigrationService
+} // namespace MediaLive
 } // namespace Aws

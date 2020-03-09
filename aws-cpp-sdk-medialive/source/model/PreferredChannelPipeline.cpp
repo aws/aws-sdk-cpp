@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/dms/model/MessageFormatValue.h>
+#include <aws/medialive/model/PreferredChannelPipeline.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -23,46 +23,53 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace DatabaseMigrationService
+  namespace MediaLive
   {
     namespace Model
     {
-      namespace MessageFormatValueMapper
+      namespace PreferredChannelPipelineMapper
       {
 
-        static const int json_HASH = HashingUtils::HashString("json");
-        static const int json_unformatted_HASH = HashingUtils::HashString("json-unformatted");
+        static const int CURRENTLY_ACTIVE_HASH = HashingUtils::HashString("CURRENTLY_ACTIVE");
+        static const int PIPELINE_0_HASH = HashingUtils::HashString("PIPELINE_0");
+        static const int PIPELINE_1_HASH = HashingUtils::HashString("PIPELINE_1");
 
 
-        MessageFormatValue GetMessageFormatValueForName(const Aws::String& name)
+        PreferredChannelPipeline GetPreferredChannelPipelineForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == json_HASH)
+          if (hashCode == CURRENTLY_ACTIVE_HASH)
           {
-            return MessageFormatValue::json;
+            return PreferredChannelPipeline::CURRENTLY_ACTIVE;
           }
-          else if (hashCode == json_unformatted_HASH)
+          else if (hashCode == PIPELINE_0_HASH)
           {
-            return MessageFormatValue::json_unformatted;
+            return PreferredChannelPipeline::PIPELINE_0;
+          }
+          else if (hashCode == PIPELINE_1_HASH)
+          {
+            return PreferredChannelPipeline::PIPELINE_1;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<MessageFormatValue>(hashCode);
+            return static_cast<PreferredChannelPipeline>(hashCode);
           }
 
-          return MessageFormatValue::NOT_SET;
+          return PreferredChannelPipeline::NOT_SET;
         }
 
-        Aws::String GetNameForMessageFormatValue(MessageFormatValue enumValue)
+        Aws::String GetNameForPreferredChannelPipeline(PreferredChannelPipeline enumValue)
         {
           switch(enumValue)
           {
-          case MessageFormatValue::json:
-            return "json";
-          case MessageFormatValue::json_unformatted:
-            return "json-unformatted";
+          case PreferredChannelPipeline::CURRENTLY_ACTIVE:
+            return "CURRENTLY_ACTIVE";
+          case PreferredChannelPipeline::PIPELINE_0:
+            return "PIPELINE_0";
+          case PreferredChannelPipeline::PIPELINE_1:
+            return "PIPELINE_1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +81,7 @@ namespace Aws
           }
         }
 
-      } // namespace MessageFormatValueMapper
+      } // namespace PreferredChannelPipelineMapper
     } // namespace Model
-  } // namespace DatabaseMigrationService
+  } // namespace MediaLive
 } // namespace Aws

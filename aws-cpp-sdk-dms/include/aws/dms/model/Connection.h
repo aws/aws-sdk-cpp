@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Status of the connection between an endpoint and a replication instance,
+   * including Amazon Resource Names (ARNs) and the last error message
+   * issued.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Connection">AWS API
    * Reference</a></p>
    */
@@ -48,91 +50,83 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(Aws::String&& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline void SetReplicationInstanceArn(const char* value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline Connection& WithReplicationInstanceArn(const Aws::String& value) { SetReplicationInstanceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline Connection& WithReplicationInstanceArn(Aws::String&& value) { SetReplicationInstanceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     * <p>The ARN of the replication instance.</p>
      */
     inline Connection& WithReplicationInstanceArn(const char* value) { SetReplicationInstanceArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
     inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
     inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
     inline Connection& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
     inline Connection& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
-     * endpoint.</p>
+     * <p>The ARN string that uniquely identifies the endpoint.</p>
      */
     inline Connection& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
 
@@ -220,58 +214,58 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The identifier of the endpoint. Identifiers must begin with a letter and must
+     * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+     * contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
 
     /**
-     * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The identifier of the endpoint. Identifiers must begin with a letter and must
+     * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+     * contain two consecutive hyphens.</p>
      */
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The identifier of the endpoint. Identifiers must begin with a letter and must
+     * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+     * contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
 
     /**
-     * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The identifier of the endpoint. Identifiers must begin with a letter and must
+     * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+     * contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The identifier of the endpoint. Identifiers must begin with a letter and must
+     * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+     * contain two consecutive hyphens.</p>
      */
     inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
 
     /**
-     * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The identifier of the endpoint. Identifiers must begin with a letter and must
+     * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+     * contain two consecutive hyphens.</p>
      */
     inline Connection& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The identifier of the endpoint. Identifiers must begin with a letter and must
+     * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+     * contain two consecutive hyphens.</p>
      */
     inline Connection& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the endpoint. Identifiers must begin with a letter; must
-     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
-     * or contain two consecutive hyphens.</p>
+     * <p>The identifier of the endpoint. Identifiers must begin with a letter and must
+     * contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+     * contain two consecutive hyphens.</p>
      */
     inline Connection& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
 

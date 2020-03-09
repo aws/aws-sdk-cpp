@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Provides information that defines an Elasticsearch endpoint.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ElasticsearchSettings">AWS
    * API Reference</a></p>
    */
@@ -155,26 +156,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of seconds that DMS retries failed API requests to the
-     * Elasticsearch cluster.</p>
+     * <p>The maximum number of seconds for which DMS retries failed API requests to
+     * the Elasticsearch cluster.</p>
      */
     inline int GetErrorRetryDuration() const{ return m_errorRetryDuration; }
 
     /**
-     * <p>The maximum number of seconds that DMS retries failed API requests to the
-     * Elasticsearch cluster.</p>
+     * <p>The maximum number of seconds for which DMS retries failed API requests to
+     * the Elasticsearch cluster.</p>
      */
     inline bool ErrorRetryDurationHasBeenSet() const { return m_errorRetryDurationHasBeenSet; }
 
     /**
-     * <p>The maximum number of seconds that DMS retries failed API requests to the
-     * Elasticsearch cluster.</p>
+     * <p>The maximum number of seconds for which DMS retries failed API requests to
+     * the Elasticsearch cluster.</p>
      */
     inline void SetErrorRetryDuration(int value) { m_errorRetryDurationHasBeenSet = true; m_errorRetryDuration = value; }
 
     /**
-     * <p>The maximum number of seconds that DMS retries failed API requests to the
-     * Elasticsearch cluster.</p>
+     * <p>The maximum number of seconds for which DMS retries failed API requests to
+     * the Elasticsearch cluster.</p>
      */
     inline ElasticsearchSettings& WithErrorRetryDuration(int value) { SetErrorRetryDuration(value); return *this;}
 

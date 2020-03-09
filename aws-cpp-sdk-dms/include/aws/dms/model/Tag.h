@@ -34,7 +34,11 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>A user-defined key-value pair that describes metadata added to an AWS DMS
+   * resource and that is used by operations such as the following:</p> <ul> <li> <p>
+   * <code>AddTagsToResource</code> </p> </li> <li> <p>
+   * <code>ListTagsForResource</code> </p> </li> <li> <p>
+   * <code>RemoveTagsFromResource</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/Tag">AWS API
    * Reference</a></p>
    */
@@ -49,7 +53,7 @@ namespace Model
 
     /**
      * <p>A key is the required name of the tag. The string value can be from 1 to 128
-     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * Unicode characters in length and can't be prefixed with "aws:" or "dms:". The
      * string can only contain only the set of Unicode letters, digits, white-space,
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -58,7 +62,7 @@ namespace Model
 
     /**
      * <p>A key is the required name of the tag. The string value can be from 1 to 128
-     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * Unicode characters in length and can't be prefixed with "aws:" or "dms:". The
      * string can only contain only the set of Unicode letters, digits, white-space,
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -67,7 +71,7 @@ namespace Model
 
     /**
      * <p>A key is the required name of the tag. The string value can be from 1 to 128
-     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * Unicode characters in length and can't be prefixed with "aws:" or "dms:". The
      * string can only contain only the set of Unicode letters, digits, white-space,
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -76,7 +80,7 @@ namespace Model
 
     /**
      * <p>A key is the required name of the tag. The string value can be from 1 to 128
-     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * Unicode characters in length and can't be prefixed with "aws:" or "dms:". The
      * string can only contain only the set of Unicode letters, digits, white-space,
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -85,7 +89,7 @@ namespace Model
 
     /**
      * <p>A key is the required name of the tag. The string value can be from 1 to 128
-     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * Unicode characters in length and can't be prefixed with "aws:" or "dms:". The
      * string can only contain only the set of Unicode letters, digits, white-space,
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -94,7 +98,7 @@ namespace Model
 
     /**
      * <p>A key is the required name of the tag. The string value can be from 1 to 128
-     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * Unicode characters in length and can't be prefixed with "aws:" or "dms:". The
      * string can only contain only the set of Unicode letters, digits, white-space,
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -103,7 +107,7 @@ namespace Model
 
     /**
      * <p>A key is the required name of the tag. The string value can be from 1 to 128
-     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * Unicode characters in length and can't be prefixed with "aws:" or "dms:". The
      * string can only contain only the set of Unicode letters, digits, white-space,
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -112,7 +116,7 @@ namespace Model
 
     /**
      * <p>A key is the required name of the tag. The string value can be from 1 to 128
-     * Unicode characters in length and cannot be prefixed with "aws:" or "dms:". The
+     * Unicode characters in length and can't be prefixed with "aws:" or "dms:". The
      * string can only contain only the set of Unicode letters, digits, white-space,
      * '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -122,7 +126,7 @@ namespace Model
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to
-     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * 256 Unicode characters in length and can't be prefixed with "aws:" or "dms:".
      * The string can only contain only the set of Unicode letters, digits,
      * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -131,7 +135,7 @@ namespace Model
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to
-     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * 256 Unicode characters in length and can't be prefixed with "aws:" or "dms:".
      * The string can only contain only the set of Unicode letters, digits,
      * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -140,7 +144,7 @@ namespace Model
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to
-     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * 256 Unicode characters in length and can't be prefixed with "aws:" or "dms:".
      * The string can only contain only the set of Unicode letters, digits,
      * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -149,7 +153,7 @@ namespace Model
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to
-     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * 256 Unicode characters in length and can't be prefixed with "aws:" or "dms:".
      * The string can only contain only the set of Unicode letters, digits,
      * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -158,7 +162,7 @@ namespace Model
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to
-     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * 256 Unicode characters in length and can't be prefixed with "aws:" or "dms:".
      * The string can only contain only the set of Unicode letters, digits,
      * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -167,7 +171,7 @@ namespace Model
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to
-     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * 256 Unicode characters in length and can't be prefixed with "aws:" or "dms:".
      * The string can only contain only the set of Unicode letters, digits,
      * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -176,7 +180,7 @@ namespace Model
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to
-     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * 256 Unicode characters in length and can't be prefixed with "aws:" or "dms:".
      * The string can only contain only the set of Unicode letters, digits,
      * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
@@ -185,7 +189,7 @@ namespace Model
 
     /**
      * <p>A value is the optional value of the tag. The string value can be from 1 to
-     * 256 Unicode characters in length and cannot be prefixed with "aws:" or "dms:".
+     * 256 Unicode characters in length and can't be prefixed with "aws:" or "dms:".
      * The string can only contain only the set of Unicode letters, digits,
      * white-space, '_', '.', '/', '=', '+', '-' (Java regex:
      * "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>

@@ -46,6 +46,7 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_dmsTransferSettingsHasBeenSet(false),
     m_mongoDbSettingsHasBeenSet(false),
     m_kinesisSettingsHasBeenSet(false),
+    m_kafkaSettingsHasBeenSet(false),
     m_elasticsearchSettingsHasBeenSet(false),
     m_redshiftSettingsHasBeenSet(false)
 {
@@ -175,6 +176,12 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_kinesisSettingsHasBeenSet)
   {
    payload.WithObject("KinesisSettings", m_kinesisSettings.Jsonize());
+
+  }
+
+  if(m_kafkaSettingsHasBeenSet)
+  {
+   payload.WithObject("KafkaSettings", m_kafkaSettings.Jsonize());
 
   }
 

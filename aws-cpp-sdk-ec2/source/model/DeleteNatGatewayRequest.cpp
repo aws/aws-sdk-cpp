@@ -21,6 +21,8 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 DeleteNatGatewayRequest::DeleteNatGatewayRequest() : 
+    m_dryRun(false),
+    m_dryRunHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false)
 {
 }
@@ -29,6 +31,11 @@ Aws::String DeleteNatGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=DeleteNatGateway&";
+  if(m_dryRunHasBeenSet)
+  {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
   if(m_natGatewayIdHasBeenSet)
   {
     ss << "NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
