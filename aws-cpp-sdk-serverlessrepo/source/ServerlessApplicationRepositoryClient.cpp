@@ -42,6 +42,7 @@
 #include <aws/serverlessrepo/model/ListApplicationVersionsRequest.h>
 #include <aws/serverlessrepo/model/ListApplicationsRequest.h>
 #include <aws/serverlessrepo/model/PutApplicationPolicyRequest.h>
+#include <aws/serverlessrepo/model/UnshareApplicationRequest.h>
 #include <aws/serverlessrepo/model/UpdateApplicationRequest.h>
 
 using namespace Aws;
@@ -614,6 +615,48 @@ void ServerlessApplicationRepositoryClient::PutApplicationPolicyAsync(const PutA
 void ServerlessApplicationRepositoryClient::PutApplicationPolicyAsyncHelper(const PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutApplicationPolicy(request), context);
+}
+
+UnshareApplicationOutcome ServerlessApplicationRepositoryClient::UnshareApplication(const UnshareApplicationRequest& request) const
+{
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UnshareApplication", "Required field: ApplicationId, is not set");
+    return UnshareApplicationOutcome(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(ServerlessApplicationRepositoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/unshare";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UnshareApplicationOutcome(NoResult());
+  }
+  else
+  {
+    return UnshareApplicationOutcome(outcome.GetError());
+  }
+}
+
+UnshareApplicationOutcomeCallable ServerlessApplicationRepositoryClient::UnshareApplicationCallable(const UnshareApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UnshareApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnshareApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServerlessApplicationRepositoryClient::UnshareApplicationAsync(const UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UnshareApplicationAsyncHelper( request, handler, context ); } );
+}
+
+void ServerlessApplicationRepositoryClient::UnshareApplicationAsyncHelper(const UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UnshareApplication(request), context);
 }
 
 UpdateApplicationOutcome ServerlessApplicationRepositoryClient::UpdateApplication(const UpdateApplicationRequest& request) const

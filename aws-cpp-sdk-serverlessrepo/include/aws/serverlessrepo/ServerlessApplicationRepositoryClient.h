@@ -85,6 +85,7 @@ namespace Model
         class ListApplicationVersionsRequest;
         class ListApplicationsRequest;
         class PutApplicationPolicyRequest;
+        class UnshareApplicationRequest;
         class UpdateApplicationRequest;
 
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> CreateApplicationOutcome;
@@ -99,6 +100,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListApplicationVersionsResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationVersionsOutcome;
         typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationsOutcome;
         typedef Aws::Utils::Outcome<PutApplicationPolicyResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> PutApplicationPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> UnshareApplicationOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> UpdateApplicationOutcome;
 
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
@@ -113,6 +115,7 @@ namespace Model
         typedef std::future<ListApplicationVersionsOutcome> ListApplicationVersionsOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<PutApplicationPolicyOutcome> PutApplicationPolicyOutcomeCallable;
+        typedef std::future<UnshareApplicationOutcome> UnshareApplicationOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 } // namespace Model
 
@@ -130,6 +133,7 @@ namespace Model
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::ListApplicationVersionsRequest&, const Model::ListApplicationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationVersionsResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::PutApplicationPolicyRequest&, const Model::PutApplicationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutApplicationPolicyResponseReceivedHandler;
+    typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::UnshareApplicationRequest&, const Model::UnshareApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnshareApplicationResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
 
   /**
@@ -536,6 +540,37 @@ namespace Model
         virtual void PutApplicationPolicyAsync(const Model::PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Unshares an application from an AWS Organization.</p><p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnshareApplicationOutcome UnshareApplication(const Model::UnshareApplicationRequest& request) const;
+
+        /**
+         * <p>Unshares an application from an AWS Organization.</p><p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UnshareApplicationOutcomeCallable UnshareApplicationCallable(const Model::UnshareApplicationRequest& request) const;
+
+        /**
+         * <p>Unshares an application from an AWS Organization.</p><p>This operation can be
+         * called only from the organization's master account.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UnshareApplication">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UnshareApplicationAsync(const Model::UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">AWS
          * API Reference</a></p>
@@ -576,6 +611,7 @@ namespace Model
         void ListApplicationVersionsAsyncHelper(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutApplicationPolicyAsyncHelper(const Model::PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UnshareApplicationAsyncHelper(const Model::UnshareApplicationRequest& request, const UnshareApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

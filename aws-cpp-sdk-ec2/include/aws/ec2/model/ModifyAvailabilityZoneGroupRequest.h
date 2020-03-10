@@ -48,79 +48,91 @@ namespace Model
   public:
 
     /**
-     * <p>The names of the Zone Group.</p>
+     * <p>The name of the Availability Zone Group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>The names of the Zone Group.</p>
+     * <p>The name of the Availability Zone Group.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>The names of the Zone Group.</p>
+     * <p>The name of the Availability Zone Group.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>The names of the Zone Group.</p>
+     * <p>The name of the Availability Zone Group.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>The names of the Zone Group.</p>
+     * <p>The name of the Availability Zone Group.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>The names of the Zone Group.</p>
+     * <p>The name of the Availability Zone Group.</p>
      */
     inline ModifyAvailabilityZoneGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>The names of the Zone Group.</p>
+     * <p>The name of the Availability Zone Group.</p>
      */
     inline ModifyAvailabilityZoneGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the Zone Group.</p>
+     * <p>The name of the Availability Zone Group.</p>
      */
     inline ModifyAvailabilityZoneGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
 
     /**
-     * <p>Indicates whether to enable or disable Zone Group membership. The valid
-     * values are <code>opted-in</code>.</p>
+     * <p>Indicates whether to enable or disable membership. The valid values are
+     * <code>opted-in</code>. You must contact <a
+     * href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">AWS
+     * Support</a> to disable an Availability Zone group.</p>
      */
     inline const ModifyAvailabilityZoneOptInStatus& GetOptInStatus() const{ return m_optInStatus; }
 
     /**
-     * <p>Indicates whether to enable or disable Zone Group membership. The valid
-     * values are <code>opted-in</code>.</p>
+     * <p>Indicates whether to enable or disable membership. The valid values are
+     * <code>opted-in</code>. You must contact <a
+     * href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">AWS
+     * Support</a> to disable an Availability Zone group.</p>
      */
     inline bool OptInStatusHasBeenSet() const { return m_optInStatusHasBeenSet; }
 
     /**
-     * <p>Indicates whether to enable or disable Zone Group membership. The valid
-     * values are <code>opted-in</code>.</p>
+     * <p>Indicates whether to enable or disable membership. The valid values are
+     * <code>opted-in</code>. You must contact <a
+     * href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">AWS
+     * Support</a> to disable an Availability Zone group.</p>
      */
     inline void SetOptInStatus(const ModifyAvailabilityZoneOptInStatus& value) { m_optInStatusHasBeenSet = true; m_optInStatus = value; }
 
     /**
-     * <p>Indicates whether to enable or disable Zone Group membership. The valid
-     * values are <code>opted-in</code>.</p>
+     * <p>Indicates whether to enable or disable membership. The valid values are
+     * <code>opted-in</code>. You must contact <a
+     * href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">AWS
+     * Support</a> to disable an Availability Zone group.</p>
      */
     inline void SetOptInStatus(ModifyAvailabilityZoneOptInStatus&& value) { m_optInStatusHasBeenSet = true; m_optInStatus = std::move(value); }
 
     /**
-     * <p>Indicates whether to enable or disable Zone Group membership. The valid
-     * values are <code>opted-in</code>.</p>
+     * <p>Indicates whether to enable or disable membership. The valid values are
+     * <code>opted-in</code>. You must contact <a
+     * href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">AWS
+     * Support</a> to disable an Availability Zone group.</p>
      */
     inline ModifyAvailabilityZoneGroupRequest& WithOptInStatus(const ModifyAvailabilityZoneOptInStatus& value) { SetOptInStatus(value); return *this;}
 
     /**
-     * <p>Indicates whether to enable or disable Zone Group membership. The valid
-     * values are <code>opted-in</code>.</p>
+     * <p>Indicates whether to enable or disable membership. The valid values are
+     * <code>opted-in</code>. You must contact <a
+     * href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">AWS
+     * Support</a> to disable an Availability Zone group.</p>
      */
     inline ModifyAvailabilityZoneGroupRequest& WithOptInStatus(ModifyAvailabilityZoneOptInStatus&& value) { SetOptInStatus(std::move(value)); return *this;}
 

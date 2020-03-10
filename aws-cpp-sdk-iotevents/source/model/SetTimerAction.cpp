@@ -30,15 +30,13 @@ namespace Model
 
 SetTimerAction::SetTimerAction() : 
     m_timerNameHasBeenSet(false),
-    m_seconds(0),
-    m_secondsHasBeenSet(false)
+    m_durationExpressionHasBeenSet(false)
 {
 }
 
 SetTimerAction::SetTimerAction(JsonView jsonValue) : 
     m_timerNameHasBeenSet(false),
-    m_seconds(0),
-    m_secondsHasBeenSet(false)
+    m_durationExpressionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,11 +50,11 @@ SetTimerAction& SetTimerAction::operator =(JsonView jsonValue)
     m_timerNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("seconds"))
+  if(jsonValue.ValueExists("durationExpression"))
   {
-    m_seconds = jsonValue.GetInteger("seconds");
+    m_durationExpression = jsonValue.GetString("durationExpression");
 
-    m_secondsHasBeenSet = true;
+    m_durationExpressionHasBeenSet = true;
   }
 
   return *this;
@@ -72,9 +70,9 @@ JsonValue SetTimerAction::Jsonize() const
 
   }
 
-  if(m_secondsHasBeenSet)
+  if(m_durationExpressionHasBeenSet)
   {
-   payload.WithInteger("seconds", m_seconds);
+   payload.WithString("durationExpression", m_durationExpression);
 
   }
 

@@ -30,6 +30,7 @@ namespace Model
 
 ApplicationPolicyStatement::ApplicationPolicyStatement() : 
     m_actionsHasBeenSet(false),
+    m_principalOrgIDsHasBeenSet(false),
     m_principalsHasBeenSet(false),
     m_statementIdHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ ApplicationPolicyStatement::ApplicationPolicyStatement() :
 
 ApplicationPolicyStatement::ApplicationPolicyStatement(JsonView jsonValue) : 
     m_actionsHasBeenSet(false),
+    m_principalOrgIDsHasBeenSet(false),
     m_principalsHasBeenSet(false),
     m_statementIdHasBeenSet(false)
 {
@@ -53,6 +55,16 @@ ApplicationPolicyStatement& ApplicationPolicyStatement::operator =(JsonView json
       m_actions.push_back(actionsJsonList[actionsIndex].AsString());
     }
     m_actionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("principalOrgIDs"))
+  {
+    Array<JsonView> principalOrgIDsJsonList = jsonValue.GetArray("principalOrgIDs");
+    for(unsigned principalOrgIDsIndex = 0; principalOrgIDsIndex < principalOrgIDsJsonList.GetLength(); ++principalOrgIDsIndex)
+    {
+      m_principalOrgIDs.push_back(principalOrgIDsJsonList[principalOrgIDsIndex].AsString());
+    }
+    m_principalOrgIDsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("principals"))
@@ -87,6 +99,17 @@ JsonValue ApplicationPolicyStatement::Jsonize() const
      actionsJsonList[actionsIndex].AsString(m_actions[actionsIndex]);
    }
    payload.WithArray("actions", std::move(actionsJsonList));
+
+  }
+
+  if(m_principalOrgIDsHasBeenSet)
+  {
+   Array<JsonValue> principalOrgIDsJsonList(m_principalOrgIDs.size());
+   for(unsigned principalOrgIDsIndex = 0; principalOrgIDsIndex < principalOrgIDsJsonList.GetLength(); ++principalOrgIDsIndex)
+   {
+     principalOrgIDsJsonList[principalOrgIDsIndex].AsString(m_principalOrgIDs[principalOrgIDsIndex]);
+   }
+   payload.WithArray("principalOrgIDs", std::move(principalOrgIDsJsonList));
 
   }
 

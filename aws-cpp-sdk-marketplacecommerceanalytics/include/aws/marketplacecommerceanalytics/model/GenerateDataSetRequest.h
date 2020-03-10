@@ -366,55 +366,67 @@ namespace Model
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
-     * day-level granularity for the desired day. For weekly data sets, provide a date
-     * with day-level granularity within the desired week (the day value will be
-     * ignored). For monthly data sets, provide a date with month-level granularity for
-     * the desired month (the day value will be ignored).
+     * day-level granularity for the desired day. For monthly data sets except those
+     * with prefix disbursed_amount, provide a date with month-level granularity for
+     * the desired month (the day value will be ignored). For data sets with prefix
+     * disbursed_amount, provide a date with day-level granularity for the desired day.
+     * For these data sets we will look backwards in time over the range of 31 days
+     * until the first data set is found (the latest one).
      */
     inline const Aws::Utils::DateTime& GetDataSetPublicationDate() const{ return m_dataSetPublicationDate; }
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
-     * day-level granularity for the desired day. For weekly data sets, provide a date
-     * with day-level granularity within the desired week (the day value will be
-     * ignored). For monthly data sets, provide a date with month-level granularity for
-     * the desired month (the day value will be ignored).
+     * day-level granularity for the desired day. For monthly data sets except those
+     * with prefix disbursed_amount, provide a date with month-level granularity for
+     * the desired month (the day value will be ignored). For data sets with prefix
+     * disbursed_amount, provide a date with day-level granularity for the desired day.
+     * For these data sets we will look backwards in time over the range of 31 days
+     * until the first data set is found (the latest one).
      */
     inline bool DataSetPublicationDateHasBeenSet() const { return m_dataSetPublicationDateHasBeenSet; }
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
-     * day-level granularity for the desired day. For weekly data sets, provide a date
-     * with day-level granularity within the desired week (the day value will be
-     * ignored). For monthly data sets, provide a date with month-level granularity for
-     * the desired month (the day value will be ignored).
+     * day-level granularity for the desired day. For monthly data sets except those
+     * with prefix disbursed_amount, provide a date with month-level granularity for
+     * the desired month (the day value will be ignored). For data sets with prefix
+     * disbursed_amount, provide a date with day-level granularity for the desired day.
+     * For these data sets we will look backwards in time over the range of 31 days
+     * until the first data set is found (the latest one).
      */
     inline void SetDataSetPublicationDate(const Aws::Utils::DateTime& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = value; }
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
-     * day-level granularity for the desired day. For weekly data sets, provide a date
-     * with day-level granularity within the desired week (the day value will be
-     * ignored). For monthly data sets, provide a date with month-level granularity for
-     * the desired month (the day value will be ignored).
+     * day-level granularity for the desired day. For monthly data sets except those
+     * with prefix disbursed_amount, provide a date with month-level granularity for
+     * the desired month (the day value will be ignored). For data sets with prefix
+     * disbursed_amount, provide a date with day-level granularity for the desired day.
+     * For these data sets we will look backwards in time over the range of 31 days
+     * until the first data set is found (the latest one).
      */
     inline void SetDataSetPublicationDate(Aws::Utils::DateTime&& value) { m_dataSetPublicationDateHasBeenSet = true; m_dataSetPublicationDate = std::move(value); }
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
-     * day-level granularity for the desired day. For weekly data sets, provide a date
-     * with day-level granularity within the desired week (the day value will be
-     * ignored). For monthly data sets, provide a date with month-level granularity for
-     * the desired month (the day value will be ignored).
+     * day-level granularity for the desired day. For monthly data sets except those
+     * with prefix disbursed_amount, provide a date with month-level granularity for
+     * the desired month (the day value will be ignored). For data sets with prefix
+     * disbursed_amount, provide a date with day-level granularity for the desired day.
+     * For these data sets we will look backwards in time over the range of 31 days
+     * until the first data set is found (the latest one).
      */
     inline GenerateDataSetRequest& WithDataSetPublicationDate(const Aws::Utils::DateTime& value) { SetDataSetPublicationDate(value); return *this;}
 
     /**
      * The date a data set was published. For daily data sets, provide a date with
-     * day-level granularity for the desired day. For weekly data sets, provide a date
-     * with day-level granularity within the desired week (the day value will be
-     * ignored). For monthly data sets, provide a date with month-level granularity for
-     * the desired month (the day value will be ignored).
+     * day-level granularity for the desired day. For monthly data sets except those
+     * with prefix disbursed_amount, provide a date with month-level granularity for
+     * the desired month (the day value will be ignored). For data sets with prefix
+     * disbursed_amount, provide a date with day-level granularity for the desired day.
+     * For these data sets we will look backwards in time over the range of 31 days
+     * until the first data set is found (the latest one).
      */
     inline GenerateDataSetRequest& WithDataSetPublicationDate(Aws::Utils::DateTime&& value) { SetDataSetPublicationDate(std::move(value)); return *this;}
 

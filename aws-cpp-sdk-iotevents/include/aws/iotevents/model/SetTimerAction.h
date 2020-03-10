@@ -89,36 +89,92 @@ namespace Model
 
 
     /**
-     * <p>The number of seconds until the timer expires. The minimum value is 60
-     * seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+     * <p>The duration of the timer, in seconds. You can use a string expression that
+     * includes numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and
+     * input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as
+     * the duration. The range of the duration is 1-31622400 seconds. To ensure
+     * accuracy, the minimum duration is 60 seconds. The evaluated result of the
+     * duration is rounded down to the nearest whole number. </p>
      */
-    inline int GetSeconds() const{ return m_seconds; }
+    inline const Aws::String& GetDurationExpression() const{ return m_durationExpression; }
 
     /**
-     * <p>The number of seconds until the timer expires. The minimum value is 60
-     * seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+     * <p>The duration of the timer, in seconds. You can use a string expression that
+     * includes numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and
+     * input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as
+     * the duration. The range of the duration is 1-31622400 seconds. To ensure
+     * accuracy, the minimum duration is 60 seconds. The evaluated result of the
+     * duration is rounded down to the nearest whole number. </p>
      */
-    inline bool SecondsHasBeenSet() const { return m_secondsHasBeenSet; }
+    inline bool DurationExpressionHasBeenSet() const { return m_durationExpressionHasBeenSet; }
 
     /**
-     * <p>The number of seconds until the timer expires. The minimum value is 60
-     * seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+     * <p>The duration of the timer, in seconds. You can use a string expression that
+     * includes numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and
+     * input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as
+     * the duration. The range of the duration is 1-31622400 seconds. To ensure
+     * accuracy, the minimum duration is 60 seconds. The evaluated result of the
+     * duration is rounded down to the nearest whole number. </p>
      */
-    inline void SetSeconds(int value) { m_secondsHasBeenSet = true; m_seconds = value; }
+    inline void SetDurationExpression(const Aws::String& value) { m_durationExpressionHasBeenSet = true; m_durationExpression = value; }
 
     /**
-     * <p>The number of seconds until the timer expires. The minimum value is 60
-     * seconds to ensure accuracy. The maximum value is 31622400 seconds. </p>
+     * <p>The duration of the timer, in seconds. You can use a string expression that
+     * includes numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and
+     * input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as
+     * the duration. The range of the duration is 1-31622400 seconds. To ensure
+     * accuracy, the minimum duration is 60 seconds. The evaluated result of the
+     * duration is rounded down to the nearest whole number. </p>
      */
-    inline SetTimerAction& WithSeconds(int value) { SetSeconds(value); return *this;}
+    inline void SetDurationExpression(Aws::String&& value) { m_durationExpressionHasBeenSet = true; m_durationExpression = std::move(value); }
+
+    /**
+     * <p>The duration of the timer, in seconds. You can use a string expression that
+     * includes numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and
+     * input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as
+     * the duration. The range of the duration is 1-31622400 seconds. To ensure
+     * accuracy, the minimum duration is 60 seconds. The evaluated result of the
+     * duration is rounded down to the nearest whole number. </p>
+     */
+    inline void SetDurationExpression(const char* value) { m_durationExpressionHasBeenSet = true; m_durationExpression.assign(value); }
+
+    /**
+     * <p>The duration of the timer, in seconds. You can use a string expression that
+     * includes numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and
+     * input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as
+     * the duration. The range of the duration is 1-31622400 seconds. To ensure
+     * accuracy, the minimum duration is 60 seconds. The evaluated result of the
+     * duration is rounded down to the nearest whole number. </p>
+     */
+    inline SetTimerAction& WithDurationExpression(const Aws::String& value) { SetDurationExpression(value); return *this;}
+
+    /**
+     * <p>The duration of the timer, in seconds. You can use a string expression that
+     * includes numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and
+     * input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as
+     * the duration. The range of the duration is 1-31622400 seconds. To ensure
+     * accuracy, the minimum duration is 60 seconds. The evaluated result of the
+     * duration is rounded down to the nearest whole number. </p>
+     */
+    inline SetTimerAction& WithDurationExpression(Aws::String&& value) { SetDurationExpression(std::move(value)); return *this;}
+
+    /**
+     * <p>The duration of the timer, in seconds. You can use a string expression that
+     * includes numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and
+     * input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as
+     * the duration. The range of the duration is 1-31622400 seconds. To ensure
+     * accuracy, the minimum duration is 60 seconds. The evaluated result of the
+     * duration is rounded down to the nearest whole number. </p>
+     */
+    inline SetTimerAction& WithDurationExpression(const char* value) { SetDurationExpression(value); return *this;}
 
   private:
 
     Aws::String m_timerName;
     bool m_timerNameHasBeenSet;
 
-    int m_seconds;
-    bool m_secondsHasBeenSet;
+    Aws::String m_durationExpression;
+    bool m_durationExpressionHasBeenSet;
   };
 
 } // namespace Model
