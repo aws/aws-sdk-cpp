@@ -10,14 +10,14 @@ RUN apt-get update && \
 RUN pip install awscli --upgrade
 
 # We can install openjdk by "apt install openjdk-8-jdk", but it has some issues during building code-generation, we have to install it manually.
-RUN wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz && \
-    tar zxvf jdk-8u191-linux-x64.tar.gz && \
+RUN wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" https://download.oracle.com/otn-pub/java/jdk/8u241-b07/1f5b5a70bf22433b84d0e960903adac8/jdk-8u241-linux-x64.tar.gz && \
+    tar zxvf jdk-8u241-linux-x64.tar.gz && \
     mkdir /usr/bin/java && \
-    mv jdk1.8.0_191 /usr/bin/java && \
-    rm jdk-8u191-linux-x64.tar.gz && \
-    ln -s /usr/bin/java/jdk1.8.0_191/bin/java /bin/java && \
-    ln -s /usr/bin/java/jdk1.8.0_191/bin/javac /bin/javac
-ENV JAVA_HOME /usr/bin/java/jdk1.8.0_191
+    mv jdk1.8.0_241 /usr/bin/java && \
+    rm jdk-8u241-linux-x64.tar.gz && \
+    ln -s /usr/bin/java/jdk1.8.0_241/bin/java /bin/java && \
+    ln -s /usr/bin/java/jdk1.8.0_241/bin/javac /bin/javac
+ENV JAVA_HOME /usr/bin/java/jdk1.8.0_241
 RUN apt-get install -y maven
 
 # Download and install Android NDK
