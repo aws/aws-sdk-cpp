@@ -42,7 +42,7 @@ public:
     //Creates client, initializes curl handle if it hasn't been created already.
     CurlHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
     //Makes request and receives response synchronously
-    AWS_DEPRECATED("This funciton in base class has been deprecated")
+    AWS_DEPRECATED("This function in base class has been deprecated")
     std::shared_ptr<HttpResponse> MakeRequest(HttpRequest& request, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
             Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override;
 

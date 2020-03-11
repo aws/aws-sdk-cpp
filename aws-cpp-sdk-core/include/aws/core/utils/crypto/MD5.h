@@ -50,7 +50,7 @@ namespace Aws
             {
             public:
                 /**
-                 * Initializes platform crypo libs for md5
+                 * Initializes platform crypto libs for md5
                  */
                 MD5();
                 virtual ~MD5();

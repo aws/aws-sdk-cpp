@@ -41,7 +41,7 @@ namespace Aws
                 ContentCryptoMaterial(ContentCryptoScheme contentCryptoScheme);
 
                 /*
-                Intialize with content encryption key (cek) and content crypto scheme.
+                Initialize with content encryption key (cek) and content crypto scheme.
                 */
                 ContentCryptoMaterial(const Aws::Utils::CryptoBuffer& cek, ContentCryptoScheme contentCryptoScheme);
 

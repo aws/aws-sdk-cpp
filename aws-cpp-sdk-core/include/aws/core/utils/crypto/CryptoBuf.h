@@ -67,7 +67,7 @@ namespace Aws
                 /**
                  * stream to src from
                  * cipher to encrypt or decrypt the src stream with
-                 * mode to use cipher in. Encryption or Decyption
+                 * mode to use cipher in. Encryption or Decryption
                  * buffersize, the size of the src buffers to read at a time. Defaults to 1kb
                  */
                 SymmetricCryptoBufSrc(Aws::IStream& stream, SymmetricCipher& cipher, CipherMode cipherMode, size_t bufferSize = DEFAULT_BUF_SIZE);

@@ -151,7 +151,7 @@ namespace Aws
 
                 /**
                 * Decrypt a buffer of data. Part of the contract for this interface is that intention that
-                * a user call this function multiple times for a large stream. As such, mutliple calls to this function
+                * a user call this function multiple times for a large stream. As such, multiple calls to this function
                 * on the same instance should produce valid sequential output from an encrypted stream.
                 */
                 CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;

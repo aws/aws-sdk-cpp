@@ -39,7 +39,7 @@ namespace Aws
             virtual bool ShouldRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const = 0;
 
             /**
-             * Calculates the time in milliseconds the client should sleep before attemptinig another request based on the error and attemptedRetries count.
+             * Calculates the time in milliseconds the client should sleep before attempting another request based on the error and attemptedRetries count.
              */
             virtual long CalculateDelayBeforeNextRetry(const AWSError<CoreErrors>& error, long attemptedRetries) const = 0;
 

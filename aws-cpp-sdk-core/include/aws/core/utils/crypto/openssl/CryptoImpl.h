@@ -47,7 +47,7 @@ namespace Aws
 
             /**
              * OpenSSL implementation for SecureRandomBytes.
-             * Incidently, this implementation is thread safe, though it is not
+             * Incidentally, this implementation is thread safe, though it is not
              * on other platforms. You should treat an instance of SecureRandomBytes
              * as needed to be memory fenced if you will be using accross multiple threads
              */
@@ -161,7 +161,7 @@ namespace Aws
 
                 /**
                 * Decrypt a buffer of data. Part of the contract for this interface is that intention that
-                * a user call this function multiple times for a large stream. As such, mutliple calls to this function
+                * a user call this function multiple times for a large stream. As such, multiple calls to this function
                 * on the same instance should produce valid sequential output from an encrypted stream.
                 */
                 CryptoBuffer DecryptBuffer(const CryptoBuffer& encryptedData) override;

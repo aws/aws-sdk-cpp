@@ -283,11 +283,11 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
     }
 
     auto sha256Digest = hashResult.GetResult();
-    Aws::String cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
+    Aws::String canonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
 
     Aws::String signingRegion = region ? region : m_region;
-    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, cannonicalRequestHash, signingRegion, m_serviceName);
+    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, canonicalRequestHash, signingRegion, m_serviceName);
     auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, m_serviceName);
 
     Aws::StringStream ss;
@@ -404,9 +404,9 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     }
 
     auto sha256Digest = hashResult.GetResult();
-    auto cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
+    auto canonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
 
-    auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, cannonicalRequestHash, signingRegion, signingServiceName);
+    auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, canonicalRequestHash, signingRegion, signingServiceName);
 
     auto finalSigningHash = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, signingServiceName);
     if (finalSigningHash.empty())
@@ -625,11 +625,11 @@ bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, co
     }
 
     auto sha256Digest = hashResult.GetResult();
-    Aws::String cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
+    Aws::String canonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
 
     Aws::String signingRegion = region ? region : m_region;
-    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, cannonicalRequestHash, signingRegion, m_serviceName);
+    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, canonicalRequestHash, signingRegion, m_serviceName);
     auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, m_serviceName);
 
     Aws::StringStream ss;

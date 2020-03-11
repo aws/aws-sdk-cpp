@@ -116,7 +116,7 @@ namespace Aws
                 aws_event_stream_message encoded;
                 if(aws_event_stream_message_init(&encoded, get_aws_allocator(), &headers, &payload) == AWS_OP_ERR)
                 {
-                    AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from paylaod.");
+                    AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from payload.");
                     aws_event_stream_headers_list_cleanup(&headers);
                     // GCC 4.9.4 issues a warning with -Wextra if we simply do
                     // return {};
@@ -155,7 +155,7 @@ namespace Aws
                 aws_event_stream_message signedmsg;
                 if(aws_event_stream_message_init(&signedmsg, get_aws_allocator(), &headers, &payload))
                 {
-                    AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from paylaod.");
+                    AWS_LOGSTREAM_ERROR(TAG, "Error creating event-stream message from payload.");
                     aws_event_stream_headers_list_cleanup(&headers);
                     // GCC 4.9.4 issues a warning with -Wextra if we simply do
                     // return {};

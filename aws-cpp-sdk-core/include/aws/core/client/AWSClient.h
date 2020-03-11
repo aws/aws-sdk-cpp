@@ -116,13 +116,13 @@ namespace Aws
             virtual ~AWSClient() { };
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri and http method. expirationInSecodns defaults
+             * Generates a signed Uri using the injected signer. for the supplied uri and http method. expirationInSeconds defaults
              * to 0 which is the default 7 days. The implication of this function is using auth signer v4 to sign it.
              */
             Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, long long expirationInSeconds = 0);
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSecodns defaults
+             * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days. The implication of this function is using auth signer v4 to sign it.
              */
             Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0);
@@ -134,7 +134,7 @@ namespace Aws
             Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, long long expirationInSeconds = 0) const;
 
             /**
-             * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSecodns defaults
+             * Generates a signed Uri using the injected signer. for the supplied uri, http method and customized headers. expirationInSeconds defaults
              * to 0 which is the default 7 days.
              */
             Aws::String GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds = 0);
@@ -359,7 +359,7 @@ namespace Aws
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
                 const char* requestName = "",
-                const char* signerRegionOverriede = nullptr) const;
+                const char* signerRegionOverride = nullptr) const;
 
             JsonOutcome MakeEventStreamRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
         };

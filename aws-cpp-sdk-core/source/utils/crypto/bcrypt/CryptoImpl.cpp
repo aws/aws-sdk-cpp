@@ -22,9 +22,9 @@
 #include <aws/core/utils/crypto/Hash.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <atomic>
-#include <bcrypt.h> 
-#include <winternl.h> 
-#include <winerror.h> 
+#include <bcrypt.h>
+#include <winternl.h>
+#include <winerror.h>
 
 #ifndef NT_SUCCESS
 #define NT_SUCCESS(Status) ((NTSTATUS)(Status) >= 0)
@@ -424,18 +424,18 @@ namespace Aws
                     m_keyHandle = ImportKeyBlob(m_algHandle, m_key);
                     if (!m_keyHandle)
                     {
-                        m_failure = true;                        
+                        m_failure = true;
                         return;
                     }
 
                     if(!m_authInfoPtr && m_initializationVector.GetLength() > 0)
-                    {              
+                    {
                         NTSTATUS status = BCryptSetProperty(m_keyHandle, BCRYPT_INITIALIZATION_VECTOR, m_initializationVector.GetUnderlyingData(), static_cast<ULONG>(m_initializationVector.GetLength()), 0);
 
                         if (!NT_SUCCESS(status))
                         {
                             m_failure = true;
-                            AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to set symetric key initialization vector with status code " << status);
+                            AWS_LOGSTREAM_ERROR(SYM_CIPHER_TAG, "Failed to set symmetric key initialization vector with status code " << status);
                             return;
                         }
                     }
@@ -650,10 +650,10 @@ namespace Aws
                     return CryptoBuffer();
                 }
             }
-            
+
             CryptoBuffer AES_CBC_Cipher_BCrypt::EncryptBuffer(const CryptoBuffer& unEncryptedData)
-            {                    
-                return BCryptSymmetricCipher::EncryptBuffer(FillInOverflow(unEncryptedData));              
+            {
+                return BCryptSymmetricCipher::EncryptBuffer(FillInOverflow(unEncryptedData));
             }
 
             /**
@@ -666,11 +666,11 @@ namespace Aws
                 {
                     m_flags = BCRYPT_BLOCK_PADDING;
                     return BCryptSymmetricCipher::EncryptBuffer(m_blockOverflow);
-                }               
+                }
 
                 return CryptoBuffer();
             }
-            
+
             CryptoBuffer AES_CBC_Cipher_BCrypt::DecryptBuffer(const CryptoBuffer& encryptedData)
             {
                 return BCryptSymmetricCipher::DecryptBuffer(FillInOverflow(encryptedData));
@@ -679,7 +679,7 @@ namespace Aws
             CryptoBuffer AES_CBC_Cipher_BCrypt::FinalizeDecryption()
             {
                 if ( m_blockOverflow.GetLength() > 0)
-                {                   
+                {
                     m_flags = BCRYPT_BLOCK_PADDING;
                     return BCryptSymmetricCipher::DecryptBuffer(m_blockOverflow);
                 }
@@ -840,7 +840,7 @@ namespace Aws
                 for (size_t i = 0; i < slicedBuffers.GetLength(); ++i)
                 {
                     if (slicedBuffers[i].GetLength() == BlockSizeBytes || (m_blockOverflow.GetLength() > 0 && slicedBuffers.GetLength() == 1))
-                    {                       
+                    {
                         ULONG lengthWritten = static_cast<ULONG>(BlockSizeBytes);
                         CryptoBuffer encryptedText(BlockSizeBytes);
 
@@ -891,7 +891,7 @@ namespace Aws
             size_t AES_CTR_Cipher_BCrypt::GetKeyLengthBits() const
             {
                 return KeyLengthBits;
-            }           
+            }
 
             void AES_CTR_Cipher_BCrypt::InitBuffersToNull(Aws::Vector<ByteBuffer*>& initBuffers)
             {
@@ -1163,11 +1163,11 @@ namespace Aws
                 }
 
                 BCRYPT_KEY_HANDLE keyHandleToEncrypt = ImportKeyBlob(m_algHandle, m_operatingKeyBuffer);
-                
+
                 NTSTATUS status = 0;
 
                 ULONG sizeOfCipherText;
-                status = BCryptExportKey(keyHandleToEncrypt, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB, 
+                status = BCryptExportKey(keyHandleToEncrypt, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB,
                     nullptr, 0, &sizeOfCipherText, 0);
 
                 if (!NT_SUCCESS(status))
@@ -1176,7 +1176,7 @@ namespace Aws
                     AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to export symmetric key size with status code " << status);
                     return CryptoBuffer();
                 }
-                
+
                 CryptoBuffer cipherText(static_cast<size_t>(sizeOfCipherText));
                 status = BCryptExportKey(keyHandleToEncrypt, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB,
                     cipherText.GetUnderlyingData(), static_cast<ULONG>(cipherText.GetLength()), &sizeOfCipherText, 0);
@@ -1204,8 +1204,8 @@ namespace Aws
                     return CryptoBuffer();
                 }
 
-                CryptoBuffer returnBuffer;    
-                
+                CryptoBuffer returnBuffer;
+
                 BCRYPT_KEY_HANDLE importKey(nullptr);
                 NTSTATUS status = BCryptImportKey(m_algHandle, m_keyHandle, BCRYPT_AES_WRAP_KEY_BLOB, &importKey,
                     nullptr, 0,
@@ -1215,7 +1215,7 @@ namespace Aws
                 {
                     ULONG exportSize(0);
                     CryptoBuffer outputBuffer(sizeof(BCRYPT_KEY_DATA_BLOB_HEADER) + m_operatingKeyBuffer.GetLength());
-                    status = BCryptExportKey(importKey, nullptr, BCRYPT_KEY_DATA_BLOB, 
+                    status = BCryptExportKey(importKey, nullptr, BCRYPT_KEY_DATA_BLOB,
                                 outputBuffer.GetUnderlyingData(), static_cast<ULONG>(outputBuffer.GetLength()), &exportSize, 0);
 
                     if (NT_SUCCESS(status))
@@ -1231,7 +1231,7 @@ namespace Aws
 
                     BCryptDestroyKey(importKey);
                 }
-                else               
+                else
                 {
                     m_failure = true;
                     AWS_LOGSTREAM_ERROR(KEYWRAP_LOG_TAG, "Failed to import symmetric key with status code " << status);

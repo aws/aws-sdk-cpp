@@ -58,7 +58,7 @@ namespace Aws
         };
 
         /**
-         * Wrapper for all the weird crap we need to do with timestamps. 
+         * Wrapper for all the weird crap we need to do with timestamps.
          */
         class AWS_CORE_API DateTime
         {
@@ -69,12 +69,12 @@ namespace Aws
             DateTime();
 
             /**
-            *  Initializes time point to any other arbirtrary timepoint
+            *  Initializes time point to any other arbitrary timepoint
             */
             DateTime(const std::chrono::system_clock::time_point& timepointToAssign);
 
             /**
-             * Initializes time point to millis Since epoch   
+             * Initializes time point to millis Since epoch
              */
             DateTime(int64_t millisSinceEpoch);
 
@@ -102,7 +102,7 @@ namespace Aws
 
             DateTime operator+(const std::chrono::milliseconds& a) const;
             DateTime operator-(const std::chrono::milliseconds& a) const;
-            
+
             /**
              * Assign from seconds.millis since epoch.
              */
@@ -252,7 +252,7 @@ namespace Aws
             void ConvertTimestampStringToTimePoint(const char* timestamp, DateFormat format);
             tm GetTimeStruct(bool localTime) const;
             tm ConvertTimestampToLocalTimeStruct() const;
-            tm ConvertTimestampToGmtStruct() const;   
+            tm ConvertTimestampToGmtStruct() const;
         };
 
     } // namespace Utils

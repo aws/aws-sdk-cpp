@@ -26,7 +26,7 @@ namespace Aws
         namespace Memory
         {
             /**
-             * Central interface for memory management customizations. To create a custom memory manager, implement this interface and then 
+             * Central interface for memory management customizations. To create a custom memory manager, implement this interface and then
              * call InitializeAWSMemorySystem().
              */
             class AWS_CORE_API MemorySystemInterface
@@ -44,11 +44,11 @@ namespace Aws
                 virtual void End() = 0;
 
                 /**
-                 * Allocate your memory inside this method. blocksize and alignment are exactly the same as the std::alocators interfaces.
+                 * Allocate your memory inside this method. blocksize and alignment are exactly the same as the std::allocator interfaces.
                  * The allocationTag parameter is for memory tracking; you don't have to handle it.
                  */
                 virtual void* AllocateMemory(std::size_t blockSize, std::size_t alignment, const char *allocationTag = nullptr) = 0;
-                
+
                 /**
                  * Free the memory pointed to by memoryPtr.
                  */

@@ -1,0 +1,21 @@
+name: cspell
+
+on: [push]
+
+jobs:
+  cspell:
+    name: cspell
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+        path: aws-sdk-cpp
+    - name: Install Dependencies
+      run: |
+        sudo npm install -g cspell
+    - name: cspell
+      run: |
+        cd aws-sdk-cpp
+        export CSPELL_OUTPUT=$(sudo cspell --no-summary "aws-cpp-sdk-core/**/*.h" "aws-cpp-sdk-core/**/*.cpp")
+        if [ -n "$CSPELL_OUTPUT" ]; then echo "$CSPELL_OUTPUT" && exit 1; fi;
