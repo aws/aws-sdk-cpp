@@ -1261,10 +1261,10 @@ namespace Model
          * using this API operation. When an explicit policy is set, it overrides the
          * default policy. For more information about the default file system policy, see
          * <a
-         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
-         * Resource-based Policies with EFS</a>. </p> <p>This operation requires
-         * permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
+         * EFS File System Policy</a>. </p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
          * API Reference</a></p>
          */
@@ -1278,10 +1278,10 @@ namespace Model
          * using this API operation. When an explicit policy is set, it overrides the
          * default policy. For more information about the default file system policy, see
          * <a
-         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
-         * Resource-based Policies with EFS</a>. </p> <p>This operation requires
-         * permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
+         * EFS File System Policy</a>. </p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
          * API Reference</a></p>
          *
@@ -1297,10 +1297,10 @@ namespace Model
          * using this API operation. When an explicit policy is set, it overrides the
          * default policy. For more information about the default file system policy, see
          * <a
-         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
-         * Resource-based Policies with EFS</a>. </p> <p>This operation requires
-         * permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
+         * EFS File System Policy</a>. </p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
          * API Reference</a></p>
          *

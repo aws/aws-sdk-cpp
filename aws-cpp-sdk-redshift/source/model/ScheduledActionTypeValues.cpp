@@ -31,6 +31,8 @@ namespace Aws
       {
 
         static const int ResizeCluster_HASH = HashingUtils::HashString("ResizeCluster");
+        static const int PauseCluster_HASH = HashingUtils::HashString("PauseCluster");
+        static const int ResumeCluster_HASH = HashingUtils::HashString("ResumeCluster");
 
 
         ScheduledActionTypeValues GetScheduledActionTypeValuesForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           if (hashCode == ResizeCluster_HASH)
           {
             return ScheduledActionTypeValues::ResizeCluster;
+          }
+          else if (hashCode == PauseCluster_HASH)
+          {
+            return ScheduledActionTypeValues::PauseCluster;
+          }
+          else if (hashCode == ResumeCluster_HASH)
+          {
+            return ScheduledActionTypeValues::ResumeCluster;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +66,10 @@ namespace Aws
           {
           case ScheduledActionTypeValues::ResizeCluster:
             return "ResizeCluster";
+          case ScheduledActionTypeValues::PauseCluster:
+            return "PauseCluster";
+          case ScheduledActionTypeValues::ResumeCluster:
+            return "ResumeCluster";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

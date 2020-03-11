@@ -26,7 +26,9 @@ namespace Model
   enum class ScheduledActionTypeValues
   {
     NOT_SET,
-    ResizeCluster
+    ResizeCluster,
+    PauseCluster,
+    ResumeCluster
   };
 
 namespace ScheduledActionTypeValuesMapper

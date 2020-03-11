@@ -160,10 +160,11 @@ namespace Model
      * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
-     * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
-     * <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li>
-     * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
-     * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p>
+     * <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li>
+     * <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p>
+     * </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p>
+     * <code>updating-hsm</code> </p> </li> </ul>
      */
     inline const Aws::String& GetClusterStatus() const{ return m_clusterStatus; }
 
@@ -178,10 +179,11 @@ namespace Model
      * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
-     * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
-     * <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li>
-     * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
-     * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p>
+     * <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li>
+     * <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p>
+     * </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p>
+     * <code>updating-hsm</code> </p> </li> </ul>
      */
     inline bool ClusterStatusHasBeenSet() const { return m_clusterStatusHasBeenSet; }
 
@@ -196,10 +198,11 @@ namespace Model
      * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
-     * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
-     * <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li>
-     * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
-     * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p>
+     * <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li>
+     * <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p>
+     * </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p>
+     * <code>updating-hsm</code> </p> </li> </ul>
      */
     inline void SetClusterStatus(const Aws::String& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = value; }
 
@@ -214,10 +217,11 @@ namespace Model
      * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
-     * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
-     * <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li>
-     * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
-     * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p>
+     * <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li>
+     * <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p>
+     * </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p>
+     * <code>updating-hsm</code> </p> </li> </ul>
      */
     inline void SetClusterStatus(Aws::String&& value) { m_clusterStatusHasBeenSet = true; m_clusterStatus = std::move(value); }
 
@@ -232,10 +236,11 @@ namespace Model
      * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
-     * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
-     * <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li>
-     * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
-     * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p>
+     * <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li>
+     * <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p>
+     * </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p>
+     * <code>updating-hsm</code> </p> </li> </ul>
      */
     inline void SetClusterStatus(const char* value) { m_clusterStatusHasBeenSet = true; m_clusterStatus.assign(value); }
 
@@ -250,10 +255,11 @@ namespace Model
      * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
-     * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
-     * <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li>
-     * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
-     * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p>
+     * <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li>
+     * <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p>
+     * </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p>
+     * <code>updating-hsm</code> </p> </li> </ul>
      */
     inline Cluster& WithClusterStatus(const Aws::String& value) { SetClusterStatus(value); return *this;}
 
@@ -268,10 +274,11 @@ namespace Model
      * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
-     * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
-     * <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li>
-     * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
-     * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p>
+     * <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li>
+     * <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p>
+     * </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p>
+     * <code>updating-hsm</code> </p> </li> </ul>
      */
     inline Cluster& WithClusterStatus(Aws::String&& value) { SetClusterStatus(std::move(value)); return *this;}
 
@@ -286,10 +293,11 @@ namespace Model
      * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
-     * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
-     * <code>renaming</code> </p> </li> <li> <p> <code>resizing</code> </p> </li> <li>
-     * <p> <code>rotating-keys</code> </p> </li> <li> <p> <code>storage-full</code>
-     * </p> </li> <li> <p> <code>updating-hsm</code> </p> </li> </ul>
+     * </p> </li> <li> <p> <code>paused</code> </p> </li> <li> <p>
+     * <code>rebooting</code> </p> </li> <li> <p> <code>renaming</code> </p> </li> <li>
+     * <p> <code>resizing</code> </p> </li> <li> <p> <code>rotating-keys</code> </p>
+     * </li> <li> <p> <code>storage-full</code> </p> </li> <li> <p>
+     * <code>updating-hsm</code> </p> </li> </ul>
      */
     inline Cluster& WithClusterStatus(const char* value) { SetClusterStatus(value); return *this;}
 

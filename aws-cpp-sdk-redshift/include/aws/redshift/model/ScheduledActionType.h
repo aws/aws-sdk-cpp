@@ -17,6 +17,8 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/redshift/model/ResizeClusterMessage.h>
+#include <aws/redshift/model/PauseClusterMessage.h>
+#include <aws/redshift/model/ResumeClusterMessage.h>
 #include <utility>
 
 namespace Aws
@@ -80,10 +82,78 @@ namespace Model
      */
     inline ScheduledActionType& WithResizeCluster(ResizeClusterMessage&& value) { SetResizeCluster(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An action that runs a <code>PauseCluster</code> API operation. </p>
+     */
+    inline const PauseClusterMessage& GetPauseCluster() const{ return m_pauseCluster; }
+
+    /**
+     * <p>An action that runs a <code>PauseCluster</code> API operation. </p>
+     */
+    inline bool PauseClusterHasBeenSet() const { return m_pauseClusterHasBeenSet; }
+
+    /**
+     * <p>An action that runs a <code>PauseCluster</code> API operation. </p>
+     */
+    inline void SetPauseCluster(const PauseClusterMessage& value) { m_pauseClusterHasBeenSet = true; m_pauseCluster = value; }
+
+    /**
+     * <p>An action that runs a <code>PauseCluster</code> API operation. </p>
+     */
+    inline void SetPauseCluster(PauseClusterMessage&& value) { m_pauseClusterHasBeenSet = true; m_pauseCluster = std::move(value); }
+
+    /**
+     * <p>An action that runs a <code>PauseCluster</code> API operation. </p>
+     */
+    inline ScheduledActionType& WithPauseCluster(const PauseClusterMessage& value) { SetPauseCluster(value); return *this;}
+
+    /**
+     * <p>An action that runs a <code>PauseCluster</code> API operation. </p>
+     */
+    inline ScheduledActionType& WithPauseCluster(PauseClusterMessage&& value) { SetPauseCluster(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
+     */
+    inline const ResumeClusterMessage& GetResumeCluster() const{ return m_resumeCluster; }
+
+    /**
+     * <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
+     */
+    inline bool ResumeClusterHasBeenSet() const { return m_resumeClusterHasBeenSet; }
+
+    /**
+     * <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
+     */
+    inline void SetResumeCluster(const ResumeClusterMessage& value) { m_resumeClusterHasBeenSet = true; m_resumeCluster = value; }
+
+    /**
+     * <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
+     */
+    inline void SetResumeCluster(ResumeClusterMessage&& value) { m_resumeClusterHasBeenSet = true; m_resumeCluster = std::move(value); }
+
+    /**
+     * <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
+     */
+    inline ScheduledActionType& WithResumeCluster(const ResumeClusterMessage& value) { SetResumeCluster(value); return *this;}
+
+    /**
+     * <p>An action that runs a <code>ResumeCluster</code> API operation. </p>
+     */
+    inline ScheduledActionType& WithResumeCluster(ResumeClusterMessage&& value) { SetResumeCluster(std::move(value)); return *this;}
+
   private:
 
     ResizeClusterMessage m_resizeCluster;
     bool m_resizeClusterHasBeenSet;
+
+    PauseClusterMessage m_pauseCluster;
+    bool m_pauseClusterHasBeenSet;
+
+    ResumeClusterMessage m_resumeCluster;
+    bool m_resumeClusterHasBeenSet;
   };
 
 } // namespace Model
