@@ -41,7 +41,8 @@ PutBotRequest::PutBotRequest() :
     m_detectSentiment(false),
     m_detectSentimentHasBeenSet(false),
     m_createVersion(false),
-    m_createVersionHasBeenSet(false)
+    m_createVersionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,17 @@ Aws::String PutBotRequest::SerializePayload() const
   if(m_createVersionHasBeenSet)
   {
    payload.WithBool("createVersion", m_createVersion);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

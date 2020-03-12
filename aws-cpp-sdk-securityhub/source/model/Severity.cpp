@@ -31,6 +31,8 @@ namespace Model
 Severity::Severity() : 
     m_product(0.0),
     m_productHasBeenSet(false),
+    m_label(SeverityLabel::NOT_SET),
+    m_labelHasBeenSet(false),
     m_normalized(0),
     m_normalizedHasBeenSet(false)
 {
@@ -39,6 +41,8 @@ Severity::Severity() :
 Severity::Severity(JsonView jsonValue) : 
     m_product(0.0),
     m_productHasBeenSet(false),
+    m_label(SeverityLabel::NOT_SET),
+    m_labelHasBeenSet(false),
     m_normalized(0),
     m_normalizedHasBeenSet(false)
 {
@@ -52,6 +56,13 @@ Severity& Severity::operator =(JsonView jsonValue)
     m_product = jsonValue.GetDouble("Product");
 
     m_productHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Label"))
+  {
+    m_label = SeverityLabelMapper::GetSeverityLabelForName(jsonValue.GetString("Label"));
+
+    m_labelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Normalized"))
@@ -72,6 +83,11 @@ JsonValue Severity::Jsonize() const
   {
    payload.WithDouble("Product", m_product);
 
+  }
+
+  if(m_labelHasBeenSet)
+  {
+   payload.WithString("Label", SeverityLabelMapper::GetNameForSeverityLabel(m_label));
   }
 
   if(m_normalizedHasBeenSet)

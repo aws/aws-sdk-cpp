@@ -158,6 +158,12 @@ UpdateIntegrationResult& UpdateIntegrationResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("tlsConfig"))
+  {
+    m_tlsConfig = jsonValue.GetObject("tlsConfig");
+
+  }
+
 
 
   return *this;

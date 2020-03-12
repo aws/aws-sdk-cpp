@@ -19,7 +19,9 @@
 #include <aws/lex-models/model/ResourceType.h>
 #include <aws/lex-models/model/MergeStrategy.h>
 #include <aws/lex-models/model/ImportStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lex-models/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -202,6 +204,42 @@ namespace Model
 
 
     /**
+     * <p>A list of tags added to the imported bot.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags added to the imported bot.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>A list of tags added to the imported bot.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags added to the imported bot.</p>
+     */
+    inline StartImportResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags added to the imported bot.</p>
+     */
+    inline StartImportResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags added to the imported bot.</p>
+     */
+    inline StartImportResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags added to the imported bot.</p>
+     */
+    inline StartImportResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A timestamp for the date and time that the import job was requested.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
@@ -237,6 +275,8 @@ namespace Model
     Aws::String m_importId;
 
     ImportStatus m_importStatus;
+
+    Aws::Vector<Tag> m_tags;
 
     Aws::Utils::DateTime m_createdDate;
   };

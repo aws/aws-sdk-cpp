@@ -105,6 +105,7 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_complianceStatusHasBeenSet(false),
     m_verificationStateHasBeenSet(false),
     m_workflowStateHasBeenSet(false),
+    m_workflowStatusHasBeenSet(false),
     m_recordStateHasBeenSet(false),
     m_relatedFindingsProductArnHasBeenSet(false),
     m_relatedFindingsIdHasBeenSet(false),
@@ -192,6 +193,7 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_complianceStatusHasBeenSet(false),
     m_verificationStateHasBeenSet(false),
     m_workflowStateHasBeenSet(false),
+    m_workflowStatusHasBeenSet(false),
     m_recordStateHasBeenSet(false),
     m_relatedFindingsProductArnHasBeenSet(false),
     m_relatedFindingsIdHasBeenSet(false),
@@ -963,6 +965,16 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_workflowState.push_back(workflowStateJsonList[workflowStateIndex].AsObject());
     }
     m_workflowStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WorkflowStatus"))
+  {
+    Array<JsonView> workflowStatusJsonList = jsonValue.GetArray("WorkflowStatus");
+    for(unsigned workflowStatusIndex = 0; workflowStatusIndex < workflowStatusJsonList.GetLength(); ++workflowStatusIndex)
+    {
+      m_workflowStatus.push_back(workflowStatusJsonList[workflowStatusIndex].AsObject());
+    }
+    m_workflowStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RecordState"))
@@ -1875,6 +1887,17 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      workflowStateJsonList[workflowStateIndex].AsObject(m_workflowState[workflowStateIndex].Jsonize());
    }
    payload.WithArray("WorkflowState", std::move(workflowStateJsonList));
+
+  }
+
+  if(m_workflowStatusHasBeenSet)
+  {
+   Array<JsonValue> workflowStatusJsonList(m_workflowStatus.size());
+   for(unsigned workflowStatusIndex = 0; workflowStatusIndex < workflowStatusJsonList.GetLength(); ++workflowStatusIndex)
+   {
+     workflowStatusJsonList[workflowStatusIndex].AsObject(m_workflowStatus[workflowStatusIndex].Jsonize());
+   }
+   payload.WithArray("WorkflowStatus", std::move(workflowStatusJsonList));
 
   }
 

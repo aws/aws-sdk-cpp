@@ -44,47 +44,65 @@ namespace Model
 
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInsightArns() const{ return m_insightArns; }
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline bool InsightArnsHasBeenSet() const { return m_insightArnsHasBeenSet; }
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline void SetInsightArns(const Aws::Vector<Aws::String>& value) { m_insightArnsHasBeenSet = true; m_insightArns = value; }
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline void SetInsightArns(Aws::Vector<Aws::String>&& value) { m_insightArnsHasBeenSet = true; m_insightArns = std::move(value); }
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline GetInsightsRequest& WithInsightArns(const Aws::Vector<Aws::String>& value) { SetInsightArns(value); return *this;}
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline GetInsightsRequest& WithInsightArns(Aws::Vector<Aws::String>&& value) { SetInsightArns(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline GetInsightsRequest& AddInsightArns(const Aws::String& value) { m_insightArnsHasBeenSet = true; m_insightArns.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline GetInsightsRequest& AddInsightArns(Aws::String&& value) { m_insightArnsHasBeenSet = true; m_insightArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ARNs of the insights to describe.</p>
+     * <p>The ARNs of the insights to describe. If you do not provide any insight ARNs,
+     * then <code>GetInsights</code> returns all of your custom insights. It does not
+     * return any managed insights.</p>
      */
     inline GetInsightsRequest& AddInsightArns(const char* value) { m_insightArnsHasBeenSet = true; m_insightArns.push_back(value); return *this; }
 

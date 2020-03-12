@@ -37,6 +37,7 @@ ResourceDetails::ResourceDetails() :
     m_awsElbv2LoadBalancerHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
+    m_awsS3ObjectHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
     m_awsIamRoleHasBeenSet(false),
     m_awsKmsKeyHasBeenSet(false),
@@ -60,6 +61,7 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsElbv2LoadBalancerHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
+    m_awsS3ObjectHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
     m_awsIamRoleHasBeenSet(false),
     m_awsKmsKeyHasBeenSet(false),
@@ -131,6 +133,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsS3Bucket = jsonValue.GetObject("AwsS3Bucket");
 
     m_awsS3BucketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsS3Object"))
+  {
+    m_awsS3Object = jsonValue.GetObject("AwsS3Object");
+
+    m_awsS3ObjectHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsIamAccessKey"))
@@ -265,6 +274,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsS3BucketHasBeenSet)
   {
    payload.WithObject("AwsS3Bucket", m_awsS3Bucket.Jsonize());
+
+  }
+
+  if(m_awsS3ObjectHasBeenSet)
+  {
+   payload.WithObject("AwsS3Object", m_awsS3Object.Jsonize());
 
   }
 

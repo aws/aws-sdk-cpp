@@ -28,7 +28,7 @@ namespace Model
     NOT_SET,
     ERROR_,
     INFO,
-    false_
+    OFF
   };
 
 namespace LoggingLevelMapper

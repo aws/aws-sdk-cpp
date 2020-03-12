@@ -93,50 +93,74 @@ namespace Model
 
 
     /**
-     * <p>Represents the base path of the imported API. Supported only for HTTP
-     * APIs.</p>
+     * <p>Specifies how to interpret the base path of the API during import. Valid
+     * values are ignore, prepend, and split. The default value is ignore. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
     inline const Aws::String& GetBasepath() const{ return m_basepath; }
 
     /**
-     * <p>Represents the base path of the imported API. Supported only for HTTP
-     * APIs.</p>
+     * <p>Specifies how to interpret the base path of the API during import. Valid
+     * values are ignore, prepend, and split. The default value is ignore. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
     inline bool BasepathHasBeenSet() const { return m_basepathHasBeenSet; }
 
     /**
-     * <p>Represents the base path of the imported API. Supported only for HTTP
-     * APIs.</p>
+     * <p>Specifies how to interpret the base path of the API during import. Valid
+     * values are ignore, prepend, and split. The default value is ignore. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
     inline void SetBasepath(const Aws::String& value) { m_basepathHasBeenSet = true; m_basepath = value; }
 
     /**
-     * <p>Represents the base path of the imported API. Supported only for HTTP
-     * APIs.</p>
+     * <p>Specifies how to interpret the base path of the API during import. Valid
+     * values are ignore, prepend, and split. The default value is ignore. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
     inline void SetBasepath(Aws::String&& value) { m_basepathHasBeenSet = true; m_basepath = std::move(value); }
 
     /**
-     * <p>Represents the base path of the imported API. Supported only for HTTP
-     * APIs.</p>
+     * <p>Specifies how to interpret the base path of the API during import. Valid
+     * values are ignore, prepend, and split. The default value is ignore. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
     inline void SetBasepath(const char* value) { m_basepathHasBeenSet = true; m_basepath.assign(value); }
 
     /**
-     * <p>Represents the base path of the imported API. Supported only for HTTP
-     * APIs.</p>
+     * <p>Specifies how to interpret the base path of the API during import. Valid
+     * values are ignore, prepend, and split. The default value is ignore. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
     inline ReimportApiRequest& WithBasepath(const Aws::String& value) { SetBasepath(value); return *this;}
 
     /**
-     * <p>Represents the base path of the imported API. Supported only for HTTP
-     * APIs.</p>
+     * <p>Specifies how to interpret the base path of the API during import. Valid
+     * values are ignore, prepend, and split. The default value is ignore. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
     inline ReimportApiRequest& WithBasepath(Aws::String&& value) { SetBasepath(std::move(value)); return *this;}
 
     /**
-     * <p>Represents the base path of the imported API. Supported only for HTTP
-     * APIs.</p>
+     * <p>Specifies how to interpret the base path of the API during import. Valid
+     * values are ignore, prepend, and split. The default value is ignore. To learn
+     * more, see <a
+     * href="https://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set
+     * the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
      */
     inline ReimportApiRequest& WithBasepath(const char* value) { SetBasepath(value); return *this;}
 

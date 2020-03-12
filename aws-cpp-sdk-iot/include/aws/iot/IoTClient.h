@@ -2110,7 +2110,7 @@ namespace Model
          * is made with the same thing name but different configuration a
          * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
          * control plane operation. See <a
-         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
@@ -2124,7 +2124,7 @@ namespace Model
          * is made with the same thing name but different configuration a
          * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
          * control plane operation. See <a
-         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
@@ -2140,7 +2140,7 @@ namespace Model
          * is made with the same thing name but different configuration a
          * <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a
          * control plane operation. See <a
-         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
@@ -2152,7 +2152,7 @@ namespace Model
 
         /**
          * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
-         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
@@ -2162,7 +2162,7 @@ namespace Model
 
         /**
          * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
-         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
@@ -2174,7 +2174,7 @@ namespace Model
 
         /**
          * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
-         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS

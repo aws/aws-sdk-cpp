@@ -57,8 +57,8 @@ namespace Model
      * tagging on creation are: <code>capacity-reservation</code> |
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
-     * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>key-pair</code> | <code>launch-template</code> | | <code>natgateway</code>
+     * | <code>spot-fleet-request</code> | <code>placement-group</code> |
      * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
@@ -75,8 +75,8 @@ namespace Model
      * tagging on creation are: <code>capacity-reservation</code> |
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
-     * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>key-pair</code> | <code>launch-template</code> | | <code>natgateway</code>
+     * | <code>spot-fleet-request</code> | <code>placement-group</code> |
      * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
@@ -93,8 +93,8 @@ namespace Model
      * tagging on creation are: <code>capacity-reservation</code> |
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
-     * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>key-pair</code> | <code>launch-template</code> | | <code>natgateway</code>
+     * | <code>spot-fleet-request</code> | <code>placement-group</code> |
      * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
@@ -111,8 +111,8 @@ namespace Model
      * tagging on creation are: <code>capacity-reservation</code> |
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
-     * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>key-pair</code> | <code>launch-template</code> | | <code>natgateway</code>
+     * | <code>spot-fleet-request</code> | <code>placement-group</code> |
      * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
@@ -129,8 +129,8 @@ namespace Model
      * tagging on creation are: <code>capacity-reservation</code> |
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
-     * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>key-pair</code> | <code>launch-template</code> | | <code>natgateway</code>
+     * | <code>spot-fleet-request</code> | <code>placement-group</code> |
      * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |
@@ -147,8 +147,8 @@ namespace Model
      * tagging on creation are: <code>capacity-reservation</code> |
      * <code>client-vpn-endpoint</code> | <code>dedicated-host</code> |
      * <code>fleet</code> | <code>fpga-image</code> | <code>instance</code> |
-     * <code>key-pair</code> | <code>launch-template</code> |
-     * <code>spot-fleet-request</code> | <code>placement-group</code> |
+     * <code>key-pair</code> | <code>launch-template</code> | | <code>natgateway</code>
+     * | <code>spot-fleet-request</code> | <code>placement-group</code> |
      * <code>snapshot</code> | <code>traffic-mirror-filter</code> |
      * <code>traffic-mirror-session</code> | <code>traffic-mirror-target</code> |
      * <code>transit-gateway</code> | <code>transit-gateway-attachment</code> |

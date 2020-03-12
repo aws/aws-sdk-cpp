@@ -58,7 +58,9 @@ namespace Model
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
      * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
+     * widespread distrust of Symantec certificate authorities.</p>
      */
     inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
 
@@ -69,7 +71,9 @@ namespace Model
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
      * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
+     * widespread distrust of Symantec certificate authorities.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
@@ -80,7 +84,9 @@ namespace Model
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
      * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
+     * widespread distrust of Symantec certificate authorities.</p>
      */
     inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
@@ -91,7 +97,9 @@ namespace Model
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
      * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
+     * widespread distrust of Symantec certificate authorities.</p>
      */
     inline void SetEndpointType(Aws::String&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
@@ -102,7 +110,9 @@ namespace Model
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
      * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
+     * widespread distrust of Symantec certificate authorities.</p>
      */
     inline void SetEndpointType(const char* value) { m_endpointTypeHasBeenSet = true; m_endpointType.assign(value); }
 
@@ -113,7 +123,9 @@ namespace Model
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
      * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
+     * widespread distrust of Symantec certificate authorities.</p>
      */
     inline DescribeEndpointRequest& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
 
@@ -124,7 +136,9 @@ namespace Model
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
      * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
+     * widespread distrust of Symantec certificate authorities.</p>
      */
     inline DescribeEndpointRequest& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
 
@@ -135,7 +149,9 @@ namespace Model
      * endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> -
      * Returns an AWS IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li>
      * <p> <code>iot:Jobs</code> - Returns an AWS IoT device management Jobs API
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer
+     * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
+     * widespread distrust of Symantec certificate authorities.</p>
      */
     inline DescribeEndpointRequest& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
 

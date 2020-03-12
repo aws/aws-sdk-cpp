@@ -21,6 +21,7 @@
 #include <aws/apigatewayv2/model/IntegrationType.h>
 #include <aws/apigatewayv2/model/PassthroughBehavior.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/apigatewayv2/model/TlsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -82,85 +83,99 @@ namespace Model
 
 
     /**
-     * <p>The connection ID.</p>
+     * <p>The ID of the VPC link for a private integration. Supported only for HTTP
+     * APIs.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p>The connection ID.</p>
+     * <p>The ID of the VPC link for a private integration. Supported only for HTTP
+     * APIs.</p>
      */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
 
     /**
-     * <p>The connection ID.</p>
+     * <p>The ID of the VPC link for a private integration. Supported only for HTTP
+     * APIs.</p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
-     * <p>The connection ID.</p>
+     * <p>The ID of the VPC link for a private integration. Supported only for HTTP
+     * APIs.</p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
-     * <p>The connection ID.</p>
+     * <p>The ID of the VPC link for a private integration. Supported only for HTTP
+     * APIs.</p>
      */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
     /**
-     * <p>The connection ID.</p>
+     * <p>The ID of the VPC link for a private integration. Supported only for HTTP
+     * APIs.</p>
      */
     inline Integration& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p>The connection ID.</p>
+     * <p>The ID of the VPC link for a private integration. Supported only for HTTP
+     * APIs.</p>
      */
     inline Integration& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The connection ID.</p>
+     * <p>The ID of the VPC link for a private integration. Supported only for HTTP
+     * APIs.</p>
      */
     inline Integration& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
 
     /**
-     * <p>The type of the network connection to the integration endpoint. Currently the
-     * only valid value is INTERNET, for connections through the public routable
-     * internet.</p>
+     * <p>The type of the network connection to the integration endpoint. Specify
+     * INTERNET for connections through the public routable internet or VPC_LINK for
+     * private connections between API Gateway and resources in a VPC. The default
+     * value is INTERNET.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
     /**
-     * <p>The type of the network connection to the integration endpoint. Currently the
-     * only valid value is INTERNET, for connections through the public routable
-     * internet.</p>
+     * <p>The type of the network connection to the integration endpoint. Specify
+     * INTERNET for connections through the public routable internet or VPC_LINK for
+     * private connections between API Gateway and resources in a VPC. The default
+     * value is INTERNET.</p>
      */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
-     * <p>The type of the network connection to the integration endpoint. Currently the
-     * only valid value is INTERNET, for connections through the public routable
-     * internet.</p>
+     * <p>The type of the network connection to the integration endpoint. Specify
+     * INTERNET for connections through the public routable internet or VPC_LINK for
+     * private connections between API Gateway and resources in a VPC. The default
+     * value is INTERNET.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
-     * <p>The type of the network connection to the integration endpoint. Currently the
-     * only valid value is INTERNET, for connections through the public routable
-     * internet.</p>
+     * <p>The type of the network connection to the integration endpoint. Specify
+     * INTERNET for connections through the public routable internet or VPC_LINK for
+     * private connections between API Gateway and resources in a VPC. The default
+     * value is INTERNET.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
     /**
-     * <p>The type of the network connection to the integration endpoint. Currently the
-     * only valid value is INTERNET, for connections through the public routable
-     * internet.</p>
+     * <p>The type of the network connection to the integration endpoint. Specify
+     * INTERNET for connections through the public routable internet or VPC_LINK for
+     * private connections between API Gateway and resources in a VPC. The default
+     * value is INTERNET.</p>
      */
     inline Integration& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
     /**
-     * <p>The type of the network connection to the integration endpoint. Currently the
-     * only valid value is INTERNET, for connections through the public routable
-     * internet.</p>
+     * <p>The type of the network connection to the integration endpoint. Specify
+     * INTERNET for connections through the public routable internet or VPC_LINK for
+     * private connections between API Gateway and resources in a VPC. The default
+     * value is INTERNET.</p>
      */
     inline Integration& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 
@@ -518,11 +533,11 @@ namespace Model
      * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
      * integrating the route or method request with an HTTP endpoint. This integration
      * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
-     * endpoint, with the client request passed through as-is. This is also referred to
-     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
-     * request with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
+     * HTTP endpoint, with the client request passed through as-is. This is also
+     * referred to as HTTP proxy integration.</p> <p>MOCK: for integrating the route or
+     * method request with API Gateway as a "loopback" endpoint without invoking any
+     * backend. Supported only for WebSocket APIs.</p>
      */
     inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
 
@@ -537,11 +552,11 @@ namespace Model
      * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
      * integrating the route or method request with an HTTP endpoint. This integration
      * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
-     * endpoint, with the client request passed through as-is. This is also referred to
-     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
-     * request with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
+     * HTTP endpoint, with the client request passed through as-is. This is also
+     * referred to as HTTP proxy integration.</p> <p>MOCK: for integrating the route or
+     * method request with API Gateway as a "loopback" endpoint without invoking any
+     * backend. Supported only for WebSocket APIs.</p>
      */
     inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
 
@@ -556,11 +571,11 @@ namespace Model
      * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
      * integrating the route or method request with an HTTP endpoint. This integration
      * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
-     * endpoint, with the client request passed through as-is. This is also referred to
-     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
-     * request with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
+     * HTTP endpoint, with the client request passed through as-is. This is also
+     * referred to as HTTP proxy integration.</p> <p>MOCK: for integrating the route or
+     * method request with API Gateway as a "loopback" endpoint without invoking any
+     * backend. Supported only for WebSocket APIs.</p>
      */
     inline void SetIntegrationType(const IntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
 
@@ -575,11 +590,11 @@ namespace Model
      * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
      * integrating the route or method request with an HTTP endpoint. This integration
      * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
-     * endpoint, with the client request passed through as-is. This is also referred to
-     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
-     * request with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
+     * HTTP endpoint, with the client request passed through as-is. This is also
+     * referred to as HTTP proxy integration.</p> <p>MOCK: for integrating the route or
+     * method request with API Gateway as a "loopback" endpoint without invoking any
+     * backend. Supported only for WebSocket APIs.</p>
      */
     inline void SetIntegrationType(IntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
 
@@ -594,11 +609,11 @@ namespace Model
      * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
      * integrating the route or method request with an HTTP endpoint. This integration
      * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
-     * endpoint, with the client request passed through as-is. This is also referred to
-     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
-     * request with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
+     * HTTP endpoint, with the client request passed through as-is. This is also
+     * referred to as HTTP proxy integration.</p> <p>MOCK: for integrating the route or
+     * method request with API Gateway as a "loopback" endpoint without invoking any
+     * backend. Supported only for WebSocket APIs.</p>
      */
     inline Integration& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
 
@@ -613,52 +628,116 @@ namespace Model
      * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
      * integrating the route or method request with an HTTP endpoint. This integration
      * is also referred to as the HTTP custom integration. Supported only for WebSocket
-     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
-     * endpoint, with the client request passed through as-is. This is also referred to
-     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
-     * request with API Gateway as a "loopback" endpoint without invoking any backend.
-     * Supported only for WebSocket APIs.</p>
+     * APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an
+     * HTTP endpoint, with the client request passed through as-is. This is also
+     * referred to as HTTP proxy integration.</p> <p>MOCK: for integrating the route or
+     * method request with API Gateway as a "loopback" endpoint without invoking any
+     * backend. Supported only for WebSocket APIs.</p>
      */
     inline Integration& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
 
 
     /**
-     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     * <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an
+     * HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private
+     * integration, specify the ARN of an Application Load Balancer listener, Network
+     * Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an
+     * AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources.
+     * You can use query parameters to target specific resources. To learn more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS
+     * account.</p>
      */
     inline const Aws::String& GetIntegrationUri() const{ return m_integrationUri; }
 
     /**
-     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     * <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an
+     * HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private
+     * integration, specify the ARN of an Application Load Balancer listener, Network
+     * Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an
+     * AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources.
+     * You can use query parameters to target specific resources. To learn more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS
+     * account.</p>
      */
     inline bool IntegrationUriHasBeenSet() const { return m_integrationUriHasBeenSet; }
 
     /**
-     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     * <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an
+     * HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private
+     * integration, specify the ARN of an Application Load Balancer listener, Network
+     * Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an
+     * AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources.
+     * You can use query parameters to target specific resources. To learn more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS
+     * account.</p>
      */
     inline void SetIntegrationUri(const Aws::String& value) { m_integrationUriHasBeenSet = true; m_integrationUri = value; }
 
     /**
-     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     * <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an
+     * HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private
+     * integration, specify the ARN of an Application Load Balancer listener, Network
+     * Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an
+     * AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources.
+     * You can use query parameters to target specific resources. To learn more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS
+     * account.</p>
      */
     inline void SetIntegrationUri(Aws::String&& value) { m_integrationUriHasBeenSet = true; m_integrationUri = std::move(value); }
 
     /**
-     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     * <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an
+     * HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private
+     * integration, specify the ARN of an Application Load Balancer listener, Network
+     * Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an
+     * AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources.
+     * You can use query parameters to target specific resources. To learn more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS
+     * account.</p>
      */
     inline void SetIntegrationUri(const char* value) { m_integrationUriHasBeenSet = true; m_integrationUri.assign(value); }
 
     /**
-     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     * <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an
+     * HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private
+     * integration, specify the ARN of an Application Load Balancer listener, Network
+     * Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an
+     * AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources.
+     * You can use query parameters to target specific resources. To learn more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS
+     * account.</p>
      */
     inline Integration& WithIntegrationUri(const Aws::String& value) { SetIntegrationUri(value); return *this;}
 
     /**
-     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     * <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an
+     * HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private
+     * integration, specify the ARN of an Application Load Balancer listener, Network
+     * Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an
+     * AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources.
+     * You can use query parameters to target specific resources. To learn more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS
+     * account.</p>
      */
     inline Integration& WithIntegrationUri(Aws::String&& value) { SetIntegrationUri(std::move(value)); return *this;}
 
     /**
-     * <p>For a Lambda proxy integration, this is the URI of the Lambda function.</p>
+     * <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an
+     * HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private
+     * integration, specify the ARN of an Application Load Balancer listener, Network
+     * Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an
+     * AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources.
+     * You can use query parameters to target specific resources. To learn more, see <a
+     * href="https://alpha-docs-aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>.
+     * For private integrations, all resources must be owned by the same AWS
+     * account.</p>
      */
     inline Integration& WithIntegrationUri(const char* value) { SetIntegrationUri(value); return *this;}
 
@@ -756,49 +835,49 @@ namespace Model
 
     /**
      * <p>Specifies the format of the payload sent to an integration. Required for HTTP
-     * APIs. Currently, the only supported value is 1.0.</p>
+     * APIs.</p>
      */
     inline const Aws::String& GetPayloadFormatVersion() const{ return m_payloadFormatVersion; }
 
     /**
      * <p>Specifies the format of the payload sent to an integration. Required for HTTP
-     * APIs. Currently, the only supported value is 1.0.</p>
+     * APIs.</p>
      */
     inline bool PayloadFormatVersionHasBeenSet() const { return m_payloadFormatVersionHasBeenSet; }
 
     /**
      * <p>Specifies the format of the payload sent to an integration. Required for HTTP
-     * APIs. Currently, the only supported value is 1.0.</p>
+     * APIs.</p>
      */
     inline void SetPayloadFormatVersion(const Aws::String& value) { m_payloadFormatVersionHasBeenSet = true; m_payloadFormatVersion = value; }
 
     /**
      * <p>Specifies the format of the payload sent to an integration. Required for HTTP
-     * APIs. Currently, the only supported value is 1.0.</p>
+     * APIs.</p>
      */
     inline void SetPayloadFormatVersion(Aws::String&& value) { m_payloadFormatVersionHasBeenSet = true; m_payloadFormatVersion = std::move(value); }
 
     /**
      * <p>Specifies the format of the payload sent to an integration. Required for HTTP
-     * APIs. Currently, the only supported value is 1.0.</p>
+     * APIs.</p>
      */
     inline void SetPayloadFormatVersion(const char* value) { m_payloadFormatVersionHasBeenSet = true; m_payloadFormatVersion.assign(value); }
 
     /**
      * <p>Specifies the format of the payload sent to an integration. Required for HTTP
-     * APIs. Currently, the only supported value is 1.0.</p>
+     * APIs.</p>
      */
     inline Integration& WithPayloadFormatVersion(const Aws::String& value) { SetPayloadFormatVersion(value); return *this;}
 
     /**
      * <p>Specifies the format of the payload sent to an integration. Required for HTTP
-     * APIs. Currently, the only supported value is 1.0.</p>
+     * APIs.</p>
      */
     inline Integration& WithPayloadFormatVersion(Aws::String&& value) { SetPayloadFormatVersion(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the format of the payload sent to an integration. Required for HTTP
-     * APIs. Currently, the only supported value is 1.0.</p>
+     * APIs.</p>
      */
     inline Integration& WithPayloadFormatVersion(const char* value) { SetPayloadFormatVersion(value); return *this;}
 
@@ -1233,6 +1312,49 @@ namespace Model
      */
     inline Integration& WithTimeoutInMillis(int value) { SetTimeoutInMillis(value); return *this;}
 
+
+    /**
+     * <p>The TLS configuration for a private integration. If you specify a TLS
+     * configuration, private integration traffic uses the HTTPS protocol. Supported
+     * only for HTTP APIs.</p>
+     */
+    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+
+    /**
+     * <p>The TLS configuration for a private integration. If you specify a TLS
+     * configuration, private integration traffic uses the HTTPS protocol. Supported
+     * only for HTTP APIs.</p>
+     */
+    inline bool TlsConfigHasBeenSet() const { return m_tlsConfigHasBeenSet; }
+
+    /**
+     * <p>The TLS configuration for a private integration. If you specify a TLS
+     * configuration, private integration traffic uses the HTTPS protocol. Supported
+     * only for HTTP APIs.</p>
+     */
+    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = value; }
+
+    /**
+     * <p>The TLS configuration for a private integration. If you specify a TLS
+     * configuration, private integration traffic uses the HTTPS protocol. Supported
+     * only for HTTP APIs.</p>
+     */
+    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::move(value); }
+
+    /**
+     * <p>The TLS configuration for a private integration. If you specify a TLS
+     * configuration, private integration traffic uses the HTTPS protocol. Supported
+     * only for HTTP APIs.</p>
+     */
+    inline Integration& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
+
+    /**
+     * <p>The TLS configuration for a private integration. If you specify a TLS
+     * configuration, private integration traffic uses the HTTPS protocol. Supported
+     * only for HTTP APIs.</p>
+     */
+    inline Integration& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+
   private:
 
     bool m_apiGatewayManaged;
@@ -1285,6 +1407,9 @@ namespace Model
 
     int m_timeoutInMillis;
     bool m_timeoutInMillisHasBeenSet;
+
+    TlsConfig m_tlsConfig;
+    bool m_tlsConfigHasBeenSet;
   };
 
 } // namespace Model

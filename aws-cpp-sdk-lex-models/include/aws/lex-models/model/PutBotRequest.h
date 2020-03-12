@@ -23,6 +23,7 @@
 #include <aws/lex-models/model/ProcessBehavior.h>
 #include <aws/lex-models/model/Locale.h>
 #include <aws/lex-models/model/Intent.h>
+#include <aws/lex-models/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -984,6 +985,63 @@ namespace Model
      */
     inline PutBotRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
 
+
+    /**
+     * <p>A list of tags to add to the bot. You can only add tags when you create a
+     * bot, you can't use the <code>PutBot</code> operation to update the tags on a
+     * bot. To update tags, use the <code>TagResource</code> operation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to add to the bot. You can only add tags when you create a
+     * bot, you can't use the <code>PutBot</code> operation to update the tags on a
+     * bot. To update tags, use the <code>TagResource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags to add to the bot. You can only add tags when you create a
+     * bot, you can't use the <code>PutBot</code> operation to update the tags on a
+     * bot. To update tags, use the <code>TagResource</code> operation.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags to add to the bot. You can only add tags when you create a
+     * bot, you can't use the <code>PutBot</code> operation to update the tags on a
+     * bot. To update tags, use the <code>TagResource</code> operation.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags to add to the bot. You can only add tags when you create a
+     * bot, you can't use the <code>PutBot</code> operation to update the tags on a
+     * bot. To update tags, use the <code>TagResource</code> operation.</p>
+     */
+    inline PutBotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags to add to the bot. You can only add tags when you create a
+     * bot, you can't use the <code>PutBot</code> operation to update the tags on a
+     * bot. To update tags, use the <code>TagResource</code> operation.</p>
+     */
+    inline PutBotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags to add to the bot. You can only add tags when you create a
+     * bot, you can't use the <code>PutBot</code> operation to update the tags on a
+     * bot. To update tags, use the <code>TagResource</code> operation.</p>
+     */
+    inline PutBotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags to add to the bot. You can only add tags when you create a
+     * bot, you can't use the <code>PutBot</code> operation to update the tags on a
+     * bot. To update tags, use the <code>TagResource</code> operation.</p>
+     */
+    inline PutBotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -1024,6 +1082,9 @@ namespace Model
 
     bool m_createVersion;
     bool m_createVersionHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

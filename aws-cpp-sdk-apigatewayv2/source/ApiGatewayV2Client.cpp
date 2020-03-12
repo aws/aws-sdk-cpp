@@ -41,6 +41,8 @@
 #include <aws/apigatewayv2/model/CreateRouteRequest.h>
 #include <aws/apigatewayv2/model/CreateRouteResponseRequest.h>
 #include <aws/apigatewayv2/model/CreateStageRequest.h>
+#include <aws/apigatewayv2/model/CreateVpcLinkRequest.h>
+#include <aws/apigatewayv2/model/DeleteAccessLogSettingsRequest.h>
 #include <aws/apigatewayv2/model/DeleteApiRequest.h>
 #include <aws/apigatewayv2/model/DeleteApiMappingRequest.h>
 #include <aws/apigatewayv2/model/DeleteAuthorizerRequest.h>
@@ -51,9 +53,11 @@
 #include <aws/apigatewayv2/model/DeleteIntegrationResponseRequest.h>
 #include <aws/apigatewayv2/model/DeleteModelRequest.h>
 #include <aws/apigatewayv2/model/DeleteRouteRequest.h>
+#include <aws/apigatewayv2/model/DeleteRouteRequestParameterRequest.h>
 #include <aws/apigatewayv2/model/DeleteRouteResponseRequest.h>
 #include <aws/apigatewayv2/model/DeleteRouteSettingsRequest.h>
 #include <aws/apigatewayv2/model/DeleteStageRequest.h>
+#include <aws/apigatewayv2/model/DeleteVpcLinkRequest.h>
 #include <aws/apigatewayv2/model/GetApiRequest.h>
 #include <aws/apigatewayv2/model/GetApiMappingRequest.h>
 #include <aws/apigatewayv2/model/GetApiMappingsRequest.h>
@@ -78,6 +82,8 @@
 #include <aws/apigatewayv2/model/GetStageRequest.h>
 #include <aws/apigatewayv2/model/GetStagesRequest.h>
 #include <aws/apigatewayv2/model/GetTagsRequest.h>
+#include <aws/apigatewayv2/model/GetVpcLinkRequest.h>
+#include <aws/apigatewayv2/model/GetVpcLinksRequest.h>
 #include <aws/apigatewayv2/model/ImportApiRequest.h>
 #include <aws/apigatewayv2/model/ReimportApiRequest.h>
 #include <aws/apigatewayv2/model/TagResourceRequest.h>
@@ -93,6 +99,7 @@
 #include <aws/apigatewayv2/model/UpdateRouteRequest.h>
 #include <aws/apigatewayv2/model/UpdateRouteResponseRequest.h>
 #include <aws/apigatewayv2/model/UpdateStageRequest.h>
+#include <aws/apigatewayv2/model/UpdateVpcLinkRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -628,6 +635,90 @@ void ApiGatewayV2Client::CreateStageAsyncHelper(const CreateStageRequest& reques
   handler(this, request, CreateStage(request), context);
 }
 
+CreateVpcLinkOutcome ApiGatewayV2Client::CreateVpcLink(const CreateVpcLinkRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/vpclinks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateVpcLinkOutcome(CreateVpcLinkResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateVpcLinkOutcome(outcome.GetError());
+  }
+}
+
+CreateVpcLinkOutcomeCallable ApiGatewayV2Client::CreateVpcLinkCallable(const CreateVpcLinkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVpcLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVpcLink(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::CreateVpcLinkAsync(const CreateVpcLinkRequest& request, const CreateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVpcLinkAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::CreateVpcLinkAsyncHelper(const CreateVpcLinkRequest& request, const CreateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVpcLink(request), context);
+}
+
+DeleteAccessLogSettingsOutcome ApiGatewayV2Client::DeleteAccessLogSettings(const DeleteAccessLogSettingsRequest& request) const
+{
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAccessLogSettings", "Required field: ApiId, is not set");
+    return DeleteAccessLogSettingsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  if (!request.StageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAccessLogSettings", "Required field: StageName, is not set");
+    return DeleteAccessLogSettingsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/apis/";
+  ss << request.GetApiId();
+  ss << "/stages/";
+  ss << request.GetStageName();
+  ss << "/accesslogsettings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAccessLogSettingsOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteAccessLogSettingsOutcome(outcome.GetError());
+  }
+}
+
+DeleteAccessLogSettingsOutcomeCallable ApiGatewayV2Client::DeleteAccessLogSettingsCallable(const DeleteAccessLogSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessLogSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccessLogSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::DeleteAccessLogSettingsAsync(const DeleteAccessLogSettingsRequest& request, const DeleteAccessLogSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessLogSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::DeleteAccessLogSettingsAsyncHelper(const DeleteAccessLogSettingsRequest& request, const DeleteAccessLogSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAccessLogSettings(request), context);
+}
+
 DeleteApiOutcome ApiGatewayV2Client::DeleteApi(const DeleteApiRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -1095,6 +1186,61 @@ void ApiGatewayV2Client::DeleteRouteAsyncHelper(const DeleteRouteRequest& reques
   handler(this, request, DeleteRoute(request), context);
 }
 
+DeleteRouteRequestParameterOutcome ApiGatewayV2Client::DeleteRouteRequestParameter(const DeleteRouteRequestParameterRequest& request) const
+{
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRouteRequestParameter", "Required field: ApiId, is not set");
+    return DeleteRouteRequestParameterOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  if (!request.RequestParameterKeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRouteRequestParameter", "Required field: RequestParameterKey, is not set");
+    return DeleteRouteRequestParameterOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestParameterKey]", false));
+  }
+  if (!request.RouteIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRouteRequestParameter", "Required field: RouteId, is not set");
+    return DeleteRouteRequestParameterOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/apis/";
+  ss << request.GetApiId();
+  ss << "/routes/";
+  ss << request.GetRouteId();
+  ss << "/requestparameters/";
+  ss << request.GetRequestParameterKey();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRouteRequestParameterOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteRouteRequestParameterOutcome(outcome.GetError());
+  }
+}
+
+DeleteRouteRequestParameterOutcomeCallable ApiGatewayV2Client::DeleteRouteRequestParameterCallable(const DeleteRouteRequestParameterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteRequestParameterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRouteRequestParameter(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::DeleteRouteRequestParameterAsync(const DeleteRouteRequestParameterRequest& request, const DeleteRouteRequestParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteRequestParameterAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::DeleteRouteRequestParameterAsyncHelper(const DeleteRouteRequestParameterRequest& request, const DeleteRouteRequestParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRouteRequestParameter(request), context);
+}
+
 DeleteRouteResponseOutcome ApiGatewayV2Client::DeleteRouteResponse(const DeleteRouteResponseRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -1251,6 +1397,47 @@ void ApiGatewayV2Client::DeleteStageAsync(const DeleteStageRequest& request, con
 void ApiGatewayV2Client::DeleteStageAsyncHelper(const DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteStage(request), context);
+}
+
+DeleteVpcLinkOutcome ApiGatewayV2Client::DeleteVpcLink(const DeleteVpcLinkRequest& request) const
+{
+  if (!request.VpcLinkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVpcLink", "Required field: VpcLinkId, is not set");
+    return DeleteVpcLinkOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/vpclinks/";
+  ss << request.GetVpcLinkId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteVpcLinkOutcome(DeleteVpcLinkResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteVpcLinkOutcome(outcome.GetError());
+  }
+}
+
+DeleteVpcLinkOutcomeCallable ApiGatewayV2Client::DeleteVpcLinkCallable(const DeleteVpcLinkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVpcLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVpcLink(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::DeleteVpcLinkAsync(const DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVpcLinkAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::DeleteVpcLinkAsyncHelper(const DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVpcLink(request), context);
 }
 
 GetApiOutcome ApiGatewayV2Client::GetApi(const GetApiRequest& request) const
@@ -2333,6 +2520,82 @@ void ApiGatewayV2Client::GetTagsAsyncHelper(const GetTagsRequest& request, const
   handler(this, request, GetTags(request), context);
 }
 
+GetVpcLinkOutcome ApiGatewayV2Client::GetVpcLink(const GetVpcLinkRequest& request) const
+{
+  if (!request.VpcLinkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVpcLink", "Required field: VpcLinkId, is not set");
+    return GetVpcLinkOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/vpclinks/";
+  ss << request.GetVpcLinkId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetVpcLinkOutcome(GetVpcLinkResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetVpcLinkOutcome(outcome.GetError());
+  }
+}
+
+GetVpcLinkOutcomeCallable ApiGatewayV2Client::GetVpcLinkCallable(const GetVpcLinkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVpcLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVpcLink(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::GetVpcLinkAsync(const GetVpcLinkRequest& request, const GetVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetVpcLinkAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::GetVpcLinkAsyncHelper(const GetVpcLinkRequest& request, const GetVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetVpcLink(request), context);
+}
+
+GetVpcLinksOutcome ApiGatewayV2Client::GetVpcLinks(const GetVpcLinksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/vpclinks";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetVpcLinksOutcome(GetVpcLinksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetVpcLinksOutcome(outcome.GetError());
+  }
+}
+
+GetVpcLinksOutcomeCallable ApiGatewayV2Client::GetVpcLinksCallable(const GetVpcLinksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVpcLinksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVpcLinks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::GetVpcLinksAsync(const GetVpcLinksRequest& request, const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetVpcLinksAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::GetVpcLinksAsyncHelper(const GetVpcLinksRequest& request, const GetVpcLinksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetVpcLinks(request), context);
+}
+
 ImportApiOutcome ApiGatewayV2Client::ImportApi(const ImportApiRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3022,5 +3285,46 @@ void ApiGatewayV2Client::UpdateStageAsync(const UpdateStageRequest& request, con
 void ApiGatewayV2Client::UpdateStageAsyncHelper(const UpdateStageRequest& request, const UpdateStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateStage(request), context);
+}
+
+UpdateVpcLinkOutcome ApiGatewayV2Client::UpdateVpcLink(const UpdateVpcLinkRequest& request) const
+{
+  if (!request.VpcLinkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVpcLink", "Required field: VpcLinkId, is not set");
+    return UpdateVpcLinkOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcLinkId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/vpclinks/";
+  ss << request.GetVpcLinkId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateVpcLinkOutcome(UpdateVpcLinkResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateVpcLinkOutcome(outcome.GetError());
+  }
+}
+
+UpdateVpcLinkOutcomeCallable ApiGatewayV2Client::UpdateVpcLinkCallable(const UpdateVpcLinkRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVpcLinkOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVpcLink(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::UpdateVpcLinkAsync(const UpdateVpcLinkRequest& request, const UpdateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateVpcLinkAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::UpdateVpcLinkAsyncHelper(const UpdateVpcLinkRequest& request, const UpdateVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateVpcLink(request), context);
 }
 

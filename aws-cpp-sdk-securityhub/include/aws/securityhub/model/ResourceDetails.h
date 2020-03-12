@@ -23,6 +23,7 @@
 #include <aws/securityhub/model/AwsElbv2LoadBalancerDetails.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainDetails.h>
 #include <aws/securityhub/model/AwsS3BucketDetails.h>
+#include <aws/securityhub/model/AwsS3ObjectDetails.h>
 #include <aws/securityhub/model/AwsIamAccessKeyDetails.h>
 #include <aws/securityhub/model/AwsIamRoleDetails.h>
 #include <aws/securityhub/model/AwsKmsKeyDetails.h>
@@ -320,6 +321,37 @@ namespace Model
      * <p>Details about an Amazon S3 Bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(AwsS3BucketDetails&& value) { SetAwsS3Bucket(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Amazon S3 object related to a finding.</p>
+     */
+    inline const AwsS3ObjectDetails& GetAwsS3Object() const{ return m_awsS3Object; }
+
+    /**
+     * <p>Details about an Amazon S3 object related to a finding.</p>
+     */
+    inline bool AwsS3ObjectHasBeenSet() const { return m_awsS3ObjectHasBeenSet; }
+
+    /**
+     * <p>Details about an Amazon S3 object related to a finding.</p>
+     */
+    inline void SetAwsS3Object(const AwsS3ObjectDetails& value) { m_awsS3ObjectHasBeenSet = true; m_awsS3Object = value; }
+
+    /**
+     * <p>Details about an Amazon S3 object related to a finding.</p>
+     */
+    inline void SetAwsS3Object(AwsS3ObjectDetails&& value) { m_awsS3ObjectHasBeenSet = true; m_awsS3Object = std::move(value); }
+
+    /**
+     * <p>Details about an Amazon S3 object related to a finding.</p>
+     */
+    inline ResourceDetails& WithAwsS3Object(const AwsS3ObjectDetails& value) { SetAwsS3Object(value); return *this;}
+
+    /**
+     * <p>Details about an Amazon S3 object related to a finding.</p>
+     */
+    inline ResourceDetails& WithAwsS3Object(AwsS3ObjectDetails&& value) { SetAwsS3Object(std::move(value)); return *this;}
 
 
     /**
@@ -813,6 +845,9 @@ namespace Model
 
     AwsS3BucketDetails m_awsS3Bucket;
     bool m_awsS3BucketHasBeenSet;
+
+    AwsS3ObjectDetails m_awsS3Object;
+    bool m_awsS3ObjectHasBeenSet;
 
     AwsIamAccessKeyDetails m_awsIamAccessKey;
     bool m_awsIamAccessKeyHasBeenSet;

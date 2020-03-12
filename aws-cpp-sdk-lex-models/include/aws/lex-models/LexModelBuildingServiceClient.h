@@ -43,11 +43,14 @@
 #include <aws/lex-models/model/GetSlotTypeVersionsResult.h>
 #include <aws/lex-models/model/GetSlotTypesResult.h>
 #include <aws/lex-models/model/GetUtterancesViewResult.h>
+#include <aws/lex-models/model/ListTagsForResourceResult.h>
 #include <aws/lex-models/model/PutBotResult.h>
 #include <aws/lex-models/model/PutBotAliasResult.h>
 #include <aws/lex-models/model/PutIntentResult.h>
 #include <aws/lex-models/model/PutSlotTypeResult.h>
 #include <aws/lex-models/model/StartImportResult.h>
+#include <aws/lex-models/model/TagResourceResult.h>
+#include <aws/lex-models/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -119,11 +122,14 @@ namespace Model
         class GetSlotTypeVersionsRequest;
         class GetSlotTypesRequest;
         class GetUtterancesViewRequest;
+        class ListTagsForResourceRequest;
         class PutBotRequest;
         class PutBotAliasRequest;
         class PutIntentRequest;
         class PutSlotTypeRequest;
         class StartImportRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<CreateBotVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateBotVersionOutcome;
         typedef Aws::Utils::Outcome<CreateIntentVersionResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> CreateIntentVersionOutcome;
@@ -156,11 +162,14 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSlotTypeVersionsResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetSlotTypeVersionsOutcome;
         typedef Aws::Utils::Outcome<GetSlotTypesResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetSlotTypesOutcome;
         typedef Aws::Utils::Outcome<GetUtterancesViewResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> GetUtterancesViewOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutBotResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutBotOutcome;
         typedef Aws::Utils::Outcome<PutBotAliasResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutBotAliasOutcome;
         typedef Aws::Utils::Outcome<PutIntentResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutIntentOutcome;
         typedef Aws::Utils::Outcome<PutSlotTypeResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> PutSlotTypeOutcome;
         typedef Aws::Utils::Outcome<StartImportResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> StartImportOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<LexModelBuildingServiceErrors>> UntagResourceOutcome;
 
         typedef std::future<CreateBotVersionOutcome> CreateBotVersionOutcomeCallable;
         typedef std::future<CreateIntentVersionOutcome> CreateIntentVersionOutcomeCallable;
@@ -193,11 +202,14 @@ namespace Model
         typedef std::future<GetSlotTypeVersionsOutcome> GetSlotTypeVersionsOutcomeCallable;
         typedef std::future<GetSlotTypesOutcome> GetSlotTypesOutcomeCallable;
         typedef std::future<GetUtterancesViewOutcome> GetUtterancesViewOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutBotOutcome> PutBotOutcomeCallable;
         typedef std::future<PutBotAliasOutcome> PutBotAliasOutcomeCallable;
         typedef std::future<PutIntentOutcome> PutIntentOutcomeCallable;
         typedef std::future<PutSlotTypeOutcome> PutSlotTypeOutcomeCallable;
         typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class LexModelBuildingServiceClient;
@@ -233,11 +245,14 @@ namespace Model
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetSlotTypeVersionsRequest&, const Model::GetSlotTypeVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSlotTypeVersionsResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetSlotTypesRequest&, const Model::GetSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSlotTypesResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::GetUtterancesViewRequest&, const Model::GetUtterancesViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUtterancesViewResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutBotRequest&, const Model::PutBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBotResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutBotAliasRequest&, const Model::PutBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutIntentRequest&, const Model::PutIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::PutSlotTypeRequest&, const Model::PutSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSlotTypeResponseReceivedHandler;
     typedef std::function<void(const LexModelBuildingServiceClient*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const LexModelBuildingServiceClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Lex Build-Time Actions</fullname> <p> Amazon Lex is an AWS
@@ -1602,6 +1617,37 @@ namespace Model
         virtual void GetUtterancesViewAsync(const Model::GetUtterancesViewRequest& request, const GetUtterancesViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a list of tags associated with the specified resource. Only bots, bot
+         * aliases, and bot channels can have tags associated with them.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Gets a list of tags associated with the specified resource. Only bots, bot
+         * aliases, and bot channels can have tags associated with them.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Gets a list of tags associated with the specified resource. Only bots, bot
+         * aliases, and bot channels can have tags associated with them.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When
          * you create or update a bot you are only required to specify a name, a locale,
          * and whether the bot is directed toward children under age 13. You can use this
@@ -1909,6 +1955,65 @@ namespace Model
          */
         virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Adds the specified tags to the specified resource. If a tag key already
+         * exists, the existing value is replaced with the new value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds the specified tags to the specified resource. If a tag key already
+         * exists, the existing value is replaced with the new value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds the specified tags to the specified resource. If a tag key already
+         * exists, the existing value is replaced with the new value.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from a bot, bot alias or bot channel.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a bot, bot alias or bot channel.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from a bot, bot alias or bot channel.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1944,11 +2049,14 @@ namespace Model
         void GetSlotTypeVersionsAsyncHelper(const Model::GetSlotTypeVersionsRequest& request, const GetSlotTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSlotTypesAsyncHelper(const Model::GetSlotTypesRequest& request, const GetSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUtterancesViewAsyncHelper(const Model::GetUtterancesViewRequest& request, const GetUtterancesViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBotAsyncHelper(const Model::PutBotRequest& request, const PutBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBotAliasAsyncHelper(const Model::PutBotAliasRequest& request, const PutBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutIntentAsyncHelper(const Model::PutIntentRequest& request, const PutIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSlotTypeAsyncHelper(const Model::PutSlotTypeRequest& request, const PutSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartImportAsyncHelper(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

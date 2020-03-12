@@ -43,7 +43,8 @@ UpdateIntegrationRequest::UpdateIntegrationRequest() :
     m_requestTemplatesHasBeenSet(false),
     m_templateSelectionExpressionHasBeenSet(false),
     m_timeoutInMillis(0),
-    m_timeoutInMillisHasBeenSet(false)
+    m_timeoutInMillisHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,12 @@ Aws::String UpdateIntegrationRequest::SerializePayload() const
   if(m_timeoutInMillisHasBeenSet)
   {
    payload.WithInteger("timeoutInMillis", m_timeoutInMillis);
+
+  }
+
+  if(m_tlsConfigHasBeenSet)
+  {
+   payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
 
   }
 

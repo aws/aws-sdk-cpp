@@ -51,7 +51,8 @@ Integration::Integration() :
     m_requestTemplatesHasBeenSet(false),
     m_templateSelectionExpressionHasBeenSet(false),
     m_timeoutInMillis(0),
-    m_timeoutInMillisHasBeenSet(false)
+    m_timeoutInMillisHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ Integration::Integration(JsonView jsonValue) :
     m_requestTemplatesHasBeenSet(false),
     m_templateSelectionExpressionHasBeenSet(false),
     m_timeoutInMillis(0),
-    m_timeoutInMillisHasBeenSet(false)
+    m_timeoutInMillisHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -210,6 +212,13 @@ Integration& Integration::operator =(JsonView jsonValue)
     m_timeoutInMillisHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tlsConfig"))
+  {
+    m_tlsConfig = jsonValue.GetObject("tlsConfig");
+
+    m_tlsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -322,6 +331,12 @@ JsonValue Integration::Jsonize() const
   if(m_timeoutInMillisHasBeenSet)
   {
    payload.WithInteger("timeoutInMillis", m_timeoutInMillis);
+
+  }
+
+  if(m_tlsConfigHasBeenSet)
+  {
+   payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
 
   }
 

@@ -30,13 +30,17 @@ namespace Model
 
 AwsS3BucketDetails::AwsS3BucketDetails() : 
     m_ownerIdHasBeenSet(false),
-    m_ownerNameHasBeenSet(false)
+    m_ownerNameHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_serverSideEncryptionConfigurationHasBeenSet(false)
 {
 }
 
 AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue) : 
     m_ownerIdHasBeenSet(false),
-    m_ownerNameHasBeenSet(false)
+    m_ownerNameHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_serverSideEncryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +61,20 @@ AwsS3BucketDetails& AwsS3BucketDetails::operator =(JsonView jsonValue)
     m_ownerNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreatedAt"))
+  {
+    m_createdAt = jsonValue.GetString("CreatedAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServerSideEncryptionConfiguration"))
+  {
+    m_serverSideEncryptionConfiguration = jsonValue.GetObject("ServerSideEncryptionConfiguration");
+
+    m_serverSideEncryptionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +91,18 @@ JsonValue AwsS3BucketDetails::Jsonize() const
   if(m_ownerNameHasBeenSet)
   {
    payload.WithString("OwnerName", m_ownerName);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("CreatedAt", m_createdAt);
+
+  }
+
+  if(m_serverSideEncryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("ServerSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
 
   }
 

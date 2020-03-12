@@ -32,7 +32,7 @@ namespace Aws
 
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
         static const int INFO_HASH = HashingUtils::HashString("INFO");
-        static const int false__HASH = HashingUtils::HashString("false");
+        static const int OFF_HASH = HashingUtils::HashString("OFF");
 
 
         LoggingLevel GetLoggingLevelForName(const Aws::String& name)
@@ -46,9 +46,9 @@ namespace Aws
           {
             return LoggingLevel::INFO;
           }
-          else if (hashCode == false__HASH)
+          else if (hashCode == OFF_HASH)
           {
-            return LoggingLevel::false_;
+            return LoggingLevel::OFF;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -68,8 +68,8 @@ namespace Aws
             return "ERROR";
           case LoggingLevel::INFO:
             return "INFO";
-          case LoggingLevel::false_:
-            return "false";
+          case LoggingLevel::OFF:
+            return "OFF";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

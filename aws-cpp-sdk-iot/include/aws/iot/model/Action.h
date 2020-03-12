@@ -26,6 +26,7 @@
 #include <aws/iot/model/FirehoseAction.h>
 #include <aws/iot/model/CloudwatchMetricAction.h>
 #include <aws/iot/model/CloudwatchAlarmAction.h>
+#include <aws/iot/model/CloudwatchLogsAction.h>
 #include <aws/iot/model/ElasticsearchAction.h>
 #include <aws/iot/model/SalesforceAction.h>
 #include <aws/iot/model/IotAnalyticsAction.h>
@@ -418,6 +419,37 @@ namespace Model
 
 
     /**
+     * <p>Send data to CloudWatch logs.</p>
+     */
+    inline const CloudwatchLogsAction& GetCloudwatchLogs() const{ return m_cloudwatchLogs; }
+
+    /**
+     * <p>Send data to CloudWatch logs.</p>
+     */
+    inline bool CloudwatchLogsHasBeenSet() const { return m_cloudwatchLogsHasBeenSet; }
+
+    /**
+     * <p>Send data to CloudWatch logs.</p>
+     */
+    inline void SetCloudwatchLogs(const CloudwatchLogsAction& value) { m_cloudwatchLogsHasBeenSet = true; m_cloudwatchLogs = value; }
+
+    /**
+     * <p>Send data to CloudWatch logs.</p>
+     */
+    inline void SetCloudwatchLogs(CloudwatchLogsAction&& value) { m_cloudwatchLogsHasBeenSet = true; m_cloudwatchLogs = std::move(value); }
+
+    /**
+     * <p>Send data to CloudWatch logs.</p>
+     */
+    inline Action& WithCloudwatchLogs(const CloudwatchLogsAction& value) { SetCloudwatchLogs(value); return *this;}
+
+    /**
+     * <p>Send data to CloudWatch logs.</p>
+     */
+    inline Action& WithCloudwatchLogs(CloudwatchLogsAction&& value) { SetCloudwatchLogs(std::move(value)); return *this;}
+
+
+    /**
      * <p>Write data to an Amazon Elasticsearch Service domain.</p>
      */
     inline const ElasticsearchAction& GetElasticsearch() const{ return m_elasticsearch; }
@@ -673,6 +705,9 @@ namespace Model
 
     CloudwatchAlarmAction m_cloudwatchAlarm;
     bool m_cloudwatchAlarmHasBeenSet;
+
+    CloudwatchLogsAction m_cloudwatchLogs;
+    bool m_cloudwatchLogsHasBeenSet;
 
     ElasticsearchAction m_elasticsearch;
     bool m_elasticsearchHasBeenSet;

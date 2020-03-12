@@ -141,43 +141,43 @@ namespace Model
 
 
     /**
-     * <p>Specifies the throttling burst limit. Supported only for WebSocket APIs.</p>
+     * <p>Specifies the throttling burst limit.</p>
      */
     inline int GetThrottlingBurstLimit() const{ return m_throttlingBurstLimit; }
 
     /**
-     * <p>Specifies the throttling burst limit. Supported only for WebSocket APIs.</p>
+     * <p>Specifies the throttling burst limit.</p>
      */
     inline bool ThrottlingBurstLimitHasBeenSet() const { return m_throttlingBurstLimitHasBeenSet; }
 
     /**
-     * <p>Specifies the throttling burst limit. Supported only for WebSocket APIs.</p>
+     * <p>Specifies the throttling burst limit.</p>
      */
     inline void SetThrottlingBurstLimit(int value) { m_throttlingBurstLimitHasBeenSet = true; m_throttlingBurstLimit = value; }
 
     /**
-     * <p>Specifies the throttling burst limit. Supported only for WebSocket APIs.</p>
+     * <p>Specifies the throttling burst limit.</p>
      */
     inline RouteSettings& WithThrottlingBurstLimit(int value) { SetThrottlingBurstLimit(value); return *this;}
 
 
     /**
-     * <p>Specifies the throttling rate limit. Supported only for WebSocket APIs.</p>
+     * <p>Specifies the throttling rate limit.</p>
      */
     inline double GetThrottlingRateLimit() const{ return m_throttlingRateLimit; }
 
     /**
-     * <p>Specifies the throttling rate limit. Supported only for WebSocket APIs.</p>
+     * <p>Specifies the throttling rate limit.</p>
      */
     inline bool ThrottlingRateLimitHasBeenSet() const { return m_throttlingRateLimitHasBeenSet; }
 
     /**
-     * <p>Specifies the throttling rate limit. Supported only for WebSocket APIs.</p>
+     * <p>Specifies the throttling rate limit.</p>
      */
     inline void SetThrottlingRateLimit(double value) { m_throttlingRateLimitHasBeenSet = true; m_throttlingRateLimit = value; }
 
     /**
-     * <p>Specifies the throttling rate limit. Supported only for WebSocket APIs.</p>
+     * <p>Specifies the throttling rate limit.</p>
      */
     inline RouteSettings& WithThrottlingRateLimit(double value) { SetThrottlingRateLimit(value); return *this;}
 

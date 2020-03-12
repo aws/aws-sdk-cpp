@@ -45,57 +45,57 @@ namespace Model
 
     /**
      * <p>The provisioning template. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning
+     * Devices That Have Device Certificates</a> for more information.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
     /**
      * <p>The provisioning template. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning
+     * Devices That Have Device Certificates</a> for more information.</p>
      */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
     /**
      * <p>The provisioning template. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning
+     * Devices That Have Device Certificates</a> for more information.</p>
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
      * <p>The provisioning template. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning
+     * Devices That Have Device Certificates</a> for more information.</p>
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
     /**
      * <p>The provisioning template. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning
+     * Devices That Have Device Certificates</a> for more information.</p>
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
     /**
      * <p>The provisioning template. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning
+     * Devices That Have Device Certificates</a> for more information.</p>
      */
     inline RegisterThingRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
     /**
      * <p>The provisioning template. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning
+     * Devices That Have Device Certificates</a> for more information.</p>
      */
     inline RegisterThingRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
     /**
      * <p>The provisioning template. See <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
-     * Provisioning</a> for more information.</p>
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning
+     * Devices That Have Device Certificates</a> for more information.</p>
      */
     inline RegisterThingRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 

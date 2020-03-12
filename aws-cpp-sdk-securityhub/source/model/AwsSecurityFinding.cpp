@@ -60,6 +60,7 @@ AwsSecurityFinding::AwsSecurityFinding() :
     m_verificationStateHasBeenSet(false),
     m_workflowState(WorkflowState::NOT_SET),
     m_workflowStateHasBeenSet(false),
+    m_workflowHasBeenSet(false),
     m_recordState(RecordState::NOT_SET),
     m_recordStateHasBeenSet(false),
     m_relatedFindingsHasBeenSet(false),
@@ -99,6 +100,7 @@ AwsSecurityFinding::AwsSecurityFinding(JsonView jsonValue) :
     m_verificationStateHasBeenSet(false),
     m_workflowState(WorkflowState::NOT_SET),
     m_workflowStateHasBeenSet(false),
+    m_workflowHasBeenSet(false),
     m_recordState(RecordState::NOT_SET),
     m_recordStateHasBeenSet(false),
     m_relatedFindingsHasBeenSet(false),
@@ -314,6 +316,13 @@ AwsSecurityFinding& AwsSecurityFinding::operator =(JsonView jsonValue)
     m_workflowState = WorkflowStateMapper::GetWorkflowStateForName(jsonValue.GetString("WorkflowState"));
 
     m_workflowStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Workflow"))
+  {
+    m_workflow = jsonValue.GetObject("Workflow");
+
+    m_workflowHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RecordState"))
@@ -535,6 +544,12 @@ JsonValue AwsSecurityFinding::Jsonize() const
   if(m_workflowStateHasBeenSet)
   {
    payload.WithString("WorkflowState", WorkflowStateMapper::GetNameForWorkflowState(m_workflowState));
+  }
+
+  if(m_workflowHasBeenSet)
+  {
+   payload.WithObject("Workflow", m_workflow.Jsonize());
+
   }
 
   if(m_recordStateHasBeenSet)

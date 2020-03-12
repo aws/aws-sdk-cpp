@@ -103,55 +103,55 @@ namespace Model
 
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * will result in an exception being thrown. PENDING_TRANSFER is a status used
-     * internally by AWS IoT. It is not intended for developer use.</p> <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be
-     * used.</p>
+     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
+     * and PENDING_ACTIVATION are statuses used internally by AWS IoT. They are not
+     * intended for developer use.</p> <p> <b>Note:</b> The status value
+     * REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline const CertificateStatus& GetNewStatus() const{ return m_newStatus; }
 
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * will result in an exception being thrown. PENDING_TRANSFER is a status used
-     * internally by AWS IoT. It is not intended for developer use.</p> <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be
-     * used.</p>
+     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
+     * and PENDING_ACTIVATION are statuses used internally by AWS IoT. They are not
+     * intended for developer use.</p> <p> <b>Note:</b> The status value
+     * REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline bool NewStatusHasBeenSet() const { return m_newStatusHasBeenSet; }
 
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * will result in an exception being thrown. PENDING_TRANSFER is a status used
-     * internally by AWS IoT. It is not intended for developer use.</p> <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be
-     * used.</p>
+     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
+     * and PENDING_ACTIVATION are statuses used internally by AWS IoT. They are not
+     * intended for developer use.</p> <p> <b>Note:</b> The status value
+     * REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline void SetNewStatus(const CertificateStatus& value) { m_newStatusHasBeenSet = true; m_newStatus = value; }
 
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * will result in an exception being thrown. PENDING_TRANSFER is a status used
-     * internally by AWS IoT. It is not intended for developer use.</p> <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be
-     * used.</p>
+     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
+     * and PENDING_ACTIVATION are statuses used internally by AWS IoT. They are not
+     * intended for developer use.</p> <p> <b>Note:</b> The status value
+     * REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline void SetNewStatus(CertificateStatus&& value) { m_newStatusHasBeenSet = true; m_newStatus = std::move(value); }
 
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * will result in an exception being thrown. PENDING_TRANSFER is a status used
-     * internally by AWS IoT. It is not intended for developer use.</p> <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be
-     * used.</p>
+     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
+     * and PENDING_ACTIVATION are statuses used internally by AWS IoT. They are not
+     * intended for developer use.</p> <p> <b>Note:</b> The status value
+     * REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline UpdateCertificateRequest& WithNewStatus(const CertificateStatus& value) { SetNewStatus(value); return *this;}
 
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
-     * will result in an exception being thrown. PENDING_TRANSFER is a status used
-     * internally by AWS IoT. It is not intended for developer use.</p> <p>
-     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be
-     * used.</p>
+     * or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER
+     * and PENDING_ACTIVATION are statuses used internally by AWS IoT. They are not
+     * intended for developer use.</p> <p> <b>Note:</b> The status value
+     * REGISTER_INACTIVE is deprecated and should not be used.</p>
      */
     inline UpdateCertificateRequest& WithNewStatus(CertificateStatus&& value) { SetNewStatus(std::move(value)); return *this;}
 

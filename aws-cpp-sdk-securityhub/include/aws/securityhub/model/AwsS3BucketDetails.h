@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securityhub/model/AwsS3BucketServerSideEncryptionConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +129,78 @@ namespace Model
      */
     inline AwsS3BucketDetails& WithOwnerName(const char* value) { SetOwnerName(value); return *this;}
 
+
+    /**
+     * <p>The date and time when the S3 bucket was created.</p>
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The date and time when the S3 bucket was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date and time when the S3 bucket was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The date and time when the S3 bucket was created.</p>
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The date and time when the S3 bucket was created.</p>
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
+
+    /**
+     * <p>The date and time when the S3 bucket was created.</p>
+     */
+    inline AwsS3BucketDetails& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time when the S3 bucket was created.</p>
+     */
+    inline AwsS3BucketDetails& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time when the S3 bucket was created.</p>
+     */
+    inline AwsS3BucketDetails& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
+    /**
+     * <p>The encryption rules that are applied to the S3 bucket.</p>
+     */
+    inline const AwsS3BucketServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
+
+    /**
+     * <p>The encryption rules that are applied to the S3 bucket.</p>
+     */
+    inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>The encryption rules that are applied to the S3 bucket.</p>
+     */
+    inline void SetServerSideEncryptionConfiguration(const AwsS3BucketServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
+
+    /**
+     * <p>The encryption rules that are applied to the S3 bucket.</p>
+     */
+    inline void SetServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>The encryption rules that are applied to the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithServerSideEncryptionConfiguration(const AwsS3BucketServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>The encryption rules that are applied to the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -135,6 +208,12 @@ namespace Model
 
     Aws::String m_ownerName;
     bool m_ownerNameHasBeenSet;
+
+    Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet;
+
+    AwsS3BucketServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
+    bool m_serverSideEncryptionConfigurationHasBeenSet;
   };
 
 } // namespace Model
