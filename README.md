@@ -145,6 +145,10 @@ Nmake builds targets in a serial fashion.  To make things quicker, we recommend 
 cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
 ```
 
+### Building for Docker
+
+To build for Docker, ensure your container meets the [minimum requirements](#minimum-requirements). By default, Docker Desktop is set to use 2 GB runtime memory, so increase your RAM on your [Windows](https://docs.docker.com/docker-for-windows/#resources) or [Mac](https://docs.docker.com/docker-for-mac/#resources) machine. We have provided [Dockerfiles](https://github.com/aws/aws-sdk-cpp/tree/master/CI/docker-file) as templates for building the SDK in a container.
+
 ### General CMake Variables
 
 #### BUILD_ONLY
