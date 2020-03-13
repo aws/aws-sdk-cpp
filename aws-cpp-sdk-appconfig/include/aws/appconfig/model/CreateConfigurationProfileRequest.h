@@ -169,82 +169,106 @@ namespace Model
 
 
     /**
-     * <p>A URI to locate the configuration. You can specify either a Systems Manager
-     * (SSM) document or an SSM Parameter Store parameter. For an SSM document, specify
-     * either the document name in the format <code>ssm-document://&lt;Document
-     * name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter
-     * name&gt;</code> or the ARN.</p>
+     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
+     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
+     * document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
+     * (ARN). For a parameter, specify either the parameter name in the format
+     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
+     * object, specify the URI in the following format:
+     * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify either a Systems Manager
-     * (SSM) document or an SSM Parameter Store parameter. For an SSM document, specify
-     * either the document name in the format <code>ssm-document://&lt;Document
-     * name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter
-     * name&gt;</code> or the ARN.</p>
+     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
+     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
+     * document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
+     * (ARN). For a parameter, specify either the parameter name in the format
+     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
+     * object, specify the URI in the following format:
+     * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
      */
     inline bool LocationUriHasBeenSet() const { return m_locationUriHasBeenSet; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify either a Systems Manager
-     * (SSM) document or an SSM Parameter Store parameter. For an SSM document, specify
-     * either the document name in the format <code>ssm-document://&lt;Document
-     * name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter
-     * name&gt;</code> or the ARN.</p>
+     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
+     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
+     * document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
+     * (ARN). For a parameter, specify either the parameter name in the format
+     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
+     * object, specify the URI in the following format:
+     * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUriHasBeenSet = true; m_locationUri = value; }
 
     /**
-     * <p>A URI to locate the configuration. You can specify either a Systems Manager
-     * (SSM) document or an SSM Parameter Store parameter. For an SSM document, specify
-     * either the document name in the format <code>ssm-document://&lt;Document
-     * name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter
-     * name&gt;</code> or the ARN.</p>
+     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
+     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
+     * document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
+     * (ARN). For a parameter, specify either the parameter name in the format
+     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
+     * object, specify the URI in the following format:
+     * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUriHasBeenSet = true; m_locationUri = std::move(value); }
 
     /**
-     * <p>A URI to locate the configuration. You can specify either a Systems Manager
-     * (SSM) document or an SSM Parameter Store parameter. For an SSM document, specify
-     * either the document name in the format <code>ssm-document://&lt;Document
-     * name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter
-     * name&gt;</code> or the ARN.</p>
+     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
+     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
+     * document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
+     * (ARN). For a parameter, specify either the parameter name in the format
+     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
+     * object, specify the URI in the following format:
+     * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
      */
     inline void SetLocationUri(const char* value) { m_locationUriHasBeenSet = true; m_locationUri.assign(value); }
 
     /**
-     * <p>A URI to locate the configuration. You can specify either a Systems Manager
-     * (SSM) document or an SSM Parameter Store parameter. For an SSM document, specify
-     * either the document name in the format <code>ssm-document://&lt;Document
-     * name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter
-     * name&gt;</code> or the ARN.</p>
+     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
+     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
+     * document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
+     * (ARN). For a parameter, specify either the parameter name in the format
+     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
+     * object, specify the URI in the following format:
+     * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>A URI to locate the configuration. You can specify either a Systems Manager
-     * (SSM) document or an SSM Parameter Store parameter. For an SSM document, specify
-     * either the document name in the format <code>ssm-document://&lt;Document
-     * name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter
-     * name&gt;</code> or the ARN.</p>
+     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
+     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
+     * document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
+     * (ARN). For a parameter, specify either the parameter name in the format
+     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
+     * object, specify the URI in the following format:
+     * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>A URI to locate the configuration. You can specify either a Systems Manager
-     * (SSM) document or an SSM Parameter Store parameter. For an SSM document, specify
-     * either the document name in the format <code>ssm-document://&lt;Document
-     * name&gt;</code> or the Amazon Resource Name (ARN). For a parameter, specify
-     * either the parameter name in the format <code>ssm-parameter://&lt;Parameter
-     * name&gt;</code> or the ARN.</p>
+     * <p>A URI to locate the configuration. You can specify a Systems Manager (SSM)
+     * document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM
+     * document, specify either the document name in the format
+     * <code>ssm-document://&lt;Document_name&gt;</code> or the Amazon Resource Name
+     * (ARN). For a parameter, specify either the parameter name in the format
+     * <code>ssm-parameter://&lt;Parameter_name&gt;</code> or the ARN. For an Amazon S3
+     * object, specify the URI in the following format:
+     * <code>s3://&lt;bucket&gt;/&lt;objectKey&gt; </code>. Here is an example:
+     * s3://my-bucket/my-app/us-east-1/my-config.json</p>
      */
     inline CreateConfigurationProfileRequest& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 

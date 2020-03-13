@@ -307,13 +307,16 @@ namespace Model
 
         /**
          * <p>Information that enables AppConfig to access the configuration source. Valid
-         * configuration sources include Systems Manager (SSM) documents and SSM Parameter
-         * Store parameters. A configuration profile includes the following
-         * information.</p> <ul> <li> <p>The Uri location of the configuration data.</p>
-         * </li> <li> <p>The AWS Identity and Access Management (IAM) role that provides
-         * access to the configuration data.</p> </li> <li> <p>A validator for the
+         * configuration sources include Systems Manager (SSM) documents, SSM Parameter
+         * Store parameters, and Amazon S3 objects. A configuration profile includes the
+         * following information.</p> <ul> <li> <p>The Uri location of the configuration
+         * data.</p> </li> <li> <p>The AWS Identity and Access Management (IAM) role that
+         * provides access to the configuration data.</p> </li> <li> <p>A validator for the
          * configuration data. Available validators include either a JSON Schema or an AWS
-         * Lambda function.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Lambda function.</p> </li> </ul> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
+         * a Configuration and a Configuration Profile</a> in the <i>AWS AppConfig User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateConfigurationProfile">AWS
          * API Reference</a></p>
          */
@@ -321,13 +324,16 @@ namespace Model
 
         /**
          * <p>Information that enables AppConfig to access the configuration source. Valid
-         * configuration sources include Systems Manager (SSM) documents and SSM Parameter
-         * Store parameters. A configuration profile includes the following
-         * information.</p> <ul> <li> <p>The Uri location of the configuration data.</p>
-         * </li> <li> <p>The AWS Identity and Access Management (IAM) role that provides
-         * access to the configuration data.</p> </li> <li> <p>A validator for the
+         * configuration sources include Systems Manager (SSM) documents, SSM Parameter
+         * Store parameters, and Amazon S3 objects. A configuration profile includes the
+         * following information.</p> <ul> <li> <p>The Uri location of the configuration
+         * data.</p> </li> <li> <p>The AWS Identity and Access Management (IAM) role that
+         * provides access to the configuration data.</p> </li> <li> <p>A validator for the
          * configuration data. Available validators include either a JSON Schema or an AWS
-         * Lambda function.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Lambda function.</p> </li> </ul> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
+         * a Configuration and a Configuration Profile</a> in the <i>AWS AppConfig User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateConfigurationProfile">AWS
          * API Reference</a></p>
          *
@@ -337,13 +343,16 @@ namespace Model
 
         /**
          * <p>Information that enables AppConfig to access the configuration source. Valid
-         * configuration sources include Systems Manager (SSM) documents and SSM Parameter
-         * Store parameters. A configuration profile includes the following
-         * information.</p> <ul> <li> <p>The Uri location of the configuration data.</p>
-         * </li> <li> <p>The AWS Identity and Access Management (IAM) role that provides
-         * access to the configuration data.</p> </li> <li> <p>A validator for the
+         * configuration sources include Systems Manager (SSM) documents, SSM Parameter
+         * Store parameters, and Amazon S3 objects. A configuration profile includes the
+         * following information.</p> <ul> <li> <p>The Uri location of the configuration
+         * data.</p> </li> <li> <p>The AWS Identity and Access Management (IAM) role that
+         * provides access to the configuration data.</p> </li> <li> <p>A validator for the
          * configuration data. Available validators include either a JSON Schema or an AWS
-         * Lambda function.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Lambda function.</p> </li> </ul> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html">Create
+         * a Configuration and a Configuration Profile</a> in the <i>AWS AppConfig User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateConfigurationProfile">AWS
          * API Reference</a></p>
          *

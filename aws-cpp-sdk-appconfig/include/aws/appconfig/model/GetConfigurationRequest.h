@@ -49,124 +49,148 @@ namespace Model
 
 
     /**
-     * <p>The application to get.</p>
+     * <p>The application to get. Specify either the application name or the
+     * application ID.</p>
      */
     inline const Aws::String& GetApplication() const{ return m_application; }
 
     /**
-     * <p>The application to get.</p>
+     * <p>The application to get. Specify either the application name or the
+     * application ID.</p>
      */
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
 
     /**
-     * <p>The application to get.</p>
+     * <p>The application to get. Specify either the application name or the
+     * application ID.</p>
      */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
 
     /**
-     * <p>The application to get.</p>
+     * <p>The application to get. Specify either the application name or the
+     * application ID.</p>
      */
     inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
 
     /**
-     * <p>The application to get.</p>
+     * <p>The application to get. Specify either the application name or the
+     * application ID.</p>
      */
     inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
 
     /**
-     * <p>The application to get.</p>
+     * <p>The application to get. Specify either the application name or the
+     * application ID.</p>
      */
     inline GetConfigurationRequest& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
 
     /**
-     * <p>The application to get.</p>
+     * <p>The application to get. Specify either the application name or the
+     * application ID.</p>
      */
     inline GetConfigurationRequest& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
 
     /**
-     * <p>The application to get.</p>
+     * <p>The application to get. Specify either the application name or the
+     * application ID.</p>
      */
     inline GetConfigurationRequest& WithApplication(const char* value) { SetApplication(value); return *this;}
 
 
     /**
-     * <p>The environment to get.</p>
+     * <p>The environment to get. Specify either the environment name or the
+     * environment ID.</p>
      */
     inline const Aws::String& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>The environment to get.</p>
+     * <p>The environment to get. Specify either the environment name or the
+     * environment ID.</p>
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
-     * <p>The environment to get.</p>
+     * <p>The environment to get. Specify either the environment name or the
+     * environment ID.</p>
      */
     inline void SetEnvironment(const Aws::String& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>The environment to get.</p>
+     * <p>The environment to get. Specify either the environment name or the
+     * environment ID.</p>
      */
     inline void SetEnvironment(Aws::String&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
-     * <p>The environment to get.</p>
+     * <p>The environment to get. Specify either the environment name or the
+     * environment ID.</p>
      */
     inline void SetEnvironment(const char* value) { m_environmentHasBeenSet = true; m_environment.assign(value); }
 
     /**
-     * <p>The environment to get.</p>
+     * <p>The environment to get. Specify either the environment name or the
+     * environment ID.</p>
      */
     inline GetConfigurationRequest& WithEnvironment(const Aws::String& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>The environment to get.</p>
+     * <p>The environment to get. Specify either the environment name or the
+     * environment ID.</p>
      */
     inline GetConfigurationRequest& WithEnvironment(Aws::String&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p>The environment to get.</p>
+     * <p>The environment to get. Specify either the environment name or the
+     * environment ID.</p>
      */
     inline GetConfigurationRequest& WithEnvironment(const char* value) { SetEnvironment(value); return *this;}
 
 
     /**
-     * <p>The configuration to get.</p>
+     * <p>The configuration to get. Specify either the configuration name or the
+     * configuration ID.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The configuration to get.</p>
+     * <p>The configuration to get. Specify either the configuration name or the
+     * configuration ID.</p>
      */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>The configuration to get.</p>
+     * <p>The configuration to get. Specify either the configuration name or the
+     * configuration ID.</p>
      */
     inline void SetConfiguration(const Aws::String& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>The configuration to get.</p>
+     * <p>The configuration to get. Specify either the configuration name or the
+     * configuration ID.</p>
      */
     inline void SetConfiguration(Aws::String&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>The configuration to get.</p>
+     * <p>The configuration to get. Specify either the configuration name or the
+     * configuration ID.</p>
      */
     inline void SetConfiguration(const char* value) { m_configurationHasBeenSet = true; m_configuration.assign(value); }
 
     /**
-     * <p>The configuration to get.</p>
+     * <p>The configuration to get. Specify either the configuration name or the
+     * configuration ID.</p>
      */
     inline GetConfigurationRequest& WithConfiguration(const Aws::String& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration to get.</p>
+     * <p>The configuration to get. Specify either the configuration name or the
+     * configuration ID.</p>
      */
     inline GetConfigurationRequest& WithConfiguration(Aws::String&& value) { SetConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration to get.</p>
+     * <p>The configuration to get. Specify either the configuration name or the
+     * configuration ID.</p>
      */
     inline GetConfigurationRequest& WithConfiguration(const char* value) { SetConfiguration(value); return *this;}
 
