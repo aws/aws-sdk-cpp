@@ -674,7 +674,7 @@ auto getObjectOutcome = s3Client->GetObject(getObjectRequest);
 ```
 
 ## Contributing Back
-\*Please Do!
+**Please Do!**
 
 ### Guidelines
 * Don't make changes to generated clients directly. Make your changes in the generator. Changes to Core, Scripts, and High-Level interfaces are fine directly in the code.
