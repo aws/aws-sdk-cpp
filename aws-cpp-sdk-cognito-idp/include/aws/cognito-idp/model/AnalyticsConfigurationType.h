@@ -35,7 +35,9 @@ namespace Model
 
   /**
    * <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user
-   * pool.</p><p><h3>See Also:</h3>   <a
+   * pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon
+   * Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of
+   * the region in which the user pool resides.</p> </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AnalyticsConfigurationType">AWS
    * API Reference</a></p>
    */

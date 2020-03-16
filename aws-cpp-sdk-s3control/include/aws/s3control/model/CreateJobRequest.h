@@ -20,6 +20,8 @@
 #include <aws/s3control/model/JobOperation.h>
 #include <aws/s3control/model/JobReport.h>
 #include <aws/s3control/model/JobManifest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3control/model/S3Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -416,6 +418,47 @@ namespace Model
      */
     inline CreateJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>An optional set of tags to associate with the job when it is created.</p>
+     */
+    inline const Aws::Vector<S3Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An optional set of tags to associate with the job when it is created.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An optional set of tags to associate with the job when it is created.</p>
+     */
+    inline void SetTags(const Aws::Vector<S3Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>An optional set of tags to associate with the job when it is created.</p>
+     */
+    inline void SetTags(Aws::Vector<S3Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>An optional set of tags to associate with the job when it is created.</p>
+     */
+    inline CreateJobRequest& WithTags(const Aws::Vector<S3Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>An optional set of tags to associate with the job when it is created.</p>
+     */
+    inline CreateJobRequest& WithTags(Aws::Vector<S3Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional set of tags to associate with the job when it is created.</p>
+     */
+    inline CreateJobRequest& AddTags(const S3Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>An optional set of tags to associate with the job when it is created.</p>
+     */
+    inline CreateJobRequest& AddTags(S3Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_accountId;
@@ -444,6 +487,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::Vector<S3Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

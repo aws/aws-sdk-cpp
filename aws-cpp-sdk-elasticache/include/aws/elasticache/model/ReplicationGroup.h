@@ -17,6 +17,7 @@
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticache/model/GlobalReplicationGroupInfo.h>
 #include <aws/elasticache/model/ReplicationGroupPendingModifiedValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AutomaticFailoverStatus.h>
@@ -136,6 +137,43 @@ namespace Model
      * <p>The user supplied description of the replication group.</p>
      */
     inline ReplicationGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The name of the Global Datastore and role of this replication group in the
+     * Global Datastore.</p>
+     */
+    inline const GlobalReplicationGroupInfo& GetGlobalReplicationGroupInfo() const{ return m_globalReplicationGroupInfo; }
+
+    /**
+     * <p>The name of the Global Datastore and role of this replication group in the
+     * Global Datastore.</p>
+     */
+    inline bool GlobalReplicationGroupInfoHasBeenSet() const { return m_globalReplicationGroupInfoHasBeenSet; }
+
+    /**
+     * <p>The name of the Global Datastore and role of this replication group in the
+     * Global Datastore.</p>
+     */
+    inline void SetGlobalReplicationGroupInfo(const GlobalReplicationGroupInfo& value) { m_globalReplicationGroupInfoHasBeenSet = true; m_globalReplicationGroupInfo = value; }
+
+    /**
+     * <p>The name of the Global Datastore and role of this replication group in the
+     * Global Datastore.</p>
+     */
+    inline void SetGlobalReplicationGroupInfo(GlobalReplicationGroupInfo&& value) { m_globalReplicationGroupInfoHasBeenSet = true; m_globalReplicationGroupInfo = std::move(value); }
+
+    /**
+     * <p>The name of the Global Datastore and role of this replication group in the
+     * Global Datastore.</p>
+     */
+    inline ReplicationGroup& WithGlobalReplicationGroupInfo(const GlobalReplicationGroupInfo& value) { SetGlobalReplicationGroupInfo(value); return *this;}
+
+    /**
+     * <p>The name of the Global Datastore and role of this replication group in the
+     * Global Datastore.</p>
+     */
+    inline ReplicationGroup& WithGlobalReplicationGroupInfo(GlobalReplicationGroupInfo&& value) { SetGlobalReplicationGroupInfo(std::move(value)); return *this;}
 
 
     /**
@@ -878,6 +916,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    GlobalReplicationGroupInfo m_globalReplicationGroupInfo;
+    bool m_globalReplicationGroupInfoHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

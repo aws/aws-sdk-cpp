@@ -48,7 +48,9 @@ namespace Model
    * <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code> </p> <p> <b>M4
    * node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
    * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-   * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+   * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+   * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+   * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
    * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
    * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
    * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -151,42 +153,58 @@ namespace Model
 
 
     /**
-     * <p>The current state of this cache node.</p>
+     * <p>The current state of this cache node, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>rebooting</code>, or
+     * <code>deleting</code>.</p>
      */
     inline const Aws::String& GetCacheNodeStatus() const{ return m_cacheNodeStatus; }
 
     /**
-     * <p>The current state of this cache node.</p>
+     * <p>The current state of this cache node, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>rebooting</code>, or
+     * <code>deleting</code>.</p>
      */
     inline bool CacheNodeStatusHasBeenSet() const { return m_cacheNodeStatusHasBeenSet; }
 
     /**
-     * <p>The current state of this cache node.</p>
+     * <p>The current state of this cache node, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>rebooting</code>, or
+     * <code>deleting</code>.</p>
      */
     inline void SetCacheNodeStatus(const Aws::String& value) { m_cacheNodeStatusHasBeenSet = true; m_cacheNodeStatus = value; }
 
     /**
-     * <p>The current state of this cache node.</p>
+     * <p>The current state of this cache node, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>rebooting</code>, or
+     * <code>deleting</code>.</p>
      */
     inline void SetCacheNodeStatus(Aws::String&& value) { m_cacheNodeStatusHasBeenSet = true; m_cacheNodeStatus = std::move(value); }
 
     /**
-     * <p>The current state of this cache node.</p>
+     * <p>The current state of this cache node, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>rebooting</code>, or
+     * <code>deleting</code>.</p>
      */
     inline void SetCacheNodeStatus(const char* value) { m_cacheNodeStatusHasBeenSet = true; m_cacheNodeStatus.assign(value); }
 
     /**
-     * <p>The current state of this cache node.</p>
+     * <p>The current state of this cache node, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>rebooting</code>, or
+     * <code>deleting</code>.</p>
      */
     inline CacheNode& WithCacheNodeStatus(const Aws::String& value) { SetCacheNodeStatus(value); return *this;}
 
     /**
-     * <p>The current state of this cache node.</p>
+     * <p>The current state of this cache node, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>rebooting</code>, or
+     * <code>deleting</code>.</p>
      */
     inline CacheNode& WithCacheNodeStatus(Aws::String&& value) { SetCacheNodeStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The current state of this cache node.</p>
+     * <p>The current state of this cache node, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>rebooting</code>, or
+     * <code>deleting</code>.</p>
      */
     inline CacheNode& WithCacheNodeStatus(const char* value) { SetCacheNodeStatus(value); return *this;}
 

@@ -17,6 +17,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ResourceDataSyncS3Format.h>
+#include <aws/ssm/model/ResourceDataSyncDestinationDataSharing.h>
 #include <utility>
 
 namespace Aws
@@ -265,6 +266,43 @@ namespace Model
      */
     inline ResourceDataSyncS3Destination& WithAWSKMSKeyARN(const char* value) { SetAWSKMSKeyARN(value); return *this;}
 
+
+    /**
+     * <p>Enables destination data sharing. By default, this field is
+     * <code>null</code>.</p>
+     */
+    inline const ResourceDataSyncDestinationDataSharing& GetDestinationDataSharing() const{ return m_destinationDataSharing; }
+
+    /**
+     * <p>Enables destination data sharing. By default, this field is
+     * <code>null</code>.</p>
+     */
+    inline bool DestinationDataSharingHasBeenSet() const { return m_destinationDataSharingHasBeenSet; }
+
+    /**
+     * <p>Enables destination data sharing. By default, this field is
+     * <code>null</code>.</p>
+     */
+    inline void SetDestinationDataSharing(const ResourceDataSyncDestinationDataSharing& value) { m_destinationDataSharingHasBeenSet = true; m_destinationDataSharing = value; }
+
+    /**
+     * <p>Enables destination data sharing. By default, this field is
+     * <code>null</code>.</p>
+     */
+    inline void SetDestinationDataSharing(ResourceDataSyncDestinationDataSharing&& value) { m_destinationDataSharingHasBeenSet = true; m_destinationDataSharing = std::move(value); }
+
+    /**
+     * <p>Enables destination data sharing. By default, this field is
+     * <code>null</code>.</p>
+     */
+    inline ResourceDataSyncS3Destination& WithDestinationDataSharing(const ResourceDataSyncDestinationDataSharing& value) { SetDestinationDataSharing(value); return *this;}
+
+    /**
+     * <p>Enables destination data sharing. By default, this field is
+     * <code>null</code>.</p>
+     */
+    inline ResourceDataSyncS3Destination& WithDestinationDataSharing(ResourceDataSyncDestinationDataSharing&& value) { SetDestinationDataSharing(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_bucketName;
@@ -281,6 +319,9 @@ namespace Model
 
     Aws::String m_aWSKMSKeyARN;
     bool m_aWSKMSKeyARNHasBeenSet;
+
+    ResourceDataSyncDestinationDataSharing m_destinationDataSharing;
+    bool m_destinationDataSharingHasBeenSet;
   };
 
 } // namespace Model

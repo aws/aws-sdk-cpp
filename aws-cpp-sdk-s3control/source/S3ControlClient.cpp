@@ -34,15 +34,18 @@
 #include <aws/s3control/model/CreateJobRequest.h>
 #include <aws/s3control/model/DeleteAccessPointRequest.h>
 #include <aws/s3control/model/DeleteAccessPointPolicyRequest.h>
+#include <aws/s3control/model/DeleteJobTaggingRequest.h>
 #include <aws/s3control/model/DeletePublicAccessBlockRequest.h>
 #include <aws/s3control/model/DescribeJobRequest.h>
 #include <aws/s3control/model/GetAccessPointRequest.h>
 #include <aws/s3control/model/GetAccessPointPolicyRequest.h>
 #include <aws/s3control/model/GetAccessPointPolicyStatusRequest.h>
+#include <aws/s3control/model/GetJobTaggingRequest.h>
 #include <aws/s3control/model/GetPublicAccessBlockRequest.h>
 #include <aws/s3control/model/ListAccessPointsRequest.h>
 #include <aws/s3control/model/ListJobsRequest.h>
 #include <aws/s3control/model/PutAccessPointPolicyRequest.h>
+#include <aws/s3control/model/PutJobTaggingRequest.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3control/model/UpdateJobPriorityRequest.h>
 #include <aws/s3control/model/UpdateJobStatusRequest.h>
@@ -327,6 +330,58 @@ void S3ControlClient::DeleteAccessPointPolicyAsyncHelper(const DeleteAccessPoint
   handler(this, request, DeleteAccessPointPolicy(request), context);
 }
 
+DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTaggingRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJobTagging", "Required field: AccountId, is not set");
+    return DeleteJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJobTagging", "Required field: JobId, is not set");
+    return DeleteJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return DeleteJobTaggingOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
+  ss << "/v20180820/jobs/";
+  ss << request.GetJobId();
+  ss << "/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeleteJobTaggingOutcome(DeleteJobTaggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteJobTaggingOutcome(outcome.GetError());
+  }
+}
+
+DeleteJobTaggingOutcomeCallable S3ControlClient::DeleteJobTaggingCallable(const DeleteJobTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteJobTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJobTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::DeleteJobTaggingAsync(const DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::DeleteJobTaggingAsyncHelper(const DeleteJobTaggingRequest& request, const DeleteJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteJobTagging(request), context);
+}
+
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -578,6 +633,58 @@ void S3ControlClient::GetAccessPointPolicyStatusAsyncHelper(const GetAccessPoint
   handler(this, request, GetAccessPointPolicyStatus(request), context);
 }
 
+GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJobTagging", "Required field: AccountId, is not set");
+    return GetJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJobTagging", "Required field: JobId, is not set");
+    return GetJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return GetJobTaggingOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
+  ss << "/v20180820/jobs/";
+  ss << request.GetJobId();
+  ss << "/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetJobTaggingOutcome(GetJobTaggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetJobTaggingOutcome(outcome.GetError());
+  }
+}
+
+GetJobTaggingOutcomeCallable S3ControlClient::GetJobTaggingCallable(const GetJobTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetJobTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetJobTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::GetJobTaggingAsync(const GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetJobTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::GetJobTaggingAsyncHelper(const GetJobTaggingRequest& request, const GetJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetJobTagging(request), context);
+}
+
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -763,6 +870,58 @@ void S3ControlClient::PutAccessPointPolicyAsync(const PutAccessPointPolicyReques
 void S3ControlClient::PutAccessPointPolicyAsyncHelper(const PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAccessPointPolicy(request), context);
+}
+
+PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutJobTagging", "Required field: AccountId, is not set");
+    return PutJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutJobTagging", "Required field: JobId, is not set");
+    return PutJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return PutJobTaggingOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
+  ss << "/v20180820/jobs/";
+  ss << request.GetJobId();
+  ss << "/tagging";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutJobTaggingOutcome(PutJobTaggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutJobTaggingOutcome(outcome.GetError());
+  }
+}
+
+PutJobTaggingOutcomeCallable S3ControlClient::PutJobTaggingCallable(const PutJobTaggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutJobTaggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutJobTagging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3ControlClient::PutJobTaggingAsync(const PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutJobTaggingAsyncHelper( request, handler, context ); } );
+}
+
+void S3ControlClient::PutJobTaggingAsyncHelper(const PutJobTaggingRequest& request, const PutJobTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutJobTagging(request), context);
 }
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const

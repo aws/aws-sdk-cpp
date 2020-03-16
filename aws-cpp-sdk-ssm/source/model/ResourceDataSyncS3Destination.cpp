@@ -34,7 +34,8 @@ ResourceDataSyncS3Destination::ResourceDataSyncS3Destination() :
     m_syncFormat(ResourceDataSyncS3Format::NOT_SET),
     m_syncFormatHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_aWSKMSKeyARNHasBeenSet(false)
+    m_aWSKMSKeyARNHasBeenSet(false),
+    m_destinationDataSharingHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ResourceDataSyncS3Destination::ResourceDataSyncS3Destination(JsonView jsonValue)
     m_syncFormat(ResourceDataSyncS3Format::NOT_SET),
     m_syncFormatHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_aWSKMSKeyARNHasBeenSet(false)
+    m_aWSKMSKeyARNHasBeenSet(false),
+    m_destinationDataSharingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ ResourceDataSyncS3Destination& ResourceDataSyncS3Destination::operator =(JsonVie
     m_aWSKMSKeyARNHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DestinationDataSharing"))
+  {
+    m_destinationDataSharing = jsonValue.GetObject("DestinationDataSharing");
+
+    m_destinationDataSharingHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +128,12 @@ JsonValue ResourceDataSyncS3Destination::Jsonize() const
   if(m_aWSKMSKeyARNHasBeenSet)
   {
    payload.WithString("AWSKMSKeyARN", m_aWSKMSKeyARN);
+
+  }
+
+  if(m_destinationDataSharingHasBeenSet)
+  {
+   payload.WithObject("DestinationDataSharing", m_destinationDataSharing.Jsonize());
 
   }
 

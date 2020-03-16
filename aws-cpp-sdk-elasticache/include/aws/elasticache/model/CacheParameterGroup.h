@@ -196,6 +196,31 @@ namespace Model
      */
     inline CacheParameterGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the parameter group is associated with a Global
+     * Datastore</p>
+     */
+    inline bool GetIsGlobal() const{ return m_isGlobal; }
+
+    /**
+     * <p>Indicates whether the parameter group is associated with a Global
+     * Datastore</p>
+     */
+    inline bool IsGlobalHasBeenSet() const { return m_isGlobalHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the parameter group is associated with a Global
+     * Datastore</p>
+     */
+    inline void SetIsGlobal(bool value) { m_isGlobalHasBeenSet = true; m_isGlobal = value; }
+
+    /**
+     * <p>Indicates whether the parameter group is associated with a Global
+     * Datastore</p>
+     */
+    inline CacheParameterGroup& WithIsGlobal(bool value) { SetIsGlobal(value); return *this;}
+
   private:
 
     Aws::String m_cacheParameterGroupName;
@@ -206,6 +231,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    bool m_isGlobal;
+    bool m_isGlobalHasBeenSet;
   };
 
 } // namespace Model

@@ -64,7 +64,8 @@ enum class S3ControlErrors
   JOB_STATUS,
   NOT_FOUND,
   NO_SUCH_PUBLIC_ACCESS_BLOCK_CONFIGURATION,
-  TOO_MANY_REQUESTS
+  TOO_MANY_REQUESTS,
+  TOO_MANY_TAGS
 };
 namespace S3ControlErrorMapper
 {

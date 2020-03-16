@@ -40,13 +40,16 @@
 #include <aws/elasticache/model/CreateCacheParameterGroupRequest.h>
 #include <aws/elasticache/model/CreateCacheSecurityGroupRequest.h>
 #include <aws/elasticache/model/CreateCacheSubnetGroupRequest.h>
+#include <aws/elasticache/model/CreateGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/CreateReplicationGroupRequest.h>
 #include <aws/elasticache/model/CreateSnapshotRequest.h>
+#include <aws/elasticache/model/DecreaseNodeGroupsInGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/DecreaseReplicaCountRequest.h>
 #include <aws/elasticache/model/DeleteCacheClusterRequest.h>
 #include <aws/elasticache/model/DeleteCacheParameterGroupRequest.h>
 #include <aws/elasticache/model/DeleteCacheSecurityGroupRequest.h>
 #include <aws/elasticache/model/DeleteCacheSubnetGroupRequest.h>
+#include <aws/elasticache/model/DeleteGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/DeleteReplicationGroupRequest.h>
 #include <aws/elasticache/model/DeleteSnapshotRequest.h>
 #include <aws/elasticache/model/DescribeCacheClustersRequest.h>
@@ -57,21 +60,27 @@
 #include <aws/elasticache/model/DescribeCacheSubnetGroupsRequest.h>
 #include <aws/elasticache/model/DescribeEngineDefaultParametersRequest.h>
 #include <aws/elasticache/model/DescribeEventsRequest.h>
+#include <aws/elasticache/model/DescribeGlobalReplicationGroupsRequest.h>
 #include <aws/elasticache/model/DescribeReplicationGroupsRequest.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesRequest.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesOfferingsRequest.h>
 #include <aws/elasticache/model/DescribeServiceUpdatesRequest.h>
 #include <aws/elasticache/model/DescribeSnapshotsRequest.h>
 #include <aws/elasticache/model/DescribeUpdateActionsRequest.h>
+#include <aws/elasticache/model/DisassociateGlobalReplicationGroupRequest.h>
+#include <aws/elasticache/model/FailoverGlobalReplicationGroupRequest.h>
+#include <aws/elasticache/model/IncreaseNodeGroupsInGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/IncreaseReplicaCountRequest.h>
 #include <aws/elasticache/model/ListAllowedNodeTypeModificationsRequest.h>
 #include <aws/elasticache/model/ListTagsForResourceRequest.h>
 #include <aws/elasticache/model/ModifyCacheClusterRequest.h>
 #include <aws/elasticache/model/ModifyCacheParameterGroupRequest.h>
 #include <aws/elasticache/model/ModifyCacheSubnetGroupRequest.h>
+#include <aws/elasticache/model/ModifyGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/ModifyReplicationGroupRequest.h>
 #include <aws/elasticache/model/ModifyReplicationGroupShardConfigurationRequest.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingRequest.h>
+#include <aws/elasticache/model/RebalanceSlotsInGlobalReplicationGroupRequest.h>
 #include <aws/elasticache/model/RebootCacheClusterRequest.h>
 #include <aws/elasticache/model/RemoveTagsFromResourceRequest.h>
 #include <aws/elasticache/model/ResetCacheParameterGroupRequest.h>
@@ -512,6 +521,41 @@ void ElastiCacheClient::CreateCacheSubnetGroupAsyncHelper(const CreateCacheSubne
   handler(this, request, CreateCacheSubnetGroup(request), context);
 }
 
+CreateGlobalReplicationGroupOutcome ElastiCacheClient::CreateGlobalReplicationGroup(const CreateGlobalReplicationGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateGlobalReplicationGroupOutcome(CreateGlobalReplicationGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateGlobalReplicationGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateGlobalReplicationGroupOutcomeCallable ElastiCacheClient::CreateGlobalReplicationGroupCallable(const CreateGlobalReplicationGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGlobalReplicationGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGlobalReplicationGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::CreateGlobalReplicationGroupAsync(const CreateGlobalReplicationGroupRequest& request, const CreateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGlobalReplicationGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::CreateGlobalReplicationGroupAsyncHelper(const CreateGlobalReplicationGroupRequest& request, const CreateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGlobalReplicationGroup(request), context);
+}
+
 CreateReplicationGroupOutcome ElastiCacheClient::CreateReplicationGroup(const CreateReplicationGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -580,6 +624,41 @@ void ElastiCacheClient::CreateSnapshotAsync(const CreateSnapshotRequest& request
 void ElastiCacheClient::CreateSnapshotAsyncHelper(const CreateSnapshotRequest& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSnapshot(request), context);
+}
+
+DecreaseNodeGroupsInGlobalReplicationGroupOutcome ElastiCacheClient::DecreaseNodeGroupsInGlobalReplicationGroup(const DecreaseNodeGroupsInGlobalReplicationGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DecreaseNodeGroupsInGlobalReplicationGroupOutcome(DecreaseNodeGroupsInGlobalReplicationGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DecreaseNodeGroupsInGlobalReplicationGroupOutcome(outcome.GetError());
+  }
+}
+
+DecreaseNodeGroupsInGlobalReplicationGroupOutcomeCallable ElastiCacheClient::DecreaseNodeGroupsInGlobalReplicationGroupCallable(const DecreaseNodeGroupsInGlobalReplicationGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DecreaseNodeGroupsInGlobalReplicationGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DecreaseNodeGroupsInGlobalReplicationGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DecreaseNodeGroupsInGlobalReplicationGroupAsync(const DecreaseNodeGroupsInGlobalReplicationGroupRequest& request, const DecreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DecreaseNodeGroupsInGlobalReplicationGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DecreaseNodeGroupsInGlobalReplicationGroupAsyncHelper(const DecreaseNodeGroupsInGlobalReplicationGroupRequest& request, const DecreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DecreaseNodeGroupsInGlobalReplicationGroup(request), context);
 }
 
 DecreaseReplicaCountOutcome ElastiCacheClient::DecreaseReplicaCount(const DecreaseReplicaCountRequest& request) const
@@ -755,6 +834,41 @@ void ElastiCacheClient::DeleteCacheSubnetGroupAsync(const DeleteCacheSubnetGroup
 void ElastiCacheClient::DeleteCacheSubnetGroupAsyncHelper(const DeleteCacheSubnetGroupRequest& request, const DeleteCacheSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCacheSubnetGroup(request), context);
+}
+
+DeleteGlobalReplicationGroupOutcome ElastiCacheClient::DeleteGlobalReplicationGroup(const DeleteGlobalReplicationGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteGlobalReplicationGroupOutcome(DeleteGlobalReplicationGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteGlobalReplicationGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteGlobalReplicationGroupOutcomeCallable ElastiCacheClient::DeleteGlobalReplicationGroupCallable(const DeleteGlobalReplicationGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGlobalReplicationGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGlobalReplicationGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DeleteGlobalReplicationGroupAsync(const DeleteGlobalReplicationGroupRequest& request, const DeleteGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGlobalReplicationGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DeleteGlobalReplicationGroupAsyncHelper(const DeleteGlobalReplicationGroupRequest& request, const DeleteGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGlobalReplicationGroup(request), context);
 }
 
 DeleteReplicationGroupOutcome ElastiCacheClient::DeleteReplicationGroup(const DeleteReplicationGroupRequest& request) const
@@ -1107,6 +1221,41 @@ void ElastiCacheClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& r
   handler(this, request, DescribeEvents(request), context);
 }
 
+DescribeGlobalReplicationGroupsOutcome ElastiCacheClient::DescribeGlobalReplicationGroups(const DescribeGlobalReplicationGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeGlobalReplicationGroupsOutcome(DescribeGlobalReplicationGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeGlobalReplicationGroupsOutcome(outcome.GetError());
+  }
+}
+
+DescribeGlobalReplicationGroupsOutcomeCallable ElastiCacheClient::DescribeGlobalReplicationGroupsCallable(const DescribeGlobalReplicationGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGlobalReplicationGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGlobalReplicationGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DescribeGlobalReplicationGroupsAsync(const DescribeGlobalReplicationGroupsRequest& request, const DescribeGlobalReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalReplicationGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DescribeGlobalReplicationGroupsAsyncHelper(const DescribeGlobalReplicationGroupsRequest& request, const DescribeGlobalReplicationGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGlobalReplicationGroups(request), context);
+}
+
 DescribeReplicationGroupsOutcome ElastiCacheClient::DescribeReplicationGroups(const DescribeReplicationGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1315,6 +1464,111 @@ void ElastiCacheClient::DescribeUpdateActionsAsync(const DescribeUpdateActionsRe
 void ElastiCacheClient::DescribeUpdateActionsAsyncHelper(const DescribeUpdateActionsRequest& request, const DescribeUpdateActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeUpdateActions(request), context);
+}
+
+DisassociateGlobalReplicationGroupOutcome ElastiCacheClient::DisassociateGlobalReplicationGroup(const DisassociateGlobalReplicationGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateGlobalReplicationGroupOutcome(DisassociateGlobalReplicationGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateGlobalReplicationGroupOutcome(outcome.GetError());
+  }
+}
+
+DisassociateGlobalReplicationGroupOutcomeCallable ElastiCacheClient::DisassociateGlobalReplicationGroupCallable(const DisassociateGlobalReplicationGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateGlobalReplicationGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateGlobalReplicationGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::DisassociateGlobalReplicationGroupAsync(const DisassociateGlobalReplicationGroupRequest& request, const DisassociateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateGlobalReplicationGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::DisassociateGlobalReplicationGroupAsyncHelper(const DisassociateGlobalReplicationGroupRequest& request, const DisassociateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateGlobalReplicationGroup(request), context);
+}
+
+FailoverGlobalReplicationGroupOutcome ElastiCacheClient::FailoverGlobalReplicationGroup(const FailoverGlobalReplicationGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return FailoverGlobalReplicationGroupOutcome(FailoverGlobalReplicationGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return FailoverGlobalReplicationGroupOutcome(outcome.GetError());
+  }
+}
+
+FailoverGlobalReplicationGroupOutcomeCallable ElastiCacheClient::FailoverGlobalReplicationGroupCallable(const FailoverGlobalReplicationGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< FailoverGlobalReplicationGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->FailoverGlobalReplicationGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::FailoverGlobalReplicationGroupAsync(const FailoverGlobalReplicationGroupRequest& request, const FailoverGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->FailoverGlobalReplicationGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::FailoverGlobalReplicationGroupAsyncHelper(const FailoverGlobalReplicationGroupRequest& request, const FailoverGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, FailoverGlobalReplicationGroup(request), context);
+}
+
+IncreaseNodeGroupsInGlobalReplicationGroupOutcome ElastiCacheClient::IncreaseNodeGroupsInGlobalReplicationGroup(const IncreaseNodeGroupsInGlobalReplicationGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return IncreaseNodeGroupsInGlobalReplicationGroupOutcome(IncreaseNodeGroupsInGlobalReplicationGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return IncreaseNodeGroupsInGlobalReplicationGroupOutcome(outcome.GetError());
+  }
+}
+
+IncreaseNodeGroupsInGlobalReplicationGroupOutcomeCallable ElastiCacheClient::IncreaseNodeGroupsInGlobalReplicationGroupCallable(const IncreaseNodeGroupsInGlobalReplicationGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< IncreaseNodeGroupsInGlobalReplicationGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->IncreaseNodeGroupsInGlobalReplicationGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::IncreaseNodeGroupsInGlobalReplicationGroupAsync(const IncreaseNodeGroupsInGlobalReplicationGroupRequest& request, const IncreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->IncreaseNodeGroupsInGlobalReplicationGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::IncreaseNodeGroupsInGlobalReplicationGroupAsyncHelper(const IncreaseNodeGroupsInGlobalReplicationGroupRequest& request, const IncreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, IncreaseNodeGroupsInGlobalReplicationGroup(request), context);
 }
 
 IncreaseReplicaCountOutcome ElastiCacheClient::IncreaseReplicaCount(const IncreaseReplicaCountRequest& request) const
@@ -1527,6 +1781,41 @@ void ElastiCacheClient::ModifyCacheSubnetGroupAsyncHelper(const ModifyCacheSubne
   handler(this, request, ModifyCacheSubnetGroup(request), context);
 }
 
+ModifyGlobalReplicationGroupOutcome ElastiCacheClient::ModifyGlobalReplicationGroup(const ModifyGlobalReplicationGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyGlobalReplicationGroupOutcome(ModifyGlobalReplicationGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyGlobalReplicationGroupOutcome(outcome.GetError());
+  }
+}
+
+ModifyGlobalReplicationGroupOutcomeCallable ElastiCacheClient::ModifyGlobalReplicationGroupCallable(const ModifyGlobalReplicationGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyGlobalReplicationGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyGlobalReplicationGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::ModifyGlobalReplicationGroupAsync(const ModifyGlobalReplicationGroupRequest& request, const ModifyGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyGlobalReplicationGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::ModifyGlobalReplicationGroupAsyncHelper(const ModifyGlobalReplicationGroupRequest& request, const ModifyGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyGlobalReplicationGroup(request), context);
+}
+
 ModifyReplicationGroupOutcome ElastiCacheClient::ModifyReplicationGroup(const ModifyReplicationGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1630,6 +1919,41 @@ void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsync(const PurchaseRe
 void ElastiCacheClient::PurchaseReservedCacheNodesOfferingAsyncHelper(const PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PurchaseReservedCacheNodesOffering(request), context);
+}
+
+RebalanceSlotsInGlobalReplicationGroupOutcome ElastiCacheClient::RebalanceSlotsInGlobalReplicationGroup(const RebalanceSlotsInGlobalReplicationGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RebalanceSlotsInGlobalReplicationGroupOutcome(RebalanceSlotsInGlobalReplicationGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RebalanceSlotsInGlobalReplicationGroupOutcome(outcome.GetError());
+  }
+}
+
+RebalanceSlotsInGlobalReplicationGroupOutcomeCallable ElastiCacheClient::RebalanceSlotsInGlobalReplicationGroupCallable(const RebalanceSlotsInGlobalReplicationGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RebalanceSlotsInGlobalReplicationGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RebalanceSlotsInGlobalReplicationGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElastiCacheClient::RebalanceSlotsInGlobalReplicationGroupAsync(const RebalanceSlotsInGlobalReplicationGroupRequest& request, const RebalanceSlotsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RebalanceSlotsInGlobalReplicationGroupAsyncHelper( request, handler, context ); } );
+}
+
+void ElastiCacheClient::RebalanceSlotsInGlobalReplicationGroupAsyncHelper(const RebalanceSlotsInGlobalReplicationGroupRequest& request, const RebalanceSlotsInGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RebalanceSlotsInGlobalReplicationGroup(request), context);
 }
 
 RebootCacheClusterOutcome ElastiCacheClient::RebootCacheCluster(const RebootCacheClusterRequest& request) const

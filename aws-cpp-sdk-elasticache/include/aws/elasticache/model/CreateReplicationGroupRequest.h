@@ -168,6 +168,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the Global Datastore</p>
+     */
+    inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
+
+    /**
+     * <p>The name of the Global Datastore</p>
+     */
+    inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
+
+    /**
+     * <p>The name of the Global Datastore</p>
+     */
+    inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
+
+    /**
+     * <p>The name of the Global Datastore</p>
+     */
+    inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
+
+    /**
+     * <p>The name of the Global Datastore</p>
+     */
+    inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
+
+    /**
+     * <p>The name of the Global Datastore</p>
+     */
+    inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
+
+    /**
+     * <p>The name of the Global Datastore</p>
+     */
+    inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Global Datastore</p>
+     */
+    inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
+
+
+    /**
      * <p>The identifier of the cluster that serves as the primary for this replication
      * group. This cluster must already exist and have a status of
      * <code>available</code>.</p> <p>This parameter is not required if
@@ -640,7 +681,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -686,7 +729,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -732,7 +777,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -778,7 +825,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -824,7 +873,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -870,7 +921,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -916,7 +969,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -962,7 +1017,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -2317,42 +2374,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline CreateReplicationGroupRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline CreateReplicationGroupRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the KMS key used to encrypt the disk on the cluster.</p>
+     * <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
      */
     inline CreateReplicationGroupRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -2363,6 +2420,9 @@ namespace Model
 
     Aws::String m_replicationGroupDescription;
     bool m_replicationGroupDescriptionHasBeenSet;
+
+    Aws::String m_globalReplicationGroupId;
+    bool m_globalReplicationGroupIdHasBeenSet;
 
     Aws::String m_primaryClusterId;
     bool m_primaryClusterIdHasBeenSet;

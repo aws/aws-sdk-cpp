@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 CreateReplicationGroupRequest::CreateReplicationGroupRequest() : 
     m_replicationGroupIdHasBeenSet(false),
     m_replicationGroupDescriptionHasBeenSet(false),
+    m_globalReplicationGroupIdHasBeenSet(false),
     m_primaryClusterIdHasBeenSet(false),
     m_automaticFailoverEnabled(false),
     m_automaticFailoverEnabledHasBeenSet(false),
@@ -74,6 +75,11 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
   if(m_replicationGroupDescriptionHasBeenSet)
   {
     ss << "ReplicationGroupDescription=" << StringUtils::URLEncode(m_replicationGroupDescription.c_str()) << "&";
+  }
+
+  if(m_globalReplicationGroupIdHasBeenSet)
+  {
+    ss << "GlobalReplicationGroupId=" << StringUtils::URLEncode(m_globalReplicationGroupId.c_str()) << "&";
   }
 
   if(m_primaryClusterIdHasBeenSet)

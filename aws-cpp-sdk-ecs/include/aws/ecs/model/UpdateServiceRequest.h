@@ -21,6 +21,8 @@
 #include <aws/ecs/model/DeploymentConfiguration.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/CapacityProviderStrategyItem.h>
+#include <aws/ecs/model/PlacementConstraint.h>
+#include <aws/ecs/model/PlacementStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -382,6 +384,176 @@ namespace Model
 
 
     /**
+     * <p>An array of task placement constraint objects to update the service to use.
+     * If no value is specified, the existing placement constraints for the service
+     * will remain unchanged. If this value is specified, it will override any existing
+     * placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
+     * constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+
+    /**
+     * <p>An array of task placement constraint objects to update the service to use.
+     * If no value is specified, the existing placement constraints for the service
+     * will remain unchanged. If this value is specified, it will override any existing
+     * placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
+     * constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
+
+    /**
+     * <p>An array of task placement constraint objects to update the service to use.
+     * If no value is specified, the existing placement constraints for the service
+     * will remain unchanged. If this value is specified, it will override any existing
+     * placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
+     * constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline void SetPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>An array of task placement constraint objects to update the service to use.
+     * If no value is specified, the existing placement constraints for the service
+     * will remain unchanged. If this value is specified, it will override any existing
+     * placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
+     * constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
+
+    /**
+     * <p>An array of task placement constraint objects to update the service to use.
+     * If no value is specified, the existing placement constraints for the service
+     * will remain unchanged. If this value is specified, it will override any existing
+     * placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
+     * constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline UpdateServiceRequest& WithPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>An array of task placement constraint objects to update the service to use.
+     * If no value is specified, the existing placement constraints for the service
+     * will remain unchanged. If this value is specified, it will override any existing
+     * placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
+     * constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline UpdateServiceRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of task placement constraint objects to update the service to use.
+     * If no value is specified, the existing placement constraints for the service
+     * will remain unchanged. If this value is specified, it will override any existing
+     * placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
+     * constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline UpdateServiceRequest& AddPlacementConstraints(const PlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
+    /**
+     * <p>An array of task placement constraint objects to update the service to use.
+     * If no value is specified, the existing placement constraints for the service
+     * will remain unchanged. If this value is specified, it will override any existing
+     * placement constraints defined for the service. To remove all existing placement
+     * constraints, specify an empty array.</p> <p>You can specify a maximum of 10
+     * constraints per task (this limit includes constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline UpdateServiceRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The task placement strategy objects to update the service to use. If no value
+     * is specified, the existing placement strategy for the service will remain
+     * unchanged. If this value is specified, it will override the existing placement
+     * strategy defined for the service. To remove an existing placement strategy,
+     * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
+     * per service.</p>
+     */
+    inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
+
+    /**
+     * <p>The task placement strategy objects to update the service to use. If no value
+     * is specified, the existing placement strategy for the service will remain
+     * unchanged. If this value is specified, it will override the existing placement
+     * strategy defined for the service. To remove an existing placement strategy,
+     * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
+     * per service.</p>
+     */
+    inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
+
+    /**
+     * <p>The task placement strategy objects to update the service to use. If no value
+     * is specified, the existing placement strategy for the service will remain
+     * unchanged. If this value is specified, it will override the existing placement
+     * strategy defined for the service. To remove an existing placement strategy,
+     * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
+     * per service.</p>
+     */
+    inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+
+    /**
+     * <p>The task placement strategy objects to update the service to use. If no value
+     * is specified, the existing placement strategy for the service will remain
+     * unchanged. If this value is specified, it will override the existing placement
+     * strategy defined for the service. To remove an existing placement strategy,
+     * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
+     * per service.</p>
+     */
+    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
+
+    /**
+     * <p>The task placement strategy objects to update the service to use. If no value
+     * is specified, the existing placement strategy for the service will remain
+     * unchanged. If this value is specified, it will override the existing placement
+     * strategy defined for the service. To remove an existing placement strategy,
+     * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
+     * per service.</p>
+     */
+    inline UpdateServiceRequest& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
+
+    /**
+     * <p>The task placement strategy objects to update the service to use. If no value
+     * is specified, the existing placement strategy for the service will remain
+     * unchanged. If this value is specified, it will override the existing placement
+     * strategy defined for the service. To remove an existing placement strategy,
+     * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
+     * per service.</p>
+     */
+    inline UpdateServiceRequest& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
+
+    /**
+     * <p>The task placement strategy objects to update the service to use. If no value
+     * is specified, the existing placement strategy for the service will remain
+     * unchanged. If this value is specified, it will override the existing placement
+     * strategy defined for the service. To remove an existing placement strategy,
+     * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
+     * per service.</p>
+     */
+    inline UpdateServiceRequest& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+
+    /**
+     * <p>The task placement strategy objects to update the service to use. If no value
+     * is specified, the existing placement strategy for the service will remain
+     * unchanged. If this value is specified, it will override the existing placement
+     * strategy defined for the service. To remove an existing placement strategy,
+     * specify an empty object.</p> <p>You can specify a maximum of five strategy rules
+     * per service.</p>
+     */
+    inline UpdateServiceRequest& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The platform version on which your tasks in the service are running. A
      * platform version is only specified for tasks using the Fargate launch type. If a
      * platform version is not specified, the <code>LATEST</code> platform version is
@@ -581,6 +753,12 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    Aws::Vector<PlacementConstraint> m_placementConstraints;
+    bool m_placementConstraintsHasBeenSet;
+
+    Aws::Vector<PlacementStrategy> m_placementStrategy;
+    bool m_placementStrategyHasBeenSet;
 
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;

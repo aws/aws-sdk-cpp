@@ -67,14 +67,17 @@ static const int REPLICATION_GROUP_ALREADY_UNDER_MIGRATION_FAULT_HASH = HashingU
 static const int RESERVED_CACHE_NODE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedCacheNodeAlreadyExists");
 static const int INVALID_CACHE_SECURITY_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidCacheSecurityGroupState");
 static const int CACHE_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("CacheSubnetGroupNotFoundFault");
+static const int GLOBAL_REPLICATION_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("GlobalReplicationGroupAlreadyExistsFault");
 static const int A_P_I_CALL_RATE_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("APICallRateForCustomerExceeded");
 static const int INVALID_REPLICATION_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidReplicationGroupState");
 static const int INSUFFICIENT_CACHE_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientCacheClusterCapacity");
 static const int INVALID_CACHE_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidCacheParameterGroupState");
+static const int GLOBAL_REPLICATION_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("GlobalReplicationGroupNotFoundFault");
 static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidVPCNetworkStateFault");
 static const int SERVICE_LINKED_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ServiceLinkedRoleNotFoundFault");
 static const int AUTHORIZATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("AuthorizationNotFound");
 static const int TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH = HashingUtils::HashString("TagQuotaPerResourceExceeded");
+static const int INVALID_GLOBAL_REPLICATION_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidGlobalReplicationGroupState");
 static const int TEST_FAILOVER_NOT_AVAILABLE_FAULT_HASH = HashingUtils::HashString("TestFailoverNotAvailableFault");
 static const int NODE_QUOTA_FOR_CUSTOMER_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NodeQuotaForCustomerExceeded");
 static const int NO_OPERATION_FAULT_HASH = HashingUtils::HashString("NoOperationFault");
@@ -240,6 +243,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::CACHE_SUBNET_GROUP_NOT_FOUND_FAULT), false);
   }
+  else if (hashCode == GLOBAL_REPLICATION_GROUP_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::GLOBAL_REPLICATION_GROUP_ALREADY_EXISTS_FAULT), false);
+  }
   else if (hashCode == A_P_I_CALL_RATE_FOR_CUSTOMER_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::A_P_I_CALL_RATE_FOR_CUSTOMER_EXCEEDED_FAULT), false);
@@ -256,6 +263,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::INVALID_CACHE_PARAMETER_GROUP_STATE_FAULT), false);
   }
+  else if (hashCode == GLOBAL_REPLICATION_GROUP_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::GLOBAL_REPLICATION_GROUP_NOT_FOUND_FAULT), false);
+  }
   else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), false);
@@ -271,6 +282,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TAG_QUOTA_PER_RESOURCE_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::TAG_QUOTA_PER_RESOURCE_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_GLOBAL_REPLICATION_GROUP_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElastiCacheErrors::INVALID_GLOBAL_REPLICATION_GROUP_STATE_FAULT), false);
   }
   else if (hashCode == TEST_FAILOVER_NOT_AVAILABLE_FAULT_HASH)
   {

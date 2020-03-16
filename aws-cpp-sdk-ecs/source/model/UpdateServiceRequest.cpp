@@ -31,6 +31,8 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_capacityProviderStrategyHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
+    m_placementConstraintsHasBeenSet(false),
+    m_placementStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_forceNewDeployment(false),
     m_forceNewDeploymentHasBeenSet(false),
@@ -87,6 +89,28 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_networkConfigurationHasBeenSet)
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
+
+  }
+
+  if(m_placementConstraintsHasBeenSet)
+  {
+   Array<JsonValue> placementConstraintsJsonList(m_placementConstraints.size());
+   for(unsigned placementConstraintsIndex = 0; placementConstraintsIndex < placementConstraintsJsonList.GetLength(); ++placementConstraintsIndex)
+   {
+     placementConstraintsJsonList[placementConstraintsIndex].AsObject(m_placementConstraints[placementConstraintsIndex].Jsonize());
+   }
+   payload.WithArray("placementConstraints", std::move(placementConstraintsJsonList));
+
+  }
+
+  if(m_placementStrategyHasBeenSet)
+  {
+   Array<JsonValue> placementStrategyJsonList(m_placementStrategy.size());
+   for(unsigned placementStrategyIndex = 0; placementStrategyIndex < placementStrategyJsonList.GetLength(); ++placementStrategyIndex)
+   {
+     placementStrategyJsonList[placementStrategyIndex].AsObject(m_placementStrategy[placementStrategyIndex].Jsonize());
+   }
+   payload.WithArray("placementStrategy", std::move(placementStrategyJsonList));
 
   }
 

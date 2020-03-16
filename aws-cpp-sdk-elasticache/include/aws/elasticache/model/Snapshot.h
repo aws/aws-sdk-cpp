@@ -344,7 +344,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -390,7 +392,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -436,7 +440,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -482,7 +488,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -528,7 +536,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -574,7 +584,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -620,7 +632,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
@@ -666,7 +680,9 @@ namespace Model
      * <code>cache.m5.24xlarge</code> </p> <p> <b>M4 node types:</b>
      * <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
      * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
-     * <code>cache.m4.10xlarge</code> </p> <p> <b>T2 node types:</b>
+     * <code>cache.m4.10xlarge</code> </p> <p> <b>T3 node types:</b>
+     * <code>cache.t3.micro</code>, <code>cache.t3.small</code>,
+     * <code>cache.t3.medium</code> </p> <p> <b>T2 node types:</b>
      * <code>cache.t2.micro</code>, <code>cache.t2.small</code>,
      * <code>cache.t2.medium</code> </p> </li> <li> <p>Previous generation: (not
      * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>

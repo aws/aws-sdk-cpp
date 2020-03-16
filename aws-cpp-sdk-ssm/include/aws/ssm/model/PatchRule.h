@@ -157,50 +157,42 @@ namespace Model
 
 
     /**
-     * <p>The cutoff date for auto approval of released patches. Any patches released
-     * on or before this date will be installed automatically</p>
+     * <p>Example API</p>
      */
     inline const Aws::String& GetApproveUntilDate() const{ return m_approveUntilDate; }
 
     /**
-     * <p>The cutoff date for auto approval of released patches. Any patches released
-     * on or before this date will be installed automatically</p>
+     * <p>Example API</p>
      */
     inline bool ApproveUntilDateHasBeenSet() const { return m_approveUntilDateHasBeenSet; }
 
     /**
-     * <p>The cutoff date for auto approval of released patches. Any patches released
-     * on or before this date will be installed automatically</p>
+     * <p>Example API</p>
      */
     inline void SetApproveUntilDate(const Aws::String& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = value; }
 
     /**
-     * <p>The cutoff date for auto approval of released patches. Any patches released
-     * on or before this date will be installed automatically</p>
+     * <p>Example API</p>
      */
     inline void SetApproveUntilDate(Aws::String&& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = std::move(value); }
 
     /**
-     * <p>The cutoff date for auto approval of released patches. Any patches released
-     * on or before this date will be installed automatically</p>
+     * <p>Example API</p>
      */
     inline void SetApproveUntilDate(const char* value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate.assign(value); }
 
     /**
-     * <p>The cutoff date for auto approval of released patches. Any patches released
-     * on or before this date will be installed automatically</p>
+     * <p>Example API</p>
      */
     inline PatchRule& WithApproveUntilDate(const Aws::String& value) { SetApproveUntilDate(value); return *this;}
 
     /**
-     * <p>The cutoff date for auto approval of released patches. Any patches released
-     * on or before this date will be installed automatically</p>
+     * <p>Example API</p>
      */
     inline PatchRule& WithApproveUntilDate(Aws::String&& value) { SetApproveUntilDate(std::move(value)); return *this;}
 
     /**
-     * <p>The cutoff date for auto approval of released patches. Any patches released
-     * on or before this date will be installed automatically</p>
+     * <p>Example API</p>
      */
     inline PatchRule& WithApproveUntilDate(const char* value) { SetApproveUntilDate(value); return *this;}
 

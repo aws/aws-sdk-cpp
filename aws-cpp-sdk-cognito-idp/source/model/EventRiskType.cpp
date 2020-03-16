@@ -32,7 +32,9 @@ EventRiskType::EventRiskType() :
     m_riskDecision(RiskDecisionType::NOT_SET),
     m_riskDecisionHasBeenSet(false),
     m_riskLevel(RiskLevelType::NOT_SET),
-    m_riskLevelHasBeenSet(false)
+    m_riskLevelHasBeenSet(false),
+    m_compromisedCredentialsDetected(false),
+    m_compromisedCredentialsDetectedHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ EventRiskType::EventRiskType(JsonView jsonValue) :
     m_riskDecision(RiskDecisionType::NOT_SET),
     m_riskDecisionHasBeenSet(false),
     m_riskLevel(RiskLevelType::NOT_SET),
-    m_riskLevelHasBeenSet(false)
+    m_riskLevelHasBeenSet(false),
+    m_compromisedCredentialsDetected(false),
+    m_compromisedCredentialsDetectedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +65,13 @@ EventRiskType& EventRiskType::operator =(JsonView jsonValue)
     m_riskLevelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CompromisedCredentialsDetected"))
+  {
+    m_compromisedCredentialsDetected = jsonValue.GetBool("CompromisedCredentialsDetected");
+
+    m_compromisedCredentialsDetectedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -76,6 +87,12 @@ JsonValue EventRiskType::Jsonize() const
   if(m_riskLevelHasBeenSet)
   {
    payload.WithString("RiskLevel", RiskLevelTypeMapper::GetNameForRiskLevelType(m_riskLevel));
+  }
+
+  if(m_compromisedCredentialsDetectedHasBeenSet)
+  {
+   payload.WithBool("CompromisedCredentialsDetected", m_compromisedCredentialsDetected);
+
   }
 
   return payload;

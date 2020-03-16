@@ -33,6 +33,7 @@ namespace Model
 ReplicationGroup::ReplicationGroup() : 
     m_replicationGroupIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_globalReplicationGroupInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_pendingModifiedValuesHasBeenSet(false),
     m_memberClustersHasBeenSet(false),
@@ -61,6 +62,7 @@ ReplicationGroup::ReplicationGroup() :
 ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) : 
     m_replicationGroupIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_globalReplicationGroupInfoHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_pendingModifiedValuesHasBeenSet(false),
     m_memberClustersHasBeenSet(false),
@@ -104,6 +106,12 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
     {
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
+    }
+    XmlNode globalReplicationGroupInfoNode = resultNode.FirstChild("GlobalReplicationGroupInfo");
+    if(!globalReplicationGroupInfoNode.IsNull())
+    {
+      m_globalReplicationGroupInfo = globalReplicationGroupInfoNode;
+      m_globalReplicationGroupInfoHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
@@ -230,6 +238,13 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_globalReplicationGroupInfoHasBeenSet)
+  {
+      Aws::StringStream globalReplicationGroupInfoLocationAndMemberSs;
+      globalReplicationGroupInfoLocationAndMemberSs << location << index << locationValue << ".GlobalReplicationGroupInfo";
+      m_globalReplicationGroupInfo.OutputToStream(oStream, globalReplicationGroupInfoLocationAndMemberSs.str().c_str());
+  }
+
   if(m_statusHasBeenSet)
   {
       oStream << location << index << locationValue << ".Status=" << StringUtils::URLEncode(m_status.c_str()) << "&";
@@ -335,6 +350,12 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_globalReplicationGroupInfoHasBeenSet)
+  {
+      Aws::String globalReplicationGroupInfoLocationAndMember(location);
+      globalReplicationGroupInfoLocationAndMember += ".GlobalReplicationGroupInfo";
+      m_globalReplicationGroupInfo.OutputToStream(oStream, globalReplicationGroupInfoLocationAndMember.c_str());
   }
   if(m_statusHasBeenSet)
   {

@@ -36,7 +36,8 @@ CreateJobRequest::CreateJobRequest() :
     m_descriptionHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ Aws::String CreateJobRequest::SerializePayload() const
   {
    XmlNode roleArnNode = parentNode.CreateChildElement("RoleArn");
    roleArnNode.SetText(m_roleArn);
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   XmlNode tagsParentNode = parentNode.CreateChildElement("Tags");
+   for(const auto& item : m_tags)
+   {
+     XmlNode tagsNode = tagsParentNode.CreateChildElement("S3Tag");
+     item.AddToNode(tagsNode);
+   }
   }
 
   return payloadDoc.ConvertToString();
