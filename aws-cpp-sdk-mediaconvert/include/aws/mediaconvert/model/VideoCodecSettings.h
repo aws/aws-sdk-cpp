@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/Av1Settings.h>
 #include <aws/mediaconvert/model/VideoCodec.h>
 #include <aws/mediaconvert/model/FrameCaptureSettings.h>
 #include <aws/mediaconvert/model/H264Settings.h>
@@ -44,8 +45,9 @@ namespace Model
    * depending on the value that you choose for Video codec (Codec). For each codec
    * enum that you choose, define the corresponding settings object. The following
    * lists the codec enum, settings object pairs. * FRAME_CAPTURE,
-   * FrameCaptureSettings * H_264, H264Settings * H_265, H265Settings * MPEG2,
-   * Mpeg2Settings * PRORES, ProresSettings<p><h3>See Also:</h3>   <a
+   * FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265,
+   * H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -56,6 +58,43 @@ namespace Model
     VideoCodecSettings(Aws::Utils::Json::JsonView jsonValue);
     VideoCodecSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * AV1.
+     */
+    inline const Av1Settings& GetAv1Settings() const{ return m_av1Settings; }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * AV1.
+     */
+    inline bool Av1SettingsHasBeenSet() const { return m_av1SettingsHasBeenSet; }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * AV1.
+     */
+    inline void SetAv1Settings(const Av1Settings& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = value; }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * AV1.
+     */
+    inline void SetAv1Settings(Av1Settings&& value) { m_av1SettingsHasBeenSet = true; m_av1Settings = std::move(value); }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * AV1.
+     */
+    inline VideoCodecSettings& WithAv1Settings(const Av1Settings& value) { SetAv1Settings(value); return *this;}
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * AV1.
+     */
+    inline VideoCodecSettings& WithAv1Settings(Av1Settings&& value) { SetAv1Settings(std::move(value)); return *this;}
 
 
     /**
@@ -274,6 +313,9 @@ namespace Model
     inline VideoCodecSettings& WithProresSettings(ProresSettings&& value) { SetProresSettings(std::move(value)); return *this;}
 
   private:
+
+    Av1Settings m_av1Settings;
+    bool m_av1SettingsHasBeenSet;
 
     VideoCodec m_codec;
     bool m_codecHasBeenSet;

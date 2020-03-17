@@ -29,6 +29,7 @@ namespace Model
 {
 
 VideoCodecSettings::VideoCodecSettings() : 
+    m_av1SettingsHasBeenSet(false),
     m_codec(VideoCodec::NOT_SET),
     m_codecHasBeenSet(false),
     m_frameCaptureSettingsHasBeenSet(false),
@@ -40,6 +41,7 @@ VideoCodecSettings::VideoCodecSettings() :
 }
 
 VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) : 
+    m_av1SettingsHasBeenSet(false),
     m_codec(VideoCodec::NOT_SET),
     m_codecHasBeenSet(false),
     m_frameCaptureSettingsHasBeenSet(false),
@@ -53,6 +55,13 @@ VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) :
 
 VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("av1Settings"))
+  {
+    m_av1Settings = jsonValue.GetObject("av1Settings");
+
+    m_av1SettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("codec"))
   {
     m_codec = VideoCodecMapper::GetVideoCodecForName(jsonValue.GetString("codec"));
@@ -101,6 +110,12 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
 JsonValue VideoCodecSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_av1SettingsHasBeenSet)
+  {
+   payload.WithObject("av1Settings", m_av1Settings.Jsonize());
+
+  }
 
   if(m_codecHasBeenSet)
   {

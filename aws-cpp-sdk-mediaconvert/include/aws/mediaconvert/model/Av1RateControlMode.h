@@ -23,23 +23,18 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class VideoCodec
+  enum class Av1RateControlMode
   {
     NOT_SET,
-    FRAME_CAPTURE,
-    AV1,
-    H_264,
-    H_265,
-    MPEG2,
-    PRORES
+    QVBR
   };
 
-namespace VideoCodecMapper
+namespace Av1RateControlModeMapper
 {
-AWS_MEDIACONVERT_API VideoCodec GetVideoCodecForName(const Aws::String& name);
+AWS_MEDIACONVERT_API Av1RateControlMode GetAv1RateControlModeForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForVideoCodec(VideoCodec value);
-} // namespace VideoCodecMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForAv1RateControlMode(Av1RateControlMode value);
+} // namespace Av1RateControlModeMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

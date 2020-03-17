@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int FRAME_CAPTURE_HASH = HashingUtils::HashString("FRAME_CAPTURE");
+        static const int AV1_HASH = HashingUtils::HashString("AV1");
         static const int H_264_HASH = HashingUtils::HashString("H_264");
         static const int H_265_HASH = HashingUtils::HashString("H_265");
         static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
@@ -43,6 +44,10 @@ namespace Aws
           if (hashCode == FRAME_CAPTURE_HASH)
           {
             return VideoCodec::FRAME_CAPTURE;
+          }
+          else if (hashCode == AV1_HASH)
+          {
+            return VideoCodec::AV1;
           }
           else if (hashCode == H_264_HASH)
           {
@@ -76,6 +81,8 @@ namespace Aws
           {
           case VideoCodec::FRAME_CAPTURE:
             return "FRAME_CAPTURE";
+          case VideoCodec::AV1:
+            return "AV1";
           case VideoCodec::H_264:
             return "H_264";
           case VideoCodec::H_265:
