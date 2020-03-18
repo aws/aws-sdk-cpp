@@ -25,6 +25,7 @@ DescribeExportTasksRequest::DescribeExportTasksRequest() :
     m_sourceArnHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_markerHasBeenSet(false),
+    m_maxRecords(0),
     m_maxRecordsHasBeenSet(false)
 {
 }
@@ -60,7 +61,7 @@ Aws::String DescribeExportTasksRequest::SerializePayload() const
 
   if(m_maxRecordsHasBeenSet)
   {
-    ss << "MaxRecords=" << StringUtils::URLEncode(m_maxRecords.c_str()) << "&";
+    ss << "MaxRecords=" << m_maxRecords << "&";
   }
 
   ss << "Version=2014-10-31";

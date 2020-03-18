@@ -291,6 +291,47 @@ namespace Model
      */
     inline BatchInferenceJobSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the solution version used by the batch inference job.</p>
+     */
+    inline const Aws::String& GetSolutionVersionArn() const{ return m_solutionVersionArn; }
+
+    /**
+     * <p>The ARN of the solution version used by the batch inference job.</p>
+     */
+    inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the solution version used by the batch inference job.</p>
+     */
+    inline void SetSolutionVersionArn(const Aws::String& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = value; }
+
+    /**
+     * <p>The ARN of the solution version used by the batch inference job.</p>
+     */
+    inline void SetSolutionVersionArn(Aws::String&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the solution version used by the batch inference job.</p>
+     */
+    inline void SetSolutionVersionArn(const char* value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn.assign(value); }
+
+    /**
+     * <p>The ARN of the solution version used by the batch inference job.</p>
+     */
+    inline BatchInferenceJobSummary& WithSolutionVersionArn(const Aws::String& value) { SetSolutionVersionArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the solution version used by the batch inference job.</p>
+     */
+    inline BatchInferenceJobSummary& WithSolutionVersionArn(Aws::String&& value) { SetSolutionVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the solution version used by the batch inference job.</p>
+     */
+    inline BatchInferenceJobSummary& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
+
   private:
 
     Aws::String m_batchInferenceJobArn;
@@ -310,6 +351,9 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet;
+
+    Aws::String m_solutionVersionArn;
+    bool m_solutionVersionArnHasBeenSet;
   };
 
 } // namespace Model

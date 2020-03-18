@@ -37,6 +37,8 @@ Flow::Flow() :
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_sourceFailoverConfigHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -51,6 +53,8 @@ Flow::Flow(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_sourceHasBeenSet(false),
+    m_sourceFailoverConfigHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -119,6 +123,23 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_source = jsonValue.GetObject("source");
 
     m_sourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceFailoverConfig"))
+  {
+    m_sourceFailoverConfig = jsonValue.GetObject("sourceFailoverConfig");
+
+    m_sourceFailoverConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sources"))
+  {
+    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
+    m_sourcesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -190,6 +211,23 @@ JsonValue Flow::Jsonize() const
   if(m_sourceHasBeenSet)
   {
    payload.WithObject("source", m_source.Jsonize());
+
+  }
+
+  if(m_sourceFailoverConfigHasBeenSet)
+  {
+   payload.WithObject("sourceFailoverConfig", m_sourceFailoverConfig.Jsonize());
+
+  }
+
+  if(m_sourcesHasBeenSet)
+  {
+   Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+   {
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+   }
+   payload.WithArray("sources", std::move(sourcesJsonList));
 
   }
 

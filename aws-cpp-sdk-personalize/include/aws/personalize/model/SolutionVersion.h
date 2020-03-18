@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/personalize/model/SolutionConfig.h>
 #include <aws/personalize/model/TrainingMode.h>
+#include <aws/personalize/model/TunedHPOParams.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -466,6 +467,43 @@ namespace Model
 
 
     /**
+     * <p>If hyperparameter optimization was performed, contains the hyperparameter
+     * values of the best performing model.</p>
+     */
+    inline const TunedHPOParams& GetTunedHPOParams() const{ return m_tunedHPOParams; }
+
+    /**
+     * <p>If hyperparameter optimization was performed, contains the hyperparameter
+     * values of the best performing model.</p>
+     */
+    inline bool TunedHPOParamsHasBeenSet() const { return m_tunedHPOParamsHasBeenSet; }
+
+    /**
+     * <p>If hyperparameter optimization was performed, contains the hyperparameter
+     * values of the best performing model.</p>
+     */
+    inline void SetTunedHPOParams(const TunedHPOParams& value) { m_tunedHPOParamsHasBeenSet = true; m_tunedHPOParams = value; }
+
+    /**
+     * <p>If hyperparameter optimization was performed, contains the hyperparameter
+     * values of the best performing model.</p>
+     */
+    inline void SetTunedHPOParams(TunedHPOParams&& value) { m_tunedHPOParamsHasBeenSet = true; m_tunedHPOParams = std::move(value); }
+
+    /**
+     * <p>If hyperparameter optimization was performed, contains the hyperparameter
+     * values of the best performing model.</p>
+     */
+    inline SolutionVersion& WithTunedHPOParams(const TunedHPOParams& value) { SetTunedHPOParams(value); return *this;}
+
+    /**
+     * <p>If hyperparameter optimization was performed, contains the hyperparameter
+     * values of the best performing model.</p>
+     */
+    inline SolutionVersion& WithTunedHPOParams(TunedHPOParams&& value) { SetTunedHPOParams(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
@@ -669,6 +707,9 @@ namespace Model
 
     TrainingMode m_trainingMode;
     bool m_trainingModeHasBeenSet;
+
+    TunedHPOParams m_tunedHPOParams;
+    bool m_tunedHPOParamsHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

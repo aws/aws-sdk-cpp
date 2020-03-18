@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/Source.h>
+#include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/Status.h>
 #include <aws/mediaconnect/model/Entitlement.h>
 #include <aws/mediaconnect/model/Output.h>
@@ -383,6 +384,50 @@ namespace Model
     inline Flow& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
 
 
+    
+    inline const FailoverConfig& GetSourceFailoverConfig() const{ return m_sourceFailoverConfig; }
+
+    
+    inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
+
+    
+    inline void SetSourceFailoverConfig(const FailoverConfig& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = value; }
+
+    
+    inline void SetSourceFailoverConfig(FailoverConfig&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::move(value); }
+
+    
+    inline Flow& WithSourceFailoverConfig(const FailoverConfig& value) { SetSourceFailoverConfig(value); return *this;}
+
+    
+    inline Flow& WithSourceFailoverConfig(FailoverConfig&& value) { SetSourceFailoverConfig(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Vector<Source>& GetSources() const{ return m_sources; }
+
+    
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    
+    inline void SetSources(const Aws::Vector<Source>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    
+    inline void SetSources(Aws::Vector<Source>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    
+    inline Flow& WithSources(const Aws::Vector<Source>& value) { SetSources(value); return *this;}
+
+    
+    inline Flow& WithSources(Aws::Vector<Source>&& value) { SetSources(std::move(value)); return *this;}
+
+    
+    inline Flow& AddSources(const Source& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    
+    inline Flow& AddSources(Source&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
+
     /**
      * The current status of the flow.
      */
@@ -438,6 +483,12 @@ namespace Model
 
     Source m_source;
     bool m_sourceHasBeenSet;
+
+    FailoverConfig m_sourceFailoverConfig;
+    bool m_sourceFailoverConfigHasBeenSet;
+
+    Aws::Vector<Source> m_sources;
+    bool m_sourcesHasBeenSet;
 
     Status m_status;
     bool m_statusHasBeenSet;

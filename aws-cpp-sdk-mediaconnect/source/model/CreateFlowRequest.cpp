@@ -27,7 +27,9 @@ CreateFlowRequest::CreateFlowRequest() :
     m_entitlementsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
-    m_sourceHasBeenSet(false)
+    m_sourceHasBeenSet(false),
+    m_sourceFailoverConfigHasBeenSet(false),
+    m_sourcesHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,23 @@ Aws::String CreateFlowRequest::SerializePayload() const
   if(m_sourceHasBeenSet)
   {
    payload.WithObject("source", m_source.Jsonize());
+
+  }
+
+  if(m_sourceFailoverConfigHasBeenSet)
+  {
+   payload.WithObject("sourceFailoverConfig", m_sourceFailoverConfig.Jsonize());
+
+  }
+
+  if(m_sourcesHasBeenSet)
+  {
+   Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+   {
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+   }
+   payload.WithArray("sources", std::move(sourcesJsonList));
 
   }
 

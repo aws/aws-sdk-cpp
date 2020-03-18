@@ -49,42 +49,50 @@ namespace Model
 
 
     /**
-     * <p>The data type of the metric.</p>
+     * <p>The type of the metric. Valid values are <code>Maximize</code> and
+     * <code>Minimize</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The data type of the metric.</p>
+     * <p>The type of the metric. Valid values are <code>Maximize</code> and
+     * <code>Minimize</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The data type of the metric.</p>
+     * <p>The type of the metric. Valid values are <code>Maximize</code> and
+     * <code>Minimize</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The data type of the metric.</p>
+     * <p>The type of the metric. Valid values are <code>Maximize</code> and
+     * <code>Minimize</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The data type of the metric.</p>
+     * <p>The type of the metric. Valid values are <code>Maximize</code> and
+     * <code>Minimize</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The data type of the metric.</p>
+     * <p>The type of the metric. Valid values are <code>Maximize</code> and
+     * <code>Minimize</code>.</p>
      */
     inline HPOObjective& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The data type of the metric.</p>
+     * <p>The type of the metric. Valid values are <code>Maximize</code> and
+     * <code>Minimize</code>.</p>
      */
     inline HPOObjective& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The data type of the metric.</p>
+     * <p>The type of the metric. Valid values are <code>Maximize</code> and
+     * <code>Minimize</code>.</p>
      */
     inline HPOObjective& WithType(const char* value) { SetType(value); return *this;}
 

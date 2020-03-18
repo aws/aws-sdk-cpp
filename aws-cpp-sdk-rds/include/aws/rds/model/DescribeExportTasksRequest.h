@@ -299,7 +299,7 @@ namespace Model
      * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline const Aws::String& GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -317,7 +317,7 @@ namespace Model
      * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline void SetMaxRecords(const Aws::String& value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
+    inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records
@@ -326,43 +326,7 @@ namespace Model
      * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
      * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
-    inline void SetMaxRecords(Aws::String&& value) { m_maxRecordsHasBeenSet = true; m_maxRecords = std::move(value); }
-
-    /**
-     * <p> The maximum number of records to include in the response. If more records
-     * exist than the specified value, a pagination token called a marker is included
-     * in the response. You can use the marker in a later
-     * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
-     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
-    inline void SetMaxRecords(const char* value) { m_maxRecordsHasBeenSet = true; m_maxRecords.assign(value); }
-
-    /**
-     * <p> The maximum number of records to include in the response. If more records
-     * exist than the specified value, a pagination token called a marker is included
-     * in the response. You can use the marker in a later
-     * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
-     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
-    inline DescribeExportTasksRequest& WithMaxRecords(const Aws::String& value) { SetMaxRecords(value); return *this;}
-
-    /**
-     * <p> The maximum number of records to include in the response. If more records
-     * exist than the specified value, a pagination token called a marker is included
-     * in the response. You can use the marker in a later
-     * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
-     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
-    inline DescribeExportTasksRequest& WithMaxRecords(Aws::String&& value) { SetMaxRecords(std::move(value)); return *this;}
-
-    /**
-     * <p> The maximum number of records to include in the response. If more records
-     * exist than the specified value, a pagination token called a marker is included
-     * in the response. You can use the marker in a later
-     * <code>DescribeExportTasks</code> request to retrieve the remaining results. </p>
-     * <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
-    inline DescribeExportTasksRequest& WithMaxRecords(const char* value) { SetMaxRecords(value); return *this;}
+    inline DescribeExportTasksRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
   private:
 
@@ -378,7 +342,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet;
 
-    Aws::String m_maxRecords;
+    int m_maxRecords;
     bool m_maxRecordsHasBeenSet;
   };
 

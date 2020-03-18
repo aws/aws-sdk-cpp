@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/SetSourceRequest.h>
+#include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/GrantEntitlementRequest.h>
 #include <aws/mediaconnect/model/AddOutputRequest.h>
 #include <utility>
@@ -32,7 +33,7 @@ namespace Model
 
   /**
    * Creates a new flow. The request must include one source. The request optionally
-   * can include outputs (up to 20) and entitlements (up to 50).<p><h3>See Also:</h3>
+   * can include outputs (up to 50) and entitlements (up to 50).<p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateFlowRequest">AWS
    * API Reference</a></p>
@@ -241,6 +242,50 @@ namespace Model
     
     inline CreateFlowRequest& WithSource(SetSourceRequest&& value) { SetSource(std::move(value)); return *this;}
 
+
+    
+    inline const FailoverConfig& GetSourceFailoverConfig() const{ return m_sourceFailoverConfig; }
+
+    
+    inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
+
+    
+    inline void SetSourceFailoverConfig(const FailoverConfig& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = value; }
+
+    
+    inline void SetSourceFailoverConfig(FailoverConfig&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::move(value); }
+
+    
+    inline CreateFlowRequest& WithSourceFailoverConfig(const FailoverConfig& value) { SetSourceFailoverConfig(value); return *this;}
+
+    
+    inline CreateFlowRequest& WithSourceFailoverConfig(FailoverConfig&& value) { SetSourceFailoverConfig(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Vector<SetSourceRequest>& GetSources() const{ return m_sources; }
+
+    
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    
+    inline void SetSources(const Aws::Vector<SetSourceRequest>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    
+    inline void SetSources(Aws::Vector<SetSourceRequest>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    
+    inline CreateFlowRequest& WithSources(const Aws::Vector<SetSourceRequest>& value) { SetSources(value); return *this;}
+
+    
+    inline CreateFlowRequest& WithSources(Aws::Vector<SetSourceRequest>&& value) { SetSources(std::move(value)); return *this;}
+
+    
+    inline CreateFlowRequest& AddSources(const SetSourceRequest& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    
+    inline CreateFlowRequest& AddSources(SetSourceRequest&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_availabilityZone;
@@ -257,6 +302,12 @@ namespace Model
 
     SetSourceRequest m_source;
     bool m_sourceHasBeenSet;
+
+    FailoverConfig m_sourceFailoverConfig;
+    bool m_sourceFailoverConfigHasBeenSet;
+
+    Aws::Vector<SetSourceRequest> m_sources;
+    bool m_sourcesHasBeenSet;
   };
 
 } // namespace Model

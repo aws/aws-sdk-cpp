@@ -34,7 +34,8 @@ BatchInferenceJobSummary::BatchInferenceJobSummary() :
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_solutionVersionArnHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ BatchInferenceJobSummary::BatchInferenceJobSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_solutionVersionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,13 @@ BatchInferenceJobSummary& BatchInferenceJobSummary::operator =(JsonView jsonValu
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("solutionVersionArn"))
+  {
+    m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
+
+    m_solutionVersionArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -131,6 +140,12 @@ JsonValue BatchInferenceJobSummary::Jsonize() const
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("failureReason", m_failureReason);
+
+  }
+
+  if(m_solutionVersionArnHasBeenSet)
+  {
+   payload.WithString("solutionVersionArn", m_solutionVersionArn);
 
   }
 
