@@ -358,24 +358,26 @@ namespace Model
         virtual void ExportCertificateAsync(const Model::ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a certificate specified by an ARN and its certificate chain . The
-         * chain is an ordered list of certificates that contains the end entity
-         * certificate, intermediate certificates of subordinate CAs, and the root
-         * certificate in that order. The certificate and certificate chain are base64
-         * encoded. If you want to decode the certificate to see the individual fields, you
-         * can use OpenSSL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain
+         * consists of the certificate of the issuing CA and the intermediate certificates
+         * of any other subordinate CAs. All of the certificates are base64 encoded. You
+         * can use <a
+         * href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to
+         * decode the certificates and inspect individual fields.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCertificateOutcome GetCertificate(const Model::GetCertificateRequest& request) const;
 
         /**
-         * <p>Retrieves a certificate specified by an ARN and its certificate chain . The
-         * chain is an ordered list of certificates that contains the end entity
-         * certificate, intermediate certificates of subordinate CAs, and the root
-         * certificate in that order. The certificate and certificate chain are base64
-         * encoded. If you want to decode the certificate to see the individual fields, you
-         * can use OpenSSL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain
+         * consists of the certificate of the issuing CA and the intermediate certificates
+         * of any other subordinate CAs. All of the certificates are base64 encoded. You
+         * can use <a
+         * href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to
+         * decode the certificates and inspect individual fields.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          *
@@ -384,12 +386,13 @@ namespace Model
         virtual Model::GetCertificateOutcomeCallable GetCertificateCallable(const Model::GetCertificateRequest& request) const;
 
         /**
-         * <p>Retrieves a certificate specified by an ARN and its certificate chain . The
-         * chain is an ordered list of certificates that contains the end entity
-         * certificate, intermediate certificates of subordinate CAs, and the root
-         * certificate in that order. The certificate and certificate chain are base64
-         * encoded. If you want to decode the certificate to see the individual fields, you
-         * can use OpenSSL.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain
+         * consists of the certificate of the issuing CA and the intermediate certificates
+         * of any other subordinate CAs. All of the certificates are base64 encoded. You
+         * can use <a
+         * href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to
+         * decode the certificates and inspect individual fields.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetCertificate">AWS
          * API Reference</a></p>
          *

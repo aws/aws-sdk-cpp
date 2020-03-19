@@ -43,87 +43,87 @@ namespace Model
 
 
     /**
-     * <p>String that contains the ACM certificate represented by the ARN specified at
-     * input.</p>
+     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>String that contains the ACM certificate represented by the ARN specified at
-     * input.</p>
+     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificate = value; }
 
     /**
-     * <p>String that contains the ACM certificate represented by the ARN specified at
-     * input.</p>
+     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificate = std::move(value); }
 
     /**
-     * <p>String that contains the ACM certificate represented by the ARN specified at
-     * input.</p>
+     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
      */
     inline void SetCertificate(const char* value) { m_certificate.assign(value); }
 
     /**
-     * <p>String that contains the ACM certificate represented by the ARN specified at
-     * input.</p>
+     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
      */
     inline GetCertificateResult& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>String that contains the ACM certificate represented by the ARN specified at
-     * input.</p>
+     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
      */
     inline GetCertificateResult& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>String that contains the ACM certificate represented by the ARN specified at
-     * input.</p>
+     * <p>The ACM-issued certificate corresponding to the ARN specified as input.</p>
      */
     inline GetCertificateResult& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
 
     /**
-     * <p>The certificate chain that contains the root certificate issued by the
-     * certificate authority (CA).</p>
+     * <p>Certificates forming the requested certificate's chain of trust. The chain
+     * consists of the certificate of the issuing CA and the intermediate certificates
+     * of any other subordinate CAs. </p>
      */
     inline const Aws::String& GetCertificateChain() const{ return m_certificateChain; }
 
     /**
-     * <p>The certificate chain that contains the root certificate issued by the
-     * certificate authority (CA).</p>
+     * <p>Certificates forming the requested certificate's chain of trust. The chain
+     * consists of the certificate of the issuing CA and the intermediate certificates
+     * of any other subordinate CAs. </p>
      */
     inline void SetCertificateChain(const Aws::String& value) { m_certificateChain = value; }
 
     /**
-     * <p>The certificate chain that contains the root certificate issued by the
-     * certificate authority (CA).</p>
+     * <p>Certificates forming the requested certificate's chain of trust. The chain
+     * consists of the certificate of the issuing CA and the intermediate certificates
+     * of any other subordinate CAs. </p>
      */
     inline void SetCertificateChain(Aws::String&& value) { m_certificateChain = std::move(value); }
 
     /**
-     * <p>The certificate chain that contains the root certificate issued by the
-     * certificate authority (CA).</p>
+     * <p>Certificates forming the requested certificate's chain of trust. The chain
+     * consists of the certificate of the issuing CA and the intermediate certificates
+     * of any other subordinate CAs. </p>
      */
     inline void SetCertificateChain(const char* value) { m_certificateChain.assign(value); }
 
     /**
-     * <p>The certificate chain that contains the root certificate issued by the
-     * certificate authority (CA).</p>
+     * <p>Certificates forming the requested certificate's chain of trust. The chain
+     * consists of the certificate of the issuing CA and the intermediate certificates
+     * of any other subordinate CAs. </p>
      */
     inline GetCertificateResult& WithCertificateChain(const Aws::String& value) { SetCertificateChain(value); return *this;}
 
     /**
-     * <p>The certificate chain that contains the root certificate issued by the
-     * certificate authority (CA).</p>
+     * <p>Certificates forming the requested certificate's chain of trust. The chain
+     * consists of the certificate of the issuing CA and the intermediate certificates
+     * of any other subordinate CAs. </p>
      */
     inline GetCertificateResult& WithCertificateChain(Aws::String&& value) { SetCertificateChain(std::move(value)); return *this;}
 
     /**
-     * <p>The certificate chain that contains the root certificate issued by the
-     * certificate authority (CA).</p>
+     * <p>Certificates forming the requested certificate's chain of trust. The chain
+     * consists of the certificate of the issuing CA and the intermediate certificates
+     * of any other subordinate CAs. </p>
      */
     inline GetCertificateResult& WithCertificateChain(const char* value) { SetCertificateChain(value); return *this;}
 

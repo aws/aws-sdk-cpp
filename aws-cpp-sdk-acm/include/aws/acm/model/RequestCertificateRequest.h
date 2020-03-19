@@ -204,10 +204,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -226,10 +226,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -248,10 +248,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -270,10 +270,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -292,10 +292,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -314,10 +314,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -336,10 +336,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -358,10 +358,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
@@ -380,10 +380,10 @@ namespace Model
      * the ACM certificate. For example, add the name www.example.net to a certificate
      * for which the <code>DomainName</code> field is www.example.com if users can
      * reach your site by using either name. The maximum number of domain names that
-     * you can add to an ACM certificate is 100. However, the initial limit is 10
-     * domain names. If you need more than 10 names, you must request a limit increase.
+     * you can add to an ACM certificate is 100. However, the initial quota is 10
+     * domain names. If you need more than 10 names, you must request a quota increase.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
      * <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of
      * multiple labels separated by periods. No label can be longer than 63 octets.
      * Consider the following examples: </p> <ul> <li> <p> <code>(63 octets).(63
