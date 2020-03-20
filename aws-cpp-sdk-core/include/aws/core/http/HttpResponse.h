@@ -106,7 +106,7 @@ namespace Aws
             GATEWAY_TIMEOUT = 504,
             HTTP_VERSION_NOT_SUPPORTED = 505,
             VARIANT_ALSO_NEGOTIATES = 506,
-            INSUFFICIENT_STORAGE = 506,
+            INSUFFICIENT_STORAGE = 507,
             LOOP_DETECTED = 508,
             BANDWIDTH_LIMIT_EXCEEDED = 509,
             NOT_EXTENDED = 510,

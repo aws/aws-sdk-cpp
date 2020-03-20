@@ -151,6 +151,7 @@ namespace Aws
 
             /**
              * URLEncodes the path portions of path (doesn't encode the "/" portion)
+             * Keeps the first and the last "/".
              */
             static Aws::String URLEncodePath(const Aws::String& path);
 

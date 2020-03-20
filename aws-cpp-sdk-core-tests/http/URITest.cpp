@@ -218,6 +218,27 @@ TEST(URITest, TestParseWithColon)
 
 }
 
+TEST(URITest, TestGetURLEncodedPath)
+{
+    Aws::String path = "";
+    EXPECT_STREQ("", URI::URLEncodePath(path).c_str());
+
+    path = "/";
+    EXPECT_STREQ("/", URI::URLEncodePath(path).c_str());
+
+    path = "/path/1234/";
+    EXPECT_STREQ("/path/1234/", URI::URLEncodePath(path).c_str());
+
+    path = "/path/~$omething-else";
+    EXPECT_STREQ("/path/~%24omething-else", URI::URLEncodePath(path).c_str());
+
+    path = "path/an.%ther/";
+    EXPECT_STREQ("path/an.%25ther/", URI::URLEncodePath(path).c_str());
+
+    path = "path/ሴ";
+    EXPECT_STREQ("path/%E1%88%B4", URI::URLEncodePath(path).c_str());
+}
+
 TEST(URITest, TestGetRFC3986URLEncodedPath)
 {
     URI uri = "https://test.com/path/1234/";

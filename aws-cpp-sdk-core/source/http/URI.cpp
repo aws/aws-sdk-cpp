@@ -171,12 +171,19 @@ Aws::String URI::URLEncodePath(const Aws::String& path)
     }
 
     //if the last character was also a slash, then add that back here.
-    if (path[path.length() - 1] == '/')
+    if (path.length() > 0 && path[path.length() - 1] == '/')
     {
         ss << '/';
     }
 
-    return ss.str();
+    if (path.length() > 0 && path[0] != '/')
+    {
+        return ss.str().substr(1);
+    }
+    else
+    {
+        return ss.str();
+    }
 }
 
 void URI::SetPath(const Aws::String& value)
