@@ -226,6 +226,120 @@ namespace Model
      */
     inline ConstraintDetail& WithOwner(const char* value) { SetOwner(value); return *this;}
 
+
+    /**
+     * <p>The identifier of the product the constraint applies to. Note that a
+     * constraint applies to a specific instance of a product within a certain
+     * portfolio.</p>
+     */
+    inline const Aws::String& GetProductId() const{ return m_productId; }
+
+    /**
+     * <p>The identifier of the product the constraint applies to. Note that a
+     * constraint applies to a specific instance of a product within a certain
+     * portfolio.</p>
+     */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the product the constraint applies to. Note that a
+     * constraint applies to a specific instance of a product within a certain
+     * portfolio.</p>
+     */
+    inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
+
+    /**
+     * <p>The identifier of the product the constraint applies to. Note that a
+     * constraint applies to a specific instance of a product within a certain
+     * portfolio.</p>
+     */
+    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
+
+    /**
+     * <p>The identifier of the product the constraint applies to. Note that a
+     * constraint applies to a specific instance of a product within a certain
+     * portfolio.</p>
+     */
+    inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
+
+    /**
+     * <p>The identifier of the product the constraint applies to. Note that a
+     * constraint applies to a specific instance of a product within a certain
+     * portfolio.</p>
+     */
+    inline ConstraintDetail& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
+
+    /**
+     * <p>The identifier of the product the constraint applies to. Note that a
+     * constraint applies to a specific instance of a product within a certain
+     * portfolio.</p>
+     */
+    inline ConstraintDetail& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the product the constraint applies to. Note that a
+     * constraint applies to a specific instance of a product within a certain
+     * portfolio.</p>
+     */
+    inline ConstraintDetail& WithProductId(const char* value) { SetProductId(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the portfolio the product resides in. The constraint
+     * applies only to the instance of the product that lives within this
+     * portfolio.</p>
+     */
+    inline const Aws::String& GetPortfolioId() const{ return m_portfolioId; }
+
+    /**
+     * <p>The identifier of the portfolio the product resides in. The constraint
+     * applies only to the instance of the product that lives within this
+     * portfolio.</p>
+     */
+    inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the portfolio the product resides in. The constraint
+     * applies only to the instance of the product that lives within this
+     * portfolio.</p>
+     */
+    inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
+
+    /**
+     * <p>The identifier of the portfolio the product resides in. The constraint
+     * applies only to the instance of the product that lives within this
+     * portfolio.</p>
+     */
+    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
+
+    /**
+     * <p>The identifier of the portfolio the product resides in. The constraint
+     * applies only to the instance of the product that lives within this
+     * portfolio.</p>
+     */
+    inline void SetPortfolioId(const char* value) { m_portfolioIdHasBeenSet = true; m_portfolioId.assign(value); }
+
+    /**
+     * <p>The identifier of the portfolio the product resides in. The constraint
+     * applies only to the instance of the product that lives within this
+     * portfolio.</p>
+     */
+    inline ConstraintDetail& WithPortfolioId(const Aws::String& value) { SetPortfolioId(value); return *this;}
+
+    /**
+     * <p>The identifier of the portfolio the product resides in. The constraint
+     * applies only to the instance of the product that lives within this
+     * portfolio.</p>
+     */
+    inline ConstraintDetail& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the portfolio the product resides in. The constraint
+     * applies only to the instance of the product that lives within this
+     * portfolio.</p>
+     */
+    inline ConstraintDetail& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
+
   private:
 
     Aws::String m_constraintId;
@@ -239,6 +353,12 @@ namespace Model
 
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
+    Aws::String m_productId;
+    bool m_productIdHasBeenSet;
+
+    Aws::String m_portfolioId;
+    bool m_portfolioIdHasBeenSet;
   };
 
 } // namespace Model

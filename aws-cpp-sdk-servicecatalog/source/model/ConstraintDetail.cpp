@@ -32,7 +32,9 @@ ConstraintDetail::ConstraintDetail() :
     m_constraintIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_portfolioIdHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ ConstraintDetail::ConstraintDetail(JsonView jsonValue) :
     m_constraintIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_portfolioIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +79,20 @@ ConstraintDetail& ConstraintDetail::operator =(JsonView jsonValue)
     m_ownerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProductId"))
+  {
+    m_productId = jsonValue.GetString("ProductId");
+
+    m_productIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PortfolioId"))
+  {
+    m_portfolioId = jsonValue.GetString("PortfolioId");
+
+    m_portfolioIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +121,18 @@ JsonValue ConstraintDetail::Jsonize() const
   if(m_ownerHasBeenSet)
   {
    payload.WithString("Owner", m_owner);
+
+  }
+
+  if(m_productIdHasBeenSet)
+  {
+   payload.WithString("ProductId", m_productId);
+
+  }
+
+  if(m_portfolioIdHasBeenSet)
+  {
+   payload.WithString("PortfolioId", m_portfolioId);
 
   }
 
