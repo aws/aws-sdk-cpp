@@ -523,8 +523,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
          * node groups or Fargate profiles attached to the cluster, you must delete them
-         * first. For more information, see <a>DeleteNodegroup</a>
-         * and<a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
+         * first. For more information, see <a>DeleteNodegroup</a> and
+         * <a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          */
@@ -539,8 +539,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
          * node groups or Fargate profiles attached to the cluster, you must delete them
-         * first. For more information, see <a>DeleteNodegroup</a>
-         * and<a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
+         * first. For more information, see <a>DeleteNodegroup</a> and
+         * <a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          *
@@ -557,8 +557,8 @@ namespace Model
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
          * node groups or Fargate profiles attached to the cluster, you must delete them
-         * first. For more information, see <a>DeleteNodegroup</a>
-         * and<a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
+         * first. For more information, see <a>DeleteNodegroup</a> and
+         * <a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          *

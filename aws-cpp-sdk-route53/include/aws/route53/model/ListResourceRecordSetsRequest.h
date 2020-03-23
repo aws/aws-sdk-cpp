@@ -104,49 +104,65 @@ namespace Model
 
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
-     * want to list.</p>
+     * want to list. If the specified record name doesn't exist, the results begin with
+     * the first resource record set that has a name greater than the value of
+     * <code>name</code>.</p>
      */
     inline const Aws::String& GetStartRecordName() const{ return m_startRecordName; }
 
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
-     * want to list.</p>
+     * want to list. If the specified record name doesn't exist, the results begin with
+     * the first resource record set that has a name greater than the value of
+     * <code>name</code>.</p>
      */
     inline bool StartRecordNameHasBeenSet() const { return m_startRecordNameHasBeenSet; }
 
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
-     * want to list.</p>
+     * want to list. If the specified record name doesn't exist, the results begin with
+     * the first resource record set that has a name greater than the value of
+     * <code>name</code>.</p>
      */
     inline void SetStartRecordName(const Aws::String& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = value; }
 
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
-     * want to list.</p>
+     * want to list. If the specified record name doesn't exist, the results begin with
+     * the first resource record set that has a name greater than the value of
+     * <code>name</code>.</p>
      */
     inline void SetStartRecordName(Aws::String&& value) { m_startRecordNameHasBeenSet = true; m_startRecordName = std::move(value); }
 
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
-     * want to list.</p>
+     * want to list. If the specified record name doesn't exist, the results begin with
+     * the first resource record set that has a name greater than the value of
+     * <code>name</code>.</p>
      */
     inline void SetStartRecordName(const char* value) { m_startRecordNameHasBeenSet = true; m_startRecordName.assign(value); }
 
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
-     * want to list.</p>
+     * want to list. If the specified record name doesn't exist, the results begin with
+     * the first resource record set that has a name greater than the value of
+     * <code>name</code>.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordName(const Aws::String& value) { SetStartRecordName(value); return *this;}
 
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
-     * want to list.</p>
+     * want to list. If the specified record name doesn't exist, the results begin with
+     * the first resource record set that has a name greater than the value of
+     * <code>name</code>.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordName(Aws::String&& value) { SetStartRecordName(std::move(value)); return *this;}
 
     /**
      * <p>The first name in the lexicographic ordering of resource record sets that you
-     * want to list.</p>
+     * want to list. If the specified record name doesn't exist, the results begin with
+     * the first resource record set that has a name greater than the value of
+     * <code>name</code>.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordName(const char* value) { SetStartRecordName(value); return *this;}
 
@@ -165,12 +181,11 @@ namespace Model
      * API</b>: A</p> </li> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p>
      * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>Elastic Load Balancing load balancer</b>:
-     * A | AAAA</p> </li> <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> <li> <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another
-     * resource record set in this hosted zone:</b> The type of the resource record set
-     * that the alias references.</p> </li> </ul> <p>Constraint: Specifying
-     * <code>type</code> without specifying <code>name</code> returns an
-     * <code>InvalidInput</code> error.</p>
+     * A | AAAA</p> </li> <li> <p> <b>S3 bucket</b>: A</p> </li> <li> <p> <b>VPC
+     * interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another resource record set
+     * in this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline const RRType& GetStartRecordType() const{ return m_startRecordType; }
 
@@ -188,12 +203,11 @@ namespace Model
      * API</b>: A</p> </li> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p>
      * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>Elastic Load Balancing load balancer</b>:
-     * A | AAAA</p> </li> <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> <li> <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another
-     * resource record set in this hosted zone:</b> The type of the resource record set
-     * that the alias references.</p> </li> </ul> <p>Constraint: Specifying
-     * <code>type</code> without specifying <code>name</code> returns an
-     * <code>InvalidInput</code> error.</p>
+     * A | AAAA</p> </li> <li> <p> <b>S3 bucket</b>: A</p> </li> <li> <p> <b>VPC
+     * interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another resource record set
+     * in this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline bool StartRecordTypeHasBeenSet() const { return m_startRecordTypeHasBeenSet; }
 
@@ -211,12 +225,11 @@ namespace Model
      * API</b>: A</p> </li> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p>
      * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>Elastic Load Balancing load balancer</b>:
-     * A | AAAA</p> </li> <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> <li> <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another
-     * resource record set in this hosted zone:</b> The type of the resource record set
-     * that the alias references.</p> </li> </ul> <p>Constraint: Specifying
-     * <code>type</code> without specifying <code>name</code> returns an
-     * <code>InvalidInput</code> error.</p>
+     * A | AAAA</p> </li> <li> <p> <b>S3 bucket</b>: A</p> </li> <li> <p> <b>VPC
+     * interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another resource record set
+     * in this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartRecordType(const RRType& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = value; }
 
@@ -234,12 +247,11 @@ namespace Model
      * API</b>: A</p> </li> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p>
      * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>Elastic Load Balancing load balancer</b>:
-     * A | AAAA</p> </li> <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> <li> <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another
-     * resource record set in this hosted zone:</b> The type of the resource record set
-     * that the alias references.</p> </li> </ul> <p>Constraint: Specifying
-     * <code>type</code> without specifying <code>name</code> returns an
-     * <code>InvalidInput</code> error.</p>
+     * A | AAAA</p> </li> <li> <p> <b>S3 bucket</b>: A</p> </li> <li> <p> <b>VPC
+     * interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another resource record set
+     * in this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline void SetStartRecordType(RRType&& value) { m_startRecordTypeHasBeenSet = true; m_startRecordType = std::move(value); }
 
@@ -257,12 +269,11 @@ namespace Model
      * API</b>: A</p> </li> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p>
      * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>Elastic Load Balancing load balancer</b>:
-     * A | AAAA</p> </li> <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> <li> <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another
-     * resource record set in this hosted zone:</b> The type of the resource record set
-     * that the alias references.</p> </li> </ul> <p>Constraint: Specifying
-     * <code>type</code> without specifying <code>name</code> returns an
-     * <code>InvalidInput</code> error.</p>
+     * A | AAAA</p> </li> <li> <p> <b>S3 bucket</b>: A</p> </li> <li> <p> <b>VPC
+     * interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another resource record set
+     * in this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordType(const RRType& value) { SetStartRecordType(value); return *this;}
 
@@ -280,12 +291,11 @@ namespace Model
      * API</b>: A</p> </li> <li> <p> <b>CloudFront distribution</b>: A or AAAA</p>
      * </li> <li> <p> <b>Elastic Beanstalk environment that has a regionalized
      * subdomain</b>: A</p> </li> <li> <p> <b>Elastic Load Balancing load balancer</b>:
-     * A | AAAA</p> </li> <li> <p> <b>Amazon S3 bucket</b>: A</p> </li> <li> <p>
-     * <b>Amazon VPC interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another
-     * resource record set in this hosted zone:</b> The type of the resource record set
-     * that the alias references.</p> </li> </ul> <p>Constraint: Specifying
-     * <code>type</code> without specifying <code>name</code> returns an
-     * <code>InvalidInput</code> error.</p>
+     * A | AAAA</p> </li> <li> <p> <b>S3 bucket</b>: A</p> </li> <li> <p> <b>VPC
+     * interface VPC endpoint</b>: A</p> </li> <li> <p> <b>Another resource record set
+     * in this hosted zone:</b> The type of the resource record set that the alias
+     * references.</p> </li> </ul> <p>Constraint: Specifying <code>type</code> without
+     * specifying <code>name</code> returns an <code>InvalidInput</code> error.</p>
      */
     inline ListResourceRecordSetsRequest& WithStartRecordType(RRType&& value) { SetStartRecordType(std::move(value)); return *this;}
 

@@ -38,6 +38,7 @@ namespace Aws
         static const int Ec2LaunchTemplateVersionMismatch_HASH = HashingUtils::HashString("Ec2LaunchTemplateVersionMismatch");
         static const int Ec2SubnetNotFound_HASH = HashingUtils::HashString("Ec2SubnetNotFound");
         static const int IamInstanceProfileNotFound_HASH = HashingUtils::HashString("IamInstanceProfileNotFound");
+        static const int IamLimitExceeded_HASH = HashingUtils::HashString("IamLimitExceeded");
         static const int IamNodeRoleNotFound_HASH = HashingUtils::HashString("IamNodeRoleNotFound");
         static const int AsgInstanceLaunchFailures_HASH = HashingUtils::HashString("AsgInstanceLaunchFailures");
         static const int InstanceLimitExceeded_HASH = HashingUtils::HashString("InstanceLimitExceeded");
@@ -80,6 +81,10 @@ namespace Aws
           else if (hashCode == IamInstanceProfileNotFound_HASH)
           {
             return NodegroupIssueCode::IamInstanceProfileNotFound;
+          }
+          else if (hashCode == IamLimitExceeded_HASH)
+          {
+            return NodegroupIssueCode::IamLimitExceeded;
           }
           else if (hashCode == IamNodeRoleNotFound_HASH)
           {
@@ -135,6 +140,8 @@ namespace Aws
             return "Ec2SubnetNotFound";
           case NodegroupIssueCode::IamInstanceProfileNotFound:
             return "IamInstanceProfileNotFound";
+          case NodegroupIssueCode::IamLimitExceeded:
+            return "IamLimitExceeded";
           case NodegroupIssueCode::IamNodeRoleNotFound:
             return "IamNodeRoleNotFound";
           case NodegroupIssueCode::AsgInstanceLaunchFailures:

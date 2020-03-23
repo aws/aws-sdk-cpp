@@ -155,9 +155,7 @@ namespace Model
      * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
      * if <code>NextCountryCode</code> from the previous response has a value, enter
      * that value in <code>startcountrycode</code> to return the next page of
-     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * results.</p>
      */
     inline const Aws::String& GetStartCountryCode() const{ return m_startCountryCode; }
 
@@ -167,9 +165,7 @@ namespace Model
      * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
      * if <code>NextCountryCode</code> from the previous response has a value, enter
      * that value in <code>startcountrycode</code> to return the next page of
-     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * results.</p>
      */
     inline bool StartCountryCodeHasBeenSet() const { return m_startCountryCodeHasBeenSet; }
 
@@ -179,9 +175,7 @@ namespace Model
      * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
      * if <code>NextCountryCode</code> from the previous response has a value, enter
      * that value in <code>startcountrycode</code> to return the next page of
-     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * results.</p>
      */
     inline void SetStartCountryCode(const Aws::String& value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode = value; }
 
@@ -191,9 +185,7 @@ namespace Model
      * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
      * if <code>NextCountryCode</code> from the previous response has a value, enter
      * that value in <code>startcountrycode</code> to return the next page of
-     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * results.</p>
      */
     inline void SetStartCountryCode(Aws::String&& value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode = std::move(value); }
 
@@ -203,9 +195,7 @@ namespace Model
      * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
      * if <code>NextCountryCode</code> from the previous response has a value, enter
      * that value in <code>startcountrycode</code> to return the next page of
-     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * results.</p>
      */
     inline void SetStartCountryCode(const char* value) { m_startCountryCodeHasBeenSet = true; m_startCountryCode.assign(value); }
 
@@ -215,9 +205,7 @@ namespace Model
      * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
      * if <code>NextCountryCode</code> from the previous response has a value, enter
      * that value in <code>startcountrycode</code> to return the next page of
-     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * results.</p>
      */
     inline ListGeoLocationsRequest& WithStartCountryCode(const Aws::String& value) { SetStartCountryCode(value); return *this;}
 
@@ -227,9 +215,7 @@ namespace Model
      * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
      * if <code>NextCountryCode</code> from the previous response has a value, enter
      * that value in <code>startcountrycode</code> to return the next page of
-     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * results.</p>
      */
     inline ListGeoLocationsRequest& WithStartCountryCode(Aws::String&& value) { SetStartCountryCode(std::move(value)); return *this;}
 
@@ -239,106 +225,104 @@ namespace Model
      * page or more of results, if <code>IsTruncated</code> is <code>true</code>, and
      * if <code>NextCountryCode</code> from the previous response has a value, enter
      * that value in <code>startcountrycode</code> to return the next page of
-     * results.</p> <p>Route 53 uses the two-letter country codes that are specified in
-     * <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO standard 3166-1
-     * alpha-2</a>.</p>
+     * results.</p>
      */
     inline ListGeoLocationsRequest& WithStartCountryCode(const char* value) { SetStartCountryCode(value); return *this;}
 
 
     /**
-     * <p>The code for the subdivision (for example, state or province) with which you
-     * want to start listing locations that Amazon Route 53 supports for geolocation.
-     * If Route 53 has already returned a page or more of results, if
-     * <code>IsTruncated</code> is <code>true</code>, and if
-     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
-     * that value in <code>startsubdivisioncode</code> to return the next page of
-     * results.</p> <p>To list subdivisions of a country, you must include both
-     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     * <p>The code for the state of the United States with which you want to start
+     * listing locations that Amazon Route 53 supports for geolocation. If Route 53 has
+     * already returned a page or more of results, if <code>IsTruncated</code> is
+     * <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous
+     * response has a value, enter that value in <code>startsubdivisioncode</code> to
+     * return the next page of results.</p> <p>To list subdivisions (U.S. states), you
+     * must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.</p>
      */
     inline const Aws::String& GetStartSubdivisionCode() const{ return m_startSubdivisionCode; }
 
     /**
-     * <p>The code for the subdivision (for example, state or province) with which you
-     * want to start listing locations that Amazon Route 53 supports for geolocation.
-     * If Route 53 has already returned a page or more of results, if
-     * <code>IsTruncated</code> is <code>true</code>, and if
-     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
-     * that value in <code>startsubdivisioncode</code> to return the next page of
-     * results.</p> <p>To list subdivisions of a country, you must include both
-     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     * <p>The code for the state of the United States with which you want to start
+     * listing locations that Amazon Route 53 supports for geolocation. If Route 53 has
+     * already returned a page or more of results, if <code>IsTruncated</code> is
+     * <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous
+     * response has a value, enter that value in <code>startsubdivisioncode</code> to
+     * return the next page of results.</p> <p>To list subdivisions (U.S. states), you
+     * must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.</p>
      */
     inline bool StartSubdivisionCodeHasBeenSet() const { return m_startSubdivisionCodeHasBeenSet; }
 
     /**
-     * <p>The code for the subdivision (for example, state or province) with which you
-     * want to start listing locations that Amazon Route 53 supports for geolocation.
-     * If Route 53 has already returned a page or more of results, if
-     * <code>IsTruncated</code> is <code>true</code>, and if
-     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
-     * that value in <code>startsubdivisioncode</code> to return the next page of
-     * results.</p> <p>To list subdivisions of a country, you must include both
-     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     * <p>The code for the state of the United States with which you want to start
+     * listing locations that Amazon Route 53 supports for geolocation. If Route 53 has
+     * already returned a page or more of results, if <code>IsTruncated</code> is
+     * <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous
+     * response has a value, enter that value in <code>startsubdivisioncode</code> to
+     * return the next page of results.</p> <p>To list subdivisions (U.S. states), you
+     * must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.</p>
      */
     inline void SetStartSubdivisionCode(const Aws::String& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = value; }
 
     /**
-     * <p>The code for the subdivision (for example, state or province) with which you
-     * want to start listing locations that Amazon Route 53 supports for geolocation.
-     * If Route 53 has already returned a page or more of results, if
-     * <code>IsTruncated</code> is <code>true</code>, and if
-     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
-     * that value in <code>startsubdivisioncode</code> to return the next page of
-     * results.</p> <p>To list subdivisions of a country, you must include both
-     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     * <p>The code for the state of the United States with which you want to start
+     * listing locations that Amazon Route 53 supports for geolocation. If Route 53 has
+     * already returned a page or more of results, if <code>IsTruncated</code> is
+     * <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous
+     * response has a value, enter that value in <code>startsubdivisioncode</code> to
+     * return the next page of results.</p> <p>To list subdivisions (U.S. states), you
+     * must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.</p>
      */
     inline void SetStartSubdivisionCode(Aws::String&& value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode = std::move(value); }
 
     /**
-     * <p>The code for the subdivision (for example, state or province) with which you
-     * want to start listing locations that Amazon Route 53 supports for geolocation.
-     * If Route 53 has already returned a page or more of results, if
-     * <code>IsTruncated</code> is <code>true</code>, and if
-     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
-     * that value in <code>startsubdivisioncode</code> to return the next page of
-     * results.</p> <p>To list subdivisions of a country, you must include both
-     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     * <p>The code for the state of the United States with which you want to start
+     * listing locations that Amazon Route 53 supports for geolocation. If Route 53 has
+     * already returned a page or more of results, if <code>IsTruncated</code> is
+     * <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous
+     * response has a value, enter that value in <code>startsubdivisioncode</code> to
+     * return the next page of results.</p> <p>To list subdivisions (U.S. states), you
+     * must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.</p>
      */
     inline void SetStartSubdivisionCode(const char* value) { m_startSubdivisionCodeHasBeenSet = true; m_startSubdivisionCode.assign(value); }
 
     /**
-     * <p>The code for the subdivision (for example, state or province) with which you
-     * want to start listing locations that Amazon Route 53 supports for geolocation.
-     * If Route 53 has already returned a page or more of results, if
-     * <code>IsTruncated</code> is <code>true</code>, and if
-     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
-     * that value in <code>startsubdivisioncode</code> to return the next page of
-     * results.</p> <p>To list subdivisions of a country, you must include both
-     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     * <p>The code for the state of the United States with which you want to start
+     * listing locations that Amazon Route 53 supports for geolocation. If Route 53 has
+     * already returned a page or more of results, if <code>IsTruncated</code> is
+     * <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous
+     * response has a value, enter that value in <code>startsubdivisioncode</code> to
+     * return the next page of results.</p> <p>To list subdivisions (U.S. states), you
+     * must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.</p>
      */
     inline ListGeoLocationsRequest& WithStartSubdivisionCode(const Aws::String& value) { SetStartSubdivisionCode(value); return *this;}
 
     /**
-     * <p>The code for the subdivision (for example, state or province) with which you
-     * want to start listing locations that Amazon Route 53 supports for geolocation.
-     * If Route 53 has already returned a page or more of results, if
-     * <code>IsTruncated</code> is <code>true</code>, and if
-     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
-     * that value in <code>startsubdivisioncode</code> to return the next page of
-     * results.</p> <p>To list subdivisions of a country, you must include both
-     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     * <p>The code for the state of the United States with which you want to start
+     * listing locations that Amazon Route 53 supports for geolocation. If Route 53 has
+     * already returned a page or more of results, if <code>IsTruncated</code> is
+     * <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous
+     * response has a value, enter that value in <code>startsubdivisioncode</code> to
+     * return the next page of results.</p> <p>To list subdivisions (U.S. states), you
+     * must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.</p>
      */
     inline ListGeoLocationsRequest& WithStartSubdivisionCode(Aws::String&& value) { SetStartSubdivisionCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code for the subdivision (for example, state or province) with which you
-     * want to start listing locations that Amazon Route 53 supports for geolocation.
-     * If Route 53 has already returned a page or more of results, if
-     * <code>IsTruncated</code> is <code>true</code>, and if
-     * <code>NextSubdivisionCode</code> from the previous response has a value, enter
-     * that value in <code>startsubdivisioncode</code> to return the next page of
-     * results.</p> <p>To list subdivisions of a country, you must include both
-     * <code>startcountrycode</code> and <code>startsubdivisioncode</code>.</p>
+     * <p>The code for the state of the United States with which you want to start
+     * listing locations that Amazon Route 53 supports for geolocation. If Route 53 has
+     * already returned a page or more of results, if <code>IsTruncated</code> is
+     * <code>true</code>, and if <code>NextSubdivisionCode</code> from the previous
+     * response has a value, enter that value in <code>startsubdivisioncode</code> to
+     * return the next page of results.</p> <p>To list subdivisions (U.S. states), you
+     * must include both <code>startcountrycode</code> and
+     * <code>startsubdivisioncode</code>.</p>
      */
     inline ListGeoLocationsRequest& WithStartSubdivisionCode(const char* value) { SetStartSubdivisionCode(value); return *this;}
 

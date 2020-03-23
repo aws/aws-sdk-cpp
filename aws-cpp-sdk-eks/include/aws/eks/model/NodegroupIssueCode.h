@@ -34,6 +34,7 @@ namespace Model
     Ec2LaunchTemplateVersionMismatch,
     Ec2SubnetNotFound,
     IamInstanceProfileNotFound,
+    IamLimitExceeded,
     IamNodeRoleNotFound,
     AsgInstanceLaunchFailures,
     InstanceLimitExceeded,
