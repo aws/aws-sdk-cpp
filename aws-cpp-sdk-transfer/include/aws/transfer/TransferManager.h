@@ -179,6 +179,18 @@ namespace Aws
                                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr);
 
             /**
+             * Downloads the contents of bucketName/keyName in S3 and writes it to writeToStream. This will perform a GetObject operation for the given range.
+             */
+            std::shared_ptr<TransferHandle> DownloadFile(const Aws::String& bucketName, 
+                                                         const Aws::String& keyName, 
+                                                         uint64_t fileOffset,
+                                                         uint64_t downloadBytes,
+                                                         CreateDownloadStreamCallback writeToStreamfn, 
+                                                         const DownloadConfiguration& downloadConfig = DownloadConfiguration(),
+                                                         const Aws::String& writeToFile = "",
+                                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr);
+
+            /**
              * Retry an download that failed from a previous DownloadFile operation. If a multi-part download was used, only the failed parts will be re-fetched.
              */
             std::shared_ptr<TransferHandle> RetryDownload(const std::shared_ptr<TransferHandle>& retryHandle);

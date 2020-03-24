@@ -154,6 +154,14 @@ namespace Aws
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath = "");
 
+            /**
+             * Alternate DOWNLOAD constructor
+             */
+            TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, 
+                const uint64_t fileOffset, const uint64_t downloadBytes, 
+                CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath = "");
+
+
             ~TransferHandle();
 
             /**
@@ -254,6 +262,10 @@ namespace Aws
             */
             void UpdateBytesTransferred(uint64_t amount) { m_bytesTransferred.fetch_add(amount); }
 
+            /**
+             * The offset from which to start downloading
+             */
+            inline uint64_t GetBytesOffset() const { return m_offset; }
             /**
              * The calculated total size of the object being transferred.
              */
@@ -376,6 +388,7 @@ namespace Aws
             std::atomic<uint64_t> m_bytesTransferred;
             std::atomic<bool> m_lastPart;
             std::atomic<uint64_t> m_bytesTotalSize;
+            uint64_t m_offset;
             Aws::String m_bucket;
             Aws::String m_key;
             Aws::String m_fileName;

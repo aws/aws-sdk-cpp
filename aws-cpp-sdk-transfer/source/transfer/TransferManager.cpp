@@ -120,7 +120,25 @@ namespace Aws
 
         std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName,
                                                                       const Aws::String& keyName,
+                                                                      uint64_t fileOffset, 
+                                                                      uint64_t downloadBytes,
+                                                                      CreateDownloadStreamCallback writeToStreamfn, 
+                                                                      const DownloadConfiguration& downloadConfig,
                                                                       const Aws::String& writeToFile,
+                                                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
+        {
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, fileOffset, downloadBytes, writeToStreamfn, writeToFile);
+            handle->ApplyDownloadConfiguration(downloadConfig);
+            handle->SetContext(context);
+
+            auto self = shared_from_this();
+            m_transferConfig.transferExecutor->Submit([self, handle] { self->DoDownload(handle); });
+            return handle;
+        }
+
+        std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
+                                                                      const Aws::String& keyName, 
+                                                                      const Aws::String& writeToFile, 
                                                                       const DownloadConfiguration& downloadConfig,
                                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
@@ -642,6 +660,13 @@ namespace Aws
             return retryHandle;
         }
 
+        static Aws::String FormatRangeSpecifier(std::size_t rangeStart, std::size_t rangeEnd)
+        {
+            Aws::StringStream rangeStream;
+            rangeStream << "bytes=" << rangeStart << "-" << rangeEnd;
+            return rangeStream.str();
+        }
+
         void TransferManager::DoSinglePartDownload(const std::shared_ptr<TransferHandle>& handle)
         {
             auto queuedParts = handle->GetQueuedParts();
@@ -651,6 +676,10 @@ namespace Aws
             Aws::S3::Model::GetObjectRequest request;
             request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
+            request.SetRange(
+                FormatRangeSpecifier(
+                    handle->GetBytesOffset(), 
+                    handle->GetBytesOffset() + handle->GetBytesTotalSize() - 1));
             request.WithBucket(handle->GetBucketName())
                    .WithKey(handle->GetKey());
 
@@ -696,13 +725,6 @@ namespace Aws
             TriggerTransferStatusUpdatedCallback(handle);
         }
 
-        static Aws::String FormatRangeSpecifier(std::size_t rangeStart, std::size_t rangeEnd)
-        {
-            Aws::StringStream rangeStream;
-            rangeStream << "bytes=" << rangeStart << "-" << rangeEnd;
-            return rangeStream.str();
-        }
-
         bool TransferManager::InitializePartsForDownload(const std::shared_ptr<TransferHandle>& handle)
         {
             bool isRetry = handle->HasParts();
@@ -717,6 +739,15 @@ namespace Aws
                 if(!handle->GetVersionId().empty())
                 {
                     headObjectRequest.SetVersionId(handle->GetVersionId());
+                }
+                
+                if (handle->GetBytesTotalSize() != 0) 
+                {
+                    // if non zero, then offset and numbytes were passed, so using part download
+                    headObjectRequest.SetRange(
+                        FormatRangeSpecifier(
+                            handle->GetBytesOffset(), 
+                            handle->GetBytesOffset() + handle->GetBytesTotalSize() - 1));
                 }
 
                 auto headObjectOutcome = m_transferConfig.s3Client->HeadObject(headObjectRequest);
@@ -795,7 +826,7 @@ namespace Aws
             while(queuedPartIter != queuedParts.end() && handle->ShouldContinue())
             {
                 const auto& partState = queuedPartIter->second;
-                std::size_t rangeStart = ( partState->GetPartId() - 1 ) * bufferSize;
+                std::size_t rangeStart = handle->GetBytesOffset() + ( partState->GetPartId() - 1 ) * bufferSize;
                 std::size_t rangeEnd = rangeStart + partState->GetSizeInBytes() - 1;
                 auto buffer = m_bufferManager.Acquire();
                 partState->SetDownloadBuffer(buffer);

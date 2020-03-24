@@ -209,13 +209,68 @@ protected:
         Aws::FStream inFile1(fileName.c_str(), std::ios::binary | std::ios::in);
         Aws::FStream inFile2(fileName2.c_str(), std::ios::binary | std::ios::in);
 #endif
-
+        bool retVal;
         if (!inFile1.good() || !inFile2.good())
         {
+            retVal = false;
+        } 
+        else 
+        {
+            retVal = HashingUtils::CalculateSHA256(inFile1) == HashingUtils::CalculateSHA256(inFile2);
+        }
+        inFile1.close();
+        inFile2.close();
+        return retVal;
+    }
+
+    static bool SourceFileSameAsConcatenatedPartFiles(const Aws::String& sourceFileName, size_t numParts)
+    {
+#ifdef _MSC_VER
+        Aws::FStream sourceFile(Aws::Utils::StringUtils::ToWString(sourceFileName.c_str()).c_str(), std::ios::binary | std::ios::in);
+#else
+        Aws::FStream sourceFile(sourceFileName.c_str(), std::ios::binary | std::ios::in);
+#endif
+
+        if (!sourceFile.good()) 
+        {
+            sourceFile.close();
             return false;
         }
 
-        return HashingUtils::CalculateSHA256(inFile1) == HashingUtils::CalculateSHA256(inFile2);
+#ifdef _MSC_VER
+        Aws::FStream concatenatedFile(Aws::Utils::StringUtils::ToWString(MakeDownloadFileName(sourceFileName).c_str()).c_str(), std::ios::binary | std::ios::out);
+#else
+        Aws::FStream concatenatedFile(MakeDownloadFileName(sourceFileName).c_str(), std::ios::binary | std::ios::out);
+#endif
+
+        for (size_t i = 0; i < numParts; i++) 
+        {
+            auto inFileName = MakeDownloadFileName(sourceFileName) + StringUtils::to_string(i);
+#ifdef _MSC_VER
+            Aws::FStream inFile(Aws::Utils::StringUtils::ToWString(inFileName.c_str()).c_str(), std::ios::binary | std::ios::in);
+#else
+            Aws::FStream inFile(inFileName.c_str(), std::ios::binary | std::ios::in);
+#endif
+            if (!inFile.good()) 
+            {
+                inFile.close();
+                return false;
+            }
+            
+            concatenatedFile << inFile.rdbuf();
+        }
+
+        concatenatedFile.close();
+      
+#ifdef _MSC_VER
+        Aws::FStream concatenatedFileRead(Aws::Utils::StringUtils::ToWString(MakeDownloadFileName(sourceFileName).c_str()).c_str(), std::ios::binary | std::ios::in);
+#else
+        Aws::FStream concatenatedFileRead(MakeDownloadFileName(sourceFileName).c_str(), std::ios::binary | std::ios::in);
+#endif
+        bool retVal = HashingUtils::CalculateSHA256(sourceFile) == HashingUtils::CalculateSHA256(concatenatedFileRead);
+        sourceFile.close();
+        concatenatedFileRead.close();
+        return retVal;
     }
 
     static Aws::String GetTestFilesDirectory()
@@ -303,6 +358,100 @@ protected:
         }
 
         Aws::FileSystem::RemoveFileIfExists(downloadFileName.c_str());
+    }
+
+
+    static void VerifyUploadedFileDownloadInParts(
+        TransferManager& transferManager,
+        const Aws::String& sourceFileName,
+        const Aws::String& bucket,
+        const Aws::String& key,
+        const Aws::String& contentType,
+        const Aws::Map<Aws::String, Aws::String>& metadata)
+    {
+        {
+            // read source file for length
+            #ifdef _MSC_VER
+            auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(sourceFileName.c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+#else
+            auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, sourceFileName.c_str(), std::ios_base::in | std::ios_base::binary);
+#endif
+            ASSERT_TRUE(fileStream->good());
+
+            fileStream->seekg(0, std::ios_base::end);
+            size_t sourceLength = static_cast<size_t>(fileStream->tellg());
+            fileStream->close();
+            fileStream = nullptr;
+
+            // calculate number of chunks
+            std::size_t bufferSize = 16 * 1024 * 1024;
+            std::size_t partCount = (std::max)(
+                static_cast<size_t>((sourceLength + bufferSize - 1) / bufferSize),
+                static_cast<std::size_t>(1));
+
+            // download each part to its own file
+            size_t offset = 0;
+            
+            for (size_t i = 0; i < partCount; i++) 
+            {
+
+                size_t partSize;
+                if (i == partCount - 1) 
+                {
+                    partSize = sourceLength - (bufferSize *i);
+                } 
+                else
+                {
+                    partSize = bufferSize;
+                }
+                auto downloadPartFileName = MakeDownloadFileName(sourceFileName) + StringUtils::to_string(i);
+                auto createStreamFn = [=](){
+#ifdef _MSC_VER
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(downloadPartFileName.c_str()).c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+#else
+                return Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadPartFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+#endif
+                };
+                std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, offset, partSize, createStreamFn);
+
+                ASSERT_EQ(true, downloadPtr->ShouldContinue());
+                ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
+                downloadPtr->WaitUntilFinished();
+
+                size_t retries = 0;
+                //just make sure we don't fail because of failing to download a part for occasional reasons like network problem or s3 eventual consistency.
+                while (downloadPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+                {
+                    transferManager.RetryDownload(downloadPtr);
+                    downloadPtr->WaitUntilFinished();
+                }
+
+                ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+                ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
+                ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
+
+                ASSERT_EQ(downloadPtr->GetBytesTotalSize(), partSize);
+                ASSERT_EQ(downloadPtr->GetBytesTransferred(), partSize);
+
+                ASSERT_STREQ(contentType.c_str(), downloadPtr->GetContentType().c_str());
+
+                auto copyMetadata = metadata;
+                // ETag will be added to Metadata when finished uploading/downloading
+                copyMetadata["ETag"] = downloadPtr->GetMetadata().find("ETag")->second;
+                ASSERT_EQ(copyMetadata, downloadPtr->GetMetadata());
+   
+                offset += partSize;
+            }
+
+            ASSERT_TRUE(SourceFileSameAsConcatenatedPartFiles(sourceFileName, partCount));
+       
+            for (size_t i = 0; i < partCount; i++) {
+                auto filename = MakeDownloadFileName(sourceFileName) + StringUtils::to_string(i).c_str();
+                Aws::FileSystem::RemoveFileIfExists(filename.c_str());
+            }
+        }
+
+        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(sourceFileName).c_str());
     }
 
     static void SetUpTestCase()
@@ -560,6 +709,13 @@ TEST_F(TransferTests, TransferManager_EmptyFileTest)
         RandomFileName,
         "text/plain",
         Aws::Map<Aws::String, Aws::String>());
+
+    VerifyUploadedFileDownloadInParts(*transferManager,
+                                      emptyTestFileName,
+                                      GetTestBucketName(),
+                                      RandomFileName,
+                                      "text/plain",
+                                      Aws::Map<Aws::String, Aws::String>());
 }
 
 TEST_F(TransferTests, TransferManager_SmallTest)
@@ -644,6 +800,13 @@ TEST_F(TransferTests, TransferManager_ContentTest)
                        CONTENT_FILE_KEY,
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
+
+    VerifyUploadedFileDownloadInParts(*transferManager,
+                                      contentTestFileName,
+                                      GetTestBucketName(),
+                                      CONTENT_FILE_KEY,
+                                      "text/plain",
+                                      Aws::Map<Aws::String, Aws::String>());
 }
 
 TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
@@ -855,6 +1018,13 @@ TEST_F(TransferTests, TransferManager_BigTest)
                        BIG_FILE_KEY,
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
+
+    VerifyUploadedFileDownloadInParts(*transferManager,
+                                      bigTestFileName,
+                                      GetTestBucketName(),
+                                      BIG_FILE_KEY,
+                                      "text/plain",
+                                      Aws::Map<Aws::String, Aws::String>());
 }
 
 #ifdef _MSC_VER
@@ -1148,6 +1318,13 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
                        MULTI_PART_CONTENT_KEY,
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
+
+    VerifyUploadedFileDownloadInParts(*transferManager,
+                                      multiPartContentFileName,
+                                      GetTestBucketName(),
+                                      MULTI_PART_CONTENT_KEY,
+                                      "text/plain",
+                                      Aws::Map<Aws::String, Aws::String>());
 }
 
 // Single part upload with metadata specified
