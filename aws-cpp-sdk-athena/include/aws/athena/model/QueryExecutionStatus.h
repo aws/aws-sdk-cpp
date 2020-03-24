@@ -51,68 +51,68 @@ namespace Model
 
 
     /**
-     * <p>The state of query execution. <code>QUEUED</code> state is listed but is not
-     * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
-     * that the query has been submitted to the service, and Athena will execute the
-     * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without errors. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing. <code>CANCELLED</code>
-     * indicates that a user input interrupted query execution. </p>
+     * <p>The state of query execution. <code>QUEUED</code> indicates that the query
+     * has been submitted to the service, and Athena will execute the query as soon as
+     * resources are available. <code>RUNNING</code> indicates that the query is in
+     * execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     * without errors. <code>FAILED</code> indicates that the query experienced an
+     * error and did not complete processing. <code>CANCELLED</code> indicates that a
+     * user input interrupted query execution. </p>
      */
     inline const QueryExecutionState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state of query execution. <code>QUEUED</code> state is listed but is not
-     * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
-     * that the query has been submitted to the service, and Athena will execute the
-     * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without errors. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing. <code>CANCELLED</code>
-     * indicates that a user input interrupted query execution. </p>
+     * <p>The state of query execution. <code>QUEUED</code> indicates that the query
+     * has been submitted to the service, and Athena will execute the query as soon as
+     * resources are available. <code>RUNNING</code> indicates that the query is in
+     * execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     * without errors. <code>FAILED</code> indicates that the query experienced an
+     * error and did not complete processing. <code>CANCELLED</code> indicates that a
+     * user input interrupted query execution. </p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state of query execution. <code>QUEUED</code> state is listed but is not
-     * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
-     * that the query has been submitted to the service, and Athena will execute the
-     * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without errors. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing. <code>CANCELLED</code>
-     * indicates that a user input interrupted query execution. </p>
+     * <p>The state of query execution. <code>QUEUED</code> indicates that the query
+     * has been submitted to the service, and Athena will execute the query as soon as
+     * resources are available. <code>RUNNING</code> indicates that the query is in
+     * execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     * without errors. <code>FAILED</code> indicates that the query experienced an
+     * error and did not complete processing. <code>CANCELLED</code> indicates that a
+     * user input interrupted query execution. </p>
      */
     inline void SetState(const QueryExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state of query execution. <code>QUEUED</code> state is listed but is not
-     * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
-     * that the query has been submitted to the service, and Athena will execute the
-     * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without errors. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing. <code>CANCELLED</code>
-     * indicates that a user input interrupted query execution. </p>
+     * <p>The state of query execution. <code>QUEUED</code> indicates that the query
+     * has been submitted to the service, and Athena will execute the query as soon as
+     * resources are available. <code>RUNNING</code> indicates that the query is in
+     * execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     * without errors. <code>FAILED</code> indicates that the query experienced an
+     * error and did not complete processing. <code>CANCELLED</code> indicates that a
+     * user input interrupted query execution. </p>
      */
     inline void SetState(QueryExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state of query execution. <code>QUEUED</code> state is listed but is not
-     * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
-     * that the query has been submitted to the service, and Athena will execute the
-     * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without errors. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing. <code>CANCELLED</code>
-     * indicates that a user input interrupted query execution. </p>
+     * <p>The state of query execution. <code>QUEUED</code> indicates that the query
+     * has been submitted to the service, and Athena will execute the query as soon as
+     * resources are available. <code>RUNNING</code> indicates that the query is in
+     * execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     * without errors. <code>FAILED</code> indicates that the query experienced an
+     * error and did not complete processing. <code>CANCELLED</code> indicates that a
+     * user input interrupted query execution. </p>
      */
     inline QueryExecutionStatus& WithState(const QueryExecutionState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state of query execution. <code>QUEUED</code> state is listed but is not
-     * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
-     * that the query has been submitted to the service, and Athena will execute the
-     * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without errors. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing. <code>CANCELLED</code>
-     * indicates that a user input interrupted query execution. </p>
+     * <p>The state of query execution. <code>QUEUED</code> indicates that the query
+     * has been submitted to the service, and Athena will execute the query as soon as
+     * resources are available. <code>RUNNING</code> indicates that the query is in
+     * execution phase. <code>SUCCEEDED</code> indicates that the query completed
+     * without errors. <code>FAILED</code> indicates that the query experienced an
+     * error and did not complete processing. <code>CANCELLED</code> indicates that a
+     * user input interrupted query execution. </p>
      */
     inline QueryExecutionStatus& WithState(QueryExecutionState&& value) { SetState(std::move(value)); return *this;}
 

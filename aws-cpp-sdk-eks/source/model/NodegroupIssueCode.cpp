@@ -37,9 +37,11 @@ namespace Aws
         static const int Ec2LaunchTemplateNotFound_HASH = HashingUtils::HashString("Ec2LaunchTemplateNotFound");
         static const int Ec2LaunchTemplateVersionMismatch_HASH = HashingUtils::HashString("Ec2LaunchTemplateVersionMismatch");
         static const int Ec2SubnetNotFound_HASH = HashingUtils::HashString("Ec2SubnetNotFound");
+        static const int Ec2SubnetInvalidConfiguration_HASH = HashingUtils::HashString("Ec2SubnetInvalidConfiguration");
         static const int IamInstanceProfileNotFound_HASH = HashingUtils::HashString("IamInstanceProfileNotFound");
         static const int IamLimitExceeded_HASH = HashingUtils::HashString("IamLimitExceeded");
         static const int IamNodeRoleNotFound_HASH = HashingUtils::HashString("IamNodeRoleNotFound");
+        static const int NodeCreationFailure_HASH = HashingUtils::HashString("NodeCreationFailure");
         static const int AsgInstanceLaunchFailures_HASH = HashingUtils::HashString("AsgInstanceLaunchFailures");
         static const int InstanceLimitExceeded_HASH = HashingUtils::HashString("InstanceLimitExceeded");
         static const int InsufficientFreeAddresses_HASH = HashingUtils::HashString("InsufficientFreeAddresses");
@@ -78,6 +80,10 @@ namespace Aws
           {
             return NodegroupIssueCode::Ec2SubnetNotFound;
           }
+          else if (hashCode == Ec2SubnetInvalidConfiguration_HASH)
+          {
+            return NodegroupIssueCode::Ec2SubnetInvalidConfiguration;
+          }
           else if (hashCode == IamInstanceProfileNotFound_HASH)
           {
             return NodegroupIssueCode::IamInstanceProfileNotFound;
@@ -89,6 +95,10 @@ namespace Aws
           else if (hashCode == IamNodeRoleNotFound_HASH)
           {
             return NodegroupIssueCode::IamNodeRoleNotFound;
+          }
+          else if (hashCode == NodeCreationFailure_HASH)
+          {
+            return NodegroupIssueCode::NodeCreationFailure;
           }
           else if (hashCode == AsgInstanceLaunchFailures_HASH)
           {
@@ -138,12 +148,16 @@ namespace Aws
             return "Ec2LaunchTemplateVersionMismatch";
           case NodegroupIssueCode::Ec2SubnetNotFound:
             return "Ec2SubnetNotFound";
+          case NodegroupIssueCode::Ec2SubnetInvalidConfiguration:
+            return "Ec2SubnetInvalidConfiguration";
           case NodegroupIssueCode::IamInstanceProfileNotFound:
             return "IamInstanceProfileNotFound";
           case NodegroupIssueCode::IamLimitExceeded:
             return "IamLimitExceeded";
           case NodegroupIssueCode::IamNodeRoleNotFound:
             return "IamNodeRoleNotFound";
+          case NodegroupIssueCode::NodeCreationFailure:
+            return "NodeCreationFailure";
           case NodegroupIssueCode::AsgInstanceLaunchFailures:
             return "AsgInstanceLaunchFailures";
           case NodegroupIssueCode::InstanceLimitExceeded:

@@ -16,9 +16,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/organizations/model/CreateAccountState.h>
 #include <utility>
 
 namespace Aws
@@ -30,16 +28,16 @@ namespace Model
 
   /**
    */
-  class AWS_ORGANIZATIONS_API ListCreateAccountStatusRequest : public OrganizationsRequest
+  class AWS_ORGANIZATIONS_API ListDelegatedAdministratorsRequest : public OrganizationsRequest
   {
   public:
-    ListCreateAccountStatusRequest();
+    ListDelegatedAdministratorsRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListCreateAccountStatus"; }
+    inline virtual const char* GetServiceRequestName() const override { return "ListDelegatedAdministrators"; }
 
     Aws::String SerializePayload() const override;
 
@@ -47,52 +45,68 @@ namespace Model
 
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>Specifies a service principal name. If specified, then the operation lists
+     * the delegated administrators only for the specified service.</p> <p>If you don't
+     * specify a service principal, the operation lists all delegated administrators
+     * for all services in your organization.</p>
      */
-    inline const Aws::Vector<CreateAccountState>& GetStates() const{ return m_states; }
+    inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>Specifies a service principal name. If specified, then the operation lists
+     * the delegated administrators only for the specified service.</p> <p>If you don't
+     * specify a service principal, the operation lists all delegated administrators
+     * for all services in your organization.</p>
      */
-    inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
+    inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>Specifies a service principal name. If specified, then the operation lists
+     * the delegated administrators only for the specified service.</p> <p>If you don't
+     * specify a service principal, the operation lists all delegated administrators
+     * for all services in your organization.</p>
      */
-    inline void SetStates(const Aws::Vector<CreateAccountState>& value) { m_statesHasBeenSet = true; m_states = value; }
+    inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>Specifies a service principal name. If specified, then the operation lists
+     * the delegated administrators only for the specified service.</p> <p>If you don't
+     * specify a service principal, the operation lists all delegated administrators
+     * for all services in your organization.</p>
      */
-    inline void SetStates(Aws::Vector<CreateAccountState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
+    inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>Specifies a service principal name. If specified, then the operation lists
+     * the delegated administrators only for the specified service.</p> <p>If you don't
+     * specify a service principal, the operation lists all delegated administrators
+     * for all services in your organization.</p>
      */
-    inline ListCreateAccountStatusRequest& WithStates(const Aws::Vector<CreateAccountState>& value) { SetStates(value); return *this;}
+    inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>Specifies a service principal name. If specified, then the operation lists
+     * the delegated administrators only for the specified service.</p> <p>If you don't
+     * specify a service principal, the operation lists all delegated administrators
+     * for all services in your organization.</p>
      */
-    inline ListCreateAccountStatusRequest& WithStates(Aws::Vector<CreateAccountState>&& value) { SetStates(std::move(value)); return *this;}
+    inline ListDelegatedAdministratorsRequest& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>Specifies a service principal name. If specified, then the operation lists
+     * the delegated administrators only for the specified service.</p> <p>If you don't
+     * specify a service principal, the operation lists all delegated administrators
+     * for all services in your organization.</p>
      */
-    inline ListCreateAccountStatusRequest& AddStates(const CreateAccountState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
+    inline ListDelegatedAdministratorsRequest& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>Specifies a service principal name. If specified, then the operation lists
+     * the delegated administrators only for the specified service.</p> <p>If you don't
+     * specify a service principal, the operation lists all delegated administrators
+     * for all services in your organization.</p>
      */
-    inline ListCreateAccountStatusRequest& AddStates(CreateAccountState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+    inline ListDelegatedAdministratorsRequest& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
 
 
     /**
@@ -147,7 +161,7 @@ namespace Model
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from.</p>
      */
-    inline ListCreateAccountStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDelegatedAdministratorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The parameter for receiving additional results if you receive a
@@ -156,7 +170,7 @@ namespace Model
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from.</p>
      */
-    inline ListCreateAccountStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListDelegatedAdministratorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The parameter for receiving additional results if you receive a
@@ -165,7 +179,7 @@ namespace Model
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from.</p>
      */
-    inline ListCreateAccountStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline ListDelegatedAdministratorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
@@ -218,12 +232,12 @@ namespace Model
      * there are more results available. You should check <code>NextToken</code> after
      * every operation to ensure that you receive all of the results.</p>
      */
-    inline ListCreateAccountStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline ListDelegatedAdministratorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
-    Aws::Vector<CreateAccountState> m_states;
-    bool m_statesHasBeenSet;
+    Aws::String m_servicePrincipal;
+    bool m_servicePrincipalHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

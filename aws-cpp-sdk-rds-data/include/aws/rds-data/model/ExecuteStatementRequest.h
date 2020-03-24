@@ -153,42 +153,50 @@ namespace Model
 
 
     /**
-     * <p>The parameters for the SQL statement.</p>
+     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
+     * supported.</p> </note>
      */
     inline const Aws::Vector<SqlParameter>& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters for the SQL statement.</p>
+     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
+     * supported.</p> </note>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>The parameters for the SQL statement.</p>
+     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
+     * supported.</p> </note>
      */
     inline void SetParameters(const Aws::Vector<SqlParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters for the SQL statement.</p>
+     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
+     * supported.</p> </note>
      */
     inline void SetParameters(Aws::Vector<SqlParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters for the SQL statement.</p>
+     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
+     * supported.</p> </note>
      */
     inline ExecuteStatementRequest& WithParameters(const Aws::Vector<SqlParameter>& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters for the SQL statement.</p>
+     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
+     * supported.</p> </note>
      */
     inline ExecuteStatementRequest& WithParameters(Aws::Vector<SqlParameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters for the SQL statement.</p>
+     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
+     * supported.</p> </note>
      */
     inline ExecuteStatementRequest& AddParameters(const SqlParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
-     * <p>The parameters for the SQL statement.</p>
+     * <p>The parameters for the SQL statement.</p> <note> <p>Array parameters are not
+     * supported.</p> </note>
      */
     inline ExecuteStatementRequest& AddParameters(SqlParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 

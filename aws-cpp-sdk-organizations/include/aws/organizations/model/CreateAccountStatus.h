@@ -378,7 +378,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact AWS Support.</p> </li> </ul>
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
 
@@ -395,7 +395,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact AWS Support.</p> </li> </ul>
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
@@ -412,7 +412,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact AWS Support.</p> </li> </ul>
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -429,7 +429,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact AWS Support.</p> </li> </ul>
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -446,7 +446,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact AWS Support.</p> </li> </ul>
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
 
@@ -463,7 +463,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact AWS Support.</p> </li> </ul>
+     * persists, contact Customer Support.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 

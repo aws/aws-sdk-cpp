@@ -86,66 +86,74 @@ namespace Model
 
 
     /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from.</p>
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from.</p>
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from.</p>
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from.</p>
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from.</p>
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from.</p>
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from.</p>
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
-     * previous request that indicates that there is more output available. Set it to
-     * the value of the previous call's <code>NextToken</code> response to indicate
-     * where the output should continue from.</p>
+     * <p>The parameter for receiving additional results if you receive a
+     * <code>NextToken</code> response in a previous request. A <code>NextToken</code>
+     * response indicates that more output is available. Set this parameter to the
+     * value of the previous call's <code>NextToken</code> response to indicate where
+     * the output should continue from.</p>
      */
     inline ListTagsForResourceRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

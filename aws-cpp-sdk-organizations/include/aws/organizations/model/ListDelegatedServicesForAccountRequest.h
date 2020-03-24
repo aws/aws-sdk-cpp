@@ -16,9 +16,7 @@
 #pragma once
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/organizations/OrganizationsRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/organizations/model/CreateAccountState.h>
 #include <utility>
 
 namespace Aws
@@ -30,16 +28,16 @@ namespace Model
 
   /**
    */
-  class AWS_ORGANIZATIONS_API ListCreateAccountStatusRequest : public OrganizationsRequest
+  class AWS_ORGANIZATIONS_API ListDelegatedServicesForAccountRequest : public OrganizationsRequest
   {
   public:
-    ListCreateAccountStatusRequest();
+    ListDelegatedServicesForAccountRequest();
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
     // Note: this is not true for response, multiple operations may have the same response name,
     // so we can not get operation's name from response.
-    inline virtual const char* GetServiceRequestName() const override { return "ListCreateAccountStatus"; }
+    inline virtual const char* GetServiceRequestName() const override { return "ListDelegatedServicesForAccount"; }
 
     Aws::String SerializePayload() const override;
 
@@ -47,52 +45,52 @@ namespace Model
 
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>The account ID number of a delegated administrator account in the
+     * organization.</p>
      */
-    inline const Aws::Vector<CreateAccountState>& GetStates() const{ return m_states; }
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>The account ID number of a delegated administrator account in the
+     * organization.</p>
      */
-    inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>The account ID number of a delegated administrator account in the
+     * organization.</p>
      */
-    inline void SetStates(const Aws::Vector<CreateAccountState>& value) { m_statesHasBeenSet = true; m_states = value; }
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>The account ID number of a delegated administrator account in the
+     * organization.</p>
      */
-    inline void SetStates(Aws::Vector<CreateAccountState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>The account ID number of a delegated administrator account in the
+     * organization.</p>
      */
-    inline ListCreateAccountStatusRequest& WithStates(const Aws::Vector<CreateAccountState>& value) { SetStates(value); return *this;}
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>The account ID number of a delegated administrator account in the
+     * organization.</p>
      */
-    inline ListCreateAccountStatusRequest& WithStates(Aws::Vector<CreateAccountState>&& value) { SetStates(std::move(value)); return *this;}
+    inline ListDelegatedServicesForAccountRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>The account ID number of a delegated administrator account in the
+     * organization.</p>
      */
-    inline ListCreateAccountStatusRequest& AddStates(const CreateAccountState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
+    inline ListDelegatedServicesForAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>A list of one or more states that you want included in the response. If this
-     * parameter isn't present, all requests are included in the response.</p>
+     * <p>The account ID number of a delegated administrator account in the
+     * organization.</p>
      */
-    inline ListCreateAccountStatusRequest& AddStates(CreateAccountState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+    inline ListDelegatedServicesForAccountRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
@@ -147,7 +145,7 @@ namespace Model
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from.</p>
      */
-    inline ListCreateAccountStatusRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDelegatedServicesForAccountRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The parameter for receiving additional results if you receive a
@@ -156,7 +154,7 @@ namespace Model
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from.</p>
      */
-    inline ListCreateAccountStatusRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListDelegatedServicesForAccountRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The parameter for receiving additional results if you receive a
@@ -165,7 +163,7 @@ namespace Model
      * value of the previous call's <code>NextToken</code> response to indicate where
      * the output should continue from.</p>
      */
-    inline ListCreateAccountStatusRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline ListDelegatedServicesForAccountRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
@@ -218,12 +216,12 @@ namespace Model
      * there are more results available. You should check <code>NextToken</code> after
      * every operation to ensure that you receive all of the results.</p>
      */
-    inline ListCreateAccountStatusRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline ListDelegatedServicesForAccountRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
-    Aws::Vector<CreateAccountState> m_states;
-    bool m_statesHasBeenSet;
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

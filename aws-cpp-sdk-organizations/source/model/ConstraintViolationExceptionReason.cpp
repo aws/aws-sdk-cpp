@@ -53,6 +53,10 @@ namespace Aws
         static const int WAIT_PERIOD_ACTIVE_HASH = HashingUtils::HashString("WAIT_PERIOD_ACTIVE");
         static const int MAX_TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAX_TAG_LIMIT_EXCEEDED");
         static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TAG_POLICY_VIOLATION");
+        static const int MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED");
+        static const int CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR_HASH = HashingUtils::HashString("CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR");
+        static const int CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG_HASH = HashingUtils::HashString("CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG");
+        static const int DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE_HASH = HashingUtils::HashString("DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE");
 
 
         ConstraintViolationExceptionReason GetConstraintViolationExceptionReasonForName(const Aws::String& name)
@@ -150,6 +154,22 @@ namespace Aws
           {
             return ConstraintViolationExceptionReason::TAG_POLICY_VIOLATION;
           }
+          else if (hashCode == MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED_HASH)
+          {
+            return ConstraintViolationExceptionReason::MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR_HASH)
+          {
+            return ConstraintViolationExceptionReason::CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR;
+          }
+          else if (hashCode == CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG_HASH)
+          {
+            return ConstraintViolationExceptionReason::CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG;
+          }
+          else if (hashCode == DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE_HASH)
+          {
+            return ConstraintViolationExceptionReason::DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -210,6 +230,14 @@ namespace Aws
             return "MAX_TAG_LIMIT_EXCEEDED";
           case ConstraintViolationExceptionReason::TAG_POLICY_VIOLATION:
             return "TAG_POLICY_VIOLATION";
+          case ConstraintViolationExceptionReason::MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED:
+            return "MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED";
+          case ConstraintViolationExceptionReason::CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR:
+            return "CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR";
+          case ConstraintViolationExceptionReason::CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG:
+            return "CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG";
+          case ConstraintViolationExceptionReason::DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE:
+            return "DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

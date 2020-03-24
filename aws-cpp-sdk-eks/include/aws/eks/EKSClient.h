@@ -833,16 +833,18 @@ namespace Model
         virtual void ListFargateProfilesAsync(const Model::ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Amazon EKS node groups associated with the specified cluster in
-         * your AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon EKS managed node groups associated with the specified
+         * cluster in your AWS account in the specified Region. Self-managed node groups
+         * are not listed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListNodegroupsOutcome ListNodegroups(const Model::ListNodegroupsRequest& request) const;
 
         /**
-         * <p>Lists the Amazon EKS node groups associated with the specified cluster in
-         * your AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon EKS managed node groups associated with the specified
+         * cluster in your AWS account in the specified Region. Self-managed node groups
+         * are not listed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
          * API Reference</a></p>
          *
@@ -851,8 +853,9 @@ namespace Model
         virtual Model::ListNodegroupsOutcomeCallable ListNodegroupsCallable(const Model::ListNodegroupsRequest& request) const;
 
         /**
-         * <p>Lists the Amazon EKS node groups associated with the specified cluster in
-         * your AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon EKS managed node groups associated with the specified
+         * cluster in your AWS account in the specified Region. Self-managed node groups
+         * are not listed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
          * API Reference</a></p>
          *

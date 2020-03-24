@@ -41,6 +41,7 @@
 #include <aws/organizations/model/DeclineHandshakeRequest.h>
 #include <aws/organizations/model/DeleteOrganizationalUnitRequest.h>
 #include <aws/organizations/model/DeletePolicyRequest.h>
+#include <aws/organizations/model/DeregisterDelegatedAdministratorRequest.h>
 #include <aws/organizations/model/DescribeAccountRequest.h>
 #include <aws/organizations/model/DescribeCreateAccountStatusRequest.h>
 #include <aws/organizations/model/DescribeEffectivePolicyRequest.h>
@@ -59,6 +60,8 @@
 #include <aws/organizations/model/ListAccountsForParentRequest.h>
 #include <aws/organizations/model/ListChildrenRequest.h>
 #include <aws/organizations/model/ListCreateAccountStatusRequest.h>
+#include <aws/organizations/model/ListDelegatedAdministratorsRequest.h>
+#include <aws/organizations/model/ListDelegatedServicesForAccountRequest.h>
 #include <aws/organizations/model/ListHandshakesForAccountRequest.h>
 #include <aws/organizations/model/ListHandshakesForOrganizationRequest.h>
 #include <aws/organizations/model/ListOrganizationalUnitsForParentRequest.h>
@@ -69,6 +72,7 @@
 #include <aws/organizations/model/ListTagsForResourceRequest.h>
 #include <aws/organizations/model/ListTargetsForPolicyRequest.h>
 #include <aws/organizations/model/MoveAccountRequest.h>
+#include <aws/organizations/model/RegisterDelegatedAdministratorRequest.h>
 #include <aws/organizations/model/RemoveAccountFromOrganizationRequest.h>
 #include <aws/organizations/model/TagResourceRequest.h>
 #include <aws/organizations/model/UntagResourceRequest.h>
@@ -563,6 +567,41 @@ void OrganizationsClient::DeletePolicyAsync(const DeletePolicyRequest& request, 
 void OrganizationsClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, const DeletePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePolicy(request), context);
+}
+
+DeregisterDelegatedAdministratorOutcome OrganizationsClient::DeregisterDelegatedAdministrator(const DeregisterDelegatedAdministratorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeregisterDelegatedAdministratorOutcome(NoResult());
+  }
+  else
+  {
+    return DeregisterDelegatedAdministratorOutcome(outcome.GetError());
+  }
+}
+
+DeregisterDelegatedAdministratorOutcomeCallable OrganizationsClient::DeregisterDelegatedAdministratorCallable(const DeregisterDelegatedAdministratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterDelegatedAdministratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterDelegatedAdministrator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::DeregisterDelegatedAdministratorAsync(const DeregisterDelegatedAdministratorRequest& request, const DeregisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterDelegatedAdministratorAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::DeregisterDelegatedAdministratorAsyncHelper(const DeregisterDelegatedAdministratorRequest& request, const DeregisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterDelegatedAdministrator(request), context);
 }
 
 DescribeAccountOutcome OrganizationsClient::DescribeAccount(const DescribeAccountRequest& request) const
@@ -1261,6 +1300,76 @@ void OrganizationsClient::ListCreateAccountStatusAsyncHelper(const ListCreateAcc
   handler(this, request, ListCreateAccountStatus(request), context);
 }
 
+ListDelegatedAdministratorsOutcome OrganizationsClient::ListDelegatedAdministrators(const ListDelegatedAdministratorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDelegatedAdministratorsOutcome(ListDelegatedAdministratorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDelegatedAdministratorsOutcome(outcome.GetError());
+  }
+}
+
+ListDelegatedAdministratorsOutcomeCallable OrganizationsClient::ListDelegatedAdministratorsCallable(const ListDelegatedAdministratorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDelegatedAdministratorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDelegatedAdministrators(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::ListDelegatedAdministratorsAsync(const ListDelegatedAdministratorsRequest& request, const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDelegatedAdministratorsAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::ListDelegatedAdministratorsAsyncHelper(const ListDelegatedAdministratorsRequest& request, const ListDelegatedAdministratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDelegatedAdministrators(request), context);
+}
+
+ListDelegatedServicesForAccountOutcome OrganizationsClient::ListDelegatedServicesForAccount(const ListDelegatedServicesForAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDelegatedServicesForAccountOutcome(ListDelegatedServicesForAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDelegatedServicesForAccountOutcome(outcome.GetError());
+  }
+}
+
+ListDelegatedServicesForAccountOutcomeCallable OrganizationsClient::ListDelegatedServicesForAccountCallable(const ListDelegatedServicesForAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDelegatedServicesForAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDelegatedServicesForAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::ListDelegatedServicesForAccountAsync(const ListDelegatedServicesForAccountRequest& request, const ListDelegatedServicesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDelegatedServicesForAccountAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::ListDelegatedServicesForAccountAsyncHelper(const ListDelegatedServicesForAccountRequest& request, const ListDelegatedServicesForAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDelegatedServicesForAccount(request), context);
+}
+
 ListHandshakesForAccountOutcome OrganizationsClient::ListHandshakesForAccount(const ListHandshakesForAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1609,6 +1718,41 @@ void OrganizationsClient::MoveAccountAsync(const MoveAccountRequest& request, co
 void OrganizationsClient::MoveAccountAsyncHelper(const MoveAccountRequest& request, const MoveAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, MoveAccount(request), context);
+}
+
+RegisterDelegatedAdministratorOutcome OrganizationsClient::RegisterDelegatedAdministrator(const RegisterDelegatedAdministratorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RegisterDelegatedAdministratorOutcome(NoResult());
+  }
+  else
+  {
+    return RegisterDelegatedAdministratorOutcome(outcome.GetError());
+  }
+}
+
+RegisterDelegatedAdministratorOutcomeCallable OrganizationsClient::RegisterDelegatedAdministratorCallable(const RegisterDelegatedAdministratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterDelegatedAdministratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterDelegatedAdministrator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::RegisterDelegatedAdministratorAsync(const RegisterDelegatedAdministratorRequest& request, const RegisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterDelegatedAdministratorAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::RegisterDelegatedAdministratorAsyncHelper(const RegisterDelegatedAdministratorRequest& request, const RegisterDelegatedAdministratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterDelegatedAdministrator(request), context);
 }
 
 RemoveAccountFromOrganizationOutcome OrganizationsClient::RemoveAccountFromOrganization(const RemoveAccountFromOrganizationRequest& request) const

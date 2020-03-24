@@ -35,8 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>A structure that contains details of a service principal that is enabled to
-   * integrate with AWS Organizations.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that contains details of a service principal that represents an
+   * AWS service that is enabled to integrate with AWS Organizations.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnabledServicePrincipal">AWS
    * API Reference</a></p>
    */

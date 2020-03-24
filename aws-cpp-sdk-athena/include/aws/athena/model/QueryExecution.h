@@ -314,38 +314,38 @@ namespace Model
 
 
     /**
-     * <p>The amount of data scanned during the query execution and the amount of time
-     * that it took to execute, and the type of statement that was run.</p>
+     * <p>Query execution statistics, such as the amount of data scanned, the amount of
+     * time that the query took to process, and the type of statement that was run.</p>
      */
     inline const QueryExecutionStatistics& GetStatistics() const{ return m_statistics; }
 
     /**
-     * <p>The amount of data scanned during the query execution and the amount of time
-     * that it took to execute, and the type of statement that was run.</p>
+     * <p>Query execution statistics, such as the amount of data scanned, the amount of
+     * time that the query took to process, and the type of statement that was run.</p>
      */
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
 
     /**
-     * <p>The amount of data scanned during the query execution and the amount of time
-     * that it took to execute, and the type of statement that was run.</p>
+     * <p>Query execution statistics, such as the amount of data scanned, the amount of
+     * time that the query took to process, and the type of statement that was run.</p>
      */
     inline void SetStatistics(const QueryExecutionStatistics& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
-     * <p>The amount of data scanned during the query execution and the amount of time
-     * that it took to execute, and the type of statement that was run.</p>
+     * <p>Query execution statistics, such as the amount of data scanned, the amount of
+     * time that the query took to process, and the type of statement that was run.</p>
      */
     inline void SetStatistics(QueryExecutionStatistics&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
 
     /**
-     * <p>The amount of data scanned during the query execution and the amount of time
-     * that it took to execute, and the type of statement that was run.</p>
+     * <p>Query execution statistics, such as the amount of data scanned, the amount of
+     * time that the query took to process, and the type of statement that was run.</p>
      */
     inline QueryExecution& WithStatistics(const QueryExecutionStatistics& value) { SetStatistics(value); return *this;}
 
     /**
-     * <p>The amount of data scanned during the query execution and the amount of time
-     * that it took to execute, and the type of statement that was run.</p>
+     * <p>Query execution statistics, such as the amount of data scanned, the amount of
+     * time that the query took to process, and the type of statement that was run.</p>
      */
     inline QueryExecution& WithStatistics(QueryExecutionStatistics&& value) { SetStatistics(std::move(value)); return *this;}
 

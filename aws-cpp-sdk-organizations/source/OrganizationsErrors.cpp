@@ -57,6 +57,8 @@ static const int ORGANIZATIONAL_UNIT_NOT_EMPTY_HASH = HashingUtils::HashString("
 static const int INVALID_HANDSHAKE_TRANSITION_HASH = HashingUtils::HashString("InvalidHandshakeTransitionException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int ORGANIZATION_NOT_EMPTY_HASH = HashingUtils::HashString("OrganizationNotEmptyException");
+static const int ACCOUNT_NOT_REGISTERED_HASH = HashingUtils::HashString("AccountNotRegisteredException");
+static const int ACCOUNT_ALREADY_REGISTERED_HASH = HashingUtils::HashString("AccountAlreadyRegisteredException");
 static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFoundException");
 static const int CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH = HashingUtils::HashString("CreateAccountStatusNotFoundException");
 static const int EFFECTIVE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("EffectivePolicyNotFoundException");
@@ -190,6 +192,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ORGANIZATION_NOT_EMPTY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATION_NOT_EMPTY), false);
+  }
+  else if (hashCode == ACCOUNT_NOT_REGISTERED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_NOT_REGISTERED), false);
+  }
+  else if (hashCode == ACCOUNT_ALREADY_REGISTERED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_ALREADY_REGISTERED), false);
   }
   else if (hashCode == POLICY_NOT_FOUND_HASH)
   {

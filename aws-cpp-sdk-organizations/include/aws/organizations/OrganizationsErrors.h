@@ -57,7 +57,9 @@ enum class OrganizationsErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ACCESS_DENIED_FOR_DEPENDENCY= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  ACCOUNT_ALREADY_REGISTERED,
   ACCOUNT_NOT_FOUND,
+  ACCOUNT_NOT_REGISTERED,
   ACCOUNT_OWNER_NOT_VERIFIED,
   ALREADY_IN_ORGANIZATION,
   A_W_S_ORGANIZATIONS_NOT_IN_USE,

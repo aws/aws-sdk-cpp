@@ -17,7 +17,7 @@
 #include <aws/organizations/Organizations_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/organizations/model/Handshake.h>
+#include <aws/organizations/model/DelegatedService.h>
 #include <utility>
 
 namespace Aws
@@ -36,55 +36,48 @@ namespace Organizations
 {
 namespace Model
 {
-  class AWS_ORGANIZATIONS_API ListHandshakesForAccountResult
+  class AWS_ORGANIZATIONS_API ListDelegatedServicesForAccountResult
   {
   public:
-    ListHandshakesForAccountResult();
-    ListHandshakesForAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    ListHandshakesForAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDelegatedServicesForAccountResult();
+    ListDelegatedServicesForAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListDelegatedServicesForAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
-     * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
-     * that is associated with the specified account.</p>
+     * <p>The services for which the account is a delegated administrator.</p>
      */
-    inline const Aws::Vector<Handshake>& GetHandshakes() const{ return m_handshakes; }
+    inline const Aws::Vector<DelegatedService>& GetDelegatedServices() const{ return m_delegatedServices; }
 
     /**
-     * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
-     * that is associated with the specified account.</p>
+     * <p>The services for which the account is a delegated administrator.</p>
      */
-    inline void SetHandshakes(const Aws::Vector<Handshake>& value) { m_handshakes = value; }
+    inline void SetDelegatedServices(const Aws::Vector<DelegatedService>& value) { m_delegatedServices = value; }
 
     /**
-     * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
-     * that is associated with the specified account.</p>
+     * <p>The services for which the account is a delegated administrator.</p>
      */
-    inline void SetHandshakes(Aws::Vector<Handshake>&& value) { m_handshakes = std::move(value); }
+    inline void SetDelegatedServices(Aws::Vector<DelegatedService>&& value) { m_delegatedServices = std::move(value); }
 
     /**
-     * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
-     * that is associated with the specified account.</p>
+     * <p>The services for which the account is a delegated administrator.</p>
      */
-    inline ListHandshakesForAccountResult& WithHandshakes(const Aws::Vector<Handshake>& value) { SetHandshakes(value); return *this;}
+    inline ListDelegatedServicesForAccountResult& WithDelegatedServices(const Aws::Vector<DelegatedService>& value) { SetDelegatedServices(value); return *this;}
 
     /**
-     * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
-     * that is associated with the specified account.</p>
+     * <p>The services for which the account is a delegated administrator.</p>
      */
-    inline ListHandshakesForAccountResult& WithHandshakes(Aws::Vector<Handshake>&& value) { SetHandshakes(std::move(value)); return *this;}
+    inline ListDelegatedServicesForAccountResult& WithDelegatedServices(Aws::Vector<DelegatedService>&& value) { SetDelegatedServices(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
-     * that is associated with the specified account.</p>
+     * <p>The services for which the account is a delegated administrator.</p>
      */
-    inline ListHandshakesForAccountResult& AddHandshakes(const Handshake& value) { m_handshakes.push_back(value); return *this; }
+    inline ListDelegatedServicesForAccountResult& AddDelegatedServices(const DelegatedService& value) { m_delegatedServices.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>Handshake</a> objects with details about each of the handshakes
-     * that is associated with the specified account.</p>
+     * <p>The services for which the account is a delegated administrator.</p>
      */
-    inline ListHandshakesForAccountResult& AddHandshakes(Handshake&& value) { m_handshakes.push_back(std::move(value)); return *this; }
+    inline ListDelegatedServicesForAccountResult& AddDelegatedServices(DelegatedService&& value) { m_delegatedServices.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -130,7 +123,7 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline ListHandshakesForAccountResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+    inline ListDelegatedServicesForAccountResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If present, indicates that more output is available than is included in the
@@ -139,7 +132,7 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline ListHandshakesForAccountResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+    inline ListDelegatedServicesForAccountResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If present, indicates that more output is available than is included in the
@@ -148,11 +141,11 @@ namespace Model
      * should repeat this until the <code>NextToken</code> response element comes back
      * as <code>null</code>.</p>
      */
-    inline ListHandshakesForAccountResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline ListDelegatedServicesForAccountResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::Vector<Handshake> m_handshakes;
+    Aws::Vector<DelegatedService> m_delegatedServices;
 
     Aws::String m_nextToken;
   };

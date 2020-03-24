@@ -53,9 +53,9 @@ namespace Model
      * billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The
      * consolidated billing feature subset isn't available for organizations in the AWS
      * GovCloud (US) Region.</p> </li> <li> <p> <code>ALL</code>: In addition to all
-     * the features that consolidated billing feature set supports, the master account
-     * can also apply any policy type to any member account in the organization. For
-     * more information, see <a
+     * the features supported by the consolidated billing feature set, the master
+     * account can also apply any policy type to any member account in the
+     * organization. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul>
      */
@@ -70,9 +70,9 @@ namespace Model
      * billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The
      * consolidated billing feature subset isn't available for organizations in the AWS
      * GovCloud (US) Region.</p> </li> <li> <p> <code>ALL</code>: In addition to all
-     * the features that consolidated billing feature set supports, the master account
-     * can also apply any policy type to any member account in the organization. For
-     * more information, see <a
+     * the features supported by the consolidated billing feature set, the master
+     * account can also apply any policy type to any member account in the
+     * organization. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul>
      */
@@ -87,9 +87,9 @@ namespace Model
      * billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The
      * consolidated billing feature subset isn't available for organizations in the AWS
      * GovCloud (US) Region.</p> </li> <li> <p> <code>ALL</code>: In addition to all
-     * the features that consolidated billing feature set supports, the master account
-     * can also apply any policy type to any member account in the organization. For
-     * more information, see <a
+     * the features supported by the consolidated billing feature set, the master
+     * account can also apply any policy type to any member account in the
+     * organization. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul>
      */
@@ -104,9 +104,9 @@ namespace Model
      * billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The
      * consolidated billing feature subset isn't available for organizations in the AWS
      * GovCloud (US) Region.</p> </li> <li> <p> <code>ALL</code>: In addition to all
-     * the features that consolidated billing feature set supports, the master account
-     * can also apply any policy type to any member account in the organization. For
-     * more information, see <a
+     * the features supported by the consolidated billing feature set, the master
+     * account can also apply any policy type to any member account in the
+     * organization. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul>
      */
@@ -121,9 +121,9 @@ namespace Model
      * billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The
      * consolidated billing feature subset isn't available for organizations in the AWS
      * GovCloud (US) Region.</p> </li> <li> <p> <code>ALL</code>: In addition to all
-     * the features that consolidated billing feature set supports, the master account
-     * can also apply any policy type to any member account in the organization. For
-     * more information, see <a
+     * the features supported by the consolidated billing feature set, the master
+     * account can also apply any policy type to any member account in the
+     * organization. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul>
      */
@@ -138,9 +138,9 @@ namespace Model
      * billing</a> in the <i>AWS Organizations User Guide.</i> </p> <p> The
      * consolidated billing feature subset isn't available for organizations in the AWS
      * GovCloud (US) Region.</p> </li> <li> <p> <code>ALL</code>: In addition to all
-     * the features that consolidated billing feature set supports, the master account
-     * can also apply any policy type to any member account in the organization. For
-     * more information, see <a
+     * the features supported by the consolidated billing feature set, the master
+     * account can also apply any policy type to any member account in the
+     * organization. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide.</i> </p> </li> </ul>
      */
