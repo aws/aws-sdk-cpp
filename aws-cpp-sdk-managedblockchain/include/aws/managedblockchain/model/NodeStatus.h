@@ -29,6 +29,7 @@ namespace Model
     CREATING,
     AVAILABLE,
     CREATE_FAILED,
+    UPDATING,
     DELETING,
     DELETED,
     FAILED

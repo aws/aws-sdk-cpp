@@ -47,6 +47,8 @@
 #include <aws/managedblockchain/model/ListProposalVotesRequest.h>
 #include <aws/managedblockchain/model/ListProposalsRequest.h>
 #include <aws/managedblockchain/model/RejectInvitationRequest.h>
+#include <aws/managedblockchain/model/UpdateMemberRequest.h>
+#include <aws/managedblockchain/model/UpdateNodeRequest.h>
 #include <aws/managedblockchain/model/VoteOnProposalRequest.h>
 
 using namespace Aws;
@@ -875,6 +877,109 @@ void ManagedBlockchainClient::RejectInvitationAsync(const RejectInvitationReques
 void ManagedBlockchainClient::RejectInvitationAsyncHelper(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RejectInvitation(request), context);
+}
+
+UpdateMemberOutcome ManagedBlockchainClient::UpdateMember(const UpdateMemberRequest& request) const
+{
+  if (!request.NetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMember", "Required field: NetworkId, is not set");
+    return UpdateMemberOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
+  }
+  if (!request.MemberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateMember", "Required field: MemberId, is not set");
+    return UpdateMemberOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/networks/";
+  ss << request.GetNetworkId();
+  ss << "/members/";
+  ss << request.GetMemberId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateMemberOutcome(UpdateMemberResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateMemberOutcome(outcome.GetError());
+  }
+}
+
+UpdateMemberOutcomeCallable ManagedBlockchainClient::UpdateMemberCallable(const UpdateMemberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateMember(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::UpdateMemberAsync(const UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateMemberAsyncHelper( request, handler, context ); } );
+}
+
+void ManagedBlockchainClient::UpdateMemberAsyncHelper(const UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateMember(request), context);
+}
+
+UpdateNodeOutcome ManagedBlockchainClient::UpdateNode(const UpdateNodeRequest& request) const
+{
+  if (!request.NetworkIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: NetworkId, is not set");
+    return UpdateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NetworkId]", false));
+  }
+  if (!request.MemberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: MemberId, is not set");
+    return UpdateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
+  }
+  if (!request.NodeIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateNode", "Required field: NodeId, is not set");
+    return UpdateNodeOutcome(Aws::Client::AWSError<ManagedBlockchainErrors>(ManagedBlockchainErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodeId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/networks/";
+  ss << request.GetNetworkId();
+  ss << "/members/";
+  ss << request.GetMemberId();
+  ss << "/nodes/";
+  ss << request.GetNodeId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateNodeOutcome(UpdateNodeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateNodeOutcome(outcome.GetError());
+  }
+}
+
+UpdateNodeOutcomeCallable ManagedBlockchainClient::UpdateNodeCallable(const UpdateNodeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateNodeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateNode(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ManagedBlockchainClient::UpdateNodeAsync(const UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateNodeAsyncHelper( request, handler, context ); } );
+}
+
+void ManagedBlockchainClient::UpdateNodeAsyncHelper(const UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateNode(request), context);
 }
 
 VoteOnProposalOutcome ManagedBlockchainClient::VoteOnProposal(const VoteOnProposalRequest& request) const

@@ -31,20 +31,27 @@
 #include <aws/es/ElasticsearchServiceEndpoint.h>
 #include <aws/es/ElasticsearchServiceErrorMarshaller.h>
 #include <aws/es/model/AddTagsRequest.h>
+#include <aws/es/model/AssociatePackageRequest.h>
 #include <aws/es/model/CancelElasticsearchServiceSoftwareUpdateRequest.h>
 #include <aws/es/model/CreateElasticsearchDomainRequest.h>
+#include <aws/es/model/CreatePackageRequest.h>
 #include <aws/es/model/DeleteElasticsearchDomainRequest.h>
+#include <aws/es/model/DeletePackageRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainConfigRequest.h>
 #include <aws/es/model/DescribeElasticsearchDomainsRequest.h>
 #include <aws/es/model/DescribeElasticsearchInstanceTypeLimitsRequest.h>
+#include <aws/es/model/DescribePackagesRequest.h>
 #include <aws/es/model/DescribeReservedElasticsearchInstanceOfferingsRequest.h>
 #include <aws/es/model/DescribeReservedElasticsearchInstancesRequest.h>
+#include <aws/es/model/DissociatePackageRequest.h>
 #include <aws/es/model/GetCompatibleElasticsearchVersionsRequest.h>
 #include <aws/es/model/GetUpgradeHistoryRequest.h>
 #include <aws/es/model/GetUpgradeStatusRequest.h>
+#include <aws/es/model/ListDomainsForPackageRequest.h>
 #include <aws/es/model/ListElasticsearchInstanceTypesRequest.h>
 #include <aws/es/model/ListElasticsearchVersionsRequest.h>
+#include <aws/es/model/ListPackagesForDomainRequest.h>
 #include <aws/es/model/ListTagsRequest.h>
 #include <aws/es/model/PurchaseReservedElasticsearchInstanceOfferingRequest.h>
 #include <aws/es/model/RemoveTagsRequest.h>
@@ -159,6 +166,54 @@ void ElasticsearchServiceClient::AddTagsAsyncHelper(const AddTagsRequest& reques
   handler(this, request, AddTags(request), context);
 }
 
+AssociatePackageOutcome ElasticsearchServiceClient::AssociatePackage(const AssociatePackageRequest& request) const
+{
+  if (!request.PackageIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociatePackage", "Required field: PackageID, is not set");
+    return AssociatePackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
+  }
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociatePackage", "Required field: DomainName, is not set");
+    return AssociatePackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/associate/";
+  ss << request.GetPackageID();
+  ss << "/";
+  ss << request.GetDomainName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociatePackageOutcome(AssociatePackageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociatePackageOutcome(outcome.GetError());
+  }
+}
+
+AssociatePackageOutcomeCallable ElasticsearchServiceClient::AssociatePackageCallable(const AssociatePackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociatePackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::AssociatePackageAsync(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociatePackageAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::AssociatePackageAsyncHelper(const AssociatePackageRequest& request, const AssociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociatePackage(request), context);
+}
+
 CancelElasticsearchServiceSoftwareUpdateOutcome ElasticsearchServiceClient::CancelElasticsearchServiceSoftwareUpdate(const CancelElasticsearchServiceSoftwareUpdateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -227,6 +282,41 @@ void ElasticsearchServiceClient::CreateElasticsearchDomainAsync(const CreateElas
 void ElasticsearchServiceClient::CreateElasticsearchDomainAsyncHelper(const CreateElasticsearchDomainRequest& request, const CreateElasticsearchDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateElasticsearchDomain(request), context);
+}
+
+CreatePackageOutcome ElasticsearchServiceClient::CreatePackage(const CreatePackageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreatePackageOutcome(CreatePackageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreatePackageOutcome(outcome.GetError());
+  }
+}
+
+CreatePackageOutcomeCallable ElasticsearchServiceClient::CreatePackageCallable(const CreatePackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::CreatePackageAsync(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePackageAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::CreatePackageAsyncHelper(const CreatePackageRequest& request, const CreatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePackage(request), context);
 }
 
 DeleteElasticsearchDomainOutcome ElasticsearchServiceClient::DeleteElasticsearchDomain(const DeleteElasticsearchDomainRequest& request) const
@@ -301,6 +391,47 @@ void ElasticsearchServiceClient::DeleteElasticsearchServiceRoleAsync(const Delet
 void ElasticsearchServiceClient::DeleteElasticsearchServiceRoleAsyncHelper(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, DeleteElasticsearchServiceRole(), context);
+}
+
+DeletePackageOutcome ElasticsearchServiceClient::DeletePackage(const DeletePackageRequest& request) const
+{
+  if (!request.PackageIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePackage", "Required field: PackageID, is not set");
+    return DeletePackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/";
+  ss << request.GetPackageID();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePackageOutcome(DeletePackageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeletePackageOutcome(outcome.GetError());
+  }
+}
+
+DeletePackageOutcomeCallable ElasticsearchServiceClient::DeletePackageCallable(const DeletePackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DeletePackageAsync(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePackageAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DeletePackageAsyncHelper(const DeletePackageRequest& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePackage(request), context);
 }
 
 DescribeElasticsearchDomainOutcome ElasticsearchServiceClient::DescribeElasticsearchDomain(const DescribeElasticsearchDomainRequest& request) const
@@ -469,6 +600,41 @@ void ElasticsearchServiceClient::DescribeElasticsearchInstanceTypeLimitsAsyncHel
   handler(this, request, DescribeElasticsearchInstanceTypeLimits(request), context);
 }
 
+DescribePackagesOutcome ElasticsearchServiceClient::DescribePackages(const DescribePackagesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/describe";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribePackagesOutcome(DescribePackagesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePackagesOutcome(outcome.GetError());
+  }
+}
+
+DescribePackagesOutcomeCallable ElasticsearchServiceClient::DescribePackagesCallable(const DescribePackagesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePackagesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePackages(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePackagesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DescribePackagesAsyncHelper(const DescribePackagesRequest& request, const DescribePackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePackages(request), context);
+}
+
 DescribeReservedElasticsearchInstanceOfferingsOutcome ElasticsearchServiceClient::DescribeReservedElasticsearchInstanceOfferings(const DescribeReservedElasticsearchInstanceOfferingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -537,6 +703,54 @@ void ElasticsearchServiceClient::DescribeReservedElasticsearchInstancesAsync(con
 void ElasticsearchServiceClient::DescribeReservedElasticsearchInstancesAsyncHelper(const DescribeReservedElasticsearchInstancesRequest& request, const DescribeReservedElasticsearchInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeReservedElasticsearchInstances(request), context);
+}
+
+DissociatePackageOutcome ElasticsearchServiceClient::DissociatePackage(const DissociatePackageRequest& request) const
+{
+  if (!request.PackageIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DissociatePackage", "Required field: PackageID, is not set");
+    return DissociatePackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
+  }
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DissociatePackage", "Required field: DomainName, is not set");
+    return DissociatePackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/dissociate/";
+  ss << request.GetPackageID();
+  ss << "/";
+  ss << request.GetDomainName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DissociatePackageOutcome(DissociatePackageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DissociatePackageOutcome(outcome.GetError());
+  }
+}
+
+DissociatePackageOutcomeCallable ElasticsearchServiceClient::DissociatePackageCallable(const DissociatePackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DissociatePackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DissociatePackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::DissociatePackageAsync(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DissociatePackageAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::DissociatePackageAsyncHelper(const DissociatePackageRequest& request, const DissociatePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DissociatePackage(request), context);
 }
 
 GetCompatibleElasticsearchVersionsOutcome ElasticsearchServiceClient::GetCompatibleElasticsearchVersions(const GetCompatibleElasticsearchVersionsRequest& request) const
@@ -691,6 +905,48 @@ void ElasticsearchServiceClient::ListDomainNamesAsyncHelper(const ListDomainName
   handler(this, ListDomainNames(), context);
 }
 
+ListDomainsForPackageOutcome ElasticsearchServiceClient::ListDomainsForPackage(const ListDomainsForPackageRequest& request) const
+{
+  if (!request.PackageIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDomainsForPackage", "Required field: PackageID, is not set");
+    return ListDomainsForPackageOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PackageID]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/packages/";
+  ss << request.GetPackageID();
+  ss << "/domains";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDomainsForPackageOutcome(ListDomainsForPackageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDomainsForPackageOutcome(outcome.GetError());
+  }
+}
+
+ListDomainsForPackageOutcomeCallable ElasticsearchServiceClient::ListDomainsForPackageCallable(const ListDomainsForPackageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDomainsForPackageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDomainsForPackage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::ListDomainsForPackageAsync(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDomainsForPackageAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::ListDomainsForPackageAsyncHelper(const ListDomainsForPackageRequest& request, const ListDomainsForPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDomainsForPackage(request), context);
+}
+
 ListElasticsearchInstanceTypesOutcome ElasticsearchServiceClient::ListElasticsearchInstanceTypes(const ListElasticsearchInstanceTypesRequest& request) const
 {
   if (!request.ElasticsearchVersionHasBeenSet())
@@ -765,6 +1021,48 @@ void ElasticsearchServiceClient::ListElasticsearchVersionsAsync(const ListElasti
 void ElasticsearchServiceClient::ListElasticsearchVersionsAsyncHelper(const ListElasticsearchVersionsRequest& request, const ListElasticsearchVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListElasticsearchVersions(request), context);
+}
+
+ListPackagesForDomainOutcome ElasticsearchServiceClient::ListPackagesForDomain(const ListPackagesForDomainRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPackagesForDomain", "Required field: DomainName, is not set");
+    return ListPackagesForDomainOutcome(Aws::Client::AWSError<ElasticsearchServiceErrors>(ElasticsearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-01-01/domain/";
+  ss << request.GetDomainName();
+  ss << "/packages";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListPackagesForDomainOutcome(ListPackagesForDomainResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPackagesForDomainOutcome(outcome.GetError());
+  }
+}
+
+ListPackagesForDomainOutcomeCallable ElasticsearchServiceClient::ListPackagesForDomainCallable(const ListPackagesForDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPackagesForDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPackagesForDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticsearchServiceClient::ListPackagesForDomainAsync(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPackagesForDomainAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticsearchServiceClient::ListPackagesForDomainAsyncHelper(const ListPackagesForDomainRequest& request, const ListPackagesForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPackagesForDomain(request), context);
 }
 
 ListTagsOutcome ElasticsearchServiceClient::ListTags(const ListTagsRequest& request) const

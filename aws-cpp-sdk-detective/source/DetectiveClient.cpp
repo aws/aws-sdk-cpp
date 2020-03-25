@@ -40,6 +40,7 @@
 #include <aws/detective/model/ListInvitationsRequest.h>
 #include <aws/detective/model/ListMembersRequest.h>
 #include <aws/detective/model/RejectInvitationRequest.h>
+#include <aws/detective/model/StartMonitoringMemberRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -494,5 +495,40 @@ void DetectiveClient::RejectInvitationAsync(const RejectInvitationRequest& reque
 void DetectiveClient::RejectInvitationAsyncHelper(const RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RejectInvitation(request), context);
+}
+
+StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartMonitoringMemberRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/graph/member/monitoringstate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartMonitoringMemberOutcome(NoResult());
+  }
+  else
+  {
+    return StartMonitoringMemberOutcome(outcome.GetError());
+  }
+}
+
+StartMonitoringMemberOutcomeCallable DetectiveClient::StartMonitoringMemberCallable(const StartMonitoringMemberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMonitoringMemberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMonitoringMember(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DetectiveClient::StartMonitoringMemberAsync(const StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMonitoringMemberAsyncHelper( request, handler, context ); } );
+}
+
+void DetectiveClient::StartMonitoringMemberAsyncHelper(const StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMonitoringMember(request), context);
 }
 

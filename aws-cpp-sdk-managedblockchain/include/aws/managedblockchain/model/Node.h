@@ -17,6 +17,7 @@
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain/model/NodeFrameworkAttributes.h>
+#include <aws/managedblockchain/model/NodeLogPublishingConfiguration.h>
 #include <aws/managedblockchain/model/NodeStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -287,6 +288,37 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const NodeLogPublishingConfiguration& GetLogPublishingConfiguration() const{ return m_logPublishingConfiguration; }
+
+    /**
+     * <p/>
+     */
+    inline bool LogPublishingConfigurationHasBeenSet() const { return m_logPublishingConfigurationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetLogPublishingConfiguration(const NodeLogPublishingConfiguration& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetLogPublishingConfiguration(NodeLogPublishingConfiguration&& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline Node& WithLogPublishingConfiguration(const NodeLogPublishingConfiguration& value) { SetLogPublishingConfiguration(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline Node& WithLogPublishingConfiguration(NodeLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of the node.</p>
      */
     inline const NodeStatus& GetStatus() const{ return m_status; }
@@ -366,6 +398,9 @@ namespace Model
 
     NodeFrameworkAttributes m_frameworkAttributes;
     bool m_frameworkAttributesHasBeenSet;
+
+    NodeLogPublishingConfiguration m_logPublishingConfiguration;
+    bool m_logPublishingConfigurationHasBeenSet;
 
     NodeStatus m_status;
     bool m_statusHasBeenSet;

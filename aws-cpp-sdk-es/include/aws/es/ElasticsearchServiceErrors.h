@@ -57,6 +57,7 @@ enum class ElasticsearchServiceErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BASE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   DISABLED_OPERATION,
   INTERNAL,
   INVALID_TYPE,

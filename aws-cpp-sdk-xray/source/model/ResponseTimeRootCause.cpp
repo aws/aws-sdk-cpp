@@ -29,12 +29,16 @@ namespace Model
 {
 
 ResponseTimeRootCause::ResponseTimeRootCause() : 
-    m_servicesHasBeenSet(false)
+    m_servicesHasBeenSet(false),
+    m_clientImpacting(false),
+    m_clientImpactingHasBeenSet(false)
 {
 }
 
 ResponseTimeRootCause::ResponseTimeRootCause(JsonView jsonValue) : 
-    m_servicesHasBeenSet(false)
+    m_servicesHasBeenSet(false),
+    m_clientImpacting(false),
+    m_clientImpactingHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ ResponseTimeRootCause& ResponseTimeRootCause::operator =(JsonView jsonValue)
       m_services.push_back(servicesJsonList[servicesIndex].AsObject());
     }
     m_servicesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ClientImpacting"))
+  {
+    m_clientImpacting = jsonValue.GetBool("ClientImpacting");
+
+    m_clientImpactingHasBeenSet = true;
   }
 
   return *this;
@@ -66,6 +77,12 @@ JsonValue ResponseTimeRootCause::Jsonize() const
      servicesJsonList[servicesIndex].AsObject(m_services[servicesIndex].Jsonize());
    }
    payload.WithArray("Services", std::move(servicesJsonList));
+
+  }
+
+  if(m_clientImpactingHasBeenSet)
+  {
+   payload.WithBool("ClientImpacting", m_clientImpacting);
 
   }
 

@@ -34,6 +34,7 @@ namespace Aws
         static const int VERIFICATION_IN_PROGRESS_HASH = HashingUtils::HashString("VERIFICATION_IN_PROGRESS");
         static const int VERIFICATION_FAILED_HASH = HashingUtils::HashString("VERIFICATION_FAILED");
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
+        static const int ACCEPTED_BUT_DISABLED_HASH = HashingUtils::HashString("ACCEPTED_BUT_DISABLED");
 
 
         MemberStatus GetMemberStatusForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == ENABLED_HASH)
           {
             return MemberStatus::ENABLED;
+          }
+          else if (hashCode == ACCEPTED_BUT_DISABLED_HASH)
+          {
+            return MemberStatus::ACCEPTED_BUT_DISABLED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "VERIFICATION_FAILED";
           case MemberStatus::ENABLED:
             return "ENABLED";
+          case MemberStatus::ACCEPTED_BUT_DISABLED:
+            return "ACCEPTED_BUT_DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

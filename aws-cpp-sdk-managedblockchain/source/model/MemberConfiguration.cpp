@@ -31,14 +31,16 @@ namespace Model
 MemberConfiguration::MemberConfiguration() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_frameworkConfigurationHasBeenSet(false)
+    m_frameworkConfigurationHasBeenSet(false),
+    m_logPublishingConfigurationHasBeenSet(false)
 {
 }
 
 MemberConfiguration::MemberConfiguration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_frameworkConfigurationHasBeenSet(false)
+    m_frameworkConfigurationHasBeenSet(false),
+    m_logPublishingConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,13 @@ MemberConfiguration& MemberConfiguration::operator =(JsonView jsonValue)
     m_frameworkConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogPublishingConfiguration"))
+  {
+    m_logPublishingConfiguration = jsonValue.GetObject("LogPublishingConfiguration");
+
+    m_logPublishingConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue MemberConfiguration::Jsonize() const
   if(m_frameworkConfigurationHasBeenSet)
   {
    payload.WithObject("FrameworkConfiguration", m_frameworkConfiguration.Jsonize());
+
+  }
+
+  if(m_logPublishingConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogPublishingConfiguration", m_logPublishingConfiguration.Jsonize());
 
   }
 

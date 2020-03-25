@@ -26,6 +26,8 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_resourceGroupNameHasBeenSet(false),
     m_opsCenterEnabled(false),
     m_opsCenterEnabledHasBeenSet(false),
+    m_cWEMonitorEnabled(false),
+    m_cWEMonitorEnabledHasBeenSet(false),
     m_opsItemSNSTopicArnHasBeenSet(false),
     m_removeSNSTopic(false),
     m_removeSNSTopicHasBeenSet(false)
@@ -45,6 +47,12 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   if(m_opsCenterEnabledHasBeenSet)
   {
    payload.WithBool("OpsCenterEnabled", m_opsCenterEnabled);
+
+  }
+
+  if(m_cWEMonitorEnabledHasBeenSet)
+  {
+   payload.WithBool("CWEMonitorEnabled", m_cWEMonitorEnabled);
 
   }
 

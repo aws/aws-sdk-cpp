@@ -17,6 +17,7 @@
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain/model/MemberFrameworkAttributes.h>
+#include <aws/managedblockchain/model/MemberLogPublishingConfiguration.h>
 #include <aws/managedblockchain/model/MemberStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -252,6 +253,37 @@ namespace Model
 
 
     /**
+     * <p>Configuration properties for logging events associated with a member.</p>
+     */
+    inline const MemberLogPublishingConfiguration& GetLogPublishingConfiguration() const{ return m_logPublishingConfiguration; }
+
+    /**
+     * <p>Configuration properties for logging events associated with a member.</p>
+     */
+    inline bool LogPublishingConfigurationHasBeenSet() const { return m_logPublishingConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration properties for logging events associated with a member.</p>
+     */
+    inline void SetLogPublishingConfiguration(const MemberLogPublishingConfiguration& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = value; }
+
+    /**
+     * <p>Configuration properties for logging events associated with a member.</p>
+     */
+    inline void SetLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = std::move(value); }
+
+    /**
+     * <p>Configuration properties for logging events associated with a member.</p>
+     */
+    inline Member& WithLogPublishingConfiguration(const MemberLogPublishingConfiguration& value) { SetLogPublishingConfiguration(value); return *this;}
+
+    /**
+     * <p>Configuration properties for logging events associated with a member.</p>
+     */
+    inline Member& WithLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of a member.</p> <ul> <li> <p> <code>CREATING</code> - The AWS
      * account is in the process of creating a member.</p> </li> <li> <p>
      * <code>AVAILABLE</code> - The member has been created and can participate in the
@@ -406,6 +438,9 @@ namespace Model
 
     MemberFrameworkAttributes m_frameworkAttributes;
     bool m_frameworkAttributesHasBeenSet;
+
+    MemberLogPublishingConfiguration m_logPublishingConfiguration;
+    bool m_logPublishingConfigurationHasBeenSet;
 
     MemberStatus m_status;
     bool m_statusHasBeenSet;

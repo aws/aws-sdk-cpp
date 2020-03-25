@@ -29,7 +29,8 @@ namespace Model
     INVITED,
     VERIFICATION_IN_PROGRESS,
     VERIFICATION_FAILED,
-    ENABLED
+    ENABLED,
+    ACCEPTED_BUT_DISABLED
   };
 
 namespace MemberStatusMapper

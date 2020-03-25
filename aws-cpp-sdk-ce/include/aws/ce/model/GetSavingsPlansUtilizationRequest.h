@@ -146,7 +146,7 @@ namespace Model
      * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension.</p>
      */
@@ -160,7 +160,7 @@ namespace Model
      * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension.</p>
      */
@@ -174,7 +174,7 @@ namespace Model
      * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension.</p>
      */
@@ -188,7 +188,7 @@ namespace Model
      * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension.</p>
      */
@@ -202,7 +202,7 @@ namespace Model
      * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension.</p>
      */
@@ -216,7 +216,7 @@ namespace Model
      * <code>REGION</code> </p> </li> <li> <p> <code>PAYMENT_OPTION</code> </p> </li>
      * <li> <p> <code>INSTANCE_TYPE_FAMILY</code> </p> </li> </ul> <p>
      * <code>GetSavingsPlansUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension.</p>
      */

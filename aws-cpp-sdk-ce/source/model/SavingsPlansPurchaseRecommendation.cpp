@@ -29,6 +29,8 @@ namespace Model
 {
 
 SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation() : 
+    m_accountScope(AccountScope::NOT_SET),
+    m_accountScopeHasBeenSet(false),
     m_savingsPlansType(SupportedSavingsPlansType::NOT_SET),
     m_savingsPlansTypeHasBeenSet(false),
     m_termInYears(TermInYears::NOT_SET),
@@ -43,6 +45,8 @@ SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation() :
 }
 
 SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation(JsonView jsonValue) : 
+    m_accountScope(AccountScope::NOT_SET),
+    m_accountScopeHasBeenSet(false),
     m_savingsPlansType(SupportedSavingsPlansType::NOT_SET),
     m_savingsPlansTypeHasBeenSet(false),
     m_termInYears(TermInYears::NOT_SET),
@@ -59,6 +63,13 @@ SavingsPlansPurchaseRecommendation::SavingsPlansPurchaseRecommendation(JsonView 
 
 SavingsPlansPurchaseRecommendation& SavingsPlansPurchaseRecommendation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AccountScope"))
+  {
+    m_accountScope = AccountScopeMapper::GetAccountScopeForName(jsonValue.GetString("AccountScope"));
+
+    m_accountScopeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SavingsPlansType"))
   {
     m_savingsPlansType = SupportedSavingsPlansTypeMapper::GetSupportedSavingsPlansTypeForName(jsonValue.GetString("SavingsPlansType"));
@@ -110,6 +121,11 @@ SavingsPlansPurchaseRecommendation& SavingsPlansPurchaseRecommendation::operator
 JsonValue SavingsPlansPurchaseRecommendation::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accountScopeHasBeenSet)
+  {
+   payload.WithString("AccountScope", AccountScopeMapper::GetNameForAccountScope(m_accountScope));
+  }
 
   if(m_savingsPlansTypeHasBeenSet)
   {

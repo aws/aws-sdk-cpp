@@ -17,6 +17,7 @@
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain/model/MemberFrameworkConfiguration.h>
+#include <aws/managedblockchain/model/MemberLogPublishingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -166,6 +167,37 @@ namespace Model
      */
     inline MemberConfiguration& WithFrameworkConfiguration(MemberFrameworkConfiguration&& value) { SetFrameworkConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const MemberLogPublishingConfiguration& GetLogPublishingConfiguration() const{ return m_logPublishingConfiguration; }
+
+    /**
+     * <p/>
+     */
+    inline bool LogPublishingConfigurationHasBeenSet() const { return m_logPublishingConfigurationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetLogPublishingConfiguration(const MemberLogPublishingConfiguration& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline MemberConfiguration& WithLogPublishingConfiguration(const MemberLogPublishingConfiguration& value) { SetLogPublishingConfiguration(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline MemberConfiguration& WithLogPublishingConfiguration(MemberLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -176,6 +208,9 @@ namespace Model
 
     MemberFrameworkConfiguration m_frameworkConfiguration;
     bool m_frameworkConfigurationHasBeenSet;
+
+    MemberLogPublishingConfiguration m_logPublishingConfiguration;
+    bool m_logPublishingConfigurationHasBeenSet;
   };
 
 } // namespace Model

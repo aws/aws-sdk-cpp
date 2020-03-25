@@ -19,8 +19,10 @@
 #include <aws/ce/model/SupportedSavingsPlansType.h>
 #include <aws/ce/model/TermInYears.h>
 #include <aws/ce/model/PaymentOption.h>
+#include <aws/ce/model/AccountScope.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ce/model/LookbackPeriodInDays.h>
+#include <aws/ce/model/Expression.h>
 #include <utility>
 
 namespace Aws
@@ -148,6 +150,55 @@ namespace Model
 
 
     /**
+     * <p>The account scope that you want your recommendations for. Amazon Web Services
+     * calculates recommendations including the payer account and linked accounts if
+     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * recommendations are calculated for individual linked accounts only.</p>
+     */
+    inline const AccountScope& GetAccountScope() const{ return m_accountScope; }
+
+    /**
+     * <p>The account scope that you want your recommendations for. Amazon Web Services
+     * calculates recommendations including the payer account and linked accounts if
+     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * recommendations are calculated for individual linked accounts only.</p>
+     */
+    inline bool AccountScopeHasBeenSet() const { return m_accountScopeHasBeenSet; }
+
+    /**
+     * <p>The account scope that you want your recommendations for. Amazon Web Services
+     * calculates recommendations including the payer account and linked accounts if
+     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * recommendations are calculated for individual linked accounts only.</p>
+     */
+    inline void SetAccountScope(const AccountScope& value) { m_accountScopeHasBeenSet = true; m_accountScope = value; }
+
+    /**
+     * <p>The account scope that you want your recommendations for. Amazon Web Services
+     * calculates recommendations including the payer account and linked accounts if
+     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * recommendations are calculated for individual linked accounts only.</p>
+     */
+    inline void SetAccountScope(AccountScope&& value) { m_accountScopeHasBeenSet = true; m_accountScope = std::move(value); }
+
+    /**
+     * <p>The account scope that you want your recommendations for. Amazon Web Services
+     * calculates recommendations including the payer account and linked accounts if
+     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * recommendations are calculated for individual linked accounts only.</p>
+     */
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithAccountScope(const AccountScope& value) { SetAccountScope(value); return *this;}
+
+    /**
+     * <p>The account scope that you want your recommendations for. Amazon Web Services
+     * calculates recommendations including the payer account and linked accounts if
+     * the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+     * recommendations are calculated for individual linked accounts only.</p>
+     */
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithAccountScope(AccountScope&& value) { SetAccountScope(std::move(value)); return *this;}
+
+
+    /**
      * <p>The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
      * maximum page size.</p>
@@ -259,6 +310,103 @@ namespace Model
      */
     inline GetSavingsPlansPurchaseRecommendationRequest& WithLookbackPeriodInDays(LookbackPeriodInDays&& value) { SetLookbackPeriodInDays(std::move(value)); return *this;}
 
+
+    /**
+     * <p>You can filter your recommendations by Account ID with the
+     * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
+     * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
+     * Savings Plans purchase recommendations.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>CostCategories</code> or <code>Tags</code>. It only includes
+     * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
+     * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
+     * multiple comma-separated Account IDs for which you want to see Savings Plans
+     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * supported.</p>
+     */
+    inline const Expression& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>You can filter your recommendations by Account ID with the
+     * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
+     * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
+     * Savings Plans purchase recommendations.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>CostCategories</code> or <code>Tags</code>. It only includes
+     * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
+     * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
+     * multiple comma-separated Account IDs for which you want to see Savings Plans
+     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * supported.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>You can filter your recommendations by Account ID with the
+     * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
+     * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
+     * Savings Plans purchase recommendations.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>CostCategories</code> or <code>Tags</code>. It only includes
+     * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
+     * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
+     * multiple comma-separated Account IDs for which you want to see Savings Plans
+     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * supported.</p>
+     */
+    inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>You can filter your recommendations by Account ID with the
+     * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
+     * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
+     * Savings Plans purchase recommendations.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>CostCategories</code> or <code>Tags</code>. It only includes
+     * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
+     * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
+     * multiple comma-separated Account IDs for which you want to see Savings Plans
+     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * supported.</p>
+     */
+    inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>You can filter your recommendations by Account ID with the
+     * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
+     * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
+     * Savings Plans purchase recommendations.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>CostCategories</code> or <code>Tags</code>. It only includes
+     * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
+     * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
+     * multiple comma-separated Account IDs for which you want to see Savings Plans
+     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * supported.</p>
+     */
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>You can filter your recommendations by Account ID with the
+     * <code>LINKED_ACCOUNT</code> dimension. To filter your recommendations by Account
+     * ID, specify <code>Key</code> as <code>LINKED_ACCOUNT</code> and
+     * <code>Value</code> as the comma-separated Acount ID(s) for which you want to see
+     * Savings Plans purchase recommendations.</p> <p>For
+     * GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+     * <code>CostCategories</code> or <code>Tags</code>. It only includes
+     * <code>Dimensions</code>. With <code>Dimensions</code>, <code>Key</code> must be
+     * <code>LINKED_ACCOUNT</code> and <code>Value</code> can be a single Account ID or
+     * multiple comma-separated Account IDs for which you want to see Savings Plans
+     * Purchase Recommendations. <code>AND</code> and <code>OR</code> operators are not
+     * supported.</p>
+     */
+    inline GetSavingsPlansPurchaseRecommendationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+
   private:
 
     SupportedSavingsPlansType m_savingsPlansType;
@@ -270,6 +418,9 @@ namespace Model
     PaymentOption m_paymentOption;
     bool m_paymentOptionHasBeenSet;
 
+    AccountScope m_accountScope;
+    bool m_accountScopeHasBeenSet;
+
     Aws::String m_nextPageToken;
     bool m_nextPageTokenHasBeenSet;
 
@@ -278,6 +429,9 @@ namespace Model
 
     LookbackPeriodInDays m_lookbackPeriodInDays;
     bool m_lookbackPeriodInDaysHasBeenSet;
+
+    Expression m_filter;
+    bool m_filterHasBeenSet;
   };
 
 } // namespace Model

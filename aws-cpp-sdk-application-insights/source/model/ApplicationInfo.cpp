@@ -34,6 +34,8 @@ ApplicationInfo::ApplicationInfo() :
     m_opsItemSNSTopicArnHasBeenSet(false),
     m_opsCenterEnabled(false),
     m_opsCenterEnabledHasBeenSet(false),
+    m_cWEMonitorEnabled(false),
+    m_cWEMonitorEnabledHasBeenSet(false),
     m_remarksHasBeenSet(false)
 {
 }
@@ -44,6 +46,8 @@ ApplicationInfo::ApplicationInfo(JsonView jsonValue) :
     m_opsItemSNSTopicArnHasBeenSet(false),
     m_opsCenterEnabled(false),
     m_opsCenterEnabledHasBeenSet(false),
+    m_cWEMonitorEnabled(false),
+    m_cWEMonitorEnabledHasBeenSet(false),
     m_remarksHasBeenSet(false)
 {
   *this = jsonValue;
@@ -77,6 +81,13 @@ ApplicationInfo& ApplicationInfo::operator =(JsonView jsonValue)
     m_opsCenterEnabled = jsonValue.GetBool("OpsCenterEnabled");
 
     m_opsCenterEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CWEMonitorEnabled"))
+  {
+    m_cWEMonitorEnabled = jsonValue.GetBool("CWEMonitorEnabled");
+
+    m_cWEMonitorEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Remarks"))
@@ -114,6 +125,12 @@ JsonValue ApplicationInfo::Jsonize() const
   if(m_opsCenterEnabledHasBeenSet)
   {
    payload.WithBool("OpsCenterEnabled", m_opsCenterEnabled);
+
+  }
+
+  if(m_cWEMonitorEnabledHasBeenSet)
+  {
+   payload.WithBool("CWEMonitorEnabled", m_cWEMonitorEnabled);
 
   }
 

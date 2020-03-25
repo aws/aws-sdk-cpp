@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>Which metric Cost Explorer uses to create your forecast. For more information
      * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
      * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
@@ -93,7 +93,7 @@ namespace Model
     /**
      * <p>Which metric Cost Explorer uses to create your forecast. For more information
      * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
      * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>Which metric Cost Explorer uses to create your forecast. For more information
      * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
      * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>Which metric Cost Explorer uses to create your forecast. For more information
      * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
      * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>Which metric Cost Explorer uses to create your forecast. For more information
      * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
      * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>
@@ -141,7 +141,7 @@ namespace Model
     /**
      * <p>Which metric Cost Explorer uses to create your forecast. For more information
      * about blended and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
      * <ul> <li> <p>AMORTIZED_COST</p> </li> <li> <p>BLENDED_COST</p> </li> <li>

@@ -226,7 +226,7 @@ namespace Model
      * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
      * <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>
      * <code>GetReservationUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension, and nesting is supported up to only one level deep. If there are
      * multiple values for a dimension, they are OR'd together.</p>
@@ -241,7 +241,7 @@ namespace Model
      * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
      * <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>
      * <code>GetReservationUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension, and nesting is supported up to only one level deep. If there are
      * multiple values for a dimension, they are OR'd together.</p>
@@ -256,7 +256,7 @@ namespace Model
      * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
      * <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>
      * <code>GetReservationUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension, and nesting is supported up to only one level deep. If there are
      * multiple values for a dimension, they are OR'd together.</p>
@@ -271,7 +271,7 @@ namespace Model
      * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
      * <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>
      * <code>GetReservationUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension, and nesting is supported up to only one level deep. If there are
      * multiple values for a dimension, they are OR'd together.</p>
@@ -286,7 +286,7 @@ namespace Model
      * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
      * <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>
      * <code>GetReservationUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension, and nesting is supported up to only one level deep. If there are
      * multiple values for a dimension, they are OR'd together.</p>
@@ -301,7 +301,7 @@ namespace Model
      * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
      * <p>SCOPE</p> </li> <li> <p>TENANCY</p> </li> </ul> <p>
      * <code>GetReservationUtilization</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension, and nesting is supported up to only one level deep. If there are
      * multiple values for a dimension, they are OR'd together.</p>

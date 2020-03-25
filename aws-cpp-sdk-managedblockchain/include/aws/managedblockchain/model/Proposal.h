@@ -308,7 +308,9 @@ namespace Model
      * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
      * <code>ProposalActions</code> in a proposal that was approved could not be
-     * completed because of an error.</p> </li> </ul>
+     * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     * if only one ProposalAction fails and other actions are successful.</p> </li>
+     * </ul>
      */
     inline const ProposalStatus& GetStatus() const{ return m_status; }
 
@@ -327,7 +329,9 @@ namespace Model
      * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
      * <code>ProposalActions</code> in a proposal that was approved could not be
-     * completed because of an error.</p> </li> </ul>
+     * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     * if only one ProposalAction fails and other actions are successful.</p> </li>
+     * </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -346,7 +350,9 @@ namespace Model
      * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
      * <code>ProposalActions</code> in a proposal that was approved could not be
-     * completed because of an error.</p> </li> </ul>
+     * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     * if only one ProposalAction fails and other actions are successful.</p> </li>
+     * </ul>
      */
     inline void SetStatus(const ProposalStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -365,7 +371,9 @@ namespace Model
      * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
      * <code>ProposalActions</code> in a proposal that was approved could not be
-     * completed because of an error.</p> </li> </ul>
+     * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     * if only one ProposalAction fails and other actions are successful.</p> </li>
+     * </ul>
      */
     inline void SetStatus(ProposalStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -384,7 +392,9 @@ namespace Model
      * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
      * <code>ProposalActions</code> in a proposal that was approved could not be
-     * completed because of an error.</p> </li> </ul>
+     * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     * if only one ProposalAction fails and other actions are successful.</p> </li>
+     * </ul>
      */
     inline Proposal& WithStatus(const ProposalStatus& value) { SetStatus(value); return *this;}
 
@@ -403,7 +413,9 @@ namespace Model
      * The specified <code>ProposalActions</code> are not carried out.</p> </li> <li>
      * <p> <code>ACTION_FAILED</code> - One or more of the specified
      * <code>ProposalActions</code> in a proposal that was approved could not be
-     * completed because of an error.</p> </li> </ul>
+     * completed because of an error. The <code>ACTION_FAILED</code> status occurs even
+     * if only one ProposalAction fails and other actions are successful.</p> </li>
+     * </ul>
      */
     inline Proposal& WithStatus(ProposalStatus&& value) { SetStatus(std::move(value)); return *this;}
 

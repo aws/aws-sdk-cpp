@@ -17,6 +17,7 @@
 #include <aws/detective/Detective_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/detective/model/MemberStatus.h>
+#include <aws/detective/model/MemberDisabledReason.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -227,9 +228,12 @@ namespace Model
      * Indicates that the account and email address provided for the member account do
      * not match, and Detective did not send an invitation to the account.</p> </li>
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> </ul> <p>Member
-     * accounts that declined an invitation or that were removed from the behavior
-     * graph are not included.</p>
+     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
+     * the invitation, but is blocked from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is
+     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * were removed from the behavior graph are not included.</p>
      */
     inline const MemberStatus& GetStatus() const{ return m_status; }
 
@@ -245,9 +249,12 @@ namespace Model
      * Indicates that the account and email address provided for the member account do
      * not match, and Detective did not send an invitation to the account.</p> </li>
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> </ul> <p>Member
-     * accounts that declined an invitation or that were removed from the behavior
-     * graph are not included.</p>
+     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
+     * the invitation, but is blocked from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is
+     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * were removed from the behavior graph are not included.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -263,9 +270,12 @@ namespace Model
      * Indicates that the account and email address provided for the member account do
      * not match, and Detective did not send an invitation to the account.</p> </li>
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> </ul> <p>Member
-     * accounts that declined an invitation or that were removed from the behavior
-     * graph are not included.</p>
+     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
+     * the invitation, but is blocked from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is
+     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * were removed from the behavior graph are not included.</p>
      */
     inline void SetStatus(const MemberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -281,9 +291,12 @@ namespace Model
      * Indicates that the account and email address provided for the member account do
      * not match, and Detective did not send an invitation to the account.</p> </li>
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> </ul> <p>Member
-     * accounts that declined an invitation or that were removed from the behavior
-     * graph are not included.</p>
+     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
+     * the invitation, but is blocked from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is
+     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * were removed from the behavior graph are not included.</p>
      */
     inline void SetStatus(MemberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -299,9 +312,12 @@ namespace Model
      * Indicates that the account and email address provided for the member account do
      * not match, and Detective did not send an invitation to the account.</p> </li>
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> </ul> <p>Member
-     * accounts that declined an invitation or that were removed from the behavior
-     * graph are not included.</p>
+     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
+     * the invitation, but is blocked from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is
+     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * were removed from the behavior graph are not included.</p>
      */
     inline MemberDetail& WithStatus(const MemberStatus& value) { SetStatus(value); return *this;}
 
@@ -317,11 +333,87 @@ namespace Model
      * Indicates that the account and email address provided for the member account do
      * not match, and Detective did not send an invitation to the account.</p> </li>
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
-     * invitation to contribute to the behavior graph.</p> </li> </ul> <p>Member
-     * accounts that declined an invitation or that were removed from the behavior
-     * graph are not included.</p>
+     * invitation to contribute to the behavior graph.</p> </li> <li> <p>
+     * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
+     * the invitation, but is blocked from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is
+     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * were removed from the behavior graph are not included.</p>
      */
     inline MemberDetail& WithStatus(MemberStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
+     * reason that the member account is blocked.</p> <p>The reason can have one of the
+     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data rate for the behavior graph
+     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
+     * Detective is unable to verify the data rate for the member account. This is
+     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * </li> </ul>
+     */
+    inline const MemberDisabledReason& GetDisabledReason() const{ return m_disabledReason; }
+
+    /**
+     * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
+     * reason that the member account is blocked.</p> <p>The reason can have one of the
+     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data rate for the behavior graph
+     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
+     * Detective is unable to verify the data rate for the member account. This is
+     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * </li> </ul>
+     */
+    inline bool DisabledReasonHasBeenSet() const { return m_disabledReasonHasBeenSet; }
+
+    /**
+     * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
+     * reason that the member account is blocked.</p> <p>The reason can have one of the
+     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data rate for the behavior graph
+     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
+     * Detective is unable to verify the data rate for the member account. This is
+     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * </li> </ul>
+     */
+    inline void SetDisabledReason(const MemberDisabledReason& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
+
+    /**
+     * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
+     * reason that the member account is blocked.</p> <p>The reason can have one of the
+     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data rate for the behavior graph
+     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
+     * Detective is unable to verify the data rate for the member account. This is
+     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * </li> </ul>
+     */
+    inline void SetDisabledReason(MemberDisabledReason&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::move(value); }
+
+    /**
+     * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
+     * reason that the member account is blocked.</p> <p>The reason can have one of the
+     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data rate for the behavior graph
+     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
+     * Detective is unable to verify the data rate for the member account. This is
+     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * </li> </ul>
+     */
+    inline MemberDetail& WithDisabledReason(const MemberDisabledReason& value) { SetDisabledReason(value); return *this;}
+
+    /**
+     * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
+     * reason that the member account is blocked.</p> <p>The reason can have one of the
+     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data rate for the behavior graph
+     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
+     * Detective is unable to verify the data rate for the member account. This is
+     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * </li> </ul>
+     */
+    inline MemberDetail& WithDisabledReason(MemberDisabledReason&& value) { SetDisabledReason(std::move(value)); return *this;}
 
 
     /**
@@ -397,6 +489,82 @@ namespace Model
      */
     inline MemberDetail& WithUpdatedTime(Aws::Utils::DateTime&& value) { SetUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The member account data volume as a percentage of the maximum allowed data
+     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
+     * this is not the percentage of the behavior graph data volume.</p> <p>For
+     * example, the data volume for the behavior graph is 80 GB per day. The maximum
+     * data volume is 160 GB per day. If the data volume for the member account is 40
+     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
+     * of the maximum allowed data volume. </p>
+     */
+    inline double GetPercentOfGraphUtilization() const{ return m_percentOfGraphUtilization; }
+
+    /**
+     * <p>The member account data volume as a percentage of the maximum allowed data
+     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
+     * this is not the percentage of the behavior graph data volume.</p> <p>For
+     * example, the data volume for the behavior graph is 80 GB per day. The maximum
+     * data volume is 160 GB per day. If the data volume for the member account is 40
+     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
+     * of the maximum allowed data volume. </p>
+     */
+    inline bool PercentOfGraphUtilizationHasBeenSet() const { return m_percentOfGraphUtilizationHasBeenSet; }
+
+    /**
+     * <p>The member account data volume as a percentage of the maximum allowed data
+     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
+     * this is not the percentage of the behavior graph data volume.</p> <p>For
+     * example, the data volume for the behavior graph is 80 GB per day. The maximum
+     * data volume is 160 GB per day. If the data volume for the member account is 40
+     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
+     * of the maximum allowed data volume. </p>
+     */
+    inline void SetPercentOfGraphUtilization(double value) { m_percentOfGraphUtilizationHasBeenSet = true; m_percentOfGraphUtilization = value; }
+
+    /**
+     * <p>The member account data volume as a percentage of the maximum allowed data
+     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
+     * this is not the percentage of the behavior graph data volume.</p> <p>For
+     * example, the data volume for the behavior graph is 80 GB per day. The maximum
+     * data volume is 160 GB per day. If the data volume for the member account is 40
+     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
+     * of the maximum allowed data volume. </p>
+     */
+    inline MemberDetail& WithPercentOfGraphUtilization(double value) { SetPercentOfGraphUtilization(value); return *this;}
+
+
+    /**
+     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetPercentOfGraphUtilizationUpdatedTime() const{ return m_percentOfGraphUtilizationUpdatedTime; }
+
+    /**
+     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     */
+    inline bool PercentOfGraphUtilizationUpdatedTimeHasBeenSet() const { return m_percentOfGraphUtilizationUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     */
+    inline void SetPercentOfGraphUtilizationUpdatedTime(const Aws::Utils::DateTime& value) { m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true; m_percentOfGraphUtilizationUpdatedTime = value; }
+
+    /**
+     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     */
+    inline void SetPercentOfGraphUtilizationUpdatedTime(Aws::Utils::DateTime&& value) { m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true; m_percentOfGraphUtilizationUpdatedTime = std::move(value); }
+
+    /**
+     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     */
+    inline MemberDetail& WithPercentOfGraphUtilizationUpdatedTime(const Aws::Utils::DateTime& value) { SetPercentOfGraphUtilizationUpdatedTime(value); return *this;}
+
+    /**
+     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     */
+    inline MemberDetail& WithPercentOfGraphUtilizationUpdatedTime(Aws::Utils::DateTime&& value) { SetPercentOfGraphUtilizationUpdatedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -414,11 +582,20 @@ namespace Model
     MemberStatus m_status;
     bool m_statusHasBeenSet;
 
+    MemberDisabledReason m_disabledReason;
+    bool m_disabledReasonHasBeenSet;
+
     Aws::Utils::DateTime m_invitedTime;
     bool m_invitedTimeHasBeenSet;
 
     Aws::Utils::DateTime m_updatedTime;
     bool m_updatedTimeHasBeenSet;
+
+    double m_percentOfGraphUtilization;
+    bool m_percentOfGraphUtilizationHasBeenSet;
+
+    Aws::Utils::DateTime m_percentOfGraphUtilizationUpdatedTime;
+    bool m_percentOfGraphUtilizationUpdatedTimeHasBeenSet;
   };
 
 } // namespace Model

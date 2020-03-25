@@ -38,7 +38,7 @@ namespace Model
    * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
    * Management and is subject to change. Your use of Cost Categories is subject to
    * the Beta Service Participation terms of the <a
-   * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+   * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
    * 1.10).</b> </i> </p> </important> <p>Rules are processed in order. If there are
    * multiple rules that match the line item, then the first rule to match is used to
    * determine that Cost Category value.</p><p><h3>See Also:</h3>   <a
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>An <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, Tags, and nested
      * expressions. Currently the only dimensions supported is
      * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
@@ -91,7 +91,7 @@ namespace Model
 
     /**
      * <p>An <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, Tags, and nested
      * expressions. Currently the only dimensions supported is
      * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>An <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, Tags, and nested
      * expressions. Currently the only dimensions supported is
      * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>An <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, Tags, and nested
      * expressions. Currently the only dimensions supported is
      * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
@@ -121,7 +121,7 @@ namespace Model
 
     /**
      * <p>An <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, Tags, and nested
      * expressions. Currently the only dimensions supported is
      * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * <p>An <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, Tags, and nested
      * expressions. Currently the only dimensions supported is
      * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.

@@ -29,11 +29,14 @@ GetSavingsPlansPurchaseRecommendationRequest::GetSavingsPlansPurchaseRecommendat
     m_termInYearsHasBeenSet(false),
     m_paymentOption(PaymentOption::NOT_SET),
     m_paymentOptionHasBeenSet(false),
+    m_accountScope(AccountScope::NOT_SET),
+    m_accountScopeHasBeenSet(false),
     m_nextPageTokenHasBeenSet(false),
     m_pageSize(0),
     m_pageSizeHasBeenSet(false),
     m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false)
+    m_lookbackPeriodInDaysHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
@@ -56,6 +59,11 @@ Aws::String GetSavingsPlansPurchaseRecommendationRequest::SerializePayload() con
    payload.WithString("PaymentOption", PaymentOptionMapper::GetNameForPaymentOption(m_paymentOption));
   }
 
+  if(m_accountScopeHasBeenSet)
+  {
+   payload.WithString("AccountScope", AccountScopeMapper::GetNameForAccountScope(m_accountScope));
+  }
+
   if(m_nextPageTokenHasBeenSet)
   {
    payload.WithString("NextPageToken", m_nextPageToken);
@@ -71,6 +79,12 @@ Aws::String GetSavingsPlansPurchaseRecommendationRequest::SerializePayload() con
   if(m_lookbackPeriodInDaysHasBeenSet)
   {
    payload.WithString("LookbackPeriodInDays", LookbackPeriodInDaysMapper::GetNameForLookbackPeriodInDays(m_lookbackPeriodInDays));
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("Filter", m_filter.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

@@ -202,7 +202,7 @@ namespace Model
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code> </p> </li>
      * <li> <p> <code>SERVICE</code> </p> </li> <li> <p> <code>INSTANCE_FAMILY</code>
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
      * together.</p>
@@ -215,7 +215,7 @@ namespace Model
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code> </p> </li>
      * <li> <p> <code>SERVICE</code> </p> </li> <li> <p> <code>INSTANCE_FAMILY</code>
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
      * together.</p>
@@ -228,7 +228,7 @@ namespace Model
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code> </p> </li>
      * <li> <p> <code>SERVICE</code> </p> </li> <li> <p> <code>INSTANCE_FAMILY</code>
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
      * together.</p>
@@ -241,7 +241,7 @@ namespace Model
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code> </p> </li>
      * <li> <p> <code>SERVICE</code> </p> </li> <li> <p> <code>INSTANCE_FAMILY</code>
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
      * together.</p>
@@ -254,7 +254,7 @@ namespace Model
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code> </p> </li>
      * <li> <p> <code>SERVICE</code> </p> </li> <li> <p> <code>INSTANCE_FAMILY</code>
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
      * together.</p>
@@ -267,7 +267,7 @@ namespace Model
      * <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code> </p> </li>
      * <li> <p> <code>SERVICE</code> </p> </li> <li> <p> <code>INSTANCE_FAMILY</code>
      * </p> </li> </ul> <p> <code>GetSavingsPlansCoverage</code> uses the same <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
      * together.</p>

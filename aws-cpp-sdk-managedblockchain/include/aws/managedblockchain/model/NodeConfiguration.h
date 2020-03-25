@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/managedblockchain/model/NodeLogPublishingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -128,6 +129,37 @@ namespace Model
      */
     inline NodeConfiguration& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const NodeLogPublishingConfiguration& GetLogPublishingConfiguration() const{ return m_logPublishingConfiguration; }
+
+    /**
+     * <p/>
+     */
+    inline bool LogPublishingConfigurationHasBeenSet() const { return m_logPublishingConfigurationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetLogPublishingConfiguration(const NodeLogPublishingConfiguration& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetLogPublishingConfiguration(NodeLogPublishingConfiguration&& value) { m_logPublishingConfigurationHasBeenSet = true; m_logPublishingConfiguration = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline NodeConfiguration& WithLogPublishingConfiguration(const NodeLogPublishingConfiguration& value) { SetLogPublishingConfiguration(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline NodeConfiguration& WithLogPublishingConfiguration(NodeLogPublishingConfiguration&& value) { SetLogPublishingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceType;
@@ -135,6 +167,9 @@ namespace Model
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
+    NodeLogPublishingConfiguration m_logPublishingConfiguration;
+    bool m_logPublishingConfigurationHasBeenSet;
   };
 
 } // namespace Model

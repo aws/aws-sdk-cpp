@@ -29,6 +29,7 @@ namespace ElasticsearchServiceErrorMapper
 {
 
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledOperationException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int BASE_HASH = HashingUtils::HashString("BaseException");
@@ -43,6 +44,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INTERNAL), false);
+  }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::CONFLICT), false);
   }
   else if (hashCode == DISABLED_OPERATION_HASH)
   {

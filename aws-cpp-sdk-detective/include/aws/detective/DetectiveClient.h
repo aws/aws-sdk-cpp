@@ -78,6 +78,7 @@ namespace Model
         class ListInvitationsRequest;
         class ListMembersRequest;
         class RejectInvitationRequest;
+        class StartMonitoringMemberRequest;
 
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> AcceptInvitationOutcome;
         typedef Aws::Utils::Outcome<CreateGraphResult, Aws::Client::AWSError<DetectiveErrors>> CreateGraphOutcome;
@@ -90,6 +91,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListInvitationsResult, Aws::Client::AWSError<DetectiveErrors>> ListInvitationsOutcome;
         typedef Aws::Utils::Outcome<ListMembersResult, Aws::Client::AWSError<DetectiveErrors>> ListMembersOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> RejectInvitationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> StartMonitoringMemberOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
         typedef std::future<CreateGraphOutcome> CreateGraphOutcomeCallable;
@@ -102,6 +104,7 @@ namespace Model
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
         typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
         typedef std::future<RejectInvitationOutcome> RejectInvitationOutcomeCallable;
+        typedef std::future<StartMonitoringMemberOutcome> StartMonitoringMemberOutcomeCallable;
 } // namespace Model
 
   class DetectiveClient;
@@ -117,6 +120,7 @@ namespace Model
     typedef std::function<void(const DetectiveClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::RejectInvitationRequest&, const Model::RejectInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInvitationResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::StartMonitoringMemberRequest&, const Model::StartMonitoringMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMemberResponseReceivedHandler;
 
   /**
    * <important> <p>Amazon Detective is currently in preview. The Detective API can
@@ -214,9 +218,14 @@ namespace Model
         /**
          * <p>Amazon Detective is currently in preview.</p> <p>Creates a new behavior graph
          * for the calling account, and sets that account as the master account. This
-         * operation is called by the account that is enabling Detective.</p> <p>The
-         * operation also enables Detective for the calling account in the currently
-         * selected Region. It returns the ARN of the new behavior graph.</p> <p>
+         * operation is called by the account that is enabling Detective.</p> <p>Before you
+         * try to enable Detective, make sure that your account has been enrolled in Amazon
+         * GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot
+         * enable Detective. If you do meet the GuardDuty prerequisite, then when you make
+         * the request to enable Detective, it checks whether your data volume is within
+         * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
+         * </p> <p>The operation also enables Detective for the calling account in the
+         * currently selected Region. It returns the ARN of the new behavior graph.</p> <p>
          * <code>CreateGraph</code> triggers a process to create the corresponding data
          * tables for the new behavior graph.</p> <p>An account can only be the master
          * account for one behavior graph within a Region. If the same account calls
@@ -231,9 +240,14 @@ namespace Model
         /**
          * <p>Amazon Detective is currently in preview.</p> <p>Creates a new behavior graph
          * for the calling account, and sets that account as the master account. This
-         * operation is called by the account that is enabling Detective.</p> <p>The
-         * operation also enables Detective for the calling account in the currently
-         * selected Region. It returns the ARN of the new behavior graph.</p> <p>
+         * operation is called by the account that is enabling Detective.</p> <p>Before you
+         * try to enable Detective, make sure that your account has been enrolled in Amazon
+         * GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot
+         * enable Detective. If you do meet the GuardDuty prerequisite, then when you make
+         * the request to enable Detective, it checks whether your data volume is within
+         * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
+         * </p> <p>The operation also enables Detective for the calling account in the
+         * currently selected Region. It returns the ARN of the new behavior graph.</p> <p>
          * <code>CreateGraph</code> triggers a process to create the corresponding data
          * tables for the new behavior graph.</p> <p>An account can only be the master
          * account for one behavior graph within a Region. If the same account calls
@@ -250,9 +264,14 @@ namespace Model
         /**
          * <p>Amazon Detective is currently in preview.</p> <p>Creates a new behavior graph
          * for the calling account, and sets that account as the master account. This
-         * operation is called by the account that is enabling Detective.</p> <p>The
-         * operation also enables Detective for the calling account in the currently
-         * selected Region. It returns the ARN of the new behavior graph.</p> <p>
+         * operation is called by the account that is enabling Detective.</p> <p>Before you
+         * try to enable Detective, make sure that your account has been enrolled in Amazon
+         * GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot
+         * enable Detective. If you do meet the GuardDuty prerequisite, then when you make
+         * the request to enable Detective, it checks whether your data volume is within
+         * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
+         * </p> <p>The operation also enables Detective for the calling account in the
+         * currently selected Region. It returns the ARN of the new behavior graph.</p> <p>
          * <code>CreateGraph</code> triggers a process to create the corresponding data
          * tables for the new behavior graph.</p> <p>An account can only be the master
          * account for one behavior graph within a Region. If the same account calls
@@ -610,6 +629,46 @@ namespace Model
          */
         virtual void RejectInvitationAsync(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Sends a request to enable data ingest for a member account that has a status
+         * of <code>ACCEPTED_BUT_DISABLED</code>.</p> <p>For valid member accounts, the
+         * status is updated as follows.</p> <ul> <li> <p>If Detective enabled the member
+         * account, then the new status is <code>ENABLED</code>.</p> </li> <li> <p>If
+         * Detective cannot enable the member account, the status remains
+         * <code>ACCEPTED_BUT_DISABLED</code>. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMonitoringMemberOutcome StartMonitoringMember(const Model::StartMonitoringMemberRequest& request) const;
+
+        /**
+         * <p>Sends a request to enable data ingest for a member account that has a status
+         * of <code>ACCEPTED_BUT_DISABLED</code>.</p> <p>For valid member accounts, the
+         * status is updated as follows.</p> <ul> <li> <p>If Detective enabled the member
+         * account, then the new status is <code>ENABLED</code>.</p> </li> <li> <p>If
+         * Detective cannot enable the member account, the status remains
+         * <code>ACCEPTED_BUT_DISABLED</code>. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMonitoringMemberOutcomeCallable StartMonitoringMemberCallable(const Model::StartMonitoringMemberRequest& request) const;
+
+        /**
+         * <p>Sends a request to enable data ingest for a member account that has a status
+         * of <code>ACCEPTED_BUT_DISABLED</code>.</p> <p>For valid member accounts, the
+         * status is updated as follows.</p> <ul> <li> <p>If Detective enabled the member
+         * account, then the new status is <code>ENABLED</code>.</p> </li> <li> <p>If
+         * Detective cannot enable the member account, the status remains
+         * <code>ACCEPTED_BUT_DISABLED</code>. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartMonitoringMember">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMonitoringMemberAsync(const Model::StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -625,6 +684,7 @@ namespace Model
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectInvitationAsyncHelper(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMonitoringMemberAsyncHelper(const Model::StartMonitoringMemberRequest& request, const StartMonitoringMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

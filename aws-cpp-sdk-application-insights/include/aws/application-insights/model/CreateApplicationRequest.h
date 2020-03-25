@@ -113,6 +113,35 @@ namespace Model
 
 
     /**
+     * <p> Indicates whether Application Insights can listen to CloudWatch events for
+     * the application resources, such as <code>instance terminated</code>,
+     * <code>failed deployment</code>, and others. </p>
+     */
+    inline bool GetCWEMonitorEnabled() const{ return m_cWEMonitorEnabled; }
+
+    /**
+     * <p> Indicates whether Application Insights can listen to CloudWatch events for
+     * the application resources, such as <code>instance terminated</code>,
+     * <code>failed deployment</code>, and others. </p>
+     */
+    inline bool CWEMonitorEnabledHasBeenSet() const { return m_cWEMonitorEnabledHasBeenSet; }
+
+    /**
+     * <p> Indicates whether Application Insights can listen to CloudWatch events for
+     * the application resources, such as <code>instance terminated</code>,
+     * <code>failed deployment</code>, and others. </p>
+     */
+    inline void SetCWEMonitorEnabled(bool value) { m_cWEMonitorEnabledHasBeenSet = true; m_cWEMonitorEnabled = value; }
+
+    /**
+     * <p> Indicates whether Application Insights can listen to CloudWatch events for
+     * the application resources, such as <code>instance terminated</code>,
+     * <code>failed deployment</code>, and others. </p>
+     */
+    inline CreateApplicationRequest& WithCWEMonitorEnabled(bool value) { SetCWEMonitorEnabled(value); return *this;}
+
+
+    /**
      * <p> The SNS topic provided to Application Insights that is associated to the
      * created opsItem. Allows you to receive notifications for updates to the opsItem.
      * </p>
@@ -232,6 +261,9 @@ namespace Model
 
     bool m_opsCenterEnabled;
     bool m_opsCenterEnabledHasBeenSet;
+
+    bool m_cWEMonitorEnabled;
+    bool m_cWEMonitorEnabledHasBeenSet;
 
     Aws::String m_opsItemSNSTopicArn;
     bool m_opsItemSNSTopicArnHasBeenSet;

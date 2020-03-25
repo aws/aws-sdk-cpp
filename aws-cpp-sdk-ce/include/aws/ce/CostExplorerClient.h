@@ -171,7 +171,7 @@ namespace Model
    * following endpoint:</p> <ul> <li> <p>
    * <code>https://ce.us-east-1.amazonaws.com</code> </p> </li> </ul> <p>For
    * information about costs associated with the Cost Explorer API, see <a
-   * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management
+   * href="http://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management
    * Pricing</a>.</p>
    */
   class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient
@@ -207,7 +207,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
          * requested name and rules.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
@@ -219,7 +219,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
          * requested name and rules.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
@@ -233,7 +233,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
          * requested name and rules.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
@@ -247,7 +247,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
          * month going forward will no longer be categorized with this Cost
          * Category.</p><p><h3>See Also:</h3>   <a
@@ -260,7 +260,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
          * month going forward will no longer be categorized with this Cost
          * Category.</p><p><h3>See Also:</h3>   <a
@@ -275,7 +275,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
          * month going forward will no longer be categorized with this Cost
          * Category.</p><p><h3>See Also:</h3>   <a
@@ -290,7 +290,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
          * and effective dates of a Cost Category that's defined in the account.</p> <p>You
          * have the option to use <code>EffectiveOn</code> to return a Cost Category that
@@ -307,7 +307,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
          * and effective dates of a Cost Category that's defined in the account.</p> <p>You
          * have the option to use <code>EffectiveOn</code> to return a Cost Category that
@@ -326,7 +326,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
          * and effective dates of a Cost Category that's defined in the account.</p> <p>You
          * have the option to use <code>EffectiveOn</code> to return a Cost Category that
@@ -348,7 +348,7 @@ namespace Model
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
-         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
@@ -363,7 +363,7 @@ namespace Model
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
-         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
@@ -380,7 +380,7 @@ namespace Model
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
-         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
@@ -781,7 +781,7 @@ namespace Model
 
         /**
          * <p>Retrieves your request parameters, Savings Plan Recommendations Summary and
-         * Details.</p><p><h3>See Also:</h3>   <a
+         * Details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">AWS
          * API Reference</a></p>
          */
@@ -789,7 +789,7 @@ namespace Model
 
         /**
          * <p>Retrieves your request parameters, Savings Plan Recommendations Summary and
-         * Details.</p><p><h3>See Also:</h3>   <a
+         * Details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">AWS
          * API Reference</a></p>
          *
@@ -799,7 +799,7 @@ namespace Model
 
         /**
          * <p>Retrieves your request parameters, Savings Plan Recommendations Summary and
-         * Details.</p><p><h3>See Also:</h3>   <a
+         * Details. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlansPurchaseRecommendation">AWS
          * API Reference</a></p>
          *
@@ -959,7 +959,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
          * of all Cost Categories defined in the account. You have the option to use
          * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
@@ -976,7 +976,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
          * of all Cost Categories defined in the account. You have the option to use
          * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
@@ -995,7 +995,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
          * of all Cost Categories defined in the account. You have the option to use
          * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
@@ -1014,7 +1014,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
          * made to the Cost Category rules will be used to categorize the current month’s
          * expenses and future expenses. This won’t change categorization for the previous
@@ -1028,7 +1028,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
          * made to the Cost Category rules will be used to categorize the current month’s
          * expenses and future expenses. This won’t change categorization for the previous
@@ -1044,7 +1044,7 @@ namespace Model
          * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
          * Management and is subject to change. Your use of Cost Categories is subject to
          * the Beta Service Participation terms of the <a
-         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
          * made to the Cost Category rules will be used to categorize the current month’s
          * expenses and future expenses. This won’t change categorization for the previous

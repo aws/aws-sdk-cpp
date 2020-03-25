@@ -34,6 +34,7 @@ Member::Member() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_frameworkAttributesHasBeenSet(false),
+    m_logPublishingConfigurationHasBeenSet(false),
     m_status(MemberStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -46,6 +47,7 @@ Member::Member(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_frameworkAttributesHasBeenSet(false),
+    m_logPublishingConfigurationHasBeenSet(false),
     m_status(MemberStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false)
@@ -88,6 +90,13 @@ Member& Member::operator =(JsonView jsonValue)
     m_frameworkAttributes = jsonValue.GetObject("FrameworkAttributes");
 
     m_frameworkAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LogPublishingConfiguration"))
+  {
+    m_logPublishingConfiguration = jsonValue.GetObject("LogPublishingConfiguration");
+
+    m_logPublishingConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -138,6 +147,12 @@ JsonValue Member::Jsonize() const
   if(m_frameworkAttributesHasBeenSet)
   {
    payload.WithObject("FrameworkAttributes", m_frameworkAttributes.Jsonize());
+
+  }
+
+  if(m_logPublishingConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogPublishingConfiguration", m_logPublishingConfiguration.Jsonize());
 
   }
 

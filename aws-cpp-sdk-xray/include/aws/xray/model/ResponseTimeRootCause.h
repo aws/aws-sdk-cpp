@@ -97,10 +97,34 @@ namespace Model
      */
     inline ResponseTimeRootCause& AddServices(ResponseTimeRootCauseService&& value) { m_servicesHasBeenSet = true; m_services.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A flag that denotes that the root cause impacts the trace client.</p>
+     */
+    inline bool GetClientImpacting() const{ return m_clientImpacting; }
+
+    /**
+     * <p>A flag that denotes that the root cause impacts the trace client.</p>
+     */
+    inline bool ClientImpactingHasBeenSet() const { return m_clientImpactingHasBeenSet; }
+
+    /**
+     * <p>A flag that denotes that the root cause impacts the trace client.</p>
+     */
+    inline void SetClientImpacting(bool value) { m_clientImpactingHasBeenSet = true; m_clientImpacting = value; }
+
+    /**
+     * <p>A flag that denotes that the root cause impacts the trace client.</p>
+     */
+    inline ResponseTimeRootCause& WithClientImpacting(bool value) { SetClientImpacting(value); return *this;}
+
   private:
 
     Aws::Vector<ResponseTimeRootCauseService> m_services;
     bool m_servicesHasBeenSet;
+
+    bool m_clientImpacting;
+    bool m_clientImpactingHasBeenSet;
   };
 
 } // namespace Model

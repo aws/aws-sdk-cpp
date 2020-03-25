@@ -30,13 +30,15 @@ namespace Model
 
 NodeConfiguration::NodeConfiguration() : 
     m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+    m_availabilityZoneHasBeenSet(false),
+    m_logPublishingConfigurationHasBeenSet(false)
 {
 }
 
 NodeConfiguration::NodeConfiguration(JsonView jsonValue) : 
     m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
+    m_availabilityZoneHasBeenSet(false),
+    m_logPublishingConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ NodeConfiguration& NodeConfiguration::operator =(JsonView jsonValue)
     m_availabilityZoneHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogPublishingConfiguration"))
+  {
+    m_logPublishingConfiguration = jsonValue.GetObject("LogPublishingConfiguration");
+
+    m_logPublishingConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue NodeConfiguration::Jsonize() const
   if(m_availabilityZoneHasBeenSet)
   {
    payload.WithString("AvailabilityZone", m_availabilityZone);
+
+  }
+
+  if(m_logPublishingConfigurationHasBeenSet)
+  {
+   payload.WithObject("LogPublishingConfiguration", m_logPublishingConfiguration.Jsonize());
 
   }
 

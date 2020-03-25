@@ -38,6 +38,8 @@
 #include <aws/managedblockchain/model/ListProposalVotesResult.h>
 #include <aws/managedblockchain/model/ListProposalsResult.h>
 #include <aws/managedblockchain/model/RejectInvitationResult.h>
+#include <aws/managedblockchain/model/UpdateMemberResult.h>
+#include <aws/managedblockchain/model/UpdateNodeResult.h>
 #include <aws/managedblockchain/model/VoteOnProposalResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -95,6 +97,8 @@ namespace Model
         class ListProposalVotesRequest;
         class ListProposalsRequest;
         class RejectInvitationRequest;
+        class UpdateMemberRequest;
+        class UpdateNodeRequest;
         class VoteOnProposalRequest;
 
         typedef Aws::Utils::Outcome<CreateMemberResult, Aws::Client::AWSError<ManagedBlockchainErrors>> CreateMemberOutcome;
@@ -114,6 +118,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListProposalVotesResult, Aws::Client::AWSError<ManagedBlockchainErrors>> ListProposalVotesOutcome;
         typedef Aws::Utils::Outcome<ListProposalsResult, Aws::Client::AWSError<ManagedBlockchainErrors>> ListProposalsOutcome;
         typedef Aws::Utils::Outcome<RejectInvitationResult, Aws::Client::AWSError<ManagedBlockchainErrors>> RejectInvitationOutcome;
+        typedef Aws::Utils::Outcome<UpdateMemberResult, Aws::Client::AWSError<ManagedBlockchainErrors>> UpdateMemberOutcome;
+        typedef Aws::Utils::Outcome<UpdateNodeResult, Aws::Client::AWSError<ManagedBlockchainErrors>> UpdateNodeOutcome;
         typedef Aws::Utils::Outcome<VoteOnProposalResult, Aws::Client::AWSError<ManagedBlockchainErrors>> VoteOnProposalOutcome;
 
         typedef std::future<CreateMemberOutcome> CreateMemberOutcomeCallable;
@@ -133,6 +139,8 @@ namespace Model
         typedef std::future<ListProposalVotesOutcome> ListProposalVotesOutcomeCallable;
         typedef std::future<ListProposalsOutcome> ListProposalsOutcomeCallable;
         typedef std::future<RejectInvitationOutcome> RejectInvitationOutcomeCallable;
+        typedef std::future<UpdateMemberOutcome> UpdateMemberOutcomeCallable;
+        typedef std::future<UpdateNodeOutcome> UpdateNodeOutcomeCallable;
         typedef std::future<VoteOnProposalOutcome> VoteOnProposalOutcomeCallable;
 } // namespace Model
 
@@ -155,6 +163,8 @@ namespace Model
     typedef std::function<void(const ManagedBlockchainClient*, const Model::ListProposalVotesRequest&, const Model::ListProposalVotesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProposalVotesResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::ListProposalsRequest&, const Model::ListProposalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProposalsResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::RejectInvitationRequest&, const Model::RejectInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInvitationResponseReceivedHandler;
+    typedef std::function<void(const ManagedBlockchainClient*, const Model::UpdateMemberRequest&, const Model::UpdateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMemberResponseReceivedHandler;
+    typedef std::function<void(const ManagedBlockchainClient*, const Model::UpdateNodeRequest&, const Model::UpdateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodeResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::VoteOnProposalRequest&, const Model::VoteOnProposalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VoteOnProposalResponseReceivedHandler;
 
   /**
@@ -680,6 +690,62 @@ namespace Model
         virtual void RejectInvitationAsync(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a member configuration with new parameters.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMemberOutcome UpdateMember(const Model::UpdateMemberRequest& request) const;
+
+        /**
+         * <p>Updates a member configuration with new parameters.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMemberOutcomeCallable UpdateMemberCallable(const Model::UpdateMemberRequest& request) const;
+
+        /**
+         * <p>Updates a member configuration with new parameters.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateMember">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMemberAsync(const Model::UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a node configuration with new parameters.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNodeOutcome UpdateNode(const Model::UpdateNodeRequest& request) const;
+
+        /**
+         * <p>Updates a node configuration with new parameters.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNodeOutcomeCallable UpdateNodeCallable(const Model::UpdateNodeRequest& request) const;
+
+        /**
+         * <p>Updates a node configuration with new parameters.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UpdateNode">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNodeAsync(const Model::UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member.
          * The member to vote as, specified by <code>VoterMemberId</code>, must be in the
          * same AWS account as the principal that calls the action.</p><p><h3>See
@@ -734,6 +800,8 @@ namespace Model
         void ListProposalVotesAsyncHelper(const Model::ListProposalVotesRequest& request, const ListProposalVotesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProposalsAsyncHelper(const Model::ListProposalsRequest& request, const ListProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectInvitationAsyncHelper(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMemberAsyncHelper(const Model::UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNodeAsyncHelper(const Model::UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VoteOnProposalAsyncHelper(const Model::VoteOnProposalRequest& request, const VoteOnProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
