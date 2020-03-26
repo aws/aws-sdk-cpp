@@ -34,7 +34,8 @@ namespace Model
     LessThanOrEqualTo,
     Contains,
     Exists,
-    NotExists
+    NotExists,
+    In
   };
 
 namespace OperatorMapper

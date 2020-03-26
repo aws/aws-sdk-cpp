@@ -15,7 +15,6 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
-#include <aws/sagemaker/model/HumanLoopRequestSource.h>
 #include <aws/sagemaker/model/HumanLoopActivationConditionsConfig.h>
 #include <utility>
 
@@ -48,37 +47,6 @@ namespace Model
     HumanLoopActivationConfig(Aws::Utils::Json::JsonView jsonValue);
     HumanLoopActivationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Container for configuring the source of human task requests.</p>
-     */
-    inline const HumanLoopRequestSource& GetHumanLoopRequestSource() const{ return m_humanLoopRequestSource; }
-
-    /**
-     * <p>Container for configuring the source of human task requests.</p>
-     */
-    inline bool HumanLoopRequestSourceHasBeenSet() const { return m_humanLoopRequestSourceHasBeenSet; }
-
-    /**
-     * <p>Container for configuring the source of human task requests.</p>
-     */
-    inline void SetHumanLoopRequestSource(const HumanLoopRequestSource& value) { m_humanLoopRequestSourceHasBeenSet = true; m_humanLoopRequestSource = value; }
-
-    /**
-     * <p>Container for configuring the source of human task requests.</p>
-     */
-    inline void SetHumanLoopRequestSource(HumanLoopRequestSource&& value) { m_humanLoopRequestSourceHasBeenSet = true; m_humanLoopRequestSource = std::move(value); }
-
-    /**
-     * <p>Container for configuring the source of human task requests.</p>
-     */
-    inline HumanLoopActivationConfig& WithHumanLoopRequestSource(const HumanLoopRequestSource& value) { SetHumanLoopRequestSource(value); return *this;}
-
-    /**
-     * <p>Container for configuring the source of human task requests.</p>
-     */
-    inline HumanLoopActivationConfig& WithHumanLoopRequestSource(HumanLoopRequestSource&& value) { SetHumanLoopRequestSource(std::move(value)); return *this;}
 
 
     /**
@@ -118,9 +86,6 @@ namespace Model
     inline HumanLoopActivationConfig& WithHumanLoopActivationConditionsConfig(HumanLoopActivationConditionsConfig&& value) { SetHumanLoopActivationConditionsConfig(std::move(value)); return *this;}
 
   private:
-
-    HumanLoopRequestSource m_humanLoopRequestSource;
-    bool m_humanLoopRequestSourceHasBeenSet;
 
     HumanLoopActivationConditionsConfig m_humanLoopActivationConditionsConfig;
     bool m_humanLoopActivationConditionsConfigHasBeenSet;

@@ -31,14 +31,18 @@ namespace Model
 Standard::Standard() : 
     m_standardsArnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_enabledByDefault(false),
+    m_enabledByDefaultHasBeenSet(false)
 {
 }
 
 Standard::Standard(JsonView jsonValue) : 
     m_standardsArnHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_enabledByDefault(false),
+    m_enabledByDefaultHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +70,13 @@ Standard& Standard::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnabledByDefault"))
+  {
+    m_enabledByDefault = jsonValue.GetBool("EnabledByDefault");
+
+    m_enabledByDefaultHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +99,12 @@ JsonValue Standard::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_enabledByDefaultHasBeenSet)
+  {
+   payload.WithBool("EnabledByDefault", m_enabledByDefault);
 
   }
 

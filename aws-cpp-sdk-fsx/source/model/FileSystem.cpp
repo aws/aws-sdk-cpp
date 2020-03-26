@@ -39,6 +39,8 @@ FileSystem::FileSystem() :
     m_failureDetailsHasBeenSet(false),
     m_storageCapacity(0),
     m_storageCapacityHasBeenSet(false),
+    m_storageType(StorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_networkInterfaceIdsHasBeenSet(false),
@@ -62,6 +64,8 @@ FileSystem::FileSystem(JsonView jsonValue) :
     m_failureDetailsHasBeenSet(false),
     m_storageCapacity(0),
     m_storageCapacityHasBeenSet(false),
+    m_storageType(StorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_networkInterfaceIdsHasBeenSet(false),
@@ -124,6 +128,13 @@ FileSystem& FileSystem::operator =(JsonView jsonValue)
     m_storageCapacity = jsonValue.GetInteger("StorageCapacity");
 
     m_storageCapacityHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StorageType"))
+  {
+    m_storageType = StorageTypeMapper::GetStorageTypeForName(jsonValue.GetString("StorageType"));
+
+    m_storageTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VpcId"))
@@ -242,6 +253,11 @@ JsonValue FileSystem::Jsonize() const
   {
    payload.WithInteger("StorageCapacity", m_storageCapacity);
 
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("StorageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
   }
 
   if(m_vpcIdHasBeenSet)

@@ -126,7 +126,9 @@ namespace Model
      * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
      * job, including the search strategy, the objective metric used to evaluate
      * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a> </p>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline const HyperParameterTuningJobConfig& GetHyperParameterTuningJobConfig() const{ return m_hyperParameterTuningJobConfig; }
 
@@ -134,7 +136,9 @@ namespace Model
      * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
      * job, including the search strategy, the objective metric used to evaluate
      * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a> </p>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline bool HyperParameterTuningJobConfigHasBeenSet() const { return m_hyperParameterTuningJobConfigHasBeenSet; }
 
@@ -142,7 +146,9 @@ namespace Model
      * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
      * job, including the search strategy, the objective metric used to evaluate
      * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a> </p>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline void SetHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { m_hyperParameterTuningJobConfigHasBeenSet = true; m_hyperParameterTuningJobConfig = value; }
 
@@ -150,7 +156,9 @@ namespace Model
      * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
      * job, including the search strategy, the objective metric used to evaluate
      * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a> </p>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline void SetHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { m_hyperParameterTuningJobConfigHasBeenSet = true; m_hyperParameterTuningJobConfig = std::move(value); }
 
@@ -158,7 +166,9 @@ namespace Model
      * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
      * job, including the search strategy, the objective metric used to evaluate
      * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a> </p>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { SetHyperParameterTuningJobConfig(value); return *this;}
 
@@ -166,7 +176,9 @@ namespace Model
      * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
      * job, including the search strategy, the objective metric used to evaluate
      * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a>automatic-model-tuning</a> </p>
+     * tuning job. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { SetHyperParameterTuningJobConfig(std::move(value)); return *this;}
 

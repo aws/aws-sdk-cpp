@@ -48,32 +48,38 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 location of the data.</p>
+     * <p>The Amazon S3 location of the input data.</p> <note> <p>The input data must
+     * be in CSV format and contain at least 1000 rows.</p> </note>
      */
     inline const AutoMLS3DataSource& GetS3DataSource() const{ return m_s3DataSource; }
 
     /**
-     * <p>The Amazon S3 location of the data.</p>
+     * <p>The Amazon S3 location of the input data.</p> <note> <p>The input data must
+     * be in CSV format and contain at least 1000 rows.</p> </note>
      */
     inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 location of the data.</p>
+     * <p>The Amazon S3 location of the input data.</p> <note> <p>The input data must
+     * be in CSV format and contain at least 1000 rows.</p> </note>
      */
     inline void SetS3DataSource(const AutoMLS3DataSource& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = value; }
 
     /**
-     * <p>The Amazon S3 location of the data.</p>
+     * <p>The Amazon S3 location of the input data.</p> <note> <p>The input data must
+     * be in CSV format and contain at least 1000 rows.</p> </note>
      */
     inline void SetS3DataSource(AutoMLS3DataSource&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::move(value); }
 
     /**
-     * <p>The Amazon S3 location of the data.</p>
+     * <p>The Amazon S3 location of the input data.</p> <note> <p>The input data must
+     * be in CSV format and contain at least 1000 rows.</p> </note>
      */
     inline AutoMLDataSource& WithS3DataSource(const AutoMLS3DataSource& value) { SetS3DataSource(value); return *this;}
 
     /**
-     * <p>The Amazon S3 location of the data.</p>
+     * <p>The Amazon S3 location of the input data.</p> <note> <p>The input data must
+     * be in CSV format and contain at least 1000 rows.</p> </note>
      */
     inline AutoMLDataSource& WithS3DataSource(AutoMLS3DataSource&& value) { SetS3DataSource(std::move(value)); return *this;}
 

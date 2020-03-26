@@ -29,7 +29,9 @@ CreateFileSystemFromBackupRequest::CreateFileSystemFromBackupRequest() :
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_windowsConfigurationHasBeenSet(false)
+    m_windowsConfigurationHasBeenSet(false),
+    m_storageType(StorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,11 @@ Aws::String CreateFileSystemFromBackupRequest::SerializePayload() const
   {
    payload.WithObject("WindowsConfiguration", m_windowsConfiguration.Jsonize());
 
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("StorageType", StorageTypeMapper::GetNameForStorageType(m_storageType));
   }
 
   return payload.View().WriteReadable();

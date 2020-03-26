@@ -121,85 +121,103 @@ namespace Model
 
     /**
      * <p>Specifies the file system deployment type, valid values are the
-     * following:</p> <ul> <li> <p>MULTI_AZ_1 - Deploys a high availability file system
-     * that is configured for Multi-AZ redundancy to tolerate temporary Availability
-     * Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in AWS
-     * Regions that have a minimum of three Availability Zones.</p> </li> <li>
-     * <p>SINGLE_AZ_1 - (Default) Choose to deploy a file system that is configured for
-     * single AZ redundancy.</p> </li> </ul> <p>To learn more about high availability
-     * Multi-AZ file systems, see <a
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
+     * file system in AWS Regions that have a minimum of three Availability Zones. Also
+     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
+     * (Default) Choose to deploy a file system that is configured for single AZ
+     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
+     * Single AZ file system. Specifies a file system that is configured for single AZ
+     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * High Availability for Amazon FSx for Windows File Server</a>.</p>
+     * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
     inline const WindowsDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
      * <p>Specifies the file system deployment type, valid values are the
-     * following:</p> <ul> <li> <p>MULTI_AZ_1 - Deploys a high availability file system
-     * that is configured for Multi-AZ redundancy to tolerate temporary Availability
-     * Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in AWS
-     * Regions that have a minimum of three Availability Zones.</p> </li> <li>
-     * <p>SINGLE_AZ_1 - (Default) Choose to deploy a file system that is configured for
-     * single AZ redundancy.</p> </li> </ul> <p>To learn more about high availability
-     * Multi-AZ file systems, see <a
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
+     * file system in AWS Regions that have a minimum of three Availability Zones. Also
+     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
+     * (Default) Choose to deploy a file system that is configured for single AZ
+     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
+     * Single AZ file system. Specifies a file system that is configured for single AZ
+     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * High Availability for Amazon FSx for Windows File Server</a>.</p>
+     * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
 
     /**
      * <p>Specifies the file system deployment type, valid values are the
-     * following:</p> <ul> <li> <p>MULTI_AZ_1 - Deploys a high availability file system
-     * that is configured for Multi-AZ redundancy to tolerate temporary Availability
-     * Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in AWS
-     * Regions that have a minimum of three Availability Zones.</p> </li> <li>
-     * <p>SINGLE_AZ_1 - (Default) Choose to deploy a file system that is configured for
-     * single AZ redundancy.</p> </li> </ul> <p>To learn more about high availability
-     * Multi-AZ file systems, see <a
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
+     * file system in AWS Regions that have a minimum of three Availability Zones. Also
+     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
+     * (Default) Choose to deploy a file system that is configured for single AZ
+     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
+     * Single AZ file system. Specifies a file system that is configured for single AZ
+     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * High Availability for Amazon FSx for Windows File Server</a>.</p>
+     * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
     inline void SetDeploymentType(const WindowsDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
      * <p>Specifies the file system deployment type, valid values are the
-     * following:</p> <ul> <li> <p>MULTI_AZ_1 - Deploys a high availability file system
-     * that is configured for Multi-AZ redundancy to tolerate temporary Availability
-     * Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in AWS
-     * Regions that have a minimum of three Availability Zones.</p> </li> <li>
-     * <p>SINGLE_AZ_1 - (Default) Choose to deploy a file system that is configured for
-     * single AZ redundancy.</p> </li> </ul> <p>To learn more about high availability
-     * Multi-AZ file systems, see <a
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
+     * file system in AWS Regions that have a minimum of three Availability Zones. Also
+     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
+     * (Default) Choose to deploy a file system that is configured for single AZ
+     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
+     * Single AZ file system. Specifies a file system that is configured for single AZ
+     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * High Availability for Amazon FSx for Windows File Server</a>.</p>
+     * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
     inline void SetDeploymentType(WindowsDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
      * <p>Specifies the file system deployment type, valid values are the
-     * following:</p> <ul> <li> <p>MULTI_AZ_1 - Deploys a high availability file system
-     * that is configured for Multi-AZ redundancy to tolerate temporary Availability
-     * Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in AWS
-     * Regions that have a minimum of three Availability Zones.</p> </li> <li>
-     * <p>SINGLE_AZ_1 - (Default) Choose to deploy a file system that is configured for
-     * single AZ redundancy.</p> </li> </ul> <p>To learn more about high availability
-     * Multi-AZ file systems, see <a
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
+     * file system in AWS Regions that have a minimum of three Availability Zones. Also
+     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
+     * (Default) Choose to deploy a file system that is configured for single AZ
+     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
+     * Single AZ file system. Specifies a file system that is configured for single AZ
+     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * High Availability for Amazon FSx for Windows File Server</a>.</p>
+     * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithDeploymentType(const WindowsDeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
      * <p>Specifies the file system deployment type, valid values are the
-     * following:</p> <ul> <li> <p>MULTI_AZ_1 - Deploys a high availability file system
-     * that is configured for Multi-AZ redundancy to tolerate temporary Availability
-     * Zone (AZ) unavailability. You can only deploy a Multi-AZ file system in AWS
-     * Regions that have a minimum of three Availability Zones.</p> </li> <li>
-     * <p>SINGLE_AZ_1 - (Default) Choose to deploy a file system that is configured for
-     * single AZ redundancy.</p> </li> </ul> <p>To learn more about high availability
-     * Multi-AZ file systems, see <a
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Deploys a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability. You can only deploy a Multi-AZ
+     * file system in AWS Regions that have a minimum of three Availability Zones. Also
+     * supports HDD storage type</p> </li> <li> <p> <code>SINGLE_AZ_1</code> -
+     * (Default) Choose to deploy a file system that is configured for single AZ
+     * redundancy.</p> </li> <li> <p> <code>SINGLE_AZ_2</code> - The latest generation
+     * Single AZ file system. Specifies a file system that is configured for single AZ
+     * redundancy and supports HDD storage type.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html">
-     * High Availability for Amazon FSx for Windows File Server</a>.</p>
+     * Availability and Durability: Single-AZ and Multi-AZ File Systems</a>.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithDeploymentType(WindowsDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
 

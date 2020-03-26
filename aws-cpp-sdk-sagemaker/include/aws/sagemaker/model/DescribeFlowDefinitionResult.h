@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/FlowDefinitionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/HumanLoopRequestSource.h>
 #include <aws/sagemaker/model/HumanLoopActivationConfig.h>
 #include <aws/sagemaker/model/HumanLoopConfig.h>
 #include <aws/sagemaker/model/FlowDefinitionOutputConfig.h>
@@ -169,6 +170,22 @@ namespace Model
      * <p>The timestamp when the flow definition was created.</p>
      */
     inline DescribeFlowDefinitionResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    
+    inline const HumanLoopRequestSource& GetHumanLoopRequestSource() const{ return m_humanLoopRequestSource; }
+
+    
+    inline void SetHumanLoopRequestSource(const HumanLoopRequestSource& value) { m_humanLoopRequestSource = value; }
+
+    
+    inline void SetHumanLoopRequestSource(HumanLoopRequestSource&& value) { m_humanLoopRequestSource = std::move(value); }
+
+    
+    inline DescribeFlowDefinitionResult& WithHumanLoopRequestSource(const HumanLoopRequestSource& value) { SetHumanLoopRequestSource(value); return *this;}
+
+    
+    inline DescribeFlowDefinitionResult& WithHumanLoopRequestSource(HumanLoopRequestSource&& value) { SetHumanLoopRequestSource(std::move(value)); return *this;}
 
 
     /**
@@ -346,6 +363,8 @@ namespace Model
     FlowDefinitionStatus m_flowDefinitionStatus;
 
     Aws::Utils::DateTime m_creationTime;
+
+    HumanLoopRequestSource m_humanLoopRequestSource;
 
     HumanLoopActivationConfig m_humanLoopActivationConfig;
 

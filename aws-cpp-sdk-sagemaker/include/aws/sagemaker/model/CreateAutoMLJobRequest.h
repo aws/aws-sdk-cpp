@@ -101,42 +101,50 @@ namespace Model
 
 
     /**
-     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.</p>
+     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Minimum of 1000 rows.</p>
      */
     inline const Aws::Vector<AutoMLChannel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
-     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.</p>
+     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Minimum of 1000 rows.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
-     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.</p>
+     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Minimum of 1000 rows.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<AutoMLChannel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
-     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.</p>
+     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Minimum of 1000 rows.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<AutoMLChannel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
     /**
-     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.</p>
+     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Minimum of 1000 rows.</p>
      */
     inline CreateAutoMLJobRequest& WithInputDataConfig(const Aws::Vector<AutoMLChannel>& value) { SetInputDataConfig(value); return *this;}
 
     /**
-     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.</p>
+     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Minimum of 1000 rows.</p>
      */
     inline CreateAutoMLJobRequest& WithInputDataConfig(Aws::Vector<AutoMLChannel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
     /**
-     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.</p>
+     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Minimum of 1000 rows.</p>
      */
     inline CreateAutoMLJobRequest& AddInputDataConfig(const AutoMLChannel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
     /**
-     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.</p>
+     * <p>Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Minimum of 1000 rows.</p>
      */
     inline CreateAutoMLJobRequest& AddInputDataConfig(AutoMLChannel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 

@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 EnableSecurityHubRequest::EnableSecurityHubRequest() : 
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableDefaultStandards(false),
+    m_enableDefaultStandardsHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,12 @@ Aws::String EnableSecurityHubRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_enableDefaultStandardsHasBeenSet)
+  {
+   payload.WithBool("EnableDefaultStandards", m_enableDefaultStandards);
 
   }
 

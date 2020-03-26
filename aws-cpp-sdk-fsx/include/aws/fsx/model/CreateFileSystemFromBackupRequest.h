@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/CreateFileSystemWindowsConfiguration.h>
+#include <aws/fsx/model/StorageType.h>
 #include <aws/fsx/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -135,65 +136,110 @@ namespace Model
 
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of IDs for the subnets that the file system will be accessible from.
-     * Currently, you can specify only one subnet. The file server is also launched in
-     * that subnet's Availability Zone.</p>
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the
+     * standby file server. You specify one of these subnets as the preferred subnet
+     * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment
+     * types and Lustre file systems, provide exactly one subnet ID. The file server is
+     * launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -201,63 +247,72 @@ namespace Model
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of IDs for the security groups that apply to the specified network
      * interfaces created for file system access. These security groups apply to all
-     * network interfaces. This value isn't returned in later describe requests.</p>
+     * network interfaces. This value isn't returned in later DescribeFileSystem
+     * requests.</p>
      */
     inline CreateFileSystemFromBackupRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -349,6 +404,103 @@ namespace Model
      */
     inline CreateFileSystemFromBackupRequest& WithWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets the storage type for the Windows file system you're creating from a
+     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
+     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * have different minimum storage capacity requirements. A restored file system's
+     * storage capacity is tied to the file system that was backed up. You can create a
+     * file system that uses HDD storage from a backup of a file system that used SSD
+     * storage only if the original SSD file system had a storage capacity of at least
+     * 2000 GiB. </p> </note>
+     */
+    inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Sets the storage type for the Windows file system you're creating from a
+     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
+     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * have different minimum storage capacity requirements. A restored file system's
+     * storage capacity is tied to the file system that was backed up. You can create a
+     * file system that uses HDD storage from a backup of a file system that used SSD
+     * storage only if the original SSD file system had a storage capacity of at least
+     * 2000 GiB. </p> </note>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>Sets the storage type for the Windows file system you're creating from a
+     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
+     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * have different minimum storage capacity requirements. A restored file system's
+     * storage capacity is tied to the file system that was backed up. You can create a
+     * file system that uses HDD storage from a backup of a file system that used SSD
+     * storage only if the original SSD file system had a storage capacity of at least
+     * 2000 GiB. </p> </note>
+     */
+    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>Sets the storage type for the Windows file system you're creating from a
+     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
+     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * have different minimum storage capacity requirements. A restored file system's
+     * storage capacity is tied to the file system that was backed up. You can create a
+     * file system that uses HDD storage from a backup of a file system that used SSD
+     * storage only if the original SSD file system had a storage capacity of at least
+     * 2000 GiB. </p> </note>
+     */
+    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>Sets the storage type for the Windows file system you're creating from a
+     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
+     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * have different minimum storage capacity requirements. A restored file system's
+     * storage capacity is tied to the file system that was backed up. You can create a
+     * file system that uses HDD storage from a backup of a file system that used SSD
+     * storage only if the original SSD file system had a storage capacity of at least
+     * 2000 GiB. </p> </note>
+     */
+    inline CreateFileSystemFromBackupRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>Sets the storage type for the Windows file system you're creating from a
+     * backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all
+     * Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard
+     * disk drive storage. Supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types
+     * have different minimum storage capacity requirements. A restored file system's
+     * storage capacity is tied to the file system that was backed up. You can create a
+     * file system that uses HDD storage from a backup of a file system that used SSD
+     * storage only if the original SSD file system had a storage capacity of at least
+     * 2000 GiB. </p> </note>
+     */
+    inline CreateFileSystemFromBackupRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_backupId;
@@ -368,6 +520,9 @@ namespace Model
 
     CreateFileSystemWindowsConfiguration m_windowsConfiguration;
     bool m_windowsConfigurationHasBeenSet;
+
+    StorageType m_storageType;
+    bool m_storageTypeHasBeenSet;
   };
 
 } // namespace Model

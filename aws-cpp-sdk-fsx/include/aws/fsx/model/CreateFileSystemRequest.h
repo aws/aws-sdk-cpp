@@ -18,6 +18,7 @@
 #include <aws/fsx/FSxRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/FileSystemType.h>
+#include <aws/fsx/model/StorageType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/CreateFileSystemWindowsConfiguration.h>
 #include <aws/fsx/model/CreateFileSystemLustreConfiguration.h>
@@ -149,44 +150,135 @@ namespace Model
 
 
     /**
-     * <p>The storage capacity of the file system being created.</p> <p>For Windows
-     * file systems, valid values are 32 GiB - 65,536 GiB.</p> <p>For
-     * <code>SCRATCH_1</code> Lustre file systems, valid values are 1,200, 2,400,
-     * 3,600, then continuing in increments of 3600 GiB. For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> file systems, valid values are 1200, 2400, then
-     * continuing in increments of 2400 GiB.</p>
+     * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
+     * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
+     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
+     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
+     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
+     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
+     * TiB).</p> </li> </ul>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The storage capacity of the file system being created.</p> <p>For Windows
-     * file systems, valid values are 32 GiB - 65,536 GiB.</p> <p>For
-     * <code>SCRATCH_1</code> Lustre file systems, valid values are 1,200, 2,400,
-     * 3,600, then continuing in increments of 3600 GiB. For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> file systems, valid values are 1200, 2400, then
-     * continuing in increments of 2400 GiB.</p>
+     * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
+     * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
+     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
+     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
+     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
+     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
+     * TiB).</p> </li> </ul>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
-     * <p>The storage capacity of the file system being created.</p> <p>For Windows
-     * file systems, valid values are 32 GiB - 65,536 GiB.</p> <p>For
-     * <code>SCRATCH_1</code> Lustre file systems, valid values are 1,200, 2,400,
-     * 3,600, then continuing in increments of 3600 GiB. For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> file systems, valid values are 1200, 2400, then
-     * continuing in increments of 2400 GiB.</p>
+     * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
+     * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
+     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
+     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
+     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
+     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
+     * TiB).</p> </li> </ul>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
-     * <p>The storage capacity of the file system being created.</p> <p>For Windows
-     * file systems, valid values are 32 GiB - 65,536 GiB.</p> <p>For
-     * <code>SCRATCH_1</code> Lustre file systems, valid values are 1,200, 2,400,
-     * 3,600, then continuing in increments of 3600 GiB. For <code>SCRATCH_2</code> and
-     * <code>PERSISTENT_1</code> file systems, valid values are 1200, 2400, then
-     * continuing in increments of 2400 GiB.</p>
+     * <p>Sets the storage capacity of the file system that you're creating.</p> <p>For
+     * Lustre file systems:</p> <ul> <li> <p>For <code>SCRATCH_2</code> and
+     * <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.</p> </li> <li> <p>For <code>SCRATCH_1</code> deployment
+     * type, valid values are 1.2, 2.4, and increments of 3.6 TiB.</p> </li> </ul>
+     * <p>For Windows file systems:</p> <ul> <li> <p>If <code>StorageType=SSD</code>,
+     * valid values are 32 GiB - 65,536 GiB (64 TiB).</p> </li> <li> <p>If
+     * <code>StorageType=HDD</code>, valid values are 2000 GiB - 65,536 GiB (64
+     * TiB).</p> </li> </ul>
      */
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
+
+
+    /**
+     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
+     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
+     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
+     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     */
+    inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
+     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
+     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
+     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
+     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
+     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
+     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     */
+    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
+     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
+     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
+     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     */
+    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
+     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
+     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
+     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     */
+    inline CreateFileSystemRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>Sets the storage type for the Amazon FSx for Windows file system you're
+     * creating. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li>
+     * <p>Set to <code>SSD</code> to use solid state drive storage. SSD is supported on
+     * all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use
+     * hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
+     * <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul>
+     * <p> Default value is <code>SSD</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-tco.html#saz-maz-storage-type">
+     * Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>. </p>
+     */
+    inline CreateFileSystemRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
 
 
     /**
@@ -195,9 +287,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
@@ -207,9 +299,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
@@ -219,9 +311,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
@@ -231,9 +323,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
@@ -243,9 +335,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
@@ -255,9 +347,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
@@ -267,9 +359,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -279,9 +371,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
@@ -291,9 +383,9 @@ namespace Model
      * exactly two subnet IDs, one for the preferred file server and one for the
      * standby file server. You specify one of these subnets as the preferred subnet
      * using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
-     * <p>For Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre
-     * file systems, provide exactly one subnet ID. The file server is launched in that
-     * subnet's Availability Zone.</p>
+     * <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system
+     * deployment types and Lustre file systems, provide exactly one subnet ID. The
+     * file server is launched in that subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -437,44 +529,32 @@ namespace Model
 
 
     /**
-     * <p>The Microsoft Windows configuration for the file system being created. This
-     * value is required if <code>FileSystemType</code> is set to
-     * <code>WINDOWS</code>.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. </p>
      */
     inline const CreateFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system being created. This
-     * value is required if <code>FileSystemType</code> is set to
-     * <code>WINDOWS</code>.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. </p>
      */
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system being created. This
-     * value is required if <code>FileSystemType</code> is set to
-     * <code>WINDOWS</code>.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. </p>
      */
     inline void SetWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system being created. This
-     * value is required if <code>FileSystemType</code> is set to
-     * <code>WINDOWS</code>.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. </p>
      */
     inline void SetWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
 
     /**
-     * <p>The Microsoft Windows configuration for the file system being created. This
-     * value is required if <code>FileSystemType</code> is set to
-     * <code>WINDOWS</code>.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. </p>
      */
     inline CreateFileSystemRequest& WithWindowsConfiguration(const CreateFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
 
     /**
-     * <p>The Microsoft Windows configuration for the file system being created. This
-     * value is required if <code>FileSystemType</code> is set to
-     * <code>WINDOWS</code>.</p>
+     * <p>The Microsoft Windows configuration for the file system being created. </p>
      */
     inline CreateFileSystemRequest& WithWindowsConfiguration(CreateFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
 
@@ -507,6 +587,9 @@ namespace Model
 
     int m_storageCapacity;
     bool m_storageCapacityHasBeenSet;
+
+    StorageType m_storageType;
+    bool m_storageTypeHasBeenSet;
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;

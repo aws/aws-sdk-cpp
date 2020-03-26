@@ -128,50 +128,66 @@ namespace Model
 
 
     /**
-     * <p>The attribute used as the aggregator to group related findings for the
-     * insight.</p>
+     * <p>The attribute used to group the findings for the insight. The grouping
+     * attribute identifies the type of item that the insight applies to. For example,
+     * if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.</p>
      */
     inline const Aws::String& GetGroupByAttribute() const{ return m_groupByAttribute; }
 
     /**
-     * <p>The attribute used as the aggregator to group related findings for the
-     * insight.</p>
+     * <p>The attribute used to group the findings for the insight. The grouping
+     * attribute identifies the type of item that the insight applies to. For example,
+     * if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.</p>
      */
     inline bool GroupByAttributeHasBeenSet() const { return m_groupByAttributeHasBeenSet; }
 
     /**
-     * <p>The attribute used as the aggregator to group related findings for the
-     * insight.</p>
+     * <p>The attribute used to group the findings for the insight. The grouping
+     * attribute identifies the type of item that the insight applies to. For example,
+     * if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.</p>
      */
     inline void SetGroupByAttribute(const Aws::String& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = value; }
 
     /**
-     * <p>The attribute used as the aggregator to group related findings for the
-     * insight.</p>
+     * <p>The attribute used to group the findings for the insight. The grouping
+     * attribute identifies the type of item that the insight applies to. For example,
+     * if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.</p>
      */
     inline void SetGroupByAttribute(Aws::String&& value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute = std::move(value); }
 
     /**
-     * <p>The attribute used as the aggregator to group related findings for the
-     * insight.</p>
+     * <p>The attribute used to group the findings for the insight. The grouping
+     * attribute identifies the type of item that the insight applies to. For example,
+     * if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.</p>
      */
     inline void SetGroupByAttribute(const char* value) { m_groupByAttributeHasBeenSet = true; m_groupByAttribute.assign(value); }
 
     /**
-     * <p>The attribute used as the aggregator to group related findings for the
-     * insight.</p>
+     * <p>The attribute used to group the findings for the insight. The grouping
+     * attribute identifies the type of item that the insight applies to. For example,
+     * if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.</p>
      */
     inline CreateInsightRequest& WithGroupByAttribute(const Aws::String& value) { SetGroupByAttribute(value); return *this;}
 
     /**
-     * <p>The attribute used as the aggregator to group related findings for the
-     * insight.</p>
+     * <p>The attribute used to group the findings for the insight. The grouping
+     * attribute identifies the type of item that the insight applies to. For example,
+     * if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.</p>
      */
     inline CreateInsightRequest& WithGroupByAttribute(Aws::String&& value) { SetGroupByAttribute(std::move(value)); return *this;}
 
     /**
-     * <p>The attribute used as the aggregator to group related findings for the
-     * insight.</p>
+     * <p>The attribute used to group the findings for the insight. The grouping
+     * attribute identifies the type of item that the insight applies to. For example,
+     * if an insight is grouped by resource identifier, then the insight produces a
+     * list of resource identifiers.</p>
      */
     inline CreateInsightRequest& WithGroupByAttribute(const char* value) { SetGroupByAttribute(value); return *this;}
 

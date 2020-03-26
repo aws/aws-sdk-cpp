@@ -47,6 +47,7 @@ namespace Model
     sbe_c,
     qcs605,
     qcs603,
+    sitara_am57x,
     amba_cv22
   };
 

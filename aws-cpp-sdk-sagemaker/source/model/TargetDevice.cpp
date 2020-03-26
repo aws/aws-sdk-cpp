@@ -51,6 +51,7 @@ namespace Aws
         static const int sbe_c_HASH = HashingUtils::HashString("sbe_c");
         static const int qcs605_HASH = HashingUtils::HashString("qcs605");
         static const int qcs603_HASH = HashingUtils::HashString("qcs603");
+        static const int sitara_am57x_HASH = HashingUtils::HashString("sitara_am57x");
         static const int amba_cv22_HASH = HashingUtils::HashString("amba_cv22");
 
 
@@ -141,6 +142,10 @@ namespace Aws
           {
             return TargetDevice::qcs603;
           }
+          else if (hashCode == sitara_am57x_HASH)
+          {
+            return TargetDevice::sitara_am57x;
+          }
           else if (hashCode == amba_cv22_HASH)
           {
             return TargetDevice::amba_cv22;
@@ -201,6 +206,8 @@ namespace Aws
             return "qcs605";
           case TargetDevice::qcs603:
             return "qcs603";
+          case TargetDevice::sitara_am57x:
+            return "sitara_am57x";
           case TargetDevice::amba_cv22:
             return "amba_cv22";
           default:

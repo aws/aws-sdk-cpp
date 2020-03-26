@@ -29,13 +29,11 @@ namespace Model
 {
 
 HumanLoopActivationConfig::HumanLoopActivationConfig() : 
-    m_humanLoopRequestSourceHasBeenSet(false),
     m_humanLoopActivationConditionsConfigHasBeenSet(false)
 {
 }
 
 HumanLoopActivationConfig::HumanLoopActivationConfig(JsonView jsonValue) : 
-    m_humanLoopRequestSourceHasBeenSet(false),
     m_humanLoopActivationConditionsConfigHasBeenSet(false)
 {
   *this = jsonValue;
@@ -43,13 +41,6 @@ HumanLoopActivationConfig::HumanLoopActivationConfig(JsonView jsonValue) :
 
 HumanLoopActivationConfig& HumanLoopActivationConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("HumanLoopRequestSource"))
-  {
-    m_humanLoopRequestSource = jsonValue.GetObject("HumanLoopRequestSource");
-
-    m_humanLoopRequestSourceHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("HumanLoopActivationConditionsConfig"))
   {
     m_humanLoopActivationConditionsConfig = jsonValue.GetObject("HumanLoopActivationConditionsConfig");
@@ -63,12 +54,6 @@ HumanLoopActivationConfig& HumanLoopActivationConfig::operator =(JsonView jsonVa
 JsonValue HumanLoopActivationConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_humanLoopRequestSourceHasBeenSet)
-  {
-   payload.WithObject("HumanLoopRequestSource", m_humanLoopRequestSource.Jsonize());
-
-  }
 
   if(m_humanLoopActivationConditionsConfigHasBeenSet)
   {

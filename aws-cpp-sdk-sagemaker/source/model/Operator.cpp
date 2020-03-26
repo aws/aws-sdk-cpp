@@ -39,6 +39,7 @@ namespace Aws
         static const int Contains_HASH = HashingUtils::HashString("Contains");
         static const int Exists_HASH = HashingUtils::HashString("Exists");
         static const int NotExists_HASH = HashingUtils::HashString("NotExists");
+        static const int In_HASH = HashingUtils::HashString("In");
 
 
         Operator GetOperatorForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return Operator::NotExists;
           }
+          else if (hashCode == In_HASH)
+          {
+            return Operator::In;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +117,8 @@ namespace Aws
             return "Exists";
           case Operator::NotExists:
             return "NotExists";
+          case Operator::In:
+            return "In";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

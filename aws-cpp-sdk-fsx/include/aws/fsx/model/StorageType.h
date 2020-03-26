@@ -14,30 +14,28 @@
 */
 
 #pragma once
-#include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace SageMaker
+namespace FSx
 {
 namespace Model
 {
-  enum class FlowDefinitionStatus
+  enum class StorageType
   {
     NOT_SET,
-    Initializing,
-    Active,
-    Failed,
-    Deleting
+    SSD,
+    HDD
   };
 
-namespace FlowDefinitionStatusMapper
+namespace StorageTypeMapper
 {
-AWS_SAGEMAKER_API FlowDefinitionStatus GetFlowDefinitionStatusForName(const Aws::String& name);
+AWS_FSX_API StorageType GetStorageTypeForName(const Aws::String& name);
 
-AWS_SAGEMAKER_API Aws::String GetNameForFlowDefinitionStatus(FlowDefinitionStatus value);
-} // namespace FlowDefinitionStatusMapper
+AWS_FSX_API Aws::String GetNameForStorageType(StorageType value);
+} // namespace StorageTypeMapper
 } // namespace Model
-} // namespace SageMaker
+} // namespace FSx
 } // namespace Aws

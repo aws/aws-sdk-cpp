@@ -1086,14 +1086,16 @@ namespace Model
         /**
          * <p>Enables Security Hub for your account in the current Region or the Region you
          * specify in the request.</p> <p>When you enable Security Hub, you grant to
-         * Security Hub the permissions necessary to gather findings from AWS Config,
-         * Amazon GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>When you use the
+         * Security Hub the permissions necessary to gather findings from other services
+         * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
          * automatically enable the CIS AWS Foundations standard. You do not enable the
-         * Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a
-         * standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To
-         * disable a standard, use the <code> <a>BatchDisableStandards</a> </code>
-         * operation.</p> <p>To learn more, see <a
+         * Payment Card Industry Data Security Standard (PCI DSS) standard. To not enable
+         * the CIS AWS Foundations standard, set <code>EnableDefaultStandards</code> to
+         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
+         * use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
+         * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.</p>
+         * <p>To learn more, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
          * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1105,14 +1107,16 @@ namespace Model
         /**
          * <p>Enables Security Hub for your account in the current Region or the Region you
          * specify in the request.</p> <p>When you enable Security Hub, you grant to
-         * Security Hub the permissions necessary to gather findings from AWS Config,
-         * Amazon GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>When you use the
+         * Security Hub the permissions necessary to gather findings from other services
+         * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
          * automatically enable the CIS AWS Foundations standard. You do not enable the
-         * Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a
-         * standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To
-         * disable a standard, use the <code> <a>BatchDisableStandards</a> </code>
-         * operation.</p> <p>To learn more, see <a
+         * Payment Card Industry Data Security Standard (PCI DSS) standard. To not enable
+         * the CIS AWS Foundations standard, set <code>EnableDefaultStandards</code> to
+         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
+         * use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
+         * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.</p>
+         * <p>To learn more, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
          * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1126,14 +1130,16 @@ namespace Model
         /**
          * <p>Enables Security Hub for your account in the current Region or the Region you
          * specify in the request.</p> <p>When you enable Security Hub, you grant to
-         * Security Hub the permissions necessary to gather findings from AWS Config,
-         * Amazon GuardDuty, Amazon Inspector, and Amazon Macie.</p> <p>When you use the
+         * Security Hub the permissions necessary to gather findings from other services
+         * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
          * automatically enable the CIS AWS Foundations standard. You do not enable the
-         * Payment Card Industry Data Security Standard (PCI DSS) standard. To enable a
-         * standard, use the <code> <a>BatchEnableStandards</a> </code> operation. To
-         * disable a standard, use the <code> <a>BatchDisableStandards</a> </code>
-         * operation.</p> <p>To learn more, see <a
+         * Payment Card Industry Data Security Standard (PCI DSS) standard. To not enable
+         * the CIS AWS Foundations standard, set <code>EnableDefaultStandards</code> to
+         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
+         * use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
+         * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.</p>
+         * <p>To learn more, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
          * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The SHA 256 hash that you used to create the request signature.</p>
+     * <p>The SHA-256 digest of the contents of the template.</p>
      */
     inline const Aws::String& GetContentSha256() const{ return m_contentSha256; }
 
     /**
-     * <p>The SHA 256 hash that you used to create the request signature.</p>
+     * <p>The SHA-256 digest of the contents of the template.</p>
      */
     inline bool ContentSha256HasBeenSet() const { return m_contentSha256HasBeenSet; }
 
     /**
-     * <p>The SHA 256 hash that you used to create the request signature.</p>
+     * <p>The SHA-256 digest of the contents of the template.</p>
      */
     inline void SetContentSha256(const Aws::String& value) { m_contentSha256HasBeenSet = true; m_contentSha256 = value; }
 
     /**
-     * <p>The SHA 256 hash that you used to create the request signature.</p>
+     * <p>The SHA-256 digest of the contents of the template.</p>
      */
     inline void SetContentSha256(Aws::String&& value) { m_contentSha256HasBeenSet = true; m_contentSha256 = std::move(value); }
 
     /**
-     * <p>The SHA 256 hash that you used to create the request signature.</p>
+     * <p>The SHA-256 digest of the contents of the template.</p>
      */
     inline void SetContentSha256(const char* value) { m_contentSha256HasBeenSet = true; m_contentSha256.assign(value); }
 
     /**
-     * <p>The SHA 256 hash that you used to create the request signature.</p>
+     * <p>The SHA-256 digest of the contents of the template.</p>
      */
     inline UiTemplateInfo& WithContentSha256(const Aws::String& value) { SetContentSha256(value); return *this;}
 
     /**
-     * <p>The SHA 256 hash that you used to create the request signature.</p>
+     * <p>The SHA-256 digest of the contents of the template.</p>
      */
     inline UiTemplateInfo& WithContentSha256(Aws::String&& value) { SetContentSha256(std::move(value)); return *this;}
 
     /**
-     * <p>The SHA 256 hash that you used to create the request signature.</p>
+     * <p>The SHA-256 digest of the contents of the template.</p>
      */
     inline UiTemplateInfo& WithContentSha256(const char* value) { SetContentSha256(value); return *this;}
 

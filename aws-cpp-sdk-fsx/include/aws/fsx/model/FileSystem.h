@@ -20,6 +20,7 @@
 #include <aws/fsx/model/FileSystemType.h>
 #include <aws/fsx/model/FileSystemLifecycle.h>
 #include <aws/fsx/model/FileSystemFailureDetails.h>
+#include <aws/fsx/model/StorageType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/WindowsFileSystemConfiguration.h>
 #include <aws/fsx/model/LustreFileSystemConfiguration.h>
@@ -359,6 +360,55 @@ namespace Model
 
 
     /**
+     * <p>The storage type of the file system. Valid values are <code>SSD</code> and
+     * <code>HDD</code>. If set to <code>SSD</code>, the file system uses solid state
+     * drive storage. If set to <code>HDD</code>, the file system uses hard disk drive
+     * storage. </p>
+     */
+    inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type of the file system. Valid values are <code>SSD</code> and
+     * <code>HDD</code>. If set to <code>SSD</code>, the file system uses solid state
+     * drive storage. If set to <code>HDD</code>, the file system uses hard disk drive
+     * storage. </p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type of the file system. Valid values are <code>SSD</code> and
+     * <code>HDD</code>. If set to <code>SSD</code>, the file system uses solid state
+     * drive storage. If set to <code>HDD</code>, the file system uses hard disk drive
+     * storage. </p>
+     */
+    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type of the file system. Valid values are <code>SSD</code> and
+     * <code>HDD</code>. If set to <code>SSD</code>, the file system uses solid state
+     * drive storage. If set to <code>HDD</code>, the file system uses hard disk drive
+     * storage. </p>
+     */
+    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type of the file system. Valid values are <code>SSD</code> and
+     * <code>HDD</code>. If set to <code>SSD</code>, the file system uses solid state
+     * drive storage. If set to <code>HDD</code>, the file system uses hard disk drive
+     * storage. </p>
+     */
+    inline FileSystem& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type of the file system. Valid values are <code>SSD</code> and
+     * <code>HDD</code>. If set to <code>SSD</code>, the file system uses solid state
+     * drive storage. If set to <code>HDD</code>, the file system uses hard disk drive
+     * storage. </p>
+     */
+    inline FileSystem& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ID of the primary VPC for the file system.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
@@ -400,65 +450,119 @@ namespace Model
 
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID of the subnet to contain the endpoint for the file system. One and
-     * only one is supported. The file system is launched in the Availability Zone
-     * associated with this subnet.</p>
+     * <p>Specifies the IDs of the subnets that the file system is accessible from. For
+     * Windows <code>MULTI_AZ_1</code> file system deployment type, there are two
+     * subnet IDs, one for the preferred file server and one for the standby file
+     * server. The preferred file server subnet identified in the
+     * <code>PreferredSubnetID</code> property. All other file systems have only one
+     * subnet ID.</p> <p>For Lustre file systems, and Single-AZ Windows file systems,
+     * this is the ID of the subnet that contains the endpoint for the file system. For
+     * <code>MULTI_AZ_1</code> Windows file systems, the endpoint for the file system
+     * is available in the <code>PreferredSubnetID</code>.</p>
      */
     inline FileSystem& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -879,6 +983,9 @@ namespace Model
 
     int m_storageCapacity;
     bool m_storageCapacityHasBeenSet;
+
+    StorageType m_storageType;
+    bool m_storageTypeHasBeenSet;
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;

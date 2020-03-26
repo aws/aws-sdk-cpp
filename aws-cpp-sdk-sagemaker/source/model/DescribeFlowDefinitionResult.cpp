@@ -64,6 +64,12 @@ DescribeFlowDefinitionResult& DescribeFlowDefinitionResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("HumanLoopRequestSource"))
+  {
+    m_humanLoopRequestSource = jsonValue.GetObject("HumanLoopRequestSource");
+
+  }
+
   if(jsonValue.ValueExists("HumanLoopActivationConfig"))
   {
     m_humanLoopActivationConfig = jsonValue.GetObject("HumanLoopActivationConfig");

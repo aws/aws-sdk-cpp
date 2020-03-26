@@ -918,14 +918,28 @@ namespace Model
         virtual void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AutoPilot job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an AutoPilot job.</p> <p>After you run an AutoPilot job, you can find
+         * the best performing model by calling , and then deploy that model by following
+         * the steps described in <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step
+         * 6.1: Deploy the Model to Amazon SageMaker Hosting Services</a>.</p> <p>For
+         * information about how to use AutoPilot, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use
+         * AutoPilot to Automate Model Development</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAutoMLJobOutcome CreateAutoMLJob(const Model::CreateAutoMLJobRequest& request) const;
 
         /**
-         * <p>Creates an AutoPilot job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an AutoPilot job.</p> <p>After you run an AutoPilot job, you can find
+         * the best performing model by calling , and then deploy that model by following
+         * the steps described in <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step
+         * 6.1: Deploy the Model to Amazon SageMaker Hosting Services</a>.</p> <p>For
+         * information about how to use AutoPilot, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use
+         * AutoPilot to Automate Model Development</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJob">AWS
          * API Reference</a></p>
          *
@@ -934,7 +948,14 @@ namespace Model
         virtual Model::CreateAutoMLJobOutcomeCallable CreateAutoMLJobCallable(const Model::CreateAutoMLJobRequest& request) const;
 
         /**
-         * <p>Creates an AutoPilot job.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an AutoPilot job.</p> <p>After you run an AutoPilot job, you can find
+         * the best performing model by calling , and then deploy that model by following
+         * the steps described in <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step
+         * 6.1: Deploy the Model to Amazon SageMaker Hosting Services</a>.</p> <p>For
+         * information about how to use AutoPilot, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use
+         * AutoPilot to Automate Model Development</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJob">AWS
          * API Reference</a></p>
          *
@@ -1119,11 +1140,10 @@ namespace Model
         /**
          * <p>Creates an endpoint using the endpoint configuration specified in the
          * request. Amazon SageMaker uses the endpoint to provision resources and deploy
-         * models. You create the endpoint configuration with the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-         * API. </p> <p> Use this API to deploy models using Amazon SageMaker hosting
-         * services. </p> <p>For an example that calls this method when deploying a model
-         * to Amazon SageMaker hosting services, see <a
+         * models. You create the endpoint configuration with the
+         * <a>CreateEndpointConfig</a> API. </p> <p> Use this API to deploy models using
+         * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
+         * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
          * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
@@ -1136,13 +1156,13 @@ namespace Model
          * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
          * sets the status to <code>InService</code>. Amazon SageMaker can then process
-         * incoming requests for inferences. To check the status of an endpoint, use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
-         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
-         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
-         * user account by default. If you previously deactivated AWS STS for a region, you
-         * need to reactivate AWS STS for that region. For more information, see <a
+         * incoming requests for inferences. To check the status of an endpoint, use the
+         * <a>DescribeEndpoint</a> API.</p> <p>If any of the models hosted at this endpoint
+         * get model data from an Amazon S3 location, Amazon SageMaker uses AWS Security
+         * Token Service to download model artifacts from the S3 path you provided. AWS STS
+         * is activated in your IAM user account by default. If you previously deactivated
+         * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1154,11 +1174,10 @@ namespace Model
         /**
          * <p>Creates an endpoint using the endpoint configuration specified in the
          * request. Amazon SageMaker uses the endpoint to provision resources and deploy
-         * models. You create the endpoint configuration with the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-         * API. </p> <p> Use this API to deploy models using Amazon SageMaker hosting
-         * services. </p> <p>For an example that calls this method when deploying a model
-         * to Amazon SageMaker hosting services, see <a
+         * models. You create the endpoint configuration with the
+         * <a>CreateEndpointConfig</a> API. </p> <p> Use this API to deploy models using
+         * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
+         * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
          * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
@@ -1171,13 +1190,13 @@ namespace Model
          * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
          * sets the status to <code>InService</code>. Amazon SageMaker can then process
-         * incoming requests for inferences. To check the status of an endpoint, use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
-         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
-         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
-         * user account by default. If you previously deactivated AWS STS for a region, you
-         * need to reactivate AWS STS for that region. For more information, see <a
+         * incoming requests for inferences. To check the status of an endpoint, use the
+         * <a>DescribeEndpoint</a> API.</p> <p>If any of the models hosted at this endpoint
+         * get model data from an Amazon S3 location, Amazon SageMaker uses AWS Security
+         * Token Service to download model artifacts from the S3 path you provided. AWS STS
+         * is activated in your IAM user account by default. If you previously deactivated
+         * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1191,11 +1210,10 @@ namespace Model
         /**
          * <p>Creates an endpoint using the endpoint configuration specified in the
          * request. Amazon SageMaker uses the endpoint to provision resources and deploy
-         * models. You create the endpoint configuration with the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
-         * API. </p> <p> Use this API to deploy models using Amazon SageMaker hosting
-         * services. </p> <p>For an example that calls this method when deploying a model
-         * to Amazon SageMaker hosting services, see <a
+         * models. You create the endpoint configuration with the
+         * <a>CreateEndpointConfig</a> API. </p> <p> Use this API to deploy models using
+         * Amazon SageMaker hosting services. </p> <p>For an example that calls this method
+         * when deploying a model to Amazon SageMaker hosting services, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy
          * the Model to Amazon SageMaker Hosting Services (AWS SDK for Python (Boto
          * 3)).</a> </p> <note> <p> You must not delete an <code>EndpointConfig</code> that
@@ -1208,13 +1226,13 @@ namespace Model
          * model(s) on them. </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Creating</code>. After it creates the endpoint, it
          * sets the status to <code>InService</code>. Amazon SageMaker can then process
-         * incoming requests for inferences. To check the status of an endpoint, use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API.</p> <p>If any of the models hosted at this endpoint get model data from an
-         * Amazon S3 location, Amazon SageMaker uses AWS Security Token Service to download
-         * model artifacts from the S3 path you provided. AWS STS is activated in your IAM
-         * user account by default. If you previously deactivated AWS STS for a region, you
-         * need to reactivate AWS STS for that region. For more information, see <a
+         * incoming requests for inferences. To check the status of an endpoint, use the
+         * <a>DescribeEndpoint</a> API.</p> <p>If any of the models hosted at this endpoint
+         * get model data from an Amazon S3 location, Amazon SageMaker uses AWS Security
+         * Token Service to download model artifacts from the S3 path you provided. AWS STS
+         * is activated in your IAM user account by default. If you previously deactivated
+         * AWS STS for a region, you need to reactivate AWS STS for that region. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1229,8 +1247,7 @@ namespace Model
          * <p>Creates an endpoint configuration that Amazon SageMaker hosting services uses
          * to deploy models. In the configuration, you identify one or more models, created
          * using the <code>CreateModel</code> API, to deploy and the resources that you
-         * want Amazon SageMaker to provision. Then you call the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+         * want Amazon SageMaker to provision. Then you call the <a>CreateEndpoint</a>
          * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
          * services to deploy models into production. </p> </note> <p>In the request, you
          * define a <code>ProductionVariant</code>, for each model that you want to deploy.
@@ -1255,8 +1272,7 @@ namespace Model
          * <p>Creates an endpoint configuration that Amazon SageMaker hosting services uses
          * to deploy models. In the configuration, you identify one or more models, created
          * using the <code>CreateModel</code> API, to deploy and the resources that you
-         * want Amazon SageMaker to provision. Then you call the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+         * want Amazon SageMaker to provision. Then you call the <a>CreateEndpoint</a>
          * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
          * services to deploy models into production. </p> </note> <p>In the request, you
          * define a <code>ProductionVariant</code>, for each model that you want to deploy.
@@ -1283,8 +1299,7 @@ namespace Model
          * <p>Creates an endpoint configuration that Amazon SageMaker hosting services uses
          * to deploy models. In the configuration, you identify one or more models, created
          * using the <code>CreateModel</code> API, to deploy and the resources that you
-         * want Amazon SageMaker to provision. Then you call the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+         * want Amazon SageMaker to provision. Then you call the <a>CreateEndpoint</a>
          * API.</p> <note> <p> Use this API if you want to use Amazon SageMaker hosting
          * services to deploy models into production. </p> </note> <p>In the request, you
          * define a <code>ProductionVariant</code>, for each model that you want to deploy.
@@ -1969,9 +1984,9 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
-         * get from a call to is valid only for 5 minutes. If you try to use the URL after
-         * the 5-minute limit expires, you are directed to the AWS console sign-in
-         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
+         * minutes. If you try to use the URL after the 5-minute limit expires, you are
+         * directed to the AWS console sign-in page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          */
@@ -1992,9 +2007,9 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
-         * get from a call to is valid only for 5 minutes. If you try to use the URL after
-         * the 5-minute limit expires, you are directed to the AWS console sign-in
-         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
+         * minutes. If you try to use the URL after the 5-minute limit expires, you are
+         * directed to the AWS console sign-in page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          *
@@ -2017,9 +2032,9 @@ namespace Model
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
-         * get from a call to is valid only for 5 minutes. If you try to use the URL after
-         * the 5-minute limit expires, you are directed to the AWS console sign-in
-         * page.</p> </note><p><h3>See Also:</h3>   <a
+         * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
+         * minutes. If you try to use the URL after the 5-minute limit expires, you are
+         * directed to the AWS console sign-in page.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          *
@@ -2698,10 +2713,10 @@ namespace Model
 
         /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
-         * entry that was created in Amazon SageMaker when you called the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-         * API. It does not delete model artifacts, inference code, or the IAM role that
-         * you specified when creating the model. </p><p><h3>See Also:</h3>   <a
+         * entry that was created in Amazon SageMaker when you called the
+         * <a>CreateModel</a> API. It does not delete model artifacts, inference code, or
+         * the IAM role that you specified when creating the model. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">AWS
          * API Reference</a></p>
          */
@@ -2709,10 +2724,10 @@ namespace Model
 
         /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
-         * entry that was created in Amazon SageMaker when you called the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-         * API. It does not delete model artifacts, inference code, or the IAM role that
-         * you specified when creating the model. </p><p><h3>See Also:</h3>   <a
+         * entry that was created in Amazon SageMaker when you called the
+         * <a>CreateModel</a> API. It does not delete model artifacts, inference code, or
+         * the IAM role that you specified when creating the model. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">AWS
          * API Reference</a></p>
          *
@@ -2722,10 +2737,10 @@ namespace Model
 
         /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
-         * entry that was created in Amazon SageMaker when you called the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-         * API. It does not delete model artifacts, inference code, or the IAM role that
-         * you specified when creating the model. </p><p><h3>See Also:</h3>   <a
+         * entry that was created in Amazon SageMaker when you called the
+         * <a>CreateModel</a> API. It does not delete model artifacts, inference code, or
+         * the IAM role that you specified when creating the model. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModel">AWS
          * API Reference</a></p>
          *
@@ -4303,18 +4318,16 @@ namespace Model
         virtual void ListModelPackagesAsync(const Model::ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists models created with the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists models created with the <a>CreateModel</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">AWS
          * API Reference</a></p>
          */
         virtual Model::ListModelsOutcome ListModels(const Model::ListModelsRequest& request) const;
 
         /**
-         * <p>Lists models created with the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists models created with the <a>CreateModel</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">AWS
          * API Reference</a></p>
          *
@@ -4323,9 +4336,8 @@ namespace Model
         virtual Model::ListModelsOutcomeCallable ListModelsCallable(const Model::ListModelsRequest& request) const;
 
         /**
-         * <p>Lists models created with the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
-         * API.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists models created with the <a>CreateModel</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModels">AWS
          * API Reference</a></p>
          *
@@ -5263,13 +5275,11 @@ namespace Model
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Updating</code>. After updating the endpoint, it
          * sets the status to <code>InService</code>. To check the status of an endpoint,
-         * use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p> <note> <p>You must not delete an <code>EndpointConfig</code> in use by
-         * an endpoint that is live or while the <code>UpdateEndpoint</code> or
-         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
-         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * use the <a>DescribeEndpoint</a> API. </p> <note> <p>You must not delete an
+         * <code>EndpointConfig</code> in use by an endpoint that is live or while the
+         * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
+         * performed on the endpoint. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -5282,13 +5292,11 @@ namespace Model
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Updating</code>. After updating the endpoint, it
          * sets the status to <code>InService</code>. To check the status of an endpoint,
-         * use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p> <note> <p>You must not delete an <code>EndpointConfig</code> in use by
-         * an endpoint that is live or while the <code>UpdateEndpoint</code> or
-         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
-         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * use the <a>DescribeEndpoint</a> API. </p> <note> <p>You must not delete an
+         * <code>EndpointConfig</code> in use by an endpoint that is live or while the
+         * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
+         * performed on the endpoint. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -5303,13 +5311,11 @@ namespace Model
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets
          * the endpoint status to <code>Updating</code>. After updating the endpoint, it
          * sets the status to <code>InService</code>. To check the status of an endpoint,
-         * use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p> <note> <p>You must not delete an <code>EndpointConfig</code> in use by
-         * an endpoint that is live or while the <code>UpdateEndpoint</code> or
-         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
-         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * use the <a>DescribeEndpoint</a> API. </p> <note> <p>You must not delete an
+         * <code>EndpointConfig</code> in use by an endpoint that is live or while the
+         * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
+         * performed on the endpoint. To update an endpoint, you must create a new
+         * <code>EndpointConfig</code>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -5322,9 +5328,8 @@ namespace Model
          * endpoint, or capacity of one variant associated with an existing endpoint. When
          * it receives the request, Amazon SageMaker sets the endpoint status to
          * <code>Updating</code>. After updating the endpoint, it sets the status to
-         * <code>InService</code>. To check the status of an endpoint, use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p><p><h3>See Also:</h3>   <a
+         * <code>InService</code>. To check the status of an endpoint, use the
+         * <a>DescribeEndpoint</a> API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">AWS
          * API Reference</a></p>
          */
@@ -5335,9 +5340,8 @@ namespace Model
          * endpoint, or capacity of one variant associated with an existing endpoint. When
          * it receives the request, Amazon SageMaker sets the endpoint status to
          * <code>Updating</code>. After updating the endpoint, it sets the status to
-         * <code>InService</code>. To check the status of an endpoint, use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p><p><h3>See Also:</h3>   <a
+         * <code>InService</code>. To check the status of an endpoint, use the
+         * <a>DescribeEndpoint</a> API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">AWS
          * API Reference</a></p>
          *
@@ -5350,9 +5354,8 @@ namespace Model
          * endpoint, or capacity of one variant associated with an existing endpoint. When
          * it receives the request, Amazon SageMaker sets the endpoint status to
          * <code>Updating</code>. After updating the endpoint, it sets the status to
-         * <code>InService</code>. To check the status of an endpoint, use the <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_DescribeEndpoint.html">DescribeEndpoint</a>
-         * API. </p><p><h3>See Also:</h3>   <a
+         * <code>InService</code>. To check the status of an endpoint, use the
+         * <a>DescribeEndpoint</a> API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">AWS
          * API Reference</a></p>
          *

@@ -108,10 +108,50 @@ namespace Model
      */
     inline EnableSecurityHubRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Whether to enable the security standards that Security Hub has designated as
+     * automatically enabled. If you do not provide a value for
+     * <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not
+     * enable the automatically enabled standards, set
+     * <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+     */
+    inline bool GetEnableDefaultStandards() const{ return m_enableDefaultStandards; }
+
+    /**
+     * <p>Whether to enable the security standards that Security Hub has designated as
+     * automatically enabled. If you do not provide a value for
+     * <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not
+     * enable the automatically enabled standards, set
+     * <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+     */
+    inline bool EnableDefaultStandardsHasBeenSet() const { return m_enableDefaultStandardsHasBeenSet; }
+
+    /**
+     * <p>Whether to enable the security standards that Security Hub has designated as
+     * automatically enabled. If you do not provide a value for
+     * <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not
+     * enable the automatically enabled standards, set
+     * <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+     */
+    inline void SetEnableDefaultStandards(bool value) { m_enableDefaultStandardsHasBeenSet = true; m_enableDefaultStandards = value; }
+
+    /**
+     * <p>Whether to enable the security standards that Security Hub has designated as
+     * automatically enabled. If you do not provide a value for
+     * <code>EnableDefaultStandards</code>, it is set to <code>true</code>. To not
+     * enable the automatically enabled standards, set
+     * <code>EnableDefaultStandards</code> to <code>false</code>.</p>
+     */
+    inline EnableSecurityHubRequest& WithEnableDefaultStandards(bool value) { SetEnableDefaultStandards(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_enableDefaultStandards;
+    bool m_enableDefaultStandardsHasBeenSet;
   };
 
 } // namespace Model

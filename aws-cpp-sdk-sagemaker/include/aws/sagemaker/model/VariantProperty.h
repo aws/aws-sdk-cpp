@@ -35,13 +35,11 @@ namespace Model
 
   /**
    * <p>Specifies a production variant property type for an Endpoint.</p> <p>If you
-   * are updating an endpoint with the <a
-   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties">RetainAllVariantProperties</a>
-   * option set to <code>true</code>, the <code>VariantProperty</code> objects listed
-   * in <a
-   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-ExcludeRetainedVariantProperties">ExcludeRetainedVariantProperties</a>
-   * override the existing variant properties of the endpoint.</p><p><h3>See
-   * Also:</h3>   <a
+   * are updating an endpoint with the
+   * <a>UpdateEndpointInput$RetainAllVariantProperties</a> option set to
+   * <code>true</code>, the <code>VariantProperty</code> objects listed in
+   * <a>UpdateEndpointInput$ExcludeRetainedVariantProperties</a> override the
+   * existing variant properties of the endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/VariantProperty">AWS
    * API Reference</a></p>
    */
@@ -57,102 +55,72 @@ namespace Model
     /**
      * <p>The type of variant property. The supported values are:</p> <ul> <li> <p>
      * <code>DesiredInstanceCount</code>: Overrides the existing variant instance
-     * counts using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount">InitialInstanceCount</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DesiredWeight</code>: Overrides the existing variant
-     * weights using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight">InitialVariantWeight</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p>
-     * </li> </ul>
+     * counts using the <a>ProductionVariant$InitialInstanceCount</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li> </ul>
      */
     inline const VariantPropertyType& GetVariantPropertyType() const{ return m_variantPropertyType; }
 
     /**
      * <p>The type of variant property. The supported values are:</p> <ul> <li> <p>
      * <code>DesiredInstanceCount</code>: Overrides the existing variant instance
-     * counts using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount">InitialInstanceCount</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DesiredWeight</code>: Overrides the existing variant
-     * weights using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight">InitialVariantWeight</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p>
-     * </li> </ul>
+     * counts using the <a>ProductionVariant$InitialInstanceCount</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li> </ul>
      */
     inline bool VariantPropertyTypeHasBeenSet() const { return m_variantPropertyTypeHasBeenSet; }
 
     /**
      * <p>The type of variant property. The supported values are:</p> <ul> <li> <p>
      * <code>DesiredInstanceCount</code>: Overrides the existing variant instance
-     * counts using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount">InitialInstanceCount</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DesiredWeight</code>: Overrides the existing variant
-     * weights using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight">InitialVariantWeight</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p>
-     * </li> </ul>
+     * counts using the <a>ProductionVariant$InitialInstanceCount</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li> </ul>
      */
     inline void SetVariantPropertyType(const VariantPropertyType& value) { m_variantPropertyTypeHasBeenSet = true; m_variantPropertyType = value; }
 
     /**
      * <p>The type of variant property. The supported values are:</p> <ul> <li> <p>
      * <code>DesiredInstanceCount</code>: Overrides the existing variant instance
-     * counts using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount">InitialInstanceCount</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DesiredWeight</code>: Overrides the existing variant
-     * weights using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight">InitialVariantWeight</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p>
-     * </li> </ul>
+     * counts using the <a>ProductionVariant$InitialInstanceCount</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li> </ul>
      */
     inline void SetVariantPropertyType(VariantPropertyType&& value) { m_variantPropertyTypeHasBeenSet = true; m_variantPropertyType = std::move(value); }
 
     /**
      * <p>The type of variant property. The supported values are:</p> <ul> <li> <p>
      * <code>DesiredInstanceCount</code>: Overrides the existing variant instance
-     * counts using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount">InitialInstanceCount</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DesiredWeight</code>: Overrides the existing variant
-     * weights using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight">InitialVariantWeight</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p>
-     * </li> </ul>
+     * counts using the <a>ProductionVariant$InitialInstanceCount</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li> </ul>
      */
     inline VariantProperty& WithVariantPropertyType(const VariantPropertyType& value) { SetVariantPropertyType(value); return *this;}
 
     /**
      * <p>The type of variant property. The supported values are:</p> <ul> <li> <p>
      * <code>DesiredInstanceCount</code>: Overrides the existing variant instance
-     * counts using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialInstanceCount">InitialInstanceCount</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DesiredWeight</code>: Overrides the existing variant
-     * weights using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_ProductionVariant.html#SageMaker-Type-ProductionVariant-InitialVariantWeight">InitialVariantWeight</a>
-     * values in the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpointConfig.html#SageMaker-CreateEndpointConfig-request-ProductionVariants">ProductionVariants</a>.</p>
-     * </li> <li> <p> <code>DataCaptureConfig</code>: (Not currently supported.)</p>
-     * </li> </ul>
+     * counts using the <a>ProductionVariant$InitialInstanceCount</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DesiredWeight</code>: Overrides the existing variant weights using the
+     * <a>ProductionVariant$InitialVariantWeight</a> values in the
+     * <a>CreateEndpointConfigInput$ProductionVariants</a>.</p> </li> <li> <p>
+     * <code>DataCaptureConfig</code>: (Not currently supported.)</p> </li> </ul>
      */
     inline VariantProperty& WithVariantPropertyType(VariantPropertyType&& value) { SetVariantPropertyType(std::move(value)); return *this;}
 

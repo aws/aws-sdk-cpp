@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/sagemaker/model/FlowDefinitionStatus.h>
+#include <aws/fsx/model/StorageType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -23,60 +23,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace SageMaker
+  namespace FSx
   {
     namespace Model
     {
-      namespace FlowDefinitionStatusMapper
+      namespace StorageTypeMapper
       {
 
-        static const int Initializing_HASH = HashingUtils::HashString("Initializing");
-        static const int Active_HASH = HashingUtils::HashString("Active");
-        static const int Failed_HASH = HashingUtils::HashString("Failed");
-        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
+        static const int SSD_HASH = HashingUtils::HashString("SSD");
+        static const int HDD_HASH = HashingUtils::HashString("HDD");
 
 
-        FlowDefinitionStatus GetFlowDefinitionStatusForName(const Aws::String& name)
+        StorageType GetStorageTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Initializing_HASH)
+          if (hashCode == SSD_HASH)
           {
-            return FlowDefinitionStatus::Initializing;
+            return StorageType::SSD;
           }
-          else if (hashCode == Active_HASH)
+          else if (hashCode == HDD_HASH)
           {
-            return FlowDefinitionStatus::Active;
-          }
-          else if (hashCode == Failed_HASH)
-          {
-            return FlowDefinitionStatus::Failed;
-          }
-          else if (hashCode == Deleting_HASH)
-          {
-            return FlowDefinitionStatus::Deleting;
+            return StorageType::HDD;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<FlowDefinitionStatus>(hashCode);
+            return static_cast<StorageType>(hashCode);
           }
 
-          return FlowDefinitionStatus::NOT_SET;
+          return StorageType::NOT_SET;
         }
 
-        Aws::String GetNameForFlowDefinitionStatus(FlowDefinitionStatus enumValue)
+        Aws::String GetNameForStorageType(StorageType enumValue)
         {
           switch(enumValue)
           {
-          case FlowDefinitionStatus::Initializing:
-            return "Initializing";
-          case FlowDefinitionStatus::Active:
-            return "Active";
-          case FlowDefinitionStatus::Failed:
-            return "Failed";
-          case FlowDefinitionStatus::Deleting:
-            return "Deleting";
+          case StorageType::SSD:
+            return "SSD";
+          case StorageType::HDD:
+            return "HDD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -88,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace FlowDefinitionStatusMapper
+      } // namespace StorageTypeMapper
     } // namespace Model
-  } // namespace SageMaker
+  } // namespace FSx
 } // namespace Aws

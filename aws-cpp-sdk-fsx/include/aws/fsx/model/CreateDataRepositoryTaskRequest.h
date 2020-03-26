@@ -83,63 +83,99 @@ namespace Model
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPaths() const{ return m_paths; }
 
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
 
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline void SetPaths(const Aws::Vector<Aws::String>& value) { m_pathsHasBeenSet = true; m_paths = value; }
 
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline void SetPaths(Aws::Vector<Aws::String>&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
 
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline CreateDataRepositoryTaskRequest& WithPaths(const Aws::Vector<Aws::String>& value) { SetPaths(value); return *this;}
 
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline CreateDataRepositoryTaskRequest& WithPaths(Aws::Vector<Aws::String>&& value) { SetPaths(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline CreateDataRepositoryTaskRequest& AddPaths(const Aws::String& value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
 
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline CreateDataRepositoryTaskRequest& AddPaths(Aws::String&& value) { m_pathsHasBeenSet = true; m_paths.push_back(std::move(value)); return *this; }
 
     /**
      * <p>(Optional) The path or paths on the Amazon FSx file system to use when the
      * data repository task is processed. The default path is the file system root
-     * directory.</p>
+     * directory. The paths you provide need to be relative to the mount point of the
+     * file system. If the mount point is <code>/mnt/fsx</code> and
+     * <code>/mnt/fsx/path1</code> is a directory or file on the file system you want
+     * to export, then the path to provide is <code>path1</code>. If a path that you
+     * provide isn't valid, the task fails.</p>
      */
     inline CreateDataRepositoryTaskRequest& AddPaths(const char* value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
 
@@ -173,7 +209,9 @@ namespace Model
      * <p>Defines whether or not Amazon FSx provides a CompletionReport once the task
      * has completed. A CompletionReport provides a detailed report on the files that
      * Amazon FSx processed that meet the criteria specified by the <code>Scope</code>
-     * parameter. </p>
+     * parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
+     * with Task Completion Reports</a>.</p>
      */
     inline const CompletionReport& GetReport() const{ return m_report; }
 
@@ -181,7 +219,9 @@ namespace Model
      * <p>Defines whether or not Amazon FSx provides a CompletionReport once the task
      * has completed. A CompletionReport provides a detailed report on the files that
      * Amazon FSx processed that meet the criteria specified by the <code>Scope</code>
-     * parameter. </p>
+     * parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
+     * with Task Completion Reports</a>.</p>
      */
     inline bool ReportHasBeenSet() const { return m_reportHasBeenSet; }
 
@@ -189,7 +229,9 @@ namespace Model
      * <p>Defines whether or not Amazon FSx provides a CompletionReport once the task
      * has completed. A CompletionReport provides a detailed report on the files that
      * Amazon FSx processed that meet the criteria specified by the <code>Scope</code>
-     * parameter. </p>
+     * parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
+     * with Task Completion Reports</a>.</p>
      */
     inline void SetReport(const CompletionReport& value) { m_reportHasBeenSet = true; m_report = value; }
 
@@ -197,7 +239,9 @@ namespace Model
      * <p>Defines whether or not Amazon FSx provides a CompletionReport once the task
      * has completed. A CompletionReport provides a detailed report on the files that
      * Amazon FSx processed that meet the criteria specified by the <code>Scope</code>
-     * parameter. </p>
+     * parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
+     * with Task Completion Reports</a>.</p>
      */
     inline void SetReport(CompletionReport&& value) { m_reportHasBeenSet = true; m_report = std::move(value); }
 
@@ -205,7 +249,9 @@ namespace Model
      * <p>Defines whether or not Amazon FSx provides a CompletionReport once the task
      * has completed. A CompletionReport provides a detailed report on the files that
      * Amazon FSx processed that meet the criteria specified by the <code>Scope</code>
-     * parameter. </p>
+     * parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
+     * with Task Completion Reports</a>.</p>
      */
     inline CreateDataRepositoryTaskRequest& WithReport(const CompletionReport& value) { SetReport(value); return *this;}
 
@@ -213,7 +259,9 @@ namespace Model
      * <p>Defines whether or not Amazon FSx provides a CompletionReport once the task
      * has completed. A CompletionReport provides a detailed report on the files that
      * Amazon FSx processed that meet the criteria specified by the <code>Scope</code>
-     * parameter. </p>
+     * parameter. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
+     * with Task Completion Reports</a>.</p>
      */
     inline CreateDataRepositoryTaskRequest& WithReport(CompletionReport&& value) { SetReport(std::move(value)); return *this;}
 

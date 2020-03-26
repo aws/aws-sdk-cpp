@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateFlowDefinitionRequest::CreateFlowDefinitionRequest() : 
     m_flowDefinitionNameHasBeenSet(false),
+    m_humanLoopRequestSourceHasBeenSet(false),
     m_humanLoopActivationConfigHasBeenSet(false),
     m_humanLoopConfigHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
@@ -39,6 +40,12 @@ Aws::String CreateFlowDefinitionRequest::SerializePayload() const
   if(m_flowDefinitionNameHasBeenSet)
   {
    payload.WithString("FlowDefinitionName", m_flowDefinitionName);
+
+  }
+
+  if(m_humanLoopRequestSourceHasBeenSet)
+  {
+   payload.WithObject("HumanLoopRequestSource", m_humanLoopRequestSource.Jsonize());
 
   }
 

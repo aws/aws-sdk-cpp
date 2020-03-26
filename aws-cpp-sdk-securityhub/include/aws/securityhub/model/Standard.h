@@ -169,6 +169,43 @@ namespace Model
      */
     inline Standard& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>Whether the standard is enabled by default. When Security Hub is enabled from
+     * the console, if a standard is enabled by default, the check box for that
+     * standard is selected by default.</p> <p>When Security Hub is enabled using the
+     * <code>EnableSecurityHub</code> API operation, the standard is enabled by default
+     * unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+     */
+    inline bool GetEnabledByDefault() const{ return m_enabledByDefault; }
+
+    /**
+     * <p>Whether the standard is enabled by default. When Security Hub is enabled from
+     * the console, if a standard is enabled by default, the check box for that
+     * standard is selected by default.</p> <p>When Security Hub is enabled using the
+     * <code>EnableSecurityHub</code> API operation, the standard is enabled by default
+     * unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+     */
+    inline bool EnabledByDefaultHasBeenSet() const { return m_enabledByDefaultHasBeenSet; }
+
+    /**
+     * <p>Whether the standard is enabled by default. When Security Hub is enabled from
+     * the console, if a standard is enabled by default, the check box for that
+     * standard is selected by default.</p> <p>When Security Hub is enabled using the
+     * <code>EnableSecurityHub</code> API operation, the standard is enabled by default
+     * unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+     */
+    inline void SetEnabledByDefault(bool value) { m_enabledByDefaultHasBeenSet = true; m_enabledByDefault = value; }
+
+    /**
+     * <p>Whether the standard is enabled by default. When Security Hub is enabled from
+     * the console, if a standard is enabled by default, the check box for that
+     * standard is selected by default.</p> <p>When Security Hub is enabled using the
+     * <code>EnableSecurityHub</code> API operation, the standard is enabled by default
+     * unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
+     */
+    inline Standard& WithEnabledByDefault(bool value) { SetEnabledByDefault(value); return *this;}
+
   private:
 
     Aws::String m_standardsArn;
@@ -179,6 +216,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    bool m_enabledByDefault;
+    bool m_enabledByDefaultHasBeenSet;
   };
 
 } // namespace Model

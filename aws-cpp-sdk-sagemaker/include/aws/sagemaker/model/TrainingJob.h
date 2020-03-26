@@ -1342,29 +1342,33 @@ namespace Model
 
     /**
      * <p>When true, enables managed spot training using Amazon EC2 Spot instances to
-     * run training jobs instead of on-demand instances. For more information, see
-     * <a>model-managed-spot-training</a>.</p>
+     * run training jobs instead of on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+     * Spot Training</a>.</p>
      */
     inline bool GetEnableManagedSpotTraining() const{ return m_enableManagedSpotTraining; }
 
     /**
      * <p>When true, enables managed spot training using Amazon EC2 Spot instances to
-     * run training jobs instead of on-demand instances. For more information, see
-     * <a>model-managed-spot-training</a>.</p>
+     * run training jobs instead of on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+     * Spot Training</a>.</p>
      */
     inline bool EnableManagedSpotTrainingHasBeenSet() const { return m_enableManagedSpotTrainingHasBeenSet; }
 
     /**
      * <p>When true, enables managed spot training using Amazon EC2 Spot instances to
-     * run training jobs instead of on-demand instances. For more information, see
-     * <a>model-managed-spot-training</a>.</p>
+     * run training jobs instead of on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+     * Spot Training</a>.</p>
      */
     inline void SetEnableManagedSpotTraining(bool value) { m_enableManagedSpotTrainingHasBeenSet = true; m_enableManagedSpotTraining = value; }
 
     /**
      * <p>When true, enables managed spot training using Amazon EC2 Spot instances to
-     * run training jobs instead of on-demand instances. For more information, see
-     * <a>model-managed-spot-training</a>.</p>
+     * run training jobs instead of on-demand instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed
+     * Spot Training</a>.</p>
      */
     inline TrainingJob& WithEnableManagedSpotTraining(bool value) { SetEnableManagedSpotTraining(value); return *this;}
 

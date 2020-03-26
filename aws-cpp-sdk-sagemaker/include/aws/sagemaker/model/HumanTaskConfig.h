@@ -149,9 +149,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -167,9 +171,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -185,9 +193,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -203,9 +215,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -221,9 +237,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -239,9 +259,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -257,9 +281,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -276,9 +304,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -295,9 +327,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -313,9 +349,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -332,9 +372,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -351,9 +395,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -379,9 +427,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -397,9 +449,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -415,9 +471,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -433,9 +493,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -451,9 +515,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -469,9 +537,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -487,9 +559,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -506,9 +582,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -525,9 +605,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -543,9 +627,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -562,9 +650,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -581,9 +673,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -609,9 +705,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -627,9 +727,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -645,9 +749,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -663,9 +771,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -681,9 +793,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -699,9 +815,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -717,9 +837,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -736,9 +860,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -755,9 +883,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -773,9 +905,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -792,9 +928,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -811,9 +951,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -839,9 +983,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -857,9 +1005,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -875,9 +1027,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -893,9 +1049,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -911,9 +1071,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -929,9 +1093,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -947,9 +1115,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -966,9 +1138,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -985,9 +1161,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1003,9 +1183,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1022,9 +1206,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1041,9 +1229,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1069,9 +1261,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1087,9 +1283,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1105,9 +1305,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1123,9 +1327,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1141,9 +1349,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1159,9 +1371,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1177,9 +1393,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1196,9 +1416,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1215,9 +1439,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1233,9 +1461,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1252,9 +1484,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1271,9 +1507,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1299,9 +1539,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1317,9 +1561,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1335,9 +1583,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1353,9 +1605,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1371,9 +1627,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1389,9 +1649,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1407,9 +1671,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1426,9 +1694,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1445,9 +1717,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1463,9 +1739,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1482,9 +1762,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1501,9 +1785,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1529,9 +1817,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1547,9 +1839,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1565,9 +1861,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1583,9 +1883,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1601,9 +1905,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1619,9 +1927,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1637,9 +1949,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1656,9 +1972,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1675,9 +1995,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1693,9 +2017,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1712,9 +2040,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1731,9 +2063,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1759,9 +2095,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1777,9 +2117,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1795,9 +2139,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1813,9 +2161,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1831,9 +2183,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1849,9 +2205,13 @@ namespace Model
      * </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1867,9 +2227,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1886,9 +2250,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1905,9 +2273,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1923,9 +2295,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1942,9 +2318,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -1961,9 +2341,13 @@ namespace Model
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
      * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+     * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
      * </p> </li> <li> <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p> </li> <li> <p>
@@ -2161,7 +2545,7 @@ namespace Model
     /**
      * <p>The length of time that a task remains available for labeling by human
      * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For private
+     * 12 hours (43200)</b>. The default value is 864000 seconds (10 days). For private
      * and vendor workforces, the maximum is as listed.</p>
      */
     inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
@@ -2169,7 +2553,7 @@ namespace Model
     /**
      * <p>The length of time that a task remains available for labeling by human
      * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For private
+     * 12 hours (43200)</b>. The default value is 864000 seconds (10 days). For private
      * and vendor workforces, the maximum is as listed.</p>
      */
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
@@ -2177,7 +2561,7 @@ namespace Model
     /**
      * <p>The length of time that a task remains available for labeling by human
      * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For private
+     * 12 hours (43200)</b>. The default value is 864000 seconds (10 days). For private
      * and vendor workforces, the maximum is as listed.</p>
      */
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
@@ -2185,7 +2569,7 @@ namespace Model
     /**
      * <p>The length of time that a task remains available for labeling by human
      * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For private
+     * 12 hours (43200)</b>. The default value is 864000 seconds (10 days). For private
      * and vendor workforces, the maximum is as listed.</p>
      */
     inline HumanTaskConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}

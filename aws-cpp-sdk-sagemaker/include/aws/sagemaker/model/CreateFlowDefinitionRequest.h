@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/HumanLoopRequestSource.h>
 #include <aws/sagemaker/model/HumanLoopActivationConfig.h>
 #include <aws/sagemaker/model/HumanLoopConfig.h>
 #include <aws/sagemaker/model/FlowDefinitionOutputConfig.h>
@@ -88,6 +89,25 @@ namespace Model
      * <p>The name of your flow definition.</p>
      */
     inline CreateFlowDefinitionRequest& WithFlowDefinitionName(const char* value) { SetFlowDefinitionName(value); return *this;}
+
+
+    
+    inline const HumanLoopRequestSource& GetHumanLoopRequestSource() const{ return m_humanLoopRequestSource; }
+
+    
+    inline bool HumanLoopRequestSourceHasBeenSet() const { return m_humanLoopRequestSourceHasBeenSet; }
+
+    
+    inline void SetHumanLoopRequestSource(const HumanLoopRequestSource& value) { m_humanLoopRequestSourceHasBeenSet = true; m_humanLoopRequestSource = value; }
+
+    
+    inline void SetHumanLoopRequestSource(HumanLoopRequestSource&& value) { m_humanLoopRequestSourceHasBeenSet = true; m_humanLoopRequestSource = std::move(value); }
+
+    
+    inline CreateFlowDefinitionRequest& WithHumanLoopRequestSource(const HumanLoopRequestSource& value) { SetHumanLoopRequestSource(value); return *this;}
+
+    
+    inline CreateFlowDefinitionRequest& WithHumanLoopRequestSource(HumanLoopRequestSource&& value) { SetHumanLoopRequestSource(std::move(value)); return *this;}
 
 
     /**
@@ -318,6 +338,9 @@ namespace Model
 
     Aws::String m_flowDefinitionName;
     bool m_flowDefinitionNameHasBeenSet;
+
+    HumanLoopRequestSource m_humanLoopRequestSource;
+    bool m_humanLoopRequestSourceHasBeenSet;
 
     HumanLoopActivationConfig m_humanLoopActivationConfig;
     bool m_humanLoopActivationConfigHasBeenSet;
