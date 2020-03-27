@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/ServerSideEncryptionConfiguration.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -234,6 +235,63 @@ namespace Model
      */
     inline CreateIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>A token that you provide to identify the request to create an index. Multiple
+     * calls to the <code>CreateIndex</code> operation with the same client token will
+     * create only one index.”</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A token that you provide to identify the request to create an index. Multiple
+     * calls to the <code>CreateIndex</code> operation with the same client token will
+     * create only one index.”</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A token that you provide to identify the request to create an index. Multiple
+     * calls to the <code>CreateIndex</code> operation with the same client token will
+     * create only one index.”</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A token that you provide to identify the request to create an index. Multiple
+     * calls to the <code>CreateIndex</code> operation with the same client token will
+     * create only one index.”</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A token that you provide to identify the request to create an index. Multiple
+     * calls to the <code>CreateIndex</code> operation with the same client token will
+     * create only one index.”</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A token that you provide to identify the request to create an index. Multiple
+     * calls to the <code>CreateIndex</code> operation with the same client token will
+     * create only one index.”</p>
+     */
+    inline CreateIndexRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create an index. Multiple
+     * calls to the <code>CreateIndex</code> operation with the same client token will
+     * create only one index.”</p>
+     */
+    inline CreateIndexRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A token that you provide to identify the request to create an index. Multiple
+     * calls to the <code>CreateIndex</code> operation with the same client token will
+     * create only one index.”</p>
+     */
+    inline CreateIndexRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -247,6 +305,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
   };
 
 } // namespace Model

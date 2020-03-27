@@ -136,32 +136,56 @@ namespace Model
 
 
     /**
-     * <p>The contents of the document as a base-64 encoded string.</p>
+     * <p>The contents of the document. </p> <p>Documents passed to the
+     * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     * encode the document file bytes if you're using an AWS SDK to call Amazon Kendra
+     * operations. If you are calling the Amazon Kendra endpoint directly using REST,
+     * you must base64 encode the contents before sending.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBlob() const{ return m_blob; }
 
     /**
-     * <p>The contents of the document as a base-64 encoded string.</p>
+     * <p>The contents of the document. </p> <p>Documents passed to the
+     * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     * encode the document file bytes if you're using an AWS SDK to call Amazon Kendra
+     * operations. If you are calling the Amazon Kendra endpoint directly using REST,
+     * you must base64 encode the contents before sending.</p>
      */
     inline bool BlobHasBeenSet() const { return m_blobHasBeenSet; }
 
     /**
-     * <p>The contents of the document as a base-64 encoded string.</p>
+     * <p>The contents of the document. </p> <p>Documents passed to the
+     * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     * encode the document file bytes if you're using an AWS SDK to call Amazon Kendra
+     * operations. If you are calling the Amazon Kendra endpoint directly using REST,
+     * you must base64 encode the contents before sending.</p>
      */
     inline void SetBlob(const Aws::Utils::ByteBuffer& value) { m_blobHasBeenSet = true; m_blob = value; }
 
     /**
-     * <p>The contents of the document as a base-64 encoded string.</p>
+     * <p>The contents of the document. </p> <p>Documents passed to the
+     * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     * encode the document file bytes if you're using an AWS SDK to call Amazon Kendra
+     * operations. If you are calling the Amazon Kendra endpoint directly using REST,
+     * you must base64 encode the contents before sending.</p>
      */
     inline void SetBlob(Aws::Utils::ByteBuffer&& value) { m_blobHasBeenSet = true; m_blob = std::move(value); }
 
     /**
-     * <p>The contents of the document as a base-64 encoded string.</p>
+     * <p>The contents of the document. </p> <p>Documents passed to the
+     * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     * encode the document file bytes if you're using an AWS SDK to call Amazon Kendra
+     * operations. If you are calling the Amazon Kendra endpoint directly using REST,
+     * you must base64 encode the contents before sending.</p>
      */
     inline Document& WithBlob(const Aws::Utils::ByteBuffer& value) { SetBlob(value); return *this;}
 
     /**
-     * <p>The contents of the document as a base-64 encoded string.</p>
+     * <p>The contents of the document. </p> <p>Documents passed to the
+     * <code>Blob</code> parameter must be base64 encoded. Your code might not need to
+     * encode the document file bytes if you're using an AWS SDK to call Amazon Kendra
+     * operations. If you are calling the Amazon Kendra endpoint directly using REST,
+     * you must base64 encode the contents before sending.</p>
      */
     inline Document& WithBlob(Aws::Utils::ByteBuffer&& value) { SetBlob(std::move(value)); return *this;}
 

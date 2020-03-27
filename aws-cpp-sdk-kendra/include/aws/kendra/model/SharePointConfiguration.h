@@ -260,6 +260,207 @@ namespace Model
     inline SharePointConfiguration& WithCrawlAttachments(bool value) { SetCrawlAttachments(value); return *this;}
 
 
+    /**
+     * <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change log to
+     * determine the documents that need to be updated in the index. Depending on the
+     * size of the SharePoint change log, it may take longer for Amazon Kendra to use
+     * the change log than it takes it to determine the changed documents using the
+     * Amazon Kendra document crawler.</p>
+     */
+    inline bool GetUseChangeLog() const{ return m_useChangeLog; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change log to
+     * determine the documents that need to be updated in the index. Depending on the
+     * size of the SharePoint change log, it may take longer for Amazon Kendra to use
+     * the change log than it takes it to determine the changed documents using the
+     * Amazon Kendra document crawler.</p>
+     */
+    inline bool UseChangeLogHasBeenSet() const { return m_useChangeLogHasBeenSet; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change log to
+     * determine the documents that need to be updated in the index. Depending on the
+     * size of the SharePoint change log, it may take longer for Amazon Kendra to use
+     * the change log than it takes it to determine the changed documents using the
+     * Amazon Kendra document crawler.</p>
+     */
+    inline void SetUseChangeLog(bool value) { m_useChangeLogHasBeenSet = true; m_useChangeLog = value; }
+
+    /**
+     * <p>Set to <code>TRUE</code> to use the Microsoft SharePoint change log to
+     * determine the documents that need to be updated in the index. Depending on the
+     * size of the SharePoint change log, it may take longer for Amazon Kendra to use
+     * the change log than it takes it to determine the changed documents using the
+     * Amazon Kendra document crawler.</p>
+     */
+    inline SharePointConfiguration& WithUseChangeLog(bool value) { SetUseChangeLog(value); return *this;}
+
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an inclusion pattern and an exclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the display URL of the SharePoint document.</p>
+     */
+    inline SharePointConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
+
+
     
     inline const DataSourceVpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
@@ -421,6 +622,15 @@ namespace Model
 
     bool m_crawlAttachments;
     bool m_crawlAttachmentsHasBeenSet;
+
+    bool m_useChangeLog;
+    bool m_useChangeLogHasBeenSet;
+
+    Aws::Vector<Aws::String> m_inclusionPatterns;
+    bool m_inclusionPatternsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_exclusionPatterns;
+    bool m_exclusionPatternsHasBeenSet;
 
     DataSourceVpcConfiguration m_vpcConfiguration;
     bool m_vpcConfigurationHasBeenSet;

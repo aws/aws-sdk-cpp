@@ -718,14 +718,16 @@ namespace Model
         virtual void DescribeAcceleratorAttributesAsync(const Model::DescribeAcceleratorAttributesRequest& request, const DescribeAcceleratorAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describe an endpoint group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe an endpoint group. To see an AWS CLI example of describing an
+         * endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeEndpointGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeEndpointGroupOutcome DescribeEndpointGroup(const Model::DescribeEndpointGroupRequest& request) const;
 
         /**
-         * <p>Describe an endpoint group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe an endpoint group. To see an AWS CLI example of describing an
+         * endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeEndpointGroup">AWS
          * API Reference</a></p>
          *
@@ -734,7 +736,8 @@ namespace Model
         virtual Model::DescribeEndpointGroupOutcomeCallable DescribeEndpointGroupCallable(const Model::DescribeEndpointGroupRequest& request) const;
 
         /**
-         * <p>Describe an endpoint group.</p><p><h3>See Also:</h3>   <a
+         * <p>Describe an endpoint group. To see an AWS CLI example of describing an
+         * endpoint group, scroll down to <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeEndpointGroup">AWS
          * API Reference</a></p>
          *
@@ -803,8 +806,9 @@ namespace Model
 
         /**
          * <p>Lists the IP address ranges that were specified in calls to <a
-         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>.</p>
-         * <p>To see an AWS CLI example of listing BYOIP CIDR addresses, scroll down to
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>,
+         * including the current state and a history of state changes.</p> <p>To see an AWS
+         * CLI example of listing BYOIP CIDR addresses, scroll down to
          * <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListByoipCidrs">AWS
          * API Reference</a></p>
@@ -813,8 +817,9 @@ namespace Model
 
         /**
          * <p>Lists the IP address ranges that were specified in calls to <a
-         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>.</p>
-         * <p>To see an AWS CLI example of listing BYOIP CIDR addresses, scroll down to
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>,
+         * including the current state and a history of state changes.</p> <p>To see an AWS
+         * CLI example of listing BYOIP CIDR addresses, scroll down to
          * <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListByoipCidrs">AWS
          * API Reference</a></p>
@@ -825,8 +830,9 @@ namespace Model
 
         /**
          * <p>Lists the IP address ranges that were specified in calls to <a
-         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>.</p>
-         * <p>To see an AWS CLI example of listing BYOIP CIDR addresses, scroll down to
+         * href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>,
+         * including the current state and a history of state changes.</p> <p>To see an AWS
+         * CLI example of listing BYOIP CIDR addresses, scroll down to
          * <b>Example</b>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListByoipCidrs">AWS
          * API Reference</a></p>

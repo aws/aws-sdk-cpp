@@ -31,14 +31,16 @@ namespace Model
 ByoipCidr::ByoipCidr() : 
     m_cidrHasBeenSet(false),
     m_state(ByoipCidrState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
 }
 
 ByoipCidr::ByoipCidr(JsonView jsonValue) : 
     m_cidrHasBeenSet(false),
     m_state(ByoipCidrState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ ByoipCidr& ByoipCidr::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Events"))
+  {
+    Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
+    for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
+    {
+      m_events.push_back(eventsJsonList[eventsIndex].AsObject());
+    }
+    m_eventsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +87,17 @@ JsonValue ByoipCidr::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("State", ByoipCidrStateMapper::GetNameForByoipCidrState(m_state));
+  }
+
+  if(m_eventsHasBeenSet)
+  {
+   Array<JsonValue> eventsJsonList(m_events.size());
+   for(unsigned eventsIndex = 0; eventsIndex < eventsJsonList.GetLength(); ++eventsIndex)
+   {
+     eventsJsonList[eventsIndex].AsObject(m_events[eventsIndex].Jsonize());
+   }
+   payload.WithArray("Events", std::move(eventsJsonList));
+
   }
 
   return payload;

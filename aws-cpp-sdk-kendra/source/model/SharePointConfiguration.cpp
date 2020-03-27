@@ -35,6 +35,10 @@ SharePointConfiguration::SharePointConfiguration() :
     m_secretArnHasBeenSet(false),
     m_crawlAttachments(false),
     m_crawlAttachmentsHasBeenSet(false),
+    m_useChangeLog(false),
+    m_useChangeLogHasBeenSet(false),
+    m_inclusionPatternsHasBeenSet(false),
+    m_exclusionPatternsHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_fieldMappingsHasBeenSet(false),
     m_documentTitleFieldNameHasBeenSet(false)
@@ -48,6 +52,10 @@ SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) :
     m_secretArnHasBeenSet(false),
     m_crawlAttachments(false),
     m_crawlAttachmentsHasBeenSet(false),
+    m_useChangeLog(false),
+    m_useChangeLogHasBeenSet(false),
+    m_inclusionPatternsHasBeenSet(false),
+    m_exclusionPatternsHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
     m_fieldMappingsHasBeenSet(false),
     m_documentTitleFieldNameHasBeenSet(false)
@@ -86,6 +94,33 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     m_crawlAttachments = jsonValue.GetBool("CrawlAttachments");
 
     m_crawlAttachmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UseChangeLog"))
+  {
+    m_useChangeLog = jsonValue.GetBool("UseChangeLog");
+
+    m_useChangeLogHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InclusionPatterns"))
+  {
+    Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
+    for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
+    {
+      m_inclusionPatterns.push_back(inclusionPatternsJsonList[inclusionPatternsIndex].AsString());
+    }
+    m_inclusionPatternsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExclusionPatterns"))
+  {
+    Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
+    for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
+    {
+      m_exclusionPatterns.push_back(exclusionPatternsJsonList[exclusionPatternsIndex].AsString());
+    }
+    m_exclusionPatternsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VpcConfiguration"))
@@ -144,6 +179,34 @@ JsonValue SharePointConfiguration::Jsonize() const
   if(m_crawlAttachmentsHasBeenSet)
   {
    payload.WithBool("CrawlAttachments", m_crawlAttachments);
+
+  }
+
+  if(m_useChangeLogHasBeenSet)
+  {
+   payload.WithBool("UseChangeLog", m_useChangeLog);
+
+  }
+
+  if(m_inclusionPatternsHasBeenSet)
+  {
+   Array<JsonValue> inclusionPatternsJsonList(m_inclusionPatterns.size());
+   for(unsigned inclusionPatternsIndex = 0; inclusionPatternsIndex < inclusionPatternsJsonList.GetLength(); ++inclusionPatternsIndex)
+   {
+     inclusionPatternsJsonList[inclusionPatternsIndex].AsString(m_inclusionPatterns[inclusionPatternsIndex]);
+   }
+   payload.WithArray("InclusionPatterns", std::move(inclusionPatternsJsonList));
+
+  }
+
+  if(m_exclusionPatternsHasBeenSet)
+  {
+   Array<JsonValue> exclusionPatternsJsonList(m_exclusionPatterns.size());
+   for(unsigned exclusionPatternsIndex = 0; exclusionPatternsIndex < exclusionPatternsJsonList.GetLength(); ++exclusionPatternsIndex)
+   {
+     exclusionPatternsJsonList[exclusionPatternsIndex].AsString(m_exclusionPatterns[exclusionPatternsIndex]);
+   }
+   payload.WithArray("ExclusionPatterns", std::move(exclusionPatternsJsonList));
 
   }
 

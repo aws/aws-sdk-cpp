@@ -176,8 +176,8 @@ namespace Model
      * client's IP address is preserved in the <code>X-Forwarded-For</code> request
      * header as traffic travels to applications on the Application Load Balancer
      * endpoint fronted by the accelerator.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-     * Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
+     * Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline bool GetClientIPPreservationEnabled() const{ return m_clientIPPreservationEnabled; }
@@ -189,8 +189,8 @@ namespace Model
      * client's IP address is preserved in the <code>X-Forwarded-For</code> request
      * header as traffic travels to applications on the Application Load Balancer
      * endpoint fronted by the accelerator.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-     * Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
+     * Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline bool ClientIPPreservationEnabledHasBeenSet() const { return m_clientIPPreservationEnabledHasBeenSet; }
@@ -202,8 +202,8 @@ namespace Model
      * client's IP address is preserved in the <code>X-Forwarded-For</code> request
      * header as traffic travels to applications on the Application Load Balancer
      * endpoint fronted by the accelerator.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-     * Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
+     * Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline void SetClientIPPreservationEnabled(bool value) { m_clientIPPreservationEnabledHasBeenSet = true; m_clientIPPreservationEnabled = value; }
@@ -215,8 +215,8 @@ namespace Model
      * client's IP address is preserved in the <code>X-Forwarded-For</code> request
      * header as traffic travels to applications on the Application Load Balancer
      * endpoint fronted by the accelerator.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/introduction-how-it-works-client-ip.html">
-     * Viewing Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
+     * Preserve Client IP Addresses in AWS Global Accelerator</a> in the <i>AWS Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline EndpointConfiguration& WithClientIPPreservationEnabled(bool value) { SetClientIPPreservationEnabled(value); return *this;}

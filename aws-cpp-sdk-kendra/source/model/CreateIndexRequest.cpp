@@ -26,7 +26,9 @@ CreateIndexRequest::CreateIndexRequest() :
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -55,6 +57,12 @@ Aws::String CreateIndexRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 
