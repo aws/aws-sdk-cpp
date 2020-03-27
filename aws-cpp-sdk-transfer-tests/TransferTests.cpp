@@ -689,6 +689,13 @@ TEST_F(TransferTests, TransferManager_EmptyFileTest)
         RandomFileName,
         "text/plain",
         Aws::Map<Aws::String, Aws::String>());
+
+    VerifyUploadedFileDownloadInParts(*transferManager,
+                                      emptyTestFileName,
+                                      GetTestBucketName(),
+                                      RandomFileName,
+                                      "text/plain",
+                                      Aws::Map<Aws::String, Aws::String>());
 }
 
 TEST_F(TransferTests, TransferManager_SmallTest)
@@ -773,38 +780,6 @@ TEST_F(TransferTests, TransferManager_ContentTest)
                        CONTENT_FILE_KEY,
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
-}
-
-TEST_F(TransferTests, TransferManager_RangeContentTest)
-{
-    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
-    Aws::String contentTestFileName = MakeFilePath(RandomFileName.c_str());
-    ScopedTestFile testFile(contentTestFileName, CONTENT_TEST_FILE_TEXT);
-
-    TransferManagerConfiguration transferManagerConfig(m_executor.get());
-    transferManagerConfig.s3Client = m_s3Client;
-    auto transferManager = TransferManager::Create(transferManagerConfig);
-
-    std::shared_ptr<TransferHandle> requestPtr =
-            transferManager->UploadFile(contentTestFileName, GetTestBucketName(), CONTENT_FILE_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
-
-    ASSERT_EQ(true, requestPtr->ShouldContinue());
-    ASSERT_EQ(TransferDirection::UPLOAD, requestPtr->GetTransferDirection());
-    ASSERT_STREQ(contentTestFileName.c_str(), requestPtr->GetTargetFilePath().c_str());
-    requestPtr->WaitUntilFinished();
-    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
-    ASSERT_EQ(1u, requestPtr->GetCompletedParts().size()); // Should be tiny
-    ASSERT_EQ(0u, requestPtr->GetFailedParts().size());
-    ASSERT_EQ(0u, requestPtr->GetPendingParts().size());
-    ASSERT_EQ(0u, requestPtr->GetQueuedParts().size());
-
-    ASSERT_STREQ("text/plain", requestPtr->GetContentType().c_str());
-
-    uint64_t fileSize = requestPtr->GetBytesTotalSize();
-    ASSERT_EQ(fileSize, strlen(CONTENT_TEST_FILE_TEXT));
-    ASSERT_EQ(fileSize, requestPtr->GetBytesTransferred());
-
-    ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), CONTENT_FILE_KEY));
 
     VerifyUploadedFileDownloadInParts(*transferManager,
                                       contentTestFileName,
@@ -813,6 +788,7 @@ TEST_F(TransferTests, TransferManager_RangeContentTest)
                                       "text/plain",
                                       Aws::Map<Aws::String, Aws::String>());
 }
+
 
 TEST_F(TransferTests, TransferManager_DirectoryUploadAndDownloadTest)
 {
@@ -1023,7 +999,15 @@ TEST_F(TransferTests, TransferManager_BigTest)
                        BIG_FILE_KEY,
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
+
+    VerifyUploadedFileDownloadInParts(*transferManager,
+                                      bigTestFileName,
+                                      GetTestBucketName(),
+                                      BIG_FILE_KEY,
+                                      "text/plain",
+                                      Aws::Map<Aws::String, Aws::String>());
 }
+
 
 #ifdef _MSC_VER
 TEST_F(TransferTests, TransferManager_UnicodeFileNameTest)
@@ -1316,6 +1300,13 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
                        MULTI_PART_CONTENT_KEY,
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
+
+    VerifyUploadedFileDownloadInParts(*transferManager,
+                                      multiPartContentFileName,
+                                      GetTestBucketName(),
+                                      MULTI_PART_CONTENT_KEY,
+                                      "text/plain",
+                                      Aws::Map<Aws::String, Aws::String>());
 }
 
 // Single part upload with metadata specified
