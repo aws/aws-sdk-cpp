@@ -218,7 +218,7 @@ protected:
         return HashingUtils::CalculateSHA256(inFile1) == HashingUtils::CalculateSHA256(inFile2);
     }
 
-        static bool SourceFileSameAsConcatenatedPartFiles(const Aws::String& sourceFileName, const Aws::String& downloadedFilePrefix, const int numParts)
+        static bool SourceFileSameAsConcatenatedPartFiles(const Aws::String& sourceFileName, const int numParts)
     {
 #ifdef _MSC_VER
         Aws::FStream sourceFile(Aws::Utils::StringUtils::ToWString(sourceFileName.c_str()).c_str(), std::ios::binary | std::ios::in);
@@ -235,7 +235,7 @@ protected:
 #endif
 
         for (int i=0; i<numParts; i++) {
-            auto inFileName = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i));
+            auto inFileName = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i).c_str());
 #ifdef _MSC_VER
             Aws::FStream inFile(Aws::Utils::StringUtils::ToWString(inFileName.c_str()).c_str(), std::ios::binary | std::ios::in);
 #else
@@ -247,7 +247,7 @@ protected:
         }
 
         // seek concatenatedFile to beginning
-        concatenatedFile->seekg(0, std::ios_base::beg);
+        concatenatedFile.seekg(0, std::ios_base::beg);
 
         return HashingUtils::CalculateSHA256(sourceFile) == HashingUtils::CalculateSHA256(concatenatedFile);
     }
@@ -361,24 +361,18 @@ protected:
             fileStream->close();
             fileStream = nullptr;
 
-            // create final string buffer
-            int numBytesRead = 0;
-            string content;
-            content.resize(sourceLength);
-
             // calculate number of chunks
-            uint64 buffer_size = 16 * 1024 * 1024;
+            std::size_t buffer_size = 16 * 1024 * 1024;
             std::size_t part_count = (std::max)(
-                static_cast<size_t>((file_size + buffer_size - 1) / buffer_size),
+                static_cast<size_t>((sourceLength + buffer_size - 1) / buffer_size),
                 static_cast<std::size_t>(1));
 
             // download each part to its own file
             int offset = 0;
-            int result_size = 0;
             
-            for (int i = 0; i < part_count; i++) {
+            for (size_t i = 0; i < part_count; i++) {
 
-                auto downloadPartFileName = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i));
+                auto downloadPartFileName = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i).c_str());
                 auto create_stream_fn = [=](){
 #ifdef _MSC_VER
                 return Aws::New<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(downloadPartFileName.c_str()).c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
@@ -404,13 +398,13 @@ protected:
                 ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
                 ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
 
-                int part_size;
+                size_t part_size;
                 if (i == part_count - 1) {
                     part_size = sourceLength - (buffer_size * (i - 1));
                 } else {
                     part_size = buffer_size;
                 }
-                ASSERT_EQ(downloadPtr->GetBytesTotalSize(), buffer_size);
+                ASSERT_EQ(downloadPtr->GetBytesTotalSize(), part_size);
                 ASSERT_EQ(downloadPtr->GetBytesTransferred(), part_size);
 
                 ASSERT_STREQ(contentType.c_str(), downloadPtr->GetContentType().c_str());
@@ -419,14 +413,17 @@ protected:
                 // ETag will be added to Metadata when finished uploading/downloading
                 copyMetadata["ETag"] = downloadPtr->GetMetadata().find("ETag")->second;
                 ASSERT_EQ(copyMetadata, downloadPtr->GetMetadata());
+   
+                offset += part_size;
             }
 
-            ASSERT_TRUE(SourceFileSameAsConcatenatedPartFiles(sourceFileName, sourceFileName, numParts));
-        }
+            ASSERT_TRUE(SourceFileSameAsConcatenatedPartFiles(sourceFileName, part_count));
+       
         
-        for (int i=0; i<numParts; i++) {
-            auto filename = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i));
-            Aws::FileSystem::RemoveFileIfExists(filename.c_str());
+            for (size_t i=0; i< part_count; i++) {
+                auto filename = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i).c_str());
+                Aws::FileSystem::RemoveFileIfExists(filename.c_str());
+            }
         }
         Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(sourceFileName).c_str());
     }
