@@ -399,11 +399,14 @@ protected:
                 ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
 
                 size_t part_size;
-                if (i == part_count - 1) {
-                    part_size = sourceLength - (buffer_size * (i - 1));
+                if (part_count == 1) {
+                    part_size = sourceLength;
+                } else if (i == part_count - 1) {
+                    part_size = sourceLength - (buffer_size * (i-1));
                 } else {
                     part_size = buffer_size;
                 }
+
                 ASSERT_EQ(downloadPtr->GetBytesTotalSize(), part_size);
                 ASSERT_EQ(downloadPtr->GetBytesTransferred(), part_size);
 
