@@ -754,16 +754,16 @@ namespace Aws
                 if (!headObjectOutcome.IsSuccess())
                 {
                     AWS_LOGSTREAM_ERROR(CLASS_TAG, "Transfer handle [" << handle->GetId()
-                        << "] Failed to get download parts information for object in Bucket: ["
-                        << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
-                        << "] " << headObjectOutcome.GetError());
+                            << "] Failed to get download parts information for object in Bucket: ["
+                            << handle->GetBucketName() << "] with Key: [" << handle->GetKey()
+                            << "] " << headObjectOutcome.GetError());
                     handle->UpdateStatus(TransferStatus::FAILED);
                     handle->SetError(headObjectOutcome.GetError());
                     TriggerErrorCallback(handle, headObjectOutcome.GetError());
                     TriggerTransferStatusUpdatedCallback(handle);
                     return false;
                 }
-                
+
                 std::size_t downloadSize = static_cast<size_t>(headObjectOutcome.GetResult().GetContentLength());
                 handle->SetBytesTotalSize(downloadSize);
                 handle->SetContentType(headObjectOutcome.GetResult().GetContentType());
@@ -847,7 +847,6 @@ namespace Aws
                     getObjectRangeRequest.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
                     getObjectRangeRequest.SetBucket(handle->GetBucketName());
                     getObjectRangeRequest.WithKey(handle->GetKey());
-
                     getObjectRangeRequest.SetRange(FormatRangeSpecifier(rangeStart, rangeEnd));
                     getObjectRangeRequest.SetResponseStreamFactory(responseStreamFunction);
                     if(handle->GetVersionId().size() > 0)

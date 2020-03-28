@@ -132,7 +132,7 @@ class ScopedTestFile
 
         ~ScopedTestFile()
         {
-           Aws::FileSystem::RemoveFileIfExists(m_fileName.c_str());
+            Aws::FileSystem::RemoveFileIfExists(m_fileName.c_str());
         }
 
     private:
@@ -339,6 +339,7 @@ protected:
             copyMetadata["ETag"] = downloadPtr->GetMetadata().find("ETag")->second;
             ASSERT_EQ(copyMetadata, downloadPtr->GetMetadata());
         }
+
         Aws::FileSystem::RemoveFileIfExists(downloadFileName.c_str());
     }
 
@@ -428,6 +429,7 @@ protected:
                 Aws::FileSystem::RemoveFileIfExists(filename.c_str());
             }
         }
+
         Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(sourceFileName).c_str());
     }
 
@@ -1004,7 +1006,6 @@ TEST_F(TransferTests, TransferManager_BigTest)
                                       "text/plain",
                                       Aws::Map<Aws::String, Aws::String>());
 }
-
 
 #ifdef _MSC_VER
 TEST_F(TransferTests, TransferManager_UnicodeFileNameTest)
@@ -1639,7 +1640,4 @@ TEST_F(TransferTests, MultipartUploadWithComputeContentMd5Test)
                        "text/plain",
                        Aws::Map<Aws::String, Aws::String>());
 }
-
 }
-
-
