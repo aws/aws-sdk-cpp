@@ -377,14 +377,11 @@ protected:
             for (size_t i = 0; i < part_count; i++) {
 
                 size_t part_size;
-                if (part_count == 1) {
-                    part_size = sourceLength;
-                } else if (i == part_count - 1) {
-                    part_size = sourceLength - (buffer_size * (i-1));
+                if (i == part_count - 1) {
+                    part_size = sourceLength - (buffer_size *i);
                 } else {
                     part_size = buffer_size;
                 }
-
                 auto downloadPartFileName = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i).c_str());
                 auto create_stream_fn = [=](){
 #ifdef _MSC_VER
