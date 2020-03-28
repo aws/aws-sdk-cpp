@@ -376,6 +376,15 @@ protected:
             
             for (size_t i = 0; i < part_count; i++) {
 
+                size_t part_size;
+                if (part_count == 1) {
+                    part_size = sourceLength;
+                } else if (i == part_count - 1) {
+                    part_size = sourceLength - (buffer_size * (i-1));
+                } else {
+                    part_size = buffer_size;
+                }
+
                 auto downloadPartFileName = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i).c_str());
                 auto create_stream_fn = [=](){
 #ifdef _MSC_VER
@@ -384,7 +393,7 @@ protected:
                 return Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadPartFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
 #endif
             };
-                std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, offset, buffer_size, create_stream_fn);
+                std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, offset, part_size, create_stream_fn);
 
                 ASSERT_EQ(true, downloadPtr->ShouldContinue());
                 ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
@@ -401,15 +410,6 @@ protected:
                 ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
                 ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
                 ASSERT_EQ(0u, downloadPtr->GetPendingParts().size());
-
-                size_t part_size;
-                if (part_count == 1) {
-                    part_size = sourceLength;
-                } else if (i == part_count - 1) {
-                    part_size = sourceLength - (buffer_size * (i-1));
-                } else {
-                    part_size = buffer_size;
-                }
 
                 ASSERT_EQ(downloadPtr->GetBytesTotalSize(), part_size);
                 ASSERT_EQ(downloadPtr->GetBytesTransferred(), part_size);
