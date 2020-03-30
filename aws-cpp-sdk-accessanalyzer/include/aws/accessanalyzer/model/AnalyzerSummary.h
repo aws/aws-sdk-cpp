@@ -17,6 +17,8 @@
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/accessanalyzer/model/AnalyzerStatus.h>
+#include <aws/accessanalyzer/model/StatusReason.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/accessanalyzer/model/Type.h>
 #include <utility>
@@ -236,6 +238,128 @@ namespace Model
 
 
     /**
+     * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
+     * monitors supported resources and generates new findings. The analyzer is
+     * <code>Disabled</code> when a user action, such as removing trusted access for
+     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * generating new findings. The status is <code>Creating</code> when the analyzer
+     * creation is in progress and <code>Failed</code> when the analyzer creation has
+     * failed. </p>
+     */
+    inline const AnalyzerStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
+     * monitors supported resources and generates new findings. The analyzer is
+     * <code>Disabled</code> when a user action, such as removing trusted access for
+     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * generating new findings. The status is <code>Creating</code> when the analyzer
+     * creation is in progress and <code>Failed</code> when the analyzer creation has
+     * failed. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
+     * monitors supported resources and generates new findings. The analyzer is
+     * <code>Disabled</code> when a user action, such as removing trusted access for
+     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * generating new findings. The status is <code>Creating</code> when the analyzer
+     * creation is in progress and <code>Failed</code> when the analyzer creation has
+     * failed. </p>
+     */
+    inline void SetStatus(const AnalyzerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
+     * monitors supported resources and generates new findings. The analyzer is
+     * <code>Disabled</code> when a user action, such as removing trusted access for
+     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * generating new findings. The status is <code>Creating</code> when the analyzer
+     * creation is in progress and <code>Failed</code> when the analyzer creation has
+     * failed. </p>
+     */
+    inline void SetStatus(AnalyzerStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
+     * monitors supported resources and generates new findings. The analyzer is
+     * <code>Disabled</code> when a user action, such as removing trusted access for
+     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * generating new findings. The status is <code>Creating</code> when the analyzer
+     * creation is in progress and <code>Failed</code> when the analyzer creation has
+     * failed. </p>
+     */
+    inline AnalyzerSummary& WithStatus(const AnalyzerStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the analyzer. An <code>Active</code> analyzer successfully
+     * monitors supported resources and generates new findings. The analyzer is
+     * <code>Disabled</code> when a user action, such as removing trusted access for
+     * IAM Access Analyzer from AWS Organizations, causes the analyzer to stop
+     * generating new findings. The status is <code>Creating</code> when the analyzer
+     * creation is in progress and <code>Failed</code> when the analyzer creation has
+     * failed. </p>
+     */
+    inline AnalyzerSummary& WithStatus(AnalyzerStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>statusReason</code> provides more details about the current status
+     * of the analyzer. For example, if the creation for the analyzer fails, a
+     * <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked
+     * roles required in the member accounts of the AWS organization.</p>
+     */
+    inline const StatusReason& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The <code>statusReason</code> provides more details about the current status
+     * of the analyzer. For example, if the creation for the analyzer fails, a
+     * <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked
+     * roles required in the member accounts of the AWS organization.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    /**
+     * <p>The <code>statusReason</code> provides more details about the current status
+     * of the analyzer. For example, if the creation for the analyzer fails, a
+     * <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked
+     * roles required in the member accounts of the AWS organization.</p>
+     */
+    inline void SetStatusReason(const StatusReason& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    /**
+     * <p>The <code>statusReason</code> provides more details about the current status
+     * of the analyzer. For example, if the creation for the analyzer fails, a
+     * <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked
+     * roles required in the member accounts of the AWS organization.</p>
+     */
+    inline void SetStatusReason(StatusReason&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    /**
+     * <p>The <code>statusReason</code> provides more details about the current status
+     * of the analyzer. For example, if the creation for the analyzer fails, a
+     * <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked
+     * roles required in the member accounts of the AWS organization.</p>
+     */
+    inline AnalyzerSummary& WithStatusReason(const StatusReason& value) { SetStatusReason(value); return *this;}
+
+    /**
+     * <p>The <code>statusReason</code> provides more details about the current status
+     * of the analyzer. For example, if the creation for the analyzer fails, a
+     * <code>Failed</code> status is displayed. For an analyzer with organization as
+     * the type, this failure can be due to an issue with creating the service-linked
+     * roles required in the member accounts of the AWS organization.</p>
+     */
+    inline AnalyzerSummary& WithStatusReason(StatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags added to the analyzer.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -353,6 +477,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    AnalyzerStatus m_status;
+    bool m_statusHasBeenSet;
+
+    StatusReason m_statusReason;
+    bool m_statusReasonHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

@@ -39,6 +39,7 @@ FindingSummary::FindingSummary() :
     m_isPublicHasBeenSet(false),
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
+    m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
@@ -58,6 +59,7 @@ FindingSummary::FindingSummary(JsonView jsonValue) :
     m_isPublicHasBeenSet(false),
     m_principalHasBeenSet(false),
     m_resourceHasBeenSet(false),
+    m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
@@ -139,6 +141,13 @@ FindingSummary& FindingSummary::operator =(JsonView jsonValue)
     m_resource = jsonValue.GetString("resource");
 
     m_resourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceOwnerAccount"))
+  {
+    m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
+
+    m_resourceOwnerAccountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceType"))
@@ -233,6 +242,12 @@ JsonValue FindingSummary::Jsonize() const
   if(m_resourceHasBeenSet)
   {
    payload.WithString("resource", m_resource);
+
+  }
+
+  if(m_resourceOwnerAccountHasBeenSet)
+  {
+   payload.WithString("resourceOwnerAccount", m_resourceOwnerAccount);
 
   }
 

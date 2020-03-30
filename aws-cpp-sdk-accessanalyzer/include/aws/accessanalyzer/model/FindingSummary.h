@@ -482,6 +482,47 @@ namespace Model
 
 
     /**
+     * <p>The AWS account ID that owns the resource.</p>
+     */
+    inline const Aws::String& GetResourceOwnerAccount() const{ return m_resourceOwnerAccount; }
+
+    /**
+     * <p>The AWS account ID that owns the resource.</p>
+     */
+    inline bool ResourceOwnerAccountHasBeenSet() const { return m_resourceOwnerAccountHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID that owns the resource.</p>
+     */
+    inline void SetResourceOwnerAccount(const Aws::String& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = value; }
+
+    /**
+     * <p>The AWS account ID that owns the resource.</p>
+     */
+    inline void SetResourceOwnerAccount(Aws::String&& value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount = std::move(value); }
+
+    /**
+     * <p>The AWS account ID that owns the resource.</p>
+     */
+    inline void SetResourceOwnerAccount(const char* value) { m_resourceOwnerAccountHasBeenSet = true; m_resourceOwnerAccount.assign(value); }
+
+    /**
+     * <p>The AWS account ID that owns the resource.</p>
+     */
+    inline FindingSummary& WithResourceOwnerAccount(const Aws::String& value) { SetResourceOwnerAccount(value); return *this;}
+
+    /**
+     * <p>The AWS account ID that owns the resource.</p>
+     */
+    inline FindingSummary& WithResourceOwnerAccount(Aws::String&& value) { SetResourceOwnerAccount(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS account ID that owns the resource.</p>
+     */
+    inline FindingSummary& WithResourceOwnerAccount(const char* value) { SetResourceOwnerAccount(value); return *this;}
+
+
+    /**
      * <p>The type of the resource that the external principal has access to.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
@@ -601,6 +642,9 @@ namespace Model
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet;
+
+    Aws::String m_resourceOwnerAccount;
+    bool m_resourceOwnerAccountHasBeenSet;
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;

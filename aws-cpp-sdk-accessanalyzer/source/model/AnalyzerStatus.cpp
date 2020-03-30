@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/accessanalyzer/model/Type.h>
+#include <aws/accessanalyzer/model/AnalyzerStatus.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -27,42 +27,56 @@ namespace Aws
   {
     namespace Model
     {
-      namespace TypeMapper
+      namespace AnalyzerStatusMapper
       {
 
-        static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
-        static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
+        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
-        Type GetTypeForName(const Aws::String& name)
+        AnalyzerStatus GetAnalyzerStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACCOUNT_HASH)
+          if (hashCode == ACTIVE_HASH)
           {
-            return Type::ACCOUNT;
+            return AnalyzerStatus::ACTIVE;
           }
-          else if (hashCode == ORGANIZATION_HASH)
+          else if (hashCode == CREATING_HASH)
           {
-            return Type::ORGANIZATION;
+            return AnalyzerStatus::CREATING;
+          }
+          else if (hashCode == DISABLED_HASH)
+          {
+            return AnalyzerStatus::DISABLED;
+          }
+          else if (hashCode == FAILED_HASH)
+          {
+            return AnalyzerStatus::FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<Type>(hashCode);
+            return static_cast<AnalyzerStatus>(hashCode);
           }
 
-          return Type::NOT_SET;
+          return AnalyzerStatus::NOT_SET;
         }
 
-        Aws::String GetNameForType(Type enumValue)
+        Aws::String GetNameForAnalyzerStatus(AnalyzerStatus enumValue)
         {
           switch(enumValue)
           {
-          case Type::ACCOUNT:
-            return "ACCOUNT";
-          case Type::ORGANIZATION:
-            return "ORGANIZATION";
+          case AnalyzerStatus::ACTIVE:
+            return "ACTIVE";
+          case AnalyzerStatus::CREATING:
+            return "CREATING";
+          case AnalyzerStatus::DISABLED:
+            return "DISABLED";
+          case AnalyzerStatus::FAILED:
+            return "FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +88,7 @@ namespace Aws
           }
         }
 
-      } // namespace TypeMapper
+      } // namespace AnalyzerStatusMapper
     } // namespace Model
   } // namespace AccessAnalyzer
 } // namespace Aws

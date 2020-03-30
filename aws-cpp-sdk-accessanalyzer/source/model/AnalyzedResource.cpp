@@ -36,6 +36,7 @@ AnalyzedResource::AnalyzedResource() :
     m_isPublic(false),
     m_isPublicHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
+    m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_sharedViaHasBeenSet(false),
@@ -53,6 +54,7 @@ AnalyzedResource::AnalyzedResource(JsonView jsonValue) :
     m_isPublic(false),
     m_isPublicHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
+    m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
     m_sharedViaHasBeenSet(false),
@@ -108,6 +110,13 @@ AnalyzedResource& AnalyzedResource::operator =(JsonView jsonValue)
     m_resourceArn = jsonValue.GetString("resourceArn");
 
     m_resourceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceOwnerAccount"))
+  {
+    m_resourceOwnerAccount = jsonValue.GetString("resourceOwnerAccount");
+
+    m_resourceOwnerAccountHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceType"))
@@ -184,6 +193,12 @@ JsonValue AnalyzedResource::Jsonize() const
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("resourceArn", m_resourceArn);
+
+  }
+
+  if(m_resourceOwnerAccountHasBeenSet)
+  {
+   payload.WithString("resourceOwnerAccount", m_resourceOwnerAccount);
 
   }
 

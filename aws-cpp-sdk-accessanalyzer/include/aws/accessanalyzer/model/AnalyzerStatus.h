@@ -23,19 +23,21 @@ namespace AccessAnalyzer
 {
 namespace Model
 {
-  enum class Type
+  enum class AnalyzerStatus
   {
     NOT_SET,
-    ACCOUNT,
-    ORGANIZATION
+    ACTIVE,
+    CREATING,
+    DISABLED,
+    FAILED
   };
 
-namespace TypeMapper
+namespace AnalyzerStatusMapper
 {
-AWS_ACCESSANALYZER_API Type GetTypeForName(const Aws::String& name);
+AWS_ACCESSANALYZER_API AnalyzerStatus GetAnalyzerStatusForName(const Aws::String& name);
 
-AWS_ACCESSANALYZER_API Aws::String GetNameForType(Type value);
-} // namespace TypeMapper
+AWS_ACCESSANALYZER_API Aws::String GetNameForAnalyzerStatus(AnalyzerStatus value);
+} // namespace AnalyzerStatusMapper
 } // namespace Model
 } // namespace AccessAnalyzer
 } // namespace Aws

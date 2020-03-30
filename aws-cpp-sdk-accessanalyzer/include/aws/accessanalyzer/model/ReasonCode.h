@@ -23,19 +23,21 @@ namespace AccessAnalyzer
 {
 namespace Model
 {
-  enum class Type
+  enum class ReasonCode
   {
     NOT_SET,
-    ACCOUNT,
-    ORGANIZATION
+    AWS_SERVICE_ACCESS_DISABLED,
+    DELEGATED_ADMINISTRATOR_DEREGISTERED,
+    ORGANIZATION_DELETED,
+    SERVICE_LINKED_ROLE_CREATION_FAILED
   };
 
-namespace TypeMapper
+namespace ReasonCodeMapper
 {
-AWS_ACCESSANALYZER_API Type GetTypeForName(const Aws::String& name);
+AWS_ACCESSANALYZER_API ReasonCode GetReasonCodeForName(const Aws::String& name);
 
-AWS_ACCESSANALYZER_API Aws::String GetNameForType(Type value);
-} // namespace TypeMapper
+AWS_ACCESSANALYZER_API Aws::String GetNameForReasonCode(ReasonCode value);
+} // namespace ReasonCodeMapper
 } // namespace Model
 } // namespace AccessAnalyzer
 } // namespace Aws

@@ -34,6 +34,9 @@ AnalyzerSummary::AnalyzerSummary() :
     m_lastResourceAnalyzedHasBeenSet(false),
     m_lastResourceAnalyzedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_status(AnalyzerStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false)
@@ -46,6 +49,9 @@ AnalyzerSummary::AnalyzerSummary(JsonView jsonValue) :
     m_lastResourceAnalyzedHasBeenSet(false),
     m_lastResourceAnalyzedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_status(AnalyzerStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false)
@@ -88,6 +94,20 @@ AnalyzerSummary& AnalyzerSummary::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = AnalyzerStatusMapper::GetAnalyzerStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("statusReason"))
+  {
+    m_statusReason = jsonValue.GetObject("statusReason");
+
+    m_statusReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -139,6 +159,17 @@ JsonValue AnalyzerSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", AnalyzerStatusMapper::GetNameForAnalyzerStatus(m_status));
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithObject("statusReason", m_statusReason.Jsonize());
 
   }
 
