@@ -27,8 +27,10 @@
 #include <aws/wafv2/model/CreateRegexPatternSetResult.h>
 #include <aws/wafv2/model/CreateRuleGroupResult.h>
 #include <aws/wafv2/model/CreateWebACLResult.h>
+#include <aws/wafv2/model/DeleteFirewallManagerRuleGroupsResult.h>
 #include <aws/wafv2/model/DeleteIPSetResult.h>
 #include <aws/wafv2/model/DeleteLoggingConfigurationResult.h>
+#include <aws/wafv2/model/DeletePermissionPolicyResult.h>
 #include <aws/wafv2/model/DeleteRegexPatternSetResult.h>
 #include <aws/wafv2/model/DeleteRuleGroupResult.h>
 #include <aws/wafv2/model/DeleteWebACLResult.h>
@@ -36,6 +38,7 @@
 #include <aws/wafv2/model/DisassociateWebACLResult.h>
 #include <aws/wafv2/model/GetIPSetResult.h>
 #include <aws/wafv2/model/GetLoggingConfigurationResult.h>
+#include <aws/wafv2/model/GetPermissionPolicyResult.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysResult.h>
 #include <aws/wafv2/model/GetRegexPatternSetResult.h>
 #include <aws/wafv2/model/GetRuleGroupResult.h>
@@ -51,6 +54,7 @@
 #include <aws/wafv2/model/ListTagsForResourceResult.h>
 #include <aws/wafv2/model/ListWebACLsResult.h>
 #include <aws/wafv2/model/PutLoggingConfigurationResult.h>
+#include <aws/wafv2/model/PutPermissionPolicyResult.h>
 #include <aws/wafv2/model/TagResourceResult.h>
 #include <aws/wafv2/model/UntagResourceResult.h>
 #include <aws/wafv2/model/UpdateIPSetResult.h>
@@ -102,8 +106,10 @@ namespace Model
         class CreateRegexPatternSetRequest;
         class CreateRuleGroupRequest;
         class CreateWebACLRequest;
+        class DeleteFirewallManagerRuleGroupsRequest;
         class DeleteIPSetRequest;
         class DeleteLoggingConfigurationRequest;
+        class DeletePermissionPolicyRequest;
         class DeleteRegexPatternSetRequest;
         class DeleteRuleGroupRequest;
         class DeleteWebACLRequest;
@@ -111,6 +117,7 @@ namespace Model
         class DisassociateWebACLRequest;
         class GetIPSetRequest;
         class GetLoggingConfigurationRequest;
+        class GetPermissionPolicyRequest;
         class GetRateBasedStatementManagedKeysRequest;
         class GetRegexPatternSetRequest;
         class GetRuleGroupRequest;
@@ -126,6 +133,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class ListWebACLsRequest;
         class PutLoggingConfigurationRequest;
+        class PutPermissionPolicyRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateIPSetRequest;
@@ -139,8 +147,10 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateRegexPatternSetResult, Aws::Client::AWSError<WAFV2Errors>> CreateRegexPatternSetOutcome;
         typedef Aws::Utils::Outcome<CreateRuleGroupResult, Aws::Client::AWSError<WAFV2Errors>> CreateRuleGroupOutcome;
         typedef Aws::Utils::Outcome<CreateWebACLResult, Aws::Client::AWSError<WAFV2Errors>> CreateWebACLOutcome;
+        typedef Aws::Utils::Outcome<DeleteFirewallManagerRuleGroupsResult, Aws::Client::AWSError<WAFV2Errors>> DeleteFirewallManagerRuleGroupsOutcome;
         typedef Aws::Utils::Outcome<DeleteIPSetResult, Aws::Client::AWSError<WAFV2Errors>> DeleteIPSetOutcome;
         typedef Aws::Utils::Outcome<DeleteLoggingConfigurationResult, Aws::Client::AWSError<WAFV2Errors>> DeleteLoggingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeletePermissionPolicyResult, Aws::Client::AWSError<WAFV2Errors>> DeletePermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteRegexPatternSetResult, Aws::Client::AWSError<WAFV2Errors>> DeleteRegexPatternSetOutcome;
         typedef Aws::Utils::Outcome<DeleteRuleGroupResult, Aws::Client::AWSError<WAFV2Errors>> DeleteRuleGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteWebACLResult, Aws::Client::AWSError<WAFV2Errors>> DeleteWebACLOutcome;
@@ -148,6 +158,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateWebACLResult, Aws::Client::AWSError<WAFV2Errors>> DisassociateWebACLOutcome;
         typedef Aws::Utils::Outcome<GetIPSetResult, Aws::Client::AWSError<WAFV2Errors>> GetIPSetOutcome;
         typedef Aws::Utils::Outcome<GetLoggingConfigurationResult, Aws::Client::AWSError<WAFV2Errors>> GetLoggingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetPermissionPolicyResult, Aws::Client::AWSError<WAFV2Errors>> GetPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<GetRateBasedStatementManagedKeysResult, Aws::Client::AWSError<WAFV2Errors>> GetRateBasedStatementManagedKeysOutcome;
         typedef Aws::Utils::Outcome<GetRegexPatternSetResult, Aws::Client::AWSError<WAFV2Errors>> GetRegexPatternSetOutcome;
         typedef Aws::Utils::Outcome<GetRuleGroupResult, Aws::Client::AWSError<WAFV2Errors>> GetRuleGroupOutcome;
@@ -163,6 +174,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<WAFV2Errors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListWebACLsResult, Aws::Client::AWSError<WAFV2Errors>> ListWebACLsOutcome;
         typedef Aws::Utils::Outcome<PutLoggingConfigurationResult, Aws::Client::AWSError<WAFV2Errors>> PutLoggingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutPermissionPolicyResult, Aws::Client::AWSError<WAFV2Errors>> PutPermissionPolicyOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<WAFV2Errors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<WAFV2Errors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<WAFV2Errors>> UpdateIPSetOutcome;
@@ -176,8 +188,10 @@ namespace Model
         typedef std::future<CreateRegexPatternSetOutcome> CreateRegexPatternSetOutcomeCallable;
         typedef std::future<CreateRuleGroupOutcome> CreateRuleGroupOutcomeCallable;
         typedef std::future<CreateWebACLOutcome> CreateWebACLOutcomeCallable;
+        typedef std::future<DeleteFirewallManagerRuleGroupsOutcome> DeleteFirewallManagerRuleGroupsOutcomeCallable;
         typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
         typedef std::future<DeleteLoggingConfigurationOutcome> DeleteLoggingConfigurationOutcomeCallable;
+        typedef std::future<DeletePermissionPolicyOutcome> DeletePermissionPolicyOutcomeCallable;
         typedef std::future<DeleteRegexPatternSetOutcome> DeleteRegexPatternSetOutcomeCallable;
         typedef std::future<DeleteRuleGroupOutcome> DeleteRuleGroupOutcomeCallable;
         typedef std::future<DeleteWebACLOutcome> DeleteWebACLOutcomeCallable;
@@ -185,6 +199,7 @@ namespace Model
         typedef std::future<DisassociateWebACLOutcome> DisassociateWebACLOutcomeCallable;
         typedef std::future<GetIPSetOutcome> GetIPSetOutcomeCallable;
         typedef std::future<GetLoggingConfigurationOutcome> GetLoggingConfigurationOutcomeCallable;
+        typedef std::future<GetPermissionPolicyOutcome> GetPermissionPolicyOutcomeCallable;
         typedef std::future<GetRateBasedStatementManagedKeysOutcome> GetRateBasedStatementManagedKeysOutcomeCallable;
         typedef std::future<GetRegexPatternSetOutcome> GetRegexPatternSetOutcomeCallable;
         typedef std::future<GetRuleGroupOutcome> GetRuleGroupOutcomeCallable;
@@ -200,6 +215,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWebACLsOutcome> ListWebACLsOutcomeCallable;
         typedef std::future<PutLoggingConfigurationOutcome> PutLoggingConfigurationOutcomeCallable;
+        typedef std::future<PutPermissionPolicyOutcome> PutPermissionPolicyOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
@@ -216,8 +232,10 @@ namespace Model
     typedef std::function<void(const WAFV2Client*, const Model::CreateRegexPatternSetRequest&, const Model::CreateRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::CreateRuleGroupRequest&, const Model::CreateRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleGroupResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::CreateWebACLRequest&, const Model::CreateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebACLResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::DeleteFirewallManagerRuleGroupsRequest&, const Model::DeleteFirewallManagerRuleGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFirewallManagerRuleGroupsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DeleteLoggingConfigurationRequest&, const Model::DeleteLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::DeletePermissionPolicyRequest&, const Model::DeletePermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DeleteRegexPatternSetRequest&, const Model::DeleteRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DeleteRuleGroupRequest&, const Model::DeleteRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleGroupResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::DeleteWebACLRequest&, const Model::DeleteWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebACLResponseReceivedHandler;
@@ -225,6 +243,7 @@ namespace Model
     typedef std::function<void(const WAFV2Client*, const Model::DisassociateWebACLRequest&, const Model::DisassociateWebACLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWebACLResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetIPSetRequest&, const Model::GetIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIPSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetLoggingConfigurationRequest&, const Model::GetLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::GetPermissionPolicyRequest&, const Model::GetPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetRateBasedStatementManagedKeysRequest&, const Model::GetRateBasedStatementManagedKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRateBasedStatementManagedKeysResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetRegexPatternSetRequest&, const Model::GetRegexPatternSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRegexPatternSetResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::GetRuleGroupRequest&, const Model::GetRuleGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuleGroupResponseReceivedHandler;
@@ -240,6 +259,7 @@ namespace Model
     typedef std::function<void(const WAFV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::ListWebACLsRequest&, const Model::ListWebACLsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWebACLsResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::PutLoggingConfigurationRequest&, const Model::PutLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLoggingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const WAFV2Client*, const Model::PutPermissionPolicyRequest&, const Model::PutPermissionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionPolicyResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const WAFV2Client*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
@@ -273,7 +293,7 @@ namespace Model
    * For detailed information about AWS WAF features and an overview of how to use
    * AWS WAF, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
-   * Guide</a>.</p> <p>You can make API calls using the endpoints listed in <a
+   * Guide</a>.</p> <p>You can make calls using the endpoints listed in <a
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region">AWS
    * Service Endpoints for AWS WAF</a>. </p> <ul> <li> <p>For regional applications,
    * you can use any of the endpoints in the list. A regional application can be an
@@ -289,12 +309,12 @@ namespace Model
    * API for both global and regional applications. Where you need to distinguish the
    * scope, you specify a <code>Scope</code> parameter and set it to
    * <code>CLOUDFRONT</code> or <code>REGIONAL</code>. </p> </li> <li> <p>You can
-   * define a Web ACL or rule group with a single API call, and update it with a
-   * single call. You define all rule specifications in JSON format, and pass them to
-   * your rule group or Web ACL API calls.</p> </li> <li> <p>The limits AWS WAF
-   * places on the use of rules more closely reflects the cost of running each type
-   * of rule. Rule groups include capacity settings, so you know the maximum cost of
-   * a rule group when you use it.</p> </li> </ul>
+   * define a Web ACL or rule group with a single call, and update it with a single
+   * call. You define all rule specifications in JSON format, and pass them to your
+   * rule group or Web ACL calls.</p> </li> <li> <p>The limits AWS WAF places on the
+   * use of rules more closely reflects the cost of running each type of rule. Rule
+   * groups include capacity settings, so you know the maximum cost of a rule group
+   * when you use it.</p> </li> </ul>
    */
   class AWS_WAFV2_API WAFV2Client : public Aws::Client::AWSJsonClient
   {
@@ -333,9 +353,10 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Associates a Web ACL with a regional
          * application resource, to protect the resource. A regional application can be an
          * Application Load Balancer (ALB) or an API Gateway stage. </p> <p>For AWS
-         * CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of
-         * the <a>WebACL</a> to the CloudFront API call <code>UpdateDistribution</code>.
-         * For information, see <a
+         * CloudFront, don't use this call. Instead, use your CloudFront distribution
+         * configuration. To associate a Web ACL, in the CloudFront call
+         * <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
+         * (ARN) of the Web ACL. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
@@ -351,9 +372,10 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Associates a Web ACL with a regional
          * application resource, to protect the resource. A regional application can be an
          * Application Load Balancer (ALB) or an API Gateway stage. </p> <p>For AWS
-         * CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of
-         * the <a>WebACL</a> to the CloudFront API call <code>UpdateDistribution</code>.
-         * For information, see <a
+         * CloudFront, don't use this call. Instead, use your CloudFront distribution
+         * configuration. To associate a Web ACL, in the CloudFront call
+         * <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
+         * (ARN) of the Web ACL. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
@@ -371,9 +393,10 @@ namespace Model
          * WAF Developer Guide</a>. </p> </note> <p>Associates a Web ACL with a regional
          * application resource, to protect the resource. A regional application can be an
          * Application Load Balancer (ALB) or an API Gateway stage. </p> <p>For AWS
-         * CloudFront, you can associate the Web ACL by providing the <code>ARN</code> of
-         * the <a>WebACL</a> to the CloudFront API call <code>UpdateDistribution</code>.
-         * For information, see <a
+         * CloudFront, don't use this call. Instead, use your CloudFront distribution
+         * configuration. To associate a Web ACL, in the CloudFront call
+         * <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
+         * (ARN) of the Web ACL. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
@@ -662,6 +685,40 @@ namespace Model
         virtual void CreateWebACLAsync(const Model::CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes all rule groups that are managed by AWS Firewall Manager for the
+         * specified web ACL. </p> <p>You can only use this if
+         * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFirewallManagerRuleGroupsOutcome DeleteFirewallManagerRuleGroups(const Model::DeleteFirewallManagerRuleGroupsRequest& request) const;
+
+        /**
+         * <p>Deletes all rule groups that are managed by AWS Firewall Manager for the
+         * specified web ACL. </p> <p>You can only use this if
+         * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFirewallManagerRuleGroupsOutcomeCallable DeleteFirewallManagerRuleGroupsCallable(const Model::DeleteFirewallManagerRuleGroupsRequest& request) const;
+
+        /**
+         * <p>Deletes all rule groups that are managed by AWS Firewall Manager for the
+         * specified web ACL. </p> <p>You can only use this if
+         * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteFirewallManagerRuleGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFirewallManagerRuleGroupsAsync(const Model::DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
          * released in November, 2019. For information, including how to migrate your AWS
          * WAF resources from the prior release, see the <a
@@ -740,6 +797,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteLoggingConfigurationAsync(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Permanently deletes an IAM policy from the specified rule group.</p> <p>You
+         * must be the owner of the rule group to perform this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePermissionPolicyOutcome DeletePermissionPolicy(const Model::DeletePermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Permanently deletes an IAM policy from the specified rule group.</p> <p>You
+         * must be the owner of the rule group to perform this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePermissionPolicyOutcomeCallable DeletePermissionPolicyCallable(const Model::DeletePermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Permanently deletes an IAM policy from the specified rule group.</p> <p>You
+         * must be the owner of the rule group to perform this operation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeletePermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePermissionPolicyAsync(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
@@ -827,7 +915,9 @@ namespace Model
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Deletes the specified
-         * <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>WebACL</a>.</p> <p>You can only use this if
+         * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
          * API Reference</a></p>
          */
@@ -839,7 +929,9 @@ namespace Model
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Deletes the specified
-         * <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>WebACL</a>.</p> <p>You can only use this if
+         * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
          * API Reference</a></p>
          *
@@ -853,7 +945,9 @@ namespace Model
          * WAF resources from the prior release, see the <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Deletes the specified
-         * <a>WebACL</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>WebACL</a>.</p> <p>You can only use this if
+         * <code>ManagedByFirewallManager</code> is false in the specified <a>WebACL</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
          * API Reference</a></p>
          *
@@ -911,8 +1005,9 @@ namespace Model
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Disassociates a Web ACL from a regional
          * application resource. A regional application can be an Application Load Balancer
-         * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, you can disassociate
-         * the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+         * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, don't use this call.
+         * Instead, use your CloudFront distribution configuration. To disassociate a Web
+         * ACL, provide an empty web ACL ID in the CloudFront call
          * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -928,8 +1023,9 @@ namespace Model
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Disassociates a Web ACL from a regional
          * application resource. A regional application can be an Application Load Balancer
-         * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, you can disassociate
-         * the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+         * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, don't use this call.
+         * Instead, use your CloudFront distribution configuration. To disassociate a Web
+         * ACL, provide an empty web ACL ID in the CloudFront call
          * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -947,8 +1043,9 @@ namespace Model
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
          * WAF Developer Guide</a>. </p> </note> <p>Disassociates a Web ACL from a regional
          * application resource. A regional application can be an Application Load Balancer
-         * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, you can disassociate
-         * the Web ACL by providing an empty web ACL ARN in the CloudFront API call
+         * (ALB) or an API Gateway stage. </p> <p>For AWS CloudFront, don't use this call.
+         * Instead, use your CloudFront distribution configuration. To disassociate a Web
+         * ACL, provide an empty web ACL ID in the CloudFront call
          * <code>UpdateDistribution</code>. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1038,6 +1135,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetLoggingConfigurationAsync(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the IAM policy that is attached to the specified rule group.</p>
+         * <p>You must be the owner of the rule group to perform this
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPermissionPolicyOutcome GetPermissionPolicy(const Model::GetPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the IAM policy that is attached to the specified rule group.</p>
+         * <p>You must be the owner of the rule group to perform this
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPermissionPolicyOutcomeCallable GetPermissionPolicyCallable(const Model::GetPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the IAM policy that is attached to the specified rule group.</p>
+         * <p>You must be the owner of the rule group to perform this
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPermissionPolicyAsync(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
@@ -1672,7 +1800,7 @@ namespace Model
          * configuration provided.</p> <p>You can access information about all traffic that
          * AWS WAF inspects using the following steps:</p> <ol> <li> <p>Create an Amazon
          * Kinesis Data Firehose. </p> <p>Create the data firehose with a PUT source and in
-         * the region that you are operating. If you are capturing logs for Amazon
+         * the Region that you are operating. If you are capturing logs for Amazon
          * CloudFront, always create the firehose in US East (N. Virginia). </p> <note>
          * <p>Do not create the data firehose using a <code>Kinesis stream</code> as your
          * source.</p> </note> </li> <li> <p>Associate that firehose to your web ACL using
@@ -1699,7 +1827,7 @@ namespace Model
          * configuration provided.</p> <p>You can access information about all traffic that
          * AWS WAF inspects using the following steps:</p> <ol> <li> <p>Create an Amazon
          * Kinesis Data Firehose. </p> <p>Create the data firehose with a PUT source and in
-         * the region that you are operating. If you are capturing logs for Amazon
+         * the Region that you are operating. If you are capturing logs for Amazon
          * CloudFront, always create the firehose in US East (N. Virginia). </p> <note>
          * <p>Do not create the data firehose using a <code>Kinesis stream</code> as your
          * source.</p> </note> </li> <li> <p>Associate that firehose to your web ACL using
@@ -1728,7 +1856,7 @@ namespace Model
          * configuration provided.</p> <p>You can access information about all traffic that
          * AWS WAF inspects using the following steps:</p> <ol> <li> <p>Create an Amazon
          * Kinesis Data Firehose. </p> <p>Create the data firehose with a PUT source and in
-         * the region that you are operating. If you are capturing logs for Amazon
+         * the Region that you are operating. If you are capturing logs for Amazon
          * CloudFront, always create the firehose in US East (N. Virginia). </p> <note>
          * <p>Do not create the data firehose using a <code>Kinesis stream</code> as your
          * source.</p> </note> </li> <li> <p>Associate that firehose to your web ACL using
@@ -1746,6 +1874,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutLoggingConfigurationAsync(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Attaches an IAM policy to the specified resource. Use this to share a rule
+         * group across accounts.</p> <p>You must be the owner of the rule group to perform
+         * this operation.</p> <p>This action is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The ARN in the
+         * request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist
+         * in the same region.</p> </li> <li> <p>The user making the request must be the
+         * owner of the rule group.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPermissionPolicyOutcome PutPermissionPolicy(const Model::PutPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Attaches an IAM policy to the specified resource. Use this to share a rule
+         * group across accounts.</p> <p>You must be the owner of the rule group to perform
+         * this operation.</p> <p>This action is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The ARN in the
+         * request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist
+         * in the same region.</p> </li> <li> <p>The user making the request must be the
+         * owner of the rule group.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPermissionPolicyOutcomeCallable PutPermissionPolicyCallable(const Model::PutPermissionPolicyRequest& request) const;
+
+        /**
+         * <p>Attaches an IAM policy to the specified resource. Use this to share a rule
+         * group across accounts.</p> <p>You must be the owner of the rule group to perform
+         * this operation.</p> <p>This action is subject to the following restrictions:</p>
+         * <ul> <li> <p>You can attach only one policy with each
+         * <code>PutPermissionPolicy</code> request.</p> </li> <li> <p>The ARN in the
+         * request must be a valid WAF <a>RuleGroup</a> ARN and the rule group must exist
+         * in the same region.</p> </li> <li> <p>The user making the request must be the
+         * owner of the rule group.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutPermissionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPermissionPolicyAsync(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
@@ -2051,8 +2225,10 @@ namespace Model
         void CreateRegexPatternSetAsyncHelper(const Model::CreateRegexPatternSetRequest& request, const CreateRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRuleGroupAsyncHelper(const Model::CreateRuleGroupRequest& request, const CreateRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWebACLAsyncHelper(const Model::CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFirewallManagerRuleGroupsAsyncHelper(const Model::DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLoggingConfigurationAsyncHelper(const Model::DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePermissionPolicyAsyncHelper(const Model::DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRegexPatternSetAsyncHelper(const Model::DeleteRegexPatternSetRequest& request, const DeleteRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRuleGroupAsyncHelper(const Model::DeleteRuleGroupRequest& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWebACLAsyncHelper(const Model::DeleteWebACLRequest& request, const DeleteWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2060,6 +2236,7 @@ namespace Model
         void DisassociateWebACLAsyncHelper(const Model::DisassociateWebACLRequest& request, const DisassociateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIPSetAsyncHelper(const Model::GetIPSetRequest& request, const GetIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLoggingConfigurationAsyncHelper(const Model::GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPermissionPolicyAsyncHelper(const Model::GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRateBasedStatementManagedKeysAsyncHelper(const Model::GetRateBasedStatementManagedKeysRequest& request, const GetRateBasedStatementManagedKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRegexPatternSetAsyncHelper(const Model::GetRegexPatternSetRequest& request, const GetRegexPatternSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRuleGroupAsyncHelper(const Model::GetRuleGroupRequest& request, const GetRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2075,6 +2252,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWebACLsAsyncHelper(const Model::ListWebACLsRequest& request, const ListWebACLsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLoggingConfigurationAsyncHelper(const Model::PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPermissionPolicyAsyncHelper(const Model::PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

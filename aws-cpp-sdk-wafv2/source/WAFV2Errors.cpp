@@ -32,10 +32,12 @@ static const int W_A_F_UNAVAILABLE_ENTITY_HASH = HashingUtils::HashString("WAFUn
 static const int W_A_F_LIMITS_EXCEEDED_HASH = HashingUtils::HashString("WAFLimitsExceededException");
 static const int W_A_F_INVALID_PARAMETER_HASH = HashingUtils::HashString("WAFInvalidParameterException");
 static const int W_A_F_INVALID_RESOURCE_HASH = HashingUtils::HashString("WAFInvalidResourceException");
+static const int W_A_F_INVALID_OPERATION_HASH = HashingUtils::HashString("WAFInvalidOperationException");
 static const int W_A_F_ASSOCIATED_ITEM_HASH = HashingUtils::HashString("WAFAssociatedItemException");
 static const int W_A_F_SUBSCRIPTION_NOT_FOUND_HASH = HashingUtils::HashString("WAFSubscriptionNotFoundException");
 static const int W_A_F_INTERNAL_ERROR_HASH = HashingUtils::HashString("WAFInternalErrorException");
 static const int W_A_F_TAG_OPERATION_HASH = HashingUtils::HashString("WAFTagOperationException");
+static const int W_A_F_INVALID_PERMISSION_POLICY_HASH = HashingUtils::HashString("WAFInvalidPermissionPolicyException");
 static const int W_A_F_NONEXISTENT_ITEM_HASH = HashingUtils::HashString("WAFNonexistentItemException");
 static const int W_A_F_DUPLICATE_ITEM_HASH = HashingUtils::HashString("WAFDuplicateItemException");
 static const int W_A_F_OPTIMISTIC_LOCK_HASH = HashingUtils::HashString("WAFOptimisticLockException");
@@ -63,6 +65,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_INVALID_RESOURCE), false);
   }
+  else if (hashCode == W_A_F_INVALID_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_INVALID_OPERATION), false);
+  }
   else if (hashCode == W_A_F_ASSOCIATED_ITEM_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_ASSOCIATED_ITEM), false);
@@ -78,6 +84,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == W_A_F_TAG_OPERATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_TAG_OPERATION), false);
+  }
+  else if (hashCode == W_A_F_INVALID_PERMISSION_POLICY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_INVALID_PERMISSION_POLICY), false);
   }
   else if (hashCode == W_A_F_NONEXISTENT_ITEM_HASH)
   {

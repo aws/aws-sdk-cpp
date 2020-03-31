@@ -31,6 +31,7 @@ namespace Model
 SMSMessage::SMSMessage() : 
     m_bodyHasBeenSet(false),
     m_keywordHasBeenSet(false),
+    m_mediaUrlHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
     m_originationNumberHasBeenSet(false),
@@ -42,6 +43,7 @@ SMSMessage::SMSMessage() :
 SMSMessage::SMSMessage(JsonView jsonValue) : 
     m_bodyHasBeenSet(false),
     m_keywordHasBeenSet(false),
+    m_mediaUrlHasBeenSet(false),
     m_messageType(MessageType::NOT_SET),
     m_messageTypeHasBeenSet(false),
     m_originationNumberHasBeenSet(false),
@@ -65,6 +67,13 @@ SMSMessage& SMSMessage::operator =(JsonView jsonValue)
     m_keyword = jsonValue.GetString("Keyword");
 
     m_keywordHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MediaUrl"))
+  {
+    m_mediaUrl = jsonValue.GetString("MediaUrl");
+
+    m_mediaUrlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MessageType"))
@@ -121,6 +130,12 @@ JsonValue SMSMessage::Jsonize() const
   if(m_keywordHasBeenSet)
   {
    payload.WithString("Keyword", m_keyword);
+
+  }
+
+  if(m_mediaUrlHasBeenSet)
+  {
+   payload.WithString("MediaUrl", m_mediaUrl);
 
   }
 

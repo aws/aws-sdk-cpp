@@ -50,7 +50,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -61,7 +61,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -72,7 +72,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -83,7 +83,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -94,7 +94,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -105,7 +105,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -113,50 +113,50 @@ namespace Model
 
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline const Aws::String& GetWebACLName() const{ return m_webACLName; }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline bool WebACLNameHasBeenSet() const { return m_webACLNameHasBeenSet; }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline void SetWebACLName(const Aws::String& value) { m_webACLNameHasBeenSet = true; m_webACLName = value; }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline void SetWebACLName(Aws::String&& value) { m_webACLNameHasBeenSet = true; m_webACLName = std::move(value); }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline void SetWebACLName(const char* value) { m_webACLNameHasBeenSet = true; m_webACLName.assign(value); }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline GetRateBasedStatementManagedKeysRequest& WithWebACLName(const Aws::String& value) { SetWebACLName(value); return *this;}
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline GetRateBasedStatementManagedKeysRequest& WithWebACLName(Aws::String&& value) { SetWebACLName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline GetRateBasedStatementManagedKeysRequest& WithWebACLName(const char* value) { SetWebACLName(value); return *this;}
 

@@ -37,7 +37,11 @@ WebACL::WebACL() :
     m_rulesHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
     m_capacity(0),
-    m_capacityHasBeenSet(false)
+    m_capacityHasBeenSet(false),
+    m_preProcessFirewallManagerRuleGroupsHasBeenSet(false),
+    m_postProcessFirewallManagerRuleGroupsHasBeenSet(false),
+    m_managedByFirewallManager(false),
+    m_managedByFirewallManagerHasBeenSet(false)
 {
 }
 
@@ -50,7 +54,11 @@ WebACL::WebACL(JsonView jsonValue) :
     m_rulesHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false),
     m_capacity(0),
-    m_capacityHasBeenSet(false)
+    m_capacityHasBeenSet(false),
+    m_preProcessFirewallManagerRuleGroupsHasBeenSet(false),
+    m_postProcessFirewallManagerRuleGroupsHasBeenSet(false),
+    m_managedByFirewallManager(false),
+    m_managedByFirewallManagerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +124,33 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_capacityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PreProcessFirewallManagerRuleGroups"))
+  {
+    Array<JsonView> preProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PreProcessFirewallManagerRuleGroups");
+    for(unsigned preProcessFirewallManagerRuleGroupsIndex = 0; preProcessFirewallManagerRuleGroupsIndex < preProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++preProcessFirewallManagerRuleGroupsIndex)
+    {
+      m_preProcessFirewallManagerRuleGroups.push_back(preProcessFirewallManagerRuleGroupsJsonList[preProcessFirewallManagerRuleGroupsIndex].AsObject());
+    }
+    m_preProcessFirewallManagerRuleGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PostProcessFirewallManagerRuleGroups"))
+  {
+    Array<JsonView> postProcessFirewallManagerRuleGroupsJsonList = jsonValue.GetArray("PostProcessFirewallManagerRuleGroups");
+    for(unsigned postProcessFirewallManagerRuleGroupsIndex = 0; postProcessFirewallManagerRuleGroupsIndex < postProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++postProcessFirewallManagerRuleGroupsIndex)
+    {
+      m_postProcessFirewallManagerRuleGroups.push_back(postProcessFirewallManagerRuleGroupsJsonList[postProcessFirewallManagerRuleGroupsIndex].AsObject());
+    }
+    m_postProcessFirewallManagerRuleGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ManagedByFirewallManager"))
+  {
+    m_managedByFirewallManager = jsonValue.GetBool("ManagedByFirewallManager");
+
+    m_managedByFirewallManagerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +208,34 @@ JsonValue WebACL::Jsonize() const
   if(m_capacityHasBeenSet)
   {
    payload.WithInt64("Capacity", m_capacity);
+
+  }
+
+  if(m_preProcessFirewallManagerRuleGroupsHasBeenSet)
+  {
+   Array<JsonValue> preProcessFirewallManagerRuleGroupsJsonList(m_preProcessFirewallManagerRuleGroups.size());
+   for(unsigned preProcessFirewallManagerRuleGroupsIndex = 0; preProcessFirewallManagerRuleGroupsIndex < preProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++preProcessFirewallManagerRuleGroupsIndex)
+   {
+     preProcessFirewallManagerRuleGroupsJsonList[preProcessFirewallManagerRuleGroupsIndex].AsObject(m_preProcessFirewallManagerRuleGroups[preProcessFirewallManagerRuleGroupsIndex].Jsonize());
+   }
+   payload.WithArray("PreProcessFirewallManagerRuleGroups", std::move(preProcessFirewallManagerRuleGroupsJsonList));
+
+  }
+
+  if(m_postProcessFirewallManagerRuleGroupsHasBeenSet)
+  {
+   Array<JsonValue> postProcessFirewallManagerRuleGroupsJsonList(m_postProcessFirewallManagerRuleGroups.size());
+   for(unsigned postProcessFirewallManagerRuleGroupsIndex = 0; postProcessFirewallManagerRuleGroupsIndex < postProcessFirewallManagerRuleGroupsJsonList.GetLength(); ++postProcessFirewallManagerRuleGroupsIndex)
+   {
+     postProcessFirewallManagerRuleGroupsJsonList[postProcessFirewallManagerRuleGroupsIndex].AsObject(m_postProcessFirewallManagerRuleGroups[postProcessFirewallManagerRuleGroupsIndex].Jsonize());
+   }
+   payload.WithArray("PostProcessFirewallManagerRuleGroups", std::move(postProcessFirewallManagerRuleGroupsJsonList));
+
+  }
+
+  if(m_managedByFirewallManagerHasBeenSet)
+  {
+   payload.WithBool("ManagedByFirewallManager", m_managedByFirewallManager);
 
   }
 

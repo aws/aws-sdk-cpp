@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int WAF_HASH = HashingUtils::HashString("WAF");
+        static const int WAFV2_HASH = HashingUtils::HashString("WAFV2");
         static const int SHIELD_ADVANCED_HASH = HashingUtils::HashString("SHIELD_ADVANCED");
         static const int SECURITY_GROUPS_COMMON_HASH = HashingUtils::HashString("SECURITY_GROUPS_COMMON");
         static const int SECURITY_GROUPS_CONTENT_AUDIT_HASH = HashingUtils::HashString("SECURITY_GROUPS_CONTENT_AUDIT");
@@ -43,6 +44,10 @@ namespace Aws
           if (hashCode == WAF_HASH)
           {
             return SecurityServiceType::WAF;
+          }
+          else if (hashCode == WAFV2_HASH)
+          {
+            return SecurityServiceType::WAFV2;
           }
           else if (hashCode == SHIELD_ADVANCED_HASH)
           {
@@ -76,6 +81,8 @@ namespace Aws
           {
           case SecurityServiceType::WAF:
             return "WAF";
+          case SecurityServiceType::WAFV2:
+            return "WAFV2";
           case SecurityServiceType::SHIELD_ADVANCED:
             return "SHIELD_ADVANCED";
           case SecurityServiceType::SECURITY_GROUPS_COMMON:

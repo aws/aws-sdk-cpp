@@ -37,6 +37,8 @@
 #include <aws/rekognition/model/CreateStreamProcessorRequest.h>
 #include <aws/rekognition/model/DeleteCollectionRequest.h>
 #include <aws/rekognition/model/DeleteFacesRequest.h>
+#include <aws/rekognition/model/DeleteProjectRequest.h>
+#include <aws/rekognition/model/DeleteProjectVersionRequest.h>
 #include <aws/rekognition/model/DeleteStreamProcessorRequest.h>
 #include <aws/rekognition/model/DescribeCollectionRequest.h>
 #include <aws/rekognition/model/DescribeProjectVersionsRequest.h>
@@ -389,6 +391,76 @@ void RekognitionClient::DeleteFacesAsync(const DeleteFacesRequest& request, cons
 void RekognitionClient::DeleteFacesAsyncHelper(const DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteFaces(request), context);
+}
+
+DeleteProjectOutcome RekognitionClient::DeleteProject(const DeleteProjectRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteProjectOutcome(DeleteProjectResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteProjectOutcome(outcome.GetError());
+  }
+}
+
+DeleteProjectOutcomeCallable RekognitionClient::DeleteProjectCallable(const DeleteProjectRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProject(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DeleteProjectAsync(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteProject(request), context);
+}
+
+DeleteProjectVersionOutcome RekognitionClient::DeleteProjectVersion(const DeleteProjectVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteProjectVersionOutcome(DeleteProjectVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteProjectVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteProjectVersionOutcomeCallable RekognitionClient::DeleteProjectVersionCallable(const DeleteProjectVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProjectVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProjectVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RekognitionClient::DeleteProjectVersionAsync(const DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteProjectVersionAsyncHelper( request, handler, context ); } );
+}
+
+void RekognitionClient::DeleteProjectVersionAsyncHelper(const DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteProjectVersion(request), context);
 }
 
 DeleteStreamProcessorOutcome RekognitionClient::DeleteStreamProcessor(const DeleteStreamProcessorRequest& request) const

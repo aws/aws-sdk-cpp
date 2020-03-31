@@ -736,6 +736,47 @@ namespace Model
     inline SMBFileShareInfo& AddInvalidUserList(const char* value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(value); return *this; }
 
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline const Aws::String& GetAuditDestinationARN() const{ return m_auditDestinationARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline bool AuditDestinationARNHasBeenSet() const { return m_auditDestinationARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const Aws::String& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(Aws::String&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const char* value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline SMBFileShareInfo& WithAuditDestinationARN(const Aws::String& value) { SetAuditDestinationARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline SMBFileShareInfo& WithAuditDestinationARN(Aws::String&& value) { SetAuditDestinationARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline SMBFileShareInfo& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
+
+
     
     inline const Aws::String& GetAuthentication() const{ return m_authentication; }
 
@@ -880,6 +921,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_invalidUserList;
     bool m_invalidUserListHasBeenSet;
+
+    Aws::String m_auditDestinationARN;
+    bool m_auditDestinationARNHasBeenSet;
 
     Aws::String m_authentication;
     bool m_authenticationHasBeenSet;

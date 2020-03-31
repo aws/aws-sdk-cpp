@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Amazon Detective is currently in preview.</p> <p>An AWS account that is the
-   * master of or a member of a behavior graph.</p><p><h3>See Also:</h3>   <a
+   * <p>An AWS account that is the master of or a member of a behavior
+   * graph.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/Account">AWS
    * API Reference</a></p>
    */

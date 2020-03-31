@@ -26,15 +26,18 @@
 #include <aws/mediastore/model/DeleteContainerPolicyResult.h>
 #include <aws/mediastore/model/DeleteCorsPolicyResult.h>
 #include <aws/mediastore/model/DeleteLifecyclePolicyResult.h>
+#include <aws/mediastore/model/DeleteMetricPolicyResult.h>
 #include <aws/mediastore/model/DescribeContainerResult.h>
 #include <aws/mediastore/model/GetContainerPolicyResult.h>
 #include <aws/mediastore/model/GetCorsPolicyResult.h>
 #include <aws/mediastore/model/GetLifecyclePolicyResult.h>
+#include <aws/mediastore/model/GetMetricPolicyResult.h>
 #include <aws/mediastore/model/ListContainersResult.h>
 #include <aws/mediastore/model/ListTagsForResourceResult.h>
 #include <aws/mediastore/model/PutContainerPolicyResult.h>
 #include <aws/mediastore/model/PutCorsPolicyResult.h>
 #include <aws/mediastore/model/PutLifecyclePolicyResult.h>
+#include <aws/mediastore/model/PutMetricPolicyResult.h>
 #include <aws/mediastore/model/StartAccessLoggingResult.h>
 #include <aws/mediastore/model/StopAccessLoggingResult.h>
 #include <aws/mediastore/model/TagResourceResult.h>
@@ -83,15 +86,18 @@ namespace Model
         class DeleteContainerPolicyRequest;
         class DeleteCorsPolicyRequest;
         class DeleteLifecyclePolicyRequest;
+        class DeleteMetricPolicyRequest;
         class DescribeContainerRequest;
         class GetContainerPolicyRequest;
         class GetCorsPolicyRequest;
         class GetLifecyclePolicyRequest;
+        class GetMetricPolicyRequest;
         class ListContainersRequest;
         class ListTagsForResourceRequest;
         class PutContainerPolicyRequest;
         class PutCorsPolicyRequest;
         class PutLifecyclePolicyRequest;
+        class PutMetricPolicyRequest;
         class StartAccessLoggingRequest;
         class StopAccessLoggingRequest;
         class TagResourceRequest;
@@ -102,15 +108,18 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteContainerPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteCorsPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteMetricPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteMetricPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeContainerResult, Aws::Client::AWSError<MediaStoreErrors>> DescribeContainerOutcome;
         typedef Aws::Utils::Outcome<GetContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetContainerPolicyOutcome;
         typedef Aws::Utils::Outcome<GetCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetCorsPolicyOutcome;
         typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetMetricPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetMetricPolicyOutcome;
         typedef Aws::Utils::Outcome<ListContainersResult, Aws::Client::AWSError<MediaStoreErrors>> ListContainersOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaStoreErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutContainerPolicyOutcome;
         typedef Aws::Utils::Outcome<PutCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutCorsPolicyOutcome;
         typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<PutMetricPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutMetricPolicyOutcome;
         typedef Aws::Utils::Outcome<StartAccessLoggingResult, Aws::Client::AWSError<MediaStoreErrors>> StartAccessLoggingOutcome;
         typedef Aws::Utils::Outcome<StopAccessLoggingResult, Aws::Client::AWSError<MediaStoreErrors>> StopAccessLoggingOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<MediaStoreErrors>> TagResourceOutcome;
@@ -121,15 +130,18 @@ namespace Model
         typedef std::future<DeleteContainerPolicyOutcome> DeleteContainerPolicyOutcomeCallable;
         typedef std::future<DeleteCorsPolicyOutcome> DeleteCorsPolicyOutcomeCallable;
         typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
+        typedef std::future<DeleteMetricPolicyOutcome> DeleteMetricPolicyOutcomeCallable;
         typedef std::future<DescribeContainerOutcome> DescribeContainerOutcomeCallable;
         typedef std::future<GetContainerPolicyOutcome> GetContainerPolicyOutcomeCallable;
         typedef std::future<GetCorsPolicyOutcome> GetCorsPolicyOutcomeCallable;
         typedef std::future<GetLifecyclePolicyOutcome> GetLifecyclePolicyOutcomeCallable;
+        typedef std::future<GetMetricPolicyOutcome> GetMetricPolicyOutcomeCallable;
         typedef std::future<ListContainersOutcome> ListContainersOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutContainerPolicyOutcome> PutContainerPolicyOutcomeCallable;
         typedef std::future<PutCorsPolicyOutcome> PutCorsPolicyOutcomeCallable;
         typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable;
+        typedef std::future<PutMetricPolicyOutcome> PutMetricPolicyOutcomeCallable;
         typedef std::future<StartAccessLoggingOutcome> StartAccessLoggingOutcomeCallable;
         typedef std::future<StopAccessLoggingOutcome> StopAccessLoggingOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -143,15 +155,18 @@ namespace Model
     typedef std::function<void(const MediaStoreClient*, const Model::DeleteContainerPolicyRequest&, const Model::DeleteContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DeleteCorsPolicyRequest&, const Model::DeleteCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCorsPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DeleteLifecyclePolicyRequest&, const Model::DeleteLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::DeleteMetricPolicyRequest&, const Model::DeleteMetricPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMetricPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DescribeContainerRequest&, const Model::DescribeContainerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContainerResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::GetContainerPolicyRequest&, const Model::GetContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::GetCorsPolicyRequest&, const Model::GetCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCorsPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::GetLifecyclePolicyRequest&, const Model::GetLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::GetMetricPolicyRequest&, const Model::GetMetricPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::ListContainersRequest&, const Model::ListContainersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainersResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutContainerPolicyRequest&, const Model::PutContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContainerPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutCorsPolicyRequest&, const Model::PutCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCorsPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutLifecyclePolicyRequest&, const Model::PutLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecyclePolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::PutMetricPolicyRequest&, const Model::PutMetricPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutMetricPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::StartAccessLoggingRequest&, const Model::StartAccessLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAccessLoggingResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::StopAccessLoggingRequest&, const Model::StopAccessLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAccessLoggingResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -346,6 +361,37 @@ namespace Model
         virtual void DeleteLifecyclePolicyAsync(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the metric policy that is associated with the specified container. If
+         * there is no metric policy associated with the container, MediaStore doesn't send
+         * metrics to CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMetricPolicyOutcome DeleteMetricPolicy(const Model::DeleteMetricPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the metric policy that is associated with the specified container. If
+         * there is no metric policy associated with the container, MediaStore doesn't send
+         * metrics to CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMetricPolicyOutcomeCallable DeleteMetricPolicyCallable(const Model::DeleteMetricPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the metric policy that is associated with the specified container. If
+         * there is no metric policy associated with the container, MediaStore doesn't send
+         * metrics to CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteMetricPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMetricPolicyAsync(const Model::DeleteMetricPolicyRequest& request, const DeleteMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the properties of the requested container. This request is commonly
          * used to retrieve the endpoint of a container. An endpoint is a value assigned by
          * the service when a new container is created. A container's endpoint does not
@@ -489,6 +535,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetLifecyclePolicyAsync(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the metric policy for the specified container. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetricPolicyOutcome GetMetricPolicy(const Model::GetMetricPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the metric policy for the specified container. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMetricPolicyOutcomeCallable GetMetricPolicyCallable(const Model::GetMetricPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the metric policy for the specified container. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetMetricPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMetricPolicyAsync(const Model::GetMetricPolicyRequest& request, const GetMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the properties of all containers in AWS Elemental MediaStore. </p>
@@ -715,6 +789,40 @@ namespace Model
         virtual void PutLifecyclePolicyAsync(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>The metric policy that you want to add to the container. A metric policy
+         * allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. It takes
+         * up to 20 minutes for the new policy to take effect.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutMetricPolicyOutcome PutMetricPolicy(const Model::PutMetricPolicyRequest& request) const;
+
+        /**
+         * <p>The metric policy that you want to add to the container. A metric policy
+         * allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. It takes
+         * up to 20 minutes for the new policy to take effect.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutMetricPolicyOutcomeCallable PutMetricPolicyCallable(const Model::PutMetricPolicyRequest& request) const;
+
+        /**
+         * <p>The metric policy that you want to add to the container. A metric policy
+         * allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. It takes
+         * up to 20 minutes for the new policy to take effect.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutMetricPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutMetricPolicyAsync(const Model::PutMetricPolicyRequest& request, const PutMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts access logging on the specified container. When you enable access
          * logging on a container, MediaStore delivers access logs for objects stored in
          * that container to Amazon CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
@@ -862,15 +970,18 @@ namespace Model
         void DeleteContainerPolicyAsyncHelper(const Model::DeleteContainerPolicyRequest& request, const DeleteContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCorsPolicyAsyncHelper(const Model::DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLifecyclePolicyAsyncHelper(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMetricPolicyAsyncHelper(const Model::DeleteMetricPolicyRequest& request, const DeleteMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContainerAsyncHelper(const Model::DescribeContainerRequest& request, const DescribeContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetContainerPolicyAsyncHelper(const Model::GetContainerPolicyRequest& request, const GetContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCorsPolicyAsyncHelper(const Model::GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLifecyclePolicyAsyncHelper(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMetricPolicyAsyncHelper(const Model::GetMetricPolicyRequest& request, const GetMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContainersAsyncHelper(const Model::ListContainersRequest& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutContainerPolicyAsyncHelper(const Model::PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutCorsPolicyAsyncHelper(const Model::PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecyclePolicyAsyncHelper(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutMetricPolicyAsyncHelper(const Model::PutMetricPolicyRequest& request, const PutMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartAccessLoggingAsyncHelper(const Model::StartAccessLoggingRequest& request, const StartAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAccessLoggingAsyncHelper(const Model::StopAccessLoggingRequest& request, const StopAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -58,50 +58,42 @@ namespace Model
 
 
     /**
-     * <p>A friendly name of the set. You cannot change the name after you create the
-     * set.</p>
+     * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A friendly name of the set. You cannot change the name after you create the
-     * set.</p>
+     * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A friendly name of the set. You cannot change the name after you create the
-     * set.</p>
+     * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A friendly name of the set. You cannot change the name after you create the
-     * set.</p>
+     * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A friendly name of the set. You cannot change the name after you create the
-     * set.</p>
+     * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A friendly name of the set. You cannot change the name after you create the
-     * set.</p>
+     * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
     inline RegexPatternSet& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A friendly name of the set. You cannot change the name after you create the
-     * set.</p>
+     * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
     inline RegexPatternSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name of the set. You cannot change the name after you create the
-     * set.</p>
+     * <p>The name of the set. You cannot change the name after you create the set.</p>
      */
     inline RegexPatternSet& WithName(const char* value) { SetName(value); return *this;}
 
@@ -205,50 +197,50 @@ namespace Model
 
 
     /**
-     * <p>A friendly description of the set. You cannot change the description of a set
-     * after you create it.</p>
+     * <p>A description of the set that helps with identification. You cannot change
+     * the description of a set after you create it.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A friendly description of the set. You cannot change the description of a set
-     * after you create it.</p>
+     * <p>A description of the set that helps with identification. You cannot change
+     * the description of a set after you create it.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A friendly description of the set. You cannot change the description of a set
-     * after you create it.</p>
+     * <p>A description of the set that helps with identification. You cannot change
+     * the description of a set after you create it.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A friendly description of the set. You cannot change the description of a set
-     * after you create it.</p>
+     * <p>A description of the set that helps with identification. You cannot change
+     * the description of a set after you create it.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A friendly description of the set. You cannot change the description of a set
-     * after you create it.</p>
+     * <p>A description of the set that helps with identification. You cannot change
+     * the description of a set after you create it.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A friendly description of the set. You cannot change the description of a set
-     * after you create it.</p>
+     * <p>A description of the set that helps with identification. You cannot change
+     * the description of a set after you create it.</p>
      */
     inline RegexPatternSet& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A friendly description of the set. You cannot change the description of a set
-     * after you create it.</p>
+     * <p>A description of the set that helps with identification. You cannot change
+     * the description of a set after you create it.</p>
      */
     inline RegexPatternSet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly description of the set. You cannot change the description of a set
-     * after you create it.</p>
+     * <p>A description of the set that helps with identification. You cannot change
+     * the description of a set after you create it.</p>
      */
     inline RegexPatternSet& WithDescription(const char* value) { SetDescription(value); return *this;}
 

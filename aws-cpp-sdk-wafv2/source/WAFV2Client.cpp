@@ -36,8 +36,10 @@
 #include <aws/wafv2/model/CreateRegexPatternSetRequest.h>
 #include <aws/wafv2/model/CreateRuleGroupRequest.h>
 #include <aws/wafv2/model/CreateWebACLRequest.h>
+#include <aws/wafv2/model/DeleteFirewallManagerRuleGroupsRequest.h>
 #include <aws/wafv2/model/DeleteIPSetRequest.h>
 #include <aws/wafv2/model/DeleteLoggingConfigurationRequest.h>
+#include <aws/wafv2/model/DeletePermissionPolicyRequest.h>
 #include <aws/wafv2/model/DeleteRegexPatternSetRequest.h>
 #include <aws/wafv2/model/DeleteRuleGroupRequest.h>
 #include <aws/wafv2/model/DeleteWebACLRequest.h>
@@ -45,6 +47,7 @@
 #include <aws/wafv2/model/DisassociateWebACLRequest.h>
 #include <aws/wafv2/model/GetIPSetRequest.h>
 #include <aws/wafv2/model/GetLoggingConfigurationRequest.h>
+#include <aws/wafv2/model/GetPermissionPolicyRequest.h>
 #include <aws/wafv2/model/GetRateBasedStatementManagedKeysRequest.h>
 #include <aws/wafv2/model/GetRegexPatternSetRequest.h>
 #include <aws/wafv2/model/GetRuleGroupRequest.h>
@@ -60,6 +63,7 @@
 #include <aws/wafv2/model/ListTagsForResourceRequest.h>
 #include <aws/wafv2/model/ListWebACLsRequest.h>
 #include <aws/wafv2/model/PutLoggingConfigurationRequest.h>
+#include <aws/wafv2/model/PutPermissionPolicyRequest.h>
 #include <aws/wafv2/model/TagResourceRequest.h>
 #include <aws/wafv2/model/UntagResourceRequest.h>
 #include <aws/wafv2/model/UpdateIPSetRequest.h>
@@ -349,6 +353,41 @@ void WAFV2Client::CreateWebACLAsyncHelper(const CreateWebACLRequest& request, co
   handler(this, request, CreateWebACL(request), context);
 }
 
+DeleteFirewallManagerRuleGroupsOutcome WAFV2Client::DeleteFirewallManagerRuleGroups(const DeleteFirewallManagerRuleGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteFirewallManagerRuleGroupsOutcome(DeleteFirewallManagerRuleGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteFirewallManagerRuleGroupsOutcome(outcome.GetError());
+  }
+}
+
+DeleteFirewallManagerRuleGroupsOutcomeCallable WAFV2Client::DeleteFirewallManagerRuleGroupsCallable(const DeleteFirewallManagerRuleGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFirewallManagerRuleGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFirewallManagerRuleGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::DeleteFirewallManagerRuleGroupsAsync(const DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFirewallManagerRuleGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::DeleteFirewallManagerRuleGroupsAsyncHelper(const DeleteFirewallManagerRuleGroupsRequest& request, const DeleteFirewallManagerRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFirewallManagerRuleGroups(request), context);
+}
+
 DeleteIPSetOutcome WAFV2Client::DeleteIPSet(const DeleteIPSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -417,6 +456,41 @@ void WAFV2Client::DeleteLoggingConfigurationAsync(const DeleteLoggingConfigurati
 void WAFV2Client::DeleteLoggingConfigurationAsyncHelper(const DeleteLoggingConfigurationRequest& request, const DeleteLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteLoggingConfiguration(request), context);
+}
+
+DeletePermissionPolicyOutcome WAFV2Client::DeletePermissionPolicy(const DeletePermissionPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePermissionPolicyOutcome(DeletePermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeletePermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeletePermissionPolicyOutcomeCallable WAFV2Client::DeletePermissionPolicyCallable(const DeletePermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::DeletePermissionPolicyAsync(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::DeletePermissionPolicyAsyncHelper(const DeletePermissionPolicyRequest& request, const DeletePermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePermissionPolicy(request), context);
 }
 
 DeleteRegexPatternSetOutcome WAFV2Client::DeleteRegexPatternSet(const DeleteRegexPatternSetRequest& request) const
@@ -662,6 +736,41 @@ void WAFV2Client::GetLoggingConfigurationAsync(const GetLoggingConfigurationRequ
 void WAFV2Client::GetLoggingConfigurationAsyncHelper(const GetLoggingConfigurationRequest& request, const GetLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetLoggingConfiguration(request), context);
+}
+
+GetPermissionPolicyOutcome WAFV2Client::GetPermissionPolicy(const GetPermissionPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPermissionPolicyOutcome(GetPermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetPermissionPolicyOutcomeCallable WAFV2Client::GetPermissionPolicyCallable(const GetPermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::GetPermissionPolicyAsync(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::GetPermissionPolicyAsyncHelper(const GetPermissionPolicyRequest& request, const GetPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPermissionPolicy(request), context);
 }
 
 GetRateBasedStatementManagedKeysOutcome WAFV2Client::GetRateBasedStatementManagedKeys(const GetRateBasedStatementManagedKeysRequest& request) const
@@ -1187,6 +1296,41 @@ void WAFV2Client::PutLoggingConfigurationAsync(const PutLoggingConfigurationRequ
 void WAFV2Client::PutLoggingConfigurationAsyncHelper(const PutLoggingConfigurationRequest& request, const PutLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutLoggingConfiguration(request), context);
+}
+
+PutPermissionPolicyOutcome WAFV2Client::PutPermissionPolicy(const PutPermissionPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutPermissionPolicyOutcome(PutPermissionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutPermissionPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutPermissionPolicyOutcomeCallable WAFV2Client::PutPermissionPolicyCallable(const PutPermissionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPermissionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPermissionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFV2Client::PutPermissionPolicyAsync(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WAFV2Client::PutPermissionPolicyAsyncHelper(const PutPermissionPolicyRequest& request, const PutPermissionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPermissionPolicy(request), context);
 }
 
 TagResourceOutcome WAFV2Client::TagResource(const TagResourceRequest& request) const

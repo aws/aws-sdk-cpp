@@ -123,8 +123,6 @@ namespace Model
     typedef std::function<void(const DetectiveClient*, const Model::StartMonitoringMemberRequest&, const Model::StartMonitoringMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMemberResponseReceivedHandler;
 
   /**
-   * <important> <p>Amazon Detective is currently in preview. The Detective API can
-   * only be used by accounts that are admitted into the preview.</p> </important>
    * <p>Detective uses machine learning and purpose-built visualizations to help you
    * analyze and investigate security issues across your Amazon Web Services (AWS)
    * workloads. Detective automatically extracts time-based events such as login
@@ -179,22 +177,20 @@ namespace Model
 
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Accepts an invitation for
-         * the member account to contribute data to a behavior graph. This operation can
-         * only be called by an invited member account. </p> <p>The request provides the
-         * ARN of behavior graph.</p> <p>The member account status in the graph must be
-         * <code>INVITED</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Accepts an invitation for the member account to contribute data to a behavior
+         * graph. This operation can only be called by an invited member account. </p>
+         * <p>The request provides the ARN of behavior graph.</p> <p>The member account
+         * status in the graph must be <code>INVITED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/AcceptInvitation">AWS
          * API Reference</a></p>
          */
         virtual Model::AcceptInvitationOutcome AcceptInvitation(const Model::AcceptInvitationRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Accepts an invitation for
-         * the member account to contribute data to a behavior graph. This operation can
-         * only be called by an invited member account. </p> <p>The request provides the
-         * ARN of behavior graph.</p> <p>The member account status in the graph must be
-         * <code>INVITED</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Accepts an invitation for the member account to contribute data to a behavior
+         * graph. This operation can only be called by an invited member account. </p>
+         * <p>The request provides the ARN of behavior graph.</p> <p>The member account
+         * status in the graph must be <code>INVITED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/AcceptInvitation">AWS
          * API Reference</a></p>
          *
@@ -203,11 +199,10 @@ namespace Model
         virtual Model::AcceptInvitationOutcomeCallable AcceptInvitationCallable(const Model::AcceptInvitationRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Accepts an invitation for
-         * the member account to contribute data to a behavior graph. This operation can
-         * only be called by an invited member account. </p> <p>The request provides the
-         * ARN of behavior graph.</p> <p>The member account status in the graph must be
-         * <code>INVITED</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Accepts an invitation for the member account to contribute data to a behavior
+         * graph. This operation can only be called by an invited member account. </p>
+         * <p>The request provides the ARN of behavior graph.</p> <p>The member account
+         * status in the graph must be <code>INVITED</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/AcceptInvitation">AWS
          * API Reference</a></p>
          *
@@ -216,44 +211,42 @@ namespace Model
         virtual void AcceptInvitationAsync(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Creates a new behavior graph
-         * for the calling account, and sets that account as the master account. This
-         * operation is called by the account that is enabling Detective.</p> <p>Before you
-         * try to enable Detective, make sure that your account has been enrolled in Amazon
-         * GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot
-         * enable Detective. If you do meet the GuardDuty prerequisite, then when you make
-         * the request to enable Detective, it checks whether your data volume is within
-         * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
-         * </p> <p>The operation also enables Detective for the calling account in the
-         * currently selected Region. It returns the ARN of the new behavior graph.</p> <p>
-         * <code>CreateGraph</code> triggers a process to create the corresponding data
-         * tables for the new behavior graph.</p> <p>An account can only be the master
-         * account for one behavior graph within a Region. If the same account calls
-         * <code>CreateGraph</code> with the same master account, it always returns the
-         * same behavior graph ARN. It does not create a new behavior graph.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new behavior graph for the calling account, and sets that account
+         * as the master account. This operation is called by the account that is enabling
+         * Detective.</p> <p>Before you try to enable Detective, make sure that your
+         * account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do
+         * not meet this requirement, you cannot enable Detective. If you do meet the
+         * GuardDuty prerequisite, then when you make the request to enable Detective, it
+         * checks whether your data volume is within the Detective quota. If it exceeds the
+         * quota, then you cannot enable Detective. </p> <p>The operation also enables
+         * Detective for the calling account in the currently selected Region. It returns
+         * the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a
+         * process to create the corresponding data tables for the new behavior graph.</p>
+         * <p>An account can only be the master account for one behavior graph within a
+         * Region. If the same account calls <code>CreateGraph</code> with the same master
+         * account, it always returns the same behavior graph ARN. It does not create a new
+         * behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateGraphOutcome CreateGraph() const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Creates a new behavior graph
-         * for the calling account, and sets that account as the master account. This
-         * operation is called by the account that is enabling Detective.</p> <p>Before you
-         * try to enable Detective, make sure that your account has been enrolled in Amazon
-         * GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot
-         * enable Detective. If you do meet the GuardDuty prerequisite, then when you make
-         * the request to enable Detective, it checks whether your data volume is within
-         * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
-         * </p> <p>The operation also enables Detective for the calling account in the
-         * currently selected Region. It returns the ARN of the new behavior graph.</p> <p>
-         * <code>CreateGraph</code> triggers a process to create the corresponding data
-         * tables for the new behavior graph.</p> <p>An account can only be the master
-         * account for one behavior graph within a Region. If the same account calls
-         * <code>CreateGraph</code> with the same master account, it always returns the
-         * same behavior graph ARN. It does not create a new behavior graph.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new behavior graph for the calling account, and sets that account
+         * as the master account. This operation is called by the account that is enabling
+         * Detective.</p> <p>Before you try to enable Detective, make sure that your
+         * account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do
+         * not meet this requirement, you cannot enable Detective. If you do meet the
+         * GuardDuty prerequisite, then when you make the request to enable Detective, it
+         * checks whether your data volume is within the Detective quota. If it exceeds the
+         * quota, then you cannot enable Detective. </p> <p>The operation also enables
+         * Detective for the calling account in the currently selected Region. It returns
+         * the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a
+         * process to create the corresponding data tables for the new behavior graph.</p>
+         * <p>An account can only be the master account for one behavior graph within a
+         * Region. If the same account calls <code>CreateGraph</code> with the same master
+         * account, it always returns the same behavior graph ARN. It does not create a new
+         * behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          *
@@ -262,22 +255,21 @@ namespace Model
         virtual Model::CreateGraphOutcomeCallable CreateGraphCallable() const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Creates a new behavior graph
-         * for the calling account, and sets that account as the master account. This
-         * operation is called by the account that is enabling Detective.</p> <p>Before you
-         * try to enable Detective, make sure that your account has been enrolled in Amazon
-         * GuardDuty for at least 48 hours. If you do not meet this requirement, you cannot
-         * enable Detective. If you do meet the GuardDuty prerequisite, then when you make
-         * the request to enable Detective, it checks whether your data volume is within
-         * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
-         * </p> <p>The operation also enables Detective for the calling account in the
-         * currently selected Region. It returns the ARN of the new behavior graph.</p> <p>
-         * <code>CreateGraph</code> triggers a process to create the corresponding data
-         * tables for the new behavior graph.</p> <p>An account can only be the master
-         * account for one behavior graph within a Region. If the same account calls
-         * <code>CreateGraph</code> with the same master account, it always returns the
-         * same behavior graph ARN. It does not create a new behavior graph.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new behavior graph for the calling account, and sets that account
+         * as the master account. This operation is called by the account that is enabling
+         * Detective.</p> <p>Before you try to enable Detective, make sure that your
+         * account has been enrolled in Amazon GuardDuty for at least 48 hours. If you do
+         * not meet this requirement, you cannot enable Detective. If you do meet the
+         * GuardDuty prerequisite, then when you make the request to enable Detective, it
+         * checks whether your data volume is within the Detective quota. If it exceeds the
+         * quota, then you cannot enable Detective. </p> <p>The operation also enables
+         * Detective for the calling account in the currently selected Region. It returns
+         * the ARN of the new behavior graph.</p> <p> <code>CreateGraph</code> triggers a
+         * process to create the corresponding data tables for the new behavior graph.</p>
+         * <p>An account can only be the master account for one behavior graph within a
+         * Region. If the same account calls <code>CreateGraph</code> with the same master
+         * account, it always returns the same behavior graph ARN. It does not create a new
+         * behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateGraph">AWS
          * API Reference</a></p>
          *
@@ -285,38 +277,36 @@ namespace Model
          */
         virtual void CreateGraphAsync(const CreateGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Sends a request to invite
-         * the specified AWS accounts to be member accounts in the behavior graph. This
-         * operation can only be called by the master account for a behavior graph. </p>
-         * <p> <code>CreateMembers</code> verifies the accounts and then sends invitations
-         * to the verified accounts.</p> <p>The request provides the behavior graph ARN and
-         * the list of accounts to invite.</p> <p>The response separates the requested
-         * accounts into two lists:</p> <ul> <li> <p>The accounts that
-         * <code>CreateMembers</code> was able to start the verification for. This list
-         * includes member accounts that are being verified, that have passed verification
-         * and are being sent an invitation, and that have failed verification.</p> </li>
-         * <li> <p>The accounts that <code>CreateMembers</code> was unable to process. This
-         * list includes accounts that were already invited to be member accounts in the
-         * behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Sends a request to invite the specified AWS accounts to be member accounts in
+         * the behavior graph. This operation can only be called by the master account for
+         * a behavior graph. </p> <p> <code>CreateMembers</code> verifies the accounts and
+         * then sends invitations to the verified accounts.</p> <p>The request provides the
+         * behavior graph ARN and the list of accounts to invite.</p> <p>The response
+         * separates the requested accounts into two lists:</p> <ul> <li> <p>The accounts
+         * that <code>CreateMembers</code> was able to start the verification for. This
+         * list includes member accounts that are being verified, that have passed
+         * verification and are being sent an invitation, and that have failed
+         * verification.</p> </li> <li> <p>The accounts that <code>CreateMembers</code> was
+         * unable to process. This list includes accounts that were already invited to be
+         * member accounts in the behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateMembersOutcome CreateMembers(const Model::CreateMembersRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Sends a request to invite
-         * the specified AWS accounts to be member accounts in the behavior graph. This
-         * operation can only be called by the master account for a behavior graph. </p>
-         * <p> <code>CreateMembers</code> verifies the accounts and then sends invitations
-         * to the verified accounts.</p> <p>The request provides the behavior graph ARN and
-         * the list of accounts to invite.</p> <p>The response separates the requested
-         * accounts into two lists:</p> <ul> <li> <p>The accounts that
-         * <code>CreateMembers</code> was able to start the verification for. This list
-         * includes member accounts that are being verified, that have passed verification
-         * and are being sent an invitation, and that have failed verification.</p> </li>
-         * <li> <p>The accounts that <code>CreateMembers</code> was unable to process. This
-         * list includes accounts that were already invited to be member accounts in the
-         * behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Sends a request to invite the specified AWS accounts to be member accounts in
+         * the behavior graph. This operation can only be called by the master account for
+         * a behavior graph. </p> <p> <code>CreateMembers</code> verifies the accounts and
+         * then sends invitations to the verified accounts.</p> <p>The request provides the
+         * behavior graph ARN and the list of accounts to invite.</p> <p>The response
+         * separates the requested accounts into two lists:</p> <ul> <li> <p>The accounts
+         * that <code>CreateMembers</code> was able to start the verification for. This
+         * list includes member accounts that are being verified, that have passed
+         * verification and are being sent an invitation, and that have failed
+         * verification.</p> </li> <li> <p>The accounts that <code>CreateMembers</code> was
+         * unable to process. This list includes accounts that were already invited to be
+         * member accounts in the behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -325,19 +315,18 @@ namespace Model
         virtual Model::CreateMembersOutcomeCallable CreateMembersCallable(const Model::CreateMembersRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Sends a request to invite
-         * the specified AWS accounts to be member accounts in the behavior graph. This
-         * operation can only be called by the master account for a behavior graph. </p>
-         * <p> <code>CreateMembers</code> verifies the accounts and then sends invitations
-         * to the verified accounts.</p> <p>The request provides the behavior graph ARN and
-         * the list of accounts to invite.</p> <p>The response separates the requested
-         * accounts into two lists:</p> <ul> <li> <p>The accounts that
-         * <code>CreateMembers</code> was able to start the verification for. This list
-         * includes member accounts that are being verified, that have passed verification
-         * and are being sent an invitation, and that have failed verification.</p> </li>
-         * <li> <p>The accounts that <code>CreateMembers</code> was unable to process. This
-         * list includes accounts that were already invited to be member accounts in the
-         * behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Sends a request to invite the specified AWS accounts to be member accounts in
+         * the behavior graph. This operation can only be called by the master account for
+         * a behavior graph. </p> <p> <code>CreateMembers</code> verifies the accounts and
+         * then sends invitations to the verified accounts.</p> <p>The request provides the
+         * behavior graph ARN and the list of accounts to invite.</p> <p>The response
+         * separates the requested accounts into two lists:</p> <ul> <li> <p>The accounts
+         * that <code>CreateMembers</code> was able to start the verification for. This
+         * list includes member accounts that are being verified, that have passed
+         * verification and are being sent an invitation, and that have failed
+         * verification.</p> </li> <li> <p>The accounts that <code>CreateMembers</code> was
+         * unable to process. This list includes accounts that were already invited to be
+         * member accounts in the behavior graph.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
          *
@@ -346,22 +335,20 @@ namespace Model
         virtual void CreateMembersAsync(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Disables the specified
-         * behavior graph and queues it to be deleted. This operation removes the graph
-         * from each member account's list of behavior graphs.</p> <p>
-         * <code>DeleteGraph</code> can only be called by the master account for a behavior
-         * graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the specified behavior graph and queues it to be deleted. This
+         * operation removes the graph from each member account's list of behavior
+         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the master
+         * account for a behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteGraph">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteGraphOutcome DeleteGraph(const Model::DeleteGraphRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Disables the specified
-         * behavior graph and queues it to be deleted. This operation removes the graph
-         * from each member account's list of behavior graphs.</p> <p>
-         * <code>DeleteGraph</code> can only be called by the master account for a behavior
-         * graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the specified behavior graph and queues it to be deleted. This
+         * operation removes the graph from each member account's list of behavior
+         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the master
+         * account for a behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteGraph">AWS
          * API Reference</a></p>
          *
@@ -370,11 +357,10 @@ namespace Model
         virtual Model::DeleteGraphOutcomeCallable DeleteGraphCallable(const Model::DeleteGraphRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Disables the specified
-         * behavior graph and queues it to be deleted. This operation removes the graph
-         * from each member account's list of behavior graphs.</p> <p>
-         * <code>DeleteGraph</code> can only be called by the master account for a behavior
-         * graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables the specified behavior graph and queues it to be deleted. This
+         * operation removes the graph from each member account's list of behavior
+         * graphs.</p> <p> <code>DeleteGraph</code> can only be called by the master
+         * account for a behavior graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteGraph">AWS
          * API Reference</a></p>
          *
@@ -383,11 +369,10 @@ namespace Model
         virtual void DeleteGraphAsync(const Model::DeleteGraphRequest& request, const DeleteGraphResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Deletes one or more member
-         * accounts from the master account behavior graph. This operation can only be
-         * called by a Detective master account. That account cannot use
-         * <code>DeleteMembers</code> to delete their own account from the behavior graph.
-         * To disable a behavior graph, the master account uses the
+         * <p>Deletes one or more member accounts from the master account behavior graph.
+         * This operation can only be called by a Detective master account. That account
+         * cannot use <code>DeleteMembers</code> to delete their own account from the
+         * behavior graph. To disable a behavior graph, the master account uses the
          * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
@@ -395,11 +380,10 @@ namespace Model
         virtual Model::DeleteMembersOutcome DeleteMembers(const Model::DeleteMembersRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Deletes one or more member
-         * accounts from the master account behavior graph. This operation can only be
-         * called by a Detective master account. That account cannot use
-         * <code>DeleteMembers</code> to delete their own account from the behavior graph.
-         * To disable a behavior graph, the master account uses the
+         * <p>Deletes one or more member accounts from the master account behavior graph.
+         * This operation can only be called by a Detective master account. That account
+         * cannot use <code>DeleteMembers</code> to delete their own account from the
+         * behavior graph. To disable a behavior graph, the master account uses the
          * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
@@ -409,11 +393,10 @@ namespace Model
         virtual Model::DeleteMembersOutcomeCallable DeleteMembersCallable(const Model::DeleteMembersRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Deletes one or more member
-         * accounts from the master account behavior graph. This operation can only be
-         * called by a Detective master account. That account cannot use
-         * <code>DeleteMembers</code> to delete their own account from the behavior graph.
-         * To disable a behavior graph, the master account uses the
+         * <p>Deletes one or more member accounts from the master account behavior graph.
+         * This operation can only be called by a Detective master account. That account
+         * cannot use <code>DeleteMembers</code> to delete their own account from the
+         * behavior graph. To disable a behavior graph, the master account uses the
          * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS
          * API Reference</a></p>
@@ -423,18 +406,18 @@ namespace Model
         virtual void DeleteMembersAsync(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Removes the member account
-         * from the specified behavior graph. This operation can only be called by a member
-         * account that has the <code>ENABLED</code> status.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the member account from the specified behavior graph. This operation
+         * can only be called by a member account that has the <code>ENABLED</code>
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisassociateMembership">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateMembershipOutcome DisassociateMembership(const Model::DisassociateMembershipRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Removes the member account
-         * from the specified behavior graph. This operation can only be called by a member
-         * account that has the <code>ENABLED</code> status.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the member account from the specified behavior graph. This operation
+         * can only be called by a member account that has the <code>ENABLED</code>
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisassociateMembership">AWS
          * API Reference</a></p>
          *
@@ -443,9 +426,9 @@ namespace Model
         virtual Model::DisassociateMembershipOutcomeCallable DisassociateMembershipCallable(const Model::DisassociateMembershipRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Removes the member account
-         * from the specified behavior graph. This operation can only be called by a member
-         * account that has the <code>ENABLED</code> status.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the member account from the specified behavior graph. This operation
+         * can only be called by a member account that has the <code>ENABLED</code>
+         * status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DisassociateMembership">AWS
          * API Reference</a></p>
          *
@@ -454,18 +437,16 @@ namespace Model
         virtual void DisassociateMembershipAsync(const Model::DisassociateMembershipRequest& request, const DisassociateMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Returns the membership
-         * details for specified member accounts for a behavior graph.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the membership details for specified member accounts for a behavior
+         * graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMembersOutcome GetMembers(const Model::GetMembersRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Returns the membership
-         * details for specified member accounts for a behavior graph.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the membership details for specified member accounts for a behavior
+         * graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          *
@@ -474,9 +455,8 @@ namespace Model
         virtual Model::GetMembersOutcomeCallable GetMembersCallable(const Model::GetMembersRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Returns the membership
-         * details for specified member accounts for a behavior graph.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the membership details for specified member accounts for a behavior
+         * graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          *
@@ -485,22 +465,20 @@ namespace Model
         virtual void GetMembersAsync(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Returns the list of behavior
-         * graphs that the calling account is a master of. This operation can only be
-         * called by a master account.</p> <p>Because an account can currently only be the
-         * master of one behavior graph within a Region, the results always contain a
-         * single graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the list of behavior graphs that the calling account is a master of.
+         * This operation can only be called by a master account.</p> <p>Because an account
+         * can currently only be the master of one behavior graph within a Region, the
+         * results always contain a single graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGraphsOutcome ListGraphs(const Model::ListGraphsRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Returns the list of behavior
-         * graphs that the calling account is a master of. This operation can only be
-         * called by a master account.</p> <p>Because an account can currently only be the
-         * master of one behavior graph within a Region, the results always contain a
-         * single graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the list of behavior graphs that the calling account is a master of.
+         * This operation can only be called by a master account.</p> <p>Because an account
+         * can currently only be the master of one behavior graph within a Region, the
+         * results always contain a single graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">AWS
          * API Reference</a></p>
          *
@@ -509,11 +487,10 @@ namespace Model
         virtual Model::ListGraphsOutcomeCallable ListGraphsCallable(const Model::ListGraphsRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Returns the list of behavior
-         * graphs that the calling account is a master of. This operation can only be
-         * called by a master account.</p> <p>Because an account can currently only be the
-         * master of one behavior graph within a Region, the results always contain a
-         * single graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the list of behavior graphs that the calling account is a master of.
+         * This operation can only be called by a master account.</p> <p>Because an account
+         * can currently only be the master of one behavior graph within a Region, the
+         * results always contain a single graph.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListGraphs">AWS
          * API Reference</a></p>
          *
@@ -522,26 +499,26 @@ namespace Model
         virtual void ListGraphsAsync(const Model::ListGraphsRequest& request, const ListGraphsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Retrieves the list of open
-         * and accepted behavior graph invitations for the member account. This operation
-         * can only be called by a member account.</p> <p>Open invitations are invitations
-         * that the member account has not responded to.</p> <p>The results do not include
-         * behavior graphs for which the member account declined the invitation. The
-         * results also do not include behavior graphs that the member account resigned
-         * from or was removed from.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of open and accepted behavior graph invitations for the
+         * member account. This operation can only be called by a member account.</p>
+         * <p>Open invitations are invitations that the member account has not responded
+         * to.</p> <p>The results do not include behavior graphs for which the member
+         * account declined the invitation. The results also do not include behavior graphs
+         * that the member account resigned from or was removed from.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Retrieves the list of open
-         * and accepted behavior graph invitations for the member account. This operation
-         * can only be called by a member account.</p> <p>Open invitations are invitations
-         * that the member account has not responded to.</p> <p>The results do not include
-         * behavior graphs for which the member account declined the invitation. The
-         * results also do not include behavior graphs that the member account resigned
-         * from or was removed from.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of open and accepted behavior graph invitations for the
+         * member account. This operation can only be called by a member account.</p>
+         * <p>Open invitations are invitations that the member account has not responded
+         * to.</p> <p>The results do not include behavior graphs for which the member
+         * account declined the invitation. The results also do not include behavior graphs
+         * that the member account resigned from or was removed from.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
          *
@@ -550,13 +527,13 @@ namespace Model
         virtual Model::ListInvitationsOutcomeCallable ListInvitationsCallable(const Model::ListInvitationsRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Retrieves the list of open
-         * and accepted behavior graph invitations for the member account. This operation
-         * can only be called by a member account.</p> <p>Open invitations are invitations
-         * that the member account has not responded to.</p> <p>The results do not include
-         * behavior graphs for which the member account declined the invitation. The
-         * results also do not include behavior graphs that the member account resigned
-         * from or was removed from.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of open and accepted behavior graph invitations for the
+         * member account. This operation can only be called by a member account.</p>
+         * <p>Open invitations are invitations that the member account has not responded
+         * to.</p> <p>The results do not include behavior graphs for which the member
+         * account declined the invitation. The results also do not include behavior graphs
+         * that the member account resigned from or was removed from.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
          *
@@ -565,18 +542,18 @@ namespace Model
         virtual void ListInvitationsAsync(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Retrieves the list of member
-         * accounts for a behavior graph. Does not return member accounts that were removed
-         * from the behavior graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of member accounts for a behavior graph. Does not return
+         * member accounts that were removed from the behavior graph.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Retrieves the list of member
-         * accounts for a behavior graph. Does not return member accounts that were removed
-         * from the behavior graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of member accounts for a behavior graph. Does not return
+         * member accounts that were removed from the behavior graph.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -585,9 +562,9 @@ namespace Model
         virtual Model::ListMembersOutcomeCallable ListMembersCallable(const Model::ListMembersRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Retrieves the list of member
-         * accounts for a behavior graph. Does not return member accounts that were removed
-         * from the behavior graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of member accounts for a behavior graph. Does not return
+         * member accounts that were removed from the behavior graph.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -596,20 +573,18 @@ namespace Model
         virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Rejects an invitation to
-         * contribute the account data to a behavior graph. This operation must be called
-         * by a member account that has the <code>INVITED</code> status.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Rejects an invitation to contribute the account data to a behavior graph.
+         * This operation must be called by a member account that has the
+         * <code>INVITED</code> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/RejectInvitation">AWS
          * API Reference</a></p>
          */
         virtual Model::RejectInvitationOutcome RejectInvitation(const Model::RejectInvitationRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Rejects an invitation to
-         * contribute the account data to a behavior graph. This operation must be called
-         * by a member account that has the <code>INVITED</code> status.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Rejects an invitation to contribute the account data to a behavior graph.
+         * This operation must be called by a member account that has the
+         * <code>INVITED</code> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/RejectInvitation">AWS
          * API Reference</a></p>
          *
@@ -618,10 +593,9 @@ namespace Model
         virtual Model::RejectInvitationOutcomeCallable RejectInvitationCallable(const Model::RejectInvitationRequest& request) const;
 
         /**
-         * <p>Amazon Detective is currently in preview.</p> <p>Rejects an invitation to
-         * contribute the account data to a behavior graph. This operation must be called
-         * by a member account that has the <code>INVITED</code> status.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Rejects an invitation to contribute the account data to a behavior graph.
+         * This operation must be called by a member account that has the
+         * <code>INVITED</code> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/RejectInvitation">AWS
          * API Reference</a></p>
          *

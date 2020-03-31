@@ -45,9 +45,12 @@ namespace Model
    * WAF resources from the prior release, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
    * WAF Developer Guide</a>. </p> </note> <p>The part of a web request that you want
-   * AWS WAF to inspect. Include the <code>FieldToMatch</code> types that you want to
-   * inspect, with additional specifications as needed, according to the type.
-   * </p><p><h3>See Also:</h3>   <a
+   * AWS WAF to inspect. Include the single <code>FieldToMatch</code> type that you
+   * want to inspect, with additional specifications as needed, according to the
+   * type. You specify a single request component in <code>FieldToMatch</code> for
+   * each rule statement that requires it. To inspect more than one component of a
+   * web request, create a separate rule statement for each component.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch">AWS
    * API Reference</a></p>
    */

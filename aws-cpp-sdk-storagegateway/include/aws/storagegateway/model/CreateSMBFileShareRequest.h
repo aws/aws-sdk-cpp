@@ -100,50 +100,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
-     * create a file share.</p>
+     * <p>The ARN of the file gateway on which you want to create a file share.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
-     * create a file share.</p>
+     * <p>The ARN of the file gateway on which you want to create a file share.</p>
      */
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
-     * create a file share.</p>
+     * <p>The ARN of the file gateway on which you want to create a file share.</p>
      */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
-     * create a file share.</p>
+     * <p>The ARN of the file gateway on which you want to create a file share.</p>
      */
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
-     * create a file share.</p>
+     * <p>The ARN of the file gateway on which you want to create a file share.</p>
      */
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
-     * create a file share.</p>
+     * <p>The ARN of the file gateway on which you want to create a file share.</p>
      */
     inline CreateSMBFileShareRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
-     * create a file share.</p>
+     * <p>The ARN of the file gateway on which you want to create a file share.</p>
      */
     inline CreateSMBFileShareRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
-     * create a file share.</p>
+     * <p>The ARN of the file gateway on which you want to create a file share.</p>
      */
     inline CreateSMBFileShareRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
@@ -793,6 +785,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline const Aws::String& GetAuditDestinationARN() const{ return m_auditDestinationARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline bool AuditDestinationARNHasBeenSet() const { return m_auditDestinationARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const Aws::String& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(Aws::String&& value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline void SetAuditDestinationARN(const char* value) { m_auditDestinationARNHasBeenSet = true; m_auditDestinationARN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline CreateSMBFileShareRequest& WithAuditDestinationARN(const Aws::String& value) { SetAuditDestinationARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline CreateSMBFileShareRequest& WithAuditDestinationARN(Aws::String&& value) { SetAuditDestinationARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
+     */
+    inline CreateSMBFileShareRequest& WithAuditDestinationARN(const char* value) { SetAuditDestinationARN(value); return *this;}
+
+
+    /**
      * <p>The authentication method that users use to access the file share.</p>
      * <p>Valid values are <code>ActiveDirectory</code> or <code>GuestAccess</code>.
      * The default is <code>ActiveDirectory</code>.</p>
@@ -967,6 +1000,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_invalidUserList;
     bool m_invalidUserListHasBeenSet;
+
+    Aws::String m_auditDestinationARN;
+    bool m_auditDestinationARNHasBeenSet;
 
     Aws::String m_authentication;
     bool m_authenticationHasBeenSet;

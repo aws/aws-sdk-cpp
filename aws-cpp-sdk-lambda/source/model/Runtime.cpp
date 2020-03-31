@@ -45,6 +45,7 @@ namespace Aws
         static const int dotnetcore1_0_HASH = HashingUtils::HashString("dotnetcore1.0");
         static const int dotnetcore2_0_HASH = HashingUtils::HashString("dotnetcore2.0");
         static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
+        static const int dotnetcore3_1_HASH = HashingUtils::HashString("dotnetcore3.1");
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
         static const int go1_x_HASH = HashingUtils::HashString("go1.x");
         static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
@@ -115,6 +116,10 @@ namespace Aws
           {
             return Runtime::dotnetcore2_1;
           }
+          else if (hashCode == dotnetcore3_1_HASH)
+          {
+            return Runtime::dotnetcore3_1;
+          }
           else if (hashCode == nodejs4_3_edge_HASH)
           {
             return Runtime::nodejs4_3_edge;
@@ -179,6 +184,8 @@ namespace Aws
             return "dotnetcore2.0";
           case Runtime::dotnetcore2_1:
             return "dotnetcore2.1";
+          case Runtime::dotnetcore3_1:
+            return "dotnetcore3.1";
           case Runtime::nodejs4_3_edge:
             return "nodejs4.3-edge";
           case Runtime::go1_x:

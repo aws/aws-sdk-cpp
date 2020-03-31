@@ -40,7 +40,8 @@ UpdateSMBFileShareRequest::UpdateSMBFileShareRequest() :
     m_sMBACLEnabledHasBeenSet(false),
     m_adminUserListHasBeenSet(false),
     m_validUserListHasBeenSet(false),
-    m_invalidUserListHasBeenSet(false)
+    m_invalidUserListHasBeenSet(false),
+    m_auditDestinationARNHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,12 @@ Aws::String UpdateSMBFileShareRequest::SerializePayload() const
      invalidUserListJsonList[invalidUserListIndex].AsString(m_invalidUserList[invalidUserListIndex]);
    }
    payload.WithArray("InvalidUserList", std::move(invalidUserListJsonList));
+
+  }
+
+  if(m_auditDestinationARNHasBeenSet)
+  {
+   payload.WithString("AuditDestinationARN", m_auditDestinationARN);
 
   }
 

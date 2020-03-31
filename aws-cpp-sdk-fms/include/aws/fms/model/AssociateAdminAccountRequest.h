@@ -50,7 +50,7 @@ namespace Model
      * or a member account. For more information about AWS Organizations and master
      * accounts, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>.</p>
+     * the AWS Accounts in Your Organization</a>. </p>
      */
     inline const Aws::String& GetAdminAccount() const{ return m_adminAccount; }
 
@@ -60,7 +60,7 @@ namespace Model
      * or a member account. For more information about AWS Organizations and master
      * accounts, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>.</p>
+     * the AWS Accounts in Your Organization</a>. </p>
      */
     inline bool AdminAccountHasBeenSet() const { return m_adminAccountHasBeenSet; }
 
@@ -70,7 +70,7 @@ namespace Model
      * or a member account. For more information about AWS Organizations and master
      * accounts, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>.</p>
+     * the AWS Accounts in Your Organization</a>. </p>
      */
     inline void SetAdminAccount(const Aws::String& value) { m_adminAccountHasBeenSet = true; m_adminAccount = value; }
 
@@ -80,7 +80,7 @@ namespace Model
      * or a member account. For more information about AWS Organizations and master
      * accounts, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>.</p>
+     * the AWS Accounts in Your Organization</a>. </p>
      */
     inline void SetAdminAccount(Aws::String&& value) { m_adminAccountHasBeenSet = true; m_adminAccount = std::move(value); }
 
@@ -90,7 +90,7 @@ namespace Model
      * or a member account. For more information about AWS Organizations and master
      * accounts, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>.</p>
+     * the AWS Accounts in Your Organization</a>. </p>
      */
     inline void SetAdminAccount(const char* value) { m_adminAccountHasBeenSet = true; m_adminAccount.assign(value); }
 
@@ -100,7 +100,7 @@ namespace Model
      * or a member account. For more information about AWS Organizations and master
      * accounts, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>.</p>
+     * the AWS Accounts in Your Organization</a>. </p>
      */
     inline AssociateAdminAccountRequest& WithAdminAccount(const Aws::String& value) { SetAdminAccount(value); return *this;}
 
@@ -110,7 +110,7 @@ namespace Model
      * or a member account. For more information about AWS Organizations and master
      * accounts, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>.</p>
+     * the AWS Accounts in Your Organization</a>. </p>
      */
     inline AssociateAdminAccountRequest& WithAdminAccount(Aws::String&& value) { SetAdminAccount(std::move(value)); return *this;}
 
@@ -120,7 +120,7 @@ namespace Model
      * or a member account. For more information about AWS Organizations and master
      * accounts, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
-     * the AWS Accounts in Your Organization</a>.</p>
+     * the AWS Accounts in Your Organization</a>. </p>
      */
     inline AssociateAdminAccountRequest& WithAdminAccount(const char* value) { SetAdminAccount(value); return *this;}
 

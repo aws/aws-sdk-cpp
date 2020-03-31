@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Amazon Detective is currently in preview.</p> <p>A behavior graph in
-   * Detective.</p><p><h3>See Also:</h3>   <a
+   * <p>A behavior graph in Detective.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/Graph">AWS API
    * Reference</a></p>
    */

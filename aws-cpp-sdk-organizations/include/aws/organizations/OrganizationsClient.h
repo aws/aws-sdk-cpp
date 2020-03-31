@@ -1384,10 +1384,11 @@ namespace Model
         /**
          * <p>Removes the specified member AWS account as a delegated administrator for the
          * specified AWS service.</p> <p>You can run this action only for AWS services that
-         * support this feature. For a current list of services that support it, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-         * Services That Support Using Delegated Administrators</a> in the <i>AWS
-         * Organizations User Guide.</i> </p> <p>This operation can be called only from the
+         * support this feature. For a current list of services that support it, see the
+         * column <i>Supports Delegated Administrator</i> in the table at <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+         * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
+         * User Guide.</i> </p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator">AWS
          * API Reference</a></p>
@@ -1397,10 +1398,11 @@ namespace Model
         /**
          * <p>Removes the specified member AWS account as a delegated administrator for the
          * specified AWS service.</p> <p>You can run this action only for AWS services that
-         * support this feature. For a current list of services that support it, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-         * Services That Support Using Delegated Administrators</a> in the <i>AWS
-         * Organizations User Guide.</i> </p> <p>This operation can be called only from the
+         * support this feature. For a current list of services that support it, see the
+         * column <i>Supports Delegated Administrator</i> in the table at <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+         * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
+         * User Guide.</i> </p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator">AWS
          * API Reference</a></p>
@@ -1412,10 +1414,11 @@ namespace Model
         /**
          * <p>Removes the specified member AWS account as a delegated administrator for the
          * specified AWS service.</p> <p>You can run this action only for AWS services that
-         * support this feature. For a current list of services that support it, see <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-         * Services That Support Using Delegated Administrators</a> in the <i>AWS
-         * Organizations User Guide.</i> </p> <p>This operation can be called only from the
+         * support this feature. For a current list of services that support it, see the
+         * column <i>Supports Delegated Administrator</i> in the table at <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+         * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
+         * User Guide.</i> </p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator">AWS
          * API Reference</a></p>
@@ -3197,10 +3200,10 @@ namespace Model
          * service data. The account still requires IAM permissions to access and
          * administer the AWS service.</p> <p>You can run this action only for AWS services
          * that support this feature. For a current list of services that support it, see
-         * <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-         * Services That Support Using Delegated Administrators</a> in the <i>AWS
-         * Organizations User Guide.</i> </p> <p>This operation can be called only from the
+         * the column <i>Supports Delegated Administrator</i> in the table at <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+         * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
+         * User Guide.</i> </p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator">AWS
          * API Reference</a></p>
@@ -3213,10 +3216,10 @@ namespace Model
          * service data. The account still requires IAM permissions to access and
          * administer the AWS service.</p> <p>You can run this action only for AWS services
          * that support this feature. For a current list of services that support it, see
-         * <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-         * Services That Support Using Delegated Administrators</a> in the <i>AWS
-         * Organizations User Guide.</i> </p> <p>This operation can be called only from the
+         * the column <i>Supports Delegated Administrator</i> in the table at <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+         * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
+         * User Guide.</i> </p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator">AWS
          * API Reference</a></p>
@@ -3231,10 +3234,10 @@ namespace Model
          * service data. The account still requires IAM permissions to access and
          * administer the AWS service.</p> <p>You can run this action only for AWS services
          * that support this feature. For a current list of services that support it, see
-         * <a
-         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html#services-that-support-delegated-admin">AWS
-         * Services That Support Using Delegated Administrators</a> in the <i>AWS
-         * Organizations User Guide.</i> </p> <p>This operation can be called only from the
+         * the column <i>Supports Delegated Administrator</i> in the table at <a
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS
+         * Services that you can use with AWS Organizations</a> in the <i>AWS Organizations
+         * User Guide.</i> </p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator">AWS
          * API Reference</a></p>

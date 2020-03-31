@@ -136,6 +136,15 @@ StartDeploymentResult& StartDeploymentResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("EventLog"))
+  {
+    Array<JsonView> eventLogJsonList = jsonValue.GetArray("EventLog");
+    for(unsigned eventLogIndex = 0; eventLogIndex < eventLogJsonList.GetLength(); ++eventLogIndex)
+    {
+      m_eventLog.push_back(eventLogJsonList[eventLogIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("PercentageComplete"))
   {
     m_percentageComplete = jsonValue.GetDouble("PercentageComplete");

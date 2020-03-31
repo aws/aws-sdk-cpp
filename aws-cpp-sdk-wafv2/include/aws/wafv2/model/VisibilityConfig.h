@@ -115,74 +115,74 @@ namespace Model
 
 
     /**
-     * <p>A friendly name of the CloudWatch metric. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9), with length from one to 128 characters.
-     * It can't contain whitespace or metric names reserved for AWS WAF, for example
-     * "All" and "Default_Action." You can't change a <code>MetricName</code> after you
-     * create a <code>VisibilityConfig</code>.</p>
+     * <p>A name of the CloudWatch metric. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can't
+     * contain whitespace or metric names reserved for AWS WAF, for example "All" and
+     * "Default_Action." You can't change a <code>MetricName</code> after you create a
+     * <code>VisibilityConfig</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>A friendly name of the CloudWatch metric. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9), with length from one to 128 characters.
-     * It can't contain whitespace or metric names reserved for AWS WAF, for example
-     * "All" and "Default_Action." You can't change a <code>MetricName</code> after you
-     * create a <code>VisibilityConfig</code>.</p>
+     * <p>A name of the CloudWatch metric. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can't
+     * contain whitespace or metric names reserved for AWS WAF, for example "All" and
+     * "Default_Action." You can't change a <code>MetricName</code> after you create a
+     * <code>VisibilityConfig</code>.</p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p>A friendly name of the CloudWatch metric. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9), with length from one to 128 characters.
-     * It can't contain whitespace or metric names reserved for AWS WAF, for example
-     * "All" and "Default_Action." You can't change a <code>MetricName</code> after you
-     * create a <code>VisibilityConfig</code>.</p>
+     * <p>A name of the CloudWatch metric. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can't
+     * contain whitespace or metric names reserved for AWS WAF, for example "All" and
+     * "Default_Action." You can't change a <code>MetricName</code> after you create a
+     * <code>VisibilityConfig</code>.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>A friendly name of the CloudWatch metric. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9), with length from one to 128 characters.
-     * It can't contain whitespace or metric names reserved for AWS WAF, for example
-     * "All" and "Default_Action." You can't change a <code>MetricName</code> after you
-     * create a <code>VisibilityConfig</code>.</p>
+     * <p>A name of the CloudWatch metric. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can't
+     * contain whitespace or metric names reserved for AWS WAF, for example "All" and
+     * "Default_Action." You can't change a <code>MetricName</code> after you create a
+     * <code>VisibilityConfig</code>.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>A friendly name of the CloudWatch metric. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9), with length from one to 128 characters.
-     * It can't contain whitespace or metric names reserved for AWS WAF, for example
-     * "All" and "Default_Action." You can't change a <code>MetricName</code> after you
-     * create a <code>VisibilityConfig</code>.</p>
+     * <p>A name of the CloudWatch metric. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can't
+     * contain whitespace or metric names reserved for AWS WAF, for example "All" and
+     * "Default_Action." You can't change a <code>MetricName</code> after you create a
+     * <code>VisibilityConfig</code>.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>A friendly name of the CloudWatch metric. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9), with length from one to 128 characters.
-     * It can't contain whitespace or metric names reserved for AWS WAF, for example
-     * "All" and "Default_Action." You can't change a <code>MetricName</code> after you
-     * create a <code>VisibilityConfig</code>.</p>
+     * <p>A name of the CloudWatch metric. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can't
+     * contain whitespace or metric names reserved for AWS WAF, for example "All" and
+     * "Default_Action." You can't change a <code>MetricName</code> after you create a
+     * <code>VisibilityConfig</code>.</p>
      */
     inline VisibilityConfig& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>A friendly name of the CloudWatch metric. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9), with length from one to 128 characters.
-     * It can't contain whitespace or metric names reserved for AWS WAF, for example
-     * "All" and "Default_Action." You can't change a <code>MetricName</code> after you
-     * create a <code>VisibilityConfig</code>.</p>
+     * <p>A name of the CloudWatch metric. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can't
+     * contain whitespace or metric names reserved for AWS WAF, for example "All" and
+     * "Default_Action." You can't change a <code>MetricName</code> after you create a
+     * <code>VisibilityConfig</code>.</p>
      */
     inline VisibilityConfig& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name of the CloudWatch metric. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9), with length from one to 128 characters.
-     * It can't contain whitespace or metric names reserved for AWS WAF, for example
-     * "All" and "Default_Action." You can't change a <code>MetricName</code> after you
-     * create a <code>VisibilityConfig</code>.</p>
+     * <p>A name of the CloudWatch metric. The name can contain only alphanumeric
+     * characters (A-Z, a-z, 0-9), with length from one to 128 characters. It can't
+     * contain whitespace or metric names reserved for AWS WAF, for example "All" and
+     * "Default_Action." You can't change a <code>MetricName</code> after you create a
+     * <code>VisibilityConfig</code>.</p>
      */
     inline VisibilityConfig& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 

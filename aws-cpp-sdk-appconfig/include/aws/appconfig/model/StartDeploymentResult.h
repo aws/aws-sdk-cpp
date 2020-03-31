@@ -18,7 +18,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appconfig/model/GrowthType.h>
 #include <aws/appconfig/model/DeploymentState.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/appconfig/model/DeploymentEvent.h>
 #include <utility>
 
 namespace Aws
@@ -456,6 +458,49 @@ namespace Model
 
 
     /**
+     * <p>A list containing all events related to a deployment. The most recent events
+     * are displayed first.</p>
+     */
+    inline const Aws::Vector<DeploymentEvent>& GetEventLog() const{ return m_eventLog; }
+
+    /**
+     * <p>A list containing all events related to a deployment. The most recent events
+     * are displayed first.</p>
+     */
+    inline void SetEventLog(const Aws::Vector<DeploymentEvent>& value) { m_eventLog = value; }
+
+    /**
+     * <p>A list containing all events related to a deployment. The most recent events
+     * are displayed first.</p>
+     */
+    inline void SetEventLog(Aws::Vector<DeploymentEvent>&& value) { m_eventLog = std::move(value); }
+
+    /**
+     * <p>A list containing all events related to a deployment. The most recent events
+     * are displayed first.</p>
+     */
+    inline StartDeploymentResult& WithEventLog(const Aws::Vector<DeploymentEvent>& value) { SetEventLog(value); return *this;}
+
+    /**
+     * <p>A list containing all events related to a deployment. The most recent events
+     * are displayed first.</p>
+     */
+    inline StartDeploymentResult& WithEventLog(Aws::Vector<DeploymentEvent>&& value) { SetEventLog(std::move(value)); return *this;}
+
+    /**
+     * <p>A list containing all events related to a deployment. The most recent events
+     * are displayed first.</p>
+     */
+    inline StartDeploymentResult& AddEventLog(const DeploymentEvent& value) { m_eventLog.push_back(value); return *this; }
+
+    /**
+     * <p>A list containing all events related to a deployment. The most recent events
+     * are displayed first.</p>
+     */
+    inline StartDeploymentResult& AddEventLog(DeploymentEvent&& value) { m_eventLog.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The percentage of targets for which the deployment is available.</p>
      */
     inline double GetPercentageComplete() const{ return m_percentageComplete; }
@@ -551,6 +596,8 @@ namespace Model
     int m_finalBakeTimeInMinutes;
 
     DeploymentState m_state;
+
+    Aws::Vector<DeploymentEvent> m_eventLog;
 
     double m_percentageComplete;
 

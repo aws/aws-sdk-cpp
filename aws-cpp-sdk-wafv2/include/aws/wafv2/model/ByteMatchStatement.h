@@ -65,7 +65,7 @@ namespace Model
      * <p>A string value that you want AWS WAF to search for. AWS WAF searches only in
      * the part of web requests that you designate for inspection in
      * <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p> <p>Valid
-     * values depend on the areas that you specify for inspection in
+     * values depend on the component that you specify for inspection in
      * <code>FieldToMatch</code>:</p> <ul> <li> <p> <code>Method</code>: The HTTP
      * method that you want AWS WAF to search for. This indicates the type of operation
      * specified in the request. </p> </li> <li> <p> <code>UriPath</code>: The value
@@ -90,7 +90,7 @@ namespace Model
      * <p>A string value that you want AWS WAF to search for. AWS WAF searches only in
      * the part of web requests that you designate for inspection in
      * <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p> <p>Valid
-     * values depend on the areas that you specify for inspection in
+     * values depend on the component that you specify for inspection in
      * <code>FieldToMatch</code>:</p> <ul> <li> <p> <code>Method</code>: The HTTP
      * method that you want AWS WAF to search for. This indicates the type of operation
      * specified in the request. </p> </li> <li> <p> <code>UriPath</code>: The value
@@ -115,7 +115,7 @@ namespace Model
      * <p>A string value that you want AWS WAF to search for. AWS WAF searches only in
      * the part of web requests that you designate for inspection in
      * <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p> <p>Valid
-     * values depend on the areas that you specify for inspection in
+     * values depend on the component that you specify for inspection in
      * <code>FieldToMatch</code>:</p> <ul> <li> <p> <code>Method</code>: The HTTP
      * method that you want AWS WAF to search for. This indicates the type of operation
      * specified in the request. </p> </li> <li> <p> <code>UriPath</code>: The value
@@ -140,7 +140,7 @@ namespace Model
      * <p>A string value that you want AWS WAF to search for. AWS WAF searches only in
      * the part of web requests that you designate for inspection in
      * <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p> <p>Valid
-     * values depend on the areas that you specify for inspection in
+     * values depend on the component that you specify for inspection in
      * <code>FieldToMatch</code>:</p> <ul> <li> <p> <code>Method</code>: The HTTP
      * method that you want AWS WAF to search for. This indicates the type of operation
      * specified in the request. </p> </li> <li> <p> <code>UriPath</code>: The value
@@ -165,7 +165,7 @@ namespace Model
      * <p>A string value that you want AWS WAF to search for. AWS WAF searches only in
      * the part of web requests that you designate for inspection in
      * <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p> <p>Valid
-     * values depend on the areas that you specify for inspection in
+     * values depend on the component that you specify for inspection in
      * <code>FieldToMatch</code>:</p> <ul> <li> <p> <code>Method</code>: The HTTP
      * method that you want AWS WAF to search for. This indicates the type of operation
      * specified in the request. </p> </li> <li> <p> <code>UriPath</code>: The value
@@ -190,7 +190,7 @@ namespace Model
      * <p>A string value that you want AWS WAF to search for. AWS WAF searches only in
      * the part of web requests that you designate for inspection in
      * <a>FieldToMatch</a>. The maximum length of the value is 50 bytes.</p> <p>Valid
-     * values depend on the areas that you specify for inspection in
+     * values depend on the component that you specify for inspection in
      * <code>FieldToMatch</code>:</p> <ul> <li> <p> <code>Method</code>: The HTTP
      * method that you want AWS WAF to search for. This indicates the type of operation
      * specified in the request. </p> </li> <li> <p> <code>UriPath</code>: The value
@@ -253,8 +253,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
 
@@ -262,8 +263,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
 
@@ -271,8 +273,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
 
@@ -280,8 +283,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
 
@@ -289,8 +293,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline ByteMatchStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
 
@@ -298,8 +303,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline ByteMatchStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
 
@@ -307,8 +313,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline ByteMatchStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
 
@@ -316,8 +323,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline ByteMatchStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
 

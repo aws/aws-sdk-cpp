@@ -34,9 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Amazon Detective is currently in preview.</p> <p>A member account that was
-   * included in a request but for which the request could not be
-   * processed.</p><p><h3>See Also:</h3>   <a
+   * <p>A member account that was included in a request but for which the request
+   * could not be processed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UnprocessedAccount">AWS
    * API Reference</a></p>
    */

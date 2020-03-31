@@ -46,50 +46,50 @@ namespace Model
 
 
     /**
-     * <p>A friendly name of the IP set. You cannot change the name of an
-     * <code>IPSet</code> after you create it.</p>
+     * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
+     * after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A friendly name of the IP set. You cannot change the name of an
-     * <code>IPSet</code> after you create it.</p>
+     * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
+     * after you create it.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A friendly name of the IP set. You cannot change the name of an
-     * <code>IPSet</code> after you create it.</p>
+     * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
+     * after you create it.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A friendly name of the IP set. You cannot change the name of an
-     * <code>IPSet</code> after you create it.</p>
+     * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
+     * after you create it.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A friendly name of the IP set. You cannot change the name of an
-     * <code>IPSet</code> after you create it.</p>
+     * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
+     * after you create it.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A friendly name of the IP set. You cannot change the name of an
-     * <code>IPSet</code> after you create it.</p>
+     * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
+     * after you create it.</p>
      */
     inline GetIPSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A friendly name of the IP set. You cannot change the name of an
-     * <code>IPSet</code> after you create it.</p>
+     * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
+     * after you create it.</p>
      */
     inline GetIPSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name of the IP set. You cannot change the name of an
-     * <code>IPSet</code> after you create it.</p>
+     * <p>The name of the IP set. You cannot change the name of an <code>IPSet</code>
+     * after you create it.</p>
      */
     inline GetIPSetRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -99,7 +99,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -110,7 +110,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -121,7 +121,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -132,7 +132,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -143,7 +143,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -154,7 +154,7 @@ namespace Model
      * regional application. A regional application can be an Application Load Balancer
      * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
      * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
-     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */

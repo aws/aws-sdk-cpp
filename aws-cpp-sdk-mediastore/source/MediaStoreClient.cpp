@@ -35,15 +35,18 @@
 #include <aws/mediastore/model/DeleteContainerPolicyRequest.h>
 #include <aws/mediastore/model/DeleteCorsPolicyRequest.h>
 #include <aws/mediastore/model/DeleteLifecyclePolicyRequest.h>
+#include <aws/mediastore/model/DeleteMetricPolicyRequest.h>
 #include <aws/mediastore/model/DescribeContainerRequest.h>
 #include <aws/mediastore/model/GetContainerPolicyRequest.h>
 #include <aws/mediastore/model/GetCorsPolicyRequest.h>
 #include <aws/mediastore/model/GetLifecyclePolicyRequest.h>
+#include <aws/mediastore/model/GetMetricPolicyRequest.h>
 #include <aws/mediastore/model/ListContainersRequest.h>
 #include <aws/mediastore/model/ListTagsForResourceRequest.h>
 #include <aws/mediastore/model/PutContainerPolicyRequest.h>
 #include <aws/mediastore/model/PutCorsPolicyRequest.h>
 #include <aws/mediastore/model/PutLifecyclePolicyRequest.h>
+#include <aws/mediastore/model/PutMetricPolicyRequest.h>
 #include <aws/mediastore/model/StartAccessLoggingRequest.h>
 #include <aws/mediastore/model/StopAccessLoggingRequest.h>
 #include <aws/mediastore/model/TagResourceRequest.h>
@@ -296,6 +299,41 @@ void MediaStoreClient::DeleteLifecyclePolicyAsyncHelper(const DeleteLifecyclePol
   handler(this, request, DeleteLifecyclePolicy(request), context);
 }
 
+DeleteMetricPolicyOutcome MediaStoreClient::DeleteMetricPolicy(const DeleteMetricPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteMetricPolicyOutcome(DeleteMetricPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteMetricPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteMetricPolicyOutcomeCallable MediaStoreClient::DeleteMetricPolicyCallable(const DeleteMetricPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMetricPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMetricPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::DeleteMetricPolicyAsync(const DeleteMetricPolicyRequest& request, const DeleteMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMetricPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::DeleteMetricPolicyAsyncHelper(const DeleteMetricPolicyRequest& request, const DeleteMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMetricPolicy(request), context);
+}
+
 DescribeContainerOutcome MediaStoreClient::DescribeContainer(const DescribeContainerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -434,6 +472,41 @@ void MediaStoreClient::GetLifecyclePolicyAsync(const GetLifecyclePolicyRequest& 
 void MediaStoreClient::GetLifecyclePolicyAsyncHelper(const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetLifecyclePolicy(request), context);
+}
+
+GetMetricPolicyOutcome MediaStoreClient::GetMetricPolicy(const GetMetricPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetMetricPolicyOutcome(GetMetricPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMetricPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetMetricPolicyOutcomeCallable MediaStoreClient::GetMetricPolicyCallable(const GetMetricPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMetricPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMetricPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::GetMetricPolicyAsync(const GetMetricPolicyRequest& request, const GetMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMetricPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::GetMetricPolicyAsyncHelper(const GetMetricPolicyRequest& request, const GetMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMetricPolicy(request), context);
 }
 
 ListContainersOutcome MediaStoreClient::ListContainers(const ListContainersRequest& request) const
@@ -609,6 +682,41 @@ void MediaStoreClient::PutLifecyclePolicyAsync(const PutLifecyclePolicyRequest& 
 void MediaStoreClient::PutLifecyclePolicyAsyncHelper(const PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutLifecyclePolicy(request), context);
+}
+
+PutMetricPolicyOutcome MediaStoreClient::PutMetricPolicy(const PutMetricPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutMetricPolicyOutcome(PutMetricPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutMetricPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutMetricPolicyOutcomeCallable MediaStoreClient::PutMetricPolicyCallable(const PutMetricPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutMetricPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutMetricPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::PutMetricPolicyAsync(const PutMetricPolicyRequest& request, const PutMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutMetricPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::PutMetricPolicyAsyncHelper(const PutMetricPolicyRequest& request, const PutMetricPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutMetricPolicy(request), context);
 }
 
 StartAccessLoggingOutcome MediaStoreClient::StartAccessLogging(const StartAccessLoggingRequest& request) const

@@ -67,6 +67,7 @@ namespace Aws
         static const int TAGS_HASH = HashingUtils::HashString("TAGS");
         static const int TAG_KEYS_HASH = HashingUtils::HashString("TAG_KEYS");
         static const int METRIC_NAME_HASH = HashingUtils::HashString("METRIC_NAME");
+        static const int FIREWALL_MANAGER_STATEMENT_HASH = HashingUtils::HashString("FIREWALL_MANAGER_STATEMENT");
 
 
         ParameterExceptionField GetParameterExceptionFieldForName(const Aws::String& name)
@@ -220,6 +221,10 @@ namespace Aws
           {
             return ParameterExceptionField::METRIC_NAME;
           }
+          else if (hashCode == FIREWALL_MANAGER_STATEMENT_HASH)
+          {
+            return ParameterExceptionField::FIREWALL_MANAGER_STATEMENT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -308,6 +313,8 @@ namespace Aws
             return "TAG_KEYS";
           case ParameterExceptionField::METRIC_NAME:
             return "METRIC_NAME";
+          case ParameterExceptionField::FIREWALL_MANAGER_STATEMENT:
+            return "FIREWALL_MANAGER_STATEMENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

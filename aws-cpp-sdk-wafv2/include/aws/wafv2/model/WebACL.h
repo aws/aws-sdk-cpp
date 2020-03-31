@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
 #include <aws/wafv2/model/Rule.h>
+#include <aws/wafv2/model/FirewallManagerRuleGroup.h>
 #include <utility>
 
 namespace Aws
@@ -64,50 +65,50 @@ namespace Model
 
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline WebACL& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline WebACL& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name of the Web ACL. You cannot change the name of a Web ACL after
-     * you create it.</p>
+     * <p>The name of the Web ACL. You cannot change the name of a Web ACL after you
+     * create it.</p>
      */
     inline WebACL& WithName(const char* value) { SetName(value); return *this;}
 
@@ -256,50 +257,50 @@ namespace Model
 
 
     /**
-     * <p>A friendly description of the Web ACL. You cannot change the description of a
-     * Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. You cannot
+     * change the description of a Web ACL after you create it.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A friendly description of the Web ACL. You cannot change the description of a
-     * Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. You cannot
+     * change the description of a Web ACL after you create it.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A friendly description of the Web ACL. You cannot change the description of a
-     * Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. You cannot
+     * change the description of a Web ACL after you create it.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A friendly description of the Web ACL. You cannot change the description of a
-     * Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. You cannot
+     * change the description of a Web ACL after you create it.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A friendly description of the Web ACL. You cannot change the description of a
-     * Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. You cannot
+     * change the description of a Web ACL after you create it.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A friendly description of the Web ACL. You cannot change the description of a
-     * Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. You cannot
+     * change the description of a Web ACL after you create it.</p>
      */
     inline WebACL& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A friendly description of the Web ACL. You cannot change the description of a
-     * Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. You cannot
+     * change the description of a Web ACL after you create it.</p>
      */
     inline WebACL& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly description of the Web ACL. You cannot change the description of a
-     * Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. You cannot
+     * change the description of a Web ACL after you create it.</p>
      */
     inline WebACL& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -454,6 +455,229 @@ namespace Model
      */
     inline WebACL& WithCapacity(long long value) { SetCapacity(value); return *this;}
 
+
+    /**
+     * <p>The first set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized after these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline const Aws::Vector<FirewallManagerRuleGroup>& GetPreProcessFirewallManagerRuleGroups() const{ return m_preProcessFirewallManagerRuleGroups; }
+
+    /**
+     * <p>The first set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized after these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline bool PreProcessFirewallManagerRuleGroupsHasBeenSet() const { return m_preProcessFirewallManagerRuleGroupsHasBeenSet; }
+
+    /**
+     * <p>The first set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized after these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline void SetPreProcessFirewallManagerRuleGroups(const Aws::Vector<FirewallManagerRuleGroup>& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups = value; }
+
+    /**
+     * <p>The first set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized after these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline void SetPreProcessFirewallManagerRuleGroups(Aws::Vector<FirewallManagerRuleGroup>&& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups = std::move(value); }
+
+    /**
+     * <p>The first set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized after these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline WebACL& WithPreProcessFirewallManagerRuleGroups(const Aws::Vector<FirewallManagerRuleGroup>& value) { SetPreProcessFirewallManagerRuleGroups(value); return *this;}
+
+    /**
+     * <p>The first set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized after these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline WebACL& WithPreProcessFirewallManagerRuleGroups(Aws::Vector<FirewallManagerRuleGroup>&& value) { SetPreProcessFirewallManagerRuleGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The first set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized after these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline WebACL& AddPreProcessFirewallManagerRuleGroups(const FirewallManagerRuleGroup& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups.push_back(value); return *this; }
+
+    /**
+     * <p>The first set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized after these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline WebACL& AddPreProcessFirewallManagerRuleGroups(FirewallManagerRuleGroup&& value) { m_preProcessFirewallManagerRuleGroupsHasBeenSet = true; m_preProcessFirewallManagerRuleGroups.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The last set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized before these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline const Aws::Vector<FirewallManagerRuleGroup>& GetPostProcessFirewallManagerRuleGroups() const{ return m_postProcessFirewallManagerRuleGroups; }
+
+    /**
+     * <p>The last set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized before these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline bool PostProcessFirewallManagerRuleGroupsHasBeenSet() const { return m_postProcessFirewallManagerRuleGroupsHasBeenSet; }
+
+    /**
+     * <p>The last set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized before these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline void SetPostProcessFirewallManagerRuleGroups(const Aws::Vector<FirewallManagerRuleGroup>& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups = value; }
+
+    /**
+     * <p>The last set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized before these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline void SetPostProcessFirewallManagerRuleGroups(Aws::Vector<FirewallManagerRuleGroup>&& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups = std::move(value); }
+
+    /**
+     * <p>The last set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized before these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline WebACL& WithPostProcessFirewallManagerRuleGroups(const Aws::Vector<FirewallManagerRuleGroup>& value) { SetPostProcessFirewallManagerRuleGroups(value); return *this;}
+
+    /**
+     * <p>The last set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized before these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline WebACL& WithPostProcessFirewallManagerRuleGroups(Aws::Vector<FirewallManagerRuleGroup>&& value) { SetPostProcessFirewallManagerRuleGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The last set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized before these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline WebACL& AddPostProcessFirewallManagerRuleGroups(const FirewallManagerRuleGroup& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups.push_back(value); return *this; }
+
+    /**
+     * <p>The last set of rules for AWS WAF to process in the web ACL. This is defined
+     * in an AWS Firewall Manager WAF policy and contains only rule group references.
+     * You can't alter these. Any rules and rule groups that you define for the web ACL
+     * are prioritized before these. </p> <p>In the Firewall Manager WAF policy, the
+     * Firewall Manager administrator can define a set of rule groups to run first in
+     * the web ACL and a set of rule groups to run last. Within each set, the
+     * administrator prioritizes the rule groups, to determine their relative
+     * processing order.</p>
+     */
+    inline WebACL& AddPostProcessFirewallManagerRuleGroups(FirewallManagerRuleGroup&& value) { m_postProcessFirewallManagerRuleGroupsHasBeenSet = true; m_postProcessFirewallManagerRuleGroups.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Indicates whether this web ACL is managed by AWS Firewall Manager. If true,
+     * then only AWS Firewall Manager can delete the web ACL or any Firewall Manager
+     * rule groups in the web ACL. </p>
+     */
+    inline bool GetManagedByFirewallManager() const{ return m_managedByFirewallManager; }
+
+    /**
+     * <p>Indicates whether this web ACL is managed by AWS Firewall Manager. If true,
+     * then only AWS Firewall Manager can delete the web ACL or any Firewall Manager
+     * rule groups in the web ACL. </p>
+     */
+    inline bool ManagedByFirewallManagerHasBeenSet() const { return m_managedByFirewallManagerHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this web ACL is managed by AWS Firewall Manager. If true,
+     * then only AWS Firewall Manager can delete the web ACL or any Firewall Manager
+     * rule groups in the web ACL. </p>
+     */
+    inline void SetManagedByFirewallManager(bool value) { m_managedByFirewallManagerHasBeenSet = true; m_managedByFirewallManager = value; }
+
+    /**
+     * <p>Indicates whether this web ACL is managed by AWS Firewall Manager. If true,
+     * then only AWS Firewall Manager can delete the web ACL or any Firewall Manager
+     * rule groups in the web ACL. </p>
+     */
+    inline WebACL& WithManagedByFirewallManager(bool value) { SetManagedByFirewallManager(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -479,6 +703,15 @@ namespace Model
 
     long long m_capacity;
     bool m_capacityHasBeenSet;
+
+    Aws::Vector<FirewallManagerRuleGroup> m_preProcessFirewallManagerRuleGroups;
+    bool m_preProcessFirewallManagerRuleGroupsHasBeenSet;
+
+    Aws::Vector<FirewallManagerRuleGroup> m_postProcessFirewallManagerRuleGroups;
+    bool m_postProcessFirewallManagerRuleGroupsHasBeenSet;
+
+    bool m_managedByFirewallManager;
+    bool m_managedByFirewallManagerHasBeenSet;
   };
 
 } // namespace Model

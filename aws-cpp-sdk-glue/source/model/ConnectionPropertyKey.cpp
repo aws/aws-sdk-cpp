@@ -46,6 +46,7 @@ namespace Aws
         static const int CUSTOM_JDBC_CERT_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT");
         static const int SKIP_CUSTOM_JDBC_CERT_VALIDATION_HASH = HashingUtils::HashString("SKIP_CUSTOM_JDBC_CERT_VALIDATION");
         static const int CUSTOM_JDBC_CERT_STRING_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT_STRING");
+        static const int CONNECTION_URL_HASH = HashingUtils::HashString("CONNECTION_URL");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -115,6 +116,10 @@ namespace Aws
           {
             return ConnectionPropertyKey::CUSTOM_JDBC_CERT_STRING;
           }
+          else if (hashCode == CONNECTION_URL_HASH)
+          {
+            return ConnectionPropertyKey::CONNECTION_URL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -161,6 +166,8 @@ namespace Aws
             return "SKIP_CUSTOM_JDBC_CERT_VALIDATION";
           case ConnectionPropertyKey::CUSTOM_JDBC_CERT_STRING:
             return "CUSTOM_JDBC_CERT_STRING";
+          case ConnectionPropertyKey::CONNECTION_URL:
+            return "CONNECTION_URL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

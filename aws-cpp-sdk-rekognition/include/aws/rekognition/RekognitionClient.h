@@ -28,6 +28,8 @@
 #include <aws/rekognition/model/CreateStreamProcessorResult.h>
 #include <aws/rekognition/model/DeleteCollectionResult.h>
 #include <aws/rekognition/model/DeleteFacesResult.h>
+#include <aws/rekognition/model/DeleteProjectResult.h>
+#include <aws/rekognition/model/DeleteProjectVersionResult.h>
 #include <aws/rekognition/model/DeleteStreamProcessorResult.h>
 #include <aws/rekognition/model/DescribeCollectionResult.h>
 #include <aws/rekognition/model/DescribeProjectVersionsResult.h>
@@ -110,6 +112,8 @@ namespace Model
         class CreateStreamProcessorRequest;
         class DeleteCollectionRequest;
         class DeleteFacesRequest;
+        class DeleteProjectRequest;
+        class DeleteProjectVersionRequest;
         class DeleteStreamProcessorRequest;
         class DescribeCollectionRequest;
         class DescribeProjectVersionsRequest;
@@ -154,6 +158,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> CreateStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<DeleteCollectionResult, Aws::Client::AWSError<RekognitionErrors>> DeleteCollectionOutcome;
         typedef Aws::Utils::Outcome<DeleteFacesResult, Aws::Client::AWSError<RekognitionErrors>> DeleteFacesOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<RekognitionErrors>> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectVersionResult, Aws::Client::AWSError<RekognitionErrors>> DeleteProjectVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> DeleteStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<DescribeCollectionResult, Aws::Client::AWSError<RekognitionErrors>> DescribeCollectionOutcome;
         typedef Aws::Utils::Outcome<DescribeProjectVersionsResult, Aws::Client::AWSError<RekognitionErrors>> DescribeProjectVersionsOutcome;
@@ -198,6 +204,8 @@ namespace Model
         typedef std::future<CreateStreamProcessorOutcome> CreateStreamProcessorOutcomeCallable;
         typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
         typedef std::future<DeleteFacesOutcome> DeleteFacesOutcomeCallable;
+        typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+        typedef std::future<DeleteProjectVersionOutcome> DeleteProjectVersionOutcomeCallable;
         typedef std::future<DeleteStreamProcessorOutcome> DeleteStreamProcessorOutcomeCallable;
         typedef std::future<DescribeCollectionOutcome> DescribeCollectionOutcomeCallable;
         typedef std::future<DescribeProjectVersionsOutcome> DescribeProjectVersionsOutcomeCallable;
@@ -245,6 +253,8 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::CreateStreamProcessorRequest&, const Model::CreateStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteCollectionRequest&, const Model::DeleteCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteFacesRequest&, const Model::DeleteFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacesResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DeleteProjectVersionRequest&, const Model::DeleteProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteStreamProcessorRequest&, const Model::DeleteStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeCollectionRequest&, const Model::DescribeCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeProjectVersionsRequest&, const Model::DescribeProjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectVersionsResponseReceivedHandler;
@@ -734,6 +744,83 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteFacesAsync(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
+         * must first delete all versions of the model associated with the project. To
+         * delete a version of a model, see <a>DeleteProjectVersion</a>.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
+         * must first delete all versions of the model associated with the project. To
+         * delete a version of a model, see <a>DeleteProjectVersion</a>.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon Rekognition Custom Labels project. To delete a project you
+         * must first delete all versions of the model associated with the project. To
+         * delete a version of a model, see <a>DeleteProjectVersion</a>.</p> <p>This
+         * operation requires permissions to perform the
+         * <code>rekognition:DeleteProject</code> action. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a version of a model. </p> <p>You must first stop the model before
+         * you can delete it. To check if a model is running, use the <code>Status</code>
+         * field returned from <a>DescribeProjectVersions</a>. To stop a running model call
+         * <a>StopProjectVersion</a>. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteProjectVersionOutcome DeleteProjectVersion(const Model::DeleteProjectVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a version of a model. </p> <p>You must first stop the model before
+         * you can delete it. To check if a model is running, use the <code>Status</code>
+         * field returned from <a>DescribeProjectVersions</a>. To stop a running model call
+         * <a>StopProjectVersion</a>. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteProjectVersionOutcomeCallable DeleteProjectVersionCallable(const Model::DeleteProjectVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a version of a model. </p> <p>You must first stop the model before
+         * you can delete it. To check if a model is running, use the <code>Status</code>
+         * field returned from <a>DescribeProjectVersions</a>. To stop a running model call
+         * <a>StopProjectVersion</a>. </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:DeleteProjectVersion</code> action. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteProjectVersionAsync(const Model::DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the stream processor identified by <code>Name</code>. You assign the
@@ -3365,6 +3452,8 @@ namespace Model
         void CreateStreamProcessorAsyncHelper(const Model::CreateStreamProcessorRequest& request, const CreateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCollectionAsyncHelper(const Model::DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFacesAsyncHelper(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteProjectVersionAsyncHelper(const Model::DeleteProjectVersionRequest& request, const DeleteProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamProcessorAsyncHelper(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCollectionAsyncHelper(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProjectVersionsAsyncHelper(const Model::DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

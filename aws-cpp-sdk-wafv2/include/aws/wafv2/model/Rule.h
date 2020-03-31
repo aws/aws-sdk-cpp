@@ -60,50 +60,50 @@ namespace Model
 
 
     /**
-     * <p>A friendly name of the rule. You can't change the name of a <code>Rule</code>
-     * after you create it. </p>
+     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
+     * you create it. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A friendly name of the rule. You can't change the name of a <code>Rule</code>
-     * after you create it. </p>
+     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
+     * you create it. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A friendly name of the rule. You can't change the name of a <code>Rule</code>
-     * after you create it. </p>
+     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
+     * you create it. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A friendly name of the rule. You can't change the name of a <code>Rule</code>
-     * after you create it. </p>
+     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
+     * you create it. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A friendly name of the rule. You can't change the name of a <code>Rule</code>
-     * after you create it. </p>
+     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
+     * you create it. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A friendly name of the rule. You can't change the name of a <code>Rule</code>
-     * after you create it. </p>
+     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
+     * you create it. </p>
      */
     inline Rule& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A friendly name of the rule. You can't change the name of a <code>Rule</code>
-     * after you create it. </p>
+     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
+     * you create it. </p>
      */
     inline Rule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A friendly name of the rule. You can't change the name of a <code>Rule</code>
-     * after you create it. </p>
+     * <p>The name of the rule. You can't change the name of a <code>Rule</code> after
+     * you create it. </p>
      */
     inline Rule& WithName(const char* value) { SetName(value); return *this;}
 
@@ -183,93 +183,189 @@ namespace Model
 
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the
-     * rule's statement. Settings at the web ACL level can override the rule action
-     * setting. </p>
+     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p> <p>This is used only for rules whose statements do not reference a rule
+     * group. Rule statements that reference a rule group include
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>You must specify either this
+     * <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but
+     * not both:</p> <ul> <li> <p>If the rule statement does not reference a rule
+     * group, use this rule action setting and not the rule override action setting.
+     * </p> </li> <li> <p>If the rule statement references a rule group, use the
+     * override action setting and not this action setting. </p> </li> </ul>
      */
     inline const RuleAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the
-     * rule's statement. Settings at the web ACL level can override the rule action
-     * setting. </p>
+     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p> <p>This is used only for rules whose statements do not reference a rule
+     * group. Rule statements that reference a rule group include
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>You must specify either this
+     * <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but
+     * not both:</p> <ul> <li> <p>If the rule statement does not reference a rule
+     * group, use this rule action setting and not the rule override action setting.
+     * </p> </li> <li> <p>If the rule statement references a rule group, use the
+     * override action setting and not this action setting. </p> </li> </ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the
-     * rule's statement. Settings at the web ACL level can override the rule action
-     * setting. </p>
+     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p> <p>This is used only for rules whose statements do not reference a rule
+     * group. Rule statements that reference a rule group include
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>You must specify either this
+     * <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but
+     * not both:</p> <ul> <li> <p>If the rule statement does not reference a rule
+     * group, use this rule action setting and not the rule override action setting.
+     * </p> </li> <li> <p>If the rule statement references a rule group, use the
+     * override action setting and not this action setting. </p> </li> </ul>
      */
     inline void SetAction(const RuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the
-     * rule's statement. Settings at the web ACL level can override the rule action
-     * setting. </p>
+     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p> <p>This is used only for rules whose statements do not reference a rule
+     * group. Rule statements that reference a rule group include
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>You must specify either this
+     * <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but
+     * not both:</p> <ul> <li> <p>If the rule statement does not reference a rule
+     * group, use this rule action setting and not the rule override action setting.
+     * </p> </li> <li> <p>If the rule statement references a rule group, use the
+     * override action setting and not this action setting. </p> </li> </ul>
      */
     inline void SetAction(RuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the
-     * rule's statement. Settings at the web ACL level can override the rule action
-     * setting. </p>
+     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p> <p>This is used only for rules whose statements do not reference a rule
+     * group. Rule statements that reference a rule group include
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>You must specify either this
+     * <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but
+     * not both:</p> <ul> <li> <p>If the rule statement does not reference a rule
+     * group, use this rule action setting and not the rule override action setting.
+     * </p> </li> <li> <p>If the rule statement references a rule group, use the
+     * override action setting and not this action setting. </p> </li> </ul>
      */
     inline Rule& WithAction(const RuleAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the
-     * rule's statement. Settings at the web ACL level can override the rule action
-     * setting. </p>
+     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p> <p>This is used only for rules whose statements do not reference a rule
+     * group. Rule statements that reference a rule group include
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>You must specify either this
+     * <code>Action</code> setting or the rule <code>OverrideAction</code> setting, but
+     * not both:</p> <ul> <li> <p>If the rule statement does not reference a rule
+     * group, use this rule action setting and not the rule override action setting.
+     * </p> </li> <li> <p>If the rule statement references a rule group, use the
+     * override action setting and not this action setting. </p> </li> </ul>
      */
     inline Rule& WithAction(RuleAction&& value) { SetAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>The action to use to override the rule's <code>Action</code> setting. You can
-     * use no override action, in which case the rule action is in effect, or count
-     * action, in which case, if the rule matches a web request, it only counts the
-     * match.</p>
+     * <p>The override action to apply to the rules in a rule group. Used only for rule
+     * statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
+     * to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
+     * specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
+     * statement references a rule group, use this override action setting and not the
+     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
+     * rule group, use the rule action setting and not this rule override action
+     * setting. </p> </li> </ul>
      */
     inline const OverrideAction& GetOverrideAction() const{ return m_overrideAction; }
 
     /**
-     * <p>The action to use to override the rule's <code>Action</code> setting. You can
-     * use no override action, in which case the rule action is in effect, or count
-     * action, in which case, if the rule matches a web request, it only counts the
-     * match.</p>
+     * <p>The override action to apply to the rules in a rule group. Used only for rule
+     * statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
+     * to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
+     * specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
+     * statement references a rule group, use this override action setting and not the
+     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
+     * rule group, use the rule action setting and not this rule override action
+     * setting. </p> </li> </ul>
      */
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
 
     /**
-     * <p>The action to use to override the rule's <code>Action</code> setting. You can
-     * use no override action, in which case the rule action is in effect, or count
-     * action, in which case, if the rule matches a web request, it only counts the
-     * match.</p>
+     * <p>The override action to apply to the rules in a rule group. Used only for rule
+     * statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
+     * to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
+     * specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
+     * statement references a rule group, use this override action setting and not the
+     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
+     * rule group, use the rule action setting and not this rule override action
+     * setting. </p> </li> </ul>
      */
     inline void SetOverrideAction(const OverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
 
     /**
-     * <p>The action to use to override the rule's <code>Action</code> setting. You can
-     * use no override action, in which case the rule action is in effect, or count
-     * action, in which case, if the rule matches a web request, it only counts the
-     * match.</p>
+     * <p>The override action to apply to the rules in a rule group. Used only for rule
+     * statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
+     * to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
+     * specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
+     * statement references a rule group, use this override action setting and not the
+     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
+     * rule group, use the rule action setting and not this rule override action
+     * setting. </p> </li> </ul>
      */
     inline void SetOverrideAction(OverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
 
     /**
-     * <p>The action to use to override the rule's <code>Action</code> setting. You can
-     * use no override action, in which case the rule action is in effect, or count
-     * action, in which case, if the rule matches a web request, it only counts the
-     * match.</p>
+     * <p>The override action to apply to the rules in a rule group. Used only for rule
+     * statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
+     * to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
+     * specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
+     * statement references a rule group, use this override action setting and not the
+     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
+     * rule group, use the rule action setting and not this rule override action
+     * setting. </p> </li> </ul>
      */
     inline Rule& WithOverrideAction(const OverrideAction& value) { SetOverrideAction(value); return *this;}
 
     /**
-     * <p>The action to use to override the rule's <code>Action</code> setting. You can
-     * use no override action, in which case the rule action is in effect, or count
-     * action, in which case, if the rule matches a web request, it only counts the
-     * match.</p>
+     * <p>The override action to apply to the rules in a rule group. Used only for rule
+     * statements that reference a rule group, like
+     * <code>RuleGroupReferenceStatement</code> and
+     * <code>ManagedRuleGroupStatement</code>. </p> <p>Set the override action to none
+     * to leave the rule actions in effect. Set it to count to only count matches,
+     * regardless of the rule action settings. </p> <p>In a <a>Rule</a>, you must
+     * specify either this <code>OverrideAction</code> setting or the rule
+     * <code>Action</code> setting, but not both:</p> <ul> <li> <p>If the rule
+     * statement references a rule group, use this override action setting and not the
+     * action setting. </p> </li> <li> <p>If the rule statement does not reference a
+     * rule group, use the rule action setting and not this rule override action
+     * setting. </p> </li> </ul>
      */
     inline Rule& WithOverrideAction(OverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
 

@@ -388,12 +388,11 @@ namespace Model
          * as the <code>Principal</code>. For AWS services, the principal is a domain-style
          * identifier defined by the service, like <code>s3.amazonaws.com</code> or
          * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN
-         * or owning account of the associated resource as the <code>SourceArn</code> or
-         * <code>SourceAccount</code>. If you grant permission to a service principal
-         * without specifying the source, other accounts could potentially configure
-         * resources in their account to invoke your Lambda function.</p> <p>This action
-         * adds a statement to a resource-based permissions policy for the function. For
-         * more information about function policies, see <a
+         * of the associated resource as the <code>SourceArn</code>. If you grant
+         * permission to a service principal without specifying the source, other accounts
+         * could potentially configure resources in their account to invoke your Lambda
+         * function.</p> <p>This action adds a statement to a resource-based permissions
+         * policy for the function. For more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
@@ -410,12 +409,11 @@ namespace Model
          * as the <code>Principal</code>. For AWS services, the principal is a domain-style
          * identifier defined by the service, like <code>s3.amazonaws.com</code> or
          * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN
-         * or owning account of the associated resource as the <code>SourceArn</code> or
-         * <code>SourceAccount</code>. If you grant permission to a service principal
-         * without specifying the source, other accounts could potentially configure
-         * resources in their account to invoke your Lambda function.</p> <p>This action
-         * adds a statement to a resource-based permissions policy for the function. For
-         * more information about function policies, see <a
+         * of the associated resource as the <code>SourceArn</code>. If you grant
+         * permission to a service principal without specifying the source, other accounts
+         * could potentially configure resources in their account to invoke your Lambda
+         * function.</p> <p>This action adds a statement to a resource-based permissions
+         * policy for the function. For more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
@@ -434,12 +432,11 @@ namespace Model
          * as the <code>Principal</code>. For AWS services, the principal is a domain-style
          * identifier defined by the service, like <code>s3.amazonaws.com</code> or
          * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN
-         * or owning account of the associated resource as the <code>SourceArn</code> or
-         * <code>SourceAccount</code>. If you grant permission to a service principal
-         * without specifying the source, other accounts could potentially configure
-         * resources in their account to invoke your Lambda function.</p> <p>This action
-         * adds a statement to a resource-based permissions policy for the function. For
-         * more information about function policies, see <a
+         * of the associated resource as the <code>SourceArn</code>. If you grant
+         * permission to a service principal without specifying the source, other accounts
+         * could potentially configure resources in their account to invoke your Lambda
+         * function.</p> <p>This action adds a statement to a resource-based permissions
+         * policy for the function. For more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS

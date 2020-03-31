@@ -41,7 +41,8 @@ namespace Model
     JDBC_ENFORCE_SSL,
     CUSTOM_JDBC_CERT,
     SKIP_CUSTOM_JDBC_CERT_VALIDATION,
-    CUSTOM_JDBC_CERT_STRING
+    CUSTOM_JDBC_CERT_STRING,
+    CONNECTION_URL
   };
 
 namespace ConnectionPropertyKeyMapper

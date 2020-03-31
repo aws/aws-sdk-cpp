@@ -37,9 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Amazon Detective is currently in preview.</p> <p>Details about a member
-   * account that was invited to contribute to a behavior graph.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Details about a member account that was invited to contribute to a behavior
+   * graph.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/MemberDetail">AWS
    * API Reference</a></p>
    */
@@ -230,9 +229,9 @@ namespace Model
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
      * invitation to contribute to the behavior graph.</p> </li> <li> <p>
      * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation, but is blocked from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is
-     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * the invitation but is prevented from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is not
+     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
      * were removed from the behavior graph are not included.</p>
      */
     inline const MemberStatus& GetStatus() const{ return m_status; }
@@ -251,9 +250,9 @@ namespace Model
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
      * invitation to contribute to the behavior graph.</p> </li> <li> <p>
      * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation, but is blocked from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is
-     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * the invitation but is prevented from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is not
+     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
      * were removed from the behavior graph are not included.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -272,9 +271,9 @@ namespace Model
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
      * invitation to contribute to the behavior graph.</p> </li> <li> <p>
      * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation, but is blocked from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is
-     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * the invitation but is prevented from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is not
+     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
      * were removed from the behavior graph are not included.</p>
      */
     inline void SetStatus(const MemberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -293,9 +292,9 @@ namespace Model
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
      * invitation to contribute to the behavior graph.</p> </li> <li> <p>
      * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation, but is blocked from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is
-     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * the invitation but is prevented from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is not
+     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
      * were removed from the behavior graph are not included.</p>
      */
     inline void SetStatus(MemberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
@@ -314,9 +313,9 @@ namespace Model
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
      * invitation to contribute to the behavior graph.</p> </li> <li> <p>
      * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation, but is blocked from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is
-     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * the invitation but is prevented from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is not
+     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
      * were removed from the behavior graph are not included.</p>
      */
     inline MemberDetail& WithStatus(const MemberStatus& value) { SetStatus(value); return *this;}
@@ -335,9 +334,9 @@ namespace Model
      * <li> <p> <code>ENABLED</code> - Indicates that the member account accepted the
      * invitation to contribute to the behavior graph.</p> </li> <li> <p>
      * <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
-     * the invitation, but is blocked from contributing data to the behavior graph.
-     * <code>DisabledReason</code> provides the reason why the member account is
-     * blocked.</p> </li> </ul> <p>Member accounts that declined an invitation or that
+     * the invitation but is prevented from contributing data to the behavior graph.
+     * <code>DisabledReason</code> provides the reason why the member account is not
+     * enabled.</p> </li> </ul> <p>Member accounts that declined an invitation or that
      * were removed from the behavior graph are not included.</p>
      */
     inline MemberDetail& WithStatus(MemberStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -345,72 +344,72 @@ namespace Model
 
     /**
      * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
-     * reason that the member account is blocked.</p> <p>The reason can have one of the
-     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
-     * that adding the member account would cause the data rate for the behavior graph
-     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
-     * Detective is unable to verify the data rate for the member account. This is
-     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * reason that the member account is not enabled.</p> <p>The reason can have one of
+     * the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data volume for the behavior
+     * graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates
+     * that Detective is unable to verify the data volume for the member account. This
+     * is usually because the member account is not enrolled in Amazon GuardDuty. </p>
      * </li> </ul>
      */
     inline const MemberDisabledReason& GetDisabledReason() const{ return m_disabledReason; }
 
     /**
      * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
-     * reason that the member account is blocked.</p> <p>The reason can have one of the
-     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
-     * that adding the member account would cause the data rate for the behavior graph
-     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
-     * Detective is unable to verify the data rate for the member account. This is
-     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * reason that the member account is not enabled.</p> <p>The reason can have one of
+     * the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data volume for the behavior
+     * graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates
+     * that Detective is unable to verify the data volume for the member account. This
+     * is usually because the member account is not enrolled in Amazon GuardDuty. </p>
      * </li> </ul>
      */
     inline bool DisabledReasonHasBeenSet() const { return m_disabledReasonHasBeenSet; }
 
     /**
      * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
-     * reason that the member account is blocked.</p> <p>The reason can have one of the
-     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
-     * that adding the member account would cause the data rate for the behavior graph
-     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
-     * Detective is unable to verify the data rate for the member account. This is
-     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * reason that the member account is not enabled.</p> <p>The reason can have one of
+     * the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data volume for the behavior
+     * graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates
+     * that Detective is unable to verify the data volume for the member account. This
+     * is usually because the member account is not enrolled in Amazon GuardDuty. </p>
      * </li> </ul>
      */
     inline void SetDisabledReason(const MemberDisabledReason& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
 
     /**
      * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
-     * reason that the member account is blocked.</p> <p>The reason can have one of the
-     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
-     * that adding the member account would cause the data rate for the behavior graph
-     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
-     * Detective is unable to verify the data rate for the member account. This is
-     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * reason that the member account is not enabled.</p> <p>The reason can have one of
+     * the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data volume for the behavior
+     * graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates
+     * that Detective is unable to verify the data volume for the member account. This
+     * is usually because the member account is not enrolled in Amazon GuardDuty. </p>
      * </li> </ul>
      */
     inline void SetDisabledReason(MemberDisabledReason&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::move(value); }
 
     /**
      * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
-     * reason that the member account is blocked.</p> <p>The reason can have one of the
-     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
-     * that adding the member account would cause the data rate for the behavior graph
-     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
-     * Detective is unable to verify the data rate for the member account. This is
-     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * reason that the member account is not enabled.</p> <p>The reason can have one of
+     * the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data volume for the behavior
+     * graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates
+     * that Detective is unable to verify the data volume for the member account. This
+     * is usually because the member account is not enrolled in Amazon GuardDuty. </p>
      * </li> </ul>
      */
     inline MemberDetail& WithDisabledReason(const MemberDisabledReason& value) { SetDisabledReason(value); return *this;}
 
     /**
      * <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the
-     * reason that the member account is blocked.</p> <p>The reason can have one of the
-     * following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
-     * that adding the member account would cause the data rate for the behavior graph
-     * to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates that
-     * Detective is unable to verify the data rate for the member account. This is
-     * usually because the member account is not enrolled in Amazon GuardDuty. </p>
+     * reason that the member account is not enabled.</p> <p>The reason can have one of
+     * the following values:</p> <ul> <li> <p> <code>VOLUME_TOO_HIGH</code> - Indicates
+     * that adding the member account would cause the data volume for the behavior
+     * graph to be too high.</p> </li> <li> <p> <code>VOLUME_UNKNOWN</code> - Indicates
+     * that Detective is unable to verify the data volume for the member account. This
+     * is usually because the member account is not enrolled in Amazon GuardDuty. </p>
      * </li> </ul>
      */
     inline MemberDetail& WithDisabledReason(MemberDisabledReason&& value) { SetDisabledReason(std::move(value)); return *this;}

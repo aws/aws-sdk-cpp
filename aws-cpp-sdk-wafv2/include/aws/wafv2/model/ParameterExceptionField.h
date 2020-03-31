@@ -62,7 +62,8 @@ namespace Model
     RESOURCE_TYPE,
     TAGS,
     TAG_KEYS,
-    METRIC_NAME
+    METRIC_NAME,
+    FIREWALL_MANAGER_STATEMENT
   };
 
 namespace ParameterExceptionFieldMapper

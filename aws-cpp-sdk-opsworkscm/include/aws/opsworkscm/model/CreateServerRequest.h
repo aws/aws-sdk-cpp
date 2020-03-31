@@ -77,324 +77,308 @@ namespace Model
 
 
     /**
-     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
-     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
-     * create a CNAME DNS record in your preferred DNS service that points the custom
-     * domain to the endpoint that is generated when the server is created (the value
-     * of the CreateServer Endpoint attribute). You cannot access the server by using
-     * the generated <code>Endpoint</code> value if the server is using a custom
-     * domain. If you specify a custom domain, you must also specify values for
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
-     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
-     * create a CNAME DNS record in your preferred DNS service that points the custom
-     * domain to the endpoint that is generated when the server is created (the value
-     * of the CreateServer Endpoint attribute). You cannot access the server by using
-     * the generated <code>Endpoint</code> value if the server is using a custom
-     * domain. If you specify a custom domain, you must also specify values for
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline bool CustomDomainHasBeenSet() const { return m_customDomainHasBeenSet; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
-     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
-     * create a CNAME DNS record in your preferred DNS service that points the custom
-     * domain to the endpoint that is generated when the server is created (the value
-     * of the CreateServer Endpoint attribute). You cannot access the server by using
-     * the generated <code>Endpoint</code> value if the server is using a custom
-     * domain. If you specify a custom domain, you must also specify values for
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
-     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
-     * create a CNAME DNS record in your preferred DNS service that points the custom
-     * domain to the endpoint that is generated when the server is created (the value
-     * of the CreateServer Endpoint attribute). You cannot access the server by using
-     * the generated <code>Endpoint</code> value if the server is using a custom
-     * domain. If you specify a custom domain, you must also specify values for
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
-     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
-     * create a CNAME DNS record in your preferred DNS service that points the custom
-     * domain to the endpoint that is generated when the server is created (the value
-     * of the CreateServer Endpoint attribute). You cannot access the server by using
-     * the generated <code>Endpoint</code> value if the server is using a custom
-     * domain. If you specify a custom domain, you must also specify values for
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
-     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
-     * create a CNAME DNS record in your preferred DNS service that points the custom
-     * domain to the endpoint that is generated when the server is created (the value
-     * of the CreateServer Endpoint attribute). You cannot access the server by using
-     * the generated <code>Endpoint</code> value if the server is using a custom
-     * domain. If you specify a custom domain, you must also specify values for
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline CreateServerRequest& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
 
     /**
-     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
-     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
-     * create a CNAME DNS record in your preferred DNS service that points the custom
-     * domain to the endpoint that is generated when the server is created (the value
-     * of the CreateServer Endpoint attribute). You cannot access the server by using
-     * the generated <code>Endpoint</code> value if the server is using a custom
-     * domain. If you specify a custom domain, you must also specify values for
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline CreateServerRequest& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
-     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
-     * create a CNAME DNS record in your preferred DNS service that points the custom
-     * domain to the endpoint that is generated when the server is created (the value
-     * of the CreateServer Endpoint attribute). You cannot access the server by using
-     * the generated <code>Endpoint</code> value if the server is using a custom
-     * domain. If you specify a custom domain, you must also specify values for
+     * <p>An optional public endpoint of a server, such as
+     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
+     * DNS record in your preferred DNS service that points the custom domain to the
+     * endpoint that is generated when the server is created (the value of the
+     * CreateServer Endpoint attribute). You cannot access the server by using the
+     * generated <code>Endpoint</code> value if the server is using a custom domain. If
+     * you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline CreateServerRequest& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
 
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
-     * certificate. The value can be be a single, self-signed certificate, or a
-     * certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
-     * following are requirements for the <code>CustomCertificate</code> value:</p>
-     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
-     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
-     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
-     * certificate must be valid at the time of upload. A certificate can't be used
-     * before its validity period begins (the certificate's <code>NotBefore</code>
-     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
-     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
-     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
-     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-     * </li> </ul>
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetCustomCertificate() const{ return m_customCertificate; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
-     * certificate. The value can be be a single, self-signed certificate, or a
-     * certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
-     * following are requirements for the <code>CustomCertificate</code> value:</p>
-     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
-     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
-     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
-     * certificate must be valid at the time of upload. A certificate can't be used
-     * before its validity period begins (the certificate's <code>NotBefore</code>
-     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
-     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
-     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
-     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-     * </li> </ul>
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
      */
     inline bool CustomCertificateHasBeenSet() const { return m_customCertificateHasBeenSet; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
-     * certificate. The value can be be a single, self-signed certificate, or a
-     * certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
-     * following are requirements for the <code>CustomCertificate</code> value:</p>
-     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
-     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
-     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
-     * certificate must be valid at the time of upload. A certificate can't be used
-     * before its validity period begins (the certificate's <code>NotBefore</code>
-     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
-     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
-     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
-     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-     * </li> </ul>
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
      */
     inline void SetCustomCertificate(const Aws::String& value) { m_customCertificateHasBeenSet = true; m_customCertificate = value; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
-     * certificate. The value can be be a single, self-signed certificate, or a
-     * certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
-     * following are requirements for the <code>CustomCertificate</code> value:</p>
-     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
-     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
-     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
-     * certificate must be valid at the time of upload. A certificate can't be used
-     * before its validity period begins (the certificate's <code>NotBefore</code>
-     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
-     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
-     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
-     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-     * </li> </ul>
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
      */
     inline void SetCustomCertificate(Aws::String&& value) { m_customCertificateHasBeenSet = true; m_customCertificate = std::move(value); }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
-     * certificate. The value can be be a single, self-signed certificate, or a
-     * certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
-     * following are requirements for the <code>CustomCertificate</code> value:</p>
-     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
-     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
-     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
-     * certificate must be valid at the time of upload. A certificate can't be used
-     * before its validity period begins (the certificate's <code>NotBefore</code>
-     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
-     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
-     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
-     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-     * </li> </ul>
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
      */
     inline void SetCustomCertificate(const char* value) { m_customCertificateHasBeenSet = true; m_customCertificate.assign(value); }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
-     * certificate. The value can be be a single, self-signed certificate, or a
-     * certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
-     * following are requirements for the <code>CustomCertificate</code> value:</p>
-     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
-     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
-     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
-     * certificate must be valid at the time of upload. A certificate can't be used
-     * before its validity period begins (the certificate's <code>NotBefore</code>
-     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
-     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
-     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
-     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-     * </li> </ul>
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
      */
     inline CreateServerRequest& WithCustomCertificate(const Aws::String& value) { SetCustomCertificate(value); return *this;}
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
-     * certificate. The value can be be a single, self-signed certificate, or a
-     * certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
-     * following are requirements for the <code>CustomCertificate</code> value:</p>
-     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
-     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
-     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
-     * certificate must be valid at the time of upload. A certificate can't be used
-     * before its validity period begins (the certificate's <code>NotBefore</code>
-     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
-     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
-     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
-     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-     * </li> </ul>
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
      */
     inline CreateServerRequest& WithCustomCertificate(Aws::String&& value) { SetCustomCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
-     * certificate. The value can be be a single, self-signed certificate, or a
-     * certificate chain. If you specify a custom certificate, you must also specify
-     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
-     * following are requirements for the <code>CustomCertificate</code> value:</p>
-     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
-     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
-     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
-     * certificate must be valid at the time of upload. A certificate can't be used
-     * before its validity period begins (the certificate's <code>NotBefore</code>
-     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
-     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
-     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
-     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
-     * </li> </ul>
+     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
+     * certificate, or a certificate chain. If you specify a custom certificate, you
+     * must also specify values for <code>CustomDomain</code> and
+     * <code>CustomPrivateKey</code>. The following are requirements for the
+     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
+     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
+     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
+     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
+     * upload. A certificate can't be used before its validity period begins (the
+     * certificate's <code>NotBefore</code> date), or after it expires (the
+     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
+     * common name or subject alternative names (SANs), if present, must match the
+     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
+     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
      */
     inline CreateServerRequest& WithCustomCertificate(const char* value) { SetCustomCertificate(value); return *this;}
 
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
-     * connecting to the server by using HTTPS. The private key must not be encrypted;
-     * it cannot be protected by a password or passphrase. If you specify a custom
-     * private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.</p>
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
      */
     inline const Aws::String& GetCustomPrivateKey() const{ return m_customPrivateKey; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
-     * connecting to the server by using HTTPS. The private key must not be encrypted;
-     * it cannot be protected by a password or passphrase. If you specify a custom
-     * private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.</p>
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
      */
     inline bool CustomPrivateKeyHasBeenSet() const { return m_customPrivateKeyHasBeenSet; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
-     * connecting to the server by using HTTPS. The private key must not be encrypted;
-     * it cannot be protected by a password or passphrase. If you specify a custom
-     * private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.</p>
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
      */
     inline void SetCustomPrivateKey(const Aws::String& value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey = value; }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
-     * connecting to the server by using HTTPS. The private key must not be encrypted;
-     * it cannot be protected by a password or passphrase. If you specify a custom
-     * private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.</p>
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
      */
     inline void SetCustomPrivateKey(Aws::String&& value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey = std::move(value); }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
-     * connecting to the server by using HTTPS. The private key must not be encrypted;
-     * it cannot be protected by a password or passphrase. If you specify a custom
-     * private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.</p>
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
      */
     inline void SetCustomPrivateKey(const char* value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey.assign(value); }
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
-     * connecting to the server by using HTTPS. The private key must not be encrypted;
-     * it cannot be protected by a password or passphrase. If you specify a custom
-     * private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.</p>
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
      */
     inline CreateServerRequest& WithCustomPrivateKey(const Aws::String& value) { SetCustomPrivateKey(value); return *this;}
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
-     * connecting to the server by using HTTPS. The private key must not be encrypted;
-     * it cannot be protected by a password or passphrase. If you specify a custom
-     * private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.</p>
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
      */
     inline CreateServerRequest& WithCustomPrivateKey(Aws::String&& value) { SetCustomPrivateKey(std::move(value)); return *this;}
 
     /**
-     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
-     * connecting to the server by using HTTPS. The private key must not be encrypted;
-     * it cannot be protected by a password or passphrase. If you specify a custom
-     * private key, you must also specify values for <code>CustomDomain</code> and
-     * <code>CustomCertificate</code>.</p>
+     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
+     * private key must not be encrypted; it cannot be protected by a password or
+     * passphrase. If you specify a custom private key, you must also specify values
+     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
      */
     inline CreateServerRequest& WithCustomPrivateKey(const char* value) { SetCustomPrivateKey(value); return *this;}
 
@@ -524,56 +508,56 @@ namespace Model
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * server, the valid value for EngineVersion is currently <code>2</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * server, the valid value for EngineVersion is currently <code>2</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * server, the valid value for EngineVersion is currently <code>2</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * server, the valid value for EngineVersion is currently <code>2</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * server, the valid value for EngineVersion is currently <code>2</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * server, the valid value for EngineVersion is currently <code>2</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * server, the valid value for EngineVersion is currently <code>2</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>12</code>. For a
+     * server, the valid value for EngineVersion is currently <code>2</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
@@ -1072,88 +1056,96 @@ namespace Model
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
-     * universal time (UTC). The default value is a random one-hour period on Tuesday,
-     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
-     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
-     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
+     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
+     * UTC. (8:00 a.m.) </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
-     * universal time (UTC). The default value is a random one-hour period on Tuesday,
-     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
-     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
-     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
+     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
+     * UTC. (8:00 a.m.) </p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
-     * universal time (UTC). The default value is a random one-hour period on Tuesday,
-     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
-     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
-     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
+     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
+     * UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
-     * universal time (UTC). The default value is a random one-hour period on Tuesday,
-     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
-     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
-     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
+     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
+     * UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
-     * universal time (UTC). The default value is a random one-hour period on Tuesday,
-     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
-     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
-     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
+     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
+     * UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
-     * universal time (UTC). The default value is a random one-hour period on Tuesday,
-     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
-     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
-     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
+     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
+     * UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
-     * universal time (UTC). The default value is a random one-hour period on Tuesday,
-     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
-     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
-     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
+     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
+     * UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
-     * universal time (UTC). The default value is a random one-hour period on Tuesday,
-     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
-     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
-     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
+     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
+     * UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1163,11 +1155,12 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
-     * universal time (UTC). The default value is a random, daily start time.</p> <p>
-     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
-     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
-     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random, daily start time.</p> <p> <b>Example:</b>
+     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
+     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
+     * Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -1176,11 +1169,12 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
-     * universal time (UTC). The default value is a random, daily start time.</p> <p>
-     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
-     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
-     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random, daily start time.</p> <p> <b>Example:</b>
+     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
+     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
+     * Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
@@ -1189,11 +1183,12 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
-     * universal time (UTC). The default value is a random, daily start time.</p> <p>
-     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
-     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
-     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random, daily start time.</p> <p> <b>Example:</b>
+     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
+     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
+     * Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -1202,11 +1197,12 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
-     * universal time (UTC). The default value is a random, daily start time.</p> <p>
-     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
-     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
-     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random, daily start time.</p> <p> <b>Example:</b>
+     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
+     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
+     * Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -1215,11 +1211,12 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
-     * universal time (UTC). The default value is a random, daily start time.</p> <p>
-     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
-     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
-     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random, daily start time.</p> <p> <b>Example:</b>
+     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
+     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
+     * Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -1228,11 +1225,12 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
-     * universal time (UTC). The default value is a random, daily start time.</p> <p>
-     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
-     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
-     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random, daily start time.</p> <p> <b>Example:</b>
+     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
+     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
+     * Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1241,11 +1239,12 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
-     * universal time (UTC). The default value is a random, daily start time.</p> <p>
-     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
-     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
-     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random, daily start time.</p> <p> <b>Example:</b>
+     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
+     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
+     * Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -1254,11 +1253,12 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
-     * universal time (UTC). The default value is a random, daily start time.</p> <p>
-     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
-     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
-     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
+     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     * default value is a random, daily start time.</p> <p> <b>Example:</b>
+     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
+     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
+     * Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1566,10 +1566,10 @@ namespace Model
      * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
      * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
      * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
-     * value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ :
-     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
+     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
+     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
      * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
      * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
      */
@@ -1580,10 +1580,10 @@ namespace Model
      * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
      * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
      * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
-     * value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ :
-     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
+     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
+     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
      * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
      * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
      */
@@ -1594,10 +1594,10 @@ namespace Model
      * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
      * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
      * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
-     * value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ :
-     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
+     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
+     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
      * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
      * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
      */
@@ -1608,10 +1608,10 @@ namespace Model
      * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
      * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
      * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
-     * value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ :
-     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
+     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
+     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
      * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
      * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
      */
@@ -1622,10 +1622,10 @@ namespace Model
      * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
      * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
      * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
-     * value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ :
-     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
+     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
+     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
      * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
      * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
      */
@@ -1636,10 +1636,10 @@ namespace Model
      * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
      * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
      * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
-     * value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ :
-     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
+     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
+     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
      * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
      * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
      */
@@ -1650,10 +1650,10 @@ namespace Model
      * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
      * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
      * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
-     * value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ :
-     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
+     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
+     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
      * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
      * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
      */
@@ -1664,10 +1664,10 @@ namespace Model
      * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
      * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
      * characters, and can contain only Unicode letters, numbers, or separators, or the
-     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
-     * value can be a maximum 255 characters, and contain only Unicode letters,
-     * numbers, or separators, or the following special characters: <code>+ - = . _ :
-     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * following special characters: <code>+ - = . _ : / @</code> </p> </li> <li>
+     * <p>The value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ : /
+     * @</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
      * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
      * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
      */

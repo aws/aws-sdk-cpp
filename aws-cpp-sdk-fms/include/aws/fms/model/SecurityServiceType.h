@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     WAF,
+    WAFV2,
     SHIELD_ADVANCED,
     SECURITY_GROUPS_COMMON,
     SECURITY_GROUPS_CONTENT_AUDIT,

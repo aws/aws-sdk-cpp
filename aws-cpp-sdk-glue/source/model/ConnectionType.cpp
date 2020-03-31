@@ -32,6 +32,7 @@ namespace Aws
 
         static const int JDBC_HASH = HashingUtils::HashString("JDBC");
         static const int SFTP_HASH = HashingUtils::HashString("SFTP");
+        static const int MONGODB_HASH = HashingUtils::HashString("MONGODB");
 
 
         ConnectionType GetConnectionTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == SFTP_HASH)
           {
             return ConnectionType::SFTP;
+          }
+          else if (hashCode == MONGODB_HASH)
+          {
+            return ConnectionType::MONGODB;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "JDBC";
           case ConnectionType::SFTP:
             return "SFTP";
+          case ConnectionType::MONGODB:
+            return "MONGODB";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

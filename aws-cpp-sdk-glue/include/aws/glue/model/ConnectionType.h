@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     JDBC,
-    SFTP
+    SFTP,
+    MONGODB
   };
 
 namespace ConnectionTypeMapper

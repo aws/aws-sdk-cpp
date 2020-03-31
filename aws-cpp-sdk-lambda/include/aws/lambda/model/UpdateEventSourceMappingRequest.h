@@ -252,26 +252,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum amount of time to gather records before invoking the function, in
-     * seconds.</p>
+     * <p>(Streams) The maximum amount of time to gather records before invoking the
+     * function, in seconds.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>The maximum amount of time to gather records before invoking the function, in
-     * seconds.</p>
+     * <p>(Streams) The maximum amount of time to gather records before invoking the
+     * function, in seconds.</p>
      */
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum amount of time to gather records before invoking the function, in
-     * seconds.</p>
+     * <p>(Streams) The maximum amount of time to gather records before invoking the
+     * function, in seconds.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>The maximum amount of time to gather records before invoking the function, in
-     * seconds.</p>
+     * <p>(Streams) The maximum amount of time to gather records before invoking the
+     * function, in seconds.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 

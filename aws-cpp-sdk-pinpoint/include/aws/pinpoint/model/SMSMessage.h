@@ -142,6 +142,47 @@ namespace Model
 
 
     /**
+     * <p>The URL of an image or video to display in the SMS message.</p>
+     */
+    inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
+
+    /**
+     * <p>The URL of an image or video to display in the SMS message.</p>
+     */
+    inline bool MediaUrlHasBeenSet() const { return m_mediaUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of an image or video to display in the SMS message.</p>
+     */
+    inline void SetMediaUrl(const Aws::String& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = value; }
+
+    /**
+     * <p>The URL of an image or video to display in the SMS message.</p>
+     */
+    inline void SetMediaUrl(Aws::String&& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = std::move(value); }
+
+    /**
+     * <p>The URL of an image or video to display in the SMS message.</p>
+     */
+    inline void SetMediaUrl(const char* value) { m_mediaUrlHasBeenSet = true; m_mediaUrl.assign(value); }
+
+    /**
+     * <p>The URL of an image or video to display in the SMS message.</p>
+     */
+    inline SMSMessage& WithMediaUrl(const Aws::String& value) { SetMediaUrl(value); return *this;}
+
+    /**
+     * <p>The URL of an image or video to display in the SMS message.</p>
+     */
+    inline SMSMessage& WithMediaUrl(Aws::String&& value) { SetMediaUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL of an image or video to display in the SMS message.</p>
+     */
+    inline SMSMessage& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
+
+
+    /**
      * <p>The SMS message type. Valid values are: TRANSACTIONAL, the message is
      * critical or time-sensitive, such as a one-time password that supports a customer
      * transaction; and, PROMOTIONAL, the message is not critical or time-sensitive,
@@ -383,6 +424,9 @@ namespace Model
 
     Aws::String m_keyword;
     bool m_keywordHasBeenSet;
+
+    Aws::String m_mediaUrl;
+    bool m_mediaUrlHasBeenSet;
 
     MessageType m_messageType;
     bool m_messageTypeHasBeenSet;

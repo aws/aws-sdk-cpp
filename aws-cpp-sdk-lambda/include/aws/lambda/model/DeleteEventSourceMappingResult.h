@@ -103,20 +103,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum amount of time to gather records before invoking the function, in
-     * seconds.</p>
+     * <p>(Streams) The maximum amount of time to gather records before invoking the
+     * function, in seconds.</p>
      */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
     /**
-     * <p>The maximum amount of time to gather records before invoking the function, in
-     * seconds.</p>
+     * <p>(Streams) The maximum amount of time to gather records before invoking the
+     * function, in seconds.</p>
      */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSeconds = value; }
 
     /**
-     * <p>The maximum amount of time to gather records before invoking the function, in
-     * seconds.</p>
+     * <p>(Streams) The maximum amount of time to gather records before invoking the
+     * function, in seconds.</p>
      */
     inline DeleteEventSourceMappingResult& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
 

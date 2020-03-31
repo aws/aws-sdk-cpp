@@ -153,8 +153,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
 
@@ -162,8 +163,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
 
@@ -171,8 +173,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
 
@@ -180,8 +183,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
 
@@ -189,8 +193,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline RegexPatternSetReferenceStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
 
@@ -198,8 +203,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline RegexPatternSetReferenceStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
 
@@ -207,8 +213,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline RegexPatternSetReferenceStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
 
@@ -216,8 +223,9 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
      * transformations in a rule statement, AWS WAF performs all transformations on the
-     * content identified by <code>FieldToMatch</code>, starting from the lowest
-     * priority setting, before inspecting the content for a match.</p>
+     * content of the request component identified by <code>FieldToMatch</code>,
+     * starting from the lowest priority setting, before inspecting the content for a
+     * match.</p>
      */
     inline RegexPatternSetReferenceStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
 

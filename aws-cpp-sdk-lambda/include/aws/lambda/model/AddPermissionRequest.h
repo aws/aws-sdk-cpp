@@ -366,82 +366,66 @@ namespace Model
 
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use this
-     * instead of <code>SourceArn</code> to grant permission to resources that are
-     * owned by another account (for example, all of an account's Amazon S3 buckets).
-     * Or use it together with <code>SourceArn</code> to ensure that the resource is
-     * owned by the specified account. For example, an Amazon S3 bucket could be
-     * deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon S3, the ID of the account that owns the resource. Use this
+     * together with <code>SourceArn</code> to ensure that the resource is owned by the
+     * specified account. It is possible for an Amazon S3 bucket to be deleted by its
+     * owner and recreated by another account.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use this
-     * instead of <code>SourceArn</code> to grant permission to resources that are
-     * owned by another account (for example, all of an account's Amazon S3 buckets).
-     * Or use it together with <code>SourceArn</code> to ensure that the resource is
-     * owned by the specified account. For example, an Amazon S3 bucket could be
-     * deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon S3, the ID of the account that owns the resource. Use this
+     * together with <code>SourceArn</code> to ensure that the resource is owned by the
+     * specified account. It is possible for an Amazon S3 bucket to be deleted by its
+     * owner and recreated by another account.</p>
      */
     inline bool SourceAccountHasBeenSet() const { return m_sourceAccountHasBeenSet; }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use this
-     * instead of <code>SourceArn</code> to grant permission to resources that are
-     * owned by another account (for example, all of an account's Amazon S3 buckets).
-     * Or use it together with <code>SourceArn</code> to ensure that the resource is
-     * owned by the specified account. For example, an Amazon S3 bucket could be
-     * deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon S3, the ID of the account that owns the resource. Use this
+     * together with <code>SourceArn</code> to ensure that the resource is owned by the
+     * specified account. It is possible for an Amazon S3 bucket to be deleted by its
+     * owner and recreated by another account.</p>
      */
     inline void SetSourceAccount(const Aws::String& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use this
-     * instead of <code>SourceArn</code> to grant permission to resources that are
-     * owned by another account (for example, all of an account's Amazon S3 buckets).
-     * Or use it together with <code>SourceArn</code> to ensure that the resource is
-     * owned by the specified account. For example, an Amazon S3 bucket could be
-     * deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon S3, the ID of the account that owns the resource. Use this
+     * together with <code>SourceArn</code> to ensure that the resource is owned by the
+     * specified account. It is possible for an Amazon S3 bucket to be deleted by its
+     * owner and recreated by another account.</p>
      */
     inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = std::move(value); }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use this
-     * instead of <code>SourceArn</code> to grant permission to resources that are
-     * owned by another account (for example, all of an account's Amazon S3 buckets).
-     * Or use it together with <code>SourceArn</code> to ensure that the resource is
-     * owned by the specified account. For example, an Amazon S3 bucket could be
-     * deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon S3, the ID of the account that owns the resource. Use this
+     * together with <code>SourceArn</code> to ensure that the resource is owned by the
+     * specified account. It is possible for an Amazon S3 bucket to be deleted by its
+     * owner and recreated by another account.</p>
      */
     inline void SetSourceAccount(const char* value) { m_sourceAccountHasBeenSet = true; m_sourceAccount.assign(value); }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use this
-     * instead of <code>SourceArn</code> to grant permission to resources that are
-     * owned by another account (for example, all of an account's Amazon S3 buckets).
-     * Or use it together with <code>SourceArn</code> to ensure that the resource is
-     * owned by the specified account. For example, an Amazon S3 bucket could be
-     * deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon S3, the ID of the account that owns the resource. Use this
+     * together with <code>SourceArn</code> to ensure that the resource is owned by the
+     * specified account. It is possible for an Amazon S3 bucket to be deleted by its
+     * owner and recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(const Aws::String& value) { SetSourceAccount(value); return *this;}
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use this
-     * instead of <code>SourceArn</code> to grant permission to resources that are
-     * owned by another account (for example, all of an account's Amazon S3 buckets).
-     * Or use it together with <code>SourceArn</code> to ensure that the resource is
-     * owned by the specified account. For example, an Amazon S3 bucket could be
-     * deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon S3, the ID of the account that owns the resource. Use this
+     * together with <code>SourceArn</code> to ensure that the resource is owned by the
+     * specified account. It is possible for an Amazon S3 bucket to be deleted by its
+     * owner and recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(std::move(value)); return *this;}
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use this
-     * instead of <code>SourceArn</code> to grant permission to resources that are
-     * owned by another account (for example, all of an account's Amazon S3 buckets).
-     * Or use it together with <code>SourceArn</code> to ensure that the resource is
-     * owned by the specified account. For example, an Amazon S3 bucket could be
-     * deleted by its owner and recreated by another account.</p>
+     * <p>For Amazon S3, the ID of the account that owns the resource. Use this
+     * together with <code>SourceArn</code> to ensure that the resource is owned by the
+     * specified account. It is possible for an Amazon S3 bucket to be deleted by its
+     * owner and recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 
