@@ -308,7 +308,6 @@ public abstract class CppClientGenerator implements ClientGenerator {
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceErrorMarshallerSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
-        context.put("ErrorFormatter", ErrorFormatter.class);
 
         String fileName = String.format("source/%sErrorMarshaller.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
@@ -382,9 +381,16 @@ public abstract class CppClientGenerator implements ClientGenerator {
         if (serviceModel.getServiceName().equals("budgets") ||
             serviceModel.getServiceName().equals("cloudfront") ||
             serviceModel.getServiceName().equals("importexport") ||
+            serviceModel.getServiceName().equals("savingsplans") ||
             serviceModel.getServiceName().equals("waf"))
         {
             serviceModel.getMetadata().setGlobalEndpoint(serviceModel.getServiceName() + ".amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("ce")) {
+            serviceModel.getMetadata().setGlobalEndpoint("ce.us-east-1.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("chime")) {
+            serviceModel.getMetadata().setGlobalEndpoint("service.chime.aws.amazon.com");
 
         } else if (serviceModel.getServiceName().equals("iam")) {
             endpoints.put("cn-north-1", "iam.cn-north-1.amazonaws.com.cn");

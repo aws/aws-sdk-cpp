@@ -41,9 +41,22 @@ namespace Aws
         class RetryStrategy; // forward declare
 
         /**
-          * This mutable structure is used to configure any of the AWS clients.
-          * Default values can only be overwritten prior to passing to the client constructors.
-          */
+         * Sets the behaviors of the underlying HTTP clients handling response with 30x status code.
+         * By default, HTTP clients will always redirect the 30x response automatically, except when
+         * specifying aws-global as the client region, then SDK will handle 30x response and redirect
+         * the request manually.
+         */
+        enum class FollowRedirectsPolicy
+        {
+            DEFAULT,
+            ALWAYS,
+            NEVER
+        };
+
+        /**
+         * This mutable structure is used to configure any of the AWS clients.
+         * Default values can only be overwritten prior to passing to the client constructors.
+         */
         struct AWS_CORE_API ClientConfiguration
         {
             ClientConfiguration();
@@ -195,9 +208,9 @@ namespace Aws
              */
             Aws::Http::TransferLibType httpLibOverride;
             /**
-             * If set to true the http stack will follow 300 redirect codes.
+             * Sets the behavior how http stack handles 30x redirect codes.
              */
-            bool followRedirects;
+            FollowRedirectsPolicy followRedirects;
 
             /**
              * Only works for Curl http client.

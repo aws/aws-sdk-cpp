@@ -16,6 +16,7 @@
 #include <limits>
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSError.h>
+#include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/RetryStrategy.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
@@ -81,13 +82,24 @@ private:
     long m_maxRetries;
 };
 
+class MockAWSErrorMarshaller : public Aws::Client::AWSErrorMarshaller
+{
+    using Aws::Client::AWSErrorMarshaller::Marshall;
+public:
+    Aws::Client::AWSError<Aws::Client::CoreErrors> Marshall(const Aws::Http::HttpResponse&) const override
+    {
+        return Aws::Client::AWSError<Aws::Client::CoreErrors>();
+    }
+};
+
 class MockAWSClient : Aws::Client::AWSClient
 {
 public:
     MockAWSClient(const Aws::Client::ClientConfiguration& config) : AWSClient(config,
             Aws::MakeShared<Aws::Client::AWSAuthV4Signer>("MockAWSClient",
                 Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>("MockAWSClient", GetMockAccessKey(),
-                    GetMockSecretAccessKey()), "service", config.region.empty() ? Aws::Region::US_EAST_1 : config.region), nullptr) ,
+                    GetMockSecretAccessKey()), "service", config.region.empty() ? Aws::Region::US_EAST_1 : config.region),
+            Aws::MakeShared<MockAWSErrorMarshaller>("MockAWSClient")),
         m_countedRetryStrategy(std::static_pointer_cast<CountedRetryStrategy>(config.retryStrategy)) { }
 
     Aws::Client::HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request)
@@ -158,7 +170,8 @@ public:
     MockAWSClientWithStandardRetryStrategy(const Aws::Client::ClientConfiguration& config) : Aws::Client::AWSClient(config,
             Aws::MakeShared<Aws::Client::AWSAuthV4Signer>("MockAWSClientWithStandardRetryStrategy",
                 Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>("MockAWSClientWithStandardRetryStrategy", GetMockAccessKey(),
-                    GetMockSecretAccessKey()), "service", config.region.empty() ? Aws::Region::US_EAST_1 : config.region), nullptr) ,
+                    GetMockSecretAccessKey()), "service", config.region.empty() ? Aws::Region::US_EAST_1 : config.region),
+            Aws::MakeShared<MockAWSErrorMarshaller>("MockAWSClientWithStandardRetryStrategy")),
         m_countedRetryStrategy(std::static_pointer_cast<CountedStandardRetryStrategy>(config.retryStrategy)) { }
 
     Aws::Client::HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request)

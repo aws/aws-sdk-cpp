@@ -236,12 +236,19 @@ namespace Aws
                  */
                 HRESULT STDMETHODCALLTYPE OnRedirect(IXMLHTTPRequest2* pXHR, const WCHAR* url) override
                 {
-                    AWS_LOGSTREAM_INFO(CLASS_TAG, "Redirect to url " << url << " detected");
-                    if (pXHR && !m_allowRedirects)
+                    auto newURL = Aws::Utils::StringUtils::FromWString(url);
+                    AWS_LOGSTREAM_INFO(CLASS_TAG, "Redirect to url " << newURL << " detected");
+                    if (pXHR)
                     {
-                        pXHR->Abort();
+                        if (m_allowRedirects)
+                        {
+                            m_response.AddHeader("Location", Aws::Utils::StringUtils::Trim(newURL.c_str()));
+                        }
+                        else
+                        {
+                            pXHR->Abort();
+                        }
                     }
-
                     return S_OK;
                 }
 
@@ -295,11 +302,20 @@ namespace Aws
 
         IXmlHttpRequest2HttpClient::IXmlHttpRequest2HttpClient(const Aws::Client::ClientConfiguration& clientConfig) :
             m_proxyUserName(clientConfig.proxyUserName), m_proxyPassword(clientConfig.proxyPassword), m_poolSize(clientConfig.maxConnections),
-            m_followRedirects(clientConfig.followRedirects), m_verifySSL(clientConfig.verifySSL), m_totalTimeoutMs(clientConfig.requestTimeoutMs + clientConfig.connectTimeoutMs)
+            m_verifySSL(clientConfig.verifySSL), m_totalTimeoutMs(clientConfig.requestTimeoutMs + clientConfig.connectTimeoutMs)
         {
             //user defined proxy not supported on this interface, this has to come from the default settings.
             assert(clientConfig.proxyHost.empty());
             AWS_LOGSTREAM_INFO(CLASS_TAG, "Initializing client with pool size of " << clientConfig.maxConnections);
+
+            if (clientConfig.followRedirects == Client::FollowRedirectsPolicy::NEVER)
+            {
+                m_followRedirects = false;
+            }
+            else
+            {
+                m_followRedirects = true;
+            }
 
             for (unsigned int i = 0; i < m_poolSize; ++i)
             {
@@ -428,7 +444,7 @@ namespace Aws
         void IXmlHttpRequest2HttpClient::FillClientSettings(const HttpRequestComHandle& handle) const
         {
             AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting up request handle with verifySSL = " << m_verifySSL
-                            << " ,follow redirects = " << m_followRedirects << " and timeout = " << m_totalTimeoutMs);
+                            << ", follow redirects = " << m_followRedirects << " and timeout = " << m_totalTimeoutMs);
             handle->SetProperty(XHR_PROP_NO_DEFAULT_HEADERS, TRUE);
             handle->SetProperty(XHR_PROP_REPORT_REDIRECT_STATUS, m_followRedirects);
             handle->SetProperty(XHR_PROP_NO_CRED_PROMPT, TRUE);

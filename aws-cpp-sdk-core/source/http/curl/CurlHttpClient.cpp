@@ -439,9 +439,17 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile),
-    m_disableExpectHeader(clientConfig.disableExpectHeader),
-    m_allowRedirects(clientConfig.followRedirects)
+    m_disableExpectHeader(clientConfig.disableExpectHeader)
 {
+    if (clientConfig.followRedirects == FollowRedirectsPolicy::NEVER ||
+       (clientConfig.followRedirects == FollowRedirectsPolicy::DEFAULT && clientConfig.region == Aws::Region::AWS_GLOBAL))
+    {
+        m_allowRedirects = false;
+    }
+    else
+    {
+        m_allowRedirects = true;
+    }
 }
 
 

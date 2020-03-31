@@ -39,9 +39,10 @@
 #include <aws/core/utils/crypto/MD5.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/monitoring/MonitoringManager.h>
-#include <aws/core/utils/event/EventStream.h>
+#include <aws/core/Region.h>
 
 #include <cstring>
 #include <cassert>
@@ -101,6 +102,7 @@ struct RequestInfo
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    m_region(configuration.region),
     m_httpClient(CreateHttpClient(configuration)),
     m_signerProvider(Aws::MakeUnique<Aws::Auth::DefaultAuthSignerProvider>(AWS_CLIENT_LOG_TAG, signer)),
     m_errorMarshaller(errorMarshaller),
@@ -117,6 +119,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
     const std::shared_ptr<AWSErrorMarshaller>& errorMarshaller) :
+    m_region(configuration.region),
     m_httpClient(CreateHttpClient(configuration)),
     m_signerProvider(signerProvider),
     m_errorMarshaller(errorMarshaller),
@@ -211,6 +214,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     AWSError<CoreErrors> lastError;
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
     auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest);
+    const char* signerRegion = signerRegionOverride;
+    Aws::String regionFromResponse;
 
     Aws::String invocationId = UUID::RandomUUID();
     RequestInfo requestInfo;
@@ -222,7 +227,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     for (long retries = 0;; retries++)
     {
         m_retryStrategy->GetSendToken();
-        outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegionOverride);
+        outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegion);
         if (retries == 0)
         {
             m_retryStrategy->RequestBookkeeping(outcome);
@@ -251,12 +256,28 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             break;
         }
 
+        // Adjust region
+        bool retryWithCorrectRegion = false;
+        HttpResponseCode httpResponseCode = outcome.GetError().GetResponseCode();
+        if (httpResponseCode == HttpResponseCode::MOVED_PERMANENTLY ||  // 301
+            httpResponseCode == HttpResponseCode::TEMPORARY_REDIRECT || // 307
+            httpResponseCode == HttpResponseCode::BAD_REQUEST ||        // 400
+            httpResponseCode == HttpResponseCode::FORBIDDEN)            // 403
+        {
+            regionFromResponse = GetErrorMarshaller()->ExtractRegion(outcome.GetError());
+            if (m_region == Aws::Region::AWS_GLOBAL && !regionFromResponse.empty() && regionFromResponse != signerRegion)
+            {
+                signerRegion = regionFromResponse.c_str();
+                retryWithCorrectRegion = true;
+            }
+        }
+
         long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
         //AdjustClockSkew returns true means clock skew was the problem and skew was adjusted, false otherwise.
-        //sleep if clock skew was NOT the problem. AdjustClockSkew may update error inside outcome.
-        bool shouldSleep = !AdjustClockSkew(outcome, signerName);
+        //sleep if clock skew and region was NOT the problem. AdjustClockSkew may update error inside outcome.
+        bool shouldSleep = !AdjustClockSkew(outcome, signerName) && !retryWithCorrectRegion;
 
-        if (!m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
+        if (!retryWithCorrectRegion && !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
             break;
         }
@@ -278,7 +299,14 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
 
-        httpRequest = CreateHttpRequest(uri, method, request.GetResponseStreamFactory());
+        Aws::Http::URI newUri(uri.GetURIString());
+        Aws::String newEndpoint = GetErrorMarshaller()->ExtractEndpoint(outcome.GetError());
+        if (!newEndpoint.empty())
+        {
+            newUri.SetAuthority(newEndpoint);
+        }
+        httpRequest = CreateHttpRequest(newUri, method, request.GetResponseStreamFactory());
+
         httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
         if (serverTime.WasParseSuccessful() && serverTime != DateTime())
         {
@@ -304,6 +332,8 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     AWSError<CoreErrors> lastError;
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
     auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), requestName, httpRequest);
+    const char* signerRegion = signerRegionOverride;
+    Aws::String regionFromResponse;
 
     Aws::String invocationId = UUID::RandomUUID();
     RequestInfo requestInfo;
@@ -315,7 +345,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     for (long retries = 0;; retries++)
     {
         m_retryStrategy->GetSendToken();
-        outcome = AttemptOneRequest(httpRequest, signerName, signerRegionOverride);
+        outcome = AttemptOneRequest(httpRequest, signerName, signerRegion);
         if (retries == 0)
         {
             m_retryStrategy->RequestBookkeeping(outcome);
@@ -344,12 +374,28 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             break;
         }
 
+        // Adjust region
+        bool retryWithCorrectRegion = false;
+        HttpResponseCode httpResponseCode = outcome.GetError().GetResponseCode();
+        if (httpResponseCode == HttpResponseCode::MOVED_PERMANENTLY ||  // 301
+            httpResponseCode == HttpResponseCode::TEMPORARY_REDIRECT || // 307
+            httpResponseCode == HttpResponseCode::BAD_REQUEST ||        // 400
+            httpResponseCode == HttpResponseCode::FORBIDDEN)            // 403
+        {
+            regionFromResponse = GetErrorMarshaller()->ExtractRegion(outcome.GetError());
+            if (m_region == Aws::Region::AWS_GLOBAL && !regionFromResponse.empty() && regionFromResponse != signerRegion)
+            {
+                signerRegion = regionFromResponse.c_str();
+                retryWithCorrectRegion = true;
+            }
+        }
+
         long sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(outcome.GetError(), retries);
         //AdjustClockSkew returns true means clock skew was the problem and skew was adjusted, false otherwise.
-        //sleep if clock skew was NOT the problem. AdjustClockSkew may update error inside outcome.
-        bool shouldSleep = !AdjustClockSkew(outcome, signerName);
+        //sleep if clock skew and region was NOT the problem. AdjustClockSkew may update error inside outcome.
+        bool shouldSleep = !AdjustClockSkew(outcome, signerName) && !retryWithCorrectRegion;
 
-        if (!m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
+        if (!retryWithCorrectRegion && !m_retryStrategy->ShouldRetry(outcome.GetError(), retries))
         {
             break;
         }
@@ -360,7 +406,15 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         {
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
-        httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+
+        Aws::Http::URI newUri(uri.GetURIString());
+        Aws::String newEndpoint = GetErrorMarshaller()->ExtractEndpoint(outcome.GetError());
+        if (!newEndpoint.empty())
+        {
+            newUri.SetAuthority(newEndpoint);
+        }
+        httpRequest = CreateHttpRequest(newUri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+
         httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
         if (serverTime.WasParseSuccessful() && serverTime != DateTime())
         {
@@ -960,7 +1014,7 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
         error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
     }
-    else if (httpResponse->GetResponseBody().tellp() < 1)
+    else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
         auto responseCode = httpResponse->GetResponseCode();
         auto errorCode = GuessBodylessErrorType(responseCode);

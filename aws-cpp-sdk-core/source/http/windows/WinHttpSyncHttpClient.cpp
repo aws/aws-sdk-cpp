@@ -67,7 +67,15 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     const char* proxyHosts = nullptr;
     Aws::String strProxyHosts;
 
-    m_allowRedirects = config.followRedirects;
+    if (config.followRedirects == FollowRedirectsPolicy::NEVER ||
+       (config.followRedirects == FollowRedirectsPolicy::DEFAULT && config.region == Aws::Region::AWS_GLOBAL))
+    {
+        m_allowRedirects = false;
+    }
+    else
+    {
+        m_allowRedirects = true;
+    }
 
     m_usingProxy = !config.proxyHost.empty();
     //setup initial proxy config.

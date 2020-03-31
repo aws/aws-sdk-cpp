@@ -174,9 +174,9 @@ namespace Aws
                 m_errorPayloadType = ErrorPayloadType::XML;
                 m_xmlPayload = std::move(xmlPayload);
             }
-            inline const Aws::Utils::Xml::XmlDocument& GetXmlPayload()
+            inline const Aws::Utils::Xml::XmlDocument& GetXmlPayload() const
             {
-                assert(m_errorPayloadType == ErrorPayloadType::XML);
+                assert(m_errorPayloadType != ErrorPayloadType::JSON);
                 return m_xmlPayload;
             }
             inline void SetJsonPayload(const Aws::Utils::Json::JsonValue& jsonPayload)
@@ -189,9 +189,9 @@ namespace Aws
                 m_errorPayloadType = ErrorPayloadType::JSON;
                 m_jsonPayload = std::move(jsonPayload);
             }
-            inline const Aws::Utils::Json::JsonValue& GetJsonPayload()
+            inline const Aws::Utils::Json::JsonValue& GetJsonPayload() const
             {
-                assert(m_errorPayloadType == ErrorPayloadType::JSON);
+                assert(m_errorPayloadType != ErrorPayloadType::XML);
                 return m_jsonPayload;
             }
 

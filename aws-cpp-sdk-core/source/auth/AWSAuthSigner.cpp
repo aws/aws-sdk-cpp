@@ -1,5 +1,5 @@
 /*
-  * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
   *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
@@ -406,7 +406,6 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     auto canonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
 
     auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, canonicalRequestHash, signingRegion, signingServiceName);
-
     auto finalSigningHash = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, signingServiceName);
     if (finalSigningHash.empty())
     {
@@ -542,7 +541,6 @@ Aws::Utils::ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey
     }
     return hashResult.GetResult();
 }
-
 
 AWSAuthEventStreamV4Signer::AWSAuthEventStreamV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>&
         credentialsProvider, const char* serviceName, const Aws::String& region) :

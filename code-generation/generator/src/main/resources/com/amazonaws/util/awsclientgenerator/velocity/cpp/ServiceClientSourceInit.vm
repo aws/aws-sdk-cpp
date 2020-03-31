@@ -34,7 +34,7 @@
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
@@ -44,7 +44,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
 ${className}::${className}(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
@@ -55,7 +55,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
@@ -65,7 +65,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
 ${className}::${className}(const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
@@ -75,7 +75,7 @@ ${className}::${className}(const Client::ClientConfiguration& clientConfiguratio
 ${className}::${className}(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
@@ -86,7 +86,7 @@ ${className}::${className}(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region${signPayloadsParam}${doubleEncodeValue}),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)${signPayloadsParam}${doubleEncodeValue}),
     Aws::MakeShared<${metadata.classNamePrefix}ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)${virtualAddressingInit}${USEast1RegionalEndpointInitString}
 {
@@ -118,7 +118,6 @@ void ${className}::init(const ClientConfiguration& config)
 #if($virtualAddressingSupported || $arnEndpointSupported || $accountIdInHostnameSupported || $metadata.hasEndpointTrait)
   m_scheme = m_configScheme;
 #if($arnEndpointSupported)
-  m_region = config.region;
   m_useDualStack = config.useDualStack;
 #end
   if (config.endpointOverride.empty())

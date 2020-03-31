@@ -62,7 +62,15 @@ WinINetSyncHttpClient::WinINetSyncHttpClient(const ClientConfiguration& config) 
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " <<
          config.maxConnections << ", request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
 
-    m_allowRedirects = config.followRedirects;
+    if (config.followRedirects == FollowRedirectsPolicy::NEVER ||
+       (config.followRedirects == FollowRedirectsPolicy::DEFAULT && config.region == Aws::Region::AWS_GLOBAL))
+    {
+        m_allowRedirects = false;
+    }
+    else
+    {
+        m_allowRedirects = true;
+    }
 
     DWORD inetFlags = INTERNET_OPEN_TYPE_DIRECT;
     const char* proxyHosts = nullptr;

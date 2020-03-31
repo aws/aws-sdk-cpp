@@ -275,6 +275,7 @@ namespace Aws
              * Performs the HTTP request via the HTTP client while enforcing rate limiters
              */
             std::shared_ptr<Aws::Http::HttpResponse> MakeHttpRequest(std::shared_ptr<Aws::Http::HttpRequest>& request) const;
+            Aws::String m_region;
         private:
             /**
              * Try to adjust signer's clock

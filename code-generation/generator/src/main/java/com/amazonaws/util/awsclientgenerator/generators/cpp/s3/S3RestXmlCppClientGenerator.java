@@ -273,6 +273,30 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
     }
 
     @Override
+    protected SdkFileEntry generateErrorMarshallerHeaderFile(ServiceModel serviceModel) throws Exception {
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ErrorMarshallerHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+        context.put("CppViewHelper", CppViewHelper.class);
+
+        String fileName = String.format("include/aws/%s/%sErrorMarshaller.h",
+                serviceModel.getMetadata().getProjectName(), serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected SdkFileEntry generateErrorMarshallingSourceFile(final ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3ErrorMarshallerSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        String fileName = String.format("source/%sErrorMarshaller.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
     protected SdkFileEntry generateRegionHeaderFile(ServiceModel serviceModel) throws Exception {
 
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/S3EndpointEnumHeader.vm", StandardCharsets.UTF_8.name());

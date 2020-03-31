@@ -71,6 +71,11 @@ AWSError<CoreErrors> JsonErrorMarshaller::Marshall(const Aws::Http::HttpResponse
     return error;
 }
 
+const JsonValue& JsonErrorMarshaller::GetJsonPayloadFromError(const AWSError<CoreErrors>& error) const
+{
+    return error.GetJsonPayload();
+}
+
 AWSError<CoreErrors> XmlErrorMarshaller::Marshall(const Aws::Http::HttpResponse& httpResponse) const
 {
     XmlDocument doc = XmlDocument::CreateFromXmlStream(httpResponse.GetResponseBody());
@@ -127,6 +132,11 @@ AWSError<CoreErrors> XmlErrorMarshaller::Marshall(const Aws::Http::HttpResponse&
 
     error.SetXmlPayload(std::move(doc));
     return error;
+}
+
+const XmlDocument& XmlErrorMarshaller::GetXmlPayloadFromError(const AWSError<CoreErrors>& error) const
+{
+    return error.GetXmlPayload();
 }
 
 AWSError<CoreErrors> AWSErrorMarshaller::Marshall(const Aws::String& exceptionName, const Aws::String& message) const
