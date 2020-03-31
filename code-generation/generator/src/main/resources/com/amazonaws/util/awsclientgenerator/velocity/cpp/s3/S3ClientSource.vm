@@ -24,13 +24,13 @@ void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
       option = Aws::Config::GetCachedConfigValue(profile, US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR);
     }
 
-    if (Aws::Utils::StringUtils::ToLower(option.c_str()) == "regional")
-    {
-      m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
-    }
-    else // defaults is legacy
+    if (Aws::Utils::StringUtils::ToLower(option.c_str()) == "legacy")
     {
       m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+    }
+    else // defaults is regional
+    {
+      m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
     }
   }
 
@@ -191,7 +191,7 @@ ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& bu
 {
     Aws::StringStream ss;
     Aws::String bucket = bucketOrArn;
-    Aws::String signerRegion = m_region;
+    Aws::String signerRegion = Aws::Region::ComputeSignerRegion(m_region);
     S3ARN arn(bucketOrArn);
 
     if (arn)
@@ -216,11 +216,7 @@ ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& bu
         if (arn.GetResourceType() == ARNResourceType::ACCESSPOINT)
         {
             ss << m_scheme << "://" << S3Endpoint::ForAccessPointArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack);
-            signerRegion = m_useArnRegion ? arn.GetRegion() : m_region;
-            if (signerRegion == "fips-us-gov-west-1")
-            {
-                signerRegion = "us-gov-west-1";
-            }
+            signerRegion = m_useArnRegion ? arn.GetRegion() : signerRegion;
             return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
         }
     }
@@ -238,24 +234,14 @@ ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& bu
         ss << m_scheme << "://" << m_baseUri << "/" << bucket;
     }
 
-    if (m_region == "fips-us-gov-west-1")
-    {
-      signerRegion = "us-gov-west-1";
-    }
-
     return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
 }
 
 ComputeEndpointOutcome ${className}::ComputeEndpointString() const
 {
-    Aws::String signerRegion = m_region;
     Aws::StringStream ss;
     ss << m_scheme << "://" << m_baseUri;
-    if (m_region == "fips-us-gov-west-1")
-    {
-      signerRegion = "us-gov-west-1";
-    }
-    return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
+    return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), Aws::Region::ComputeSignerRegion(m_region)));
 }
 
 bool ${className}::MultipartUploadSupported() const

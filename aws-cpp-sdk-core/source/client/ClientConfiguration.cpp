@@ -53,7 +53,7 @@ ClientConfiguration::ClientConfiguration() :
     writeRateLimiter(nullptr),
     readRateLimiter(nullptr),
     httpLibOverride(Aws::Http::TransferLibType::DEFAULT_CLIENT),
-    followRedirects(true),
+    followRedirects(FollowRedirectsPolicy::DEFAULT),
     disableExpectHeader(false),
     enableClockSkewAdjustment(true),
     enableHostPrefixInjection(true),

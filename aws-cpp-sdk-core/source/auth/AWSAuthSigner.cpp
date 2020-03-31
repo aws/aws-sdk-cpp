@@ -396,7 +396,6 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     auto canonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
 
     auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, canonicalRequestHash, signingRegion, signingServiceName);
-
     auto finalSigningHash = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, signingServiceName);
     if (finalSigningHash.empty())
     {
@@ -532,7 +531,6 @@ Aws::Utils::ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey
     }
     return hashResult.GetResult();
 }
-
 
 AWSAuthEventStreamV4Signer::AWSAuthEventStreamV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>&
         credentialsProvider, const char* serviceName, const Aws::String& region) :
