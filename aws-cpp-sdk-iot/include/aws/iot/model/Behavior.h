@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/MetricDimension.h>
 #include <aws/iot/model/BehaviorCriteria.h>
 #include <utility>
 
@@ -131,6 +132,49 @@ namespace Model
 
 
     /**
+     * <p>The dimension for a metric in your behavior. For example, using a
+     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     */
+    inline const MetricDimension& GetMetricDimension() const{ return m_metricDimension; }
+
+    /**
+     * <p>The dimension for a metric in your behavior. For example, using a
+     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     */
+    inline bool MetricDimensionHasBeenSet() const { return m_metricDimensionHasBeenSet; }
+
+    /**
+     * <p>The dimension for a metric in your behavior. For example, using a
+     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     */
+    inline void SetMetricDimension(const MetricDimension& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = value; }
+
+    /**
+     * <p>The dimension for a metric in your behavior. For example, using a
+     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     */
+    inline void SetMetricDimension(MetricDimension&& value) { m_metricDimensionHasBeenSet = true; m_metricDimension = std::move(value); }
+
+    /**
+     * <p>The dimension for a metric in your behavior. For example, using a
+     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     */
+    inline Behavior& WithMetricDimension(const MetricDimension& value) { SetMetricDimension(value); return *this;}
+
+    /**
+     * <p>The dimension for a metric in your behavior. For example, using a
+     * <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
+     * only to MQTT topics whose name match the pattern specified in the dimension.</p>
+     */
+    inline Behavior& WithMetricDimension(MetricDimension&& value) { SetMetricDimension(std::move(value)); return *this;}
+
+
+    /**
      * <p>The criteria that determine if a device is behaving normally in regard to the
      * <code>metric</code>.</p>
      */
@@ -173,6 +217,9 @@ namespace Model
 
     Aws::String m_metric;
     bool m_metricHasBeenSet;
+
+    MetricDimension m_metricDimension;
+    bool m_metricDimensionHasBeenSet;
 
     BehaviorCriteria m_criteria;
     bool m_criteriaHasBeenSet;

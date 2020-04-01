@@ -28,7 +28,8 @@ using namespace Aws::Http;
 ListSecurityProfilesRequest::ListSecurityProfilesRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_dimensionNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,13 @@ void ListSecurityProfilesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_dimensionNameHasBeenSet)
+    {
+      ss << m_dimensionName;
+      uri.AddQueryStringParameter("dimensionName", ss.str());
       ss.str("");
     }
 

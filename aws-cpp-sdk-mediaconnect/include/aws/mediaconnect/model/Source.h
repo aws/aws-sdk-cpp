@@ -383,6 +383,47 @@ namespace Model
 
 
     /**
+     * The name of the VPC Interface this Source is configured with.
+     */
+    inline const Aws::String& GetVpcInterfaceName() const{ return m_vpcInterfaceName; }
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     */
+    inline bool VpcInterfaceNameHasBeenSet() const { return m_vpcInterfaceNameHasBeenSet; }
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     */
+    inline void SetVpcInterfaceName(const Aws::String& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = value; }
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     */
+    inline void SetVpcInterfaceName(Aws::String&& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = std::move(value); }
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     */
+    inline void SetVpcInterfaceName(const char* value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName.assign(value); }
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     */
+    inline Source& WithVpcInterfaceName(const Aws::String& value) { SetVpcInterfaceName(value); return *this;}
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     */
+    inline Source& WithVpcInterfaceName(Aws::String&& value) { SetVpcInterfaceName(std::move(value)); return *this;}
+
+    /**
+     * The name of the VPC Interface this Source is configured with.
+     */
+    inline Source& WithVpcInterfaceName(const char* value) { SetVpcInterfaceName(value); return *this;}
+
+
+    /**
      * The range of IP addresses that should be allowed to contribute content to your
      * source. These IP addresses should be in the form of a Classless Inter-Domain
      * Routing (CIDR) block; for example, 10.0.0.0/16.
@@ -466,6 +507,9 @@ namespace Model
 
     Transport m_transport;
     bool m_transportHasBeenSet;
+
+    Aws::String m_vpcInterfaceName;
+    bool m_vpcInterfaceNameHasBeenSet;
 
     Aws::String m_whitelistCidr;
     bool m_whitelistCidrHasBeenSet;

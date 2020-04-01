@@ -23,6 +23,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/mediaconnect/model/AddFlowOutputsResult.h>
 #include <aws/mediaconnect/model/AddFlowSourcesResult.h>
+#include <aws/mediaconnect/model/AddFlowVpcInterfacesResult.h>
 #include <aws/mediaconnect/model/CreateFlowResult.h>
 #include <aws/mediaconnect/model/DeleteFlowResult.h>
 #include <aws/mediaconnect/model/DescribeFlowResult.h>
@@ -32,6 +33,7 @@
 #include <aws/mediaconnect/model/ListTagsForResourceResult.h>
 #include <aws/mediaconnect/model/RemoveFlowOutputResult.h>
 #include <aws/mediaconnect/model/RemoveFlowSourceResult.h>
+#include <aws/mediaconnect/model/RemoveFlowVpcInterfaceResult.h>
 #include <aws/mediaconnect/model/RevokeFlowEntitlementResult.h>
 #include <aws/mediaconnect/model/StartFlowResult.h>
 #include <aws/mediaconnect/model/StopFlowResult.h>
@@ -81,6 +83,7 @@ namespace Model
 {
         class AddFlowOutputsRequest;
         class AddFlowSourcesRequest;
+        class AddFlowVpcInterfacesRequest;
         class CreateFlowRequest;
         class DeleteFlowRequest;
         class DescribeFlowRequest;
@@ -90,6 +93,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class RemoveFlowOutputRequest;
         class RemoveFlowSourceRequest;
+        class RemoveFlowVpcInterfaceRequest;
         class RevokeFlowEntitlementRequest;
         class StartFlowRequest;
         class StopFlowRequest;
@@ -102,6 +106,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<AddFlowOutputsResult, Aws::Client::AWSError<MediaConnectErrors>> AddFlowOutputsOutcome;
         typedef Aws::Utils::Outcome<AddFlowSourcesResult, Aws::Client::AWSError<MediaConnectErrors>> AddFlowSourcesOutcome;
+        typedef Aws::Utils::Outcome<AddFlowVpcInterfacesResult, Aws::Client::AWSError<MediaConnectErrors>> AddFlowVpcInterfacesOutcome;
         typedef Aws::Utils::Outcome<CreateFlowResult, Aws::Client::AWSError<MediaConnectErrors>> CreateFlowOutcome;
         typedef Aws::Utils::Outcome<DeleteFlowResult, Aws::Client::AWSError<MediaConnectErrors>> DeleteFlowOutcome;
         typedef Aws::Utils::Outcome<DescribeFlowResult, Aws::Client::AWSError<MediaConnectErrors>> DescribeFlowOutcome;
@@ -111,6 +116,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaConnectErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RemoveFlowOutputResult, Aws::Client::AWSError<MediaConnectErrors>> RemoveFlowOutputOutcome;
         typedef Aws::Utils::Outcome<RemoveFlowSourceResult, Aws::Client::AWSError<MediaConnectErrors>> RemoveFlowSourceOutcome;
+        typedef Aws::Utils::Outcome<RemoveFlowVpcInterfaceResult, Aws::Client::AWSError<MediaConnectErrors>> RemoveFlowVpcInterfaceOutcome;
         typedef Aws::Utils::Outcome<RevokeFlowEntitlementResult, Aws::Client::AWSError<MediaConnectErrors>> RevokeFlowEntitlementOutcome;
         typedef Aws::Utils::Outcome<StartFlowResult, Aws::Client::AWSError<MediaConnectErrors>> StartFlowOutcome;
         typedef Aws::Utils::Outcome<StopFlowResult, Aws::Client::AWSError<MediaConnectErrors>> StopFlowOutcome;
@@ -123,6 +129,7 @@ namespace Model
 
         typedef std::future<AddFlowOutputsOutcome> AddFlowOutputsOutcomeCallable;
         typedef std::future<AddFlowSourcesOutcome> AddFlowSourcesOutcomeCallable;
+        typedef std::future<AddFlowVpcInterfacesOutcome> AddFlowVpcInterfacesOutcomeCallable;
         typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
         typedef std::future<DeleteFlowOutcome> DeleteFlowOutcomeCallable;
         typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
@@ -132,6 +139,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RemoveFlowOutputOutcome> RemoveFlowOutputOutcomeCallable;
         typedef std::future<RemoveFlowSourceOutcome> RemoveFlowSourceOutcomeCallable;
+        typedef std::future<RemoveFlowVpcInterfaceOutcome> RemoveFlowVpcInterfaceOutcomeCallable;
         typedef std::future<RevokeFlowEntitlementOutcome> RevokeFlowEntitlementOutcomeCallable;
         typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
         typedef std::future<StopFlowOutcome> StopFlowOutcomeCallable;
@@ -147,6 +155,7 @@ namespace Model
 
     typedef std::function<void(const MediaConnectClient*, const Model::AddFlowOutputsRequest&, const Model::AddFlowOutputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddFlowOutputsResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::AddFlowSourcesRequest&, const Model::AddFlowSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddFlowSourcesResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::AddFlowVpcInterfacesRequest&, const Model::AddFlowVpcInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddFlowVpcInterfacesResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::CreateFlowRequest&, const Model::CreateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DeleteFlowRequest&, const Model::DeleteFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::DescribeFlowRequest&, const Model::DescribeFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowResponseReceivedHandler;
@@ -156,6 +165,7 @@ namespace Model
     typedef std::function<void(const MediaConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowOutputRequest&, const Model::RemoveFlowOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowOutputResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowSourceRequest&, const Model::RemoveFlowSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowSourceResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowVpcInterfaceRequest&, const Model::RemoveFlowVpcInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowVpcInterfaceResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RevokeFlowEntitlementRequest&, const Model::RevokeFlowEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeFlowEntitlementResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::StartFlowRequest&, const Model::StartFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFlowResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::StopFlowRequest&, const Model::StopFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopFlowResponseReceivedHandler;
@@ -250,6 +260,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddFlowSourcesAsync(const Model::AddFlowSourcesRequest& request, const AddFlowSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Adds VPC interfaces to flow<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddFlowVpcInterfacesOutcome AddFlowVpcInterfaces(const Model::AddFlowVpcInterfacesRequest& request) const;
+
+        /**
+         * Adds VPC interfaces to flow<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddFlowVpcInterfacesOutcomeCallable AddFlowVpcInterfacesCallable(const Model::AddFlowVpcInterfacesRequest& request) const;
+
+        /**
+         * Adds VPC interfaces to flow<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddFlowVpcInterfacesAsync(const Model::AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Creates a new flow. The request must include one source. The request optionally
@@ -516,6 +551,43 @@ namespace Model
         virtual void RemoveFlowSourceAsync(const Model::RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Removes a VPC Interface from an existing flow. This request can be made only on
+         * a VPC interface that does not have a Source or Output associated with it. If the
+         * VPC interface is referenced by a Source or Output, you must first delete or
+         * update the Source or Output to no longer reference the VPC interface.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveFlowVpcInterfaceOutcome RemoveFlowVpcInterface(const Model::RemoveFlowVpcInterfaceRequest& request) const;
+
+        /**
+         * Removes a VPC Interface from an existing flow. This request can be made only on
+         * a VPC interface that does not have a Source or Output associated with it. If the
+         * VPC interface is referenced by a Source or Output, you must first delete or
+         * update the Source or Output to no longer reference the VPC interface.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveFlowVpcInterfaceOutcomeCallable RemoveFlowVpcInterfaceCallable(const Model::RemoveFlowVpcInterfaceRequest& request) const;
+
+        /**
+         * Removes a VPC Interface from an existing flow. This request can be made only on
+         * a VPC interface that does not have a Source or Output associated with it. If the
+         * VPC interface is referenced by a Source or Output, you must first delete or
+         * update the Source or Output to no longer reference the VPC interface.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowVpcInterface">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveFlowVpcInterfaceAsync(const Model::RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Revokes an entitlement from a flow. Once an entitlement is revoked, the content
          * becomes unavailable to the subscriber and the associated output is
          * removed.<p><h3>See Also:</h3>   <a
@@ -767,6 +839,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AddFlowOutputsAsyncHelper(const Model::AddFlowOutputsRequest& request, const AddFlowOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddFlowSourcesAsyncHelper(const Model::AddFlowSourcesRequest& request, const AddFlowSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AddFlowVpcInterfacesAsyncHelper(const Model::AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFlowAsyncHelper(const Model::CreateFlowRequest& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFlowAsyncHelper(const Model::DeleteFlowRequest& request, const DeleteFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFlowAsyncHelper(const Model::DescribeFlowRequest& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -776,6 +849,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveFlowOutputAsyncHelper(const Model::RemoveFlowOutputRequest& request, const RemoveFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveFlowSourceAsyncHelper(const Model::RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveFlowVpcInterfaceAsyncHelper(const Model::RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeFlowEntitlementAsyncHelper(const Model::RevokeFlowEntitlementRequest& request, const RevokeFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartFlowAsyncHelper(const Model::StartFlowRequest& request, const StartFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopFlowAsyncHelper(const Model::StopFlowRequest& request, const StopFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

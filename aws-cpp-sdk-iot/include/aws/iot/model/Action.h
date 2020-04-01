@@ -419,32 +419,32 @@ namespace Model
 
 
     /**
-     * <p>Send data to CloudWatch logs.</p>
+     * <p>Send data to CloudWatch Logs.</p>
      */
     inline const CloudwatchLogsAction& GetCloudwatchLogs() const{ return m_cloudwatchLogs; }
 
     /**
-     * <p>Send data to CloudWatch logs.</p>
+     * <p>Send data to CloudWatch Logs.</p>
      */
     inline bool CloudwatchLogsHasBeenSet() const { return m_cloudwatchLogsHasBeenSet; }
 
     /**
-     * <p>Send data to CloudWatch logs.</p>
+     * <p>Send data to CloudWatch Logs.</p>
      */
     inline void SetCloudwatchLogs(const CloudwatchLogsAction& value) { m_cloudwatchLogsHasBeenSet = true; m_cloudwatchLogs = value; }
 
     /**
-     * <p>Send data to CloudWatch logs.</p>
+     * <p>Send data to CloudWatch Logs.</p>
      */
     inline void SetCloudwatchLogs(CloudwatchLogsAction&& value) { m_cloudwatchLogsHasBeenSet = true; m_cloudwatchLogs = std::move(value); }
 
     /**
-     * <p>Send data to CloudWatch logs.</p>
+     * <p>Send data to CloudWatch Logs.</p>
      */
     inline Action& WithCloudwatchLogs(const CloudwatchLogsAction& value) { SetCloudwatchLogs(value); return *this;}
 
     /**
-     * <p>Send data to CloudWatch logs.</p>
+     * <p>Send data to CloudWatch Logs.</p>
      */
     inline Action& WithCloudwatchLogs(CloudwatchLogsAction&& value) { SetCloudwatchLogs(std::move(value)); return *this;}
 

@@ -109,6 +109,55 @@ namespace Model
      */
     inline ListSecurityProfilesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>A filter to limit results to the security profiles that use the defined
+     * dimension.</p>
+     */
+    inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
+
+    /**
+     * <p>A filter to limit results to the security profiles that use the defined
+     * dimension.</p>
+     */
+    inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
+
+    /**
+     * <p>A filter to limit results to the security profiles that use the defined
+     * dimension.</p>
+     */
+    inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
+
+    /**
+     * <p>A filter to limit results to the security profiles that use the defined
+     * dimension.</p>
+     */
+    inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
+
+    /**
+     * <p>A filter to limit results to the security profiles that use the defined
+     * dimension.</p>
+     */
+    inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
+
+    /**
+     * <p>A filter to limit results to the security profiles that use the defined
+     * dimension.</p>
+     */
+    inline ListSecurityProfilesRequest& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
+
+    /**
+     * <p>A filter to limit results to the security profiles that use the defined
+     * dimension.</p>
+     */
+    inline ListSecurityProfilesRequest& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter to limit results to the security profiles that use the defined
+     * dimension.</p>
+     */
+    inline ListSecurityProfilesRequest& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -116,6 +165,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_dimensionName;
+    bool m_dimensionNameHasBeenSet;
   };
 
 } // namespace Model

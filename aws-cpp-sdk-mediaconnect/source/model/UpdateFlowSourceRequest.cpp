@@ -37,6 +37,7 @@ UpdateFlowSourceRequest::UpdateFlowSourceRequest() :
     m_protocolHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_streamIdHasBeenSet(false),
+    m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
 {
 }
@@ -89,6 +90,12 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const
   if(m_streamIdHasBeenSet)
   {
    payload.WithString("streamId", m_streamId);
+
+  }
+
+  if(m_vpcInterfaceNameHasBeenSet)
+  {
+   payload.WithString("vpcInterfaceName", m_vpcInterfaceName);
 
   }
 

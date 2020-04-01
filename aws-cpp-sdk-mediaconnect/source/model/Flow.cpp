@@ -40,7 +40,8 @@ Flow::Flow() :
     m_sourceFailoverConfigHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_vpcInterfacesHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Flow::Flow(JsonView jsonValue) :
     m_sourceFailoverConfigHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_vpcInterfacesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +151,16 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcInterfaces"))
+  {
+    Array<JsonView> vpcInterfacesJsonList = jsonValue.GetArray("vpcInterfaces");
+    for(unsigned vpcInterfacesIndex = 0; vpcInterfacesIndex < vpcInterfacesJsonList.GetLength(); ++vpcInterfacesIndex)
+    {
+      m_vpcInterfaces.push_back(vpcInterfacesJsonList[vpcInterfacesIndex].AsObject());
+    }
+    m_vpcInterfacesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -234,6 +246,17 @@ JsonValue Flow::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", StatusMapper::GetNameForStatus(m_status));
+  }
+
+  if(m_vpcInterfacesHasBeenSet)
+  {
+   Array<JsonValue> vpcInterfacesJsonList(m_vpcInterfaces.size());
+   for(unsigned vpcInterfacesIndex = 0; vpcInterfacesIndex < vpcInterfacesJsonList.GetLength(); ++vpcInterfacesIndex)
+   {
+     vpcInterfacesJsonList[vpcInterfacesIndex].AsObject(m_vpcInterfaces[vpcInterfacesIndex].Jsonize());
+   }
+   payload.WithArray("vpcInterfaces", std::move(vpcInterfacesJsonList));
+
   }
 
   return payload;

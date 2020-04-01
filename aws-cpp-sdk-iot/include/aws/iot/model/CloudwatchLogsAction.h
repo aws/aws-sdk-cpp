@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an action that sends data to CloudWatch logs.</p><p><h3>See
+   * <p>Describes an action that sends data to CloudWatch Logs.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CloudwatchLogsAction">AWS
    * API Reference</a></p>

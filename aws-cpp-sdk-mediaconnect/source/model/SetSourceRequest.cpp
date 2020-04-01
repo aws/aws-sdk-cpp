@@ -42,6 +42,7 @@ SetSourceRequest::SetSourceRequest() :
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_streamIdHasBeenSet(false),
+    m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
 {
 }
@@ -60,6 +61,7 @@ SetSourceRequest::SetSourceRequest(JsonView jsonValue) :
     m_protocol(Protocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_streamIdHasBeenSet(false),
+    m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
 {
   *this = jsonValue;
@@ -130,6 +132,13 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
     m_streamIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcInterfaceName"))
+  {
+    m_vpcInterfaceName = jsonValue.GetString("vpcInterfaceName");
+
+    m_vpcInterfaceNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("whitelistCidr"))
   {
     m_whitelistCidr = jsonValue.GetString("whitelistCidr");
@@ -194,6 +203,12 @@ JsonValue SetSourceRequest::Jsonize() const
   if(m_streamIdHasBeenSet)
   {
    payload.WithString("streamId", m_streamId);
+
+  }
+
+  if(m_vpcInterfaceNameHasBeenSet)
+  {
+   payload.WithString("vpcInterfaceName", m_vpcInterfaceName);
 
   }
 

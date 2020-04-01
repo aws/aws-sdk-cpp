@@ -22,6 +22,7 @@
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/GrantEntitlementRequest.h>
 #include <aws/mediaconnect/model/AddOutputRequest.h>
+#include <aws/mediaconnect/model/VpcInterfaceRequest.h>
 #include <utility>
 
 namespace Aws
@@ -286,6 +287,47 @@ namespace Model
     
     inline CreateFlowRequest& AddSources(SetSourceRequest&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * The VPC interfaces you want on the flow.
+     */
+    inline const Aws::Vector<VpcInterfaceRequest>& GetVpcInterfaces() const{ return m_vpcInterfaces; }
+
+    /**
+     * The VPC interfaces you want on the flow.
+     */
+    inline bool VpcInterfacesHasBeenSet() const { return m_vpcInterfacesHasBeenSet; }
+
+    /**
+     * The VPC interfaces you want on the flow.
+     */
+    inline void SetVpcInterfaces(const Aws::Vector<VpcInterfaceRequest>& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces = value; }
+
+    /**
+     * The VPC interfaces you want on the flow.
+     */
+    inline void SetVpcInterfaces(Aws::Vector<VpcInterfaceRequest>&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces = std::move(value); }
+
+    /**
+     * The VPC interfaces you want on the flow.
+     */
+    inline CreateFlowRequest& WithVpcInterfaces(const Aws::Vector<VpcInterfaceRequest>& value) { SetVpcInterfaces(value); return *this;}
+
+    /**
+     * The VPC interfaces you want on the flow.
+     */
+    inline CreateFlowRequest& WithVpcInterfaces(Aws::Vector<VpcInterfaceRequest>&& value) { SetVpcInterfaces(std::move(value)); return *this;}
+
+    /**
+     * The VPC interfaces you want on the flow.
+     */
+    inline CreateFlowRequest& AddVpcInterfaces(const VpcInterfaceRequest& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(value); return *this; }
+
+    /**
+     * The VPC interfaces you want on the flow.
+     */
+    inline CreateFlowRequest& AddVpcInterfaces(VpcInterfaceRequest&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_availabilityZone;
@@ -308,6 +350,9 @@ namespace Model
 
     Aws::Vector<SetSourceRequest> m_sources;
     bool m_sourcesHasBeenSet;
+
+    Aws::Vector<VpcInterfaceRequest> m_vpcInterfaces;
+    bool m_vpcInterfacesHasBeenSet;
   };
 
 } // namespace Model

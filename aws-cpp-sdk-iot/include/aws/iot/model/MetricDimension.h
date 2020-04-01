@@ -1,0 +1,163 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/iot/IoT_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/DimensionValueOperator.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace IoT
+{
+namespace Model
+{
+
+  /**
+   * <p>The dimension of a metric.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/MetricDimension">AWS
+   * API Reference</a></p>
+   */
+  class AWS_IOT_API MetricDimension
+  {
+  public:
+    MetricDimension();
+    MetricDimension(Aws::Utils::Json::JsonView jsonValue);
+    MetricDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A unique identifier for the dimension.</p>
+     */
+    inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
+
+    /**
+     * <p>A unique identifier for the dimension.</p>
+     */
+    inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the dimension.</p>
+     */
+    inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
+
+    /**
+     * <p>A unique identifier for the dimension.</p>
+     */
+    inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the dimension.</p>
+     */
+    inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
+
+    /**
+     * <p>A unique identifier for the dimension.</p>
+     */
+    inline MetricDimension& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the dimension.</p>
+     */
+    inline MetricDimension& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the dimension.</p>
+     */
+    inline MetricDimension& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
+
+
+    /**
+     * <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted.
+     * For example, for DimensionType TOPIC_FILTER, with <code>IN</code> operator, a
+     * message will be counted only if its topic matches one of the topic filters. With
+     * <code>NOT_IN</code> Operator, a message will be counted only if it doesn't match
+     * any of the topic filters. The operator is optional: if it's not provided (is
+     * <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+     */
+    inline const DimensionValueOperator& GetOperator() const{ return m_operator; }
+
+    /**
+     * <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted.
+     * For example, for DimensionType TOPIC_FILTER, with <code>IN</code> operator, a
+     * message will be counted only if its topic matches one of the topic filters. With
+     * <code>NOT_IN</code> Operator, a message will be counted only if it doesn't match
+     * any of the topic filters. The operator is optional: if it's not provided (is
+     * <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+     */
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+
+    /**
+     * <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted.
+     * For example, for DimensionType TOPIC_FILTER, with <code>IN</code> operator, a
+     * message will be counted only if its topic matches one of the topic filters. With
+     * <code>NOT_IN</code> Operator, a message will be counted only if it doesn't match
+     * any of the topic filters. The operator is optional: if it's not provided (is
+     * <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+     */
+    inline void SetOperator(const DimensionValueOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
+
+    /**
+     * <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted.
+     * For example, for DimensionType TOPIC_FILTER, with <code>IN</code> operator, a
+     * message will be counted only if its topic matches one of the topic filters. With
+     * <code>NOT_IN</code> Operator, a message will be counted only if it doesn't match
+     * any of the topic filters. The operator is optional: if it's not provided (is
+     * <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+     */
+    inline void SetOperator(DimensionValueOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+
+    /**
+     * <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted.
+     * For example, for DimensionType TOPIC_FILTER, with <code>IN</code> operator, a
+     * message will be counted only if its topic matches one of the topic filters. With
+     * <code>NOT_IN</code> Operator, a message will be counted only if it doesn't match
+     * any of the topic filters. The operator is optional: if it's not provided (is
+     * <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+     */
+    inline MetricDimension& WithOperator(const DimensionValueOperator& value) { SetOperator(value); return *this;}
+
+    /**
+     * <p>Defines how the <code>dimensionValues</code> of a dimension are interpreted.
+     * For example, for DimensionType TOPIC_FILTER, with <code>IN</code> operator, a
+     * message will be counted only if its topic matches one of the topic filters. With
+     * <code>NOT_IN</code> Operator, a message will be counted only if it doesn't match
+     * any of the topic filters. The operator is optional: if it's not provided (is
+     * <code>null</code>), it will be interpreted as <code>IN</code>.</p>
+     */
+    inline MetricDimension& WithOperator(DimensionValueOperator&& value) { SetOperator(std::move(value)); return *this;}
+
+  private:
+
+    Aws::String m_dimensionName;
+    bool m_dimensionNameHasBeenSet;
+
+    DimensionValueOperator m_operator;
+    bool m_operatorHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace IoT
+} // namespace Aws

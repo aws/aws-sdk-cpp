@@ -22,6 +22,7 @@
 #include <aws/mediaconnect/model/Status.h>
 #include <aws/mediaconnect/model/Entitlement.h>
 #include <aws/mediaconnect/model/Output.h>
+#include <aws/mediaconnect/model/VpcInterface.h>
 #include <utility>
 
 namespace Aws
@@ -458,6 +459,47 @@ namespace Model
      */
     inline Flow& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * The VPC Interfaces for this flow.
+     */
+    inline const Aws::Vector<VpcInterface>& GetVpcInterfaces() const{ return m_vpcInterfaces; }
+
+    /**
+     * The VPC Interfaces for this flow.
+     */
+    inline bool VpcInterfacesHasBeenSet() const { return m_vpcInterfacesHasBeenSet; }
+
+    /**
+     * The VPC Interfaces for this flow.
+     */
+    inline void SetVpcInterfaces(const Aws::Vector<VpcInterface>& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces = value; }
+
+    /**
+     * The VPC Interfaces for this flow.
+     */
+    inline void SetVpcInterfaces(Aws::Vector<VpcInterface>&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces = std::move(value); }
+
+    /**
+     * The VPC Interfaces for this flow.
+     */
+    inline Flow& WithVpcInterfaces(const Aws::Vector<VpcInterface>& value) { SetVpcInterfaces(value); return *this;}
+
+    /**
+     * The VPC Interfaces for this flow.
+     */
+    inline Flow& WithVpcInterfaces(Aws::Vector<VpcInterface>&& value) { SetVpcInterfaces(std::move(value)); return *this;}
+
+    /**
+     * The VPC Interfaces for this flow.
+     */
+    inline Flow& AddVpcInterfaces(const VpcInterface& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(value); return *this; }
+
+    /**
+     * The VPC Interfaces for this flow.
+     */
+    inline Flow& AddVpcInterfaces(VpcInterface&& value) { m_vpcInterfacesHasBeenSet = true; m_vpcInterfaces.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_availabilityZone;
@@ -492,6 +534,9 @@ namespace Model
 
     Status m_status;
     bool m_statusHasBeenSet;
+
+    Aws::Vector<VpcInterface> m_vpcInterfaces;
+    bool m_vpcInterfacesHasBeenSet;
   };
 
 } // namespace Model

@@ -32,6 +32,7 @@
 #include <aws/mediaconnect/MediaConnectErrorMarshaller.h>
 #include <aws/mediaconnect/model/AddFlowOutputsRequest.h>
 #include <aws/mediaconnect/model/AddFlowSourcesRequest.h>
+#include <aws/mediaconnect/model/AddFlowVpcInterfacesRequest.h>
 #include <aws/mediaconnect/model/CreateFlowRequest.h>
 #include <aws/mediaconnect/model/DeleteFlowRequest.h>
 #include <aws/mediaconnect/model/DescribeFlowRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/mediaconnect/model/ListTagsForResourceRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowOutputRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowSourceRequest.h>
+#include <aws/mediaconnect/model/RemoveFlowVpcInterfaceRequest.h>
 #include <aws/mediaconnect/model/RevokeFlowEntitlementRequest.h>
 #include <aws/mediaconnect/model/StartFlowRequest.h>
 #include <aws/mediaconnect/model/StopFlowRequest.h>
@@ -205,6 +207,48 @@ void MediaConnectClient::AddFlowSourcesAsync(const AddFlowSourcesRequest& reques
 void MediaConnectClient::AddFlowSourcesAsyncHelper(const AddFlowSourcesRequest& request, const AddFlowSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddFlowSources(request), context);
+}
+
+AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFlowVpcInterfacesRequest& request) const
+{
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddFlowVpcInterfaces", "Required field: FlowArn, is not set");
+    return AddFlowVpcInterfacesOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/flows/";
+  ss << request.GetFlowArn();
+  ss << "/vpcInterfaces";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AddFlowVpcInterfacesOutcome(AddFlowVpcInterfacesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddFlowVpcInterfacesOutcome(outcome.GetError());
+  }
+}
+
+AddFlowVpcInterfacesOutcomeCallable MediaConnectClient::AddFlowVpcInterfacesCallable(const AddFlowVpcInterfacesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddFlowVpcInterfacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddFlowVpcInterfaces(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::AddFlowVpcInterfacesAsync(const AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddFlowVpcInterfacesAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::AddFlowVpcInterfacesAsyncHelper(const AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddFlowVpcInterfaces(request), context);
 }
 
 CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& request) const
@@ -571,6 +615,54 @@ void MediaConnectClient::RemoveFlowSourceAsync(const RemoveFlowSourceRequest& re
 void MediaConnectClient::RemoveFlowSourceAsyncHelper(const RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemoveFlowSource(request), context);
+}
+
+RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const RemoveFlowVpcInterfaceRequest& request) const
+{
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveFlowVpcInterface", "Required field: FlowArn, is not set");
+    return RemoveFlowVpcInterfaceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  if (!request.VpcInterfaceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveFlowVpcInterface", "Required field: VpcInterfaceName, is not set");
+    return RemoveFlowVpcInterfaceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcInterfaceName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/flows/";
+  ss << request.GetFlowArn();
+  ss << "/vpcInterfaces/";
+  ss << request.GetVpcInterfaceName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemoveFlowVpcInterfaceOutcome(RemoveFlowVpcInterfaceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveFlowVpcInterfaceOutcome(outcome.GetError());
+  }
+}
+
+RemoveFlowVpcInterfaceOutcomeCallable MediaConnectClient::RemoveFlowVpcInterfaceCallable(const RemoveFlowVpcInterfaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveFlowVpcInterfaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveFlowVpcInterface(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::RemoveFlowVpcInterfaceAsync(const RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveFlowVpcInterfaceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::RemoveFlowVpcInterfaceAsyncHelper(const RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveFlowVpcInterface(request), context);
 }
 
 RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const RevokeFlowEntitlementRequest& request) const

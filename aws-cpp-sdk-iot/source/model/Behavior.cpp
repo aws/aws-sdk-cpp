@@ -31,6 +31,7 @@ namespace Model
 Behavior::Behavior() : 
     m_nameHasBeenSet(false),
     m_metricHasBeenSet(false),
+    m_metricDimensionHasBeenSet(false),
     m_criteriaHasBeenSet(false)
 {
 }
@@ -38,6 +39,7 @@ Behavior::Behavior() :
 Behavior::Behavior(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_metricHasBeenSet(false),
+    m_metricDimensionHasBeenSet(false),
     m_criteriaHasBeenSet(false)
 {
   *this = jsonValue;
@@ -57,6 +59,13 @@ Behavior& Behavior::operator =(JsonView jsonValue)
     m_metric = jsonValue.GetString("metric");
 
     m_metricHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("metricDimension"))
+  {
+    m_metricDimension = jsonValue.GetObject("metricDimension");
+
+    m_metricDimensionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("criteria"))
@@ -82,6 +91,12 @@ JsonValue Behavior::Jsonize() const
   if(m_metricHasBeenSet)
   {
    payload.WithString("metric", m_metric);
+
+  }
+
+  if(m_metricDimensionHasBeenSet)
+  {
+   payload.WithObject("metricDimension", m_metricDimension.Jsonize());
 
   }
 

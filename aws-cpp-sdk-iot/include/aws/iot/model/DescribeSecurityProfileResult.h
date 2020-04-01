@@ -22,6 +22,7 @@
 #include <aws/iot/model/Behavior.h>
 #include <aws/iot/model/AlertTargetType.h>
 #include <aws/iot/model/AlertTarget.h>
+#include <aws/iot/model/MetricToRetain.h>
 #include <utility>
 
 namespace Aws
@@ -254,59 +255,52 @@ namespace Model
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code>, but it is
-     * also retained for any metric specified here.</p>
+     * retained for any metric used in the profile's behaviors, but it is also retained
+     * for any metric specified here.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalMetricsToRetain() const{ return m_additionalMetricsToRetain; }
+    inline const Aws::Vector<MetricToRetain>& GetAdditionalMetricsToRetainV2() const{ return m_additionalMetricsToRetainV2; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code>, but it is
-     * also retained for any metric specified here.</p>
+     * retained for any metric used in the profile's behaviors, but it is also retained
+     * for any metric specified here.</p>
      */
-    inline void SetAdditionalMetricsToRetain(const Aws::Vector<Aws::String>& value) { m_additionalMetricsToRetain = value; }
+    inline void SetAdditionalMetricsToRetainV2(const Aws::Vector<MetricToRetain>& value) { m_additionalMetricsToRetainV2 = value; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code>, but it is
-     * also retained for any metric specified here.</p>
+     * retained for any metric used in the profile's behaviors, but it is also retained
+     * for any metric specified here.</p>
      */
-    inline void SetAdditionalMetricsToRetain(Aws::Vector<Aws::String>&& value) { m_additionalMetricsToRetain = std::move(value); }
+    inline void SetAdditionalMetricsToRetainV2(Aws::Vector<MetricToRetain>&& value) { m_additionalMetricsToRetainV2 = std::move(value); }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code>, but it is
-     * also retained for any metric specified here.</p>
+     * retained for any metric used in the profile's behaviors, but it is also retained
+     * for any metric specified here.</p>
      */
-    inline DescribeSecurityProfileResult& WithAdditionalMetricsToRetain(const Aws::Vector<Aws::String>& value) { SetAdditionalMetricsToRetain(value); return *this;}
+    inline DescribeSecurityProfileResult& WithAdditionalMetricsToRetainV2(const Aws::Vector<MetricToRetain>& value) { SetAdditionalMetricsToRetainV2(value); return *this;}
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code>, but it is
-     * also retained for any metric specified here.</p>
+     * retained for any metric used in the profile's behaviors, but it is also retained
+     * for any metric specified here.</p>
      */
-    inline DescribeSecurityProfileResult& WithAdditionalMetricsToRetain(Aws::Vector<Aws::String>&& value) { SetAdditionalMetricsToRetain(std::move(value)); return *this;}
+    inline DescribeSecurityProfileResult& WithAdditionalMetricsToRetainV2(Aws::Vector<MetricToRetain>&& value) { SetAdditionalMetricsToRetainV2(std::move(value)); return *this;}
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code>, but it is
-     * also retained for any metric specified here.</p>
+     * retained for any metric used in the profile's behaviors, but it is also retained
+     * for any metric specified here.</p>
      */
-    inline DescribeSecurityProfileResult& AddAdditionalMetricsToRetain(const Aws::String& value) { m_additionalMetricsToRetain.push_back(value); return *this; }
+    inline DescribeSecurityProfileResult& AddAdditionalMetricsToRetainV2(const MetricToRetain& value) { m_additionalMetricsToRetainV2.push_back(value); return *this; }
 
     /**
      * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code>, but it is
-     * also retained for any metric specified here.</p>
+     * retained for any metric used in the profile's behaviors, but it is also retained
+     * for any metric specified here.</p>
      */
-    inline DescribeSecurityProfileResult& AddAdditionalMetricsToRetain(Aws::String&& value) { m_additionalMetricsToRetain.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of metrics whose data is retained (stored). By default, data is
-     * retained for any metric used in the profile's <code>behaviors</code>, but it is
-     * also retained for any metric specified here.</p>
-     */
-    inline DescribeSecurityProfileResult& AddAdditionalMetricsToRetain(const char* value) { m_additionalMetricsToRetain.push_back(value); return *this; }
+    inline DescribeSecurityProfileResult& AddAdditionalMetricsToRetainV2(MetricToRetain&& value) { m_additionalMetricsToRetainV2.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -391,7 +385,7 @@ namespace Model
 
     Aws::Map<AlertTargetType, AlertTarget> m_alertTargets;
 
-    Aws::Vector<Aws::String> m_additionalMetricsToRetain;
+    Aws::Vector<MetricToRetain> m_additionalMetricsToRetainV2;
 
     long long m_version;
 

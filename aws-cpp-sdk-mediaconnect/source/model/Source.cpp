@@ -40,6 +40,7 @@ Source::Source() :
     m_nameHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_transportHasBeenSet(false),
+    m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
 {
 }
@@ -56,6 +57,7 @@ Source::Source(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_transportHasBeenSet(false),
+    m_vpcInterfaceNameHasBeenSet(false),
     m_whitelistCidrHasBeenSet(false)
 {
   *this = jsonValue;
@@ -126,6 +128,13 @@ Source& Source::operator =(JsonView jsonValue)
     m_transportHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcInterfaceName"))
+  {
+    m_vpcInterfaceName = jsonValue.GetString("vpcInterfaceName");
+
+    m_vpcInterfaceNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("whitelistCidr"))
   {
     m_whitelistCidr = jsonValue.GetString("whitelistCidr");
@@ -191,6 +200,12 @@ JsonValue Source::Jsonize() const
   if(m_transportHasBeenSet)
   {
    payload.WithObject("transport", m_transport.Jsonize());
+
+  }
+
+  if(m_vpcInterfaceNameHasBeenSet)
+  {
+   payload.WithString("vpcInterfaceName", m_vpcInterfaceName);
 
   }
 
