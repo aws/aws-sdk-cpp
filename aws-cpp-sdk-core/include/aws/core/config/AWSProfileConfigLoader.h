@@ -224,28 +224,28 @@ namespace Aws
             Aws::Config::AWSConfigFileProfileConfigLoader m_configFileLoader;
         };
 
-        void AWS_CORE_API InitConfigAndCredentialsCacheManager();
+        AWS_CORE_API void InitConfigAndCredentialsCacheManager();
 
-        void AWS_CORE_API CleanupConfigAndCredentialsCacheManager();
+        AWS_CORE_API void CleanupConfigAndCredentialsCacheManager();
 
-        void AWS_CORE_API ReloadCachedConfigFile();
+        AWS_CORE_API void ReloadCachedConfigFile();
 
-        void AWS_CORE_API ReloadCachedCredentialsFile();
+        AWS_CORE_API void ReloadCachedCredentialsFile();
 
-        bool AWS_CORE_API HasCachedConfigProfile(const Aws::String& profileName);
+        AWS_CORE_API bool HasCachedConfigProfile(const Aws::String& profileName);
 
-        Aws::Config::Profile AWS_CORE_API GetCachedConfigProfile(const Aws::String& profileName);
+        AWS_CORE_API Aws::Config::Profile GetCachedConfigProfile(const Aws::String& profileName);
 
-        Aws::Map<Aws::String, Aws::Config::Profile> AWS_CORE_API GetCachedConfigProfiles();
+        AWS_CORE_API Aws::Map<Aws::String, Aws::Config::Profile> GetCachedConfigProfiles();
 
-        Aws::String AWS_CORE_API GetCachedConfigValue(const Aws::String& profileName, const Aws::String& key);
+        AWS_CORE_API Aws::String GetCachedConfigValue(const Aws::String& profileName, const Aws::String& key);
 
-        Aws::String AWS_CORE_API GetCachedConfigValue(const Aws::String& key);
+        AWS_CORE_API Aws::String GetCachedConfigValue(const Aws::String& key);
 
-        bool AWS_CORE_API HasCachedCredentialsProfile(const Aws::String &profileName);
+        AWS_CORE_API bool HasCachedCredentialsProfile(const Aws::String &profileName);
 
-        Aws::Config::Profile AWS_CORE_API GetCachedCredentialsProfile(const Aws::String& profileName);
+        AWS_CORE_API Aws::Config::Profile GetCachedCredentialsProfile(const Aws::String& profileName);
 
-        Aws::Auth::AWSCredentials AWS_CORE_API GetCachedCredentials(const Aws::String& profileName);
+        AWS_CORE_API Aws::Auth::AWSCredentials GetCachedCredentials(const Aws::String& profileName);
     }
 }

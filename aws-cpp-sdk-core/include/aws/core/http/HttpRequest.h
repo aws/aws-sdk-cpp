@@ -49,6 +49,8 @@ namespace Aws
         extern AWS_CORE_API const char X_AMZ_EXPIRES_HEADER[];
         extern AWS_CORE_API const char CONTENT_MD5_HEADER[];
         extern AWS_CORE_API const char API_VERSION_HEADER[];
+        extern AWS_CORE_API const char SDK_INVOCATION_ID_HEADER[];
+        extern AWS_CORE_API const char SDK_REQUEST_HEADER[];
         extern AWS_CORE_API const char CHUNKED_VALUE[];
 
         class HttpRequest;

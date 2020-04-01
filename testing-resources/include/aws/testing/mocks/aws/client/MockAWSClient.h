@@ -17,6 +17,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/client/RetryStrategy.h>
 #include <aws/core/client/DefaultRetryStrategy.h>
 #include <aws/core/AmazonWebServiceRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
@@ -27,6 +28,14 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
+
+namespace Aws
+{
+    namespace Client
+    {
+        class RetryQuotaContainer;
+    }
+}
 
 class AmazonWebServiceRequestMock : public Aws::AmazonWebServiceRequest
 {
@@ -49,8 +58,8 @@ private:
 class CountedRetryStrategy : public Aws::Client::DefaultRetryStrategy
 {
 public:
-    CountedRetryStrategy() : m_attemptedRetries(0), m_maxRetries(std::numeric_limits<int>::max()) {}
-    CountedRetryStrategy(int maxRetires) : m_attemptedRetries(0), m_maxRetries(maxRetires <= 0 ? std::numeric_limits<int>::max() : maxRetires) {}
+    CountedRetryStrategy() : m_attemptedRetries(0), m_maxRetries(std::numeric_limits<long>::max()) {}
+    CountedRetryStrategy(long maxRetires) : m_attemptedRetries(0), m_maxRetries(maxRetires <= 0 ? std::numeric_limits<long>::max() : maxRetires) {}
 
     bool ShouldRetry(const Aws::Client::AWSError<Aws::Client::CoreErrors>& error, long attemptedRetries) const override
     {
@@ -58,18 +67,18 @@ public:
         {
             return false;
         }
-        if(DefaultRetryStrategy::ShouldRetry(error, attemptedRetries))
+        if(Aws::Client::DefaultRetryStrategy::ShouldRetry(error, attemptedRetries))
         {
             m_attemptedRetries = attemptedRetries + 1;
             return true;
         }
         return false;
     }
-    int GetAttemptedRetriesCount() { return m_attemptedRetries; }
+    long GetAttemptedRetriesCount() { return m_attemptedRetries; }
     void ResetAttemptedRetriesCount() { m_attemptedRetries = 0; }
 private:
-    mutable int m_attemptedRetries;
-    int m_maxRetries;
+    mutable long m_attemptedRetries;
+    long m_maxRetries;
 };
 
 class MockAWSClient : Aws::Client::AWSClient
@@ -86,14 +95,14 @@ public:
         m_countedRetryStrategy->ResetAttemptedRetriesCount();
         const Aws::Http::URI uri("domain.com/something");
         const auto method = Aws::Http::HttpMethod::HTTP_GET;
-        Aws::Client::HttpResponseOutcome httpOutcome(AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
+        Aws::Client::HttpResponseOutcome httpOutcome(Aws::Client::AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
         return httpOutcome;
     }
 
     inline static const char* GetMockAccessKey() { return "AKIDEXAMPLE"; }
     inline static const char* GetMockSecretAccessKey() { return "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"; }
 
-    int GetRequestAttemptedRetries()
+    long GetRequestAttemptedRetries()
     {
         return m_countedRetryStrategy->GetAttemptedRetriesCount();
     }
@@ -107,6 +116,81 @@ protected:
         if (response->HasClientError())
         {
             auto err = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+            err.SetResponseCode(Aws::Http::HttpResponseCode::INTERNAL_SERVER_ERROR);
+            return err;
+        }
+        auto err = Aws::Client::AWSError<Aws::Client::CoreErrors>(Aws::Client::CoreErrors::INVALID_ACTION, false);
+        err.SetResponseHeaders(response->GetHeaders());
+        err.SetResponseCode(response->GetResponseCode());
+        return err;
+    }
+};
+
+class CountedStandardRetryStrategy : public Aws::Client::StandardRetryStrategy
+{
+public:
+    CountedStandardRetryStrategy(std::shared_ptr<Aws::Client::RetryQuotaContainer> retryQuotaContainer, long maxAttempts = 3) : Aws::Client::StandardRetryStrategy(retryQuotaContainer, maxAttempts), m_attemptedRetries(0) {}
+    CountedStandardRetryStrategy(long maxAttempts = 3) : Aws::Client::StandardRetryStrategy(maxAttempts), m_attemptedRetries(0) {}
+
+    bool ShouldRetry(const Aws::Client::AWSError<Aws::Client::CoreErrors>& error, long attemptedRetries) const override
+    {
+        if (Aws::Client::StandardRetryStrategy::ShouldRetry(error, attemptedRetries))
+        {
+            m_attemptedRetries ++;
+            return true;
+        }
+        return false;
+    }
+    const std::shared_ptr<Aws::Client::RetryQuotaContainer>& GetRetryQuotaContainer() const
+    {
+       return m_retryQuotaContainer;
+    }
+    long GetRequestAttemptedRetries() { return m_attemptedRetries; }
+    void ResetAttemptedRetriesCount() { m_attemptedRetries = 0; }
+private:
+    mutable long m_attemptedRetries;
+};
+
+class MockAWSClientWithStandardRetryStrategy : Aws::Client::AWSClient
+{
+public:
+    MockAWSClientWithStandardRetryStrategy(const Aws::Client::ClientConfiguration& config) : Aws::Client::AWSClient(config,
+            Aws::MakeShared<Aws::Client::AWSAuthV4Signer>("MockAWSClientWithStandardRetryStrategy",
+                Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>("MockAWSClientWithStandardRetryStrategy", GetMockAccessKey(),
+                    GetMockSecretAccessKey()), "service", config.region.empty() ? Aws::Region::US_EAST_1 : config.region), nullptr) ,
+        m_countedRetryStrategy(std::static_pointer_cast<CountedStandardRetryStrategy>(config.retryStrategy)) { }
+
+    Aws::Client::HttpResponseOutcome MakeRequest(const Aws::AmazonWebServiceRequest& request)
+    {
+        m_countedRetryStrategy->ResetAttemptedRetriesCount();
+        const Aws::Http::URI uri("domain.com/something");
+        const auto method = Aws::Http::HttpMethod::HTTP_GET;
+        Aws::Client::HttpResponseOutcome httpOutcome(Aws::Client::AWSClient::AttemptExhaustively(uri, request, method, Aws::Auth::SIGV4_SIGNER));
+        return httpOutcome;
+    }
+
+    inline static const char* GetMockAccessKey() { return "AKIDEXAMPLE"; }
+    inline static const char* GetMockSecretAccessKey() { return "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY"; }
+
+    const std::shared_ptr<Aws::Client::RetryQuotaContainer>& GetRetryQuotaContainer() const
+    {
+        return m_countedRetryStrategy->GetRetryQuotaContainer();
+    }
+
+    long GetRequestAttemptedRetries()
+    {
+        return m_countedRetryStrategy->GetRequestAttemptedRetries();
+    }
+
+    inline const char* GetServiceClientName() const override { return "MockAWSClientWithStandardRetryStrategy"; }
+
+protected:
+    std::shared_ptr<CountedStandardRetryStrategy> m_countedRetryStrategy;
+    Aws::Client::AWSError<Aws::Client::CoreErrors> BuildAWSError(const std::shared_ptr<Aws::Http::HttpResponse>& response) const override
+    {
+        if (response->HasClientError())
+        {
+            auto err = Aws::Client::AWSError<Aws::Client::CoreErrors>(response->GetClientErrorType(), "", response->GetClientErrorMessage(), true);
             err.SetResponseCode(Aws::Http::HttpResponseCode::INTERNAL_SERVER_ERROR);
             return err;
         }

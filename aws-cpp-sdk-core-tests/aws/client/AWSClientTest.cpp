@@ -110,6 +110,33 @@ protected:
         }
         mockHttpClient->AddResponseToReturn(httpResponse);
     }
+
+    void QueueMockResponse(const AWSError<CoreErrors>& clientError, const HeaderValueCollection& headers)
+    {
+        auto httpRequest = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
+                HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        auto httpResponse = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
+        httpResponse->SetClientErrorType(clientError.GetErrorType());
+        httpResponse->SetClientErrorMessage(clientError.GetMessage());
+        httpResponse->GetResponseBody() << "";
+        for(auto&& header : headers)
+        {
+            httpResponse->AddHeader(header.first, header.second);
+        }
+        mockHttpClient->AddResponseToReturn(httpResponse);
+    }
+
+    Aws::String ExtractFromRequestInfo(const Aws::String& requestInfo, const Aws::String& key)
+    {
+        auto iter = requestInfo.find(key + "=");
+        if (iter == Aws::String::npos)
+        {
+            return {};
+        }
+        Aws::String substr = requestInfo.substr(iter + key.size() + 1);
+        substr.erase(std::find_if(substr.begin(), substr.end(), [](char ch) {return ch == ';';} ), substr.end());
+        return substr;
+    }
 };
 
 class AWSConfigTestSuite : public ::testing::Test
@@ -139,11 +166,9 @@ protected:
 
 TEST_F(AWSClientTestSuite, TestClockSkewOutsideAcceptableRange)
 {
-    HeaderValueCollection responseHeaders, requestHeaders;
+    HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
     AmazonWebServiceRequestMock request;
-    requestHeaders.emplace("X-Amz-Date", DateTime::Now().ToGmtString(DateFormat::ISO_8601));
-    request.SetHeaders(requestHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     auto outcome = client->MakeRequest(request);
@@ -153,11 +178,9 @@ TEST_F(AWSClientTestSuite, TestClockSkewOutsideAcceptableRange)
 
 TEST_F(AWSClientTestSuite, TestClockSkewWithinAcceptableRange)
 {
-    HeaderValueCollection responseHeaders, requestHeaders;
+    HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::minutes(2)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 2 minutes
     AmazonWebServiceRequestMock request;
-    requestHeaders.emplace("X-Amz-Date", DateTime::Now().ToGmtString(DateFormat::ISO_8601));
-    request.SetHeaders(requestHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     auto outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
@@ -167,11 +190,9 @@ TEST_F(AWSClientTestSuite, TestClockSkewWithinAcceptableRange)
 TEST_F(AWSClientTestSuite, TestClockSkewConsecutiveRequests)
 {
     // first request should set the skew offset and retry, but following requests should not
-    HeaderValueCollection responseHeaders, requestHeaders;
+    HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
     AmazonWebServiceRequestMock request;
-    requestHeaders.emplace("X-Amz-Date", DateTime::Now().ToGmtString(DateFormat::ISO_8601));
-    request.SetHeaders(requestHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     auto outcome = client->MakeRequest(request);
@@ -198,11 +219,9 @@ TEST_F(AWSClientTestSuite, TestClockChangesAfterSkewHasBeenSet)
     // The skew should reflect the clock's changes.
 
     // make an initial request so that a skew adjustment is set
-    HeaderValueCollection responseHeaders, requestHeaders;
+    HeaderValueCollection responseHeaders;
     responseHeaders.emplace("Date", (DateTime::Now() + std::chrono::hours(1)).ToGmtString(DateFormat::RFC822)); // server is ahead of us by 1 hour
     AmazonWebServiceRequestMock request;
-    requestHeaders.emplace("X-Amz-Date", DateTime::Now().ToGmtString(DateFormat::ISO_8601));
-    request.SetHeaders(requestHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     QueueMockResponse(HttpResponseCode::BAD_REQUEST, responseHeaders);
     auto outcome = client->MakeRequest(request);
@@ -226,6 +245,112 @@ TEST_F(AWSClientTestSuite, TestClockChangesAfterSkewHasBeenSet)
     outcome = client->MakeRequest(request);
     ASSERT_FALSE(outcome.IsSuccess());
     ASSERT_EQ(1, client->GetRequestAttemptedRetries());
+}
+
+TEST_F(AWSClientTestSuite, TestRetryHeaders)
+{
+    // The first server time is ahead of us by 1 hour.
+    DateTime serverTime1 = DateTime::Now() + std::chrono::hours(1);
+    QueueMockResponse(HttpResponseCode::REQUEST_NOT_MADE, HeaderValueCollection{std::make_pair("Date", serverTime1.ToGmtString(DateFormat::RFC822))});
+    // The second server time is ahead of us by 2 hour.
+    DateTime serverTime2 = DateTime::Now() + std::chrono::hours(2);
+    QueueMockResponse(HttpResponseCode::REQUEST_NOT_MADE, HeaderValueCollection{std::make_pair("Date", serverTime2.ToGmtString(DateFormat::RFC822))});
+    // The third server time is ahead of us by 3 hour.
+    DateTime serverTime3 = DateTime::Now() + std::chrono::hours(3);
+    QueueMockResponse(HttpResponseCode::OK, HeaderValueCollection{std::make_pair("Date", serverTime3.ToGmtString(DateFormat::RFC822))});
+    AmazonWebServiceRequestMock request;
+    auto outcome = client->MakeRequest(request);
+    ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_EQ(2, client->GetRequestAttemptedRetries());
+    const auto& requests = mockHttpClient->GetAllRequestsMade();
+    ASSERT_EQ(3u, requests.size());
+    // The first request to send.
+    Aws::String invocationId = requests[0].GetHeaders()[Http::SDK_INVOCATION_ID_HEADER];
+    Aws::String requestInfo = requests[0].GetHeaders()[Http::SDK_REQUEST_HEADER];
+    ASSERT_TRUE(ExtractFromRequestInfo(requestInfo, "ttl").empty());
+    ASSERT_STREQ("1", ExtractFromRequestInfo(requestInfo, "attempt").c_str());
+    ASSERT_TRUE(ExtractFromRequestInfo(requestInfo, "max").empty());
+    // The second request to send.
+    ASSERT_STREQ(invocationId.c_str(), requests[1].GetHeaders()[Http::SDK_INVOCATION_ID_HEADER].c_str());
+    requestInfo = requests[1].GetHeaders()[Http::SDK_REQUEST_HEADER];
+    Aws::String ttl = ExtractFromRequestInfo(requestInfo, "ttl");
+    ASSERT_FALSE(ttl.empty());
+    auto diff = DateTime::Diff(DateTime(ttl, DateFormat::ISO_8601_BASIC), serverTime1 + std::chrono::milliseconds(30000)); // request timeout is 30,000 ms.
+    ASSERT_LT(diff, std::chrono::seconds(2));
+    ASSERT_GT(diff, std::chrono::seconds(-2));
+    ASSERT_STREQ("2", ExtractFromRequestInfo(requestInfo, "attempt").c_str());
+    ASSERT_STREQ("11", ExtractFromRequestInfo(requestInfo, "max").c_str());
+    // The third request to send.
+    ASSERT_STREQ(invocationId.c_str(), requests[2].GetHeaders()[Http::SDK_INVOCATION_ID_HEADER].c_str());
+    requestInfo = requests[2].GetHeaders()[Http::SDK_REQUEST_HEADER];
+    ttl = ExtractFromRequestInfo(requestInfo, "ttl");
+    ASSERT_FALSE(ttl.empty());
+    diff = DateTime::Diff(DateTime(ttl, DateFormat::ISO_8601_BASIC), serverTime2 + std::chrono::milliseconds(30000)); // request timeout is 30,000 ms.
+    ASSERT_LT(diff, std::chrono::seconds(2));
+    ASSERT_GT(diff, std::chrono::seconds(-2));
+    ASSERT_STREQ("3", ExtractFromRequestInfo(requestInfo, "attempt").c_str());
+    ASSERT_STREQ("11", ExtractFromRequestInfo(requestInfo, "max").c_str());
+}
+
+TEST_F(AWSClientTestSuite, TestStandardRetryStrategy)
+{
+    ClientConfiguration config;
+    auto retryQuotaContainer = Aws::MakeShared<DefaultRetryQuotaContainer>(ALLOCATION_TAG); // 500 tokens in total
+    auto countedRetryStrategy = Aws::MakeShared<CountedStandardRetryStrategy>(ALLOCATION_TAG, retryQuotaContainer);
+    config.retryStrategy = countedRetryStrategy;
+    MockAWSClientWithStandardRetryStrategy clientWithStandardRetryStrategy(config);
+
+    // 1. Successful request.
+    HeaderValueCollection responseHeaders;
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders);
+    AmazonWebServiceRequestMock request;
+    auto outcome = clientWithStandardRetryStrategy.MakeRequest(request);
+    ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
+    ASSERT_EQ(500, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // 2. Fail due to max attempts reached.
+    AWSError<CoreErrors> connectionError(CoreErrors::NETWORK_CONNECTION, true);
+    AWSError<CoreErrors> requestTimeoutError(CoreErrors::REQUEST_TIMEOUT, true);
+    QueueMockResponse(connectionError, responseHeaders); // Acquire 5 tokens
+    QueueMockResponse(requestTimeoutError, responseHeaders); // Acquire 10 tokens
+    QueueMockResponse(connectionError, responseHeaders); // Max attempts reached, will not acquire more tokens
+    outcome = clientWithStandardRetryStrategy.MakeRequest(request);
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(2, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
+    ASSERT_EQ(485, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // 3. Retry eventually succeeds.
+    QueueMockResponse(connectionError, responseHeaders); // Acquire 5 tokens
+    QueueMockResponse(requestTimeoutError, responseHeaders); // Acquire 10 tokens
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders); // Release 10 tokens
+    outcome = clientWithStandardRetryStrategy.MakeRequest(request);
+    ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_EQ(2, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
+    ASSERT_EQ(480, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // 4. Retry Quota reached after a single retry.
+    ASSERT_TRUE(clientWithStandardRetryStrategy.GetRetryQuotaContainer()->AcquireRetryQuota(473)); // Acquire 473 tokens
+    QueueMockResponse(connectionError, responseHeaders); // Acquire 5 tokens
+    QueueMockResponse(connectionError, responseHeaders); // Not able to acquire more tokens
+    outcome = clientWithStandardRetryStrategy.MakeRequest(request);
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(1, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
+    ASSERT_EQ(2, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // 5. No retries at all.
+    QueueMockResponse(connectionError, responseHeaders); // Acquire 5 tokens
+    outcome = clientWithStandardRetryStrategy.MakeRequest(request);
+    ASSERT_FALSE(outcome.IsSuccess());
+    ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
+    ASSERT_EQ(2, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
+
+    // 6. Successful request.
+    QueueMockResponse(HttpResponseCode::OK, responseHeaders); // Release 1 token
+    outcome = clientWithStandardRetryStrategy.MakeRequest(request);
+    ASSERT_TRUE(outcome.IsSuccess());
+    ASSERT_EQ(0, clientWithStandardRetryStrategy.GetRequestAttemptedRetries());
+    ASSERT_EQ(3, clientWithStandardRetryStrategy.GetRetryQuotaContainer()->GetRetryQuota());
 }
 
 TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)

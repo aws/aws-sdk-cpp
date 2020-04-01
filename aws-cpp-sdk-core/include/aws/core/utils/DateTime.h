@@ -27,6 +27,7 @@ namespace Aws
         {
             RFC822, //for http headers
             ISO_8601, //for query and xml payloads
+            ISO_8601_BASIC, // for retry headers and signers
             AutoDetect
         };
 

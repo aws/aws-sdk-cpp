@@ -138,8 +138,10 @@ protected:
         mockHttpClient = nullptr;
         mockHttpClientFactory = nullptr;
 
+        CleanupMonitoring();
         CleanupHttp();
         InitHttp();
+        InitMonitoring(std::vector<Aws::Monitoring::MonitoringFactoryCreateFunction>());
     }
 
     void SetServiceClient(const Aws::String& serviceName, const Aws::String& region)

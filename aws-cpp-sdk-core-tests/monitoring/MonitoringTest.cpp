@@ -233,8 +233,10 @@ protected:
         mockHttpClient = nullptr;
         mockHttpClientFactory = nullptr;
 
+        CleanupMonitoring();
         CleanupHttp();
         InitHttp();
+        InitMonitoring(std::vector<Aws::Monitoring::MonitoringFactoryCreateFunction>());
     }
 
     void QueueMockResponse(HttpResponseCode code, const HeaderValueCollection& headers)

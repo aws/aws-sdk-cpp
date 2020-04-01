@@ -297,6 +297,7 @@ namespace Aws
             std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_readRateLimiter;
             Aws::String m_userAgent;
             std::shared_ptr<Aws::Utils::Crypto::Hash> m_hash;
+            long m_requestTimeoutMs;
             bool m_enableClockSkewAdjustment;
         };
 

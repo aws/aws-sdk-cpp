@@ -39,6 +39,8 @@ const char AMZ_TARGET_HEADER[] = "x-amz-target";
 const char X_AMZ_EXPIRES_HEADER[] = "X-Amz-Expires";
 const char CONTENT_MD5_HEADER[] = "content-md5";
 const char API_VERSION_HEADER[] = "x-amz-api-version";
+const char SDK_INVOCATION_ID_HEADER[] = "amz-sdk-invocation-id";
+const char SDK_REQUEST_HEADER[] = "amz-sdk-request";
 const char CHUNKED_VALUE[] = "chunked";
 
 } // Http

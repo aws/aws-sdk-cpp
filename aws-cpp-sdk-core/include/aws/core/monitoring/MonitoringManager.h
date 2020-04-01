@@ -64,11 +64,11 @@ namespace Aws
          * and create other instances from these factories.
          * This function will be called during Aws::InitAPI call, argument is acquired from Aws::SDKOptions->MonitoringOptions
          */
-        void AWS_CORE_API InitMonitoring(const std::vector<MonitoringFactoryCreateFunction>& monitoringFactoryCreateFunctions);
+        AWS_CORE_API void InitMonitoring(const std::vector<MonitoringFactoryCreateFunction>& monitoringFactoryCreateFunctions);
 
         /**
          * Clean up monitoring related global variables
          */
-        void AWS_CORE_API CleanupMonitoring();
+        AWS_CORE_API void CleanupMonitoring();
     }
 }

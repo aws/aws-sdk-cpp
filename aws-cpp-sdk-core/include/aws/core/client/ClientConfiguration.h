@@ -235,6 +235,7 @@ namespace Aws
              * profileName in config file that will be used by this object to reslove more configurations.
              */
             Aws::String profileName;
+
         };
 
     } // namespace Client

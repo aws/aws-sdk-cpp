@@ -26,6 +26,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/Outcome.h>
@@ -38,7 +39,7 @@
 #include <aws/core/utils/crypto/MD5.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Factories.h>
-#include <aws/core/http/URI.h>
+#include <aws/core/utils/UUID.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/utils/event/EventStream.h>
 
@@ -74,6 +75,28 @@ static CoreErrors GuessBodylessErrorType(Aws::Http::HttpResponseCode responseCod
         return CoreErrors::UNKNOWN;
     }
 }
+struct RequestInfo
+{
+    Aws::Utils::DateTime ttl;
+    long attempt;
+    long maxAttempts;
+
+    operator String()
+    {
+        Aws::StringStream ss;
+        if (ttl.WasParseSuccessful() && ttl != DateTime())
+        {
+            assert(attempt > 1);
+            ss << "ttl=" << ttl.ToGmtString(DateFormat::ISO_8601_BASIC) << "; ";
+        }
+        ss << "attempt=" << attempt;
+        if (maxAttempts > 0)
+        {
+            ss << "; max=" << maxAttempts;
+        }
+        return ss.str();
+    }
+};
 
 AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
@@ -86,6 +109,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
+    m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
 }
@@ -101,6 +125,7 @@ AWSClient::AWSClient(const Aws::Client::ClientConfiguration& configuration,
     m_readRateLimiter(configuration.readRateLimiter),
     m_userAgent(configuration.userAgent),
     m_hash(Aws::Utils::Crypto::CreateMD5Implementation()),
+    m_requestTimeoutMs(configuration.requestTimeoutMs),
     m_enableClockSkewAdjustment(configuration.enableClockSkewAdjustment)
 {
 }
@@ -121,6 +146,25 @@ Aws::Client::AWSAuthSigner* AWSClient::GetSignerByName(const char* name) const
     return signer ? signer.get() : nullptr;
 }
 
+static DateTime GetServerTimeFromError(const AWSError<CoreErrors> error)
+{
+    const Http::HeaderValueCollection& headers = error.GetResponseHeaders();
+    auto awsDateHeaderIter = headers.find(StringUtils::ToLower(Http::AWS_DATE_HEADER));
+    auto dateHeaderIter = headers.find(StringUtils::ToLower(Http::DATE_HEADER));
+    if (awsDateHeaderIter != headers.end())
+    {
+        return DateTime(awsDateHeaderIter->second.c_str(), DateFormat::AutoDetect);
+    }
+    else if (dateHeaderIter != headers.end())
+    {
+        return DateTime(dateHeaderIter->second.c_str(), DateFormat::AutoDetect);
+    }
+    else
+    {
+        return DateTime();
+    }
+}
+
 bool AWSClient::AdjustClockSkew(HttpResponseOutcome& outcome, const char* signerName) const
 {
     if (m_enableClockSkewAdjustment)
@@ -128,20 +172,8 @@ bool AWSClient::AdjustClockSkew(HttpResponseOutcome& outcome, const char* signer
         auto signer = GetSignerByName(signerName);
         //detect clock skew and try to correct.
         AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "If the signature check failed. This could be because of a time skew. Attempting to adjust the signer.");
-        const Http::HeaderValueCollection& headers = outcome.GetError().GetResponseHeaders();
-        auto awsDateHeaderIter = headers.find(StringUtils::ToLower(Http::AWS_DATE_HEADER));
-        auto dateHeaderIter = headers.find(StringUtils::ToLower(Http::DATE_HEADER));
 
-        DateTime serverTime;
-        if (awsDateHeaderIter != headers.end())
-        {
-            serverTime = DateTime(awsDateHeaderIter->second.c_str(), DateFormat::AutoDetect);
-        }
-        else if (dateHeaderIter != headers.end())
-        {
-            serverTime = DateTime(dateHeaderIter->second.c_str(), DateFormat::AutoDetect);
-        }
-
+        DateTime serverTime = GetServerTimeFromError(outcome.GetError());
         const auto signingTimestamp = signer->GetSigningTimestamp();
         if (!serverTime.WasParseSuccessful() || serverTime == DateTime())
         {
@@ -176,12 +208,29 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 {
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, request.GetResponseStreamFactory()));
     HttpResponseOutcome outcome;
+    AWSError<CoreErrors> lastError;
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
     auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest);
 
+    Aws::String invocationId = UUID::RandomUUID();
+    RequestInfo requestInfo;
+    requestInfo.attempt = 1;
+    requestInfo.maxAttempts = 0;
+    httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
+    httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
+
     for (long retries = 0;; retries++)
     {
+        m_retryStrategy->GetSendToken();
         outcome = AttemptOneRequest(httpRequest, request, signerName, signerRegionOverride);
+        if (retries == 0)
+        {
+            m_retryStrategy->RequestBookkeeping(outcome);
+        }
+        else
+        {
+            m_retryStrategy->RequestBookkeeping(outcome, lastError);
+        }
         coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
         if (outcome.IsSuccess())
         {
@@ -189,6 +238,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
             break;
         }
+        lastError = outcome.GetError();
+
+        DateTime serverTime = GetServerTimeFromError(outcome.GetError());
+        auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());
 
         Aws::Monitoring::OnRequestFailed(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, outcome, coreMetrics, contexts);
 
@@ -226,6 +279,14 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
         }
 
         httpRequest = CreateHttpRequest(uri, method, request.GetResponseStreamFactory());
+        httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
+        if (serverTime.WasParseSuccessful() && serverTime != DateTime())
+        {
+            requestInfo.ttl = DateTime::Now() + clockSkew + std::chrono::milliseconds(m_requestTimeoutMs);
+        }
+        requestInfo.attempt ++;
+        requestInfo.maxAttempts = m_retryStrategy->GetMaxAttempts();
+        httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
         Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
     }
     Aws::Monitoring::OnFinish(this->GetServiceClientName(), request.GetServiceRequestName(), httpRequest, contexts);
@@ -240,12 +301,29 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 {
     std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
     HttpResponseOutcome outcome;
+    AWSError<CoreErrors> lastError;
     Aws::Monitoring::CoreMetricsCollection coreMetrics;
     auto contexts = Aws::Monitoring::OnRequestStarted(this->GetServiceClientName(), requestName, httpRequest);
 
+    Aws::String invocationId = UUID::RandomUUID();
+    RequestInfo requestInfo;
+    requestInfo.attempt = 1;
+    requestInfo.maxAttempts = 0;
+    httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
+    httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
+
     for (long retries = 0;; retries++)
     {
+        m_retryStrategy->GetSendToken();
         outcome = AttemptOneRequest(httpRequest, signerName, signerRegionOverride);
+        if (retries == 0)
+        {
+            m_retryStrategy->RequestBookkeeping(outcome);
+        }
+        else
+        {
+            m_retryStrategy->RequestBookkeeping(outcome, lastError);
+        }
         coreMetrics.httpClientMetrics = httpRequest->GetRequestMetrics();
         if (outcome.IsSuccess())
         {
@@ -253,6 +331,10 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Request successful returning.");
             break;
         }
+        lastError = outcome.GetError();
+
+        DateTime serverTime = GetServerTimeFromError(outcome.GetError());
+        auto clockSkew = DateTime::Diff(serverTime, DateTime::Now());
 
         Aws::Monitoring::OnRequestFailed(this->GetServiceClientName(), requestName, httpRequest, outcome, coreMetrics, contexts);
 
@@ -279,6 +361,14 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
             m_httpClient->RetryRequestSleep(std::chrono::milliseconds(sleepMillis));
         }
         httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+        httpRequest->SetHeaderValue(Http::SDK_INVOCATION_ID_HEADER, invocationId);
+        if (serverTime.WasParseSuccessful() && serverTime != DateTime())
+        {
+            requestInfo.ttl = DateTime::Now() + clockSkew + std::chrono::milliseconds(m_requestTimeoutMs);
+        }
+        requestInfo.attempt ++;
+        requestInfo.maxAttempts = m_retryStrategy->GetMaxAttempts();
+        httpRequest->SetHeaderValue(Http::SDK_REQUEST_HEADER, requestInfo);
         Aws::Monitoring::OnRequestRetry(this->GetServiceClientName(), requestName, httpRequest, contexts);
     }
     Aws::Monitoring::OnFinish(this->GetServiceClientName(), requestName, httpRequest, contexts);
