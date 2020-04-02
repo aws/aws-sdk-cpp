@@ -23,7 +23,8 @@ using namespace Aws::Utils;
 PutInsightRuleRequest::PutInsightRuleRequest() : 
     m_ruleNameHasBeenSet(false),
     m_ruleStateHasBeenSet(false),
-    m_ruleDefinitionHasBeenSet(false)
+    m_ruleDefinitionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,16 @@ Aws::String PutInsightRuleRequest::SerializePayload() const
   if(m_ruleDefinitionHasBeenSet)
   {
     ss << "RuleDefinition=" << StringUtils::URLEncode(m_ruleDefinition.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2010-08-01";

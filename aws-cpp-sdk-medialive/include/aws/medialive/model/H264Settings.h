@@ -22,6 +22,7 @@
 #include <aws/medialive/model/H264EntropyEncoding.h>
 #include <aws/medialive/model/FixedAfd.h>
 #include <aws/medialive/model/H264FlickerAq.h>
+#include <aws/medialive/model/H264ForceFieldPictures.h>
 #include <aws/medialive/model/H264FramerateControl.h>
 #include <aws/medialive/model/H264GopBReference.h>
 #include <aws/medialive/model/H264GopSizeUnits.h>
@@ -390,6 +391,79 @@ namespace Model
      * 'pop' on I-frames.
      */
     inline H264Settings& WithFlickerAq(H264FlickerAq&& value) { SetFlickerAq(std::move(value)); return *this;}
+
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether
+     * coding is on a field basis or a frame basis. (When the video is progressive, the
+     * coding is always on a frame basis.)
+enabled: Always code on a field basis, so
+     * that odd and even sets of fields are coded separately.
+disabled: Code the two
+     * sets of fields separately (on a field basis) or together (on a frame basis,
+     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     */
+    inline const H264ForceFieldPictures& GetForceFieldPictures() const{ return m_forceFieldPictures; }
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether
+     * coding is on a field basis or a frame basis. (When the video is progressive, the
+     * coding is always on a frame basis.)
+enabled: Always code on a field basis, so
+     * that odd and even sets of fields are coded separately.
+disabled: Code the two
+     * sets of fields separately (on a field basis) or together (on a frame basis,
+     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     */
+    inline bool ForceFieldPicturesHasBeenSet() const { return m_forceFieldPicturesHasBeenSet; }
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether
+     * coding is on a field basis or a frame basis. (When the video is progressive, the
+     * coding is always on a frame basis.)
+enabled: Always code on a field basis, so
+     * that odd and even sets of fields are coded separately.
+disabled: Code the two
+     * sets of fields separately (on a field basis) or together (on a frame basis,
+     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     */
+    inline void SetForceFieldPictures(const H264ForceFieldPictures& value) { m_forceFieldPicturesHasBeenSet = true; m_forceFieldPictures = value; }
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether
+     * coding is on a field basis or a frame basis. (When the video is progressive, the
+     * coding is always on a frame basis.)
+enabled: Always code on a field basis, so
+     * that odd and even sets of fields are coded separately.
+disabled: Code the two
+     * sets of fields separately (on a field basis) or together (on a frame basis,
+     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     */
+    inline void SetForceFieldPictures(H264ForceFieldPictures&& value) { m_forceFieldPicturesHasBeenSet = true; m_forceFieldPictures = std::move(value); }
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether
+     * coding is on a field basis or a frame basis. (When the video is progressive, the
+     * coding is always on a frame basis.)
+enabled: Always code on a field basis, so
+     * that odd and even sets of fields are coded separately.
+disabled: Code the two
+     * sets of fields separately (on a field basis) or together (on a frame basis,
+     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     */
+    inline H264Settings& WithForceFieldPictures(const H264ForceFieldPictures& value) { SetForceFieldPictures(value); return *this;}
+
+    /**
+     * This setting applies only when scan type is "interlaced." It controls whether
+     * coding is on a field basis or a frame basis. (When the video is progressive, the
+     * coding is always on a frame basis.)
+enabled: Always code on a field basis, so
+     * that odd and even sets of fields are coded separately.
+disabled: Code the two
+     * sets of fields separately (on a field basis) or together (on a frame basis,
+     * using PAFF or MBAFF), depending on what is most appropriate for the content.
+     */
+    inline H264Settings& WithForceFieldPictures(H264ForceFieldPictures&& value) { SetForceFieldPictures(std::move(value)); return *this;}
 
 
     /**
@@ -1542,6 +1616,9 @@ This field is optional; when
 
     H264FlickerAq m_flickerAq;
     bool m_flickerAqHasBeenSet;
+
+    H264ForceFieldPictures m_forceFieldPictures;
+    bool m_forceFieldPicturesHasBeenSet;
 
     H264FramerateControl m_framerateControl;
     bool m_framerateControlHasBeenSet;

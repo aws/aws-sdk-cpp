@@ -546,68 +546,95 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the database engine version supports Read Replicas.</p>
+     * <p>Indicates whether the database engine version supports read replicas.</p>
      */
     inline bool GetSupportsReadReplica() const{ return m_supportsReadReplica; }
 
     /**
-     * <p>Indicates whether the database engine version supports Read Replicas.</p>
+     * <p>Indicates whether the database engine version supports read replicas.</p>
      */
     inline bool SupportsReadReplicaHasBeenSet() const { return m_supportsReadReplicaHasBeenSet; }
 
     /**
-     * <p>Indicates whether the database engine version supports Read Replicas.</p>
+     * <p>Indicates whether the database engine version supports read replicas.</p>
      */
     inline void SetSupportsReadReplica(bool value) { m_supportsReadReplicaHasBeenSet = true; m_supportsReadReplica = value; }
 
     /**
-     * <p>Indicates whether the database engine version supports Read Replicas.</p>
+     * <p>Indicates whether the database engine version supports read replicas.</p>
      */
     inline DBEngineVersion& WithSupportsReadReplica(bool value) { SetSupportsReadReplica(value); return *this;}
 
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline bool SupportedEngineModesHasBeenSet() const { return m_supportedEngineModesHasBeenSet; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline void SetSupportedEngineModes(const Aws::Vector<Aws::String>& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = value; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline void SetSupportedEngineModes(Aws::Vector<Aws::String>&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes = std::move(value); }
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline DBEngineVersion& WithSupportedEngineModes(const Aws::Vector<Aws::String>& value) { SetSupportedEngineModes(value); return *this;}
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline DBEngineVersion& WithSupportedEngineModes(Aws::Vector<Aws::String>&& value) { SetSupportedEngineModes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline DBEngineVersion& AddSupportedEngineModes(const Aws::String& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline DBEngineVersion& AddSupportedEngineModes(Aws::String&& value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of the supported DB engine modes.</p>
+     * <p>A list of the supported DB engine modes.</p> <note> <p> <code>global</code>
+     * engine mode only applies for global database clusters created with Aurora MySQL
+     * version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global
+     * database use <code>provisioned</code> engine mode. </p> </note>
      */
     inline DBEngineVersion& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
 

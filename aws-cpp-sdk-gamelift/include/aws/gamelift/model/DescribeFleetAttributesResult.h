@@ -52,43 +52,50 @@ namespace Model
 
     /**
      * <p>A collection of objects containing attribute metadata for each requested
-     * fleet ID.</p>
+     * fleet ID. Attribute objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline const Aws::Vector<FleetAttributes>& GetFleetAttributes() const{ return m_fleetAttributes; }
 
     /**
      * <p>A collection of objects containing attribute metadata for each requested
-     * fleet ID.</p>
+     * fleet ID. Attribute objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline void SetFleetAttributes(const Aws::Vector<FleetAttributes>& value) { m_fleetAttributes = value; }
 
     /**
      * <p>A collection of objects containing attribute metadata for each requested
-     * fleet ID.</p>
+     * fleet ID. Attribute objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline void SetFleetAttributes(Aws::Vector<FleetAttributes>&& value) { m_fleetAttributes = std::move(value); }
 
     /**
      * <p>A collection of objects containing attribute metadata for each requested
-     * fleet ID.</p>
+     * fleet ID. Attribute objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline DescribeFleetAttributesResult& WithFleetAttributes(const Aws::Vector<FleetAttributes>& value) { SetFleetAttributes(value); return *this;}
 
     /**
      * <p>A collection of objects containing attribute metadata for each requested
-     * fleet ID.</p>
+     * fleet ID. Attribute objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline DescribeFleetAttributesResult& WithFleetAttributes(Aws::Vector<FleetAttributes>&& value) { SetFleetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>A collection of objects containing attribute metadata for each requested
-     * fleet ID.</p>
+     * fleet ID. Attribute objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline DescribeFleetAttributesResult& AddFleetAttributes(const FleetAttributes& value) { m_fleetAttributes.push_back(value); return *this; }
 
     /**
      * <p>A collection of objects containing attribute metadata for each requested
-     * fleet ID.</p>
+     * fleet ID. Attribute objects are returned only for fleets that currently
+     * exist.</p>
      */
     inline DescribeFleetAttributesResult& AddFleetAttributes(FleetAttributes&& value) { m_fleetAttributes.push_back(std::move(value)); return *this; }
 

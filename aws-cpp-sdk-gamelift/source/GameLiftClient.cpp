@@ -31,9 +31,11 @@
 #include <aws/gamelift/GameLiftEndpoint.h>
 #include <aws/gamelift/GameLiftErrorMarshaller.h>
 #include <aws/gamelift/model/AcceptMatchRequest.h>
+#include <aws/gamelift/model/ClaimGameServerRequest.h>
 #include <aws/gamelift/model/CreateAliasRequest.h>
 #include <aws/gamelift/model/CreateBuildRequest.h>
 #include <aws/gamelift/model/CreateFleetRequest.h>
+#include <aws/gamelift/model/CreateGameServerGroupRequest.h>
 #include <aws/gamelift/model/CreateGameSessionRequest.h>
 #include <aws/gamelift/model/CreateGameSessionQueueRequest.h>
 #include <aws/gamelift/model/CreateMatchmakingConfigurationRequest.h>
@@ -46,6 +48,7 @@
 #include <aws/gamelift/model/DeleteAliasRequest.h>
 #include <aws/gamelift/model/DeleteBuildRequest.h>
 #include <aws/gamelift/model/DeleteFleetRequest.h>
+#include <aws/gamelift/model/DeleteGameServerGroupRequest.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueRequest.h>
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationRequest.h>
 #include <aws/gamelift/model/DeleteMatchmakingRuleSetRequest.h>
@@ -53,6 +56,7 @@
 #include <aws/gamelift/model/DeleteScriptRequest.h>
 #include <aws/gamelift/model/DeleteVpcPeeringAuthorizationRequest.h>
 #include <aws/gamelift/model/DeleteVpcPeeringConnectionRequest.h>
+#include <aws/gamelift/model/DeregisterGameServerRequest.h>
 #include <aws/gamelift/model/DescribeAliasRequest.h>
 #include <aws/gamelift/model/DescribeBuildRequest.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
@@ -61,6 +65,8 @@
 #include <aws/gamelift/model/DescribeFleetEventsRequest.h>
 #include <aws/gamelift/model/DescribeFleetPortSettingsRequest.h>
 #include <aws/gamelift/model/DescribeFleetUtilizationRequest.h>
+#include <aws/gamelift/model/DescribeGameServerRequest.h>
+#include <aws/gamelift/model/DescribeGameServerGroupRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionDetailsRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionPlacementRequest.h>
 #include <aws/gamelift/model/DescribeGameSessionQueuesRequest.h>
@@ -80,11 +86,15 @@
 #include <aws/gamelift/model/ListAliasesRequest.h>
 #include <aws/gamelift/model/ListBuildsRequest.h>
 #include <aws/gamelift/model/ListFleetsRequest.h>
+#include <aws/gamelift/model/ListGameServerGroupsRequest.h>
+#include <aws/gamelift/model/ListGameServersRequest.h>
 #include <aws/gamelift/model/ListScriptsRequest.h>
 #include <aws/gamelift/model/ListTagsForResourceRequest.h>
 #include <aws/gamelift/model/PutScalingPolicyRequest.h>
+#include <aws/gamelift/model/RegisterGameServerRequest.h>
 #include <aws/gamelift/model/RequestUploadCredentialsRequest.h>
 #include <aws/gamelift/model/ResolveAliasRequest.h>
+#include <aws/gamelift/model/ResumeGameServerGroupRequest.h>
 #include <aws/gamelift/model/SearchGameSessionsRequest.h>
 #include <aws/gamelift/model/StartFleetActionsRequest.h>
 #include <aws/gamelift/model/StartGameSessionPlacementRequest.h>
@@ -93,6 +103,7 @@
 #include <aws/gamelift/model/StopFleetActionsRequest.h>
 #include <aws/gamelift/model/StopGameSessionPlacementRequest.h>
 #include <aws/gamelift/model/StopMatchmakingRequest.h>
+#include <aws/gamelift/model/SuspendGameServerGroupRequest.h>
 #include <aws/gamelift/model/TagResourceRequest.h>
 #include <aws/gamelift/model/UntagResourceRequest.h>
 #include <aws/gamelift/model/UpdateAliasRequest.h>
@@ -100,6 +111,8 @@
 #include <aws/gamelift/model/UpdateFleetAttributesRequest.h>
 #include <aws/gamelift/model/UpdateFleetCapacityRequest.h>
 #include <aws/gamelift/model/UpdateFleetPortSettingsRequest.h>
+#include <aws/gamelift/model/UpdateGameServerRequest.h>
+#include <aws/gamelift/model/UpdateGameServerGroupRequest.h>
 #include <aws/gamelift/model/UpdateGameSessionRequest.h>
 #include <aws/gamelift/model/UpdateGameSessionQueueRequest.h>
 #include <aws/gamelift/model/UpdateMatchmakingConfigurationRequest.h>
@@ -214,6 +227,41 @@ void GameLiftClient::AcceptMatchAsyncHelper(const AcceptMatchRequest& request, c
   handler(this, request, AcceptMatch(request), context);
 }
 
+ClaimGameServerOutcome GameLiftClient::ClaimGameServer(const ClaimGameServerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ClaimGameServerOutcome(ClaimGameServerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ClaimGameServerOutcome(outcome.GetError());
+  }
+}
+
+ClaimGameServerOutcomeCallable GameLiftClient::ClaimGameServerCallable(const ClaimGameServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ClaimGameServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ClaimGameServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::ClaimGameServerAsync(const ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ClaimGameServerAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::ClaimGameServerAsyncHelper(const ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ClaimGameServer(request), context);
+}
+
 CreateAliasOutcome GameLiftClient::CreateAlias(const CreateAliasRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -317,6 +365,41 @@ void GameLiftClient::CreateFleetAsync(const CreateFleetRequest& request, const C
 void GameLiftClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateFleet(request), context);
+}
+
+CreateGameServerGroupOutcome GameLiftClient::CreateGameServerGroup(const CreateGameServerGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateGameServerGroupOutcome(CreateGameServerGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateGameServerGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateGameServerGroupOutcomeCallable GameLiftClient::CreateGameServerGroupCallable(const CreateGameServerGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGameServerGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGameServerGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::CreateGameServerGroupAsync(const CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGameServerGroupAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::CreateGameServerGroupAsyncHelper(const CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGameServerGroup(request), context);
 }
 
 CreateGameSessionOutcome GameLiftClient::CreateGameSession(const CreateGameSessionRequest& request) const
@@ -739,6 +822,41 @@ void GameLiftClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, c
   handler(this, request, DeleteFleet(request), context);
 }
 
+DeleteGameServerGroupOutcome GameLiftClient::DeleteGameServerGroup(const DeleteGameServerGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteGameServerGroupOutcome(DeleteGameServerGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteGameServerGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteGameServerGroupOutcomeCallable GameLiftClient::DeleteGameServerGroupCallable(const DeleteGameServerGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGameServerGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGameServerGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeleteGameServerGroupAsync(const DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGameServerGroupAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DeleteGameServerGroupAsyncHelper(const DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGameServerGroup(request), context);
+}
+
 DeleteGameSessionQueueOutcome GameLiftClient::DeleteGameSessionQueue(const DeleteGameSessionQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -982,6 +1100,41 @@ void GameLiftClient::DeleteVpcPeeringConnectionAsync(const DeleteVpcPeeringConne
 void GameLiftClient::DeleteVpcPeeringConnectionAsyncHelper(const DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteVpcPeeringConnection(request), context);
+}
+
+DeregisterGameServerOutcome GameLiftClient::DeregisterGameServer(const DeregisterGameServerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeregisterGameServerOutcome(NoResult());
+  }
+  else
+  {
+    return DeregisterGameServerOutcome(outcome.GetError());
+  }
+}
+
+DeregisterGameServerOutcomeCallable GameLiftClient::DeregisterGameServerCallable(const DeregisterGameServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterGameServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterGameServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DeregisterGameServerAsync(const DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterGameServerAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DeregisterGameServerAsyncHelper(const DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterGameServer(request), context);
 }
 
 DescribeAliasOutcome GameLiftClient::DescribeAlias(const DescribeAliasRequest& request) const
@@ -1262,6 +1415,76 @@ void GameLiftClient::DescribeFleetUtilizationAsync(const DescribeFleetUtilizatio
 void GameLiftClient::DescribeFleetUtilizationAsyncHelper(const DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeFleetUtilization(request), context);
+}
+
+DescribeGameServerOutcome GameLiftClient::DescribeGameServer(const DescribeGameServerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeGameServerOutcome(DescribeGameServerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeGameServerOutcome(outcome.GetError());
+  }
+}
+
+DescribeGameServerOutcomeCallable GameLiftClient::DescribeGameServerCallable(const DescribeGameServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGameServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGameServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeGameServerAsync(const DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameServerAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeGameServerAsyncHelper(const DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGameServer(request), context);
+}
+
+DescribeGameServerGroupOutcome GameLiftClient::DescribeGameServerGroup(const DescribeGameServerGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeGameServerGroupOutcome(DescribeGameServerGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeGameServerGroupOutcome(outcome.GetError());
+  }
+}
+
+DescribeGameServerGroupOutcomeCallable GameLiftClient::DescribeGameServerGroupCallable(const DescribeGameServerGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGameServerGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGameServerGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::DescribeGameServerGroupAsync(const DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGameServerGroupAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::DescribeGameServerGroupAsyncHelper(const DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGameServerGroup(request), context);
 }
 
 DescribeGameSessionDetailsOutcome GameLiftClient::DescribeGameSessionDetails(const DescribeGameSessionDetailsRequest& request) const
@@ -1929,6 +2152,76 @@ void GameLiftClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, con
   handler(this, request, ListFleets(request), context);
 }
 
+ListGameServerGroupsOutcome GameLiftClient::ListGameServerGroups(const ListGameServerGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListGameServerGroupsOutcome(ListGameServerGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListGameServerGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListGameServerGroupsOutcomeCallable GameLiftClient::ListGameServerGroupsCallable(const ListGameServerGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGameServerGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGameServerGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::ListGameServerGroupsAsync(const ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGameServerGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::ListGameServerGroupsAsyncHelper(const ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGameServerGroups(request), context);
+}
+
+ListGameServersOutcome GameLiftClient::ListGameServers(const ListGameServersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListGameServersOutcome(ListGameServersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListGameServersOutcome(outcome.GetError());
+  }
+}
+
+ListGameServersOutcomeCallable GameLiftClient::ListGameServersCallable(const ListGameServersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListGameServersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListGameServers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::ListGameServersAsync(const ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListGameServersAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::ListGameServersAsyncHelper(const ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListGameServers(request), context);
+}
+
 ListScriptsOutcome GameLiftClient::ListScripts(const ListScriptsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2034,6 +2327,41 @@ void GameLiftClient::PutScalingPolicyAsyncHelper(const PutScalingPolicyRequest& 
   handler(this, request, PutScalingPolicy(request), context);
 }
 
+RegisterGameServerOutcome GameLiftClient::RegisterGameServer(const RegisterGameServerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RegisterGameServerOutcome(RegisterGameServerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterGameServerOutcome(outcome.GetError());
+  }
+}
+
+RegisterGameServerOutcomeCallable GameLiftClient::RegisterGameServerCallable(const RegisterGameServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterGameServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterGameServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::RegisterGameServerAsync(const RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterGameServerAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::RegisterGameServerAsyncHelper(const RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterGameServer(request), context);
+}
+
 RequestUploadCredentialsOutcome GameLiftClient::RequestUploadCredentials(const RequestUploadCredentialsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2102,6 +2430,41 @@ void GameLiftClient::ResolveAliasAsync(const ResolveAliasRequest& request, const
 void GameLiftClient::ResolveAliasAsyncHelper(const ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ResolveAlias(request), context);
+}
+
+ResumeGameServerGroupOutcome GameLiftClient::ResumeGameServerGroup(const ResumeGameServerGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ResumeGameServerGroupOutcome(ResumeGameServerGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResumeGameServerGroupOutcome(outcome.GetError());
+  }
+}
+
+ResumeGameServerGroupOutcomeCallable GameLiftClient::ResumeGameServerGroupCallable(const ResumeGameServerGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResumeGameServerGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResumeGameServerGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::ResumeGameServerGroupAsync(const ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResumeGameServerGroupAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::ResumeGameServerGroupAsyncHelper(const ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResumeGameServerGroup(request), context);
 }
 
 SearchGameSessionsOutcome GameLiftClient::SearchGameSessions(const SearchGameSessionsRequest& request) const
@@ -2384,6 +2747,41 @@ void GameLiftClient::StopMatchmakingAsyncHelper(const StopMatchmakingRequest& re
   handler(this, request, StopMatchmaking(request), context);
 }
 
+SuspendGameServerGroupOutcome GameLiftClient::SuspendGameServerGroup(const SuspendGameServerGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return SuspendGameServerGroupOutcome(SuspendGameServerGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SuspendGameServerGroupOutcome(outcome.GetError());
+  }
+}
+
+SuspendGameServerGroupOutcomeCallable GameLiftClient::SuspendGameServerGroupCallable(const SuspendGameServerGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SuspendGameServerGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SuspendGameServerGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::SuspendGameServerGroupAsync(const SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SuspendGameServerGroupAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::SuspendGameServerGroupAsyncHelper(const SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SuspendGameServerGroup(request), context);
+}
+
 TagResourceOutcome GameLiftClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2627,6 +3025,76 @@ void GameLiftClient::UpdateFleetPortSettingsAsync(const UpdateFleetPortSettingsR
 void GameLiftClient::UpdateFleetPortSettingsAsyncHelper(const UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFleetPortSettings(request), context);
+}
+
+UpdateGameServerOutcome GameLiftClient::UpdateGameServer(const UpdateGameServerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateGameServerOutcome(UpdateGameServerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateGameServerOutcome(outcome.GetError());
+  }
+}
+
+UpdateGameServerOutcomeCallable GameLiftClient::UpdateGameServerCallable(const UpdateGameServerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGameServerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGameServer(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::UpdateGameServerAsync(const UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameServerAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::UpdateGameServerAsyncHelper(const UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGameServer(request), context);
+}
+
+UpdateGameServerGroupOutcome GameLiftClient::UpdateGameServerGroup(const UpdateGameServerGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateGameServerGroupOutcome(UpdateGameServerGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateGameServerGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateGameServerGroupOutcomeCallable GameLiftClient::UpdateGameServerGroupCallable(const UpdateGameServerGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateGameServerGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateGameServerGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GameLiftClient::UpdateGameServerGroupAsync(const UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateGameServerGroupAsyncHelper( request, handler, context ); } );
+}
+
+void GameLiftClient::UpdateGameServerGroupAsyncHelper(const UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateGameServerGroup(request), context);
 }
 
 UpdateGameSessionOutcome GameLiftClient::UpdateGameSession(const UpdateGameSessionRequest& request) const

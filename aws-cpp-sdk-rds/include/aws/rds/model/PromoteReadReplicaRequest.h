@@ -51,57 +51,57 @@ namespace Model
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing Read
-     * Replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing read
+     * replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing Read
-     * Replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing read
+     * replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing Read
-     * Replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing read
+     * replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing Read
-     * Replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing read
+     * replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing Read
-     * Replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing read
+     * replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing Read
-     * Replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing read
+     * replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing Read
-     * Replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing read
+     * replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The DB instance identifier. This value is stored as a lowercase string.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing Read
-     * Replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must match the identifier of an existing read
+     * replica DB instance.</p> </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline PromoteReadReplicaRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
 
@@ -111,7 +111,7 @@ namespace Model
      * parameter to a positive number enables backups. Setting this parameter to 0
      * disables automated backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 0 to 35.</p> </li> <li> <p>Can't be set to 0 if the DB
-     * instance is a source to Read Replicas.</p> </li> </ul>
+     * instance is a source to read replicas.</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -120,7 +120,7 @@ namespace Model
      * parameter to a positive number enables backups. Setting this parameter to 0
      * disables automated backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 0 to 35.</p> </li> <li> <p>Can't be set to 0 if the DB
-     * instance is a source to Read Replicas.</p> </li> </ul>
+     * instance is a source to read replicas.</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
@@ -129,7 +129,7 @@ namespace Model
      * parameter to a positive number enables backups. Setting this parameter to 0
      * disables automated backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 0 to 35.</p> </li> <li> <p>Can't be set to 0 if the DB
-     * instance is a source to Read Replicas.</p> </li> </ul>
+     * instance is a source to read replicas.</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -138,7 +138,7 @@ namespace Model
      * parameter to a positive number enables backups. Setting this parameter to 0
      * disables automated backups.</p> <p>Default: 1</p> <p>Constraints:</p> <ul> <li>
      * <p>Must be a value from 0 to 35.</p> </li> <li> <p>Can't be set to 0 if the DB
-     * instance is a source to Read Replicas.</p> </li> </ul>
+     * instance is a source to read replicas.</p> </li> </ul>
      */
     inline PromoteReadReplicaRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 

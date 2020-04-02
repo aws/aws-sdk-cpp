@@ -49,114 +49,122 @@ namespace Model
 
     /**
      * <p>A unique identifier for a build to return fleets for. Use this parameter to
-     * return only fleets using the specified build. Use either the build ID or ARN
-     * value.To retrieve all fleets, leave this parameter empty.</p>
+     * return only fleets using a specified build. Use either the build ID or ARN
+     * value. To retrieve all fleets, do not include either a BuildId and ScriptID
+     * parameter.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
      * <p>A unique identifier for a build to return fleets for. Use this parameter to
-     * return only fleets using the specified build. Use either the build ID or ARN
-     * value.To retrieve all fleets, leave this parameter empty.</p>
+     * return only fleets using a specified build. Use either the build ID or ARN
+     * value. To retrieve all fleets, do not include either a BuildId and ScriptID
+     * parameter.</p>
      */
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for a build to return fleets for. Use this parameter to
-     * return only fleets using the specified build. Use either the build ID or ARN
-     * value.To retrieve all fleets, leave this parameter empty.</p>
+     * return only fleets using a specified build. Use either the build ID or ARN
+     * value. To retrieve all fleets, do not include either a BuildId and ScriptID
+     * parameter.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
      * <p>A unique identifier for a build to return fleets for. Use this parameter to
-     * return only fleets using the specified build. Use either the build ID or ARN
-     * value.To retrieve all fleets, leave this parameter empty.</p>
+     * return only fleets using a specified build. Use either the build ID or ARN
+     * value. To retrieve all fleets, do not include either a BuildId and ScriptID
+     * parameter.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
      * <p>A unique identifier for a build to return fleets for. Use this parameter to
-     * return only fleets using the specified build. Use either the build ID or ARN
-     * value.To retrieve all fleets, leave this parameter empty.</p>
+     * return only fleets using a specified build. Use either the build ID or ARN
+     * value. To retrieve all fleets, do not include either a BuildId and ScriptID
+     * parameter.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
      * <p>A unique identifier for a build to return fleets for. Use this parameter to
-     * return only fleets using the specified build. Use either the build ID or ARN
-     * value.To retrieve all fleets, leave this parameter empty.</p>
+     * return only fleets using a specified build. Use either the build ID or ARN
+     * value. To retrieve all fleets, do not include either a BuildId and ScriptID
+     * parameter.</p>
      */
     inline ListFleetsRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
      * <p>A unique identifier for a build to return fleets for. Use this parameter to
-     * return only fleets using the specified build. Use either the build ID or ARN
-     * value.To retrieve all fleets, leave this parameter empty.</p>
+     * return only fleets using a specified build. Use either the build ID or ARN
+     * value. To retrieve all fleets, do not include either a BuildId and ScriptID
+     * parameter.</p>
      */
     inline ListFleetsRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a build to return fleets for. Use this parameter to
-     * return only fleets using the specified build. Use either the build ID or ARN
-     * value.To retrieve all fleets, leave this parameter empty.</p>
+     * return only fleets using a specified build. Use either the build ID or ARN
+     * value. To retrieve all fleets, do not include either a BuildId and ScriptID
+     * parameter.</p>
      */
     inline ListFleetsRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
 
     /**
      * <p>A unique identifier for a Realtime script to return fleets for. Use this
-     * parameter to return only fleets using the specified script. Use either the
-     * script ID or ARN value.To retrieve all fleets, leave this parameter empty.</p>
+     * parameter to return only fleets using a specified script. Use either the script
+     * ID or ARN value. To retrieve all fleets, leave this parameter empty.</p>
      */
     inline const Aws::String& GetScriptId() const{ return m_scriptId; }
 
     /**
      * <p>A unique identifier for a Realtime script to return fleets for. Use this
-     * parameter to return only fleets using the specified script. Use either the
-     * script ID or ARN value.To retrieve all fleets, leave this parameter empty.</p>
+     * parameter to return only fleets using a specified script. Use either the script
+     * ID or ARN value. To retrieve all fleets, leave this parameter empty.</p>
      */
     inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for a Realtime script to return fleets for. Use this
-     * parameter to return only fleets using the specified script. Use either the
-     * script ID or ARN value.To retrieve all fleets, leave this parameter empty.</p>
+     * parameter to return only fleets using a specified script. Use either the script
+     * ID or ARN value. To retrieve all fleets, leave this parameter empty.</p>
      */
     inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
 
     /**
      * <p>A unique identifier for a Realtime script to return fleets for. Use this
-     * parameter to return only fleets using the specified script. Use either the
-     * script ID or ARN value.To retrieve all fleets, leave this parameter empty.</p>
+     * parameter to return only fleets using a specified script. Use either the script
+     * ID or ARN value. To retrieve all fleets, leave this parameter empty.</p>
      */
     inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
 
     /**
      * <p>A unique identifier for a Realtime script to return fleets for. Use this
-     * parameter to return only fleets using the specified script. Use either the
-     * script ID or ARN value.To retrieve all fleets, leave this parameter empty.</p>
+     * parameter to return only fleets using a specified script. Use either the script
+     * ID or ARN value. To retrieve all fleets, leave this parameter empty.</p>
      */
     inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
 
     /**
      * <p>A unique identifier for a Realtime script to return fleets for. Use this
-     * parameter to return only fleets using the specified script. Use either the
-     * script ID or ARN value.To retrieve all fleets, leave this parameter empty.</p>
+     * parameter to return only fleets using a specified script. Use either the script
+     * ID or ARN value. To retrieve all fleets, leave this parameter empty.</p>
      */
     inline ListFleetsRequest& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
 
     /**
      * <p>A unique identifier for a Realtime script to return fleets for. Use this
-     * parameter to return only fleets using the specified script. Use either the
-     * script ID or ARN value.To retrieve all fleets, leave this parameter empty.</p>
+     * parameter to return only fleets using a specified script. Use either the script
+     * ID or ARN value. To retrieve all fleets, leave this parameter empty.</p>
      */
     inline ListFleetsRequest& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for a Realtime script to return fleets for. Use this
-     * parameter to return only fleets using the specified script. Use either the
-     * script ID or ARN value.To retrieve all fleets, leave this parameter empty.</p>
+     * parameter to return only fleets using a specified script. Use either the script
+     * ID or ARN value. To retrieve all fleets, leave this parameter empty.</p>
      */
     inline ListFleetsRequest& WithScriptId(const char* value) { SetScriptId(value); return *this;}
 

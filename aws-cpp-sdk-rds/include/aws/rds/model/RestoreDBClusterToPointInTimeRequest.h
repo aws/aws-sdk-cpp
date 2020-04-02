@@ -1039,9 +1039,8 @@ namespace Model
      * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-     * Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
@@ -1050,9 +1049,8 @@ namespace Model
      * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-     * Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
@@ -1061,9 +1059,8 @@ namespace Model
      * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-     * Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
@@ -1072,9 +1069,8 @@ namespace Model
      * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-     * Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
@@ -1083,9 +1079,8 @@ namespace Model
      * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-     * Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
@@ -1094,9 +1089,8 @@ namespace Model
      * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-     * Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
@@ -1105,9 +1099,8 @@ namespace Model
      * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-     * Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -1116,9 +1109,8 @@ namespace Model
      * domain must be created prior to this operation. </p> <p> For Amazon Aurora DB
      * clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB cluster. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurmysql-kerberos.html">Using
-     * Kerberos Authentication for Aurora MySQL</a> in the <i>Amazon Aurora User
-     * Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>. </p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 

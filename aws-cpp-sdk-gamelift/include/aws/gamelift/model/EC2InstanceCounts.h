@@ -39,9 +39,8 @@ namespace Model
    * affected.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
    * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>
    * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a>
-   * </p> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p>
-   * <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li>
-   * </ul> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> <li> <p> <a>StartFleetActions</a> or <a>StopFleetActions</a> </p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts">AWS
    * API Reference</a></p>
    */

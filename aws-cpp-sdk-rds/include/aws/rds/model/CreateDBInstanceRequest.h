@@ -1537,8 +1537,8 @@ namespace Model
      * disables automated backups.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
-     * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to Read
-     * Replicas</p> </li> </ul>
+     * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
+     * replicas</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -1548,8 +1548,8 @@ namespace Model
      * disables automated backups.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
-     * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to Read
-     * Replicas</p> </li> </ul>
+     * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
+     * replicas</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
@@ -1559,8 +1559,8 @@ namespace Model
      * disables automated backups.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
-     * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to Read
-     * Replicas</p> </li> </ul>
+     * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
+     * replicas</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -1570,8 +1570,8 @@ namespace Model
      * disables automated backups.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable.
      * The retention period for automated backups is managed by the DB cluster.</p>
      * <p>Default: 1</p> <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to
-     * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to Read
-     * Replicas</p> </li> </ul>
+     * 35</p> </li> <li> <p>Can't be set to 0 if the DB instance is a source to read
+     * replicas</p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -1731,68 +1731,68 @@ namespace Model
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
-     * Default: <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * Default: <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
      * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid Values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
-     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid Values:
+     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid Values: <code>1150-65535</code> except for
-     * <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>,
-     * and <code>49152</code> through <code>49156</code>. </p> <p> <b>Amazon Aurora</b>
-     * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
+     * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
-     * Default: <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * Default: <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
      * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid Values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
-     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid Values:
+     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid Values: <code>1150-65535</code> except for
-     * <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>,
-     * and <code>49152</code> through <code>49156</code>. </p> <p> <b>Amazon Aurora</b>
-     * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
+     * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
-     * Default: <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * Default: <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
      * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid Values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
-     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid Values:
+     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid Values: <code>1150-65535</code> except for
-     * <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>,
-     * and <code>49152</code> through <code>49156</code>. </p> <p> <b>Amazon Aurora</b>
-     * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
+     * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port number on which the database accepts connections.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>MariaDB</b> </p> <p>
-     * Default: <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * Default: <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
      * <p>Type: Integer</p> <p> <b>PostgreSQL</b> </p> <p> Default: <code>5432</code>
-     * </p> <p> Valid Values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
-     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid Values:
+     * </p> <p> Valid values: <code>1150-65535</code> </p> <p>Type: Integer</p> <p>
+     * <b>Oracle</b> </p> <p> Default: <code>1521</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p> <b>SQL Server</b> </p> <p> Default:
-     * <code>1433</code> </p> <p> Valid Values: <code>1150-65535</code> except for
-     * <code>1434</code>, <code>3389</code>, <code>47001</code>, <code>49152</code>,
-     * and <code>49152</code> through <code>49156</code>. </p> <p> <b>Amazon Aurora</b>
-     * </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <code>1433</code> </p> <p> Valid values: <code>1150-65535</code> except
+     * <code>1234</code>, <code>1434</code>, <code>3260</code>, <code>3343</code>,
+     * <code>3389</code>, <code>47001</code>, and <code>49152-49156</code>.</p> <p>
+     * <b>Amazon Aurora</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p>
      */
     inline CreateDBInstanceRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -2794,11 +2794,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p/>
+     * RDS User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
@@ -2811,11 +2811,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p/>
+     * RDS User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
@@ -2828,11 +2828,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p/>
+     * RDS User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
@@ -2845,11 +2845,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p/>
+     * RDS User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
@@ -2862,11 +2862,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p/>
+     * RDS User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
@@ -2879,11 +2879,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p/>
+     * RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
@@ -2896,11 +2896,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p/>
+     * RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -2913,11 +2913,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html">
      * Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft
      * SQL Server</a> in the <i>Amazon RDS User Guide</i>.</p> <p>For Oracle DB
-     * instance, Amazon RDS can use Kerberos Authentication to authenticate users that
+     * instances, Amazon RDS can use Kerberos Authentication to authenticate users that
      * connect to the DB instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html">
      * Using Kerberos Authentication with Amazon RDS for Oracle</a> in the <i>Amazon
-     * RDS User Guide</i>.</p> <p/>
+     * RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 

@@ -113,8 +113,8 @@ namespace Model
      * instance is deleted. By default, skip isn't specified, and the DB snapshot is
      * created.</p> <p>When a DB instance is in a failure state and has a status of
      * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
-     * deleted when skip is specified.</p> <p>Specify skip when deleting a Read
-     * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
+     * deleted when skip is specified.</p> <p>Specify skip when deleting a read
+     * replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
      * if skip isn't specified.</p> </note>
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
@@ -126,8 +126,8 @@ namespace Model
      * instance is deleted. By default, skip isn't specified, and the DB snapshot is
      * created.</p> <p>When a DB instance is in a failure state and has a status of
      * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
-     * deleted when skip is specified.</p> <p>Specify skip when deleting a Read
-     * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
+     * deleted when skip is specified.</p> <p>Specify skip when deleting a read
+     * replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
      * if skip isn't specified.</p> </note>
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
@@ -139,8 +139,8 @@ namespace Model
      * instance is deleted. By default, skip isn't specified, and the DB snapshot is
      * created.</p> <p>When a DB instance is in a failure state and has a status of
      * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
-     * deleted when skip is specified.</p> <p>Specify skip when deleting a Read
-     * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
+     * deleted when skip is specified.</p> <p>Specify skip when deleting a read
+     * replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
      * if skip isn't specified.</p> </note>
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
@@ -152,8 +152,8 @@ namespace Model
      * instance is deleted. By default, skip isn't specified, and the DB snapshot is
      * created.</p> <p>When a DB instance is in a failure state and has a status of
      * 'failed', 'incompatible-restore', or 'incompatible-network', it can only be
-     * deleted when skip is specified.</p> <p>Specify skip when deleting a Read
-     * Replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
+     * deleted when skip is specified.</p> <p>Specify skip when deleting a read
+     * replica.</p> <note> <p>The FinalDBSnapshotIdentifier parameter must be specified
      * if skip isn't specified.</p> </note>
      */
     inline DeleteDBInstanceRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
@@ -167,7 +167,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a Read Replica.</p> </li> </ul>
+     * when deleting a read replica.</p> </li> </ul>
      */
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
 
@@ -179,7 +179,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a Read Replica.</p> </li> </ul>
+     * when deleting a read replica.</p> </li> </ul>
      */
     inline bool FinalDBSnapshotIdentifierHasBeenSet() const { return m_finalDBSnapshotIdentifierHasBeenSet; }
 
@@ -191,7 +191,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a Read Replica.</p> </li> </ul>
+     * when deleting a read replica.</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(const Aws::String& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = value; }
 
@@ -203,7 +203,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a Read Replica.</p> </li> </ul>
+     * when deleting a read replica.</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(Aws::String&& value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier = std::move(value); }
 
@@ -215,7 +215,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a Read Replica.</p> </li> </ul>
+     * when deleting a read replica.</p> </li> </ul>
      */
     inline void SetFinalDBSnapshotIdentifier(const char* value) { m_finalDBSnapshotIdentifierHasBeenSet = true; m_finalDBSnapshotIdentifier.assign(value); }
 
@@ -227,7 +227,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a Read Replica.</p> </li> </ul>
+     * when deleting a read replica.</p> </li> </ul>
      */
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(const Aws::String& value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 
@@ -239,7 +239,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a Read Replica.</p> </li> </ul>
+     * when deleting a read replica.</p> </li> </ul>
      */
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(Aws::String&& value) { SetFinalDBSnapshotIdentifier(std::move(value)); return *this;}
 
@@ -251,7 +251,7 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
      * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
      * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
-     * when deleting a Read Replica.</p> </li> </ul>
+     * when deleting a read replica.</p> </li> </ul>
      */
     inline DeleteDBInstanceRequest& WithFinalDBSnapshotIdentifier(const char* value) { SetFinalDBSnapshotIdentifier(value); return *this;}
 

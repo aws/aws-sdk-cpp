@@ -49,56 +49,83 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline DescribeFleetAttributesRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline DescribeFleetAttributesRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve attributes for. You can use
-     * either the fleet ID or ARN value.</p>
+     * <p>A list of unique fleet identifiers to retrieve attributes for. You can use
+     * either the fleet ID or ARN value. To retrieve attributes for all current fleets,
+     * do not include this parameter. If the list of fleet identifiers includes fleets
+     * that don't currently exist, the request succeeds but no attributes for that
+     * fleet are returned.</p>
      */
     inline DescribeFleetAttributesRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 

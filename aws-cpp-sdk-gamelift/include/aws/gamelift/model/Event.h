@@ -136,19 +136,20 @@ namespace Model
 
     /**
      * <p>The type of event being logged. </p> <p> <b>Fleet creation events (ordered by
-     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet record
-     * was successfully created with a status of <code>NEW</code>. Event messaging
-     * includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status
-     * changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build
-     * has started downloading to a fleet instance for installation.</p> </li> <li> <p>
-     * FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet
-     * instance.</p> </li> <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server
-     * build was successfully downloaded to an instance, and the build files are now
-     * being extracted from the uploaded build and saved to an instance. Failure at
-     * this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for
-     * this stage display a list of the files that are extracted and saved on the
-     * instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-     * <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
+     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * resource was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
+     * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
+     * downloaded to an instance, and the build files are now being extracted from the
+     * uploaded build and saved to an instance. Failure at this stage prevents a fleet
+     * from moving to <code>ACTIVE</code> status. Logs for this stage display a list of
+     * the files that are extracted and saved on the instance. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
+     * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
      * successfully extracted, and the Amazon GameLift is now running the build's
      * install script (if one is included). Failure in this stage prevents a fleet from
      * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
@@ -207,19 +208,20 @@ namespace Model
 
     /**
      * <p>The type of event being logged. </p> <p> <b>Fleet creation events (ordered by
-     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet record
-     * was successfully created with a status of <code>NEW</code>. Event messaging
-     * includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status
-     * changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build
-     * has started downloading to a fleet instance for installation.</p> </li> <li> <p>
-     * FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet
-     * instance.</p> </li> <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server
-     * build was successfully downloaded to an instance, and the build files are now
-     * being extracted from the uploaded build and saved to an instance. Failure at
-     * this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for
-     * this stage display a list of the files that are extracted and saved on the
-     * instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-     * <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
+     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * resource was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
+     * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
+     * downloaded to an instance, and the build files are now being extracted from the
+     * uploaded build and saved to an instance. Failure at this stage prevents a fleet
+     * from moving to <code>ACTIVE</code> status. Logs for this stage display a list of
+     * the files that are extracted and saved on the instance. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
+     * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
      * successfully extracted, and the Amazon GameLift is now running the build's
      * install script (if one is included). Failure in this stage prevents a fleet from
      * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
@@ -278,19 +280,20 @@ namespace Model
 
     /**
      * <p>The type of event being logged. </p> <p> <b>Fleet creation events (ordered by
-     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet record
-     * was successfully created with a status of <code>NEW</code>. Event messaging
-     * includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status
-     * changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build
-     * has started downloading to a fleet instance for installation.</p> </li> <li> <p>
-     * FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet
-     * instance.</p> </li> <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server
-     * build was successfully downloaded to an instance, and the build files are now
-     * being extracted from the uploaded build and saved to an instance. Failure at
-     * this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for
-     * this stage display a list of the files that are extracted and saved on the
-     * instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-     * <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
+     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * resource was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
+     * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
+     * downloaded to an instance, and the build files are now being extracted from the
+     * uploaded build and saved to an instance. Failure at this stage prevents a fleet
+     * from moving to <code>ACTIVE</code> status. Logs for this stage display a list of
+     * the files that are extracted and saved on the instance. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
+     * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
      * successfully extracted, and the Amazon GameLift is now running the build's
      * install script (if one is included). Failure in this stage prevents a fleet from
      * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
@@ -349,19 +352,20 @@ namespace Model
 
     /**
      * <p>The type of event being logged. </p> <p> <b>Fleet creation events (ordered by
-     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet record
-     * was successfully created with a status of <code>NEW</code>. Event messaging
-     * includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status
-     * changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build
-     * has started downloading to a fleet instance for installation.</p> </li> <li> <p>
-     * FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet
-     * instance.</p> </li> <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server
-     * build was successfully downloaded to an instance, and the build files are now
-     * being extracted from the uploaded build and saved to an instance. Failure at
-     * this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for
-     * this stage display a list of the files that are extracted and saved on the
-     * instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-     * <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
+     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * resource was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
+     * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
+     * downloaded to an instance, and the build files are now being extracted from the
+     * uploaded build and saved to an instance. Failure at this stage prevents a fleet
+     * from moving to <code>ACTIVE</code> status. Logs for this stage display a list of
+     * the files that are extracted and saved on the instance. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
+     * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
      * successfully extracted, and the Amazon GameLift is now running the build's
      * install script (if one is included). Failure in this stage prevents a fleet from
      * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
@@ -420,19 +424,20 @@ namespace Model
 
     /**
      * <p>The type of event being logged. </p> <p> <b>Fleet creation events (ordered by
-     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet record
-     * was successfully created with a status of <code>NEW</code>. Event messaging
-     * includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status
-     * changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build
-     * has started downloading to a fleet instance for installation.</p> </li> <li> <p>
-     * FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet
-     * instance.</p> </li> <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server
-     * build was successfully downloaded to an instance, and the build files are now
-     * being extracted from the uploaded build and saved to an instance. Failure at
-     * this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for
-     * this stage display a list of the files that are extracted and saved on the
-     * instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-     * <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
+     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * resource was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
+     * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
+     * downloaded to an instance, and the build files are now being extracted from the
+     * uploaded build and saved to an instance. Failure at this stage prevents a fleet
+     * from moving to <code>ACTIVE</code> status. Logs for this stage display a list of
+     * the files that are extracted and saved on the instance. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
+     * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
      * successfully extracted, and the Amazon GameLift is now running the build's
      * install script (if one is included). Failure in this stage prevents a fleet from
      * moving to <code>ACTIVE</code> status. Logs for this stage list the installation
@@ -491,19 +496,20 @@ namespace Model
 
     /**
      * <p>The type of event being logged. </p> <p> <b>Fleet creation events (ordered by
-     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet record
-     * was successfully created with a status of <code>NEW</code>. Event messaging
-     * includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING -- Fleet status
-     * changed from <code>NEW</code> to <code>DOWNLOADING</code>. The compressed build
-     * has started downloading to a fleet instance for installation.</p> </li> <li> <p>
-     * FLEET_BINARY_DOWNLOAD_FAILED -- The build failed to download to the fleet
-     * instance.</p> </li> <li> <p>FLEET_CREATION_EXTRACTING_BUILD – The game server
-     * build was successfully downloaded to an instance, and the build files are now
-     * being extracted from the uploaded build and saved to an instance. Failure at
-     * this stage prevents a fleet from moving to <code>ACTIVE</code> status. Logs for
-     * this stage display a list of the files that are extracted and saved on the
-     * instance. Access the logs by using the URL in <i>PreSignedLogUrl</i>.</p> </li>
-     * <li> <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
+     * fleet creation activity):</b> </p> <ul> <li> <p>FLEET_CREATED -- A fleet
+     * resource was successfully created with a status of <code>NEW</code>. Event
+     * messaging includes the fleet ID.</p> </li> <li> <p>FLEET_STATE_DOWNLOADING --
+     * Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>. The
+     * compressed build has started downloading to a fleet instance for
+     * installation.</p> </li> <li> <p> FLEET_BINARY_DOWNLOAD_FAILED -- The build
+     * failed to download to the fleet instance.</p> </li> <li>
+     * <p>FLEET_CREATION_EXTRACTING_BUILD – The game server build was successfully
+     * downloaded to an instance, and the build files are now being extracted from the
+     * uploaded build and saved to an instance. Failure at this stage prevents a fleet
+     * from moving to <code>ACTIVE</code> status. Logs for this stage display a list of
+     * the files that are extracted and saved on the instance. Access the logs by using
+     * the URL in <i>PreSignedLogUrl</i>.</p> </li> <li>
+     * <p>FLEET_CREATION_RUNNING_INSTALLER – The game server build files were
      * successfully extracted, and the Amazon GameLift is now running the build's
      * install script (if one is included). Failure in this stage prevents a fleet from
      * moving to <code>ACTIVE</code> status. Logs for this stage list the installation

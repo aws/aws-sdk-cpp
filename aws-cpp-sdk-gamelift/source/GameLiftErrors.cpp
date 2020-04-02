@@ -37,6 +37,7 @@ static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServi
 static const int UNSUPPORTED_REGION_HASH = HashingUtils::HashString("UnsupportedRegionException");
 static const int TAGGING_FAILED_HASH = HashingUtils::HashString("TaggingFailedException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int OUT_OF_CAPACITY_HASH = HashingUtils::HashString("OutOfCapacityException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int INVALID_FLEET_STATUS_HASH = HashingUtils::HashString("InvalidFleetStatusException");
 static const int GAME_SESSION_FULL_HASH = HashingUtils::HashString("GameSessionFullException");
@@ -83,6 +84,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == OUT_OF_CAPACITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GameLiftErrors::OUT_OF_CAPACITY), false);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {

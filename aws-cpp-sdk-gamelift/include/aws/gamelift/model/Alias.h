@@ -147,7 +147,7 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions.. In a GameLift alias ARN, the resource ID matches
+     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
      * the alias ID value.</p>
      */
     inline const Aws::String& GetAliasArn() const{ return m_aliasArn; }
@@ -156,7 +156,7 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions.. In a GameLift alias ARN, the resource ID matches
+     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
      * the alias ID value.</p>
      */
     inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
@@ -165,7 +165,7 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions.. In a GameLift alias ARN, the resource ID matches
+     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
      * the alias ID value.</p>
      */
     inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
@@ -174,7 +174,7 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions.. In a GameLift alias ARN, the resource ID matches
+     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
      * the alias ID value.</p>
      */
     inline void SetAliasArn(Aws::String&& value) { m_aliasArnHasBeenSet = true; m_aliasArn = std::move(value); }
@@ -183,7 +183,7 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions.. In a GameLift alias ARN, the resource ID matches
+     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
      * the alias ID value.</p>
      */
     inline void SetAliasArn(const char* value) { m_aliasArnHasBeenSet = true; m_aliasArn.assign(value); }
@@ -192,7 +192,7 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions.. In a GameLift alias ARN, the resource ID matches
+     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
      * the alias ID value.</p>
      */
     inline Alias& WithAliasArn(const Aws::String& value) { SetAliasArn(value); return *this;}
@@ -201,7 +201,7 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions.. In a GameLift alias ARN, the resource ID matches
+     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
      * the alias ID value.</p>
      */
     inline Alias& WithAliasArn(Aws::String&& value) { SetAliasArn(std::move(value)); return *this;}
@@ -210,7 +210,7 @@ namespace Model
      * <p>Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
      * that is assigned to a GameLift alias resource and uniquely identifies it. ARNs
-     * are unique across all Regions.. In a GameLift alias ARN, the resource ID matches
+     * are unique across all Regions. In a GameLift alias ARN, the resource ID matches
      * the alias ID value.</p>
      */
     inline Alias& WithAliasArn(const char* value) { SetAliasArn(value); return *this;}

@@ -421,7 +421,7 @@ namespace Model
      * must be used when copying an encrypted DB cluster snapshot from another AWS
      * Region. Don't specify <code>PreSignedUrl</code> when you are copying an
      * encrypted DB cluster snapshot in the same AWS Region.</p> <p>The pre-signed URL
-     * must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action
+     * must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
@@ -460,7 +460,7 @@ namespace Model
      * must be used when copying an encrypted DB cluster snapshot from another AWS
      * Region. Don't specify <code>PreSignedUrl</code> when you are copying an
      * encrypted DB cluster snapshot in the same AWS Region.</p> <p>The pre-signed URL
-     * must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action
+     * must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
@@ -499,7 +499,7 @@ namespace Model
      * must be used when copying an encrypted DB cluster snapshot from another AWS
      * Region. Don't specify <code>PreSignedUrl</code> when you are copying an
      * encrypted DB cluster snapshot in the same AWS Region.</p> <p>The pre-signed URL
-     * must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action
+     * must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
@@ -538,7 +538,7 @@ namespace Model
      * must be used when copying an encrypted DB cluster snapshot from another AWS
      * Region. Don't specify <code>PreSignedUrl</code> when you are copying an
      * encrypted DB cluster snapshot in the same AWS Region.</p> <p>The pre-signed URL
-     * must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action
+     * must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
@@ -577,7 +577,7 @@ namespace Model
      * must be used when copying an encrypted DB cluster snapshot from another AWS
      * Region. Don't specify <code>PreSignedUrl</code> when you are copying an
      * encrypted DB cluster snapshot in the same AWS Region.</p> <p>The pre-signed URL
-     * must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action
+     * must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
@@ -616,7 +616,7 @@ namespace Model
      * must be used when copying an encrypted DB cluster snapshot from another AWS
      * Region. Don't specify <code>PreSignedUrl</code> when you are copying an
      * encrypted DB cluster snapshot in the same AWS Region.</p> <p>The pre-signed URL
-     * must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action
+     * must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
@@ -655,7 +655,7 @@ namespace Model
      * must be used when copying an encrypted DB cluster snapshot from another AWS
      * Region. Don't specify <code>PreSignedUrl</code> when you are copying an
      * encrypted DB cluster snapshot in the same AWS Region.</p> <p>The pre-signed URL
-     * must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action
+     * must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS
@@ -694,7 +694,7 @@ namespace Model
      * must be used when copying an encrypted DB cluster snapshot from another AWS
      * Region. Don't specify <code>PreSignedUrl</code> when you are copying an
      * encrypted DB cluster snapshot in the same AWS Region.</p> <p>The pre-signed URL
-     * must be a valid request for the <code>CopyDBSClusterSnapshot</code> API action
+     * must be a valid request for the <code>CopyDBClusterSnapshot</code> API action
      * that can be executed in the source AWS Region that contains the encrypted DB
      * cluster snapshot to be copied. The pre-signed URL request must contain the
      * following parameter values:</p> <ul> <li> <p> <code>KmsKeyId</code> - The AWS

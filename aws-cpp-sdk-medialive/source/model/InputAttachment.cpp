@@ -29,6 +29,7 @@ namespace Model
 {
 
 InputAttachment::InputAttachment() : 
+    m_automaticInputFailoverSettingsHasBeenSet(false),
     m_inputAttachmentNameHasBeenSet(false),
     m_inputIdHasBeenSet(false),
     m_inputSettingsHasBeenSet(false)
@@ -36,6 +37,7 @@ InputAttachment::InputAttachment() :
 }
 
 InputAttachment::InputAttachment(JsonView jsonValue) : 
+    m_automaticInputFailoverSettingsHasBeenSet(false),
     m_inputAttachmentNameHasBeenSet(false),
     m_inputIdHasBeenSet(false),
     m_inputSettingsHasBeenSet(false)
@@ -45,6 +47,13 @@ InputAttachment::InputAttachment(JsonView jsonValue) :
 
 InputAttachment& InputAttachment::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("automaticInputFailoverSettings"))
+  {
+    m_automaticInputFailoverSettings = jsonValue.GetObject("automaticInputFailoverSettings");
+
+    m_automaticInputFailoverSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputAttachmentName"))
   {
     m_inputAttachmentName = jsonValue.GetString("inputAttachmentName");
@@ -72,6 +81,12 @@ InputAttachment& InputAttachment::operator =(JsonView jsonValue)
 JsonValue InputAttachment::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_automaticInputFailoverSettingsHasBeenSet)
+  {
+   payload.WithObject("automaticInputFailoverSettings", m_automaticInputFailoverSettings.Jsonize());
+
+  }
 
   if(m_inputAttachmentNameHasBeenSet)
   {

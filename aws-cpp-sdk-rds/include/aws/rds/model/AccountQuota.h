@@ -78,10 +78,10 @@ namespace Model
    * <code>OptionGroups</code> - The number of DB option groups per account,
    * excluding default option groups. The used value is the count of nondefault DB
    * option groups in the account.</p> </li> <li> <p>
-   * <code>ReadReplicasPerMaster</code> - The number of Read Replicas per DB
-   * instance. The used value is the highest number of Read Replicas for a DB
+   * <code>ReadReplicasPerMaster</code> - The number of read replicas per DB
+   * instance. The used value is the highest number of read replicas for a DB
    * instance in the account. Other DB instances in the account might have a lower
-   * number of Read Replicas.</p> </li> <li> <p> <code>ReservedDBInstances</code> -
+   * number of read replicas.</p> </li> <li> <p> <code>ReservedDBInstances</code> -
    * The number of reserved DB instances per account. The used value is the count of
    * the active reserved DB instances in the account.</p> </li> <li> <p>
    * <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet

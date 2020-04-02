@@ -51,27 +51,32 @@ namespace Model
 
 
     /**
-     * <p>The newly created build record, including a unique build IDs and status. </p>
+     * <p>The newly created build resource, including a unique build IDs and status.
+     * </p>
      */
     inline const Build& GetBuild() const{ return m_build; }
 
     /**
-     * <p>The newly created build record, including a unique build IDs and status. </p>
+     * <p>The newly created build resource, including a unique build IDs and status.
+     * </p>
      */
     inline void SetBuild(const Build& value) { m_build = value; }
 
     /**
-     * <p>The newly created build record, including a unique build IDs and status. </p>
+     * <p>The newly created build resource, including a unique build IDs and status.
+     * </p>
      */
     inline void SetBuild(Build&& value) { m_build = std::move(value); }
 
     /**
-     * <p>The newly created build record, including a unique build IDs and status. </p>
+     * <p>The newly created build resource, including a unique build IDs and status.
+     * </p>
      */
     inline CreateBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
 
     /**
-     * <p>The newly created build record, including a unique build IDs and status. </p>
+     * <p>The newly created build resource, including a unique build IDs and status.
+     * </p>
      */
     inline CreateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 
@@ -79,45 +84,40 @@ namespace Model
     /**
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
-     * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
-     * </p>
+     * an S3 bucket that is owned by Amazon GameLift. Credentials have a limited life
+     * span. To refresh these credentials, call <a>RequestUploadCredentials</a>. </p>
      */
     inline const AwsCredentials& GetUploadCredentials() const{ return m_uploadCredentials; }
 
     /**
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
-     * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
-     * </p>
+     * an S3 bucket that is owned by Amazon GameLift. Credentials have a limited life
+     * span. To refresh these credentials, call <a>RequestUploadCredentials</a>. </p>
      */
     inline void SetUploadCredentials(const AwsCredentials& value) { m_uploadCredentials = value; }
 
     /**
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
-     * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
-     * </p>
+     * an S3 bucket that is owned by Amazon GameLift. Credentials have a limited life
+     * span. To refresh these credentials, call <a>RequestUploadCredentials</a>. </p>
      */
     inline void SetUploadCredentials(AwsCredentials&& value) { m_uploadCredentials = std::move(value); }
 
     /**
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
-     * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
-     * </p>
+     * an S3 bucket that is owned by Amazon GameLift. Credentials have a limited life
+     * span. To refresh these credentials, call <a>RequestUploadCredentials</a>. </p>
      */
     inline CreateBuildResult& WithUploadCredentials(const AwsCredentials& value) { SetUploadCredentials(value); return *this;}
 
     /**
      * <p>This element is returned only when the operation is called without a storage
      * location. It contains credentials to use when you are uploading a build file to
-     * an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited
-     * life span. To refresh these credentials, call <a>RequestUploadCredentials</a>.
-     * </p>
+     * an S3 bucket that is owned by Amazon GameLift. Credentials have a limited life
+     * span. To refresh these credentials, call <a>RequestUploadCredentials</a>. </p>
      */
     inline CreateBuildResult& WithUploadCredentials(AwsCredentials&& value) { SetUploadCredentials(std::move(value)); return *this;}
 

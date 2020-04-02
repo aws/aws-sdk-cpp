@@ -1093,104 +1093,104 @@ namespace Model
 
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Contains the identifier of the source DB cluster if this DB cluster is a read
+     * replica.</p>
      */
     inline const Aws::String& GetReplicationSourceIdentifier() const{ return m_replicationSourceIdentifier; }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Contains the identifier of the source DB cluster if this DB cluster is a read
+     * replica.</p>
      */
     inline bool ReplicationSourceIdentifierHasBeenSet() const { return m_replicationSourceIdentifierHasBeenSet; }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Contains the identifier of the source DB cluster if this DB cluster is a read
+     * replica.</p>
      */
     inline void SetReplicationSourceIdentifier(const Aws::String& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = value; }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Contains the identifier of the source DB cluster if this DB cluster is a read
+     * replica.</p>
      */
     inline void SetReplicationSourceIdentifier(Aws::String&& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = std::move(value); }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Contains the identifier of the source DB cluster if this DB cluster is a read
+     * replica.</p>
      */
     inline void SetReplicationSourceIdentifier(const char* value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier.assign(value); }
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Contains the identifier of the source DB cluster if this DB cluster is a read
+     * replica.</p>
      */
     inline DBCluster& WithReplicationSourceIdentifier(const Aws::String& value) { SetReplicationSourceIdentifier(value); return *this;}
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Contains the identifier of the source DB cluster if this DB cluster is a read
+     * replica.</p>
      */
     inline DBCluster& WithReplicationSourceIdentifier(Aws::String&& value) { SetReplicationSourceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the identifier of the source DB cluster if this DB cluster is a Read
-     * Replica.</p>
+     * <p>Contains the identifier of the source DB cluster if this DB cluster is a read
+     * replica.</p>
      */
     inline DBCluster& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
 
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaIdentifiers() const{ return m_readReplicaIdentifiers; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline bool ReadReplicaIdentifiersHasBeenSet() const { return m_readReplicaIdentifiersHasBeenSet; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline void SetReadReplicaIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers = value; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline void SetReadReplicaIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers = std::move(value); }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline DBCluster& WithReadReplicaIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaIdentifiers(value); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline DBCluster& WithReadReplicaIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline DBCluster& AddReadReplicaIdentifiers(const Aws::String& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline DBCluster& AddReadReplicaIdentifiers(Aws::String&& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * cluster.</p>
      */
     inline DBCluster& AddReadReplicaIdentifiers(const char* value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(value); return *this; }
@@ -1866,56 +1866,104 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>
+     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
+     * For higher Aurora MySQL versions, the clusters in a global database use
+     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
+     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
+     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
+     * </note>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>
+     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
+     * For higher Aurora MySQL versions, the clusters in a global database use
+     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
+     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
+     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
+     * </note>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>
+     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
+     * For higher Aurora MySQL versions, the clusters in a global database use
+     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
+     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
+     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
+     * </note>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>
+     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
+     * For higher Aurora MySQL versions, the clusters in a global database use
+     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
+     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
+     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
+     * </note>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>
+     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
+     * For higher Aurora MySQL versions, the clusters in a global database use
+     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
+     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
+     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
+     * </note>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>
+     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
+     * For higher Aurora MySQL versions, the clusters in a global database use
+     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
+     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
+     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
+     * </note>
      */
     inline DBCluster& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>
+     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
+     * For higher Aurora MySQL versions, the clusters in a global database use
+     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
+     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
+     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
+     * </note>
      */
     inline DBCluster& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
      * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p>
+     * <code>multimaster</code>.</p> <note> <p> <code>global</code> engine mode only
+     * applies for global database clusters created with Aurora MySQL version 5.6.10a.
+     * For higher Aurora MySQL versions, the clusters in a global database use
+     * <code>provisioned</code> engine mode. To check if a DB cluster is part of a
+     * global database, use <code>DescribeGlobalClusters</code> instead of checking the
+     * <code>EngineMode</code> return value from <code>DescribeDBClusters</code>. </p>
+     * </note>
      */
     inline DBCluster& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 

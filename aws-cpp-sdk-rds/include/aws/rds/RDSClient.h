@@ -1459,7 +1459,7 @@ namespace Aws
         /**
          * <p>Creates a new Amazon Aurora DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster or Amazon RDS MySQL DB instance. For
+         * read replica of another DB cluster or Amazon RDS MySQL DB instance. For
          * cross-region replication where the DB cluster identified by
          * <code>ReplicationSourceIdentifier</code> is encrypted, you must also specify the
          * <code>PreSignedUrl</code> parameter.</p> <p>For more information on Amazon
@@ -1476,7 +1476,7 @@ namespace Aws
         /**
          * <p>Creates a new Amazon Aurora DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster or Amazon RDS MySQL DB instance. For
+         * read replica of another DB cluster or Amazon RDS MySQL DB instance. For
          * cross-region replication where the DB cluster identified by
          * <code>ReplicationSourceIdentifier</code> is encrypted, you must also specify the
          * <code>PreSignedUrl</code> parameter.</p> <p>For more information on Amazon
@@ -1495,7 +1495,7 @@ namespace Aws
         /**
          * <p>Creates a new Amazon Aurora DB cluster.</p> <p>You can use the
          * <code>ReplicationSourceIdentifier</code> parameter to create the DB cluster as a
-         * Read Replica of another DB cluster or Amazon RDS MySQL DB instance. For
+         * read replica of another DB cluster or Amazon RDS MySQL DB instance. For
          * cross-region replication where the DB cluster identified by
          * <code>ReplicationSourceIdentifier</code> is encrypted, you must also specify the
          * <code>PreSignedUrl</code> parameter.</p> <p>For more information on Amazon
@@ -1711,36 +1711,36 @@ namespace Aws
         virtual void CreateDBInstanceAsync(const Model::CreateDBInstanceRequest& request, const CreateDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DB instance that acts as a Read Replica for an existing source
-         * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, Oracle, or PostgreSQL. For more information, see <a
+         * <p>Creates a new DB instance that acts as a read replica for an existing source
+         * DB instance. You can create a read replica for a DB instance running MySQL,
+         * MariaDB, Oracle, PostgreSQL, or SQL Server. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
          * with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. </p> <p>Amazon
-         * Aurora doesn't support this action. You must call the
-         * <code>CreateDBInstance</code> action to create a DB instance for an Aurora DB
-         * cluster. </p> <p>All Read Replica DB instances are created with backups
-         * disabled. All other DB instance attributes (including DB security groups and DB
-         * parameter groups) are inherited from the source DB instance, except as specified
-         * following. </p> <important> <p>Your source DB instance must have backup
-         * retention enabled. </p> </important><p><h3>See Also:</h3>   <a
+         * Aurora doesn't support this action. Call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster.</p> <p>All read replica
+         * DB instances are created with backups disabled. All other DB instance attributes
+         * (including DB security groups and DB parameter groups) are inherited from the
+         * source DB instance, except as specified.</p> <important> <p>Your source DB
+         * instance must have backup retention enabled. </p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDBInstanceReadReplicaOutcome CreateDBInstanceReadReplica(const Model::CreateDBInstanceReadReplicaRequest& request) const;
 
         /**
-         * <p>Creates a new DB instance that acts as a Read Replica for an existing source
-         * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, Oracle, or PostgreSQL. For more information, see <a
+         * <p>Creates a new DB instance that acts as a read replica for an existing source
+         * DB instance. You can create a read replica for a DB instance running MySQL,
+         * MariaDB, Oracle, PostgreSQL, or SQL Server. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
          * with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. </p> <p>Amazon
-         * Aurora doesn't support this action. You must call the
-         * <code>CreateDBInstance</code> action to create a DB instance for an Aurora DB
-         * cluster. </p> <p>All Read Replica DB instances are created with backups
-         * disabled. All other DB instance attributes (including DB security groups and DB
-         * parameter groups) are inherited from the source DB instance, except as specified
-         * following. </p> <important> <p>Your source DB instance must have backup
-         * retention enabled. </p> </important><p><h3>See Also:</h3>   <a
+         * Aurora doesn't support this action. Call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster.</p> <p>All read replica
+         * DB instances are created with backups disabled. All other DB instance attributes
+         * (including DB security groups and DB parameter groups) are inherited from the
+         * source DB instance, except as specified.</p> <important> <p>Your source DB
+         * instance must have backup retention enabled. </p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
          * API Reference</a></p>
          *
@@ -1749,18 +1749,18 @@ namespace Aws
         virtual Model::CreateDBInstanceReadReplicaOutcomeCallable CreateDBInstanceReadReplicaCallable(const Model::CreateDBInstanceReadReplicaRequest& request) const;
 
         /**
-         * <p>Creates a new DB instance that acts as a Read Replica for an existing source
-         * DB instance. You can create a Read Replica for a DB instance running MySQL,
-         * MariaDB, Oracle, or PostgreSQL. For more information, see <a
+         * <p>Creates a new DB instance that acts as a read replica for an existing source
+         * DB instance. You can create a read replica for a DB instance running MySQL,
+         * MariaDB, Oracle, PostgreSQL, or SQL Server. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
          * with Read Replicas</a> in the <i>Amazon RDS User Guide</i>. </p> <p>Amazon
-         * Aurora doesn't support this action. You must call the
-         * <code>CreateDBInstance</code> action to create a DB instance for an Aurora DB
-         * cluster. </p> <p>All Read Replica DB instances are created with backups
-         * disabled. All other DB instance attributes (including DB security groups and DB
-         * parameter groups) are inherited from the source DB instance, except as specified
-         * following. </p> <important> <p>Your source DB instance must have backup
-         * retention enabled. </p> </important><p><h3>See Also:</h3>   <a
+         * Aurora doesn't support this action. Call the <code>CreateDBInstance</code>
+         * action to create a DB instance for an Aurora DB cluster.</p> <p>All read replica
+         * DB instances are created with backups disabled. All other DB instance attributes
+         * (including DB security groups and DB parameter groups) are inherited from the
+         * source DB instance, except as specified.</p> <important> <p>Your source DB
+         * instance must have backup retention enabled. </p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
          * API Reference</a></p>
          *
@@ -2338,11 +2338,11 @@ namespace Aws
          * only delete it when you skip creation of the final snapshot with the
          * <code>SkipFinalSnapshot</code> parameter.</p> <p>If the specified DB instance is
          * part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of
-         * the following conditions are true:</p> <ul> <li> <p>The DB cluster is a Read
-         * Replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance
+         * the following conditions are true:</p> <ul> <li> <p>The DB cluster is a read
+         * replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance
          * is the only instance in the DB cluster.</p> </li> </ul> <p>To delete a DB
          * instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-         * API action to promote the DB cluster so it's no longer a Read Replica. After the
+         * API action to promote the DB cluster so it's no longer a read replica. After the
          * promotion completes, then call the <code>DeleteDBInstance</code> API action to
          * delete the final instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
@@ -2364,11 +2364,11 @@ namespace Aws
          * only delete it when you skip creation of the final snapshot with the
          * <code>SkipFinalSnapshot</code> parameter.</p> <p>If the specified DB instance is
          * part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of
-         * the following conditions are true:</p> <ul> <li> <p>The DB cluster is a Read
-         * Replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance
+         * the following conditions are true:</p> <ul> <li> <p>The DB cluster is a read
+         * replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance
          * is the only instance in the DB cluster.</p> </li> </ul> <p>To delete a DB
          * instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-         * API action to promote the DB cluster so it's no longer a Read Replica. After the
+         * API action to promote the DB cluster so it's no longer a read replica. After the
          * promotion completes, then call the <code>DeleteDBInstance</code> API action to
          * delete the final instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
@@ -2392,11 +2392,11 @@ namespace Aws
          * only delete it when you skip creation of the final snapshot with the
          * <code>SkipFinalSnapshot</code> parameter.</p> <p>If the specified DB instance is
          * part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of
-         * the following conditions are true:</p> <ul> <li> <p>The DB cluster is a Read
-         * Replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance
+         * the following conditions are true:</p> <ul> <li> <p>The DB cluster is a read
+         * replica of another Amazon Aurora DB cluster.</p> </li> <li> <p>The DB instance
          * is the only instance in the DB cluster.</p> </li> </ul> <p>To delete a DB
          * instance in this case, first call the <code>PromoteReadReplicaDBCluster</code>
-         * API action to promote the DB cluster so it's no longer a Read Replica. After the
+         * API action to promote the DB cluster so it's no longer a read replica. After the
          * promotion completes, then call the <code>DeleteDBInstance</code> API action to
          * delete the final instance in the DB cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance">AWS
@@ -4004,7 +4004,7 @@ namespace Aws
 
         /**
          * <p>Returns a list of the source AWS Regions where the current AWS Region can
-         * create a Read Replica or copy a DB snapshot from. This API action supports
+         * create a read replica or copy a DB snapshot from. This API action supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
          * API Reference</a></p>
@@ -4013,7 +4013,7 @@ namespace Aws
 
         /**
          * <p>Returns a list of the source AWS Regions where the current AWS Region can
-         * create a Read Replica or copy a DB snapshot from. This API action supports
+         * create a read replica or copy a DB snapshot from. This API action supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
          * API Reference</a></p>
@@ -4024,7 +4024,7 @@ namespace Aws
 
         /**
          * <p>Returns a list of the source AWS Regions where the current AWS Region can
-         * create a Read Replica or copy a DB snapshot from. This API action supports
+         * create a read replica or copy a DB snapshot from. This API action supports
          * pagination.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeSourceRegions">AWS
          * API Reference</a></p>
@@ -4811,18 +4811,20 @@ namespace Aws
         virtual void ModifyDBProxyTargetGroupAsync(const Model::ModifyDBProxyTargetGroupRequest& request, const ModifyDBProxyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for
-         * MySQL, Oracle, and PostgreSQL. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
+         * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
+         * upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyDBSnapshotOutcome ModifyDBSnapshot(const Model::ModifyDBSnapshotRequest& request) const;
 
         /**
-         * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for
-         * MySQL, Oracle, and PostgreSQL. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
+         * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
+         * upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -4831,9 +4833,10 @@ namespace Aws
         virtual Model::ModifyDBSnapshotOutcomeCallable ModifyDBSnapshotCallable(const Model::ModifyDBSnapshotRequest& request) const;
 
         /**
-         * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for
-         * MySQL, Oracle, and PostgreSQL. </p><p><h3>See Also:</h3>   <a
+         * <p>Updates a manual DB snapshot with a new engine version. The snapshot can be
+         * encrypted or unencrypted, but not shared or public. </p> <p>Amazon RDS supports
+         * upgrading DB snapshots for MySQL, Oracle, and PostgreSQL. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -5051,14 +5054,14 @@ namespace Aws
         virtual void ModifyOptionGroupAsync(const Model::ModifyOptionGroupRequest& request, const ModifyOptionGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
+         * <p>Promotes a read replica DB instance to a standalone DB instance.</p> <note>
          * <ul> <li> <p>Backup duration is a function of the amount of changes to the
-         * database since the previous backup. If you plan to promote a Read Replica to a
+         * database since the previous backup. If you plan to promote a read replica to a
          * standalone instance, we recommend that you enable backups and complete at least
-         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * one backup prior to promotion. In addition, a read replica cannot be promoted to
          * a standalone instance when it is in the <code>backing-up</code> status. If you
-         * have enabled backups on your Read Replica, configure the automated backup window
-         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * have enabled backups on your read replica, configure the automated backup window
+         * so that daily backups do not interfere with read replica promotion.</p> </li>
          * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
          * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
@@ -5067,14 +5070,14 @@ namespace Aws
         virtual Model::PromoteReadReplicaOutcome PromoteReadReplica(const Model::PromoteReadReplicaRequest& request) const;
 
         /**
-         * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
+         * <p>Promotes a read replica DB instance to a standalone DB instance.</p> <note>
          * <ul> <li> <p>Backup duration is a function of the amount of changes to the
-         * database since the previous backup. If you plan to promote a Read Replica to a
+         * database since the previous backup. If you plan to promote a read replica to a
          * standalone instance, we recommend that you enable backups and complete at least
-         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * one backup prior to promotion. In addition, a read replica cannot be promoted to
          * a standalone instance when it is in the <code>backing-up</code> status. If you
-         * have enabled backups on your Read Replica, configure the automated backup window
-         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * have enabled backups on your read replica, configure the automated backup window
+         * so that daily backups do not interfere with read replica promotion.</p> </li>
          * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
          * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
@@ -5085,14 +5088,14 @@ namespace Aws
         virtual Model::PromoteReadReplicaOutcomeCallable PromoteReadReplicaCallable(const Model::PromoteReadReplicaRequest& request) const;
 
         /**
-         * <p>Promotes a Read Replica DB instance to a standalone DB instance.</p> <note>
+         * <p>Promotes a read replica DB instance to a standalone DB instance.</p> <note>
          * <ul> <li> <p>Backup duration is a function of the amount of changes to the
-         * database since the previous backup. If you plan to promote a Read Replica to a
+         * database since the previous backup. If you plan to promote a read replica to a
          * standalone instance, we recommend that you enable backups and complete at least
-         * one backup prior to promotion. In addition, a Read Replica cannot be promoted to
+         * one backup prior to promotion. In addition, a read replica cannot be promoted to
          * a standalone instance when it is in the <code>backing-up</code> status. If you
-         * have enabled backups on your Read Replica, configure the automated backup window
-         * so that daily backups do not interfere with Read Replica promotion.</p> </li>
+         * have enabled backups on your read replica, configure the automated backup window
+         * so that daily backups do not interfere with read replica promotion.</p> </li>
          * <li> <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.</p>
          * </li> </ul> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplica">AWS
@@ -5103,7 +5106,7 @@ namespace Aws
         virtual void PromoteReadReplicaAsync(const Model::PromoteReadReplicaRequest& request, const PromoteReadReplicaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p> <note>
+         * <p>Promotes a read replica DB cluster to a standalone DB cluster.</p> <note>
          * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">AWS
@@ -5112,7 +5115,7 @@ namespace Aws
         virtual Model::PromoteReadReplicaDBClusterOutcome PromoteReadReplicaDBCluster(const Model::PromoteReadReplicaDBClusterRequest& request) const;
 
         /**
-         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p> <note>
+         * <p>Promotes a read replica DB cluster to a standalone DB cluster.</p> <note>
          * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">AWS
@@ -5123,7 +5126,7 @@ namespace Aws
         virtual Model::PromoteReadReplicaDBClusterOutcomeCallable PromoteReadReplicaDBClusterCallable(const Model::PromoteReadReplicaDBClusterRequest& request) const;
 
         /**
-         * <p>Promotes a Read Replica DB cluster to a standalone DB cluster.</p> <note>
+         * <p>Promotes a read replica DB cluster to a standalone DB cluster.</p> <note>
          * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/PromoteReadReplicaDBCluster">AWS
@@ -5571,36 +5574,42 @@ namespace Aws
         virtual void RestoreDBClusterFromS3Async(const Model::RestoreDBClusterFromS3Request& request, const RestoreDBClusterFromS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
-         * a DB snapshot is specified, the target DB cluster is created from the source DB
-         * snapshot with a default configuration and default security group.</p> <p>If a DB
-         * cluster snapshot is specified, the target DB cluster is created from the source
-         * DB cluster restore point with the same configuration as the original source DB
-         * cluster. If you don't specify a security group, the new DB cluster is associated
-         * with the default security group.</p> <p>For more information on Amazon Aurora,
-         * see <a
+         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This
+         * action only applies to Aurora DB clusters.</p> <p>The target DB cluster is
+         * created from the source snapshot with a default configuration. If you don't
+         * specify a security group, the new DB cluster is associated with the default
+         * security group.</p> <note> <p>This action only restores the DB cluster, not the
+         * DB instances for that DB cluster. You must invoke the
+         * <code>CreateDBInstance</code> action to create DB instances for the restored DB
+         * cluster, specifying the identifier of the restored DB cluster in
+         * <code>DBClusterIdentifier</code>. You can create DB instances only after the
+         * <code>RestoreDBClusterFromSnapshot</code> action has completed and the DB
+         * cluster is available.</p> </note> <p>For more information on Amazon Aurora, see
+         * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::RestoreDBClusterFromSnapshotOutcome RestoreDBClusterFromSnapshot(const Model::RestoreDBClusterFromSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
-         * a DB snapshot is specified, the target DB cluster is created from the source DB
-         * snapshot with a default configuration and default security group.</p> <p>If a DB
-         * cluster snapshot is specified, the target DB cluster is created from the source
-         * DB cluster restore point with the same configuration as the original source DB
-         * cluster. If you don't specify a security group, the new DB cluster is associated
-         * with the default security group.</p> <p>For more information on Amazon Aurora,
-         * see <a
+         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This
+         * action only applies to Aurora DB clusters.</p> <p>The target DB cluster is
+         * created from the source snapshot with a default configuration. If you don't
+         * specify a security group, the new DB cluster is associated with the default
+         * security group.</p> <note> <p>This action only restores the DB cluster, not the
+         * DB instances for that DB cluster. You must invoke the
+         * <code>CreateDBInstance</code> action to create DB instances for the restored DB
+         * cluster, specifying the identifier of the restored DB cluster in
+         * <code>DBClusterIdentifier</code>. You can create DB instances only after the
+         * <code>RestoreDBClusterFromSnapshot</code> action has completed and the DB
+         * cluster is available.</p> </note> <p>For more information on Amazon Aurora, see
+         * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -5609,18 +5618,21 @@ namespace Aws
         virtual Model::RestoreDBClusterFromSnapshotOutcomeCallable RestoreDBClusterFromSnapshotCallable(const Model::RestoreDBClusterFromSnapshotRequest& request) const;
 
         /**
-         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> <p>If
-         * a DB snapshot is specified, the target DB cluster is created from the source DB
-         * snapshot with a default configuration and default security group.</p> <p>If a DB
-         * cluster snapshot is specified, the target DB cluster is created from the source
-         * DB cluster restore point with the same configuration as the original source DB
-         * cluster. If you don't specify a security group, the new DB cluster is associated
-         * with the default security group.</p> <p>For more information on Amazon Aurora,
-         * see <a
+         * <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot. This
+         * action only applies to Aurora DB clusters.</p> <p>The target DB cluster is
+         * created from the source snapshot with a default configuration. If you don't
+         * specify a security group, the new DB cluster is associated with the default
+         * security group.</p> <note> <p>This action only restores the DB cluster, not the
+         * DB instances for that DB cluster. You must invoke the
+         * <code>CreateDBInstance</code> action to create DB instances for the restored DB
+         * cluster, specifying the identifier of the restored DB cluster in
+         * <code>DBClusterIdentifier</code>. You can create DB instances only after the
+         * <code>RestoreDBClusterFromSnapshot</code> action has completed and the DB
+         * cluster is available.</p> </note> <p>For more information on Amazon Aurora, see
+         * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          *

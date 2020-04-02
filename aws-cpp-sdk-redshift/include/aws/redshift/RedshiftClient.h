@@ -1321,16 +1321,16 @@ namespace Model
         virtual void CreateSnapshotCopyGrantAsync(const Model::CreateSnapshotCopyGrantRequest& request, const CreateSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a snapshot schedule with the rate of every 12 hours.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create a snapshot schedule that can be associated to a cluster and which
+         * overrides the default system backup schedule. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSnapshotScheduleOutcome CreateSnapshotSchedule(const Model::CreateSnapshotScheduleRequest& request) const;
 
         /**
-         * <p>Creates a snapshot schedule with the rate of every 12 hours.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create a snapshot schedule that can be associated to a cluster and which
+         * overrides the default system backup schedule. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule">AWS
          * API Reference</a></p>
          *
@@ -1339,8 +1339,8 @@ namespace Model
         virtual Model::CreateSnapshotScheduleOutcomeCallable CreateSnapshotScheduleCallable(const Model::CreateSnapshotScheduleRequest& request) const;
 
         /**
-         * <p>Creates a snapshot schedule with the rate of every 12 hours.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Create a snapshot schedule that can be associated to a cluster and which
+         * overrides the default system backup schedule. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateSnapshotSchedule">AWS
          * API Reference</a></p>
          *
@@ -3846,9 +3846,9 @@ namespace Model
          * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
          * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
          * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
-         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The
-         * type of nodes that you add must match the node type for the cluster.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p>
+         * </li> </ul> </li> <li> <p>The type of nodes that you add must match the node
+         * type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          */
@@ -3862,9 +3862,9 @@ namespace Model
          * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
          * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
          * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
-         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The
-         * type of nodes that you add must match the node type for the cluster.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p>
+         * </li> </ul> </li> <li> <p>The type of nodes that you add must match the node
+         * type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          *
@@ -3880,9 +3880,9 @@ namespace Model
          * resize operations have the following restrictions:</p> <ul> <li> <p>You can only
          * resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li>
          * <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li>
-         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The
-         * type of nodes that you add must match the node type for the cluster.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p>
+         * </li> </ul> </li> <li> <p>The type of nodes that you add must match the node
+         * type for the cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster">AWS
          * API Reference</a></p>
          *

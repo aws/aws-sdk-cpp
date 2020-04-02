@@ -118,49 +118,49 @@ namespace Model
 
     /**
      * <p>Name of the queue to use to place the new game session. You can use either
-     * the qieue name or ARN value. </p>
+     * the queue name or ARN value. </p>
      */
     inline const Aws::String& GetGameSessionQueueName() const{ return m_gameSessionQueueName; }
 
     /**
      * <p>Name of the queue to use to place the new game session. You can use either
-     * the qieue name or ARN value. </p>
+     * the queue name or ARN value. </p>
      */
     inline bool GameSessionQueueNameHasBeenSet() const { return m_gameSessionQueueNameHasBeenSet; }
 
     /**
      * <p>Name of the queue to use to place the new game session. You can use either
-     * the qieue name or ARN value. </p>
+     * the queue name or ARN value. </p>
      */
     inline void SetGameSessionQueueName(const Aws::String& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = value; }
 
     /**
      * <p>Name of the queue to use to place the new game session. You can use either
-     * the qieue name or ARN value. </p>
+     * the queue name or ARN value. </p>
      */
     inline void SetGameSessionQueueName(Aws::String&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = std::move(value); }
 
     /**
      * <p>Name of the queue to use to place the new game session. You can use either
-     * the qieue name or ARN value. </p>
+     * the queue name or ARN value. </p>
      */
     inline void SetGameSessionQueueName(const char* value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName.assign(value); }
 
     /**
      * <p>Name of the queue to use to place the new game session. You can use either
-     * the qieue name or ARN value. </p>
+     * the queue name or ARN value. </p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionQueueName(const Aws::String& value) { SetGameSessionQueueName(value); return *this;}
 
     /**
      * <p>Name of the queue to use to place the new game session. You can use either
-     * the qieue name or ARN value. </p>
+     * the queue name or ARN value. </p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionQueueName(Aws::String&& value) { SetGameSessionQueueName(std::move(value)); return *this;}
 
     /**
      * <p>Name of the queue to use to place the new game session. You can use either
-     * the qieue name or ARN value. </p>
+     * the queue name or ARN value. </p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionQueueName(const char* value) { SetGameSessionQueueName(value); return *this;}
 

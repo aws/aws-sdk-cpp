@@ -204,42 +204,66 @@ namespace Model
 
 
     /**
-     * <p>Specifies the current state of this database.</p>
+     * <p>Specifies the current state of this database.</p> <p>For information about DB
+     * instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetDBInstanceStatus() const{ return m_dBInstanceStatus; }
 
     /**
-     * <p>Specifies the current state of this database.</p>
+     * <p>Specifies the current state of this database.</p> <p>For information about DB
+     * instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline bool DBInstanceStatusHasBeenSet() const { return m_dBInstanceStatusHasBeenSet; }
 
     /**
-     * <p>Specifies the current state of this database.</p>
+     * <p>Specifies the current state of this database.</p> <p>For information about DB
+     * instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceStatus(const Aws::String& value) { m_dBInstanceStatusHasBeenSet = true; m_dBInstanceStatus = value; }
 
     /**
-     * <p>Specifies the current state of this database.</p>
+     * <p>Specifies the current state of this database.</p> <p>For information about DB
+     * instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceStatus(Aws::String&& value) { m_dBInstanceStatusHasBeenSet = true; m_dBInstanceStatus = std::move(value); }
 
     /**
-     * <p>Specifies the current state of this database.</p>
+     * <p>Specifies the current state of this database.</p> <p>For information about DB
+     * instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceStatus(const char* value) { m_dBInstanceStatusHasBeenSet = true; m_dBInstanceStatus.assign(value); }
 
     /**
-     * <p>Specifies the current state of this database.</p>
+     * <p>Specifies the current state of this database.</p> <p>For information about DB
+     * instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithDBInstanceStatus(const Aws::String& value) { SetDBInstanceStatus(value); return *this;}
 
     /**
-     * <p>Specifies the current state of this database.</p>
+     * <p>Specifies the current state of this database.</p> <p>For information about DB
+     * instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithDBInstanceStatus(Aws::String&& value) { SetDBInstanceStatus(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the current state of this database.</p>
+     * <p>Specifies the current state of this database.</p> <p>For information about DB
+     * instance statuses, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithDBInstanceStatus(const char* value) { SetDBInstanceStatus(value); return *this;}
 
@@ -994,103 +1018,103 @@ namespace Model
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
-     * Read Replica.</p>
+     * read replica.</p>
      */
     inline const Aws::String& GetReadReplicaSourceDBInstanceIdentifier() const{ return m_readReplicaSourceDBInstanceIdentifier; }
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
-     * Read Replica.</p>
+     * read replica.</p>
      */
     inline bool ReadReplicaSourceDBInstanceIdentifierHasBeenSet() const { return m_readReplicaSourceDBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
-     * Read Replica.</p>
+     * read replica.</p>
      */
     inline void SetReadReplicaSourceDBInstanceIdentifier(const Aws::String& value) { m_readReplicaSourceDBInstanceIdentifierHasBeenSet = true; m_readReplicaSourceDBInstanceIdentifier = value; }
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
-     * Read Replica.</p>
+     * read replica.</p>
      */
     inline void SetReadReplicaSourceDBInstanceIdentifier(Aws::String&& value) { m_readReplicaSourceDBInstanceIdentifierHasBeenSet = true; m_readReplicaSourceDBInstanceIdentifier = std::move(value); }
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
-     * Read Replica.</p>
+     * read replica.</p>
      */
     inline void SetReadReplicaSourceDBInstanceIdentifier(const char* value) { m_readReplicaSourceDBInstanceIdentifierHasBeenSet = true; m_readReplicaSourceDBInstanceIdentifier.assign(value); }
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
-     * Read Replica.</p>
+     * read replica.</p>
      */
     inline DBInstance& WithReadReplicaSourceDBInstanceIdentifier(const Aws::String& value) { SetReadReplicaSourceDBInstanceIdentifier(value); return *this;}
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
-     * Read Replica.</p>
+     * read replica.</p>
      */
     inline DBInstance& WithReadReplicaSourceDBInstanceIdentifier(Aws::String&& value) { SetReadReplicaSourceDBInstanceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>Contains the identifier of the source DB instance if this DB instance is a
-     * Read Replica.</p>
+     * read replica.</p>
      */
     inline DBInstance& WithReadReplicaSourceDBInstanceIdentifier(const char* value) { SetReadReplicaSourceDBInstanceIdentifier(value); return *this;}
 
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaDBInstanceIdentifiers() const{ return m_readReplicaDBInstanceIdentifiers; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline bool ReadReplicaDBInstanceIdentifiersHasBeenSet() const { return m_readReplicaDBInstanceIdentifiersHasBeenSet; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline void SetReadReplicaDBInstanceIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaDBInstanceIdentifiersHasBeenSet = true; m_readReplicaDBInstanceIdentifiers = value; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline void SetReadReplicaDBInstanceIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaDBInstanceIdentifiersHasBeenSet = true; m_readReplicaDBInstanceIdentifiers = std::move(value); }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline DBInstance& WithReadReplicaDBInstanceIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaDBInstanceIdentifiers(value); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline DBInstance& WithReadReplicaDBInstanceIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaDBInstanceIdentifiers(std::move(value)); return *this;}
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline DBInstance& AddReadReplicaDBInstanceIdentifiers(const Aws::String& value) { m_readReplicaDBInstanceIdentifiersHasBeenSet = true; m_readReplicaDBInstanceIdentifiers.push_back(value); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline DBInstance& AddReadReplicaDBInstanceIdentifiers(Aws::String&& value) { m_readReplicaDBInstanceIdentifiersHasBeenSet = true; m_readReplicaDBInstanceIdentifiers.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Contains one or more identifiers of the Read Replicas associated with this DB
+     * <p>Contains one or more identifiers of the read replicas associated with this DB
      * instance.</p>
      */
     inline DBInstance& AddReadReplicaDBInstanceIdentifiers(const char* value) { m_readReplicaDBInstanceIdentifiersHasBeenSet = true; m_readReplicaDBInstanceIdentifiers.push_back(value); return *this; }
@@ -1098,91 +1122,91 @@ namespace Model
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaDBClusterIdentifiers() const{ return m_readReplicaDBClusterIdentifiers; }
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline bool ReadReplicaDBClusterIdentifiersHasBeenSet() const { return m_readReplicaDBClusterIdentifiersHasBeenSet; }
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline void SetReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = value; }
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline void SetReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = std::move(value); }
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaDBClusterIdentifiers(value); return *this;}
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaDBClusterIdentifiers(std::move(value)); return *this;}
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const Aws::String& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(Aws::String&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Contains one or more identifiers of Aurora DB clusters to which the RDS DB
-     * instance is replicated as a Read Replica. For example, when you create an Aurora
-     * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
-     * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
-     * can have only one Aurora Read Replica.</p> </note>
+     * instance is replicated as a read replica. For example, when you create an Aurora
+     * read replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
+     * Aurora read replica is shown. This output does not contain information about
+     * cross region Aurora read replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora read replica.</p> </note>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
@@ -1422,49 +1446,49 @@ namespace Model
 
 
     /**
-     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
+     * <p>The status of a read replica. If the instance isn't a read replica, this is
      * blank.</p>
      */
     inline const Aws::Vector<DBInstanceStatusInfo>& GetStatusInfos() const{ return m_statusInfos; }
 
     /**
-     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
+     * <p>The status of a read replica. If the instance isn't a read replica, this is
      * blank.</p>
      */
     inline bool StatusInfosHasBeenSet() const { return m_statusInfosHasBeenSet; }
 
     /**
-     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
+     * <p>The status of a read replica. If the instance isn't a read replica, this is
      * blank.</p>
      */
     inline void SetStatusInfos(const Aws::Vector<DBInstanceStatusInfo>& value) { m_statusInfosHasBeenSet = true; m_statusInfos = value; }
 
     /**
-     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
+     * <p>The status of a read replica. If the instance isn't a read replica, this is
      * blank.</p>
      */
     inline void SetStatusInfos(Aws::Vector<DBInstanceStatusInfo>&& value) { m_statusInfosHasBeenSet = true; m_statusInfos = std::move(value); }
 
     /**
-     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
+     * <p>The status of a read replica. If the instance isn't a read replica, this is
      * blank.</p>
      */
     inline DBInstance& WithStatusInfos(const Aws::Vector<DBInstanceStatusInfo>& value) { SetStatusInfos(value); return *this;}
 
     /**
-     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
+     * <p>The status of a read replica. If the instance isn't a read replica, this is
      * blank.</p>
      */
     inline DBInstance& WithStatusInfos(Aws::Vector<DBInstanceStatusInfo>&& value) { SetStatusInfos(std::move(value)); return *this;}
 
     /**
-     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
+     * <p>The status of a read replica. If the instance isn't a read replica, this is
      * blank.</p>
      */
     inline DBInstance& AddStatusInfos(const DBInstanceStatusInfo& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(value); return *this; }
 
     /**
-     * <p>The status of a Read Replica. If the instance isn't a Read Replica, this is
+     * <p>The status of a read replica. If the instance isn't a read replica, this is
      * blank.</p>
      */
     inline DBInstance& AddStatusInfos(DBInstanceStatusInfo&& value) { m_statusInfosHasBeenSet = true; m_statusInfos.push_back(std::move(value)); return *this; }

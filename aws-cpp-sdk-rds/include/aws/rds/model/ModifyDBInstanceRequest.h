@@ -892,10 +892,10 @@ namespace Model
      * managed by the DB cluster. For more information, see
      * <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
-     * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
-     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica
+     * <p>Can be specified for a MySQL read replica only if the source is running MySQL
+     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL read replica
      * only if the source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to
-     * 0 if the DB instance is a source to Read Replicas</p> </li> </ul>
+     * 0 if the DB instance is a source to read replicas</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -912,10 +912,10 @@ namespace Model
      * managed by the DB cluster. For more information, see
      * <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
-     * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
-     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica
+     * <p>Can be specified for a MySQL read replica only if the source is running MySQL
+     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL read replica
      * only if the source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to
-     * 0 if the DB instance is a source to Read Replicas</p> </li> </ul>
+     * 0 if the DB instance is a source to read replicas</p> </li> </ul>
      */
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
 
@@ -932,10 +932,10 @@ namespace Model
      * managed by the DB cluster. For more information, see
      * <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
-     * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
-     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica
+     * <p>Can be specified for a MySQL read replica only if the source is running MySQL
+     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL read replica
      * only if the source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to
-     * 0 if the DB instance is a source to Read Replicas</p> </li> </ul>
+     * 0 if the DB instance is a source to read replicas</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -952,10 +952,10 @@ namespace Model
      * managed by the DB cluster. For more information, see
      * <code>ModifyDBCluster</code>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
-     * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
-     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica
+     * <p>Can be specified for a MySQL read replica only if the source is running MySQL
+     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL read replica
      * only if the source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to
-     * 0 if the DB instance is a source to Read Replicas</p> </li> </ul>
+     * 0 if the DB instance is a source to read replicas</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 
@@ -1493,7 +1493,7 @@ namespace Model
      * While the migration takes place, nightly backups for the instance are suspended.
      * No other Amazon RDS operations can take place for the instance, including
      * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.
+     * a read replica for the instance, and creating a DB snapshot of the instance.
      * </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value
      * supplied must be at least 10% greater than the current value. Values that are
      * not at least 10% greater than the existing value are rounded up so that they are
@@ -1519,7 +1519,7 @@ namespace Model
      * While the migration takes place, nightly backups for the instance are suspended.
      * No other Amazon RDS operations can take place for the instance, including
      * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.
+     * a read replica for the instance, and creating a DB snapshot of the instance.
      * </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value
      * supplied must be at least 10% greater than the current value. Values that are
      * not at least 10% greater than the existing value are rounded up so that they are
@@ -1545,7 +1545,7 @@ namespace Model
      * While the migration takes place, nightly backups for the instance are suspended.
      * No other Amazon RDS operations can take place for the instance, including
      * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.
+     * a read replica for the instance, and creating a DB snapshot of the instance.
      * </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value
      * supplied must be at least 10% greater than the current value. Values that are
      * not at least 10% greater than the existing value are rounded up so that they are
@@ -1571,7 +1571,7 @@ namespace Model
      * While the migration takes place, nightly backups for the instance are suspended.
      * No other Amazon RDS operations can take place for the instance, including
      * modifying the instance, rebooting the instance, deleting the instance, creating
-     * a Read Replica for the instance, and creating a DB snapshot of the instance.
+     * a read replica for the instance, and creating a DB snapshot of the instance.
      * </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL, the value
      * supplied must be at least 10% greater than the current value. Values that are
      * not at least 10% greater than the existing value are rounded up so that they are
@@ -1804,7 +1804,7 @@ namespace Model
      * might experience performance degradation. While the migration takes place,
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * instance, deleting the instance, creating a read replica for the instance, and
      * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
@@ -1825,7 +1825,7 @@ namespace Model
      * might experience performance degradation. While the migration takes place,
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * instance, deleting the instance, creating a read replica for the instance, and
      * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
@@ -1846,7 +1846,7 @@ namespace Model
      * might experience performance degradation. While the migration takes place,
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * instance, deleting the instance, creating a read replica for the instance, and
      * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
@@ -1867,7 +1867,7 @@ namespace Model
      * might experience performance degradation. While the migration takes place,
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * instance, deleting the instance, creating a read replica for the instance, and
      * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
@@ -1888,7 +1888,7 @@ namespace Model
      * might experience performance degradation. While the migration takes place,
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * instance, deleting the instance, creating a read replica for the instance, and
      * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
@@ -1909,7 +1909,7 @@ namespace Model
      * might experience performance degradation. While the migration takes place,
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * instance, deleting the instance, creating a read replica for the instance, and
      * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
@@ -1930,7 +1930,7 @@ namespace Model
      * might experience performance degradation. While the migration takes place,
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * instance, deleting the instance, creating a read replica for the instance, and
      * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
@@ -1951,7 +1951,7 @@ namespace Model
      * might experience performance degradation. While the migration takes place,
      * nightly backups for the instance are suspended. No other Amazon RDS operations
      * can take place for the instance, including modifying the instance, rebooting the
-     * instance, deleting the instance, creating a Read Replica for the instance, and
+     * instance, deleting the instance, creating a read replica for the instance, and
      * creating a DB snapshot of the instance. </p> <p> Valid values: <code>standard |
      * gp2 | io1</code> </p> <p>Default: <code>io1</code> if the <code>Iops</code>
      * parameter is specified, otherwise <code>gp2</code> </p>
@@ -2331,17 +2331,17 @@ namespace Model
      * specified for options in the option group for the DB instance.</p> <p>Your
      * database will restart when you change the <code>DBPortNumber</code> value
      * regardless of the value of the <code>ApplyImmediately</code> parameter.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p> <b>MariaDB</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p> <p>
-     * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code> </p> <p> Valid Values:
+     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>
+     * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>Oracle</b> </p> <p>
-     * Default: <code>1521</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
-     * <p> <b>SQL Server</b> </p> <p> Default: <code>1433</code> </p> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
-     * <code>47001</code>, <code>49152</code>, and <code>49152</code> through
-     * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * Default: <code>1521</code> </p> <p> Valid values: <code>1150-65535</code> </p>
+     * <p> <b>SQL Server</b> </p> <p> Default: <code>1433</code> </p> <p> Valid values:
+     * <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
+     * <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and
+     * <code>49152-49156</code>.</p> <p> <b>Amazon Aurora</b> </p> <p> Default:
+     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
      */
     inline int GetDBPortNumber() const{ return m_dBPortNumber; }
 
@@ -2351,17 +2351,17 @@ namespace Model
      * specified for options in the option group for the DB instance.</p> <p>Your
      * database will restart when you change the <code>DBPortNumber</code> value
      * regardless of the value of the <code>ApplyImmediately</code> parameter.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p> <b>MariaDB</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p> <p>
-     * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code> </p> <p> Valid Values:
+     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>
+     * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>Oracle</b> </p> <p>
-     * Default: <code>1521</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
-     * <p> <b>SQL Server</b> </p> <p> Default: <code>1433</code> </p> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
-     * <code>47001</code>, <code>49152</code>, and <code>49152</code> through
-     * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * Default: <code>1521</code> </p> <p> Valid values: <code>1150-65535</code> </p>
+     * <p> <b>SQL Server</b> </p> <p> Default: <code>1433</code> </p> <p> Valid values:
+     * <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
+     * <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and
+     * <code>49152-49156</code>.</p> <p> <b>Amazon Aurora</b> </p> <p> Default:
+     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
      */
     inline bool DBPortNumberHasBeenSet() const { return m_dBPortNumberHasBeenSet; }
 
@@ -2371,17 +2371,17 @@ namespace Model
      * specified for options in the option group for the DB instance.</p> <p>Your
      * database will restart when you change the <code>DBPortNumber</code> value
      * regardless of the value of the <code>ApplyImmediately</code> parameter.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p> <b>MariaDB</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p> <p>
-     * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code> </p> <p> Valid Values:
+     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>
+     * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>Oracle</b> </p> <p>
-     * Default: <code>1521</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
-     * <p> <b>SQL Server</b> </p> <p> Default: <code>1433</code> </p> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
-     * <code>47001</code>, <code>49152</code>, and <code>49152</code> through
-     * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * Default: <code>1521</code> </p> <p> Valid values: <code>1150-65535</code> </p>
+     * <p> <b>SQL Server</b> </p> <p> Default: <code>1433</code> </p> <p> Valid values:
+     * <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
+     * <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and
+     * <code>49152-49156</code>.</p> <p> <b>Amazon Aurora</b> </p> <p> Default:
+     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
      */
     inline void SetDBPortNumber(int value) { m_dBPortNumberHasBeenSet = true; m_dBPortNumber = value; }
 
@@ -2391,17 +2391,17 @@ namespace Model
      * specified for options in the option group for the DB instance.</p> <p>Your
      * database will restart when you change the <code>DBPortNumber</code> value
      * regardless of the value of the <code>ApplyImmediately</code> parameter.</p> <p>
-     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid Values:
+     * <b>MySQL</b> </p> <p> Default: <code>3306</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p> <b>MariaDB</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p> <p>
-     * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code> </p> <p> Valid Values:
+     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p> <p>
+     * <b>PostgreSQL</b> </p> <p> Default: <code>5432</code> </p> <p> Valid values:
      * <code>1150-65535</code> </p> <p>Type: Integer</p> <p> <b>Oracle</b> </p> <p>
-     * Default: <code>1521</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
-     * <p> <b>SQL Server</b> </p> <p> Default: <code>1433</code> </p> <p> Valid Values:
-     * <code>1150-65535</code> except for <code>1434</code>, <code>3389</code>,
-     * <code>47001</code>, <code>49152</code>, and <code>49152</code> through
-     * <code>49156</code>. </p> <p> <b>Amazon Aurora</b> </p> <p> Default:
-     * <code>3306</code> </p> <p> Valid Values: <code>1150-65535</code> </p>
+     * Default: <code>1521</code> </p> <p> Valid values: <code>1150-65535</code> </p>
+     * <p> <b>SQL Server</b> </p> <p> Default: <code>1433</code> </p> <p> Valid values:
+     * <code>1150-65535</code> except <code>1234</code>, <code>1434</code>,
+     * <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, and
+     * <code>49152-49156</code>.</p> <p> <b>Amazon Aurora</b> </p> <p> Default:
+     * <code>3306</code> </p> <p> Valid values: <code>1150-65535</code> </p>
      */
     inline ModifyDBInstanceRequest& WithDBPortNumber(int value) { SetDBPortNumber(value); return *this;}
 

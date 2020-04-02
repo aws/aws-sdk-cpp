@@ -103,43 +103,43 @@ namespace Model
 
     /**
      * <p>A list of SourceRegion instances that contains each source AWS Region that
-     * the current AWS Region can get a Read Replica or a DB snapshot from.</p>
+     * the current AWS Region can get a read replica or a DB snapshot from.</p>
      */
     inline const Aws::Vector<SourceRegion>& GetSourceRegions() const{ return m_sourceRegions; }
 
     /**
      * <p>A list of SourceRegion instances that contains each source AWS Region that
-     * the current AWS Region can get a Read Replica or a DB snapshot from.</p>
+     * the current AWS Region can get a read replica or a DB snapshot from.</p>
      */
     inline void SetSourceRegions(const Aws::Vector<SourceRegion>& value) { m_sourceRegions = value; }
 
     /**
      * <p>A list of SourceRegion instances that contains each source AWS Region that
-     * the current AWS Region can get a Read Replica or a DB snapshot from.</p>
+     * the current AWS Region can get a read replica or a DB snapshot from.</p>
      */
     inline void SetSourceRegions(Aws::Vector<SourceRegion>&& value) { m_sourceRegions = std::move(value); }
 
     /**
      * <p>A list of SourceRegion instances that contains each source AWS Region that
-     * the current AWS Region can get a Read Replica or a DB snapshot from.</p>
+     * the current AWS Region can get a read replica or a DB snapshot from.</p>
      */
     inline DescribeSourceRegionsResult& WithSourceRegions(const Aws::Vector<SourceRegion>& value) { SetSourceRegions(value); return *this;}
 
     /**
      * <p>A list of SourceRegion instances that contains each source AWS Region that
-     * the current AWS Region can get a Read Replica or a DB snapshot from.</p>
+     * the current AWS Region can get a read replica or a DB snapshot from.</p>
      */
     inline DescribeSourceRegionsResult& WithSourceRegions(Aws::Vector<SourceRegion>&& value) { SetSourceRegions(std::move(value)); return *this;}
 
     /**
      * <p>A list of SourceRegion instances that contains each source AWS Region that
-     * the current AWS Region can get a Read Replica or a DB snapshot from.</p>
+     * the current AWS Region can get a read replica or a DB snapshot from.</p>
      */
     inline DescribeSourceRegionsResult& AddSourceRegions(const SourceRegion& value) { m_sourceRegions.push_back(value); return *this; }
 
     /**
      * <p>A list of SourceRegion instances that contains each source AWS Region that
-     * the current AWS Region can get a Read Replica or a DB snapshot from.</p>
+     * the current AWS Region can get a read replica or a DB snapshot from.</p>
      */
     inline DescribeSourceRegionsResult& AddSourceRegions(SourceRegion&& value) { m_sourceRegions.push_back(std::move(value)); return *this; }
 

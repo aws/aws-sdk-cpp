@@ -17,6 +17,8 @@
 #include <aws/monitoring/CloudWatch_EXPORTS.h>
 #include <aws/monitoring/CloudWatchRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/monitoring/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -192,6 +194,127 @@ namespace Model
      */
     inline PutInsightRuleRequest& WithRuleDefinition(const char* value) { SetRuleDefinition(value); return *this;}
 
+
+    /**
+     * <p>A list of key-value pairs to associate with the Contributor Insights rule.
+     * You can associate as many as 50 tags with a rule.</p> <p>Tags can help you
+     * organize and categorize your resources. You can also use them to scope user
+     * permissions, by granting a user permission to access or change only the
+     * resources that have certain tag values.</p> <p>To be able to associate tags with
+     * a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you
+     * are using this operation to update an existing Contributor Insights rule, any
+     * tags you specify in this parameter are ignored. To change the tags of an
+     * existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of key-value pairs to associate with the Contributor Insights rule.
+     * You can associate as many as 50 tags with a rule.</p> <p>Tags can help you
+     * organize and categorize your resources. You can also use them to scope user
+     * permissions, by granting a user permission to access or change only the
+     * resources that have certain tag values.</p> <p>To be able to associate tags with
+     * a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you
+     * are using this operation to update an existing Contributor Insights rule, any
+     * tags you specify in this parameter are ignored. To change the tags of an
+     * existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs to associate with the Contributor Insights rule.
+     * You can associate as many as 50 tags with a rule.</p> <p>Tags can help you
+     * organize and categorize your resources. You can also use them to scope user
+     * permissions, by granting a user permission to access or change only the
+     * resources that have certain tag values.</p> <p>To be able to associate tags with
+     * a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you
+     * are using this operation to update an existing Contributor Insights rule, any
+     * tags you specify in this parameter are ignored. To change the tags of an
+     * existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of key-value pairs to associate with the Contributor Insights rule.
+     * You can associate as many as 50 tags with a rule.</p> <p>Tags can help you
+     * organize and categorize your resources. You can also use them to scope user
+     * permissions, by granting a user permission to access or change only the
+     * resources that have certain tag values.</p> <p>To be able to associate tags with
+     * a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you
+     * are using this operation to update an existing Contributor Insights rule, any
+     * tags you specify in this parameter are ignored. To change the tags of an
+     * existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs to associate with the Contributor Insights rule.
+     * You can associate as many as 50 tags with a rule.</p> <p>Tags can help you
+     * organize and categorize your resources. You can also use them to scope user
+     * permissions, by granting a user permission to access or change only the
+     * resources that have certain tag values.</p> <p>To be able to associate tags with
+     * a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you
+     * are using this operation to update an existing Contributor Insights rule, any
+     * tags you specify in this parameter are ignored. To change the tags of an
+     * existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+     */
+    inline PutInsightRuleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs to associate with the Contributor Insights rule.
+     * You can associate as many as 50 tags with a rule.</p> <p>Tags can help you
+     * organize and categorize your resources. You can also use them to scope user
+     * permissions, by granting a user permission to access or change only the
+     * resources that have certain tag values.</p> <p>To be able to associate tags with
+     * a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you
+     * are using this operation to update an existing Contributor Insights rule, any
+     * tags you specify in this parameter are ignored. To change the tags of an
+     * existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+     */
+    inline PutInsightRuleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs to associate with the Contributor Insights rule.
+     * You can associate as many as 50 tags with a rule.</p> <p>Tags can help you
+     * organize and categorize your resources. You can also use them to scope user
+     * permissions, by granting a user permission to access or change only the
+     * resources that have certain tag values.</p> <p>To be able to associate tags with
+     * a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you
+     * are using this operation to update an existing Contributor Insights rule, any
+     * tags you specify in this parameter are ignored. To change the tags of an
+     * existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+     */
+    inline PutInsightRuleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs to associate with the Contributor Insights rule.
+     * You can associate as many as 50 tags with a rule.</p> <p>Tags can help you
+     * organize and categorize your resources. You can also use them to scope user
+     * permissions, by granting a user permission to access or change only the
+     * resources that have certain tag values.</p> <p>To be able to associate tags with
+     * a rule, you must have the <code>cloudwatch:TagResource</code> permission in
+     * addition to the <code>cloudwatch:PutInsightRule</code> permission.</p> <p>If you
+     * are using this operation to update an existing Contributor Insights rule, any
+     * tags you specify in this parameter are ignored. To change the tags of an
+     * existing rule, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+     */
+    inline PutInsightRuleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ruleName;
@@ -202,6 +325,9 @@ namespace Model
 
     Aws::String m_ruleDefinition;
     bool m_ruleDefinitionHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

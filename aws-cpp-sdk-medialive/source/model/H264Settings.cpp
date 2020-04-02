@@ -48,6 +48,8 @@ H264Settings::H264Settings() :
     m_fixedAfdHasBeenSet(false),
     m_flickerAq(H264FlickerAq::NOT_SET),
     m_flickerAqHasBeenSet(false),
+    m_forceFieldPictures(H264ForceFieldPictures::NOT_SET),
+    m_forceFieldPicturesHasBeenSet(false),
     m_framerateControl(H264FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateDenominator(0),
@@ -127,6 +129,8 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_fixedAfdHasBeenSet(false),
     m_flickerAq(H264FlickerAq::NOT_SET),
     m_flickerAqHasBeenSet(false),
+    m_forceFieldPictures(H264ForceFieldPictures::NOT_SET),
+    m_forceFieldPicturesHasBeenSet(false),
     m_framerateControl(H264FramerateControl::NOT_SET),
     m_framerateControlHasBeenSet(false),
     m_framerateDenominator(0),
@@ -257,6 +261,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_flickerAq = H264FlickerAqMapper::GetH264FlickerAqForName(jsonValue.GetString("flickerAq"));
 
     m_flickerAqHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("forceFieldPictures"))
+  {
+    m_forceFieldPictures = H264ForceFieldPicturesMapper::GetH264ForceFieldPicturesForName(jsonValue.GetString("forceFieldPictures"));
+
+    m_forceFieldPicturesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("framerateControl"))
@@ -514,6 +525,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_flickerAqHasBeenSet)
   {
    payload.WithString("flickerAq", H264FlickerAqMapper::GetNameForH264FlickerAq(m_flickerAq));
+  }
+
+  if(m_forceFieldPicturesHasBeenSet)
+  {
+   payload.WithString("forceFieldPictures", H264ForceFieldPicturesMapper::GetNameForH264ForceFieldPictures(m_forceFieldPictures));
   }
 
   if(m_framerateControlHasBeenSet)

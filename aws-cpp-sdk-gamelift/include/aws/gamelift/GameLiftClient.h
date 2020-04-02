@@ -22,9 +22,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/gamelift/model/AcceptMatchResult.h>
+#include <aws/gamelift/model/ClaimGameServerResult.h>
 #include <aws/gamelift/model/CreateAliasResult.h>
 #include <aws/gamelift/model/CreateBuildResult.h>
 #include <aws/gamelift/model/CreateFleetResult.h>
+#include <aws/gamelift/model/CreateGameServerGroupResult.h>
 #include <aws/gamelift/model/CreateGameSessionResult.h>
 #include <aws/gamelift/model/CreateGameSessionQueueResult.h>
 #include <aws/gamelift/model/CreateMatchmakingConfigurationResult.h>
@@ -34,6 +36,7 @@
 #include <aws/gamelift/model/CreateScriptResult.h>
 #include <aws/gamelift/model/CreateVpcPeeringAuthorizationResult.h>
 #include <aws/gamelift/model/CreateVpcPeeringConnectionResult.h>
+#include <aws/gamelift/model/DeleteGameServerGroupResult.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueResult.h>
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationResult.h>
 #include <aws/gamelift/model/DeleteMatchmakingRuleSetResult.h>
@@ -47,6 +50,8 @@
 #include <aws/gamelift/model/DescribeFleetEventsResult.h>
 #include <aws/gamelift/model/DescribeFleetPortSettingsResult.h>
 #include <aws/gamelift/model/DescribeFleetUtilizationResult.h>
+#include <aws/gamelift/model/DescribeGameServerResult.h>
+#include <aws/gamelift/model/DescribeGameServerGroupResult.h>
 #include <aws/gamelift/model/DescribeGameSessionDetailsResult.h>
 #include <aws/gamelift/model/DescribeGameSessionPlacementResult.h>
 #include <aws/gamelift/model/DescribeGameSessionQueuesResult.h>
@@ -66,11 +71,15 @@
 #include <aws/gamelift/model/ListAliasesResult.h>
 #include <aws/gamelift/model/ListBuildsResult.h>
 #include <aws/gamelift/model/ListFleetsResult.h>
+#include <aws/gamelift/model/ListGameServerGroupsResult.h>
+#include <aws/gamelift/model/ListGameServersResult.h>
 #include <aws/gamelift/model/ListScriptsResult.h>
 #include <aws/gamelift/model/ListTagsForResourceResult.h>
 #include <aws/gamelift/model/PutScalingPolicyResult.h>
+#include <aws/gamelift/model/RegisterGameServerResult.h>
 #include <aws/gamelift/model/RequestUploadCredentialsResult.h>
 #include <aws/gamelift/model/ResolveAliasResult.h>
+#include <aws/gamelift/model/ResumeGameServerGroupResult.h>
 #include <aws/gamelift/model/SearchGameSessionsResult.h>
 #include <aws/gamelift/model/StartFleetActionsResult.h>
 #include <aws/gamelift/model/StartGameSessionPlacementResult.h>
@@ -79,6 +88,7 @@
 #include <aws/gamelift/model/StopFleetActionsResult.h>
 #include <aws/gamelift/model/StopGameSessionPlacementResult.h>
 #include <aws/gamelift/model/StopMatchmakingResult.h>
+#include <aws/gamelift/model/SuspendGameServerGroupResult.h>
 #include <aws/gamelift/model/TagResourceResult.h>
 #include <aws/gamelift/model/UntagResourceResult.h>
 #include <aws/gamelift/model/UpdateAliasResult.h>
@@ -86,6 +96,8 @@
 #include <aws/gamelift/model/UpdateFleetAttributesResult.h>
 #include <aws/gamelift/model/UpdateFleetCapacityResult.h>
 #include <aws/gamelift/model/UpdateFleetPortSettingsResult.h>
+#include <aws/gamelift/model/UpdateGameServerResult.h>
+#include <aws/gamelift/model/UpdateGameServerGroupResult.h>
 #include <aws/gamelift/model/UpdateGameSessionResult.h>
 #include <aws/gamelift/model/UpdateGameSessionQueueResult.h>
 #include <aws/gamelift/model/UpdateMatchmakingConfigurationResult.h>
@@ -133,9 +145,11 @@ namespace GameLift
 namespace Model
 {
         class AcceptMatchRequest;
+        class ClaimGameServerRequest;
         class CreateAliasRequest;
         class CreateBuildRequest;
         class CreateFleetRequest;
+        class CreateGameServerGroupRequest;
         class CreateGameSessionRequest;
         class CreateGameSessionQueueRequest;
         class CreateMatchmakingConfigurationRequest;
@@ -148,6 +162,7 @@ namespace Model
         class DeleteAliasRequest;
         class DeleteBuildRequest;
         class DeleteFleetRequest;
+        class DeleteGameServerGroupRequest;
         class DeleteGameSessionQueueRequest;
         class DeleteMatchmakingConfigurationRequest;
         class DeleteMatchmakingRuleSetRequest;
@@ -155,6 +170,7 @@ namespace Model
         class DeleteScriptRequest;
         class DeleteVpcPeeringAuthorizationRequest;
         class DeleteVpcPeeringConnectionRequest;
+        class DeregisterGameServerRequest;
         class DescribeAliasRequest;
         class DescribeBuildRequest;
         class DescribeEC2InstanceLimitsRequest;
@@ -163,6 +179,8 @@ namespace Model
         class DescribeFleetEventsRequest;
         class DescribeFleetPortSettingsRequest;
         class DescribeFleetUtilizationRequest;
+        class DescribeGameServerRequest;
+        class DescribeGameServerGroupRequest;
         class DescribeGameSessionDetailsRequest;
         class DescribeGameSessionPlacementRequest;
         class DescribeGameSessionQueuesRequest;
@@ -182,11 +200,15 @@ namespace Model
         class ListAliasesRequest;
         class ListBuildsRequest;
         class ListFleetsRequest;
+        class ListGameServerGroupsRequest;
+        class ListGameServersRequest;
         class ListScriptsRequest;
         class ListTagsForResourceRequest;
         class PutScalingPolicyRequest;
+        class RegisterGameServerRequest;
         class RequestUploadCredentialsRequest;
         class ResolveAliasRequest;
+        class ResumeGameServerGroupRequest;
         class SearchGameSessionsRequest;
         class StartFleetActionsRequest;
         class StartGameSessionPlacementRequest;
@@ -195,6 +217,7 @@ namespace Model
         class StopFleetActionsRequest;
         class StopGameSessionPlacementRequest;
         class StopMatchmakingRequest;
+        class SuspendGameServerGroupRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateAliasRequest;
@@ -202,6 +225,8 @@ namespace Model
         class UpdateFleetAttributesRequest;
         class UpdateFleetCapacityRequest;
         class UpdateFleetPortSettingsRequest;
+        class UpdateGameServerRequest;
+        class UpdateGameServerGroupRequest;
         class UpdateGameSessionRequest;
         class UpdateGameSessionQueueRequest;
         class UpdateMatchmakingConfigurationRequest;
@@ -210,9 +235,11 @@ namespace Model
         class ValidateMatchmakingRuleSetRequest;
 
         typedef Aws::Utils::Outcome<AcceptMatchResult, Aws::Client::AWSError<GameLiftErrors>> AcceptMatchOutcome;
+        typedef Aws::Utils::Outcome<ClaimGameServerResult, Aws::Client::AWSError<GameLiftErrors>> ClaimGameServerOutcome;
         typedef Aws::Utils::Outcome<CreateAliasResult, Aws::Client::AWSError<GameLiftErrors>> CreateAliasOutcome;
         typedef Aws::Utils::Outcome<CreateBuildResult, Aws::Client::AWSError<GameLiftErrors>> CreateBuildOutcome;
         typedef Aws::Utils::Outcome<CreateFleetResult, Aws::Client::AWSError<GameLiftErrors>> CreateFleetOutcome;
+        typedef Aws::Utils::Outcome<CreateGameServerGroupResult, Aws::Client::AWSError<GameLiftErrors>> CreateGameServerGroupOutcome;
         typedef Aws::Utils::Outcome<CreateGameSessionResult, Aws::Client::AWSError<GameLiftErrors>> CreateGameSessionOutcome;
         typedef Aws::Utils::Outcome<CreateGameSessionQueueResult, Aws::Client::AWSError<GameLiftErrors>> CreateGameSessionQueueOutcome;
         typedef Aws::Utils::Outcome<CreateMatchmakingConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> CreateMatchmakingConfigurationOutcome;
@@ -225,6 +252,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteAliasOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteBuildOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteFleetOutcome;
+        typedef Aws::Utils::Outcome<DeleteGameServerGroupResult, Aws::Client::AWSError<GameLiftErrors>> DeleteGameServerGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteGameSessionQueueResult, Aws::Client::AWSError<GameLiftErrors>> DeleteGameSessionQueueOutcome;
         typedef Aws::Utils::Outcome<DeleteMatchmakingConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> DeleteMatchmakingConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteMatchmakingRuleSetResult, Aws::Client::AWSError<GameLiftErrors>> DeleteMatchmakingRuleSetOutcome;
@@ -232,6 +260,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteScriptOutcome;
         typedef Aws::Utils::Outcome<DeleteVpcPeeringAuthorizationResult, Aws::Client::AWSError<GameLiftErrors>> DeleteVpcPeeringAuthorizationOutcome;
         typedef Aws::Utils::Outcome<DeleteVpcPeeringConnectionResult, Aws::Client::AWSError<GameLiftErrors>> DeleteVpcPeeringConnectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeregisterGameServerOutcome;
         typedef Aws::Utils::Outcome<DescribeAliasResult, Aws::Client::AWSError<GameLiftErrors>> DescribeAliasOutcome;
         typedef Aws::Utils::Outcome<DescribeBuildResult, Aws::Client::AWSError<GameLiftErrors>> DescribeBuildOutcome;
         typedef Aws::Utils::Outcome<DescribeEC2InstanceLimitsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeEC2InstanceLimitsOutcome;
@@ -240,6 +269,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeFleetEventsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeFleetEventsOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetPortSettingsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeFleetPortSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetUtilizationResult, Aws::Client::AWSError<GameLiftErrors>> DescribeFleetUtilizationOutcome;
+        typedef Aws::Utils::Outcome<DescribeGameServerResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameServerOutcome;
+        typedef Aws::Utils::Outcome<DescribeGameServerGroupResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameServerGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeGameSessionDetailsResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameSessionDetailsOutcome;
         typedef Aws::Utils::Outcome<DescribeGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameSessionPlacementOutcome;
         typedef Aws::Utils::Outcome<DescribeGameSessionQueuesResult, Aws::Client::AWSError<GameLiftErrors>> DescribeGameSessionQueuesOutcome;
@@ -259,11 +290,15 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAliasesResult, Aws::Client::AWSError<GameLiftErrors>> ListAliasesOutcome;
         typedef Aws::Utils::Outcome<ListBuildsResult, Aws::Client::AWSError<GameLiftErrors>> ListBuildsOutcome;
         typedef Aws::Utils::Outcome<ListFleetsResult, Aws::Client::AWSError<GameLiftErrors>> ListFleetsOutcome;
+        typedef Aws::Utils::Outcome<ListGameServerGroupsResult, Aws::Client::AWSError<GameLiftErrors>> ListGameServerGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListGameServersResult, Aws::Client::AWSError<GameLiftErrors>> ListGameServersOutcome;
         typedef Aws::Utils::Outcome<ListScriptsResult, Aws::Client::AWSError<GameLiftErrors>> ListScriptsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<GameLiftErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutScalingPolicyResult, Aws::Client::AWSError<GameLiftErrors>> PutScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<RegisterGameServerResult, Aws::Client::AWSError<GameLiftErrors>> RegisterGameServerOutcome;
         typedef Aws::Utils::Outcome<RequestUploadCredentialsResult, Aws::Client::AWSError<GameLiftErrors>> RequestUploadCredentialsOutcome;
         typedef Aws::Utils::Outcome<ResolveAliasResult, Aws::Client::AWSError<GameLiftErrors>> ResolveAliasOutcome;
+        typedef Aws::Utils::Outcome<ResumeGameServerGroupResult, Aws::Client::AWSError<GameLiftErrors>> ResumeGameServerGroupOutcome;
         typedef Aws::Utils::Outcome<SearchGameSessionsResult, Aws::Client::AWSError<GameLiftErrors>> SearchGameSessionsOutcome;
         typedef Aws::Utils::Outcome<StartFleetActionsResult, Aws::Client::AWSError<GameLiftErrors>> StartFleetActionsOutcome;
         typedef Aws::Utils::Outcome<StartGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> StartGameSessionPlacementOutcome;
@@ -272,6 +307,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StopFleetActionsResult, Aws::Client::AWSError<GameLiftErrors>> StopFleetActionsOutcome;
         typedef Aws::Utils::Outcome<StopGameSessionPlacementResult, Aws::Client::AWSError<GameLiftErrors>> StopGameSessionPlacementOutcome;
         typedef Aws::Utils::Outcome<StopMatchmakingResult, Aws::Client::AWSError<GameLiftErrors>> StopMatchmakingOutcome;
+        typedef Aws::Utils::Outcome<SuspendGameServerGroupResult, Aws::Client::AWSError<GameLiftErrors>> SuspendGameServerGroupOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<GameLiftErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<GameLiftErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAliasResult, Aws::Client::AWSError<GameLiftErrors>> UpdateAliasOutcome;
@@ -279,6 +315,8 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFleetAttributesResult, Aws::Client::AWSError<GameLiftErrors>> UpdateFleetAttributesOutcome;
         typedef Aws::Utils::Outcome<UpdateFleetCapacityResult, Aws::Client::AWSError<GameLiftErrors>> UpdateFleetCapacityOutcome;
         typedef Aws::Utils::Outcome<UpdateFleetPortSettingsResult, Aws::Client::AWSError<GameLiftErrors>> UpdateFleetPortSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateGameServerResult, Aws::Client::AWSError<GameLiftErrors>> UpdateGameServerOutcome;
+        typedef Aws::Utils::Outcome<UpdateGameServerGroupResult, Aws::Client::AWSError<GameLiftErrors>> UpdateGameServerGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateGameSessionResult, Aws::Client::AWSError<GameLiftErrors>> UpdateGameSessionOutcome;
         typedef Aws::Utils::Outcome<UpdateGameSessionQueueResult, Aws::Client::AWSError<GameLiftErrors>> UpdateGameSessionQueueOutcome;
         typedef Aws::Utils::Outcome<UpdateMatchmakingConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> UpdateMatchmakingConfigurationOutcome;
@@ -287,9 +325,11 @@ namespace Model
         typedef Aws::Utils::Outcome<ValidateMatchmakingRuleSetResult, Aws::Client::AWSError<GameLiftErrors>> ValidateMatchmakingRuleSetOutcome;
 
         typedef std::future<AcceptMatchOutcome> AcceptMatchOutcomeCallable;
+        typedef std::future<ClaimGameServerOutcome> ClaimGameServerOutcomeCallable;
         typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
         typedef std::future<CreateBuildOutcome> CreateBuildOutcomeCallable;
         typedef std::future<CreateFleetOutcome> CreateFleetOutcomeCallable;
+        typedef std::future<CreateGameServerGroupOutcome> CreateGameServerGroupOutcomeCallable;
         typedef std::future<CreateGameSessionOutcome> CreateGameSessionOutcomeCallable;
         typedef std::future<CreateGameSessionQueueOutcome> CreateGameSessionQueueOutcomeCallable;
         typedef std::future<CreateMatchmakingConfigurationOutcome> CreateMatchmakingConfigurationOutcomeCallable;
@@ -302,6 +342,7 @@ namespace Model
         typedef std::future<DeleteAliasOutcome> DeleteAliasOutcomeCallable;
         typedef std::future<DeleteBuildOutcome> DeleteBuildOutcomeCallable;
         typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
+        typedef std::future<DeleteGameServerGroupOutcome> DeleteGameServerGroupOutcomeCallable;
         typedef std::future<DeleteGameSessionQueueOutcome> DeleteGameSessionQueueOutcomeCallable;
         typedef std::future<DeleteMatchmakingConfigurationOutcome> DeleteMatchmakingConfigurationOutcomeCallable;
         typedef std::future<DeleteMatchmakingRuleSetOutcome> DeleteMatchmakingRuleSetOutcomeCallable;
@@ -309,6 +350,7 @@ namespace Model
         typedef std::future<DeleteScriptOutcome> DeleteScriptOutcomeCallable;
         typedef std::future<DeleteVpcPeeringAuthorizationOutcome> DeleteVpcPeeringAuthorizationOutcomeCallable;
         typedef std::future<DeleteVpcPeeringConnectionOutcome> DeleteVpcPeeringConnectionOutcomeCallable;
+        typedef std::future<DeregisterGameServerOutcome> DeregisterGameServerOutcomeCallable;
         typedef std::future<DescribeAliasOutcome> DescribeAliasOutcomeCallable;
         typedef std::future<DescribeBuildOutcome> DescribeBuildOutcomeCallable;
         typedef std::future<DescribeEC2InstanceLimitsOutcome> DescribeEC2InstanceLimitsOutcomeCallable;
@@ -317,6 +359,8 @@ namespace Model
         typedef std::future<DescribeFleetEventsOutcome> DescribeFleetEventsOutcomeCallable;
         typedef std::future<DescribeFleetPortSettingsOutcome> DescribeFleetPortSettingsOutcomeCallable;
         typedef std::future<DescribeFleetUtilizationOutcome> DescribeFleetUtilizationOutcomeCallable;
+        typedef std::future<DescribeGameServerOutcome> DescribeGameServerOutcomeCallable;
+        typedef std::future<DescribeGameServerGroupOutcome> DescribeGameServerGroupOutcomeCallable;
         typedef std::future<DescribeGameSessionDetailsOutcome> DescribeGameSessionDetailsOutcomeCallable;
         typedef std::future<DescribeGameSessionPlacementOutcome> DescribeGameSessionPlacementOutcomeCallable;
         typedef std::future<DescribeGameSessionQueuesOutcome> DescribeGameSessionQueuesOutcomeCallable;
@@ -336,11 +380,15 @@ namespace Model
         typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
         typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
         typedef std::future<ListFleetsOutcome> ListFleetsOutcomeCallable;
+        typedef std::future<ListGameServerGroupsOutcome> ListGameServerGroupsOutcomeCallable;
+        typedef std::future<ListGameServersOutcome> ListGameServersOutcomeCallable;
         typedef std::future<ListScriptsOutcome> ListScriptsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
+        typedef std::future<RegisterGameServerOutcome> RegisterGameServerOutcomeCallable;
         typedef std::future<RequestUploadCredentialsOutcome> RequestUploadCredentialsOutcomeCallable;
         typedef std::future<ResolveAliasOutcome> ResolveAliasOutcomeCallable;
+        typedef std::future<ResumeGameServerGroupOutcome> ResumeGameServerGroupOutcomeCallable;
         typedef std::future<SearchGameSessionsOutcome> SearchGameSessionsOutcomeCallable;
         typedef std::future<StartFleetActionsOutcome> StartFleetActionsOutcomeCallable;
         typedef std::future<StartGameSessionPlacementOutcome> StartGameSessionPlacementOutcomeCallable;
@@ -349,6 +397,7 @@ namespace Model
         typedef std::future<StopFleetActionsOutcome> StopFleetActionsOutcomeCallable;
         typedef std::future<StopGameSessionPlacementOutcome> StopGameSessionPlacementOutcomeCallable;
         typedef std::future<StopMatchmakingOutcome> StopMatchmakingOutcomeCallable;
+        typedef std::future<SuspendGameServerGroupOutcome> SuspendGameServerGroupOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
@@ -356,6 +405,8 @@ namespace Model
         typedef std::future<UpdateFleetAttributesOutcome> UpdateFleetAttributesOutcomeCallable;
         typedef std::future<UpdateFleetCapacityOutcome> UpdateFleetCapacityOutcomeCallable;
         typedef std::future<UpdateFleetPortSettingsOutcome> UpdateFleetPortSettingsOutcomeCallable;
+        typedef std::future<UpdateGameServerOutcome> UpdateGameServerOutcomeCallable;
+        typedef std::future<UpdateGameServerGroupOutcome> UpdateGameServerGroupOutcomeCallable;
         typedef std::future<UpdateGameSessionOutcome> UpdateGameSessionOutcomeCallable;
         typedef std::future<UpdateGameSessionQueueOutcome> UpdateGameSessionQueueOutcomeCallable;
         typedef std::future<UpdateMatchmakingConfigurationOutcome> UpdateMatchmakingConfigurationOutcomeCallable;
@@ -367,9 +418,11 @@ namespace Model
   class GameLiftClient;
 
     typedef std::function<void(const GameLiftClient*, const Model::AcceptMatchRequest&, const Model::AcceptMatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptMatchResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ClaimGameServerRequest&, const Model::ClaimGameServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClaimGameServerResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateBuildRequest&, const Model::CreateBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateFleetRequest&, const Model::CreateFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFleetResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::CreateGameServerGroupRequest&, const Model::CreateGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateGameSessionRequest&, const Model::CreateGameSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGameSessionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateGameSessionQueueRequest&, const Model::CreateGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGameSessionQueueResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::CreateMatchmakingConfigurationRequest&, const Model::CreateMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMatchmakingConfigurationResponseReceivedHandler;
@@ -382,6 +435,7 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::DeleteAliasRequest&, const Model::DeleteAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteBuildRequest&, const Model::DeleteBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeleteGameServerGroupRequest&, const Model::DeleteGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteGameSessionQueueRequest&, const Model::DeleteGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGameSessionQueueResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteMatchmakingConfigurationRequest&, const Model::DeleteMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchmakingConfigurationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteMatchmakingRuleSetRequest&, const Model::DeleteMatchmakingRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchmakingRuleSetResponseReceivedHandler;
@@ -389,6 +443,7 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::DeleteScriptRequest&, const Model::DeleteScriptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScriptResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteVpcPeeringAuthorizationRequest&, const Model::DeleteVpcPeeringAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcPeeringAuthorizationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteVpcPeeringConnectionRequest&, const Model::DeleteVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcPeeringConnectionResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeregisterGameServerRequest&, const Model::DeregisterGameServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterGameServerResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeAliasRequest&, const Model::DescribeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAliasResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeBuildRequest&, const Model::DescribeBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBuildResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeEC2InstanceLimitsRequest&, const Model::DescribeEC2InstanceLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEC2InstanceLimitsResponseReceivedHandler;
@@ -397,6 +452,8 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetEventsRequest&, const Model::DescribeFleetEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetEventsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetPortSettingsRequest&, const Model::DescribeFleetPortSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetPortSettingsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeFleetUtilizationRequest&, const Model::DescribeFleetUtilizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetUtilizationResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeGameServerRequest&, const Model::DescribeGameServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameServerResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DescribeGameServerGroupRequest&, const Model::DescribeGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeGameSessionDetailsRequest&, const Model::DescribeGameSessionDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameSessionDetailsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeGameSessionPlacementRequest&, const Model::DescribeGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameSessionPlacementResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DescribeGameSessionQueuesRequest&, const Model::DescribeGameSessionQueuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGameSessionQueuesResponseReceivedHandler;
@@ -416,11 +473,15 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListFleetsRequest&, const Model::ListFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFleetsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ListGameServerGroupsRequest&, const Model::ListGameServerGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGameServerGroupsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ListGameServersRequest&, const Model::ListGameServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGameServersResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListScriptsRequest&, const Model::ListScriptsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListScriptsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::RegisterGameServerRequest&, const Model::RegisterGameServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterGameServerResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::RequestUploadCredentialsRequest&, const Model::RequestUploadCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestUploadCredentialsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::ResolveAliasRequest&, const Model::ResolveAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveAliasResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::ResumeGameServerGroupRequest&, const Model::ResumeGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::SearchGameSessionsRequest&, const Model::SearchGameSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchGameSessionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StartFleetActionsRequest&, const Model::StartFleetActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFleetActionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StartGameSessionPlacementRequest&, const Model::StartGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGameSessionPlacementResponseReceivedHandler;
@@ -429,6 +490,7 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::StopFleetActionsRequest&, const Model::StopFleetActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopFleetActionsResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StopGameSessionPlacementRequest&, const Model::StopGameSessionPlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopGameSessionPlacementResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::StopMatchmakingRequest&, const Model::StopMatchmakingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMatchmakingResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::SuspendGameServerGroupRequest&, const Model::SuspendGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SuspendGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateAliasRequest&, const Model::UpdateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAliasResponseReceivedHandler;
@@ -436,6 +498,8 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetAttributesRequest&, const Model::UpdateFleetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetAttributesResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetCapacityRequest&, const Model::UpdateFleetCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetCapacityResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateFleetPortSettingsRequest&, const Model::UpdateFleetPortSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFleetPortSettingsResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::UpdateGameServerRequest&, const Model::UpdateGameServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGameServerResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::UpdateGameServerGroupRequest&, const Model::UpdateGameServerGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGameServerGroupResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateGameSessionRequest&, const Model::UpdateGameSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGameSessionResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateGameSessionQueueRequest&, const Model::UpdateGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGameSessionQueueResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::UpdateMatchmakingConfigurationRequest&, const Model::UpdateMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMatchmakingConfigurationResponseReceivedHandler;
@@ -444,16 +508,23 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::ValidateMatchmakingRuleSetRequest&, const Model::ValidateMatchmakingRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ValidateMatchmakingRuleSetResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon GameLift Service</fullname> <p> Amazon GameLift is a managed
-   * service for developers who need a scalable, dedicated server solution for their
-   * multiplayer games. Use Amazon GameLift for these tasks: (1) set up computing
-   * resources and deploy your game servers, (2) run game sessions and get players
-   * into games, (3) automatically scale your resources to meet player demand and
-   * manage costs, and (4) track in-depth metrics on game server performance and
-   * player usage.</p> <p>When setting up hosting resources, you can deploy your
-   * custom game server or use the Amazon GameLift Realtime Servers. Realtime Servers
-   * gives you the ability to quickly stand up lightweight, efficient game servers
-   * with the core Amazon GameLift infrastructure already built in.</p> <p> <b>Get
+   * <fullname>Amazon GameLift Service</fullname> <p> Amazon GameLift provides a
+   * range of multiplayer game hosting solutions. As a fully managed service,
+   * GameLift helps you:</p> <ul> <li> <p>Set up EC2-based computing resources and
+   * use GameLift FleetIQ to and deploy your game servers on low-cost, reliable Spot
+   * instances.</p> </li> <li> <p>Track game server availability and route players
+   * into game sessions to minimize latency.</p> </li> <li> <p>Automatically scale
+   * your resources to meet player demand and manage costs</p> </li> <li>
+   * <p>Optionally add FlexMatch matchmaking.</p> </li> </ul> <p>With GameLift as a
+   * managed service, you have the option to deploy your custom game server or use
+   * Amazon GameLift Realtime Servers to quickly stand up lightweight game servers
+   * for your game. Realtime Servers provides an efficient game server framework with
+   * core Amazon GameLift infrastructure already built in.</p> <p> <b>Now in Public
+   * Preview:</b> </p> <p>Use GameLift FleetIQ as a standalone feature with EC2
+   * instances and Auto Scaling groups. GameLift FleetIQ provides optimizations that
+   * make low-cost Spot instances viable for game hosting. This extension of GameLift
+   * FleetIQ gives you access to these optimizations while managing your EC2
+   * instances and Auto Scaling groups within your own AWS account.</p> <p> <b>Get
    * Amazon GameLift Tools and Resources</b> </p> <p>This reference guide describes
    * the low-level service API for Amazon GameLift and provides links to
    * language-specific SDK reference topics. See also <a
@@ -606,6 +677,136 @@ namespace Model
         virtual void AcceptMatchAsync(const Model::AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Locates an
+         * available game server and temporarily reserves it to host gameplay and players.
+         * This action is called by a game client or client service (such as a matchmaker)
+         * to request hosting resources for a new game session. In response, GameLift
+         * FleetIQ searches for an available game server in the specified game server
+         * group, places the game server in "claimed" status for 60 seconds, and returns
+         * connection information back to the requester so that players can connect to the
+         * game server. </p> <p>There are two ways you can claim a game server. For the
+         * first option, you provide a game server group ID only, which prompts GameLift
+         * FleetIQ to search for an available game server in the specified group and claim
+         * it. With this option, GameLift FleetIQ attempts to consolidate gameplay on as
+         * few instances as possible to minimize hosting costs. For the second option, you
+         * request a specific game server by its ID. This option results in a less
+         * efficient claiming process because it does not take advantage of consolidation
+         * and may fail if the requested game server is unavailable. </p> <p>To claim a
+         * game server, identify a game server group and (optionally) a game server ID. If
+         * your game requires that game data be provided to the game server at the start of
+         * a game, such as a game map or player information, you can provide it in your
+         * claim request. </p> <p>When a game server is successfully claimed, connection
+         * information is returned. A claimed game server's utilization status remains
+         * AVAILABLE, while the claim status is set to CLAIMED for up to 60 seconds. This
+         * time period allows the game server to be prompted to update its status to
+         * UTILIZED (using <a>UpdateGameServer</a>). If the game server's status is not
+         * updated within 60 seconds, the game server reverts to unclaimed status and is
+         * available to be claimed by another request.</p> <p>If you try to claim a
+         * specific game server, this request will fail in the following cases: (1) if the
+         * game server utilization status is UTILIZED, (2) if the game server claim status
+         * is CLAIMED, or (3) if the instance that the game server is running on is flagged
+         * as draining.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ClaimGameServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ClaimGameServerOutcome ClaimGameServer(const Model::ClaimGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Locates an
+         * available game server and temporarily reserves it to host gameplay and players.
+         * This action is called by a game client or client service (such as a matchmaker)
+         * to request hosting resources for a new game session. In response, GameLift
+         * FleetIQ searches for an available game server in the specified game server
+         * group, places the game server in "claimed" status for 60 seconds, and returns
+         * connection information back to the requester so that players can connect to the
+         * game server. </p> <p>There are two ways you can claim a game server. For the
+         * first option, you provide a game server group ID only, which prompts GameLift
+         * FleetIQ to search for an available game server in the specified group and claim
+         * it. With this option, GameLift FleetIQ attempts to consolidate gameplay on as
+         * few instances as possible to minimize hosting costs. For the second option, you
+         * request a specific game server by its ID. This option results in a less
+         * efficient claiming process because it does not take advantage of consolidation
+         * and may fail if the requested game server is unavailable. </p> <p>To claim a
+         * game server, identify a game server group and (optionally) a game server ID. If
+         * your game requires that game data be provided to the game server at the start of
+         * a game, such as a game map or player information, you can provide it in your
+         * claim request. </p> <p>When a game server is successfully claimed, connection
+         * information is returned. A claimed game server's utilization status remains
+         * AVAILABLE, while the claim status is set to CLAIMED for up to 60 seconds. This
+         * time period allows the game server to be prompted to update its status to
+         * UTILIZED (using <a>UpdateGameServer</a>). If the game server's status is not
+         * updated within 60 seconds, the game server reverts to unclaimed status and is
+         * available to be claimed by another request.</p> <p>If you try to claim a
+         * specific game server, this request will fail in the following cases: (1) if the
+         * game server utilization status is UTILIZED, (2) if the game server claim status
+         * is CLAIMED, or (3) if the instance that the game server is running on is flagged
+         * as draining.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ClaimGameServer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ClaimGameServerOutcomeCallable ClaimGameServerCallable(const Model::ClaimGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Locates an
+         * available game server and temporarily reserves it to host gameplay and players.
+         * This action is called by a game client or client service (such as a matchmaker)
+         * to request hosting resources for a new game session. In response, GameLift
+         * FleetIQ searches for an available game server in the specified game server
+         * group, places the game server in "claimed" status for 60 seconds, and returns
+         * connection information back to the requester so that players can connect to the
+         * game server. </p> <p>There are two ways you can claim a game server. For the
+         * first option, you provide a game server group ID only, which prompts GameLift
+         * FleetIQ to search for an available game server in the specified group and claim
+         * it. With this option, GameLift FleetIQ attempts to consolidate gameplay on as
+         * few instances as possible to minimize hosting costs. For the second option, you
+         * request a specific game server by its ID. This option results in a less
+         * efficient claiming process because it does not take advantage of consolidation
+         * and may fail if the requested game server is unavailable. </p> <p>To claim a
+         * game server, identify a game server group and (optionally) a game server ID. If
+         * your game requires that game data be provided to the game server at the start of
+         * a game, such as a game map or player information, you can provide it in your
+         * claim request. </p> <p>When a game server is successfully claimed, connection
+         * information is returned. A claimed game server's utilization status remains
+         * AVAILABLE, while the claim status is set to CLAIMED for up to 60 seconds. This
+         * time period allows the game server to be prompted to update its status to
+         * UTILIZED (using <a>UpdateGameServer</a>). If the game server's status is not
+         * updated within 60 seconds, the game server reverts to unclaimed status and is
+         * available to be claimed by another request.</p> <p>If you try to claim a
+         * specific game server, this request will fail in the following cases: (1) if the
+         * game server utilization status is UTILIZED, (2) if the game server claim status
+         * is CLAIMED, or (3) if the instance that the game server is running on is flagged
+         * as draining.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ClaimGameServer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ClaimGameServerAsync(const Model::ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an alias for a fleet. In most situations, you can use an alias ID in
          * place of a fleet ID. An alias provides a level of abstraction for a fleet that
          * is useful when redirecting player traffic from one fleet to another, such as
@@ -679,37 +880,34 @@ namespace Model
         virtual void CreateAliasAsync(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new Amazon GameLift build record for your game server binary files
-         * and points to the location of your game server build files in an Amazon Simple
-         * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
-         * combined into a zip file for use with Amazon GameLift. </p> <important> <p>To
-         * create new builds directly from a file directory, use the AWS CLI command <b> <a
+         * <p>Creates a new Amazon GameLift build resource for your game server binary
+         * files. Game server binaries must be combined into a zip file for use with Amazon
+         * GameLift. </p> <important> <p>When setting up a new game build for GameLift, we
+         * recommend using the AWS CLI command <b> <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
-         * </b>. This helper command uploads build files and creates a new build record in
-         * one step, and automatically handles the necessary permissions. </p> </important>
-         * <p>The <code>CreateBuild</code> operation should be used only in the following
-         * scenarios:</p> <ul> <li> <p>To create a new game build with build files that are
-         * in an Amazon S3 bucket under your own AWS account. To use this option, you must
-         * first give Amazon GameLift access to that Amazon S3 bucket. Then call
-         * <code>CreateBuild</code> and specify a build name, operating system, and the
-         * Amazon S3 storage location of your game build.</p> </li> <li> <p>To upload build
-         * files directly to Amazon GameLift's Amazon S3 account. To use this option, first
-         * call <code>CreateBuild</code> and specify a build name and operating system.
-         * This action creates a new build record and returns an Amazon S3 storage location
-         * (bucket and key only) and temporary access credentials. Use the credentials to
-         * manually upload your build file to the provided storage location (see the Amazon
-         * S3 topic <a
+         * </b>. This helper command combines two tasks: (1) it uploads your build files
+         * from a file directory to a GameLift Amazon S3 location, and (2) it creates a new
+         * build resource. </p> </important> <p>The <code>CreateBuild</code> operation can
+         * used in the following scenarios:</p> <ul> <li> <p>To create a new game build
+         * with build files that are in an S3 location under an AWS account that you
+         * control. To use this option, you must first give Amazon GameLift access to the
+         * S3 bucket. With permissions in place, call <code>CreateBuild</code> and specify
+         * a build name, operating system, and the S3 storage location of your game
+         * build.</p> </li> <li> <p>To directly upload your build files to a GameLift S3
+         * location. To use this option, first call <code>CreateBuild</code> and specify a
+         * build name and operating system. This action creates a new build resource and
+         * also returns an S3 location with temporary access credentials. Use the
+         * credentials to manually upload your build files to the specified S3 location.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
-         * Objects</a>). You can upload build files to the GameLift Amazon S3 location only
-         * once. </p> </li> </ul> <p>If successful, this operation creates a new build
-         * record with a unique build ID and places it in <code>INITIALIZED</code> status.
-         * You can use <a>DescribeBuild</a> to check the status of your build. A build must
-         * be in <code>READY</code> status before it can be used to create fleets.</p> <p>
-         * <b>Learn more</b> </p> <p> <a
+         * Objects</a> in the <i>Amazon S3 Developer Guide</i>. Build files can be uploaded
+         * to the GameLift S3 location once only; that can't be updated. </p> </li> </ul>
+         * <p>If successful, this operation creates a new build resource with a unique
+         * build ID and places it in <code>INITIALIZED</code> status. A build must be in
+         * <code>READY</code> status before you can create fleets with it.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game</a> <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html</a>
-         * </p> <p> <a
+         * Your Game</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
          * Create a Build with Files in Amazon S3</a> </p> <p> <b>Related operations</b>
          * </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
@@ -721,37 +919,34 @@ namespace Model
         virtual Model::CreateBuildOutcome CreateBuild(const Model::CreateBuildRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon GameLift build record for your game server binary files
-         * and points to the location of your game server build files in an Amazon Simple
-         * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
-         * combined into a zip file for use with Amazon GameLift. </p> <important> <p>To
-         * create new builds directly from a file directory, use the AWS CLI command <b> <a
+         * <p>Creates a new Amazon GameLift build resource for your game server binary
+         * files. Game server binaries must be combined into a zip file for use with Amazon
+         * GameLift. </p> <important> <p>When setting up a new game build for GameLift, we
+         * recommend using the AWS CLI command <b> <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
-         * </b>. This helper command uploads build files and creates a new build record in
-         * one step, and automatically handles the necessary permissions. </p> </important>
-         * <p>The <code>CreateBuild</code> operation should be used only in the following
-         * scenarios:</p> <ul> <li> <p>To create a new game build with build files that are
-         * in an Amazon S3 bucket under your own AWS account. To use this option, you must
-         * first give Amazon GameLift access to that Amazon S3 bucket. Then call
-         * <code>CreateBuild</code> and specify a build name, operating system, and the
-         * Amazon S3 storage location of your game build.</p> </li> <li> <p>To upload build
-         * files directly to Amazon GameLift's Amazon S3 account. To use this option, first
-         * call <code>CreateBuild</code> and specify a build name and operating system.
-         * This action creates a new build record and returns an Amazon S3 storage location
-         * (bucket and key only) and temporary access credentials. Use the credentials to
-         * manually upload your build file to the provided storage location (see the Amazon
-         * S3 topic <a
+         * </b>. This helper command combines two tasks: (1) it uploads your build files
+         * from a file directory to a GameLift Amazon S3 location, and (2) it creates a new
+         * build resource. </p> </important> <p>The <code>CreateBuild</code> operation can
+         * used in the following scenarios:</p> <ul> <li> <p>To create a new game build
+         * with build files that are in an S3 location under an AWS account that you
+         * control. To use this option, you must first give Amazon GameLift access to the
+         * S3 bucket. With permissions in place, call <code>CreateBuild</code> and specify
+         * a build name, operating system, and the S3 storage location of your game
+         * build.</p> </li> <li> <p>To directly upload your build files to a GameLift S3
+         * location. To use this option, first call <code>CreateBuild</code> and specify a
+         * build name and operating system. This action creates a new build resource and
+         * also returns an S3 location with temporary access credentials. Use the
+         * credentials to manually upload your build files to the specified S3 location.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
-         * Objects</a>). You can upload build files to the GameLift Amazon S3 location only
-         * once. </p> </li> </ul> <p>If successful, this operation creates a new build
-         * record with a unique build ID and places it in <code>INITIALIZED</code> status.
-         * You can use <a>DescribeBuild</a> to check the status of your build. A build must
-         * be in <code>READY</code> status before it can be used to create fleets.</p> <p>
-         * <b>Learn more</b> </p> <p> <a
+         * Objects</a> in the <i>Amazon S3 Developer Guide</i>. Build files can be uploaded
+         * to the GameLift S3 location once only; that can't be updated. </p> </li> </ul>
+         * <p>If successful, this operation creates a new build resource with a unique
+         * build ID and places it in <code>INITIALIZED</code> status. A build must be in
+         * <code>READY</code> status before you can create fleets with it.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game</a> <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html</a>
-         * </p> <p> <a
+         * Your Game</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
          * Create a Build with Files in Amazon S3</a> </p> <p> <b>Related operations</b>
          * </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
@@ -765,37 +960,34 @@ namespace Model
         virtual Model::CreateBuildOutcomeCallable CreateBuildCallable(const Model::CreateBuildRequest& request) const;
 
         /**
-         * <p>Creates a new Amazon GameLift build record for your game server binary files
-         * and points to the location of your game server build files in an Amazon Simple
-         * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
-         * combined into a zip file for use with Amazon GameLift. </p> <important> <p>To
-         * create new builds directly from a file directory, use the AWS CLI command <b> <a
+         * <p>Creates a new Amazon GameLift build resource for your game server binary
+         * files. Game server binaries must be combined into a zip file for use with Amazon
+         * GameLift. </p> <important> <p>When setting up a new game build for GameLift, we
+         * recommend using the AWS CLI command <b> <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
-         * </b>. This helper command uploads build files and creates a new build record in
-         * one step, and automatically handles the necessary permissions. </p> </important>
-         * <p>The <code>CreateBuild</code> operation should be used only in the following
-         * scenarios:</p> <ul> <li> <p>To create a new game build with build files that are
-         * in an Amazon S3 bucket under your own AWS account. To use this option, you must
-         * first give Amazon GameLift access to that Amazon S3 bucket. Then call
-         * <code>CreateBuild</code> and specify a build name, operating system, and the
-         * Amazon S3 storage location of your game build.</p> </li> <li> <p>To upload build
-         * files directly to Amazon GameLift's Amazon S3 account. To use this option, first
-         * call <code>CreateBuild</code> and specify a build name and operating system.
-         * This action creates a new build record and returns an Amazon S3 storage location
-         * (bucket and key only) and temporary access credentials. Use the credentials to
-         * manually upload your build file to the provided storage location (see the Amazon
-         * S3 topic <a
+         * </b>. This helper command combines two tasks: (1) it uploads your build files
+         * from a file directory to a GameLift Amazon S3 location, and (2) it creates a new
+         * build resource. </p> </important> <p>The <code>CreateBuild</code> operation can
+         * used in the following scenarios:</p> <ul> <li> <p>To create a new game build
+         * with build files that are in an S3 location under an AWS account that you
+         * control. To use this option, you must first give Amazon GameLift access to the
+         * S3 bucket. With permissions in place, call <code>CreateBuild</code> and specify
+         * a build name, operating system, and the S3 storage location of your game
+         * build.</p> </li> <li> <p>To directly upload your build files to a GameLift S3
+         * location. To use this option, first call <code>CreateBuild</code> and specify a
+         * build name and operating system. This action creates a new build resource and
+         * also returns an S3 location with temporary access credentials. Use the
+         * credentials to manually upload your build files to the specified S3 location.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
-         * Objects</a>). You can upload build files to the GameLift Amazon S3 location only
-         * once. </p> </li> </ul> <p>If successful, this operation creates a new build
-         * record with a unique build ID and places it in <code>INITIALIZED</code> status.
-         * You can use <a>DescribeBuild</a> to check the status of your build. A build must
-         * be in <code>READY</code> status before it can be used to create fleets.</p> <p>
-         * <b>Learn more</b> </p> <p> <a
+         * Objects</a> in the <i>Amazon S3 Developer Guide</i>. Build files can be uploaded
+         * to the GameLift S3 location once only; that can't be updated. </p> </li> </ul>
+         * <p>If successful, this operation creates a new build resource with a unique
+         * build ID and places it in <code>INITIALIZED</code> status. A build must be in
+         * <code>READY</code> status before you can create fleets with it.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game</a> <a
-         * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html</a>
-         * </p> <p> <a
+         * Your Game</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
          * Create a Build with Files in Amazon S3</a> </p> <p> <b>Related operations</b>
          * </p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
@@ -814,35 +1006,34 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can host multiple
          * game sessions. When creating a fleet, you choose the hardware specifications,
          * set some configuration options, and specify the game server to deploy on the new
-         * fleet. </p> <p>To create a new fleet, you must provide the following: (1) a
-         * fleet name, (2) an EC2 instance type and fleet type (spot or on-demand), (3) the
-         * build ID for your game build or script ID if using Realtime Servers, and (4) a
-         * runtime configuration, which determines how game servers will run on each
-         * instance in the fleet. </p> <p>If the <code>CreateFleet</code> call is
-         * successful, Amazon GameLift performs the following tasks. You can track the
-         * process of a fleet by checking the fleet status or by monitoring fleet creation
-         * events:</p> <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p>
-         * </li> <li> <p>Begins writing events to the fleet event log, which can be
-         * accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's
-         * target capacity to 1 (desired instances), which triggers Amazon GameLift to
-         * start one new EC2 instance.</p> </li> <li> <p>Downloads the game build or
-         * Realtime script to the new instance and installs it. Statuses:
-         * <code>DOWNLOADING</code>, <code>VALIDATING</code>, <code>BUILDING</code>. </p>
-         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
-         * configured to run multiple server processes per instance, Amazon GameLift
-         * staggers each process launch by a few seconds. Status:
-         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process is ready to host a game
-         * session.</p> </li> </ul> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Setting Up Fleets</a> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">
-         * Debug Fleet Creation Issues</a> </p> <p> <b>Related operations</b> </p> <ul>
-         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
-         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * fleet. </p> <p>To create a new fleet, provide the following: (1) a fleet name,
+         * (2) an EC2 instance type and fleet type (spot or on-demand), (3) the build ID
+         * for your game build or script ID if using Realtime Servers, and (4) a runtime
+         * configuration, which determines how game servers will run on each instance in
+         * the fleet. </p> <p>If the <code>CreateFleet</code> call is successful, Amazon
+         * GameLift performs the following tasks. You can track the process of a fleet by
+         * checking the fleet status or by monitoring fleet creation events:</p> <ul> <li>
+         * <p>Creates a fleet resource. Status: <code>NEW</code>.</p> </li> <li> <p>Begins
+         * writing events to the fleet event log, which can be accessed in the Amazon
+         * GameLift console.</p> </li> <li> <p>Sets the fleet's target capacity to 1
+         * (desired instances), which triggers Amazon GameLift to start one new EC2
+         * instance.</p> </li> <li> <p>Downloads the game build or Realtime script to the
+         * new instance and installs it. Statuses: <code>DOWNLOADING</code>,
+         * <code>VALIDATING</code>, <code>BUILDING</code>. </p> </li> <li> <p>Starts
+         * launching server processes on the instance. If the fleet is configured to run
+         * multiple server processes per instance, Amazon GameLift staggers each process
+         * launch by a few seconds. Status: <code>ACTIVATING</code>.</p> </li> <li> <p>Sets
+         * the fleet's status to <code>ACTIVE</code> as soon as one server process is ready
+         * to host a game session.</p> </li> </ul> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * Up Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
+         * Fleet Creation Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
          * API Reference</a></p>
          */
@@ -854,35 +1045,34 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can host multiple
          * game sessions. When creating a fleet, you choose the hardware specifications,
          * set some configuration options, and specify the game server to deploy on the new
-         * fleet. </p> <p>To create a new fleet, you must provide the following: (1) a
-         * fleet name, (2) an EC2 instance type and fleet type (spot or on-demand), (3) the
-         * build ID for your game build or script ID if using Realtime Servers, and (4) a
-         * runtime configuration, which determines how game servers will run on each
-         * instance in the fleet. </p> <p>If the <code>CreateFleet</code> call is
-         * successful, Amazon GameLift performs the following tasks. You can track the
-         * process of a fleet by checking the fleet status or by monitoring fleet creation
-         * events:</p> <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p>
-         * </li> <li> <p>Begins writing events to the fleet event log, which can be
-         * accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's
-         * target capacity to 1 (desired instances), which triggers Amazon GameLift to
-         * start one new EC2 instance.</p> </li> <li> <p>Downloads the game build or
-         * Realtime script to the new instance and installs it. Statuses:
-         * <code>DOWNLOADING</code>, <code>VALIDATING</code>, <code>BUILDING</code>. </p>
-         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
-         * configured to run multiple server processes per instance, Amazon GameLift
-         * staggers each process launch by a few seconds. Status:
-         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process is ready to host a game
-         * session.</p> </li> </ul> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Setting Up Fleets</a> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">
-         * Debug Fleet Creation Issues</a> </p> <p> <b>Related operations</b> </p> <ul>
-         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
-         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * fleet. </p> <p>To create a new fleet, provide the following: (1) a fleet name,
+         * (2) an EC2 instance type and fleet type (spot or on-demand), (3) the build ID
+         * for your game build or script ID if using Realtime Servers, and (4) a runtime
+         * configuration, which determines how game servers will run on each instance in
+         * the fleet. </p> <p>If the <code>CreateFleet</code> call is successful, Amazon
+         * GameLift performs the following tasks. You can track the process of a fleet by
+         * checking the fleet status or by monitoring fleet creation events:</p> <ul> <li>
+         * <p>Creates a fleet resource. Status: <code>NEW</code>.</p> </li> <li> <p>Begins
+         * writing events to the fleet event log, which can be accessed in the Amazon
+         * GameLift console.</p> </li> <li> <p>Sets the fleet's target capacity to 1
+         * (desired instances), which triggers Amazon GameLift to start one new EC2
+         * instance.</p> </li> <li> <p>Downloads the game build or Realtime script to the
+         * new instance and installs it. Statuses: <code>DOWNLOADING</code>,
+         * <code>VALIDATING</code>, <code>BUILDING</code>. </p> </li> <li> <p>Starts
+         * launching server processes on the instance. If the fleet is configured to run
+         * multiple server processes per instance, Amazon GameLift staggers each process
+         * launch by a few seconds. Status: <code>ACTIVATING</code>.</p> </li> <li> <p>Sets
+         * the fleet's status to <code>ACTIVE</code> as soon as one server process is ready
+         * to host a game session.</p> </li> </ul> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * Up Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
+         * Fleet Creation Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
          * API Reference</a></p>
          *
@@ -896,41 +1086,191 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can host multiple
          * game sessions. When creating a fleet, you choose the hardware specifications,
          * set some configuration options, and specify the game server to deploy on the new
-         * fleet. </p> <p>To create a new fleet, you must provide the following: (1) a
-         * fleet name, (2) an EC2 instance type and fleet type (spot or on-demand), (3) the
-         * build ID for your game build or script ID if using Realtime Servers, and (4) a
-         * runtime configuration, which determines how game servers will run on each
-         * instance in the fleet. </p> <p>If the <code>CreateFleet</code> call is
-         * successful, Amazon GameLift performs the following tasks. You can track the
-         * process of a fleet by checking the fleet status or by monitoring fleet creation
-         * events:</p> <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p>
-         * </li> <li> <p>Begins writing events to the fleet event log, which can be
-         * accessed in the Amazon GameLift console.</p> </li> <li> <p>Sets the fleet's
-         * target capacity to 1 (desired instances), which triggers Amazon GameLift to
-         * start one new EC2 instance.</p> </li> <li> <p>Downloads the game build or
-         * Realtime script to the new instance and installs it. Statuses:
-         * <code>DOWNLOADING</code>, <code>VALIDATING</code>, <code>BUILDING</code>. </p>
-         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
-         * configured to run multiple server processes per instance, Amazon GameLift
-         * staggers each process launch by a few seconds. Status:
-         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process is ready to host a game
-         * session.</p> </li> </ul> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Setting Up Fleets</a> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">
-         * Debug Fleet Creation Issues</a> </p> <p> <b>Related operations</b> </p> <ul>
-         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
-         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * fleet. </p> <p>To create a new fleet, provide the following: (1) a fleet name,
+         * (2) an EC2 instance type and fleet type (spot or on-demand), (3) the build ID
+         * for your game build or script ID if using Realtime Servers, and (4) a runtime
+         * configuration, which determines how game servers will run on each instance in
+         * the fleet. </p> <p>If the <code>CreateFleet</code> call is successful, Amazon
+         * GameLift performs the following tasks. You can track the process of a fleet by
+         * checking the fleet status or by monitoring fleet creation events:</p> <ul> <li>
+         * <p>Creates a fleet resource. Status: <code>NEW</code>.</p> </li> <li> <p>Begins
+         * writing events to the fleet event log, which can be accessed in the Amazon
+         * GameLift console.</p> </li> <li> <p>Sets the fleet's target capacity to 1
+         * (desired instances), which triggers Amazon GameLift to start one new EC2
+         * instance.</p> </li> <li> <p>Downloads the game build or Realtime script to the
+         * new instance and installs it. Statuses: <code>DOWNLOADING</code>,
+         * <code>VALIDATING</code>, <code>BUILDING</code>. </p> </li> <li> <p>Starts
+         * launching server processes on the instance. If the fleet is configured to run
+         * multiple server processes per instance, Amazon GameLift staggers each process
+         * launch by a few seconds. Status: <code>ACTIVATING</code>.</p> </li> <li> <p>Sets
+         * the fleet's status to <code>ACTIVE</code> as soon as one server process is ready
+         * to host a game session.</p> </li> </ul> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * Up Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
+         * Fleet Creation Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateFleetAsync(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Creates a
+         * GameLift FleetIQ game server group to manage a collection of EC2 instances for
+         * game hosting. In addition to creating the game server group, this action also
+         * creates an Auto Scaling group in your AWS account and establishes a link between
+         * the two groups. You have full control over configuration of the Auto Scaling
+         * group, but GameLift FleetIQ routinely certain Auto Scaling group properties in
+         * order to optimize the group's instances for low-cost game hosting. You can view
+         * the status of your game server groups in the GameLift Console. Game server group
+         * metrics and events are emitted to Amazon CloudWatch.</p> <p>Prior creating a new
+         * game server group, you must set up the following: </p> <ul> <li> <p>An EC2
+         * launch template. The template provides configuration settings for a set of EC2
+         * instances and includes the game server build that you want to deploy and run on
+         * each instance. For more information on creating a launch template, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">
+         * Launching an Instance from a Launch Template</a> in the <i>Amazon EC2 User
+         * Guide</i>. </p> </li> <li> <p>An IAM role. The role sets up limited access to
+         * your AWS account, allowing GameLift FleetIQ to create and manage the EC2 Auto
+         * Scaling group, get instance data, and emit metrics and events to CloudWatch. For
+         * more information on setting up an IAM permissions policy with principal access
+         * for GameLift, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html">
+         * Specifying a Principal in a Policy</a> in the <i>Amazon S3 Developer
+         * Guide</i>.</p> </li> </ul> <p>To create a new game server group, provide a name
+         * and specify the IAM role and EC2 launch template. You also need to provide a
+         * list of instance types to be used in the group and set initial maximum and
+         * minimum limits on the group's instance count. You can optionally set an
+         * autoscaling policy with target tracking based on a GameLift FleetIQ metric.</p>
+         * <p>Once the game server group and corresponding Auto Scaling group are created,
+         * you have full access to change the Auto Scaling group's configuration as needed.
+         * Keep in mind, however, that some properties are periodically updated by GameLift
+         * FleetIQ as it balances the group's instances based on availability and cost.</p>
+         * <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-asgroups.html">Updating
+         * a GameLift FleetIQ-Linked Auto Scaling Group</a> </p> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p> <a>CreateGameServerGroup</a> </p> </li> <li>
+         * <p> <a>ListGameServerGroups</a> </p> </li> <li> <p>
+         * <a>DescribeGameServerGroup</a> </p> </li> <li> <p> <a>UpdateGameServerGroup</a>
+         * </p> </li> <li> <p> <a>DeleteGameServerGroup</a> </p> </li> <li> <p>
+         * <a>ResumeGameServerGroup</a> </p> </li> <li> <p> <a>SuspendGameServerGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameServerGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGameServerGroupOutcome CreateGameServerGroup(const Model::CreateGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Creates a
+         * GameLift FleetIQ game server group to manage a collection of EC2 instances for
+         * game hosting. In addition to creating the game server group, this action also
+         * creates an Auto Scaling group in your AWS account and establishes a link between
+         * the two groups. You have full control over configuration of the Auto Scaling
+         * group, but GameLift FleetIQ routinely certain Auto Scaling group properties in
+         * order to optimize the group's instances for low-cost game hosting. You can view
+         * the status of your game server groups in the GameLift Console. Game server group
+         * metrics and events are emitted to Amazon CloudWatch.</p> <p>Prior creating a new
+         * game server group, you must set up the following: </p> <ul> <li> <p>An EC2
+         * launch template. The template provides configuration settings for a set of EC2
+         * instances and includes the game server build that you want to deploy and run on
+         * each instance. For more information on creating a launch template, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">
+         * Launching an Instance from a Launch Template</a> in the <i>Amazon EC2 User
+         * Guide</i>. </p> </li> <li> <p>An IAM role. The role sets up limited access to
+         * your AWS account, allowing GameLift FleetIQ to create and manage the EC2 Auto
+         * Scaling group, get instance data, and emit metrics and events to CloudWatch. For
+         * more information on setting up an IAM permissions policy with principal access
+         * for GameLift, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html">
+         * Specifying a Principal in a Policy</a> in the <i>Amazon S3 Developer
+         * Guide</i>.</p> </li> </ul> <p>To create a new game server group, provide a name
+         * and specify the IAM role and EC2 launch template. You also need to provide a
+         * list of instance types to be used in the group and set initial maximum and
+         * minimum limits on the group's instance count. You can optionally set an
+         * autoscaling policy with target tracking based on a GameLift FleetIQ metric.</p>
+         * <p>Once the game server group and corresponding Auto Scaling group are created,
+         * you have full access to change the Auto Scaling group's configuration as needed.
+         * Keep in mind, however, that some properties are periodically updated by GameLift
+         * FleetIQ as it balances the group's instances based on availability and cost.</p>
+         * <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-asgroups.html">Updating
+         * a GameLift FleetIQ-Linked Auto Scaling Group</a> </p> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p> <a>CreateGameServerGroup</a> </p> </li> <li>
+         * <p> <a>ListGameServerGroups</a> </p> </li> <li> <p>
+         * <a>DescribeGameServerGroup</a> </p> </li> <li> <p> <a>UpdateGameServerGroup</a>
+         * </p> </li> <li> <p> <a>DeleteGameServerGroup</a> </p> </li> <li> <p>
+         * <a>ResumeGameServerGroup</a> </p> </li> <li> <p> <a>SuspendGameServerGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateGameServerGroupOutcomeCallable CreateGameServerGroupCallable(const Model::CreateGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Creates a
+         * GameLift FleetIQ game server group to manage a collection of EC2 instances for
+         * game hosting. In addition to creating the game server group, this action also
+         * creates an Auto Scaling group in your AWS account and establishes a link between
+         * the two groups. You have full control over configuration of the Auto Scaling
+         * group, but GameLift FleetIQ routinely certain Auto Scaling group properties in
+         * order to optimize the group's instances for low-cost game hosting. You can view
+         * the status of your game server groups in the GameLift Console. Game server group
+         * metrics and events are emitted to Amazon CloudWatch.</p> <p>Prior creating a new
+         * game server group, you must set up the following: </p> <ul> <li> <p>An EC2
+         * launch template. The template provides configuration settings for a set of EC2
+         * instances and includes the game server build that you want to deploy and run on
+         * each instance. For more information on creating a launch template, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">
+         * Launching an Instance from a Launch Template</a> in the <i>Amazon EC2 User
+         * Guide</i>. </p> </li> <li> <p>An IAM role. The role sets up limited access to
+         * your AWS account, allowing GameLift FleetIQ to create and manage the EC2 Auto
+         * Scaling group, get instance data, and emit metrics and events to CloudWatch. For
+         * more information on setting up an IAM permissions policy with principal access
+         * for GameLift, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html">
+         * Specifying a Principal in a Policy</a> in the <i>Amazon S3 Developer
+         * Guide</i>.</p> </li> </ul> <p>To create a new game server group, provide a name
+         * and specify the IAM role and EC2 launch template. You also need to provide a
+         * list of instance types to be used in the group and set initial maximum and
+         * minimum limits on the group's instance count. You can optionally set an
+         * autoscaling policy with target tracking based on a GameLift FleetIQ metric.</p>
+         * <p>Once the game server group and corresponding Auto Scaling group are created,
+         * you have full access to change the Auto Scaling group's configuration as needed.
+         * Keep in mind, however, that some properties are periodically updated by GameLift
+         * FleetIQ as it balances the group's instances based on availability and cost.</p>
+         * <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-asgroups.html">Updating
+         * a GameLift FleetIQ-Linked Auto Scaling Group</a> </p> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p> <a>CreateGameServerGroup</a> </p> </li> <li>
+         * <p> <a>ListGameServerGroups</a> </p> </li> <li> <p>
+         * <a>DescribeGameServerGroup</a> </p> </li> <li> <p> <a>UpdateGameServerGroup</a>
+         * </p> </li> <li> <p> <a>DeleteGameServerGroup</a> </p> </li> <li> <p>
+         * <a>ResumeGameServerGroup</a> </p> </li> <li> <p> <a>SuspendGameServerGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateGameServerGroupAsync(const Model::CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a multiplayer game session for players. This action creates a game
@@ -1073,8 +1413,13 @@ namespace Model
          * latency cap for the first 60 seconds, a second policy with a higher cap for the
          * next 60 seconds, etc. </p> <p>To create a new queue, provide a name, timeout
          * value, a list of destinations and, if desired, a set of latency policies. If
-         * successful, a new queue object is returned.</p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * successful, a new queue object is returned.</p> <p> <b>Learn more</b> </p> <p>
+         * <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html">
+         * Design a Game Session Queue</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html">
+         * Create a Game Session Queue</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -1109,8 +1454,13 @@ namespace Model
          * latency cap for the first 60 seconds, a second policy with a higher cap for the
          * next 60 seconds, etc. </p> <p>To create a new queue, provide a name, timeout
          * value, a list of destinations and, if desired, a set of latency policies. If
-         * successful, a new queue object is returned.</p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * successful, a new queue object is returned.</p> <p> <b>Learn more</b> </p> <p>
+         * <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html">
+         * Design a Game Session Queue</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html">
+         * Create a Game Session Queue</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -1147,8 +1497,13 @@ namespace Model
          * latency cap for the first 60 seconds, a second policy with a higher cap for the
          * next 60 seconds, etc. </p> <p>To create a new queue, provide a name, timeout
          * value, a list of destinations and, if desired, a set of latency policies. If
-         * successful, a new queue object is returned.</p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * successful, a new queue object is returned.</p> <p> <b>Learn more</b> </p> <p>
+         * <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-design.html">
+         * Design a Game Session Queue</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-creating.html">
+         * Create a Game Session Queue</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -1870,32 +2225,32 @@ namespace Model
         virtual void DeleteAliasAsync(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a build. This action permanently deletes the build record and any
-         * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
-         * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p> <p> <b>Learn more</b> </p>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Deletes a build. This action permanently deletes the build resource and any
+         * uploaded build files. Deleting a build does not affect the status of any active
+         * fleets using the build, but you can no longer create new fleets with the deleted
+         * build.</p> <p>To delete a build, specify the build ID. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBuildOutcome DeleteBuild(const Model::DeleteBuildRequest& request) const;
 
         /**
-         * <p>Deletes a build. This action permanently deletes the build record and any
-         * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
-         * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p> <p> <b>Learn more</b> </p>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Deletes a build. This action permanently deletes the build resource and any
+         * uploaded build files. Deleting a build does not affect the status of any active
+         * fleets using the build, but you can no longer create new fleets with the deleted
+         * build.</p> <p>To delete a build, specify the build ID. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
          * API Reference</a></p>
          *
@@ -1904,16 +2259,16 @@ namespace Model
         virtual Model::DeleteBuildOutcomeCallable DeleteBuildCallable(const Model::DeleteBuildRequest& request) const;
 
         /**
-         * <p>Deletes a build. This action permanently deletes the build record and any
-         * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
-         * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p> <p> <b>Learn more</b> </p>
-         * <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Deletes a build. This action permanently deletes the build resource and any
+         * uploaded build files. Deleting a build does not affect the status of any active
+         * fleets using the build, but you can no longer create new fleets with the deleted
+         * build.</p> <p>To delete a build, specify the build ID. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
          * API Reference</a></p>
          *
@@ -1928,16 +2283,16 @@ namespace Model
          * valid authorization (good for 24 hours) by calling
          * <a>CreateVpcPeeringAuthorization</a>. You do not need to explicitly delete the
          * VPC peering connection--this is done as part of the delete fleet process.</p>
-         * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p> <p> <b>Learn more</b> </p> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>This action removes the fleet and its resources. Once a fleet is deleted, you
+         * can no longer use any of the resource in that fleet.</p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
          * API Reference</a></p>
          */
@@ -1950,16 +2305,16 @@ namespace Model
          * valid authorization (good for 24 hours) by calling
          * <a>CreateVpcPeeringAuthorization</a>. You do not need to explicitly delete the
          * VPC peering connection--this is done as part of the delete fleet process.</p>
-         * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p> <p> <b>Learn more</b> </p> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>This action removes the fleet and its resources. Once a fleet is deleted, you
+         * can no longer use any of the resource in that fleet.</p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
          * API Reference</a></p>
          *
@@ -1974,16 +2329,16 @@ namespace Model
          * valid authorization (good for 24 hours) by calling
          * <a>CreateVpcPeeringAuthorization</a>. You do not need to explicitly delete the
          * VPC peering connection--this is done as part of the delete fleet process.</p>
-         * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p> <p> <b>Learn more</b> </p> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>This action removes the fleet and its resources. Once a fleet is deleted, you
+         * can no longer use any of the resource in that fleet.</p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteFleet">AWS
          * API Reference</a></p>
          *
@@ -1992,10 +2347,106 @@ namespace Model
         virtual void DeleteFleetAsync(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Terminates a
+         * game server group and permanently deletes the game server group record. You have
+         * several options for how these resources are impacted when deleting the game
+         * server group. Depending on the type of delete action selected, this action may
+         * affect three types of resources: the game server group, the corresponding Auto
+         * Scaling group, and all game servers currently running in the group. </p> <p>To
+         * delete a game server group, identify the game server group to delete and specify
+         * the type of delete action to initiate. Game server groups can only be deleted if
+         * they are in ACTIVE or ERROR status.</p> <p>If the delete request is successful,
+         * a series of actions are kicked off. The game server group status is changed to
+         * DELETE_SCHEDULED, which prevents new game servers from being registered and
+         * stops autoscaling activity. Once all game servers in the game server group are
+         * de-registered, GameLift FleetIQ can begin deleting resources. If any of the
+         * delete actions fail, the game server group is placed in ERROR status.</p>
+         * <p>GameLift FleetIQ emits delete events to Amazon CloudWatch.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameServerGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGameServerGroupOutcome DeleteGameServerGroup(const Model::DeleteGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Terminates a
+         * game server group and permanently deletes the game server group record. You have
+         * several options for how these resources are impacted when deleting the game
+         * server group. Depending on the type of delete action selected, this action may
+         * affect three types of resources: the game server group, the corresponding Auto
+         * Scaling group, and all game servers currently running in the group. </p> <p>To
+         * delete a game server group, identify the game server group to delete and specify
+         * the type of delete action to initiate. Game server groups can only be deleted if
+         * they are in ACTIVE or ERROR status.</p> <p>If the delete request is successful,
+         * a series of actions are kicked off. The game server group status is changed to
+         * DELETE_SCHEDULED, which prevents new game servers from being registered and
+         * stops autoscaling activity. Once all game servers in the game server group are
+         * de-registered, GameLift FleetIQ can begin deleting resources. If any of the
+         * delete actions fail, the game server group is placed in ERROR status.</p>
+         * <p>GameLift FleetIQ emits delete events to Amazon CloudWatch.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteGameServerGroupOutcomeCallable DeleteGameServerGroupCallable(const Model::DeleteGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Terminates a
+         * game server group and permanently deletes the game server group record. You have
+         * several options for how these resources are impacted when deleting the game
+         * server group. Depending on the type of delete action selected, this action may
+         * affect three types of resources: the game server group, the corresponding Auto
+         * Scaling group, and all game servers currently running in the group. </p> <p>To
+         * delete a game server group, identify the game server group to delete and specify
+         * the type of delete action to initiate. Game server groups can only be deleted if
+         * they are in ACTIVE or ERROR status.</p> <p>If the delete request is successful,
+         * a series of actions are kicked off. The game server group status is changed to
+         * DELETE_SCHEDULED, which prevents new game servers from being registered and
+         * stops autoscaling activity. Once all game servers in the game server group are
+         * de-registered, GameLift FleetIQ can begin deleting resources. If any of the
+         * delete actions fail, the game server group is placed in ERROR status.</p>
+         * <p>GameLift FleetIQ emits delete events to Amazon CloudWatch.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteGameServerGroupAsync(const Model::DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a game session queue. This action means that any
          * <a>StartGameSessionPlacement</a> requests that reference this queue will fail.
-         * To delete a queue, specify the queue name.</p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * To delete a queue, specify the queue name.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
+         * Using Multi-Region Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2007,8 +2458,10 @@ namespace Model
         /**
          * <p>Deletes a game session queue. This action means that any
          * <a>StartGameSessionPlacement</a> requests that reference this queue will fail.
-         * To delete a queue, specify the queue name.</p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * To delete a queue, specify the queue name.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
+         * Using Multi-Region Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2022,8 +2475,10 @@ namespace Model
         /**
          * <p>Deletes a game session queue. This action means that any
          * <a>StartGameSessionPlacement</a> requests that reference this queue will fail.
-         * To delete a queue, specify the queue name.</p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * To delete a queue, specify the queue name.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
+         * Using Multi-Region Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2380,6 +2835,70 @@ namespace Model
         virtual void DeleteVpcPeeringConnectionAsync(const Model::DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Removes the
+         * game server resource from the game server group. As a result of this action, the
+         * de-registered game server can no longer be claimed and will not returned in a
+         * list of active game servers. </p> <p>To de-register a game server, specify the
+         * game server group and game server ID. If successful, this action emits a
+         * CloudWatch event with termination time stamp and reason.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterGameServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterGameServerOutcome DeregisterGameServer(const Model::DeregisterGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Removes the
+         * game server resource from the game server group. As a result of this action, the
+         * de-registered game server can no longer be claimed and will not returned in a
+         * list of active game servers. </p> <p>To de-register a game server, specify the
+         * game server group and game server ID. If successful, this action emits a
+         * CloudWatch event with termination time stamp and reason.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterGameServer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterGameServerOutcomeCallable DeregisterGameServerCallable(const Model::DeregisterGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Removes the
+         * game server resource from the game server group. As a result of this action, the
+         * de-registered game server can no longer be claimed and will not returned in a
+         * list of active game servers. </p> <p>To de-register a game server, specify the
+         * game server group and game server ID. If successful, this action emits a
+         * CloudWatch event with termination time stamp and reason.</p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterGameServer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterGameServerAsync(const Model::DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves properties for an alias. This operation returns all alias metadata
          * and settings. To get an alias's target fleet ID only, use
          * <code>ResolveAlias</code>. </p> <p>To get alias properties, specify the alias
@@ -2426,28 +2945,28 @@ namespace Model
         virtual void DescribeAliasAsync(const Model::DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves properties for a build. To request a build record, specify a build
-         * ID. If successful, an object containing the build properties is returned.</p>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Retrieves properties for a custom game build. To request a build resource,
+         * specify a build ID. If successful, an object containing the build properties is
+         * returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBuildOutcome DescribeBuild(const Model::DescribeBuildRequest& request) const;
 
         /**
-         * <p>Retrieves properties for a build. To request a build record, specify a build
-         * ID. If successful, an object containing the build properties is returned.</p>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Retrieves properties for a custom game build. To request a build resource,
+         * specify a build ID. If successful, an object containing the build properties is
+         * returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
          * API Reference</a></p>
          *
@@ -2456,14 +2975,14 @@ namespace Model
         virtual Model::DescribeBuildOutcomeCallable DescribeBuildCallable(const Model::DescribeBuildRequest& request) const;
 
         /**
-         * <p>Retrieves properties for a build. To request a build record, specify a build
-         * ID. If successful, an object containing the build properties is returned.</p>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Retrieves properties for a custom game build. To request a build resource,
+         * specify a build ID. If successful, an object containing the build properties is
+         * returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
          * API Reference</a></p>
          *
@@ -2473,26 +2992,19 @@ namespace Model
 
         /**
          * <p>Retrieves the following information for the specified EC2 instance type:</p>
-         * <ul> <li> <p>maximum number of instances allowed per AWS account (service
-         * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
-         * <p>Service limits vary depending on Region. Available Regions for Amazon
-         * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
-         * drop-down list in the upper right corner).</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <ul> <li> <p>Maximum number of instances allowed per AWS account (service
+         * limit).</p> </li> <li> <p>Current usage for the AWS account.</p> </li> </ul>
+         * <p>To learn more about the capabilities of each instance type, see <a
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.
+         * Note that the instance types offered may vary depending on the region.</p> <p>
+         * <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
          * API Reference</a></p>
          */
@@ -2500,26 +3012,19 @@ namespace Model
 
         /**
          * <p>Retrieves the following information for the specified EC2 instance type:</p>
-         * <ul> <li> <p>maximum number of instances allowed per AWS account (service
-         * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
-         * <p>Service limits vary depending on Region. Available Regions for Amazon
-         * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
-         * drop-down list in the upper right corner).</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <ul> <li> <p>Maximum number of instances allowed per AWS account (service
+         * limit).</p> </li> <li> <p>Current usage for the AWS account.</p> </li> </ul>
+         * <p>To learn more about the capabilities of each instance type, see <a
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.
+         * Note that the instance types offered may vary depending on the region.</p> <p>
+         * <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
          * API Reference</a></p>
          *
@@ -2529,26 +3034,19 @@ namespace Model
 
         /**
          * <p>Retrieves the following information for the specified EC2 instance type:</p>
-         * <ul> <li> <p>maximum number of instances allowed per AWS account (service
-         * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
-         * <p>Service limits vary depending on Region. Available Regions for Amazon
-         * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
-         * drop-down list in the upper right corner).</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <ul> <li> <p>Maximum number of instances allowed per AWS account (service
+         * limit).</p> </li> <li> <p>Current usage for the AWS account.</p> </li> </ul>
+         * <p>To learn more about the capabilities of each instance type, see <a
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>.
+         * Note that the instance types offered may vary depending on the region.</p> <p>
+         * <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
          * API Reference</a></p>
          *
@@ -2557,18 +3055,18 @@ namespace Model
         virtual void DescribeEC2InstanceLimitsAsync(const Model::DescribeEC2InstanceLimitsRequest& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves fleet properties, including metadata, status, and configuration,
-         * for one or more fleets. You can request attributes for all fleets, or specify a
-         * list of one or more fleet IDs. When requesting multiple fleets, use the
+         * <p>Retrieves core properties, including configuration, status, and metadata, for
+         * a fleet. </p> <p>To get attributes for one or more fleets, provide a list of
+         * fleet IDs or fleet ARNs. To get attributes for all fleets, do not specify a
+         * fleet identifier. When requesting attributes for multiple fleets, use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a <a>FleetAttributes</a> object is returned for each requested fleet
-         * ID. When specifying a list of fleet IDs, attribute objects are returned only for
-         * fleets that currently exist. </p> <note> <p>Some API actions may limit the
-         * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * successful, a <a>FleetAttributes</a> object is returned for each fleet
+         * requested, unless the fleet identifier is not found.</p> <note> <p>Some API
+         * actions may limit the number of fleet IDs allowed in one request. If a request
+         * exceeds this limit, the request fails and the error message includes the maximum
+         * allowed number.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2576,9 +3074,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
          * API Reference</a></p>
@@ -2586,18 +3083,18 @@ namespace Model
         virtual Model::DescribeFleetAttributesOutcome DescribeFleetAttributes(const Model::DescribeFleetAttributesRequest& request) const;
 
         /**
-         * <p>Retrieves fleet properties, including metadata, status, and configuration,
-         * for one or more fleets. You can request attributes for all fleets, or specify a
-         * list of one or more fleet IDs. When requesting multiple fleets, use the
+         * <p>Retrieves core properties, including configuration, status, and metadata, for
+         * a fleet. </p> <p>To get attributes for one or more fleets, provide a list of
+         * fleet IDs or fleet ARNs. To get attributes for all fleets, do not specify a
+         * fleet identifier. When requesting attributes for multiple fleets, use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a <a>FleetAttributes</a> object is returned for each requested fleet
-         * ID. When specifying a list of fleet IDs, attribute objects are returned only for
-         * fleets that currently exist. </p> <note> <p>Some API actions may limit the
-         * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * successful, a <a>FleetAttributes</a> object is returned for each fleet
+         * requested, unless the fleet identifier is not found.</p> <note> <p>Some API
+         * actions may limit the number of fleet IDs allowed in one request. If a request
+         * exceeds this limit, the request fails and the error message includes the maximum
+         * allowed number.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2605,9 +3102,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
          * API Reference</a></p>
@@ -2617,18 +3113,18 @@ namespace Model
         virtual Model::DescribeFleetAttributesOutcomeCallable DescribeFleetAttributesCallable(const Model::DescribeFleetAttributesRequest& request) const;
 
         /**
-         * <p>Retrieves fleet properties, including metadata, status, and configuration,
-         * for one or more fleets. You can request attributes for all fleets, or specify a
-         * list of one or more fleet IDs. When requesting multiple fleets, use the
+         * <p>Retrieves core properties, including configuration, status, and metadata, for
+         * a fleet. </p> <p>To get attributes for one or more fleets, provide a list of
+         * fleet IDs or fleet ARNs. To get attributes for all fleets, do not specify a
+         * fleet identifier. When requesting attributes for multiple fleets, use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a <a>FleetAttributes</a> object is returned for each requested fleet
-         * ID. When specifying a list of fleet IDs, attribute objects are returned only for
-         * fleets that currently exist. </p> <note> <p>Some API actions may limit the
-         * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * successful, a <a>FleetAttributes</a> object is returned for each fleet
+         * requested, unless the fleet identifier is not found.</p> <note> <p>Some API
+         * actions may limit the number of fleet IDs allowed in one request. If a request
+         * exceeds this limit, the request fails and the error message includes the maximum
+         * allowed number.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2636,9 +3132,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes">AWS
          * API Reference</a></p>
@@ -2648,19 +3143,22 @@ namespace Model
         virtual void DescribeFleetAttributesAsync(const Model::DescribeFleetAttributesRequest& request, const DescribeFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the current status of fleet capacity for one or more fleets. This
-         * information includes the number of instances that have been requested for the
-         * fleet and the number currently active. You can request capacity for all fleets,
-         * or specify a list of one or more fleet IDs. When requesting multiple fleets, use
-         * the pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a <a>FleetCapacity</a> object is returned for each requested fleet
-         * ID. When specifying a list of fleet IDs, attribute objects are returned only for
-         * fleets that currently exist. </p> <note> <p>Some API actions may limit the
-         * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves the current capacity statistics for one or more fleets. These
+         * statistics present a snapshot of the fleet's instances and provide insight on
+         * current or imminent scaling activity. To get statistics on game hosting activity
+         * in the fleet, see <a>DescribeFleetUtilization</a>.</p> <p>You can request
+         * capacity for all fleets or specify a list of one or more fleet identifiers. When
+         * requesting multiple fleets, use the pagination parameters to retrieve results as
+         * a set of sequential pages. If successful, a <a>FleetCapacity</a> object is
+         * returned for each requested fleet ID. When a list of fleet IDs is provided,
+         * attribute objects are returned only for fleets that currently exist.</p> <note>
+         * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
+         * a request exceeds this limit, the request fails and the error message includes
+         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
+         * Metrics for Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2668,9 +3166,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
          * API Reference</a></p>
@@ -2678,19 +3175,22 @@ namespace Model
         virtual Model::DescribeFleetCapacityOutcome DescribeFleetCapacity(const Model::DescribeFleetCapacityRequest& request) const;
 
         /**
-         * <p>Retrieves the current status of fleet capacity for one or more fleets. This
-         * information includes the number of instances that have been requested for the
-         * fleet and the number currently active. You can request capacity for all fleets,
-         * or specify a list of one or more fleet IDs. When requesting multiple fleets, use
-         * the pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a <a>FleetCapacity</a> object is returned for each requested fleet
-         * ID. When specifying a list of fleet IDs, attribute objects are returned only for
-         * fleets that currently exist. </p> <note> <p>Some API actions may limit the
-         * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves the current capacity statistics for one or more fleets. These
+         * statistics present a snapshot of the fleet's instances and provide insight on
+         * current or imminent scaling activity. To get statistics on game hosting activity
+         * in the fleet, see <a>DescribeFleetUtilization</a>.</p> <p>You can request
+         * capacity for all fleets or specify a list of one or more fleet identifiers. When
+         * requesting multiple fleets, use the pagination parameters to retrieve results as
+         * a set of sequential pages. If successful, a <a>FleetCapacity</a> object is
+         * returned for each requested fleet ID. When a list of fleet IDs is provided,
+         * attribute objects are returned only for fleets that currently exist.</p> <note>
+         * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
+         * a request exceeds this limit, the request fails and the error message includes
+         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
+         * Metrics for Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2698,9 +3198,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
          * API Reference</a></p>
@@ -2710,19 +3209,22 @@ namespace Model
         virtual Model::DescribeFleetCapacityOutcomeCallable DescribeFleetCapacityCallable(const Model::DescribeFleetCapacityRequest& request) const;
 
         /**
-         * <p>Retrieves the current status of fleet capacity for one or more fleets. This
-         * information includes the number of instances that have been requested for the
-         * fleet and the number currently active. You can request capacity for all fleets,
-         * or specify a list of one or more fleet IDs. When requesting multiple fleets, use
-         * the pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, a <a>FleetCapacity</a> object is returned for each requested fleet
-         * ID. When specifying a list of fleet IDs, attribute objects are returned only for
-         * fleets that currently exist. </p> <note> <p>Some API actions may limit the
-         * number of fleet IDs allowed in one request. If a request exceeds this limit, the
-         * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves the current capacity statistics for one or more fleets. These
+         * statistics present a snapshot of the fleet's instances and provide insight on
+         * current or imminent scaling activity. To get statistics on game hosting activity
+         * in the fleet, see <a>DescribeFleetUtilization</a>.</p> <p>You can request
+         * capacity for all fleets or specify a list of one or more fleet identifiers. When
+         * requesting multiple fleets, use the pagination parameters to retrieve results as
+         * a set of sequential pages. If successful, a <a>FleetCapacity</a> object is
+         * returned for each requested fleet ID. When a list of fleet IDs is provided,
+         * attribute objects are returned only for fleets that currently exist.</p> <note>
+         * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
+         * a request exceeds this limit, the request fails and the error message includes
+         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
+         * Metrics for Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2730,9 +3232,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity">AWS
          * API Reference</a></p>
@@ -2746,8 +3247,8 @@ namespace Model
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
          * entries matching the request are returned.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2755,9 +3256,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
          * API Reference</a></p>
@@ -2769,8 +3269,8 @@ namespace Model
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
          * entries matching the request are returned.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2778,9 +3278,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
          * API Reference</a></p>
@@ -2794,8 +3293,8 @@ namespace Model
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
          * entries matching the request are returned.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2803,9 +3302,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents">AWS
          * API Reference</a></p>
@@ -2815,15 +3313,16 @@ namespace Model
         virtual void DescribeFleetEventsAsync(const Model::DescribeFleetEventsRequest& request, const DescribeFleetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the inbound connection permissions for a fleet. Connection
-         * permissions include a range of IP addresses and port settings that incoming
-         * traffic can use to access server processes in the fleet. To get a fleet's
-         * inbound connection permissions, specify a fleet ID. If successful, a collection
-         * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p> <p> <b>Learn
-         * more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves a fleet's inbound connection permissions. Connection permissions
+         * specify the range of IP addresses and port settings that incoming traffic can
+         * use to access server processes in the fleet. Game sessions that are running on
+         * instances in the fleet use connections that fall in this range. </p> <p>To get a
+         * fleet's inbound connection permissions, specify the fleet's unique identifier.
+         * If successful, a collection of <a>IpPermission</a> objects is returned for the
+         * requested fleet ID. If the requested fleet has been deleted, the result set is
+         * empty.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2831,9 +3330,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
          * API Reference</a></p>
@@ -2841,15 +3339,16 @@ namespace Model
         virtual Model::DescribeFleetPortSettingsOutcome DescribeFleetPortSettings(const Model::DescribeFleetPortSettingsRequest& request) const;
 
         /**
-         * <p>Retrieves the inbound connection permissions for a fleet. Connection
-         * permissions include a range of IP addresses and port settings that incoming
-         * traffic can use to access server processes in the fleet. To get a fleet's
-         * inbound connection permissions, specify a fleet ID. If successful, a collection
-         * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p> <p> <b>Learn
-         * more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves a fleet's inbound connection permissions. Connection permissions
+         * specify the range of IP addresses and port settings that incoming traffic can
+         * use to access server processes in the fleet. Game sessions that are running on
+         * instances in the fleet use connections that fall in this range. </p> <p>To get a
+         * fleet's inbound connection permissions, specify the fleet's unique identifier.
+         * If successful, a collection of <a>IpPermission</a> objects is returned for the
+         * requested fleet ID. If the requested fleet has been deleted, the result set is
+         * empty.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2857,9 +3356,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
          * API Reference</a></p>
@@ -2869,15 +3367,16 @@ namespace Model
         virtual Model::DescribeFleetPortSettingsOutcomeCallable DescribeFleetPortSettingsCallable(const Model::DescribeFleetPortSettingsRequest& request) const;
 
         /**
-         * <p>Retrieves the inbound connection permissions for a fleet. Connection
-         * permissions include a range of IP addresses and port settings that incoming
-         * traffic can use to access server processes in the fleet. To get a fleet's
-         * inbound connection permissions, specify a fleet ID. If successful, a collection
-         * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p> <p> <b>Learn
-         * more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves a fleet's inbound connection permissions. Connection permissions
+         * specify the range of IP addresses and port settings that incoming traffic can
+         * use to access server processes in the fleet. Game sessions that are running on
+         * instances in the fleet use connections that fall in this range. </p> <p>To get a
+         * fleet's inbound connection permissions, specify the fleet's unique identifier.
+         * If successful, a collection of <a>IpPermission</a> objects is returned for the
+         * requested fleet ID. If the requested fleet has been deleted, the result set is
+         * empty.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2885,9 +3384,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetPortSettings">AWS
          * API Reference</a></p>
@@ -2897,18 +3395,21 @@ namespace Model
         virtual void DescribeFleetPortSettingsAsync(const Model::DescribeFleetPortSettingsRequest& request, const DescribeFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves utilization statistics for one or more fleets. You can request
-         * utilization data for all fleets, or specify a list of one or more fleet IDs.
-         * When requesting multiple fleets, use the pagination parameters to retrieve
-         * results as a set of sequential pages. If successful, a <a>FleetUtilization</a>
-         * object is returned for each requested fleet ID. When specifying a list of fleet
-         * IDs, utilization objects are returned only for fleets that currently exist. </p>
-         * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
-         * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves utilization statistics for one or more fleets. These statistics
+         * provide insight into how available hosting resources are currently being used.
+         * To get statistics on available hosting resources, see
+         * <a>DescribeFleetCapacity</a>.</p> <p>You can request utilization data for all
+         * fleets, or specify a list of one or more fleet IDs. When requesting multiple
+         * fleets, use the pagination parameters to retrieve results as a set of sequential
+         * pages. If successful, a <a>FleetUtilization</a> object is returned for each
+         * requested fleet ID, unless the fleet identifier is not found. </p> <note>
+         * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
+         * a request exceeds this limit, the request fails and the error message includes
+         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
+         * Metrics for Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2916,9 +3417,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
          * API Reference</a></p>
@@ -2926,18 +3426,21 @@ namespace Model
         virtual Model::DescribeFleetUtilizationOutcome DescribeFleetUtilization(const Model::DescribeFleetUtilizationRequest& request) const;
 
         /**
-         * <p>Retrieves utilization statistics for one or more fleets. You can request
-         * utilization data for all fleets, or specify a list of one or more fleet IDs.
-         * When requesting multiple fleets, use the pagination parameters to retrieve
-         * results as a set of sequential pages. If successful, a <a>FleetUtilization</a>
-         * object is returned for each requested fleet ID. When specifying a list of fleet
-         * IDs, utilization objects are returned only for fleets that currently exist. </p>
-         * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
-         * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves utilization statistics for one or more fleets. These statistics
+         * provide insight into how available hosting resources are currently being used.
+         * To get statistics on available hosting resources, see
+         * <a>DescribeFleetCapacity</a>.</p> <p>You can request utilization data for all
+         * fleets, or specify a list of one or more fleet IDs. When requesting multiple
+         * fleets, use the pagination parameters to retrieve results as a set of sequential
+         * pages. If successful, a <a>FleetUtilization</a> object is returned for each
+         * requested fleet ID, unless the fleet identifier is not found. </p> <note>
+         * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
+         * a request exceeds this limit, the request fails and the error message includes
+         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
+         * Metrics for Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2945,9 +3448,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
          * API Reference</a></p>
@@ -2957,18 +3459,21 @@ namespace Model
         virtual Model::DescribeFleetUtilizationOutcomeCallable DescribeFleetUtilizationCallable(const Model::DescribeFleetUtilizationRequest& request) const;
 
         /**
-         * <p>Retrieves utilization statistics for one or more fleets. You can request
-         * utilization data for all fleets, or specify a list of one or more fleet IDs.
-         * When requesting multiple fleets, use the pagination parameters to retrieve
-         * results as a set of sequential pages. If successful, a <a>FleetUtilization</a>
-         * object is returned for each requested fleet ID. When specifying a list of fleet
-         * IDs, utilization objects are returned only for fleets that currently exist. </p>
-         * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
-         * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p>
-         * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves utilization statistics for one or more fleets. These statistics
+         * provide insight into how available hosting resources are currently being used.
+         * To get statistics on available hosting resources, see
+         * <a>DescribeFleetCapacity</a>.</p> <p>You can request utilization data for all
+         * fleets, or specify a list of one or more fleet IDs. When requesting multiple
+         * fleets, use the pagination parameters to retrieve results as a set of sequential
+         * pages. If successful, a <a>FleetUtilization</a> object is returned for each
+         * requested fleet ID, unless the fleet identifier is not found. </p> <note>
+         * <p>Some API actions may limit the number of fleet IDs allowed in one request. If
+         * a request exceeds this limit, the request fails and the error message includes
+         * the maximum allowed.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html#gamelift-metrics-fleet">GameLift
+         * Metrics for Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -2976,9 +3481,8 @@ namespace Model
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization">AWS
          * API Reference</a></p>
@@ -2986,6 +3490,125 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeFleetUtilizationAsync(const Model::DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information for a game server resource. Information includes the game server
+         * statuses, health check info, and the instance the game server is running on.
+         * </p> <p>To retrieve game server information, specify the game server ID. If
+         * successful, the requested game server object is returned. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGameServerOutcome DescribeGameServer(const Model::DescribeGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information for a game server resource. Information includes the game server
+         * statuses, health check info, and the instance the game server is running on.
+         * </p> <p>To retrieve game server information, specify the game server ID. If
+         * successful, the requested game server object is returned. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeGameServerOutcomeCallable DescribeGameServerCallable(const Model::DescribeGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information for a game server resource. Information includes the game server
+         * statuses, health check info, and the instance the game server is running on.
+         * </p> <p>To retrieve game server information, specify the game server ID. If
+         * successful, the requested game server object is returned. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeGameServerAsync(const Model::DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on a game server group. </p> <p>To get attributes for a game server
+         * group, provide a group name or ARN value. If successful, a
+         * <a>GameServerGroup</a> object is returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServerGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGameServerGroupOutcome DescribeGameServerGroup(const Model::DescribeGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on a game server group. </p> <p>To get attributes for a game server
+         * group, provide a group name or ARN value. If successful, a
+         * <a>GameServerGroup</a> object is returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeGameServerGroupOutcomeCallable DescribeGameServerGroupCallable(const Model::DescribeGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on a game server group. </p> <p>To get attributes for a game server
+         * group, provide a group name or ARN value. If successful, a
+         * <a>GameServerGroup</a> object is returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeGameServerGroupAsync(const Model::DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves properties, including the protection policy in force, for one or
@@ -3123,7 +3746,10 @@ namespace Model
          * multiple queues, use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionQueue</a> object is returned
          * for each requested queue. When specifying a list of queues, objects are returned
-         * only for queues that currently exist in the Region.</p> <ul> <li> <p>
+         * only for queues that currently exist in the Region.</p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html">
+         * View Your Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
@@ -3138,7 +3764,10 @@ namespace Model
          * multiple queues, use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionQueue</a> object is returned
          * for each requested queue. When specifying a list of queues, objects are returned
-         * only for queues that currently exist in the Region.</p> <ul> <li> <p>
+         * only for queues that currently exist in the Region.</p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html">
+         * View Your Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
@@ -3155,7 +3784,10 @@ namespace Model
          * multiple queues, use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionQueue</a> object is returned
          * for each requested queue. When specifying a list of queues, objects are returned
-         * only for queues that currently exist in the Region.</p> <ul> <li> <p>
+         * only for queues that currently exist in the Region.</p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-console.html">
+         * View Your Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
@@ -3249,8 +3881,14 @@ namespace Model
          * specific instance.</p> <p>To get a specific instance, specify fleet ID and
          * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, an <a>Instance</a> object is returned for each result.</p><p><h3>See
-         * Also:</h3>   <a
+         * successful, an <a>Instance</a> object is returned for each result.</p> <p>
+         * <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
+         * Access Fleet Instances</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
+         * Fleet Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>DescribeInstances</a> </p> </li> <li> <p> <a>GetInstanceAccess</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">AWS
          * API Reference</a></p>
          */
@@ -3262,8 +3900,14 @@ namespace Model
          * specific instance.</p> <p>To get a specific instance, specify fleet ID and
          * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, an <a>Instance</a> object is returned for each result.</p><p><h3>See
-         * Also:</h3>   <a
+         * successful, an <a>Instance</a> object is returned for each result.</p> <p>
+         * <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
+         * Access Fleet Instances</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
+         * Fleet Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>DescribeInstances</a> </p> </li> <li> <p> <a>GetInstanceAccess</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">AWS
          * API Reference</a></p>
          *
@@ -3277,8 +3921,14 @@ namespace Model
          * specific instance.</p> <p>To get a specific instance, specify fleet ID and
          * instance ID. To get all instances in a fleet, specify a fleet ID only. Use the
          * pagination parameters to retrieve results as a set of sequential pages. If
-         * successful, an <a>Instance</a> object is returned for each result.</p><p><h3>See
-         * Also:</h3>   <a
+         * successful, an <a>Instance</a> object is returned for each result.</p> <p>
+         * <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
+         * Access Fleet Instances</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
+         * Fleet Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>DescribeInstances</a> </p> </li> <li> <p> <a>GetInstanceAccess</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeInstances">AWS
          * API Reference</a></p>
          *
@@ -3582,21 +4232,26 @@ namespace Model
         virtual void DescribePlayerSessionsAsync(const Model::DescribePlayerSessionsRequest& request, const DescribePlayerSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the current runtime configuration for the specified fleet. The
-         * runtime configuration tells Amazon GameLift how to launch server processes on
-         * instances in the fleet.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <p>Retrieves a fleet's runtime configuration settings. The runtime configuration
+         * tells Amazon GameLift which server processes to run (and how) on each instance
+         * in the fleet.</p> <p>To get a runtime configuration, specify the fleet's unique
+         * identifier. If successful, a <a>RuntimeConfiguration</a> object is returned for
+         * the requested fleet. If the requested fleet has been deleted, the result set is
+         * empty.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">Running
+         * Multiple Processes on a Fleet</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li>
+         * <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
          * API Reference</a></p>
@@ -3604,21 +4259,26 @@ namespace Model
         virtual Model::DescribeRuntimeConfigurationOutcome DescribeRuntimeConfiguration(const Model::DescribeRuntimeConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the current runtime configuration for the specified fleet. The
-         * runtime configuration tells Amazon GameLift how to launch server processes on
-         * instances in the fleet.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <p>Retrieves a fleet's runtime configuration settings. The runtime configuration
+         * tells Amazon GameLift which server processes to run (and how) on each instance
+         * in the fleet.</p> <p>To get a runtime configuration, specify the fleet's unique
+         * identifier. If successful, a <a>RuntimeConfiguration</a> object is returned for
+         * the requested fleet. If the requested fleet has been deleted, the result set is
+         * empty.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">Running
+         * Multiple Processes on a Fleet</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li>
+         * <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
          * API Reference</a></p>
@@ -3628,21 +4288,26 @@ namespace Model
         virtual Model::DescribeRuntimeConfigurationOutcomeCallable DescribeRuntimeConfigurationCallable(const Model::DescribeRuntimeConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieves the current runtime configuration for the specified fleet. The
-         * runtime configuration tells Amazon GameLift how to launch server processes on
-         * instances in the fleet.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * <p>Retrieves a fleet's runtime configuration settings. The runtime configuration
+         * tells Amazon GameLift which server processes to run (and how) on each instance
+         * in the fleet.</p> <p>To get a runtime configuration, specify the fleet's unique
+         * identifier. If successful, a <a>RuntimeConfiguration</a> object is returned for
+         * the requested fleet. If the requested fleet has been deleted, the result set is
+         * empty.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">Running
+         * Multiple Processes on a Fleet</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li>
+         * <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li>
-         * <p>Manage fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li>
-         * <li> <p> <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See
+         * </p> </li> </ul> </li> <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeRuntimeConfiguration">AWS
          * API Reference</a></p>
@@ -3946,22 +4611,26 @@ namespace Model
 
         /**
          * <p>Requests remote access to a fleet instance. Remote access is useful for
-         * debugging, gathering benchmarking data, or watching activity in real time. </p>
-         * <p>Access requires credentials that match the operating system of the instance.
-         * For a Windows instance, Amazon GameLift returns a user name and password as
-         * strings for use with a Windows Remote Desktop client. For a Linux instance,
-         * Amazon GameLift returns a user name and RSA private key, also as strings, for
-         * use with an SSH client. The private key must be saved in the proper format to a
-         * <code>.pem</code> file before using. If you're making this request using the AWS
-         * CLI, saving the secret can be handled as part of the GetInstanceAccess request.
-         * (See the example later in this topic). For more information on remote access,
-         * see <a
+         * debugging, gathering benchmarking data, or observing activity in real time. </p>
+         * <p>To remotely access an instance, you need credentials that match the operating
+         * system of the instance. For a Windows instance, Amazon GameLift returns a user
+         * name and password as strings for use with a Windows Remote Desktop client. For a
+         * Linux instance, Amazon GameLift returns a user name and RSA private key, also as
+         * strings, for use with an SSH client. The private key must be saved in the proper
+         * format to a <code>.pem</code> file before using. If you're making this request
+         * using the AWS CLI, saving the secret can be handled as part of the
+         * GetInstanceAccess request, as shown in one of the examples for this action. </p>
+         * <p>To request access to a specific instance, specify the IDs of both the
+         * instance and the fleet it belongs to. You can retrieve a fleet's instance IDs by
+         * calling <a>DescribeInstances</a>. If successful, an <a>InstanceAccess</a> object
+         * is returned that contains the instance's IP address and a set of
+         * credentials.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-         * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
-         * specify the IDs of both the instance and the fleet it belongs to. You can
-         * retrieve a fleet's instance IDs by calling <a>DescribeInstances</a>. If
-         * successful, an <a>InstanceAccess</a> object is returned containing the
-         * instance's IP address and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * Access Fleet Instances</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
+         * Fleet Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>DescribeInstances</a> </p> </li> <li> <p> <a>GetInstanceAccess</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
          * API Reference</a></p>
          */
@@ -3969,22 +4638,26 @@ namespace Model
 
         /**
          * <p>Requests remote access to a fleet instance. Remote access is useful for
-         * debugging, gathering benchmarking data, or watching activity in real time. </p>
-         * <p>Access requires credentials that match the operating system of the instance.
-         * For a Windows instance, Amazon GameLift returns a user name and password as
-         * strings for use with a Windows Remote Desktop client. For a Linux instance,
-         * Amazon GameLift returns a user name and RSA private key, also as strings, for
-         * use with an SSH client. The private key must be saved in the proper format to a
-         * <code>.pem</code> file before using. If you're making this request using the AWS
-         * CLI, saving the secret can be handled as part of the GetInstanceAccess request.
-         * (See the example later in this topic). For more information on remote access,
-         * see <a
+         * debugging, gathering benchmarking data, or observing activity in real time. </p>
+         * <p>To remotely access an instance, you need credentials that match the operating
+         * system of the instance. For a Windows instance, Amazon GameLift returns a user
+         * name and password as strings for use with a Windows Remote Desktop client. For a
+         * Linux instance, Amazon GameLift returns a user name and RSA private key, also as
+         * strings, for use with an SSH client. The private key must be saved in the proper
+         * format to a <code>.pem</code> file before using. If you're making this request
+         * using the AWS CLI, saving the secret can be handled as part of the
+         * GetInstanceAccess request, as shown in one of the examples for this action. </p>
+         * <p>To request access to a specific instance, specify the IDs of both the
+         * instance and the fleet it belongs to. You can retrieve a fleet's instance IDs by
+         * calling <a>DescribeInstances</a>. If successful, an <a>InstanceAccess</a> object
+         * is returned that contains the instance's IP address and a set of
+         * credentials.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-         * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
-         * specify the IDs of both the instance and the fleet it belongs to. You can
-         * retrieve a fleet's instance IDs by calling <a>DescribeInstances</a>. If
-         * successful, an <a>InstanceAccess</a> object is returned containing the
-         * instance's IP address and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * Access Fleet Instances</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
+         * Fleet Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>DescribeInstances</a> </p> </li> <li> <p> <a>GetInstanceAccess</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
          * API Reference</a></p>
          *
@@ -3994,22 +4667,26 @@ namespace Model
 
         /**
          * <p>Requests remote access to a fleet instance. Remote access is useful for
-         * debugging, gathering benchmarking data, or watching activity in real time. </p>
-         * <p>Access requires credentials that match the operating system of the instance.
-         * For a Windows instance, Amazon GameLift returns a user name and password as
-         * strings for use with a Windows Remote Desktop client. For a Linux instance,
-         * Amazon GameLift returns a user name and RSA private key, also as strings, for
-         * use with an SSH client. The private key must be saved in the proper format to a
-         * <code>.pem</code> file before using. If you're making this request using the AWS
-         * CLI, saving the secret can be handled as part of the GetInstanceAccess request.
-         * (See the example later in this topic). For more information on remote access,
-         * see <a
+         * debugging, gathering benchmarking data, or observing activity in real time. </p>
+         * <p>To remotely access an instance, you need credentials that match the operating
+         * system of the instance. For a Windows instance, Amazon GameLift returns a user
+         * name and password as strings for use with a Windows Remote Desktop client. For a
+         * Linux instance, Amazon GameLift returns a user name and RSA private key, also as
+         * strings, for use with an SSH client. The private key must be saved in the proper
+         * format to a <code>.pem</code> file before using. If you're making this request
+         * using the AWS CLI, saving the secret can be handled as part of the
+         * GetInstanceAccess request, as shown in one of the examples for this action. </p>
+         * <p>To request access to a specific instance, specify the IDs of both the
+         * instance and the fleet it belongs to. You can retrieve a fleet's instance IDs by
+         * calling <a>DescribeInstances</a>. If successful, an <a>InstanceAccess</a> object
+         * is returned that contains the instance's IP address and a set of
+         * credentials.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
-         * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
-         * specify the IDs of both the instance and the fleet it belongs to. You can
-         * retrieve a fleet's instance IDs by calling <a>DescribeInstances</a>. If
-         * successful, an <a>InstanceAccess</a> object is returned containing the
-         * instance's IP address and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * Access Fleet Instances</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html">Debug
+         * Fleet Issues</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>DescribeInstances</a> </p> </li> <li> <p> <a>GetInstanceAccess</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
          * API Reference</a></p>
          *
@@ -4064,32 +4741,32 @@ namespace Model
         virtual void ListAliasesAsync(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves build records for all builds associated with the AWS account in
+         * <p>Retrieves build resources for all builds associated with the AWS account in
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
-         * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * in a set of sequential pages. </p> <note> <p>Build resources are not listed in
+         * any particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBuildsOutcome ListBuilds(const Model::ListBuildsRequest& request) const;
 
         /**
-         * <p>Retrieves build records for all builds associated with the AWS account in
+         * <p>Retrieves build resources for all builds associated with the AWS account in
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
-         * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * in a set of sequential pages. </p> <note> <p>Build resources are not listed in
+         * any particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
          * API Reference</a></p>
          *
@@ -4098,16 +4775,16 @@ namespace Model
         virtual Model::ListBuildsOutcomeCallable ListBuildsCallable(const Model::ListBuildsRequest& request) const;
 
         /**
-         * <p>Retrieves build records for all builds associated with the AWS account in
+         * <p>Retrieves build resources for all builds associated with the AWS account in
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
-         * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * in a set of sequential pages. </p> <note> <p>Build resources are not listed in
+         * any particular order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
          * API Reference</a></p>
          *
@@ -4116,36 +4793,36 @@ namespace Model
         virtual void ListBuildsAsync(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a collection of fleet records for this AWS account. You can filter
-         * the result set to find only those fleets that are deployed with a specific build
-         * or script. Use the pagination parameters to retrieve results in sequential
-         * pages.</p> <note> <p>Fleet records are not listed in a particular order.</p>
-         * </note> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Set Up Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves a collection of fleet resources for this AWS account. You can
+         * filter the result set to find only those fleets that are deployed with a
+         * specific build or script. Use the pagination parameters to retrieve results in
+         * sequential pages.</p> <note> <p>Fleet resources are not listed in a particular
+         * order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request) const;
 
         /**
-         * <p>Retrieves a collection of fleet records for this AWS account. You can filter
-         * the result set to find only those fleets that are deployed with a specific build
-         * or script. Use the pagination parameters to retrieve results in sequential
-         * pages.</p> <note> <p>Fleet records are not listed in a particular order.</p>
-         * </note> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Set Up Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves a collection of fleet resources for this AWS account. You can
+         * filter the result set to find only those fleets that are deployed with a
+         * specific build or script. Use the pagination parameters to retrieve results in
+         * sequential pages.</p> <note> <p>Fleet resources are not listed in a particular
+         * order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
          * API Reference</a></p>
          *
@@ -4154,24 +4831,143 @@ namespace Model
         virtual Model::ListFleetsOutcomeCallable ListFleetsCallable(const Model::ListFleetsRequest& request) const;
 
         /**
-         * <p>Retrieves a collection of fleet records for this AWS account. You can filter
-         * the result set to find only those fleets that are deployed with a specific build
-         * or script. Use the pagination parameters to retrieve results in sequential
-         * pages.</p> <note> <p>Fleet records are not listed in a particular order.</p>
-         * </note> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Set Up Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <p>Retrieves a collection of fleet resources for this AWS account. You can
+         * filter the result set to find only those fleets that are deployed with a
+         * specific build or script. Use the pagination parameters to retrieve results in
+         * sequential pages.</p> <note> <p>Fleet resources are not listed in a particular
+         * order.</p> </note> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListFleetsAsync(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on all game servers groups that exist in the current AWS account for
+         * the selected region. Use the pagination parameters to retrieve results in a set
+         * of sequential pages. </p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServerGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGameServerGroupsOutcome ListGameServerGroups(const Model::ListGameServerGroupsRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on all game servers groups that exist in the current AWS account for
+         * the selected region. Use the pagination parameters to retrieve results in a set
+         * of sequential pages. </p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServerGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListGameServerGroupsOutcomeCallable ListGameServerGroupsCallable(const Model::ListGameServerGroupsRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on all game servers groups that exist in the current AWS account for
+         * the selected region. Use the pagination parameters to retrieve results in a set
+         * of sequential pages. </p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServerGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListGameServerGroupsAsync(const Model::ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on all game servers that are currently running in a specified game
+         * server group. If there are custom key sort values for your game servers, you can
+         * opt to have the returned list sorted based on these values. Use the pagination
+         * parameters to retrieve results in a set of sequential pages. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGameServersOutcome ListGameServers(const Model::ListGameServersRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on all game servers that are currently running in a specified game
+         * server group. If there are custom key sort values for your game servers, you can
+         * opt to have the returned list sorted based on these values. Use the pagination
+         * parameters to retrieve results in a set of sequential pages. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListGameServersOutcomeCallable ListGameServersCallable(const Model::ListGameServersRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Retrieves
+         * information on all game servers that are currently running in a specified game
+         * server group. If there are custom key sort values for your game servers, you can
+         * opt to have the returned list sorted based on these values. Use the pagination
+         * parameters to retrieve results in a set of sequential pages. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListGameServers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListGameServersAsync(const Model::ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves script records for all Realtime scripts that are associated with
@@ -4501,6 +5297,91 @@ namespace Model
         virtual void PutScalingPolicyAsync(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Creates a new
+         * game server resource and notifies GameLift FleetIQ that the game server is ready
+         * to host gameplay and players. This action is called by a game server process
+         * that is running on an instance in a game server group. Registering game servers
+         * enables GameLift FleetIQ to track available game servers and enables game
+         * clients and services to claim a game server for a new game session. </p> <p>To
+         * register a game server, identify the game server group and instance where the
+         * game server is running, and provide a unique identifier for the game server. You
+         * can also include connection and game server data; when a game client or service
+         * requests a game server by calling <a>ClaimGameServer</a>, this information is
+         * returned in response.</p> <p>Once a game server is successfully registered, it
+         * is put in status AVAILABLE. A request to register a game server may fail if the
+         * instance it is in the process of shutting down as part of instance rebalancing
+         * or scale-down activity. </p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterGameServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterGameServerOutcome RegisterGameServer(const Model::RegisterGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Creates a new
+         * game server resource and notifies GameLift FleetIQ that the game server is ready
+         * to host gameplay and players. This action is called by a game server process
+         * that is running on an instance in a game server group. Registering game servers
+         * enables GameLift FleetIQ to track available game servers and enables game
+         * clients and services to claim a game server for a new game session. </p> <p>To
+         * register a game server, identify the game server group and instance where the
+         * game server is running, and provide a unique identifier for the game server. You
+         * can also include connection and game server data; when a game client or service
+         * requests a game server by calling <a>ClaimGameServer</a>, this information is
+         * returned in response.</p> <p>Once a game server is successfully registered, it
+         * is put in status AVAILABLE. A request to register a game server may fail if the
+         * instance it is in the process of shutting down as part of instance rebalancing
+         * or scale-down activity. </p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterGameServer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterGameServerOutcomeCallable RegisterGameServerCallable(const Model::RegisterGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Creates a new
+         * game server resource and notifies GameLift FleetIQ that the game server is ready
+         * to host gameplay and players. This action is called by a game server process
+         * that is running on an instance in a game server group. Registering game servers
+         * enables GameLift FleetIQ to track available game servers and enables game
+         * clients and services to claim a game server for a new game session. </p> <p>To
+         * register a game server, identify the game server group and instance where the
+         * game server is running, and provide a unique identifier for the game server. You
+         * can also include connection and game server data; when a game client or service
+         * requests a game server by calling <a>ClaimGameServer</a>, this information is
+         * returned in response.</p> <p>Once a game server is successfully registered, it
+         * is put in status AVAILABLE. A request to register a game server may fail if the
+         * instance it is in the process of shutting down as part of instance rebalancing
+         * or scale-down activity. </p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterGameServer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterGameServerAsync(const Model::RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a fresh set of credentials for use when uploading a new set of game
          * build files to Amazon GameLift's Amazon S3. This is done as part of the build
          * creation process; see <a>CreateBuild</a>.</p> <p>To request new credentials,
@@ -4508,11 +5389,11 @@ namespace Model
          * request. If successful, a new set of credentials are returned, along with the S3
          * storage location associated with the build ID.</p> <p> <b>Learn more</b> </p>
          * <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * Create a Build with Files in S3</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
          * API Reference</a></p>
          */
@@ -4526,11 +5407,11 @@ namespace Model
          * request. If successful, a new set of credentials are returned, along with the S3
          * storage location associated with the build ID.</p> <p> <b>Learn more</b> </p>
          * <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * Create a Build with Files in S3</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
          * API Reference</a></p>
          *
@@ -4546,11 +5427,11 @@ namespace Model
          * request. If successful, a new set of credentials are returned, along with the S3
          * storage location associated with the build ID.</p> <p> <b>Learn more</b> </p>
          * <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
-         * Your Game</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * Create a Build with Files in S3</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RequestUploadCredentials">AWS
          * API Reference</a></p>
          *
@@ -4594,6 +5475,79 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ResolveAliasAsync(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Reinstates
+         * activity on a game server group after it has been suspended. A game server group
+         * may be suspended by calling <a>SuspendGameServerGroup</a>, or it may have been
+         * involuntarily suspended due to a configuration problem. You can manually resume
+         * activity on the group once the configuration problem has been resolved. Refer to
+         * the game server group status and status reason for more information on why group
+         * activity is suspended.</p> <p>To resume activity, specify a game server group
+         * ARN and the type of activity to be resumed.</p> <p> <b>Learn more</b> </p> <p>
+         * <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResumeGameServerGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResumeGameServerGroupOutcome ResumeGameServerGroup(const Model::ResumeGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Reinstates
+         * activity on a game server group after it has been suspended. A game server group
+         * may be suspended by calling <a>SuspendGameServerGroup</a>, or it may have been
+         * involuntarily suspended due to a configuration problem. You can manually resume
+         * activity on the group once the configuration problem has been resolved. Refer to
+         * the game server group status and status reason for more information on why group
+         * activity is suspended.</p> <p>To resume activity, specify a game server group
+         * ARN and the type of activity to be resumed.</p> <p> <b>Learn more</b> </p> <p>
+         * <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResumeGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResumeGameServerGroupOutcomeCallable ResumeGameServerGroupCallable(const Model::ResumeGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Reinstates
+         * activity on a game server group after it has been suspended. A game server group
+         * may be suspended by calling <a>SuspendGameServerGroup</a>, or it may have been
+         * involuntarily suspended due to a configuration problem. You can manually resume
+         * activity on the group once the configuration problem has been resolved. Refer to
+         * the game server group status and status reason for more information on why group
+         * activity is suspended.</p> <p>To resume activity, specify a game server group
+         * ARN and the type of activity to be resumed.</p> <p> <b>Learn more</b> </p> <p>
+         * <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResumeGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResumeGameServerGroupAsync(const Model::ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all active game sessions that match a set of search criteria and
@@ -4767,21 +5721,13 @@ namespace Model
          * actions on the fleet were never stopped, this operation will have no effect. You
          * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>
          * <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">AWS
          * API Reference</a></p>
          */
@@ -4796,21 +5742,13 @@ namespace Model
          * actions on the fleet were never stopped, this operation will have no effect. You
          * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>
          * <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">AWS
          * API Reference</a></p>
          *
@@ -4827,21 +5765,13 @@ namespace Model
          * actions on the fleet were never stopped, this operation will have no effect. You
          * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>
          * <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions">AWS
          * API Reference</a></p>
          *
@@ -5301,30 +6231,21 @@ namespace Model
 
         /**
          * <p>Suspends activity on a fleet. Currently, this operation is used to stop a
-         * fleet's auto-scaling activity. It is used to temporarily stop scaling events
-         * triggered by the fleet's scaling policies. The policies can be retained and
-         * auto-scaling activity can be restarted using <a>StartFleetActions</a>. You can
-         * view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>To
-         * stop fleet actions, specify the fleet ID and the type of actions to suspend.
-         * When auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates
-         * scaling events except to maintain the fleet's desired instances setting
-         * (<a>FleetCapacity</a>. Changes to the fleet's capacity must be done manually
-         * using <a>UpdateFleetCapacity</a>. </p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * fleet's auto-scaling activity. It is used to temporarily stop triggering scaling
+         * events. The policies can be retained and auto-scaling activity can be restarted
+         * using <a>StartFleetActions</a>. You can view a fleet's stopped actions using
+         * <a>DescribeFleetAttributes</a>.</p> <p>To stop fleet actions, specify the fleet
+         * ID and the type of actions to suspend. When auto-scaling fleet actions are
+         * stopped, Amazon GameLift no longer initiates scaling events except in response
+         * to manual changes using <a>UpdateFleetCapacity</a>. </p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">AWS
          * API Reference</a></p>
          */
@@ -5332,30 +6253,21 @@ namespace Model
 
         /**
          * <p>Suspends activity on a fleet. Currently, this operation is used to stop a
-         * fleet's auto-scaling activity. It is used to temporarily stop scaling events
-         * triggered by the fleet's scaling policies. The policies can be retained and
-         * auto-scaling activity can be restarted using <a>StartFleetActions</a>. You can
-         * view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>To
-         * stop fleet actions, specify the fleet ID and the type of actions to suspend.
-         * When auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates
-         * scaling events except to maintain the fleet's desired instances setting
-         * (<a>FleetCapacity</a>. Changes to the fleet's capacity must be done manually
-         * using <a>UpdateFleetCapacity</a>. </p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * fleet's auto-scaling activity. It is used to temporarily stop triggering scaling
+         * events. The policies can be retained and auto-scaling activity can be restarted
+         * using <a>StartFleetActions</a>. You can view a fleet's stopped actions using
+         * <a>DescribeFleetAttributes</a>.</p> <p>To stop fleet actions, specify the fleet
+         * ID and the type of actions to suspend. When auto-scaling fleet actions are
+         * stopped, Amazon GameLift no longer initiates scaling events except in response
+         * to manual changes using <a>UpdateFleetCapacity</a>. </p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">AWS
          * API Reference</a></p>
          *
@@ -5365,30 +6277,21 @@ namespace Model
 
         /**
          * <p>Suspends activity on a fleet. Currently, this operation is used to stop a
-         * fleet's auto-scaling activity. It is used to temporarily stop scaling events
-         * triggered by the fleet's scaling policies. The policies can be retained and
-         * auto-scaling activity can be restarted using <a>StartFleetActions</a>. You can
-         * view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p> <p>To
-         * stop fleet actions, specify the fleet ID and the type of actions to suspend.
-         * When auto-scaling fleet actions are stopped, Amazon GameLift no longer initiates
-         * scaling events except to maintain the fleet's desired instances setting
-         * (<a>FleetCapacity</a>. Changes to the fleet's capacity must be done manually
-         * using <a>UpdateFleetCapacity</a>. </p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * fleet's auto-scaling activity. It is used to temporarily stop triggering scaling
+         * events. The policies can be retained and auto-scaling activity can be restarted
+         * using <a>StartFleetActions</a>. You can view a fleet's stopped actions using
+         * <a>DescribeFleetAttributes</a>.</p> <p>To stop fleet actions, specify the fleet
+         * ID and the type of actions to suspend. When auto-scaling fleet actions are
+         * stopped, Amazon GameLift no longer initiates scaling events except in response
+         * to manual changes using <a>UpdateFleetCapacity</a>. </p> <p> <b>Learn more</b>
+         * </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-         * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-         * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-         * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>UpdateFleetAttributes</a> </p> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions">AWS
          * API Reference</a></p>
          *
@@ -5525,6 +6428,91 @@ namespace Model
         virtual void StopMatchmakingAsync(const Model::StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Temporarily
+         * stops activity on a game server group without terminating instances or the game
+         * server group. Activity can be restarted by calling <a>ResumeGameServerGroup</a>.
+         * Activities that can suspended are:</p> <ul> <li> <p>Instance type replacement.
+         * This activity evaluates the current Spot viability of all instance types that
+         * are defined for the game server group. It updates the Auto Scaling group to
+         * remove nonviable Spot instance types (which have a higher chance of game server
+         * interruptions) and rebalances capacity across the remaining viable Spot instance
+         * types. When this activity is suspended, the Auto Scaling group continues with
+         * its current balance, regardless of viability. Instance protection, utilization
+         * metrics, and capacity autoscaling activities continue to be active. </p> </li>
+         * </ul> <p>To suspend activity, specify a game server group ARN and the type of
+         * activity to be suspended.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SuspendGameServerGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SuspendGameServerGroupOutcome SuspendGameServerGroup(const Model::SuspendGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Temporarily
+         * stops activity on a game server group without terminating instances or the game
+         * server group. Activity can be restarted by calling <a>ResumeGameServerGroup</a>.
+         * Activities that can suspended are:</p> <ul> <li> <p>Instance type replacement.
+         * This activity evaluates the current Spot viability of all instance types that
+         * are defined for the game server group. It updates the Auto Scaling group to
+         * remove nonviable Spot instance types (which have a higher chance of game server
+         * interruptions) and rebalances capacity across the remaining viable Spot instance
+         * types. When this activity is suspended, the Auto Scaling group continues with
+         * its current balance, regardless of viability. Instance protection, utilization
+         * metrics, and capacity autoscaling activities continue to be active. </p> </li>
+         * </ul> <p>To suspend activity, specify a game server group ARN and the type of
+         * activity to be suspended.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SuspendGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SuspendGameServerGroupOutcomeCallable SuspendGameServerGroupCallable(const Model::SuspendGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Temporarily
+         * stops activity on a game server group without terminating instances or the game
+         * server group. Activity can be restarted by calling <a>ResumeGameServerGroup</a>.
+         * Activities that can suspended are:</p> <ul> <li> <p>Instance type replacement.
+         * This activity evaluates the current Spot viability of all instance types that
+         * are defined for the game server group. It updates the Auto Scaling group to
+         * remove nonviable Spot instance types (which have a higher chance of game server
+         * interruptions) and rebalances capacity across the remaining viable Spot instance
+         * types. When this activity is suspended, the Auto Scaling group continues with
+         * its current balance, regardless of viability. Instance protection, utilization
+         * metrics, and capacity autoscaling activities continue to be active. </p> </li>
+         * </ul> <p>To suspend activity, specify a game server group ARN and the type of
+         * activity to be suspended.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateGameServerGroup</a> </p> </li> <li> <p> <a>ListGameServerGroups</a>
+         * </p> </li> <li> <p> <a>DescribeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>UpdateGameServerGroup</a> </p> </li> <li> <p> <a>DeleteGameServerGroup</a>
+         * </p> </li> <li> <p> <a>ResumeGameServerGroup</a> </p> </li> <li> <p>
+         * <a>SuspendGameServerGroup</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SuspendGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SuspendGameServerGroupAsync(const Model::SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Assigns a tag to a GameLift resource. AWS resource tags provide an
          * additional management tool set. You can use tags to organize resources, create
          * IAM permissions policies to manage access to groups of resources, customize AWS
@@ -5533,7 +6521,7 @@ namespace Model
          * <li> <p>Script</p> </li> <li> <p>Fleet</p> </li> <li> <p>Alias</p> </li> <li>
          * <p>GameSessionQueue</p> </li> <li> <p>MatchmakingConfiguration</p> </li> <li>
          * <p>MatchmakingRuleSet</p> </li> </ul> <p>To add a tag to a resource, specify the
-         * unique ARN value for the resource and provide a trig list containing one or more
+         * unique ARN value for the resource and provide a tag list containing one or more
          * tags. The operation succeeds even if the list includes tags that are already
          * assigned to the specified resource. </p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -5556,7 +6544,7 @@ namespace Model
          * <li> <p>Script</p> </li> <li> <p>Fleet</p> </li> <li> <p>Alias</p> </li> <li>
          * <p>GameSessionQueue</p> </li> <li> <p>MatchmakingConfiguration</p> </li> <li>
          * <p>MatchmakingRuleSet</p> </li> </ul> <p>To add a tag to a resource, specify the
-         * unique ARN value for the resource and provide a trig list containing one or more
+         * unique ARN value for the resource and provide a tag list containing one or more
          * tags. The operation succeeds even if the list includes tags that are already
          * assigned to the specified resource. </p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -5581,7 +6569,7 @@ namespace Model
          * <li> <p>Script</p> </li> <li> <p>Fleet</p> </li> <li> <p>Alias</p> </li> <li>
          * <p>GameSessionQueue</p> </li> <li> <p>MatchmakingConfiguration</p> </li> <li>
          * <p>MatchmakingRuleSet</p> </li> </ul> <p>To add a tag to a resource, specify the
-         * unique ARN value for the resource and provide a trig list containing one or more
+         * unique ARN value for the resource and provide a tag list containing one or more
          * tags. The operation succeeds even if the list includes tags that are already
          * assigned to the specified resource. </p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
@@ -5711,30 +6699,30 @@ namespace Model
         virtual void UpdateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates metadata in a build record, including the build name and version. To
-         * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned.</p>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Updates metadata in a build resource, including the build name and version.
+         * To update the metadata, specify the build ID to update and provide the new
+         * values. If successful, a build object containing the updated metadata is
+         * returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateBuildOutcome UpdateBuild(const Model::UpdateBuildRequest& request) const;
 
         /**
-         * <p>Updates metadata in a build record, including the build name and version. To
-         * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned.</p>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Updates metadata in a build resource, including the build name and version.
+         * To update the metadata, specify the build ID to update and provide the new
+         * values. If successful, a build object containing the updated metadata is
+         * returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
          * API Reference</a></p>
          *
@@ -5743,15 +6731,15 @@ namespace Model
         virtual Model::UpdateBuildOutcomeCallable UpdateBuildCallable(const Model::UpdateBuildRequest& request) const;
 
         /**
-         * <p>Updates metadata in a build record, including the build name and version. To
-         * update the metadata, specify the build ID to update and provide the new values.
-         * If successful, a build object containing the updated metadata is returned.</p>
-         * <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/build-intro.html">
-         * Working with Builds</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <p>Updates metadata in a build resource, including the build name and version.
+         * To update the metadata, specify the build ID to update and provide the new
+         * values. If successful, a build object containing the updated metadata is
+         * returned.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">
+         * Upload a Custom Server Build</a> </p> <p> <b>Related operations</b> </p> <ul>
+         * <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li>
+         * <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li>
+         * <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
          * API Reference</a></p>
          *
@@ -5764,16 +6752,16 @@ namespace Model
          * update metadata, specify the fleet ID and the property values that you want to
          * change. If successful, the fleet ID for the updated fleet is returned.</p> <p>
          * <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
          * API Reference</a></p>
          */
@@ -5784,16 +6772,16 @@ namespace Model
          * update metadata, specify the fleet ID and the property values that you want to
          * change. If successful, the fleet ID for the updated fleet is returned.</p> <p>
          * <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
          * API Reference</a></p>
          *
@@ -5806,16 +6794,16 @@ namespace Model
          * update metadata, specify the fleet ID and the property values that you want to
          * change. If successful, the fleet ID for the updated fleet is returned.</p> <p>
          * <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes">AWS
          * API Reference</a></p>
          *
@@ -5839,16 +6827,16 @@ namespace Model
          * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
          * instance type's limit, the "Limit Exceeded" exception occurs.</p> <p> <b>Learn
          * more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
          * API Reference</a></p>
          */
@@ -5870,16 +6858,16 @@ namespace Model
          * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
          * instance type's limit, the "Limit Exceeded" exception occurs.</p> <p> <b>Learn
          * more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
          * API Reference</a></p>
          *
@@ -5903,16 +6891,16 @@ namespace Model
          * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
          * instance type's limit, the "Limit Exceeded" exception occurs.</p> <p> <b>Learn
          * more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity">AWS
          * API Reference</a></p>
          *
@@ -5927,16 +6915,16 @@ namespace Model
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
          * for the updated fleet is returned.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
          * API Reference</a></p>
          */
@@ -5949,16 +6937,16 @@ namespace Model
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
          * for the updated fleet is returned.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
          * API Reference</a></p>
          *
@@ -5973,22 +6961,216 @@ namespace Model
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
          * for the updated fleet is returned.</p> <p> <b>Learn more</b> </p> <p> <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateFleetPortSettingsAsync(const Model::UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Updates
+         * information about a registered game server. This action is called by a game
+         * server process that is running on an instance in a game server group. There are
+         * three reasons to update game server information: (1) to change the utilization
+         * status of the game server, (2) to report game server health status, and (3) to
+         * change game server metadata. A registered game server should regularly report
+         * health and should update utilization status when it is supporting gameplay so
+         * that GameLift FleetIQ can accurately track game server availability. You can
+         * make all three types of updates in the same request.</p> <ul> <li> <p>To update
+         * the game server's utilization status, identify the game server and game server
+         * group and specify the current utilization status. Use this status to identify
+         * when game servers are currently hosting games and when they are available to be
+         * claimed. </p> </li> <li> <p>To report health status, identify the game server
+         * and game server group and set health check to HEALTHY. If a game server does not
+         * report health status for a certain length of time, the game server is no longer
+         * considered healthy and will be eventually de-registered from the game server
+         * group to avoid affecting utilization metrics. The best practice is to report
+         * health every 60 seconds.</p> </li> <li> <p>To change game server metadata,
+         * provide updated game server data and custom sort key values.</p> </li> </ul>
+         * <p>Once a game server is successfully updated, the relevant statuses and
+         * timestamps are updated.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGameServerOutcome UpdateGameServer(const Model::UpdateGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Updates
+         * information about a registered game server. This action is called by a game
+         * server process that is running on an instance in a game server group. There are
+         * three reasons to update game server information: (1) to change the utilization
+         * status of the game server, (2) to report game server health status, and (3) to
+         * change game server metadata. A registered game server should regularly report
+         * health and should update utilization status when it is supporting gameplay so
+         * that GameLift FleetIQ can accurately track game server availability. You can
+         * make all three types of updates in the same request.</p> <ul> <li> <p>To update
+         * the game server's utilization status, identify the game server and game server
+         * group and specify the current utilization status. Use this status to identify
+         * when game servers are currently hosting games and when they are available to be
+         * claimed. </p> </li> <li> <p>To report health status, identify the game server
+         * and game server group and set health check to HEALTHY. If a game server does not
+         * report health status for a certain length of time, the game server is no longer
+         * considered healthy and will be eventually de-registered from the game server
+         * group to avoid affecting utilization metrics. The best practice is to report
+         * health every 60 seconds.</p> </li> <li> <p>To change game server metadata,
+         * provide updated game server data and custom sort key values.</p> </li> </ul>
+         * <p>Once a game server is successfully updated, the relevant statuses and
+         * timestamps are updated.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateGameServerOutcomeCallable UpdateGameServerCallable(const Model::UpdateGameServerRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Updates
+         * information about a registered game server. This action is called by a game
+         * server process that is running on an instance in a game server group. There are
+         * three reasons to update game server information: (1) to change the utilization
+         * status of the game server, (2) to report game server health status, and (3) to
+         * change game server metadata. A registered game server should regularly report
+         * health and should update utilization status when it is supporting gameplay so
+         * that GameLift FleetIQ can accurately track game server availability. You can
+         * make all three types of updates in the same request.</p> <ul> <li> <p>To update
+         * the game server's utilization status, identify the game server and game server
+         * group and specify the current utilization status. Use this status to identify
+         * when game servers are currently hosting games and when they are available to be
+         * claimed. </p> </li> <li> <p>To report health status, identify the game server
+         * and game server group and set health check to HEALTHY. If a game server does not
+         * report health status for a certain length of time, the game server is no longer
+         * considered healthy and will be eventually de-registered from the game server
+         * group to avoid affecting utilization metrics. The best practice is to report
+         * health every 60 seconds.</p> </li> <li> <p>To change game server metadata,
+         * provide updated game server data and custom sort key values.</p> </li> </ul>
+         * <p>Once a game server is successfully updated, the relevant statuses and
+         * timestamps are updated.</p> <p> <b>Learn more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>RegisterGameServer</a> </p> </li> <li> <p> <a>ListGameServers</a> </p> </li>
+         * <li> <p> <a>ClaimGameServer</a> </p> </li> <li> <p> <a>DescribeGameServer</a>
+         * </p> </li> <li> <p> <a>UpdateGameServer</a> </p> </li> <li> <p>
+         * <a>DeregisterGameServer</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateGameServerAsync(const Model::UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Updates
+         * GameLift FleetIQ-specific properties for a game server group. These properties
+         * include instance rebalancing and game server protection. Many Auto Scaling group
+         * properties are updated directly. These include autoscaling policies,
+         * minimum/maximum/desired instance counts, and launch template. </p> <p>To update
+         * the game server group, specify the game server group ID and provide the updated
+         * values.</p> <p>Updated properties are validated to ensure that GameLift FleetIQ
+         * can continue to perform its core instance rebalancing activity. When you change
+         * Auto Scaling group properties directly and the changes cause errors with
+         * GameLift FleetIQ activities, an alert is sent.</p> <p> <b>Learn more</b> </p>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-asgroups.html">Updating
+         * a GameLift FleetIQ-Linked Auto Scaling Group</a> </p> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p> <a>CreateGameServerGroup</a> </p> </li> <li>
+         * <p> <a>ListGameServerGroups</a> </p> </li> <li> <p>
+         * <a>DescribeGameServerGroup</a> </p> </li> <li> <p> <a>UpdateGameServerGroup</a>
+         * </p> </li> <li> <p> <a>DeleteGameServerGroup</a> </p> </li> <li> <p>
+         * <a>ResumeGameServerGroup</a> </p> </li> <li> <p> <a>SuspendGameServerGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServerGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGameServerGroupOutcome UpdateGameServerGroup(const Model::UpdateGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Updates
+         * GameLift FleetIQ-specific properties for a game server group. These properties
+         * include instance rebalancing and game server protection. Many Auto Scaling group
+         * properties are updated directly. These include autoscaling policies,
+         * minimum/maximum/desired instance counts, and launch template. </p> <p>To update
+         * the game server group, specify the game server group ID and provide the updated
+         * values.</p> <p>Updated properties are validated to ensure that GameLift FleetIQ
+         * can continue to perform its core instance rebalancing activity. When you change
+         * Auto Scaling group properties directly and the changes cause errors with
+         * GameLift FleetIQ activities, an alert is sent.</p> <p> <b>Learn more</b> </p>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-asgroups.html">Updating
+         * a GameLift FleetIQ-Linked Auto Scaling Group</a> </p> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p> <a>CreateGameServerGroup</a> </p> </li> <li>
+         * <p> <a>ListGameServerGroups</a> </p> </li> <li> <p>
+         * <a>DescribeGameServerGroup</a> </p> </li> <li> <p> <a>UpdateGameServerGroup</a>
+         * </p> </li> <li> <p> <a>DeleteGameServerGroup</a> </p> </li> <li> <p>
+         * <a>ResumeGameServerGroup</a> </p> </li> <li> <p> <a>SuspendGameServerGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateGameServerGroupOutcomeCallable UpdateGameServerGroupCallable(const Model::UpdateGameServerGroupRequest& request) const;
+
+        /**
+         * <p> <b>This action is part of Amazon GameLift FleetIQ with game server groups,
+         * which is in preview release and is subject to change.</b> </p> <p>Updates
+         * GameLift FleetIQ-specific properties for a game server group. These properties
+         * include instance rebalancing and game server protection. Many Auto Scaling group
+         * properties are updated directly. These include autoscaling policies,
+         * minimum/maximum/desired instance counts, and launch template. </p> <p>To update
+         * the game server group, specify the game server group ID and provide the updated
+         * values.</p> <p>Updated properties are validated to ensure that GameLift FleetIQ
+         * can continue to perform its core instance rebalancing activity. When you change
+         * Auto Scaling group properties directly and the changes cause errors with
+         * GameLift FleetIQ activities, an alert is sent.</p> <p> <b>Learn more</b> </p>
+         * <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-intro.html">GameLift
+         * FleetIQ Guide</a> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gsg-asgroups.html">Updating
+         * a GameLift FleetIQ-Linked Auto Scaling Group</a> </p> <p> <b>Related
+         * operations</b> </p> <ul> <li> <p> <a>CreateGameServerGroup</a> </p> </li> <li>
+         * <p> <a>ListGameServerGroups</a> </p> </li> <li> <p>
+         * <a>DescribeGameServerGroup</a> </p> </li> <li> <p> <a>UpdateGameServerGroup</a>
+         * </p> </li> <li> <p> <a>DeleteGameServerGroup</a> </p> </li> <li> <p>
+         * <a>ResumeGameServerGroup</a> </p> </li> <li> <p> <a>SuspendGameServerGroup</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameServerGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateGameServerGroupAsync(const Model::UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates game session properties. This includes the session name, maximum
@@ -6061,8 +7243,11 @@ namespace Model
          * <p>Updates settings for a game session queue, which determines how new game
          * session requests in the queue are processed. To update settings, specify the
          * queue name to be updated and provide the new settings. When updating
-         * destinations, provide a complete list of destinations. </p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * destinations, provide a complete list of destinations. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
+         * Using Multi-Region Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -6075,8 +7260,11 @@ namespace Model
          * <p>Updates settings for a game session queue, which determines how new game
          * session requests in the queue are processed. To update settings, specify the
          * queue name to be updated and provide the new settings. When updating
-         * destinations, provide a complete list of destinations. </p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * destinations, provide a complete list of destinations. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
+         * Using Multi-Region Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -6091,8 +7279,11 @@ namespace Model
          * <p>Updates settings for a game session queue, which determines how new game
          * session requests in the queue are processed. To update settings, specify the
          * queue name to be updated and provide the new settings. When updating
-         * destinations, provide a complete list of destinations. </p> <ul> <li> <p>
-         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * destinations, provide a complete list of destinations. </p> <p> <b>Learn
+         * more</b> </p> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">
+         * Using Multi-Region Queues</a> </p> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -6181,16 +7372,16 @@ namespace Model
          * existing processes shut down and new processes are launched during Amazon
          * GameLift's normal process recycling activity.</p> <p> <b>Learn more</b> </p> <p>
          * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
          * API Reference</a></p>
          */
@@ -6210,16 +7401,16 @@ namespace Model
          * existing processes shut down and new processes are launched during Amazon
          * GameLift's normal process recycling activity.</p> <p> <b>Learn more</b> </p> <p>
          * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
          * API Reference</a></p>
          *
@@ -6241,16 +7432,16 @@ namespace Model
          * existing processes shut down and new processes are launched during Amazon
          * GameLift's normal process recycling activity.</p> <p> <b>Learn more</b> </p> <p>
          * <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
-         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
+         * up GameLift Fleets</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
          * <li> <p>Update fleets:</p> <ul> <li> <p> <a>UpdateFleetAttributes</a> </p> </li>
          * <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
          * <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-         * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-         * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>
+         * <a>StartFleetActions</a> or <a>StopFleetActions</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration">AWS
          * API Reference</a></p>
          *
@@ -6394,9 +7585,11 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AcceptMatchAsyncHelper(const Model::AcceptMatchRequest& request, const AcceptMatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ClaimGameServerAsyncHelper(const Model::ClaimGameServerRequest& request, const ClaimGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBuildAsyncHelper(const Model::CreateBuildRequest& request, const CreateBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFleetAsyncHelper(const Model::CreateFleetRequest& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateGameServerGroupAsyncHelper(const Model::CreateGameServerGroupRequest& request, const CreateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGameSessionAsyncHelper(const Model::CreateGameSessionRequest& request, const CreateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGameSessionQueueAsyncHelper(const Model::CreateGameSessionQueueRequest& request, const CreateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMatchmakingConfigurationAsyncHelper(const Model::CreateMatchmakingConfigurationRequest& request, const CreateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6409,6 +7602,7 @@ namespace Model
         void DeleteAliasAsyncHelper(const Model::DeleteAliasRequest& request, const DeleteAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBuildAsyncHelper(const Model::DeleteBuildRequest& request, const DeleteBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFleetAsyncHelper(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteGameServerGroupAsyncHelper(const Model::DeleteGameServerGroupRequest& request, const DeleteGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGameSessionQueueAsyncHelper(const Model::DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMatchmakingConfigurationAsyncHelper(const Model::DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMatchmakingRuleSetAsyncHelper(const Model::DeleteMatchmakingRuleSetRequest& request, const DeleteMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6416,6 +7610,7 @@ namespace Model
         void DeleteScriptAsyncHelper(const Model::DeleteScriptRequest& request, const DeleteScriptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpcPeeringAuthorizationAsyncHelper(const Model::DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpcPeeringConnectionAsyncHelper(const Model::DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterGameServerAsyncHelper(const Model::DeregisterGameServerRequest& request, const DeregisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAliasAsyncHelper(const Model::DescribeAliasRequest& request, const DescribeAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBuildAsyncHelper(const Model::DescribeBuildRequest& request, const DescribeBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEC2InstanceLimitsAsyncHelper(const Model::DescribeEC2InstanceLimitsRequest& request, const DescribeEC2InstanceLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6424,6 +7619,8 @@ namespace Model
         void DescribeFleetEventsAsyncHelper(const Model::DescribeFleetEventsRequest& request, const DescribeFleetEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetPortSettingsAsyncHelper(const Model::DescribeFleetPortSettingsRequest& request, const DescribeFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetUtilizationAsyncHelper(const Model::DescribeFleetUtilizationRequest& request, const DescribeFleetUtilizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeGameServerAsyncHelper(const Model::DescribeGameServerRequest& request, const DescribeGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeGameServerGroupAsyncHelper(const Model::DescribeGameServerGroupRequest& request, const DescribeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGameSessionDetailsAsyncHelper(const Model::DescribeGameSessionDetailsRequest& request, const DescribeGameSessionDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGameSessionPlacementAsyncHelper(const Model::DescribeGameSessionPlacementRequest& request, const DescribeGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGameSessionQueuesAsyncHelper(const Model::DescribeGameSessionQueuesRequest& request, const DescribeGameSessionQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6443,11 +7640,15 @@ namespace Model
         void ListAliasesAsyncHelper(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsAsyncHelper(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFleetsAsyncHelper(const Model::ListFleetsRequest& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListGameServerGroupsAsyncHelper(const Model::ListGameServerGroupsRequest& request, const ListGameServerGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListGameServersAsyncHelper(const Model::ListGameServersRequest& request, const ListGameServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListScriptsAsyncHelper(const Model::ListScriptsRequest& request, const ListScriptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutScalingPolicyAsyncHelper(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterGameServerAsyncHelper(const Model::RegisterGameServerRequest& request, const RegisterGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestUploadCredentialsAsyncHelper(const Model::RequestUploadCredentialsRequest& request, const RequestUploadCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResolveAliasAsyncHelper(const Model::ResolveAliasRequest& request, const ResolveAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResumeGameServerGroupAsyncHelper(const Model::ResumeGameServerGroupRequest& request, const ResumeGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchGameSessionsAsyncHelper(const Model::SearchGameSessionsRequest& request, const SearchGameSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartFleetActionsAsyncHelper(const Model::StartFleetActionsRequest& request, const StartFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartGameSessionPlacementAsyncHelper(const Model::StartGameSessionPlacementRequest& request, const StartGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6456,6 +7657,7 @@ namespace Model
         void StopFleetActionsAsyncHelper(const Model::StopFleetActionsRequest& request, const StopFleetActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopGameSessionPlacementAsyncHelper(const Model::StopGameSessionPlacementRequest& request, const StopGameSessionPlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopMatchmakingAsyncHelper(const Model::StopMatchmakingRequest& request, const StopMatchmakingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SuspendGameServerGroupAsyncHelper(const Model::SuspendGameServerGroupRequest& request, const SuspendGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAliasAsyncHelper(const Model::UpdateAliasRequest& request, const UpdateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6463,6 +7665,8 @@ namespace Model
         void UpdateFleetAttributesAsyncHelper(const Model::UpdateFleetAttributesRequest& request, const UpdateFleetAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFleetCapacityAsyncHelper(const Model::UpdateFleetCapacityRequest& request, const UpdateFleetCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFleetPortSettingsAsyncHelper(const Model::UpdateFleetPortSettingsRequest& request, const UpdateFleetPortSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateGameServerAsyncHelper(const Model::UpdateGameServerRequest& request, const UpdateGameServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateGameServerGroupAsyncHelper(const Model::UpdateGameServerGroupRequest& request, const UpdateGameServerGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGameSessionAsyncHelper(const Model::UpdateGameSessionRequest& request, const UpdateGameSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGameSessionQueueAsyncHelper(const Model::UpdateGameSessionQueueRequest& request, const UpdateGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMatchmakingConfigurationAsyncHelper(const Model::UpdateMatchmakingConfigurationRequest& request, const UpdateMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
