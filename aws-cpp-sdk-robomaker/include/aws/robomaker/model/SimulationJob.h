@@ -26,6 +26,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
 #include <aws/robomaker/model/NetworkInterface.h>
+#include <aws/robomaker/model/ComputeResponse.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
 #include <aws/robomaker/model/DataSource.h>
@@ -831,6 +832,37 @@ namespace Model
      */
     inline SimulationJob& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Compute information for the simulation job</p>
+     */
+    inline const ComputeResponse& GetCompute() const{ return m_compute; }
+
+    /**
+     * <p>Compute information for the simulation job</p>
+     */
+    inline bool ComputeHasBeenSet() const { return m_computeHasBeenSet; }
+
+    /**
+     * <p>Compute information for the simulation job</p>
+     */
+    inline void SetCompute(const ComputeResponse& value) { m_computeHasBeenSet = true; m_compute = value; }
+
+    /**
+     * <p>Compute information for the simulation job</p>
+     */
+    inline void SetCompute(ComputeResponse&& value) { m_computeHasBeenSet = true; m_compute = std::move(value); }
+
+    /**
+     * <p>Compute information for the simulation job</p>
+     */
+    inline SimulationJob& WithCompute(const ComputeResponse& value) { SetCompute(value); return *this;}
+
+    /**
+     * <p>Compute information for the simulation job</p>
+     */
+    inline SimulationJob& WithCompute(ComputeResponse&& value) { SetCompute(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -892,6 +924,9 @@ namespace Model
 
     NetworkInterface m_networkInterface;
     bool m_networkInterfaceHasBeenSet;
+
+    ComputeResponse m_compute;
+    bool m_computeHasBeenSet;
   };
 
 } // namespace Model

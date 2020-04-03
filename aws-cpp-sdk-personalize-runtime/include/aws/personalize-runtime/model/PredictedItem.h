@@ -88,10 +88,38 @@ namespace Model
      */
     inline PredictedItem& WithItemId(const char* value) { SetItemId(value); return *this;}
 
+
+    /**
+     * <p>A numeric representation of the model's certainty in the item's suitability.
+     * For more information on scoring logic, see <a>how-scores-work</a>.</p>
+     */
+    inline double GetScore() const{ return m_score; }
+
+    /**
+     * <p>A numeric representation of the model's certainty in the item's suitability.
+     * For more information on scoring logic, see <a>how-scores-work</a>.</p>
+     */
+    inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
+
+    /**
+     * <p>A numeric representation of the model's certainty in the item's suitability.
+     * For more information on scoring logic, see <a>how-scores-work</a>.</p>
+     */
+    inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
+
+    /**
+     * <p>A numeric representation of the model's certainty in the item's suitability.
+     * For more information on scoring logic, see <a>how-scores-work</a>.</p>
+     */
+    inline PredictedItem& WithScore(double value) { SetScore(value); return *this;}
+
   private:
 
     Aws::String m_itemId;
     bool m_itemIdHasBeenSet;
+
+    double m_score;
+    bool m_scoreHasBeenSet;
   };
 
 } // namespace Model

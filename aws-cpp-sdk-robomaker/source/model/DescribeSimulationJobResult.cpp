@@ -180,6 +180,12 @@ DescribeSimulationJobResult& DescribeSimulationJobResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("compute"))
+  {
+    m_compute = jsonValue.GetObject("compute");
+
+  }
+
 
 
   return *this;

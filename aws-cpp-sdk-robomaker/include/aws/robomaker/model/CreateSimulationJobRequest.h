@@ -23,6 +23,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfig.h>
+#include <aws/robomaker/model/Compute.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
 #include <aws/robomaker/model/DataSourceConfig.h>
@@ -574,6 +575,37 @@ namespace Model
      */
     inline CreateSimulationJobRequest& WithVpcConfig(VPCConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline const Compute& GetCompute() const{ return m_compute; }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline bool ComputeHasBeenSet() const { return m_computeHasBeenSet; }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline void SetCompute(const Compute& value) { m_computeHasBeenSet = true; m_compute = value; }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline void SetCompute(Compute&& value) { m_computeHasBeenSet = true; m_compute = std::move(value); }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& WithCompute(const Compute& value) { SetCompute(value); return *this;}
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& WithCompute(Compute&& value) { SetCompute(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientRequestToken;
@@ -608,6 +640,9 @@ namespace Model
 
     VPCConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    Compute m_compute;
+    bool m_computeHasBeenSet;
   };
 
 } // namespace Model

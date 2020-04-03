@@ -53,7 +53,8 @@ SimulationJob::SimulationJob() :
     m_dataSourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false)
+    m_networkInterfaceHasBeenSet(false),
+    m_computeHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ SimulationJob::SimulationJob(JsonView jsonValue) :
     m_dataSourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
-    m_networkInterfaceHasBeenSet(false)
+    m_networkInterfaceHasBeenSet(false),
+    m_computeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -241,6 +243,13 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     m_networkInterfaceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("compute"))
+  {
+    m_compute = jsonValue.GetObject("compute");
+
+    m_computeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -380,6 +389,12 @@ JsonValue SimulationJob::Jsonize() const
   if(m_networkInterfaceHasBeenSet)
   {
    payload.WithObject("networkInterface", m_networkInterface.Jsonize());
+
+  }
+
+  if(m_computeHasBeenSet)
+  {
+   payload.WithObject("compute", m_compute.Jsonize());
 
   }
 

@@ -162,6 +162,12 @@ CreateSimulationJobResult& CreateSimulationJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("compute"))
+  {
+    m_compute = jsonValue.GetObject("compute");
+
+  }
+
 
 
   return *this;

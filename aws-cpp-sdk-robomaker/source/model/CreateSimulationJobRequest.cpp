@@ -36,7 +36,8 @@ CreateSimulationJobRequest::CreateSimulationJobRequest() :
     m_simulationApplicationsHasBeenSet(false),
     m_dataSourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_computeHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,12 @@ Aws::String CreateSimulationJobRequest::SerializePayload() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_computeHasBeenSet)
+  {
+   payload.WithObject("compute", m_compute.Jsonize());
 
   }
 

@@ -42,6 +42,7 @@ SimulationJobRequest::SimulationJobRequest() :
     m_simulationApplicationsHasBeenSet(false),
     m_dataSourcesHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_computeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -60,6 +61,7 @@ SimulationJobRequest::SimulationJobRequest(JsonView jsonValue) :
     m_simulationApplicationsHasBeenSet(false),
     m_dataSourcesHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
+    m_computeHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -144,6 +146,13 @@ SimulationJobRequest& SimulationJobRequest::operator =(JsonView jsonValue)
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
 
     m_vpcConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("compute"))
+  {
+    m_compute = jsonValue.GetObject("compute");
+
+    m_computeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -234,6 +243,12 @@ JsonValue SimulationJobRequest::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_computeHasBeenSet)
+  {
+   payload.WithObject("compute", m_compute.Jsonize());
 
   }
 

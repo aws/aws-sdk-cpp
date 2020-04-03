@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/personalize-runtime/model/PredictedItem.h>
+#include <aws/robomaker/model/ComputeResponse.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -23,58 +23,43 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-namespace PersonalizeRuntime
+namespace RoboMaker
 {
 namespace Model
 {
 
-PredictedItem::PredictedItem() : 
-    m_itemIdHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+ComputeResponse::ComputeResponse() : 
+    m_simulationUnitLimit(0),
+    m_simulationUnitLimitHasBeenSet(false)
 {
 }
 
-PredictedItem::PredictedItem(JsonView jsonValue) : 
-    m_itemIdHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
+ComputeResponse::ComputeResponse(JsonView jsonValue) : 
+    m_simulationUnitLimit(0),
+    m_simulationUnitLimitHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-PredictedItem& PredictedItem::operator =(JsonView jsonValue)
+ComputeResponse& ComputeResponse::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("itemId"))
+  if(jsonValue.ValueExists("simulationUnitLimit"))
   {
-    m_itemId = jsonValue.GetString("itemId");
+    m_simulationUnitLimit = jsonValue.GetInteger("simulationUnitLimit");
 
-    m_itemIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("score"))
-  {
-    m_score = jsonValue.GetDouble("score");
-
-    m_scoreHasBeenSet = true;
+    m_simulationUnitLimitHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue PredictedItem::Jsonize() const
+JsonValue ComputeResponse::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_itemIdHasBeenSet)
+  if(m_simulationUnitLimitHasBeenSet)
   {
-   payload.WithString("itemId", m_itemId);
-
-  }
-
-  if(m_scoreHasBeenSet)
-  {
-   payload.WithDouble("score", m_score);
+   payload.WithInteger("simulationUnitLimit", m_simulationUnitLimit);
 
   }
 
@@ -82,5 +67,5 @@ JsonValue PredictedItem::Jsonize() const
 }
 
 } // namespace Model
-} // namespace PersonalizeRuntime
+} // namespace RoboMaker
 } // namespace Aws

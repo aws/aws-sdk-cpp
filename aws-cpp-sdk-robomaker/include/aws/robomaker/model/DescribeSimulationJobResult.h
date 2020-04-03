@@ -26,6 +26,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
 #include <aws/robomaker/model/NetworkInterface.h>
+#include <aws/robomaker/model/ComputeResponse.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
 #include <aws/robomaker/model/DataSource.h>
@@ -820,6 +821,32 @@ namespace Model
      */
     inline DescribeSimulationJobResult& WithNetworkInterface(NetworkInterface&& value) { SetNetworkInterface(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline const ComputeResponse& GetCompute() const{ return m_compute; }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline void SetCompute(const ComputeResponse& value) { m_compute = value; }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline void SetCompute(ComputeResponse&& value) { m_compute = std::move(value); }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline DescribeSimulationJobResult& WithCompute(const ComputeResponse& value) { SetCompute(value); return *this;}
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline DescribeSimulationJobResult& WithCompute(ComputeResponse&& value) { SetCompute(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -861,6 +888,8 @@ namespace Model
     VPCConfigResponse m_vpcConfig;
 
     NetworkInterface m_networkInterface;
+
+    ComputeResponse m_compute;
   };
 
 } // namespace Model

@@ -210,7 +210,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
 
@@ -218,7 +218,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
 
@@ -226,7 +226,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
 
@@ -234,7 +234,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline void SetContext(Aws::Map<Aws::String, Aws::String>&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
 
@@ -242,7 +242,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& WithContext(const Aws::Map<Aws::String, Aws::String>& value) { SetContext(value); return *this;}
 
@@ -250,7 +250,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& WithContext(Aws::Map<Aws::String, Aws::String>&& value) { SetContext(std::move(value)); return *this;}
 
@@ -258,7 +258,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& AddContext(const Aws::String& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
 
@@ -266,7 +266,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& AddContext(Aws::String&& key, const Aws::String& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
 
@@ -274,7 +274,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& AddContext(const Aws::String& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
 
@@ -282,7 +282,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& AddContext(Aws::String&& key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -290,7 +290,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& AddContext(const char* key, Aws::String&& value) { m_contextHasBeenSet = true; m_context.emplace(key, std::move(value)); return *this; }
 
@@ -298,7 +298,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& AddContext(Aws::String&& key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(std::move(key), value); return *this; }
 
@@ -306,7 +306,7 @@ namespace Model
      * <p>The contextual metadata to use when getting recommendations. Contextual
      * metadata includes any interaction information that might be relevant when
      * getting a user's recommendations, such as the user's current location or device
-     * type. For more information, see Contextual Metadata.</p>
+     * type.</p>
      */
     inline GetPersonalizedRankingRequest& AddContext(const char* key, const char* value) { m_contextHasBeenSet = true; m_context.emplace(key, value); return *this; }
 

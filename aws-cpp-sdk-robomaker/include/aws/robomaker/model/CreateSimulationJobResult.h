@@ -25,6 +25,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
+#include <aws/robomaker/model/ComputeResponse.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
 #include <aws/robomaker/model/DataSource.h>
@@ -704,6 +705,32 @@ namespace Model
      */
     inline CreateSimulationJobResult& WithVpcConfig(VPCConfigResponse&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline const ComputeResponse& GetCompute() const{ return m_compute; }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline void SetCompute(const ComputeResponse& value) { m_compute = value; }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline void SetCompute(ComputeResponse&& value) { m_compute = std::move(value); }
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& WithCompute(const ComputeResponse& value) { SetCompute(value); return *this;}
+
+    /**
+     * <p>Compute information for the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& WithCompute(ComputeResponse&& value) { SetCompute(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -739,6 +766,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     VPCConfigResponse m_vpcConfig;
+
+    ComputeResponse m_compute;
   };
 
 } // namespace Model
