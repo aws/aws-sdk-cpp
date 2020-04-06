@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>The resource lifecycle configuration for an application. Defines lifecycle
    * settings for resources that belong to the application, and the service role that
-   * Elastic Beanstalk assumes in order to apply lifecycle settings. The version
+   * AWS Elastic Beanstalk assumes in order to apply lifecycle settings. The version
    * lifecycle configuration defines lifecycle settings for application
    * versions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ApplicationResourceLifecycleConfig">AWS
@@ -160,32 +160,32 @@ namespace Model
 
 
     /**
-     * <p>The application version lifecycle configuration.</p>
+     * <p>Defines lifecycle settings for application versions.</p>
      */
     inline const ApplicationVersionLifecycleConfig& GetVersionLifecycleConfig() const{ return m_versionLifecycleConfig; }
 
     /**
-     * <p>The application version lifecycle configuration.</p>
+     * <p>Defines lifecycle settings for application versions.</p>
      */
     inline bool VersionLifecycleConfigHasBeenSet() const { return m_versionLifecycleConfigHasBeenSet; }
 
     /**
-     * <p>The application version lifecycle configuration.</p>
+     * <p>Defines lifecycle settings for application versions.</p>
      */
     inline void SetVersionLifecycleConfig(const ApplicationVersionLifecycleConfig& value) { m_versionLifecycleConfigHasBeenSet = true; m_versionLifecycleConfig = value; }
 
     /**
-     * <p>The application version lifecycle configuration.</p>
+     * <p>Defines lifecycle settings for application versions.</p>
      */
     inline void SetVersionLifecycleConfig(ApplicationVersionLifecycleConfig&& value) { m_versionLifecycleConfigHasBeenSet = true; m_versionLifecycleConfig = std::move(value); }
 
     /**
-     * <p>The application version lifecycle configuration.</p>
+     * <p>Defines lifecycle settings for application versions.</p>
      */
     inline ApplicationResourceLifecycleConfig& WithVersionLifecycleConfig(const ApplicationVersionLifecycleConfig& value) { SetVersionLifecycleConfig(value); return *this;}
 
     /**
-     * <p>The application version lifecycle configuration.</p>
+     * <p>Defines lifecycle settings for application versions.</p>
      */
     inline ApplicationResourceLifecycleConfig& WithVersionLifecycleConfig(ApplicationVersionLifecycleConfig&& value) { SetVersionLifecycleConfig(std::move(value)); return *this;}
 

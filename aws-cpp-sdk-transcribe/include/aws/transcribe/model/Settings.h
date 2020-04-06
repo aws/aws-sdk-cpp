@@ -141,33 +141,33 @@ namespace Model
 
     /**
      * <p>The maximum number of speakers to identify in the input audio. If there are
-     * more speakers in the audio than this number, multiple speakers will be
-     * identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
-     * field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
+     * more speakers in the audio than this number, multiple speakers are identified as
+     * a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you
+     * must set the <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline int GetMaxSpeakerLabels() const{ return m_maxSpeakerLabels; }
 
     /**
      * <p>The maximum number of speakers to identify in the input audio. If there are
-     * more speakers in the audio than this number, multiple speakers will be
-     * identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
-     * field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
+     * more speakers in the audio than this number, multiple speakers are identified as
+     * a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you
+     * must set the <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline bool MaxSpeakerLabelsHasBeenSet() const { return m_maxSpeakerLabelsHasBeenSet; }
 
     /**
      * <p>The maximum number of speakers to identify in the input audio. If there are
-     * more speakers in the audio than this number, multiple speakers will be
-     * identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
-     * field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
+     * more speakers in the audio than this number, multiple speakers are identified as
+     * a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you
+     * must set the <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline void SetMaxSpeakerLabels(int value) { m_maxSpeakerLabelsHasBeenSet = true; m_maxSpeakerLabels = value; }
 
     /**
      * <p>The maximum number of speakers to identify in the input audio. If there are
-     * more speakers in the audio than this number, multiple speakers will be
-     * identified as a single speaker. If you specify the <code>MaxSpeakerLabels</code>
-     * field, you must set the <code>ShowSpeakerLabels</code> field to true.</p>
+     * more speakers in the audio than this number, multiple speakers are identified as
+     * a single speaker. If you specify the <code>MaxSpeakerLabels</code> field, you
+     * must set the <code>ShowSpeakerLabels</code> field to true.</p>
      */
     inline Settings& WithMaxSpeakerLabels(int value) { SetMaxSpeakerLabels(value); return *this;}
 

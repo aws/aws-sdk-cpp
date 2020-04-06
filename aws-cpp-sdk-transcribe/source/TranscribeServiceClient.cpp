@@ -32,15 +32,19 @@
 #include <aws/transcribe/TranscribeServiceErrorMarshaller.h>
 #include <aws/transcribe/model/CreateVocabularyRequest.h>
 #include <aws/transcribe/model/CreateVocabularyFilterRequest.h>
+#include <aws/transcribe/model/DeleteMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/DeleteTranscriptionJobRequest.h>
 #include <aws/transcribe/model/DeleteVocabularyRequest.h>
 #include <aws/transcribe/model/DeleteVocabularyFilterRequest.h>
+#include <aws/transcribe/model/GetMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/GetTranscriptionJobRequest.h>
 #include <aws/transcribe/model/GetVocabularyRequest.h>
 #include <aws/transcribe/model/GetVocabularyFilterRequest.h>
+#include <aws/transcribe/model/ListMedicalTranscriptionJobsRequest.h>
 #include <aws/transcribe/model/ListTranscriptionJobsRequest.h>
 #include <aws/transcribe/model/ListVocabulariesRequest.h>
 #include <aws/transcribe/model/ListVocabularyFiltersRequest.h>
+#include <aws/transcribe/model/StartMedicalTranscriptionJobRequest.h>
 #include <aws/transcribe/model/StartTranscriptionJobRequest.h>
 #include <aws/transcribe/model/UpdateVocabularyRequest.h>
 #include <aws/transcribe/model/UpdateVocabularyFilterRequest.h>
@@ -187,6 +191,41 @@ void TranscribeServiceClient::CreateVocabularyFilterAsyncHelper(const CreateVoca
   handler(this, request, CreateVocabularyFilter(request), context);
 }
 
+DeleteMedicalTranscriptionJobOutcome TranscribeServiceClient::DeleteMedicalTranscriptionJob(const DeleteMedicalTranscriptionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteMedicalTranscriptionJobOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteMedicalTranscriptionJobOutcome(outcome.GetError());
+  }
+}
+
+DeleteMedicalTranscriptionJobOutcomeCallable TranscribeServiceClient::DeleteMedicalTranscriptionJobCallable(const DeleteMedicalTranscriptionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMedicalTranscriptionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMedicalTranscriptionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::DeleteMedicalTranscriptionJobAsync(const DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMedicalTranscriptionJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::DeleteMedicalTranscriptionJobAsyncHelper(const DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMedicalTranscriptionJob(request), context);
+}
+
 DeleteTranscriptionJobOutcome TranscribeServiceClient::DeleteTranscriptionJob(const DeleteTranscriptionJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -290,6 +329,41 @@ void TranscribeServiceClient::DeleteVocabularyFilterAsync(const DeleteVocabulary
 void TranscribeServiceClient::DeleteVocabularyFilterAsyncHelper(const DeleteVocabularyFilterRequest& request, const DeleteVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteVocabularyFilter(request), context);
+}
+
+GetMedicalTranscriptionJobOutcome TranscribeServiceClient::GetMedicalTranscriptionJob(const GetMedicalTranscriptionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetMedicalTranscriptionJobOutcome(GetMedicalTranscriptionJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMedicalTranscriptionJobOutcome(outcome.GetError());
+  }
+}
+
+GetMedicalTranscriptionJobOutcomeCallable TranscribeServiceClient::GetMedicalTranscriptionJobCallable(const GetMedicalTranscriptionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMedicalTranscriptionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMedicalTranscriptionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::GetMedicalTranscriptionJobAsync(const GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMedicalTranscriptionJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::GetMedicalTranscriptionJobAsyncHelper(const GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMedicalTranscriptionJob(request), context);
 }
 
 GetTranscriptionJobOutcome TranscribeServiceClient::GetTranscriptionJob(const GetTranscriptionJobRequest& request) const
@@ -397,6 +471,41 @@ void TranscribeServiceClient::GetVocabularyFilterAsyncHelper(const GetVocabulary
   handler(this, request, GetVocabularyFilter(request), context);
 }
 
+ListMedicalTranscriptionJobsOutcome TranscribeServiceClient::ListMedicalTranscriptionJobs(const ListMedicalTranscriptionJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListMedicalTranscriptionJobsOutcome(ListMedicalTranscriptionJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListMedicalTranscriptionJobsOutcome(outcome.GetError());
+  }
+}
+
+ListMedicalTranscriptionJobsOutcomeCallable TranscribeServiceClient::ListMedicalTranscriptionJobsCallable(const ListMedicalTranscriptionJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMedicalTranscriptionJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMedicalTranscriptionJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::ListMedicalTranscriptionJobsAsync(const ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMedicalTranscriptionJobsAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::ListMedicalTranscriptionJobsAsyncHelper(const ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMedicalTranscriptionJobs(request), context);
+}
+
 ListTranscriptionJobsOutcome TranscribeServiceClient::ListTranscriptionJobs(const ListTranscriptionJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -500,6 +609,41 @@ void TranscribeServiceClient::ListVocabularyFiltersAsync(const ListVocabularyFil
 void TranscribeServiceClient::ListVocabularyFiltersAsyncHelper(const ListVocabularyFiltersRequest& request, const ListVocabularyFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListVocabularyFilters(request), context);
+}
+
+StartMedicalTranscriptionJobOutcome TranscribeServiceClient::StartMedicalTranscriptionJob(const StartMedicalTranscriptionJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartMedicalTranscriptionJobOutcome(StartMedicalTranscriptionJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartMedicalTranscriptionJobOutcome(outcome.GetError());
+  }
+}
+
+StartMedicalTranscriptionJobOutcomeCallable TranscribeServiceClient::StartMedicalTranscriptionJobCallable(const StartMedicalTranscriptionJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartMedicalTranscriptionJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartMedicalTranscriptionJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranscribeServiceClient::StartMedicalTranscriptionJobAsync(const StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartMedicalTranscriptionJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranscribeServiceClient::StartMedicalTranscriptionJobAsyncHelper(const StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartMedicalTranscriptionJob(request), context);
 }
 
 StartTranscriptionJobOutcome TranscribeServiceClient::StartTranscriptionJob(const StartTranscriptionJobRequest& request) const

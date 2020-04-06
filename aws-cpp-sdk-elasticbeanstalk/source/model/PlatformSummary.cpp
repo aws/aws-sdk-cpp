@@ -39,7 +39,11 @@ PlatformSummary::PlatformSummary() :
     m_operatingSystemNameHasBeenSet(false),
     m_operatingSystemVersionHasBeenSet(false),
     m_supportedTierListHasBeenSet(false),
-    m_supportedAddonListHasBeenSet(false)
+    m_supportedAddonListHasBeenSet(false),
+    m_platformLifecycleStateHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
+    m_platformBranchNameHasBeenSet(false),
+    m_platformBranchLifecycleStateHasBeenSet(false)
 {
 }
 
@@ -52,7 +56,11 @@ PlatformSummary::PlatformSummary(const XmlNode& xmlNode) :
     m_operatingSystemNameHasBeenSet(false),
     m_operatingSystemVersionHasBeenSet(false),
     m_supportedTierListHasBeenSet(false),
-    m_supportedAddonListHasBeenSet(false)
+    m_supportedAddonListHasBeenSet(false),
+    m_platformLifecycleStateHasBeenSet(false),
+    m_platformVersionHasBeenSet(false),
+    m_platformBranchNameHasBeenSet(false),
+    m_platformBranchLifecycleStateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -123,6 +131,30 @@ PlatformSummary& PlatformSummary::operator =(const XmlNode& xmlNode)
 
       m_supportedAddonListHasBeenSet = true;
     }
+    XmlNode platformLifecycleStateNode = resultNode.FirstChild("PlatformLifecycleState");
+    if(!platformLifecycleStateNode.IsNull())
+    {
+      m_platformLifecycleState = Aws::Utils::Xml::DecodeEscapedXmlText(platformLifecycleStateNode.GetText());
+      m_platformLifecycleStateHasBeenSet = true;
+    }
+    XmlNode platformVersionNode = resultNode.FirstChild("PlatformVersion");
+    if(!platformVersionNode.IsNull())
+    {
+      m_platformVersion = Aws::Utils::Xml::DecodeEscapedXmlText(platformVersionNode.GetText());
+      m_platformVersionHasBeenSet = true;
+    }
+    XmlNode platformBranchNameNode = resultNode.FirstChild("PlatformBranchName");
+    if(!platformBranchNameNode.IsNull())
+    {
+      m_platformBranchName = Aws::Utils::Xml::DecodeEscapedXmlText(platformBranchNameNode.GetText());
+      m_platformBranchNameHasBeenSet = true;
+    }
+    XmlNode platformBranchLifecycleStateNode = resultNode.FirstChild("PlatformBranchLifecycleState");
+    if(!platformBranchLifecycleStateNode.IsNull())
+    {
+      m_platformBranchLifecycleState = Aws::Utils::Xml::DecodeEscapedXmlText(platformBranchLifecycleStateNode.GetText());
+      m_platformBranchLifecycleStateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -178,6 +210,26 @@ void PlatformSummary::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_platformLifecycleStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlatformLifecycleState=" << StringUtils::URLEncode(m_platformLifecycleState.c_str()) << "&";
+  }
+
+  if(m_platformVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlatformVersion=" << StringUtils::URLEncode(m_platformVersion.c_str()) << "&";
+  }
+
+  if(m_platformBranchNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlatformBranchName=" << StringUtils::URLEncode(m_platformBranchName.c_str()) << "&";
+  }
+
+  if(m_platformBranchLifecycleStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PlatformBranchLifecycleState=" << StringUtils::URLEncode(m_platformBranchLifecycleState.c_str()) << "&";
+  }
+
 }
 
 void PlatformSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -221,6 +273,22 @@ void PlatformSummary::OutputToStream(Aws::OStream& oStream, const char* location
       {
         oStream << location << ".SupportedAddonList.member." << supportedAddonListIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_platformLifecycleStateHasBeenSet)
+  {
+      oStream << location << ".PlatformLifecycleState=" << StringUtils::URLEncode(m_platformLifecycleState.c_str()) << "&";
+  }
+  if(m_platformVersionHasBeenSet)
+  {
+      oStream << location << ".PlatformVersion=" << StringUtils::URLEncode(m_platformVersion.c_str()) << "&";
+  }
+  if(m_platformBranchNameHasBeenSet)
+  {
+      oStream << location << ".PlatformBranchName=" << StringUtils::URLEncode(m_platformBranchName.c_str()) << "&";
+  }
+  if(m_platformBranchLifecycleStateHasBeenSet)
+  {
+      oStream << location << ".PlatformBranchLifecycleState=" << StringUtils::URLEncode(m_platformBranchLifecycleState.c_str()) << "&";
   }
 }
 

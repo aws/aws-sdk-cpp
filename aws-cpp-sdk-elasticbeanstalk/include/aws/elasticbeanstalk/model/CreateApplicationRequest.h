@@ -53,135 +53,119 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the application.</p> <p>Constraint: This name must be unique
-     * within your account. If the specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.</p>
+     * <p>The name of the application. Must be unique within your account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of the application.</p> <p>Constraint: This name must be unique
-     * within your account. If the specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.</p>
+     * <p>The name of the application. Must be unique within your account.</p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of the application.</p> <p>Constraint: This name must be unique
-     * within your account. If the specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.</p>
+     * <p>The name of the application. Must be unique within your account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of the application.</p> <p>Constraint: This name must be unique
-     * within your account. If the specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.</p>
+     * <p>The name of the application. Must be unique within your account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of the application.</p> <p>Constraint: This name must be unique
-     * within your account. If the specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.</p>
+     * <p>The name of the application. Must be unique within your account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of the application.</p> <p>Constraint: This name must be unique
-     * within your account. If the specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.</p>
+     * <p>The name of the application. Must be unique within your account.</p>
      */
     inline CreateApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of the application.</p> <p>Constraint: This name must be unique
-     * within your account. If the specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.</p>
+     * <p>The name of the application. Must be unique within your account.</p>
      */
     inline CreateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the application.</p> <p>Constraint: This name must be unique
-     * within your account. If the specified name already exists, the action returns an
-     * <code>InvalidParameterValue</code> error.</p>
+     * <p>The name of the application. Must be unique within your account.</p>
      */
     inline CreateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
 
     /**
-     * <p>Describes the application.</p>
+     * <p>Your description of the application.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Describes the application.</p>
+     * <p>Your description of the application.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Describes the application.</p>
+     * <p>Your description of the application.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Describes the application.</p>
+     * <p>Your description of the application.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Describes the application.</p>
+     * <p>Your description of the application.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Describes the application.</p>
+     * <p>Your description of the application.</p>
      */
     inline CreateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Describes the application.</p>
+     * <p>Your description of the application.</p>
      */
     inline CreateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Describes the application.</p>
+     * <p>Your description of the application.</p>
      */
     inline CreateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Specify an application resource lifecycle configuration to prevent your
+     * <p>Specifies an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
     inline const ApplicationResourceLifecycleConfig& GetResourceLifecycleConfig() const{ return m_resourceLifecycleConfig; }
 
     /**
-     * <p>Specify an application resource lifecycle configuration to prevent your
+     * <p>Specifies an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
     inline bool ResourceLifecycleConfigHasBeenSet() const { return m_resourceLifecycleConfigHasBeenSet; }
 
     /**
-     * <p>Specify an application resource lifecycle configuration to prevent your
+     * <p>Specifies an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
     inline void SetResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
 
     /**
-     * <p>Specify an application resource lifecycle configuration to prevent your
+     * <p>Specifies an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
     inline void SetResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = std::move(value); }
 
     /**
-     * <p>Specify an application resource lifecycle configuration to prevent your
+     * <p>Specifies an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
     inline CreateApplicationRequest& WithResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { SetResourceLifecycleConfig(value); return *this;}
 
     /**
-     * <p>Specify an application resource lifecycle configuration to prevent your
+     * <p>Specifies an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
     inline CreateApplicationRequest& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}

@@ -46,6 +46,7 @@
 #include <aws/elasticbeanstalk/model/DescribeInstancesHealthResult.h>
 #include <aws/elasticbeanstalk/model/DescribePlatformVersionResult.h>
 #include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksResult.h>
+#include <aws/elasticbeanstalk/model/ListPlatformBranchesResult.h>
 #include <aws/elasticbeanstalk/model/ListPlatformVersionsResult.h>
 #include <aws/elasticbeanstalk/model/ListTagsForResourceResult.h>
 #include <aws/elasticbeanstalk/model/RetrieveEnvironmentInfoResult.h>
@@ -131,6 +132,7 @@ namespace Model
         class DescribeInstancesHealthRequest;
         class DescribePlatformVersionRequest;
         class ListAvailableSolutionStacksRequest;
+        class ListPlatformBranchesRequest;
         class ListPlatformVersionsRequest;
         class ListTagsForResourceRequest;
         class RebuildEnvironmentRequest;
@@ -176,6 +178,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInstancesHealthResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribeInstancesHealthOutcome;
         typedef Aws::Utils::Outcome<DescribePlatformVersionResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> DescribePlatformVersionOutcome;
         typedef Aws::Utils::Outcome<ListAvailableSolutionStacksResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListAvailableSolutionStacksOutcome;
+        typedef Aws::Utils::Outcome<ListPlatformBranchesResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListPlatformBranchesOutcome;
         typedef Aws::Utils::Outcome<ListPlatformVersionsResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListPlatformVersionsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ElasticBeanstalkErrors>> RebuildEnvironmentOutcome;
@@ -221,6 +224,7 @@ namespace Model
         typedef std::future<DescribeInstancesHealthOutcome> DescribeInstancesHealthOutcomeCallable;
         typedef std::future<DescribePlatformVersionOutcome> DescribePlatformVersionOutcomeCallable;
         typedef std::future<ListAvailableSolutionStacksOutcome> ListAvailableSolutionStacksOutcomeCallable;
+        typedef std::future<ListPlatformBranchesOutcome> ListPlatformBranchesOutcomeCallable;
         typedef std::future<ListPlatformVersionsOutcome> ListPlatformVersionsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RebuildEnvironmentOutcome> RebuildEnvironmentOutcomeCallable;
@@ -269,6 +273,7 @@ namespace Model
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribeInstancesHealthRequest&, const Model::DescribeInstancesHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesHealthResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::DescribePlatformVersionRequest&, const Model::DescribePlatformVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePlatformVersionResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListAvailableSolutionStacksRequest&, const Model::ListAvailableSolutionStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableSolutionStacksResponseReceivedHandler;
+    typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListPlatformBranchesRequest&, const Model::ListPlatformBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformBranchesResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListPlatformVersionsRequest&, const Model::ListPlatformVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlatformVersionsResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ElasticBeanstalkClient*, const Model::RebuildEnvironmentRequest&, const Model::RebuildEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebuildEnvironmentResponseReceivedHandler;
@@ -467,16 +472,16 @@ namespace Model
         virtual void ComposeEnvironmentsAsync(const Model::ComposeEnvironmentsRequest& request, const ComposeEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Creates an application that has one configuration template named
-         * <code>default</code> and no application versions. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an application that has one configuration template named
+         * <code>default</code> and no application versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p> Creates an application that has one configuration template named
-         * <code>default</code> and no application versions. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an application that has one configuration template named
+         * <code>default</code> and no application versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -485,8 +490,8 @@ namespace Model
         virtual Model::CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request) const;
 
         /**
-         * <p> Creates an application that has one configuration template named
-         * <code>default</code> and no application versions. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an application that has one configuration template named
+         * <code>default</code> and no application versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplication">AWS
          * API Reference</a></p>
          *
@@ -504,10 +509,10 @@ namespace Model
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
          * and <code>SourceBundle</code> to use the default sample application.</p> <note>
-         * <p>Once you create an application version with a specified Amazon S3 bucket and
-         * key location, you cannot change that Amazon S3 location. If you change the
-         * Amazon S3 location, you receive an exception when you attempt to launch an
-         * environment from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>After you create an application version with a specified Amazon S3 bucket and
+         * key location, you can't change that Amazon S3 location. If you change the Amazon
+         * S3 location, you receive an exception when you attempt to launch an environment
+         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          */
@@ -523,10 +528,10 @@ namespace Model
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
          * and <code>SourceBundle</code> to use the default sample application.</p> <note>
-         * <p>Once you create an application version with a specified Amazon S3 bucket and
-         * key location, you cannot change that Amazon S3 location. If you change the
-         * Amazon S3 location, you receive an exception when you attempt to launch an
-         * environment from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>After you create an application version with a specified Amazon S3 bucket and
+         * key location, you can't change that Amazon S3 location. If you change the Amazon
+         * S3 location, you receive an exception when you attempt to launch an environment
+         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -544,10 +549,10 @@ namespace Model
          * <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with
          * <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code>
          * and <code>SourceBundle</code> to use the default sample application.</p> <note>
-         * <p>Once you create an application version with a specified Amazon S3 bucket and
-         * key location, you cannot change that Amazon S3 location. If you change the
-         * Amazon S3 location, you receive an exception when you attempt to launch an
-         * environment from the application version.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>After you create an application version with a specified Amazon S3 bucket and
+         * key location, you can't change that Amazon S3 location. If you change the Amazon
+         * S3 location, you receive an exception when you attempt to launch an environment
+         * from the application version.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateApplicationVersion">AWS
          * API Reference</a></p>
          *
@@ -556,10 +561,12 @@ namespace Model
         virtual void CreateApplicationVersionAsync(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a configuration template. Templates are associated with a specific
-         * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Templates aren't associated with any
-         * environment. The <code>EnvironmentName</code> response element is always
+         * <p>Creates an AWS Elastic Beanstalk configuration template, associated with a
+         * specific Elastic Beanstalk application. You define application configuration
+         * settings in a configuration template. You can then use the configuration
+         * template to deploy different versions of the application with the same
+         * configuration settings.</p> <p>Templates aren't associated with any environment.
+         * The <code>EnvironmentName</code> response element is always
          * <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
@@ -570,10 +577,12 @@ namespace Model
         virtual Model::CreateConfigurationTemplateOutcome CreateConfigurationTemplate(const Model::CreateConfigurationTemplateRequest& request) const;
 
         /**
-         * <p>Creates a configuration template. Templates are associated with a specific
-         * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Templates aren't associated with any
-         * environment. The <code>EnvironmentName</code> response element is always
+         * <p>Creates an AWS Elastic Beanstalk configuration template, associated with a
+         * specific Elastic Beanstalk application. You define application configuration
+         * settings in a configuration template. You can then use the configuration
+         * template to deploy different versions of the application with the same
+         * configuration settings.</p> <p>Templates aren't associated with any environment.
+         * The <code>EnvironmentName</code> response element is always
          * <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
@@ -586,10 +595,12 @@ namespace Model
         virtual Model::CreateConfigurationTemplateOutcomeCallable CreateConfigurationTemplateCallable(const Model::CreateConfigurationTemplateRequest& request) const;
 
         /**
-         * <p>Creates a configuration template. Templates are associated with a specific
-         * application and are used to deploy different versions of the application with
-         * the same configuration settings.</p> <p>Templates aren't associated with any
-         * environment. The <code>EnvironmentName</code> response element is always
+         * <p>Creates an AWS Elastic Beanstalk configuration template, associated with a
+         * specific Elastic Beanstalk application. You define application configuration
+         * settings in a configuration template. You can then use the configuration
+         * template to deploy different versions of the application with the same
+         * configuration settings.</p> <p>Templates aren't associated with any environment.
+         * The <code>EnvironmentName</code> response element is always
          * <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p>
          * <a>DescribeConfigurationOptions</a> </p> </li> <li> <p>
          * <a>DescribeConfigurationSettings</a> </p> </li> <li> <p>
@@ -602,16 +613,16 @@ namespace Model
         virtual void CreateConfigurationTemplateAsync(const Model::CreateConfigurationTemplateRequest& request, const CreateConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Launches an environment for the specified application using the specified
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Launches an AWS Elastic Beanstalk environment for the specified application
+         * using the specified configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
         /**
-         * <p>Launches an environment for the specified application using the specified
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Launches an AWS Elastic Beanstalk environment for the specified application
+         * using the specified configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -620,8 +631,8 @@ namespace Model
         virtual Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
 
         /**
-         * <p>Launches an environment for the specified application using the specified
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Launches an AWS Elastic Beanstalk environment for the specified application
+         * using the specified configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/CreateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -1240,14 +1251,24 @@ namespace Model
         virtual void DescribeInstancesHealthAsync(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the version of the platform.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a platform version. Provides full details. Compare to
+         * <a>ListPlatformVersions</a>, which provides summary information about a list of
+         * platform versions.</p> <p>For definitions of platform version and other
+         * platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribePlatformVersionOutcome DescribePlatformVersion(const Model::DescribePlatformVersionRequest& request) const;
 
         /**
-         * <p>Describes the version of the platform.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a platform version. Provides full details. Compare to
+         * <a>ListPlatformVersions</a>, which provides summary information about a list of
+         * platform versions.</p> <p>For definitions of platform version and other
+         * platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">AWS
          * API Reference</a></p>
          *
@@ -1256,7 +1277,12 @@ namespace Model
         virtual Model::DescribePlatformVersionOutcomeCallable DescribePlatformVersionCallable(const Model::DescribePlatformVersionRequest& request) const;
 
         /**
-         * <p>Describes the version of the platform.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a platform version. Provides full details. Compare to
+         * <a>ListPlatformVersions</a>, which provides summary information about a list of
+         * platform versions.</p> <p>For definitions of platform version and other
+         * platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribePlatformVersion">AWS
          * API Reference</a></p>
          *
@@ -1293,14 +1319,63 @@ namespace Model
         virtual void ListAvailableSolutionStacksAsync(const Model::ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the available platforms.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the platform branches available for your account in an AWS Region.
+         * Provides summary information about each platform branch.</p> <p>For definitions
+         * of platform branch and other platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPlatformBranchesOutcome ListPlatformBranches(const Model::ListPlatformBranchesRequest& request) const;
+
+        /**
+         * <p>Lists the platform branches available for your account in an AWS Region.
+         * Provides summary information about each platform branch.</p> <p>For definitions
+         * of platform branch and other platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPlatformBranchesOutcomeCallable ListPlatformBranchesCallable(const Model::ListPlatformBranchesRequest& request) const;
+
+        /**
+         * <p>Lists the platform branches available for your account in an AWS Region.
+         * Provides summary information about each platform branch.</p> <p>For definitions
+         * of platform branch and other platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformBranches">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPlatformBranchesAsync(const Model::ListPlatformBranchesRequest& request, const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the platform versions available for your account in an AWS Region.
+         * Provides summary information about each platform version. Compare to
+         * <a>DescribePlatformVersion</a>, which provides full details about a single
+         * platform version.</p> <p>For definitions of platform version and other
+         * platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPlatformVersionsOutcome ListPlatformVersions(const Model::ListPlatformVersionsRequest& request) const;
 
         /**
-         * <p>Lists the available platforms.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the platform versions available for your account in an AWS Region.
+         * Provides summary information about each platform version. Compare to
+         * <a>DescribePlatformVersion</a>, which provides full details about a single
+         * platform version.</p> <p>For definitions of platform version and other
+         * platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">AWS
          * API Reference</a></p>
          *
@@ -1309,7 +1384,13 @@ namespace Model
         virtual Model::ListPlatformVersionsOutcomeCallable ListPlatformVersionsCallable(const Model::ListPlatformVersionsRequest& request) const;
 
         /**
-         * <p>Lists the available platforms.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the platform versions available for your account in an AWS Region.
+         * Provides summary information about each platform version. Compare to
+         * <a>DescribePlatformVersion</a>, which provides full details about a single
+         * platform version.</p> <p>For definitions of platform version and other
+         * platform-related terms, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS
+         * Elastic Beanstalk Platforms Glossary</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListPlatformVersions">AWS
          * API Reference</a></p>
          *
@@ -1318,26 +1399,22 @@ namespace Model
         virtual void ListPlatformVersionsAsync(const Model::ListPlatformVersionsRequest& request, const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the tags applied to an AWS Elastic Beanstalk resource. The response
-         * contains a list of tag key-value pairs.</p> <p>Currently, Elastic Beanstalk only
-         * supports tagging of Elastic Beanstalk environments. For details about
-         * environment tagging, see <a
-         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-         * Resources in Your Elastic Beanstalk Environment</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Return the tags applied to an AWS Elastic Beanstalk resource. The response
+         * contains a list of tag key-value pairs.</p> <p>Elastic Beanstalk supports
+         * tagging of all of its resources. For details about resource tagging, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+         * Application Resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns the tags applied to an AWS Elastic Beanstalk resource. The response
-         * contains a list of tag key-value pairs.</p> <p>Currently, Elastic Beanstalk only
-         * supports tagging of Elastic Beanstalk environments. For details about
-         * environment tagging, see <a
-         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-         * Resources in Your Elastic Beanstalk Environment</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Return the tags applied to an AWS Elastic Beanstalk resource. The response
+         * contains a list of tag key-value pairs.</p> <p>Elastic Beanstalk supports
+         * tagging of all of its resources. For details about resource tagging, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+         * Application Resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1346,13 +1423,11 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns the tags applied to an AWS Elastic Beanstalk resource. The response
-         * contains a list of tag key-value pairs.</p> <p>Currently, Elastic Beanstalk only
-         * supports tagging of Elastic Beanstalk environments. For details about
-         * environment tagging, see <a
-         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-         * Resources in Your Elastic Beanstalk Environment</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Return the tags applied to an AWS Elastic Beanstalk resource. The response
+         * contains a list of tag key-value pairs.</p> <p>Elastic Beanstalk supports
+         * tagging of all of its resources. For details about resource tagging, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+         * Application Resources</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -1740,15 +1815,14 @@ namespace Model
         /**
          * <p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two
          * lists can be passed: <code>TagsToAdd</code> for tags to add or update, and
-         * <code>TagsToRemove</code>.</p> <p>Currently, Elastic Beanstalk only supports
-         * tagging of Elastic Beanstalk environments. For details about environment
-         * tagging, see <a
-         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-         * Resources in Your Elastic Beanstalk Environment</a>.</p> <p>If you create a
-         * custom IAM user policy to control permission to this operation, specify one of
-         * the following two virtual actions (or both) instead of the API operation
-         * name:</p> <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to
-         * call <code>UpdateTagsForResource</code> and pass a list of tags to add in the
+         * <code>TagsToRemove</code>.</p> <p>Elastic Beanstalk supports tagging of all of
+         * its resources. For details about resource tagging, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+         * Application Resources</a>.</p> <p>If you create a custom IAM user policy to
+         * control permission to this operation, specify one of the following two virtual
+         * actions (or both) instead of the API operation name:</p> <dl>
+         * <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to call
+         * <code>UpdateTagsForResource</code> and pass a list of tags to add in the
          * <code>TagsToAdd</code> parameter.</p> </dd> <dt>elasticbeanstalk:RemoveTags</dt>
          * <dd> <p>Controls permission to call <code>UpdateTagsForResource</code> and pass
          * a list of tag keys to remove in the <code>TagsToRemove</code> parameter.</p>
@@ -1763,15 +1837,14 @@ namespace Model
         /**
          * <p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two
          * lists can be passed: <code>TagsToAdd</code> for tags to add or update, and
-         * <code>TagsToRemove</code>.</p> <p>Currently, Elastic Beanstalk only supports
-         * tagging of Elastic Beanstalk environments. For details about environment
-         * tagging, see <a
-         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-         * Resources in Your Elastic Beanstalk Environment</a>.</p> <p>If you create a
-         * custom IAM user policy to control permission to this operation, specify one of
-         * the following two virtual actions (or both) instead of the API operation
-         * name:</p> <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to
-         * call <code>UpdateTagsForResource</code> and pass a list of tags to add in the
+         * <code>TagsToRemove</code>.</p> <p>Elastic Beanstalk supports tagging of all of
+         * its resources. For details about resource tagging, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+         * Application Resources</a>.</p> <p>If you create a custom IAM user policy to
+         * control permission to this operation, specify one of the following two virtual
+         * actions (or both) instead of the API operation name:</p> <dl>
+         * <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to call
+         * <code>UpdateTagsForResource</code> and pass a list of tags to add in the
          * <code>TagsToAdd</code> parameter.</p> </dd> <dt>elasticbeanstalk:RemoveTags</dt>
          * <dd> <p>Controls permission to call <code>UpdateTagsForResource</code> and pass
          * a list of tag keys to remove in the <code>TagsToRemove</code> parameter.</p>
@@ -1788,15 +1861,14 @@ namespace Model
         /**
          * <p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two
          * lists can be passed: <code>TagsToAdd</code> for tags to add or update, and
-         * <code>TagsToRemove</code>.</p> <p>Currently, Elastic Beanstalk only supports
-         * tagging of Elastic Beanstalk environments. For details about environment
-         * tagging, see <a
-         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.tagging.html">Tagging
-         * Resources in Your Elastic Beanstalk Environment</a>.</p> <p>If you create a
-         * custom IAM user policy to control permission to this operation, specify one of
-         * the following two virtual actions (or both) instead of the API operation
-         * name:</p> <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to
-         * call <code>UpdateTagsForResource</code> and pass a list of tags to add in the
+         * <code>TagsToRemove</code>.</p> <p>Elastic Beanstalk supports tagging of all of
+         * its resources. For details about resource tagging, see <a
+         * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging
+         * Application Resources</a>.</p> <p>If you create a custom IAM user policy to
+         * control permission to this operation, specify one of the following two virtual
+         * actions (or both) instead of the API operation name:</p> <dl>
+         * <dt>elasticbeanstalk:AddTags</dt> <dd> <p>Controls permission to call
+         * <code>UpdateTagsForResource</code> and pass a list of tags to add in the
          * <code>TagsToAdd</code> parameter.</p> </dd> <dt>elasticbeanstalk:RemoveTags</dt>
          * <dd> <p>Controls permission to call <code>UpdateTagsForResource</code> and pass
          * a list of tag keys to remove in the <code>TagsToRemove</code> parameter.</p>
@@ -1877,6 +1949,7 @@ namespace Model
         void DescribeInstancesHealthAsyncHelper(const Model::DescribeInstancesHealthRequest& request, const DescribeInstancesHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePlatformVersionAsyncHelper(const Model::DescribePlatformVersionRequest& request, const DescribePlatformVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAvailableSolutionStacksAsyncHelper(const Model::ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPlatformBranchesAsyncHelper(const Model::ListPlatformBranchesRequest& request, const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlatformVersionsAsyncHelper(const Model::ListPlatformVersionsRequest& request, const ListPlatformVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebuildEnvironmentAsyncHelper(const Model::RebuildEnvironmentRequest& request, const RebuildEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

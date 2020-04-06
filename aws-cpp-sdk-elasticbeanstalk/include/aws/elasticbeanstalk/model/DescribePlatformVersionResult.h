@@ -44,27 +44,27 @@ namespace Model
 
 
     /**
-     * <p>Detailed information about the version of the platform.</p>
+     * <p>Detailed information about the platform version.</p>
      */
     inline const PlatformDescription& GetPlatformDescription() const{ return m_platformDescription; }
 
     /**
-     * <p>Detailed information about the version of the platform.</p>
+     * <p>Detailed information about the platform version.</p>
      */
     inline void SetPlatformDescription(const PlatformDescription& value) { m_platformDescription = value; }
 
     /**
-     * <p>Detailed information about the version of the platform.</p>
+     * <p>Detailed information about the platform version.</p>
      */
     inline void SetPlatformDescription(PlatformDescription&& value) { m_platformDescription = std::move(value); }
 
     /**
-     * <p>Detailed information about the version of the platform.</p>
+     * <p>Detailed information about the platform version.</p>
      */
     inline DescribePlatformVersionResult& WithPlatformDescription(const PlatformDescription& value) { SetPlatformDescription(value); return *this;}
 
     /**
-     * <p>Detailed information about the version of the platform.</p>
+     * <p>Detailed information about the platform version.</p>
      */
     inline DescribePlatformVersionResult& WithPlatformDescription(PlatformDescription&& value) { SetPlatformDescription(std::move(value)); return *this;}
 

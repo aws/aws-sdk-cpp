@@ -46,6 +46,7 @@
 #include <aws/chime/model/CreateBotRequest.h>
 #include <aws/chime/model/CreateMeetingRequest.h>
 #include <aws/chime/model/CreatePhoneNumberOrderRequest.h>
+#include <aws/chime/model/CreateProxySessionRequest.h>
 #include <aws/chime/model/CreateRoomRequest.h>
 #include <aws/chime/model/CreateRoomMembershipRequest.h>
 #include <aws/chime/model/CreateUserRequest.h>
@@ -56,11 +57,13 @@
 #include <aws/chime/model/DeleteEventsConfigurationRequest.h>
 #include <aws/chime/model/DeleteMeetingRequest.h>
 #include <aws/chime/model/DeletePhoneNumberRequest.h>
+#include <aws/chime/model/DeleteProxySessionRequest.h>
 #include <aws/chime/model/DeleteRoomRequest.h>
 #include <aws/chime/model/DeleteRoomMembershipRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorOriginationRequest.h>
+#include <aws/chime/model/DeleteVoiceConnectorProxyRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorTerminationRequest.h>
 #include <aws/chime/model/DeleteVoiceConnectorTerminationCredentialsRequest.h>
@@ -76,6 +79,7 @@
 #include <aws/chime/model/GetMeetingRequest.h>
 #include <aws/chime/model/GetPhoneNumberRequest.h>
 #include <aws/chime/model/GetPhoneNumberOrderRequest.h>
+#include <aws/chime/model/GetProxySessionRequest.h>
 #include <aws/chime/model/GetRoomRequest.h>
 #include <aws/chime/model/GetUserRequest.h>
 #include <aws/chime/model/GetUserSettingsRequest.h>
@@ -83,6 +87,7 @@
 #include <aws/chime/model/GetVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/GetVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime/model/GetVoiceConnectorOriginationRequest.h>
+#include <aws/chime/model/GetVoiceConnectorProxyRequest.h>
 #include <aws/chime/model/GetVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime/model/GetVoiceConnectorTerminationRequest.h>
 #include <aws/chime/model/GetVoiceConnectorTerminationHealthRequest.h>
@@ -93,6 +98,7 @@
 #include <aws/chime/model/ListMeetingsRequest.h>
 #include <aws/chime/model/ListPhoneNumberOrdersRequest.h>
 #include <aws/chime/model/ListPhoneNumbersRequest.h>
+#include <aws/chime/model/ListProxySessionsRequest.h>
 #include <aws/chime/model/ListRoomMembershipsRequest.h>
 #include <aws/chime/model/ListRoomsRequest.h>
 #include <aws/chime/model/ListUsersRequest.h>
@@ -103,6 +109,7 @@
 #include <aws/chime/model/PutEventsConfigurationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorOriginationRequest.h>
+#include <aws/chime/model/PutVoiceConnectorProxyRequest.h>
 #include <aws/chime/model/PutVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationCredentialsRequest.h>
@@ -116,6 +123,7 @@
 #include <aws/chime/model/UpdateGlobalSettingsRequest.h>
 #include <aws/chime/model/UpdatePhoneNumberRequest.h>
 #include <aws/chime/model/UpdatePhoneNumberSettingsRequest.h>
+#include <aws/chime/model/UpdateProxySessionRequest.h>
 #include <aws/chime/model/UpdateRoomRequest.h>
 #include <aws/chime/model/UpdateRoomMembershipRequest.h>
 #include <aws/chime/model/UpdateUserRequest.h>
@@ -862,6 +870,48 @@ void ChimeClient::CreatePhoneNumberOrderAsyncHelper(const CreatePhoneNumberOrder
   handler(this, request, CreatePhoneNumberOrder(request), context);
 }
 
+CreateProxySessionOutcome ChimeClient::CreateProxySession(const CreateProxySessionRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateProxySession", "Required field: VoiceConnectorId, is not set");
+    return CreateProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/proxy-sessions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateProxySessionOutcome(CreateProxySessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateProxySessionOutcome(outcome.GetError());
+  }
+}
+
+CreateProxySessionOutcomeCallable ChimeClient::CreateProxySessionCallable(const CreateProxySessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateProxySessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateProxySession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateProxySessionAsync(const CreateProxySessionRequest& request, const CreateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateProxySessionAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateProxySessionAsyncHelper(const CreateProxySessionRequest& request, const CreateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateProxySession(request), context);
+}
+
 CreateRoomOutcome ChimeClient::CreateRoom(const CreateRoomRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -1287,6 +1337,54 @@ void ChimeClient::DeletePhoneNumberAsyncHelper(const DeletePhoneNumberRequest& r
   handler(this, request, DeletePhoneNumber(request), context);
 }
 
+DeleteProxySessionOutcome ChimeClient::DeleteProxySession(const DeleteProxySessionRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProxySession", "Required field: VoiceConnectorId, is not set");
+    return DeleteProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  if (!request.ProxySessionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProxySession", "Required field: ProxySessionId, is not set");
+    return DeleteProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/proxy-sessions/";
+  ss << request.GetProxySessionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteProxySessionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteProxySessionOutcome(outcome.GetError());
+  }
+}
+
+DeleteProxySessionOutcomeCallable ChimeClient::DeleteProxySessionCallable(const DeleteProxySessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProxySessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProxySession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteProxySessionAsync(const DeleteProxySessionRequest& request, const DeleteProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteProxySessionAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteProxySessionAsyncHelper(const DeleteProxySessionRequest& request, const DeleteProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteProxySession(request), context);
+}
+
 DeleteRoomOutcome ChimeClient::DeleteRoom(const DeleteRoomRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -1512,6 +1610,48 @@ void ChimeClient::DeleteVoiceConnectorOriginationAsync(const DeleteVoiceConnecto
 void ChimeClient::DeleteVoiceConnectorOriginationAsyncHelper(const DeleteVoiceConnectorOriginationRequest& request, const DeleteVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteVoiceConnectorOrigination(request), context);
+}
+
+DeleteVoiceConnectorProxyOutcome ChimeClient::DeleteVoiceConnectorProxy(const DeleteVoiceConnectorProxyRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
+    return DeleteVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/programmable-numbers/proxy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteVoiceConnectorProxyOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteVoiceConnectorProxyOutcome(outcome.GetError());
+  }
+}
+
+DeleteVoiceConnectorProxyOutcomeCallable ChimeClient::DeleteVoiceConnectorProxyCallable(const DeleteVoiceConnectorProxyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVoiceConnectorProxyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVoiceConnectorProxy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteVoiceConnectorProxyAsync(const DeleteVoiceConnectorProxyRequest& request, const DeleteVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVoiceConnectorProxyAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteVoiceConnectorProxyAsyncHelper(const DeleteVoiceConnectorProxyRequest& request, const DeleteVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVoiceConnectorProxy(request), context);
 }
 
 DeleteVoiceConnectorStreamingConfigurationOutcome ChimeClient::DeleteVoiceConnectorStreamingConfiguration(const DeleteVoiceConnectorStreamingConfigurationRequest& request) const
@@ -2238,6 +2378,54 @@ void ChimeClient::GetPhoneNumberSettingsAsyncHelper(const GetPhoneNumberSettings
   handler(this, GetPhoneNumberSettings(), context);
 }
 
+GetProxySessionOutcome ChimeClient::GetProxySession(const GetProxySessionRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetProxySession", "Required field: VoiceConnectorId, is not set");
+    return GetProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  if (!request.ProxySessionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetProxySession", "Required field: ProxySessionId, is not set");
+    return GetProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/proxy-sessions/";
+  ss << request.GetProxySessionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetProxySessionOutcome(GetProxySessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetProxySessionOutcome(outcome.GetError());
+  }
+}
+
+GetProxySessionOutcomeCallable ChimeClient::GetProxySessionCallable(const GetProxySessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetProxySessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProxySession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetProxySessionAsync(const GetProxySessionRequest& request, const GetProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetProxySessionAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetProxySessionAsyncHelper(const GetProxySessionRequest& request, const GetProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetProxySession(request), context);
+}
+
 GetRoomOutcome ChimeClient::GetRoom(const GetRoomRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -2547,6 +2735,48 @@ void ChimeClient::GetVoiceConnectorOriginationAsync(const GetVoiceConnectorOrigi
 void ChimeClient::GetVoiceConnectorOriginationAsyncHelper(const GetVoiceConnectorOriginationRequest& request, const GetVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetVoiceConnectorOrigination(request), context);
+}
+
+GetVoiceConnectorProxyOutcome ChimeClient::GetVoiceConnectorProxy(const GetVoiceConnectorProxyRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
+    return GetVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/programmable-numbers/proxy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetVoiceConnectorProxyOutcome(GetVoiceConnectorProxyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetVoiceConnectorProxyOutcome(outcome.GetError());
+  }
+}
+
+GetVoiceConnectorProxyOutcomeCallable ChimeClient::GetVoiceConnectorProxyCallable(const GetVoiceConnectorProxyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVoiceConnectorProxyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVoiceConnectorProxy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetVoiceConnectorProxyAsync(const GetVoiceConnectorProxyRequest& request, const GetVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetVoiceConnectorProxyAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetVoiceConnectorProxyAsyncHelper(const GetVoiceConnectorProxyRequest& request, const GetVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetVoiceConnectorProxy(request), context);
 }
 
 GetVoiceConnectorStreamingConfigurationOutcome ChimeClient::GetVoiceConnectorStreamingConfiguration(const GetVoiceConnectorStreamingConfigurationRequest& request) const
@@ -2941,6 +3171,48 @@ void ChimeClient::ListPhoneNumbersAsync(const ListPhoneNumbersRequest& request, 
 void ChimeClient::ListPhoneNumbersAsyncHelper(const ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPhoneNumbers(request), context);
+}
+
+ListProxySessionsOutcome ChimeClient::ListProxySessions(const ListProxySessionsRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProxySessions", "Required field: VoiceConnectorId, is not set");
+    return ListProxySessionsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/proxy-sessions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListProxySessionsOutcome(ListProxySessionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListProxySessionsOutcome(outcome.GetError());
+  }
+}
+
+ListProxySessionsOutcomeCallable ChimeClient::ListProxySessionsCallable(const ListProxySessionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProxySessionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProxySessions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListProxySessionsAsync(const ListProxySessionsRequest& request, const ListProxySessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProxySessionsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListProxySessionsAsyncHelper(const ListProxySessionsRequest& request, const ListProxySessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProxySessions(request), context);
 }
 
 ListRoomMembershipsOutcome ChimeClient::ListRoomMemberships(const ListRoomMembershipsRequest& request) const
@@ -3369,6 +3641,48 @@ void ChimeClient::PutVoiceConnectorOriginationAsync(const PutVoiceConnectorOrigi
 void ChimeClient::PutVoiceConnectorOriginationAsyncHelper(const PutVoiceConnectorOriginationRequest& request, const PutVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutVoiceConnectorOrigination(request), context);
+}
+
+PutVoiceConnectorProxyOutcome ChimeClient::PutVoiceConnectorProxy(const PutVoiceConnectorProxyRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutVoiceConnectorProxy", "Required field: VoiceConnectorId, is not set");
+    return PutVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/programmable-numbers/proxy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutVoiceConnectorProxyOutcome(PutVoiceConnectorProxyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutVoiceConnectorProxyOutcome(outcome.GetError());
+  }
+}
+
+PutVoiceConnectorProxyOutcomeCallable ChimeClient::PutVoiceConnectorProxyCallable(const PutVoiceConnectorProxyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutVoiceConnectorProxyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutVoiceConnectorProxy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::PutVoiceConnectorProxyAsync(const PutVoiceConnectorProxyRequest& request, const PutVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutVoiceConnectorProxyAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::PutVoiceConnectorProxyAsyncHelper(const PutVoiceConnectorProxyRequest& request, const PutVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutVoiceConnectorProxy(request), context);
 }
 
 PutVoiceConnectorStreamingConfigurationOutcome ChimeClient::PutVoiceConnectorStreamingConfiguration(const PutVoiceConnectorStreamingConfigurationRequest& request) const
@@ -3919,6 +4233,54 @@ void ChimeClient::UpdatePhoneNumberSettingsAsync(const UpdatePhoneNumberSettings
 void ChimeClient::UpdatePhoneNumberSettingsAsyncHelper(const UpdatePhoneNumberSettingsRequest& request, const UpdatePhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdatePhoneNumberSettings(request), context);
+}
+
+UpdateProxySessionOutcome ChimeClient::UpdateProxySession(const UpdateProxySessionRequest& request) const
+{
+  if (!request.VoiceConnectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProxySession", "Required field: VoiceConnectorId, is not set");
+    return UpdateProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
+  }
+  if (!request.ProxySessionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProxySession", "Required field: ProxySessionId, is not set");
+    return UpdateProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/voice-connectors/";
+  ss << request.GetVoiceConnectorId();
+  ss << "/proxy-sessions/";
+  ss << request.GetProxySessionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateProxySessionOutcome(UpdateProxySessionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateProxySessionOutcome(outcome.GetError());
+  }
+}
+
+UpdateProxySessionOutcomeCallable ChimeClient::UpdateProxySessionCallable(const UpdateProxySessionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateProxySessionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateProxySession(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::UpdateProxySessionAsync(const UpdateProxySessionRequest& request, const UpdateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateProxySessionAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::UpdateProxySessionAsyncHelper(const UpdateProxySessionRequest& request, const UpdateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateProxySession(request), context);
 }
 
 UpdateRoomOutcome ChimeClient::UpdateRoom(const UpdateRoomRequest& request) const

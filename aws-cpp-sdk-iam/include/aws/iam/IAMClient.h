@@ -3436,7 +3436,10 @@ namespace Model
          * <a>GetServiceLastAccessedDetails</a> – Use this operation for users, groups,
          * roles, or policies to list every AWS service that the resource could access
          * using permissions policies. For each service, the response includes information
-         * about the most recent access attempt. </p> </li> <li> <p>
+         * about the most recent access attempt.</p> <p>The <code>JobId</code> returned by
+         * <code>GenerateServiceLastAccessedDetail</code> must be used by the same role
+         * within a session, or by the same user when used to call
+         * <code>GetServiceLastAccessedDetail</code>.</p> </li> <li> <p>
          * <a>GetServiceLastAccessedDetailsWithEntities</a> – Use this operation for groups
          * and policies to list information about the associated entities (users or roles)
          * that attempted to access a specific AWS service. </p> </li> </ul> <p>To check
@@ -3485,7 +3488,10 @@ namespace Model
          * <a>GetServiceLastAccessedDetails</a> – Use this operation for users, groups,
          * roles, or policies to list every AWS service that the resource could access
          * using permissions policies. For each service, the response includes information
-         * about the most recent access attempt. </p> </li> <li> <p>
+         * about the most recent access attempt.</p> <p>The <code>JobId</code> returned by
+         * <code>GenerateServiceLastAccessedDetail</code> must be used by the same role
+         * within a session, or by the same user when used to call
+         * <code>GetServiceLastAccessedDetail</code>.</p> </li> <li> <p>
          * <a>GetServiceLastAccessedDetailsWithEntities</a> – Use this operation for groups
          * and policies to list information about the associated entities (users or roles)
          * that attempted to access a specific AWS service. </p> </li> </ul> <p>To check
@@ -3536,7 +3542,10 @@ namespace Model
          * <a>GetServiceLastAccessedDetails</a> – Use this operation for users, groups,
          * roles, or policies to list every AWS service that the resource could access
          * using permissions policies. For each service, the response includes information
-         * about the most recent access attempt. </p> </li> <li> <p>
+         * about the most recent access attempt.</p> <p>The <code>JobId</code> returned by
+         * <code>GenerateServiceLastAccessedDetail</code> must be used by the same role
+         * within a session, or by the same user when used to call
+         * <code>GetServiceLastAccessedDetail</code>.</p> </li> <li> <p>
          * <a>GetServiceLastAccessedDetailsWithEntities</a> – Use this operation for groups
          * and policies to list information about the associated entities (users or roles)
          * that attempted to access a specific AWS service. </p> </li> </ul> <p>To check

@@ -46,43 +46,43 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list was
+     * <p>The Amazon Resource Name (ARN) of the resource for which a tag list was
      * requested.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list was
+     * <p>The Amazon Resource Name (ARN) of the resource for which a tag list was
      * requested.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list was
+     * <p>The Amazon Resource Name (ARN) of the resource for which a tag list was
      * requested.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list was
+     * <p>The Amazon Resource Name (ARN) of the resource for which a tag list was
      * requested.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list was
+     * <p>The Amazon Resource Name (ARN) of the resource for which a tag list was
      * requested.</p>
      */
     inline ListTagsForResourceResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list was
+     * <p>The Amazon Resource Name (ARN) of the resource for which a tag list was
      * requested.</p>
      */
     inline ListTagsForResourceResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resouce for which a tag list was
+     * <p>The Amazon Resource Name (ARN) of the resource for which a tag list was
      * requested.</p>
      */
     inline ListTagsForResourceResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}

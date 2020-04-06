@@ -116,8 +116,8 @@ namespace Model
 
 
     /**
-     * <p>The list of vocabulary filters. It will contain at most
-     * <code>MaxResults</code> number of filters. If there are more filters, call the
+     * <p>The list of vocabulary filters. It contains at most <code>MaxResults</code>
+     * number of filters. If there are more filters, call the
      * <code>ListVocabularyFilters</code> operation again with the
      * <code>NextToken</code> parameter in the request set to the value of the
      * <code>NextToken</code> field in the response.</p>
@@ -125,8 +125,8 @@ namespace Model
     inline const Aws::Vector<VocabularyFilterInfo>& GetVocabularyFilters() const{ return m_vocabularyFilters; }
 
     /**
-     * <p>The list of vocabulary filters. It will contain at most
-     * <code>MaxResults</code> number of filters. If there are more filters, call the
+     * <p>The list of vocabulary filters. It contains at most <code>MaxResults</code>
+     * number of filters. If there are more filters, call the
      * <code>ListVocabularyFilters</code> operation again with the
      * <code>NextToken</code> parameter in the request set to the value of the
      * <code>NextToken</code> field in the response.</p>
@@ -134,8 +134,8 @@ namespace Model
     inline void SetVocabularyFilters(const Aws::Vector<VocabularyFilterInfo>& value) { m_vocabularyFilters = value; }
 
     /**
-     * <p>The list of vocabulary filters. It will contain at most
-     * <code>MaxResults</code> number of filters. If there are more filters, call the
+     * <p>The list of vocabulary filters. It contains at most <code>MaxResults</code>
+     * number of filters. If there are more filters, call the
      * <code>ListVocabularyFilters</code> operation again with the
      * <code>NextToken</code> parameter in the request set to the value of the
      * <code>NextToken</code> field in the response.</p>
@@ -143,8 +143,8 @@ namespace Model
     inline void SetVocabularyFilters(Aws::Vector<VocabularyFilterInfo>&& value) { m_vocabularyFilters = std::move(value); }
 
     /**
-     * <p>The list of vocabulary filters. It will contain at most
-     * <code>MaxResults</code> number of filters. If there are more filters, call the
+     * <p>The list of vocabulary filters. It contains at most <code>MaxResults</code>
+     * number of filters. If there are more filters, call the
      * <code>ListVocabularyFilters</code> operation again with the
      * <code>NextToken</code> parameter in the request set to the value of the
      * <code>NextToken</code> field in the response.</p>
@@ -152,8 +152,8 @@ namespace Model
     inline ListVocabularyFiltersResult& WithVocabularyFilters(const Aws::Vector<VocabularyFilterInfo>& value) { SetVocabularyFilters(value); return *this;}
 
     /**
-     * <p>The list of vocabulary filters. It will contain at most
-     * <code>MaxResults</code> number of filters. If there are more filters, call the
+     * <p>The list of vocabulary filters. It contains at most <code>MaxResults</code>
+     * number of filters. If there are more filters, call the
      * <code>ListVocabularyFilters</code> operation again with the
      * <code>NextToken</code> parameter in the request set to the value of the
      * <code>NextToken</code> field in the response.</p>
@@ -161,8 +161,8 @@ namespace Model
     inline ListVocabularyFiltersResult& WithVocabularyFilters(Aws::Vector<VocabularyFilterInfo>&& value) { SetVocabularyFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The list of vocabulary filters. It will contain at most
-     * <code>MaxResults</code> number of filters. If there are more filters, call the
+     * <p>The list of vocabulary filters. It contains at most <code>MaxResults</code>
+     * number of filters. If there are more filters, call the
      * <code>ListVocabularyFilters</code> operation again with the
      * <code>NextToken</code> parameter in the request set to the value of the
      * <code>NextToken</code> field in the response.</p>
@@ -170,8 +170,8 @@ namespace Model
     inline ListVocabularyFiltersResult& AddVocabularyFilters(const VocabularyFilterInfo& value) { m_vocabularyFilters.push_back(value); return *this; }
 
     /**
-     * <p>The list of vocabulary filters. It will contain at most
-     * <code>MaxResults</code> number of filters. If there are more filters, call the
+     * <p>The list of vocabulary filters. It contains at most <code>MaxResults</code>
+     * number of filters. If there are more filters, call the
      * <code>ListVocabularyFilters</code> operation again with the
      * <code>NextToken</code> parameter in the request set to the value of the
      * <code>NextToken</code> field in the response.</p>

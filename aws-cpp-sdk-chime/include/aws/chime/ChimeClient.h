@@ -37,6 +37,7 @@
 #include <aws/chime/model/CreateBotResult.h>
 #include <aws/chime/model/CreateMeetingResult.h>
 #include <aws/chime/model/CreatePhoneNumberOrderResult.h>
+#include <aws/chime/model/CreateProxySessionResult.h>
 #include <aws/chime/model/CreateRoomResult.h>
 #include <aws/chime/model/CreateRoomMembershipResult.h>
 #include <aws/chime/model/CreateUserResult.h>
@@ -57,6 +58,7 @@
 #include <aws/chime/model/GetPhoneNumberResult.h>
 #include <aws/chime/model/GetPhoneNumberOrderResult.h>
 #include <aws/chime/model/GetPhoneNumberSettingsResult.h>
+#include <aws/chime/model/GetProxySessionResult.h>
 #include <aws/chime/model/GetRoomResult.h>
 #include <aws/chime/model/GetUserResult.h>
 #include <aws/chime/model/GetUserSettingsResult.h>
@@ -64,6 +66,7 @@
 #include <aws/chime/model/GetVoiceConnectorGroupResult.h>
 #include <aws/chime/model/GetVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime/model/GetVoiceConnectorOriginationResult.h>
+#include <aws/chime/model/GetVoiceConnectorProxyResult.h>
 #include <aws/chime/model/GetVoiceConnectorStreamingConfigurationResult.h>
 #include <aws/chime/model/GetVoiceConnectorTerminationResult.h>
 #include <aws/chime/model/GetVoiceConnectorTerminationHealthResult.h>
@@ -74,6 +77,7 @@
 #include <aws/chime/model/ListMeetingsResult.h>
 #include <aws/chime/model/ListPhoneNumberOrdersResult.h>
 #include <aws/chime/model/ListPhoneNumbersResult.h>
+#include <aws/chime/model/ListProxySessionsResult.h>
 #include <aws/chime/model/ListRoomMembershipsResult.h>
 #include <aws/chime/model/ListRoomsResult.h>
 #include <aws/chime/model/ListUsersResult.h>
@@ -84,6 +88,7 @@
 #include <aws/chime/model/PutEventsConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorOriginationResult.h>
+#include <aws/chime/model/PutVoiceConnectorProxyResult.h>
 #include <aws/chime/model/PutVoiceConnectorStreamingConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationResult.h>
 #include <aws/chime/model/RegenerateSecurityTokenResult.h>
@@ -94,6 +99,7 @@
 #include <aws/chime/model/UpdateAccountSettingsResult.h>
 #include <aws/chime/model/UpdateBotResult.h>
 #include <aws/chime/model/UpdatePhoneNumberResult.h>
+#include <aws/chime/model/UpdateProxySessionResult.h>
 #include <aws/chime/model/UpdateRoomResult.h>
 #include <aws/chime/model/UpdateRoomMembershipResult.h>
 #include <aws/chime/model/UpdateUserResult.h>
@@ -155,6 +161,7 @@ namespace Model
         class CreateBotRequest;
         class CreateMeetingRequest;
         class CreatePhoneNumberOrderRequest;
+        class CreateProxySessionRequest;
         class CreateRoomRequest;
         class CreateRoomMembershipRequest;
         class CreateUserRequest;
@@ -165,11 +172,13 @@ namespace Model
         class DeleteEventsConfigurationRequest;
         class DeleteMeetingRequest;
         class DeletePhoneNumberRequest;
+        class DeleteProxySessionRequest;
         class DeleteRoomRequest;
         class DeleteRoomMembershipRequest;
         class DeleteVoiceConnectorRequest;
         class DeleteVoiceConnectorGroupRequest;
         class DeleteVoiceConnectorOriginationRequest;
+        class DeleteVoiceConnectorProxyRequest;
         class DeleteVoiceConnectorStreamingConfigurationRequest;
         class DeleteVoiceConnectorTerminationRequest;
         class DeleteVoiceConnectorTerminationCredentialsRequest;
@@ -185,6 +194,7 @@ namespace Model
         class GetMeetingRequest;
         class GetPhoneNumberRequest;
         class GetPhoneNumberOrderRequest;
+        class GetProxySessionRequest;
         class GetRoomRequest;
         class GetUserRequest;
         class GetUserSettingsRequest;
@@ -192,6 +202,7 @@ namespace Model
         class GetVoiceConnectorGroupRequest;
         class GetVoiceConnectorLoggingConfigurationRequest;
         class GetVoiceConnectorOriginationRequest;
+        class GetVoiceConnectorProxyRequest;
         class GetVoiceConnectorStreamingConfigurationRequest;
         class GetVoiceConnectorTerminationRequest;
         class GetVoiceConnectorTerminationHealthRequest;
@@ -202,6 +213,7 @@ namespace Model
         class ListMeetingsRequest;
         class ListPhoneNumberOrdersRequest;
         class ListPhoneNumbersRequest;
+        class ListProxySessionsRequest;
         class ListRoomMembershipsRequest;
         class ListRoomsRequest;
         class ListUsersRequest;
@@ -212,6 +224,7 @@ namespace Model
         class PutEventsConfigurationRequest;
         class PutVoiceConnectorLoggingConfigurationRequest;
         class PutVoiceConnectorOriginationRequest;
+        class PutVoiceConnectorProxyRequest;
         class PutVoiceConnectorStreamingConfigurationRequest;
         class PutVoiceConnectorTerminationRequest;
         class PutVoiceConnectorTerminationCredentialsRequest;
@@ -225,6 +238,7 @@ namespace Model
         class UpdateGlobalSettingsRequest;
         class UpdatePhoneNumberRequest;
         class UpdatePhoneNumberSettingsRequest;
+        class UpdateProxySessionRequest;
         class UpdateRoomRequest;
         class UpdateRoomMembershipRequest;
         class UpdateUserRequest;
@@ -248,6 +262,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateBotResult, Aws::Client::AWSError<ChimeErrors>> CreateBotOutcome;
         typedef Aws::Utils::Outcome<CreateMeetingResult, Aws::Client::AWSError<ChimeErrors>> CreateMeetingOutcome;
         typedef Aws::Utils::Outcome<CreatePhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> CreatePhoneNumberOrderOutcome;
+        typedef Aws::Utils::Outcome<CreateProxySessionResult, Aws::Client::AWSError<ChimeErrors>> CreateProxySessionOutcome;
         typedef Aws::Utils::Outcome<CreateRoomResult, Aws::Client::AWSError<ChimeErrors>> CreateRoomOutcome;
         typedef Aws::Utils::Outcome<CreateRoomMembershipResult, Aws::Client::AWSError<ChimeErrors>> CreateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<ChimeErrors>> CreateUserOutcome;
@@ -258,11 +273,13 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteMeetingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeletePhoneNumberOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteProxySessionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteRoomOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorOriginationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorProxyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorStreamingConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorTerminationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorTerminationCredentialsOutcome;
@@ -280,6 +297,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOrderOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetProxySessionResult, Aws::Client::AWSError<ChimeErrors>> GetProxySessionOutcome;
         typedef Aws::Utils::Outcome<GetRoomResult, Aws::Client::AWSError<ChimeErrors>> GetRoomOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<ChimeErrors>> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetUserSettingsOutcome;
@@ -287,6 +305,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetVoiceConnectorGroupResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorLoggingConfigurationResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorLoggingConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorOriginationResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorOriginationOutcome;
+        typedef Aws::Utils::Outcome<GetVoiceConnectorProxyResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorProxyOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorStreamingConfigurationResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorStreamingConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorTerminationResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorTerminationOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorTerminationHealthResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorTerminationHealthOutcome;
@@ -297,6 +316,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListMeetingsResult, Aws::Client::AWSError<ChimeErrors>> ListMeetingsOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumberOrdersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumberOrdersOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumbersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumbersOutcome;
+        typedef Aws::Utils::Outcome<ListProxySessionsResult, Aws::Client::AWSError<ChimeErrors>> ListProxySessionsOutcome;
         typedef Aws::Utils::Outcome<ListRoomMembershipsResult, Aws::Client::AWSError<ChimeErrors>> ListRoomMembershipsOutcome;
         typedef Aws::Utils::Outcome<ListRoomsResult, Aws::Client::AWSError<ChimeErrors>> ListRoomsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<ChimeErrors>> ListUsersOutcome;
@@ -307,6 +327,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutEventsConfigurationResult, Aws::Client::AWSError<ChimeErrors>> PutEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorLoggingConfigurationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorLoggingConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorOriginationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorOriginationOutcome;
+        typedef Aws::Utils::Outcome<PutVoiceConnectorProxyResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorProxyOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorStreamingConfigurationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorStreamingConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorTerminationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorTerminationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorTerminationCredentialsOutcome;
@@ -320,6 +341,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UpdateGlobalSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> UpdatePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UpdatePhoneNumberSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateProxySessionResult, Aws::Client::AWSError<ChimeErrors>> UpdateProxySessionOutcome;
         typedef Aws::Utils::Outcome<UpdateRoomResult, Aws::Client::AWSError<ChimeErrors>> UpdateRoomOutcome;
         typedef Aws::Utils::Outcome<UpdateRoomMembershipResult, Aws::Client::AWSError<ChimeErrors>> UpdateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<UpdateUserResult, Aws::Client::AWSError<ChimeErrors>> UpdateUserOutcome;
@@ -343,6 +365,7 @@ namespace Model
         typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
         typedef std::future<CreateMeetingOutcome> CreateMeetingOutcomeCallable;
         typedef std::future<CreatePhoneNumberOrderOutcome> CreatePhoneNumberOrderOutcomeCallable;
+        typedef std::future<CreateProxySessionOutcome> CreateProxySessionOutcomeCallable;
         typedef std::future<CreateRoomOutcome> CreateRoomOutcomeCallable;
         typedef std::future<CreateRoomMembershipOutcome> CreateRoomMembershipOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
@@ -353,11 +376,13 @@ namespace Model
         typedef std::future<DeleteEventsConfigurationOutcome> DeleteEventsConfigurationOutcomeCallable;
         typedef std::future<DeleteMeetingOutcome> DeleteMeetingOutcomeCallable;
         typedef std::future<DeletePhoneNumberOutcome> DeletePhoneNumberOutcomeCallable;
+        typedef std::future<DeleteProxySessionOutcome> DeleteProxySessionOutcomeCallable;
         typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
         typedef std::future<DeleteRoomMembershipOutcome> DeleteRoomMembershipOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorOutcome> DeleteVoiceConnectorOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorGroupOutcome> DeleteVoiceConnectorGroupOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorOriginationOutcome> DeleteVoiceConnectorOriginationOutcomeCallable;
+        typedef std::future<DeleteVoiceConnectorProxyOutcome> DeleteVoiceConnectorProxyOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorStreamingConfigurationOutcome> DeleteVoiceConnectorStreamingConfigurationOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorTerminationOutcome> DeleteVoiceConnectorTerminationOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorTerminationCredentialsOutcome> DeleteVoiceConnectorTerminationCredentialsOutcomeCallable;
@@ -375,6 +400,7 @@ namespace Model
         typedef std::future<GetPhoneNumberOutcome> GetPhoneNumberOutcomeCallable;
         typedef std::future<GetPhoneNumberOrderOutcome> GetPhoneNumberOrderOutcomeCallable;
         typedef std::future<GetPhoneNumberSettingsOutcome> GetPhoneNumberSettingsOutcomeCallable;
+        typedef std::future<GetProxySessionOutcome> GetProxySessionOutcomeCallable;
         typedef std::future<GetRoomOutcome> GetRoomOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserSettingsOutcome> GetUserSettingsOutcomeCallable;
@@ -382,6 +408,7 @@ namespace Model
         typedef std::future<GetVoiceConnectorGroupOutcome> GetVoiceConnectorGroupOutcomeCallable;
         typedef std::future<GetVoiceConnectorLoggingConfigurationOutcome> GetVoiceConnectorLoggingConfigurationOutcomeCallable;
         typedef std::future<GetVoiceConnectorOriginationOutcome> GetVoiceConnectorOriginationOutcomeCallable;
+        typedef std::future<GetVoiceConnectorProxyOutcome> GetVoiceConnectorProxyOutcomeCallable;
         typedef std::future<GetVoiceConnectorStreamingConfigurationOutcome> GetVoiceConnectorStreamingConfigurationOutcomeCallable;
         typedef std::future<GetVoiceConnectorTerminationOutcome> GetVoiceConnectorTerminationOutcomeCallable;
         typedef std::future<GetVoiceConnectorTerminationHealthOutcome> GetVoiceConnectorTerminationHealthOutcomeCallable;
@@ -392,6 +419,7 @@ namespace Model
         typedef std::future<ListMeetingsOutcome> ListMeetingsOutcomeCallable;
         typedef std::future<ListPhoneNumberOrdersOutcome> ListPhoneNumberOrdersOutcomeCallable;
         typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
+        typedef std::future<ListProxySessionsOutcome> ListProxySessionsOutcomeCallable;
         typedef std::future<ListRoomMembershipsOutcome> ListRoomMembershipsOutcomeCallable;
         typedef std::future<ListRoomsOutcome> ListRoomsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
@@ -402,6 +430,7 @@ namespace Model
         typedef std::future<PutEventsConfigurationOutcome> PutEventsConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorLoggingConfigurationOutcome> PutVoiceConnectorLoggingConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorOriginationOutcome> PutVoiceConnectorOriginationOutcomeCallable;
+        typedef std::future<PutVoiceConnectorProxyOutcome> PutVoiceConnectorProxyOutcomeCallable;
         typedef std::future<PutVoiceConnectorStreamingConfigurationOutcome> PutVoiceConnectorStreamingConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorTerminationOutcome> PutVoiceConnectorTerminationOutcomeCallable;
         typedef std::future<PutVoiceConnectorTerminationCredentialsOutcome> PutVoiceConnectorTerminationCredentialsOutcomeCallable;
@@ -415,6 +444,7 @@ namespace Model
         typedef std::future<UpdateGlobalSettingsOutcome> UpdateGlobalSettingsOutcomeCallable;
         typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
         typedef std::future<UpdatePhoneNumberSettingsOutcome> UpdatePhoneNumberSettingsOutcomeCallable;
+        typedef std::future<UpdateProxySessionOutcome> UpdateProxySessionOutcomeCallable;
         typedef std::future<UpdateRoomOutcome> UpdateRoomOutcomeCallable;
         typedef std::future<UpdateRoomMembershipOutcome> UpdateRoomMembershipOutcomeCallable;
         typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
@@ -441,6 +471,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::CreateBotRequest&, const Model::CreateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateMeetingRequest&, const Model::CreateMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreatePhoneNumberOrderRequest&, const Model::CreatePhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePhoneNumberOrderResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateProxySessionRequest&, const Model::CreateProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProxySessionResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateRoomRequest&, const Model::CreateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateRoomMembershipRequest&, const Model::CreateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
@@ -451,11 +482,13 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::DeleteEventsConfigurationRequest&, const Model::DeleteEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteMeetingRequest&, const Model::DeleteMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeletePhoneNumberRequest&, const Model::DeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePhoneNumberResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteProxySessionRequest&, const Model::DeleteProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProxySessionResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteRoomRequest&, const Model::DeleteRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteRoomMembershipRequest&, const Model::DeleteRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorRequest&, const Model::DeleteVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorGroupRequest&, const Model::DeleteVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorOriginationRequest&, const Model::DeleteVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorOriginationResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorProxyRequest&, const Model::DeleteVoiceConnectorProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorProxyResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorStreamingConfigurationRequest&, const Model::DeleteVoiceConnectorStreamingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorStreamingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorTerminationRequest&, const Model::DeleteVoiceConnectorTerminationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorTerminationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorTerminationCredentialsRequest&, const Model::DeleteVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorTerminationCredentialsResponseReceivedHandler;
@@ -473,6 +506,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberRequest&, const Model::GetPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberOrderRequest&, const Model::GetPhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberOrderResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetProxySessionRequest&, const Model::GetProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProxySessionResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetRoomRequest&, const Model::GetRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetUserSettingsRequest&, const Model::GetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserSettingsResponseReceivedHandler;
@@ -480,6 +514,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorGroupRequest&, const Model::GetVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorLoggingConfigurationRequest&, const Model::GetVoiceConnectorLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorOriginationRequest&, const Model::GetVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorOriginationResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorProxyRequest&, const Model::GetVoiceConnectorProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorProxyResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorStreamingConfigurationRequest&, const Model::GetVoiceConnectorStreamingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorStreamingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorTerminationRequest&, const Model::GetVoiceConnectorTerminationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorTerminationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorTerminationHealthRequest&, const Model::GetVoiceConnectorTerminationHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorTerminationHealthResponseReceivedHandler;
@@ -490,6 +525,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::ListMeetingsRequest&, const Model::ListMeetingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeetingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumberOrdersRequest&, const Model::ListPhoneNumberOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumberOrdersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListProxySessionsRequest&, const Model::ListProxySessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProxySessionsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListRoomMembershipsRequest&, const Model::ListRoomMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomMembershipsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListRoomsRequest&, const Model::ListRoomsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
@@ -500,6 +536,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::PutEventsConfigurationRequest&, const Model::PutEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorLoggingConfigurationRequest&, const Model::PutVoiceConnectorLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorOriginationRequest&, const Model::PutVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorOriginationResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorProxyRequest&, const Model::PutVoiceConnectorProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorProxyResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorStreamingConfigurationRequest&, const Model::PutVoiceConnectorStreamingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorStreamingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorTerminationRequest&, const Model::PutVoiceConnectorTerminationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorTerminationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorTerminationCredentialsRequest&, const Model::PutVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorTerminationCredentialsResponseReceivedHandler;
@@ -513,6 +550,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::UpdateGlobalSettingsRequest&, const Model::UpdateGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdatePhoneNumberRequest&, const Model::UpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdatePhoneNumberSettingsRequest&, const Model::UpdatePhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateProxySessionRequest&, const Model::UpdateProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProxySessionResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateRoomRequest&, const Model::UpdateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateRoomMembershipRequest&, const Model::UpdateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
@@ -1177,6 +1215,25 @@ namespace Model
         virtual void CreatePhoneNumberOrderAsync(const Model::CreatePhoneNumberOrderRequest& request, const CreatePhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::CreateProxySessionOutcome CreateProxySession(const Model::CreateProxySessionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateProxySessionOutcomeCallable CreateProxySessionCallable(const Model::CreateProxySessionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateProxySessionAsync(const Model::CreateProxySessionRequest& request, const CreateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a chat room for the specified Amazon Chime Enterprise
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom">AWS
@@ -1547,6 +1604,25 @@ namespace Model
         virtual void DeletePhoneNumberAsync(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::DeleteProxySessionOutcome DeleteProxySession(const Model::DeleteProxySessionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteProxySessionOutcomeCallable DeleteProxySessionCallable(const Model::DeleteProxySessionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteProxySessionAsync(const Model::DeleteProxySessionRequest& request, const DeleteProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a chat room in an Amazon Chime Enterprise account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom">AWS
@@ -1691,6 +1767,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVoiceConnectorOriginationAsync(const Model::DeleteVoiceConnectorOriginationRequest& request, const DeleteVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DeleteVoiceConnectorProxyOutcome DeleteVoiceConnectorProxy(const Model::DeleteVoiceConnectorProxyRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVoiceConnectorProxyOutcomeCallable DeleteVoiceConnectorProxyCallable(const Model::DeleteVoiceConnectorProxyRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVoiceConnectorProxyAsync(const Model::DeleteVoiceConnectorProxyRequest& request, const DeleteVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the streaming configuration for the specified Amazon Chime Voice
@@ -2203,6 +2298,25 @@ namespace Model
          */
         virtual void GetPhoneNumberSettingsAsync(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
+         * 
+         */
+        virtual Model::GetProxySessionOutcome GetProxySession(const Model::GetProxySessionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetProxySessionOutcomeCallable GetProxySessionCallable(const Model::GetProxySessionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetProxySessionAsync(const Model::GetProxySessionRequest& request, const GetProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves room details, such as the room name, for a room in an Amazon Chime
          * Enterprise account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom">AWS API
@@ -2412,6 +2526,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetVoiceConnectorOriginationAsync(const Model::GetVoiceConnectorOriginationRequest& request, const GetVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::GetVoiceConnectorProxyOutcome GetVoiceConnectorProxy(const Model::GetVoiceConnectorProxyRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVoiceConnectorProxyOutcomeCallable GetVoiceConnectorProxyCallable(const Model::GetVoiceConnectorProxyRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVoiceConnectorProxyAsync(const Model::GetVoiceConnectorProxyRequest& request, const GetVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves the streaming configuration details for the specified Amazon Chime
@@ -2733,6 +2866,25 @@ namespace Model
         virtual void ListPhoneNumbersAsync(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::ListProxySessionsOutcome ListProxySessions(const Model::ListProxySessionsRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListProxySessionsOutcomeCallable ListProxySessionsCallable(const Model::ListProxySessionsRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListProxySessionsAsync(const Model::ListProxySessionsRequest& request, const ListProxySessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the membership details for the specified room in an Amazon Chime
          * Enterprise account, such as the members' IDs, email addresses, and
          * names.</p><p><h3>See Also:</h3>   <a
@@ -3026,6 +3178,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutVoiceConnectorOriginationAsync(const Model::PutVoiceConnectorOriginationRequest& request, const PutVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::PutVoiceConnectorProxyOutcome PutVoiceConnectorProxy(const Model::PutVoiceConnectorProxyRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutVoiceConnectorProxyOutcomeCallable PutVoiceConnectorProxyCallable(const Model::PutVoiceConnectorProxyRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutVoiceConnectorProxyAsync(const Model::PutVoiceConnectorProxyRequest& request, const PutVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a streaming configuration for the specified Amazon Chime Voice
@@ -3434,6 +3605,25 @@ namespace Model
         virtual void UpdatePhoneNumberSettingsAsync(const Model::UpdatePhoneNumberSettingsRequest& request, const UpdatePhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::UpdateProxySessionOutcome UpdateProxySession(const Model::UpdateProxySessionRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateProxySessionOutcomeCallable UpdateProxySessionCallable(const Model::UpdateProxySessionRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateProxySessionAsync(const Model::UpdateProxySessionRequest& request, const UpdateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates room details, such as the room name, for a room in an Amazon Chime
          * Enterprise account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom">AWS
@@ -3633,6 +3823,7 @@ namespace Model
         void CreateBotAsyncHelper(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMeetingAsyncHelper(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePhoneNumberOrderAsyncHelper(const Model::CreatePhoneNumberOrderRequest& request, const CreatePhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateProxySessionAsyncHelper(const Model::CreateProxySessionRequest& request, const CreateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoomAsyncHelper(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoomMembershipAsyncHelper(const Model::CreateRoomMembershipRequest& request, const CreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3643,11 +3834,13 @@ namespace Model
         void DeleteEventsConfigurationAsyncHelper(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMeetingAsyncHelper(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePhoneNumberAsyncHelper(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteProxySessionAsyncHelper(const Model::DeleteProxySessionRequest& request, const DeleteProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoomAsyncHelper(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoomMembershipAsyncHelper(const Model::DeleteRoomMembershipRequest& request, const DeleteRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorAsyncHelper(const Model::DeleteVoiceConnectorRequest& request, const DeleteVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorGroupAsyncHelper(const Model::DeleteVoiceConnectorGroupRequest& request, const DeleteVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorOriginationAsyncHelper(const Model::DeleteVoiceConnectorOriginationRequest& request, const DeleteVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVoiceConnectorProxyAsyncHelper(const Model::DeleteVoiceConnectorProxyRequest& request, const DeleteVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorStreamingConfigurationAsyncHelper(const Model::DeleteVoiceConnectorStreamingConfigurationRequest& request, const DeleteVoiceConnectorStreamingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorTerminationAsyncHelper(const Model::DeleteVoiceConnectorTerminationRequest& request, const DeleteVoiceConnectorTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorTerminationCredentialsAsyncHelper(const Model::DeleteVoiceConnectorTerminationCredentialsRequest& request, const DeleteVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3665,6 +3858,7 @@ namespace Model
         void GetPhoneNumberAsyncHelper(const Model::GetPhoneNumberRequest& request, const GetPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberOrderAsyncHelper(const Model::GetPhoneNumberOrderRequest& request, const GetPhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberSettingsAsyncHelper(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetProxySessionAsyncHelper(const Model::GetProxySessionRequest& request, const GetProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRoomAsyncHelper(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserSettingsAsyncHelper(const Model::GetUserSettingsRequest& request, const GetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3672,6 +3866,7 @@ namespace Model
         void GetVoiceConnectorGroupAsyncHelper(const Model::GetVoiceConnectorGroupRequest& request, const GetVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorLoggingConfigurationAsyncHelper(const Model::GetVoiceConnectorLoggingConfigurationRequest& request, const GetVoiceConnectorLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorOriginationAsyncHelper(const Model::GetVoiceConnectorOriginationRequest& request, const GetVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetVoiceConnectorProxyAsyncHelper(const Model::GetVoiceConnectorProxyRequest& request, const GetVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorStreamingConfigurationAsyncHelper(const Model::GetVoiceConnectorStreamingConfigurationRequest& request, const GetVoiceConnectorStreamingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorTerminationAsyncHelper(const Model::GetVoiceConnectorTerminationRequest& request, const GetVoiceConnectorTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorTerminationHealthAsyncHelper(const Model::GetVoiceConnectorTerminationHealthRequest& request, const GetVoiceConnectorTerminationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3682,6 +3877,7 @@ namespace Model
         void ListMeetingsAsyncHelper(const Model::ListMeetingsRequest& request, const ListMeetingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumberOrdersAsyncHelper(const Model::ListPhoneNumberOrdersRequest& request, const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumbersAsyncHelper(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListProxySessionsAsyncHelper(const Model::ListProxySessionsRequest& request, const ListProxySessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoomMembershipsAsyncHelper(const Model::ListRoomMembershipsRequest& request, const ListRoomMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoomsAsyncHelper(const Model::ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3692,6 +3888,7 @@ namespace Model
         void PutEventsConfigurationAsyncHelper(const Model::PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorLoggingConfigurationAsyncHelper(const Model::PutVoiceConnectorLoggingConfigurationRequest& request, const PutVoiceConnectorLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorOriginationAsyncHelper(const Model::PutVoiceConnectorOriginationRequest& request, const PutVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutVoiceConnectorProxyAsyncHelper(const Model::PutVoiceConnectorProxyRequest& request, const PutVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorStreamingConfigurationAsyncHelper(const Model::PutVoiceConnectorStreamingConfigurationRequest& request, const PutVoiceConnectorStreamingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorTerminationAsyncHelper(const Model::PutVoiceConnectorTerminationRequest& request, const PutVoiceConnectorTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorTerminationCredentialsAsyncHelper(const Model::PutVoiceConnectorTerminationCredentialsRequest& request, const PutVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3705,6 +3902,7 @@ namespace Model
         void UpdateGlobalSettingsAsyncHelper(const Model::UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePhoneNumberAsyncHelper(const Model::UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePhoneNumberSettingsAsyncHelper(const Model::UpdatePhoneNumberSettingsRequest& request, const UpdatePhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateProxySessionAsyncHelper(const Model::UpdateProxySessionRequest& request, const UpdateProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoomAsyncHelper(const Model::UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoomMembershipAsyncHelper(const Model::UpdateRoomMembershipRequest& request, const UpdateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

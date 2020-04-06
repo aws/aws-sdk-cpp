@@ -54,501 +54,597 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the application to associate with this configuration template. If
-     * no application is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * <p>The name of the Elastic Beanstalk application to associate with this
+     * configuration template.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of the application to associate with this configuration template. If
-     * no application is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * <p>The name of the Elastic Beanstalk application to associate with this
+     * configuration template.</p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of the application to associate with this configuration template. If
-     * no application is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * <p>The name of the Elastic Beanstalk application to associate with this
+     * configuration template.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of the application to associate with this configuration template. If
-     * no application is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * <p>The name of the Elastic Beanstalk application to associate with this
+     * configuration template.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of the application to associate with this configuration template. If
-     * no application is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * <p>The name of the Elastic Beanstalk application to associate with this
+     * configuration template.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of the application to associate with this configuration template. If
-     * no application is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * <p>The name of the Elastic Beanstalk application to associate with this
+     * configuration template.</p>
      */
     inline CreateConfigurationTemplateRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of the application to associate with this configuration template. If
-     * no application is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * <p>The name of the Elastic Beanstalk application to associate with this
+     * configuration template.</p>
      */
     inline CreateConfigurationTemplateRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the application to associate with this configuration template. If
-     * no application is found with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * <p>The name of the Elastic Beanstalk application to associate with this
+     * configuration template.</p>
      */
     inline CreateConfigurationTemplateRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
-     * unique per application.</p> <p>Default: If a configuration template already
-     * exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * unique per application.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
-     * unique per application.</p> <p>Default: If a configuration template already
-     * exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * unique per application.</p>
      */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
-     * unique per application.</p> <p>Default: If a configuration template already
-     * exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * unique per application.</p>
      */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
-     * unique per application.</p> <p>Default: If a configuration template already
-     * exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * unique per application.</p>
      */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
-     * unique per application.</p> <p>Default: If a configuration template already
-     * exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * unique per application.</p>
      */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
-     * unique per application.</p> <p>Default: If a configuration template already
-     * exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * unique per application.</p>
      */
     inline CreateConfigurationTemplateRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
-     * unique per application.</p> <p>Default: If a configuration template already
-     * exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * unique per application.</p>
      */
     inline CreateConfigurationTemplateRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the configuration template.</p> <p>Constraint: This name must be
-     * unique per application.</p> <p>Default: If a configuration template already
-     * exists with this name, AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p>
+     * unique per application.</p>
      */
     inline CreateConfigurationTemplateRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
 
 
     /**
-     * <p>The name of the solution stack used by this configuration. The solution stack
-     * specifies the operating system, architecture, and application server for a
-     * configuration template. It determines the set of configuration options as well
-     * as the possible and default values.</p> <p> Use
-     * <a>ListAvailableSolutionStacks</a> to obtain a list of available solution
-     * stacks. </p> <p> A solution stack name or a source configuration parameter must
-     * be specified, otherwise AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p>If a solution stack name is
-     * not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.</p>
+     * <p>The name of an Elastic Beanstalk solution stack (platform version) that this
+     * configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat
+     * 7 Java 7</code>. A solution stack specifies the operating system, runtime, and
+     * application server for a configuration template. It also determines the set of
+     * configuration options as well as the possible and default values. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
+     * must specify <code>SolutionStackName</code> if you don't specify
+     * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+     * <code>SourceConfiguration</code>.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available
+     * solution stacks.</p>
      */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
 
     /**
-     * <p>The name of the solution stack used by this configuration. The solution stack
-     * specifies the operating system, architecture, and application server for a
-     * configuration template. It determines the set of configuration options as well
-     * as the possible and default values.</p> <p> Use
-     * <a>ListAvailableSolutionStacks</a> to obtain a list of available solution
-     * stacks. </p> <p> A solution stack name or a source configuration parameter must
-     * be specified, otherwise AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p>If a solution stack name is
-     * not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.</p>
+     * <p>The name of an Elastic Beanstalk solution stack (platform version) that this
+     * configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat
+     * 7 Java 7</code>. A solution stack specifies the operating system, runtime, and
+     * application server for a configuration template. It also determines the set of
+     * configuration options as well as the possible and default values. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
+     * must specify <code>SolutionStackName</code> if you don't specify
+     * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+     * <code>SourceConfiguration</code>.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available
+     * solution stacks.</p>
      */
     inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
 
     /**
-     * <p>The name of the solution stack used by this configuration. The solution stack
-     * specifies the operating system, architecture, and application server for a
-     * configuration template. It determines the set of configuration options as well
-     * as the possible and default values.</p> <p> Use
-     * <a>ListAvailableSolutionStacks</a> to obtain a list of available solution
-     * stacks. </p> <p> A solution stack name or a source configuration parameter must
-     * be specified, otherwise AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p>If a solution stack name is
-     * not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.</p>
+     * <p>The name of an Elastic Beanstalk solution stack (platform version) that this
+     * configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat
+     * 7 Java 7</code>. A solution stack specifies the operating system, runtime, and
+     * application server for a configuration template. It also determines the set of
+     * configuration options as well as the possible and default values. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
+     * must specify <code>SolutionStackName</code> if you don't specify
+     * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+     * <code>SourceConfiguration</code>.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available
+     * solution stacks.</p>
      */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
-     * <p>The name of the solution stack used by this configuration. The solution stack
-     * specifies the operating system, architecture, and application server for a
-     * configuration template. It determines the set of configuration options as well
-     * as the possible and default values.</p> <p> Use
-     * <a>ListAvailableSolutionStacks</a> to obtain a list of available solution
-     * stacks. </p> <p> A solution stack name or a source configuration parameter must
-     * be specified, otherwise AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p>If a solution stack name is
-     * not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.</p>
+     * <p>The name of an Elastic Beanstalk solution stack (platform version) that this
+     * configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat
+     * 7 Java 7</code>. A solution stack specifies the operating system, runtime, and
+     * application server for a configuration template. It also determines the set of
+     * configuration options as well as the possible and default values. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
+     * must specify <code>SolutionStackName</code> if you don't specify
+     * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+     * <code>SourceConfiguration</code>.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available
+     * solution stacks.</p>
      */
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
 
     /**
-     * <p>The name of the solution stack used by this configuration. The solution stack
-     * specifies the operating system, architecture, and application server for a
-     * configuration template. It determines the set of configuration options as well
-     * as the possible and default values.</p> <p> Use
-     * <a>ListAvailableSolutionStacks</a> to obtain a list of available solution
-     * stacks. </p> <p> A solution stack name or a source configuration parameter must
-     * be specified, otherwise AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p>If a solution stack name is
-     * not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.</p>
+     * <p>The name of an Elastic Beanstalk solution stack (platform version) that this
+     * configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat
+     * 7 Java 7</code>. A solution stack specifies the operating system, runtime, and
+     * application server for a configuration template. It also determines the set of
+     * configuration options as well as the possible and default values. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
+     * must specify <code>SolutionStackName</code> if you don't specify
+     * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+     * <code>SourceConfiguration</code>.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available
+     * solution stacks.</p>
      */
     inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
 
     /**
-     * <p>The name of the solution stack used by this configuration. The solution stack
-     * specifies the operating system, architecture, and application server for a
-     * configuration template. It determines the set of configuration options as well
-     * as the possible and default values.</p> <p> Use
-     * <a>ListAvailableSolutionStacks</a> to obtain a list of available solution
-     * stacks. </p> <p> A solution stack name or a source configuration parameter must
-     * be specified, otherwise AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p>If a solution stack name is
-     * not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.</p>
+     * <p>The name of an Elastic Beanstalk solution stack (platform version) that this
+     * configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat
+     * 7 Java 7</code>. A solution stack specifies the operating system, runtime, and
+     * application server for a configuration template. It also determines the set of
+     * configuration options as well as the possible and default values. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
+     * must specify <code>SolutionStackName</code> if you don't specify
+     * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+     * <code>SourceConfiguration</code>.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available
+     * solution stacks.</p>
      */
     inline CreateConfigurationTemplateRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
 
     /**
-     * <p>The name of the solution stack used by this configuration. The solution stack
-     * specifies the operating system, architecture, and application server for a
-     * configuration template. It determines the set of configuration options as well
-     * as the possible and default values.</p> <p> Use
-     * <a>ListAvailableSolutionStacks</a> to obtain a list of available solution
-     * stacks. </p> <p> A solution stack name or a source configuration parameter must
-     * be specified, otherwise AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p>If a solution stack name is
-     * not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.</p>
+     * <p>The name of an Elastic Beanstalk solution stack (platform version) that this
+     * configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat
+     * 7 Java 7</code>. A solution stack specifies the operating system, runtime, and
+     * application server for a configuration template. It also determines the set of
+     * configuration options as well as the possible and default values. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
+     * must specify <code>SolutionStackName</code> if you don't specify
+     * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+     * <code>SourceConfiguration</code>.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available
+     * solution stacks.</p>
      */
     inline CreateConfigurationTemplateRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the solution stack used by this configuration. The solution stack
-     * specifies the operating system, architecture, and application server for a
-     * configuration template. It determines the set of configuration options as well
-     * as the possible and default values.</p> <p> Use
-     * <a>ListAvailableSolutionStacks</a> to obtain a list of available solution
-     * stacks. </p> <p> A solution stack name or a source configuration parameter must
-     * be specified, otherwise AWS Elastic Beanstalk returns an
-     * <code>InvalidParameterValue</code> error. </p> <p>If a solution stack name is
-     * not specified and the source configuration parameter is specified, AWS Elastic
-     * Beanstalk uses the same solution stack as the source configuration template.</p>
+     * <p>The name of an Elastic Beanstalk solution stack (platform version) that this
+     * configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat
+     * 7 Java 7</code>. A solution stack specifies the operating system, runtime, and
+     * application server for a configuration template. It also determines the set of
+     * configuration options as well as the possible and default values. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+     * Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You
+     * must specify <code>SolutionStackName</code> if you don't specify
+     * <code>PlatformArn</code>, <code>EnvironmentId</code>, or
+     * <code>SourceConfiguration</code>.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
+     * <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available
+     * solution stacks.</p>
      */
     inline CreateConfigurationTemplateRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
 
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> </note>
      */
     inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> </note>
      */
     inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> </note>
      */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> </note>
      */
     inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> </note>
      */
     inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> </note>
      */
     inline CreateConfigurationTemplateRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> </note>
      */
     inline CreateConfigurationTemplateRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the custom platform.</p>
+     * <p>The Amazon Resource Name (ARN) of the custom platform. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">
+     * Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+     * <note> <p>If you specify <code>PlatformArn</code>, then don't specify
+     * <code>SolutionStackName</code>.</p> </note>
      */
     inline CreateConfigurationTemplateRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
 
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk uses the configuration values from the
-     * specified configuration template to create a new configuration.</p> <p> Values
-     * specified in the <code>OptionSettings</code> parameter of this call overrides
-     * any values obtained from the <code>SourceConfiguration</code>. </p> <p> If no
-     * configuration template is found, returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Constraint: If both the solution stack name parameter and the
-     * source configuration parameters are specified, the solution stack of the source
-     * configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
-     * </p>
+     * <p>An Elastic Beanstalk configuration template to base this one on. If
+     * specified, Elastic Beanstalk uses the configuration values from the specified
+     * configuration template to create a new configuration.</p> <p>Values specified in
+     * <code>OptionSettings</code> override any values obtained from the
+     * <code>SourceConfiguration</code>.</p> <p>You must specify
+     * <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p>
+     * <p>Constraint: If both solution stack name and source configuration are
+     * specified, the solution stack of the source configuration template must match
+     * the specified solution stack name.</p>
      */
     inline const SourceConfiguration& GetSourceConfiguration() const{ return m_sourceConfiguration; }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk uses the configuration values from the
-     * specified configuration template to create a new configuration.</p> <p> Values
-     * specified in the <code>OptionSettings</code> parameter of this call overrides
-     * any values obtained from the <code>SourceConfiguration</code>. </p> <p> If no
-     * configuration template is found, returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Constraint: If both the solution stack name parameter and the
-     * source configuration parameters are specified, the solution stack of the source
-     * configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
-     * </p>
+     * <p>An Elastic Beanstalk configuration template to base this one on. If
+     * specified, Elastic Beanstalk uses the configuration values from the specified
+     * configuration template to create a new configuration.</p> <p>Values specified in
+     * <code>OptionSettings</code> override any values obtained from the
+     * <code>SourceConfiguration</code>.</p> <p>You must specify
+     * <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p>
+     * <p>Constraint: If both solution stack name and source configuration are
+     * specified, the solution stack of the source configuration template must match
+     * the specified solution stack name.</p>
      */
     inline bool SourceConfigurationHasBeenSet() const { return m_sourceConfigurationHasBeenSet; }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk uses the configuration values from the
-     * specified configuration template to create a new configuration.</p> <p> Values
-     * specified in the <code>OptionSettings</code> parameter of this call overrides
-     * any values obtained from the <code>SourceConfiguration</code>. </p> <p> If no
-     * configuration template is found, returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Constraint: If both the solution stack name parameter and the
-     * source configuration parameters are specified, the solution stack of the source
-     * configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
-     * </p>
+     * <p>An Elastic Beanstalk configuration template to base this one on. If
+     * specified, Elastic Beanstalk uses the configuration values from the specified
+     * configuration template to create a new configuration.</p> <p>Values specified in
+     * <code>OptionSettings</code> override any values obtained from the
+     * <code>SourceConfiguration</code>.</p> <p>You must specify
+     * <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p>
+     * <p>Constraint: If both solution stack name and source configuration are
+     * specified, the solution stack of the source configuration template must match
+     * the specified solution stack name.</p>
      */
     inline void SetSourceConfiguration(const SourceConfiguration& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = value; }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk uses the configuration values from the
-     * specified configuration template to create a new configuration.</p> <p> Values
-     * specified in the <code>OptionSettings</code> parameter of this call overrides
-     * any values obtained from the <code>SourceConfiguration</code>. </p> <p> If no
-     * configuration template is found, returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Constraint: If both the solution stack name parameter and the
-     * source configuration parameters are specified, the solution stack of the source
-     * configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
-     * </p>
+     * <p>An Elastic Beanstalk configuration template to base this one on. If
+     * specified, Elastic Beanstalk uses the configuration values from the specified
+     * configuration template to create a new configuration.</p> <p>Values specified in
+     * <code>OptionSettings</code> override any values obtained from the
+     * <code>SourceConfiguration</code>.</p> <p>You must specify
+     * <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p>
+     * <p>Constraint: If both solution stack name and source configuration are
+     * specified, the solution stack of the source configuration template must match
+     * the specified solution stack name.</p>
      */
     inline void SetSourceConfiguration(SourceConfiguration&& value) { m_sourceConfigurationHasBeenSet = true; m_sourceConfiguration = std::move(value); }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk uses the configuration values from the
-     * specified configuration template to create a new configuration.</p> <p> Values
-     * specified in the <code>OptionSettings</code> parameter of this call overrides
-     * any values obtained from the <code>SourceConfiguration</code>. </p> <p> If no
-     * configuration template is found, returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Constraint: If both the solution stack name parameter and the
-     * source configuration parameters are specified, the solution stack of the source
-     * configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
-     * </p>
+     * <p>An Elastic Beanstalk configuration template to base this one on. If
+     * specified, Elastic Beanstalk uses the configuration values from the specified
+     * configuration template to create a new configuration.</p> <p>Values specified in
+     * <code>OptionSettings</code> override any values obtained from the
+     * <code>SourceConfiguration</code>.</p> <p>You must specify
+     * <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p>
+     * <p>Constraint: If both solution stack name and source configuration are
+     * specified, the solution stack of the source configuration template must match
+     * the specified solution stack name.</p>
      */
     inline CreateConfigurationTemplateRequest& WithSourceConfiguration(const SourceConfiguration& value) { SetSourceConfiguration(value); return *this;}
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk uses the configuration values from the
-     * specified configuration template to create a new configuration.</p> <p> Values
-     * specified in the <code>OptionSettings</code> parameter of this call overrides
-     * any values obtained from the <code>SourceConfiguration</code>. </p> <p> If no
-     * configuration template is found, returns an <code>InvalidParameterValue</code>
-     * error. </p> <p> Constraint: If both the solution stack name parameter and the
-     * source configuration parameters are specified, the solution stack of the source
-     * configuration template must match the specified solution stack name or else AWS
-     * Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
-     * </p>
+     * <p>An Elastic Beanstalk configuration template to base this one on. If
+     * specified, Elastic Beanstalk uses the configuration values from the specified
+     * configuration template to create a new configuration.</p> <p>Values specified in
+     * <code>OptionSettings</code> override any values obtained from the
+     * <code>SourceConfiguration</code>.</p> <p>You must specify
+     * <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
+     * <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p>
+     * <p>Constraint: If both solution stack name and source configuration are
+     * specified, the solution stack of the source configuration template must match
+     * the specified solution stack name.</p>
      */
     inline CreateConfigurationTemplateRequest& WithSourceConfiguration(SourceConfiguration&& value) { SetSourceConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the environment used with this configuration template.</p>
+     * <p>The ID of an environment whose settings you want to use to create the
+     * configuration template. You must specify <code>EnvironmentId</code> if you don't
+     * specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
 
     /**
-     * <p>The ID of the environment used with this configuration template.</p>
+     * <p>The ID of an environment whose settings you want to use to create the
+     * configuration template. You must specify <code>EnvironmentId</code> if you don't
+     * specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.</p>
      */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
-     * <p>The ID of the environment used with this configuration template.</p>
+     * <p>The ID of an environment whose settings you want to use to create the
+     * configuration template. You must specify <code>EnvironmentId</code> if you don't
+     * specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.</p>
      */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
-     * <p>The ID of the environment used with this configuration template.</p>
+     * <p>The ID of an environment whose settings you want to use to create the
+     * configuration template. You must specify <code>EnvironmentId</code> if you don't
+     * specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.</p>
      */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
 
     /**
-     * <p>The ID of the environment used with this configuration template.</p>
+     * <p>The ID of an environment whose settings you want to use to create the
+     * configuration template. You must specify <code>EnvironmentId</code> if you don't
+     * specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.</p>
      */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
 
     /**
-     * <p>The ID of the environment used with this configuration template.</p>
+     * <p>The ID of an environment whose settings you want to use to create the
+     * configuration template. You must specify <code>EnvironmentId</code> if you don't
+     * specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.</p>
      */
     inline CreateConfigurationTemplateRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
 
     /**
-     * <p>The ID of the environment used with this configuration template.</p>
+     * <p>The ID of an environment whose settings you want to use to create the
+     * configuration template. You must specify <code>EnvironmentId</code> if you don't
+     * specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.</p>
      */
     inline CreateConfigurationTemplateRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the environment used with this configuration template.</p>
+     * <p>The ID of an environment whose settings you want to use to create the
+     * configuration template. You must specify <code>EnvironmentId</code> if you don't
+     * specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or
+     * <code>SourceConfiguration</code>.</p>
      */
     inline CreateConfigurationTemplateRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
 
 
     /**
-     * <p>Describes this configuration.</p>
+     * <p>An optional description for this configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Describes this configuration.</p>
+     * <p>An optional description for this configuration.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Describes this configuration.</p>
+     * <p>An optional description for this configuration.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Describes this configuration.</p>
+     * <p>An optional description for this configuration.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Describes this configuration.</p>
+     * <p>An optional description for this configuration.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Describes this configuration.</p>
+     * <p>An optional description for this configuration.</p>
      */
     inline CreateConfigurationTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Describes this configuration.</p>
+     * <p>An optional description for this configuration.</p>
      */
     inline CreateConfigurationTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Describes this configuration.</p>
+     * <p>An optional description for this configuration.</p>
      */
     inline CreateConfigurationTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
-     * to the requested value. The new value overrides the value obtained from the
-     * solution stack or the source configuration template.</p>
+     * <p>Option values for the Elastic Beanstalk configuration, such as the instance
+     * type. If specified, these values override the values obtained from the solution
+     * stack or the source configuration template. For a complete list of Elastic
+     * Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+     * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
-     * to the requested value. The new value overrides the value obtained from the
-     * solution stack or the source configuration template.</p>
+     * <p>Option values for the Elastic Beanstalk configuration, such as the instance
+     * type. If specified, these values override the values obtained from the solution
+     * stack or the source configuration template. For a complete list of Elastic
+     * Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+     * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
     inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
-     * to the requested value. The new value overrides the value obtained from the
-     * solution stack or the source configuration template.</p>
+     * <p>Option values for the Elastic Beanstalk configuration, such as the instance
+     * type. If specified, these values override the values obtained from the solution
+     * stack or the source configuration template. For a complete list of Elastic
+     * Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+     * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
     inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
-     * to the requested value. The new value overrides the value obtained from the
-     * solution stack or the source configuration template.</p>
+     * <p>Option values for the Elastic Beanstalk configuration, such as the instance
+     * type. If specified, these values override the values obtained from the solution
+     * stack or the source configuration template. For a complete list of Elastic
+     * Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+     * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
     inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::move(value); }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
-     * to the requested value. The new value overrides the value obtained from the
-     * solution stack or the source configuration template.</p>
+     * <p>Option values for the Elastic Beanstalk configuration, such as the instance
+     * type. If specified, these values override the values obtained from the solution
+     * stack or the source configuration template. For a complete list of Elastic
+     * Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+     * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
     inline CreateConfigurationTemplateRequest& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
-     * to the requested value. The new value overrides the value obtained from the
-     * solution stack or the source configuration template.</p>
+     * <p>Option values for the Elastic Beanstalk configuration, such as the instance
+     * type. If specified, these values override the values obtained from the solution
+     * stack or the source configuration template. For a complete list of Elastic
+     * Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+     * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
     inline CreateConfigurationTemplateRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(std::move(value)); return *this;}
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
-     * to the requested value. The new value overrides the value obtained from the
-     * solution stack or the source configuration template.</p>
+     * <p>Option values for the Elastic Beanstalk configuration, such as the instance
+     * type. If specified, these values override the values obtained from the solution
+     * stack or the source configuration template. For a complete list of Elastic
+     * Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+     * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
     inline CreateConfigurationTemplateRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
 
     /**
-     * <p>If specified, AWS Elastic Beanstalk sets the specified configuration option
-     * to the requested value. The new value overrides the value obtained from the
-     * solution stack or the source configuration template.</p>
+     * <p>Option values for the Elastic Beanstalk configuration, such as the instance
+     * type. If specified, these values override the values obtained from the solution
+     * stack or the source configuration template. For a complete list of Elastic
+     * Beanstalk configuration options, see <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+     * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
     inline CreateConfigurationTemplateRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 

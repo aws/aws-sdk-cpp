@@ -59,6 +59,7 @@
 #include <aws/elasticbeanstalk/model/DescribeInstancesHealthRequest.h>
 #include <aws/elasticbeanstalk/model/DescribePlatformVersionRequest.h>
 #include <aws/elasticbeanstalk/model/ListAvailableSolutionStacksRequest.h>
+#include <aws/elasticbeanstalk/model/ListPlatformBranchesRequest.h>
 #include <aws/elasticbeanstalk/model/ListPlatformVersionsRequest.h>
 #include <aws/elasticbeanstalk/model/ListTagsForResourceRequest.h>
 #include <aws/elasticbeanstalk/model/RebuildEnvironmentRequest.h>
@@ -1171,6 +1172,41 @@ void ElasticBeanstalkClient::ListAvailableSolutionStacksAsync(const ListAvailabl
 void ElasticBeanstalkClient::ListAvailableSolutionStacksAsyncHelper(const ListAvailableSolutionStacksRequest& request, const ListAvailableSolutionStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAvailableSolutionStacks(request), context);
+}
+
+ListPlatformBranchesOutcome ElasticBeanstalkClient::ListPlatformBranches(const ListPlatformBranchesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListPlatformBranchesOutcome(ListPlatformBranchesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPlatformBranchesOutcome(outcome.GetError());
+  }
+}
+
+ListPlatformBranchesOutcomeCallable ElasticBeanstalkClient::ListPlatformBranchesCallable(const ListPlatformBranchesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPlatformBranchesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPlatformBranches(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticBeanstalkClient::ListPlatformBranchesAsync(const ListPlatformBranchesRequest& request, const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPlatformBranchesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticBeanstalkClient::ListPlatformBranchesAsyncHelper(const ListPlatformBranchesRequest& request, const ListPlatformBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPlatformBranches(request), context);
 }
 
 ListPlatformVersionsOutcome ElasticBeanstalkClient::ListPlatformVersions(const ListPlatformVersionsRequest& request) const

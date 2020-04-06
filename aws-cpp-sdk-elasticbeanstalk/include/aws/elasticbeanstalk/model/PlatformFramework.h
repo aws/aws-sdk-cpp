@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A framework supported by the custom platform.</p><p><h3>See Also:</h3>   <a
+   * <p>A framework supported by the platform.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/PlatformFramework">AWS
    * API Reference</a></p>
    */

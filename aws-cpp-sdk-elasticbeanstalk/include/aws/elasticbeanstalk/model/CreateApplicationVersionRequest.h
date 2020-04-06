@@ -177,42 +177,42 @@ namespace Model
 
 
     /**
-     * <p>Describes this version.</p>
+     * <p>A description of this application version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Describes this version.</p>
+     * <p>A description of this application version.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Describes this version.</p>
+     * <p>A description of this application version.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Describes this version.</p>
+     * <p>A description of this application version.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Describes this version.</p>
+     * <p>A description of this application version.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Describes this version.</p>
+     * <p>A description of this application version.</p>
      */
     inline CreateApplicationVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Describes this version.</p>
+     * <p>A description of this application version.</p>
      */
     inline CreateApplicationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Describes this version.</p>
+     * <p>A description of this application version.</p>
      */
     inline CreateApplicationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

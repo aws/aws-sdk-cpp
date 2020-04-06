@@ -50,49 +50,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p> <p>Must be
-     * the ARN of an Elastic Beanstalk environment.</p>
+     * the ARN of an Elastic Beanstalk resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p> <p>Must be
-     * the ARN of an Elastic Beanstalk environment.</p>
+     * the ARN of an Elastic Beanstalk resource.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p> <p>Must be
-     * the ARN of an Elastic Beanstalk environment.</p>
+     * the ARN of an Elastic Beanstalk resource.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p> <p>Must be
-     * the ARN of an Elastic Beanstalk environment.</p>
+     * the ARN of an Elastic Beanstalk resource.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p> <p>Must be
-     * the ARN of an Elastic Beanstalk environment.</p>
+     * the ARN of an Elastic Beanstalk resource.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p> <p>Must be
-     * the ARN of an Elastic Beanstalk environment.</p>
+     * the ARN of an Elastic Beanstalk resource.</p>
      */
     inline UpdateTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p> <p>Must be
-     * the ARN of an Elastic Beanstalk environment.</p>
+     * the ARN of an Elastic Beanstalk resource.</p>
      */
     inline UpdateTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the resouce to be updated.</p> <p>Must be
-     * the ARN of an Elastic Beanstalk environment.</p>
+     * the ARN of an Elastic Beanstalk resource.</p>
      */
     inline UpdateTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

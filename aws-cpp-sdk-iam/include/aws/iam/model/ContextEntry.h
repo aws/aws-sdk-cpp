@@ -40,8 +40,8 @@ namespace Model
    * the key and specifies the value (or values, if the context key supports multiple
    * values) to use in the simulation. This information is used when evaluating the
    * <code>Condition</code> elements of the input policies.</p> <p>This data type is
-   * used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and
-   * <code> <a>SimulatePrincipalPolicy</a> </code>.</p><p><h3>See Also:</h3>   <a
+   * used as an input parameter to <a>SimulateCustomPolicy</a> and
+   * <a>SimulatePrincipalPolicy</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ContextEntry">AWS
    * API Reference</a></p>
    */

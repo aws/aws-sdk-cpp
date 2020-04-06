@@ -35,10 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Settings for content redaction within a transcription job.</p> <p>You can
-   * redact transcripts in US English (en-us). For more information see: <a
-   * href="https://docs.aws.amazon.com/transcribe/latest/dg/content-redaction.html">Automatic
-   * Content Redaction</a> </p><p><h3>See Also:</h3>   <a
+   * <p>Settings for content redaction within a transcription job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ContentRedaction">AWS
    * API Reference</a></p>
    */
@@ -89,68 +87,56 @@ namespace Model
 
 
     /**
-     * <p>Request parameter where you choose whether to output only the redacted
-     * transcript or generate an additional unredacted transcript.</p> <p>When you
-     * choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the
-     * redacted transcript and related information.</p> <p>When you choose
-     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with
-     * the unredacted transcript and related information in addition to the JSON file
-     * with the redacted transcript.</p>
+     * <p>The output transcript file stored in either the default S3 bucket or in a
+     * bucket you specify.</p> <p>When you choose <code>redacted</code> Amazon
+     * Transcribe outputs only the redacted transcript.</p> <p>When you choose
+     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted
+     * and unredacted transcripts.</p>
      */
     inline const RedactionOutput& GetRedactionOutput() const{ return m_redactionOutput; }
 
     /**
-     * <p>Request parameter where you choose whether to output only the redacted
-     * transcript or generate an additional unredacted transcript.</p> <p>When you
-     * choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the
-     * redacted transcript and related information.</p> <p>When you choose
-     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with
-     * the unredacted transcript and related information in addition to the JSON file
-     * with the redacted transcript.</p>
+     * <p>The output transcript file stored in either the default S3 bucket or in a
+     * bucket you specify.</p> <p>When you choose <code>redacted</code> Amazon
+     * Transcribe outputs only the redacted transcript.</p> <p>When you choose
+     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted
+     * and unredacted transcripts.</p>
      */
     inline bool RedactionOutputHasBeenSet() const { return m_redactionOutputHasBeenSet; }
 
     /**
-     * <p>Request parameter where you choose whether to output only the redacted
-     * transcript or generate an additional unredacted transcript.</p> <p>When you
-     * choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the
-     * redacted transcript and related information.</p> <p>When you choose
-     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with
-     * the unredacted transcript and related information in addition to the JSON file
-     * with the redacted transcript.</p>
+     * <p>The output transcript file stored in either the default S3 bucket or in a
+     * bucket you specify.</p> <p>When you choose <code>redacted</code> Amazon
+     * Transcribe outputs only the redacted transcript.</p> <p>When you choose
+     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted
+     * and unredacted transcripts.</p>
      */
     inline void SetRedactionOutput(const RedactionOutput& value) { m_redactionOutputHasBeenSet = true; m_redactionOutput = value; }
 
     /**
-     * <p>Request parameter where you choose whether to output only the redacted
-     * transcript or generate an additional unredacted transcript.</p> <p>When you
-     * choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the
-     * redacted transcript and related information.</p> <p>When you choose
-     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with
-     * the unredacted transcript and related information in addition to the JSON file
-     * with the redacted transcript.</p>
+     * <p>The output transcript file stored in either the default S3 bucket or in a
+     * bucket you specify.</p> <p>When you choose <code>redacted</code> Amazon
+     * Transcribe outputs only the redacted transcript.</p> <p>When you choose
+     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted
+     * and unredacted transcripts.</p>
      */
     inline void SetRedactionOutput(RedactionOutput&& value) { m_redactionOutputHasBeenSet = true; m_redactionOutput = std::move(value); }
 
     /**
-     * <p>Request parameter where you choose whether to output only the redacted
-     * transcript or generate an additional unredacted transcript.</p> <p>When you
-     * choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the
-     * redacted transcript and related information.</p> <p>When you choose
-     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with
-     * the unredacted transcript and related information in addition to the JSON file
-     * with the redacted transcript.</p>
+     * <p>The output transcript file stored in either the default S3 bucket or in a
+     * bucket you specify.</p> <p>When you choose <code>redacted</code> Amazon
+     * Transcribe outputs only the redacted transcript.</p> <p>When you choose
+     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted
+     * and unredacted transcripts.</p>
      */
     inline ContentRedaction& WithRedactionOutput(const RedactionOutput& value) { SetRedactionOutput(value); return *this;}
 
     /**
-     * <p>Request parameter where you choose whether to output only the redacted
-     * transcript or generate an additional unredacted transcript.</p> <p>When you
-     * choose <code>redacted</code> Amazon Transcribe outputs a JSON file with only the
-     * redacted transcript and related information.</p> <p>When you choose
-     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs a JSON file with
-     * the unredacted transcript and related information in addition to the JSON file
-     * with the redacted transcript.</p>
+     * <p>The output transcript file stored in either the default S3 bucket or in a
+     * bucket you specify.</p> <p>When you choose <code>redacted</code> Amazon
+     * Transcribe outputs only the redacted transcript.</p> <p>When you choose
+     * <code>redacted_and_unredacted</code> Amazon Transcribe outputs both the redacted
+     * and unredacted transcripts.</p>
      */
     inline ContentRedaction& WithRedactionOutput(RedactionOutput&& value) { SetRedactionOutput(std::move(value)); return *this;}
 
