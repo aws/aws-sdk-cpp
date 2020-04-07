@@ -1,0 +1,99 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/mediaconnect/MediaConnect_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace MediaConnect
+{
+namespace Model
+{
+
+  /**
+   * The settings for attaching a VPC interface to an output.<p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/VpcInterfaceAttachment">AWS
+   * API Reference</a></p>
+   */
+  class AWS_MEDIACONNECT_API VpcInterfaceAttachment
+  {
+  public:
+    VpcInterfaceAttachment();
+    VpcInterfaceAttachment(Aws::Utils::Json::JsonView jsonValue);
+    VpcInterfaceAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * The name of the VPC interface to use for this output.
+     */
+    inline const Aws::String& GetVpcInterfaceName() const{ return m_vpcInterfaceName; }
+
+    /**
+     * The name of the VPC interface to use for this output.
+     */
+    inline bool VpcInterfaceNameHasBeenSet() const { return m_vpcInterfaceNameHasBeenSet; }
+
+    /**
+     * The name of the VPC interface to use for this output.
+     */
+    inline void SetVpcInterfaceName(const Aws::String& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = value; }
+
+    /**
+     * The name of the VPC interface to use for this output.
+     */
+    inline void SetVpcInterfaceName(Aws::String&& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = std::move(value); }
+
+    /**
+     * The name of the VPC interface to use for this output.
+     */
+    inline void SetVpcInterfaceName(const char* value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName.assign(value); }
+
+    /**
+     * The name of the VPC interface to use for this output.
+     */
+    inline VpcInterfaceAttachment& WithVpcInterfaceName(const Aws::String& value) { SetVpcInterfaceName(value); return *this;}
+
+    /**
+     * The name of the VPC interface to use for this output.
+     */
+    inline VpcInterfaceAttachment& WithVpcInterfaceName(Aws::String&& value) { SetVpcInterfaceName(std::move(value)); return *this;}
+
+    /**
+     * The name of the VPC interface to use for this output.
+     */
+    inline VpcInterfaceAttachment& WithVpcInterfaceName(const char* value) { SetVpcInterfaceName(value); return *this;}
+
+  private:
+
+    Aws::String m_vpcInterfaceName;
+    bool m_vpcInterfaceNameHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace MediaConnect
+} // namespace Aws

@@ -114,42 +114,66 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis
+     * Data Firehose delivery stream to receive access logs. If you specify a Kinesis
+     * Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.</p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
 
     /**
-     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis
+     * Data Firehose delivery stream to receive access logs. If you specify a Kinesis
+     * Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.</p>
      */
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis
+     * Data Firehose delivery stream to receive access logs. If you specify a Kinesis
+     * Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.</p>
      */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /**
-     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis
+     * Data Firehose delivery stream to receive access logs. If you specify a Kinesis
+     * Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.</p>
      */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
     /**
-     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis
+     * Data Firehose delivery stream to receive access logs. If you specify a Kinesis
+     * Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.</p>
      */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
     /**
-     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis
+     * Data Firehose delivery stream to receive access logs. If you specify a Kinesis
+     * Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.</p>
      */
     inline AccessLogSettings& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
 
     /**
-     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis
+     * Data Firehose delivery stream to receive access logs. If you specify a Kinesis
+     * Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.</p>
      */
     inline AccessLogSettings& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or Kinesis
+     * Data Firehose delivery stream to receive access logs. If you specify a Kinesis
+     * Data Firehose delivery stream, the stream name must begin with
+     * <code>amazon-apigateway-</code>.</p>
      */
     inline AccessLogSettings& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 

@@ -153,25 +153,29 @@ namespace Model
 
     /**
      * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
-     * identifier is distinct from the created API key value.</p>
+     * identifier is distinct from the created API key value. This parameter is
+     * deprecated and should not be used.</p>
      */
     inline bool GetGenerateDistinctId() const{ return m_generateDistinctId; }
 
     /**
      * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
-     * identifier is distinct from the created API key value.</p>
+     * identifier is distinct from the created API key value. This parameter is
+     * deprecated and should not be used.</p>
      */
     inline bool GenerateDistinctIdHasBeenSet() const { return m_generateDistinctIdHasBeenSet; }
 
     /**
      * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
-     * identifier is distinct from the created API key value.</p>
+     * identifier is distinct from the created API key value. This parameter is
+     * deprecated and should not be used.</p>
      */
     inline void SetGenerateDistinctId(bool value) { m_generateDistinctIdHasBeenSet = true; m_generateDistinctId = value; }
 
     /**
      * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
-     * identifier is distinct from the created API key value.</p>
+     * identifier is distinct from the created API key value. This parameter is
+     * deprecated and should not be used.</p>
      */
     inline CreateApiKeyRequest& WithGenerateDistinctId(bool value) { SetGenerateDistinctId(value); return *this;}
 

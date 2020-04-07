@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/UpdateEncryption.h>
 #include <aws/mediaconnect/model/Protocol.h>
+#include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
 #include <utility>
 
 namespace Aws
@@ -504,6 +505,37 @@ namespace Model
      */
     inline UpdateFlowOutputRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
 
+
+    /**
+     * The name of the VPC interface attachment to use for this output.
+     */
+    inline const VpcInterfaceAttachment& GetVpcInterfaceAttachment() const{ return m_vpcInterfaceAttachment; }
+
+    /**
+     * The name of the VPC interface attachment to use for this output.
+     */
+    inline bool VpcInterfaceAttachmentHasBeenSet() const { return m_vpcInterfaceAttachmentHasBeenSet; }
+
+    /**
+     * The name of the VPC interface attachment to use for this output.
+     */
+    inline void SetVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { m_vpcInterfaceAttachmentHasBeenSet = true; m_vpcInterfaceAttachment = value; }
+
+    /**
+     * The name of the VPC interface attachment to use for this output.
+     */
+    inline void SetVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { m_vpcInterfaceAttachmentHasBeenSet = true; m_vpcInterfaceAttachment = std::move(value); }
+
+    /**
+     * The name of the VPC interface attachment to use for this output.
+     */
+    inline UpdateFlowOutputRequest& WithVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { SetVpcInterfaceAttachment(value); return *this;}
+
+    /**
+     * The name of the VPC interface attachment to use for this output.
+     */
+    inline UpdateFlowOutputRequest& WithVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { SetVpcInterfaceAttachment(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_cidrAllowList;
@@ -541,6 +573,9 @@ namespace Model
 
     Aws::String m_streamId;
     bool m_streamIdHasBeenSet;
+
+    VpcInterfaceAttachment m_vpcInterfaceAttachment;
+    bool m_vpcInterfaceAttachmentHasBeenSet;
   };
 
 } // namespace Model

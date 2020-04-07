@@ -203,57 +203,57 @@ namespace Model
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Specify
-     * '(none)' if you do not want callers to explicitly specify the stage name after
-     * any base path name.</p>
+     * '(none)' if you want callers to explicitly specify the stage name after any base
+     * path name.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Specify
-     * '(none)' if you do not want callers to explicitly specify the stage name after
-     * any base path name.</p>
+     * '(none)' if you want callers to explicitly specify the stage name after any base
+     * path name.</p>
      */
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Specify
-     * '(none)' if you do not want callers to explicitly specify the stage name after
-     * any base path name.</p>
+     * '(none)' if you want callers to explicitly specify the stage name after any base
+     * path name.</p>
      */
     inline void SetStage(const Aws::String& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Specify
-     * '(none)' if you do not want callers to explicitly specify the stage name after
-     * any base path name.</p>
+     * '(none)' if you want callers to explicitly specify the stage name after any base
+     * path name.</p>
      */
     inline void SetStage(Aws::String&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Specify
-     * '(none)' if you do not want callers to explicitly specify the stage name after
-     * any base path name.</p>
+     * '(none)' if you want callers to explicitly specify the stage name after any base
+     * path name.</p>
      */
     inline void SetStage(const char* value) { m_stageHasBeenSet = true; m_stage.assign(value); }
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Specify
-     * '(none)' if you do not want callers to explicitly specify the stage name after
-     * any base path name.</p>
+     * '(none)' if you want callers to explicitly specify the stage name after any base
+     * path name.</p>
      */
     inline CreateBasePathMappingRequest& WithStage(const Aws::String& value) { SetStage(value); return *this;}
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Specify
-     * '(none)' if you do not want callers to explicitly specify the stage name after
-     * any base path name.</p>
+     * '(none)' if you want callers to explicitly specify the stage name after any base
+     * path name.</p>
      */
     inline CreateBasePathMappingRequest& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Specify
-     * '(none)' if you do not want callers to explicitly specify the stage name after
-     * any base path name.</p>
+     * '(none)' if you want callers to explicitly specify the stage name after any base
+     * path name.</p>
      */
     inline CreateBasePathMappingRequest& WithStage(const char* value) { SetStage(value); return *this;}
 

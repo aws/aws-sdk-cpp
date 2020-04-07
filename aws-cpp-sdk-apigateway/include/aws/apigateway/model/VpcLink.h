@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon
+   * <p>An API Gateway VPC link for a <a>RestApi</a> to access resources in an Amazon
    * Virtual Private Cloud (VPC).</p> <div class="remarks"> <p><p>To enable access to
    * a resource in an Amazon Virtual Private Cloud through Amazon API Gateway, you,
    * as an API developer, create a <a>VpcLink</a> resource targeted for one or more
@@ -191,64 +191,64 @@ namespace Model
 
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetArns() const{ return m_targetArns; }
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline bool TargetArnsHasBeenSet() const { return m_targetArnsHasBeenSet; }
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline void SetTargetArns(const Aws::Vector<Aws::String>& value) { m_targetArnsHasBeenSet = true; m_targetArns = value; }
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline void SetTargetArns(Aws::Vector<Aws::String>&& value) { m_targetArnsHasBeenSet = true; m_targetArns = std::move(value); }
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline VpcLink& WithTargetArns(const Aws::Vector<Aws::String>& value) { SetTargetArns(value); return *this;}
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline VpcLink& WithTargetArns(Aws::Vector<Aws::String>&& value) { SetTargetArns(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline VpcLink& AddTargetArns(const Aws::String& value) { m_targetArnsHasBeenSet = true; m_targetArns.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline VpcLink& AddTargetArns(Aws::String&& value) { m_targetArnsHasBeenSet = true; m_targetArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ARNs of network load balancers of the VPC targeted by the VPC link. The
-     * network load balancers must be owned by the same AWS account of the API
+     * <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The
+     * network load balancer must be owned by the same AWS account of the API
      * owner.</p>
      */
     inline VpcLink& AddTargetArns(const char* value) { m_targetArnsHasBeenSet = true; m_targetArns.push_back(value); return *this; }

@@ -40,7 +40,8 @@ Output::Output() :
     m_outputArnHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_transportHasBeenSet(false)
+    m_transportHasBeenSet(false),
+    m_vpcInterfaceAttachmentHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Output::Output(JsonView jsonValue) :
     m_outputArnHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_transportHasBeenSet(false)
+    m_transportHasBeenSet(false),
+    m_vpcInterfaceAttachmentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -133,6 +135,13 @@ Output& Output::operator =(JsonView jsonValue)
     m_transportHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcInterfaceAttachment"))
+  {
+    m_vpcInterfaceAttachment = jsonValue.GetObject("vpcInterfaceAttachment");
+
+    m_vpcInterfaceAttachmentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -197,6 +206,12 @@ JsonValue Output::Jsonize() const
   if(m_transportHasBeenSet)
   {
    payload.WithObject("transport", m_transport.Jsonize());
+
+  }
+
+  if(m_vpcInterfaceAttachmentHasBeenSet)
+  {
+   payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
 
   }
 

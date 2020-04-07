@@ -43,7 +43,8 @@ AddOutputRequest::AddOutputRequest() :
     m_remoteIdHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
+    m_streamIdHasBeenSet(false),
+    m_vpcInterfaceAttachmentHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ AddOutputRequest::AddOutputRequest(JsonView jsonValue) :
     m_remoteIdHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
+    m_streamIdHasBeenSet(false),
+    m_vpcInterfaceAttachmentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +151,13 @@ AddOutputRequest& AddOutputRequest::operator =(JsonView jsonValue)
     m_streamIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcInterfaceAttachment"))
+  {
+    m_vpcInterfaceAttachment = jsonValue.GetObject("vpcInterfaceAttachment");
+
+    m_vpcInterfaceAttachmentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +232,12 @@ JsonValue AddOutputRequest::Jsonize() const
   if(m_streamIdHasBeenSet)
   {
    payload.WithString("streamId", m_streamId);
+
+  }
+
+  if(m_vpcInterfaceAttachmentHasBeenSet)
+  {
+   payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
 
   }
 

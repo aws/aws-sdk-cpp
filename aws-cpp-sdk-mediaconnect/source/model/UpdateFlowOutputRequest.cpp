@@ -38,7 +38,8 @@ UpdateFlowOutputRequest::UpdateFlowOutputRequest() :
     m_remoteIdHasBeenSet(false),
     m_smoothingLatency(0),
     m_smoothingLatencyHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
+    m_streamIdHasBeenSet(false),
+    m_vpcInterfaceAttachmentHasBeenSet(false)
 {
 }
 
@@ -107,6 +108,12 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
   if(m_streamIdHasBeenSet)
   {
    payload.WithString("streamId", m_streamId);
+
+  }
+
+  if(m_vpcInterfaceAttachmentHasBeenSet)
+  {
+   payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
 
   }
 
