@@ -134,6 +134,7 @@
 #include <aws/ec2/model/DeleteVpcEndpointsResponse.h>
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/DeprovisionByoipCidrResponse.h>
+#include <aws/ec2/model/DeregisterInstanceEventNotificationAttributesResponse.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersResponse.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
@@ -176,6 +177,7 @@
 #include <aws/ec2/model/DescribeImportSnapshotTasksResponse.h>
 #include <aws/ec2/model/DescribeInstanceAttributeResponse.h>
 #include <aws/ec2/model/DescribeInstanceCreditSpecificationsResponse.h>
+#include <aws/ec2/model/DescribeInstanceEventNotificationAttributesResponse.h>
 #include <aws/ec2/model/DescribeInstanceStatusResponse.h>
 #include <aws/ec2/model/DescribeInstanceTypeOfferingsResponse.h>
 #include <aws/ec2/model/DescribeInstanceTypesResponse.h>
@@ -329,6 +331,7 @@
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
 #include <aws/ec2/model/RegisterImageResponse.h>
+#include <aws/ec2/model/RegisterInstanceEventNotificationAttributesResponse.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersResponse.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/RejectTransitGatewayPeeringAttachmentResponse.h>
@@ -550,6 +553,7 @@ namespace Model
         class DeleteVpnGatewayRequest;
         class DeprovisionByoipCidrRequest;
         class DeregisterImageRequest;
+        class DeregisterInstanceEventNotificationAttributesRequest;
         class DeregisterTransitGatewayMulticastGroupMembersRequest;
         class DeregisterTransitGatewayMulticastGroupSourcesRequest;
         class DescribeAccountAttributesRequest;
@@ -592,6 +596,7 @@ namespace Model
         class DescribeImportSnapshotTasksRequest;
         class DescribeInstanceAttributeRequest;
         class DescribeInstanceCreditSpecificationsRequest;
+        class DescribeInstanceEventNotificationAttributesRequest;
         class DescribeInstanceStatusRequest;
         class DescribeInstanceTypeOfferingsRequest;
         class DescribeInstanceTypesRequest;
@@ -763,6 +768,7 @@ namespace Model
         class PurchaseScheduledInstancesRequest;
         class RebootInstancesRequest;
         class RegisterImageRequest;
+        class RegisterInstanceEventNotificationAttributesRequest;
         class RegisterTransitGatewayMulticastGroupMembersRequest;
         class RegisterTransitGatewayMulticastGroupSourcesRequest;
         class RejectTransitGatewayPeeringAttachmentRequest;
@@ -951,6 +957,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnGatewayOutcome;
         typedef Aws::Utils::Outcome<DeprovisionByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> DeprovisionByoipCidrOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeregisterImageOutcome;
+        typedef Aws::Utils::Outcome<DeregisterInstanceEventNotificationAttributesResponse, Aws::Client::AWSError<EC2Errors>> DeregisterInstanceEventNotificationAttributesOutcome;
         typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupMembersResponse, Aws::Client::AWSError<EC2Errors>> DeregisterTransitGatewayMulticastGroupMembersOutcome;
         typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupSourcesResponse, Aws::Client::AWSError<EC2Errors>> DeregisterTransitGatewayMulticastGroupSourcesOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAccountAttributesOutcome;
@@ -993,6 +1000,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeImportSnapshotTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeImportSnapshotTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceCreditSpecificationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceCreditSpecificationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstanceEventNotificationAttributesResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceEventNotificationAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceStatusResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceTypeOfferingsResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceTypeOfferingsOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceTypesResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceTypesOutcome;
@@ -1164,6 +1172,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PurchaseScheduledInstancesResponse, Aws::Client::AWSError<EC2Errors>> PurchaseScheduledInstancesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> RebootInstancesOutcome;
         typedef Aws::Utils::Outcome<RegisterImageResponse, Aws::Client::AWSError<EC2Errors>> RegisterImageOutcome;
+        typedef Aws::Utils::Outcome<RegisterInstanceEventNotificationAttributesResponse, Aws::Client::AWSError<EC2Errors>> RegisterInstanceEventNotificationAttributesOutcome;
         typedef Aws::Utils::Outcome<RegisterTransitGatewayMulticastGroupMembersResponse, Aws::Client::AWSError<EC2Errors>> RegisterTransitGatewayMulticastGroupMembersOutcome;
         typedef Aws::Utils::Outcome<RegisterTransitGatewayMulticastGroupSourcesResponse, Aws::Client::AWSError<EC2Errors>> RegisterTransitGatewayMulticastGroupSourcesOutcome;
         typedef Aws::Utils::Outcome<RejectTransitGatewayPeeringAttachmentResponse, Aws::Client::AWSError<EC2Errors>> RejectTransitGatewayPeeringAttachmentOutcome;
@@ -1352,6 +1361,7 @@ namespace Model
         typedef std::future<DeleteVpnGatewayOutcome> DeleteVpnGatewayOutcomeCallable;
         typedef std::future<DeprovisionByoipCidrOutcome> DeprovisionByoipCidrOutcomeCallable;
         typedef std::future<DeregisterImageOutcome> DeregisterImageOutcomeCallable;
+        typedef std::future<DeregisterInstanceEventNotificationAttributesOutcome> DeregisterInstanceEventNotificationAttributesOutcomeCallable;
         typedef std::future<DeregisterTransitGatewayMulticastGroupMembersOutcome> DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable;
         typedef std::future<DeregisterTransitGatewayMulticastGroupSourcesOutcome> DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
         typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
@@ -1394,6 +1404,7 @@ namespace Model
         typedef std::future<DescribeImportSnapshotTasksOutcome> DescribeImportSnapshotTasksOutcomeCallable;
         typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
         typedef std::future<DescribeInstanceCreditSpecificationsOutcome> DescribeInstanceCreditSpecificationsOutcomeCallable;
+        typedef std::future<DescribeInstanceEventNotificationAttributesOutcome> DescribeInstanceEventNotificationAttributesOutcomeCallable;
         typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
         typedef std::future<DescribeInstanceTypeOfferingsOutcome> DescribeInstanceTypeOfferingsOutcomeCallable;
         typedef std::future<DescribeInstanceTypesOutcome> DescribeInstanceTypesOutcomeCallable;
@@ -1565,6 +1576,7 @@ namespace Model
         typedef std::future<PurchaseScheduledInstancesOutcome> PurchaseScheduledInstancesOutcomeCallable;
         typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
         typedef std::future<RegisterImageOutcome> RegisterImageOutcomeCallable;
+        typedef std::future<RegisterInstanceEventNotificationAttributesOutcome> RegisterInstanceEventNotificationAttributesOutcomeCallable;
         typedef std::future<RegisterTransitGatewayMulticastGroupMembersOutcome> RegisterTransitGatewayMulticastGroupMembersOutcomeCallable;
         typedef std::future<RegisterTransitGatewayMulticastGroupSourcesOutcome> RegisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
         typedef std::future<RejectTransitGatewayPeeringAttachmentOutcome> RejectTransitGatewayPeeringAttachmentOutcomeCallable;
@@ -1756,6 +1768,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteVpnGatewayRequest&, const Model::DeleteVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpnGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeprovisionByoipCidrRequest&, const Model::DeprovisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprovisionByoipCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterImageRequest&, const Model::DeregisterImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterImageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeregisterInstanceEventNotificationAttributesRequest&, const Model::DeregisterInstanceEventNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterInstanceEventNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupMembersRequest&, const Model::DeregisterTransitGatewayMulticastGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest&, const Model::DeregisterTransitGatewayMulticastGroupSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
@@ -1798,6 +1811,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeImportSnapshotTasksRequest&, const Model::DescribeImportSnapshotTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportSnapshotTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceCreditSpecificationsRequest&, const Model::DescribeInstanceCreditSpecificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceCreditSpecificationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeInstanceEventNotificationAttributesRequest&, const Model::DescribeInstanceEventNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceEventNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceStatusRequest&, const Model::DescribeInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypeOfferingsRequest&, const Model::DescribeInstanceTypeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypeOfferingsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypesRequest&, const Model::DescribeInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypesResponseReceivedHandler;
@@ -1969,6 +1983,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::PurchaseScheduledInstancesRequest&, const Model::PurchaseScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseScheduledInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RebootInstancesRequest&, const Model::RebootInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RegisterImageRequest&, const Model::RegisterImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterImageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::RegisterInstanceEventNotificationAttributesRequest&, const Model::RegisterInstanceEventNotificationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterInstanceEventNotificationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RegisterTransitGatewayMulticastGroupMembersRequest&, const Model::RegisterTransitGatewayMulticastGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RegisterTransitGatewayMulticastGroupSourcesRequest&, const Model::RegisterTransitGatewayMulticastGroupSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RejectTransitGatewayPeeringAttachmentRequest&, const Model::RejectTransitGatewayPeeringAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectTransitGatewayPeeringAttachmentResponseReceivedHandler;
@@ -8298,6 +8313,43 @@ namespace Model
         virtual void DeregisterImageAsync(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
+         * being included in scheduled event notifications for resources in the Region.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+         * Scheduled Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterInstanceEventNotificationAttributesOutcome DeregisterInstanceEventNotificationAttributes(const Model::DeregisterInstanceEventNotificationAttributesRequest& request) const;
+
+        /**
+         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
+         * being included in scheduled event notifications for resources in the Region.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+         * Scheduled Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterInstanceEventNotificationAttributesOutcomeCallable DeregisterInstanceEventNotificationAttributesCallable(const Model::DeregisterInstanceEventNotificationAttributesRequest& request) const;
+
+        /**
+         * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
+         * being included in scheduled event notifications for resources in the Region.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+         * Scheduled Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterInstanceEventNotificationAttributesAsync(const Model::DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deregisters the specified members (network interfaces) from the transit
          * gateway multicast group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">AWS
@@ -9940,6 +9992,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstanceCreditSpecificationsAsync(const Model::DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the tag keys that are registered to appear in scheduled event
+         * notifications for resources in the current Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceEventNotificationAttributesOutcome DescribeInstanceEventNotificationAttributes(const Model::DescribeInstanceEventNotificationAttributesRequest& request) const;
+
+        /**
+         * <p>Describes the tag keys that are registered to appear in scheduled event
+         * notifications for resources in the current Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInstanceEventNotificationAttributesOutcomeCallable DescribeInstanceEventNotificationAttributesCallable(const Model::DescribeInstanceEventNotificationAttributesRequest& request) const;
+
+        /**
+         * <p>Describes the tag keys that are registered to appear in scheduled event
+         * notifications for resources in the current Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInstanceEventNotificationAttributesAsync(const Model::DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the status of the specified instances or all of your instances. By
@@ -11598,7 +11678,8 @@ namespace Model
          * <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by
          * examining the response. If the status of the Spot Instance is
          * <code>fulfilled</code>, the instance ID appears in the response and contains the
-         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
+         * identifier of the instance. Alternatively, you can use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
          * with a filter to look for instances where the instance lifecycle is
          * <code>spot</code>.</p> <p>We recommend that you set <code>MaxResults</code> to a
          * value between 5 and 1000 to limit the number of results returned. This paginates
@@ -11619,7 +11700,8 @@ namespace Model
          * <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by
          * examining the response. If the status of the Spot Instance is
          * <code>fulfilled</code>, the instance ID appears in the response and contains the
-         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
+         * identifier of the instance. Alternatively, you can use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
          * with a filter to look for instances where the instance lifecycle is
          * <code>spot</code>.</p> <p>We recommend that you set <code>MaxResults</code> to a
          * value between 5 and 1000 to limit the number of results returned. This paginates
@@ -11642,7 +11724,8 @@ namespace Model
          * <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance by
          * examining the response. If the status of the Spot Instance is
          * <code>fulfilled</code>, the instance ID appears in the response and contains the
-         * identifier of the instance. Alternatively, you can use <a>DescribeInstances</a>
+         * identifier of the instance. Alternatively, you can use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
          * with a filter to look for instances where the instance lifecycle is
          * <code>spot</code>.</p> <p>We recommend that you set <code>MaxResults</code> to a
          * value between 5 and 1000 to limit the number of results returned. This paginates
@@ -17217,6 +17300,43 @@ namespace Model
         virtual void RegisterImageAsync(const Model::RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Registers a set of tag keys to include in scheduled event notifications for
+         * your resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+         * Scheduled Event Notifications</a>.</p> <p>To remove tags, use .</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterInstanceEventNotificationAttributesOutcome RegisterInstanceEventNotificationAttributes(const Model::RegisterInstanceEventNotificationAttributesRequest& request) const;
+
+        /**
+         * <p>Registers a set of tag keys to include in scheduled event notifications for
+         * your resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+         * Scheduled Event Notifications</a>.</p> <p>To remove tags, use .</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterInstanceEventNotificationAttributesOutcomeCallable RegisterInstanceEventNotificationAttributesCallable(const Model::RegisterInstanceEventNotificationAttributesRequest& request) const;
+
+        /**
+         * <p>Registers a set of tag keys to include in scheduled event notifications for
+         * your resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
+         * Scheduled Event Notifications</a>.</p> <p>To remove tags, use .</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterInstanceEventNotificationAttributesAsync(const Model::RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Registers members (network interfaces) with the transit gateway multicast
          * group. A member is a network interface associated with a supported EC2 instance
          * that receives multicast traffic. For information about supported instances, see
@@ -18364,7 +18484,7 @@ namespace Model
 
         /**
          * <p>Launches the specified number of instances using an AMI for which you have
-         * permissions. </p> <p>You can specify a number of options, or leave the default
+         * permissions.</p> <p>You can specify a number of options, or leave the default
          * options. The following rules apply:</p> <ul> <li> <p>[EC2-VPC] If you don't
          * specify a subnet ID, we choose a default subnet from your default VPC for you.
          * If you don't have a default VPC, you must specify a subnet ID in the
@@ -18416,7 +18536,7 @@ namespace Model
 
         /**
          * <p>Launches the specified number of instances using an AMI for which you have
-         * permissions. </p> <p>You can specify a number of options, or leave the default
+         * permissions.</p> <p>You can specify a number of options, or leave the default
          * options. The following rules apply:</p> <ul> <li> <p>[EC2-VPC] If you don't
          * specify a subnet ID, we choose a default subnet from your default VPC for you.
          * If you don't have a default VPC, you must specify a subnet ID in the
@@ -18470,7 +18590,7 @@ namespace Model
 
         /**
          * <p>Launches the specified number of instances using an AMI for which you have
-         * permissions. </p> <p>You can specify a number of options, or leave the default
+         * permissions.</p> <p>You can specify a number of options, or leave the default
          * options. The following rules apply:</p> <ul> <li> <p>[EC2-VPC] If you don't
          * specify a subnet ID, we choose a default subnet from your default VPC for you.
          * If you don't have a default VPC, you must specify a subnet ID in the
@@ -19474,6 +19594,7 @@ namespace Model
         void DeleteVpnGatewayAsyncHelper(const Model::DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeprovisionByoipCidrAsyncHelper(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterImageAsyncHelper(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterInstanceEventNotificationAttributesAsyncHelper(const Model::DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterTransitGatewayMulticastGroupMembersAsyncHelper(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterTransitGatewayMulticastGroupSourcesAsyncHelper(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19516,6 +19637,7 @@ namespace Model
         void DescribeImportSnapshotTasksAsyncHelper(const Model::DescribeImportSnapshotTasksRequest& request, const DescribeImportSnapshotTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceAttributeAsyncHelper(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceCreditSpecificationsAsyncHelper(const Model::DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInstanceEventNotificationAttributesAsyncHelper(const Model::DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceStatusAsyncHelper(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceTypeOfferingsAsyncHelper(const Model::DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceTypesAsyncHelper(const Model::DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19687,6 +19809,7 @@ namespace Model
         void PurchaseScheduledInstancesAsyncHelper(const Model::PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootInstancesAsyncHelper(const Model::RebootInstancesRequest& request, const RebootInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterImageAsyncHelper(const Model::RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterInstanceEventNotificationAttributesAsyncHelper(const Model::RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTransitGatewayMulticastGroupMembersAsyncHelper(const Model::RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTransitGatewayMulticastGroupSourcesAsyncHelper(const Model::RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectTransitGatewayPeeringAttachmentAsyncHelper(const Model::RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

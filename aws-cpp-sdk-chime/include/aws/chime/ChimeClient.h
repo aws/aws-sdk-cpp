@@ -72,14 +72,17 @@
 #include <aws/chime/model/GetVoiceConnectorTerminationHealthResult.h>
 #include <aws/chime/model/InviteUsersResult.h>
 #include <aws/chime/model/ListAccountsResult.h>
+#include <aws/chime/model/ListAttendeeTagsResult.h>
 #include <aws/chime/model/ListAttendeesResult.h>
 #include <aws/chime/model/ListBotsResult.h>
+#include <aws/chime/model/ListMeetingTagsResult.h>
 #include <aws/chime/model/ListMeetingsResult.h>
 #include <aws/chime/model/ListPhoneNumberOrdersResult.h>
 #include <aws/chime/model/ListPhoneNumbersResult.h>
 #include <aws/chime/model/ListProxySessionsResult.h>
 #include <aws/chime/model/ListRoomMembershipsResult.h>
 #include <aws/chime/model/ListRoomsResult.h>
+#include <aws/chime/model/ListTagsForResourceResult.h>
 #include <aws/chime/model/ListUsersResult.h>
 #include <aws/chime/model/ListVoiceConnectorGroupsResult.h>
 #include <aws/chime/model/ListVoiceConnectorTerminationCredentialsResult.h>
@@ -208,14 +211,17 @@ namespace Model
         class GetVoiceConnectorTerminationHealthRequest;
         class InviteUsersRequest;
         class ListAccountsRequest;
+        class ListAttendeeTagsRequest;
         class ListAttendeesRequest;
         class ListBotsRequest;
+        class ListMeetingTagsRequest;
         class ListMeetingsRequest;
         class ListPhoneNumberOrdersRequest;
         class ListPhoneNumbersRequest;
         class ListProxySessionsRequest;
         class ListRoomMembershipsRequest;
         class ListRoomsRequest;
+        class ListTagsForResourceRequest;
         class ListUsersRequest;
         class ListVoiceConnectorGroupsRequest;
         class ListVoiceConnectorTerminationCredentialsRequest;
@@ -232,6 +238,12 @@ namespace Model
         class ResetPersonalPINRequest;
         class RestorePhoneNumberRequest;
         class SearchAvailablePhoneNumbersRequest;
+        class TagAttendeeRequest;
+        class TagMeetingRequest;
+        class TagResourceRequest;
+        class UntagAttendeeRequest;
+        class UntagMeetingRequest;
+        class UntagResourceRequest;
         class UpdateAccountRequest;
         class UpdateAccountSettingsRequest;
         class UpdateBotRequest;
@@ -311,14 +323,17 @@ namespace Model
         typedef Aws::Utils::Outcome<GetVoiceConnectorTerminationHealthResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorTerminationHealthOutcome;
         typedef Aws::Utils::Outcome<InviteUsersResult, Aws::Client::AWSError<ChimeErrors>> InviteUsersOutcome;
         typedef Aws::Utils::Outcome<ListAccountsResult, Aws::Client::AWSError<ChimeErrors>> ListAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListAttendeeTagsResult, Aws::Client::AWSError<ChimeErrors>> ListAttendeeTagsOutcome;
         typedef Aws::Utils::Outcome<ListAttendeesResult, Aws::Client::AWSError<ChimeErrors>> ListAttendeesOutcome;
         typedef Aws::Utils::Outcome<ListBotsResult, Aws::Client::AWSError<ChimeErrors>> ListBotsOutcome;
+        typedef Aws::Utils::Outcome<ListMeetingTagsResult, Aws::Client::AWSError<ChimeErrors>> ListMeetingTagsOutcome;
         typedef Aws::Utils::Outcome<ListMeetingsResult, Aws::Client::AWSError<ChimeErrors>> ListMeetingsOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumberOrdersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumberOrdersOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumbersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumbersOutcome;
         typedef Aws::Utils::Outcome<ListProxySessionsResult, Aws::Client::AWSError<ChimeErrors>> ListProxySessionsOutcome;
         typedef Aws::Utils::Outcome<ListRoomMembershipsResult, Aws::Client::AWSError<ChimeErrors>> ListRoomMembershipsOutcome;
         typedef Aws::Utils::Outcome<ListRoomsResult, Aws::Client::AWSError<ChimeErrors>> ListRoomsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ChimeErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<ChimeErrors>> ListUsersOutcome;
         typedef Aws::Utils::Outcome<ListVoiceConnectorGroupsResult, Aws::Client::AWSError<ChimeErrors>> ListVoiceConnectorGroupsOutcome;
         typedef Aws::Utils::Outcome<ListVoiceConnectorTerminationCredentialsResult, Aws::Client::AWSError<ChimeErrors>> ListVoiceConnectorTerminationCredentialsOutcome;
@@ -335,6 +350,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ResetPersonalPINResult, Aws::Client::AWSError<ChimeErrors>> ResetPersonalPINOutcome;
         typedef Aws::Utils::Outcome<RestorePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> RestorePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<SearchAvailablePhoneNumbersResult, Aws::Client::AWSError<ChimeErrors>> SearchAvailablePhoneNumbersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> TagAttendeeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> TagMeetingOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UntagAttendeeOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UntagMeetingOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountResult, Aws::Client::AWSError<ChimeErrors>> UpdateAccountOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountSettingsResult, Aws::Client::AWSError<ChimeErrors>> UpdateAccountSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateBotResult, Aws::Client::AWSError<ChimeErrors>> UpdateBotOutcome;
@@ -414,14 +435,17 @@ namespace Model
         typedef std::future<GetVoiceConnectorTerminationHealthOutcome> GetVoiceConnectorTerminationHealthOutcomeCallable;
         typedef std::future<InviteUsersOutcome> InviteUsersOutcomeCallable;
         typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
+        typedef std::future<ListAttendeeTagsOutcome> ListAttendeeTagsOutcomeCallable;
         typedef std::future<ListAttendeesOutcome> ListAttendeesOutcomeCallable;
         typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
+        typedef std::future<ListMeetingTagsOutcome> ListMeetingTagsOutcomeCallable;
         typedef std::future<ListMeetingsOutcome> ListMeetingsOutcomeCallable;
         typedef std::future<ListPhoneNumberOrdersOutcome> ListPhoneNumberOrdersOutcomeCallable;
         typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
         typedef std::future<ListProxySessionsOutcome> ListProxySessionsOutcomeCallable;
         typedef std::future<ListRoomMembershipsOutcome> ListRoomMembershipsOutcomeCallable;
         typedef std::future<ListRoomsOutcome> ListRoomsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<ListVoiceConnectorGroupsOutcome> ListVoiceConnectorGroupsOutcomeCallable;
         typedef std::future<ListVoiceConnectorTerminationCredentialsOutcome> ListVoiceConnectorTerminationCredentialsOutcomeCallable;
@@ -438,6 +462,12 @@ namespace Model
         typedef std::future<ResetPersonalPINOutcome> ResetPersonalPINOutcomeCallable;
         typedef std::future<RestorePhoneNumberOutcome> RestorePhoneNumberOutcomeCallable;
         typedef std::future<SearchAvailablePhoneNumbersOutcome> SearchAvailablePhoneNumbersOutcomeCallable;
+        typedef std::future<TagAttendeeOutcome> TagAttendeeOutcomeCallable;
+        typedef std::future<TagMeetingOutcome> TagMeetingOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagAttendeeOutcome> UntagAttendeeOutcomeCallable;
+        typedef std::future<UntagMeetingOutcome> UntagMeetingOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAccountOutcome> UpdateAccountOutcomeCallable;
         typedef std::future<UpdateAccountSettingsOutcome> UpdateAccountSettingsOutcomeCallable;
         typedef std::future<UpdateBotOutcome> UpdateBotOutcomeCallable;
@@ -520,14 +550,17 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorTerminationHealthRequest&, const Model::GetVoiceConnectorTerminationHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorTerminationHealthResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::InviteUsersRequest&, const Model::InviteUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteUsersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListAccountsRequest&, const Model::ListAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListAttendeeTagsRequest&, const Model::ListAttendeeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttendeeTagsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListAttendeesRequest&, const Model::ListAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttendeesResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListMeetingTagsRequest&, const Model::ListMeetingTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeetingTagsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListMeetingsRequest&, const Model::ListMeetingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeetingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumberOrdersRequest&, const Model::ListPhoneNumberOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumberOrdersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListProxySessionsRequest&, const Model::ListProxySessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProxySessionsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListRoomMembershipsRequest&, const Model::ListRoomMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomMembershipsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListRoomsRequest&, const Model::ListRoomsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorGroupsRequest&, const Model::ListVoiceConnectorGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorGroupsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorTerminationCredentialsRequest&, const Model::ListVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorTerminationCredentialsResponseReceivedHandler;
@@ -544,6 +577,12 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::ResetPersonalPINRequest&, const Model::ResetPersonalPINOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetPersonalPINResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::RestorePhoneNumberRequest&, const Model::RestorePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestorePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::SearchAvailablePhoneNumbersRequest&, const Model::SearchAvailablePhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAvailablePhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::TagAttendeeRequest&, const Model::TagAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagAttendeeResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::TagMeetingRequest&, const Model::TagMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagMeetingResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UntagAttendeeRequest&, const Model::UntagAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagAttendeeResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UntagMeetingRequest&, const Model::UntagMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagMeetingResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateAccountRequest&, const Model::UpdateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateAccountSettingsRequest&, const Model::UpdateAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateBotRequest&, const Model::UpdateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotResponseReceivedHandler;
@@ -1215,19 +1254,28 @@ namespace Model
         virtual void CreatePhoneNumberOrderAsync(const Model::CreatePhoneNumberOrderRequest& request, const CreatePhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Creates a proxy session on the specified Amazon Chime Voice Connector for the
+         * specified participant phone numbers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateProxySession">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateProxySessionOutcome CreateProxySession(const Model::CreateProxySessionRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a proxy session on the specified Amazon Chime Voice Connector for the
+         * specified participant phone numbers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateProxySession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::CreateProxySessionOutcomeCallable CreateProxySessionCallable(const Model::CreateProxySessionRequest& request) const;
 
         /**
-         * 
+         * <p>Creates a proxy session on the specified Amazon Chime Voice Connector for the
+         * specified participant phone numbers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateProxySession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1604,19 +1652,28 @@ namespace Model
         virtual void DeletePhoneNumberAsync(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes the specified proxy session from the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteProxySession">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteProxySessionOutcome DeleteProxySession(const Model::DeleteProxySessionRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified proxy session from the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteProxySession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteProxySessionOutcomeCallable DeleteProxySessionCallable(const Model::DeleteProxySessionRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the specified proxy session from the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteProxySession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -1769,19 +1826,28 @@ namespace Model
         virtual void DeleteVoiceConnectorOriginationAsync(const Model::DeleteVoiceConnectorOriginationRequest& request, const DeleteVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Deletes the proxy configuration from the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorProxyOutcome DeleteVoiceConnectorProxy(const Model::DeleteVoiceConnectorProxyRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the proxy configuration from the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DeleteVoiceConnectorProxyOutcomeCallable DeleteVoiceConnectorProxyCallable(const Model::DeleteVoiceConnectorProxyRequest& request) const;
 
         /**
-         * 
+         * <p>Deletes the proxy configuration from the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2298,19 +2364,28 @@ namespace Model
          */
         virtual void GetPhoneNumberSettingsAsync(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
-         * 
+         * <p>Gets the specified proxy session details for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetProxySession">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetProxySessionOutcome GetProxySession(const Model::GetProxySessionRequest& request) const;
 
         /**
-         * 
+         * <p>Gets the specified proxy session details for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetProxySession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetProxySessionOutcomeCallable GetProxySessionCallable(const Model::GetProxySessionRequest& request) const;
 
         /**
-         * 
+         * <p>Gets the specified proxy session details for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetProxySession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2528,19 +2603,28 @@ namespace Model
         virtual void GetVoiceConnectorOriginationAsync(const Model::GetVoiceConnectorOriginationRequest& request, const GetVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Gets the proxy configuration details for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorProxyOutcome GetVoiceConnectorProxy(const Model::GetVoiceConnectorProxyRequest& request) const;
 
         /**
-         * 
+         * <p>Gets the proxy configuration details for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetVoiceConnectorProxyOutcomeCallable GetVoiceConnectorProxyCallable(const Model::GetVoiceConnectorProxyRequest& request) const;
 
         /**
-         * 
+         * <p>Gets the proxy configuration details for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2705,6 +2789,34 @@ namespace Model
         virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the tags applied to an Amazon Chime SDK attendee
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendeeTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAttendeeTagsOutcome ListAttendeeTags(const Model::ListAttendeeTagsRequest& request) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK attendee
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendeeTags">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAttendeeTagsOutcomeCallable ListAttendeeTagsCallable(const Model::ListAttendeeTagsRequest& request) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK attendee
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendeeTags">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAttendeeTagsAsync(const Model::ListAttendeeTagsRequest& request, const ListAttendeeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
@@ -2768,6 +2880,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBotsAsync(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetingTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMeetingTagsOutcome ListMeetingTags(const Model::ListMeetingTagsRequest& request) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetingTags">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMeetingTagsOutcomeCallable ListMeetingTagsCallable(const Model::ListMeetingTagsRequest& request) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetingTags">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMeetingTagsAsync(const Model::ListMeetingTagsRequest& request, const ListMeetingTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists up to 100 active Amazon Chime SDK meetings. For more information about
@@ -2866,19 +3006,28 @@ namespace Model
         virtual void ListPhoneNumbersAsync(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Lists the proxy sessions for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListProxySessions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListProxySessionsOutcome ListProxySessions(const Model::ListProxySessionsRequest& request) const;
 
         /**
-         * 
+         * <p>Lists the proxy sessions for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListProxySessions">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::ListProxySessionsOutcomeCallable ListProxySessionsCallable(const Model::ListProxySessionsRequest& request) const;
 
         /**
-         * 
+         * <p>Lists the proxy sessions for the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListProxySessions">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2945,6 +3094,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListRoomsAsync(const Model::ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the users that belong to the specified Amazon Chime account. You can
@@ -3180,19 +3357,28 @@ namespace Model
         virtual void PutVoiceConnectorOriginationAsync(const Model::PutVoiceConnectorOriginationRequest& request, const PutVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Puts the specified proxy configuration to the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorProxyOutcome PutVoiceConnectorProxy(const Model::PutVoiceConnectorProxyRequest& request) const;
 
         /**
-         * 
+         * <p>Puts the specified proxy configuration to the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutVoiceConnectorProxyOutcomeCallable PutVoiceConnectorProxyCallable(const Model::PutVoiceConnectorProxyRequest& request) const;
 
         /**
-         * 
+         * <p>Puts the specified proxy configuration to the specified Amazon Chime Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3396,6 +3582,174 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SearchAvailablePhoneNumbersAsync(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK
+         * attendee.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagAttendee">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagAttendeeOutcome TagAttendee(const Model::TagAttendeeRequest& request) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK
+         * attendee.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagAttendee">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagAttendeeOutcomeCallable TagAttendeeCallable(const Model::TagAttendeeRequest& request) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK
+         * attendee.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagAttendee">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagAttendeeAsync(const Model::TagAttendeeRequest& request, const TagAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK
+         * meeting.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagMeeting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagMeetingOutcome TagMeeting(const Model::TagMeetingRequest& request) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK
+         * meeting.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagMeeting">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagMeetingOutcomeCallable TagMeetingCallable(const Model::TagMeetingRequest& request) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK
+         * meeting.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagMeeting">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagMeetingAsync(const Model::TagMeetingRequest& request, const TagMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK meeting
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK meeting
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies the specified tags to the specified Amazon Chime SDK meeting
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK
+         * attendee.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagAttendee">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagAttendeeOutcome UntagAttendee(const Model::UntagAttendeeRequest& request) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK
+         * attendee.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagAttendee">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagAttendeeOutcomeCallable UntagAttendeeCallable(const Model::UntagAttendeeRequest& request) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK
+         * attendee.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagAttendee">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagAttendeeAsync(const Model::UntagAttendeeRequest& request, const UntagAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK
+         * meeting.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagMeeting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagMeetingOutcome UntagMeeting(const Model::UntagMeetingRequest& request) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK
+         * meeting.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagMeeting">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagMeetingOutcomeCallable UntagMeetingCallable(const Model::UntagMeetingRequest& request) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK
+         * meeting.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagMeeting">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagMeetingAsync(const Model::UntagMeetingRequest& request, const UntagMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK meeting
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK meeting
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Untags the specified tags from the specified Amazon Chime SDK meeting
+         * resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates account details for the specified Amazon Chime account. Currently,
@@ -3605,19 +3959,28 @@ namespace Model
         virtual void UpdatePhoneNumberSettingsAsync(const Model::UpdatePhoneNumberSettingsRequest& request, const UpdatePhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Updates the specified proxy session details, such as voice or SMS
+         * capabilities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateProxySession">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateProxySessionOutcome UpdateProxySession(const Model::UpdateProxySessionRequest& request) const;
 
         /**
-         * 
+         * <p>Updates the specified proxy session details, such as voice or SMS
+         * capabilities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateProxySession">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::UpdateProxySessionOutcomeCallable UpdateProxySessionCallable(const Model::UpdateProxySessionRequest& request) const;
 
         /**
-         * 
+         * <p>Updates the specified proxy session details, such as voice or SMS
+         * capabilities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateProxySession">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3872,14 +4235,17 @@ namespace Model
         void GetVoiceConnectorTerminationHealthAsyncHelper(const Model::GetVoiceConnectorTerminationHealthRequest& request, const GetVoiceConnectorTerminationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InviteUsersAsyncHelper(const Model::InviteUsersRequest& request, const InviteUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountsAsyncHelper(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAttendeeTagsAsyncHelper(const Model::ListAttendeeTagsRequest& request, const ListAttendeeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttendeesAsyncHelper(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMeetingTagsAsyncHelper(const Model::ListMeetingTagsRequest& request, const ListMeetingTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMeetingsAsyncHelper(const Model::ListMeetingsRequest& request, const ListMeetingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumberOrdersAsyncHelper(const Model::ListPhoneNumberOrdersRequest& request, const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumbersAsyncHelper(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProxySessionsAsyncHelper(const Model::ListProxySessionsRequest& request, const ListProxySessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoomMembershipsAsyncHelper(const Model::ListRoomMembershipsRequest& request, const ListRoomMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoomsAsyncHelper(const Model::ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVoiceConnectorGroupsAsyncHelper(const Model::ListVoiceConnectorGroupsRequest& request, const ListVoiceConnectorGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVoiceConnectorTerminationCredentialsAsyncHelper(const Model::ListVoiceConnectorTerminationCredentialsRequest& request, const ListVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3896,6 +4262,12 @@ namespace Model
         void ResetPersonalPINAsyncHelper(const Model::ResetPersonalPINRequest& request, const ResetPersonalPINResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestorePhoneNumberAsyncHelper(const Model::RestorePhoneNumberRequest& request, const RestorePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAvailablePhoneNumbersAsyncHelper(const Model::SearchAvailablePhoneNumbersRequest& request, const SearchAvailablePhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagAttendeeAsyncHelper(const Model::TagAttendeeRequest& request, const TagAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagMeetingAsyncHelper(const Model::TagMeetingRequest& request, const TagMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagAttendeeAsyncHelper(const Model::UntagAttendeeRequest& request, const UntagAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagMeetingAsyncHelper(const Model::UntagMeetingRequest& request, const UntagMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountAsyncHelper(const Model::UpdateAccountRequest& request, const UpdateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountSettingsAsyncHelper(const Model::UpdateAccountSettingsRequest& request, const UpdateAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotAsyncHelper(const Model::UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

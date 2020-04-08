@@ -137,42 +137,42 @@ namespace Model
 
 
     /**
-     * <p>The name of a region that's associated with this stack instance.</p>
+     * <p>The name of a Region that's associated with this stack instance.</p>
      */
     inline const Aws::String& GetStackInstanceRegion() const{ return m_stackInstanceRegion; }
 
     /**
-     * <p>The name of a region that's associated with this stack instance.</p>
+     * <p>The name of a Region that's associated with this stack instance.</p>
      */
     inline bool StackInstanceRegionHasBeenSet() const { return m_stackInstanceRegionHasBeenSet; }
 
     /**
-     * <p>The name of a region that's associated with this stack instance.</p>
+     * <p>The name of a Region that's associated with this stack instance.</p>
      */
     inline void SetStackInstanceRegion(const Aws::String& value) { m_stackInstanceRegionHasBeenSet = true; m_stackInstanceRegion = value; }
 
     /**
-     * <p>The name of a region that's associated with this stack instance.</p>
+     * <p>The name of a Region that's associated with this stack instance.</p>
      */
     inline void SetStackInstanceRegion(Aws::String&& value) { m_stackInstanceRegionHasBeenSet = true; m_stackInstanceRegion = std::move(value); }
 
     /**
-     * <p>The name of a region that's associated with this stack instance.</p>
+     * <p>The name of a Region that's associated with this stack instance.</p>
      */
     inline void SetStackInstanceRegion(const char* value) { m_stackInstanceRegionHasBeenSet = true; m_stackInstanceRegion.assign(value); }
 
     /**
-     * <p>The name of a region that's associated with this stack instance.</p>
+     * <p>The name of a Region that's associated with this stack instance.</p>
      */
     inline DescribeStackInstanceRequest& WithStackInstanceRegion(const Aws::String& value) { SetStackInstanceRegion(value); return *this;}
 
     /**
-     * <p>The name of a region that's associated with this stack instance.</p>
+     * <p>The name of a Region that's associated with this stack instance.</p>
      */
     inline DescribeStackInstanceRequest& WithStackInstanceRegion(Aws::String&& value) { SetStackInstanceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a region that's associated with this stack instance.</p>
+     * <p>The name of a Region that's associated with this stack instance.</p>
      */
     inline DescribeStackInstanceRequest& WithStackInstanceRegion(const char* value) { SetStackInstanceRegion(value); return *this;}
 

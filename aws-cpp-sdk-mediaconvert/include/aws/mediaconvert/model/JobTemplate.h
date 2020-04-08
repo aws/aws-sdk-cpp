@@ -18,9 +18,11 @@
 #include <aws/mediaconvert/model/AccelerationSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/JobTemplateSettings.h>
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/mediaconvert/model/Type.h>
+#include <aws/mediaconvert/model/HopDestination.h>
 #include <utility>
 
 namespace Aws
@@ -242,6 +244,47 @@ namespace Model
      * An optional description you create for each job template.
      */
     inline JobTemplate& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline const Aws::Vector<HopDestination>& GetHopDestinations() const{ return m_hopDestinations; }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline bool HopDestinationsHasBeenSet() const { return m_hopDestinationsHasBeenSet; }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline void SetHopDestinations(const Aws::Vector<HopDestination>& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = value; }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline void SetHopDestinations(Aws::Vector<HopDestination>&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = std::move(value); }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline JobTemplate& WithHopDestinations(const Aws::Vector<HopDestination>& value) { SetHopDestinations(value); return *this;}
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline JobTemplate& WithHopDestinations(Aws::Vector<HopDestination>&& value) { SetHopDestinations(std::move(value)); return *this;}
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline JobTemplate& AddHopDestinations(const HopDestination& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.push_back(value); return *this; }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline JobTemplate& AddHopDestinations(HopDestination&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -532,6 +575,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::Vector<HopDestination> m_hopDestinations;
+    bool m_hopDestinationsHasBeenSet;
 
     Aws::Utils::DateTime m_lastUpdated;
     bool m_lastUpdatedHasBeenSet;

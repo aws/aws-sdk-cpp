@@ -100,65 +100,65 @@ namespace Model
 
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of the AWS accounts that you want to
-     * delete stack instances for.</p> <p>You can specify <code>Accounts</code> or
-     * <code>DeploymentTargets</code>, but not both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of the AWS accounts that
+     * you want to delete stack instances for.</p> <p>You can specify
+     * <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
      */
     inline DeleteStackInstancesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
@@ -207,47 +207,47 @@ namespace Model
 
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline DeleteStackInstancesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline DeleteStackInstancesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline DeleteStackInstancesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline DeleteStackInstancesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The regions where you want to delete stack set instances. </p>
+     * <p>The Regions where you want to delete stack set instances. </p>
      */
     inline DeleteStackInstancesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 

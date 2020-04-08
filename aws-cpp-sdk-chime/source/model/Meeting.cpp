@@ -30,6 +30,7 @@ namespace Model
 
 Meeting::Meeting() : 
     m_meetingIdHasBeenSet(false),
+    m_externalMeetingIdHasBeenSet(false),
     m_mediaPlacementHasBeenSet(false),
     m_mediaRegionHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ Meeting::Meeting() :
 
 Meeting::Meeting(JsonView jsonValue) : 
     m_meetingIdHasBeenSet(false),
+    m_externalMeetingIdHasBeenSet(false),
     m_mediaPlacementHasBeenSet(false),
     m_mediaRegionHasBeenSet(false)
 {
@@ -50,6 +52,13 @@ Meeting& Meeting::operator =(JsonView jsonValue)
     m_meetingId = jsonValue.GetString("MeetingId");
 
     m_meetingIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExternalMeetingId"))
+  {
+    m_externalMeetingId = jsonValue.GetString("ExternalMeetingId");
+
+    m_externalMeetingIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MediaPlacement"))
@@ -76,6 +85,12 @@ JsonValue Meeting::Jsonize() const
   if(m_meetingIdHasBeenSet)
   {
    payload.WithString("MeetingId", m_meetingId);
+
+  }
+
+  if(m_externalMeetingIdHasBeenSet)
+  {
+   payload.WithString("ExternalMeetingId", m_externalMeetingId);
 
   }
 

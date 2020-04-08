@@ -173,6 +173,7 @@
 #include <aws/ec2/model/DeleteVpnGatewayRequest.h>
 #include <aws/ec2/model/DeprovisionByoipCidrRequest.h>
 #include <aws/ec2/model/DeregisterImageRequest.h>
+#include <aws/ec2/model/DeregisterInstanceEventNotificationAttributesRequest.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersRequest.h>
 #include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesRequest.h>
 #include <aws/ec2/model/DescribeAccountAttributesRequest.h>
@@ -215,6 +216,7 @@
 #include <aws/ec2/model/DescribeImportSnapshotTasksRequest.h>
 #include <aws/ec2/model/DescribeInstanceAttributeRequest.h>
 #include <aws/ec2/model/DescribeInstanceCreditSpecificationsRequest.h>
+#include <aws/ec2/model/DescribeInstanceEventNotificationAttributesRequest.h>
 #include <aws/ec2/model/DescribeInstanceStatusRequest.h>
 #include <aws/ec2/model/DescribeInstanceTypeOfferingsRequest.h>
 #include <aws/ec2/model/DescribeInstanceTypesRequest.h>
@@ -386,6 +388,7 @@
 #include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 #include <aws/ec2/model/RebootInstancesRequest.h>
 #include <aws/ec2/model/RegisterImageRequest.h>
+#include <aws/ec2/model/RegisterInstanceEventNotificationAttributesRequest.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersRequest.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayPeeringAttachmentRequest.h>
@@ -5509,6 +5512,41 @@ void EC2Client::DeregisterImageAsyncHelper(const DeregisterImageRequest& request
   handler(this, request, DeregisterImage(request), context);
 }
 
+DeregisterInstanceEventNotificationAttributesOutcome EC2Client::DeregisterInstanceEventNotificationAttributes(const DeregisterInstanceEventNotificationAttributesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeregisterInstanceEventNotificationAttributesOutcome(DeregisterInstanceEventNotificationAttributesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeregisterInstanceEventNotificationAttributesOutcome(outcome.GetError());
+  }
+}
+
+DeregisterInstanceEventNotificationAttributesOutcomeCallable EC2Client::DeregisterInstanceEventNotificationAttributesCallable(const DeregisterInstanceEventNotificationAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterInstanceEventNotificationAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterInstanceEventNotificationAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeregisterInstanceEventNotificationAttributesAsync(const DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterInstanceEventNotificationAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeregisterInstanceEventNotificationAttributesAsyncHelper(const DeregisterInstanceEventNotificationAttributesRequest& request, const DeregisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterInstanceEventNotificationAttributes(request), context);
+}
+
 DeregisterTransitGatewayMulticastGroupMembersOutcome EC2Client::DeregisterTransitGatewayMulticastGroupMembers(const DeregisterTransitGatewayMulticastGroupMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -6977,6 +7015,41 @@ void EC2Client::DescribeInstanceCreditSpecificationsAsync(const DescribeInstance
 void EC2Client::DescribeInstanceCreditSpecificationsAsyncHelper(const DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeInstanceCreditSpecifications(request), context);
+}
+
+DescribeInstanceEventNotificationAttributesOutcome EC2Client::DescribeInstanceEventNotificationAttributes(const DescribeInstanceEventNotificationAttributesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeInstanceEventNotificationAttributesOutcome(DescribeInstanceEventNotificationAttributesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeInstanceEventNotificationAttributesOutcome(outcome.GetError());
+  }
+}
+
+DescribeInstanceEventNotificationAttributesOutcomeCallable EC2Client::DescribeInstanceEventNotificationAttributesCallable(const DescribeInstanceEventNotificationAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInstanceEventNotificationAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInstanceEventNotificationAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeInstanceEventNotificationAttributesAsync(const DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInstanceEventNotificationAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeInstanceEventNotificationAttributesAsyncHelper(const DescribeInstanceEventNotificationAttributesRequest& request, const DescribeInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInstanceEventNotificationAttributes(request), context);
 }
 
 DescribeInstanceStatusOutcome EC2Client::DescribeInstanceStatus(const DescribeInstanceStatusRequest& request) const
@@ -12962,6 +13035,41 @@ void EC2Client::RegisterImageAsync(const RegisterImageRequest& request, const Re
 void EC2Client::RegisterImageAsyncHelper(const RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RegisterImage(request), context);
+}
+
+RegisterInstanceEventNotificationAttributesOutcome EC2Client::RegisterInstanceEventNotificationAttributes(const RegisterInstanceEventNotificationAttributesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RegisterInstanceEventNotificationAttributesOutcome(RegisterInstanceEventNotificationAttributesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterInstanceEventNotificationAttributesOutcome(outcome.GetError());
+  }
+}
+
+RegisterInstanceEventNotificationAttributesOutcomeCallable EC2Client::RegisterInstanceEventNotificationAttributesCallable(const RegisterInstanceEventNotificationAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterInstanceEventNotificationAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterInstanceEventNotificationAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::RegisterInstanceEventNotificationAttributesAsync(const RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterInstanceEventNotificationAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::RegisterInstanceEventNotificationAttributesAsyncHelper(const RegisterInstanceEventNotificationAttributesRequest& request, const RegisterInstanceEventNotificationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterInstanceEventNotificationAttributes(request), context);
 }
 
 RegisterTransitGatewayMulticastGroupMembersOutcome EC2Client::RegisterTransitGatewayMulticastGroupMembers(const RegisterTransitGatewayMulticastGroupMembersRequest& request) const

@@ -213,37 +213,37 @@ namespace Model
 
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are
+     * Optional. When you request lists of resources, you can specify whether they are
      * sorted in ASCENDING or DESCENDING order. Default varies by resource.
      */
     inline const Order& GetOrder() const{ return m_order; }
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are
+     * Optional. When you request lists of resources, you can specify whether they are
      * sorted in ASCENDING or DESCENDING order. Default varies by resource.
      */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are
+     * Optional. When you request lists of resources, you can specify whether they are
      * sorted in ASCENDING or DESCENDING order. Default varies by resource.
      */
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are
+     * Optional. When you request lists of resources, you can specify whether they are
      * sorted in ASCENDING or DESCENDING order. Default varies by resource.
      */
     inline void SetOrder(Order&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are
+     * Optional. When you request lists of resources, you can specify whether they are
      * sorted in ASCENDING or DESCENDING order. Default varies by resource.
      */
     inline ListPresetsRequest& WithOrder(const Order& value) { SetOrder(value); return *this;}
 
     /**
-     * When you request lists of resources, you can optionally specify whether they are
+     * Optional. When you request lists of resources, you can specify whether they are
      * sorted in ASCENDING or DESCENDING order. Default varies by resource.
      */
     inline ListPresetsRequest& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}

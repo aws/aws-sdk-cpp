@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p> <note> <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
      * </note>
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p> <note> <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
      * </note>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p> <note> <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
      * </note>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p> <note> <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
      * </note>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p> <note> <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
      * </note>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p> <note> <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
      * </note>
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p> <note> <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
      * </note>
@@ -120,7 +120,7 @@ namespace Model
 
     /**
      * <p>The name that is associated with the stack. The name must be unique in the
-     * region in which you are creating the stack.</p> <note> <p>A stack name can
+     * Region in which you are creating the stack.</p> <note> <p>A stack name can
      * contain only alphanumeric characters (case sensitive) and hyphens. It must start
      * with an alphabetic character and cannot be longer than 128 characters.</p>
      * </note>
@@ -1428,7 +1428,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
@@ -1436,7 +1436,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
@@ -1444,7 +1444,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
@@ -1452,7 +1452,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
@@ -1460,7 +1460,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
@@ -1468,7 +1468,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
@@ -1476,7 +1476,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
@@ -1484,7 +1484,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the stack policy. The URL must point to a
-     * policy (maximum size: 16 KB) located in an S3 bucket in the same region as the
+     * policy (maximum size: 16 KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */

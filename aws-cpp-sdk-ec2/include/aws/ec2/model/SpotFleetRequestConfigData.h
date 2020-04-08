@@ -374,8 +374,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet
-     * request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+     * Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+     * or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.</p>
      */
     inline const Aws::String& GetIamFleetRole() const{ return m_iamFleetRole; }
 
@@ -386,8 +388,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet
-     * request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+     * Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+     * or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.</p>
      */
     inline bool IamFleetRoleHasBeenSet() const { return m_iamFleetRoleHasBeenSet; }
 
@@ -398,8 +402,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet
-     * request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+     * Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+     * or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.</p>
      */
     inline void SetIamFleetRole(const Aws::String& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = value; }
 
@@ -410,8 +416,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet
-     * request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+     * Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+     * or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.</p>
      */
     inline void SetIamFleetRole(Aws::String&& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = std::move(value); }
 
@@ -422,8 +430,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet
-     * request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+     * Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+     * or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.</p>
      */
     inline void SetIamFleetRole(const char* value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole.assign(value); }
 
@@ -434,8 +444,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet
-     * request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+     * Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+     * or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithIamFleetRole(const Aws::String& value) { SetIamFleetRole(value); return *this;}
 
@@ -446,8 +458,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet
-     * request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+     * Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+     * or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithIamFleetRole(Aws::String&& value) { SetIamFleetRole(std::move(value)); return *this;}
 
@@ -458,8 +472,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
      * Fleet Prerequisites</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * Spot Fleet can terminate Spot Instances on your behalf when you cancel its Spot
-     * Fleet request using <a>CancelSpotFleetRequests</a> or when the Spot Fleet
-     * request expires, if you set <code>TerminateInstancesWithExpiration</code>.</p>
+     * Fleet request using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotFleetRequests">CancelSpotFleetRequests</a>
+     * or when the Spot Fleet request expires, if you set
+     * <code>TerminateInstancesWithExpiration</code>.</p>
      */
     inline SpotFleetRequestConfigData& WithIamFleetRole(const char* value) { SetIamFleetRole(value); return *this;}
 

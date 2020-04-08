@@ -19,10 +19,12 @@
 #include <aws/mediaconvert/model/AccelerationSettings.h>
 #include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/JobSettings.h>
 #include <aws/mediaconvert/model/SimulateReservedQueue.h>
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediaconvert/model/HopDestination.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -50,50 +52,50 @@ namespace Model
 
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually
-     * complex content. Outputs that use this feature incur pro-tier pricing. For
-     * information about feature limitations, see the AWS Elemental MediaConvert User
-     * Guide.
+     * Optional. Accelerated transcoding can significantly speed up jobs with long,
+     * visually complex content. Outputs that use this feature incur pro-tier pricing.
+     * For information about feature limitations, see the AWS Elemental MediaConvert
+     * User Guide.
      */
     inline const AccelerationSettings& GetAccelerationSettings() const{ return m_accelerationSettings; }
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually
-     * complex content. Outputs that use this feature incur pro-tier pricing. For
-     * information about feature limitations, see the AWS Elemental MediaConvert User
-     * Guide.
+     * Optional. Accelerated transcoding can significantly speed up jobs with long,
+     * visually complex content. Outputs that use this feature incur pro-tier pricing.
+     * For information about feature limitations, see the AWS Elemental MediaConvert
+     * User Guide.
      */
     inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually
-     * complex content. Outputs that use this feature incur pro-tier pricing. For
-     * information about feature limitations, see the AWS Elemental MediaConvert User
-     * Guide.
+     * Optional. Accelerated transcoding can significantly speed up jobs with long,
+     * visually complex content. Outputs that use this feature incur pro-tier pricing.
+     * For information about feature limitations, see the AWS Elemental MediaConvert
+     * User Guide.
      */
     inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually
-     * complex content. Outputs that use this feature incur pro-tier pricing. For
-     * information about feature limitations, see the AWS Elemental MediaConvert User
-     * Guide.
+     * Optional. Accelerated transcoding can significantly speed up jobs with long,
+     * visually complex content. Outputs that use this feature incur pro-tier pricing.
+     * For information about feature limitations, see the AWS Elemental MediaConvert
+     * User Guide.
      */
     inline void SetAccelerationSettings(AccelerationSettings&& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = std::move(value); }
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually
-     * complex content. Outputs that use this feature incur pro-tier pricing. For
-     * information about feature limitations, see the AWS Elemental MediaConvert User
-     * Guide.
+     * Optional. Accelerated transcoding can significantly speed up jobs with long,
+     * visually complex content. Outputs that use this feature incur pro-tier pricing.
+     * For information about feature limitations, see the AWS Elemental MediaConvert
+     * User Guide.
      */
     inline CreateJobRequest& WithAccelerationSettings(const AccelerationSettings& value) { SetAccelerationSettings(value); return *this;}
 
     /**
-     * Accelerated transcoding can significantly speed up jobs with long, visually
-     * complex content. Outputs that use this feature incur pro-tier pricing. For
-     * information about feature limitations, see the AWS Elemental MediaConvert User
-     * Guide.
+     * Optional. Accelerated transcoding can significantly speed up jobs with long,
+     * visually complex content. Outputs that use this feature incur pro-tier pricing.
+     * For information about feature limitations, see the AWS Elemental MediaConvert
+     * User Guide.
      */
     inline CreateJobRequest& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
 
@@ -154,124 +156,193 @@ namespace Model
 
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      */
     inline CreateJobRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      */
     inline CreateJobRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * Idempotency token for CreateJob operation.
+     * Optional. Idempotency token for CreateJob operation.
      */
     inline CreateJobRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
-     * When you create a job, you can either specify a job template or specify the
-     * transcoding settings individually
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the
+     * queue that you submit your job to. Specify an alternate queue and the maximum
+     * time that your job will wait in the initial queue before hopping. For more
+     * information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    inline const Aws::Vector<HopDestination>& GetHopDestinations() const{ return m_hopDestinations; }
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the
+     * queue that you submit your job to. Specify an alternate queue and the maximum
+     * time that your job will wait in the initial queue before hopping. For more
+     * information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    inline bool HopDestinationsHasBeenSet() const { return m_hopDestinationsHasBeenSet; }
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the
+     * queue that you submit your job to. Specify an alternate queue and the maximum
+     * time that your job will wait in the initial queue before hopping. For more
+     * information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    inline void SetHopDestinations(const Aws::Vector<HopDestination>& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = value; }
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the
+     * queue that you submit your job to. Specify an alternate queue and the maximum
+     * time that your job will wait in the initial queue before hopping. For more
+     * information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    inline void SetHopDestinations(Aws::Vector<HopDestination>&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = std::move(value); }
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the
+     * queue that you submit your job to. Specify an alternate queue and the maximum
+     * time that your job will wait in the initial queue before hopping. For more
+     * information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    inline CreateJobRequest& WithHopDestinations(const Aws::Vector<HopDestination>& value) { SetHopDestinations(value); return *this;}
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the
+     * queue that you submit your job to. Specify an alternate queue and the maximum
+     * time that your job will wait in the initial queue before hopping. For more
+     * information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    inline CreateJobRequest& WithHopDestinations(Aws::Vector<HopDestination>&& value) { SetHopDestinations(std::move(value)); return *this;}
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the
+     * queue that you submit your job to. Specify an alternate queue and the maximum
+     * time that your job will wait in the initial queue before hopping. For more
+     * information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    inline CreateJobRequest& AddHopDestinations(const HopDestination& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.push_back(value); return *this; }
+
+    /**
+     * Optional. Use queue hopping to avoid overly long waits in the backlog of the
+     * queue that you submit your job to. Specify an alternate queue and the maximum
+     * time that your job will wait in the initial queue before hopping. For more
+     * information about this feature, see the AWS Elemental MediaConvert User Guide.
+     */
+    inline CreateJobRequest& AddHopDestinations(HopDestination&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Optional. When you create a job, you can either specify a job template or
+     * specify the transcoding settings individually.
      */
     inline const Aws::String& GetJobTemplate() const{ return m_jobTemplate; }
 
     /**
-     * When you create a job, you can either specify a job template or specify the
-     * transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or
+     * specify the transcoding settings individually.
      */
     inline bool JobTemplateHasBeenSet() const { return m_jobTemplateHasBeenSet; }
 
     /**
-     * When you create a job, you can either specify a job template or specify the
-     * transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or
+     * specify the transcoding settings individually.
      */
     inline void SetJobTemplate(const Aws::String& value) { m_jobTemplateHasBeenSet = true; m_jobTemplate = value; }
 
     /**
-     * When you create a job, you can either specify a job template or specify the
-     * transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or
+     * specify the transcoding settings individually.
      */
     inline void SetJobTemplate(Aws::String&& value) { m_jobTemplateHasBeenSet = true; m_jobTemplate = std::move(value); }
 
     /**
-     * When you create a job, you can either specify a job template or specify the
-     * transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or
+     * specify the transcoding settings individually.
      */
     inline void SetJobTemplate(const char* value) { m_jobTemplateHasBeenSet = true; m_jobTemplate.assign(value); }
 
     /**
-     * When you create a job, you can either specify a job template or specify the
-     * transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or
+     * specify the transcoding settings individually.
      */
     inline CreateJobRequest& WithJobTemplate(const Aws::String& value) { SetJobTemplate(value); return *this;}
 
     /**
-     * When you create a job, you can either specify a job template or specify the
-     * transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or
+     * specify the transcoding settings individually.
      */
     inline CreateJobRequest& WithJobTemplate(Aws::String&& value) { SetJobTemplate(std::move(value)); return *this;}
 
     /**
-     * When you create a job, you can either specify a job template or specify the
-     * transcoding settings individually
+     * Optional. When you create a job, you can either specify a job template or
+     * specify the transcoding settings individually.
      */
     inline CreateJobRequest& WithJobTemplate(const char* value) { SetJobTemplate(value); return *this;}
 
 
     /**
-     * Specify the relative priority for this job. In any given queue, the service
-     * begins processing the job with the highest value first. When more than one job
-     * has the same priority, the service begins processing the job that you submitted
-     * first. If you don't specify a priority, the service uses the default value 0.
+     * Optional. Specify the relative priority for this job. In any given queue, the
+     * service begins processing the job with the highest value first. When more than
+     * one job has the same priority, the service begins processing the job that you
+     * submitted first. If you don't specify a priority, the service uses the default
+     * value 0.
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * Specify the relative priority for this job. In any given queue, the service
-     * begins processing the job with the highest value first. When more than one job
-     * has the same priority, the service begins processing the job that you submitted
-     * first. If you don't specify a priority, the service uses the default value 0.
+     * Optional. Specify the relative priority for this job. In any given queue, the
+     * service begins processing the job with the highest value first. When more than
+     * one job has the same priority, the service begins processing the job that you
+     * submitted first. If you don't specify a priority, the service uses the default
+     * value 0.
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * Specify the relative priority for this job. In any given queue, the service
-     * begins processing the job with the highest value first. When more than one job
-     * has the same priority, the service begins processing the job that you submitted
-     * first. If you don't specify a priority, the service uses the default value 0.
+     * Optional. Specify the relative priority for this job. In any given queue, the
+     * service begins processing the job with the highest value first. When more than
+     * one job has the same priority, the service begins processing the job that you
+     * submitted first. If you don't specify a priority, the service uses the default
+     * value 0.
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * Specify the relative priority for this job. In any given queue, the service
-     * begins processing the job with the highest value first. When more than one job
-     * has the same priority, the service begins processing the job that you submitted
-     * first. If you don't specify a priority, the service uses the default value 0.
+     * Optional. Specify the relative priority for this job. In any given queue, the
+     * service begins processing the job with the highest value first. When more than
+     * one job has the same priority, the service begins processing the job that you
+     * submitted first. If you don't specify a priority, the service uses the default
+     * value 0.
      */
     inline CreateJobRequest& WithPriority(int value) { SetPriority(value); return *this;}
 
@@ -430,257 +501,263 @@ namespace Model
 
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved
-     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
-     * job from an on-demand queue with similar performance to what you will see with
-     * one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many
+     * reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert
+     * runs your job from an on-demand queue with similar performance to what you will
+     * see with one RTS in a reserved queue. This setting is disabled by default.
      */
     inline const SimulateReservedQueue& GetSimulateReservedQueue() const{ return m_simulateReservedQueue; }
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved
-     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
-     * job from an on-demand queue with similar performance to what you will see with
-     * one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many
+     * reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert
+     * runs your job from an on-demand queue with similar performance to what you will
+     * see with one RTS in a reserved queue. This setting is disabled by default.
      */
     inline bool SimulateReservedQueueHasBeenSet() const { return m_simulateReservedQueueHasBeenSet; }
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved
-     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
-     * job from an on-demand queue with similar performance to what you will see with
-     * one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many
+     * reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert
+     * runs your job from an on-demand queue with similar performance to what you will
+     * see with one RTS in a reserved queue. This setting is disabled by default.
      */
     inline void SetSimulateReservedQueue(const SimulateReservedQueue& value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = value; }
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved
-     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
-     * job from an on-demand queue with similar performance to what you will see with
-     * one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many
+     * reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert
+     * runs your job from an on-demand queue with similar performance to what you will
+     * see with one RTS in a reserved queue. This setting is disabled by default.
      */
     inline void SetSimulateReservedQueue(SimulateReservedQueue&& value) { m_simulateReservedQueueHasBeenSet = true; m_simulateReservedQueue = std::move(value); }
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved
-     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
-     * job from an on-demand queue with similar performance to what you will see with
-     * one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many
+     * reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert
+     * runs your job from an on-demand queue with similar performance to what you will
+     * see with one RTS in a reserved queue. This setting is disabled by default.
      */
     inline CreateJobRequest& WithSimulateReservedQueue(const SimulateReservedQueue& value) { SetSimulateReservedQueue(value); return *this;}
 
     /**
-     * Enable this setting when you run a test job to estimate how many reserved
-     * transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your
-     * job from an on-demand queue with similar performance to what you will see with
-     * one RTS in a reserved queue. This setting is disabled by default.
+     * Optional. Enable this setting when you run a test job to estimate how many
+     * reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert
+     * runs your job from an on-demand queue with similar performance to what you will
+     * see with one RTS in a reserved queue. This setting is disabled by default.
      */
     inline CreateJobRequest& WithSimulateReservedQueue(SimulateReservedQueue&& value) { SetSimulateReservedQueue(std::move(value)); return *this;}
 
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
-     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
-     * an update at this interval from the time the service begins processing your job
-     * to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon
+     * CloudWatch Events. Set the interval, in seconds, between status updates.
+     * MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an
+     * error.
      */
     inline const StatusUpdateInterval& GetStatusUpdateInterval() const{ return m_statusUpdateInterval; }
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
-     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
-     * an update at this interval from the time the service begins processing your job
-     * to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon
+     * CloudWatch Events. Set the interval, in seconds, between status updates.
+     * MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an
+     * error.
      */
     inline bool StatusUpdateIntervalHasBeenSet() const { return m_statusUpdateIntervalHasBeenSet; }
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
-     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
-     * an update at this interval from the time the service begins processing your job
-     * to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon
+     * CloudWatch Events. Set the interval, in seconds, between status updates.
+     * MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an
+     * error.
      */
     inline void SetStatusUpdateInterval(const StatusUpdateInterval& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = value; }
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
-     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
-     * an update at this interval from the time the service begins processing your job
-     * to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon
+     * CloudWatch Events. Set the interval, in seconds, between status updates.
+     * MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an
+     * error.
      */
     inline void SetStatusUpdateInterval(StatusUpdateInterval&& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = std::move(value); }
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
-     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
-     * an update at this interval from the time the service begins processing your job
-     * to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon
+     * CloudWatch Events. Set the interval, in seconds, between status updates.
+     * MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an
+     * error.
      */
     inline CreateJobRequest& WithStatusUpdateInterval(const StatusUpdateInterval& value) { SetStatusUpdateInterval(value); return *this;}
 
     /**
-     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
-     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
-     * an update at this interval from the time the service begins processing your job
-     * to the time it completes the transcode or encounters an error.
+     * Optional. Specify how often MediaConvert sends STATUS_UPDATE events to Amazon
+     * CloudWatch Events. Set the interval, in seconds, between status updates.
+     * MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an
+     * error.
      */
     inline CreateJobRequest& WithStatusUpdateInterval(StatusUpdateInterval&& value) { SetStatusUpdateInterval(std::move(value)); return *this;}
 
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The tags that you want to add to the resource. You can tag resources with a
-     * key-value pair or with only a key.
+     * Optional. The tags that you want to add to the resource. You can tag resources
+     * with a key-value pair or with only a key.
      */
     inline CreateJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const{ return m_userMetadata; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline bool UserMetadataHasBeenSet() const { return m_userMetadataHasBeenSet; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline void SetUserMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_userMetadataHasBeenSet = true; m_userMetadata = value; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline void SetUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_userMetadataHasBeenSet = true; m_userMetadata = std::move(value); }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& WithUserMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetUserMetadata(value); return *this;}
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& WithUserMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetUserMetadata(std::move(value)); return *this;}
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& AddUserMetadata(const Aws::String& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const Aws::String& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& AddUserMetadata(const Aws::String& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& AddUserMetadata(const char* key, Aws::String&& value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& AddUserMetadata(Aws::String&& key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * User-defined metadata that you want to associate with an MediaConvert job. You
-     * specify metadata in key/value pairs.
+     * Optional. User-defined metadata that you want to associate with an MediaConvert
+     * job. You specify metadata in key/value pairs.
      */
     inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
@@ -694,6 +771,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::Vector<HopDestination> m_hopDestinations;
+    bool m_hopDestinationsHasBeenSet;
 
     Aws::String m_jobTemplate;
     bool m_jobTemplateHasBeenSet;

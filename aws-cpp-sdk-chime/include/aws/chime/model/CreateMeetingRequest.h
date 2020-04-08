@@ -17,7 +17,9 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/ChimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/chime/model/MeetingNotificationConfiguration.h>
+#include <aws/chime/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -91,6 +93,47 @@ namespace Model
      * different meetings.</p>
      */
     inline CreateMeetingRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline const Aws::String& GetExternalMeetingId() const{ return m_externalMeetingId; }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline bool ExternalMeetingIdHasBeenSet() const { return m_externalMeetingIdHasBeenSet; }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline void SetExternalMeetingId(const Aws::String& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = value; }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline void SetExternalMeetingId(Aws::String&& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = std::move(value); }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline void SetExternalMeetingId(const char* value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId.assign(value); }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline CreateMeetingRequest& WithExternalMeetingId(const Aws::String& value) { SetExternalMeetingId(value); return *this;}
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline CreateMeetingRequest& WithExternalMeetingId(Aws::String&& value) { SetExternalMeetingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline CreateMeetingRequest& WithExternalMeetingId(const char* value) { SetExternalMeetingId(value); return *this;}
 
 
     /**
@@ -224,6 +267,47 @@ namespace Model
 
 
     /**
+     * <p>The tag key-value pairs.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag key-value pairs.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag key-value pairs.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tag key-value pairs.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tag key-value pairs.</p>
+     */
+    inline CreateMeetingRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tag key-value pairs.</p>
+     */
+    inline CreateMeetingRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tag key-value pairs.</p>
+     */
+    inline CreateMeetingRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tag key-value pairs.</p>
+     */
+    inline CreateMeetingRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The configuration for resource targets to receive notifications when meeting
      * and attendee events occur.</p>
      */
@@ -264,11 +348,17 @@ namespace Model
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
 
+    Aws::String m_externalMeetingId;
+    bool m_externalMeetingIdHasBeenSet;
+
     Aws::String m_meetingHostId;
     bool m_meetingHostIdHasBeenSet;
 
     Aws::String m_mediaRegion;
     bool m_mediaRegionHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
 
     MeetingNotificationConfiguration m_notificationsConfiguration;
     bool m_notificationsConfigurationHasBeenSet;

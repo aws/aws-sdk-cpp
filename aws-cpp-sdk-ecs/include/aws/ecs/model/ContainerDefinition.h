@@ -4177,8 +4177,8 @@ namespace Model
 
 
     /**
-     * <p>The health check command and associated configuration parameters for the
-     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * <p>The container health check command and associated configuration parameters
+     * for the container. This parameter maps to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4188,8 +4188,8 @@ namespace Model
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
 
     /**
-     * <p>The health check command and associated configuration parameters for the
-     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * <p>The container health check command and associated configuration parameters
+     * for the container. This parameter maps to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4199,8 +4199,8 @@ namespace Model
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
 
     /**
-     * <p>The health check command and associated configuration parameters for the
-     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * <p>The container health check command and associated configuration parameters
+     * for the container. This parameter maps to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4210,8 +4210,8 @@ namespace Model
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
 
     /**
-     * <p>The health check command and associated configuration parameters for the
-     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * <p>The container health check command and associated configuration parameters
+     * for the container. This parameter maps to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4221,8 +4221,8 @@ namespace Model
     inline void SetHealthCheck(HealthCheck&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
 
     /**
-     * <p>The health check command and associated configuration parameters for the
-     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * <p>The container health check command and associated configuration parameters
+     * for the container. This parameter maps to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -4232,8 +4232,8 @@ namespace Model
     inline ContainerDefinition& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
 
     /**
-     * <p>The health check command and associated configuration parameters for the
-     * container. This parameter maps to <code>HealthCheck</code> in the <a
+     * <p>The container health check command and associated configuration parameters
+     * for the container. This parameter maps to <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the

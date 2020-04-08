@@ -29,12 +29,14 @@ namespace Model
 {
 
 CreateAttendeeRequestItem::CreateAttendeeRequestItem() : 
-    m_externalUserIdHasBeenSet(false)
+    m_externalUserIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 CreateAttendeeRequestItem::CreateAttendeeRequestItem(JsonView jsonValue) : 
-    m_externalUserIdHasBeenSet(false)
+    m_externalUserIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,16 @@ CreateAttendeeRequestItem& CreateAttendeeRequestItem::operator =(JsonView jsonVa
     m_externalUserIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +70,17 @@ JsonValue CreateAttendeeRequestItem::Jsonize() const
   if(m_externalUserIdHasBeenSet)
   {
    payload.WithString("ExternalUserId", m_externalUserId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

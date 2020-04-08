@@ -55,95 +55,95 @@ namespace Model
 
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegionOrder() const{ return m_regionOrder; }
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline bool RegionOrderHasBeenSet() const { return m_regionOrderHasBeenSet; }
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline void SetRegionOrder(const Aws::Vector<Aws::String>& value) { m_regionOrderHasBeenSet = true; m_regionOrder = value; }
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline void SetRegionOrder(Aws::Vector<Aws::String>&& value) { m_regionOrderHasBeenSet = true; m_regionOrder = std::move(value); }
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline StackSetOperationPreferences& WithRegionOrder(const Aws::Vector<Aws::String>& value) { SetRegionOrder(value); return *this;}
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline StackSetOperationPreferences& WithRegionOrder(Aws::Vector<Aws::String>&& value) { SetRegionOrder(std::move(value)); return *this;}
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline StackSetOperationPreferences& AddRegionOrder(const Aws::String& value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline StackSetOperationPreferences& AddRegionOrder(Aws::String&& value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The order of the regions in where you want to perform the stack
+     * <p>The order of the Regions in where you want to perform the stack
      * operation.</p>
      */
     inline StackSetOperationPreferences& AddRegionOrder(const char* value) { m_regionOrderHasBeenSet = true; m_regionOrder.push_back(value); return *this; }
 
 
     /**
-     * <p>The number of accounts, per region, for which this operation can fail before
-     * AWS CloudFormation stops the operation in that region. If the operation is
-     * stopped in a region, AWS CloudFormation doesn't attempt the operation in any
-     * subsequent regions.</p> <p>Conditional: You must specify either
+     * <p>The number of accounts, per Region, for which this operation can fail before
+     * AWS CloudFormation stops the operation in that Region. If the operation is
+     * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p>
      */
     inline int GetFailureToleranceCount() const{ return m_failureToleranceCount; }
 
     /**
-     * <p>The number of accounts, per region, for which this operation can fail before
-     * AWS CloudFormation stops the operation in that region. If the operation is
-     * stopped in a region, AWS CloudFormation doesn't attempt the operation in any
-     * subsequent regions.</p> <p>Conditional: You must specify either
+     * <p>The number of accounts, per Region, for which this operation can fail before
+     * AWS CloudFormation stops the operation in that Region. If the operation is
+     * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p>
      */
     inline bool FailureToleranceCountHasBeenSet() const { return m_failureToleranceCountHasBeenSet; }
 
     /**
-     * <p>The number of accounts, per region, for which this operation can fail before
-     * AWS CloudFormation stops the operation in that region. If the operation is
-     * stopped in a region, AWS CloudFormation doesn't attempt the operation in any
-     * subsequent regions.</p> <p>Conditional: You must specify either
+     * <p>The number of accounts, per Region, for which this operation can fail before
+     * AWS CloudFormation stops the operation in that Region. If the operation is
+     * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p>
      */
     inline void SetFailureToleranceCount(int value) { m_failureToleranceCountHasBeenSet = true; m_failureToleranceCount = value; }
 
     /**
-     * <p>The number of accounts, per region, for which this operation can fail before
-     * AWS CloudFormation stops the operation in that region. If the operation is
-     * stopped in a region, AWS CloudFormation doesn't attempt the operation in any
-     * subsequent regions.</p> <p>Conditional: You must specify either
+     * <p>The number of accounts, per Region, for which this operation can fail before
+     * AWS CloudFormation stops the operation in that Region. If the operation is
+     * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
+     * subsequent Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
      * (but not both).</p>
      */
@@ -151,10 +151,10 @@ namespace Model
 
 
     /**
-     * <p>The percentage of accounts, per region, for which this stack operation can
-     * fail before AWS CloudFormation stops the operation in that region. If the
-     * operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.</p> <p>When calculating the number of
+     * <p>The percentage of accounts, per Region, for which this stack operation can
+     * fail before AWS CloudFormation stops the operation in that Region. If the
+     * operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.</p> <p>When calculating the number of
      * accounts based on the specified percentage, AWS CloudFormation rounds
      * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
      * either <code>FailureToleranceCount</code> or
@@ -163,10 +163,10 @@ namespace Model
     inline int GetFailureTolerancePercentage() const{ return m_failureTolerancePercentage; }
 
     /**
-     * <p>The percentage of accounts, per region, for which this stack operation can
-     * fail before AWS CloudFormation stops the operation in that region. If the
-     * operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.</p> <p>When calculating the number of
+     * <p>The percentage of accounts, per Region, for which this stack operation can
+     * fail before AWS CloudFormation stops the operation in that Region. If the
+     * operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.</p> <p>When calculating the number of
      * accounts based on the specified percentage, AWS CloudFormation rounds
      * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
      * either <code>FailureToleranceCount</code> or
@@ -175,10 +175,10 @@ namespace Model
     inline bool FailureTolerancePercentageHasBeenSet() const { return m_failureTolerancePercentageHasBeenSet; }
 
     /**
-     * <p>The percentage of accounts, per region, for which this stack operation can
-     * fail before AWS CloudFormation stops the operation in that region. If the
-     * operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.</p> <p>When calculating the number of
+     * <p>The percentage of accounts, per Region, for which this stack operation can
+     * fail before AWS CloudFormation stops the operation in that Region. If the
+     * operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.</p> <p>When calculating the number of
      * accounts based on the specified percentage, AWS CloudFormation rounds
      * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
      * either <code>FailureToleranceCount</code> or
@@ -187,10 +187,10 @@ namespace Model
     inline void SetFailureTolerancePercentage(int value) { m_failureTolerancePercentageHasBeenSet = true; m_failureTolerancePercentage = value; }
 
     /**
-     * <p>The percentage of accounts, per region, for which this stack operation can
-     * fail before AWS CloudFormation stops the operation in that region. If the
-     * operation is stopped in a region, AWS CloudFormation doesn't attempt the
-     * operation in any subsequent regions.</p> <p>When calculating the number of
+     * <p>The percentage of accounts, per Region, for which this stack operation can
+     * fail before AWS CloudFormation stops the operation in that Region. If the
+     * operation is stopped in a Region, AWS CloudFormation doesn't attempt the
+     * operation in any subsequent Regions.</p> <p>When calculating the number of
      * accounts based on the specified percentage, AWS CloudFormation rounds
      * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
      * either <code>FailureToleranceCount</code> or

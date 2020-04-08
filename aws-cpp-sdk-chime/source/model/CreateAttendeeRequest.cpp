@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateAttendeeRequest::CreateAttendeeRequest() : 
     m_meetingIdHasBeenSet(false),
-    m_externalUserIdHasBeenSet(false)
+    m_externalUserIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,17 @@ Aws::String CreateAttendeeRequest::SerializePayload() const
   if(m_externalUserIdHasBeenSet)
   {
    payload.WithString("ExternalUserId", m_externalUserId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

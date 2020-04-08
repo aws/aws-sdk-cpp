@@ -21,15 +21,17 @@
 #include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediaconvert/model/JobPhase.h>
-#include <aws/mediaconvert/model/JobMessages.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/JobMessages.h>
 #include <aws/mediaconvert/model/JobSettings.h>
 #include <aws/mediaconvert/model/SimulateReservedQueue.h>
 #include <aws/mediaconvert/model/JobStatus.h>
 #include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/mediaconvert/model/Timing.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediaconvert/model/HopDestination.h>
 #include <aws/mediaconvert/model/OutputGroupDetail.h>
+#include <aws/mediaconvert/model/QueueTransition.h>
 #include <utility>
 
 namespace Aws
@@ -234,56 +236,38 @@ namespace Model
 
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
-     * sort your AWS Elemental MediaConvert costs on any billing report that you set
-     * up. Any transcoding outputs that don't have an associated tag will appear in
-     * your billing report unsorted. If you don't choose a valid value for this field,
-     * your job outputs will appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS
+     * Elemental MediaConvert costs on any billing report that you set up.
      */
     inline const BillingTagsSource& GetBillingTagsSource() const{ return m_billingTagsSource; }
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
-     * sort your AWS Elemental MediaConvert costs on any billing report that you set
-     * up. Any transcoding outputs that don't have an associated tag will appear in
-     * your billing report unsorted. If you don't choose a valid value for this field,
-     * your job outputs will appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS
+     * Elemental MediaConvert costs on any billing report that you set up.
      */
     inline bool BillingTagsSourceHasBeenSet() const { return m_billingTagsSourceHasBeenSet; }
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
-     * sort your AWS Elemental MediaConvert costs on any billing report that you set
-     * up. Any transcoding outputs that don't have an associated tag will appear in
-     * your billing report unsorted. If you don't choose a valid value for this field,
-     * your job outputs will appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS
+     * Elemental MediaConvert costs on any billing report that you set up.
      */
     inline void SetBillingTagsSource(const BillingTagsSource& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = value; }
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
-     * sort your AWS Elemental MediaConvert costs on any billing report that you set
-     * up. Any transcoding outputs that don't have an associated tag will appear in
-     * your billing report unsorted. If you don't choose a valid value for this field,
-     * your job outputs will appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS
+     * Elemental MediaConvert costs on any billing report that you set up.
      */
     inline void SetBillingTagsSource(BillingTagsSource&& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = std::move(value); }
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
-     * sort your AWS Elemental MediaConvert costs on any billing report that you set
-     * up. Any transcoding outputs that don't have an associated tag will appear in
-     * your billing report unsorted. If you don't choose a valid value for this field,
-     * your job outputs will appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS
+     * Elemental MediaConvert costs on any billing report that you set up.
      */
     inline Job& WithBillingTagsSource(const BillingTagsSource& value) { SetBillingTagsSource(value); return *this;}
 
     /**
-     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
-     * sort your AWS Elemental MediaConvert costs on any billing report that you set
-     * up. Any transcoding outputs that don't have an associated tag will appear in
-     * your billing report unsorted. If you don't choose a valid value for this field,
-     * your job outputs will appear on the billing report unsorted.
+     * The tag type that AWS Billing and Cost Management will use to sort your AWS
+     * Elemental MediaConvert costs on any billing report that you set up.
      */
     inline Job& WithBillingTagsSource(BillingTagsSource&& value) { SetBillingTagsSource(std::move(value)); return *this;}
 
@@ -410,6 +394,47 @@ namespace Model
      * Error message of Job
      */
     inline Job& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline const Aws::Vector<HopDestination>& GetHopDestinations() const{ return m_hopDestinations; }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline bool HopDestinationsHasBeenSet() const { return m_hopDestinationsHasBeenSet; }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline void SetHopDestinations(const Aws::Vector<HopDestination>& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = value; }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline void SetHopDestinations(Aws::Vector<HopDestination>&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations = std::move(value); }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline Job& WithHopDestinations(const Aws::Vector<HopDestination>& value) { SetHopDestinations(value); return *this;}
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline Job& WithHopDestinations(Aws::Vector<HopDestination>&& value) { SetHopDestinations(std::move(value)); return *this;}
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline Job& AddHopDestinations(const HopDestination& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.push_back(value); return *this; }
+
+    /**
+     * Optional list of hop destinations.
+     */
+    inline Job& AddHopDestinations(HopDestination&& value) { m_hopDestinationsHasBeenSet = true; m_hopDestinations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -659,68 +684,109 @@ namespace Model
 
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you
-     * don't specify, the job will go to the default queue. For more about queues, see
-     * the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't
+     * specify, the job will go to the default queue. For more about queues, see the
+     * User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline const Aws::String& GetQueue() const{ return m_queue; }
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you
-     * don't specify, the job will go to the default queue. For more about queues, see
-     * the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't
+     * specify, the job will go to the default queue. For more about queues, see the
+     * User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you
-     * don't specify, the job will go to the default queue. For more about queues, see
-     * the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't
+     * specify, the job will go to the default queue. For more about queues, see the
+     * User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you
-     * don't specify, the job will go to the default queue. For more about queues, see
-     * the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't
+     * specify, the job will go to the default queue. For more about queues, see the
+     * User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you
-     * don't specify, the job will go to the default queue. For more about queues, see
-     * the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't
+     * specify, the job will go to the default queue. For more about queues, see the
+     * User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline void SetQueue(const char* value) { m_queueHasBeenSet = true; m_queue.assign(value); }
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you
-     * don't specify, the job will go to the default queue. For more about queues, see
-     * the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't
+     * specify, the job will go to the default queue. For more about queues, see the
+     * User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline Job& WithQueue(const Aws::String& value) { SetQueue(value); return *this;}
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you
-     * don't specify, the job will go to the default queue. For more about queues, see
-     * the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't
+     * specify, the job will go to the default queue. For more about queues, see the
+     * User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline Job& WithQueue(Aws::String&& value) { SetQueue(std::move(value)); return *this;}
 
     /**
-     * Optional. When you create a job, you can specify a queue to send it to. If you
-     * don't specify, the job will go to the default queue. For more about queues, see
-     * the User Guide topic at
+     * When you create a job, you can specify a queue to send it to. If you don't
+     * specify, the job will go to the default queue. For more about queues, see the
+     * User Guide topic at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline Job& WithQueue(const char* value) { SetQueue(value); return *this;}
+
+
+    /**
+     * The job's queue hopping history.
+     */
+    inline const Aws::Vector<QueueTransition>& GetQueueTransitions() const{ return m_queueTransitions; }
+
+    /**
+     * The job's queue hopping history.
+     */
+    inline bool QueueTransitionsHasBeenSet() const { return m_queueTransitionsHasBeenSet; }
+
+    /**
+     * The job's queue hopping history.
+     */
+    inline void SetQueueTransitions(const Aws::Vector<QueueTransition>& value) { m_queueTransitionsHasBeenSet = true; m_queueTransitions = value; }
+
+    /**
+     * The job's queue hopping history.
+     */
+    inline void SetQueueTransitions(Aws::Vector<QueueTransition>&& value) { m_queueTransitionsHasBeenSet = true; m_queueTransitions = std::move(value); }
+
+    /**
+     * The job's queue hopping history.
+     */
+    inline Job& WithQueueTransitions(const Aws::Vector<QueueTransition>& value) { SetQueueTransitions(value); return *this;}
+
+    /**
+     * The job's queue hopping history.
+     */
+    inline Job& WithQueueTransitions(Aws::Vector<QueueTransition>&& value) { SetQueueTransitions(std::move(value)); return *this;}
+
+    /**
+     * The job's queue hopping history.
+     */
+    inline Job& AddQueueTransitions(const QueueTransition& value) { m_queueTransitionsHasBeenSet = true; m_queueTransitions.push_back(value); return *this; }
+
+    /**
+     * The job's queue hopping history.
+     */
+    inline Job& AddQueueTransitions(QueueTransition&& value) { m_queueTransitionsHasBeenSet = true; m_queueTransitions.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -1106,6 +1172,9 @@ namespace Model
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet;
 
+    Aws::Vector<HopDestination> m_hopDestinations;
+    bool m_hopDestinationsHasBeenSet;
+
     Aws::String m_id;
     bool m_idHasBeenSet;
 
@@ -1126,6 +1195,9 @@ namespace Model
 
     Aws::String m_queue;
     bool m_queueHasBeenSet;
+
+    Aws::Vector<QueueTransition> m_queueTransitions;
+    bool m_queueTransitionsHasBeenSet;
 
     int m_retryCount;
     bool m_retryCountHasBeenSet;

@@ -39,9 +39,9 @@ namespace Model
 {
 
   /**
-   * <p>An AWS CloudFormation stack, in a specific account and region, that's part of
+   * <p>An AWS CloudFormation stack, in a specific account and Region, that's part of
    * a stack set operation. A stack instance is a reference to an attempted or actual
-   * stack in a given account within a given region. A stack instance can exist
+   * stack in a given account within a given Region. A stack instance can exist
    * without a stack—for example, if the stack couldn't be created for some reason. A
    * stack instance is associated with only one stack set. Each stack instance
    * contains the ID of its associated stack set, as well as the ID of the actual
@@ -110,91 +110,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     * <p>The name of the AWS Region that the stack instance is associated with.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     * <p>The name of the AWS Region that the stack instance is associated with.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     * <p>The name of the AWS Region that the stack instance is associated with.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     * <p>The name of the AWS Region that the stack instance is associated with.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     * <p>The name of the AWS Region that the stack instance is associated with.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     * <p>The name of the AWS Region that the stack instance is associated with.</p>
      */
     inline StackInstance& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     * <p>The name of the AWS Region that the stack instance is associated with.</p>
      */
     inline StackInstance& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     * <p>The name of the AWS Region that the stack instance is associated with.</p>
      */
     inline StackInstance& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
+     * stack instance is associated with.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
+     * stack instance is associated with.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
+     * stack instance is associated with.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
+     * stack instance is associated with.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
+     * stack instance is associated with.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
+     * stack instance is associated with.</p>
      */
     inline StackInstance& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
+     * stack instance is associated with.</p>
      */
     inline StackInstance& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account that the stack
-     * instance is associated with.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account that the
+     * stack instance is associated with.</p>
      */
     inline StackInstance& WithAccount(const char* value) { SetAccount(value); return *this;}
 
@@ -454,50 +454,42 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID that the stack instance is associated with.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID that the stack instance is associated with.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID that the stack instance is associated with.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID that the stack instance is associated with.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID that the stack instance is associated with.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID that the stack instance is associated with.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackInstance& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID that the stack instance is associated with.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackInstance& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID that the stack instance is associated with.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackInstance& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
 

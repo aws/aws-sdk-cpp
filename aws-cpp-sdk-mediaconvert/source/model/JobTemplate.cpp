@@ -34,6 +34,7 @@ JobTemplate::JobTemplate() :
     m_categoryHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_hopDestinationsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_priority(0),
@@ -53,6 +54,7 @@ JobTemplate::JobTemplate(JsonView jsonValue) :
     m_categoryHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_hopDestinationsHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_priority(0),
@@ -102,6 +104,16 @@ JobTemplate& JobTemplate::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hopDestinations"))
+  {
+    Array<JsonView> hopDestinationsJsonList = jsonValue.GetArray("hopDestinations");
+    for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
+    {
+      m_hopDestinations.push_back(hopDestinationsJsonList[hopDestinationsIndex].AsObject());
+    }
+    m_hopDestinationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastUpdated"))
@@ -186,6 +198,17 @@ JsonValue JobTemplate::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_hopDestinationsHasBeenSet)
+  {
+   Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
+   for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
+   {
+     hopDestinationsJsonList[hopDestinationsIndex].AsObject(m_hopDestinations[hopDestinationsIndex].Jsonize());
+   }
+   payload.WithArray("hopDestinations", std::move(hopDestinationsJsonList));
 
   }
 

@@ -34,10 +34,13 @@
 #include <aws/codeguruprofiler/model/CreateProfilingGroupRequest.h>
 #include <aws/codeguruprofiler/model/DeleteProfilingGroupRequest.h>
 #include <aws/codeguruprofiler/model/DescribeProfilingGroupRequest.h>
+#include <aws/codeguruprofiler/model/GetPolicyRequest.h>
 #include <aws/codeguruprofiler/model/GetProfileRequest.h>
 #include <aws/codeguruprofiler/model/ListProfileTimesRequest.h>
 #include <aws/codeguruprofiler/model/ListProfilingGroupsRequest.h>
 #include <aws/codeguruprofiler/model/PostAgentProfileRequest.h>
+#include <aws/codeguruprofiler/model/PutPermissionRequest.h>
+#include <aws/codeguruprofiler/model/RemovePermissionRequest.h>
 #include <aws/codeguruprofiler/model/UpdateProfilingGroupRequest.h>
 
 using namespace Aws;
@@ -276,6 +279,48 @@ void CodeGuruProfilerClient::DescribeProfilingGroupAsyncHelper(const DescribePro
   handler(this, request, DescribeProfilingGroup(request), context);
 }
 
+GetPolicyOutcome CodeGuruProfilerClient::GetPolicy(const GetPolicyRequest& request) const
+{
+  if (!request.ProfilingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPolicy", "Required field: ProfilingGroupName, is not set");
+    return GetPolicyOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/profilingGroups/";
+  ss << request.GetProfilingGroupName();
+  ss << "/policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPolicyOutcome(GetPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetPolicyOutcomeCallable CodeGuruProfilerClient::GetPolicyCallable(const GetPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruProfilerClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruProfilerClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPolicy(request), context);
+}
+
 GetProfileOutcome CodeGuruProfilerClient::GetProfile(const GetProfileRequest& request) const
 {
   if (!request.ProfilingGroupNameHasBeenSet())
@@ -450,6 +495,107 @@ void CodeGuruProfilerClient::PostAgentProfileAsync(const PostAgentProfileRequest
 void CodeGuruProfilerClient::PostAgentProfileAsyncHelper(const PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PostAgentProfile(request), context);
+}
+
+PutPermissionOutcome CodeGuruProfilerClient::PutPermission(const PutPermissionRequest& request) const
+{
+  if (!request.ActionGroupHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPermission", "Required field: ActionGroup, is not set");
+    return PutPermissionOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionGroup]", false));
+  }
+  if (!request.ProfilingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPermission", "Required field: ProfilingGroupName, is not set");
+    return PutPermissionOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/profilingGroups/";
+  ss << request.GetProfilingGroupName();
+  ss << "/policy/";
+  ss << ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup());
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutPermissionOutcome(PutPermissionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutPermissionOutcome(outcome.GetError());
+  }
+}
+
+PutPermissionOutcomeCallable CodeGuruProfilerClient::PutPermissionCallable(const PutPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruProfilerClient::PutPermissionAsync(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPermissionAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruProfilerClient::PutPermissionAsyncHelper(const PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPermission(request), context);
+}
+
+RemovePermissionOutcome CodeGuruProfilerClient::RemovePermission(const RemovePermissionRequest& request) const
+{
+  if (!request.ActionGroupHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemovePermission", "Required field: ActionGroup, is not set");
+    return RemovePermissionOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionGroup]", false));
+  }
+  if (!request.ProfilingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemovePermission", "Required field: ProfilingGroupName, is not set");
+    return RemovePermissionOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
+  }
+  if (!request.RevisionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemovePermission", "Required field: RevisionId, is not set");
+    return RemovePermissionOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/profilingGroups/";
+  ss << request.GetProfilingGroupName();
+  ss << "/policy/";
+  ss << ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup());
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemovePermissionOutcome(RemovePermissionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemovePermissionOutcome(outcome.GetError());
+  }
+}
+
+RemovePermissionOutcomeCallable CodeGuruProfilerClient::RemovePermissionCallable(const RemovePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemovePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemovePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruProfilerClient::RemovePermissionAsync(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemovePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruProfilerClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemovePermission(request), context);
 }
 
 UpdateProfilingGroupOutcome CodeGuruProfilerClient::UpdateProfilingGroup(const UpdateProfilingGroupRequest& request) const

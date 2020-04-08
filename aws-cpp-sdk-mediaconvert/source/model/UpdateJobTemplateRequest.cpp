@@ -26,6 +26,7 @@ UpdateJobTemplateRequest::UpdateJobTemplateRequest() :
     m_accelerationSettingsHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_hopDestinationsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
@@ -55,6 +56,17 @@ Aws::String UpdateJobTemplateRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_hopDestinationsHasBeenSet)
+  {
+   Array<JsonValue> hopDestinationsJsonList(m_hopDestinations.size());
+   for(unsigned hopDestinationsIndex = 0; hopDestinationsIndex < hopDestinationsJsonList.GetLength(); ++hopDestinationsIndex)
+   {
+     hopDestinationsJsonList[hopDestinationsIndex].AsObject(m_hopDestinations[hopDestinationsIndex].Jsonize());
+   }
+   payload.WithArray("hopDestinations", std::move(hopDestinationsJsonList));
 
   }
 

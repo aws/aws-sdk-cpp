@@ -25,8 +25,10 @@ using namespace Aws::Utils;
 CreateMeetingRequest::CreateMeetingRequest() : 
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
+    m_externalMeetingIdHasBeenSet(false),
     m_meetingHostIdHasBeenSet(false),
     m_mediaRegionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_notificationsConfigurationHasBeenSet(false)
 {
 }
@@ -41,6 +43,12 @@ Aws::String CreateMeetingRequest::SerializePayload() const
 
   }
 
+  if(m_externalMeetingIdHasBeenSet)
+  {
+   payload.WithString("ExternalMeetingId", m_externalMeetingId);
+
+  }
+
   if(m_meetingHostIdHasBeenSet)
   {
    payload.WithString("MeetingHostId", m_meetingHostId);
@@ -50,6 +58,17 @@ Aws::String CreateMeetingRequest::SerializePayload() const
   if(m_mediaRegionHasBeenSet)
   {
    payload.WithString("MediaRegion", m_mediaRegion);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

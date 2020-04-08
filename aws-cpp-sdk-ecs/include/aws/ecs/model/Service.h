@@ -1192,10 +1192,11 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each container instance in your cluster. When you are using this strategy, do
-     * not specify a desired number of tasks or any task placement strategies.</p>
-     * <note> <p>Fargate tasks do not support the <code>DAEMON</code> scheduling
-     * strategy.</p> </note> </li> </ul>
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
      */
     inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
 
@@ -1208,10 +1209,11 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each container instance in your cluster. When you are using this strategy, do
-     * not specify a desired number of tasks or any task placement strategies.</p>
-     * <note> <p>Fargate tasks do not support the <code>DAEMON</code> scheduling
-     * strategy.</p> </note> </li> </ul>
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
      */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
 
@@ -1224,10 +1226,11 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each container instance in your cluster. When you are using this strategy, do
-     * not specify a desired number of tasks or any task placement strategies.</p>
-     * <note> <p>Fargate tasks do not support the <code>DAEMON</code> scheduling
-     * strategy.</p> </note> </li> </ul>
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
      */
     inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
 
@@ -1240,10 +1243,11 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each container instance in your cluster. When you are using this strategy, do
-     * not specify a desired number of tasks or any task placement strategies.</p>
-     * <note> <p>Fargate tasks do not support the <code>DAEMON</code> scheduling
-     * strategy.</p> </note> </li> </ul>
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
      */
     inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
 
@@ -1256,10 +1260,11 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each container instance in your cluster. When you are using this strategy, do
-     * not specify a desired number of tasks or any task placement strategies.</p>
-     * <note> <p>Fargate tasks do not support the <code>DAEMON</code> scheduling
-     * strategy.</p> </note> </li> </ul>
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
      */
     inline Service& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
 
@@ -1272,10 +1277,11 @@ namespace Model
      * spreads tasks across Availability Zones. You can use task placement strategies
      * and constraints to customize task placement decisions.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
-     * each container instance in your cluster. When you are using this strategy, do
-     * not specify a desired number of tasks or any task placement strategies.</p>
-     * <note> <p>Fargate tasks do not support the <code>DAEMON</code> scheduling
-     * strategy.</p> </note> </li> </ul>
+     * each active container instance that meets all of the task placement constraints
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints.</p> <note> <p>Fargate tasks do not support the
+     * <code>DAEMON</code> scheduling strategy.</p> </note> </li> </ul>
      */
     inline Service& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
 

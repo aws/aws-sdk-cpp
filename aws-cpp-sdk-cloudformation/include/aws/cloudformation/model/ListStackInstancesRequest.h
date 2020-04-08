@@ -251,42 +251,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the region where you want to list stack instances. </p>
+     * <p>The name of the Region where you want to list stack instances. </p>
      */
     inline const Aws::String& GetStackInstanceRegion() const{ return m_stackInstanceRegion; }
 
     /**
-     * <p>The name of the region where you want to list stack instances. </p>
+     * <p>The name of the Region where you want to list stack instances. </p>
      */
     inline bool StackInstanceRegionHasBeenSet() const { return m_stackInstanceRegionHasBeenSet; }
 
     /**
-     * <p>The name of the region where you want to list stack instances. </p>
+     * <p>The name of the Region where you want to list stack instances. </p>
      */
     inline void SetStackInstanceRegion(const Aws::String& value) { m_stackInstanceRegionHasBeenSet = true; m_stackInstanceRegion = value; }
 
     /**
-     * <p>The name of the region where you want to list stack instances. </p>
+     * <p>The name of the Region where you want to list stack instances. </p>
      */
     inline void SetStackInstanceRegion(Aws::String&& value) { m_stackInstanceRegionHasBeenSet = true; m_stackInstanceRegion = std::move(value); }
 
     /**
-     * <p>The name of the region where you want to list stack instances. </p>
+     * <p>The name of the Region where you want to list stack instances. </p>
      */
     inline void SetStackInstanceRegion(const char* value) { m_stackInstanceRegionHasBeenSet = true; m_stackInstanceRegion.assign(value); }
 
     /**
-     * <p>The name of the region where you want to list stack instances. </p>
+     * <p>The name of the Region where you want to list stack instances. </p>
      */
     inline ListStackInstancesRequest& WithStackInstanceRegion(const Aws::String& value) { SetStackInstanceRegion(value); return *this;}
 
     /**
-     * <p>The name of the region where you want to list stack instances. </p>
+     * <p>The name of the Region where you want to list stack instances. </p>
      */
     inline ListStackInstancesRequest& WithStackInstanceRegion(Aws::String&& value) { SetStackInstanceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the region where you want to list stack instances. </p>
+     * <p>The name of the Region where you want to list stack instances. </p>
      */
     inline ListStackInstancesRequest& WithStackInstanceRegion(const char* value) { SetStackInstanceRegion(value); return *this;}
 

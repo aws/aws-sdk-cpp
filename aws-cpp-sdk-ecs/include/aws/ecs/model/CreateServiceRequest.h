@@ -1633,12 +1633,14 @@ namespace Model
      * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
      * each active container instance that meets all of the task placement constraints
-     * that you specify in your cluster. When you're using this strategy, you don't
-     * need to specify a desired number of tasks, a task placement strategy, or use
-     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
-     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
-     * </li> </ul>
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints. When you're using this strategy, you don't need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * </ul>
      */
     inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
 
@@ -1654,12 +1656,14 @@ namespace Model
      * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
      * each active container instance that meets all of the task placement constraints
-     * that you specify in your cluster. When you're using this strategy, you don't
-     * need to specify a desired number of tasks, a task placement strategy, or use
-     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
-     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
-     * </li> </ul>
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints. When you're using this strategy, you don't need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * </ul>
      */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
 
@@ -1675,12 +1679,14 @@ namespace Model
      * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
      * each active container instance that meets all of the task placement constraints
-     * that you specify in your cluster. When you're using this strategy, you don't
-     * need to specify a desired number of tasks, a task placement strategy, or use
-     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
-     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
-     * </li> </ul>
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints. When you're using this strategy, you don't need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * </ul>
      */
     inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
 
@@ -1696,12 +1702,14 @@ namespace Model
      * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
      * each active container instance that meets all of the task placement constraints
-     * that you specify in your cluster. When you're using this strategy, you don't
-     * need to specify a desired number of tasks, a task placement strategy, or use
-     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
-     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
-     * </li> </ul>
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints. When you're using this strategy, you don't need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * </ul>
      */
     inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
 
@@ -1717,12 +1725,14 @@ namespace Model
      * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
      * each active container instance that meets all of the task placement constraints
-     * that you specify in your cluster. When you're using this strategy, you don't
-     * need to specify a desired number of tasks, a task placement strategy, or use
-     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
-     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
-     * </li> </ul>
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints. When you're using this strategy, you don't need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * </ul>
      */
     inline CreateServiceRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
 
@@ -1738,12 +1748,14 @@ namespace Model
      * <code>EXTERNAL</code> deployment controller types.</p> </li> <li> <p>
      * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
      * each active container instance that meets all of the task placement constraints
-     * that you specify in your cluster. When you're using this strategy, you don't
-     * need to specify a desired number of tasks, a task placement strategy, or use
-     * Service Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type
-     * or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller
-     * types don't support the <code>DAEMON</code> scheduling strategy.</p> </note>
-     * </li> </ul>
+     * that you specify in your cluster. The service scheduler also evaluates the task
+     * placement constraints for running tasks and will stop tasks that do not meet the
+     * placement constraints. When you're using this strategy, you don't need to
+     * specify a desired number of tasks, a task placement strategy, or use Service
+     * Auto Scaling policies.</p> <note> <p>Tasks using the Fargate launch type or the
+     * <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types
+     * don't support the <code>DAEMON</code> scheduling strategy.</p> </note> </li>
+     * </ul>
      */
     inline CreateServiceRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
 

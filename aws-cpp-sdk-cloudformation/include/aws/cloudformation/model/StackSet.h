@@ -43,7 +43,7 @@ namespace Model
 
   /**
    * <p>A structure that contains information about a stack set. A stack set enables
-   * you to provision stacks into AWS accounts and across regions by using a single
+   * you to provision stacks into AWS accounts and across Regions by using a single
    * CloudFormation template. In the stack set, you specify the template to use, as
    * well as any parameters and capabilities that the template requires.
    * </p><p><h3>See Also:</h3>   <a
@@ -814,65 +814,47 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitIds() const{ return m_organizationalUnitIds; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline bool OrganizationalUnitIdsHasBeenSet() const { return m_organizationalUnitIdsHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline void SetOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline void SetOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackSet& WithOrganizationalUnitIds(const Aws::Vector<Aws::String>& value) { SetOrganizationalUnitIds(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackSet& WithOrganizationalUnitIds(Aws::Vector<Aws::String>&& value) { SetOrganizationalUnitIds(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(const Aws::String& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(Aws::String&& value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OUs) IDs to which stacks in your stack set have been
-     * deployed.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackSet& AddOrganizationalUnitIds(const char* value) { m_organizationalUnitIdsHasBeenSet = true; m_organizationalUnitIds.push_back(value); return *this; }
 

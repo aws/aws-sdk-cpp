@@ -257,72 +257,200 @@ namespace Model
     /**
      * <p>The capacity provider strategy to update the service to use.</p> <p>If the
      * service is using the default capacity provider strategy for the cluster, the
-     * service can be updated to use one or more capacity providers. However, when a
-     * service is using a non-default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.</p> <p/>
+     * service can be updated to use one or more capacity providers as opposed to the
+     * default capacity provider strategy. However, when a service is using a capacity
+     * provider strategy that is not the default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider
+     * strategy.</p> <p>A capacity provider strategy consists of one or more capacity
+     * providers along with the <code>base</code> and <code>weight</code> to assign to
+     * them. A capacity provider must be associated with the cluster to be used in a
+     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used
+     * to associate a capacity provider with a cluster. Only capacity providers with an
+     * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p> <p/>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
     /**
      * <p>The capacity provider strategy to update the service to use.</p> <p>If the
      * service is using the default capacity provider strategy for the cluster, the
-     * service can be updated to use one or more capacity providers. However, when a
-     * service is using a non-default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.</p> <p/>
+     * service can be updated to use one or more capacity providers as opposed to the
+     * default capacity provider strategy. However, when a service is using a capacity
+     * provider strategy that is not the default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider
+     * strategy.</p> <p>A capacity provider strategy consists of one or more capacity
+     * providers along with the <code>base</code> and <code>weight</code> to assign to
+     * them. A capacity provider must be associated with the cluster to be used in a
+     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used
+     * to associate a capacity provider with a cluster. Only capacity providers with an
+     * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p> <p/>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
     /**
      * <p>The capacity provider strategy to update the service to use.</p> <p>If the
      * service is using the default capacity provider strategy for the cluster, the
-     * service can be updated to use one or more capacity providers. However, when a
-     * service is using a non-default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.</p> <p/>
+     * service can be updated to use one or more capacity providers as opposed to the
+     * default capacity provider strategy. However, when a service is using a capacity
+     * provider strategy that is not the default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider
+     * strategy.</p> <p>A capacity provider strategy consists of one or more capacity
+     * providers along with the <code>base</code> and <code>weight</code> to assign to
+     * them. A capacity provider must be associated with the cluster to be used in a
+     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used
+     * to associate a capacity provider with a cluster. Only capacity providers with an
+     * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p> <p/>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
     /**
      * <p>The capacity provider strategy to update the service to use.</p> <p>If the
      * service is using the default capacity provider strategy for the cluster, the
-     * service can be updated to use one or more capacity providers. However, when a
-     * service is using a non-default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.</p> <p/>
+     * service can be updated to use one or more capacity providers as opposed to the
+     * default capacity provider strategy. However, when a service is using a capacity
+     * provider strategy that is not the default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider
+     * strategy.</p> <p>A capacity provider strategy consists of one or more capacity
+     * providers along with the <code>base</code> and <code>weight</code> to assign to
+     * them. A capacity provider must be associated with the cluster to be used in a
+     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used
+     * to associate a capacity provider with a cluster. Only capacity providers with an
+     * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p> <p/>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
     /**
      * <p>The capacity provider strategy to update the service to use.</p> <p>If the
      * service is using the default capacity provider strategy for the cluster, the
-     * service can be updated to use one or more capacity providers. However, when a
-     * service is using a non-default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.</p> <p/>
+     * service can be updated to use one or more capacity providers as opposed to the
+     * default capacity provider strategy. However, when a service is using a capacity
+     * provider strategy that is not the default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider
+     * strategy.</p> <p>A capacity provider strategy consists of one or more capacity
+     * providers along with the <code>base</code> and <code>weight</code> to assign to
+     * them. A capacity provider must be associated with the cluster to be used in a
+     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used
+     * to associate a capacity provider with a cluster. Only capacity providers with an
+     * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p> <p/>
      */
     inline UpdateServiceRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
     /**
      * <p>The capacity provider strategy to update the service to use.</p> <p>If the
      * service is using the default capacity provider strategy for the cluster, the
-     * service can be updated to use one or more capacity providers. However, when a
-     * service is using a non-default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.</p> <p/>
+     * service can be updated to use one or more capacity providers as opposed to the
+     * default capacity provider strategy. However, when a service is using a capacity
+     * provider strategy that is not the default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider
+     * strategy.</p> <p>A capacity provider strategy consists of one or more capacity
+     * providers along with the <code>base</code> and <code>weight</code> to assign to
+     * them. A capacity provider must be associated with the cluster to be used in a
+     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used
+     * to associate a capacity provider with a cluster. Only capacity providers with an
+     * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p> <p/>
      */
     inline UpdateServiceRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
     /**
      * <p>The capacity provider strategy to update the service to use.</p> <p>If the
      * service is using the default capacity provider strategy for the cluster, the
-     * service can be updated to use one or more capacity providers. However, when a
-     * service is using a non-default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.</p> <p/>
+     * service can be updated to use one or more capacity providers as opposed to the
+     * default capacity provider strategy. However, when a service is using a capacity
+     * provider strategy that is not the default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider
+     * strategy.</p> <p>A capacity provider strategy consists of one or more capacity
+     * providers along with the <code>base</code> and <code>weight</code> to assign to
+     * them. A capacity provider must be associated with the cluster to be used in a
+     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used
+     * to associate a capacity provider with a cluster. Only capacity providers with an
+     * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p> <p/>
      */
     inline UpdateServiceRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
     /**
      * <p>The capacity provider strategy to update the service to use.</p> <p>If the
      * service is using the default capacity provider strategy for the cluster, the
-     * service can be updated to use one or more capacity providers. However, when a
-     * service is using a non-default capacity provider strategy, the service cannot be
-     * updated to use the cluster's default capacity provider strategy.</p> <p/>
+     * service can be updated to use one or more capacity providers as opposed to the
+     * default capacity provider strategy. However, when a service is using a capacity
+     * provider strategy that is not the default capacity provider strategy, the
+     * service cannot be updated to use the cluster's default capacity provider
+     * strategy.</p> <p>A capacity provider strategy consists of one or more capacity
+     * providers along with the <code>base</code> and <code>weight</code> to assign to
+     * them. A capacity provider must be associated with the cluster to be used in a
+     * capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used
+     * to associate a capacity provider with a cluster. Only capacity providers with an
+     * <code>ACTIVE</code> or <code>UPDATING</code> status can be used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p> <p/>
      */
     inline UpdateServiceRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 

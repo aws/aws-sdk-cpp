@@ -48,50 +48,42 @@ namespace Model
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the capacity
-     * provider.</p>
+     * <p>The short name of the capacity provider.</p>
      */
     inline const Aws::String& GetCapacityProvider() const{ return m_capacityProvider; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the capacity
-     * provider.</p>
+     * <p>The short name of the capacity provider.</p>
      */
     inline bool CapacityProviderHasBeenSet() const { return m_capacityProviderHasBeenSet; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the capacity
-     * provider.</p>
+     * <p>The short name of the capacity provider.</p>
      */
     inline void SetCapacityProvider(const Aws::String& value) { m_capacityProviderHasBeenSet = true; m_capacityProvider = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the capacity
-     * provider.</p>
+     * <p>The short name of the capacity provider.</p>
      */
     inline void SetCapacityProvider(Aws::String&& value) { m_capacityProviderHasBeenSet = true; m_capacityProvider = std::move(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the capacity
-     * provider.</p>
+     * <p>The short name of the capacity provider.</p>
      */
     inline void SetCapacityProvider(const char* value) { m_capacityProviderHasBeenSet = true; m_capacityProvider.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the capacity
-     * provider.</p>
+     * <p>The short name of the capacity provider.</p>
      */
     inline CapacityProviderStrategyItem& WithCapacityProvider(const Aws::String& value) { SetCapacityProvider(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the capacity
-     * provider.</p>
+     * <p>The short name of the capacity provider.</p>
      */
     inline CapacityProviderStrategyItem& WithCapacityProvider(Aws::String&& value) { SetCapacityProvider(std::move(value)); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the capacity
-     * provider.</p>
+     * <p>The short name of the capacity provider.</p>
      */
     inline CapacityProviderStrategyItem& WithCapacityProvider(const char* value) { SetCapacityProvider(value); return *this;}
 

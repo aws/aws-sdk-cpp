@@ -25,10 +25,13 @@
 #include <aws/codeguruprofiler/model/CreateProfilingGroupResult.h>
 #include <aws/codeguruprofiler/model/DeleteProfilingGroupResult.h>
 #include <aws/codeguruprofiler/model/DescribeProfilingGroupResult.h>
+#include <aws/codeguruprofiler/model/GetPolicyResult.h>
 #include <aws/codeguruprofiler/model/GetProfileResult.h>
 #include <aws/codeguruprofiler/model/ListProfileTimesResult.h>
 #include <aws/codeguruprofiler/model/ListProfilingGroupsResult.h>
 #include <aws/codeguruprofiler/model/PostAgentProfileResult.h>
+#include <aws/codeguruprofiler/model/PutPermissionResult.h>
+#include <aws/codeguruprofiler/model/RemovePermissionResult.h>
 #include <aws/codeguruprofiler/model/UpdateProfilingGroupResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -73,30 +76,39 @@ namespace Model
         class CreateProfilingGroupRequest;
         class DeleteProfilingGroupRequest;
         class DescribeProfilingGroupRequest;
+        class GetPolicyRequest;
         class GetProfileRequest;
         class ListProfileTimesRequest;
         class ListProfilingGroupsRequest;
         class PostAgentProfileRequest;
+        class PutPermissionRequest;
+        class RemovePermissionRequest;
         class UpdateProfilingGroupRequest;
 
         typedef Aws::Utils::Outcome<ConfigureAgentResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> ConfigureAgentOutcome;
         typedef Aws::Utils::Outcome<CreateProfilingGroupResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> CreateProfilingGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteProfilingGroupResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> DeleteProfilingGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeProfilingGroupResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> DescribeProfilingGroupOutcome;
+        typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<GetProfileResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> GetProfileOutcome;
         typedef Aws::Utils::Outcome<ListProfileTimesResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> ListProfileTimesOutcome;
         typedef Aws::Utils::Outcome<ListProfilingGroupsResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> ListProfilingGroupsOutcome;
         typedef Aws::Utils::Outcome<PostAgentProfileResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> PostAgentProfileOutcome;
+        typedef Aws::Utils::Outcome<PutPermissionResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> PutPermissionOutcome;
+        typedef Aws::Utils::Outcome<RemovePermissionResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<UpdateProfilingGroupResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> UpdateProfilingGroupOutcome;
 
         typedef std::future<ConfigureAgentOutcome> ConfigureAgentOutcomeCallable;
         typedef std::future<CreateProfilingGroupOutcome> CreateProfilingGroupOutcomeCallable;
         typedef std::future<DeleteProfilingGroupOutcome> DeleteProfilingGroupOutcomeCallable;
         typedef std::future<DescribeProfilingGroupOutcome> DescribeProfilingGroupOutcomeCallable;
+        typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
         typedef std::future<GetProfileOutcome> GetProfileOutcomeCallable;
         typedef std::future<ListProfileTimesOutcome> ListProfileTimesOutcomeCallable;
         typedef std::future<ListProfilingGroupsOutcome> ListProfilingGroupsOutcomeCallable;
         typedef std::future<PostAgentProfileOutcome> PostAgentProfileOutcomeCallable;
+        typedef std::future<PutPermissionOutcome> PutPermissionOutcomeCallable;
+        typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<UpdateProfilingGroupOutcome> UpdateProfilingGroupOutcomeCallable;
 } // namespace Model
 
@@ -106,10 +118,13 @@ namespace Model
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::CreateProfilingGroupRequest&, const Model::CreateProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfilingGroupResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::DeleteProfilingGroupRequest&, const Model::DeleteProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfilingGroupResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::DescribeProfilingGroupRequest&, const Model::DescribeProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProfilingGroupResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruProfilerClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::GetProfileRequest&, Model::GetProfileOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListProfileTimesRequest&, const Model::ListProfileTimesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileTimesResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::ListProfilingGroupsRequest&, const Model::ListProfilingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfilingGroupsResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::PostAgentProfileRequest&, const Model::PostAgentProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PostAgentProfileResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruProfilerClient*, const Model::PutPermissionRequest&, const Model::PutPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPermissionResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruProfilerClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const CodeGuruProfilerClient*, const Model::UpdateProfilingGroupRequest&, const Model::UpdateProfilingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfilingGroupResponseReceivedHandler;
 
   /**
@@ -246,6 +261,31 @@ namespace Model
         virtual void DescribeProfilingGroupAsync(const Model::DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the profiling group policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPolicyOutcome GetPolicy(const Model::GetPolicyRequest& request) const;
+
+        /**
+         * <p>Gets the profiling group policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPolicyOutcomeCallable GetPolicyCallable(const Model::GetPolicyRequest& request) const;
+
+        /**
+         * <p>Gets the profiling group policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/GetPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPolicyAsync(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the aggregated profile of a profiling group for the specified time
          * range. If the requested time range does not align with the available aggregated
          * profiles, it is expanded to attain alignment. If aggregated profiles are
@@ -379,6 +419,62 @@ namespace Model
         virtual void PostAgentProfileAsync(const Model::PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides permission to the principals. This overwrites the existing
+         * permissions, and is not additive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPermissionOutcome PutPermission(const Model::PutPermissionRequest& request) const;
+
+        /**
+         * <p>Provides permission to the principals. This overwrites the existing
+         * permissions, and is not additive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPermissionOutcomeCallable PutPermissionCallable(const Model::PutPermissionRequest& request) const;
+
+        /**
+         * <p>Provides permission to the principals. This overwrites the existing
+         * permissions, and is not additive.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/PutPermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPermissionAsync(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes statement for the provided action group from the
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
+
+        /**
+         * <p>Removes statement for the provided action group from the
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
+
+        /**
+         * <p>Removes statement for the provided action group from the
+         * policy.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemovePermissionAsync(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a profiling group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/UpdateProfilingGroup">AWS
          * API Reference</a></p>
@@ -411,10 +507,13 @@ namespace Model
         void CreateProfilingGroupAsyncHelper(const Model::CreateProfilingGroupRequest& request, const CreateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProfilingGroupAsyncHelper(const Model::DeleteProfilingGroupRequest& request, const DeleteProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProfilingGroupAsyncHelper(const Model::DescribeProfilingGroupRequest& request, const DescribeProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProfileAsyncHelper(const Model::GetProfileRequest& request, const GetProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProfileTimesAsyncHelper(const Model::ListProfileTimesRequest& request, const ListProfileTimesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProfilingGroupsAsyncHelper(const Model::ListProfilingGroupsRequest& request, const ListProfilingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PostAgentProfileAsyncHelper(const Model::PostAgentProfileRequest& request, const PostAgentProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPermissionAsyncHelper(const Model::PutPermissionRequest& request, const PutPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProfilingGroupAsyncHelper(const Model::UpdateProfilingGroupRequest& request, const UpdateProfilingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

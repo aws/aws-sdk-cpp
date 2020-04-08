@@ -90,6 +90,47 @@ namespace Model
 
 
     /**
+     * <p>The external meeting ID.</p>
+     */
+    inline const Aws::String& GetExternalMeetingId() const{ return m_externalMeetingId; }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline bool ExternalMeetingIdHasBeenSet() const { return m_externalMeetingIdHasBeenSet; }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline void SetExternalMeetingId(const Aws::String& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = value; }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline void SetExternalMeetingId(Aws::String&& value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId = std::move(value); }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline void SetExternalMeetingId(const char* value) { m_externalMeetingIdHasBeenSet = true; m_externalMeetingId.assign(value); }
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline Meeting& WithExternalMeetingId(const Aws::String& value) { SetExternalMeetingId(value); return *this;}
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline Meeting& WithExternalMeetingId(Aws::String&& value) { SetExternalMeetingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external meeting ID.</p>
+     */
+    inline Meeting& WithExternalMeetingId(const char* value) { SetExternalMeetingId(value); return *this;}
+
+
+    /**
      * <p>The media placement for the meeting.</p>
      */
     inline const MediaPlacement& GetMediaPlacement() const{ return m_mediaPlacement; }
@@ -212,6 +253,9 @@ namespace Model
 
     Aws::String m_meetingId;
     bool m_meetingIdHasBeenSet;
+
+    Aws::String m_externalMeetingId;
+    bool m_externalMeetingIdHasBeenSet;
 
     MediaPlacement m_mediaPlacement;
     bool m_mediaPlacementHasBeenSet;

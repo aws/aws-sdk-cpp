@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>The structure that contains information about a specified operation's results
-   * for a given account in a given region.</p><p><h3>See Also:</h3>   <a
+   * for a given account in a given Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetOperationResultSummary">AWS
    * API Reference</a></p>
    */
@@ -53,193 +53,193 @@ namespace Model
 
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
-     * result.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
+     * operation result.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
-     * result.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
+     * operation result.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
-     * result.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
+     * operation result.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
-     * result.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
+     * operation result.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
-     * result.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
+     * operation result.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
-     * result.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
+     * operation result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
-     * result.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
+     * operation result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The name of the AWS account for this operation
-     * result.</p>
+     * <p>[<code>Self-managed</code> permissions] The name of the AWS account for this
+     * operation result.</p>
      */
     inline StackSetOperationResultSummary& WithAccount(const char* value) { SetAccount(value); return *this;}
 
 
     /**
-     * <p>The name of the AWS region for this operation result.</p>
+     * <p>The name of the AWS Region for this operation result.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The name of the AWS region for this operation result.</p>
+     * <p>The name of the AWS Region for this operation result.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The name of the AWS region for this operation result.</p>
+     * <p>The name of the AWS Region for this operation result.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The name of the AWS region for this operation result.</p>
+     * <p>The name of the AWS Region for this operation result.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The name of the AWS region for this operation result.</p>
+     * <p>The name of the AWS Region for this operation result.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The name of the AWS region for this operation result.</p>
+     * <p>The name of the AWS Region for this operation result.</p>
      */
     inline StackSetOperationResultSummary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The name of the AWS region for this operation result.</p>
+     * <p>The name of the AWS Region for this operation result.</p>
      */
     inline StackSetOperationResultSummary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AWS region for this operation result.</p>
+     * <p>The name of the AWS Region for this operation result.</p>
      */
     inline StackSetOperationResultSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
      * <p>The result status of the stack set operation for the given account in the
-     * given region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and region has been cancelled. This is either because a user
+     * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
+     * specified account and Region has been cancelled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and region failed. </p> <p>If the stack
-     * set operation fails in enough accounts within a region, the failure tolerance
+     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * set operation fails in enough accounts within a Region, the failure tolerance
      * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
-     * <code>RUNNING</code>: The operation in the specified account and region is
+     * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and region has yet to start. </p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The operation in the specified account and region
+     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
     inline const StackSetOperationResultStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The result status of the stack set operation for the given account in the
-     * given region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and region has been cancelled. This is either because a user
+     * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
+     * specified account and Region has been cancelled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and region failed. </p> <p>If the stack
-     * set operation fails in enough accounts within a region, the failure tolerance
+     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * set operation fails in enough accounts within a Region, the failure tolerance
      * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
-     * <code>RUNNING</code>: The operation in the specified account and region is
+     * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and region has yet to start. </p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The operation in the specified account and region
+     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The result status of the stack set operation for the given account in the
-     * given region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and region has been cancelled. This is either because a user
+     * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
+     * specified account and Region has been cancelled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and region failed. </p> <p>If the stack
-     * set operation fails in enough accounts within a region, the failure tolerance
+     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * set operation fails in enough accounts within a Region, the failure tolerance
      * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
-     * <code>RUNNING</code>: The operation in the specified account and region is
+     * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and region has yet to start. </p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The operation in the specified account and region
+     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
     inline void SetStatus(const StackSetOperationResultStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The result status of the stack set operation for the given account in the
-     * given region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and region has been cancelled. This is either because a user
+     * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
+     * specified account and Region has been cancelled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and region failed. </p> <p>If the stack
-     * set operation fails in enough accounts within a region, the failure tolerance
+     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * set operation fails in enough accounts within a Region, the failure tolerance
      * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
-     * <code>RUNNING</code>: The operation in the specified account and region is
+     * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and region has yet to start. </p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The operation in the specified account and region
+     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
     inline void SetStatus(StackSetOperationResultStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The result status of the stack set operation for the given account in the
-     * given region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and region has been cancelled. This is either because a user
+     * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
+     * specified account and Region has been cancelled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and region failed. </p> <p>If the stack
-     * set operation fails in enough accounts within a region, the failure tolerance
+     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * set operation fails in enough accounts within a Region, the failure tolerance
      * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
-     * <code>RUNNING</code>: The operation in the specified account and region is
+     * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and region has yet to start. </p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The operation in the specified account and region
+     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
     inline StackSetOperationResultSummary& WithStatus(const StackSetOperationResultStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The result status of the stack set operation for the given account in the
-     * given region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
-     * specified account and region has been cancelled. This is either because a user
+     * given Region.</p> <ul> <li> <p> <code>CANCELLED</code>: The operation in the
+     * specified account and Region has been cancelled. This is either because a user
      * has stopped the stack set operation, or because the failure tolerance of the
      * stack set operation has been exceeded.</p> </li> <li> <p> <code>FAILED</code>:
-     * The operation in the specified account and region failed. </p> <p>If the stack
-     * set operation fails in enough accounts within a region, the failure tolerance
+     * The operation in the specified account and Region failed. </p> <p>If the stack
+     * set operation fails in enough accounts within a Region, the failure tolerance
      * for the stack set operation as a whole might be exceeded. </p> </li> <li> <p>
-     * <code>RUNNING</code>: The operation in the specified account and region is
+     * <code>RUNNING</code>: The operation in the specified account and Region is
      * currently in progress.</p> </li> <li> <p> <code>PENDING</code>: The operation in
-     * the specified account and region has yet to start. </p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The operation in the specified account and region
+     * the specified account and Region has yet to start. </p> </li> <li> <p>
+     * <code>SUCCEEDED</code>: The operation in the specified account and Region
      * completed successfully.</p> </li> </ul>
      */
     inline StackSetOperationResultSummary& WithStatus(StackSetOperationResultStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -324,50 +324,42 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID for this operation result.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID for this operation result.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID for this operation result.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID for this operation result.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID for this operation result.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID for this operation result.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID for this operation result.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The organization root ID or
-     * organizational unit (OU) ID for this operation result.</p>
+     * <p>Reserved for internal use. No data returned.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
 

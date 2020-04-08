@@ -390,7 +390,7 @@ namespace Model
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
      * must point to a policy (max size: 16KB) located in an S3 bucket in the same
-     * region as the stack. You can specify either the
+     * Region as the stack. You can specify either the
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -402,7 +402,7 @@ namespace Model
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
      * must point to a policy (max size: 16KB) located in an S3 bucket in the same
-     * region as the stack. You can specify either the
+     * Region as the stack. You can specify either the
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -414,7 +414,7 @@ namespace Model
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
      * must point to a policy (max size: 16KB) located in an S3 bucket in the same
-     * region as the stack. You can specify either the
+     * Region as the stack. You can specify either the
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -426,7 +426,7 @@ namespace Model
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
      * must point to a policy (max size: 16KB) located in an S3 bucket in the same
-     * region as the stack. You can specify either the
+     * Region as the stack. You can specify either the
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -438,7 +438,7 @@ namespace Model
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
      * must point to a policy (max size: 16KB) located in an S3 bucket in the same
-     * region as the stack. You can specify either the
+     * Region as the stack. You can specify either the
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -450,7 +450,7 @@ namespace Model
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
      * must point to a policy (max size: 16KB) located in an S3 bucket in the same
-     * region as the stack. You can specify either the
+     * Region as the stack. You can specify either the
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -462,7 +462,7 @@ namespace Model
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
      * must point to a policy (max size: 16KB) located in an S3 bucket in the same
-     * region as the stack. You can specify either the
+     * Region as the stack. You can specify either the
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -474,7 +474,7 @@ namespace Model
     /**
      * <p>Location of a file containing the temporary overriding stack policy. The URL
      * must point to a policy (max size: 16KB) located in an S3 bucket in the same
-     * region as the stack. You can specify either the
+     * Region as the stack. You can specify either the
      * <code>StackPolicyDuringUpdateBody</code> or the
      * <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p> <p>If you
      * want to update protected resources, specify a temporary overriding stack policy
@@ -1406,7 +1406,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
@@ -1417,7 +1417,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
@@ -1428,7 +1428,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
@@ -1439,7 +1439,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
@@ -1450,7 +1450,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
@@ -1461,7 +1461,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
@@ -1472,7 +1472,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created
@@ -1483,7 +1483,7 @@ namespace Model
 
     /**
      * <p>Location of a file containing the updated stack policy. The URL must point to
-     * a policy (max size: 16KB) located in an S3 bucket in the same region as the
+     * a policy (max size: 16KB) located in an S3 bucket in the same Region as the
      * stack. You can specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p> <p>You might update the
      * stack policy, for example, in order to protect a new resource that you created

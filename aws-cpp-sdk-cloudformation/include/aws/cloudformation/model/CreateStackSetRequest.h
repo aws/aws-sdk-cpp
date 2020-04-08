@@ -55,7 +55,7 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p> <note> <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> </note>
      */
@@ -63,7 +63,7 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p> <note> <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> </note>
      */
@@ -71,7 +71,7 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p> <note> <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> </note>
      */
@@ -79,7 +79,7 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p> <note> <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> </note>
      */
@@ -87,7 +87,7 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p> <note> <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> </note>
      */
@@ -95,7 +95,7 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p> <note> <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> </note>
      */
@@ -103,7 +103,7 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p> <note> <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> </note>
      */
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>The name to associate with the stack set. The name must be unique in the
-     * region where you create your stack set.</p> <note> <p>A stack name can contain
+     * Region where you create your stack set.</p> <note> <p>A stack name can contain
      * only alphanumeric characters (case-sensitive) and hyphens. It must start with an
      * alphabetic character and can't be longer than 128 characters.</p> </note>
      */
@@ -1163,8 +1163,7 @@ namespace Model
      * <p>Describes whether StackSets automatically deploys to AWS Organizations
      * accounts that are added to the target organization or organizational unit (OU).
      * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
-     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     * <code>SERVICE_MANAGED</code>.</p>
      */
     inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
 
@@ -1172,8 +1171,7 @@ namespace Model
      * <p>Describes whether StackSets automatically deploys to AWS Organizations
      * accounts that are added to the target organization or organizational unit (OU).
      * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
-     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     * <code>SERVICE_MANAGED</code>.</p>
      */
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
 
@@ -1181,8 +1179,7 @@ namespace Model
      * <p>Describes whether StackSets automatically deploys to AWS Organizations
      * accounts that are added to the target organization or organizational unit (OU).
      * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
-     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     * <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
 
@@ -1190,8 +1187,7 @@ namespace Model
      * <p>Describes whether StackSets automatically deploys to AWS Organizations
      * accounts that are added to the target organization or organizational unit (OU).
      * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
-     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     * <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
 
@@ -1199,8 +1195,7 @@ namespace Model
      * <p>Describes whether StackSets automatically deploys to AWS Organizations
      * accounts that are added to the target organization or organizational unit (OU).
      * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
-     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     * <code>SERVICE_MANAGED</code>.</p>
      */
     inline CreateStackSetRequest& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
 
@@ -1208,8 +1203,7 @@ namespace Model
      * <p>Describes whether StackSets automatically deploys to AWS Organizations
      * accounts that are added to the target organization or organizational unit (OU).
      * Specify only if <code>PermissionModel</code> is
-     * <code>SERVICE_MANAGED</code>.</p> <p>If you specify <code>AutoDeployment</code>,
-     * do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+     * <code>SERVICE_MANAGED</code>.</p>
      */
     inline CreateStackSetRequest& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
 

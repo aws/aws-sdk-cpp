@@ -481,8 +481,10 @@ namespace Model
          * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> </li> <li> <p> <code>DAEMON</code> - The daemon scheduling
          * strategy deploys exactly one task on each active container instance that meets
-         * all of the task placement constraints that you specify in your cluster. When
-         * using this strategy, you don't need to specify a desired number of tasks, a task
+         * all of the task placement constraints that you specify in your cluster. The
+         * service scheduler also evaluates the task placement constraints for running
+         * tasks and will stop tasks that do not meet the placement constraints. When using
+         * this strategy, you don't need to specify a desired number of tasks, a task
          * placement strategy, or use Service Auto Scaling policies. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
@@ -578,8 +580,10 @@ namespace Model
          * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> </li> <li> <p> <code>DAEMON</code> - The daemon scheduling
          * strategy deploys exactly one task on each active container instance that meets
-         * all of the task placement constraints that you specify in your cluster. When
-         * using this strategy, you don't need to specify a desired number of tasks, a task
+         * all of the task placement constraints that you specify in your cluster. The
+         * service scheduler also evaluates the task placement constraints for running
+         * tasks and will stop tasks that do not meet the placement constraints. When using
+         * this strategy, you don't need to specify a desired number of tasks, a task
          * placement strategy, or use Service Auto Scaling policies. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
@@ -677,8 +681,10 @@ namespace Model
          * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> </li> <li> <p> <code>DAEMON</code> - The daemon scheduling
          * strategy deploys exactly one task on each active container instance that meets
-         * all of the task placement constraints that you specify in your cluster. When
-         * using this strategy, you don't need to specify a desired number of tasks, a task
+         * all of the task placement constraints that you specify in your cluster. The
+         * service scheduler also evaluates the task placement constraints for running
+         * tasks and will stop tasks that do not meet the placement constraints. When using
+         * this strategy, you don't need to specify a desired number of tasks, a task
          * placement strategy, or use Service Auto Scaling policies. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
@@ -2648,36 +2654,42 @@ namespace Model
         virtual void UpdateContainerInstancesStateAsync(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
-         * update (<code>ECS</code>) deployment controller, the desired count, deployment
-         * configuration, network configuration, or task definition used can be
-         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
-         * deployment controller, only the desired count, deployment configuration, and
-         * health check grace period can be updated using this API. If the network
-         * configuration, platform version, or task definition need to be updated, a new
-         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * <important> <p>Updating the task placement strategies and constraints on an
+         * Amazon ECS service remains in preview and is a Beta Service as defined by and
+         * subject to the Beta Service Participation Service Terms located at <a
+         * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+         * ("Beta Terms"). These Beta Terms apply to your participation in this
+         * preview.</p> </important> <p>Modifies the parameters of a service.</p> <p>For
+         * services using the rolling update (<code>ECS</code>) deployment controller, the
+         * desired count, deployment configuration, network configuration, task placement
+         * constraints and strategies, or task definition used can be updated.</p> <p>For
+         * services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
+         * only the desired count, deployment configuration, task placement constraints and
+         * strategies, and health check grace period can be updated using this API. If the
+         * network configuration, platform version, or task definition need to be updated,
+         * a new AWS CodeDeploy deployment should be created. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
          * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
-         * external deployment controller, you can update only the desired count and health
-         * check grace period using this API. If the launch type, load balancer, network
-         * configuration, platform version, or task definition need to be updated, you
-         * should create a new task set. For more information, see
-         * <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from the number of
-         * instantiations of a task definition in a service by specifying the cluster that
-         * the service is running in and a new <code>desiredCount</code> parameter.</p>
-         * <p>If you have updated the Docker image of your application, you can create a
-         * new task definition with that image and deploy it to your service. The service
-         * scheduler uses the minimum healthy percent and maximum percent parameters (in
-         * the service's deployment configuration) to determine the deployment
-         * strategy.</p> <note> <p>If your updated Docker image uses the same tag as what
-         * is in the existing task definition for your service (for example,
-         * <code>my_image:latest</code>), you do not need to create a new revision of your
-         * task definition. You can update the service using the
-         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
-         * pull the current image/tag combination from your repository when they start.</p>
-         * </note> <p>You can also update the deployment configuration of a service. When a
-         * deployment is triggered by updating the task definition of a service, the
-         * service scheduler uses the deployment configuration parameters,
+         * external deployment controller, you can update only the desired count, task
+         * placement constraints and strategies, and health check grace period using this
+         * API. If the launch type, load balancer, network configuration, platform version,
+         * or task definition need to be updated, you should create a new task set. For
+         * more information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract
+         * from the number of instantiations of a task definition in a service by
+         * specifying the cluster that the service is running in and a new
+         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
+         * of your application, you can create a new task definition with that image and
+         * deploy it to your service. The service scheduler uses the minimum healthy
+         * percent and maximum percent parameters (in the service's deployment
+         * configuration) to determine the deployment strategy.</p> <note> <p>If your
+         * updated Docker image uses the same tag as what is in the existing task
+         * definition for your service (for example, <code>my_image:latest</code>), you do
+         * not need to create a new revision of your task definition. You can update the
+         * service using the <code>forceNewDeployment</code> option. The new tasks launched
+         * by the deployment pull the current image/tag combination from your repository
+         * when they start.</p> </note> <p>You can also update the deployment configuration
+         * of a service. When a deployment is triggered by updating the task definition of
+         * a service, the service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
@@ -2729,36 +2741,42 @@ namespace Model
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
-         * update (<code>ECS</code>) deployment controller, the desired count, deployment
-         * configuration, network configuration, or task definition used can be
-         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
-         * deployment controller, only the desired count, deployment configuration, and
-         * health check grace period can be updated using this API. If the network
-         * configuration, platform version, or task definition need to be updated, a new
-         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * <important> <p>Updating the task placement strategies and constraints on an
+         * Amazon ECS service remains in preview and is a Beta Service as defined by and
+         * subject to the Beta Service Participation Service Terms located at <a
+         * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+         * ("Beta Terms"). These Beta Terms apply to your participation in this
+         * preview.</p> </important> <p>Modifies the parameters of a service.</p> <p>For
+         * services using the rolling update (<code>ECS</code>) deployment controller, the
+         * desired count, deployment configuration, network configuration, task placement
+         * constraints and strategies, or task definition used can be updated.</p> <p>For
+         * services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
+         * only the desired count, deployment configuration, task placement constraints and
+         * strategies, and health check grace period can be updated using this API. If the
+         * network configuration, platform version, or task definition need to be updated,
+         * a new AWS CodeDeploy deployment should be created. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
          * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
-         * external deployment controller, you can update only the desired count and health
-         * check grace period using this API. If the launch type, load balancer, network
-         * configuration, platform version, or task definition need to be updated, you
-         * should create a new task set. For more information, see
-         * <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from the number of
-         * instantiations of a task definition in a service by specifying the cluster that
-         * the service is running in and a new <code>desiredCount</code> parameter.</p>
-         * <p>If you have updated the Docker image of your application, you can create a
-         * new task definition with that image and deploy it to your service. The service
-         * scheduler uses the minimum healthy percent and maximum percent parameters (in
-         * the service's deployment configuration) to determine the deployment
-         * strategy.</p> <note> <p>If your updated Docker image uses the same tag as what
-         * is in the existing task definition for your service (for example,
-         * <code>my_image:latest</code>), you do not need to create a new revision of your
-         * task definition. You can update the service using the
-         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
-         * pull the current image/tag combination from your repository when they start.</p>
-         * </note> <p>You can also update the deployment configuration of a service. When a
-         * deployment is triggered by updating the task definition of a service, the
-         * service scheduler uses the deployment configuration parameters,
+         * external deployment controller, you can update only the desired count, task
+         * placement constraints and strategies, and health check grace period using this
+         * API. If the launch type, load balancer, network configuration, platform version,
+         * or task definition need to be updated, you should create a new task set. For
+         * more information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract
+         * from the number of instantiations of a task definition in a service by
+         * specifying the cluster that the service is running in and a new
+         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
+         * of your application, you can create a new task definition with that image and
+         * deploy it to your service. The service scheduler uses the minimum healthy
+         * percent and maximum percent parameters (in the service's deployment
+         * configuration) to determine the deployment strategy.</p> <note> <p>If your
+         * updated Docker image uses the same tag as what is in the existing task
+         * definition for your service (for example, <code>my_image:latest</code>), you do
+         * not need to create a new revision of your task definition. You can update the
+         * service using the <code>forceNewDeployment</code> option. The new tasks launched
+         * by the deployment pull the current image/tag combination from your repository
+         * when they start.</p> </note> <p>You can also update the deployment configuration
+         * of a service. When a deployment is triggered by updating the task definition of
+         * a service, the service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
@@ -2812,36 +2830,42 @@ namespace Model
         virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
-         * update (<code>ECS</code>) deployment controller, the desired count, deployment
-         * configuration, network configuration, or task definition used can be
-         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
-         * deployment controller, only the desired count, deployment configuration, and
-         * health check grace period can be updated using this API. If the network
-         * configuration, platform version, or task definition need to be updated, a new
-         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * <important> <p>Updating the task placement strategies and constraints on an
+         * Amazon ECS service remains in preview and is a Beta Service as defined by and
+         * subject to the Beta Service Participation Service Terms located at <a
+         * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+         * ("Beta Terms"). These Beta Terms apply to your participation in this
+         * preview.</p> </important> <p>Modifies the parameters of a service.</p> <p>For
+         * services using the rolling update (<code>ECS</code>) deployment controller, the
+         * desired count, deployment configuration, network configuration, task placement
+         * constraints and strategies, or task definition used can be updated.</p> <p>For
+         * services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
+         * only the desired count, deployment configuration, task placement constraints and
+         * strategies, and health check grace period can be updated using this API. If the
+         * network configuration, platform version, or task definition need to be updated,
+         * a new AWS CodeDeploy deployment should be created. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
          * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
-         * external deployment controller, you can update only the desired count and health
-         * check grace period using this API. If the launch type, load balancer, network
-         * configuration, platform version, or task definition need to be updated, you
-         * should create a new task set. For more information, see
-         * <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from the number of
-         * instantiations of a task definition in a service by specifying the cluster that
-         * the service is running in and a new <code>desiredCount</code> parameter.</p>
-         * <p>If you have updated the Docker image of your application, you can create a
-         * new task definition with that image and deploy it to your service. The service
-         * scheduler uses the minimum healthy percent and maximum percent parameters (in
-         * the service's deployment configuration) to determine the deployment
-         * strategy.</p> <note> <p>If your updated Docker image uses the same tag as what
-         * is in the existing task definition for your service (for example,
-         * <code>my_image:latest</code>), you do not need to create a new revision of your
-         * task definition. You can update the service using the
-         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
-         * pull the current image/tag combination from your repository when they start.</p>
-         * </note> <p>You can also update the deployment configuration of a service. When a
-         * deployment is triggered by updating the task definition of a service, the
-         * service scheduler uses the deployment configuration parameters,
+         * external deployment controller, you can update only the desired count, task
+         * placement constraints and strategies, and health check grace period using this
+         * API. If the launch type, load balancer, network configuration, platform version,
+         * or task definition need to be updated, you should create a new task set. For
+         * more information, see <a>CreateTaskSet</a>.</p> <p>You can add to or subtract
+         * from the number of instantiations of a task definition in a service by
+         * specifying the cluster that the service is running in and a new
+         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
+         * of your application, you can create a new task definition with that image and
+         * deploy it to your service. The service scheduler uses the minimum healthy
+         * percent and maximum percent parameters (in the service's deployment
+         * configuration) to determine the deployment strategy.</p> <note> <p>If your
+         * updated Docker image uses the same tag as what is in the existing task
+         * definition for your service (for example, <code>my_image:latest</code>), you do
+         * not need to create a new revision of your task definition. You can update the
+         * service using the <code>forceNewDeployment</code> option. The new tasks launched
+         * by the deployment pull the current image/tag combination from your repository
+         * when they start.</p> </note> <p>You can also update the deployment configuration
+         * of a service. When a deployment is triggered by updating the task definition of
+         * a service, the service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily

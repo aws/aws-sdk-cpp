@@ -101,74 +101,74 @@ namespace Model
 
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline CreateStackInstancesRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline CreateStackInstancesRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline CreateStackInstancesRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline CreateStackInstancesRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[Self-managed permissions] The names of one or more AWS accounts that you
-     * want to create stack instances in the specified region(s) for.</p> <p>You can
-     * specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
-     * both.</p>
+     * <p>[<code>Self-managed</code> permissions] The names of one or more AWS accounts
+     * that you want to create stack instances in the specified Region(s) for.</p>
+     * <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but
+     * not both.</p>
      */
     inline CreateStackInstancesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
@@ -217,55 +217,55 @@ namespace Model
 
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline CreateStackInstancesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline CreateStackInstancesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline CreateStackInstancesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline CreateStackInstancesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of one or more regions where you want to create stack instances
+     * <p>The names of one or more Regions where you want to create stack instances
      * using the specified AWS account(s). </p>
      */
     inline CreateStackInstancesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
@@ -274,7 +274,7 @@ namespace Model
     /**
      * <p>A list of stack set parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
-     * to all stack instances in the specified accounts and regions. When specifying
+     * to all stack instances in the specified accounts and Regions. When specifying
      * parameters and their values, be aware of how AWS CloudFormation sets parameter
      * values during stack instance operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
@@ -298,7 +298,7 @@ namespace Model
     /**
      * <p>A list of stack set parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
-     * to all stack instances in the specified accounts and regions. When specifying
+     * to all stack instances in the specified accounts and Regions. When specifying
      * parameters and their values, be aware of how AWS CloudFormation sets parameter
      * values during stack instance operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
@@ -322,7 +322,7 @@ namespace Model
     /**
      * <p>A list of stack set parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
-     * to all stack instances in the specified accounts and regions. When specifying
+     * to all stack instances in the specified accounts and Regions. When specifying
      * parameters and their values, be aware of how AWS CloudFormation sets parameter
      * values during stack instance operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
@@ -346,7 +346,7 @@ namespace Model
     /**
      * <p>A list of stack set parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
-     * to all stack instances in the specified accounts and regions. When specifying
+     * to all stack instances in the specified accounts and Regions. When specifying
      * parameters and their values, be aware of how AWS CloudFormation sets parameter
      * values during stack instance operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
@@ -370,7 +370,7 @@ namespace Model
     /**
      * <p>A list of stack set parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
-     * to all stack instances in the specified accounts and regions. When specifying
+     * to all stack instances in the specified accounts and Regions. When specifying
      * parameters and their values, be aware of how AWS CloudFormation sets parameter
      * values during stack instance operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
@@ -394,7 +394,7 @@ namespace Model
     /**
      * <p>A list of stack set parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
-     * to all stack instances in the specified accounts and regions. When specifying
+     * to all stack instances in the specified accounts and Regions. When specifying
      * parameters and their values, be aware of how AWS CloudFormation sets parameter
      * values during stack instance operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
@@ -418,7 +418,7 @@ namespace Model
     /**
      * <p>A list of stack set parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
-     * to all stack instances in the specified accounts and regions. When specifying
+     * to all stack instances in the specified accounts and Regions. When specifying
      * parameters and their values, be aware of how AWS CloudFormation sets parameter
      * values during stack instance operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
@@ -442,7 +442,7 @@ namespace Model
     /**
      * <p>A list of stack set parameters whose values you want to override in the
      * selected stack instances.</p> <p>Any overridden parameter values will be applied
-     * to all stack instances in the specified accounts and regions. When specifying
+     * to all stack instances in the specified accounts and Regions. When specifying
      * parameters and their values, be aware of how AWS CloudFormation sets parameter
      * values during stack instance operations:</p> <ul> <li> <p>To override the
      * current value for a parameter, include the parameter and specify its value.</p>
