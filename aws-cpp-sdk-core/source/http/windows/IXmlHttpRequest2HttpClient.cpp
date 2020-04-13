@@ -392,6 +392,8 @@ namespace Aws
                 }
             }
 
+            OverrideOptionsOnRequestHandle(requestHandle);
+
             if (writeLimiter)
             {
                 writeLimiter->ApplyAndPayForCost(request->GetSize());

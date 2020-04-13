@@ -278,11 +278,13 @@ std::shared_ptr<HttpResponse> WinSyncHttpClient::MakeRequest(const std::shared_p
         }
 
         connection = m_connectionPoolMgr->AcquireConnectionForHost(uriRef.GetAuthority(), uriRef.GetPort());
+        OverrideOptionsOnConnectionHandle(connection);
         AWS_LOGSTREAM_DEBUG(GetLogTag(), "Acquired connection " << connection);
 
         hHttpRequest = AllocateWindowsHttpRequest(request, connection);
 
         AddHeadersToRequest(request, hHttpRequest);
+        OverrideOptionsOnRequestHandle(hHttpRequest);
         if (DoSendRequest(hHttpRequest) && StreamPayloadToRequest(request, hHttpRequest, writeLimiter))
         {
             success = BuildSuccessResponse(request, response, hHttpRequest, readLimiter);
