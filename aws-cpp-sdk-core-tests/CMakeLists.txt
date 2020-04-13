@@ -99,7 +99,7 @@ if (NO_HTTP_CLIENT)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "NO_HTTP_CLIENT")
 endif()
 
-target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS} ${CLIENT_LIBS})
 
 add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory

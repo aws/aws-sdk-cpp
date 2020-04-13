@@ -78,6 +78,16 @@ namespace Aws
              */
             void* AllocateWindowsHttpRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request, void* connection) const;
             /**
+             * Override any configuration on connection handle.
+             * The usage is override this function in the subclass to configure whatever you want on connection handle.
+             */
+            virtual void OverrideOptionsOnConnectionHandle(void*) const {}
+            /**
+             * Override any configuration on request handle.
+             * The usage is override this function in the subclass to configure whatever you want on request handle.
+             */
+            virtual void OverrideOptionsOnRequestHandle(void*) const {}
+            /**
              * config flag for whether or not to tell apis to allow redirects.
              */
             bool m_allowRedirects;

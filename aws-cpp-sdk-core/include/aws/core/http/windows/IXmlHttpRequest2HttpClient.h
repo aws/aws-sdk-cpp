@@ -64,6 +64,13 @@ namespace Aws
              */
             virtual bool SupportsChunkedTransferEncoding() const override { return false; }
 
+        protected:
+            /**
+             * Override any configuration on request handle.
+             * The usage is override this function in the subclass to configure whatever you want on request handle.
+             */
+            virtual void OverrideOptionsOnRequestHandle(const HttpRequestComHandle&) const {}
+
         private:
             void FillClientSettings(const HttpRequestComHandle&) const;
 

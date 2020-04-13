@@ -50,6 +50,13 @@ public:
     static void InitGlobalState();
     static void CleanupGlobalState();
 
+protected:
+    /**
+     * Override any configuration on CURL handle for each request before sending.
+     * The usage is to have a subclass of CurlHttpClient and have your own implementation of this function to configure whatever you want on CURL handle.
+     */
+    virtual void OverrideOptionsOnConnectionHandle(CURL*) const {}
+
 private:
     mutable CurlHandleContainer m_curlHandleContainer;
     bool m_isUsingProxy;

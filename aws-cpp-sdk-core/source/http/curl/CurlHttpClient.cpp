@@ -616,6 +616,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKFUNCTION, SeekBody);
             curl_easy_setopt(connectionHandle, CURLOPT_SEEKDATA, &readContext);
         }
+        OverrideOptionsOnConnectionHandle(connectionHandle);
         Aws::Utils::DateTime startTransmissionTime = Aws::Utils::DateTime::Now();
         CURLcode curlResponseCode = curl_easy_perform(connectionHandle);
         bool shouldContinueRequest = ContinueRequest(*request);

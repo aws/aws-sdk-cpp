@@ -59,8 +59,8 @@ private:
 class CountedRetryStrategy : public Aws::Client::DefaultRetryStrategy
 {
 public:
-    CountedRetryStrategy() : m_attemptedRetries(0), m_maxRetries(std::numeric_limits<long>::max()) {}
-    CountedRetryStrategy(long maxRetires) : m_attemptedRetries(0), m_maxRetries(maxRetires <= 0 ? std::numeric_limits<long>::max() : maxRetires) {}
+    CountedRetryStrategy() : m_attemptedRetries(0), m_maxRetries((std::numeric_limits<long>::max)()) {}
+    CountedRetryStrategy(long maxRetires) : m_attemptedRetries(0), m_maxRetries(maxRetires <= 0 ? (std::numeric_limits<long>::max)() : maxRetires) {}
 
     bool ShouldRetry(const Aws::Client::AWSError<Aws::Client::CoreErrors>& error, long attemptedRetries) const override
     {
