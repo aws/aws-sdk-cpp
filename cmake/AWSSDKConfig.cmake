@@ -82,6 +82,7 @@ if (AWSSDK_ROOT_DIR)
             )
 else()
     find_file(AWSSDK_CORE_HEADER_FILE Aws.h
+        "/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "/usr/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "/usr/local/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
         "C:/Progra~1/AWSSDK/${AWSSDK_INSTALL_INCLUDEDIR}/aws/core"
@@ -97,14 +98,18 @@ if (NOT AWSSDK_CORE_HEADER_FILE)
     message(FATAL_ERROR "AWS SDK for C++ is missing, please install it first")
 endif()
 
-# based on core header file path, inspects the actual AWSSDK_ROOT_DIR
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_CORE_HEADER_FILE}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
+if (IS_ABSOLUTE ${AWSSDK_INSTALL_LIBDIR})
+    set(AWSSDK_ROOT_DIR "")
+else()
+    # based on core header file path, inspects the actual AWSSDK_ROOT_DIR
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_CORE_HEADER_FILE}" PATH)
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 
-if (NOT AWSSDK_ROOT_DIR)
-    message(FATAL_ERROR "AWSSDK_ROOT_DIR is not set or can't be calculated from the path of core header file")
+    if (NOT AWSSDK_ROOT_DIR)
+	message(FATAL_ERROR "AWSSDK_ROOT_DIR is not set or can't be calculated from the path of core header file")
+    endif()
 endif()
 
 
