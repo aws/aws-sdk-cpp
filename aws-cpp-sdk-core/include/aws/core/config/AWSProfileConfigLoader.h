@@ -212,6 +212,12 @@ namespace Aws
             Aws::Config::Profile GetCredentialsProfile(const Aws::String& profileName) const;
 
             /**
+             * Returns cached credentials profiles.
+             * Using copy instead of const reference to avoid reading bad contents due to thread contention.
+             */
+            Aws::Map<Aws::String, Aws::Config::Profile> GetCredentialsProfiles() const;
+
+            /**
              * Returns cached credentials with the specified profile name.
              * Using copy instead of const reference to avoid reading bad contents due to thread contention.
              */
@@ -245,6 +251,8 @@ namespace Aws
         bool AWS_CORE_API HasCachedCredentialsProfile(const Aws::String &profileName);
 
         Aws::Config::Profile AWS_CORE_API GetCachedCredentialsProfile(const Aws::String& profileName);
+
+        Aws::Map<Aws::String, Aws::Config::Profile> AWS_CORE_API GetCachedCredentialsProfiles();
 
         Aws::Auth::AWSCredentials AWS_CORE_API GetCachedCredentials(const Aws::String& profileName);
     }

@@ -445,6 +445,12 @@ namespace Aws
             return iter->second;
         }
 
+        Aws::Map<Aws::String, Aws::Config::Profile> ConfigAndCredentialsCacheManager::GetCredentialsProfiles() const
+        {
+            Aws::Utils::Threading::ReaderLockGuard guard(m_credentialsLock);
+            return m_credentialsFileLoader.GetProfiles();
+        }
+
         Aws::Auth::AWSCredentials ConfigAndCredentialsCacheManager::GetCredentials(const Aws::String& profileName) const
         {
             Aws::Utils::Threading::ReaderLockGuard guard(m_credentialsLock);
@@ -527,6 +533,12 @@ namespace Aws
         {
             assert(s_configManager);
             return s_configManager->GetCredentialsProfile(profileName);
+        }
+
+        Aws::Map<Aws::String, Aws::Config::Profile> GetCachedCredentialsProfiles()
+        {
+            assert(s_configManager);
+            return s_configManager->GetCredentialsProfiles();
         }
 
         Aws::Auth::AWSCredentials GetCachedCredentials(const Aws::String &profileName)
