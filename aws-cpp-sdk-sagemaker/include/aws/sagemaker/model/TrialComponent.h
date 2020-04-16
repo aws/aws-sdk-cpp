@@ -46,8 +46,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of the properties of a trial component as returned by the
-   * <a>Search</a> API.</p><p><h3>See Also:</h3>   <a
+   * <p>The properties of a trial component as returned by the <a>Search</a>
+   * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponent">AWS
    * API Reference</a></p>
    */
@@ -191,22 +191,40 @@ namespace Model
     inline TrialComponent& WithTrialComponentArn(const char* value) { SetTrialComponentArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline const TrialComponentSource& GetSource() const{ return m_source; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline void SetSource(const TrialComponentSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline void SetSource(TrialComponentSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline TrialComponent& WithSource(const TrialComponentSource& value) { SetSource(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) and job type of the source of the
+     * component.</p>
+     */
     inline TrialComponent& WithSource(TrialComponentSource&& value) { SetSource(std::move(value)); return *this;}
 
 
@@ -616,32 +634,32 @@ namespace Model
 
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline const TrialComponentSourceDetail& GetSourceDetail() const{ return m_sourceDetail; }
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline bool SourceDetailHasBeenSet() const { return m_sourceDetailHasBeenSet; }
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline void SetSourceDetail(const TrialComponentSourceDetail& value) { m_sourceDetailHasBeenSet = true; m_sourceDetail = value; }
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline void SetSourceDetail(TrialComponentSourceDetail&& value) { m_sourceDetailHasBeenSet = true; m_sourceDetail = std::move(value); }
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline TrialComponent& WithSourceDetail(const TrialComponentSourceDetail& value) { SetSourceDetail(value); return *this;}
 
     /**
-     * <p>The source of the trial component.&gt;</p>
+     * <p>Details of the source of the component.</p>
      */
     inline TrialComponent& WithSourceDetail(TrialComponentSourceDetail&& value) { SetSourceDetail(std::move(value)); return *this;}
 

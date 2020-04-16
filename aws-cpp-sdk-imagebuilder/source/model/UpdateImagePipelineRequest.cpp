@@ -29,6 +29,8 @@ UpdateImagePipelineRequest::UpdateImagePipelineRequest() :
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_distributionConfigurationArnHasBeenSet(false),
     m_imageTestsConfigurationHasBeenSet(false),
+    m_enhancedImageMetadataEnabled(false),
+    m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_status(PipelineStatus::NOT_SET),
     m_statusHasBeenSet(false),
@@ -74,6 +76,12 @@ Aws::String UpdateImagePipelineRequest::SerializePayload() const
   if(m_imageTestsConfigurationHasBeenSet)
   {
    payload.WithObject("imageTestsConfiguration", m_imageTestsConfiguration.Jsonize());
+
+  }
+
+  if(m_enhancedImageMetadataEnabledHasBeenSet)
+  {
+   payload.WithBool("enhancedImageMetadataEnabled", m_enhancedImageMetadataEnabled);
 
   }
 

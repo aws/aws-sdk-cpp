@@ -35,7 +35,8 @@ namespace Model
 
   /**
    * <p>Information required to reset the timer. The timer is reset to the previously
-   * evaluated result of the duration. </p><p><h3>See Also:</h3>   <a
+   * evaluated result of the duration. The duration expression isn't reevaluated when
+   * you reset the timer.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ResetTimerAction">AWS
    * API Reference</a></p>
    */

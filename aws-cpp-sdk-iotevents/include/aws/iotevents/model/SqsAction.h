@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotevents/model/Payload.h>
 #include <utility>
 
 namespace Aws
@@ -91,27 +92,64 @@ namespace Model
 
     /**
      * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
-     * written to the queue.</p>
+     * written to the queue. Otherwise, set this to FALSE.</p>
      */
     inline bool GetUseBase64() const{ return m_useBase64; }
 
     /**
      * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
-     * written to the queue.</p>
+     * written to the queue. Otherwise, set this to FALSE.</p>
      */
     inline bool UseBase64HasBeenSet() const { return m_useBase64HasBeenSet; }
 
     /**
      * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
-     * written to the queue.</p>
+     * written to the queue. Otherwise, set this to FALSE.</p>
      */
     inline void SetUseBase64(bool value) { m_useBase64HasBeenSet = true; m_useBase64 = value; }
 
     /**
      * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
-     * written to the queue.</p>
+     * written to the queue. Otherwise, set this to FALSE.</p>
      */
     inline SqsAction& WithUseBase64(bool value) { SetUseBase64(value); return *this;}
+
+
+    /**
+     * <p>You can configure the action payload when you send a message to an Amazon SQS
+     * queue.</p>
+     */
+    inline const Payload& GetPayload() const{ return m_payload; }
+
+    /**
+     * <p>You can configure the action payload when you send a message to an Amazon SQS
+     * queue.</p>
+     */
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+
+    /**
+     * <p>You can configure the action payload when you send a message to an Amazon SQS
+     * queue.</p>
+     */
+    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
+
+    /**
+     * <p>You can configure the action payload when you send a message to an Amazon SQS
+     * queue.</p>
+     */
+    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
+
+    /**
+     * <p>You can configure the action payload when you send a message to an Amazon SQS
+     * queue.</p>
+     */
+    inline SqsAction& WithPayload(const Payload& value) { SetPayload(value); return *this;}
+
+    /**
+     * <p>You can configure the action payload when you send a message to an Amazon SQS
+     * queue.</p>
+     */
+    inline SqsAction& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
 
   private:
 
@@ -120,6 +158,9 @@ namespace Model
 
     bool m_useBase64;
     bool m_useBase64HasBeenSet;
+
+    Payload m_payload;
+    bool m_payloadHasBeenSet;
   };
 
 } // namespace Model

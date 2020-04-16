@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotevents/model/Payload.h>
 #include <utility>
 
 namespace Aws
@@ -88,10 +89,50 @@ namespace Model
      */
     inline SNSTopicPublishAction& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline const Payload& GetPayload() const{ return m_payload; }
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline SNSTopicPublishAction& WithPayload(const Payload& value) { SetPayload(value); return *this;}
+
+    /**
+     * <p>You can configure the action payload when you send a message as an Amazon SNS
+     * push notification.</p>
+     */
+    inline SNSTopicPublishAction& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet;
+
+    Payload m_payload;
+    bool m_payloadHasBeenSet;
   };
 
 } // namespace Model

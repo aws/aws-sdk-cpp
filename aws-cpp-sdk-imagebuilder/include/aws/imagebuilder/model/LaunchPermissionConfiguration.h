@@ -53,47 +53,47 @@ namespace Model
 
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline void SetUserIds(const Aws::Vector<Aws::String>& value) { m_userIdsHasBeenSet = true; m_userIds = value; }
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline void SetUserIds(Aws::Vector<Aws::String>&& value) { m_userIdsHasBeenSet = true; m_userIds = std::move(value); }
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& WithUserIds(const Aws::Vector<Aws::String>& value) { SetUserIds(value); return *this;}
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& WithUserIds(Aws::Vector<Aws::String>&& value) { SetUserIds(std::move(value)); return *this;}
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(const Aws::String& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(Aws::String&& value) { m_userIdsHasBeenSet = true; m_userIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The AWS account ID. </p>
+     * <p>The AWS account ID. </p>
      */
     inline LaunchPermissionConfiguration& AddUserIds(const char* value) { m_userIdsHasBeenSet = true; m_userIds.push_back(value); return *this; }
 

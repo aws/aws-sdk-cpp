@@ -31,14 +31,16 @@ namespace Model
 SqsAction::SqsAction() : 
     m_queueUrlHasBeenSet(false),
     m_useBase64(false),
-    m_useBase64HasBeenSet(false)
+    m_useBase64HasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
 }
 
 SqsAction::SqsAction(JsonView jsonValue) : 
     m_queueUrlHasBeenSet(false),
     m_useBase64(false),
-    m_useBase64HasBeenSet(false)
+    m_useBase64HasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ SqsAction& SqsAction::operator =(JsonView jsonValue)
     m_useBase64HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("payload"))
+  {
+    m_payload = jsonValue.GetObject("payload");
+
+    m_payloadHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +84,12 @@ JsonValue SqsAction::Jsonize() const
   if(m_useBase64HasBeenSet)
   {
    payload.WithBool("useBase64", m_useBase64);
+
+  }
+
+  if(m_payloadHasBeenSet)
+  {
+   payload.WithObject("payload", m_payload.Jsonize());
 
   }
 

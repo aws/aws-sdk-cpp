@@ -191,50 +191,50 @@ namespace Model
 
 
     /**
-     * <p>Currently, this value is always <code>MYSQL</code>. The engine family applies
-     * to both RDS MySQL and Aurora MySQL.</p>
+     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
+     * Aurora.</p>
      */
     inline const Aws::String& GetEngineFamily() const{ return m_engineFamily; }
 
     /**
-     * <p>Currently, this value is always <code>MYSQL</code>. The engine family applies
-     * to both RDS MySQL and Aurora MySQL.</p>
+     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
+     * Aurora.</p>
      */
     inline bool EngineFamilyHasBeenSet() const { return m_engineFamilyHasBeenSet; }
 
     /**
-     * <p>Currently, this value is always <code>MYSQL</code>. The engine family applies
-     * to both RDS MySQL and Aurora MySQL.</p>
+     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
+     * Aurora.</p>
      */
     inline void SetEngineFamily(const Aws::String& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = value; }
 
     /**
-     * <p>Currently, this value is always <code>MYSQL</code>. The engine family applies
-     * to both RDS MySQL and Aurora MySQL.</p>
+     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
+     * Aurora.</p>
      */
     inline void SetEngineFamily(Aws::String&& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = std::move(value); }
 
     /**
-     * <p>Currently, this value is always <code>MYSQL</code>. The engine family applies
-     * to both RDS MySQL and Aurora MySQL.</p>
+     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
+     * Aurora.</p>
      */
     inline void SetEngineFamily(const char* value) { m_engineFamilyHasBeenSet = true; m_engineFamily.assign(value); }
 
     /**
-     * <p>Currently, this value is always <code>MYSQL</code>. The engine family applies
-     * to both RDS MySQL and Aurora MySQL.</p>
+     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
+     * Aurora.</p>
      */
     inline DBProxy& WithEngineFamily(const Aws::String& value) { SetEngineFamily(value); return *this;}
 
     /**
-     * <p>Currently, this value is always <code>MYSQL</code>. The engine family applies
-     * to both RDS MySQL and Aurora MySQL.</p>
+     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
+     * Aurora.</p>
      */
     inline DBProxy& WithEngineFamily(Aws::String&& value) { SetEngineFamily(std::move(value)); return *this;}
 
     /**
-     * <p>Currently, this value is always <code>MYSQL</code>. The engine family applies
-     * to both RDS MySQL and Aurora MySQL.</p>
+     * <p>The engine family applies to MySQL and PostgreSQL for both RDS and
+     * Aurora.</p>
      */
     inline DBProxy& WithEngineFamily(const char* value) { SetEngineFamily(value); return *this;}
 

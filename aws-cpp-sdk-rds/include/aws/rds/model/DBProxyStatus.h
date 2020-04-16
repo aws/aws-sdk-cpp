@@ -31,7 +31,10 @@ namespace Model
     incompatible_network,
     insufficient_resource_limits,
     creating,
-    deleting
+    deleting,
+    suspended,
+    suspending,
+    reactivating
   };
 
 namespace DBProxyStatusMapper

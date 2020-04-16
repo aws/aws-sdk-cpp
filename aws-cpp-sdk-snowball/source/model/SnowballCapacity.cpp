@@ -34,6 +34,7 @@ namespace Aws
         static const int T80_HASH = HashingUtils::HashString("T80");
         static const int T100_HASH = HashingUtils::HashString("T100");
         static const int T42_HASH = HashingUtils::HashString("T42");
+        static const int T98_HASH = HashingUtils::HashString("T98");
         static const int NoPreference_HASH = HashingUtils::HashString("NoPreference");
 
 
@@ -55,6 +56,10 @@ namespace Aws
           else if (hashCode == T42_HASH)
           {
             return SnowballCapacity::T42;
+          }
+          else if (hashCode == T98_HASH)
+          {
+            return SnowballCapacity::T98;
           }
           else if (hashCode == NoPreference_HASH)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "T100";
           case SnowballCapacity::T42:
             return "T42";
+          case SnowballCapacity::T98:
+            return "T98";
           case SnowballCapacity::NoPreference:
             return "NoPreference";
           default:

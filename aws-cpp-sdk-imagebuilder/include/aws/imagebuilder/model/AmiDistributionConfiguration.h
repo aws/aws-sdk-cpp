@@ -51,149 +51,149 @@ namespace Model
 
 
     /**
-     * <p> The name of the distribution configuration. </p>
+     * <p>The name of the distribution configuration. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the distribution configuration. </p>
+     * <p>The name of the distribution configuration. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the distribution configuration. </p>
+     * <p>The name of the distribution configuration. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the distribution configuration. </p>
+     * <p>The name of the distribution configuration. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the distribution configuration. </p>
+     * <p>The name of the distribution configuration. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the distribution configuration. </p>
+     * <p>The name of the distribution configuration. </p>
      */
     inline AmiDistributionConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the distribution configuration. </p>
+     * <p>The name of the distribution configuration. </p>
      */
     inline AmiDistributionConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the distribution configuration. </p>
+     * <p>The name of the distribution configuration. </p>
      */
     inline AmiDistributionConfiguration& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. </p>
      */
     inline AmiDistributionConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. </p>
      */
     inline AmiDistributionConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the distribution configuration. </p>
+     * <p>The description of the distribution configuration. </p>
      */
     inline AmiDistributionConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAmiTags() const{ return m_amiTags; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline bool AmiTagsHasBeenSet() const { return m_amiTagsHasBeenSet; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline void SetAmiTags(const Aws::Map<Aws::String, Aws::String>& value) { m_amiTagsHasBeenSet = true; m_amiTags = value; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline void SetAmiTags(Aws::Map<Aws::String, Aws::String>&& value) { m_amiTagsHasBeenSet = true; m_amiTags = std::move(value); }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& WithAmiTags(const Aws::Map<Aws::String, Aws::String>& value) { SetAmiTags(value); return *this;}
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& WithAmiTags(Aws::Map<Aws::String, Aws::String>&& value) { SetAmiTags(std::move(value)); return *this;}
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(const Aws::String& key, const Aws::String& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(key, value); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(Aws::String&& key, const Aws::String& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(const Aws::String& key, Aws::String&& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(Aws::String&& key, Aws::String&& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(const char* key, Aws::String&& value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(Aws::String&& key, const char* value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags to apply to AMIs distributed to this Region. </p>
+     * <p>The tags to apply to AMIs distributed to this Region. </p>
      */
     inline AmiDistributionConfiguration& AddAmiTags(const char* key, const char* value) { m_amiTagsHasBeenSet = true; m_amiTags.emplace(key, value); return *this; }
 

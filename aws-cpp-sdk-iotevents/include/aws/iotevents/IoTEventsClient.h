@@ -150,7 +150,7 @@ namespace Model
   /**
    * <p>AWS IoT Events monitors your equipment or device fleets for failures or
    * changes in operation, and triggers actions when such events occur. You can use
-   * AWS IoT Events API commands to create, read, update, and delete inputs and
+   * AWS IoT Events API operations to create, read, update, and delete inputs and
    * detector models, and to list their versions.</p>
    */
   class AWS_IOTEVENTS_API IoTEventsClient : public Aws::Client::AWSJsonClient

@@ -224,6 +224,39 @@ namespace Model
 
 
     /**
+     * <p> Collects additional information about the image being created, including the
+     * operating system (OS) version and package list. This information is used to
+     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
+     * </p>
+     */
+    inline bool GetEnhancedImageMetadataEnabled() const{ return m_enhancedImageMetadataEnabled; }
+
+    /**
+     * <p> Collects additional information about the image being created, including the
+     * operating system (OS) version and package list. This information is used to
+     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
+     * </p>
+     */
+    inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
+
+    /**
+     * <p> Collects additional information about the image being created, including the
+     * operating system (OS) version and package list. This information is used to
+     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
+     * </p>
+     */
+    inline void SetEnhancedImageMetadataEnabled(bool value) { m_enhancedImageMetadataEnabledHasBeenSet = true; m_enhancedImageMetadataEnabled = value; }
+
+    /**
+     * <p> Collects additional information about the image being created, including the
+     * operating system (OS) version and package list. This information is used to
+     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
+     * </p>
+     */
+    inline CreateImageRequest& WithEnhancedImageMetadataEnabled(bool value) { SetEnhancedImageMetadataEnabled(value); return *this;}
+
+
+    /**
      * <p> The tags of the image. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -342,6 +375,9 @@ namespace Model
 
     ImageTestsConfiguration m_imageTestsConfiguration;
     bool m_imageTestsConfigurationHasBeenSet;
+
+    bool m_enhancedImageMetadataEnabled;
+    bool m_enhancedImageMetadataEnabledHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

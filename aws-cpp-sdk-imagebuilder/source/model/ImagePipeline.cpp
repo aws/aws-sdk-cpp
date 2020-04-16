@@ -34,6 +34,8 @@ ImagePipeline::ImagePipeline() :
     m_descriptionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_enhancedImageMetadataEnabled(false),
+    m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_imageRecipeArnHasBeenSet(false),
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_distributionConfigurationArnHasBeenSet(false),
@@ -55,6 +57,8 @@ ImagePipeline::ImagePipeline(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_enhancedImageMetadataEnabled(false),
+    m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_imageRecipeArnHasBeenSet(false),
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_distributionConfigurationArnHasBeenSet(false),
@@ -99,6 +103,13 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
 
     m_platformHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enhancedImageMetadataEnabled"))
+  {
+    m_enhancedImageMetadataEnabled = jsonValue.GetBool("enhancedImageMetadataEnabled");
+
+    m_enhancedImageMetadataEnabledHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("imageRecipeArn"))
@@ -209,6 +220,12 @@ JsonValue ImagePipeline::Jsonize() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
+  }
+
+  if(m_enhancedImageMetadataEnabledHasBeenSet)
+  {
+   payload.WithBool("enhancedImageMetadataEnabled", m_enhancedImageMetadataEnabled);
+
   }
 
   if(m_imageRecipeArnHasBeenSet)

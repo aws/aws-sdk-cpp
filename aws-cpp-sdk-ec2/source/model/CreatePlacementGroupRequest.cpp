@@ -27,7 +27,8 @@ CreatePlacementGroupRequest::CreatePlacementGroupRequest() :
     m_strategy(PlacementStrategy::NOT_SET),
     m_strategyHasBeenSet(false),
     m_partitionCount(0),
-    m_partitionCountHasBeenSet(false)
+    m_partitionCountHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,16 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
   if(m_partitionCountHasBeenSet)
   {
     ss << "PartitionCount=" << m_partitionCount << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

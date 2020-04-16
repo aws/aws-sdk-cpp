@@ -25,6 +25,7 @@
 #include <aws/securityhub/model/BatchDisableStandardsResult.h>
 #include <aws/securityhub/model/BatchEnableStandardsResult.h>
 #include <aws/securityhub/model/BatchImportFindingsResult.h>
+#include <aws/securityhub/model/BatchUpdateFindingsResult.h>
 #include <aws/securityhub/model/CreateActionTargetResult.h>
 #include <aws/securityhub/model/CreateInsightResult.h>
 #include <aws/securityhub/model/CreateMembersResult.h>
@@ -105,6 +106,7 @@ namespace Model
         class BatchDisableStandardsRequest;
         class BatchEnableStandardsRequest;
         class BatchImportFindingsRequest;
+        class BatchUpdateFindingsRequest;
         class CreateActionTargetRequest;
         class CreateInsightRequest;
         class CreateMembersRequest;
@@ -147,6 +149,7 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchDisableStandardsResult, Aws::Client::AWSError<SecurityHubErrors>> BatchDisableStandardsOutcome;
         typedef Aws::Utils::Outcome<BatchEnableStandardsResult, Aws::Client::AWSError<SecurityHubErrors>> BatchEnableStandardsOutcome;
         typedef Aws::Utils::Outcome<BatchImportFindingsResult, Aws::Client::AWSError<SecurityHubErrors>> BatchImportFindingsOutcome;
+        typedef Aws::Utils::Outcome<BatchUpdateFindingsResult, Aws::Client::AWSError<SecurityHubErrors>> BatchUpdateFindingsOutcome;
         typedef Aws::Utils::Outcome<CreateActionTargetResult, Aws::Client::AWSError<SecurityHubErrors>> CreateActionTargetOutcome;
         typedef Aws::Utils::Outcome<CreateInsightResult, Aws::Client::AWSError<SecurityHubErrors>> CreateInsightOutcome;
         typedef Aws::Utils::Outcome<CreateMembersResult, Aws::Client::AWSError<SecurityHubErrors>> CreateMembersOutcome;
@@ -189,6 +192,7 @@ namespace Model
         typedef std::future<BatchDisableStandardsOutcome> BatchDisableStandardsOutcomeCallable;
         typedef std::future<BatchEnableStandardsOutcome> BatchEnableStandardsOutcomeCallable;
         typedef std::future<BatchImportFindingsOutcome> BatchImportFindingsOutcomeCallable;
+        typedef std::future<BatchUpdateFindingsOutcome> BatchUpdateFindingsOutcomeCallable;
         typedef std::future<CreateActionTargetOutcome> CreateActionTargetOutcomeCallable;
         typedef std::future<CreateInsightOutcome> CreateInsightOutcomeCallable;
         typedef std::future<CreateMembersOutcome> CreateMembersOutcomeCallable;
@@ -234,6 +238,7 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::BatchDisableStandardsRequest&, const Model::BatchDisableStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisableStandardsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchEnableStandardsRequest&, const Model::BatchEnableStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchEnableStandardsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchImportFindingsRequest&, const Model::BatchImportFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchImportFindingsResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::BatchUpdateFindingsRequest&, const Model::BatchUpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateActionTargetRequest&, const Model::CreateActionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActionTargetResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateInsightRequest&, const Model::CreateInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInsightResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
@@ -447,8 +452,16 @@ namespace Model
          * <p>Imports security findings generated from an integrated third-party product
          * into Security Hub. This action is requested by the integrated product to import
          * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p><p><h3>See
-         * Also:</h3>   <a
+         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
+         * finding is created, <code>BatchImportFindings</code> cannot be used to update
+         * the following finding fields and objects, which Security Hub customers use to
+         * manage their investigation workflow.</p> <ul> <li> <p> <code>Confidence</code>
+         * </p> </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
+         * <code>Note</code> </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li>
+         * <li> <p> <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li>
+         * <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          */
@@ -458,8 +471,16 @@ namespace Model
          * <p>Imports security findings generated from an integrated third-party product
          * into Security Hub. This action is requested by the integrated product to import
          * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p><p><h3>See
-         * Also:</h3>   <a
+         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
+         * finding is created, <code>BatchImportFindings</code> cannot be used to update
+         * the following finding fields and objects, which Security Hub customers use to
+         * manage their investigation workflow.</p> <ul> <li> <p> <code>Confidence</code>
+         * </p> </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
+         * <code>Note</code> </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li>
+         * <li> <p> <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li>
+         * <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *
@@ -471,14 +492,89 @@ namespace Model
          * <p>Imports security findings generated from an integrated third-party product
          * into Security Hub. This action is requested by the integrated product to import
          * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p><p><h3>See
-         * Also:</h3>   <a
+         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
+         * finding is created, <code>BatchImportFindings</code> cannot be used to update
+         * the following finding fields and objects, which Security Hub customers use to
+         * manage their investigation workflow.</p> <ul> <li> <p> <code>Confidence</code>
+         * </p> </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
+         * <code>Note</code> </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li>
+         * <li> <p> <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li>
+         * <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchImportFindingsAsync(const Model::BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Used by Security Hub customers to update information about their
+         * investigation into a finding. Requested by master accounts or member accounts.
+         * Master accounts can update findings for their account and their member accounts.
+         * Member accounts can update findings for their account.</p> <p>Updates from
+         * <code>BatchUpdateFindings</code> do not affect the value of
+         * <code>UpdatedAt</code> for a finding.</p> <p>Master accounts can use
+         * <code>BatchUpdateFindings</code> to update the following finding fields and
+         * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
+         * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
+         * <p> <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
+         * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
+         * </li> </ul> <p>Member accounts can only use <code>BatchUpdateFindings</code> to
+         * update the Note object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateFindingsOutcome BatchUpdateFindings(const Model::BatchUpdateFindingsRequest& request) const;
+
+        /**
+         * <p>Used by Security Hub customers to update information about their
+         * investigation into a finding. Requested by master accounts or member accounts.
+         * Master accounts can update findings for their account and their member accounts.
+         * Member accounts can update findings for their account.</p> <p>Updates from
+         * <code>BatchUpdateFindings</code> do not affect the value of
+         * <code>UpdatedAt</code> for a finding.</p> <p>Master accounts can use
+         * <code>BatchUpdateFindings</code> to update the following finding fields and
+         * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
+         * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
+         * <p> <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
+         * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
+         * </li> </ul> <p>Member accounts can only use <code>BatchUpdateFindings</code> to
+         * update the Note object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchUpdateFindingsOutcomeCallable BatchUpdateFindingsCallable(const Model::BatchUpdateFindingsRequest& request) const;
+
+        /**
+         * <p>Used by Security Hub customers to update information about their
+         * investigation into a finding. Requested by master accounts or member accounts.
+         * Master accounts can update findings for their account and their member accounts.
+         * Member accounts can update findings for their account.</p> <p>Updates from
+         * <code>BatchUpdateFindings</code> do not affect the value of
+         * <code>UpdatedAt</code> for a finding.</p> <p>Master accounts can use
+         * <code>BatchUpdateFindings</code> to update the following finding fields and
+         * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
+         * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
+         * <p> <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
+         * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
+         * </li> </ul> <p>Member accounts can only use <code>BatchUpdateFindings</code> to
+         * update the Note object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchUpdateFindingsAsync(const Model::BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a custom action target in Security Hub.</p> <p>You can use custom
@@ -1583,6 +1679,8 @@ namespace Model
         virtual void UpdateActionTargetAsync(const Model::UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <code>UpdateFindings</code> is deprecated. Instead of
+         * <code>UpdateFindings</code>, use <code>BatchUpdateFindings</code>.</p>
          * <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security
          * Hub-aggregated findings that the filter attributes specify. Any member account
          * that can view the finding also sees the update to the finding.</p><p><h3>See
@@ -1593,6 +1691,8 @@ namespace Model
         virtual Model::UpdateFindingsOutcome UpdateFindings(const Model::UpdateFindingsRequest& request) const;
 
         /**
+         * <p> <code>UpdateFindings</code> is deprecated. Instead of
+         * <code>UpdateFindings</code>, use <code>BatchUpdateFindings</code>.</p>
          * <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security
          * Hub-aggregated findings that the filter attributes specify. Any member account
          * that can view the finding also sees the update to the finding.</p><p><h3>See
@@ -1605,6 +1705,8 @@ namespace Model
         virtual Model::UpdateFindingsOutcomeCallable UpdateFindingsCallable(const Model::UpdateFindingsRequest& request) const;
 
         /**
+         * <p> <code>UpdateFindings</code> is deprecated. Instead of
+         * <code>UpdateFindings</code>, use <code>BatchUpdateFindings</code>.</p>
          * <p>Updates the <code>Note</code> and <code>RecordState</code> of the Security
          * Hub-aggregated findings that the filter attributes specify. Any member account
          * that can view the finding also sees the update to the finding.</p><p><h3>See
@@ -1680,6 +1782,7 @@ namespace Model
         void BatchDisableStandardsAsyncHelper(const Model::BatchDisableStandardsRequest& request, const BatchDisableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchEnableStandardsAsyncHelper(const Model::BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchImportFindingsAsyncHelper(const Model::BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchUpdateFindingsAsyncHelper(const Model::BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateActionTargetAsyncHelper(const Model::CreateActionTargetRequest& request, const CreateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInsightAsyncHelper(const Model::CreateInsightRequest& request, const CreateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMembersAsyncHelper(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

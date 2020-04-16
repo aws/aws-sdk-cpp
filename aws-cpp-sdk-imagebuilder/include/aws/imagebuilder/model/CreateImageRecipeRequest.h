@@ -130,165 +130,229 @@ namespace Model
 
 
     /**
-     * <p> The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe. </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
 
     /**
-     * <p> The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe. </p>
      */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
 
     /**
-     * <p> The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe. </p>
      */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
-     * <p> The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe. </p>
      */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
 
     /**
-     * <p> The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe. </p>
      */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
 
     /**
-     * <p> The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
 
     /**
-     * <p> The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
 
     /**
-     * <p> The semantic version of the image recipe. </p>
+     * <p>The semantic version of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
 
 
     /**
-     * <p> The components of the image recipe. </p>
+     * <p>The components of the image recipe. </p>
      */
     inline const Aws::Vector<ComponentConfiguration>& GetComponents() const{ return m_components; }
 
     /**
-     * <p> The components of the image recipe. </p>
+     * <p>The components of the image recipe. </p>
      */
     inline bool ComponentsHasBeenSet() const { return m_componentsHasBeenSet; }
 
     /**
-     * <p> The components of the image recipe. </p>
+     * <p>The components of the image recipe. </p>
      */
     inline void SetComponents(const Aws::Vector<ComponentConfiguration>& value) { m_componentsHasBeenSet = true; m_components = value; }
 
     /**
-     * <p> The components of the image recipe. </p>
+     * <p>The components of the image recipe. </p>
      */
     inline void SetComponents(Aws::Vector<ComponentConfiguration>&& value) { m_componentsHasBeenSet = true; m_components = std::move(value); }
 
     /**
-     * <p> The components of the image recipe. </p>
+     * <p>The components of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& WithComponents(const Aws::Vector<ComponentConfiguration>& value) { SetComponents(value); return *this;}
 
     /**
-     * <p> The components of the image recipe. </p>
+     * <p>The components of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& WithComponents(Aws::Vector<ComponentConfiguration>&& value) { SetComponents(std::move(value)); return *this;}
 
     /**
-     * <p> The components of the image recipe. </p>
+     * <p>The components of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& AddComponents(const ComponentConfiguration& value) { m_componentsHasBeenSet = true; m_components.push_back(value); return *this; }
 
     /**
-     * <p> The components of the image recipe. </p>
+     * <p>The components of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& AddComponents(ComponentConfiguration&& value) { m_componentsHasBeenSet = true; m_components.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p> The parent image of the image recipe. </p>
+     * <p>The parent image of the image recipe. The value of the string can be the ARN
+     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
+     * Builder that you want to use the latest AMI created in 20xx (year). You can
+     * provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have
+     * access to the AMI, and the AMI must be in the same Region in which you are using
+     * Image Builder. </p>
      */
     inline const Aws::String& GetParentImage() const{ return m_parentImage; }
 
     /**
-     * <p> The parent image of the image recipe. </p>
+     * <p>The parent image of the image recipe. The value of the string can be the ARN
+     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
+     * Builder that you want to use the latest AMI created in 20xx (year). You can
+     * provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have
+     * access to the AMI, and the AMI must be in the same Region in which you are using
+     * Image Builder. </p>
      */
     inline bool ParentImageHasBeenSet() const { return m_parentImageHasBeenSet; }
 
     /**
-     * <p> The parent image of the image recipe. </p>
+     * <p>The parent image of the image recipe. The value of the string can be the ARN
+     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
+     * Builder that you want to use the latest AMI created in 20xx (year). You can
+     * provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have
+     * access to the AMI, and the AMI must be in the same Region in which you are using
+     * Image Builder. </p>
      */
     inline void SetParentImage(const Aws::String& value) { m_parentImageHasBeenSet = true; m_parentImage = value; }
 
     /**
-     * <p> The parent image of the image recipe. </p>
+     * <p>The parent image of the image recipe. The value of the string can be the ARN
+     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
+     * Builder that you want to use the latest AMI created in 20xx (year). You can
+     * provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have
+     * access to the AMI, and the AMI must be in the same Region in which you are using
+     * Image Builder. </p>
      */
     inline void SetParentImage(Aws::String&& value) { m_parentImageHasBeenSet = true; m_parentImage = std::move(value); }
 
     /**
-     * <p> The parent image of the image recipe. </p>
+     * <p>The parent image of the image recipe. The value of the string can be the ARN
+     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
+     * Builder that you want to use the latest AMI created in 20xx (year). You can
+     * provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have
+     * access to the AMI, and the AMI must be in the same Region in which you are using
+     * Image Builder. </p>
      */
     inline void SetParentImage(const char* value) { m_parentImageHasBeenSet = true; m_parentImage.assign(value); }
 
     /**
-     * <p> The parent image of the image recipe. </p>
+     * <p>The parent image of the image recipe. The value of the string can be the ARN
+     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
+     * Builder that you want to use the latest AMI created in 20xx (year). You can
+     * provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have
+     * access to the AMI, and the AMI must be in the same Region in which you are using
+     * Image Builder. </p>
      */
     inline CreateImageRecipeRequest& WithParentImage(const Aws::String& value) { SetParentImage(value); return *this;}
 
     /**
-     * <p> The parent image of the image recipe. </p>
+     * <p>The parent image of the image recipe. The value of the string can be the ARN
+     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
+     * Builder that you want to use the latest AMI created in 20xx (year). You can
+     * provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have
+     * access to the AMI, and the AMI must be in the same Region in which you are using
+     * Image Builder. </p>
      */
     inline CreateImageRecipeRequest& WithParentImage(Aws::String&& value) { SetParentImage(std::move(value)); return *this;}
 
     /**
-     * <p> The parent image of the image recipe. </p>
+     * <p>The parent image of the image recipe. The value of the string can be the ARN
+     * of the parent image or an AMI ID. The format for the ARN follows this example:
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
+     * The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image
+     * Builder that you want to use the latest AMI created in 20xx (year). You can
+     * provide the specific version that you want to use, or you can use a wildcard in
+     * all of the fields. If you enter an AMI ID for the string value, you must have
+     * access to the AMI, and the AMI must be in the same Region in which you are using
+     * Image Builder. </p>
      */
     inline CreateImageRecipeRequest& WithParentImage(const char* value) { SetParentImage(value); return *this;}
 
 
     /**
-     * <p> The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe. </p>
      */
     inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p> The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe. </p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p> The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe. </p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p> The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe. </p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p> The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p> The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p> The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& AddBlockDeviceMappings(const InstanceBlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p> The block device mappings of the image recipe. </p>
+     * <p>The block device mappings of the image recipe. </p>
      */
     inline CreateImageRecipeRequest& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -360,42 +424,42 @@ namespace Model
 
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline CreateImageRecipeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline CreateImageRecipeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p> The idempotency token used to make this request idempotent. </p>
+     * <p>The idempotency token used to make this request idempotent. </p>
      */
     inline CreateImageRecipeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

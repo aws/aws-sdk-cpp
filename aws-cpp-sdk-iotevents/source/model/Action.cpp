@@ -38,7 +38,9 @@ Action::Action() :
     m_lambdaHasBeenSet(false),
     m_iotEventsHasBeenSet(false),
     m_sqsHasBeenSet(false),
-    m_firehoseHasBeenSet(false)
+    m_firehoseHasBeenSet(false),
+    m_dynamoDBHasBeenSet(false),
+    m_dynamoDBv2HasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ Action::Action(JsonView jsonValue) :
     m_lambdaHasBeenSet(false),
     m_iotEventsHasBeenSet(false),
     m_sqsHasBeenSet(false),
-    m_firehoseHasBeenSet(false)
+    m_firehoseHasBeenSet(false),
+    m_dynamoDBHasBeenSet(false),
+    m_dynamoDBv2HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +133,20 @@ Action& Action::operator =(JsonView jsonValue)
     m_firehoseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dynamoDB"))
+  {
+    m_dynamoDB = jsonValue.GetObject("dynamoDB");
+
+    m_dynamoDBHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamoDBv2"))
+  {
+    m_dynamoDBv2 = jsonValue.GetObject("dynamoDBv2");
+
+    m_dynamoDBv2HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +211,18 @@ JsonValue Action::Jsonize() const
   if(m_firehoseHasBeenSet)
   {
    payload.WithObject("firehose", m_firehose.Jsonize());
+
+  }
+
+  if(m_dynamoDBHasBeenSet)
+  {
+   payload.WithObject("dynamoDB", m_dynamoDB.Jsonize());
+
+  }
+
+  if(m_dynamoDBv2HasBeenSet)
+  {
+   payload.WithObject("dynamoDBv2", m_dynamoDBv2.Jsonize());
 
   }
 

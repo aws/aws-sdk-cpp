@@ -29,12 +29,14 @@ namespace Model
 {
 
 IotTopicPublishAction::IotTopicPublishAction() : 
-    m_mqttTopicHasBeenSet(false)
+    m_mqttTopicHasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
 }
 
 IotTopicPublishAction::IotTopicPublishAction(JsonView jsonValue) : 
-    m_mqttTopicHasBeenSet(false)
+    m_mqttTopicHasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ IotTopicPublishAction& IotTopicPublishAction::operator =(JsonView jsonValue)
     m_mqttTopicHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("payload"))
+  {
+    m_payload = jsonValue.GetObject("payload");
+
+    m_payloadHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue IotTopicPublishAction::Jsonize() const
   if(m_mqttTopicHasBeenSet)
   {
    payload.WithString("mqttTopic", m_mqttTopic);
+
+  }
+
+  if(m_payloadHasBeenSet)
+  {
+   payload.WithObject("payload", m_payload.Jsonize());
 
   }
 

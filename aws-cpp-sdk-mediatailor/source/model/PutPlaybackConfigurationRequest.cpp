@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() : 
     m_adDecisionServerUrlHasBeenSet(false),
+    m_availSuppressionHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
     m_livePreRollConfigurationHasBeenSet(false),
@@ -44,6 +45,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_adDecisionServerUrlHasBeenSet)
   {
    payload.WithString("AdDecisionServerUrl", m_adDecisionServerUrl);
+
+  }
+
+  if(m_availSuppressionHasBeenSet)
+  {
+   payload.WithObject("AvailSuppression", m_availSuppression.Jsonize());
 
   }
 

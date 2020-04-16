@@ -29,12 +29,14 @@ namespace Model
 {
 
 LambdaAction::LambdaAction() : 
-    m_functionArnHasBeenSet(false)
+    m_functionArnHasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
 }
 
 LambdaAction::LambdaAction(JsonView jsonValue) : 
-    m_functionArnHasBeenSet(false)
+    m_functionArnHasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ LambdaAction& LambdaAction::operator =(JsonView jsonValue)
     m_functionArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("payload"))
+  {
+    m_payload = jsonValue.GetObject("payload");
+
+    m_payloadHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue LambdaAction::Jsonize() const
   if(m_functionArnHasBeenSet)
   {
    payload.WithString("functionArn", m_functionArn);
+
+  }
+
+  if(m_payloadHasBeenSet)
+  {
+   payload.WithObject("payload", m_payload.Jsonize());
 
   }
 

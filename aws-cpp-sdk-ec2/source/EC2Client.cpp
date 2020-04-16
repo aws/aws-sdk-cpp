@@ -2791,7 +2791,7 @@ CreatePlacementGroupOutcome EC2Client::CreatePlacementGroup(const CreatePlacemen
   XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
-    return CreatePlacementGroupOutcome(NoResult());
+    return CreatePlacementGroupOutcome(CreatePlacementGroupResponse(outcome.GetResult()));
   }
   else
   {

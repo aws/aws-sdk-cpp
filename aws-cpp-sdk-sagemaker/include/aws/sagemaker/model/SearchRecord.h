@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>An individual search result record that contains a single resource
-   * object.</p><p><h3>See Also:</h3>   <a
+   * <p>A single resource returned as part of the <a>Search</a> API
+   * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchRecord">AWS
    * API Reference</a></p>
    */
@@ -52,131 +52,125 @@ namespace Model
 
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline const TrainingJob& GetTrainingJob() const{ return m_trainingJob; }
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline bool TrainingJobHasBeenSet() const { return m_trainingJobHasBeenSet; }
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline void SetTrainingJob(const TrainingJob& value) { m_trainingJobHasBeenSet = true; m_trainingJob = value; }
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline void SetTrainingJob(TrainingJob&& value) { m_trainingJobHasBeenSet = true; m_trainingJob = std::move(value); }
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline SearchRecord& WithTrainingJob(const TrainingJob& value) { SetTrainingJob(value); return *this;}
 
     /**
-     * <p>A <code>TrainingJob</code> object that is returned as part of a
-     * <code>Search</code> request.</p>
+     * <p>The properties of a training job.</p>
      */
     inline SearchRecord& WithTrainingJob(TrainingJob&& value) { SetTrainingJob(std::move(value)); return *this;}
 
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline const Experiment& GetExperiment() const{ return m_experiment; }
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline bool ExperimentHasBeenSet() const { return m_experimentHasBeenSet; }
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline void SetExperiment(const Experiment& value) { m_experimentHasBeenSet = true; m_experiment = value; }
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline void SetExperiment(Experiment&& value) { m_experimentHasBeenSet = true; m_experiment = std::move(value); }
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline SearchRecord& WithExperiment(const Experiment& value) { SetExperiment(value); return *this;}
 
     /**
-     * <p>A summary of the properties of an experiment.</p>
+     * <p>The properties of an experiment.</p>
      */
     inline SearchRecord& WithExperiment(Experiment&& value) { SetExperiment(std::move(value)); return *this;}
 
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline const Trial& GetTrial() const{ return m_trial; }
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline bool TrialHasBeenSet() const { return m_trialHasBeenSet; }
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline void SetTrial(const Trial& value) { m_trialHasBeenSet = true; m_trial = value; }
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline void SetTrial(Trial&& value) { m_trialHasBeenSet = true; m_trial = std::move(value); }
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline SearchRecord& WithTrial(const Trial& value) { SetTrial(value); return *this;}
 
     /**
-     * <p>A summary of the properties of a trial.</p>
+     * <p>The properties of a trial.</p>
      */
     inline SearchRecord& WithTrial(Trial&& value) { SetTrial(std::move(value)); return *this;}
 
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline const TrialComponent& GetTrialComponent() const{ return m_trialComponent; }
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline bool TrialComponentHasBeenSet() const { return m_trialComponentHasBeenSet; }
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline void SetTrialComponent(const TrialComponent& value) { m_trialComponentHasBeenSet = true; m_trialComponent = value; }
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline void SetTrialComponent(TrialComponent&& value) { m_trialComponentHasBeenSet = true; m_trialComponent = std::move(value); }
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline SearchRecord& WithTrialComponent(const TrialComponent& value) { SetTrialComponent(value); return *this;}
 
     /**
-     * <p>A summary of the properties of a trial component.</p>
+     * <p>The properties of a trial component.</p>
      */
     inline SearchRecord& WithTrialComponent(TrialComponent&& value) { SetTrialComponent(std::move(value)); return *this;}
 

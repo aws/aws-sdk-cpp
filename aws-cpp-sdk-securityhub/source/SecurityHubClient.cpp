@@ -34,6 +34,7 @@
 #include <aws/securityhub/model/BatchDisableStandardsRequest.h>
 #include <aws/securityhub/model/BatchEnableStandardsRequest.h>
 #include <aws/securityhub/model/BatchImportFindingsRequest.h>
+#include <aws/securityhub/model/BatchUpdateFindingsRequest.h>
 #include <aws/securityhub/model/CreateActionTargetRequest.h>
 #include <aws/securityhub/model/CreateInsightRequest.h>
 #include <aws/securityhub/model/CreateMembersRequest.h>
@@ -282,6 +283,41 @@ void SecurityHubClient::BatchImportFindingsAsync(const BatchImportFindingsReques
 void SecurityHubClient::BatchImportFindingsAsyncHelper(const BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchImportFindings(request), context);
+}
+
+BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpdateFindingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/findings/batchupdate";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchUpdateFindingsOutcome(BatchUpdateFindingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchUpdateFindingsOutcome(outcome.GetError());
+  }
+}
+
+BatchUpdateFindingsOutcomeCallable SecurityHubClient::BatchUpdateFindingsCallable(const BatchUpdateFindingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchUpdateFindingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchUpdateFindings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::BatchUpdateFindingsAsync(const BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchUpdateFindingsAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::BatchUpdateFindingsAsyncHelper(const BatchUpdateFindingsRequest& request, const BatchUpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchUpdateFindings(request), context);
 }
 
 CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActionTargetRequest& request) const

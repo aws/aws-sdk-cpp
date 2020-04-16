@@ -36,6 +36,7 @@ namespace Aws
         static const int ONNX_HASH = HashingUtils::HashString("ONNX");
         static const int PYTORCH_HASH = HashingUtils::HashString("PYTORCH");
         static const int XGBOOST_HASH = HashingUtils::HashString("XGBOOST");
+        static const int TFLITE_HASH = HashingUtils::HashString("TFLITE");
 
 
         Framework GetFrameworkForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return Framework::XGBOOST;
           }
+          else if (hashCode == TFLITE_HASH)
+          {
+            return Framework::TFLITE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "PYTORCH";
           case Framework::XGBOOST:
             return "XGBOOST";
+          case Framework::TFLITE:
+            return "TFLITE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

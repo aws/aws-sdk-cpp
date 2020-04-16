@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * <p>An array of objects containing information about the human loops.</p>
+     * <p>An array of objects that contain information about the human loops.</p>
      */
     inline const Aws::Vector<HumanLoopSummary>& GetHumanLoopSummaries() const{ return m_humanLoopSummaries; }
 
     /**
-     * <p>An array of objects containing information about the human loops.</p>
+     * <p>An array of objects that contain information about the human loops.</p>
      */
     inline void SetHumanLoopSummaries(const Aws::Vector<HumanLoopSummary>& value) { m_humanLoopSummaries = value; }
 
     /**
-     * <p>An array of objects containing information about the human loops.</p>
+     * <p>An array of objects that contain information about the human loops.</p>
      */
     inline void SetHumanLoopSummaries(Aws::Vector<HumanLoopSummary>&& value) { m_humanLoopSummaries = std::move(value); }
 
     /**
-     * <p>An array of objects containing information about the human loops.</p>
+     * <p>An array of objects that contain information about the human loops.</p>
      */
     inline ListHumanLoopsResult& WithHumanLoopSummaries(const Aws::Vector<HumanLoopSummary>& value) { SetHumanLoopSummaries(value); return *this;}
 
     /**
-     * <p>An array of objects containing information about the human loops.</p>
+     * <p>An array of objects that contain information about the human loops.</p>
      */
     inline ListHumanLoopsResult& WithHumanLoopSummaries(Aws::Vector<HumanLoopSummary>&& value) { SetHumanLoopSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects containing information about the human loops.</p>
+     * <p>An array of objects that contain information about the human loops.</p>
      */
     inline ListHumanLoopsResult& AddHumanLoopSummaries(const HumanLoopSummary& value) { m_humanLoopSummaries.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects containing information about the human loops.</p>
+     * <p>An array of objects that contain information about the human loops.</p>
      */
     inline ListHumanLoopsResult& AddHumanLoopSummaries(HumanLoopSummary&& value) { m_humanLoopSummaries.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline ListHumanLoopsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline ListHumanLoopsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to resume pagination.</p>
+     * <p>A token to display the next page of results.</p>
      */
     inline ListHumanLoopsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

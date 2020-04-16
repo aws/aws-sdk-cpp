@@ -711,7 +711,12 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::UpdateWorkteamRequest&, const Model::UpdateWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkteamResponseReceivedHandler;
 
   /**
-   * <p>Provides APIs for creating and managing Amazon SageMaker resources.</p>
+   * <p>Provides APIs for creating and managing Amazon SageMaker resources. </p>
+   * <p>Other Resources:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user">Amazon
+   * SageMaker Developer Guide</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/Welcome.html">Amazon
+   * Augmented AI Runtime API Reference</a> </p> </li> </ul>
    */
   class AWS_SAGEMAKER_API SageMakerClient : public Aws::Client::AWSJsonClient
   {
@@ -4784,8 +4789,8 @@ namespace Model
         virtual void RenderUiTemplateAsync(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Finds Amazon SageMaker resources that match a search query. Matching resource
-         * objects are returned as a list of <code>SearchResult</code> objects in the
+         * <p>Finds Amazon SageMaker resources that match a search query. Matching
+         * resources are returned as a list of <code>SearchRecord</code> objects in the
          * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
          * types: numeric, text, Boolean, and timestamp.</p><p><h3>See Also:</h3>   <a
@@ -4795,8 +4800,8 @@ namespace Model
         virtual Model::SearchOutcome Search(const Model::SearchRequest& request) const;
 
         /**
-         * <p>Finds Amazon SageMaker resources that match a search query. Matching resource
-         * objects are returned as a list of <code>SearchResult</code> objects in the
+         * <p>Finds Amazon SageMaker resources that match a search query. Matching
+         * resources are returned as a list of <code>SearchRecord</code> objects in the
          * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
          * types: numeric, text, Boolean, and timestamp.</p><p><h3>See Also:</h3>   <a
@@ -4808,8 +4813,8 @@ namespace Model
         virtual Model::SearchOutcomeCallable SearchCallable(const Model::SearchRequest& request) const;
 
         /**
-         * <p>Finds Amazon SageMaker resources that match a search query. Matching resource
-         * objects are returned as a list of <code>SearchResult</code> objects in the
+         * <p>Finds Amazon SageMaker resources that match a search query. Matching
+         * resources are returned as a list of <code>SearchRecord</code> objects in the
          * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
          * types: numeric, text, Boolean, and timestamp.</p><p><h3>See Also:</h3>   <a

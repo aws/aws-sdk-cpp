@@ -79,62 +79,56 @@ namespace Model
 
 
     /**
-     * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results. You must provide at least one subexpression,
-     * filter, or nested filter. The maximum number of recursive
-     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
-     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
-     * object is 50.</p>
+     * <p>A Boolean conditional statement. Resources must satisfy this condition to be
+     * included in search results. You must provide at least one subexpression, filter,
+     * or nested filter. The maximum number of recursive <code>SubExpressions</code>,
+     * <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.</p>
      */
     inline const SearchExpression& GetSearchExpression() const{ return m_searchExpression; }
 
     /**
-     * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results. You must provide at least one subexpression,
-     * filter, or nested filter. The maximum number of recursive
-     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
-     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
-     * object is 50.</p>
+     * <p>A Boolean conditional statement. Resources must satisfy this condition to be
+     * included in search results. You must provide at least one subexpression, filter,
+     * or nested filter. The maximum number of recursive <code>SubExpressions</code>,
+     * <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.</p>
      */
     inline bool SearchExpressionHasBeenSet() const { return m_searchExpressionHasBeenSet; }
 
     /**
-     * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results. You must provide at least one subexpression,
-     * filter, or nested filter. The maximum number of recursive
-     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
-     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
-     * object is 50.</p>
+     * <p>A Boolean conditional statement. Resources must satisfy this condition to be
+     * included in search results. You must provide at least one subexpression, filter,
+     * or nested filter. The maximum number of recursive <code>SubExpressions</code>,
+     * <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.</p>
      */
     inline void SetSearchExpression(const SearchExpression& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = value; }
 
     /**
-     * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results. You must provide at least one subexpression,
-     * filter, or nested filter. The maximum number of recursive
-     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
-     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
-     * object is 50.</p>
+     * <p>A Boolean conditional statement. Resources must satisfy this condition to be
+     * included in search results. You must provide at least one subexpression, filter,
+     * or nested filter. The maximum number of recursive <code>SubExpressions</code>,
+     * <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.</p>
      */
     inline void SetSearchExpression(SearchExpression&& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = std::move(value); }
 
     /**
-     * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results. You must provide at least one subexpression,
-     * filter, or nested filter. The maximum number of recursive
-     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
-     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
-     * object is 50.</p>
+     * <p>A Boolean conditional statement. Resources must satisfy this condition to be
+     * included in search results. You must provide at least one subexpression, filter,
+     * or nested filter. The maximum number of recursive <code>SubExpressions</code>,
+     * <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.</p>
      */
     inline SearchRequest& WithSearchExpression(const SearchExpression& value) { SetSearchExpression(value); return *this;}
 
     /**
-     * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results. You must provide at least one subexpression,
-     * filter, or nested filter. The maximum number of recursive
-     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
-     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
-     * object is 50.</p>
+     * <p>A Boolean conditional statement. Resources must satisfy this condition to be
+     * included in search results. You must provide at least one subexpression, filter,
+     * or nested filter. The maximum number of recursive <code>SubExpressions</code>,
+     * <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.</p>
      */
     inline SearchRequest& WithSearchExpression(SearchExpression&& value) { SetSearchExpression(std::move(value)); return *this;}
 
@@ -232,95 +226,87 @@ namespace Model
 
 
     /**
-     * <p>If more than <code>MaxResults</code> resource objects match the specified
-     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
-     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-     * <code>SearchRequest</code> to continue retrieving results for the specified
-     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     * <p>If more than <code>MaxResults</code> resources match the specified
+     * <code>SearchExpression</code>, the response includes a <code>NextToken</code>.
+     * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
+     * to continue retrieving results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If more than <code>MaxResults</code> resource objects match the specified
-     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
-     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-     * <code>SearchRequest</code> to continue retrieving results for the specified
-     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     * <p>If more than <code>MaxResults</code> resources match the specified
+     * <code>SearchExpression</code>, the response includes a <code>NextToken</code>.
+     * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
+     * to continue retrieving results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>If more than <code>MaxResults</code> resource objects match the specified
-     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
-     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-     * <code>SearchRequest</code> to continue retrieving results for the specified
-     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     * <p>If more than <code>MaxResults</code> resources match the specified
+     * <code>SearchExpression</code>, the response includes a <code>NextToken</code>.
+     * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
+     * to continue retrieving results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>If more than <code>MaxResults</code> resource objects match the specified
-     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
-     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-     * <code>SearchRequest</code> to continue retrieving results for the specified
-     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     * <p>If more than <code>MaxResults</code> resources match the specified
+     * <code>SearchExpression</code>, the response includes a <code>NextToken</code>.
+     * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
+     * to continue retrieving results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>If more than <code>MaxResults</code> resource objects match the specified
-     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
-     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-     * <code>SearchRequest</code> to continue retrieving results for the specified
-     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     * <p>If more than <code>MaxResults</code> resources match the specified
+     * <code>SearchExpression</code>, the response includes a <code>NextToken</code>.
+     * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
+     * to continue retrieving results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>If more than <code>MaxResults</code> resource objects match the specified
-     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
-     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-     * <code>SearchRequest</code> to continue retrieving results for the specified
-     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     * <p>If more than <code>MaxResults</code> resources match the specified
+     * <code>SearchExpression</code>, the response includes a <code>NextToken</code>.
+     * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
+     * to continue retrieving results.</p>
      */
     inline SearchRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If more than <code>MaxResults</code> resource objects match the specified
-     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
-     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-     * <code>SearchRequest</code> to continue retrieving results for the specified
-     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     * <p>If more than <code>MaxResults</code> resources match the specified
+     * <code>SearchExpression</code>, the response includes a <code>NextToken</code>.
+     * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
+     * to continue retrieving results.</p>
      */
     inline SearchRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If more than <code>MaxResults</code> resource objects match the specified
-     * <code>SearchExpression</code>, the <code>SearchResponse</code> includes a
-     * <code>NextToken</code>. The <code>NextToken</code> can be passed to the next
-     * <code>SearchRequest</code> to continue retrieving results for the specified
-     * <code>SearchExpression</code> and <code>Sort</code> parameters.</p>
+     * <p>If more than <code>MaxResults</code> resources match the specified
+     * <code>SearchExpression</code>, the response includes a <code>NextToken</code>.
+     * The <code>NextToken</code> can be passed to the next <code>SearchRequest</code>
+     * to continue retrieving results.</p>
      */
     inline SearchRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of results to return in a <code>SearchResponse</code>.</p>
+     * <p>The maximum number of results to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return in a <code>SearchResponse</code>.</p>
+     * <p>The maximum number of results to return.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return in a <code>SearchResponse</code>.</p>
+     * <p>The maximum number of results to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return in a <code>SearchResponse</code>.</p>
+     * <p>The maximum number of results to return.</p>
      */
     inline SearchRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

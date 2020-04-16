@@ -30,13 +30,15 @@ namespace Model
 
 TrialComponentSourceDetail::TrialComponentSourceDetail() : 
     m_sourceArnHasBeenSet(false),
-    m_trainingJobHasBeenSet(false)
+    m_trainingJobHasBeenSet(false),
+    m_processingJobHasBeenSet(false)
 {
 }
 
 TrialComponentSourceDetail::TrialComponentSourceDetail(JsonView jsonValue) : 
     m_sourceArnHasBeenSet(false),
-    m_trainingJobHasBeenSet(false)
+    m_trainingJobHasBeenSet(false),
+    m_processingJobHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ TrialComponentSourceDetail& TrialComponentSourceDetail::operator =(JsonView json
     m_trainingJobHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProcessingJob"))
+  {
+    m_processingJob = jsonValue.GetObject("ProcessingJob");
+
+    m_processingJobHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue TrialComponentSourceDetail::Jsonize() const
   if(m_trainingJobHasBeenSet)
   {
    payload.WithObject("TrainingJob", m_trainingJob.Jsonize());
+
+  }
+
+  if(m_processingJobHasBeenSet)
+  {
+   payload.WithObject("ProcessingJob", m_processingJob.Jsonize());
 
   }
 

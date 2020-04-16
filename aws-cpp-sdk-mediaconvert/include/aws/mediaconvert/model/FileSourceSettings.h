@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/FileSourceConvert608To708.h>
+#include <aws/mediaconvert/model/CaptionSourceFramerate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -107,6 +108,73 @@ namespace Model
 
 
     /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing framerates between your input captions and
+     * input video, specify the framerate of the captions file. Specify this value as a
+     * fraction, using the settings Framerate numerator (framerateNumerator) and
+     * Framerate denominator (framerateDenominator). For example, you might specify 24
+     * / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001
+     * for 29.97 fps.
+     */
+    inline const CaptionSourceFramerate& GetFramerate() const{ return m_framerate; }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing framerates between your input captions and
+     * input video, specify the framerate of the captions file. Specify this value as a
+     * fraction, using the settings Framerate numerator (framerateNumerator) and
+     * Framerate denominator (framerateDenominator). For example, you might specify 24
+     * / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001
+     * for 29.97 fps.
+     */
+    inline bool FramerateHasBeenSet() const { return m_framerateHasBeenSet; }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing framerates between your input captions and
+     * input video, specify the framerate of the captions file. Specify this value as a
+     * fraction, using the settings Framerate numerator (framerateNumerator) and
+     * Framerate denominator (framerateDenominator). For example, you might specify 24
+     * / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001
+     * for 29.97 fps.
+     */
+    inline void SetFramerate(const CaptionSourceFramerate& value) { m_framerateHasBeenSet = true; m_framerate = value; }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing framerates between your input captions and
+     * input video, specify the framerate of the captions file. Specify this value as a
+     * fraction, using the settings Framerate numerator (framerateNumerator) and
+     * Framerate denominator (framerateDenominator). For example, you might specify 24
+     * / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001
+     * for 29.97 fps.
+     */
+    inline void SetFramerate(CaptionSourceFramerate&& value) { m_framerateHasBeenSet = true; m_framerate = std::move(value); }
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing framerates between your input captions and
+     * input video, specify the framerate of the captions file. Specify this value as a
+     * fraction, using the settings Framerate numerator (framerateNumerator) and
+     * Framerate denominator (framerateDenominator). For example, you might specify 24
+     * / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001
+     * for 29.97 fps.
+     */
+    inline FileSourceSettings& WithFramerate(const CaptionSourceFramerate& value) { SetFramerate(value); return *this;}
+
+    /**
+     * Ignore this setting unless your input captions format is SCC. To have the
+     * service compensate for differing framerates between your input captions and
+     * input video, specify the framerate of the captions file. Specify this value as a
+     * fraction, using the settings Framerate numerator (framerateNumerator) and
+     * Framerate denominator (framerateDenominator). For example, you might specify 24
+     * / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001
+     * for 29.97 fps.
+     */
+    inline FileSourceSettings& WithFramerate(CaptionSourceFramerate&& value) { SetFramerate(std::move(value)); return *this;}
+
+
+    /**
      * External caption file used for loading captions. Accepted file extensions are
      * 'scc', 'ttml', 'dfxp', 'stl', 'srt', 'xml', and 'smi'.
      */
@@ -179,6 +247,9 @@ namespace Model
 
     FileSourceConvert608To708 m_convert608To708;
     bool m_convert608To708HasBeenSet;
+
+    CaptionSourceFramerate m_framerate;
+    bool m_framerateHasBeenSet;
 
     Aws::String m_sourceFile;
     bool m_sourceFileHasBeenSet;

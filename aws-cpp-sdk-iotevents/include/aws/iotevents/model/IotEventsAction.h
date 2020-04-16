@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/iotevents/IoTEvents_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotevents/model/Payload.h>
 #include <utility>
 
 namespace Aws
@@ -89,10 +90,50 @@ namespace Model
      */
     inline IotEventsAction& WithInputName(const char* value) { SetInputName(value); return *this;}
 
+
+    /**
+     * <p>You can configure the action payload when you send a message to an AWS IoT
+     * Events input.</p>
+     */
+    inline const Payload& GetPayload() const{ return m_payload; }
+
+    /**
+     * <p>You can configure the action payload when you send a message to an AWS IoT
+     * Events input.</p>
+     */
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+
+    /**
+     * <p>You can configure the action payload when you send a message to an AWS IoT
+     * Events input.</p>
+     */
+    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
+
+    /**
+     * <p>You can configure the action payload when you send a message to an AWS IoT
+     * Events input.</p>
+     */
+    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
+
+    /**
+     * <p>You can configure the action payload when you send a message to an AWS IoT
+     * Events input.</p>
+     */
+    inline IotEventsAction& WithPayload(const Payload& value) { SetPayload(value); return *this;}
+
+    /**
+     * <p>You can configure the action payload when you send a message to an AWS IoT
+     * Events input.</p>
+     */
+    inline IotEventsAction& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_inputName;
     bool m_inputNameHasBeenSet;
+
+    Payload m_payload;
+    bool m_payloadHasBeenSet;
   };
 
 } // namespace Model

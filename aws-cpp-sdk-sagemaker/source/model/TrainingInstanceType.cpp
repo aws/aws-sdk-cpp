@@ -63,6 +63,11 @@ namespace Aws
         static const int ml_c5_4xlarge_HASH = HashingUtils::HashString("ml.c5.4xlarge");
         static const int ml_c5_9xlarge_HASH = HashingUtils::HashString("ml.c5.9xlarge");
         static const int ml_c5_18xlarge_HASH = HashingUtils::HashString("ml.c5.18xlarge");
+        static const int ml_c5n_xlarge_HASH = HashingUtils::HashString("ml.c5n.xlarge");
+        static const int ml_c5n_2xlarge_HASH = HashingUtils::HashString("ml.c5n.2xlarge");
+        static const int ml_c5n_4xlarge_HASH = HashingUtils::HashString("ml.c5n.4xlarge");
+        static const int ml_c5n_9xlarge_HASH = HashingUtils::HashString("ml.c5n.9xlarge");
+        static const int ml_c5n_18xlarge_HASH = HashingUtils::HashString("ml.c5n.18xlarge");
 
 
         TrainingInstanceType GetTrainingInstanceTypeForName(const Aws::String& name)
@@ -200,6 +205,26 @@ namespace Aws
           {
             return TrainingInstanceType::ml_c5_18xlarge;
           }
+          else if (hashCode == ml_c5n_xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c5n_xlarge;
+          }
+          else if (hashCode == ml_c5n_2xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c5n_2xlarge;
+          }
+          else if (hashCode == ml_c5n_4xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c5n_4xlarge;
+          }
+          else if (hashCode == ml_c5n_9xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c5n_9xlarge;
+          }
+          else if (hashCode == ml_c5n_18xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_c5n_18xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -280,6 +305,16 @@ namespace Aws
             return "ml.c5.9xlarge";
           case TrainingInstanceType::ml_c5_18xlarge:
             return "ml.c5.18xlarge";
+          case TrainingInstanceType::ml_c5n_xlarge:
+            return "ml.c5n.xlarge";
+          case TrainingInstanceType::ml_c5n_2xlarge:
+            return "ml.c5n.2xlarge";
+          case TrainingInstanceType::ml_c5n_4xlarge:
+            return "ml.c5n.4xlarge";
+          case TrainingInstanceType::ml_c5n_9xlarge:
+            return "ml.c5n.9xlarge";
+          case TrainingInstanceType::ml_c5n_18xlarge:
+            return "ml.c5n.18xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

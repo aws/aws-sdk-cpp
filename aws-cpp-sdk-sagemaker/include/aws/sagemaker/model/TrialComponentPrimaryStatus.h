@@ -28,7 +28,9 @@ namespace Model
     NOT_SET,
     InProgress,
     Completed,
-    Failed
+    Failed,
+    Stopping,
+    Stopped
   };
 
 namespace TrialComponentPrimaryStatusMapper

@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 
 DeleteKeyPairRequest::DeleteKeyPairRequest() : 
     m_keyNameHasBeenSet(false),
+    m_keyPairIdHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -34,6 +35,11 @@ Aws::String DeleteKeyPairRequest::SerializePayload() const
   if(m_keyNameHasBeenSet)
   {
     ss << "KeyName=" << StringUtils::URLEncode(m_keyName.c_str()) << "&";
+  }
+
+  if(m_keyPairIdHasBeenSet)
+  {
+    ss << "KeyPairId=" << StringUtils::URLEncode(m_keyPairId.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

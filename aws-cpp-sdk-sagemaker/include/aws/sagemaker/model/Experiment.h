@@ -39,7 +39,7 @@ namespace Model
 {
 
   /**
-   * <p>A summary of the properties of an experiment as returned by the <a>Search</a>
+   * <p>The properties of an experiment as returned by the <a>Search</a>
    * API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Experiment">AWS
    * API Reference</a></p>

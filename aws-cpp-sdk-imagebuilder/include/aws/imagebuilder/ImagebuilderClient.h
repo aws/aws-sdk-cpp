@@ -1192,14 +1192,26 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Applies a policy to a component. </p><p><h3>See Also:</h3>   <a
+         * <p> Applies a policy to a component. We recommend that you call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutComponentPolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutComponentPolicyOutcome PutComponentPolicy(const Model::PutComponentPolicyRequest& request) const;
 
         /**
-         * <p> Applies a policy to a component. </p><p><h3>See Also:</h3>   <a
+         * <p> Applies a policy to a component. We recommend that you call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutComponentPolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">AWS
          * API Reference</a></p>
          *
@@ -1208,7 +1220,13 @@ namespace Model
         virtual Model::PutComponentPolicyOutcomeCallable PutComponentPolicyCallable(const Model::PutComponentPolicyRequest& request) const;
 
         /**
-         * <p> Applies a policy to a component. </p><p><h3>See Also:</h3>   <a
+         * <p> Applies a policy to a component. We recommend that you call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutComponentPolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutComponentPolicy">AWS
          * API Reference</a></p>
          *
@@ -1217,14 +1235,26 @@ namespace Model
         virtual void PutComponentPolicyAsync(const Model::PutComponentPolicyRequest& request, const PutComponentPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Applies a policy to an image. </p><p><h3>See Also:</h3>   <a
+         * <p>Applies a policy to an image. We recommend that you call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutImagePolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutImagePolicyOutcome PutImagePolicy(const Model::PutImagePolicyRequest& request) const;
 
         /**
-         * <p> Applies a policy to an image. </p><p><h3>See Also:</h3>   <a
+         * <p>Applies a policy to an image. We recommend that you call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutImagePolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">AWS
          * API Reference</a></p>
          *
@@ -1233,7 +1263,13 @@ namespace Model
         virtual Model::PutImagePolicyOutcomeCallable PutImagePolicyCallable(const Model::PutImagePolicyRequest& request) const;
 
         /**
-         * <p> Applies a policy to an image. </p><p><h3>See Also:</h3>   <a
+         * <p>Applies a policy to an image. We recommend that you call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutImagePolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImagePolicy">AWS
          * API Reference</a></p>
          *
@@ -1242,14 +1278,28 @@ namespace Model
         virtual void PutImagePolicyAsync(const Model::PutImagePolicyRequest& request, const PutImagePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Applies a policy to an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Applies a policy to an image recipe. We recommend that you call the RAM API
+         * <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutImageRecipePolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutImageRecipePolicyOutcome PutImageRecipePolicy(const Model::PutImageRecipePolicyRequest& request) const;
 
         /**
-         * <p> Applies a policy to an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Applies a policy to an image recipe. We recommend that you call the RAM API
+         * <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutImageRecipePolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">AWS
          * API Reference</a></p>
          *
@@ -1258,7 +1308,14 @@ namespace Model
         virtual Model::PutImageRecipePolicyOutcomeCallable PutImageRecipePolicyCallable(const Model::PutImageRecipePolicyRequest& request) const;
 
         /**
-         * <p> Applies a policy to an image recipe. </p><p><h3>See Also:</h3>   <a
+         * <p> Applies a policy to an image recipe. We recommend that you call the RAM API
+         * <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
+         * to share resources. If you call the Image Builder API
+         * <code>PutImageRecipePolicy</code>, you must also call the RAM API <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * in order for the resource to be visible to all principals with whom the resource
+         * is shared. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/PutImageRecipePolicy">AWS
          * API Reference</a></p>
          *

@@ -226,7 +226,7 @@ namespace Model
 
 
     /**
-     * <p>Wether to use <code>File</code> or <code>Pipe</code> input mode. In
+     * <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In
      * <code>File</code> mode, Amazon SageMaker copies the data from the input source
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
@@ -236,7 +236,7 @@ namespace Model
     inline const ProcessingS3InputMode& GetS3InputMode() const{ return m_s3InputMode; }
 
     /**
-     * <p>Wether to use <code>File</code> or <code>Pipe</code> input mode. In
+     * <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In
      * <code>File</code> mode, Amazon SageMaker copies the data from the input source
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
@@ -246,7 +246,7 @@ namespace Model
     inline bool S3InputModeHasBeenSet() const { return m_s3InputModeHasBeenSet; }
 
     /**
-     * <p>Wether to use <code>File</code> or <code>Pipe</code> input mode. In
+     * <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In
      * <code>File</code> mode, Amazon SageMaker copies the data from the input source
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
@@ -256,7 +256,7 @@ namespace Model
     inline void SetS3InputMode(const ProcessingS3InputMode& value) { m_s3InputModeHasBeenSet = true; m_s3InputMode = value; }
 
     /**
-     * <p>Wether to use <code>File</code> or <code>Pipe</code> input mode. In
+     * <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In
      * <code>File</code> mode, Amazon SageMaker copies the data from the input source
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
@@ -266,7 +266,7 @@ namespace Model
     inline void SetS3InputMode(ProcessingS3InputMode&& value) { m_s3InputModeHasBeenSet = true; m_s3InputMode = std::move(value); }
 
     /**
-     * <p>Wether to use <code>File</code> or <code>Pipe</code> input mode. In
+     * <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In
      * <code>File</code> mode, Amazon SageMaker copies the data from the input source
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
@@ -276,7 +276,7 @@ namespace Model
     inline ProcessingS3Input& WithS3InputMode(const ProcessingS3InputMode& value) { SetS3InputMode(value); return *this;}
 
     /**
-     * <p>Wether to use <code>File</code> or <code>Pipe</code> input mode. In
+     * <p>Whether to use <code>File</code> or <code>Pipe</code> input mode. In
      * <code>File</code> mode, Amazon SageMaker copies the data from the input source
      * onto the local Amazon Elastic Block Store (Amazon EBS) volumes before starting
      * your training algorithm. This is the most commonly used input mode. In
@@ -324,32 +324,32 @@ namespace Model
 
 
     /**
-     * <p>Whether to use <code>Gzip</code> compresion for Amazon S3 storage.</p>
+     * <p>Whether to use <code>Gzip</code> compression for Amazon S3 storage.</p>
      */
     inline const ProcessingS3CompressionType& GetS3CompressionType() const{ return m_s3CompressionType; }
 
     /**
-     * <p>Whether to use <code>Gzip</code> compresion for Amazon S3 storage.</p>
+     * <p>Whether to use <code>Gzip</code> compression for Amazon S3 storage.</p>
      */
     inline bool S3CompressionTypeHasBeenSet() const { return m_s3CompressionTypeHasBeenSet; }
 
     /**
-     * <p>Whether to use <code>Gzip</code> compresion for Amazon S3 storage.</p>
+     * <p>Whether to use <code>Gzip</code> compression for Amazon S3 storage.</p>
      */
     inline void SetS3CompressionType(const ProcessingS3CompressionType& value) { m_s3CompressionTypeHasBeenSet = true; m_s3CompressionType = value; }
 
     /**
-     * <p>Whether to use <code>Gzip</code> compresion for Amazon S3 storage.</p>
+     * <p>Whether to use <code>Gzip</code> compression for Amazon S3 storage.</p>
      */
     inline void SetS3CompressionType(ProcessingS3CompressionType&& value) { m_s3CompressionTypeHasBeenSet = true; m_s3CompressionType = std::move(value); }
 
     /**
-     * <p>Whether to use <code>Gzip</code> compresion for Amazon S3 storage.</p>
+     * <p>Whether to use <code>Gzip</code> compression for Amazon S3 storage.</p>
      */
     inline ProcessingS3Input& WithS3CompressionType(const ProcessingS3CompressionType& value) { SetS3CompressionType(value); return *this;}
 
     /**
-     * <p>Whether to use <code>Gzip</code> compresion for Amazon S3 storage.</p>
+     * <p>Whether to use <code>Gzip</code> compression for Amazon S3 storage.</p>
      */
     inline ProcessingS3Input& WithS3CompressionType(ProcessingS3CompressionType&& value) { SetS3CompressionType(std::move(value)); return *this;}
 

@@ -167,37 +167,37 @@ namespace Model
 
     /**
      * <p>When exiting this state, perform these <code>actions</code> if the specified
-     * <code>condition</code> is TRUE.</p>
+     * <code>condition</code> is <code>TRUE</code>.</p>
      */
     inline const OnExitLifecycle& GetOnExit() const{ return m_onExit; }
 
     /**
      * <p>When exiting this state, perform these <code>actions</code> if the specified
-     * <code>condition</code> is TRUE.</p>
+     * <code>condition</code> is <code>TRUE</code>.</p>
      */
     inline bool OnExitHasBeenSet() const { return m_onExitHasBeenSet; }
 
     /**
      * <p>When exiting this state, perform these <code>actions</code> if the specified
-     * <code>condition</code> is TRUE.</p>
+     * <code>condition</code> is <code>TRUE</code>.</p>
      */
     inline void SetOnExit(const OnExitLifecycle& value) { m_onExitHasBeenSet = true; m_onExit = value; }
 
     /**
      * <p>When exiting this state, perform these <code>actions</code> if the specified
-     * <code>condition</code> is TRUE.</p>
+     * <code>condition</code> is <code>TRUE</code>.</p>
      */
     inline void SetOnExit(OnExitLifecycle&& value) { m_onExitHasBeenSet = true; m_onExit = std::move(value); }
 
     /**
      * <p>When exiting this state, perform these <code>actions</code> if the specified
-     * <code>condition</code> is TRUE.</p>
+     * <code>condition</code> is <code>TRUE</code>.</p>
      */
     inline State& WithOnExit(const OnExitLifecycle& value) { SetOnExit(value); return *this;}
 
     /**
      * <p>When exiting this state, perform these <code>actions</code> if the specified
-     * <code>condition</code> is TRUE.</p>
+     * <code>condition</code> is <code>TRUE</code>.</p>
      */
     inline State& WithOnExit(OnExitLifecycle&& value) { SetOnExit(std::move(value)); return *this;}
 

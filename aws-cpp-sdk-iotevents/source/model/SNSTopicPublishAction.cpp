@@ -29,12 +29,14 @@ namespace Model
 {
 
 SNSTopicPublishAction::SNSTopicPublishAction() : 
-    m_targetArnHasBeenSet(false)
+    m_targetArnHasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
 }
 
 SNSTopicPublishAction::SNSTopicPublishAction(JsonView jsonValue) : 
-    m_targetArnHasBeenSet(false)
+    m_targetArnHasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ SNSTopicPublishAction& SNSTopicPublishAction::operator =(JsonView jsonValue)
     m_targetArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("payload"))
+  {
+    m_payload = jsonValue.GetObject("payload");
+
+    m_payloadHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue SNSTopicPublishAction::Jsonize() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("targetArn", m_targetArn);
+
+  }
+
+  if(m_payloadHasBeenSet)
+  {
+   payload.WithObject("payload", m_payload.Jsonize());
 
   }
 

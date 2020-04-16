@@ -80,6 +80,7 @@
 #include <aws/ec2/model/CreateNetworkAclResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfacePermissionResponse.h>
+#include <aws/ec2/model/CreatePlacementGroupResponse.h>
 #include <aws/ec2/model/CreateReservedInstancesListingResponse.h>
 #include <aws/ec2/model/CreateRouteResponse.h>
 #include <aws/ec2/model/CreateRouteTableResponse.h>
@@ -879,7 +880,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclEntryOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInterfaceResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkInterfaceOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkInterfacePermissionResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkInterfacePermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreatePlacementGroupOutcome;
+        typedef Aws::Utils::Outcome<CreatePlacementGroupResponse, Aws::Client::AWSError<EC2Errors>> CreatePlacementGroupOutcome;
         typedef Aws::Utils::Outcome<CreateReservedInstancesListingResponse, Aws::Client::AWSError<EC2Errors>> CreateReservedInstancesListingOutcome;
         typedef Aws::Utils::Outcome<CreateRouteResponse, Aws::Client::AWSError<EC2Errors>> CreateRouteOutcome;
         typedef Aws::Utils::Outcome<CreateRouteTableResponse, Aws::Client::AWSError<EC2Errors>> CreateRouteTableOutcome;
@@ -8314,10 +8315,8 @@ namespace Model
 
         /**
          * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
-         * being included in scheduled event notifications for resources in the Region.</p>
-         * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
-         * Scheduled Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * being included in scheduled event notifications for resources in the
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          */
@@ -8325,10 +8324,8 @@ namespace Model
 
         /**
          * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
-         * being included in scheduled event notifications for resources in the Region.</p>
-         * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
-         * Scheduled Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * being included in scheduled event notifications for resources in the
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          *
@@ -8338,10 +8335,8 @@ namespace Model
 
         /**
          * <p>Deregisters tag keys to prevent tags that have the specified tag keys from
-         * being included in scheduled event notifications for resources in the Region.</p>
-         * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
-         * Scheduled Event Notifications</a>.</p><p><h3>See Also:</h3>   <a
+         * being included in scheduled event notifications for resources in the
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          *
@@ -17301,10 +17296,7 @@ namespace Model
 
         /**
          * <p>Registers a set of tag keys to include in scheduled event notifications for
-         * your resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
-         * Scheduled Event Notifications</a>.</p> <p>To remove tags, use .</p><p><h3>See
-         * Also:</h3>   <a
+         * your resources. </p> <p>To remove tags, use .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          */
@@ -17312,10 +17304,7 @@ namespace Model
 
         /**
          * <p>Registers a set of tag keys to include in scheduled event notifications for
-         * your resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
-         * Scheduled Event Notifications</a>.</p> <p>To remove tags, use .</p><p><h3>See
-         * Also:</h3>   <a
+         * your resources. </p> <p>To remove tags, use .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          *
@@ -17325,10 +17314,7 @@ namespace Model
 
         /**
          * <p>Registers a set of tag keys to include in scheduled event notifications for
-         * your resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html#customizing_scheduled_event_notifications">Customizing
-         * Scheduled Event Notifications</a>.</p> <p>To remove tags, use .</p><p><h3>See
-         * Also:</h3>   <a
+         * your resources. </p> <p>To remove tags, use .</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterInstanceEventNotificationAttributes">AWS
          * API Reference</a></p>
          *

@@ -195,56 +195,56 @@ namespace Model
 
 
     /**
-     * <p> The change description of the component. Describes what change has been made
+     * <p>The change description of the component. Describes what change has been made
      * in this version, or what makes this version different from other versions of
      * this component. </p>
      */
     inline const Aws::String& GetChangeDescription() const{ return m_changeDescription; }
 
     /**
-     * <p> The change description of the component. Describes what change has been made
+     * <p>The change description of the component. Describes what change has been made
      * in this version, or what makes this version different from other versions of
      * this component. </p>
      */
     inline bool ChangeDescriptionHasBeenSet() const { return m_changeDescriptionHasBeenSet; }
 
     /**
-     * <p> The change description of the component. Describes what change has been made
+     * <p>The change description of the component. Describes what change has been made
      * in this version, or what makes this version different from other versions of
      * this component. </p>
      */
     inline void SetChangeDescription(const Aws::String& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = value; }
 
     /**
-     * <p> The change description of the component. Describes what change has been made
+     * <p>The change description of the component. Describes what change has been made
      * in this version, or what makes this version different from other versions of
      * this component. </p>
      */
     inline void SetChangeDescription(Aws::String&& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = std::move(value); }
 
     /**
-     * <p> The change description of the component. Describes what change has been made
+     * <p>The change description of the component. Describes what change has been made
      * in this version, or what makes this version different from other versions of
      * this component. </p>
      */
     inline void SetChangeDescription(const char* value) { m_changeDescriptionHasBeenSet = true; m_changeDescription.assign(value); }
 
     /**
-     * <p> The change description of the component. Describes what change has been made
+     * <p>The change description of the component. Describes what change has been made
      * in this version, or what makes this version different from other versions of
      * this component. </p>
      */
     inline ImportComponentRequest& WithChangeDescription(const Aws::String& value) { SetChangeDescription(value); return *this;}
 
     /**
-     * <p> The change description of the component. Describes what change has been made
+     * <p>The change description of the component. Describes what change has been made
      * in this version, or what makes this version different from other versions of
      * this component. </p>
      */
     inline ImportComponentRequest& WithChangeDescription(Aws::String&& value) { SetChangeDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The change description of the component. Describes what change has been made
+     * <p>The change description of the component. Describes what change has been made
      * in this version, or what makes this version different from other versions of
      * this component. </p>
      */
@@ -289,63 +289,63 @@ namespace Model
 
 
     /**
-     * <p> The format of the resource that you want to import as a component. </p>
+     * <p>The format of the resource that you want to import as a component. </p>
      */
     inline const ComponentFormat& GetFormat() const{ return m_format; }
 
     /**
-     * <p> The format of the resource that you want to import as a component. </p>
+     * <p>The format of the resource that you want to import as a component. </p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p> The format of the resource that you want to import as a component. </p>
+     * <p>The format of the resource that you want to import as a component. </p>
      */
     inline void SetFormat(const ComponentFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p> The format of the resource that you want to import as a component. </p>
+     * <p>The format of the resource that you want to import as a component. </p>
      */
     inline void SetFormat(ComponentFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p> The format of the resource that you want to import as a component. </p>
+     * <p>The format of the resource that you want to import as a component. </p>
      */
     inline ImportComponentRequest& WithFormat(const ComponentFormat& value) { SetFormat(value); return *this;}
 
     /**
-     * <p> The format of the resource that you want to import as a component. </p>
+     * <p>The format of the resource that you want to import as a component. </p>
      */
     inline ImportComponentRequest& WithFormat(ComponentFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
     /**
-     * <p> The platform of the component. </p>
+     * <p>The platform of the component. </p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p> The platform of the component. </p>
+     * <p>The platform of the component. </p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p> The platform of the component. </p>
+     * <p>The platform of the component. </p>
      */
     inline void SetPlatform(const Platform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p> The platform of the component. </p>
+     * <p>The platform of the component. </p>
      */
     inline void SetPlatform(Platform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p> The platform of the component. </p>
+     * <p>The platform of the component. </p>
      */
     inline ImportComponentRequest& WithPlatform(const Platform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p> The platform of the component. </p>
+     * <p>The platform of the component. </p>
      */
     inline ImportComponentRequest& WithPlatform(Platform&& value) { SetPlatform(std::move(value)); return *this;}
 
@@ -473,149 +473,149 @@ namespace Model
 
 
     /**
-     * <p> The ID of the KMS key that should be used to encrypt this component. </p>
+     * <p>The ID of the KMS key that should be used to encrypt this component. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> The ID of the KMS key that should be used to encrypt this component. </p>
+     * <p>The ID of the KMS key that should be used to encrypt this component. </p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p> The ID of the KMS key that should be used to encrypt this component. </p>
+     * <p>The ID of the KMS key that should be used to encrypt this component. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> The ID of the KMS key that should be used to encrypt this component. </p>
+     * <p>The ID of the KMS key that should be used to encrypt this component. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p> The ID of the KMS key that should be used to encrypt this component. </p>
+     * <p>The ID of the KMS key that should be used to encrypt this component. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> The ID of the KMS key that should be used to encrypt this component. </p>
+     * <p>The ID of the KMS key that should be used to encrypt this component. </p>
      */
     inline ImportComponentRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> The ID of the KMS key that should be used to encrypt this component. </p>
+     * <p>The ID of the KMS key that should be used to encrypt this component. </p>
      */
     inline ImportComponentRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> The ID of the KMS key that should be used to encrypt this component. </p>
+     * <p>The ID of the KMS key that should be used to encrypt this component. </p>
      */
     inline ImportComponentRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags of the component. </p>
+     * <p>The tags of the component. </p>
      */
     inline ImportComponentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p> The idempotency token of the component. </p>
+     * <p>The idempotency token of the component. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p> The idempotency token of the component. </p>
+     * <p>The idempotency token of the component. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p> The idempotency token of the component. </p>
+     * <p>The idempotency token of the component. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p> The idempotency token of the component. </p>
+     * <p>The idempotency token of the component. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p> The idempotency token of the component. </p>
+     * <p>The idempotency token of the component. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p> The idempotency token of the component. </p>
+     * <p>The idempotency token of the component. </p>
      */
     inline ImportComponentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p> The idempotency token of the component. </p>
+     * <p>The idempotency token of the component. </p>
      */
     inline ImportComponentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p> The idempotency token of the component. </p>
+     * <p>The idempotency token of the component. </p>
      */
     inline ImportComponentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

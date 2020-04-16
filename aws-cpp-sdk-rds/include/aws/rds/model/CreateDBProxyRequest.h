@@ -118,54 +118,48 @@ namespace Model
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline const EngineFamily& GetEngineFamily() const{ return m_engineFamily; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline bool EngineFamilyHasBeenSet() const { return m_engineFamilyHasBeenSet; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline void SetEngineFamily(const EngineFamily& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = value; }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline void SetEngineFamily(EngineFamily&& value) { m_engineFamilyHasBeenSet = true; m_engineFamily = std::move(value); }
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline CreateDBProxyRequest& WithEngineFamily(const EngineFamily& value) { SetEngineFamily(value); return *this;}
 
     /**
      * <p>The kinds of databases that the proxy can connect to. This value determines
      * which database network protocol the proxy recognizes when it interprets network
-     * traffic to and from the database. Currently, this value is always
-     * <code>MYSQL</code>. The engine family applies to both RDS MySQL and Aurora
-     * MySQL.</p>
+     * traffic to and from the database. The engine family applies to MySQL and
+     * PostgreSQL for both RDS and Aurora.</p>
      */
     inline CreateDBProxyRequest& WithEngineFamily(EngineFamily&& value) { SetEngineFamily(std::move(value)); return *this;}
 

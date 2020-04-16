@@ -25,7 +25,8 @@ ImportKeyPairRequest::ImportKeyPairRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_keyNameHasBeenSet(false),
-    m_publicKeyMaterialHasBeenSet(false)
+    m_publicKeyMaterialHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,16 @@ Aws::String ImportKeyPairRequest::SerializePayload() const
   if(m_publicKeyMaterialHasBeenSet)
   {
     ss << "PublicKeyMaterial=" << HashingUtils::Base64Encode(m_publicKeyMaterial) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

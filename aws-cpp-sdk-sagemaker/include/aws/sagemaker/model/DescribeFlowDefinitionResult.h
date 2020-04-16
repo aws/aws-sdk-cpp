@@ -172,19 +172,34 @@ namespace Model
     inline DescribeFlowDefinitionResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Used to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline const HumanLoopRequestSource& GetHumanLoopRequestSource() const{ return m_humanLoopRequestSource; }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Used to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline void SetHumanLoopRequestSource(const HumanLoopRequestSource& value) { m_humanLoopRequestSource = value; }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Used to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline void SetHumanLoopRequestSource(HumanLoopRequestSource&& value) { m_humanLoopRequestSource = std::move(value); }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Used to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline DescribeFlowDefinitionResult& WithHumanLoopRequestSource(const HumanLoopRequestSource& value) { SetHumanLoopRequestSource(value); return *this;}
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Used to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline DescribeFlowDefinitionResult& WithHumanLoopRequestSource(HumanLoopRequestSource&& value) { SetHumanLoopRequestSource(std::move(value)); return *this;}
 
 

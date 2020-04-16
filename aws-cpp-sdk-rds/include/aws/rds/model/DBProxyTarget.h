@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/TargetType.h>
+#include <aws/rds/model/TargetHealth.h>
 #include <utility>
 
 namespace Aws
@@ -304,6 +305,37 @@ namespace Model
      */
     inline DBProxyTarget& WithType(TargetType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline const TargetHealth& GetTargetHealth() const{ return m_targetHealth; }
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline bool TargetHealthHasBeenSet() const { return m_targetHealthHasBeenSet; }
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline void SetTargetHealth(const TargetHealth& value) { m_targetHealthHasBeenSet = true; m_targetHealth = value; }
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline void SetTargetHealth(TargetHealth&& value) { m_targetHealthHasBeenSet = true; m_targetHealth = std::move(value); }
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline DBProxyTarget& WithTargetHealth(const TargetHealth& value) { SetTargetHealth(value); return *this;}
+
+    /**
+     * <p>Information about the connection health of the RDS Proxy target.</p>
+     */
+    inline DBProxyTarget& WithTargetHealth(TargetHealth&& value) { SetTargetHealth(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetArn;
@@ -323,6 +355,9 @@ namespace Model
 
     TargetType m_type;
     bool m_typeHasBeenSet;
+
+    TargetHealth m_targetHealth;
+    bool m_targetHealthHasBeenSet;
   };
 
 } // namespace Model

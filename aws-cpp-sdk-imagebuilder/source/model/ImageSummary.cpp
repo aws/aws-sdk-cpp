@@ -34,6 +34,7 @@ ImageSummary::ImageSummary() :
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_osVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
@@ -48,6 +49,7 @@ ImageSummary::ImageSummary(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_osVersionHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_dateCreatedHasBeenSet(false),
@@ -85,6 +87,13 @@ ImageSummary& ImageSummary::operator =(JsonView jsonValue)
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
 
     m_platformHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("osVersion"))
+  {
+    m_osVersion = jsonValue.GetString("osVersion");
+
+    m_osVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -153,6 +162,12 @@ JsonValue ImageSummary::Jsonize() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
+  }
+
+  if(m_osVersionHasBeenSet)
+  {
+   payload.WithString("osVersion", m_osVersion);
+
   }
 
   if(m_stateHasBeenSet)

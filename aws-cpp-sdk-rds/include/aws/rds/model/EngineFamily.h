@@ -26,7 +26,8 @@ namespace Model
   enum class EngineFamily
   {
     NOT_SET,
-    MYSQL
+    MYSQL,
+    POSTGRESQL
   };
 
 namespace EngineFamilyMapper

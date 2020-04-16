@@ -17,6 +17,7 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfigurationForPut.h>
 #include <aws/mediatailor/model/LivePreRollConfiguration.h>
@@ -117,6 +118,43 @@ namespace Model
      * VAST URL. The maximum length is 25,000 characters.</p>
      */
     inline PutPlaybackConfigurationRequest& WithAdDecisionServerUrl(const char* value) { SetAdDecisionServerUrl(value); return *this;}
+
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline const AvailSuppression& GetAvailSuppression() const{ return m_availSuppression; }
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline bool AvailSuppressionHasBeenSet() const { return m_availSuppressionHasBeenSet; }
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline void SetAvailSuppression(const AvailSuppression& value) { m_availSuppressionHasBeenSet = true; m_availSuppression = value; }
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline void SetAvailSuppression(AvailSuppression&& value) { m_availSuppressionHasBeenSet = true; m_availSuppression = std::move(value); }
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline PutPlaybackConfigurationRequest& WithAvailSuppression(const AvailSuppression& value) { SetAvailSuppression(value); return *this;}
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline PutPlaybackConfigurationRequest& WithAvailSuppression(AvailSuppression&& value) { SetAvailSuppression(std::move(value)); return *this;}
 
 
     /**
@@ -548,6 +586,9 @@ namespace Model
 
     Aws::String m_adDecisionServerUrl;
     bool m_adDecisionServerUrlHasBeenSet;
+
+    AvailSuppression m_availSuppression;
+    bool m_availSuppressionHasBeenSet;
 
     CdnConfiguration m_cdnConfiguration;
     bool m_cdnConfigurationHasBeenSet;

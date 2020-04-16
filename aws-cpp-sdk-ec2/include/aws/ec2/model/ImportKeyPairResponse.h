@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +117,78 @@ namespace Model
     inline ImportKeyPairResponse& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
 
+    /**
+     * <p>The ID of the resulting key pair.</p>
+     */
+    inline const Aws::String& GetKeyPairId() const{ return m_keyPairId; }
+
+    /**
+     * <p>The ID of the resulting key pair.</p>
+     */
+    inline void SetKeyPairId(const Aws::String& value) { m_keyPairId = value; }
+
+    /**
+     * <p>The ID of the resulting key pair.</p>
+     */
+    inline void SetKeyPairId(Aws::String&& value) { m_keyPairId = std::move(value); }
+
+    /**
+     * <p>The ID of the resulting key pair.</p>
+     */
+    inline void SetKeyPairId(const char* value) { m_keyPairId.assign(value); }
+
+    /**
+     * <p>The ID of the resulting key pair.</p>
+     */
+    inline ImportKeyPairResponse& WithKeyPairId(const Aws::String& value) { SetKeyPairId(value); return *this;}
+
+    /**
+     * <p>The ID of the resulting key pair.</p>
+     */
+    inline ImportKeyPairResponse& WithKeyPairId(Aws::String&& value) { SetKeyPairId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the resulting key pair.</p>
+     */
+    inline ImportKeyPairResponse& WithKeyPairId(const char* value) { SetKeyPairId(value); return *this;}
+
+
+    /**
+     * <p>The tags applied to the imported key pair.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags applied to the imported key pair.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>The tags applied to the imported key pair.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The tags applied to the imported key pair.</p>
+     */
+    inline ImportKeyPairResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags applied to the imported key pair.</p>
+     */
+    inline ImportKeyPairResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags applied to the imported key pair.</p>
+     */
+    inline ImportKeyPairResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags applied to the imported key pair.</p>
+     */
+    inline ImportKeyPairResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -135,6 +209,10 @@ namespace Model
     Aws::String m_keyFingerprint;
 
     Aws::String m_keyName;
+
+    Aws::String m_keyPairId;
+
+    Aws::Vector<Tag> m_tags;
 
     ResponseMetadata m_responseMetadata;
   };

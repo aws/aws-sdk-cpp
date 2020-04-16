@@ -33,6 +33,8 @@ namespace Aws
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
         static const int Completed_HASH = HashingUtils::HashString("Completed");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
+        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
 
 
         TrialComponentPrimaryStatus GetTrialComponentPrimaryStatusForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == Failed_HASH)
           {
             return TrialComponentPrimaryStatus::Failed;
+          }
+          else if (hashCode == Stopping_HASH)
+          {
+            return TrialComponentPrimaryStatus::Stopping;
+          }
+          else if (hashCode == Stopped_HASH)
+          {
+            return TrialComponentPrimaryStatus::Stopped;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +80,10 @@ namespace Aws
             return "Completed";
           case TrialComponentPrimaryStatus::Failed:
             return "Failed";
+          case TrialComponentPrimaryStatus::Stopping:
+            return "Stopping";
+          case TrialComponentPrimaryStatus::Stopped:
+            return "Stopped";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

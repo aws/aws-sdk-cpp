@@ -91,22 +91,40 @@ namespace Model
     inline CreateFlowDefinitionRequest& WithFlowDefinitionName(const char* value) { SetFlowDefinitionName(value); return *this;}
 
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline const HumanLoopRequestSource& GetHumanLoopRequestSource() const{ return m_humanLoopRequestSource; }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline bool HumanLoopRequestSourceHasBeenSet() const { return m_humanLoopRequestSourceHasBeenSet; }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline void SetHumanLoopRequestSource(const HumanLoopRequestSource& value) { m_humanLoopRequestSourceHasBeenSet = true; m_humanLoopRequestSource = value; }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline void SetHumanLoopRequestSource(HumanLoopRequestSource&& value) { m_humanLoopRequestSourceHasBeenSet = true; m_humanLoopRequestSource = std::move(value); }
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline CreateFlowDefinitionRequest& WithHumanLoopRequestSource(const HumanLoopRequestSource& value) { SetHumanLoopRequestSource(value); return *this;}
 
-    
+    /**
+     * <p>Container for configuring the source of human task requests. Use to specify
+     * if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
+     */
     inline CreateFlowDefinitionRequest& WithHumanLoopRequestSource(HumanLoopRequestSource&& value) { SetHumanLoopRequestSource(std::move(value)); return *this;}
 
 

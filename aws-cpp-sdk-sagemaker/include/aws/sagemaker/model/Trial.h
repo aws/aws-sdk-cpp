@@ -40,8 +40,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary of the properties of a trial as returned by the <a>Search</a>
-   * API.</p><p><h3>See Also:</h3>   <a
+   * <p>The properties of a trial as returned by the <a>Search</a> API.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Trial">AWS API
    * Reference</a></p>
    */

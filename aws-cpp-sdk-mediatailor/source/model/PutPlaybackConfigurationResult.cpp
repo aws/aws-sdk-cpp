@@ -46,6 +46,12 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("AvailSuppression"))
+  {
+    m_availSuppression = jsonValue.GetObject("AvailSuppression");
+
+  }
+
   if(jsonValue.ValueExists("CdnConfiguration"))
   {
     m_cdnConfiguration = jsonValue.GetObject("CdnConfiguration");

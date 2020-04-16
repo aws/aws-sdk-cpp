@@ -27,6 +27,8 @@ CreateImageRequest::CreateImageRequest() :
     m_distributionConfigurationArnHasBeenSet(false),
     m_infrastructureConfigurationArnHasBeenSet(false),
     m_imageTestsConfigurationHasBeenSet(false),
+    m_enhancedImageMetadataEnabled(false),
+    m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
@@ -58,6 +60,12 @@ Aws::String CreateImageRequest::SerializePayload() const
   if(m_imageTestsConfigurationHasBeenSet)
   {
    payload.WithObject("imageTestsConfiguration", m_imageTestsConfiguration.Jsonize());
+
+  }
+
+  if(m_enhancedImageMetadataEnabledHasBeenSet)
+  {
+   payload.WithBool("enhancedImageMetadataEnabled", m_enhancedImageMetadataEnabled);
 
   }
 

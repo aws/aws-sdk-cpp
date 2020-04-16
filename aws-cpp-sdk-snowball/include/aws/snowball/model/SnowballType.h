@@ -29,7 +29,8 @@ namespace Model
     STANDARD,
     EDGE,
     EDGE_C,
-    EDGE_CG
+    EDGE_CG,
+    EDGE_S
   };
 
 namespace SnowballTypeMapper

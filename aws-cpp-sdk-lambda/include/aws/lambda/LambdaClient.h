@@ -1354,7 +1354,9 @@ namespace Model
          * synchronous invocation while it waits for a response. Configure your HTTP
          * client, SDK, firewall, proxy, or operating system to allow for long connections
          * with timeout or keep-alive settings.</p> <p>This operation requires permission
-         * for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * for the <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          */
@@ -1397,7 +1399,9 @@ namespace Model
          * synchronous invocation while it waits for a response. Configure your HTTP
          * client, SDK, firewall, proxy, or operating system to allow for long connections
          * with timeout or keep-alive settings.</p> <p>This operation requires permission
-         * for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * for the <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          *
@@ -1442,7 +1446,9 @@ namespace Model
          * synchronous invocation while it waits for a response. Configure your HTTP
          * client, SDK, firewall, proxy, or operating system to allow for long connections
          * with timeout or keep-alive settings.</p> <p>This operation requires permission
-         * for the <code>lambda:InvokeFunction</code> action.</p><p><h3>See Also:</h3>   <a
+         * for the <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API
          * Reference</a></p>
          *

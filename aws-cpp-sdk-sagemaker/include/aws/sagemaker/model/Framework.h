@@ -31,7 +31,8 @@ namespace Model
     MXNET,
     ONNX,
     PYTORCH,
-    XGBOOST
+    XGBOOST,
+    TFLITE
   };
 
 namespace FrameworkMapper

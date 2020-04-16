@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/TrainingJob.h>
+#include <aws/sagemaker/model/ProcessingJob.h>
 #include <utility>
 
 namespace Aws
@@ -35,8 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Detailed information about the source of a trial component.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Detailed information about the source of a trial component. Either
+   * <code>ProcessingJob</code> or <code>TrainingJob</code> is
+   * returned.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSourceDetail">AWS
    * API Reference</a></p>
    */
@@ -90,23 +92,72 @@ namespace Model
     inline TrialComponentSourceDetail& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
 
-    
+    /**
+     * <p>Information about a training job that's the source of a trial component.</p>
+     */
     inline const TrainingJob& GetTrainingJob() const{ return m_trainingJob; }
 
-    
+    /**
+     * <p>Information about a training job that's the source of a trial component.</p>
+     */
     inline bool TrainingJobHasBeenSet() const { return m_trainingJobHasBeenSet; }
 
-    
+    /**
+     * <p>Information about a training job that's the source of a trial component.</p>
+     */
     inline void SetTrainingJob(const TrainingJob& value) { m_trainingJobHasBeenSet = true; m_trainingJob = value; }
 
-    
+    /**
+     * <p>Information about a training job that's the source of a trial component.</p>
+     */
     inline void SetTrainingJob(TrainingJob&& value) { m_trainingJobHasBeenSet = true; m_trainingJob = std::move(value); }
 
-    
+    /**
+     * <p>Information about a training job that's the source of a trial component.</p>
+     */
     inline TrialComponentSourceDetail& WithTrainingJob(const TrainingJob& value) { SetTrainingJob(value); return *this;}
 
-    
+    /**
+     * <p>Information about a training job that's the source of a trial component.</p>
+     */
     inline TrialComponentSourceDetail& WithTrainingJob(TrainingJob&& value) { SetTrainingJob(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about a processing job that's the source of a trial
+     * component.</p>
+     */
+    inline const ProcessingJob& GetProcessingJob() const{ return m_processingJob; }
+
+    /**
+     * <p>Information about a processing job that's the source of a trial
+     * component.</p>
+     */
+    inline bool ProcessingJobHasBeenSet() const { return m_processingJobHasBeenSet; }
+
+    /**
+     * <p>Information about a processing job that's the source of a trial
+     * component.</p>
+     */
+    inline void SetProcessingJob(const ProcessingJob& value) { m_processingJobHasBeenSet = true; m_processingJob = value; }
+
+    /**
+     * <p>Information about a processing job that's the source of a trial
+     * component.</p>
+     */
+    inline void SetProcessingJob(ProcessingJob&& value) { m_processingJobHasBeenSet = true; m_processingJob = std::move(value); }
+
+    /**
+     * <p>Information about a processing job that's the source of a trial
+     * component.</p>
+     */
+    inline TrialComponentSourceDetail& WithProcessingJob(const ProcessingJob& value) { SetProcessingJob(value); return *this;}
+
+    /**
+     * <p>Information about a processing job that's the source of a trial
+     * component.</p>
+     */
+    inline TrialComponentSourceDetail& WithProcessingJob(ProcessingJob&& value) { SetProcessingJob(std::move(value)); return *this;}
 
   private:
 
@@ -115,6 +166,9 @@ namespace Model
 
     TrainingJob m_trainingJob;
     bool m_trainingJobHasBeenSet;
+
+    ProcessingJob m_processingJob;
+    bool m_processingJobHasBeenSet;
   };
 
 } // namespace Model

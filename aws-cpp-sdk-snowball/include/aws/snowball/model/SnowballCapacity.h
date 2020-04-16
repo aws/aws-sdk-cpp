@@ -30,6 +30,7 @@ namespace Model
     T80,
     T100,
     T42,
+    T98,
     NoPreference
   };
 

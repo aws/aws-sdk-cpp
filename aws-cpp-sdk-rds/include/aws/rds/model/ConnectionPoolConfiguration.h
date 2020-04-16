@@ -264,7 +264,8 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>. </p> <p> <code>InitQuery</code> is not currently
+     * supported for PostgreSQL.</p> <p>Default: no initialization query</p>
      */
     inline const Aws::String& GetInitQuery() const{ return m_initQuery; }
 
@@ -274,7 +275,8 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>. </p> <p> <code>InitQuery</code> is not currently
+     * supported for PostgreSQL.</p> <p>Default: no initialization query</p>
      */
     inline bool InitQueryHasBeenSet() const { return m_initQueryHasBeenSet; }
 
@@ -284,7 +286,8 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>. </p> <p> <code>InitQuery</code> is not currently
+     * supported for PostgreSQL.</p> <p>Default: no initialization query</p>
      */
     inline void SetInitQuery(const Aws::String& value) { m_initQueryHasBeenSet = true; m_initQuery = value; }
 
@@ -294,7 +297,8 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>. </p> <p> <code>InitQuery</code> is not currently
+     * supported for PostgreSQL.</p> <p>Default: no initialization query</p>
      */
     inline void SetInitQuery(Aws::String&& value) { m_initQueryHasBeenSet = true; m_initQuery = std::move(value); }
 
@@ -304,7 +308,8 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>. </p> <p> <code>InitQuery</code> is not currently
+     * supported for PostgreSQL.</p> <p>Default: no initialization query</p>
      */
     inline void SetInitQuery(const char* value) { m_initQueryHasBeenSet = true; m_initQuery.assign(value); }
 
@@ -314,7 +319,8 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>. </p> <p> <code>InitQuery</code> is not currently
+     * supported for PostgreSQL.</p> <p>Default: no initialization query</p>
      */
     inline ConnectionPoolConfiguration& WithInitQuery(const Aws::String& value) { SetInitQuery(value); return *this;}
 
@@ -324,7 +330,8 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>. </p> <p> <code>InitQuery</code> is not currently
+     * supported for PostgreSQL.</p> <p>Default: no initialization query</p>
      */
     inline ConnectionPoolConfiguration& WithInitQuery(Aws::String&& value) { SetInitQuery(std::move(value)); return *this;}
 
@@ -334,7 +341,8 @@ namespace Model
      * sure that each connection has identical settings such as time zone and character
      * set. For multiple statements, use semicolons as the separator. You can also
      * include multiple variables in a single <code>SET</code> statement, such as
-     * <code>SET x=1, y=2</code>. </p> <p>Default: no initialization query</p>
+     * <code>SET x=1, y=2</code>. </p> <p> <code>InitQuery</code> is not currently
+     * supported for PostgreSQL.</p> <p>Default: no initialization query</p>
      */
     inline ConnectionPoolConfiguration& WithInitQuery(const char* value) { SetInitQuery(value); return *this;}
 

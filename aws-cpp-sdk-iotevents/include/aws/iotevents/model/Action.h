@@ -25,6 +25,8 @@
 #include <aws/iotevents/model/IotEventsAction.h>
 #include <aws/iotevents/model/SqsAction.h>
 #include <aws/iotevents/model/FirehoseAction.h>
+#include <aws/iotevents/model/DynamoDBAction.h>
+#include <aws/iotevents/model/DynamoDBv2Action.h>
 #include <utility>
 
 namespace Aws
@@ -287,38 +289,38 @@ namespace Model
 
 
     /**
-     * <p>Sends an AWS IoT Events input, passing in information about the detector
-     * model instance and the event that triggered the action.</p>
+     * <p>Sends AWS IoT Events input, which passes information about the detector model
+     * instance and the event that triggered the action.</p>
      */
     inline const IotEventsAction& GetIotEvents() const{ return m_iotEvents; }
 
     /**
-     * <p>Sends an AWS IoT Events input, passing in information about the detector
-     * model instance and the event that triggered the action.</p>
+     * <p>Sends AWS IoT Events input, which passes information about the detector model
+     * instance and the event that triggered the action.</p>
      */
     inline bool IotEventsHasBeenSet() const { return m_iotEventsHasBeenSet; }
 
     /**
-     * <p>Sends an AWS IoT Events input, passing in information about the detector
-     * model instance and the event that triggered the action.</p>
+     * <p>Sends AWS IoT Events input, which passes information about the detector model
+     * instance and the event that triggered the action.</p>
      */
     inline void SetIotEvents(const IotEventsAction& value) { m_iotEventsHasBeenSet = true; m_iotEvents = value; }
 
     /**
-     * <p>Sends an AWS IoT Events input, passing in information about the detector
-     * model instance and the event that triggered the action.</p>
+     * <p>Sends AWS IoT Events input, which passes information about the detector model
+     * instance and the event that triggered the action.</p>
      */
     inline void SetIotEvents(IotEventsAction&& value) { m_iotEventsHasBeenSet = true; m_iotEvents = std::move(value); }
 
     /**
-     * <p>Sends an AWS IoT Events input, passing in information about the detector
-     * model instance and the event that triggered the action.</p>
+     * <p>Sends AWS IoT Events input, which passes information about the detector model
+     * instance and the event that triggered the action.</p>
      */
     inline Action& WithIotEvents(const IotEventsAction& value) { SetIotEvents(value); return *this;}
 
     /**
-     * <p>Sends an AWS IoT Events input, passing in information about the detector
-     * model instance and the event that triggered the action.</p>
+     * <p>Sends AWS IoT Events input, which passes information about the detector model
+     * instance and the event that triggered the action.</p>
      */
     inline Action& WithIotEvents(IotEventsAction&& value) { SetIotEvents(std::move(value)); return *this;}
 
@@ -396,6 +398,164 @@ namespace Model
      */
     inline Action& WithFirehose(FirehoseAction&& value) { SetFirehose(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline const DynamoDBAction& GetDynamoDB() const{ return m_dynamoDB; }
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline bool DynamoDBHasBeenSet() const { return m_dynamoDBHasBeenSet; }
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline void SetDynamoDB(const DynamoDBAction& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = value; }
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline void SetDynamoDB(DynamoDBAction&& value) { m_dynamoDBHasBeenSet = true; m_dynamoDB = std::move(value); }
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline Action& WithDynamoDB(const DynamoDBAction& value) { SetDynamoDB(value); return *this;}
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * One column of the DynamoDB table receives all attribute-value pairs in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline Action& WithDynamoDB(DynamoDBAction&& value) { SetDynamoDB(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * A separate column of the DynamoDB table receives one attribute-value pair in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline const DynamoDBv2Action& GetDynamoDBv2() const{ return m_dynamoDBv2; }
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * A separate column of the DynamoDB table receives one attribute-value pair in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline bool DynamoDBv2HasBeenSet() const { return m_dynamoDBv2HasBeenSet; }
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * A separate column of the DynamoDB table receives one attribute-value pair in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline void SetDynamoDBv2(const DynamoDBv2Action& value) { m_dynamoDBv2HasBeenSet = true; m_dynamoDBv2 = value; }
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * A separate column of the DynamoDB table receives one attribute-value pair in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline void SetDynamoDBv2(DynamoDBv2Action&& value) { m_dynamoDBv2HasBeenSet = true; m_dynamoDBv2 = std::move(value); }
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * A separate column of the DynamoDB table receives one attribute-value pair in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline Action& WithDynamoDBv2(const DynamoDBv2Action& value) { SetDynamoDBv2(value); return *this;}
+
+    /**
+     * <p>Writes to the DynamoDB table that you created. The default action payload
+     * contains all attribute-value pairs that have the information about the detector
+     * model instance and the event that triggered the action. You can also customize
+     * the <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>.
+     * A separate column of the DynamoDB table receives one attribute-value pair in the
+     * payload that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a>
+     * in <i>AWS IoT Events Developer Guide</i>.</p>
+     */
+    inline Action& WithDynamoDBv2(DynamoDBv2Action&& value) { SetDynamoDBv2(std::move(value)); return *this;}
+
   private:
 
     SetVariableAction m_setVariable;
@@ -427,6 +587,12 @@ namespace Model
 
     FirehoseAction m_firehose;
     bool m_firehoseHasBeenSet;
+
+    DynamoDBAction m_dynamoDB;
+    bool m_dynamoDBHasBeenSet;
+
+    DynamoDBv2Action m_dynamoDBv2;
+    bool m_dynamoDBv2HasBeenSet;
   };
 
 } // namespace Model

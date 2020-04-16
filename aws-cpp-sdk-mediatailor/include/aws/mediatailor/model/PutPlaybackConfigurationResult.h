@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediatailor/model/AvailSuppression.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
@@ -109,6 +110,37 @@ namespace Model
      * VAST URL. The maximum length is 25,000 characters.</p>
      */
     inline PutPlaybackConfigurationResult& WithAdDecisionServerUrl(const char* value) { SetAdDecisionServerUrl(value); return *this;}
+
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline const AvailSuppression& GetAvailSuppression() const{ return m_availSuppression; }
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline void SetAvailSuppression(const AvailSuppression& value) { m_availSuppression = value; }
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline void SetAvailSuppression(AvailSuppression&& value) { m_availSuppression = std::move(value); }
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline PutPlaybackConfigurationResult& WithAvailSuppression(const AvailSuppression& value) { SetAvailSuppression(value); return *this;}
+
+    /**
+     * <p>The configuration for Avail Suppression. Ad suppression can be used to turn
+     * off ad personalization in a long manifest, or if a viewer joins mid-break.</p>
+     */
+    inline PutPlaybackConfigurationResult& WithAvailSuppression(AvailSuppression&& value) { SetAvailSuppression(std::move(value)); return *this;}
 
 
     /**
@@ -631,6 +663,8 @@ namespace Model
   private:
 
     Aws::String m_adDecisionServerUrl;
+
+    AvailSuppression m_availSuppression;
 
     CdnConfiguration m_cdnConfiguration;
 

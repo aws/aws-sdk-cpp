@@ -98,9 +98,9 @@ static const int D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH = HashingUtils
 static const int D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH = HashingUtils::HashString("DBUpgradeDependencyFailure");
 static const int INVALID_D_B_PROXY_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBProxyStateFault");
 static const int D_B_SUBNET_GROUP_NOT_ALLOWED_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupNotAllowedFault");
+static const int D_B_PROXY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyNotFoundFault");
 static const int D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBClusterParameterGroupNotFound");
 static const int DOMAIN_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DomainNotFoundFault");
-static const int D_B_PROXY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyNotFoundFault");
 static const int INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidEventSubscriptionState");
 static const int D_B_INSTANCE_AUTOMATED_BACKUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBInstanceAutomatedBackupNotFound");
 static const int D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointAlreadyExistsFault");
@@ -426,6 +426,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_SUBNET_GROUP_NOT_ALLOWED_FAULT), false);
   }
+  else if (hashCode == D_B_PROXY_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_NOT_FOUND_FAULT), false);
+  }
   else if (hashCode == D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT), false);
@@ -433,10 +437,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DOMAIN_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::DOMAIN_NOT_FOUND_FAULT), false);
-  }
-  else if (hashCode == D_B_PROXY_NOT_FOUND_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_PROXY_NOT_FOUND_FAULT), false);
   }
   else if (hashCode == INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH)
   {

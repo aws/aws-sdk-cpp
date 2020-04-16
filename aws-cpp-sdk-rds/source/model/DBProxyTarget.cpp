@@ -38,7 +38,8 @@ DBProxyTarget::DBProxyTarget() :
     m_port(0),
     m_portHasBeenSet(false),
     m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_targetHealthHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ DBProxyTarget::DBProxyTarget(const XmlNode& xmlNode) :
     m_port(0),
     m_portHasBeenSet(false),
     m_type(TargetType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_targetHealthHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -97,6 +99,12 @@ DBProxyTarget& DBProxyTarget::operator =(const XmlNode& xmlNode)
       m_type = TargetTypeMapper::GetTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
+    XmlNode targetHealthNode = resultNode.FirstChild("TargetHealth");
+    if(!targetHealthNode.IsNull())
+    {
+      m_targetHealth = targetHealthNode;
+      m_targetHealthHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -134,6 +142,13 @@ void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Type=" << TargetTypeMapper::GetNameForTargetType(m_type) << "&";
   }
 
+  if(m_targetHealthHasBeenSet)
+  {
+      Aws::StringStream targetHealthLocationAndMemberSs;
+      targetHealthLocationAndMemberSs << location << index << locationValue << ".TargetHealth";
+      m_targetHealth.OutputToStream(oStream, targetHealthLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -161,6 +176,12 @@ void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << TargetTypeMapper::GetNameForTargetType(m_type) << "&";
+  }
+  if(m_targetHealthHasBeenSet)
+  {
+      Aws::String targetHealthLocationAndMember(location);
+      targetHealthLocationAndMember += ".TargetHealth";
+      m_targetHealth.OutputToStream(oStream, targetHealthLocationAndMember.c_str());
   }
 }
 

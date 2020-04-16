@@ -31,6 +31,7 @@ namespace Model
 FileSourceSettings::FileSourceSettings() : 
     m_convert608To708(FileSourceConvert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
+    m_framerateHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
     m_timeDelta(0),
     m_timeDeltaHasBeenSet(false)
@@ -40,6 +41,7 @@ FileSourceSettings::FileSourceSettings() :
 FileSourceSettings::FileSourceSettings(JsonView jsonValue) : 
     m_convert608To708(FileSourceConvert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
+    m_framerateHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
     m_timeDelta(0),
     m_timeDeltaHasBeenSet(false)
@@ -54,6 +56,13 @@ FileSourceSettings& FileSourceSettings::operator =(JsonView jsonValue)
     m_convert608To708 = FileSourceConvert608To708Mapper::GetFileSourceConvert608To708ForName(jsonValue.GetString("convert608To708"));
 
     m_convert608To708HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("framerate"))
+  {
+    m_framerate = jsonValue.GetObject("framerate");
+
+    m_framerateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceFile"))
@@ -80,6 +89,12 @@ JsonValue FileSourceSettings::Jsonize() const
   if(m_convert608To708HasBeenSet)
   {
    payload.WithString("convert608To708", FileSourceConvert608To708Mapper::GetNameForFileSourceConvert608To708(m_convert608To708));
+  }
+
+  if(m_framerateHasBeenSet)
+  {
+   payload.WithObject("framerate", m_framerate.Jsonize());
+
   }
 
   if(m_sourceFileHasBeenSet)

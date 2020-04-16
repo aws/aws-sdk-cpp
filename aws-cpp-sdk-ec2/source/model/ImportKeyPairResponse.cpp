@@ -58,6 +58,22 @@ ImportKeyPairResponse& ImportKeyPairResponse::operator =(const Aws::AmazonWebSer
     {
       m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
     }
+    XmlNode keyPairIdNode = resultNode.FirstChild("keyPairId");
+    if(!keyPairIdNode.IsNull())
+    {
+      m_keyPairId = Aws::Utils::Xml::DecodeEscapedXmlText(keyPairIdNode.GetText());
+    }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

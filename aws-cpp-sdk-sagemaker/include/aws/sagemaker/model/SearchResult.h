@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>A list of <code>SearchResult</code> objects.</p>
+     * <p>A list of <code>SearchRecord</code> objects.</p>
      */
     inline const Aws::Vector<SearchRecord>& GetResults() const{ return m_results; }
 
     /**
-     * <p>A list of <code>SearchResult</code> objects.</p>
+     * <p>A list of <code>SearchRecord</code> objects.</p>
      */
     inline void SetResults(const Aws::Vector<SearchRecord>& value) { m_results = value; }
 
     /**
-     * <p>A list of <code>SearchResult</code> objects.</p>
+     * <p>A list of <code>SearchRecord</code> objects.</p>
      */
     inline void SetResults(Aws::Vector<SearchRecord>&& value) { m_results = std::move(value); }
 
     /**
-     * <p>A list of <code>SearchResult</code> objects.</p>
+     * <p>A list of <code>SearchRecord</code> objects.</p>
      */
     inline SearchResult& WithResults(const Aws::Vector<SearchRecord>& value) { SetResults(value); return *this;}
 
     /**
-     * <p>A list of <code>SearchResult</code> objects.</p>
+     * <p>A list of <code>SearchRecord</code> objects.</p>
      */
     inline SearchResult& WithResults(Aws::Vector<SearchRecord>&& value) { SetResults(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <code>SearchResult</code> objects.</p>
+     * <p>A list of <code>SearchRecord</code> objects.</p>
      */
     inline SearchResult& AddResults(const SearchRecord& value) { m_results.push_back(value); return *this; }
 
     /**
-     * <p>A list of <code>SearchResult</code> objects.</p>
+     * <p>A list of <code>SearchRecord</code> objects.</p>
      */
     inline SearchResult& AddResults(SearchRecord&& value) { m_results.push_back(std::move(value)); return *this; }
 

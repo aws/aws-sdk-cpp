@@ -30,13 +30,15 @@ namespace Model
 
 FirehoseAction::FirehoseAction() : 
     m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false)
+    m_separatorHasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
 }
 
 FirehoseAction::FirehoseAction(JsonView jsonValue) : 
     m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false)
+    m_separatorHasBeenSet(false),
+    m_payloadHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ FirehoseAction& FirehoseAction::operator =(JsonView jsonValue)
     m_separatorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("payload"))
+  {
+    m_payload = jsonValue.GetObject("payload");
+
+    m_payloadHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue FirehoseAction::Jsonize() const
   if(m_separatorHasBeenSet)
   {
    payload.WithString("separator", m_separator);
+
+  }
+
+  if(m_payloadHasBeenSet)
+  {
+   payload.WithObject("payload", m_payload.Jsonize());
 
   }
 
