@@ -508,56 +508,56 @@ namespace Model
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>2</code>. For a
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>2</code>. For a
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>2</code>. For a
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>2</code>. For a
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>2</code>. For a
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>2</code>. For a
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>2</code>. For a
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p> The major release version of the engine that you want to use. For a Chef
-     * server, the valid value for EngineVersion is currently <code>2</code>. For a
+     * server, the valid value for EngineVersion is currently <code>12</code>. For a
      * Puppet server, the valid value is <code>2017</code>. </p>
      */
     inline CreateServerRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
@@ -1056,96 +1056,88 @@ namespace Model
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
-     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
-     * UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
-     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
-     * UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
-     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
-     * UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
-     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
-     * UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
-     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
-     * UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
-     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
-     * UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
-     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
-     * UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
      * <p> The start time for a one-hour period each week during which AWS OpsWorks CM
      * performs maintenance on the instance. Valid values must be specified in the
-     * following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
-     * <code>TimeWindowDefinition</code> for more information. </p> <p> <b>Example:</b>
-     * <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00
-     * UTC. (8:00 a.m.) </p>
+     * following format: <code>DDD:HH:MM</code>. The specified time is in coordinated
+     * universal time (UTC). The default value is a random one-hour period on Tuesday,
+     * Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more
+     * information. </p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a
+     * start time of every Monday at 08:00 UTC. (8:00 a.m.) </p>
      */
     inline CreateServerRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1155,12 +1147,11 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random, daily start time.</p> <p> <b>Example:</b>
-     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
-     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
-     * Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -1169,12 +1160,11 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random, daily start time.</p> <p> <b>Example:</b>
-     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
-     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
-     * Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
@@ -1183,12 +1173,11 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random, daily start time.</p> <p> <b>Example:</b>
-     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
-     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
-     * Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -1197,12 +1186,11 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random, daily start time.</p> <p> <b>Example:</b>
-     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
-     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
-     * Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -1211,12 +1199,11 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random, daily start time.</p> <p> <b>Example:</b>
-     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
-     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
-     * Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -1225,12 +1212,11 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random, daily start time.</p> <p> <b>Example:</b>
-     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
-     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
-     * Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1239,12 +1225,11 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random, daily start time.</p> <p> <b>Example:</b>
-     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
-     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
-     * Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -1253,12 +1238,11 @@ namespace Model
      * application-level data on your server if automated backups are enabled. Valid
      * values must be specified in one of the following formats: </p> <ul> <li> <p>
      * <code>HH:MM</code> for daily backups</p> </li> <li> <p> <code>DDD:HH:MM</code>
-     * for weekly backups</p> </li> </ul> <p> <code>MM</code> must be specified as
-     * <code>00</code>. The specified time is in coordinated universal time (UTC). The
-     * default value is a random, daily start time.</p> <p> <b>Example:</b>
-     * <code>08:00</code>, which represents a daily start time of 08:00 UTC.</p> <p>
-     * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every
-     * Monday at 08:00 UTC. (8:00 a.m.)</p>
+     * for weekly backups</p> </li> </ul> <p>The specified time is in coordinated
+     * universal time (UTC). The default value is a random, daily start time.</p> <p>
+     * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00
+     * UTC.</p> <p> <b>Example:</b> <code>Mon:08:00</code>, which represents a start
+     * time of every Monday at 08:00 UTC. (8:00 a.m.)</p>
      */
     inline CreateServerRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 

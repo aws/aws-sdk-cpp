@@ -56,6 +56,15 @@ GetPredictionResult& GetPredictionResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("ruleResults"))
+  {
+    Array<JsonView> ruleResultsJsonList = jsonValue.GetArray("ruleResults");
+    for(unsigned ruleResultsIndex = 0; ruleResultsIndex < ruleResultsJsonList.GetLength(); ++ruleResultsIndex)
+    {
+      m_ruleResults.push_back(ruleResultsJsonList[ruleResultsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

@@ -18,6 +18,7 @@
 #include <aws/frauddetector/FraudDetectorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/frauddetector/model/RuleExecutionMode.h>
 #include <aws/frauddetector/model/Rule.h>
 #include <aws/frauddetector/model/ModelVersion.h>
 #include <utility>
@@ -297,6 +298,79 @@ namespace Model
      */
     inline UpdateDetectorVersionRequest& AddModelVersions(ModelVersion&& value) { m_modelVersionsHasBeenSet = true; m_modelVersions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The rule execution mode to add to the detector.</p> <p>If you specify
+     * <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+     * first to last, stopping at the first matched rule. Amazon Fraud dectector then
+     * provides the outcomes for that single rule.</p> <p>If you specifiy
+     * <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns
+     * the outcomes for all matched rules. You can define and edit the rule mode at the
+     * detector version level, when it is in draft status.</p> <p>The default behavior
+     * is <code>FIRST_MATCHED</code>.</p>
+     */
+    inline const RuleExecutionMode& GetRuleExecutionMode() const{ return m_ruleExecutionMode; }
+
+    /**
+     * <p>The rule execution mode to add to the detector.</p> <p>If you specify
+     * <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+     * first to last, stopping at the first matched rule. Amazon Fraud dectector then
+     * provides the outcomes for that single rule.</p> <p>If you specifiy
+     * <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns
+     * the outcomes for all matched rules. You can define and edit the rule mode at the
+     * detector version level, when it is in draft status.</p> <p>The default behavior
+     * is <code>FIRST_MATCHED</code>.</p>
+     */
+    inline bool RuleExecutionModeHasBeenSet() const { return m_ruleExecutionModeHasBeenSet; }
+
+    /**
+     * <p>The rule execution mode to add to the detector.</p> <p>If you specify
+     * <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+     * first to last, stopping at the first matched rule. Amazon Fraud dectector then
+     * provides the outcomes for that single rule.</p> <p>If you specifiy
+     * <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns
+     * the outcomes for all matched rules. You can define and edit the rule mode at the
+     * detector version level, when it is in draft status.</p> <p>The default behavior
+     * is <code>FIRST_MATCHED</code>.</p>
+     */
+    inline void SetRuleExecutionMode(const RuleExecutionMode& value) { m_ruleExecutionModeHasBeenSet = true; m_ruleExecutionMode = value; }
+
+    /**
+     * <p>The rule execution mode to add to the detector.</p> <p>If you specify
+     * <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+     * first to last, stopping at the first matched rule. Amazon Fraud dectector then
+     * provides the outcomes for that single rule.</p> <p>If you specifiy
+     * <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns
+     * the outcomes for all matched rules. You can define and edit the rule mode at the
+     * detector version level, when it is in draft status.</p> <p>The default behavior
+     * is <code>FIRST_MATCHED</code>.</p>
+     */
+    inline void SetRuleExecutionMode(RuleExecutionMode&& value) { m_ruleExecutionModeHasBeenSet = true; m_ruleExecutionMode = std::move(value); }
+
+    /**
+     * <p>The rule execution mode to add to the detector.</p> <p>If you specify
+     * <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+     * first to last, stopping at the first matched rule. Amazon Fraud dectector then
+     * provides the outcomes for that single rule.</p> <p>If you specifiy
+     * <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns
+     * the outcomes for all matched rules. You can define and edit the rule mode at the
+     * detector version level, when it is in draft status.</p> <p>The default behavior
+     * is <code>FIRST_MATCHED</code>.</p>
+     */
+    inline UpdateDetectorVersionRequest& WithRuleExecutionMode(const RuleExecutionMode& value) { SetRuleExecutionMode(value); return *this;}
+
+    /**
+     * <p>The rule execution mode to add to the detector.</p> <p>If you specify
+     * <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+     * first to last, stopping at the first matched rule. Amazon Fraud dectector then
+     * provides the outcomes for that single rule.</p> <p>If you specifiy
+     * <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns
+     * the outcomes for all matched rules. You can define and edit the rule mode at the
+     * detector version level, when it is in draft status.</p> <p>The default behavior
+     * is <code>FIRST_MATCHED</code>.</p>
+     */
+    inline UpdateDetectorVersionRequest& WithRuleExecutionMode(RuleExecutionMode&& value) { SetRuleExecutionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -316,6 +390,9 @@ namespace Model
 
     Aws::Vector<ModelVersion> m_modelVersions;
     bool m_modelVersionsHasBeenSet;
+
+    RuleExecutionMode m_ruleExecutionMode;
+    bool m_ruleExecutionModeHasBeenSet;
   };
 
 } // namespace Model

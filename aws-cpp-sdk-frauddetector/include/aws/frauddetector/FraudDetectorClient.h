@@ -27,8 +27,10 @@
 #include <aws/frauddetector/model/CreateModelVersionResult.h>
 #include <aws/frauddetector/model/CreateRuleResult.h>
 #include <aws/frauddetector/model/CreateVariableResult.h>
+#include <aws/frauddetector/model/DeleteDetectorResult.h>
 #include <aws/frauddetector/model/DeleteDetectorVersionResult.h>
 #include <aws/frauddetector/model/DeleteEventResult.h>
+#include <aws/frauddetector/model/DeleteRuleVersionResult.h>
 #include <aws/frauddetector/model/DescribeDetectorResult.h>
 #include <aws/frauddetector/model/DescribeModelVersionsResult.h>
 #include <aws/frauddetector/model/GetDetectorVersionResult.h>
@@ -96,8 +98,10 @@ namespace Model
         class CreateModelVersionRequest;
         class CreateRuleRequest;
         class CreateVariableRequest;
+        class DeleteDetectorRequest;
         class DeleteDetectorVersionRequest;
         class DeleteEventRequest;
+        class DeleteRuleVersionRequest;
         class DescribeDetectorRequest;
         class DescribeModelVersionsRequest;
         class GetDetectorVersionRequest;
@@ -127,8 +131,10 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateModelVersionResult, Aws::Client::AWSError<FraudDetectorErrors>> CreateModelVersionOutcome;
         typedef Aws::Utils::Outcome<CreateRuleResult, Aws::Client::AWSError<FraudDetectorErrors>> CreateRuleOutcome;
         typedef Aws::Utils::Outcome<CreateVariableResult, Aws::Client::AWSError<FraudDetectorErrors>> CreateVariableOutcome;
+        typedef Aws::Utils::Outcome<DeleteDetectorResult, Aws::Client::AWSError<FraudDetectorErrors>> DeleteDetectorOutcome;
         typedef Aws::Utils::Outcome<DeleteDetectorVersionResult, Aws::Client::AWSError<FraudDetectorErrors>> DeleteDetectorVersionOutcome;
         typedef Aws::Utils::Outcome<DeleteEventResult, Aws::Client::AWSError<FraudDetectorErrors>> DeleteEventOutcome;
+        typedef Aws::Utils::Outcome<DeleteRuleVersionResult, Aws::Client::AWSError<FraudDetectorErrors>> DeleteRuleVersionOutcome;
         typedef Aws::Utils::Outcome<DescribeDetectorResult, Aws::Client::AWSError<FraudDetectorErrors>> DescribeDetectorOutcome;
         typedef Aws::Utils::Outcome<DescribeModelVersionsResult, Aws::Client::AWSError<FraudDetectorErrors>> DescribeModelVersionsOutcome;
         typedef Aws::Utils::Outcome<GetDetectorVersionResult, Aws::Client::AWSError<FraudDetectorErrors>> GetDetectorVersionOutcome;
@@ -158,8 +164,10 @@ namespace Model
         typedef std::future<CreateModelVersionOutcome> CreateModelVersionOutcomeCallable;
         typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
         typedef std::future<CreateVariableOutcome> CreateVariableOutcomeCallable;
+        typedef std::future<DeleteDetectorOutcome> DeleteDetectorOutcomeCallable;
         typedef std::future<DeleteDetectorVersionOutcome> DeleteDetectorVersionOutcomeCallable;
         typedef std::future<DeleteEventOutcome> DeleteEventOutcomeCallable;
+        typedef std::future<DeleteRuleVersionOutcome> DeleteRuleVersionOutcomeCallable;
         typedef std::future<DescribeDetectorOutcome> DescribeDetectorOutcomeCallable;
         typedef std::future<DescribeModelVersionsOutcome> DescribeModelVersionsOutcomeCallable;
         typedef std::future<GetDetectorVersionOutcome> GetDetectorVersionOutcomeCallable;
@@ -192,8 +200,10 @@ namespace Model
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateModelVersionRequest&, const Model::CreateModelVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateRuleRequest&, const Model::CreateRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRuleResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::CreateVariableRequest&, const Model::CreateVariableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVariableResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteDetectorRequest&, const Model::DeleteDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteDetectorVersionRequest&, const Model::DeleteDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDetectorVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DeleteEventRequest&, const Model::DeleteEventOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventResponseReceivedHandler;
+    typedef std::function<void(const FraudDetectorClient*, const Model::DeleteRuleVersionRequest&, const Model::DeleteRuleVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRuleVersionResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DescribeDetectorRequest&, const Model::DescribeDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectorResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::DescribeModelVersionsRequest&, const Model::DescribeModelVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelVersionsResponseReceivedHandler;
     typedef std::function<void(const FraudDetectorClient*, const Model::GetDetectorVersionRequest&, const Model::GetDetectorVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorVersionResponseReceivedHandler;
@@ -413,14 +423,47 @@ namespace Model
         virtual void CreateVariableAsync(const Model::CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the detector version.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the detector. Before deleting a detector, you must first delete all
+         * detector versions and rule versions associated with the detector.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDetectorOutcome DeleteDetector(const Model::DeleteDetectorRequest& request) const;
+
+        /**
+         * <p>Deletes the detector. Before deleting a detector, you must first delete all
+         * detector versions and rule versions associated with the detector.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDetectorOutcomeCallable DeleteDetectorCallable(const Model::DeleteDetectorRequest& request) const;
+
+        /**
+         * <p>Deletes the detector. Before deleting a detector, you must first delete all
+         * detector versions and rule versions associated with the detector.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDetectorAsync(const Model::DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the detector version. You cannot delete detector versions that are in
+         * <code>ACTIVE</code> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDetectorVersionOutcome DeleteDetectorVersion(const Model::DeleteDetectorVersionRequest& request) const;
 
         /**
-         * <p>Deletes the detector version.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the detector version. You cannot delete detector versions that are in
+         * <code>ACTIVE</code> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion">AWS
          * API Reference</a></p>
          *
@@ -429,7 +472,8 @@ namespace Model
         virtual Model::DeleteDetectorVersionOutcomeCallable DeleteDetectorVersionCallable(const Model::DeleteDetectorVersionRequest& request) const;
 
         /**
-         * <p>Deletes the detector version.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the detector version. You cannot delete detector versions that are in
+         * <code>ACTIVE</code> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion">AWS
          * API Reference</a></p>
          *
@@ -461,6 +505,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventAsync(const Model::DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the rule version. You cannot delete a rule version if it is used by
+         * an <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRuleVersionOutcome DeleteRuleVersion(const Model::DeleteRuleVersionRequest& request) const;
+
+        /**
+         * <p>Deletes the rule version. You cannot delete a rule version if it is used by
+         * an <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRuleVersionOutcomeCallable DeleteRuleVersionCallable(const Model::DeleteRuleVersionRequest& request) const;
+
+        /**
+         * <p>Deletes the rule version. You cannot delete a rule version if it is used by
+         * an <code>ACTIVE</code> or <code>INACTIVE</code> detector version.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRuleVersionAsync(const Model::DeleteRuleVersionRequest& request, const DeleteRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets all versions for a specified detector.</p><p><h3>See Also:</h3>   <a
@@ -1151,8 +1226,10 @@ namespace Model
         void CreateModelVersionAsyncHelper(const Model::CreateModelVersionRequest& request, const CreateModelVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRuleAsyncHelper(const Model::CreateRuleRequest& request, const CreateRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVariableAsyncHelper(const Model::CreateVariableRequest& request, const CreateVariableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDetectorAsyncHelper(const Model::DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDetectorVersionAsyncHelper(const Model::DeleteDetectorVersionRequest& request, const DeleteDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventAsyncHelper(const Model::DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRuleVersionAsyncHelper(const Model::DeleteRuleVersionRequest& request, const DeleteRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDetectorAsyncHelper(const Model::DescribeDetectorRequest& request, const DescribeDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelVersionsAsyncHelper(const Model::DescribeModelVersionsRequest& request, const DescribeModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDetectorVersionAsyncHelper(const Model::GetDetectorVersionRequest& request, const GetDetectorVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -36,8 +36,10 @@
 #include <aws/frauddetector/model/CreateModelVersionRequest.h>
 #include <aws/frauddetector/model/CreateRuleRequest.h>
 #include <aws/frauddetector/model/CreateVariableRequest.h>
+#include <aws/frauddetector/model/DeleteDetectorRequest.h>
 #include <aws/frauddetector/model/DeleteDetectorVersionRequest.h>
 #include <aws/frauddetector/model/DeleteEventRequest.h>
+#include <aws/frauddetector/model/DeleteRuleVersionRequest.h>
 #include <aws/frauddetector/model/DescribeDetectorRequest.h>
 #include <aws/frauddetector/model/DescribeModelVersionsRequest.h>
 #include <aws/frauddetector/model/GetDetectorVersionRequest.h>
@@ -343,6 +345,41 @@ void FraudDetectorClient::CreateVariableAsyncHelper(const CreateVariableRequest&
   handler(this, request, CreateVariable(request), context);
 }
 
+DeleteDetectorOutcome FraudDetectorClient::DeleteDetector(const DeleteDetectorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDetectorOutcome(DeleteDetectorResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDetectorOutcome(outcome.GetError());
+  }
+}
+
+DeleteDetectorOutcomeCallable FraudDetectorClient::DeleteDetectorCallable(const DeleteDetectorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDetectorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDetector(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::DeleteDetectorAsync(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDetectorAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::DeleteDetectorAsyncHelper(const DeleteDetectorRequest& request, const DeleteDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDetector(request), context);
+}
+
 DeleteDetectorVersionOutcome FraudDetectorClient::DeleteDetectorVersion(const DeleteDetectorVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -411,6 +448,41 @@ void FraudDetectorClient::DeleteEventAsync(const DeleteEventRequest& request, co
 void FraudDetectorClient::DeleteEventAsyncHelper(const DeleteEventRequest& request, const DeleteEventResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEvent(request), context);
+}
+
+DeleteRuleVersionOutcome FraudDetectorClient::DeleteRuleVersion(const DeleteRuleVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRuleVersionOutcome(DeleteRuleVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRuleVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteRuleVersionOutcomeCallable FraudDetectorClient::DeleteRuleVersionCallable(const DeleteRuleVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRuleVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRuleVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FraudDetectorClient::DeleteRuleVersionAsync(const DeleteRuleVersionRequest& request, const DeleteRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRuleVersionAsyncHelper( request, handler, context ); } );
+}
+
+void FraudDetectorClient::DeleteRuleVersionAsyncHelper(const DeleteRuleVersionRequest& request, const DeleteRuleVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRuleVersion(request), context);
 }
 
 DescribeDetectorOutcome FraudDetectorClient::DescribeDetector(const DescribeDetectorRequest& request) const

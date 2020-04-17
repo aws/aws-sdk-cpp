@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetDetectorVersionResult::GetDetectorVersionResult() : 
-    m_status(DetectorVersionStatus::NOT_SET)
+    m_status(DetectorVersionStatus::NOT_SET),
+    m_ruleExecutionMode(RuleExecutionMode::NOT_SET)
 {
 }
 
 GetDetectorVersionResult::GetDetectorVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(DetectorVersionStatus::NOT_SET)
+    m_status(DetectorVersionStatus::NOT_SET),
+    m_ruleExecutionMode(RuleExecutionMode::NOT_SET)
 {
   *this = result;
 }
@@ -100,6 +102,12 @@ GetDetectorVersionResult& GetDetectorVersionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetString("createdTime");
+
+  }
+
+  if(jsonValue.ValueExists("ruleExecutionMode"))
+  {
+    m_ruleExecutionMode = RuleExecutionModeMapper::GetRuleExecutionModeForName(jsonValue.GetString("ruleExecutionMode"));
 
   }
 

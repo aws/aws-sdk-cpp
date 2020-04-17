@@ -27,7 +27,9 @@ CreateDetectorVersionRequest::CreateDetectorVersionRequest() :
     m_descriptionHasBeenSet(false),
     m_externalModelEndpointsHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_modelVersionsHasBeenSet(false)
+    m_modelVersionsHasBeenSet(false),
+    m_ruleExecutionMode(RuleExecutionMode::NOT_SET),
+    m_ruleExecutionModeHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,11 @@ Aws::String CreateDetectorVersionRequest::SerializePayload() const
    }
    payload.WithArray("modelVersions", std::move(modelVersionsJsonList));
 
+  }
+
+  if(m_ruleExecutionModeHasBeenSet)
+  {
+   payload.WithString("ruleExecutionMode", RuleExecutionModeMapper::GetNameForRuleExecutionMode(m_ruleExecutionMode));
   }
 
   return payload.View().WriteReadable();

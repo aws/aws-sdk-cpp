@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/frauddetector/model/ModelScores.h>
+#include <aws/frauddetector/model/RuleResult.h>
 #include <utility>
 
 namespace Aws
@@ -120,11 +121,49 @@ namespace Model
      */
     inline GetPredictionResult& AddModelScores(ModelScores&& value) { m_modelScores.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The rule results in the prediction.</p>
+     */
+    inline const Aws::Vector<RuleResult>& GetRuleResults() const{ return m_ruleResults; }
+
+    /**
+     * <p>The rule results in the prediction.</p>
+     */
+    inline void SetRuleResults(const Aws::Vector<RuleResult>& value) { m_ruleResults = value; }
+
+    /**
+     * <p>The rule results in the prediction.</p>
+     */
+    inline void SetRuleResults(Aws::Vector<RuleResult>&& value) { m_ruleResults = std::move(value); }
+
+    /**
+     * <p>The rule results in the prediction.</p>
+     */
+    inline GetPredictionResult& WithRuleResults(const Aws::Vector<RuleResult>& value) { SetRuleResults(value); return *this;}
+
+    /**
+     * <p>The rule results in the prediction.</p>
+     */
+    inline GetPredictionResult& WithRuleResults(Aws::Vector<RuleResult>&& value) { SetRuleResults(std::move(value)); return *this;}
+
+    /**
+     * <p>The rule results in the prediction.</p>
+     */
+    inline GetPredictionResult& AddRuleResults(const RuleResult& value) { m_ruleResults.push_back(value); return *this; }
+
+    /**
+     * <p>The rule results in the prediction.</p>
+     */
+    inline GetPredictionResult& AddRuleResults(RuleResult&& value) { m_ruleResults.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_outcomes;
 
     Aws::Vector<ModelScores> m_modelScores;
+
+    Aws::Vector<RuleResult> m_ruleResults;
   };
 
 } // namespace Model

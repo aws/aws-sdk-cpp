@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/frauddetector/model/DetectorVersionStatus.h>
+#include <aws/frauddetector/model/RuleExecutionMode.h>
 #include <aws/frauddetector/model/ModelVersion.h>
 #include <aws/frauddetector/model/Rule.h>
 #include <utility>
@@ -364,6 +365,62 @@ namespace Model
      */
     inline GetDetectorVersionResult& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
 
+
+    /**
+     * <p>The execution mode of the rule in the dectector</p> <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules
+     * sequentially, first to last, stopping at the first matched rule. Amazon Fraud
+     * dectector then provides the outcomes for that single rule.</p> <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all
+     * rules and returns the outcomes for all matched rules. You can define and edit
+     * the rule mode at the detector version level, when it is in draft status.</p>
+     */
+    inline const RuleExecutionMode& GetRuleExecutionMode() const{ return m_ruleExecutionMode; }
+
+    /**
+     * <p>The execution mode of the rule in the dectector</p> <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules
+     * sequentially, first to last, stopping at the first matched rule. Amazon Fraud
+     * dectector then provides the outcomes for that single rule.</p> <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all
+     * rules and returns the outcomes for all matched rules. You can define and edit
+     * the rule mode at the detector version level, when it is in draft status.</p>
+     */
+    inline void SetRuleExecutionMode(const RuleExecutionMode& value) { m_ruleExecutionMode = value; }
+
+    /**
+     * <p>The execution mode of the rule in the dectector</p> <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules
+     * sequentially, first to last, stopping at the first matched rule. Amazon Fraud
+     * dectector then provides the outcomes for that single rule.</p> <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all
+     * rules and returns the outcomes for all matched rules. You can define and edit
+     * the rule mode at the detector version level, when it is in draft status.</p>
+     */
+    inline void SetRuleExecutionMode(RuleExecutionMode&& value) { m_ruleExecutionMode = std::move(value); }
+
+    /**
+     * <p>The execution mode of the rule in the dectector</p> <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules
+     * sequentially, first to last, stopping at the first matched rule. Amazon Fraud
+     * dectector then provides the outcomes for that single rule.</p> <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all
+     * rules and returns the outcomes for all matched rules. You can define and edit
+     * the rule mode at the detector version level, when it is in draft status.</p>
+     */
+    inline GetDetectorVersionResult& WithRuleExecutionMode(const RuleExecutionMode& value) { SetRuleExecutionMode(value); return *this;}
+
+    /**
+     * <p>The execution mode of the rule in the dectector</p> <p>
+     * <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules
+     * sequentially, first to last, stopping at the first matched rule. Amazon Fraud
+     * dectector then provides the outcomes for that single rule.</p> <p>
+     * <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all
+     * rules and returns the outcomes for all matched rules. You can define and edit
+     * the rule mode at the detector version level, when it is in draft status.</p>
+     */
+    inline GetDetectorVersionResult& WithRuleExecutionMode(RuleExecutionMode&& value) { SetRuleExecutionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -383,6 +440,8 @@ namespace Model
     Aws::String m_lastUpdatedTime;
 
     Aws::String m_createdTime;
+
+    RuleExecutionMode m_ruleExecutionMode;
   };
 
 } // namespace Model
