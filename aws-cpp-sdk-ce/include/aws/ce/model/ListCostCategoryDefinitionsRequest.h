@@ -88,66 +88,79 @@ namespace Model
     /**
      * <p> The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
-     * maximum page size. </p> <p>You can use this information to retrieve the full
-     * Cost Category information using <code>DescribeCostCategory</code>.</p>
+     * maximum page size. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p> The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
-     * maximum page size. </p> <p>You can use this information to retrieve the full
-     * Cost Category information using <code>DescribeCostCategory</code>.</p>
+     * maximum page size. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p> The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
-     * maximum page size. </p> <p>You can use this information to retrieve the full
-     * Cost Category information using <code>DescribeCostCategory</code>.</p>
+     * maximum page size. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p> The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
-     * maximum page size. </p> <p>You can use this information to retrieve the full
-     * Cost Category information using <code>DescribeCostCategory</code>.</p>
+     * maximum page size. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p> The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
-     * maximum page size. </p> <p>You can use this information to retrieve the full
-     * Cost Category information using <code>DescribeCostCategory</code>.</p>
+     * maximum page size. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p> The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
-     * maximum page size. </p> <p>You can use this information to retrieve the full
-     * Cost Category information using <code>DescribeCostCategory</code>.</p>
+     * maximum page size. </p>
      */
     inline ListCostCategoryDefinitionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p> The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
-     * maximum page size. </p> <p>You can use this information to retrieve the full
-     * Cost Category information using <code>DescribeCostCategory</code>.</p>
+     * maximum page size. </p>
      */
     inline ListCostCategoryDefinitionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p> The token to retrieve the next set of results. Amazon Web Services provides
      * the token when the response from a previous call has more results than the
-     * maximum page size. </p> <p>You can use this information to retrieve the full
-     * Cost Category information using <code>DescribeCostCategory</code>.</p>
+     * maximum page size. </p>
      */
     inline ListCostCategoryDefinitionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p> The number of entries a paginated response contains. </p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p> The number of entries a paginated response contains. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p> The number of entries a paginated response contains. </p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p> The number of entries a paginated response contains. </p>
+     */
+    inline ListCostCategoryDefinitionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
@@ -156,6 +169,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

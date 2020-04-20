@@ -171,7 +171,7 @@ namespace Model
      * costs that are associated with that account's usage of that service. You can
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
      * you either group by or filter by a <code>ResourceId</code>.</p>
      */
@@ -183,7 +183,7 @@ namespace Model
      * costs that are associated with that account's usage of that service. You can
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
      * you either group by or filter by a <code>ResourceId</code>.</p>
      */
@@ -195,7 +195,7 @@ namespace Model
      * costs that are associated with that account's usage of that service. You can
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
      * you either group by or filter by a <code>ResourceId</code>.</p>
      */
@@ -207,7 +207,7 @@ namespace Model
      * costs that are associated with that account's usage of that service. You can
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
      * you either group by or filter by a <code>ResourceId</code>.</p>
      */
@@ -219,7 +219,7 @@ namespace Model
      * costs that are associated with that account's usage of that service. You can
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
      * you either group by or filter by a <code>ResourceId</code>.</p>
      */
@@ -231,7 +231,7 @@ namespace Model
      * costs that are associated with that account's usage of that service. You can
      * nest <code>Expression</code> objects to define any combination of dimension
      * filters. For more information, see <a
-     * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
      * </p> <p>The <code>GetCostAndUsageWithResources</code> operation requires that
      * you either group by or filter by a <code>ResourceId</code>.</p>
      */
@@ -241,7 +241,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
@@ -261,7 +261,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
@@ -281,7 +281,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
@@ -301,7 +301,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
@@ -321,7 +321,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
@@ -341,7 +341,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
@@ -361,7 +361,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
@@ -381,7 +381,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
@@ -401,7 +401,7 @@ namespace Model
     /**
      * <p>Which metrics are returned in the query. For more information about blended
      * and unblended rates, see <a
-     * href="https://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
+     * href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why
      * does the "blended" annotation appear on some line items in my bill?</a>. </p>
      * <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
      * <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,

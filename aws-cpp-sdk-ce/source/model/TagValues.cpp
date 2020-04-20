@@ -30,13 +30,15 @@ namespace Model
 
 TagValues::TagValues() : 
     m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_matchOptionsHasBeenSet(false)
 {
 }
 
 TagValues::TagValues(JsonView jsonValue) : 
     m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_matchOptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,16 @@ TagValues& TagValues::operator =(JsonView jsonValue)
     m_valuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MatchOptions"))
+  {
+    Array<JsonView> matchOptionsJsonList = jsonValue.GetArray("MatchOptions");
+    for(unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex)
+    {
+      m_matchOptions.push_back(MatchOptionMapper::GetMatchOptionForName(matchOptionsJsonList[matchOptionsIndex].AsString()));
+    }
+    m_matchOptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +93,17 @@ JsonValue TagValues::Jsonize() const
      valuesJsonList[valuesIndex].AsString(m_values[valuesIndex]);
    }
    payload.WithArray("Values", std::move(valuesJsonList));
+
+  }
+
+  if(m_matchOptionsHasBeenSet)
+  {
+   Array<JsonValue> matchOptionsJsonList(m_matchOptions.size());
+   for(unsigned matchOptionsIndex = 0; matchOptionsIndex < matchOptionsJsonList.GetLength(); ++matchOptionsIndex)
+   {
+     matchOptionsJsonList[matchOptionsIndex].AsString(MatchOptionMapper::GetNameForMatchOption(m_matchOptions[matchOptionsIndex]));
+   }
+   payload.WithArray("MatchOptions", std::move(matchOptionsJsonList));
 
   }
 

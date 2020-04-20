@@ -34,14 +34,10 @@ namespace Model
 {
 
   /**
-   * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-   * Management and is subject to change. Your use of Cost Categories is subject to
-   * the Beta Service Participation terms of the <a
-   * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-   * 1.10).</b> </i> </p> </important> <p>A reference to a Cost Category containing
-   * only enough information to identify the Cost Category.</p> <p>You can use this
-   * information to retrieve the full Cost Category information using
-   * <code>DescribeCostCategory</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>A reference to a Cost Category containing only enough information to identify
+   * the Cost Category.</p> <p>You can use this information to retrieve the full Cost
+   * Category information using <code>DescribeCostCategory</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CostCategoryReference">AWS
    * API Reference</a></p>
    */
@@ -55,42 +51,42 @@ namespace Model
 
 
     /**
-     * <p> The unique identifier for your Cost Category Reference. </p>
+     * <p> The unique identifier for your Cost Category. </p>
      */
     inline const Aws::String& GetCostCategoryArn() const{ return m_costCategoryArn; }
 
     /**
-     * <p> The unique identifier for your Cost Category Reference. </p>
+     * <p> The unique identifier for your Cost Category. </p>
      */
     inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
 
     /**
-     * <p> The unique identifier for your Cost Category Reference. </p>
+     * <p> The unique identifier for your Cost Category. </p>
      */
     inline void SetCostCategoryArn(const Aws::String& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = value; }
 
     /**
-     * <p> The unique identifier for your Cost Category Reference. </p>
+     * <p> The unique identifier for your Cost Category. </p>
      */
     inline void SetCostCategoryArn(Aws::String&& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = std::move(value); }
 
     /**
-     * <p> The unique identifier for your Cost Category Reference. </p>
+     * <p> The unique identifier for your Cost Category. </p>
      */
     inline void SetCostCategoryArn(const char* value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn.assign(value); }
 
     /**
-     * <p> The unique identifier for your Cost Category Reference. </p>
+     * <p> The unique identifier for your Cost Category. </p>
      */
     inline CostCategoryReference& WithCostCategoryArn(const Aws::String& value) { SetCostCategoryArn(value); return *this;}
 
     /**
-     * <p> The unique identifier for your Cost Category Reference. </p>
+     * <p> The unique identifier for your Cost Category. </p>
      */
     inline CostCategoryReference& WithCostCategoryArn(Aws::String&& value) { SetCostCategoryArn(std::move(value)); return *this;}
 
     /**
-     * <p> The unique identifier for your Cost Category Reference. </p>
+     * <p> The unique identifier for your Cost Category. </p>
      */
     inline CostCategoryReference& WithCostCategoryArn(const char* value) { SetCostCategoryArn(value); return *this;}
 
@@ -201,6 +197,27 @@ namespace Model
      */
     inline CostCategoryReference& WithEffectiveEnd(const char* value) { SetEffectiveEnd(value); return *this;}
 
+
+    /**
+     * <p> The number of rules associated with a specific Cost Category. </p>
+     */
+    inline int GetNumberOfRules() const{ return m_numberOfRules; }
+
+    /**
+     * <p> The number of rules associated with a specific Cost Category. </p>
+     */
+    inline bool NumberOfRulesHasBeenSet() const { return m_numberOfRulesHasBeenSet; }
+
+    /**
+     * <p> The number of rules associated with a specific Cost Category. </p>
+     */
+    inline void SetNumberOfRules(int value) { m_numberOfRulesHasBeenSet = true; m_numberOfRules = value; }
+
+    /**
+     * <p> The number of rules associated with a specific Cost Category. </p>
+     */
+    inline CostCategoryReference& WithNumberOfRules(int value) { SetNumberOfRules(value); return *this;}
+
   private:
 
     Aws::String m_costCategoryArn;
@@ -214,6 +231,9 @@ namespace Model
 
     Aws::String m_effectiveEnd;
     bool m_effectiveEndHasBeenSet;
+
+    int m_numberOfRules;
+    bool m_numberOfRulesHasBeenSet;
   };
 
 } // namespace Model

@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     JDBC,
     SFTP,
-    MONGODB
+    MONGODB,
+    KAFKA
   };
 
 namespace ConnectionTypeMapper

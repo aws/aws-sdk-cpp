@@ -255,62 +255,32 @@ namespace Model
 
 
     /**
-     * <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management
-     * and is subject to change. Your use of Cost Categories is subject to the Beta
-     * Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
-     * <code>Expression</code>.</p>
+     * <p>The filter based on <code>CostCategory</code> values.</p>
      */
     inline const CostCategoryValues& GetCostCategories() const{ return m_costCategories; }
 
     /**
-     * <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management
-     * and is subject to change. Your use of Cost Categories is subject to the Beta
-     * Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
-     * <code>Expression</code>.</p>
+     * <p>The filter based on <code>CostCategory</code> values.</p>
      */
     inline bool CostCategoriesHasBeenSet() const { return m_costCategoriesHasBeenSet; }
 
     /**
-     * <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management
-     * and is subject to change. Your use of Cost Categories is subject to the Beta
-     * Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
-     * <code>Expression</code>.</p>
+     * <p>The filter based on <code>CostCategory</code> values.</p>
      */
     inline void SetCostCategories(const CostCategoryValues& value) { m_costCategoriesHasBeenSet = true; m_costCategories = value; }
 
     /**
-     * <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management
-     * and is subject to change. Your use of Cost Categories is subject to the Beta
-     * Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
-     * <code>Expression</code>.</p>
+     * <p>The filter based on <code>CostCategory</code> values.</p>
      */
     inline void SetCostCategories(CostCategoryValues&& value) { m_costCategoriesHasBeenSet = true; m_costCategories = std::move(value); }
 
     /**
-     * <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management
-     * and is subject to change. Your use of Cost Categories is subject to the Beta
-     * Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
-     * <code>Expression</code>.</p>
+     * <p>The filter based on <code>CostCategory</code> values.</p>
      */
     inline Expression& WithCostCategories(const CostCategoryValues& value) { SetCostCategories(value); return *this;}
 
     /**
-     * <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost Management
-     * and is subject to change. Your use of Cost Categories is subject to the Beta
-     * Service Participation terms of the <a
-     * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
-     * <code>Expression</code>.</p>
+     * <p>The filter based on <code>CostCategory</code> values.</p>
      */
     inline Expression& WithCostCategories(CostCategoryValues&& value) { SetCostCategories(std::move(value)); return *this;}
 

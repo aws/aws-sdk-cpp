@@ -40,7 +40,8 @@ Action::Action() :
     m_sqsHasBeenSet(false),
     m_firehoseHasBeenSet(false),
     m_dynamoDBHasBeenSet(false),
-    m_dynamoDBv2HasBeenSet(false)
+    m_dynamoDBv2HasBeenSet(false),
+    m_iotSiteWiseHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Action::Action(JsonView jsonValue) :
     m_sqsHasBeenSet(false),
     m_firehoseHasBeenSet(false),
     m_dynamoDBHasBeenSet(false),
-    m_dynamoDBv2HasBeenSet(false)
+    m_dynamoDBv2HasBeenSet(false),
+    m_iotSiteWiseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +149,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_dynamoDBv2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iotSiteWise"))
+  {
+    m_iotSiteWise = jsonValue.GetObject("iotSiteWise");
+
+    m_iotSiteWiseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +232,12 @@ JsonValue Action::Jsonize() const
   if(m_dynamoDBv2HasBeenSet)
   {
    payload.WithObject("dynamoDBv2", m_dynamoDBv2.Jsonize());
+
+  }
+
+  if(m_iotSiteWiseHasBeenSet)
+  {
+   payload.WithObject("iotSiteWise", m_iotSiteWise.Jsonize());
 
   }
 

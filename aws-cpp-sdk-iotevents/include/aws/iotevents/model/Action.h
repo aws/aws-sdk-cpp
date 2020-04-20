@@ -27,6 +27,7 @@
 #include <aws/iotevents/model/FirehoseAction.h>
 #include <aws/iotevents/model/DynamoDBAction.h>
 #include <aws/iotevents/model/DynamoDBv2Action.h>
+#include <aws/iotevents/model/IotSiteWiseAction.h>
 #include <utility>
 
 namespace Aws
@@ -556,6 +557,43 @@ namespace Model
      */
     inline Action& WithDynamoDBv2(DynamoDBv2Action&& value) { SetDynamoDBv2(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sends information about the detector model instance and the event that
+     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     */
+    inline const IotSiteWiseAction& GetIotSiteWise() const{ return m_iotSiteWise; }
+
+    /**
+     * <p>Sends information about the detector model instance and the event that
+     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     */
+    inline bool IotSiteWiseHasBeenSet() const { return m_iotSiteWiseHasBeenSet; }
+
+    /**
+     * <p>Sends information about the detector model instance and the event that
+     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     */
+    inline void SetIotSiteWise(const IotSiteWiseAction& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = value; }
+
+    /**
+     * <p>Sends information about the detector model instance and the event that
+     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     */
+    inline void SetIotSiteWise(IotSiteWiseAction&& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = std::move(value); }
+
+    /**
+     * <p>Sends information about the detector model instance and the event that
+     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     */
+    inline Action& WithIotSiteWise(const IotSiteWiseAction& value) { SetIotSiteWise(value); return *this;}
+
+    /**
+     * <p>Sends information about the detector model instance and the event that
+     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     */
+    inline Action& WithIotSiteWise(IotSiteWiseAction&& value) { SetIotSiteWise(std::move(value)); return *this;}
+
   private:
 
     SetVariableAction m_setVariable;
@@ -593,6 +631,9 @@ namespace Model
 
     DynamoDBv2Action m_dynamoDBv2;
     bool m_dynamoDBv2HasBeenSet;
+
+    IotSiteWiseAction m_iotSiteWise;
+    bool m_iotSiteWiseHasBeenSet;
   };
 
 } // namespace Model

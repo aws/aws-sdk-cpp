@@ -42,7 +42,8 @@ namespace Model
     CUSTOM_JDBC_CERT,
     SKIP_CUSTOM_JDBC_CERT_VALIDATION,
     CUSTOM_JDBC_CERT_STRING,
-    CONNECTION_URL
+    CONNECTION_URL,
+    KAFKA_BOOTSTRAP_SERVERS
   };
 
 namespace ConnectionPropertyKeyMapper

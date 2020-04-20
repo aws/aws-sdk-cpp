@@ -17,6 +17,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ce/model/MatchOption.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +135,71 @@ namespace Model
      */
     inline TagValues& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for only applicable for actions
+     * related to Cost Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline const Aws::Vector<MatchOption>& GetMatchOptions() const{ return m_matchOptions; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for only applicable for actions
+     * related to Cost Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline bool MatchOptionsHasBeenSet() const { return m_matchOptionsHasBeenSet; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for only applicable for actions
+     * related to Cost Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline void SetMatchOptions(const Aws::Vector<MatchOption>& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = value; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for only applicable for actions
+     * related to Cost Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline void SetMatchOptions(Aws::Vector<MatchOption>&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::move(value); }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for only applicable for actions
+     * related to Cost Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline TagValues& WithMatchOptions(const Aws::Vector<MatchOption>& value) { SetMatchOptions(value); return *this;}
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for only applicable for actions
+     * related to Cost Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline TagValues& WithMatchOptions(Aws::Vector<MatchOption>&& value) { SetMatchOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for only applicable for actions
+     * related to Cost Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline TagValues& AddMatchOptions(const MatchOption& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for only applicable for actions
+     * related to Cost Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline TagValues& AddMatchOptions(MatchOption&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_key;
@@ -141,6 +207,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
+    Aws::Vector<MatchOption> m_matchOptions;
+    bool m_matchOptionsHasBeenSet;
   };
 
 } // namespace Model

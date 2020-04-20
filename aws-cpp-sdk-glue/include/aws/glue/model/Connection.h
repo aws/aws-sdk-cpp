@@ -260,7 +260,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
@@ -306,7 +309,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
@@ -352,7 +358,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
@@ -398,7 +407,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
@@ -444,7 +456,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
@@ -490,7 +505,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
@@ -536,7 +554,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
@@ -582,7 +603,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -628,7 +652,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
@@ -674,7 +701,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -720,7 +750,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -766,7 +799,10 @@ namespace Model
      * in Microsoft SQL Server, this is used as the
      * <code>hostNameInCertificate</code>.</p> </li> <li> <p>
      * <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC)
-     * data source.</p> </li> </ul>
+     * data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A
+     * comma-separated list of host and port pairs that are the addresses of the Apache
+     * Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
+     * bootstrap itself.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

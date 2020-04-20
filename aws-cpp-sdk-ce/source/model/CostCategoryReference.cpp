@@ -32,7 +32,9 @@ CostCategoryReference::CostCategoryReference() :
     m_costCategoryArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_effectiveStartHasBeenSet(false),
-    m_effectiveEndHasBeenSet(false)
+    m_effectiveEndHasBeenSet(false),
+    m_numberOfRules(0),
+    m_numberOfRulesHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ CostCategoryReference::CostCategoryReference(JsonView jsonValue) :
     m_costCategoryArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_effectiveStartHasBeenSet(false),
-    m_effectiveEndHasBeenSet(false)
+    m_effectiveEndHasBeenSet(false),
+    m_numberOfRules(0),
+    m_numberOfRulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +79,13 @@ CostCategoryReference& CostCategoryReference::operator =(JsonView jsonValue)
     m_effectiveEndHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NumberOfRules"))
+  {
+    m_numberOfRules = jsonValue.GetInteger("NumberOfRules");
+
+    m_numberOfRulesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +114,12 @@ JsonValue CostCategoryReference::Jsonize() const
   if(m_effectiveEndHasBeenSet)
   {
    payload.WithString("EffectiveEnd", m_effectiveEnd);
+
+  }
+
+  if(m_numberOfRulesHasBeenSet)
+  {
+   payload.WithInteger("NumberOfRules", m_numberOfRules);
 
   }
 

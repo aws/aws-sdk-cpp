@@ -272,7 +272,8 @@ namespace Model
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. You can nest only one level deep. If there are multiple values
      * for a dimension, they are OR'd together.</p> <p>If you don't provide a
-     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
+     * is also supported.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -288,7 +289,8 @@ namespace Model
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. You can nest only one level deep. If there are multiple values
      * for a dimension, they are OR'd together.</p> <p>If you don't provide a
-     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
+     * is also supported.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -304,7 +306,8 @@ namespace Model
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. You can nest only one level deep. If there are multiple values
      * for a dimension, they are OR'd together.</p> <p>If you don't provide a
-     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
+     * is also supported.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -320,7 +323,8 @@ namespace Model
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. You can nest only one level deep. If there are multiple values
      * for a dimension, they are OR'd together.</p> <p>If you don't provide a
-     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
+     * is also supported.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -336,7 +340,8 @@ namespace Model
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. You can nest only one level deep. If there are multiple values
      * for a dimension, they are OR'd together.</p> <p>If you don't provide a
-     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
+     * is also supported.</p>
      */
     inline GetReservationCoverageRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -352,7 +357,8 @@ namespace Model
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. You can nest only one level deep. If there are multiple values
      * for a dimension, they are OR'd together.</p> <p>If you don't provide a
-     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
+     * <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p> <p>Cost category
+     * is also supported.</p>
      */
     inline GetReservationCoverageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

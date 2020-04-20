@@ -34,6 +34,7 @@
 #include <aws/apigatewayv2/model/CreateStageResult.h>
 #include <aws/apigatewayv2/model/CreateVpcLinkResult.h>
 #include <aws/apigatewayv2/model/DeleteVpcLinkResult.h>
+#include <aws/apigatewayv2/model/ExportApiResult.h>
 #include <aws/apigatewayv2/model/GetApiResult.h>
 #include <aws/apigatewayv2/model/GetApiMappingResult.h>
 #include <aws/apigatewayv2/model/GetApiMappingsResult.h>
@@ -143,6 +144,7 @@ namespace Model
         class DeleteRouteSettingsRequest;
         class DeleteStageRequest;
         class DeleteVpcLinkRequest;
+        class ExportApiRequest;
         class GetApiRequest;
         class GetApiMappingRequest;
         class GetApiMappingsRequest;
@@ -214,6 +216,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteRouteSettingsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteStageOutcome;
         typedef Aws::Utils::Outcome<DeleteVpcLinkResult, Aws::Client::AWSError<ApiGatewayV2Errors>> DeleteVpcLinkOutcome;
+        typedef Aws::Utils::Outcome<ExportApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> ExportApiOutcome;
         typedef Aws::Utils::Outcome<GetApiResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetApiOutcome;
         typedef Aws::Utils::Outcome<GetApiMappingResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetApiMappingOutcome;
         typedef Aws::Utils::Outcome<GetApiMappingsResult, Aws::Client::AWSError<ApiGatewayV2Errors>> GetApiMappingsOutcome;
@@ -285,6 +288,7 @@ namespace Model
         typedef std::future<DeleteRouteSettingsOutcome> DeleteRouteSettingsOutcomeCallable;
         typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
         typedef std::future<DeleteVpcLinkOutcome> DeleteVpcLinkOutcomeCallable;
+        typedef std::future<ExportApiOutcome> ExportApiOutcomeCallable;
         typedef std::future<GetApiOutcome> GetApiOutcomeCallable;
         typedef std::future<GetApiMappingOutcome> GetApiMappingOutcomeCallable;
         typedef std::future<GetApiMappingsOutcome> GetApiMappingsOutcomeCallable;
@@ -359,6 +363,7 @@ namespace Model
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteRouteSettingsRequest&, const Model::DeleteRouteSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRouteSettingsResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteStageRequest&, const Model::DeleteStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStageResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteVpcLinkRequest&, const Model::DeleteVpcLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcLinkResponseReceivedHandler;
+    typedef std::function<void(const ApiGatewayV2Client*, const Model::ExportApiRequest&, Model::ExportApiOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportApiResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiRequest&, const Model::GetApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiMappingRequest&, const Model::GetApiMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiMappingResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiMappingsRequest&, const Model::GetApiMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiMappingsResponseReceivedHandler;
@@ -1136,6 +1141,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVpcLinkAsync(const Model::DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::ExportApiOutcome ExportApi(const Model::ExportApiRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportApiOutcomeCallable ExportApiCallable(const Model::ExportApiRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportApiAsync(const Model::ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets an Api resource.</p><p><h3>See Also:</h3>   <a
@@ -2222,6 +2246,7 @@ namespace Model
         void DeleteRouteSettingsAsyncHelper(const Model::DeleteRouteSettingsRequest& request, const DeleteRouteSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStageAsyncHelper(const Model::DeleteStageRequest& request, const DeleteStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpcLinkAsyncHelper(const Model::DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportApiAsyncHelper(const Model::ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiAsyncHelper(const Model::GetApiRequest& request, const GetApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiMappingAsyncHelper(const Model::GetApiMappingRequest& request, const GetApiMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApiMappingsAsyncHelper(const Model::GetApiMappingsRequest& request, const GetApiMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

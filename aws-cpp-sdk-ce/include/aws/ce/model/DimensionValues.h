@@ -18,6 +18,7 @@
 #include <aws/ce/model/Dimension.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/MatchOption.h>
 #include <utility>
 
 namespace Aws
@@ -90,93 +91,122 @@ namespace Model
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline DimensionValues& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline DimensionValues& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline DimensionValues& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline DimensionValues& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The metadata values that you can use to filter and group your results. You
-     * can use <code>GetDimensionValues</code> to find specific values.</p> <p>Valid
-     * values for the <code>SERVICE</code> dimension are <code>Amazon Elastic Compute
-     * Cloud - Compute</code>, <code>Amazon Elasticsearch Service</code>, <code>Amazon
-     * ElastiCache</code>, <code>Amazon Redshift</code>, and <code>Amazon Relational
-     * Database Service</code>.</p>
+     * can use <code>GetDimensionValues</code> to find specific values.</p>
      */
     inline DimensionValues& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline const Aws::Vector<MatchOption>& GetMatchOptions() const{ return m_matchOptions; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline bool MatchOptionsHasBeenSet() const { return m_matchOptionsHasBeenSet; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline void SetMatchOptions(const Aws::Vector<MatchOption>& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = value; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline void SetMatchOptions(Aws::Vector<MatchOption>&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions = std::move(value); }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline DimensionValues& WithMatchOptions(const Aws::Vector<MatchOption>& value) { SetMatchOptions(value); return *this;}
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline DimensionValues& WithMatchOptions(Aws::Vector<MatchOption>&& value) { SetMatchOptions(std::move(value)); return *this;}
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline DimensionValues& AddMatchOptions(const MatchOption& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(value); return *this; }
+
+    /**
+     * <p>The match options that you can use to filter your results.
+     * <code>MatchOptions</code> is only applicable for actions related to Cost
+     * Category. The default values for <code>MatchOptions</code> is
+     * <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.</p>
+     */
+    inline DimensionValues& AddMatchOptions(MatchOption&& value) { m_matchOptionsHasBeenSet = true; m_matchOptions.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -185,6 +215,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
+    Aws::Vector<MatchOption> m_matchOptions;
+    bool m_matchOptionsHasBeenSet;
   };
 
 } // namespace Model

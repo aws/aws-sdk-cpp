@@ -235,50 +235,50 @@ namespace Model
 
 
     /**
-     * <p>Details for the Savings Plans we recommend you to purchase to cover existing,
-     * Savings Plans eligible workloads.</p>
+     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * existing Savings Plans eligible workloads.</p>
      */
     inline const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& GetSavingsPlansPurchaseRecommendationDetails() const{ return m_savingsPlansPurchaseRecommendationDetails; }
 
     /**
-     * <p>Details for the Savings Plans we recommend you to purchase to cover existing,
-     * Savings Plans eligible workloads.</p>
+     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * existing Savings Plans eligible workloads.</p>
      */
     inline bool SavingsPlansPurchaseRecommendationDetailsHasBeenSet() const { return m_savingsPlansPurchaseRecommendationDetailsHasBeenSet; }
 
     /**
-     * <p>Details for the Savings Plans we recommend you to purchase to cover existing,
-     * Savings Plans eligible workloads.</p>
+     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * existing Savings Plans eligible workloads.</p>
      */
     inline void SetSavingsPlansPurchaseRecommendationDetails(const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails = value; }
 
     /**
-     * <p>Details for the Savings Plans we recommend you to purchase to cover existing,
-     * Savings Plans eligible workloads.</p>
+     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * existing Savings Plans eligible workloads.</p>
      */
     inline void SetSavingsPlansPurchaseRecommendationDetails(Aws::Vector<SavingsPlansPurchaseRecommendationDetail>&& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails = std::move(value); }
 
     /**
-     * <p>Details for the Savings Plans we recommend you to purchase to cover existing,
-     * Savings Plans eligible workloads.</p>
+     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithSavingsPlansPurchaseRecommendationDetails(const Aws::Vector<SavingsPlansPurchaseRecommendationDetail>& value) { SetSavingsPlansPurchaseRecommendationDetails(value); return *this;}
 
     /**
-     * <p>Details for the Savings Plans we recommend you to purchase to cover existing,
-     * Savings Plans eligible workloads.</p>
+     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& WithSavingsPlansPurchaseRecommendationDetails(Aws::Vector<SavingsPlansPurchaseRecommendationDetail>&& value) { SetSavingsPlansPurchaseRecommendationDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Details for the Savings Plans we recommend you to purchase to cover existing,
-     * Savings Plans eligible workloads.</p>
+     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& AddSavingsPlansPurchaseRecommendationDetails(const SavingsPlansPurchaseRecommendationDetail& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails.push_back(value); return *this; }
 
     /**
-     * <p>Details for the Savings Plans we recommend you to purchase to cover existing,
-     * Savings Plans eligible workloads.</p>
+     * <p>Details for the Savings Plans we recommend that you purchase to cover
+     * existing Savings Plans eligible workloads.</p>
      */
     inline SavingsPlansPurchaseRecommendation& AddSavingsPlansPurchaseRecommendationDetails(SavingsPlansPurchaseRecommendationDetail&& value) { m_savingsPlansPurchaseRecommendationDetailsHasBeenSet = true; m_savingsPlansPurchaseRecommendationDetails.push_back(std::move(value)); return *this; }
 

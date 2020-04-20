@@ -138,54 +138,60 @@ namespace Model
     /**
      * <p>The type of the connection. Currently, these types are supported:</p> <ul>
      * <li> <p> <code>JDBC</code> - Designates a connection to a database through Java
-     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>MONGODB</code> -
-     * Designates a connection to a MongoDB document database.</p> </li> </ul> <p>SFTP
-     * is not supported.</p>
+     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
+     * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
+     * <code>MONGODB</code> - Designates a connection to a MongoDB document
+     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
     /**
      * <p>The type of the connection. Currently, these types are supported:</p> <ul>
      * <li> <p> <code>JDBC</code> - Designates a connection to a database through Java
-     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>MONGODB</code> -
-     * Designates a connection to a MongoDB document database.</p> </li> </ul> <p>SFTP
-     * is not supported.</p>
+     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
+     * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
+     * <code>MONGODB</code> - Designates a connection to a MongoDB document
+     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
      * <p>The type of the connection. Currently, these types are supported:</p> <ul>
      * <li> <p> <code>JDBC</code> - Designates a connection to a database through Java
-     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>MONGODB</code> -
-     * Designates a connection to a MongoDB document database.</p> </li> </ul> <p>SFTP
-     * is not supported.</p>
+     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
+     * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
+     * <code>MONGODB</code> - Designates a connection to a MongoDB document
+     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
      * <p>The type of the connection. Currently, these types are supported:</p> <ul>
      * <li> <p> <code>JDBC</code> - Designates a connection to a database through Java
-     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>MONGODB</code> -
-     * Designates a connection to a MongoDB document database.</p> </li> </ul> <p>SFTP
-     * is not supported.</p>
+     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
+     * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
+     * <code>MONGODB</code> - Designates a connection to a MongoDB document
+     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
     /**
      * <p>The type of the connection. Currently, these types are supported:</p> <ul>
      * <li> <p> <code>JDBC</code> - Designates a connection to a database through Java
-     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>MONGODB</code> -
-     * Designates a connection to a MongoDB document database.</p> </li> </ul> <p>SFTP
-     * is not supported.</p>
+     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
+     * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
+     * <code>MONGODB</code> - Designates a connection to a MongoDB document
+     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline ConnectionInput& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
     /**
      * <p>The type of the connection. Currently, these types are supported:</p> <ul>
      * <li> <p> <code>JDBC</code> - Designates a connection to a database through Java
-     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>MONGODB</code> -
-     * Designates a connection to a MongoDB document database.</p> </li> </ul> <p>SFTP
-     * is not supported.</p>
+     * Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates
+     * a connection to an Apache Kafka streaming platform.</p> </li> <li> <p>
+     * <code>MONGODB</code> - Designates a connection to a MongoDB document
+     * database.</p> </li> </ul> <p>SFTP is not supported.</p>
      */
     inline ConnectionInput& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 

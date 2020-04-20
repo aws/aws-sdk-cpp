@@ -28,10 +28,16 @@ namespace IoTEvents
 namespace IoTEventsErrorMapper
 {
 
+static const int TAGRIS_INVALID_ARN_HASH = HashingUtils::HashString("TagrisInvalidArnException");
+static const int TAGRIS_INVALID_PARAMETER_HASH = HashingUtils::HashString("TagrisInvalidParameterException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
+static const int TAGRIS_PARTIAL_RESOURCES_EXIST_RESULTS_HASH = HashingUtils::HashString("TagrisPartialResourcesExistResultsException");
+static const int TAGRIS_ACCESS_DENIED_HASH = HashingUtils::HashString("TagrisAccessDeniedException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
+static const int TAGRIS_THROTTLED_HASH = HashingUtils::HashString("TagrisThrottledException");
+static const int TAGRIS_INTERNAL_SERVICE_HASH = HashingUtils::HashString("TagrisInternalServiceException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -39,9 +45,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
+  if (hashCode == TAGRIS_INVALID_ARN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::TAGRIS_INVALID_ARN), false);
+  }
+  else if (hashCode == TAGRIS_INVALID_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::TAGRIS_INVALID_PARAMETER), false);
+  }
+  else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::RESOURCE_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == TAGRIS_PARTIAL_RESOURCES_EXIST_RESULTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::TAGRIS_PARTIAL_RESOURCES_EXIST_RESULTS), false);
+  }
+  else if (hashCode == TAGRIS_ACCESS_DENIED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::TAGRIS_ACCESS_DENIED), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
@@ -54,6 +76,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::UNSUPPORTED_OPERATION), false);
+  }
+  else if (hashCode == TAGRIS_THROTTLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::TAGRIS_THROTTLED), false);
+  }
+  else if (hashCode == TAGRIS_INTERNAL_SERVICE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTEventsErrors::TAGRIS_INTERNAL_SERVICE), false);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

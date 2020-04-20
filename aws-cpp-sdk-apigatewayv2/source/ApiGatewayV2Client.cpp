@@ -58,6 +58,7 @@
 #include <aws/apigatewayv2/model/DeleteRouteSettingsRequest.h>
 #include <aws/apigatewayv2/model/DeleteStageRequest.h>
 #include <aws/apigatewayv2/model/DeleteVpcLinkRequest.h>
+#include <aws/apigatewayv2/model/ExportApiRequest.h>
 #include <aws/apigatewayv2/model/GetApiRequest.h>
 #include <aws/apigatewayv2/model/GetApiMappingRequest.h>
 #include <aws/apigatewayv2/model/GetApiMappingsRequest.h>
@@ -1438,6 +1439,59 @@ void ApiGatewayV2Client::DeleteVpcLinkAsync(const DeleteVpcLinkRequest& request,
 void ApiGatewayV2Client::DeleteVpcLinkAsyncHelper(const DeleteVpcLinkRequest& request, const DeleteVpcLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteVpcLink(request), context);
+}
+
+ExportApiOutcome ApiGatewayV2Client::ExportApi(const ExportApiRequest& request) const
+{
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportApi", "Required field: ApiId, is not set");
+    return ExportApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  if (!request.OutputTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportApi", "Required field: OutputType, is not set");
+    return ExportApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutputType]", false));
+  }
+  if (!request.SpecificationHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportApi", "Required field: Specification, is not set");
+    return ExportApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Specification]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/apis/";
+  ss << request.GetApiId();
+  ss << "/exports/";
+  ss << request.GetSpecification();
+  uri.SetPath(uri.GetPath() + ss.str());
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return ExportApiOutcome(ExportApiResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return ExportApiOutcome(outcome.GetError());
+  }
+}
+
+ExportApiOutcomeCallable ApiGatewayV2Client::ExportApiCallable(const ExportApiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportApi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::ExportApiAsync(const ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportApiAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::ExportApiAsyncHelper(const ExportApiRequest& request, const ExportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportApi(request), context);
 }
 
 GetApiOutcome ApiGatewayV2Client::GetApi(const GetApiRequest& request) const

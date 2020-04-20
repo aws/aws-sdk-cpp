@@ -189,50 +189,50 @@ namespace Model
 
 
     /**
-     * <p>The percentage of your existing Savings Planscovered usage, divided by all of
-     * your eligible Savings Plans usage in an account(or set of accounts).</p>
+     * <p>The percentage of your existing Savings Plans covered usage, divided by all
+     * of your eligible Savings Plans usage in an account(or set of accounts).</p>
      */
     inline const Aws::String& GetCoveragePercentage() const{ return m_coveragePercentage; }
 
     /**
-     * <p>The percentage of your existing Savings Planscovered usage, divided by all of
-     * your eligible Savings Plans usage in an account(or set of accounts).</p>
+     * <p>The percentage of your existing Savings Plans covered usage, divided by all
+     * of your eligible Savings Plans usage in an account(or set of accounts).</p>
      */
     inline bool CoveragePercentageHasBeenSet() const { return m_coveragePercentageHasBeenSet; }
 
     /**
-     * <p>The percentage of your existing Savings Planscovered usage, divided by all of
-     * your eligible Savings Plans usage in an account(or set of accounts).</p>
+     * <p>The percentage of your existing Savings Plans covered usage, divided by all
+     * of your eligible Savings Plans usage in an account(or set of accounts).</p>
      */
     inline void SetCoveragePercentage(const Aws::String& value) { m_coveragePercentageHasBeenSet = true; m_coveragePercentage = value; }
 
     /**
-     * <p>The percentage of your existing Savings Planscovered usage, divided by all of
-     * your eligible Savings Plans usage in an account(or set of accounts).</p>
+     * <p>The percentage of your existing Savings Plans covered usage, divided by all
+     * of your eligible Savings Plans usage in an account(or set of accounts).</p>
      */
     inline void SetCoveragePercentage(Aws::String&& value) { m_coveragePercentageHasBeenSet = true; m_coveragePercentage = std::move(value); }
 
     /**
-     * <p>The percentage of your existing Savings Planscovered usage, divided by all of
-     * your eligible Savings Plans usage in an account(or set of accounts).</p>
+     * <p>The percentage of your existing Savings Plans covered usage, divided by all
+     * of your eligible Savings Plans usage in an account(or set of accounts).</p>
      */
     inline void SetCoveragePercentage(const char* value) { m_coveragePercentageHasBeenSet = true; m_coveragePercentage.assign(value); }
 
     /**
-     * <p>The percentage of your existing Savings Planscovered usage, divided by all of
-     * your eligible Savings Plans usage in an account(or set of accounts).</p>
+     * <p>The percentage of your existing Savings Plans covered usage, divided by all
+     * of your eligible Savings Plans usage in an account(or set of accounts).</p>
      */
     inline SavingsPlansCoverageData& WithCoveragePercentage(const Aws::String& value) { SetCoveragePercentage(value); return *this;}
 
     /**
-     * <p>The percentage of your existing Savings Planscovered usage, divided by all of
-     * your eligible Savings Plans usage in an account(or set of accounts).</p>
+     * <p>The percentage of your existing Savings Plans covered usage, divided by all
+     * of your eligible Savings Plans usage in an account(or set of accounts).</p>
      */
     inline SavingsPlansCoverageData& WithCoveragePercentage(Aws::String&& value) { SetCoveragePercentage(std::move(value)); return *this;}
 
     /**
-     * <p>The percentage of your existing Savings Planscovered usage, divided by all of
-     * your eligible Savings Plans usage in an account(or set of accounts).</p>
+     * <p>The percentage of your existing Savings Plans covered usage, divided by all
+     * of your eligible Savings Plans usage in an account(or set of accounts).</p>
      */
     inline SavingsPlansCoverageData& WithCoveragePercentage(const char* value) { SetCoveragePercentage(value); return *this;}
 

@@ -47,6 +47,7 @@ namespace Aws
         static const int SKIP_CUSTOM_JDBC_CERT_VALIDATION_HASH = HashingUtils::HashString("SKIP_CUSTOM_JDBC_CERT_VALIDATION");
         static const int CUSTOM_JDBC_CERT_STRING_HASH = HashingUtils::HashString("CUSTOM_JDBC_CERT_STRING");
         static const int CONNECTION_URL_HASH = HashingUtils::HashString("CONNECTION_URL");
+        static const int KAFKA_BOOTSTRAP_SERVERS_HASH = HashingUtils::HashString("KAFKA_BOOTSTRAP_SERVERS");
 
 
         ConnectionPropertyKey GetConnectionPropertyKeyForName(const Aws::String& name)
@@ -120,6 +121,10 @@ namespace Aws
           {
             return ConnectionPropertyKey::CONNECTION_URL;
           }
+          else if (hashCode == KAFKA_BOOTSTRAP_SERVERS_HASH)
+          {
+            return ConnectionPropertyKey::KAFKA_BOOTSTRAP_SERVERS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -168,6 +173,8 @@ namespace Aws
             return "CUSTOM_JDBC_CERT_STRING";
           case ConnectionPropertyKey::CONNECTION_URL:
             return "CONNECTION_URL";
+          case ConnectionPropertyKey::KAFKA_BOOTSTRAP_SERVERS:
+            return "KAFKA_BOOTSTRAP_SERVERS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

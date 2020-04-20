@@ -204,24 +204,16 @@ namespace Model
 
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
-         * requested name and rules.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Cost Category with the requested name and rules.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCostCategoryDefinitionOutcome CreateCostCategoryDefinition(const Model::CreateCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
-         * requested name and rules.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Cost Category with the requested name and rules.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
          * API Reference</a></p>
          *
@@ -230,12 +222,8 @@ namespace Model
         virtual Model::CreateCostCategoryDefinitionOutcomeCallable CreateCostCategoryDefinitionCallable(const Model::CreateCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
-         * requested name and rules.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new Cost Category with the requested name and rules.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
          * API Reference</a></p>
          *
@@ -244,26 +232,16 @@ namespace Model
         virtual void CreateCostCategoryDefinitionAsync(const Model::CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
-         * month going forward will no longer be categorized with this Cost
-         * Category.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Cost Category. Expenses from this month going forward will no
+         * longer be categorized with this Cost Category.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCostCategoryDefinitionOutcome DeleteCostCategoryDefinition(const Model::DeleteCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
-         * month going forward will no longer be categorized with this Cost
-         * Category.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Cost Category. Expenses from this month going forward will no
+         * longer be categorized with this Cost Category.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">AWS
          * API Reference</a></p>
          *
@@ -272,13 +250,8 @@ namespace Model
         virtual Model::DeleteCostCategoryDefinitionOutcomeCallable DeleteCostCategoryDefinitionCallable(const Model::DeleteCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
-         * month going forward will no longer be categorized with this Cost
-         * Category.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a Cost Category. Expenses from this month going forward will no
+         * longer be categorized with this Cost Category.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">AWS
          * API Reference</a></p>
          *
@@ -287,34 +260,26 @@ namespace Model
         virtual void DeleteCostCategoryDefinitionAsync(const Model::DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
-         * and effective dates of a Cost Category that's defined in the account.</p> <p>You
-         * have the option to use <code>EffectiveOn</code> to return a Cost Category that
-         * is active on a specific date. If there is no <code>EffectiveOn</code> specified,
-         * you’ll see a Cost Category that is effective on the current date. If Cost
-         * Category is still effective, <code>EffectiveEnd</code> is omitted in the
-         * response. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the name, ARN, rules, definition, and effective dates of a Cost
+         * Category that's defined in the account.</p> <p>You have the option to use
+         * <code>EffectiveOn</code> to return a Cost Category that is active on a specific
+         * date. If there is no <code>EffectiveOn</code> specified, you’ll see a Cost
+         * Category that is effective on the current date. If Cost Category is still
+         * effective, <code>EffectiveEnd</code> is omitted in the response. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeCostCategoryDefinitionOutcome DescribeCostCategoryDefinition(const Model::DescribeCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
-         * and effective dates of a Cost Category that's defined in the account.</p> <p>You
-         * have the option to use <code>EffectiveOn</code> to return a Cost Category that
-         * is active on a specific date. If there is no <code>EffectiveOn</code> specified,
-         * you’ll see a Cost Category that is effective on the current date. If Cost
-         * Category is still effective, <code>EffectiveEnd</code> is omitted in the
-         * response. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the name, ARN, rules, definition, and effective dates of a Cost
+         * Category that's defined in the account.</p> <p>You have the option to use
+         * <code>EffectiveOn</code> to return a Cost Category that is active on a specific
+         * date. If there is no <code>EffectiveOn</code> specified, you’ll see a Cost
+         * Category that is effective on the current date. If Cost Category is still
+         * effective, <code>EffectiveEnd</code> is omitted in the response. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">AWS
          * API Reference</a></p>
          *
@@ -323,17 +288,13 @@ namespace Model
         virtual Model::DescribeCostCategoryDefinitionOutcomeCallable DescribeCostCategoryDefinitionCallable(const Model::DescribeCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
-         * and effective dates of a Cost Category that's defined in the account.</p> <p>You
-         * have the option to use <code>EffectiveOn</code> to return a Cost Category that
-         * is active on a specific date. If there is no <code>EffectiveOn</code> specified,
-         * you’ll see a Cost Category that is effective on the current date. If Cost
-         * Category is still effective, <code>EffectiveEnd</code> is omitted in the
-         * response. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns the name, ARN, rules, definition, and effective dates of a Cost
+         * Category that's defined in the account.</p> <p>You have the option to use
+         * <code>EffectiveOn</code> to return a Cost Category that is active on a specific
+         * date. If there is no <code>EffectiveOn</code> specified, you’ll see a Cost
+         * Category that is effective on the current date. If Cost Category is still
+         * effective, <code>EffectiveEnd</code> is omitted in the response. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">AWS
          * API Reference</a></p>
          *
@@ -397,7 +358,7 @@ namespace Model
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
-         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts. This API is currently available for the Amazon Elastic
          * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
@@ -418,7 +379,7 @@ namespace Model
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
-         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts. This API is currently available for the Amazon Elastic
          * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
@@ -441,7 +402,7 @@ namespace Model
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
          * dimensions, see the <a
-         * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
          * operation. Master accounts in an organization in AWS Organizations have access
          * to all member accounts. This API is currently available for the Amazon Elastic
          * Compute Cloud – Compute service only.</p> <note> <p>This is an opt-in only
@@ -524,9 +485,10 @@ namespace Model
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
-         * associated member accounts. For any time period, you can filter data about
-         * reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li>
-         * <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+         * associated member accounts. This supports dimensions, Cost Categories, and
+         * nested expressions. For any time period, you can filter data about reservation
+         * usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li>
+         * <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
          * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
          * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
          * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
@@ -543,9 +505,10 @@ namespace Model
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
-         * associated member accounts. For any time period, you can filter data about
-         * reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li>
-         * <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+         * associated member accounts. This supports dimensions, Cost Categories, and
+         * nested expressions. For any time period, you can filter data about reservation
+         * usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li>
+         * <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
          * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
          * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
          * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
@@ -564,9 +527,10 @@ namespace Model
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
-         * associated member accounts. For any time period, you can filter data about
-         * reservation usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li>
-         * <li> <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
+         * associated member accounts. This supports dimensions, Cost Categories, and
+         * nested expressions. For any time period, you can filter data about reservation
+         * usage by the following dimensions:</p> <ul> <li> <p>AZ</p> </li> <li>
+         * <p>CACHE_ENGINE</p> </li> <li> <p>DATABASE_ENGINE</p> </li> <li>
          * <p>DEPLOYMENT_OPTION</p> </li> <li> <p>INSTANCE_TYPE</p> </li> <li>
          * <p>LINKED_ACCOUNT</p> </li> <li> <p>OPERATING_SYSTEM</p> </li> <li>
          * <p>PLATFORM</p> </li> <li> <p>REGION</p> </li> <li> <p>SERVICE</p> </li> <li>
@@ -733,10 +697,11 @@ namespace Model
         /**
          * <p>Retrieves the Savings Plans covered for your account. This enables you to see
          * how much of your cost is covered by a Savings Plan. An organization’s master
-         * account can see the coverage of the associated member accounts. For any time
-         * period, you can filter data for Savings Plans usage with the following
-         * dimensions:</p> <ul> <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p>
-         * <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
+         * account can see the coverage of the associated member accounts. This supports
+         * dimensions, Cost Categories, and nested expressions. For any time period, you
+         * can filter data for Savings Plans usage with the following dimensions:</p> <ul>
+         * <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code>
+         * </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
          * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
          * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
          * Also:</h3>   <a
@@ -748,10 +713,11 @@ namespace Model
         /**
          * <p>Retrieves the Savings Plans covered for your account. This enables you to see
          * how much of your cost is covered by a Savings Plan. An organization’s master
-         * account can see the coverage of the associated member accounts. For any time
-         * period, you can filter data for Savings Plans usage with the following
-         * dimensions:</p> <ul> <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p>
-         * <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
+         * account can see the coverage of the associated member accounts. This supports
+         * dimensions, Cost Categories, and nested expressions. For any time period, you
+         * can filter data for Savings Plans usage with the following dimensions:</p> <ul>
+         * <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code>
+         * </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
          * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
          * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
          * Also:</h3>   <a
@@ -765,10 +731,11 @@ namespace Model
         /**
          * <p>Retrieves the Savings Plans covered for your account. This enables you to see
          * how much of your cost is covered by a Savings Plan. An organization’s master
-         * account can see the coverage of the associated member accounts. For any time
-         * period, you can filter data for Savings Plans usage with the following
-         * dimensions:</p> <ul> <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p>
-         * <code>REGION</code> </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
+         * account can see the coverage of the associated member accounts. This supports
+         * dimensions, Cost Categories, and nested expressions. For any time period, you
+         * can filter data for Savings Plans usage with the following dimensions:</p> <ul>
+         * <li> <p> <code>LINKED_ACCOUNT</code> </p> </li> <li> <p> <code>REGION</code>
+         * </p> </li> <li> <p> <code>SERVICE</code> </p> </li> <li> <p>
          * <code>INSTANCE_FAMILY</code> </p> </li> </ul> <p>To determine valid values for a
          * dimension, use the <code>GetDimensionValues</code> operation.</p><p><h3>See
          * Also:</h3>   <a
@@ -956,34 +923,28 @@ namespace Model
         virtual void GetUsageForecastAsync(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
-         * of all Cost Categories defined in the account. You have the option to use
+         * <p>Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all
+         * Cost Categories defined in the account. You have the option to use
          * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
          * a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
          * Cost Categories that are effective on the current date. If Cost Category is
          * still effective, <code>EffectiveEnd</code> is omitted in the response.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>ListCostCategoryDefinitions</code> supports pagination. The request can
+         * have a <code>MaxResults</code> range up to 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCostCategoryDefinitionsOutcome ListCostCategoryDefinitions(const Model::ListCostCategoryDefinitionsRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
-         * of all Cost Categories defined in the account. You have the option to use
+         * <p>Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all
+         * Cost Categories defined in the account. You have the option to use
          * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
          * a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
          * Cost Categories that are effective on the current date. If Cost Category is
          * still effective, <code>EffectiveEnd</code> is omitted in the response.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>ListCostCategoryDefinitions</code> supports pagination. The request can
+         * have a <code>MaxResults</code> range up to 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
          * API Reference</a></p>
          *
@@ -992,17 +953,14 @@ namespace Model
         virtual Model::ListCostCategoryDefinitionsOutcomeCallable ListCostCategoryDefinitionsCallable(const Model::ListCostCategoryDefinitionsRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
-         * of all Cost Categories defined in the account. You have the option to use
+         * <p>Returns the name, ARN, <code>NumberOfRules</code> and effective dates of all
+         * Cost Categories defined in the account. You have the option to use
          * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
          * a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
          * Cost Categories that are effective on the current date. If Cost Category is
          * still effective, <code>EffectiveEnd</code> is omitted in the response.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>ListCostCategoryDefinitions</code> supports pagination. The request can
+         * have a <code>MaxResults</code> range up to 100.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
          * API Reference</a></p>
          *
@@ -1011,28 +969,20 @@ namespace Model
         virtual void ListCostCategoryDefinitionsAsync(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
-         * made to the Cost Category rules will be used to categorize the current month’s
-         * expenses and future expenses. This won’t change categorization for the previous
-         * months.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Cost Category. Changes made to the Cost Category rules
+         * will be used to categorize the current month’s expenses and future expenses.
+         * This won’t change categorization for the previous months.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateCostCategoryDefinitionOutcome UpdateCostCategoryDefinition(const Model::UpdateCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
-         * made to the Cost Category rules will be used to categorize the current month’s
-         * expenses and future expenses. This won’t change categorization for the previous
-         * months.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Cost Category. Changes made to the Cost Category rules
+         * will be used to categorize the current month’s expenses and future expenses.
+         * This won’t change categorization for the previous months.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">AWS
          * API Reference</a></p>
          *
@@ -1041,14 +991,10 @@ namespace Model
         virtual Model::UpdateCostCategoryDefinitionOutcomeCallable UpdateCostCategoryDefinitionCallable(const Model::UpdateCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
-         * Management and is subject to change. Your use of Cost Categories is subject to
-         * the Beta Service Participation terms of the <a
-         * href="http://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
-         * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
-         * made to the Cost Category rules will be used to categorize the current month’s
-         * expenses and future expenses. This won’t change categorization for the previous
-         * months.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Cost Category. Changes made to the Cost Category rules
+         * will be used to categorize the current month’s expenses and future expenses.
+         * This won’t change categorization for the previous months.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">AWS
          * API Reference</a></p>
          *

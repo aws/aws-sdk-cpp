@@ -92,82 +92,58 @@ namespace Model
 
 
     /**
-     * <p> <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and
-     * nested expressions. Currently the only dimensions supported is
-     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
-     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
-     * order. If there are multiple rules that match the line item, then the first rule
-     * to match is used to determine that Cost Category value. </p>
+     * <p>The Cost Category rules used to categorize costs. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline const Aws::Vector<CostCategoryRule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p> <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and
-     * nested expressions. Currently the only dimensions supported is
-     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
-     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
-     * order. If there are multiple rules that match the line item, then the first rule
-     * to match is used to determine that Cost Category value. </p>
+     * <p>The Cost Category rules used to categorize costs. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
-     * <p> <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and
-     * nested expressions. Currently the only dimensions supported is
-     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
-     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
-     * order. If there are multiple rules that match the line item, then the first rule
-     * to match is used to determine that Cost Category value. </p>
+     * <p>The Cost Category rules used to categorize costs. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline void SetRules(const Aws::Vector<CostCategoryRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * <p> <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and
-     * nested expressions. Currently the only dimensions supported is
-     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
-     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
-     * order. If there are multiple rules that match the line item, then the first rule
-     * to match is used to determine that Cost Category value. </p>
+     * <p>The Cost Category rules used to categorize costs. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline void SetRules(Aws::Vector<CostCategoryRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * <p> <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and
-     * nested expressions. Currently the only dimensions supported is
-     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
-     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
-     * order. If there are multiple rules that match the line item, then the first rule
-     * to match is used to determine that Cost Category value. </p>
+     * <p>The Cost Category rules used to categorize costs. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline CreateCostCategoryDefinitionRequest& WithRules(const Aws::Vector<CostCategoryRule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p> <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and
-     * nested expressions. Currently the only dimensions supported is
-     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
-     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
-     * order. If there are multiple rules that match the line item, then the first rule
-     * to match is used to determine that Cost Category value. </p>
+     * <p>The Cost Category rules used to categorize costs. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline CreateCostCategoryDefinitionRequest& WithRules(Aws::Vector<CostCategoryRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p> <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and
-     * nested expressions. Currently the only dimensions supported is
-     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
-     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
-     * order. If there are multiple rules that match the line item, then the first rule
-     * to match is used to determine that Cost Category value. </p>
+     * <p>The Cost Category rules used to categorize costs. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline CreateCostCategoryDefinitionRequest& AddRules(const CostCategoryRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
-     * <p> <code>CreateCostCategoryDefinition</code> supports dimensions, Tags, and
-     * nested expressions. Currently the only dimensions supported is
-     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
-     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
-     * order. If there are multiple rules that match the line item, then the first rule
-     * to match is used to determine that Cost Category value. </p>
+     * <p>The Cost Category rules used to categorize costs. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
      */
     inline CreateCostCategoryDefinitionRequest& AddRules(CostCategoryRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

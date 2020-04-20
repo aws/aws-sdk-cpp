@@ -205,7 +205,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline const Expression& GetFilter() const{ return m_filter; }
 
@@ -218,7 +218,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
@@ -231,7 +231,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline void SetFilter(const Expression& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -244,7 +244,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline void SetFilter(Expression&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -257,7 +257,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithFilter(const Expression& value) { SetFilter(value); return *this;}
 
@@ -270,7 +270,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object as the other operations, but only <code>AND</code> is supported among
      * each dimension. If there are multiple values for a dimension, they are OR'd
-     * together.</p>
+     * together.</p> <p>Cost category is also supported.</p>
      */
     inline GetSavingsPlansCoverageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 

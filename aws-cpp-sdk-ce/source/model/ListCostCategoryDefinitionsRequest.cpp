@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 ListCostCategoryDefinitionsRequest::ListCostCategoryDefinitionsRequest() : 
     m_effectiveOnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,12 @@ Aws::String ListCostCategoryDefinitionsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 

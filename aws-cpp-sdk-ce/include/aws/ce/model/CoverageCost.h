@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>How much it cost to run an instance.</p><p><h3>See Also:</h3>   <a
+   * <p>How much it costs to run an instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CoverageCost">AWS API
    * Reference</a></p>
    */
@@ -48,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline const Aws::String& GetOnDemandCost() const{ return m_onDemandCost; }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline bool OnDemandCostHasBeenSet() const { return m_onDemandCostHasBeenSet; }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline void SetOnDemandCost(const Aws::String& value) { m_onDemandCostHasBeenSet = true; m_onDemandCost = value; }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline void SetOnDemandCost(Aws::String&& value) { m_onDemandCostHasBeenSet = true; m_onDemandCost = std::move(value); }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline void SetOnDemandCost(const char* value) { m_onDemandCostHasBeenSet = true; m_onDemandCost.assign(value); }
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline CoverageCost& WithOnDemandCost(const Aws::String& value) { SetOnDemandCost(value); return *this;}
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline CoverageCost& WithOnDemandCost(Aws::String&& value) { SetOnDemandCost(std::move(value)); return *this;}
 
     /**
-     * <p>How much an On-Demand instance cost.</p>
+     * <p>How much an On-Demand Instance costs.</p>
      */
     inline CoverageCost& WithOnDemandCost(const char* value) { SetOnDemandCost(value); return *this;}
 

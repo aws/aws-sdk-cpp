@@ -33,10 +33,12 @@ namespace Aws
         static const int AZ_HASH = HashingUtils::HashString("AZ");
         static const int INSTANCE_TYPE_HASH = HashingUtils::HashString("INSTANCE_TYPE");
         static const int LINKED_ACCOUNT_HASH = HashingUtils::HashString("LINKED_ACCOUNT");
+        static const int LINKED_ACCOUNT_NAME_HASH = HashingUtils::HashString("LINKED_ACCOUNT_NAME");
         static const int OPERATION_HASH = HashingUtils::HashString("OPERATION");
         static const int PURCHASE_TYPE_HASH = HashingUtils::HashString("PURCHASE_TYPE");
         static const int REGION_HASH = HashingUtils::HashString("REGION");
         static const int SERVICE_HASH = HashingUtils::HashString("SERVICE");
+        static const int SERVICE_CODE_HASH = HashingUtils::HashString("SERVICE_CODE");
         static const int USAGE_TYPE_HASH = HashingUtils::HashString("USAGE_TYPE");
         static const int USAGE_TYPE_GROUP_HASH = HashingUtils::HashString("USAGE_TYPE_GROUP");
         static const int RECORD_TYPE_HASH = HashingUtils::HashString("RECORD_TYPE");
@@ -74,6 +76,10 @@ namespace Aws
           {
             return Dimension::LINKED_ACCOUNT;
           }
+          else if (hashCode == LINKED_ACCOUNT_NAME_HASH)
+          {
+            return Dimension::LINKED_ACCOUNT_NAME;
+          }
           else if (hashCode == OPERATION_HASH)
           {
             return Dimension::OPERATION;
@@ -89,6 +95,10 @@ namespace Aws
           else if (hashCode == SERVICE_HASH)
           {
             return Dimension::SERVICE;
+          }
+          else if (hashCode == SERVICE_CODE_HASH)
+          {
+            return Dimension::SERVICE_CODE;
           }
           else if (hashCode == USAGE_TYPE_HASH)
           {
@@ -190,6 +200,8 @@ namespace Aws
             return "INSTANCE_TYPE";
           case Dimension::LINKED_ACCOUNT:
             return "LINKED_ACCOUNT";
+          case Dimension::LINKED_ACCOUNT_NAME:
+            return "LINKED_ACCOUNT_NAME";
           case Dimension::OPERATION:
             return "OPERATION";
           case Dimension::PURCHASE_TYPE:
@@ -198,6 +210,8 @@ namespace Aws
             return "REGION";
           case Dimension::SERVICE:
             return "SERVICE";
+          case Dimension::SERVICE_CODE:
+            return "SERVICE_CODE";
           case Dimension::USAGE_TYPE:
             return "USAGE_TYPE";
           case Dimension::USAGE_TYPE_GROUP:
