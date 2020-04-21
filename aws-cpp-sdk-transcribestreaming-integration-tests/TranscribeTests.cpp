@@ -72,7 +72,7 @@ public:
 
 TEST_F(TranscribeStreamingTests, TranscribeAudioFile)
 {
-    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it? Careful that you keep adequate coverage.";
+    const char EXPECTED_MESSAGE[] = "But what if somebody decides to break it? Be careful that you keep adequate coverage.";
     Aws::String transcribedResult;
     StartStreamTranscriptionHandler handler;
     handler.SetTranscriptEventCallback([&transcribedResult](const TranscriptEvent& ev)
