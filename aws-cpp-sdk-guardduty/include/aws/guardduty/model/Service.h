@@ -51,32 +51,32 @@ namespace Model
 
 
     /**
-     * <p>Information about the activity described in a finding.</p>
+     * <p>Information about the activity that is described in a finding.</p>
      */
     inline const Action& GetAction() const{ return m_action; }
 
     /**
-     * <p>Information about the activity described in a finding.</p>
+     * <p>Information about the activity that is described in a finding.</p>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>Information about the activity described in a finding.</p>
+     * <p>Information about the activity that is described in a finding.</p>
      */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>Information about the activity described in a finding.</p>
+     * <p>Information about the activity that is described in a finding.</p>
      */
     inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>Information about the activity described in a finding.</p>
+     * <p>Information about the activity that is described in a finding.</p>
      */
     inline Service& WithAction(const Action& value) { SetAction(value); return *this;}
 
     /**
-     * <p>Information about the activity described in a finding.</p>
+     * <p>Information about the activity that is described in a finding.</p>
      */
     inline Service& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
 
@@ -134,202 +134,202 @@ namespace Model
 
 
     /**
-     * <p>Total count of the occurrences of this finding type.</p>
+     * <p>The total count of the occurrences of this finding type.</p>
      */
     inline int GetCount() const{ return m_count; }
 
     /**
-     * <p>Total count of the occurrences of this finding type.</p>
+     * <p>The total count of the occurrences of this finding type.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>Total count of the occurrences of this finding type.</p>
+     * <p>The total count of the occurrences of this finding type.</p>
      */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>Total count of the occurrences of this finding type.</p>
+     * <p>The total count of the occurrences of this finding type.</p>
      */
     inline Service& WithCount(int value) { SetCount(value); return *this;}
 
 
     /**
-     * <p>Detector ID for the GuardDuty service.</p>
+     * <p>The detector ID for the GuardDuty service.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>Detector ID for the GuardDuty service.</p>
+     * <p>The detector ID for the GuardDuty service.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>Detector ID for the GuardDuty service.</p>
+     * <p>The detector ID for the GuardDuty service.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>Detector ID for the GuardDuty service.</p>
+     * <p>The detector ID for the GuardDuty service.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>Detector ID for the GuardDuty service.</p>
+     * <p>The detector ID for the GuardDuty service.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>Detector ID for the GuardDuty service.</p>
+     * <p>The detector ID for the GuardDuty service.</p>
      */
     inline Service& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>Detector ID for the GuardDuty service.</p>
+     * <p>The detector ID for the GuardDuty service.</p>
      */
     inline Service& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>Detector ID for the GuardDuty service.</p>
+     * <p>The detector ID for the GuardDuty service.</p>
      */
     inline Service& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * <p>First seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The first-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline const Aws::String& GetEventFirstSeen() const{ return m_eventFirstSeen; }
 
     /**
-     * <p>First seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The first-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline bool EventFirstSeenHasBeenSet() const { return m_eventFirstSeenHasBeenSet; }
 
     /**
-     * <p>First seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The first-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline void SetEventFirstSeen(const Aws::String& value) { m_eventFirstSeenHasBeenSet = true; m_eventFirstSeen = value; }
 
     /**
-     * <p>First seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The first-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline void SetEventFirstSeen(Aws::String&& value) { m_eventFirstSeenHasBeenSet = true; m_eventFirstSeen = std::move(value); }
 
     /**
-     * <p>First seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The first-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline void SetEventFirstSeen(const char* value) { m_eventFirstSeenHasBeenSet = true; m_eventFirstSeen.assign(value); }
 
     /**
-     * <p>First seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The first-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline Service& WithEventFirstSeen(const Aws::String& value) { SetEventFirstSeen(value); return *this;}
 
     /**
-     * <p>First seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The first-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline Service& WithEventFirstSeen(Aws::String&& value) { SetEventFirstSeen(std::move(value)); return *this;}
 
     /**
-     * <p>First seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The first-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline Service& WithEventFirstSeen(const char* value) { SetEventFirstSeen(value); return *this;}
 
 
     /**
-     * <p>Last seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The last-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline const Aws::String& GetEventLastSeen() const{ return m_eventLastSeen; }
 
     /**
-     * <p>Last seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The last-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline bool EventLastSeenHasBeenSet() const { return m_eventLastSeenHasBeenSet; }
 
     /**
-     * <p>Last seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The last-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline void SetEventLastSeen(const Aws::String& value) { m_eventLastSeenHasBeenSet = true; m_eventLastSeen = value; }
 
     /**
-     * <p>Last seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The last-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline void SetEventLastSeen(Aws::String&& value) { m_eventLastSeenHasBeenSet = true; m_eventLastSeen = std::move(value); }
 
     /**
-     * <p>Last seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The last-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline void SetEventLastSeen(const char* value) { m_eventLastSeenHasBeenSet = true; m_eventLastSeen.assign(value); }
 
     /**
-     * <p>Last seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The last-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline Service& WithEventLastSeen(const Aws::String& value) { SetEventLastSeen(value); return *this;}
 
     /**
-     * <p>Last seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The last-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline Service& WithEventLastSeen(Aws::String&& value) { SetEventLastSeen(std::move(value)); return *this;}
 
     /**
-     * <p>Last seen timestamp of the activity that prompted GuardDuty to generate this
-     * finding.</p>
+     * <p>The last-seen timestamp of the activity that prompted GuardDuty to generate
+     * this finding.</p>
      */
     inline Service& WithEventLastSeen(const char* value) { SetEventLastSeen(value); return *this;}
 
 
     /**
-     * <p>Resource role information for this finding.</p>
+     * <p>The resource role information for this finding.</p>
      */
     inline const Aws::String& GetResourceRole() const{ return m_resourceRole; }
 
     /**
-     * <p>Resource role information for this finding.</p>
+     * <p>The resource role information for this finding.</p>
      */
     inline bool ResourceRoleHasBeenSet() const { return m_resourceRoleHasBeenSet; }
 
     /**
-     * <p>Resource role information for this finding.</p>
+     * <p>The resource role information for this finding.</p>
      */
     inline void SetResourceRole(const Aws::String& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = value; }
 
     /**
-     * <p>Resource role information for this finding.</p>
+     * <p>The resource role information for this finding.</p>
      */
     inline void SetResourceRole(Aws::String&& value) { m_resourceRoleHasBeenSet = true; m_resourceRole = std::move(value); }
 
     /**
-     * <p>Resource role information for this finding.</p>
+     * <p>The resource role information for this finding.</p>
      */
     inline void SetResourceRole(const char* value) { m_resourceRoleHasBeenSet = true; m_resourceRole.assign(value); }
 
     /**
-     * <p>Resource role information for this finding.</p>
+     * <p>The resource role information for this finding.</p>
      */
     inline Service& WithResourceRole(const Aws::String& value) { SetResourceRole(value); return *this;}
 
     /**
-     * <p>Resource role information for this finding.</p>
+     * <p>The resource role information for this finding.</p>
      */
     inline Service& WithResourceRole(Aws::String&& value) { SetResourceRole(std::move(value)); return *this;}
 
     /**
-     * <p>Resource role information for this finding.</p>
+     * <p>The resource role information for this finding.</p>
      */
     inline Service& WithResourceRole(const char* value) { SetResourceRole(value); return *this;}
 
@@ -376,42 +376,42 @@ namespace Model
 
 
     /**
-     * <p>Feedback left about the finding.</p>
+     * <p>Feedback that was submitted about the finding.</p>
      */
     inline const Aws::String& GetUserFeedback() const{ return m_userFeedback; }
 
     /**
-     * <p>Feedback left about the finding.</p>
+     * <p>Feedback that was submitted about the finding.</p>
      */
     inline bool UserFeedbackHasBeenSet() const { return m_userFeedbackHasBeenSet; }
 
     /**
-     * <p>Feedback left about the finding.</p>
+     * <p>Feedback that was submitted about the finding.</p>
      */
     inline void SetUserFeedback(const Aws::String& value) { m_userFeedbackHasBeenSet = true; m_userFeedback = value; }
 
     /**
-     * <p>Feedback left about the finding.</p>
+     * <p>Feedback that was submitted about the finding.</p>
      */
     inline void SetUserFeedback(Aws::String&& value) { m_userFeedbackHasBeenSet = true; m_userFeedback = std::move(value); }
 
     /**
-     * <p>Feedback left about the finding.</p>
+     * <p>Feedback that was submitted about the finding.</p>
      */
     inline void SetUserFeedback(const char* value) { m_userFeedbackHasBeenSet = true; m_userFeedback.assign(value); }
 
     /**
-     * <p>Feedback left about the finding.</p>
+     * <p>Feedback that was submitted about the finding.</p>
      */
     inline Service& WithUserFeedback(const Aws::String& value) { SetUserFeedback(value); return *this;}
 
     /**
-     * <p>Feedback left about the finding.</p>
+     * <p>Feedback that was submitted about the finding.</p>
      */
     inline Service& WithUserFeedback(Aws::String&& value) { SetUserFeedback(std::move(value)); return *this;}
 
     /**
-     * <p>Feedback left about the finding.</p>
+     * <p>Feedback that was submitted about the finding.</p>
      */
     inline Service& WithUserFeedback(const char* value) { SetUserFeedback(value); return *this;}
 

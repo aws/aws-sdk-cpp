@@ -65,6 +65,12 @@ GetRightsizingRecommendationResult& GetRightsizingRecommendationResult::operator
 
   }
 
+  if(jsonValue.ValueExists("Configuration"))
+  {
+    m_configuration = jsonValue.GetObject("Configuration");
+
+  }
+
 
 
   return *this;

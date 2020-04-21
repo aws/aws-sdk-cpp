@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the account from which the invitations was sent.</p>
+     * <p>The ID of the account that the invitation was sent from.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The ID of the account from which the invitations was sent.</p>
+     * <p>The ID of the account that the invitation was sent from.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The ID of the account from which the invitations was sent.</p>
+     * <p>The ID of the account that the invitation was sent from.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The ID of the account from which the invitations was sent.</p>
+     * <p>The ID of the account that the invitation was sent from.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The ID of the account from which the invitations was sent.</p>
+     * <p>The ID of the account that the invitation was sent from.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The ID of the account from which the invitations was sent.</p>
+     * <p>The ID of the account that the invitation was sent from.</p>
      */
     inline Invitation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The ID of the account from which the invitations was sent.</p>
+     * <p>The ID of the account that the invitation was sent from.</p>
      */
     inline Invitation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the account from which the invitations was sent.</p>
+     * <p>The ID of the account that the invitation was sent from.</p>
      */
     inline Invitation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -180,42 +180,42 @@ namespace Model
 
 
     /**
-     * <p>Timestamp at which the invitation was sent.</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline const Aws::String& GetInvitedAt() const{ return m_invitedAt; }
 
     /**
-     * <p>Timestamp at which the invitation was sent.</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
 
     /**
-     * <p>Timestamp at which the invitation was sent.</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline void SetInvitedAt(const Aws::String& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
 
     /**
-     * <p>Timestamp at which the invitation was sent.</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline void SetInvitedAt(Aws::String&& value) { m_invitedAtHasBeenSet = true; m_invitedAt = std::move(value); }
 
     /**
-     * <p>Timestamp at which the invitation was sent.</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline void SetInvitedAt(const char* value) { m_invitedAtHasBeenSet = true; m_invitedAt.assign(value); }
 
     /**
-     * <p>Timestamp at which the invitation was sent.</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline Invitation& WithInvitedAt(const Aws::String& value) { SetInvitedAt(value); return *this;}
 
     /**
-     * <p>Timestamp at which the invitation was sent.</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline Invitation& WithInvitedAt(Aws::String&& value) { SetInvitedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Timestamp at which the invitation was sent.</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline Invitation& WithInvitedAt(const char* value) { SetInvitedAt(value); return *this;}
 

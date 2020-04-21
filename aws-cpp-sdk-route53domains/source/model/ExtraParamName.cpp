@@ -41,6 +41,8 @@ namespace Aws
         static const int AU_ID_TYPE_HASH = HashingUtils::HashString("AU_ID_TYPE");
         static const int CA_LEGAL_TYPE_HASH = HashingUtils::HashString("CA_LEGAL_TYPE");
         static const int CA_BUSINESS_ENTITY_TYPE_HASH = HashingUtils::HashString("CA_BUSINESS_ENTITY_TYPE");
+        static const int CA_LEGAL_REPRESENTATIVE_HASH = HashingUtils::HashString("CA_LEGAL_REPRESENTATIVE");
+        static const int CA_LEGAL_REPRESENTATIVE_CAPACITY_HASH = HashingUtils::HashString("CA_LEGAL_REPRESENTATIVE_CAPACITY");
         static const int ES_IDENTIFICATION_HASH = HashingUtils::HashString("ES_IDENTIFICATION");
         static const int ES_IDENTIFICATION_TYPE_HASH = HashingUtils::HashString("ES_IDENTIFICATION_TYPE");
         static const int ES_LEGAL_FORM_HASH = HashingUtils::HashString("ES_LEGAL_FORM");
@@ -48,6 +50,7 @@ namespace Aws
         static const int FI_ID_NUMBER_HASH = HashingUtils::HashString("FI_ID_NUMBER");
         static const int FI_NATIONALITY_HASH = HashingUtils::HashString("FI_NATIONALITY");
         static const int FI_ORGANIZATION_TYPE_HASH = HashingUtils::HashString("FI_ORGANIZATION_TYPE");
+        static const int IT_NATIONALITY_HASH = HashingUtils::HashString("IT_NATIONALITY");
         static const int IT_PIN_HASH = HashingUtils::HashString("IT_PIN");
         static const int IT_REGISTRANT_ENTITY_TYPE_HASH = HashingUtils::HashString("IT_REGISTRANT_ENTITY_TYPE");
         static const int RU_PASSPORT_DATA_HASH = HashingUtils::HashString("RU_PASSPORT_DATA");
@@ -105,6 +108,14 @@ namespace Aws
           {
             return ExtraParamName::CA_BUSINESS_ENTITY_TYPE;
           }
+          else if (hashCode == CA_LEGAL_REPRESENTATIVE_HASH)
+          {
+            return ExtraParamName::CA_LEGAL_REPRESENTATIVE;
+          }
+          else if (hashCode == CA_LEGAL_REPRESENTATIVE_CAPACITY_HASH)
+          {
+            return ExtraParamName::CA_LEGAL_REPRESENTATIVE_CAPACITY;
+          }
           else if (hashCode == ES_IDENTIFICATION_HASH)
           {
             return ExtraParamName::ES_IDENTIFICATION;
@@ -132,6 +143,10 @@ namespace Aws
           else if (hashCode == FI_ORGANIZATION_TYPE_HASH)
           {
             return ExtraParamName::FI_ORGANIZATION_TYPE;
+          }
+          else if (hashCode == IT_NATIONALITY_HASH)
+          {
+            return ExtraParamName::IT_NATIONALITY;
           }
           else if (hashCode == IT_PIN_HASH)
           {
@@ -201,6 +216,10 @@ namespace Aws
             return "CA_LEGAL_TYPE";
           case ExtraParamName::CA_BUSINESS_ENTITY_TYPE:
             return "CA_BUSINESS_ENTITY_TYPE";
+          case ExtraParamName::CA_LEGAL_REPRESENTATIVE:
+            return "CA_LEGAL_REPRESENTATIVE";
+          case ExtraParamName::CA_LEGAL_REPRESENTATIVE_CAPACITY:
+            return "CA_LEGAL_REPRESENTATIVE_CAPACITY";
           case ExtraParamName::ES_IDENTIFICATION:
             return "ES_IDENTIFICATION";
           case ExtraParamName::ES_IDENTIFICATION_TYPE:
@@ -215,6 +234,8 @@ namespace Aws
             return "FI_NATIONALITY";
           case ExtraParamName::FI_ORGANIZATION_TYPE:
             return "FI_ORGANIZATION_TYPE";
+          case ExtraParamName::IT_NATIONALITY:
+            return "IT_NATIONALITY";
           case ExtraParamName::IT_PIN:
             return "IT_PIN";
           case ExtraParamName::IT_REGISTRANT_ENTITY_TYPE:

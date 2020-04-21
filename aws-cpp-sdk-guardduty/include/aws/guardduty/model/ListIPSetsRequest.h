@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline ListIPSetsRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline ListIPSetsRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline ListIPSetsRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -133,7 +133,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -141,7 +141,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -149,7 +149,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -157,7 +157,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListIPSetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -165,7 +165,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListIPSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -173,7 +173,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListIPSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

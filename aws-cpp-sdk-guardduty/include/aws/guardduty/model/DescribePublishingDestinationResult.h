@@ -82,27 +82,32 @@ namespace Model
 
 
     /**
-     * <p>The type of the publishing destination. Currently, only S3 is supported.</p>
+     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
+     * supported.</p>
      */
     inline const DestinationType& GetDestinationType() const{ return m_destinationType; }
 
     /**
-     * <p>The type of the publishing destination. Currently, only S3 is supported.</p>
+     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
+     * supported.</p>
      */
     inline void SetDestinationType(const DestinationType& value) { m_destinationType = value; }
 
     /**
-     * <p>The type of the publishing destination. Currently, only S3 is supported.</p>
+     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
+     * supported.</p>
      */
     inline void SetDestinationType(DestinationType&& value) { m_destinationType = std::move(value); }
 
     /**
-     * <p>The type of the publishing destination. Currently, only S3 is supported.</p>
+     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
+     * supported.</p>
      */
     inline DescribePublishingDestinationResult& WithDestinationType(const DestinationType& value) { SetDestinationType(value); return *this;}
 
     /**
-     * <p>The type of the publishing destination. Currently, only S3 is supported.</p>
+     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
+     * supported.</p>
      */
     inline DescribePublishingDestinationResult& WithDestinationType(DestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
 

@@ -54,42 +54,42 @@ namespace Model
 
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The availability zone of the EC2 instance.</p>
+     * <p>The Availability Zone of the EC2 instance.</p>
      */
     inline InstanceDetails& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
@@ -421,42 +421,42 @@ namespace Model
 
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>The network interface information of the EC2 instance.</p>
+     * <p>The elastic network interface information of the EC2 instance.</p>
      */
     inline InstanceDetails& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 

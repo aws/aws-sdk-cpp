@@ -46,6 +46,8 @@ namespace Aws
         static const int CHANGE_DOMAIN_OWNER_HASH = HashingUtils::HashString("CHANGE_DOMAIN_OWNER");
         static const int RENEW_DOMAIN_HASH = HashingUtils::HashString("RENEW_DOMAIN");
         static const int PUSH_DOMAIN_HASH = HashingUtils::HashString("PUSH_DOMAIN");
+        static const int INTERNAL_TRANSFER_OUT_DOMAIN_HASH = HashingUtils::HashString("INTERNAL_TRANSFER_OUT_DOMAIN");
+        static const int INTERNAL_TRANSFER_IN_DOMAIN_HASH = HashingUtils::HashString("INTERNAL_TRANSFER_IN_DOMAIN");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -115,6 +117,14 @@ namespace Aws
           {
             return OperationType::PUSH_DOMAIN;
           }
+          else if (hashCode == INTERNAL_TRANSFER_OUT_DOMAIN_HASH)
+          {
+            return OperationType::INTERNAL_TRANSFER_OUT_DOMAIN;
+          }
+          else if (hashCode == INTERNAL_TRANSFER_IN_DOMAIN_HASH)
+          {
+            return OperationType::INTERNAL_TRANSFER_IN_DOMAIN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -161,6 +171,10 @@ namespace Aws
             return "RENEW_DOMAIN";
           case OperationType::PUSH_DOMAIN:
             return "PUSH_DOMAIN";
+          case OperationType::INTERNAL_TRANSFER_OUT_DOMAIN:
+            return "INTERNAL_TRANSFER_OUT_DOMAIN";
+          case OperationType::INTERNAL_TRANSFER_IN_DOMAIN:
+            return "INTERNAL_TRANSFER_IN_DOMAIN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

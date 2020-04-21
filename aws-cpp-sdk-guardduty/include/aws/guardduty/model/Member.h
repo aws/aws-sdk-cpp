@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Continas information about the member account </p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the member account. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Member">AWS
    * API Reference</a></p>
    */
@@ -48,165 +48,165 @@ namespace Model
 
 
     /**
-     * <p>Member account ID.</p>
+     * <p>The ID of the member account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>Member account ID.</p>
+     * <p>The ID of the member account.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>Member account ID.</p>
+     * <p>The ID of the member account.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>Member account ID.</p>
+     * <p>The ID of the member account.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>Member account ID.</p>
+     * <p>The ID of the member account.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>Member account ID.</p>
+     * <p>The ID of the member account.</p>
      */
     inline Member& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>Member account ID.</p>
+     * <p>The ID of the member account.</p>
      */
     inline Member& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>Member account ID.</p>
+     * <p>The ID of the member account.</p>
      */
     inline Member& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>Member account's detector ID.</p>
+     * <p>The detector ID of the member account.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>Member account's detector ID.</p>
+     * <p>The detector ID of the member account.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>Member account's detector ID.</p>
+     * <p>The detector ID of the member account.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>Member account's detector ID.</p>
+     * <p>The detector ID of the member account.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>Member account's detector ID.</p>
+     * <p>The detector ID of the member account.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>Member account's detector ID.</p>
+     * <p>The detector ID of the member account.</p>
      */
     inline Member& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>Member account's detector ID.</p>
+     * <p>The detector ID of the member account.</p>
      */
     inline Member& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>Member account's detector ID.</p>
+     * <p>The detector ID of the member account.</p>
      */
     inline Member& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * <p>Master account ID.</p>
+     * <p>The master account ID.</p>
      */
     inline const Aws::String& GetMasterId() const{ return m_masterId; }
 
     /**
-     * <p>Master account ID.</p>
+     * <p>The master account ID.</p>
      */
     inline bool MasterIdHasBeenSet() const { return m_masterIdHasBeenSet; }
 
     /**
-     * <p>Master account ID.</p>
+     * <p>The master account ID.</p>
      */
     inline void SetMasterId(const Aws::String& value) { m_masterIdHasBeenSet = true; m_masterId = value; }
 
     /**
-     * <p>Master account ID.</p>
+     * <p>The master account ID.</p>
      */
     inline void SetMasterId(Aws::String&& value) { m_masterIdHasBeenSet = true; m_masterId = std::move(value); }
 
     /**
-     * <p>Master account ID.</p>
+     * <p>The master account ID.</p>
      */
     inline void SetMasterId(const char* value) { m_masterIdHasBeenSet = true; m_masterId.assign(value); }
 
     /**
-     * <p>Master account ID.</p>
+     * <p>The master account ID.</p>
      */
     inline Member& WithMasterId(const Aws::String& value) { SetMasterId(value); return *this;}
 
     /**
-     * <p>Master account ID.</p>
+     * <p>The master account ID.</p>
      */
     inline Member& WithMasterId(Aws::String&& value) { SetMasterId(std::move(value)); return *this;}
 
     /**
-     * <p>Master account ID.</p>
+     * <p>The master account ID.</p>
      */
     inline Member& WithMasterId(const char* value) { SetMasterId(value); return *this;}
 
 
     /**
-     * <p>Member account's email address.</p>
+     * <p>The email address of the member account.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     /**
-     * <p>Member account's email address.</p>
+     * <p>The email address of the member account.</p>
      */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
-     * <p>Member account's email address.</p>
+     * <p>The email address of the member account.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
-     * <p>Member account's email address.</p>
+     * <p>The email address of the member account.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
-     * <p>Member account's email address.</p>
+     * <p>The email address of the member account.</p>
      */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
     /**
-     * <p>Member account's email address.</p>
+     * <p>The email address of the member account.</p>
      */
     inline Member& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     /**
-     * <p>Member account's email address.</p>
+     * <p>The email address of the member account.</p>
      */
     inline Member& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
-     * <p>Member account's email address.</p>
+     * <p>The email address of the member account.</p>
      */
     inline Member& WithEmail(const char* value) { SetEmail(value); return *this;}
 
@@ -253,83 +253,83 @@ namespace Model
 
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline const Aws::String& GetInvitedAt() const{ return m_invitedAt; }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline bool InvitedAtHasBeenSet() const { return m_invitedAtHasBeenSet; }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline void SetInvitedAt(const Aws::String& value) { m_invitedAtHasBeenSet = true; m_invitedAt = value; }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline void SetInvitedAt(Aws::String&& value) { m_invitedAtHasBeenSet = true; m_invitedAt = std::move(value); }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline void SetInvitedAt(const char* value) { m_invitedAtHasBeenSet = true; m_invitedAt.assign(value); }
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline Member& WithInvitedAt(const Aws::String& value) { SetInvitedAt(value); return *this;}
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline Member& WithInvitedAt(Aws::String&& value) { SetInvitedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Timestamp at which the invitation was sent</p>
+     * <p>The timestamp when the invitation was sent.</p>
      */
     inline Member& WithInvitedAt(const char* value) { SetInvitedAt(value); return *this;}
 
 
     /**
-     * <p>Member last updated timestamp.</p>
+     * <p>The last-updated timestamp of the member.</p>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>Member last updated timestamp.</p>
+     * <p>The last-updated timestamp of the member.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>Member last updated timestamp.</p>
+     * <p>The last-updated timestamp of the member.</p>
      */
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>Member last updated timestamp.</p>
+     * <p>The last-updated timestamp of the member.</p>
      */
     inline void SetUpdatedAt(Aws::String&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>Member last updated timestamp.</p>
+     * <p>The last-updated timestamp of the member.</p>
      */
     inline void SetUpdatedAt(const char* value) { m_updatedAtHasBeenSet = true; m_updatedAt.assign(value); }
 
     /**
-     * <p>Member last updated timestamp.</p>
+     * <p>The last-updated timestamp of the member.</p>
      */
     inline Member& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>Member last updated timestamp.</p>
+     * <p>The last-updated timestamp of the member.</p>
      */
     inline Member& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Member last updated timestamp.</p>
+     * <p>The last-updated timestamp of the member.</p>
      */
     inline Member& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
 

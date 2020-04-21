@@ -43,42 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline GetFilterRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline GetFilterRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector the filter is associated with.</p>
+     * <p>The unique ID of the detector that the filter is associated with.</p>
      */
     inline GetFilterRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 

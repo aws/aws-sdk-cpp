@@ -54,8 +54,8 @@ namespace Model
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
      * internationalized domain name, then this value is in Punycode. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -64,8 +64,8 @@ namespace Model
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
      * internationalized domain name, then this value is in Punycode. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
@@ -74,8 +74,8 @@ namespace Model
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
      * internationalized domain name, then this value is in Punycode. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
@@ -84,8 +84,8 @@ namespace Model
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
      * internationalized domain name, then this value is in Punycode. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
@@ -94,8 +94,8 @@ namespace Model
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
      * internationalized domain name, then this value is in Punycode. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
@@ -104,8 +104,8 @@ namespace Model
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
      * internationalized domain name, then this value is in Punycode. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline BillingRecord& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
@@ -114,8 +114,8 @@ namespace Model
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
      * internationalized domain name, then this value is in Punycode. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline BillingRecord& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
@@ -124,8 +124,8 @@ namespace Model
      * contains characters other than a-z, 0-9, and - (hyphen), such as an
      * internationalized domain name, then this value is in Punycode. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
-     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guidezzz</i>.</p>
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS
+     * Domain Name Format</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
      */
     inline BillingRecord& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

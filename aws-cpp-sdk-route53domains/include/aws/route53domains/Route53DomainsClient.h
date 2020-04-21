@@ -21,6 +21,8 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/route53domains/model/AcceptDomainTransferFromAnotherAwsAccountResult.h>
+#include <aws/route53domains/model/CancelDomainTransferToAnotherAwsAccountResult.h>
 #include <aws/route53domains/model/CheckDomainAvailabilityResult.h>
 #include <aws/route53domains/model/CheckDomainTransferabilityResult.h>
 #include <aws/route53domains/model/DeleteTagsForDomainResult.h>
@@ -36,10 +38,12 @@
 #include <aws/route53domains/model/ListOperationsResult.h>
 #include <aws/route53domains/model/ListTagsForDomainResult.h>
 #include <aws/route53domains/model/RegisterDomainResult.h>
+#include <aws/route53domains/model/RejectDomainTransferFromAnotherAwsAccountResult.h>
 #include <aws/route53domains/model/RenewDomainResult.h>
 #include <aws/route53domains/model/ResendContactReachabilityEmailResult.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeResult.h>
 #include <aws/route53domains/model/TransferDomainResult.h>
+#include <aws/route53domains/model/TransferDomainToAnotherAwsAccountResult.h>
 #include <aws/route53domains/model/UpdateDomainContactResult.h>
 #include <aws/route53domains/model/UpdateDomainContactPrivacyResult.h>
 #include <aws/route53domains/model/UpdateDomainNameserversResult.h>
@@ -84,6 +88,8 @@ namespace Route53Domains
 
 namespace Model
 {
+        class AcceptDomainTransferFromAnotherAwsAccountRequest;
+        class CancelDomainTransferToAnotherAwsAccountRequest;
         class CheckDomainAvailabilityRequest;
         class CheckDomainTransferabilityRequest;
         class DeleteTagsForDomainRequest;
@@ -99,16 +105,20 @@ namespace Model
         class ListOperationsRequest;
         class ListTagsForDomainRequest;
         class RegisterDomainRequest;
+        class RejectDomainTransferFromAnotherAwsAccountRequest;
         class RenewDomainRequest;
         class ResendContactReachabilityEmailRequest;
         class RetrieveDomainAuthCodeRequest;
         class TransferDomainRequest;
+        class TransferDomainToAnotherAwsAccountRequest;
         class UpdateDomainContactRequest;
         class UpdateDomainContactPrivacyRequest;
         class UpdateDomainNameserversRequest;
         class UpdateTagsForDomainRequest;
         class ViewBillingRequest;
 
+        typedef Aws::Utils::Outcome<AcceptDomainTransferFromAnotherAwsAccountResult, Aws::Client::AWSError<Route53DomainsErrors>> AcceptDomainTransferFromAnotherAwsAccountOutcome;
+        typedef Aws::Utils::Outcome<CancelDomainTransferToAnotherAwsAccountResult, Aws::Client::AWSError<Route53DomainsErrors>> CancelDomainTransferToAnotherAwsAccountOutcome;
         typedef Aws::Utils::Outcome<CheckDomainAvailabilityResult, Aws::Client::AWSError<Route53DomainsErrors>> CheckDomainAvailabilityOutcome;
         typedef Aws::Utils::Outcome<CheckDomainTransferabilityResult, Aws::Client::AWSError<Route53DomainsErrors>> CheckDomainTransferabilityOutcome;
         typedef Aws::Utils::Outcome<DeleteTagsForDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> DeleteTagsForDomainOutcome;
@@ -124,16 +134,20 @@ namespace Model
         typedef Aws::Utils::Outcome<ListOperationsResult, Aws::Client::AWSError<Route53DomainsErrors>> ListOperationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> ListTagsForDomainOutcome;
         typedef Aws::Utils::Outcome<RegisterDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> RegisterDomainOutcome;
+        typedef Aws::Utils::Outcome<RejectDomainTransferFromAnotherAwsAccountResult, Aws::Client::AWSError<Route53DomainsErrors>> RejectDomainTransferFromAnotherAwsAccountOutcome;
         typedef Aws::Utils::Outcome<RenewDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> RenewDomainOutcome;
         typedef Aws::Utils::Outcome<ResendContactReachabilityEmailResult, Aws::Client::AWSError<Route53DomainsErrors>> ResendContactReachabilityEmailOutcome;
         typedef Aws::Utils::Outcome<RetrieveDomainAuthCodeResult, Aws::Client::AWSError<Route53DomainsErrors>> RetrieveDomainAuthCodeOutcome;
         typedef Aws::Utils::Outcome<TransferDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> TransferDomainOutcome;
+        typedef Aws::Utils::Outcome<TransferDomainToAnotherAwsAccountResult, Aws::Client::AWSError<Route53DomainsErrors>> TransferDomainToAnotherAwsAccountOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainContactResult, Aws::Client::AWSError<Route53DomainsErrors>> UpdateDomainContactOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainContactPrivacyResult, Aws::Client::AWSError<Route53DomainsErrors>> UpdateDomainContactPrivacyOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainNameserversResult, Aws::Client::AWSError<Route53DomainsErrors>> UpdateDomainNameserversOutcome;
         typedef Aws::Utils::Outcome<UpdateTagsForDomainResult, Aws::Client::AWSError<Route53DomainsErrors>> UpdateTagsForDomainOutcome;
         typedef Aws::Utils::Outcome<ViewBillingResult, Aws::Client::AWSError<Route53DomainsErrors>> ViewBillingOutcome;
 
+        typedef std::future<AcceptDomainTransferFromAnotherAwsAccountOutcome> AcceptDomainTransferFromAnotherAwsAccountOutcomeCallable;
+        typedef std::future<CancelDomainTransferToAnotherAwsAccountOutcome> CancelDomainTransferToAnotherAwsAccountOutcomeCallable;
         typedef std::future<CheckDomainAvailabilityOutcome> CheckDomainAvailabilityOutcomeCallable;
         typedef std::future<CheckDomainTransferabilityOutcome> CheckDomainTransferabilityOutcomeCallable;
         typedef std::future<DeleteTagsForDomainOutcome> DeleteTagsForDomainOutcomeCallable;
@@ -149,10 +163,12 @@ namespace Model
         typedef std::future<ListOperationsOutcome> ListOperationsOutcomeCallable;
         typedef std::future<ListTagsForDomainOutcome> ListTagsForDomainOutcomeCallable;
         typedef std::future<RegisterDomainOutcome> RegisterDomainOutcomeCallable;
+        typedef std::future<RejectDomainTransferFromAnotherAwsAccountOutcome> RejectDomainTransferFromAnotherAwsAccountOutcomeCallable;
         typedef std::future<RenewDomainOutcome> RenewDomainOutcomeCallable;
         typedef std::future<ResendContactReachabilityEmailOutcome> ResendContactReachabilityEmailOutcomeCallable;
         typedef std::future<RetrieveDomainAuthCodeOutcome> RetrieveDomainAuthCodeOutcomeCallable;
         typedef std::future<TransferDomainOutcome> TransferDomainOutcomeCallable;
+        typedef std::future<TransferDomainToAnotherAwsAccountOutcome> TransferDomainToAnotherAwsAccountOutcomeCallable;
         typedef std::future<UpdateDomainContactOutcome> UpdateDomainContactOutcomeCallable;
         typedef std::future<UpdateDomainContactPrivacyOutcome> UpdateDomainContactPrivacyOutcomeCallable;
         typedef std::future<UpdateDomainNameserversOutcome> UpdateDomainNameserversOutcomeCallable;
@@ -162,6 +178,8 @@ namespace Model
 
   class Route53DomainsClient;
 
+    typedef std::function<void(const Route53DomainsClient*, const Model::AcceptDomainTransferFromAnotherAwsAccountRequest&, const Model::AcceptDomainTransferFromAnotherAwsAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler;
+    typedef std::function<void(const Route53DomainsClient*, const Model::CancelDomainTransferToAnotherAwsAccountRequest&, const Model::CancelDomainTransferToAnotherAwsAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::CheckDomainAvailabilityRequest&, const Model::CheckDomainAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDomainAvailabilityResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::CheckDomainTransferabilityRequest&, const Model::CheckDomainTransferabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CheckDomainTransferabilityResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::DeleteTagsForDomainRequest&, const Model::DeleteTagsForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsForDomainResponseReceivedHandler;
@@ -177,10 +195,12 @@ namespace Model
     typedef std::function<void(const Route53DomainsClient*, const Model::ListOperationsRequest&, const Model::ListOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOperationsResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::ListTagsForDomainRequest&, const Model::ListTagsForDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForDomainResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::RegisterDomainRequest&, const Model::RegisterDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDomainResponseReceivedHandler;
+    typedef std::function<void(const Route53DomainsClient*, const Model::RejectDomainTransferFromAnotherAwsAccountRequest&, const Model::RejectDomainTransferFromAnotherAwsAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::RenewDomainRequest&, const Model::RenewDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenewDomainResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::ResendContactReachabilityEmailRequest&, const Model::ResendContactReachabilityEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendContactReachabilityEmailResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::RetrieveDomainAuthCodeRequest&, const Model::RetrieveDomainAuthCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetrieveDomainAuthCodeResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::TransferDomainRequest&, const Model::TransferDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferDomainResponseReceivedHandler;
+    typedef std::function<void(const Route53DomainsClient*, const Model::TransferDomainToAnotherAwsAccountRequest&, const Model::TransferDomainToAnotherAwsAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransferDomainToAnotherAwsAccountResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::UpdateDomainContactRequest&, const Model::UpdateDomainContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainContactResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::UpdateDomainContactPrivacyRequest&, const Model::UpdateDomainContactPrivacyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainContactPrivacyResponseReceivedHandler;
     typedef std::function<void(const Route53DomainsClient*, const Model::UpdateDomainNameserversRequest&, const Model::UpdateDomainNameserversOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainNameserversResponseReceivedHandler;
@@ -217,8 +237,127 @@ namespace Model
 
         virtual ~Route53DomainsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "route53domains"; }
+        inline virtual const char* GetServiceClientName() const override { return "Route 53 Domains"; }
 
+
+        /**
+         * <p>Accepts the transfer of a domain from another AWS account to the current AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AcceptDomainTransferFromAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptDomainTransferFromAnotherAwsAccountOutcome AcceptDomainTransferFromAnotherAwsAccount(const Model::AcceptDomainTransferFromAnotherAwsAccountRequest& request) const;
+
+        /**
+         * <p>Accepts the transfer of a domain from another AWS account to the current AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AcceptDomainTransferFromAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AcceptDomainTransferFromAnotherAwsAccountOutcomeCallable AcceptDomainTransferFromAnotherAwsAccountCallable(const Model::AcceptDomainTransferFromAnotherAwsAccountRequest& request) const;
+
+        /**
+         * <p>Accepts the transfer of a domain from another AWS account to the current AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AcceptDomainTransferFromAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AcceptDomainTransferFromAnotherAwsAccountAsync(const Model::AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Cancels the transfer of a domain from the current AWS account to another AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <important> <p>You must cancel the transfer before the other AWS account
+         * accepts the transfer using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.</p>
+         * </important> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CancelDomainTransferToAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelDomainTransferToAnotherAwsAccountOutcome CancelDomainTransferToAnotherAwsAccount(const Model::CancelDomainTransferToAnotherAwsAccountRequest& request) const;
+
+        /**
+         * <p>Cancels the transfer of a domain from the current AWS account to another AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <important> <p>You must cancel the transfer before the other AWS account
+         * accepts the transfer using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.</p>
+         * </important> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CancelDomainTransferToAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelDomainTransferToAnotherAwsAccountOutcomeCallable CancelDomainTransferToAnotherAwsAccountCallable(const Model::CancelDomainTransferToAnotherAwsAccountRequest& request) const;
+
+        /**
+         * <p>Cancels the transfer of a domain from the current AWS account to another AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <important> <p>You must cancel the transfer before the other AWS account
+         * accepts the transfer using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.</p>
+         * </important> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/CancelDomainTransferToAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelDomainTransferToAnotherAwsAccountAsync(const Model::CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation checks the availability of one domain name. Note that if the
@@ -387,11 +526,11 @@ namespace Model
          * your domain registration is billed to your AWS account.</p> <p>The period during
          * which you can renew a domain name varies by TLD. For a list of TLDs and their
          * renewal policies, see <a
-         * href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times">"Renewal,
-         * restoration, and deletion times"</a> on the website for our registrar associate,
-         * Gandi. Amazon Route 53 requires that you renew before the end of the renewal
-         * period that is listed on the Gandi website so we can complete processing before
-         * the deadline.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+         * That You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+         * Developer Guide</i>. Route 53 requires that you renew before the end of the
+         * renewal period so we can complete processing before the deadline.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">AWS
          * API Reference</a></p>
          */
@@ -403,11 +542,11 @@ namespace Model
          * your domain registration is billed to your AWS account.</p> <p>The period during
          * which you can renew a domain name varies by TLD. For a list of TLDs and their
          * renewal policies, see <a
-         * href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times">"Renewal,
-         * restoration, and deletion times"</a> on the website for our registrar associate,
-         * Gandi. Amazon Route 53 requires that you renew before the end of the renewal
-         * period that is listed on the Gandi website so we can complete processing before
-         * the deadline.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+         * That You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+         * Developer Guide</i>. Route 53 requires that you renew before the end of the
+         * renewal period so we can complete processing before the deadline.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">AWS
          * API Reference</a></p>
          *
@@ -421,11 +560,11 @@ namespace Model
          * your domain registration is billed to your AWS account.</p> <p>The period during
          * which you can renew a domain name varies by TLD. For a list of TLDs and their
          * renewal policies, see <a
-         * href="http://wiki.gandi.net/en/domains/renew#renewal_restoration_and_deletion_times">"Renewal,
-         * restoration, and deletion times"</a> on the website for our registrar associate,
-         * Gandi. Amazon Route 53 requires that you renew before the end of the renewal
-         * period that is listed on the Gandi website so we can complete processing before
-         * the deadline.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains
+         * That You Can Register with Amazon Route 53</a> in the <i>Amazon Route 53
+         * Developer Guide</i>. Route 53 requires that you renew before the end of the
+         * renewal period so we can complete processing before the deadline.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/EnableDomainAutoRenew">AWS
          * API Reference</a></p>
          *
@@ -545,18 +684,16 @@ namespace Model
         virtual void GetDomainDetailAsync(const Model::GetDomainDetailRequest& request, const GetDomainDetailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The GetDomainSuggestions operation returns a list of suggested domain names
-         * given a string, which can either be a domain name or simply a word or phrase
-         * (without spaces).</p><p><h3>See Also:</h3>   <a
+         * <p>The GetDomainSuggestions operation returns a list of suggested domain
+         * names.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDomainSuggestionsOutcome GetDomainSuggestions(const Model::GetDomainSuggestionsRequest& request) const;
 
         /**
-         * <p>The GetDomainSuggestions operation returns a list of suggested domain names
-         * given a string, which can either be a domain name or simply a word or phrase
-         * (without spaces).</p><p><h3>See Also:</h3>   <a
+         * <p>The GetDomainSuggestions operation returns a list of suggested domain
+         * names.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">AWS
          * API Reference</a></p>
          *
@@ -565,9 +702,8 @@ namespace Model
         virtual Model::GetDomainSuggestionsOutcomeCallable GetDomainSuggestionsCallable(const Model::GetDomainSuggestionsRequest& request) const;
 
         /**
-         * <p>The GetDomainSuggestions operation returns a list of suggested domain names
-         * given a string, which can either be a domain name or simply a word or phrase
-         * (without spaces).</p><p><h3>See Also:</h3>   <a
+         * <p>The GetDomainSuggestions operation returns a list of suggested domain
+         * names.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/GetDomainSuggestions">AWS
          * API Reference</a></p>
          *
@@ -632,16 +768,18 @@ namespace Model
         virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation returns the operation IDs of operations that are not yet
-         * complete.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all of the operations that return an operation ID
+         * and that have ever been performed on domains that were registered by the current
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOperationsOutcome ListOperations(const Model::ListOperationsRequest& request) const;
 
         /**
-         * <p>This operation returns the operation IDs of operations that are not yet
-         * complete.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all of the operations that return an operation ID
+         * and that have ever been performed on domains that were registered by the current
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">AWS
          * API Reference</a></p>
          *
@@ -650,8 +788,9 @@ namespace Model
         virtual Model::ListOperationsOutcomeCallable ListOperationsCallable(const Model::ListOperationsRequest& request) const;
 
         /**
-         * <p>This operation returns the operation IDs of operations that are not yet
-         * complete.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about all of the operations that return an operation ID
+         * and that have ever been performed on domains that were registered by the current
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ListOperations">AWS
          * API Reference</a></p>
          *
@@ -698,13 +837,13 @@ namespace Model
          * Registrar (for .com, .net, and .org domains) or by our registrar associate,
          * Gandi (for all other domains). For some top-level domains (TLDs), this operation
          * requires extra parameters.</p> <p>When you register a domain, Amazon Route 53
-         * does the following:</p> <ul> <li> <p>Creates a Amazon Route 53 hosted zone that
-         * has the same name as the domain. Amazon Route 53 assigns four name servers to
-         * your hosted zone and automatically updates your domain registration with the
-         * names of these name servers.</p> </li> <li> <p>Enables autorenew, so your domain
-         * registration will renew automatically each year. We'll notify you in advance of
-         * the renewal date so you can choose whether to renew the registration.</p> </li>
-         * <li> <p>Optionally enables privacy protection, so WHOIS queries return contact
+         * does the following:</p> <ul> <li> <p>Creates a Route 53 hosted zone that has the
+         * same name as the domain. Route 53 assigns four name servers to your hosted zone
+         * and automatically updates your domain registration with the names of these name
+         * servers.</p> </li> <li> <p>Enables autorenew, so your domain registration will
+         * renew automatically each year. We'll notify you in advance of the renewal date
+         * so you can choose whether to renew the registration.</p> </li> <li>
+         * <p>Optionally enables privacy protection, so WHOIS queries return contact
          * information either for Amazon Registrar (for .com, .net, and .org domains) or
          * for our registrar associate, Gandi (for all other TLDs). If you don't enable
          * privacy protection, WHOIS queries return the information that you entered for
@@ -725,13 +864,13 @@ namespace Model
          * Registrar (for .com, .net, and .org domains) or by our registrar associate,
          * Gandi (for all other domains). For some top-level domains (TLDs), this operation
          * requires extra parameters.</p> <p>When you register a domain, Amazon Route 53
-         * does the following:</p> <ul> <li> <p>Creates a Amazon Route 53 hosted zone that
-         * has the same name as the domain. Amazon Route 53 assigns four name servers to
-         * your hosted zone and automatically updates your domain registration with the
-         * names of these name servers.</p> </li> <li> <p>Enables autorenew, so your domain
-         * registration will renew automatically each year. We'll notify you in advance of
-         * the renewal date so you can choose whether to renew the registration.</p> </li>
-         * <li> <p>Optionally enables privacy protection, so WHOIS queries return contact
+         * does the following:</p> <ul> <li> <p>Creates a Route 53 hosted zone that has the
+         * same name as the domain. Route 53 assigns four name servers to your hosted zone
+         * and automatically updates your domain registration with the names of these name
+         * servers.</p> </li> <li> <p>Enables autorenew, so your domain registration will
+         * renew automatically each year. We'll notify you in advance of the renewal date
+         * so you can choose whether to renew the registration.</p> </li> <li>
+         * <p>Optionally enables privacy protection, so WHOIS queries return contact
          * information either for Amazon Registrar (for .com, .net, and .org domains) or
          * for our registrar associate, Gandi (for all other TLDs). If you don't enable
          * privacy protection, WHOIS queries return the information that you entered for
@@ -754,13 +893,13 @@ namespace Model
          * Registrar (for .com, .net, and .org domains) or by our registrar associate,
          * Gandi (for all other domains). For some top-level domains (TLDs), this operation
          * requires extra parameters.</p> <p>When you register a domain, Amazon Route 53
-         * does the following:</p> <ul> <li> <p>Creates a Amazon Route 53 hosted zone that
-         * has the same name as the domain. Amazon Route 53 assigns four name servers to
-         * your hosted zone and automatically updates your domain registration with the
-         * names of these name servers.</p> </li> <li> <p>Enables autorenew, so your domain
-         * registration will renew automatically each year. We'll notify you in advance of
-         * the renewal date so you can choose whether to renew the registration.</p> </li>
-         * <li> <p>Optionally enables privacy protection, so WHOIS queries return contact
+         * does the following:</p> <ul> <li> <p>Creates a Route 53 hosted zone that has the
+         * same name as the domain. Route 53 assigns four name servers to your hosted zone
+         * and automatically updates your domain registration with the names of these name
+         * servers.</p> </li> <li> <p>Enables autorenew, so your domain registration will
+         * renew automatically each year. We'll notify you in advance of the renewal date
+         * so you can choose whether to renew the registration.</p> </li> <li>
+         * <p>Optionally enables privacy protection, so WHOIS queries return contact
          * information either for Amazon Registrar (for .com, .net, and .org domains) or
          * for our registrar associate, Gandi (for all other TLDs). If you don't enable
          * privacy protection, WHOIS queries return the information that you entered for
@@ -779,14 +918,69 @@ namespace Model
         virtual void RegisterDomainAsync(const Model::RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Rejects the transfer of a domain from another AWS account to the current AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RejectDomainTransferFromAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectDomainTransferFromAnotherAwsAccountOutcome RejectDomainTransferFromAnotherAwsAccount(const Model::RejectDomainTransferFromAnotherAwsAccountRequest& request) const;
+
+        /**
+         * <p>Rejects the transfer of a domain from another AWS account to the current AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RejectDomainTransferFromAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RejectDomainTransferFromAnotherAwsAccountOutcomeCallable RejectDomainTransferFromAnotherAwsAccountCallable(const Model::RejectDomainTransferFromAnotherAwsAccountRequest& request) const;
+
+        /**
+         * <p>Rejects the transfer of a domain from another AWS account to the current AWS
+         * account. You initiate a transfer between AWS accounts using <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RejectDomainTransferFromAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RejectDomainTransferFromAnotherAwsAccountAsync(const Model::RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>This operation renews a domain for the specified number of years. The cost of
          * renewing your domain is billed to your AWS account.</p> <p>We recommend that you
          * renew your domain several weeks before the expiration date. Some TLD registries
          * delete domains before the expiration date if you haven't renewed far enough in
          * advance. For more information about renewing domain registration, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
-         * Registration for a Domain</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
+         * Registration for a Domain</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">AWS
          * API Reference</a></p>
          */
@@ -798,9 +992,9 @@ namespace Model
          * renew your domain several weeks before the expiration date. Some TLD registries
          * delete domains before the expiration date if you haven't renewed far enough in
          * advance. For more information about renewing domain registration, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
-         * Registration for a Domain</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
+         * Registration for a Domain</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">AWS
          * API Reference</a></p>
          *
@@ -814,9 +1008,9 @@ namespace Model
          * renew your domain several weeks before the expiration date. Some TLD registries
          * delete domains before the expiration date if you haven't renewed far enough in
          * advance. For more information about renewing domain registration, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
-         * Registration for a Domain</a> in the Amazon Route 53 Developer
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-renew.html">Renewing
+         * Registration for a Domain</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/RenewDomain">AWS
          * API Reference</a></p>
          *
@@ -890,54 +1084,72 @@ namespace Model
         virtual void RetrieveDomainAuthCodeAsync(const Model::RetrieveDomainAuthCodeRequest& request, const RetrieveDomainAuthCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This operation transfers a domain from another registrar to Amazon Route 53.
-         * When the transfer is complete, the domain is registered either with Amazon
-         * Registrar (for .com, .net, and .org domains) or with our registrar associate,
-         * Gandi (for all other TLDs).</p> <p>For transfer requirements, a detailed
-         * procedure, and information about viewing the status of a domain transfer, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
+         * <p>Transfers a domain from another registrar to Amazon Route 53. When the
+         * transfer is complete, the domain is registered either with Amazon Registrar (for
+         * .com, .net, and .org domains) or with our registrar associate, Gandi (for all
+         * other TLDs).</p> <p>For more information about transferring domains, see the
+         * following topics:</p> <ul> <li> <p>For transfer requirements, a detailed
+         * procedure, and information about viewing the status of a domain that you're
+         * transferring to Route 53, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
          * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> <p>If the registrar for your domain is also the DNS
-         * service provider for the domain, we highly recommend that you consider
-         * transferring your DNS service to Amazon Route 53 or to another DNS service
-         * provider before you transfer your registration. Some registrars provide free DNS
-         * service when you purchase a domain registration. When you transfer the
-         * registration, the previous registrar will not renew your domain registration and
-         * could end your DNS service at any time.</p> <important> <p>If the registrar for
-         * your domain is also the DNS service provider for the domain and you don't
-         * transfer DNS service to another provider, your website, email, and the web
-         * applications associated with the domain might become unavailable.</p>
-         * </important> <p>If the transfer is successful, this method returns an operation
-         * ID that you can use to track the progress and completion of the action. If the
-         * transfer doesn't complete successfully, the domain registrant will be notified
-         * by email.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> </li> <li> <p>For information about how to transfer a
+         * domain from one AWS account to another, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>For information about how to transfer a domain to another
+         * domain registrar, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-from-route-53.html">Transferring
+         * a Domain from Amazon Route 53 to Another Registrar</a> in the <i>Amazon Route 53
+         * Developer Guide</i>.</p> </li> </ul> <p>If the registrar for your domain is also
+         * the DNS service provider for the domain, we highly recommend that you transfer
+         * your DNS service to Route 53 or to another DNS service provider before you
+         * transfer your registration. Some registrars provide free DNS service when you
+         * purchase a domain registration. When you transfer the registration, the previous
+         * registrar will not renew your domain registration and could end your DNS service
+         * at any time.</p> <important> <p>If the registrar for your domain is also the DNS
+         * service provider for the domain and you don't transfer DNS service to another
+         * provider, your website, email, and the web applications associated with the
+         * domain might become unavailable.</p> </important> <p>If the transfer is
+         * successful, this method returns an operation ID that you can use to track the
+         * progress and completion of the action. If the transfer doesn't complete
+         * successfully, the domain registrant will be notified by email.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">AWS
          * API Reference</a></p>
          */
         virtual Model::TransferDomainOutcome TransferDomain(const Model::TransferDomainRequest& request) const;
 
         /**
-         * <p>This operation transfers a domain from another registrar to Amazon Route 53.
-         * When the transfer is complete, the domain is registered either with Amazon
-         * Registrar (for .com, .net, and .org domains) or with our registrar associate,
-         * Gandi (for all other TLDs).</p> <p>For transfer requirements, a detailed
-         * procedure, and information about viewing the status of a domain transfer, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
+         * <p>Transfers a domain from another registrar to Amazon Route 53. When the
+         * transfer is complete, the domain is registered either with Amazon Registrar (for
+         * .com, .net, and .org domains) or with our registrar associate, Gandi (for all
+         * other TLDs).</p> <p>For more information about transferring domains, see the
+         * following topics:</p> <ul> <li> <p>For transfer requirements, a detailed
+         * procedure, and information about viewing the status of a domain that you're
+         * transferring to Route 53, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
          * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> <p>If the registrar for your domain is also the DNS
-         * service provider for the domain, we highly recommend that you consider
-         * transferring your DNS service to Amazon Route 53 or to another DNS service
-         * provider before you transfer your registration. Some registrars provide free DNS
-         * service when you purchase a domain registration. When you transfer the
-         * registration, the previous registrar will not renew your domain registration and
-         * could end your DNS service at any time.</p> <important> <p>If the registrar for
-         * your domain is also the DNS service provider for the domain and you don't
-         * transfer DNS service to another provider, your website, email, and the web
-         * applications associated with the domain might become unavailable.</p>
-         * </important> <p>If the transfer is successful, this method returns an operation
-         * ID that you can use to track the progress and completion of the action. If the
-         * transfer doesn't complete successfully, the domain registrant will be notified
-         * by email.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> </li> <li> <p>For information about how to transfer a
+         * domain from one AWS account to another, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>For information about how to transfer a domain to another
+         * domain registrar, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-from-route-53.html">Transferring
+         * a Domain from Amazon Route 53 to Another Registrar</a> in the <i>Amazon Route 53
+         * Developer Guide</i>.</p> </li> </ul> <p>If the registrar for your domain is also
+         * the DNS service provider for the domain, we highly recommend that you transfer
+         * your DNS service to Route 53 or to another DNS service provider before you
+         * transfer your registration. Some registrars provide free DNS service when you
+         * purchase a domain registration. When you transfer the registration, the previous
+         * registrar will not renew your domain registration and could end your DNS service
+         * at any time.</p> <important> <p>If the registrar for your domain is also the DNS
+         * service provider for the domain and you don't transfer DNS service to another
+         * provider, your website, email, and the web applications associated with the
+         * domain might become unavailable.</p> </important> <p>If the transfer is
+         * successful, this method returns an operation ID that you can use to track the
+         * progress and completion of the action. If the transfer doesn't complete
+         * successfully, the domain registrant will be notified by email.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">AWS
          * API Reference</a></p>
          *
@@ -946,33 +1158,139 @@ namespace Model
         virtual Model::TransferDomainOutcomeCallable TransferDomainCallable(const Model::TransferDomainRequest& request) const;
 
         /**
-         * <p>This operation transfers a domain from another registrar to Amazon Route 53.
-         * When the transfer is complete, the domain is registered either with Amazon
-         * Registrar (for .com, .net, and .org domains) or with our registrar associate,
-         * Gandi (for all other TLDs).</p> <p>For transfer requirements, a detailed
-         * procedure, and information about viewing the status of a domain transfer, see <a
-         * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
+         * <p>Transfers a domain from another registrar to Amazon Route 53. When the
+         * transfer is complete, the domain is registered either with Amazon Registrar (for
+         * .com, .net, and .org domains) or with our registrar associate, Gandi (for all
+         * other TLDs).</p> <p>For more information about transferring domains, see the
+         * following topics:</p> <ul> <li> <p>For transfer requirements, a detailed
+         * procedure, and information about viewing the status of a domain that you're
+         * transferring to Route 53, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html">Transferring
          * Registration for a Domain to Amazon Route 53</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> <p>If the registrar for your domain is also the DNS
-         * service provider for the domain, we highly recommend that you consider
-         * transferring your DNS service to Amazon Route 53 or to another DNS service
-         * provider before you transfer your registration. Some registrars provide free DNS
-         * service when you purchase a domain registration. When you transfer the
-         * registration, the previous registrar will not renew your domain registration and
-         * could end your DNS service at any time.</p> <important> <p>If the registrar for
-         * your domain is also the DNS service provider for the domain and you don't
-         * transfer DNS service to another provider, your website, email, and the web
-         * applications associated with the domain might become unavailable.</p>
-         * </important> <p>If the transfer is successful, this method returns an operation
-         * ID that you can use to track the progress and completion of the action. If the
-         * transfer doesn't complete successfully, the domain registrant will be notified
-         * by email.</p><p><h3>See Also:</h3>   <a
+         * Developer Guide</i>.</p> </li> <li> <p>For information about how to transfer a
+         * domain from one AWS account to another, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>For information about how to transfer a domain to another
+         * domain registrar, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-from-route-53.html">Transferring
+         * a Domain from Amazon Route 53 to Another Registrar</a> in the <i>Amazon Route 53
+         * Developer Guide</i>.</p> </li> </ul> <p>If the registrar for your domain is also
+         * the DNS service provider for the domain, we highly recommend that you transfer
+         * your DNS service to Route 53 or to another DNS service provider before you
+         * transfer your registration. Some registrars provide free DNS service when you
+         * purchase a domain registration. When you transfer the registration, the previous
+         * registrar will not renew your domain registration and could end your DNS service
+         * at any time.</p> <important> <p>If the registrar for your domain is also the DNS
+         * service provider for the domain and you don't transfer DNS service to another
+         * provider, your website, email, and the web applications associated with the
+         * domain might become unavailable.</p> </important> <p>If the transfer is
+         * successful, this method returns an operation ID that you can use to track the
+         * progress and completion of the action. If the transfer doesn't complete
+         * successfully, the domain registrant will be notified by email.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomain">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void TransferDomainAsync(const Model::TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Transfers a domain from the current AWS account to another AWS account. Note
+         * the following:</p> <ul> <li> <p>The AWS account that you're transferring the
+         * domain to must accept the transfer. If the other account doesn't accept the
+         * transfer within 3 days, we cancel the transfer. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>You can cancel the transfer before the other account accepts
+         * it. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CancelDomainTransferToAnotherAwsAccount.html">CancelDomainTransferToAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>The other account can reject the transfer. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RejectDomainTransferFromAnotherAwsAccount.html">RejectDomainTransferFromAnotherAwsAccount</a>.
+         * </p> </li> </ul> <important> <p>When you transfer a domain from one AWS account
+         * to another, Route 53 doesn't transfer the hosted zone that is associated with
+         * the domain. DNS resolution isn't affected if the domain and the hosted zone are
+         * owned by separate accounts, so transferring the hosted zone is optional. For
+         * information about transferring the hosted zone to another AWS account, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
+         * a Hosted Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p> </important> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomainToAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TransferDomainToAnotherAwsAccountOutcome TransferDomainToAnotherAwsAccount(const Model::TransferDomainToAnotherAwsAccountRequest& request) const;
+
+        /**
+         * <p>Transfers a domain from the current AWS account to another AWS account. Note
+         * the following:</p> <ul> <li> <p>The AWS account that you're transferring the
+         * domain to must accept the transfer. If the other account doesn't accept the
+         * transfer within 3 days, we cancel the transfer. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>You can cancel the transfer before the other account accepts
+         * it. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CancelDomainTransferToAnotherAwsAccount.html">CancelDomainTransferToAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>The other account can reject the transfer. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RejectDomainTransferFromAnotherAwsAccount.html">RejectDomainTransferFromAnotherAwsAccount</a>.
+         * </p> </li> </ul> <important> <p>When you transfer a domain from one AWS account
+         * to another, Route 53 doesn't transfer the hosted zone that is associated with
+         * the domain. DNS resolution isn't affected if the domain and the hosted zone are
+         * owned by separate accounts, so transferring the hosted zone is optional. For
+         * information about transferring the hosted zone to another AWS account, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
+         * a Hosted Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p> </important> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomainToAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TransferDomainToAnotherAwsAccountOutcomeCallable TransferDomainToAnotherAwsAccountCallable(const Model::TransferDomainToAnotherAwsAccountRequest& request) const;
+
+        /**
+         * <p>Transfers a domain from the current AWS account to another AWS account. Note
+         * the following:</p> <ul> <li> <p>The AWS account that you're transferring the
+         * domain to must accept the transfer. If the other account doesn't accept the
+         * transfer within 3 days, we cancel the transfer. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>You can cancel the transfer before the other account accepts
+         * it. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_CancelDomainTransferToAnotherAwsAccount.html">CancelDomainTransferToAnotherAwsAccount</a>.
+         * </p> </li> <li> <p>The other account can reject the transfer. See <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_RejectDomainTransferFromAnotherAwsAccount.html">RejectDomainTransferFromAnotherAwsAccount</a>.
+         * </p> </li> </ul> <important> <p>When you transfer a domain from one AWS account
+         * to another, Route 53 doesn't transfer the hosted zone that is associated with
+         * the domain. DNS resolution isn't affected if the domain and the hosted zone are
+         * owned by separate accounts, so transferring the hosted zone is optional. For
+         * information about transferring the hosted zone to another AWS account, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-migrating.html">Migrating
+         * a Hosted Zone to a Different AWS Account</a> in the <i>Amazon Route 53 Developer
+         * Guide</i>.</p> </important> <p>Use either <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to determine whether the operation succeeded. <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * provides additional information, for example, <code>Domain Transfer from Aws
+         * Account 111122223333 has been cancelled</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomainToAnotherAwsAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TransferDomainToAnotherAwsAccountAsync(const Model::TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation updates the contact information for a particular domain. You
@@ -1021,10 +1339,20 @@ namespace Model
          * and .org domains) or with contact information for our registrar associate,
          * Gandi.</p> <p>This operation affects only the contact information for the
          * specified contact type (registrant, administrator, or tech). If the request
-         * succeeds, Amazon Route 53 returns an operation ID that you can use with
-         * <a>GetOperationDetail</a> to track the progress and completion of the action. If
-         * the request doesn't complete successfully, the domain registrant will be
-         * notified by email.</p><p><h3>See Also:</h3>   <a
+         * succeeds, Amazon Route 53 returns an operation ID that you can use with <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to track the progress and completion of the action. If the request doesn't
+         * complete successfully, the domain registrant will be notified by email.</p>
+         * <important> <p>By disabling the privacy service via API, you consent to the
+         * publication of the contact information provided for this domain via the public
+         * WHOIS database. You certify that you are the registrant of this domain name and
+         * have the authority to make this decision. You may withdraw your consent at any
+         * time by enabling privacy protection using either
+         * <code>UpdateDomainContactPrivacy</code> or the Route 53 console. Enabling
+         * privacy protection removes the contact information provided for this domain from
+         * the WHOIS database. For more information on our privacy practices, see <a
+         * href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>
          */
@@ -1037,10 +1365,20 @@ namespace Model
          * and .org domains) or with contact information for our registrar associate,
          * Gandi.</p> <p>This operation affects only the contact information for the
          * specified contact type (registrant, administrator, or tech). If the request
-         * succeeds, Amazon Route 53 returns an operation ID that you can use with
-         * <a>GetOperationDetail</a> to track the progress and completion of the action. If
-         * the request doesn't complete successfully, the domain registrant will be
-         * notified by email.</p><p><h3>See Also:</h3>   <a
+         * succeeds, Amazon Route 53 returns an operation ID that you can use with <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to track the progress and completion of the action. If the request doesn't
+         * complete successfully, the domain registrant will be notified by email.</p>
+         * <important> <p>By disabling the privacy service via API, you consent to the
+         * publication of the contact information provided for this domain via the public
+         * WHOIS database. You certify that you are the registrant of this domain name and
+         * have the authority to make this decision. You may withdraw your consent at any
+         * time by enabling privacy protection using either
+         * <code>UpdateDomainContactPrivacy</code> or the Route 53 console. Enabling
+         * privacy protection removes the contact information provided for this domain from
+         * the WHOIS database. For more information on our privacy practices, see <a
+         * href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>
          *
@@ -1055,10 +1393,20 @@ namespace Model
          * and .org domains) or with contact information for our registrar associate,
          * Gandi.</p> <p>This operation affects only the contact information for the
          * specified contact type (registrant, administrator, or tech). If the request
-         * succeeds, Amazon Route 53 returns an operation ID that you can use with
-         * <a>GetOperationDetail</a> to track the progress and completion of the action. If
-         * the request doesn't complete successfully, the domain registrant will be
-         * notified by email.</p><p><h3>See Also:</h3>   <a
+         * succeeds, Amazon Route 53 returns an operation ID that you can use with <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
+         * to track the progress and completion of the action. If the request doesn't
+         * complete successfully, the domain registrant will be notified by email.</p>
+         * <important> <p>By disabling the privacy service via API, you consent to the
+         * publication of the contact information provided for this domain via the public
+         * WHOIS database. You certify that you are the registrant of this domain name and
+         * have the authority to make this decision. You may withdraw your consent at any
+         * time by enabling privacy protection using either
+         * <code>UpdateDomainContactPrivacy</code> or the Route 53 console. Enabling
+         * privacy protection removes the contact information provided for this domain from
+         * the WHOIS database. For more information on our privacy practices, see <a
+         * href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy">AWS
          * API Reference</a></p>
          *
@@ -1172,6 +1520,8 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AcceptDomainTransferFromAnotherAwsAccountAsyncHelper(const Model::AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelDomainTransferToAnotherAwsAccountAsyncHelper(const Model::CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CheckDomainAvailabilityAsyncHelper(const Model::CheckDomainAvailabilityRequest& request, const CheckDomainAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CheckDomainTransferabilityAsyncHelper(const Model::CheckDomainTransferabilityRequest& request, const CheckDomainTransferabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsForDomainAsyncHelper(const Model::DeleteTagsForDomainRequest& request, const DeleteTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1187,10 +1537,12 @@ namespace Model
         void ListOperationsAsyncHelper(const Model::ListOperationsRequest& request, const ListOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForDomainAsyncHelper(const Model::ListTagsForDomainRequest& request, const ListTagsForDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterDomainAsyncHelper(const Model::RegisterDomainRequest& request, const RegisterDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RejectDomainTransferFromAnotherAwsAccountAsyncHelper(const Model::RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenewDomainAsyncHelper(const Model::RenewDomainRequest& request, const RenewDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResendContactReachabilityEmailAsyncHelper(const Model::ResendContactReachabilityEmailRequest& request, const ResendContactReachabilityEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RetrieveDomainAuthCodeAsyncHelper(const Model::RetrieveDomainAuthCodeRequest& request, const RetrieveDomainAuthCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TransferDomainAsyncHelper(const Model::TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TransferDomainToAnotherAwsAccountAsyncHelper(const Model::TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainContactAsyncHelper(const Model::UpdateDomainContactRequest& request, const UpdateDomainContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainContactPrivacyAsyncHelper(const Model::UpdateDomainContactPrivacyRequest& request, const UpdateDomainContactPrivacyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainNameserversAsyncHelper(const Model::UpdateDomainNameserversRequest& request, const UpdateDomainNameserversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -49,83 +49,83 @@ namespace Model
 
 
     /**
-     * <p>AWS EC2 instance profile ARN.</p>
+     * <p>The profile ARN of the EC2 instance.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>AWS EC2 instance profile ARN.</p>
+     * <p>The profile ARN of the EC2 instance.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>AWS EC2 instance profile ARN.</p>
+     * <p>The profile ARN of the EC2 instance.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>AWS EC2 instance profile ARN.</p>
+     * <p>The profile ARN of the EC2 instance.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>AWS EC2 instance profile ARN.</p>
+     * <p>The profile ARN of the EC2 instance.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>AWS EC2 instance profile ARN.</p>
+     * <p>The profile ARN of the EC2 instance.</p>
      */
     inline IamInstanceProfile& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>AWS EC2 instance profile ARN.</p>
+     * <p>The profile ARN of the EC2 instance.</p>
      */
     inline IamInstanceProfile& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>AWS EC2 instance profile ARN.</p>
+     * <p>The profile ARN of the EC2 instance.</p>
      */
     inline IamInstanceProfile& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>AWS EC2 instance profile ID.</p>
+     * <p>The profile ID of the EC2 instance.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>AWS EC2 instance profile ID.</p>
+     * <p>The profile ID of the EC2 instance.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>AWS EC2 instance profile ID.</p>
+     * <p>The profile ID of the EC2 instance.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>AWS EC2 instance profile ID.</p>
+     * <p>The profile ID of the EC2 instance.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>AWS EC2 instance profile ID.</p>
+     * <p>The profile ID of the EC2 instance.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>AWS EC2 instance profile ID.</p>
+     * <p>The profile ID of the EC2 instance.</p>
      */
     inline IamInstanceProfile& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>AWS EC2 instance profile ID.</p>
+     * <p>The profile ID of the EC2 instance.</p>
      */
     inline IamInstanceProfile& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS EC2 instance profile ID.</p>
+     * <p>The profile ID of the EC2 instance.</p>
      */
     inline IamInstanceProfile& WithId(const char* value) { SetId(value); return *this;}
 

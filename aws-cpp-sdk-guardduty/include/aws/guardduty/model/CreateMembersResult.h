@@ -44,44 +44,44 @@ namespace Model
 
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>A list of objects that include the <code>accountIds</code> of the unprocessed
+     * accounts and a result string that explains why each was unprocessed.</p>
      */
     inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>A list of objects that include the <code>accountIds</code> of the unprocessed
+     * accounts and a result string that explains why each was unprocessed.</p>
      */
     inline void SetUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { m_unprocessedAccounts = value; }
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>A list of objects that include the <code>accountIds</code> of the unprocessed
+     * accounts and a result string that explains why each was unprocessed.</p>
      */
     inline void SetUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { m_unprocessedAccounts = std::move(value); }
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>A list of objects that include the <code>accountIds</code> of the unprocessed
+     * accounts and a result string that explains why each was unprocessed.</p>
      */
     inline CreateMembersResult& WithUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { SetUnprocessedAccounts(value); return *this;}
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>A list of objects that include the <code>accountIds</code> of the unprocessed
+     * accounts and a result string that explains why each was unprocessed.</p>
      */
     inline CreateMembersResult& WithUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>A list of objects that include the <code>accountIds</code> of the unprocessed
+     * accounts and a result string that explains why each was unprocessed.</p>
      */
     inline CreateMembersResult& AddUnprocessedAccounts(const UnprocessedAccount& value) { m_unprocessedAccounts.push_back(value); return *this; }
 
     /**
-     * <p>A list of objects containing the unprocessed account and a result string
-     * explaining why it was unprocessed.</p>
+     * <p>A list of objects that include the <code>accountIds</code> of the unprocessed
+     * accounts and a result string that explains why each was unprocessed.</p>
      */
     inline CreateMembersResult& AddUnprocessedAccounts(UnprocessedAccount&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
 

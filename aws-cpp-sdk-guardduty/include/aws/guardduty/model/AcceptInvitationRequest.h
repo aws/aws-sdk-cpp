@@ -133,42 +133,50 @@ namespace Model
 
 
     /**
-     * <p>This value is used to validate the master account to the member account.</p>
+     * <p>The value that is used to validate the master account to the member
+     * account.</p>
      */
     inline const Aws::String& GetInvitationId() const{ return m_invitationId; }
 
     /**
-     * <p>This value is used to validate the master account to the member account.</p>
+     * <p>The value that is used to validate the master account to the member
+     * account.</p>
      */
     inline bool InvitationIdHasBeenSet() const { return m_invitationIdHasBeenSet; }
 
     /**
-     * <p>This value is used to validate the master account to the member account.</p>
+     * <p>The value that is used to validate the master account to the member
+     * account.</p>
      */
     inline void SetInvitationId(const Aws::String& value) { m_invitationIdHasBeenSet = true; m_invitationId = value; }
 
     /**
-     * <p>This value is used to validate the master account to the member account.</p>
+     * <p>The value that is used to validate the master account to the member
+     * account.</p>
      */
     inline void SetInvitationId(Aws::String&& value) { m_invitationIdHasBeenSet = true; m_invitationId = std::move(value); }
 
     /**
-     * <p>This value is used to validate the master account to the member account.</p>
+     * <p>The value that is used to validate the master account to the member
+     * account.</p>
      */
     inline void SetInvitationId(const char* value) { m_invitationIdHasBeenSet = true; m_invitationId.assign(value); }
 
     /**
-     * <p>This value is used to validate the master account to the member account.</p>
+     * <p>The value that is used to validate the master account to the member
+     * account.</p>
      */
     inline AcceptInvitationRequest& WithInvitationId(const Aws::String& value) { SetInvitationId(value); return *this;}
 
     /**
-     * <p>This value is used to validate the master account to the member account.</p>
+     * <p>The value that is used to validate the master account to the member
+     * account.</p>
      */
     inline AcceptInvitationRequest& WithInvitationId(Aws::String&& value) { SetInvitationId(std::move(value)); return *this;}
 
     /**
-     * <p>This value is used to validate the master account to the member account.</p>
+     * <p>The value that is used to validate the master account to the member
+     * account.</p>
      */
     inline AcceptInvitationRequest& WithInvitationId(const char* value) { SetInvitationId(value); return *this;}
 

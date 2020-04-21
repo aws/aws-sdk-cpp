@@ -1284,27 +1284,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies the number of steps that can be executed concurrently.</p>
-     */
-    inline int GetStepConcurrencyLevel() const{ return m_stepConcurrencyLevel; }
-
-    /**
-     * <p>Specifies the number of steps that can be executed concurrently.</p>
-     */
-    inline bool StepConcurrencyLevelHasBeenSet() const { return m_stepConcurrencyLevelHasBeenSet; }
-
-    /**
-     * <p>Specifies the number of steps that can be executed concurrently.</p>
-     */
-    inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevelHasBeenSet = true; m_stepConcurrencyLevel = value; }
-
-    /**
-     * <p>Specifies the number of steps that can be executed concurrently.</p>
-     */
-    inline Cluster& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
-
-
-    /**
      * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
      * </p>
      */
@@ -1351,6 +1330,27 @@ namespace Model
      * </p>
      */
     inline Cluster& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
+     * <p>Specifies the number of steps that can be executed concurrently.</p>
+     */
+    inline int GetStepConcurrencyLevel() const{ return m_stepConcurrencyLevel; }
+
+    /**
+     * <p>Specifies the number of steps that can be executed concurrently.</p>
+     */
+    inline bool StepConcurrencyLevelHasBeenSet() const { return m_stepConcurrencyLevelHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of steps that can be executed concurrently.</p>
+     */
+    inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevelHasBeenSet = true; m_stepConcurrencyLevel = value; }
+
+    /**
+     * <p>Specifies the number of steps that can be executed concurrently.</p>
+     */
+    inline Cluster& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
 
   private:
 
@@ -1432,11 +1432,11 @@ namespace Model
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet;
 
-    int m_stepConcurrencyLevel;
-    bool m_stepConcurrencyLevelHasBeenSet;
-
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet;
+
+    int m_stepConcurrencyLevel;
+    bool m_stepConcurrencyLevelHasBeenSet;
   };
 
 } // namespace Model

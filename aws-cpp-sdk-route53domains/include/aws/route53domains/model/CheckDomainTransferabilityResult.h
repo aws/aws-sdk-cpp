@@ -50,31 +50,31 @@ namespace Model
 
     /**
      * <p>A complex type that contains information about whether the specified domain
-     * can be transferred to Amazon Route 53.</p>
+     * can be transferred to Route 53.</p>
      */
     inline const DomainTransferability& GetTransferability() const{ return m_transferability; }
 
     /**
      * <p>A complex type that contains information about whether the specified domain
-     * can be transferred to Amazon Route 53.</p>
+     * can be transferred to Route 53.</p>
      */
     inline void SetTransferability(const DomainTransferability& value) { m_transferability = value; }
 
     /**
      * <p>A complex type that contains information about whether the specified domain
-     * can be transferred to Amazon Route 53.</p>
+     * can be transferred to Route 53.</p>
      */
     inline void SetTransferability(DomainTransferability&& value) { m_transferability = std::move(value); }
 
     /**
      * <p>A complex type that contains information about whether the specified domain
-     * can be transferred to Amazon Route 53.</p>
+     * can be transferred to Route 53.</p>
      */
     inline CheckDomainTransferabilityResult& WithTransferability(const DomainTransferability& value) { SetTransferability(value); return *this;}
 
     /**
      * <p>A complex type that contains information about whether the specified domain
-     * can be transferred to Amazon Route 53.</p>
+     * can be transferred to Route 53.</p>
      */
     inline CheckDomainTransferabilityResult& WithTransferability(DomainTransferability&& value) { SetTransferability(std::move(value)); return *this;}
 

@@ -47,9 +47,12 @@
 #include <aws/guardduty/model/DeleteMembersRequest.h>
 #include <aws/guardduty/model/DeletePublishingDestinationRequest.h>
 #include <aws/guardduty/model/DeleteThreatIntelSetRequest.h>
+#include <aws/guardduty/model/DescribeOrganizationConfigurationRequest.h>
 #include <aws/guardduty/model/DescribePublishingDestinationRequest.h>
+#include <aws/guardduty/model/DisableOrganizationAdminAccountRequest.h>
 #include <aws/guardduty/model/DisassociateFromMasterAccountRequest.h>
 #include <aws/guardduty/model/DisassociateMembersRequest.h>
+#include <aws/guardduty/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/guardduty/model/GetDetectorRequest.h>
 #include <aws/guardduty/model/GetFilterRequest.h>
 #include <aws/guardduty/model/GetFindingsRequest.h>
@@ -66,6 +69,7 @@
 #include <aws/guardduty/model/ListIPSetsRequest.h>
 #include <aws/guardduty/model/ListInvitationsRequest.h>
 #include <aws/guardduty/model/ListMembersRequest.h>
+#include <aws/guardduty/model/ListOrganizationAdminAccountsRequest.h>
 #include <aws/guardduty/model/ListPublishingDestinationsRequest.h>
 #include <aws/guardduty/model/ListTagsForResourceRequest.h>
 #include <aws/guardduty/model/ListThreatIntelSetsRequest.h>
@@ -78,6 +82,7 @@
 #include <aws/guardduty/model/UpdateFilterRequest.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackRequest.h>
 #include <aws/guardduty/model/UpdateIPSetRequest.h>
+#include <aws/guardduty/model/UpdateOrganizationConfigurationRequest.h>
 #include <aws/guardduty/model/UpdatePublishingDestinationRequest.h>
 #include <aws/guardduty/model/UpdateThreatIntelSetRequest.h>
 
@@ -869,6 +874,48 @@ void GuardDutyClient::DeleteThreatIntelSetAsyncHelper(const DeleteThreatIntelSet
   handler(this, request, DeleteThreatIntelSet(request), context);
 }
 
+DescribeOrganizationConfigurationOutcome GuardDutyClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
+{
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeOrganizationConfiguration", "Required field: DetectorId, is not set");
+    return DescribeOrganizationConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/admin";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeOrganizationConfigurationOutcome(DescribeOrganizationConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeOrganizationConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DescribeOrganizationConfigurationOutcomeCallable GuardDutyClient::DescribeOrganizationConfigurationCallable(const DescribeOrganizationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeOrganizationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::DescribeOrganizationConfigurationAsync(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::DescribeOrganizationConfigurationAsyncHelper(const DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeOrganizationConfiguration(request), context);
+}
+
 DescribePublishingDestinationOutcome GuardDutyClient::DescribePublishingDestination(const DescribePublishingDestinationRequest& request) const
 {
   if (!request.DetectorIdHasBeenSet())
@@ -915,6 +962,41 @@ void GuardDutyClient::DescribePublishingDestinationAsync(const DescribePublishin
 void GuardDutyClient::DescribePublishingDestinationAsyncHelper(const DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePublishingDestination(request), context);
+}
+
+DisableOrganizationAdminAccountOutcome GuardDutyClient::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/admin/disable";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisableOrganizationAdminAccountOutcome(DisableOrganizationAdminAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisableOrganizationAdminAccountOutcome(outcome.GetError());
+  }
+}
+
+DisableOrganizationAdminAccountOutcomeCallable GuardDutyClient::DisableOrganizationAdminAccountCallable(const DisableOrganizationAdminAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableOrganizationAdminAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::DisableOrganizationAdminAccountAsync(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::DisableOrganizationAdminAccountAsyncHelper(const DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableOrganizationAdminAccount(request), context);
 }
 
 DisassociateFromMasterAccountOutcome GuardDutyClient::DisassociateFromMasterAccount(const DisassociateFromMasterAccountRequest& request) const
@@ -999,6 +1081,41 @@ void GuardDutyClient::DisassociateMembersAsync(const DisassociateMembersRequest&
 void GuardDutyClient::DisassociateMembersAsyncHelper(const DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociateMembers(request), context);
+}
+
+EnableOrganizationAdminAccountOutcome GuardDutyClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/admin/enable";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return EnableOrganizationAdminAccountOutcome(EnableOrganizationAdminAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return EnableOrganizationAdminAccountOutcome(outcome.GetError());
+  }
+}
+
+EnableOrganizationAdminAccountOutcomeCallable GuardDutyClient::EnableOrganizationAdminAccountCallable(const EnableOrganizationAdminAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableOrganizationAdminAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableOrganizationAdminAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::EnableOrganizationAdminAccountAsync(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableOrganizationAdminAccountAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::EnableOrganizationAdminAccountAsyncHelper(const EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableOrganizationAdminAccount(request), context);
 }
 
 GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& request) const
@@ -1669,6 +1786,41 @@ void GuardDutyClient::ListMembersAsyncHelper(const ListMembersRequest& request, 
   handler(this, request, ListMembers(request), context);
 }
 
+ListOrganizationAdminAccountsOutcome GuardDutyClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/admin";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListOrganizationAdminAccountsOutcome(ListOrganizationAdminAccountsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListOrganizationAdminAccountsOutcome(outcome.GetError());
+  }
+}
+
+ListOrganizationAdminAccountsOutcomeCallable GuardDutyClient::ListOrganizationAdminAccountsCallable(const ListOrganizationAdminAccountsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOrganizationAdminAccountsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrganizationAdminAccounts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::ListOrganizationAdminAccountsAsync(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationAdminAccountsAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::ListOrganizationAdminAccountsAsyncHelper(const ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOrganizationAdminAccounts(request), context);
+}
+
 ListPublishingDestinationsOutcome GuardDutyClient::ListPublishingDestinations(const ListPublishingDestinationsRequest& request) const
 {
   if (!request.DetectorIdHasBeenSet())
@@ -2184,6 +2336,48 @@ void GuardDutyClient::UpdateIPSetAsync(const UpdateIPSetRequest& request, const 
 void GuardDutyClient::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIPSet(request), context);
+}
+
+UpdateOrganizationConfigurationOutcome GuardDutyClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
+{
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateOrganizationConfiguration", "Required field: DetectorId, is not set");
+    return UpdateOrganizationConfigurationOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/detector/";
+  ss << request.GetDetectorId();
+  ss << "/admin";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateOrganizationConfigurationOutcome(UpdateOrganizationConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateOrganizationConfigurationOutcome(outcome.GetError());
+  }
+}
+
+UpdateOrganizationConfigurationOutcomeCallable GuardDutyClient::UpdateOrganizationConfigurationCallable(const UpdateOrganizationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateOrganizationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateOrganizationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GuardDutyClient::UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateOrganizationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void GuardDutyClient::UpdateOrganizationConfigurationAsyncHelper(const UpdateOrganizationConfigurationRequest& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateOrganizationConfiguration(request), context);
 }
 
 UpdatePublishingDestinationOutcome GuardDutyClient::UpdatePublishingDestination(const UpdatePublishingDestinationRequest& request) const

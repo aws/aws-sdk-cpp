@@ -578,136 +578,146 @@ namespace Model
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline GetDomainDetailResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
 
     /**
      * <p>The date when the domain was created as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline GetDomainDetailResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline void SetUpdatedDate(const Aws::Utils::DateTime& value) { m_updatedDate = value; }
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline void SetUpdatedDate(Aws::Utils::DateTime&& value) { m_updatedDate = std::move(value); }
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline GetDomainDetailResult& WithUpdatedDate(const Aws::Utils::DateTime& value) { SetUpdatedDate(value); return *this;}
 
     /**
      * <p>The last updated date of the domain as found in the response to a WHOIS
-     * query. The date and time is in Coordinated Universal time (UTC).</p>
+     * query. The date and time is in Unix time format and Coordinated Universal time
+     * (UTC).</p>
      */
     inline GetDomainDetailResult& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(std::move(value)); return *this;}
 
 
     /**
      * <p>The date when the registration for the domain is set to expire. The date and
-     * time is in Coordinated Universal time (UTC).</p>
+     * time is in Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
 
     /**
      * <p>The date when the registration for the domain is set to expire. The date and
-     * time is in Coordinated Universal time (UTC).</p>
+     * time is in Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDate = value; }
 
     /**
      * <p>The date when the registration for the domain is set to expire. The date and
-     * time is in Coordinated Universal time (UTC).</p>
+     * time is in Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = std::move(value); }
 
     /**
      * <p>The date when the registration for the domain is set to expire. The date and
-     * time is in Coordinated Universal time (UTC).</p>
+     * time is in Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline GetDomainDetailResult& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
 
     /**
      * <p>The date when the registration for the domain is set to expire. The date and
-     * time is in Coordinated Universal time (UTC).</p>
+     * time is in Unix time format and Coordinated Universal time (UTC).</p>
      */
     inline GetDomainDetailResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
-     * 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+     * <p>Reseller of the domain. Domains registered or transferred using Route 53
+     * domains will have <code>"Amazon"</code> as the reseller. </p>
      */
     inline const Aws::String& GetReseller() const{ return m_reseller; }
 
     /**
-     * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
-     * 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+     * <p>Reseller of the domain. Domains registered or transferred using Route 53
+     * domains will have <code>"Amazon"</code> as the reseller. </p>
      */
     inline void SetReseller(const Aws::String& value) { m_reseller = value; }
 
     /**
-     * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
-     * 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+     * <p>Reseller of the domain. Domains registered or transferred using Route 53
+     * domains will have <code>"Amazon"</code> as the reseller. </p>
      */
     inline void SetReseller(Aws::String&& value) { m_reseller = std::move(value); }
 
     /**
-     * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
-     * 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+     * <p>Reseller of the domain. Domains registered or transferred using Route 53
+     * domains will have <code>"Amazon"</code> as the reseller. </p>
      */
     inline void SetReseller(const char* value) { m_reseller.assign(value); }
 
     /**
-     * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
-     * 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+     * <p>Reseller of the domain. Domains registered or transferred using Route 53
+     * domains will have <code>"Amazon"</code> as the reseller. </p>
      */
     inline GetDomainDetailResult& WithReseller(const Aws::String& value) { SetReseller(value); return *this;}
 
     /**
-     * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
-     * 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+     * <p>Reseller of the domain. Domains registered or transferred using Route 53
+     * domains will have <code>"Amazon"</code> as the reseller. </p>
      */
     inline GetDomainDetailResult& WithReseller(Aws::String&& value) { SetReseller(std::move(value)); return *this;}
 
     /**
-     * <p>Reseller of the domain. Domains registered or transferred using Amazon Route
-     * 53 domains will have <code>"Amazon"</code> as the reseller. </p>
+     * <p>Reseller of the domain. Domains registered or transferred using Route 53
+     * domains will have <code>"Amazon"</code> as the reseller. </p>
      */
     inline GetDomainDetailResult& WithReseller(const char* value) { SetReseller(value); return *this;}
 

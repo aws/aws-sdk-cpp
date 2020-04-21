@@ -22,6 +22,7 @@
 #include <aws/elasticmapreduce/model/ScaleDownBehavior.h>
 #include <aws/elasticmapreduce/model/RepoUpgradeOnBoot.h>
 #include <aws/elasticmapreduce/model/KerberosAttributes.h>
+#include <aws/elasticmapreduce/model/ManagedScalingPolicy.h>
 #include <aws/elasticmapreduce/model/StepConfig.h>
 #include <aws/elasticmapreduce/model/BootstrapActionConfig.h>
 #include <aws/elasticmapreduce/model/SupportedProductConfig.h>
@@ -1558,6 +1559,37 @@ namespace Model
      */
     inline RunJobFlowRequest& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
 
+
+    /**
+     * <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+     */
+    inline const ManagedScalingPolicy& GetManagedScalingPolicy() const{ return m_managedScalingPolicy; }
+
+    /**
+     * <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+     */
+    inline bool ManagedScalingPolicyHasBeenSet() const { return m_managedScalingPolicyHasBeenSet; }
+
+    /**
+     * <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+     */
+    inline void SetManagedScalingPolicy(const ManagedScalingPolicy& value) { m_managedScalingPolicyHasBeenSet = true; m_managedScalingPolicy = value; }
+
+    /**
+     * <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+     */
+    inline void SetManagedScalingPolicy(ManagedScalingPolicy&& value) { m_managedScalingPolicyHasBeenSet = true; m_managedScalingPolicy = std::move(value); }
+
+    /**
+     * <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+     */
+    inline RunJobFlowRequest& WithManagedScalingPolicy(const ManagedScalingPolicy& value) { SetManagedScalingPolicy(value); return *this;}
+
+    /**
+     * <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
+     */
+    inline RunJobFlowRequest& WithManagedScalingPolicy(ManagedScalingPolicy&& value) { SetManagedScalingPolicy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1631,6 +1663,9 @@ namespace Model
 
     int m_stepConcurrencyLevel;
     bool m_stepConcurrencyLevelHasBeenSet;
+
+    ManagedScalingPolicy m_managedScalingPolicy;
+    bool m_managedScalingPolicyHasBeenSet;
   };
 
 } // namespace Model

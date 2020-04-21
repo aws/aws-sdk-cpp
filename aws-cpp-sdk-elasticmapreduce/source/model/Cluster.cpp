@@ -63,9 +63,9 @@ Cluster::Cluster() :
     m_repoUpgradeOnBootHasBeenSet(false),
     m_kerberosAttributesHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_stepConcurrencyLevelHasBeenSet(false)
 {
 }
 
@@ -104,9 +104,9 @@ Cluster::Cluster(JsonView jsonValue) :
     m_repoUpgradeOnBootHasBeenSet(false),
     m_kerberosAttributesHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false),
-    m_outpostArnHasBeenSet(false)
+    m_stepConcurrencyLevelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -304,18 +304,18 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_clusterArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("StepConcurrencyLevel"))
-  {
-    m_stepConcurrencyLevel = jsonValue.GetInteger("StepConcurrencyLevel");
-
-    m_stepConcurrencyLevelHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("OutpostArn"))
   {
     m_outpostArn = jsonValue.GetString("OutpostArn");
 
     m_outpostArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StepConcurrencyLevel"))
+  {
+    m_stepConcurrencyLevel = jsonValue.GetInteger("StepConcurrencyLevel");
+
+    m_stepConcurrencyLevelHasBeenSet = true;
   }
 
   return *this;
@@ -493,15 +493,15 @@ JsonValue Cluster::Jsonize() const
 
   }
 
-  if(m_stepConcurrencyLevelHasBeenSet)
-  {
-   payload.WithInteger("StepConcurrencyLevel", m_stepConcurrencyLevel);
-
-  }
-
   if(m_outpostArnHasBeenSet)
   {
    payload.WithString("OutpostArn", m_outpostArn);
+
+  }
+
+  if(m_stepConcurrencyLevelHasBeenSet)
+  {
+   payload.WithInteger("StepConcurrencyLevel", m_stepConcurrencyLevel);
 
   }
 

@@ -117,7 +117,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -133,7 +133,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -141,7 +141,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -149,7 +149,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -157,7 +157,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListMembersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -165,7 +165,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListMembersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -173,65 +173,73 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListMembersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members which haven't been invited yet or have been
-     * disassociated).</p>
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is "true". If set
+     * to "false" the response includes all existing member accounts (including members
+     * who haven't been invited yet or have been disassociated).</p>
      */
     inline const Aws::String& GetOnlyAssociated() const{ return m_onlyAssociated; }
 
     /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members which haven't been invited yet or have been
-     * disassociated).</p>
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is "true". If set
+     * to "false" the response includes all existing member accounts (including members
+     * who haven't been invited yet or have been disassociated).</p>
      */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
 
     /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members which haven't been invited yet or have been
-     * disassociated).</p>
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is "true". If set
+     * to "false" the response includes all existing member accounts (including members
+     * who haven't been invited yet or have been disassociated).</p>
      */
     inline void SetOnlyAssociated(const Aws::String& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
 
     /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members which haven't been invited yet or have been
-     * disassociated).</p>
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is "true". If set
+     * to "false" the response includes all existing member accounts (including members
+     * who haven't been invited yet or have been disassociated).</p>
      */
     inline void SetOnlyAssociated(Aws::String&& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = std::move(value); }
 
     /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members which haven't been invited yet or have been
-     * disassociated).</p>
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is "true". If set
+     * to "false" the response includes all existing member accounts (including members
+     * who haven't been invited yet or have been disassociated).</p>
      */
     inline void SetOnlyAssociated(const char* value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated.assign(value); }
 
     /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members which haven't been invited yet or have been
-     * disassociated).</p>
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is "true". If set
+     * to "false" the response includes all existing member accounts (including members
+     * who haven't been invited yet or have been disassociated).</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(const Aws::String& value) { SetOnlyAssociated(value); return *this;}
 
     /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members which haven't been invited yet or have been
-     * disassociated).</p>
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is "true". If set
+     * to "false" the response includes all existing member accounts (including members
+     * who haven't been invited yet or have been disassociated).</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(Aws::String&& value) { SetOnlyAssociated(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members which haven't been invited yet or have been
-     * disassociated).</p>
+     * <p>Specifies what member accounts the response includes based on their
+     * relationship status with the master account. The default value is "true". If set
+     * to "false" the response includes all existing member accounts (including members
+     * who haven't been invited yet or have been disassociated).</p>
      */
     inline ListMembersRequest& WithOnlyAssociated(const char* value) { SetOnlyAssociated(value); return *this;}
 

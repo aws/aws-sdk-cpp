@@ -49,47 +49,47 @@ namespace Model
 
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline const Aws::Map<Aws::String, int>& GetCountBySeverity() const{ return m_countBySeverity; }
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline bool CountBySeverityHasBeenSet() const { return m_countBySeverityHasBeenSet; }
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline void SetCountBySeverity(const Aws::Map<Aws::String, int>& value) { m_countBySeverityHasBeenSet = true; m_countBySeverity = value; }
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline void SetCountBySeverity(Aws::Map<Aws::String, int>&& value) { m_countBySeverityHasBeenSet = true; m_countBySeverity = std::move(value); }
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline FindingStatistics& WithCountBySeverity(const Aws::Map<Aws::String, int>& value) { SetCountBySeverity(value); return *this;}
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline FindingStatistics& WithCountBySeverity(Aws::Map<Aws::String, int>&& value) { SetCountBySeverity(std::move(value)); return *this;}
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline FindingStatistics& AddCountBySeverity(const Aws::String& key, int value) { m_countBySeverityHasBeenSet = true; m_countBySeverity.emplace(key, value); return *this; }
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline FindingStatistics& AddCountBySeverity(Aws::String&& key, int value) { m_countBySeverityHasBeenSet = true; m_countBySeverity.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Represents a map of severity to count statistic for a set of findings</p>
+     * <p>Represents a map of severity to count statistics for a set of findings.</p>
      */
     inline FindingStatistics& AddCountBySeverity(const char* key, int value) { m_countBySeverityHasBeenSet = true; m_countBySeverity.emplace(key, value); return *this; }
 

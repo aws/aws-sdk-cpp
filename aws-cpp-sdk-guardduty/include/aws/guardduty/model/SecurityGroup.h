@@ -49,83 +49,83 @@ namespace Model
 
 
     /**
-     * <p>EC2 instance's security group ID.</p>
+     * <p>The security group ID of the EC2 instance.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>EC2 instance's security group ID.</p>
+     * <p>The security group ID of the EC2 instance.</p>
      */
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
-     * <p>EC2 instance's security group ID.</p>
+     * <p>The security group ID of the EC2 instance.</p>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>EC2 instance's security group ID.</p>
+     * <p>The security group ID of the EC2 instance.</p>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>EC2 instance's security group ID.</p>
+     * <p>The security group ID of the EC2 instance.</p>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>EC2 instance's security group ID.</p>
+     * <p>The security group ID of the EC2 instance.</p>
      */
     inline SecurityGroup& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>EC2 instance's security group ID.</p>
+     * <p>The security group ID of the EC2 instance.</p>
      */
     inline SecurityGroup& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>EC2 instance's security group ID.</p>
+     * <p>The security group ID of the EC2 instance.</p>
      */
     inline SecurityGroup& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
 
     /**
-     * <p>EC2 instance's security group name.</p>
+     * <p>The security group name of the EC2 instance.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
-     * <p>EC2 instance's security group name.</p>
+     * <p>The security group name of the EC2 instance.</p>
      */
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
-     * <p>EC2 instance's security group name.</p>
+     * <p>The security group name of the EC2 instance.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
-     * <p>EC2 instance's security group name.</p>
+     * <p>The security group name of the EC2 instance.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
-     * <p>EC2 instance's security group name.</p>
+     * <p>The security group name of the EC2 instance.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
-     * <p>EC2 instance's security group name.</p>
+     * <p>The security group name of the EC2 instance.</p>
      */
     inline SecurityGroup& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
-     * <p>EC2 instance's security group name.</p>
+     * <p>The security group name of the EC2 instance.</p>
      */
     inline SecurityGroup& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>EC2 instance's security group name.</p>
+     * <p>The security group name of the EC2 instance.</p>
      */
     inline SecurityGroup& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 

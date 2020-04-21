@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 GetRightsizingRecommendationRequest::GetRightsizingRecommendationRequest() : 
     m_filterHasBeenSet(false),
+    m_configurationHasBeenSet(false),
     m_serviceHasBeenSet(false),
     m_pageSize(0),
     m_pageSizeHasBeenSet(false),
@@ -38,6 +39,12 @@ Aws::String GetRightsizingRecommendationRequest::SerializePayload() const
   if(m_filterHasBeenSet)
   {
    payload.WithObject("Filter", m_filter.Jsonize());
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("Configuration", m_configuration.Jsonize());
 
   }
 

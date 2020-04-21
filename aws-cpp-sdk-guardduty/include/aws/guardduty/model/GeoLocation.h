@@ -47,43 +47,43 @@ namespace Model
 
 
     /**
-     * <p>Latitude information of remote IP address.</p>
+     * <p>The latitude information of the remote IP address.</p>
      */
     inline double GetLat() const{ return m_lat; }
 
     /**
-     * <p>Latitude information of remote IP address.</p>
+     * <p>The latitude information of the remote IP address.</p>
      */
     inline bool LatHasBeenSet() const { return m_latHasBeenSet; }
 
     /**
-     * <p>Latitude information of remote IP address.</p>
+     * <p>The latitude information of the remote IP address.</p>
      */
     inline void SetLat(double value) { m_latHasBeenSet = true; m_lat = value; }
 
     /**
-     * <p>Latitude information of remote IP address.</p>
+     * <p>The latitude information of the remote IP address.</p>
      */
     inline GeoLocation& WithLat(double value) { SetLat(value); return *this;}
 
 
     /**
-     * <p>Longitude information of remote IP address.</p>
+     * <p>The longitude information of the remote IP address.</p>
      */
     inline double GetLon() const{ return m_lon; }
 
     /**
-     * <p>Longitude information of remote IP address.</p>
+     * <p>The longitude information of the remote IP address.</p>
      */
     inline bool LonHasBeenSet() const { return m_lonHasBeenSet; }
 
     /**
-     * <p>Longitude information of remote IP address.</p>
+     * <p>The longitude information of the remote IP address.</p>
      */
     inline void SetLon(double value) { m_lonHasBeenSet = true; m_lon = value; }
 
     /**
-     * <p>Longitude information of remote IP address.</p>
+     * <p>The longitude information of the remote IP address.</p>
      */
     inline GeoLocation& WithLon(double value) { SetLon(value); return *this;}
 

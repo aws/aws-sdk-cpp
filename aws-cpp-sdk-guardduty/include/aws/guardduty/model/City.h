@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>City name of the remote IP address.</p>
+     * <p>The city name of the remote IP address.</p>
      */
     inline const Aws::String& GetCityName() const{ return m_cityName; }
 
     /**
-     * <p>City name of the remote IP address.</p>
+     * <p>The city name of the remote IP address.</p>
      */
     inline bool CityNameHasBeenSet() const { return m_cityNameHasBeenSet; }
 
     /**
-     * <p>City name of the remote IP address.</p>
+     * <p>The city name of the remote IP address.</p>
      */
     inline void SetCityName(const Aws::String& value) { m_cityNameHasBeenSet = true; m_cityName = value; }
 
     /**
-     * <p>City name of the remote IP address.</p>
+     * <p>The city name of the remote IP address.</p>
      */
     inline void SetCityName(Aws::String&& value) { m_cityNameHasBeenSet = true; m_cityName = std::move(value); }
 
     /**
-     * <p>City name of the remote IP address.</p>
+     * <p>The city name of the remote IP address.</p>
      */
     inline void SetCityName(const char* value) { m_cityNameHasBeenSet = true; m_cityName.assign(value); }
 
     /**
-     * <p>City name of the remote IP address.</p>
+     * <p>The city name of the remote IP address.</p>
      */
     inline City& WithCityName(const Aws::String& value) { SetCityName(value); return *this;}
 
     /**
-     * <p>City name of the remote IP address.</p>
+     * <p>The city name of the remote IP address.</p>
      */
     inline City& WithCityName(Aws::String&& value) { SetCityName(std::move(value)); return *this;}
 
     /**
-     * <p>City name of the remote IP address.</p>
+     * <p>The city name of the remote IP address.</p>
      */
     inline City& WithCityName(const char* value) { SetCityName(value); return *this;}
 

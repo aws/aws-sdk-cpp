@@ -174,74 +174,74 @@ namespace Model
 
 
     /**
-     * <p>The updated URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
+     * <p>The updated URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The updated URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
+     * <p>The updated URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The updated URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
+     * <p>The updated URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The updated URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
+     * <p>The updated URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The updated URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
+     * <p>The updated URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The updated URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
+     * <p>The updated URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
      */
     inline UpdateIPSetRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The updated URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
+     * <p>The updated URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
      */
     inline UpdateIPSetRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The updated URI of the file that contains the IPSet. For example
-     * (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key).</p>
+     * <p>The updated URI of the file that contains the IPSet. For example:
+     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.</p>
      */
     inline UpdateIPSetRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
     /**
-     * <p>The updated boolean value that specifies whether the IPSet is active or
+     * <p>The updated Boolean value that specifies whether the IPSet is active or
      * not.</p>
      */
     inline bool GetActivate() const{ return m_activate; }
 
     /**
-     * <p>The updated boolean value that specifies whether the IPSet is active or
+     * <p>The updated Boolean value that specifies whether the IPSet is active or
      * not.</p>
      */
     inline bool ActivateHasBeenSet() const { return m_activateHasBeenSet; }
 
     /**
-     * <p>The updated boolean value that specifies whether the IPSet is active or
+     * <p>The updated Boolean value that specifies whether the IPSet is active or
      * not.</p>
      */
     inline void SetActivate(bool value) { m_activateHasBeenSet = true; m_activate = value; }
 
     /**
-     * <p>The updated boolean value that specifies whether the IPSet is active or
+     * <p>The updated Boolean value that specifies whether the IPSet is active or
      * not.</p>
      */
     inline UpdateIPSetRequest& WithActivate(bool value) { SetActivate(value); return *this;}

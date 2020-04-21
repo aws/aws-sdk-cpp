@@ -35,7 +35,7 @@ namespace Route53Domains
 namespace Model
 {
   /**
-   * <p>The TranserDomain response includes the following element.</p><p><h3>See
+   * <p>The TransferDomain response includes the following element.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/TransferDomainResponse">AWS
    * API Reference</a></p>
@@ -49,44 +49,51 @@ namespace Model
 
 
     /**
-     * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use <a>GetOperationDetail</a>.</p>
+     * <p>Identifier for tracking the progress of the request. To query the operation
+     * status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
 
     /**
-     * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use <a>GetOperationDetail</a>.</p>
+     * <p>Identifier for tracking the progress of the request. To query the operation
+     * status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
 
     /**
-     * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use <a>GetOperationDetail</a>.</p>
+     * <p>Identifier for tracking the progress of the request. To query the operation
+     * status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
 
     /**
-     * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use <a>GetOperationDetail</a>.</p>
+     * <p>Identifier for tracking the progress of the request. To query the operation
+     * status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
 
     /**
-     * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use <a>GetOperationDetail</a>.</p>
+     * <p>Identifier for tracking the progress of the request. To query the operation
+     * status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
     inline TransferDomainResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
 
     /**
-     * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use <a>GetOperationDetail</a>.</p>
+     * <p>Identifier for tracking the progress of the request. To query the operation
+     * status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
     inline TransferDomainResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier for tracking the progress of the request. To use this ID to query
-     * the operation status, use <a>GetOperationDetail</a>.</p>
+     * <p>Identifier for tracking the progress of the request. To query the operation
+     * status, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
     inline TransferDomainResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
 

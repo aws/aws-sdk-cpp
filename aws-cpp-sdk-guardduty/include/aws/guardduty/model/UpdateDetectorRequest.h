@@ -106,37 +106,37 @@ namespace Model
 
 
     /**
-     * <p>A enum value that specifies how frequently findings are exported, such as to
+     * <p>An enum value that specifies how frequently findings are exported, such as to
      * CloudWatch Events.</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * <p>A enum value that specifies how frequently findings are exported, such as to
+     * <p>An enum value that specifies how frequently findings are exported, such as to
      * CloudWatch Events.</p>
      */
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
-     * <p>A enum value that specifies how frequently findings are exported, such as to
+     * <p>An enum value that specifies how frequently findings are exported, such as to
      * CloudWatch Events.</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
 
     /**
-     * <p>A enum value that specifies how frequently findings are exported, such as to
+     * <p>An enum value that specifies how frequently findings are exported, such as to
      * CloudWatch Events.</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * <p>A enum value that specifies how frequently findings are exported, such as to
+     * <p>An enum value that specifies how frequently findings are exported, such as to
      * CloudWatch Events.</p>
      */
     inline UpdateDetectorRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * <p>A enum value that specifies how frequently findings are exported, such as to
+     * <p>An enum value that specifies how frequently findings are exported, such as to
      * CloudWatch Events.</p>
      */
     inline UpdateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}

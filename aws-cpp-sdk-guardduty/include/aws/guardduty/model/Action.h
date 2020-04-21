@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about action.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Action">AWS
    * API Reference</a></p>
    */
@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline const Aws::String& GetActionType() const{ return m_actionType; }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline void SetActionType(const Aws::String& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline void SetActionType(Aws::String&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline void SetActionType(const char* value) { m_actionTypeHasBeenSet = true; m_actionType.assign(value); }
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline Action& WithActionType(const Aws::String& value) { SetActionType(value); return *this;}
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline Action& WithActionType(Aws::String&& value) { SetActionType(std::move(value)); return *this;}
 
     /**
-     * <p>GuardDuty Finding activity type.</p>
+     * <p>The GuardDuty finding activity type.</p>
      */
     inline Action& WithActionType(const char* value) { SetActionType(value); return *this;}
 

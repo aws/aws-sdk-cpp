@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about a publishing destination, including the ID, type,
-   * and status.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the publishing destination, including the ID,
+   * type, and status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Destination">AWS
    * API Reference</a></p>
    */
@@ -92,38 +92,38 @@ namespace Model
 
 
     /**
-     * <p>The type of resource used for the publishing destination. Currently, only S3
-     * is supported.</p>
+     * <p>The type of resource used for the publishing destination. Currently, only
+     * Amazon S3 buckets are supported.</p>
      */
     inline const DestinationType& GetDestinationType() const{ return m_destinationType; }
 
     /**
-     * <p>The type of resource used for the publishing destination. Currently, only S3
-     * is supported.</p>
+     * <p>The type of resource used for the publishing destination. Currently, only
+     * Amazon S3 buckets are supported.</p>
      */
     inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource used for the publishing destination. Currently, only S3
-     * is supported.</p>
+     * <p>The type of resource used for the publishing destination. Currently, only
+     * Amazon S3 buckets are supported.</p>
      */
     inline void SetDestinationType(const DestinationType& value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
 
     /**
-     * <p>The type of resource used for the publishing destination. Currently, only S3
-     * is supported.</p>
+     * <p>The type of resource used for the publishing destination. Currently, only
+     * Amazon S3 buckets are supported.</p>
      */
     inline void SetDestinationType(DestinationType&& value) { m_destinationTypeHasBeenSet = true; m_destinationType = std::move(value); }
 
     /**
-     * <p>The type of resource used for the publishing destination. Currently, only S3
-     * is supported.</p>
+     * <p>The type of resource used for the publishing destination. Currently, only
+     * Amazon S3 buckets are supported.</p>
      */
     inline Destination& WithDestinationType(const DestinationType& value) { SetDestinationType(value); return *this;}
 
     /**
-     * <p>The type of resource used for the publishing destination. Currently, only S3
-     * is supported.</p>
+     * <p>The type of resource used for the publishing destination. Currently, only
+     * Amazon S3 buckets are supported.</p>
      */
     inline Destination& WithDestinationType(DestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the country in which the remote IP address is
+   * <p>Contains information about the country where the remote IP address is
    * located.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Country">AWS
    * API Reference</a></p>
@@ -49,83 +49,83 @@ namespace Model
 
 
     /**
-     * <p>Country code of the remote IP address.</p>
+     * <p>The country code of the remote IP address.</p>
      */
     inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
 
     /**
-     * <p>Country code of the remote IP address.</p>
+     * <p>The country code of the remote IP address.</p>
      */
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
 
     /**
-     * <p>Country code of the remote IP address.</p>
+     * <p>The country code of the remote IP address.</p>
      */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
-     * <p>Country code of the remote IP address.</p>
+     * <p>The country code of the remote IP address.</p>
      */
     inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
 
     /**
-     * <p>Country code of the remote IP address.</p>
+     * <p>The country code of the remote IP address.</p>
      */
     inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
 
     /**
-     * <p>Country code of the remote IP address.</p>
+     * <p>The country code of the remote IP address.</p>
      */
     inline Country& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
 
     /**
-     * <p>Country code of the remote IP address.</p>
+     * <p>The country code of the remote IP address.</p>
      */
     inline Country& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
 
     /**
-     * <p>Country code of the remote IP address.</p>
+     * <p>The country code of the remote IP address.</p>
      */
     inline Country& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
 
 
     /**
-     * <p>Country name of the remote IP address.</p>
+     * <p>The country name of the remote IP address.</p>
      */
     inline const Aws::String& GetCountryName() const{ return m_countryName; }
 
     /**
-     * <p>Country name of the remote IP address.</p>
+     * <p>The country name of the remote IP address.</p>
      */
     inline bool CountryNameHasBeenSet() const { return m_countryNameHasBeenSet; }
 
     /**
-     * <p>Country name of the remote IP address.</p>
+     * <p>The country name of the remote IP address.</p>
      */
     inline void SetCountryName(const Aws::String& value) { m_countryNameHasBeenSet = true; m_countryName = value; }
 
     /**
-     * <p>Country name of the remote IP address.</p>
+     * <p>The country name of the remote IP address.</p>
      */
     inline void SetCountryName(Aws::String&& value) { m_countryNameHasBeenSet = true; m_countryName = std::move(value); }
 
     /**
-     * <p>Country name of the remote IP address.</p>
+     * <p>The country name of the remote IP address.</p>
      */
     inline void SetCountryName(const char* value) { m_countryNameHasBeenSet = true; m_countryName.assign(value); }
 
     /**
-     * <p>Country name of the remote IP address.</p>
+     * <p>The country name of the remote IP address.</p>
      */
     inline Country& WithCountryName(const Aws::String& value) { SetCountryName(value); return *this;}
 
     /**
-     * <p>Country name of the remote IP address.</p>
+     * <p>The country name of the remote IP address.</p>
      */
     inline Country& WithCountryName(Aws::String&& value) { SetCountryName(std::move(value)); return *this;}
 
     /**
-     * <p>Country name of the remote IP address.</p>
+     * <p>The country name of the remote IP address.</p>
      */
     inline Country& WithCountryName(const char* value) { SetCountryName(value); return *this;}
 

@@ -46,63 +46,63 @@ namespace Model
 
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline GetDetectorResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline GetDetectorResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Detector creation timestamp.</p>
+     * <p>The timestamp of when the detector was created.</p>
      */
     inline GetDetectorResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequency = value; }
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline GetDetectorResult& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * <p>Finding publishing frequency.</p>
+     * <p>The publishing frequency of the finding.</p>
      */
     inline GetDetectorResult& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 
@@ -170,37 +170,37 @@ namespace Model
 
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAt = value; }
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline void SetUpdatedAt(Aws::String&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline void SetUpdatedAt(const char* value) { m_updatedAt.assign(value); }
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline GetDetectorResult& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline GetDetectorResult& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>Detector last update timestamp.</p>
+     * <p>The last-updated timestamp for the detector.</p>
      */
     inline GetDetectorResult& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
 

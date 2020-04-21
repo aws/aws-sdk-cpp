@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the accounts that were not
-   * processed.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the accounts that weren't processed.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnprocessedAccount">AWS
    * API Reference</a></p>
    */
@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline UnprocessedAccount& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline UnprocessedAccount& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline UnprocessedAccount& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

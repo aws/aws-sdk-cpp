@@ -41,6 +41,7 @@
 #include <aws/elasticmapreduce/model/DescribeSecurityConfigurationRequest.h>
 #include <aws/elasticmapreduce/model/DescribeStepRequest.h>
 #include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationRequest.h>
+#include <aws/elasticmapreduce/model/GetManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsRequest.h>
 #include <aws/elasticmapreduce/model/ListClustersRequest.h>
 #include <aws/elasticmapreduce/model/ListInstanceFleetsRequest.h>
@@ -53,7 +54,9 @@
 #include <aws/elasticmapreduce/model/ModifyInstanceGroupsRequest.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/PutBlockPublicAccessConfigurationRequest.h>
+#include <aws/elasticmapreduce/model/PutManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/RemoveAutoScalingPolicyRequest.h>
+#include <aws/elasticmapreduce/model/RemoveManagedScalingPolicyRequest.h>
 #include <aws/elasticmapreduce/model/RemoveTagsRequest.h>
 #include <aws/elasticmapreduce/model/RunJobFlowRequest.h>
 #include <aws/elasticmapreduce/model/SetTerminationProtectionRequest.h>
@@ -517,6 +520,41 @@ void EMRClient::GetBlockPublicAccessConfigurationAsyncHelper(const GetBlockPubli
   handler(this, request, GetBlockPublicAccessConfiguration(request), context);
 }
 
+GetManagedScalingPolicyOutcome EMRClient::GetManagedScalingPolicy(const GetManagedScalingPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetManagedScalingPolicyOutcome(GetManagedScalingPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetManagedScalingPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetManagedScalingPolicyOutcomeCallable EMRClient::GetManagedScalingPolicyCallable(const GetManagedScalingPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetManagedScalingPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetManagedScalingPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::GetManagedScalingPolicyAsync(const GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetManagedScalingPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::GetManagedScalingPolicyAsyncHelper(const GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetManagedScalingPolicy(request), context);
+}
+
 ListBootstrapActionsOutcome EMRClient::ListBootstrapActions(const ListBootstrapActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -937,6 +975,41 @@ void EMRClient::PutBlockPublicAccessConfigurationAsyncHelper(const PutBlockPubli
   handler(this, request, PutBlockPublicAccessConfiguration(request), context);
 }
 
+PutManagedScalingPolicyOutcome EMRClient::PutManagedScalingPolicy(const PutManagedScalingPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutManagedScalingPolicyOutcome(PutManagedScalingPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutManagedScalingPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutManagedScalingPolicyOutcomeCallable EMRClient::PutManagedScalingPolicyCallable(const PutManagedScalingPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutManagedScalingPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutManagedScalingPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::PutManagedScalingPolicyAsync(const PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutManagedScalingPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::PutManagedScalingPolicyAsyncHelper(const PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutManagedScalingPolicy(request), context);
+}
+
 RemoveAutoScalingPolicyOutcome EMRClient::RemoveAutoScalingPolicy(const RemoveAutoScalingPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -970,6 +1043,41 @@ void EMRClient::RemoveAutoScalingPolicyAsync(const RemoveAutoScalingPolicyReques
 void EMRClient::RemoveAutoScalingPolicyAsyncHelper(const RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RemoveAutoScalingPolicy(request), context);
+}
+
+RemoveManagedScalingPolicyOutcome EMRClient::RemoveManagedScalingPolicy(const RemoveManagedScalingPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemoveManagedScalingPolicyOutcome(RemoveManagedScalingPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveManagedScalingPolicyOutcome(outcome.GetError());
+  }
+}
+
+RemoveManagedScalingPolicyOutcomeCallable EMRClient::RemoveManagedScalingPolicyCallable(const RemoveManagedScalingPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveManagedScalingPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveManagedScalingPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EMRClient::RemoveManagedScalingPolicyAsync(const RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveManagedScalingPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void EMRClient::RemoveManagedScalingPolicyAsyncHelper(const RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveManagedScalingPolicy(request), context);
 }
 
 RemoveTagsOutcome EMRClient::RemoveTags(const RemoveTagsRequest& request) const

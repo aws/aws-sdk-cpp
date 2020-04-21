@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the ARN of the resource to publish to, such as an S3 bucket, and the
-   * ARN of the KMS key to use to encrypt published findings.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains the Amazon Resource Name (ARN) of the resource to publish to, such
+   * as an S3 bucket, and the ARN of the KMS key to use to encrypt published
+   * findings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DestinationProperties">AWS
    * API Reference</a></p>
    */

@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>IPV4 remote address of the connection.</p>
+     * <p>The IPv4 local address of the connection.</p>
      */
     inline const Aws::String& GetIpAddressV4() const{ return m_ipAddressV4; }
 
     /**
-     * <p>IPV4 remote address of the connection.</p>
+     * <p>The IPv4 local address of the connection.</p>
      */
     inline bool IpAddressV4HasBeenSet() const { return m_ipAddressV4HasBeenSet; }
 
     /**
-     * <p>IPV4 remote address of the connection.</p>
+     * <p>The IPv4 local address of the connection.</p>
      */
     inline void SetIpAddressV4(const Aws::String& value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4 = value; }
 
     /**
-     * <p>IPV4 remote address of the connection.</p>
+     * <p>The IPv4 local address of the connection.</p>
      */
     inline void SetIpAddressV4(Aws::String&& value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4 = std::move(value); }
 
     /**
-     * <p>IPV4 remote address of the connection.</p>
+     * <p>The IPv4 local address of the connection.</p>
      */
     inline void SetIpAddressV4(const char* value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4.assign(value); }
 
     /**
-     * <p>IPV4 remote address of the connection.</p>
+     * <p>The IPv4 local address of the connection.</p>
      */
     inline LocalIpDetails& WithIpAddressV4(const Aws::String& value) { SetIpAddressV4(value); return *this;}
 
     /**
-     * <p>IPV4 remote address of the connection.</p>
+     * <p>The IPv4 local address of the connection.</p>
      */
     inline LocalIpDetails& WithIpAddressV4(Aws::String&& value) { SetIpAddressV4(std::move(value)); return *this;}
 
     /**
-     * <p>IPV4 remote address of the connection.</p>
+     * <p>The IPv4 local address of the connection.</p>
      */
     inline LocalIpDetails& WithIpAddressV4(const char* value) { SetIpAddressV4(value); return *this;}
 

@@ -111,66 +111,66 @@ namespace Model
 
 
     /**
-     * <p>A token to use for paginating results returned in the repsonse. Set the value
-     * of this parameter to null for the first request to a list action. For subsequent
-     * calls, use the <code>NextToken</code> value returned from the previous request
-     * to continue listing results after the first page.</p>
+     * <p>A token to use for paginating results that are returned in the response. Set
+     * the value of this parameter to null for the first request to a list action. For
+     * subsequent calls, use the <code>NextToken</code> value returned from the
+     * previous request to continue listing results after the first page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to use for paginating results returned in the repsonse. Set the value
-     * of this parameter to null for the first request to a list action. For subsequent
-     * calls, use the <code>NextToken</code> value returned from the previous request
-     * to continue listing results after the first page.</p>
+     * <p>A token to use for paginating results that are returned in the response. Set
+     * the value of this parameter to null for the first request to a list action. For
+     * subsequent calls, use the <code>NextToken</code> value returned from the
+     * previous request to continue listing results after the first page.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A token to use for paginating results returned in the repsonse. Set the value
-     * of this parameter to null for the first request to a list action. For subsequent
-     * calls, use the <code>NextToken</code> value returned from the previous request
-     * to continue listing results after the first page.</p>
+     * <p>A token to use for paginating results that are returned in the response. Set
+     * the value of this parameter to null for the first request to a list action. For
+     * subsequent calls, use the <code>NextToken</code> value returned from the
+     * previous request to continue listing results after the first page.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A token to use for paginating results returned in the repsonse. Set the value
-     * of this parameter to null for the first request to a list action. For subsequent
-     * calls, use the <code>NextToken</code> value returned from the previous request
-     * to continue listing results after the first page.</p>
+     * <p>A token to use for paginating results that are returned in the response. Set
+     * the value of this parameter to null for the first request to a list action. For
+     * subsequent calls, use the <code>NextToken</code> value returned from the
+     * previous request to continue listing results after the first page.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to use for paginating results returned in the repsonse. Set the value
-     * of this parameter to null for the first request to a list action. For subsequent
-     * calls, use the <code>NextToken</code> value returned from the previous request
-     * to continue listing results after the first page.</p>
+     * <p>A token to use for paginating results that are returned in the response. Set
+     * the value of this parameter to null for the first request to a list action. For
+     * subsequent calls, use the <code>NextToken</code> value returned from the
+     * previous request to continue listing results after the first page.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A token to use for paginating results returned in the repsonse. Set the value
-     * of this parameter to null for the first request to a list action. For subsequent
-     * calls, use the <code>NextToken</code> value returned from the previous request
-     * to continue listing results after the first page.</p>
+     * <p>A token to use for paginating results that are returned in the response. Set
+     * the value of this parameter to null for the first request to a list action. For
+     * subsequent calls, use the <code>NextToken</code> value returned from the
+     * previous request to continue listing results after the first page.</p>
      */
     inline ListPublishingDestinationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to use for paginating results returned in the repsonse. Set the value
-     * of this parameter to null for the first request to a list action. For subsequent
-     * calls, use the <code>NextToken</code> value returned from the previous request
-     * to continue listing results after the first page.</p>
+     * <p>A token to use for paginating results that are returned in the response. Set
+     * the value of this parameter to null for the first request to a list action. For
+     * subsequent calls, use the <code>NextToken</code> value returned from the
+     * previous request to continue listing results after the first page.</p>
      */
     inline ListPublishingDestinationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to use for paginating results returned in the repsonse. Set the value
-     * of this parameter to null for the first request to a list action. For subsequent
-     * calls, use the <code>NextToken</code> value returned from the previous request
-     * to continue listing results after the first page.</p>
+     * <p>A token to use for paginating results that are returned in the response. Set
+     * the value of this parameter to null for the first request to a list action. For
+     * subsequent calls, use the <code>NextToken</code> value returned from the
+     * previous request to continue listing results after the first page.</p>
      */
     inline ListPublishingDestinationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

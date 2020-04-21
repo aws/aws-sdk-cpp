@@ -85,47 +85,47 @@ namespace Model
 
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::move(value); }
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& AddFindingIds(const Aws::String& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& AddFindingIds(Aws::String&& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>IDs of the findings to unarchive.</p>
+     * <p>The IDs of the findings to unarchive.</p>
      */
     inline UnarchiveFindingsRequest& AddFindingIds(const char* value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 

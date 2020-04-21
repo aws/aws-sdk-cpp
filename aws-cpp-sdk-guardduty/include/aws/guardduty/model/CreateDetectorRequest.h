@@ -46,22 +46,22 @@ namespace Model
 
 
     /**
-     * <p>A boolean value that specifies whether the detector is to be enabled.</p>
+     * <p>A Boolean value that specifies whether the detector is to be enabled.</p>
      */
     inline bool GetEnable() const{ return m_enable; }
 
     /**
-     * <p>A boolean value that specifies whether the detector is to be enabled.</p>
+     * <p>A Boolean value that specifies whether the detector is to be enabled.</p>
      */
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
 
     /**
-     * <p>A boolean value that specifies whether the detector is to be enabled.</p>
+     * <p>A Boolean value that specifies whether the detector is to be enabled.</p>
      */
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
 
     /**
-     * <p>A boolean value that specifies whether the detector is to be enabled.</p>
+     * <p>A Boolean value that specifies whether the detector is to be enabled.</p>
      */
     inline CreateDetectorRequest& WithEnable(bool value) { SetEnable(value); return *this;}
 
@@ -108,38 +108,38 @@ namespace Model
 
 
     /**
-     * <p>A enum value that specifies how frequently customer got Finding updates
-     * published.</p>
+     * <p>An enum value that specifies how frequently updated findings are
+     * exported.</p>
      */
     inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
 
     /**
-     * <p>A enum value that specifies how frequently customer got Finding updates
-     * published.</p>
+     * <p>An enum value that specifies how frequently updated findings are
+     * exported.</p>
      */
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
 
     /**
-     * <p>A enum value that specifies how frequently customer got Finding updates
-     * published.</p>
+     * <p>An enum value that specifies how frequently updated findings are
+     * exported.</p>
      */
     inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
 
     /**
-     * <p>A enum value that specifies how frequently customer got Finding updates
-     * published.</p>
+     * <p>An enum value that specifies how frequently updated findings are
+     * exported.</p>
      */
     inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
 
     /**
-     * <p>A enum value that specifies how frequently customer got Finding updates
-     * published.</p>
+     * <p>An enum value that specifies how frequently updated findings are
+     * exported.</p>
      */
     inline CreateDetectorRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
 
     /**
-     * <p>A enum value that specifies how frequently customer got Finding updates
-     * published.</p>
+     * <p>An enum value that specifies how frequently updated findings are
+     * exported.</p>
      */
     inline CreateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
 

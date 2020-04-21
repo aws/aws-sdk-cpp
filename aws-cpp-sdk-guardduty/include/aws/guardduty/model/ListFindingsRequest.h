@@ -104,7 +104,6 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
-     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -130,8 +129,7 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -162,7 +160,6 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
-     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -188,8 +185,7 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -220,7 +216,6 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
-     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -246,8 +241,7 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -278,7 +272,6 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
-     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -304,8 +297,7 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -336,7 +328,6 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
-     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -362,8 +353,7 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -394,7 +384,6 @@ namespace Model
      * <p>resource.instanceDetails.iamInstanceProfile.id</p> </li> <li>
      * <p>resource.instanceDetails.imageId</p> </li> <li>
      * <p>resource.instanceDetails.instanceId</p> </li> <li>
-     * <p>resource.instanceDetails.outpostArn</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.ipv6Addresses</p> </li> <li>
      * <p>resource.instanceDetails.networkInterfaces.privateIpAddresses.privateIpAddress</p>
      * </li> <li> <p>resource.instanceDetails.networkInterfaces.publicDnsName</p> </li>
@@ -420,8 +409,7 @@ namespace Model
      * <p>service.action.networkConnectionAction.connectionDirection</p> </li> <li>
      * <p>service.action.networkConnectionAction.localPortDetails.port</p> </li> <li>
      * <p>service.action.networkConnectionAction.protocol</p> </li> <li>
-     * <p>service.action.networkConnectionAction.localIpDetails.ipAddressV4</p> </li>
-     * <li> <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
+     * <p>service.action.networkConnectionAction.remoteIpDetails.city.cityName</p>
      * </li> <li>
      * <p>service.action.networkConnectionAction.remoteIpDetails.country.countryName</p>
      * </li> <li>
@@ -501,7 +489,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -509,7 +497,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
@@ -517,7 +505,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -525,7 +513,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
@@ -533,7 +521,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
@@ -541,7 +529,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListFindingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
@@ -549,7 +537,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
@@ -557,7 +545,7 @@ namespace Model
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
+     * the action, fill nextToken in the request with the value of NextToken from the
      * previous response to continue listing data.</p>
      */
     inline ListFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}

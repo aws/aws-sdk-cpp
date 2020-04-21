@@ -51,7 +51,8 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_repoUpgradeOnBootHasBeenSet(false),
     m_kerberosAttributesHasBeenSet(false),
     m_stepConcurrencyLevel(0),
-    m_stepConcurrencyLevelHasBeenSet(false)
+    m_stepConcurrencyLevelHasBeenSet(false),
+    m_managedScalingPolicyHasBeenSet(false)
 {
 }
 
@@ -233,6 +234,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_stepConcurrencyLevelHasBeenSet)
   {
    payload.WithInteger("StepConcurrencyLevel", m_stepConcurrencyLevel);
+
+  }
+
+  if(m_managedScalingPolicyHasBeenSet)
+  {
+   payload.WithObject("ManagedScalingPolicy", m_managedScalingPolicy.Jsonize());
 
   }
 

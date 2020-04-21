@@ -30,6 +30,8 @@
 #include <aws/route53domains/Route53DomainsClient.h>
 #include <aws/route53domains/Route53DomainsEndpoint.h>
 #include <aws/route53domains/Route53DomainsErrorMarshaller.h>
+#include <aws/route53domains/model/AcceptDomainTransferFromAnotherAwsAccountRequest.h>
+#include <aws/route53domains/model/CancelDomainTransferToAnotherAwsAccountRequest.h>
 #include <aws/route53domains/model/CheckDomainAvailabilityRequest.h>
 #include <aws/route53domains/model/CheckDomainTransferabilityRequest.h>
 #include <aws/route53domains/model/DeleteTagsForDomainRequest.h>
@@ -45,10 +47,12 @@
 #include <aws/route53domains/model/ListOperationsRequest.h>
 #include <aws/route53domains/model/ListTagsForDomainRequest.h>
 #include <aws/route53domains/model/RegisterDomainRequest.h>
+#include <aws/route53domains/model/RejectDomainTransferFromAnotherAwsAccountRequest.h>
 #include <aws/route53domains/model/RenewDomainRequest.h>
 #include <aws/route53domains/model/ResendContactReachabilityEmailRequest.h>
 #include <aws/route53domains/model/RetrieveDomainAuthCodeRequest.h>
 #include <aws/route53domains/model/TransferDomainRequest.h>
+#include <aws/route53domains/model/TransferDomainToAnotherAwsAccountRequest.h>
 #include <aws/route53domains/model/UpdateDomainContactRequest.h>
 #include <aws/route53domains/model/UpdateDomainContactPrivacyRequest.h>
 #include <aws/route53domains/model/UpdateDomainNameserversRequest.h>
@@ -125,6 +129,76 @@ void Route53DomainsClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AcceptDomainTransferFromAnotherAwsAccountOutcome Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccount(const AcceptDomainTransferFromAnotherAwsAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AcceptDomainTransferFromAnotherAwsAccountOutcome(AcceptDomainTransferFromAnotherAwsAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AcceptDomainTransferFromAnotherAwsAccountOutcome(outcome.GetError());
+  }
+}
+
+AcceptDomainTransferFromAnotherAwsAccountOutcomeCallable Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccountCallable(const AcceptDomainTransferFromAnotherAwsAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AcceptDomainTransferFromAnotherAwsAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptDomainTransferFromAnotherAwsAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccountAsync(const AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AcceptDomainTransferFromAnotherAwsAccountAsyncHelper( request, handler, context ); } );
+}
+
+void Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccountAsyncHelper(const AcceptDomainTransferFromAnotherAwsAccountRequest& request, const AcceptDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AcceptDomainTransferFromAnotherAwsAccount(request), context);
+}
+
+CancelDomainTransferToAnotherAwsAccountOutcome Route53DomainsClient::CancelDomainTransferToAnotherAwsAccount(const CancelDomainTransferToAnotherAwsAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelDomainTransferToAnotherAwsAccountOutcome(CancelDomainTransferToAnotherAwsAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelDomainTransferToAnotherAwsAccountOutcome(outcome.GetError());
+  }
+}
+
+CancelDomainTransferToAnotherAwsAccountOutcomeCallable Route53DomainsClient::CancelDomainTransferToAnotherAwsAccountCallable(const CancelDomainTransferToAnotherAwsAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelDomainTransferToAnotherAwsAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelDomainTransferToAnotherAwsAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::CancelDomainTransferToAnotherAwsAccountAsync(const CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelDomainTransferToAnotherAwsAccountAsyncHelper( request, handler, context ); } );
+}
+
+void Route53DomainsClient::CancelDomainTransferToAnotherAwsAccountAsyncHelper(const CancelDomainTransferToAnotherAwsAccountRequest& request, const CancelDomainTransferToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelDomainTransferToAnotherAwsAccount(request), context);
 }
 
 CheckDomainAvailabilityOutcome Route53DomainsClient::CheckDomainAvailability(const CheckDomainAvailabilityRequest& request) const
@@ -652,6 +726,41 @@ void Route53DomainsClient::RegisterDomainAsyncHelper(const RegisterDomainRequest
   handler(this, request, RegisterDomain(request), context);
 }
 
+RejectDomainTransferFromAnotherAwsAccountOutcome Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccount(const RejectDomainTransferFromAnotherAwsAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RejectDomainTransferFromAnotherAwsAccountOutcome(RejectDomainTransferFromAnotherAwsAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RejectDomainTransferFromAnotherAwsAccountOutcome(outcome.GetError());
+  }
+}
+
+RejectDomainTransferFromAnotherAwsAccountOutcomeCallable Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccountCallable(const RejectDomainTransferFromAnotherAwsAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RejectDomainTransferFromAnotherAwsAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectDomainTransferFromAnotherAwsAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccountAsync(const RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RejectDomainTransferFromAnotherAwsAccountAsyncHelper( request, handler, context ); } );
+}
+
+void Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccountAsyncHelper(const RejectDomainTransferFromAnotherAwsAccountRequest& request, const RejectDomainTransferFromAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RejectDomainTransferFromAnotherAwsAccount(request), context);
+}
+
 RenewDomainOutcome Route53DomainsClient::RenewDomain(const RenewDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -790,6 +899,41 @@ void Route53DomainsClient::TransferDomainAsync(const TransferDomainRequest& requ
 void Route53DomainsClient::TransferDomainAsyncHelper(const TransferDomainRequest& request, const TransferDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TransferDomain(request), context);
+}
+
+TransferDomainToAnotherAwsAccountOutcome Route53DomainsClient::TransferDomainToAnotherAwsAccount(const TransferDomainToAnotherAwsAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TransferDomainToAnotherAwsAccountOutcome(TransferDomainToAnotherAwsAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TransferDomainToAnotherAwsAccountOutcome(outcome.GetError());
+  }
+}
+
+TransferDomainToAnotherAwsAccountOutcomeCallable Route53DomainsClient::TransferDomainToAnotherAwsAccountCallable(const TransferDomainToAnotherAwsAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TransferDomainToAnotherAwsAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TransferDomainToAnotherAwsAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Route53DomainsClient::TransferDomainToAnotherAwsAccountAsync(const TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TransferDomainToAnotherAwsAccountAsyncHelper( request, handler, context ); } );
+}
+
+void Route53DomainsClient::TransferDomainToAnotherAwsAccountAsyncHelper(const TransferDomainToAnotherAwsAccountRequest& request, const TransferDomainToAnotherAwsAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TransferDomainToAnotherAwsAccount(request), context);
 }
 
 UpdateDomainContactOutcome Route53DomainsClient::UpdateDomainContact(const UpdateDomainContactRequest& request) const

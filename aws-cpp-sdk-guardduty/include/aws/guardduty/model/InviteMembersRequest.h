@@ -44,50 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * invite members with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * invite members with.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * invite members with.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * invite members with.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * invite members with.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * invite members with.</p>
      */
     inline InviteMembersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * invite members with.</p>
      */
     inline InviteMembersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector of the GuardDuty account with which you want to
-     * invite members.</p>
+     * <p>The unique ID of the detector of the GuardDuty account that you want to
+     * invite members with.</p>
      */
     inline InviteMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
@@ -148,25 +148,25 @@ namespace Model
 
 
     /**
-     * <p>A boolean value that specifies whether you want to disable email notification
+     * <p>A Boolean value that specifies whether you want to disable email notification
      * to the accounts that you’re inviting to GuardDuty as members.</p>
      */
     inline bool GetDisableEmailNotification() const{ return m_disableEmailNotification; }
 
     /**
-     * <p>A boolean value that specifies whether you want to disable email notification
+     * <p>A Boolean value that specifies whether you want to disable email notification
      * to the accounts that you’re inviting to GuardDuty as members.</p>
      */
     inline bool DisableEmailNotificationHasBeenSet() const { return m_disableEmailNotificationHasBeenSet; }
 
     /**
-     * <p>A boolean value that specifies whether you want to disable email notification
+     * <p>A Boolean value that specifies whether you want to disable email notification
      * to the accounts that you’re inviting to GuardDuty as members.</p>
      */
     inline void SetDisableEmailNotification(bool value) { m_disableEmailNotificationHasBeenSet = true; m_disableEmailNotification = value; }
 
     /**
-     * <p>A boolean value that specifies whether you want to disable email notification
+     * <p>A Boolean value that specifies whether you want to disable email notification
      * to the accounts that you’re inviting to GuardDuty as members.</p>
      */
     inline InviteMembersRequest& WithDisableEmailNotification(bool value) { SetDisableEmailNotification(value); return *this;}

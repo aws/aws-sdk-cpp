@@ -48,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>Access key ID of the user.</p>
+     * <p>The access key ID of the user.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
     /**
-     * <p>Access key ID of the user.</p>
+     * <p>The access key ID of the user.</p>
      */
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
     /**
-     * <p>Access key ID of the user.</p>
+     * <p>The access key ID of the user.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
-     * <p>Access key ID of the user.</p>
+     * <p>The access key ID of the user.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
-     * <p>Access key ID of the user.</p>
+     * <p>The access key ID of the user.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /**
-     * <p>Access key ID of the user.</p>
+     * <p>The access key ID of the user.</p>
      */
     inline AccessKeyDetails& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
     /**
-     * <p>Access key ID of the user.</p>
+     * <p>The access key ID of the user.</p>
      */
     inline AccessKeyDetails& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Access key ID of the user.</p>
+     * <p>The access key ID of the user.</p>
      */
     inline AccessKeyDetails& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 

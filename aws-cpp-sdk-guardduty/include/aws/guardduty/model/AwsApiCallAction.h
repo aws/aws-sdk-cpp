@@ -50,186 +50,186 @@ namespace Model
 
 
     /**
-     * <p>AWS API name.</p>
+     * <p>The AWS API name.</p>
      */
     inline const Aws::String& GetApi() const{ return m_api; }
 
     /**
-     * <p>AWS API name.</p>
+     * <p>The AWS API name.</p>
      */
     inline bool ApiHasBeenSet() const { return m_apiHasBeenSet; }
 
     /**
-     * <p>AWS API name.</p>
+     * <p>The AWS API name.</p>
      */
     inline void SetApi(const Aws::String& value) { m_apiHasBeenSet = true; m_api = value; }
 
     /**
-     * <p>AWS API name.</p>
+     * <p>The AWS API name.</p>
      */
     inline void SetApi(Aws::String&& value) { m_apiHasBeenSet = true; m_api = std::move(value); }
 
     /**
-     * <p>AWS API name.</p>
+     * <p>The AWS API name.</p>
      */
     inline void SetApi(const char* value) { m_apiHasBeenSet = true; m_api.assign(value); }
 
     /**
-     * <p>AWS API name.</p>
+     * <p>The AWS API name.</p>
      */
     inline AwsApiCallAction& WithApi(const Aws::String& value) { SetApi(value); return *this;}
 
     /**
-     * <p>AWS API name.</p>
+     * <p>The AWS API name.</p>
      */
     inline AwsApiCallAction& WithApi(Aws::String&& value) { SetApi(std::move(value)); return *this;}
 
     /**
-     * <p>AWS API name.</p>
+     * <p>The AWS API name.</p>
      */
     inline AwsApiCallAction& WithApi(const char* value) { SetApi(value); return *this;}
 
 
     /**
-     * <p>AWS API caller type.</p>
+     * <p>The AWS API caller type.</p>
      */
     inline const Aws::String& GetCallerType() const{ return m_callerType; }
 
     /**
-     * <p>AWS API caller type.</p>
+     * <p>The AWS API caller type.</p>
      */
     inline bool CallerTypeHasBeenSet() const { return m_callerTypeHasBeenSet; }
 
     /**
-     * <p>AWS API caller type.</p>
+     * <p>The AWS API caller type.</p>
      */
     inline void SetCallerType(const Aws::String& value) { m_callerTypeHasBeenSet = true; m_callerType = value; }
 
     /**
-     * <p>AWS API caller type.</p>
+     * <p>The AWS API caller type.</p>
      */
     inline void SetCallerType(Aws::String&& value) { m_callerTypeHasBeenSet = true; m_callerType = std::move(value); }
 
     /**
-     * <p>AWS API caller type.</p>
+     * <p>The AWS API caller type.</p>
      */
     inline void SetCallerType(const char* value) { m_callerTypeHasBeenSet = true; m_callerType.assign(value); }
 
     /**
-     * <p>AWS API caller type.</p>
+     * <p>The AWS API caller type.</p>
      */
     inline AwsApiCallAction& WithCallerType(const Aws::String& value) { SetCallerType(value); return *this;}
 
     /**
-     * <p>AWS API caller type.</p>
+     * <p>The AWS API caller type.</p>
      */
     inline AwsApiCallAction& WithCallerType(Aws::String&& value) { SetCallerType(std::move(value)); return *this;}
 
     /**
-     * <p>AWS API caller type.</p>
+     * <p>The AWS API caller type.</p>
      */
     inline AwsApiCallAction& WithCallerType(const char* value) { SetCallerType(value); return *this;}
 
 
     /**
-     * <p>Domain information for the AWS API call.</p>
+     * <p>The domain information for the AWS API call.</p>
      */
     inline const DomainDetails& GetDomainDetails() const{ return m_domainDetails; }
 
     /**
-     * <p>Domain information for the AWS API call.</p>
+     * <p>The domain information for the AWS API call.</p>
      */
     inline bool DomainDetailsHasBeenSet() const { return m_domainDetailsHasBeenSet; }
 
     /**
-     * <p>Domain information for the AWS API call.</p>
+     * <p>The domain information for the AWS API call.</p>
      */
     inline void SetDomainDetails(const DomainDetails& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = value; }
 
     /**
-     * <p>Domain information for the AWS API call.</p>
+     * <p>The domain information for the AWS API call.</p>
      */
     inline void SetDomainDetails(DomainDetails&& value) { m_domainDetailsHasBeenSet = true; m_domainDetails = std::move(value); }
 
     /**
-     * <p>Domain information for the AWS API call.</p>
+     * <p>The domain information for the AWS API call.</p>
      */
     inline AwsApiCallAction& WithDomainDetails(const DomainDetails& value) { SetDomainDetails(value); return *this;}
 
     /**
-     * <p>Domain information for the AWS API call.</p>
+     * <p>The domain information for the AWS API call.</p>
      */
     inline AwsApiCallAction& WithDomainDetails(DomainDetails&& value) { SetDomainDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline const RemoteIpDetails& GetRemoteIpDetails() const{ return m_remoteIpDetails; }
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline bool RemoteIpDetailsHasBeenSet() const { return m_remoteIpDetailsHasBeenSet; }
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline void SetRemoteIpDetails(const RemoteIpDetails& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = value; }
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline void SetRemoteIpDetails(RemoteIpDetails&& value) { m_remoteIpDetailsHasBeenSet = true; m_remoteIpDetails = std::move(value); }
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline AwsApiCallAction& WithRemoteIpDetails(const RemoteIpDetails& value) { SetRemoteIpDetails(value); return *this;}
 
     /**
-     * <p>Remote IP information of the connection.</p>
+     * <p>The remote IP information of the connection.</p>
      */
     inline AwsApiCallAction& WithRemoteIpDetails(RemoteIpDetails&& value) { SetRemoteIpDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>AWS service name whose API was invoked.</p>
+     * <p>The AWS service name whose API was invoked.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p>AWS service name whose API was invoked.</p>
+     * <p>The AWS service name whose API was invoked.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
-     * <p>AWS service name whose API was invoked.</p>
+     * <p>The AWS service name whose API was invoked.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p>AWS service name whose API was invoked.</p>
+     * <p>The AWS service name whose API was invoked.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p>AWS service name whose API was invoked.</p>
+     * <p>The AWS service name whose API was invoked.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p>AWS service name whose API was invoked.</p>
+     * <p>The AWS service name whose API was invoked.</p>
      */
     inline AwsApiCallAction& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p>AWS service name whose API was invoked.</p>
+     * <p>The AWS service name whose API was invoked.</p>
      */
     inline AwsApiCallAction& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>AWS service name whose API was invoked.</p>
+     * <p>The AWS service name whose API was invoked.</p>
      */
     inline AwsApiCallAction& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

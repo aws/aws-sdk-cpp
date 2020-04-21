@@ -32,6 +32,7 @@
 #include <aws/elasticmapreduce/model/DescribeSecurityConfigurationResult.h>
 #include <aws/elasticmapreduce/model/DescribeStepResult.h>
 #include <aws/elasticmapreduce/model/GetBlockPublicAccessConfigurationResult.h>
+#include <aws/elasticmapreduce/model/GetManagedScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/ListBootstrapActionsResult.h>
 #include <aws/elasticmapreduce/model/ListClustersResult.h>
 #include <aws/elasticmapreduce/model/ListInstanceFleetsResult.h>
@@ -42,7 +43,9 @@
 #include <aws/elasticmapreduce/model/ModifyClusterResult.h>
 #include <aws/elasticmapreduce/model/PutAutoScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/PutBlockPublicAccessConfigurationResult.h>
+#include <aws/elasticmapreduce/model/PutManagedScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/RemoveAutoScalingPolicyResult.h>
+#include <aws/elasticmapreduce/model/RemoveManagedScalingPolicyResult.h>
 #include <aws/elasticmapreduce/model/RemoveTagsResult.h>
 #include <aws/elasticmapreduce/model/RunJobFlowResult.h>
 #include <aws/core/NoResult.h>
@@ -96,6 +99,7 @@ namespace Model
         class DescribeSecurityConfigurationRequest;
         class DescribeStepRequest;
         class GetBlockPublicAccessConfigurationRequest;
+        class GetManagedScalingPolicyRequest;
         class ListBootstrapActionsRequest;
         class ListClustersRequest;
         class ListInstanceFleetsRequest;
@@ -108,7 +112,9 @@ namespace Model
         class ModifyInstanceGroupsRequest;
         class PutAutoScalingPolicyRequest;
         class PutBlockPublicAccessConfigurationRequest;
+        class PutManagedScalingPolicyRequest;
         class RemoveAutoScalingPolicyRequest;
+        class RemoveManagedScalingPolicyRequest;
         class RemoveTagsRequest;
         class RunJobFlowRequest;
         class SetTerminationProtectionRequest;
@@ -126,6 +132,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeSecurityConfigurationResult, Aws::Client::AWSError<EMRErrors>> DescribeSecurityConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeStepResult, Aws::Client::AWSError<EMRErrors>> DescribeStepOutcome;
         typedef Aws::Utils::Outcome<GetBlockPublicAccessConfigurationResult, Aws::Client::AWSError<EMRErrors>> GetBlockPublicAccessConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetManagedScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> GetManagedScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<ListBootstrapActionsResult, Aws::Client::AWSError<EMRErrors>> ListBootstrapActionsOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EMRErrors>> ListClustersOutcome;
         typedef Aws::Utils::Outcome<ListInstanceFleetsResult, Aws::Client::AWSError<EMRErrors>> ListInstanceFleetsOutcome;
@@ -138,7 +145,9 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> ModifyInstanceGroupsOutcome;
         typedef Aws::Utils::Outcome<PutAutoScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> PutAutoScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<PutBlockPublicAccessConfigurationResult, Aws::Client::AWSError<EMRErrors>> PutBlockPublicAccessConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutManagedScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> PutManagedScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<RemoveAutoScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> RemoveAutoScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<RemoveManagedScalingPolicyResult, Aws::Client::AWSError<EMRErrors>> RemoveManagedScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<EMRErrors>> RemoveTagsOutcome;
         typedef Aws::Utils::Outcome<RunJobFlowResult, Aws::Client::AWSError<EMRErrors>> RunJobFlowOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EMRErrors>> SetTerminationProtectionOutcome;
@@ -156,6 +165,7 @@ namespace Model
         typedef std::future<DescribeSecurityConfigurationOutcome> DescribeSecurityConfigurationOutcomeCallable;
         typedef std::future<DescribeStepOutcome> DescribeStepOutcomeCallable;
         typedef std::future<GetBlockPublicAccessConfigurationOutcome> GetBlockPublicAccessConfigurationOutcomeCallable;
+        typedef std::future<GetManagedScalingPolicyOutcome> GetManagedScalingPolicyOutcomeCallable;
         typedef std::future<ListBootstrapActionsOutcome> ListBootstrapActionsOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
         typedef std::future<ListInstanceFleetsOutcome> ListInstanceFleetsOutcomeCallable;
@@ -168,7 +178,9 @@ namespace Model
         typedef std::future<ModifyInstanceGroupsOutcome> ModifyInstanceGroupsOutcomeCallable;
         typedef std::future<PutAutoScalingPolicyOutcome> PutAutoScalingPolicyOutcomeCallable;
         typedef std::future<PutBlockPublicAccessConfigurationOutcome> PutBlockPublicAccessConfigurationOutcomeCallable;
+        typedef std::future<PutManagedScalingPolicyOutcome> PutManagedScalingPolicyOutcomeCallable;
         typedef std::future<RemoveAutoScalingPolicyOutcome> RemoveAutoScalingPolicyOutcomeCallable;
+        typedef std::future<RemoveManagedScalingPolicyOutcome> RemoveManagedScalingPolicyOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
         typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
         typedef std::future<SetTerminationProtectionOutcome> SetTerminationProtectionOutcomeCallable;
@@ -189,6 +201,7 @@ namespace Model
     typedef std::function<void(const EMRClient*, const Model::DescribeSecurityConfigurationRequest&, const Model::DescribeSecurityConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityConfigurationResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::DescribeStepRequest&, const Model::DescribeStepOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStepResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::GetBlockPublicAccessConfigurationRequest&, const Model::GetBlockPublicAccessConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlockPublicAccessConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::GetManagedScalingPolicyRequest&, const Model::GetManagedScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListBootstrapActionsRequest&, const Model::ListBootstrapActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBootstrapActionsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::ListInstanceFleetsRequest&, const Model::ListInstanceFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInstanceFleetsResponseReceivedHandler;
@@ -201,7 +214,9 @@ namespace Model
     typedef std::function<void(const EMRClient*, const Model::ModifyInstanceGroupsRequest&, const Model::ModifyInstanceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceGroupsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::PutAutoScalingPolicyRequest&, const Model::PutAutoScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAutoScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::PutBlockPublicAccessConfigurationRequest&, const Model::PutBlockPublicAccessConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBlockPublicAccessConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::PutManagedScalingPolicyRequest&, const Model::PutManagedScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutManagedScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RemoveAutoScalingPolicyRequest&, const Model::RemoveAutoScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAutoScalingPolicyResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::RemoveManagedScalingPolicyRequest&, const Model::RemoveManagedScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveManagedScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RunJobFlowRequest&, const Model::RunJobFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunJobFlowResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::SetTerminationProtectionRequest&, const Model::SetTerminationProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTerminationProtectionResponseReceivedHandler;
@@ -630,6 +645,34 @@ namespace Model
         virtual void GetBlockPublicAccessConfigurationAsync(const Model::GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Fetches the attached managed scaling policy for an Amazon EMR cluster.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedScalingPolicyOutcome GetManagedScalingPolicy(const Model::GetManagedScalingPolicyRequest& request) const;
+
+        /**
+         * <p> Fetches the attached managed scaling policy for an Amazon EMR cluster.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetManagedScalingPolicyOutcomeCallable GetManagedScalingPolicyCallable(const Model::GetManagedScalingPolicyRequest& request) const;
+
+        /**
+         * <p> Fetches the attached managed scaling policy for an Amazon EMR cluster.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetManagedScalingPolicyAsync(const Model::GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides information about the bootstrap actions associated with a
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListBootstrapActions">AWS
@@ -1029,6 +1072,43 @@ namespace Model
         virtual void PutBlockPublicAccessConfigurationAsync(const Model::PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Creates or updates a managed scaling policy for an Amazon EMR cluster. The
+         * managed scaling policy defines the limits for resources, such as EC2 instances
+         * that can be added or terminated from a cluster. The policy only applies to the
+         * core and task nodes. The master node cannot be scaled after initial
+         * configuration. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutManagedScalingPolicyOutcome PutManagedScalingPolicy(const Model::PutManagedScalingPolicyRequest& request) const;
+
+        /**
+         * <p> Creates or updates a managed scaling policy for an Amazon EMR cluster. The
+         * managed scaling policy defines the limits for resources, such as EC2 instances
+         * that can be added or terminated from a cluster. The policy only applies to the
+         * core and task nodes. The master node cannot be scaled after initial
+         * configuration. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutManagedScalingPolicyOutcomeCallable PutManagedScalingPolicyCallable(const Model::PutManagedScalingPolicyRequest& request) const;
+
+        /**
+         * <p> Creates or updates a managed scaling policy for an Amazon EMR cluster. The
+         * managed scaling policy defines the limits for resources, such as EC2 instances
+         * that can be added or terminated from a cluster. The policy only applies to the
+         * core and task nodes. The master node cannot be scaled after initial
+         * configuration. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutManagedScalingPolicyAsync(const Model::PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes an automatic scaling policy from a specified instance group within an
          * EMR cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">AWS
@@ -1055,6 +1135,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RemoveAutoScalingPolicyAsync(const Model::RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Removes a managed scaling policy from a specified EMR cluster.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveManagedScalingPolicyOutcome RemoveManagedScalingPolicy(const Model::RemoveManagedScalingPolicyRequest& request) const;
+
+        /**
+         * <p> Removes a managed scaling policy from a specified EMR cluster.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveManagedScalingPolicyOutcomeCallable RemoveManagedScalingPolicyCallable(const Model::RemoveManagedScalingPolicyRequest& request) const;
+
+        /**
+         * <p> Removes a managed scaling policy from a specified EMR cluster.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveManagedScalingPolicyAsync(const Model::RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes tags from an Amazon EMR resource. Tags make it easier to associate
@@ -1376,6 +1484,7 @@ namespace Model
         void DescribeSecurityConfigurationAsyncHelper(const Model::DescribeSecurityConfigurationRequest& request, const DescribeSecurityConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStepAsyncHelper(const Model::DescribeStepRequest& request, const DescribeStepResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlockPublicAccessConfigurationAsyncHelper(const Model::GetBlockPublicAccessConfigurationRequest& request, const GetBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetManagedScalingPolicyAsyncHelper(const Model::GetManagedScalingPolicyRequest& request, const GetManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBootstrapActionsAsyncHelper(const Model::ListBootstrapActionsRequest& request, const ListBootstrapActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInstanceFleetsAsyncHelper(const Model::ListInstanceFleetsRequest& request, const ListInstanceFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1388,7 +1497,9 @@ namespace Model
         void ModifyInstanceGroupsAsyncHelper(const Model::ModifyInstanceGroupsRequest& request, const ModifyInstanceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAutoScalingPolicyAsyncHelper(const Model::PutAutoScalingPolicyRequest& request, const PutAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBlockPublicAccessConfigurationAsyncHelper(const Model::PutBlockPublicAccessConfigurationRequest& request, const PutBlockPublicAccessConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutManagedScalingPolicyAsyncHelper(const Model::PutManagedScalingPolicyRequest& request, const PutManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAutoScalingPolicyAsyncHelper(const Model::RemoveAutoScalingPolicyRequest& request, const RemoveAutoScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveManagedScalingPolicyAsyncHelper(const Model::RemoveManagedScalingPolicyRequest& request, const RemoveManagedScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RunJobFlowAsyncHelper(const Model::RunJobFlowRequest& request, const RunJobFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetTerminationProtectionAsyncHelper(const Model::SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

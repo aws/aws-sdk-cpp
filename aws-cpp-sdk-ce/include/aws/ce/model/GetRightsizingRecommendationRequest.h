@@ -17,6 +17,7 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/ce/CostExplorerRequest.h>
 #include <aws/ce/model/Expression.h>
+#include <aws/ce/model/RightsizingRecommendationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -62,6 +63,61 @@ namespace Model
 
     
     inline GetRightsizingRecommendationRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Enables you to customize recommendations across two attributes. You can
+     * choose to view recommendations for instances within the same instance families
+     * or across different instance families. You can also choose to view your
+     * estimated savings associated with recommendations with consideration of existing
+     * Savings Plans or RI benefits, or niether. </p>
+     */
+    inline const RightsizingRecommendationConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p> Enables you to customize recommendations across two attributes. You can
+     * choose to view recommendations for instances within the same instance families
+     * or across different instance families. You can also choose to view your
+     * estimated savings associated with recommendations with consideration of existing
+     * Savings Plans or RI benefits, or niether. </p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p> Enables you to customize recommendations across two attributes. You can
+     * choose to view recommendations for instances within the same instance families
+     * or across different instance families. You can also choose to view your
+     * estimated savings associated with recommendations with consideration of existing
+     * Savings Plans or RI benefits, or niether. </p>
+     */
+    inline void SetConfiguration(const RightsizingRecommendationConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p> Enables you to customize recommendations across two attributes. You can
+     * choose to view recommendations for instances within the same instance families
+     * or across different instance families. You can also choose to view your
+     * estimated savings associated with recommendations with consideration of existing
+     * Savings Plans or RI benefits, or niether. </p>
+     */
+    inline void SetConfiguration(RightsizingRecommendationConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p> Enables you to customize recommendations across two attributes. You can
+     * choose to view recommendations for instances within the same instance families
+     * or across different instance families. You can also choose to view your
+     * estimated savings associated with recommendations with consideration of existing
+     * Savings Plans or RI benefits, or niether. </p>
+     */
+    inline GetRightsizingRecommendationRequest& WithConfiguration(const RightsizingRecommendationConfiguration& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p> Enables you to customize recommendations across two attributes. You can
+     * choose to view recommendations for instances within the same instance families
+     * or across different instance families. You can also choose to view your
+     * estimated savings associated with recommendations with consideration of existing
+     * Savings Plans or RI benefits, or niether. </p>
+     */
+    inline GetRightsizingRecommendationRequest& WithConfiguration(RightsizingRecommendationConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -190,6 +246,9 @@ namespace Model
 
     Expression m_filter;
     bool m_filterHasBeenSet;
+
+    RightsizingRecommendationConfiguration m_configuration;
+    bool m_configurationHasBeenSet;
 
     Aws::String m_service;
     bool m_serviceHasBeenSet;

@@ -93,47 +93,47 @@ namespace Model
 
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingIds() const{ return m_findingIds; }
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline bool FindingIdsHasBeenSet() const { return m_findingIdsHasBeenSet; }
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline void SetFindingIds(const Aws::Vector<Aws::String>& value) { m_findingIdsHasBeenSet = true; m_findingIds = value; }
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline void SetFindingIds(Aws::Vector<Aws::String>&& value) { m_findingIdsHasBeenSet = true; m_findingIds = std::move(value); }
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline ArchiveFindingsRequest& WithFindingIds(const Aws::Vector<Aws::String>& value) { SetFindingIds(value); return *this;}
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline ArchiveFindingsRequest& WithFindingIds(Aws::Vector<Aws::String>&& value) { SetFindingIds(std::move(value)); return *this;}
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline ArchiveFindingsRequest& AddFindingIds(const Aws::String& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline ArchiveFindingsRequest& AddFindingIds(Aws::String&& value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>IDs of the findings that you want to archive.</p>
+     * <p>The IDs of the findings that you want to archive.</p>
      */
     inline ArchiveFindingsRequest& AddFindingIds(const char* value) { m_findingIdsHasBeenSet = true; m_findingIds.push_back(value); return *this; }
 

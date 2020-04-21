@@ -85,44 +85,44 @@ namespace Model
 
 
     /**
-     * <p>Pagination parameter to be used on the next list operation to retrieve more
-     * items.</p>
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination parameter to be used on the next list operation to retrieve more
-     * items.</p>
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Pagination parameter to be used on the next list operation to retrieve more
-     * items.</p>
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination parameter to be used on the next list operation to retrieve more
-     * items.</p>
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination parameter to be used on the next list operation to retrieve more
-     * items.</p>
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
      */
     inline ListThreatIntelSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination parameter to be used on the next list operation to retrieve more
-     * items.</p>
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
      */
     inline ListThreatIntelSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination parameter to be used on the next list operation to retrieve more
-     * items.</p>
+     * <p>The pagination parameter to be used on the next list operation to retrieve
+     * more items.</p>
      */
     inline ListThreatIntelSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
