@@ -77,153 +77,145 @@ namespace Model
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * of the request.</p> <p>To add a new repository association, this parameter
+     * specifies a unique identifier for the new repository association that helps
+     * ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call
+     * this operation, you can leave this parameter empty. The CLI or SDK generates a
+     * random UUID for you and includes that in the request. If you don't use the SDK
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * you must generate a ClientRequestToken yourself for new versions and include
+     * that value in the request.</p> <p>You typically interact with this value if you
+     * implement your own retry logic and want to ensure that a given repository
+     * association is not created twice. We recommend that you generate a UUID-type
+     * value to ensure uniqueness within the specified repository association.</p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * of the request.</p> <p>To add a new repository association, this parameter
+     * specifies a unique identifier for the new repository association that helps
+     * ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call
+     * this operation, you can leave this parameter empty. The CLI or SDK generates a
+     * random UUID for you and includes that in the request. If you don't use the SDK
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * you must generate a ClientRequestToken yourself for new versions and include
+     * that value in the request.</p> <p>You typically interact with this value if you
+     * implement your own retry logic and want to ensure that a given repository
+     * association is not created twice. We recommend that you generate a UUID-type
+     * value to ensure uniqueness within the specified repository association.</p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * of the request.</p> <p>To add a new repository association, this parameter
+     * specifies a unique identifier for the new repository association that helps
+     * ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call
+     * this operation, you can leave this parameter empty. The CLI or SDK generates a
+     * random UUID for you and includes that in the request. If you don't use the SDK
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * you must generate a ClientRequestToken yourself for new versions and include
+     * that value in the request.</p> <p>You typically interact with this value if you
+     * implement your own retry logic and want to ensure that a given repository
+     * association is not created twice. We recommend that you generate a UUID-type
+     * value to ensure uniqueness within the specified repository association.</p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * of the request.</p> <p>To add a new repository association, this parameter
+     * specifies a unique identifier for the new repository association that helps
+     * ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call
+     * this operation, you can leave this parameter empty. The CLI or SDK generates a
+     * random UUID for you and includes that in the request. If you don't use the SDK
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * you must generate a ClientRequestToken yourself for new versions and include
+     * that value in the request.</p> <p>You typically interact with this value if you
+     * implement your own retry logic and want to ensure that a given repository
+     * association is not created twice. We recommend that you generate a UUID-type
+     * value to ensure uniqueness within the specified repository association.</p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * of the request.</p> <p>To add a new repository association, this parameter
+     * specifies a unique identifier for the new repository association that helps
+     * ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call
+     * this operation, you can leave this parameter empty. The CLI or SDK generates a
+     * random UUID for you and includes that in the request. If you don't use the SDK
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * you must generate a ClientRequestToken yourself for new versions and include
+     * that value in the request.</p> <p>You typically interact with this value if you
+     * implement your own retry logic and want to ensure that a given repository
+     * association is not created twice. We recommend that you generate a UUID-type
+     * value to ensure uniqueness within the specified repository association.</p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * of the request.</p> <p>To add a new repository association, this parameter
+     * specifies a unique identifier for the new repository association that helps
+     * ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call
+     * this operation, you can leave this parameter empty. The CLI or SDK generates a
+     * random UUID for you and includes that in the request. If you don't use the SDK
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * you must generate a ClientRequestToken yourself for new versions and include
+     * that value in the request.</p> <p>You typically interact with this value if you
+     * implement your own retry logic and want to ensure that a given repository
+     * association is not created twice. We recommend that you generate a UUID-type
+     * value to ensure uniqueness within the specified repository association.</p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline AssociateRepositoryRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * of the request.</p> <p>To add a new repository association, this parameter
+     * specifies a unique identifier for the new repository association that helps
+     * ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call
+     * this operation, you can leave this parameter empty. The CLI or SDK generates a
+     * random UUID for you and includes that in the request. If you don't use the SDK
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * you must generate a ClientRequestToken yourself for new versions and include
+     * that value in the request.</p> <p>You typically interact with this value if you
+     * implement your own retry logic and want to ensure that a given repository
+     * association is not created twice. We recommend that you generate a UUID-type
+     * value to ensure uniqueness within the specified repository association.</p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline AssociateRepositoryRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p> <p>If you want to add a new repository association, this
-     * parameter specifies a unique identifier for the new repository association that
-     * helps ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDK to
-     * call this operation, then you can leave this parameter empty. The CLI or SDK
-     * generates a random UUID for you and includes that in the request. If you don't
-     * use the SDK and instead generate a raw HTTP request to the Secrets Manager
-     * service endpoint, then you must generate a ClientRequestToken yourself for new
-     * versions and include that value in the request.</p> <p>You typically only need
-     * to interact with this value if you implement your own retry logic and want to
-     * ensure that a given repository association is not created twice. We recommend
-     * that you generate a UUID-type value to ensure uniqueness within the specified
-     * repository association.</p> <p>Amazon CodeGuru Reviewer uses this value to
-     * prevent the accidental creation of duplicate repository associations if there
-     * are failures and retries. </p>
+     * of the request.</p> <p>To add a new repository association, this parameter
+     * specifies a unique identifier for the new repository association that helps
+     * ensure idempotency.</p> <p>If you use the AWS CLI or one of the AWS SDKs to call
+     * this operation, you can leave this parameter empty. The CLI or SDK generates a
+     * random UUID for you and includes that in the request. If you don't use the SDK
+     * and instead generate a raw HTTP request to the Secrets Manager service endpoint,
+     * you must generate a ClientRequestToken yourself for new versions and include
+     * that value in the request.</p> <p>You typically interact with this value if you
+     * implement your own retry logic and want to ensure that a given repository
+     * association is not created twice. We recommend that you generate a UUID-type
+     * value to ensure uniqueness within the specified repository association.</p>
+     * <p>Amazon CodeGuru Reviewer uses this value to prevent the accidental creation
+     * of duplicate repository associations if there are failures and retries. </p>
      */
     inline AssociateRepositoryRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

@@ -38,7 +38,9 @@ ServiceSoftwareOptions::ServiceSoftwareOptions() :
     m_updateStatus(DeploymentStatus::NOT_SET),
     m_updateStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_automatedUpdateDateHasBeenSet(false)
+    m_automatedUpdateDateHasBeenSet(false),
+    m_optionalDeployment(false),
+    m_optionalDeploymentHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ ServiceSoftwareOptions::ServiceSoftwareOptions(JsonView jsonValue) :
     m_updateStatus(DeploymentStatus::NOT_SET),
     m_updateStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_automatedUpdateDateHasBeenSet(false)
+    m_automatedUpdateDateHasBeenSet(false),
+    m_optionalDeployment(false),
+    m_optionalDeploymentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +112,13 @@ ServiceSoftwareOptions& ServiceSoftwareOptions::operator =(JsonView jsonValue)
     m_automatedUpdateDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OptionalDeployment"))
+  {
+    m_optionalDeployment = jsonValue.GetBool("OptionalDeployment");
+
+    m_optionalDeploymentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +164,12 @@ JsonValue ServiceSoftwareOptions::Jsonize() const
   if(m_automatedUpdateDateHasBeenSet)
   {
    payload.WithDouble("AutomatedUpdateDate", m_automatedUpdateDate.SecondsWithMSPrecision());
+  }
+
+  if(m_optionalDeploymentHasBeenSet)
+  {
+   payload.WithBool("OptionalDeployment", m_optionalDeployment);
+
   }
 
   return payload;

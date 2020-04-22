@@ -638,14 +638,16 @@ namespace Model
          * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
          * following types of policies: </p> <ul> <li> <p>A Shield Advanced policy, which
          * applies Shield Advanced protection to specified accounts and resources</p> </li>
-         * <li> <p>An AWS WAF policy, which contains a rule group and defines which
-         * resources are to be protected by that rule group</p> </li> <li> <p>A security
-         * group policy, which manages VPC security groups across your AWS organization.
-         * </p> </li> </ul> <p>Each policy is specific to one of the three types. If you
-         * want to enforce more than one policy type across accounts, you can create
-         * multiple policies. You can create multiple policies for each type.</p> <p>You
-         * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
-         * more information about subscribing to Shield Advanced, see <a
+         * <li> <p>An AWS WAF policy (type WAFV2), which defines rule groups to run first
+         * in the corresponding AWS WAF web ACL and rule groups to run last in the web
+         * ACL.</p> </li> <li> <p>An AWS WAF Classic policy (type WAF), which defines a
+         * rule group. </p> </li> <li> <p>A security group policy, which manages VPC
+         * security groups across your AWS organization. </p> </li> </ul> <p>Each policy is
+         * specific to one of the types. If you want to enforce more than one policy type
+         * across accounts, create multiple policies. You can create multiple policies for
+         * each type.</p> <p>You must be subscribed to Shield Advanced to create a Shield
+         * Advanced policy. For more information about subscribing to Shield Advanced, see
+         * <a
          * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API
@@ -657,14 +659,16 @@ namespace Model
          * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
          * following types of policies: </p> <ul> <li> <p>A Shield Advanced policy, which
          * applies Shield Advanced protection to specified accounts and resources</p> </li>
-         * <li> <p>An AWS WAF policy, which contains a rule group and defines which
-         * resources are to be protected by that rule group</p> </li> <li> <p>A security
-         * group policy, which manages VPC security groups across your AWS organization.
-         * </p> </li> </ul> <p>Each policy is specific to one of the three types. If you
-         * want to enforce more than one policy type across accounts, you can create
-         * multiple policies. You can create multiple policies for each type.</p> <p>You
-         * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
-         * more information about subscribing to Shield Advanced, see <a
+         * <li> <p>An AWS WAF policy (type WAFV2), which defines rule groups to run first
+         * in the corresponding AWS WAF web ACL and rule groups to run last in the web
+         * ACL.</p> </li> <li> <p>An AWS WAF Classic policy (type WAF), which defines a
+         * rule group. </p> </li> <li> <p>A security group policy, which manages VPC
+         * security groups across your AWS organization. </p> </li> </ul> <p>Each policy is
+         * specific to one of the types. If you want to enforce more than one policy type
+         * across accounts, create multiple policies. You can create multiple policies for
+         * each type.</p> <p>You must be subscribed to Shield Advanced to create a Shield
+         * Advanced policy. For more information about subscribing to Shield Advanced, see
+         * <a
          * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API
@@ -678,14 +682,16 @@ namespace Model
          * <p>Creates an AWS Firewall Manager policy.</p> <p>Firewall Manager provides the
          * following types of policies: </p> <ul> <li> <p>A Shield Advanced policy, which
          * applies Shield Advanced protection to specified accounts and resources</p> </li>
-         * <li> <p>An AWS WAF policy, which contains a rule group and defines which
-         * resources are to be protected by that rule group</p> </li> <li> <p>A security
-         * group policy, which manages VPC security groups across your AWS organization.
-         * </p> </li> </ul> <p>Each policy is specific to one of the three types. If you
-         * want to enforce more than one policy type across accounts, you can create
-         * multiple policies. You can create multiple policies for each type.</p> <p>You
-         * must be subscribed to Shield Advanced to create a Shield Advanced policy. For
-         * more information about subscribing to Shield Advanced, see <a
+         * <li> <p>An AWS WAF policy (type WAFV2), which defines rule groups to run first
+         * in the corresponding AWS WAF web ACL and rule groups to run last in the web
+         * ACL.</p> </li> <li> <p>An AWS WAF Classic policy (type WAF), which defines a
+         * rule group. </p> </li> <li> <p>A security group policy, which manages VPC
+         * security groups across your AWS organization. </p> </li> </ul> <p>Each policy is
+         * specific to one of the types. If you want to enforce more than one policy type
+         * across accounts, create multiple policies. You can create multiple policies for
+         * each type.</p> <p>You must be subscribed to Shield Advanced to create a Shield
+         * Advanced policy. For more information about subscribing to Shield Advanced, see
+         * <a
          * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutPolicy">AWS API

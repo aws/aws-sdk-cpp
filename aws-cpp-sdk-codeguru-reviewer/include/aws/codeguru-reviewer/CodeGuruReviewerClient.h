@@ -22,9 +22,15 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codeguru-reviewer/model/AssociateRepositoryResult.h>
+#include <aws/codeguru-reviewer/model/DescribeCodeReviewResult.h>
+#include <aws/codeguru-reviewer/model/DescribeRecommendationFeedbackResult.h>
 #include <aws/codeguru-reviewer/model/DescribeRepositoryAssociationResult.h>
 #include <aws/codeguru-reviewer/model/DisassociateRepositoryResult.h>
+#include <aws/codeguru-reviewer/model/ListCodeReviewsResult.h>
+#include <aws/codeguru-reviewer/model/ListRecommendationFeedbackResult.h>
+#include <aws/codeguru-reviewer/model/ListRecommendationsResult.h>
 #include <aws/codeguru-reviewer/model/ListRepositoryAssociationsResult.h>
+#include <aws/codeguru-reviewer/model/PutRecommendationFeedbackResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -65,27 +71,51 @@ namespace CodeGuruReviewer
 namespace Model
 {
         class AssociateRepositoryRequest;
+        class DescribeCodeReviewRequest;
+        class DescribeRecommendationFeedbackRequest;
         class DescribeRepositoryAssociationRequest;
         class DisassociateRepositoryRequest;
+        class ListCodeReviewsRequest;
+        class ListRecommendationFeedbackRequest;
+        class ListRecommendationsRequest;
         class ListRepositoryAssociationsRequest;
+        class PutRecommendationFeedbackRequest;
 
         typedef Aws::Utils::Outcome<AssociateRepositoryResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> AssociateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeCodeReviewResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> DescribeCodeReviewOutcome;
+        typedef Aws::Utils::Outcome<DescribeRecommendationFeedbackResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> DescribeRecommendationFeedbackOutcome;
         typedef Aws::Utils::Outcome<DescribeRepositoryAssociationResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> DescribeRepositoryAssociationOutcome;
         typedef Aws::Utils::Outcome<DisassociateRepositoryResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> DisassociateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<ListCodeReviewsResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> ListCodeReviewsOutcome;
+        typedef Aws::Utils::Outcome<ListRecommendationFeedbackResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> ListRecommendationFeedbackOutcome;
+        typedef Aws::Utils::Outcome<ListRecommendationsResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> ListRecommendationsOutcome;
         typedef Aws::Utils::Outcome<ListRepositoryAssociationsResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> ListRepositoryAssociationsOutcome;
+        typedef Aws::Utils::Outcome<PutRecommendationFeedbackResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> PutRecommendationFeedbackOutcome;
 
         typedef std::future<AssociateRepositoryOutcome> AssociateRepositoryOutcomeCallable;
+        typedef std::future<DescribeCodeReviewOutcome> DescribeCodeReviewOutcomeCallable;
+        typedef std::future<DescribeRecommendationFeedbackOutcome> DescribeRecommendationFeedbackOutcomeCallable;
         typedef std::future<DescribeRepositoryAssociationOutcome> DescribeRepositoryAssociationOutcomeCallable;
         typedef std::future<DisassociateRepositoryOutcome> DisassociateRepositoryOutcomeCallable;
+        typedef std::future<ListCodeReviewsOutcome> ListCodeReviewsOutcomeCallable;
+        typedef std::future<ListRecommendationFeedbackOutcome> ListRecommendationFeedbackOutcomeCallable;
+        typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
         typedef std::future<ListRepositoryAssociationsOutcome> ListRepositoryAssociationsOutcomeCallable;
+        typedef std::future<PutRecommendationFeedbackOutcome> PutRecommendationFeedbackOutcomeCallable;
 } // namespace Model
 
   class CodeGuruReviewerClient;
 
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::AssociateRepositoryRequest&, const Model::AssociateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRepositoryResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::DescribeCodeReviewRequest&, const Model::DescribeCodeReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeReviewResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::DescribeRecommendationFeedbackRequest&, const Model::DescribeRecommendationFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecommendationFeedbackResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::DescribeRepositoryAssociationRequest&, const Model::DescribeRepositoryAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRepositoryAssociationResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::DisassociateRepositoryRequest&, const Model::DisassociateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRepositoryResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::ListCodeReviewsRequest&, const Model::ListCodeReviewsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodeReviewsResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::ListRecommendationFeedbackRequest&, const Model::ListRecommendationFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendationFeedbackResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::ListRecommendationsRequest&, const Model::ListRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRecommendationsResponseReceivedHandler;
     typedef std::function<void(const CodeGuruReviewerClient*, const Model::ListRepositoryAssociationsRequest&, const Model::ListRepositoryAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRepositoryAssociationsResponseReceivedHandler;
+    typedef std::function<void(const CodeGuruReviewerClient*, const Model::PutRecommendationFeedbackRequest&, const Model::PutRecommendationFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecommendationFeedbackResponseReceivedHandler;
 
   /**
    * <p>This section provides documentation for the Amazon CodeGuru Reviewer API
@@ -123,10 +153,10 @@ namespace Model
         /**
          * <p>Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When
          * you associate an AWS CodeCommit repository with Amazon CodeGuru Reviewer, Amazon
-         * CodeGuru Reviewer will provide recommendations for each pull request. You can
-         * view recommendations in the AWS CodeCommit repository.</p> <p>You can associate
-         * a GitHub repository using the Amazon CodeGuru Reviewer console.</p><p><h3>See
-         * Also:</h3>   <a
+         * CodeGuru Reviewer will provide recommendations for each pull request raised
+         * within the repository. You can view recommendations in the AWS CodeCommit
+         * repository.</p> <p>You can associate a GitHub repository using the Amazon
+         * CodeGuru Reviewer console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">AWS
          * API Reference</a></p>
          */
@@ -135,10 +165,10 @@ namespace Model
         /**
          * <p>Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When
          * you associate an AWS CodeCommit repository with Amazon CodeGuru Reviewer, Amazon
-         * CodeGuru Reviewer will provide recommendations for each pull request. You can
-         * view recommendations in the AWS CodeCommit repository.</p> <p>You can associate
-         * a GitHub repository using the Amazon CodeGuru Reviewer console.</p><p><h3>See
-         * Also:</h3>   <a
+         * CodeGuru Reviewer will provide recommendations for each pull request raised
+         * within the repository. You can view recommendations in the AWS CodeCommit
+         * repository.</p> <p>You can associate a GitHub repository using the Amazon
+         * CodeGuru Reviewer console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">AWS
          * API Reference</a></p>
          *
@@ -149,16 +179,72 @@ namespace Model
         /**
          * <p>Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When
          * you associate an AWS CodeCommit repository with Amazon CodeGuru Reviewer, Amazon
-         * CodeGuru Reviewer will provide recommendations for each pull request. You can
-         * view recommendations in the AWS CodeCommit repository.</p> <p>You can associate
-         * a GitHub repository using the Amazon CodeGuru Reviewer console.</p><p><h3>See
-         * Also:</h3>   <a
+         * CodeGuru Reviewer will provide recommendations for each pull request raised
+         * within the repository. You can view recommendations in the AWS CodeCommit
+         * repository.</p> <p>You can associate a GitHub repository using the Amazon
+         * CodeGuru Reviewer console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/AssociateRepository">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateRepositoryAsync(const Model::AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns the metadaata associated with the code review along with its
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCodeReviewOutcome DescribeCodeReview(const Model::DescribeCodeReviewRequest& request) const;
+
+        /**
+         * <p> Returns the metadaata associated with the code review along with its
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCodeReviewOutcomeCallable DescribeCodeReviewCallable(const Model::DescribeCodeReviewRequest& request) const;
+
+        /**
+         * <p> Returns the metadaata associated with the code review along with its
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeCodeReview">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCodeReviewAsync(const Model::DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Describes the customer feedback for a CodeGuru Reviewer recommendation.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRecommendationFeedbackOutcome DescribeRecommendationFeedback(const Model::DescribeRecommendationFeedbackRequest& request) const;
+
+        /**
+         * <p> Describes the customer feedback for a CodeGuru Reviewer recommendation.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRecommendationFeedbackOutcomeCallable DescribeRecommendationFeedbackCallable(const Model::DescribeRecommendationFeedbackRequest& request) const;
+
+        /**
+         * <p> Describes the customer feedback for a CodeGuru Reviewer recommendation.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/DescribeRecommendationFeedback">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRecommendationFeedbackAsync(const Model::DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a repository association.</p><p><h3>See Also:</h3>   <a
@@ -214,6 +300,96 @@ namespace Model
         virtual void DisassociateRepositoryAsync(const Model::DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Lists all the code reviews that the customer has created in the past 90
+         * days. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCodeReviewsOutcome ListCodeReviews(const Model::ListCodeReviewsRequest& request) const;
+
+        /**
+         * <p> Lists all the code reviews that the customer has created in the past 90
+         * days. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCodeReviewsOutcomeCallable ListCodeReviewsCallable(const Model::ListCodeReviewsRequest& request) const;
+
+        /**
+         * <p> Lists all the code reviews that the customer has created in the past 90
+         * days. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListCodeReviews">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCodeReviewsAsync(const Model::ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Lists the customer feedback for a CodeGuru Reviewer recommendation for all
+         * users. This API will be used from the console to extract the previously given
+         * feedback by the user to pre-populate the feedback emojis for all
+         * recommendations. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRecommendationFeedbackOutcome ListRecommendationFeedback(const Model::ListRecommendationFeedbackRequest& request) const;
+
+        /**
+         * <p> Lists the customer feedback for a CodeGuru Reviewer recommendation for all
+         * users. This API will be used from the console to extract the previously given
+         * feedback by the user to pre-populate the feedback emojis for all
+         * recommendations. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRecommendationFeedbackOutcomeCallable ListRecommendationFeedbackCallable(const Model::ListRecommendationFeedbackRequest& request) const;
+
+        /**
+         * <p> Lists the customer feedback for a CodeGuru Reviewer recommendation for all
+         * users. This API will be used from the console to extract the previously given
+         * feedback by the user to pre-populate the feedback emojis for all
+         * recommendations. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendationFeedback">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRecommendationFeedbackAsync(const Model::ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns the list of all recommendations for a completed code review.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request) const;
+
+        /**
+         * <p> Returns the list of all recommendations for a completed code review.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const Model::ListRecommendationsRequest& request) const;
+
+        /**
+         * <p> Returns the list of all recommendations for a completed code review.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRecommendationsAsync(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists repository associations. You can optionally filter on one or more of
          * the following recommendation properties: provider types, states, names, and
          * owners.</p><p><h3>See Also:</h3>   <a
@@ -244,14 +420,51 @@ namespace Model
          */
         virtual void ListRepositoryAssociationsAsync(const Model::ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p> Stores customer feedback for a CodeGuru-Reviewer recommendation. When this
+         * API is called again with different reactions the previous feedback is
+         * overwritten. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRecommendationFeedbackOutcome PutRecommendationFeedback(const Model::PutRecommendationFeedbackRequest& request) const;
+
+        /**
+         * <p> Stores customer feedback for a CodeGuru-Reviewer recommendation. When this
+         * API is called again with different reactions the previous feedback is
+         * overwritten. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRecommendationFeedbackOutcomeCallable PutRecommendationFeedbackCallable(const Model::PutRecommendationFeedbackRequest& request) const;
+
+        /**
+         * <p> Stores customer feedback for a CodeGuru-Reviewer recommendation. When this
+         * API is called again with different reactions the previous feedback is
+         * overwritten. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/PutRecommendationFeedback">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRecommendationFeedbackAsync(const Model::PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AssociateRepositoryAsyncHelper(const Model::AssociateRepositoryRequest& request, const AssociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCodeReviewAsyncHelper(const Model::DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRecommendationFeedbackAsyncHelper(const Model::DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRepositoryAssociationAsyncHelper(const Model::DescribeRepositoryAssociationRequest& request, const DescribeRepositoryAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateRepositoryAsyncHelper(const Model::DisassociateRepositoryRequest& request, const DisassociateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCodeReviewsAsyncHelper(const Model::ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRecommendationFeedbackAsyncHelper(const Model::ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRecommendationsAsyncHelper(const Model::ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRepositoryAssociationsAsyncHelper(const Model::ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutRecommendationFeedbackAsyncHelper(const Model::PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

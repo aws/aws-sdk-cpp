@@ -26,7 +26,8 @@ namespace Model
   enum class CustomerPolicyScopeIdType
   {
     NOT_SET,
-    ACCOUNT
+    ACCOUNT,
+    ORG_UNIT
   };
 
 namespace CustomerPolicyScopeIdTypeMapper

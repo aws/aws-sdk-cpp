@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) identifying the association.</p>
+     * <p>The Amazon Resource Name (ARN) identifying the association. You can retrieve
+     * this ARN by calling <code>ListRepositories</code>.</p>
      */
     inline const Aws::String& GetAssociationArn() const{ return m_associationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) identifying the association.</p>
+     * <p>The Amazon Resource Name (ARN) identifying the association. You can retrieve
+     * this ARN by calling <code>ListRepositories</code>.</p>
      */
     inline bool AssociationArnHasBeenSet() const { return m_associationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) identifying the association.</p>
+     * <p>The Amazon Resource Name (ARN) identifying the association. You can retrieve
+     * this ARN by calling <code>ListRepositories</code>.</p>
      */
     inline void SetAssociationArn(const Aws::String& value) { m_associationArnHasBeenSet = true; m_associationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) identifying the association.</p>
+     * <p>The Amazon Resource Name (ARN) identifying the association. You can retrieve
+     * this ARN by calling <code>ListRepositories</code>.</p>
      */
     inline void SetAssociationArn(Aws::String&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) identifying the association.</p>
+     * <p>The Amazon Resource Name (ARN) identifying the association. You can retrieve
+     * this ARN by calling <code>ListRepositories</code>.</p>
      */
     inline void SetAssociationArn(const char* value) { m_associationArnHasBeenSet = true; m_associationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) identifying the association.</p>
+     * <p>The Amazon Resource Name (ARN) identifying the association. You can retrieve
+     * this ARN by calling <code>ListRepositories</code>.</p>
      */
     inline DescribeRepositoryAssociationRequest& WithAssociationArn(const Aws::String& value) { SetAssociationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) identifying the association.</p>
+     * <p>The Amazon Resource Name (ARN) identifying the association. You can retrieve
+     * this ARN by calling <code>ListRepositories</code>.</p>
      */
     inline DescribeRepositoryAssociationRequest& WithAssociationArn(Aws::String&& value) { SetAssociationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) identifying the association.</p>
+     * <p>The Amazon Resource Name (ARN) identifying the association. You can retrieve
+     * this ARN by calling <code>ListRepositories</code>.</p>
      */
     inline DescribeRepositoryAssociationRequest& WithAssociationArn(const char* value) { SetAssociationArn(value); return *this;}
 

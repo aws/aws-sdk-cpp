@@ -1,0 +1,97 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/redshift/Redshift_EXPORTS.h>
+#include <aws/redshift/RedshiftRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Redshift
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_REDSHIFT_API DeleteUsageLimitRequest : public RedshiftRequest
+  {
+  public:
+    DeleteUsageLimitRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "DeleteUsageLimit"; }
+
+    Aws::String SerializePayload() const override;
+
+  protected:
+    void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+
+  public:
+
+    /**
+     * <p>The identifier of the usage limit to delete.</p>
+     */
+    inline const Aws::String& GetUsageLimitId() const{ return m_usageLimitId; }
+
+    /**
+     * <p>The identifier of the usage limit to delete.</p>
+     */
+    inline bool UsageLimitIdHasBeenSet() const { return m_usageLimitIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the usage limit to delete.</p>
+     */
+    inline void SetUsageLimitId(const Aws::String& value) { m_usageLimitIdHasBeenSet = true; m_usageLimitId = value; }
+
+    /**
+     * <p>The identifier of the usage limit to delete.</p>
+     */
+    inline void SetUsageLimitId(Aws::String&& value) { m_usageLimitIdHasBeenSet = true; m_usageLimitId = std::move(value); }
+
+    /**
+     * <p>The identifier of the usage limit to delete.</p>
+     */
+    inline void SetUsageLimitId(const char* value) { m_usageLimitIdHasBeenSet = true; m_usageLimitId.assign(value); }
+
+    /**
+     * <p>The identifier of the usage limit to delete.</p>
+     */
+    inline DeleteUsageLimitRequest& WithUsageLimitId(const Aws::String& value) { SetUsageLimitId(value); return *this;}
+
+    /**
+     * <p>The identifier of the usage limit to delete.</p>
+     */
+    inline DeleteUsageLimitRequest& WithUsageLimitId(Aws::String&& value) { SetUsageLimitId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the usage limit to delete.</p>
+     */
+    inline DeleteUsageLimitRequest& WithUsageLimitId(const char* value) { SetUsageLimitId(value); return *this;}
+
+  private:
+
+    Aws::String m_usageLimitId;
+    bool m_usageLimitIdHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Redshift
+} // namespace Aws

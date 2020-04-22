@@ -31,9 +31,15 @@
 #include <aws/codeguru-reviewer/CodeGuruReviewerEndpoint.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewerErrorMarshaller.h>
 #include <aws/codeguru-reviewer/model/AssociateRepositoryRequest.h>
+#include <aws/codeguru-reviewer/model/DescribeCodeReviewRequest.h>
+#include <aws/codeguru-reviewer/model/DescribeRecommendationFeedbackRequest.h>
 #include <aws/codeguru-reviewer/model/DescribeRepositoryAssociationRequest.h>
 #include <aws/codeguru-reviewer/model/DisassociateRepositoryRequest.h>
+#include <aws/codeguru-reviewer/model/ListCodeReviewsRequest.h>
+#include <aws/codeguru-reviewer/model/ListRecommendationFeedbackRequest.h>
+#include <aws/codeguru-reviewer/model/ListRecommendationsRequest.h>
 #include <aws/codeguru-reviewer/model/ListRepositoryAssociationsRequest.h>
+#include <aws/codeguru-reviewer/model/PutRecommendationFeedbackRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -142,6 +148,93 @@ void CodeGuruReviewerClient::AssociateRepositoryAsyncHelper(const AssociateRepos
   handler(this, request, AssociateRepository(request), context);
 }
 
+DescribeCodeReviewOutcome CodeGuruReviewerClient::DescribeCodeReview(const DescribeCodeReviewRequest& request) const
+{
+  if (!request.CodeReviewArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCodeReview", "Required field: CodeReviewArn, is not set");
+    return DescribeCodeReviewOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeReviewArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/codereviews/";
+  ss << request.GetCodeReviewArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCodeReviewOutcome(DescribeCodeReviewResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCodeReviewOutcome(outcome.GetError());
+  }
+}
+
+DescribeCodeReviewOutcomeCallable CodeGuruReviewerClient::DescribeCodeReviewCallable(const DescribeCodeReviewRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCodeReviewOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCodeReview(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruReviewerClient::DescribeCodeReviewAsync(const DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCodeReviewAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruReviewerClient::DescribeCodeReviewAsyncHelper(const DescribeCodeReviewRequest& request, const DescribeCodeReviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCodeReview(request), context);
+}
+
+DescribeRecommendationFeedbackOutcome CodeGuruReviewerClient::DescribeRecommendationFeedback(const DescribeRecommendationFeedbackRequest& request) const
+{
+  if (!request.CodeReviewArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRecommendationFeedback", "Required field: CodeReviewArn, is not set");
+    return DescribeRecommendationFeedbackOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeReviewArn]", false));
+  }
+  if (!request.RecommendationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRecommendationFeedback", "Required field: RecommendationId, is not set");
+    return DescribeRecommendationFeedbackOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/feedback/";
+  ss << request.GetCodeReviewArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeRecommendationFeedbackOutcome(DescribeRecommendationFeedbackResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeRecommendationFeedbackOutcome(outcome.GetError());
+  }
+}
+
+DescribeRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::DescribeRecommendationFeedbackCallable(const DescribeRecommendationFeedbackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRecommendationFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRecommendationFeedback(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruReviewerClient::DescribeRecommendationFeedbackAsync(const DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRecommendationFeedbackAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruReviewerClient::DescribeRecommendationFeedbackAsyncHelper(const DescribeRecommendationFeedbackRequest& request, const DescribeRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRecommendationFeedback(request), context);
+}
+
 DescribeRepositoryAssociationOutcome CodeGuruReviewerClient::DescribeRepositoryAssociation(const DescribeRepositoryAssociationRequest& request) const
 {
   if (!request.AssociationArnHasBeenSet())
@@ -224,6 +317,130 @@ void CodeGuruReviewerClient::DisassociateRepositoryAsyncHelper(const Disassociat
   handler(this, request, DisassociateRepository(request), context);
 }
 
+ListCodeReviewsOutcome CodeGuruReviewerClient::ListCodeReviews(const ListCodeReviewsRequest& request) const
+{
+  if (!request.TypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCodeReviews", "Required field: Type, is not set");
+    return ListCodeReviewsOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/codereviews";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListCodeReviewsOutcome(ListCodeReviewsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListCodeReviewsOutcome(outcome.GetError());
+  }
+}
+
+ListCodeReviewsOutcomeCallable CodeGuruReviewerClient::ListCodeReviewsCallable(const ListCodeReviewsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCodeReviewsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCodeReviews(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruReviewerClient::ListCodeReviewsAsync(const ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCodeReviewsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruReviewerClient::ListCodeReviewsAsyncHelper(const ListCodeReviewsRequest& request, const ListCodeReviewsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCodeReviews(request), context);
+}
+
+ListRecommendationFeedbackOutcome CodeGuruReviewerClient::ListRecommendationFeedback(const ListRecommendationFeedbackRequest& request) const
+{
+  if (!request.CodeReviewArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRecommendationFeedback", "Required field: CodeReviewArn, is not set");
+    return ListRecommendationFeedbackOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeReviewArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/feedback/";
+  ss << request.GetCodeReviewArn();
+  ss << "/RecommendationFeedback";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListRecommendationFeedbackOutcome(ListRecommendationFeedbackResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListRecommendationFeedbackOutcome(outcome.GetError());
+  }
+}
+
+ListRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::ListRecommendationFeedbackCallable(const ListRecommendationFeedbackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRecommendationFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommendationFeedback(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruReviewerClient::ListRecommendationFeedbackAsync(const ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendationFeedbackAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruReviewerClient::ListRecommendationFeedbackAsyncHelper(const ListRecommendationFeedbackRequest& request, const ListRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRecommendationFeedback(request), context);
+}
+
+ListRecommendationsOutcome CodeGuruReviewerClient::ListRecommendations(const ListRecommendationsRequest& request) const
+{
+  if (!request.CodeReviewArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRecommendations", "Required field: CodeReviewArn, is not set");
+    return ListRecommendationsOutcome(Aws::Client::AWSError<CodeGuruReviewerErrors>(CodeGuruReviewerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CodeReviewArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/codereviews/";
+  ss << request.GetCodeReviewArn();
+  ss << "/Recommendations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListRecommendationsOutcome(ListRecommendationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListRecommendationsOutcome(outcome.GetError());
+  }
+}
+
+ListRecommendationsOutcomeCallable CodeGuruReviewerClient::ListRecommendationsCallable(const ListRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruReviewerClient::ListRecommendationsAsync(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRecommendationsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruReviewerClient::ListRecommendationsAsyncHelper(const ListRecommendationsRequest& request, const ListRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRecommendations(request), context);
+}
+
 ListRepositoryAssociationsOutcome CodeGuruReviewerClient::ListRepositoryAssociations(const ListRepositoryAssociationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -257,5 +474,40 @@ void CodeGuruReviewerClient::ListRepositoryAssociationsAsync(const ListRepositor
 void CodeGuruReviewerClient::ListRepositoryAssociationsAsyncHelper(const ListRepositoryAssociationsRequest& request, const ListRepositoryAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRepositoryAssociations(request), context);
+}
+
+PutRecommendationFeedbackOutcome CodeGuruReviewerClient::PutRecommendationFeedback(const PutRecommendationFeedbackRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/feedback";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutRecommendationFeedbackOutcome(PutRecommendationFeedbackResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutRecommendationFeedbackOutcome(outcome.GetError());
+  }
+}
+
+PutRecommendationFeedbackOutcomeCallable CodeGuruReviewerClient::PutRecommendationFeedbackCallable(const PutRecommendationFeedbackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRecommendationFeedbackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRecommendationFeedback(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeGuruReviewerClient::PutRecommendationFeedbackAsync(const PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRecommendationFeedbackAsyncHelper( request, handler, context ); } );
+}
+
+void CodeGuruReviewerClient::PutRecommendationFeedbackAsyncHelper(const PutRecommendationFeedbackRequest& request, const PutRecommendationFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRecommendationFeedback(request), context);
 }
 

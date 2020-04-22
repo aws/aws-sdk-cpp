@@ -286,8 +286,7 @@ namespace Model
      * <p>The state of the repository association.</p> <dl> <dt>Associated</dt> <dd>
      * <p>Amazon CodeGuru Reviewer is associated with the repository. </p> </dd>
      * <dt>Associating</dt> <dd> <p>The association is in progress. </p> </dd>
-     * <dt>Failed</dt> <dd> <p>The association failed. For more information about
-     * troubleshooting (or why it failed), see [troubleshooting topic]. </p> </dd>
+     * <dt>Failed</dt> <dd> <p>The association failed. </p> </dd>
      * <dt>Disassociating</dt> <dd> <p>Amazon CodeGuru Reviewer is in the process of
      * disassociating with the repository. </p> </dd> </dl>
      */
@@ -297,8 +296,7 @@ namespace Model
      * <p>The state of the repository association.</p> <dl> <dt>Associated</dt> <dd>
      * <p>Amazon CodeGuru Reviewer is associated with the repository. </p> </dd>
      * <dt>Associating</dt> <dd> <p>The association is in progress. </p> </dd>
-     * <dt>Failed</dt> <dd> <p>The association failed. For more information about
-     * troubleshooting (or why it failed), see [troubleshooting topic]. </p> </dd>
+     * <dt>Failed</dt> <dd> <p>The association failed. </p> </dd>
      * <dt>Disassociating</dt> <dd> <p>Amazon CodeGuru Reviewer is in the process of
      * disassociating with the repository. </p> </dd> </dl>
      */
@@ -308,8 +306,7 @@ namespace Model
      * <p>The state of the repository association.</p> <dl> <dt>Associated</dt> <dd>
      * <p>Amazon CodeGuru Reviewer is associated with the repository. </p> </dd>
      * <dt>Associating</dt> <dd> <p>The association is in progress. </p> </dd>
-     * <dt>Failed</dt> <dd> <p>The association failed. For more information about
-     * troubleshooting (or why it failed), see [troubleshooting topic]. </p> </dd>
+     * <dt>Failed</dt> <dd> <p>The association failed. </p> </dd>
      * <dt>Disassociating</dt> <dd> <p>Amazon CodeGuru Reviewer is in the process of
      * disassociating with the repository. </p> </dd> </dl>
      */
@@ -319,8 +316,7 @@ namespace Model
      * <p>The state of the repository association.</p> <dl> <dt>Associated</dt> <dd>
      * <p>Amazon CodeGuru Reviewer is associated with the repository. </p> </dd>
      * <dt>Associating</dt> <dd> <p>The association is in progress. </p> </dd>
-     * <dt>Failed</dt> <dd> <p>The association failed. For more information about
-     * troubleshooting (or why it failed), see [troubleshooting topic]. </p> </dd>
+     * <dt>Failed</dt> <dd> <p>The association failed. </p> </dd>
      * <dt>Disassociating</dt> <dd> <p>Amazon CodeGuru Reviewer is in the process of
      * disassociating with the repository. </p> </dd> </dl>
      */
@@ -330,8 +326,7 @@ namespace Model
      * <p>The state of the repository association.</p> <dl> <dt>Associated</dt> <dd>
      * <p>Amazon CodeGuru Reviewer is associated with the repository. </p> </dd>
      * <dt>Associating</dt> <dd> <p>The association is in progress. </p> </dd>
-     * <dt>Failed</dt> <dd> <p>The association failed. For more information about
-     * troubleshooting (or why it failed), see [troubleshooting topic]. </p> </dd>
+     * <dt>Failed</dt> <dd> <p>The association failed. </p> </dd>
      * <dt>Disassociating</dt> <dd> <p>Amazon CodeGuru Reviewer is in the process of
      * disassociating with the repository. </p> </dd> </dl>
      */
@@ -341,8 +336,7 @@ namespace Model
      * <p>The state of the repository association.</p> <dl> <dt>Associated</dt> <dd>
      * <p>Amazon CodeGuru Reviewer is associated with the repository. </p> </dd>
      * <dt>Associating</dt> <dd> <p>The association is in progress. </p> </dd>
-     * <dt>Failed</dt> <dd> <p>The association failed. For more information about
-     * troubleshooting (or why it failed), see [troubleshooting topic]. </p> </dd>
+     * <dt>Failed</dt> <dd> <p>The association failed. </p> </dd>
      * <dt>Disassociating</dt> <dd> <p>Amazon CodeGuru Reviewer is in the process of
      * disassociating with the repository. </p> </dd> </dl>
      */

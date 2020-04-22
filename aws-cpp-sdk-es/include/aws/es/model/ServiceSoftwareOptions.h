@@ -322,6 +322,35 @@ namespace Model
      */
     inline ServiceSoftwareOptions& WithAutomatedUpdateDate(Aws::Utils::DateTime&& value) { SetAutomatedUpdateDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p><code>True</code> if a service software is never automatically updated.
+     * <code>False</code> if a service software is automatically updated after
+     * <code>AutomatedUpdateDate</code>. </p>
+     */
+    inline bool GetOptionalDeployment() const{ return m_optionalDeployment; }
+
+    /**
+     * <p><code>True</code> if a service software is never automatically updated.
+     * <code>False</code> if a service software is automatically updated after
+     * <code>AutomatedUpdateDate</code>. </p>
+     */
+    inline bool OptionalDeploymentHasBeenSet() const { return m_optionalDeploymentHasBeenSet; }
+
+    /**
+     * <p><code>True</code> if a service software is never automatically updated.
+     * <code>False</code> if a service software is automatically updated after
+     * <code>AutomatedUpdateDate</code>. </p>
+     */
+    inline void SetOptionalDeployment(bool value) { m_optionalDeploymentHasBeenSet = true; m_optionalDeployment = value; }
+
+    /**
+     * <p><code>True</code> if a service software is never automatically updated.
+     * <code>False</code> if a service software is automatically updated after
+     * <code>AutomatedUpdateDate</code>. </p>
+     */
+    inline ServiceSoftwareOptions& WithOptionalDeployment(bool value) { SetOptionalDeployment(value); return *this;}
+
   private:
 
     Aws::String m_currentVersion;
@@ -344,6 +373,9 @@ namespace Model
 
     Aws::Utils::DateTime m_automatedUpdateDate;
     bool m_automatedUpdateDateHasBeenSet;
+
+    bool m_optionalDeployment;
+    bool m_optionalDeploymentHasBeenSet;
   };
 
 } // namespace Model

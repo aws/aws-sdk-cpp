@@ -20,6 +20,7 @@
 #include <aws/transcribestreaming/model/LimitExceededException.h>
 #include <aws/transcribestreaming/model/InternalFailureException.h>
 #include <aws/transcribestreaming/model/ConflictException.h>
+#include <aws/transcribestreaming/model/ServiceUnavailableException.h>
 #include <utility>
 
 namespace Aws
@@ -254,6 +255,37 @@ namespace Model
      */
     inline TranscriptResultStream& WithConflictException(ConflictException&& value) { SetConflictException(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline void SetServiceUnavailableException(ServiceUnavailableException&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::move(value); }
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline TranscriptResultStream& WithServiceUnavailableException(const ServiceUnavailableException& value) { SetServiceUnavailableException(value); return *this;}
+
+    /**
+     * <p>Service is currently unavailable. Try your request later.</p>
+     */
+    inline TranscriptResultStream& WithServiceUnavailableException(ServiceUnavailableException&& value) { SetServiceUnavailableException(std::move(value)); return *this;}
+
   private:
 
     TranscriptEvent m_transcriptEvent;
@@ -270,6 +302,9 @@ namespace Model
 
     ConflictException m_conflictException;
     bool m_conflictExceptionHasBeenSet;
+
+    ServiceUnavailableException m_serviceUnavailableException;
+    bool m_serviceUnavailableExceptionHasBeenSet;
   };
 
 } // namespace Model

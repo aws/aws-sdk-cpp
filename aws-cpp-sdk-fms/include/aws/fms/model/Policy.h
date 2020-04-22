@@ -515,223 +515,463 @@ namespace Model
 
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline bool IncludeMapHasBeenSet() const { return m_includeMapHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
-     * Organizations are included in the policy. If <code>IncludeMap</code> is not
-     * null, only values listed in <code>IncludeMap</code> are included in the
-     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
-     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
-     * “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to include in the policy. Specifying an OU is the equivalent of specifying
+     * all accounts in the OU and in any of its child OUs, including any child OUs and
+     * accounts that are added at a later time.</p> <p>You can specify inclusions or
+     * exclusions, but not both. If you specify an <code>IncludeMap</code>, AWS
+     * Firewall Manager applies the policy to all accounts specified by the
+     * <code>IncludeMap</code>, and does not evaluate any <code>ExcludeMap</code>
+     * specifications. If you do not specify an <code>IncludeMap</code>, then Firewall
+     * Manager applies the policy to all accounts except for those specified by the
+     * <code>ExcludeMap</code>.</p> <p>You can specify account IDs, OUs, or a
+     * combination: </p> <ul> <li> <p>Specify account IDs by setting the key to
+     * <code>ACCOUNT</code>. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p> </li> <li>
+     * <p>Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the
+     * following is a valid map: <code>{“ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> <li> <p>Specify accounts and OUs together in a
+     * single map, separated with a comma. For example, the following is a valid map:
+     * <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT” : [“ouid111”,
+     * “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
 
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetExcludeMap() const{ return m_excludeMap; }
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline bool ExcludeMapHasBeenSet() const { return m_excludeMapHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetExcludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_excludeMapHasBeenSet = true; m_excludeMap = value; }
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline void SetExcludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap = std::move(value); }
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithExcludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetExcludeMap(value); return *this;}
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& WithExcludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetExcludeMap(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddExcludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, value); return *this; }
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddExcludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
-     * account IDs added to the policy. Then the accounts listed in
-     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
-     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
-     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
-     * [“accountID1”, “accountID2”]}</code>.</p>
+     * <p>Specifies the AWS account IDs and AWS Organizations organizational units
+     * (OUs) to exclude from the policy. Specifying an OU is the equivalent of
+     * specifying all accounts in the OU and in any of its child OUs, including any
+     * child OUs and accounts that are added at a later time.</p> <p>You can specify
+     * inclusions or exclusions, but not both. If you specify an
+     * <code>IncludeMap</code>, AWS Firewall Manager applies the policy to all accounts
+     * specified by the <code>IncludeMap</code>, and does not evaluate any
+     * <code>ExcludeMap</code> specifications. If you do not specify an
+     * <code>IncludeMap</code>, then Firewall Manager applies the policy to all
+     * accounts except for those specified by the <code>ExcludeMap</code>.</p> <p>You
+     * can specify account IDs, OUs, or a combination: </p> <ul> <li> <p>Specify
+     * account IDs by setting the key to <code>ACCOUNT</code>. For example, the
+     * following is a valid map: <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p> </li> <li> <p>Specify OUs by setting the key to
+     * <code>ORG_UNIT</code>. For example, the following is a valid map:
+     * <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> <li> <p>Specify
+     * accounts and OUs together in a single map, separated with a comma. For example,
+     * the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”],
+     * “ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.</p> </li> </ul>
      */
     inline Policy& AddExcludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_excludeMapHasBeenSet = true; m_excludeMap.emplace(std::move(key), std::move(value)); return *this; }
 

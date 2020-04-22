@@ -51,6 +51,7 @@ static const int CLUSTER_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::Has
 static const int INVALID_SCHEDULE_FAULT_HASH = HashingUtils::HashString("InvalidSchedule");
 static const int INVALID_CLUSTER_SNAPSHOT_SCHEDULE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSnapshotScheduleState");
 static const int CLUSTER_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterAlreadyExists");
+static const int INVALID_USAGE_LIMIT_FAULT_HASH = HashingUtils::HashString("InvalidUsageLimit");
 static const int CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterSnapshotNotFound");
 static const int INVALID_CLUSTER_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterState");
 static const int INVALID_CLUSTER_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSnapshotState");
@@ -81,6 +82,7 @@ static const int INVALID_SCHEDULED_ACTION_FAULT_HASH = HashingUtils::HashString(
 static const int SNAPSHOT_COPY_ALREADY_DISABLED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyAlreadyDisabledFault");
 static const int UNKNOWN_SNAPSHOT_COPY_REGION_FAULT_HASH = HashingUtils::HashString("UnknownSnapshotCopyRegionFault");
 static const int SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleNotFound");
+static const int USAGE_LIMIT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("UsageLimitAlreadyExists");
 static const int INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH = HashingUtils::HashString("InvalidTableRestoreArgument");
 static const int UNSUPPORTED_OPTION_FAULT_HASH = HashingUtils::HashString("UnsupportedOptionFault");
 static const int SNAPSHOT_COPY_GRANT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantQuotaExceededFault");
@@ -111,6 +113,7 @@ static const int SNAPSHOT_COPY_DISABLED_FAULT_HASH = HashingUtils::HashString("S
 static const int BATCH_MODIFY_CLUSTER_SNAPSHOTS_LIMIT_EXCEEDED_FAULT_HASH = HashingUtils::HashString("BatchModifyClusterSnapshotsLimitExceededFault");
 static const int CLUSTER_ON_LATEST_REVISION_FAULT_HASH = HashingUtils::HashString("ClusterOnLatestRevision");
 static const int CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSecurityGroupAlreadyExists");
+static const int USAGE_LIMIT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("UsageLimitNotFound");
 static const int CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("QuotaExceeded.ClusterSecurityGroup");
 static const int COPY_TO_REGION_DISABLED_FAULT_HASH = HashingUtils::HashString("CopyToRegionDisabledFault");
 static const int NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NumberOfNodesQuotaExceeded");
@@ -229,6 +232,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLUSTER_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_ALREADY_EXISTS_FAULT), false);
+  }
+  else if (hashCode == INVALID_USAGE_LIMIT_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_USAGE_LIMIT_FAULT), false);
   }
   else if (hashCode == CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH)
   {
@@ -350,6 +357,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT), false);
   }
+  else if (hashCode == USAGE_LIMIT_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::USAGE_LIMIT_ALREADY_EXISTS_FAULT), false);
+  }
   else if (hashCode == INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_TABLE_RESTORE_ARGUMENT_FAULT), false);
@@ -469,6 +480,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SECURITY_GROUP_ALREADY_EXISTS_FAULT), false);
+  }
+  else if (hashCode == USAGE_LIMIT_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::USAGE_LIMIT_NOT_FOUND_FAULT), false);
   }
   else if (hashCode == CLUSTER_SECURITY_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {

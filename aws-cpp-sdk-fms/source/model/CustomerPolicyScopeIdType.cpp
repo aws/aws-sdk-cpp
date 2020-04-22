@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
+        static const int ORG_UNIT_HASH = HashingUtils::HashString("ORG_UNIT");
 
 
         CustomerPolicyScopeIdType GetCustomerPolicyScopeIdTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == ACCOUNT_HASH)
           {
             return CustomerPolicyScopeIdType::ACCOUNT;
+          }
+          else if (hashCode == ORG_UNIT_HASH)
+          {
+            return CustomerPolicyScopeIdType::ORG_UNIT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case CustomerPolicyScopeIdType::ACCOUNT:
             return "ACCOUNT";
+          case CustomerPolicyScopeIdType::ORG_UNIT:
+            return "ORG_UNIT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

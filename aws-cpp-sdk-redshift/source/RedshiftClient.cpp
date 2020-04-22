@@ -49,6 +49,7 @@
 #include <aws/redshift/model/CreateSnapshotCopyGrantRequest.h>
 #include <aws/redshift/model/CreateSnapshotScheduleRequest.h>
 #include <aws/redshift/model/CreateTagsRequest.h>
+#include <aws/redshift/model/CreateUsageLimitRequest.h>
 #include <aws/redshift/model/DeleteClusterRequest.h>
 #include <aws/redshift/model/DeleteClusterParameterGroupRequest.h>
 #include <aws/redshift/model/DeleteClusterSecurityGroupRequest.h>
@@ -61,6 +62,7 @@
 #include <aws/redshift/model/DeleteSnapshotCopyGrantRequest.h>
 #include <aws/redshift/model/DeleteSnapshotScheduleRequest.h>
 #include <aws/redshift/model/DeleteTagsRequest.h>
+#include <aws/redshift/model/DeleteUsageLimitRequest.h>
 #include <aws/redshift/model/DescribeAccountAttributesRequest.h>
 #include <aws/redshift/model/DescribeClusterDbRevisionsRequest.h>
 #include <aws/redshift/model/DescribeClusterParameterGroupsRequest.h>
@@ -89,6 +91,7 @@
 #include <aws/redshift/model/DescribeStorageRequest.h>
 #include <aws/redshift/model/DescribeTableRestoreStatusRequest.h>
 #include <aws/redshift/model/DescribeTagsRequest.h>
+#include <aws/redshift/model/DescribeUsageLimitsRequest.h>
 #include <aws/redshift/model/DisableLoggingRequest.h>
 #include <aws/redshift/model/DisableSnapshotCopyRequest.h>
 #include <aws/redshift/model/EnableLoggingRequest.h>
@@ -107,6 +110,7 @@
 #include <aws/redshift/model/ModifyScheduledActionRequest.h>
 #include <aws/redshift/model/ModifySnapshotCopyRetentionPeriodRequest.h>
 #include <aws/redshift/model/ModifySnapshotScheduleRequest.h>
+#include <aws/redshift/model/ModifyUsageLimitRequest.h>
 #include <aws/redshift/model/PauseClusterRequest.h>
 #include <aws/redshift/model/PurchaseReservedNodeOfferingRequest.h>
 #include <aws/redshift/model/RebootClusterRequest.h>
@@ -867,6 +871,41 @@ void RedshiftClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, con
   handler(this, request, CreateTags(request), context);
 }
 
+CreateUsageLimitOutcome RedshiftClient::CreateUsageLimit(const CreateUsageLimitRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateUsageLimitOutcome(CreateUsageLimitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateUsageLimitOutcome(outcome.GetError());
+  }
+}
+
+CreateUsageLimitOutcomeCallable RedshiftClient::CreateUsageLimitCallable(const CreateUsageLimitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUsageLimitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUsageLimit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::CreateUsageLimitAsync(const CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUsageLimitAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::CreateUsageLimitAsyncHelper(const CreateUsageLimitRequest& request, const CreateUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUsageLimit(request), context);
+}
+
 DeleteClusterOutcome RedshiftClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1285,6 +1324,41 @@ void RedshiftClient::DeleteTagsAsync(const DeleteTagsRequest& request, const Del
 void RedshiftClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTags(request), context);
+}
+
+DeleteUsageLimitOutcome RedshiftClient::DeleteUsageLimit(const DeleteUsageLimitRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteUsageLimitOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteUsageLimitOutcome(outcome.GetError());
+  }
+}
+
+DeleteUsageLimitOutcomeCallable RedshiftClient::DeleteUsageLimitCallable(const DeleteUsageLimitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUsageLimitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUsageLimit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DeleteUsageLimitAsync(const DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUsageLimitAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DeleteUsageLimitAsyncHelper(const DeleteUsageLimitRequest& request, const DeleteUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUsageLimit(request), context);
 }
 
 DescribeAccountAttributesOutcome RedshiftClient::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
@@ -2267,6 +2341,41 @@ void RedshiftClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request,
   handler(this, request, DescribeTags(request), context);
 }
 
+DescribeUsageLimitsOutcome RedshiftClient::DescribeUsageLimits(const DescribeUsageLimitsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeUsageLimitsOutcome(DescribeUsageLimitsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeUsageLimitsOutcome(outcome.GetError());
+  }
+}
+
+DescribeUsageLimitsOutcomeCallable RedshiftClient::DescribeUsageLimitsCallable(const DescribeUsageLimitsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeUsageLimitsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeUsageLimits(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribeUsageLimitsAsync(const DescribeUsageLimitsRequest& request, const DescribeUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeUsageLimitsAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribeUsageLimitsAsyncHelper(const DescribeUsageLimitsRequest& request, const DescribeUsageLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeUsageLimits(request), context);
+}
+
 DisableLoggingOutcome RedshiftClient::DisableLogging(const DisableLoggingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2895,6 +3004,41 @@ void RedshiftClient::ModifySnapshotScheduleAsync(const ModifySnapshotScheduleReq
 void RedshiftClient::ModifySnapshotScheduleAsyncHelper(const ModifySnapshotScheduleRequest& request, const ModifySnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifySnapshotSchedule(request), context);
+}
+
+ModifyUsageLimitOutcome RedshiftClient::ModifyUsageLimit(const ModifyUsageLimitRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyUsageLimitOutcome(ModifyUsageLimitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyUsageLimitOutcome(outcome.GetError());
+  }
+}
+
+ModifyUsageLimitOutcomeCallable RedshiftClient::ModifyUsageLimitCallable(const ModifyUsageLimitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyUsageLimitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyUsageLimit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::ModifyUsageLimitAsync(const ModifyUsageLimitRequest& request, const ModifyUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyUsageLimitAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::ModifyUsageLimitAsyncHelper(const ModifyUsageLimitRequest& request, const ModifyUsageLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyUsageLimit(request), context);
 }
 
 PauseClusterOutcome RedshiftClient::PauseCluster(const PauseClusterRequest& request) const
