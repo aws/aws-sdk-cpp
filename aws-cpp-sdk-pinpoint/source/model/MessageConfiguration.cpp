@@ -32,6 +32,7 @@ MessageConfiguration::MessageConfiguration() :
     m_aDMMessageHasBeenSet(false),
     m_aPNSMessageHasBeenSet(false),
     m_baiduMessageHasBeenSet(false),
+    m_customMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
@@ -43,6 +44,7 @@ MessageConfiguration::MessageConfiguration(JsonView jsonValue) :
     m_aDMMessageHasBeenSet(false),
     m_aPNSMessageHasBeenSet(false),
     m_baiduMessageHasBeenSet(false),
+    m_customMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
@@ -72,6 +74,13 @@ MessageConfiguration& MessageConfiguration::operator =(JsonView jsonValue)
     m_baiduMessage = jsonValue.GetObject("BaiduMessage");
 
     m_baiduMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomMessage"))
+  {
+    m_customMessage = jsonValue.GetObject("CustomMessage");
+
+    m_customMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DefaultMessage"))
@@ -124,6 +133,12 @@ JsonValue MessageConfiguration::Jsonize() const
   if(m_baiduMessageHasBeenSet)
   {
    payload.WithObject("BaiduMessage", m_baiduMessage.Jsonize());
+
+  }
+
+  if(m_customMessageHasBeenSet)
+  {
+   payload.WithObject("CustomMessage", m_customMessage.Jsonize());
 
   }
 

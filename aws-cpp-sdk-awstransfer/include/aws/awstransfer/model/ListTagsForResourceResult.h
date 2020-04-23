@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline ListTagsForResourceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline ListTagsForResourceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>This value is the ARN you specified to list the tags of.</p>
+     * <p>The ARN you specified to list the tags of.</p>
      */
     inline ListTagsForResourceResult& WithArn(const char* value) { SetArn(value); return *this;}
 

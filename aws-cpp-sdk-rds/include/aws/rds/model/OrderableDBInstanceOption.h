@@ -220,6 +220,47 @@ namespace Model
 
 
     /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The Availability Zone group for a DB instance.</p>
+     */
+    inline OrderableDBInstanceOption& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
+
+
+    /**
      * <p>A list of Availability Zones for a DB instance.</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
@@ -722,26 +763,26 @@ namespace Model
 
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the specified instance class.</p>
+     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
+     * the specified DB instance class.</p>
      */
     inline bool GetSupportsStorageAutoscaling() const{ return m_supportsStorageAutoscaling; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the specified instance class.</p>
+     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
+     * the specified DB instance class.</p>
      */
     inline bool SupportsStorageAutoscalingHasBeenSet() const { return m_supportsStorageAutoscalingHasBeenSet; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the specified instance class.</p>
+     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
+     * the specified DB instance class.</p>
      */
     inline void SetSupportsStorageAutoscaling(bool value) { m_supportsStorageAutoscalingHasBeenSet = true; m_supportsStorageAutoscaling = value; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the specified instance class.</p>
+     * <p>Whether Amazon RDS can automatically scale storage for DB instances that use
+     * the specified DB instance class.</p>
      */
     inline OrderableDBInstanceOption& WithSupportsStorageAutoscaling(bool value) { SetSupportsStorageAutoscaling(value); return *this;}
 
@@ -779,6 +820,9 @@ namespace Model
 
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
+    Aws::String m_availabilityZoneGroup;
+    bool m_availabilityZoneGroupHasBeenSet;
 
     Aws::Vector<AvailabilityZone> m_availabilityZones;
     bool m_availabilityZonesHasBeenSet;

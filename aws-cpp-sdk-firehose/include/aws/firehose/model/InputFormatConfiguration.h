@@ -35,7 +35,8 @@ namespace Model
 
   /**
    * <p>Specifies the deserializer you want to use to convert the format of the input
-   * data.</p><p><h3>See Also:</h3>   <a
+   * data. This parameter is required if <code>Enabled</code> is set to
+   * true.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/InputFormatConfiguration">AWS
    * API Reference</a></p>
    */

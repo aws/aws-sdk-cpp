@@ -25,6 +25,7 @@ DescribeOrderableDBInstanceOptionsRequest::DescribeOrderableDBInstanceOptionsReq
     m_engineVersionHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
+    m_availabilityZoneGroupHasBeenSet(false),
     m_vpc(false),
     m_vpcHasBeenSet(false),
     m_filtersHasBeenSet(false),
@@ -56,6 +57,11 @@ Aws::String DescribeOrderableDBInstanceOptionsRequest::SerializePayload() const
   if(m_licenseModelHasBeenSet)
   {
     ss << "LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneGroupHasBeenSet)
+  {
+    ss << "AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
   }
 
   if(m_vpcHasBeenSet)

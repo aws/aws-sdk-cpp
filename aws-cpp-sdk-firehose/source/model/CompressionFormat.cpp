@@ -34,6 +34,7 @@ namespace Aws
         static const int GZIP_HASH = HashingUtils::HashString("GZIP");
         static const int ZIP_HASH = HashingUtils::HashString("ZIP");
         static const int Snappy_HASH = HashingUtils::HashString("Snappy");
+        static const int HADOOP_SNAPPY_HASH = HashingUtils::HashString("HADOOP_SNAPPY");
 
 
         CompressionFormat GetCompressionFormatForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == Snappy_HASH)
           {
             return CompressionFormat::Snappy;
+          }
+          else if (hashCode == HADOOP_SNAPPY_HASH)
+          {
+            return CompressionFormat::HADOOP_SNAPPY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "ZIP";
           case CompressionFormat::Snappy:
             return "Snappy";
+          case CompressionFormat::HADOOP_SNAPPY:
+            return "HADOOP_SNAPPY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

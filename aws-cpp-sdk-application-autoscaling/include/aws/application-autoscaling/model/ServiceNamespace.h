@@ -35,7 +35,8 @@ namespace Model
     sagemaker,
     custom_resource,
     comprehend,
-    lambda
+    lambda,
+    cassandra
   };
 
 namespace ServiceNamespaceMapper

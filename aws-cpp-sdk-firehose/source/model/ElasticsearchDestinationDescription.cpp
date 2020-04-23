@@ -42,7 +42,8 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription() :
     m_s3BackupModeHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_vpcConfigurationDescriptionHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ ElasticsearchDestinationDescription::ElasticsearchDestinationDescription(JsonVie
     m_s3BackupModeHasBeenSet(false),
     m_s3DestinationDescriptionHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_vpcConfigurationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -151,6 +153,13 @@ ElasticsearchDestinationDescription& ElasticsearchDestinationDescription::operat
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcConfigurationDescription"))
+  {
+    m_vpcConfigurationDescription = jsonValue.GetObject("VpcConfigurationDescription");
+
+    m_vpcConfigurationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -225,6 +234,12 @@ JsonValue ElasticsearchDestinationDescription::Jsonize() const
   if(m_cloudWatchLoggingOptionsHasBeenSet)
   {
    payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
+
+  }
+
+  if(m_vpcConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("VpcConfigurationDescription", m_vpcConfigurationDescription.Jsonize());
 
   }
 

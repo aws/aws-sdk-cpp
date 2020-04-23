@@ -46,58 +46,58 @@ namespace Model
 
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline UntagResourceRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline UntagResourceRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>This is the value of the resource that will have the tag removed. An Amazon
-     * Resource Name (ARN) is an identifier for a specific AWS resource, such as a
-     * server, user, or role.</p>
+     * <p>The value of the resource that will have the tag removed. An Amazon Resource
+     * Name (ARN) is an identifier for a specific AWS resource, such as a server, user,
+     * or role.</p>
      */
     inline UntagResourceRequest& WithArn(const char* value) { SetArn(value); return *this;}
 

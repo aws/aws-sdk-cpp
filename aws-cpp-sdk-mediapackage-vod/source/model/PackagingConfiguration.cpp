@@ -35,7 +35,8 @@ PackagingConfiguration::PackagingConfiguration() :
     m_hlsPackageHasBeenSet(false),
     m_idHasBeenSet(false),
     m_mssPackageHasBeenSet(false),
-    m_packagingGroupIdHasBeenSet(false)
+    m_packagingGroupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ PackagingConfiguration::PackagingConfiguration(JsonView jsonValue) :
     m_hlsPackageHasBeenSet(false),
     m_idHasBeenSet(false),
     m_mssPackageHasBeenSet(false),
-    m_packagingGroupIdHasBeenSet(false)
+    m_packagingGroupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +104,16 @@ PackagingConfiguration& PackagingConfiguration::operator =(JsonView jsonValue)
     m_packagingGroupIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +160,17 @@ JsonValue PackagingConfiguration::Jsonize() const
   if(m_packagingGroupIdHasBeenSet)
   {
    payload.WithString("packagingGroupId", m_packagingGroupId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

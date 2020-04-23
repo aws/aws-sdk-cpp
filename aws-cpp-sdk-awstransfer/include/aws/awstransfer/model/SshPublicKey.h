@@ -36,11 +36,11 @@ namespace Model
 
   /**
    * <p>Provides information about the public Secure Shell (SSH) key that is
-   * associated with a user account for a specific server (as identified by
-   * <code>ServerId</code>). The information returned includes the date the key was
-   * imported, the public key contents, and the public key ID. A user can store more
-   * than one SSH public key associated with their user name on a specific SFTP
-   * server.</p><p><h3>See Also:</h3>   <a
+   * associated with a user account for the specific file transfer protocol-enabled
+   * server (as identified by <code>ServerId</code>). The information returned
+   * includes the date the key was imported, the public key contents, and the public
+   * key ID. A user can store more than one SSH public key associated with their user
+   * name on a specific server.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SshPublicKey">AWS
    * API Reference</a></p>
    */

@@ -48,7 +48,7 @@ namespace Model
      * <p>When you can get additional results from the <code>ListServers</code>
      * operation, a <code>NextToken</code> parameter is returned in the output. In a
      * following command, you can pass in the <code>NextToken</code> parameter to
-     * continue listing additional servers.</p>
+     * continue listing additional file transfer protocol-enabled servers.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -56,7 +56,7 @@ namespace Model
      * <p>When you can get additional results from the <code>ListServers</code>
      * operation, a <code>NextToken</code> parameter is returned in the output. In a
      * following command, you can pass in the <code>NextToken</code> parameter to
-     * continue listing additional servers.</p>
+     * continue listing additional file transfer protocol-enabled servers.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -64,7 +64,7 @@ namespace Model
      * <p>When you can get additional results from the <code>ListServers</code>
      * operation, a <code>NextToken</code> parameter is returned in the output. In a
      * following command, you can pass in the <code>NextToken</code> parameter to
-     * continue listing additional servers.</p>
+     * continue listing additional file transfer protocol-enabled servers.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -72,7 +72,7 @@ namespace Model
      * <p>When you can get additional results from the <code>ListServers</code>
      * operation, a <code>NextToken</code> parameter is returned in the output. In a
      * following command, you can pass in the <code>NextToken</code> parameter to
-     * continue listing additional servers.</p>
+     * continue listing additional file transfer protocol-enabled servers.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -80,7 +80,7 @@ namespace Model
      * <p>When you can get additional results from the <code>ListServers</code>
      * operation, a <code>NextToken</code> parameter is returned in the output. In a
      * following command, you can pass in the <code>NextToken</code> parameter to
-     * continue listing additional servers.</p>
+     * continue listing additional file transfer protocol-enabled servers.</p>
      */
     inline ListServersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -88,7 +88,7 @@ namespace Model
      * <p>When you can get additional results from the <code>ListServers</code>
      * operation, a <code>NextToken</code> parameter is returned in the output. In a
      * following command, you can pass in the <code>NextToken</code> parameter to
-     * continue listing additional servers.</p>
+     * continue listing additional file transfer protocol-enabled servers.</p>
      */
     inline ListServersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -96,43 +96,43 @@ namespace Model
      * <p>When you can get additional results from the <code>ListServers</code>
      * operation, a <code>NextToken</code> parameter is returned in the output. In a
      * following command, you can pass in the <code>NextToken</code> parameter to
-     * continue listing additional servers.</p>
+     * continue listing additional file transfer protocol-enabled servers.</p>
      */
     inline ListServersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>An array of servers that were listed.</p>
+     * <p>An array of file transfer protocol-enabled servers that were listed.</p>
      */
     inline const Aws::Vector<ListedServer>& GetServers() const{ return m_servers; }
 
     /**
-     * <p>An array of servers that were listed.</p>
+     * <p>An array of file transfer protocol-enabled servers that were listed.</p>
      */
     inline void SetServers(const Aws::Vector<ListedServer>& value) { m_servers = value; }
 
     /**
-     * <p>An array of servers that were listed.</p>
+     * <p>An array of file transfer protocol-enabled servers that were listed.</p>
      */
     inline void SetServers(Aws::Vector<ListedServer>&& value) { m_servers = std::move(value); }
 
     /**
-     * <p>An array of servers that were listed.</p>
+     * <p>An array of file transfer protocol-enabled servers that were listed.</p>
      */
     inline ListServersResult& WithServers(const Aws::Vector<ListedServer>& value) { SetServers(value); return *this;}
 
     /**
-     * <p>An array of servers that were listed.</p>
+     * <p>An array of file transfer protocol-enabled servers that were listed.</p>
      */
     inline ListServersResult& WithServers(Aws::Vector<ListedServer>&& value) { SetServers(std::move(value)); return *this;}
 
     /**
-     * <p>An array of servers that were listed.</p>
+     * <p>An array of file transfer protocol-enabled servers that were listed.</p>
      */
     inline ListServersResult& AddServers(const ListedServer& value) { m_servers.push_back(value); return *this; }
 
     /**
-     * <p>An array of servers that were listed.</p>
+     * <p>An array of file transfer protocol-enabled servers that were listed.</p>
      */
     inline ListServersResult& AddServers(ListedServer&& value) { m_servers.push_back(std::move(value)); return *this; }
 

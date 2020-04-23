@@ -99,56 +99,56 @@ namespace Model
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported for application, campaign, and journey
+     * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported for application, campaign, and journey
+     * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported for application, campaign, and journey
+     * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported for application, campaign, and journey
+     * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported for application, campaign, and journey
+     * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported for application, campaign, and journey
+     * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline GetExportJobsRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported for application, campaign, and journey
+     * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline GetExportJobsRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
 
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is currently not supported for application, campaign, and journey
+     * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline GetExportJobsRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}

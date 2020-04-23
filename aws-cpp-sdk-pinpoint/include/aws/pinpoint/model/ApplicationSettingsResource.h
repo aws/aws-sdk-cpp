@@ -101,38 +101,44 @@ namespace Model
 
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p>
      */
     inline const CampaignHook& GetCampaignHook() const{ return m_campaignHook; }
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p>
      */
     inline bool CampaignHookHasBeenSet() const { return m_campaignHookHasBeenSet; }
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p>
      */
     inline void SetCampaignHook(const CampaignHook& value) { m_campaignHookHasBeenSet = true; m_campaignHook = value; }
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p>
      */
     inline void SetCampaignHook(CampaignHook&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::move(value); }
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p>
      */
     inline ApplicationSettingsResource& WithCampaignHook(const CampaignHook& value) { SetCampaignHook(value); return *this;}
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p>
      */
     inline ApplicationSettingsResource& WithCampaignHook(CampaignHook&& value) { SetCampaignHook(std::move(value)); return *this;}
 
@@ -187,32 +193,32 @@ namespace Model
 
 
     /**
-     * <p>The default sending limits for campaigns in the application.</p>
+     * <p>The default sending limits for campaigns and journeys in the application.</p>
      */
     inline const CampaignLimits& GetLimits() const{ return m_limits; }
 
     /**
-     * <p>The default sending limits for campaigns in the application.</p>
+     * <p>The default sending limits for campaigns and journeys in the application.</p>
      */
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
 
     /**
-     * <p>The default sending limits for campaigns in the application.</p>
+     * <p>The default sending limits for campaigns and journeys in the application.</p>
      */
     inline void SetLimits(const CampaignLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
 
     /**
-     * <p>The default sending limits for campaigns in the application.</p>
+     * <p>The default sending limits for campaigns and journeys in the application.</p>
      */
     inline void SetLimits(CampaignLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
 
     /**
-     * <p>The default sending limits for campaigns in the application.</p>
+     * <p>The default sending limits for campaigns and journeys in the application.</p>
      */
     inline ApplicationSettingsResource& WithLimits(const CampaignLimits& value) { SetLimits(value); return *this;}
 
     /**
-     * <p>The default sending limits for campaigns in the application.</p>
+     * <p>The default sending limits for campaigns and journeys in the application.</p>
      */
     inline ApplicationSettingsResource& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
 

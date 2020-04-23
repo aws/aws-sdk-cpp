@@ -20,6 +20,7 @@
 #include <aws/mediapackage-vod/model/DashPackage.h>
 #include <aws/mediapackage-vod/model/HlsPackage.h>
 #include <aws/mediapackage-vod/model/MssPackage.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -217,6 +218,43 @@ namespace Model
      */
     inline CreatePackagingConfigurationResult& WithPackagingGroupId(const char* value) { SetPackagingGroupId(value); return *this;}
 
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    
+    inline CreatePackagingConfigurationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    
+    inline CreatePackagingConfigurationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    
+    inline CreatePackagingConfigurationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    
+    inline CreatePackagingConfigurationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    
+    inline CreatePackagingConfigurationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    
+    inline CreatePackagingConfigurationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline CreatePackagingConfigurationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    
+    inline CreatePackagingConfigurationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    
+    inline CreatePackagingConfigurationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -232,6 +270,8 @@ namespace Model
     MssPackage m_mssPackage;
 
     Aws::String m_packagingGroupId;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

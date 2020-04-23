@@ -45,42 +45,50 @@ namespace Model
 
 
     /**
-     * <p>A unique system-assigned identifier for an SFTP server instance.</p>
+     * <p>A unique system-assigned identifier for a file transfer protocol-enabled
+     * server instance.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A unique system-assigned identifier for an SFTP server instance.</p>
+     * <p>A unique system-assigned identifier for a file transfer protocol-enabled
+     * server instance.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A unique system-assigned identifier for an SFTP server instance.</p>
+     * <p>A unique system-assigned identifier for a file transfer protocol-enabled
+     * server instance.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A unique system-assigned identifier for an SFTP server instance.</p>
+     * <p>A unique system-assigned identifier for a file transfer protocol-enabled
+     * server instance.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A unique system-assigned identifier for an SFTP server instance.</p>
+     * <p>A unique system-assigned identifier for a file transfer protocol-enabled
+     * server instance.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A unique system-assigned identifier for an SFTP server instance.</p>
+     * <p>A unique system-assigned identifier for a file transfer protocol-enabled
+     * server instance.</p>
      */
     inline DeleteServerRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A unique system-assigned identifier for an SFTP server instance.</p>
+     * <p>A unique system-assigned identifier for a file transfer protocol-enabled
+     * server instance.</p>
      */
     inline DeleteServerRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique system-assigned identifier for an SFTP server instance.</p>
+     * <p>A unique system-assigned identifier for a file transfer protocol-enabled
+     * server instance.</p>
      */
     inline DeleteServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 

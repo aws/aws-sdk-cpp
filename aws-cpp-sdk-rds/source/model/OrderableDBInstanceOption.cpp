@@ -35,6 +35,7 @@ OrderableDBInstanceOption::OrderableDBInstanceOption() :
     m_engineVersionHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
+    m_availabilityZoneGroupHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_multiAZCapable(false),
     m_multiAZCapableHasBeenSet(false),
@@ -79,6 +80,7 @@ OrderableDBInstanceOption::OrderableDBInstanceOption(const XmlNode& xmlNode) :
     m_engineVersionHasBeenSet(false),
     m_dBInstanceClassHasBeenSet(false),
     m_licenseModelHasBeenSet(false),
+    m_availabilityZoneGroupHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
     m_multiAZCapable(false),
     m_multiAZCapableHasBeenSet(false),
@@ -148,6 +150,12 @@ OrderableDBInstanceOption& OrderableDBInstanceOption::operator =(const XmlNode& 
     {
       m_licenseModel = Aws::Utils::Xml::DecodeEscapedXmlText(licenseModelNode.GetText());
       m_licenseModelHasBeenSet = true;
+    }
+    XmlNode availabilityZoneGroupNode = resultNode.FirstChild("AvailabilityZoneGroup");
+    if(!availabilityZoneGroupNode.IsNull())
+    {
+      m_availabilityZoneGroup = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneGroupNode.GetText());
+      m_availabilityZoneGroupHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
     if(!availabilityZonesNode.IsNull())
@@ -314,6 +322,11 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
   }
 
+  if(m_availabilityZoneGroupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
+  }
+
   if(m_availabilityZonesHasBeenSet)
   {
       unsigned availabilityZonesIdx = 1;
@@ -449,6 +462,10 @@ void OrderableDBInstanceOption::OutputToStream(Aws::OStream& oStream, const char
   if(m_licenseModelHasBeenSet)
   {
       oStream << location << ".LicenseModel=" << StringUtils::URLEncode(m_licenseModel.c_str()) << "&";
+  }
+  if(m_availabilityZoneGroupHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneGroup=" << StringUtils::URLEncode(m_availabilityZoneGroup.c_str()) << "&";
   }
   if(m_availabilityZonesHasBeenSet)
   {

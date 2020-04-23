@@ -43,32 +43,32 @@ namespace Model
 
 
     /**
-     * <p>An array containing the properties of the server with the
-     * <code>ServerID</code> you specified.</p>
+     * <p>An array containing the properties of a file transfer protocol-enabled server
+     * with the <code>ServerID</code> you specified.</p>
      */
     inline const DescribedServer& GetServer() const{ return m_server; }
 
     /**
-     * <p>An array containing the properties of the server with the
-     * <code>ServerID</code> you specified.</p>
+     * <p>An array containing the properties of a file transfer protocol-enabled server
+     * with the <code>ServerID</code> you specified.</p>
      */
     inline void SetServer(const DescribedServer& value) { m_server = value; }
 
     /**
-     * <p>An array containing the properties of the server with the
-     * <code>ServerID</code> you specified.</p>
+     * <p>An array containing the properties of a file transfer protocol-enabled server
+     * with the <code>ServerID</code> you specified.</p>
      */
     inline void SetServer(DescribedServer&& value) { m_server = std::move(value); }
 
     /**
-     * <p>An array containing the properties of the server with the
-     * <code>ServerID</code> you specified.</p>
+     * <p>An array containing the properties of a file transfer protocol-enabled server
+     * with the <code>ServerID</code> you specified.</p>
      */
     inline DescribeServerResult& WithServer(const DescribedServer& value) { SetServer(value); return *this;}
 
     /**
-     * <p>An array containing the properties of the server with the
-     * <code>ServerID</code> you specified.</p>
+     * <p>An array containing the properties of a file transfer protocol-enabled server
+     * with the <code>ServerID</code> you specified.</p>
      */
     inline DescribeServerResult& WithServer(DescribedServer&& value) { SetServer(std::move(value)); return *this;}
 

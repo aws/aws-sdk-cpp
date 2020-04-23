@@ -51,56 +51,68 @@ namespace Model
 
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application. To override these settings for a specific
-     * campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom Lambda function settings for the campaign.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p> <p>To override these settings
+     * and define custom settings for a specific campaign, use the CampaignHook object
+     * of the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
+     * resource.</p>
      */
     inline const CampaignHook& GetCampaignHook() const{ return m_campaignHook; }
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application. To override these settings for a specific
-     * campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom Lambda function settings for the campaign.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p> <p>To override these settings
+     * and define custom settings for a specific campaign, use the CampaignHook object
+     * of the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
+     * resource.</p>
      */
     inline bool CampaignHookHasBeenSet() const { return m_campaignHookHasBeenSet; }
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application. To override these settings for a specific
-     * campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom Lambda function settings for the campaign.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p> <p>To override these settings
+     * and define custom settings for a specific campaign, use the CampaignHook object
+     * of the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
+     * resource.</p>
      */
     inline void SetCampaignHook(const CampaignHook& value) { m_campaignHookHasBeenSet = true; m_campaignHook = value; }
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application. To override these settings for a specific
-     * campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom Lambda function settings for the campaign.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p> <p>To override these settings
+     * and define custom settings for a specific campaign, use the CampaignHook object
+     * of the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
+     * resource.</p>
      */
     inline void SetCampaignHook(CampaignHook&& value) { m_campaignHookHasBeenSet = true; m_campaignHook = std::move(value); }
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application. To override these settings for a specific
-     * campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom Lambda function settings for the campaign.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p> <p>To override these settings
+     * and define custom settings for a specific campaign, use the CampaignHook object
+     * of the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
+     * resource.</p>
      */
     inline WriteApplicationSettingsRequest& WithCampaignHook(const CampaignHook& value) { SetCampaignHook(value); return *this;}
 
     /**
-     * <p>The settings for the AWS Lambda function to use by default as a code hook for
-     * campaigns in the application. To override these settings for a specific
-     * campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom Lambda function settings for the campaign.</p>
+     * <p>The settings for the AWS Lambda function to invoke by default as a code hook
+     * for campaigns in the application. You can use this hook to customize segments
+     * that are used by campaigns in the application.</p> <p>To override these settings
+     * and define custom settings for a specific campaign, use the CampaignHook object
+     * of the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link>
+     * resource.</p>
      */
     inline WriteApplicationSettingsRequest& WithCampaignHook(CampaignHook&& value) { SetCampaignHook(std::move(value)); return *this;}
 
@@ -131,50 +143,62 @@ namespace Model
 
 
     /**
-     * <p>The default sending limits for campaigns in the application. To override
-     * these limits for a specific campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom limits for the campaign.</p>
+     * <p>The default sending limits for campaigns and journeys in the application. To
+     * override these limits and define custom limits for a specific campaign or
+     * journey, use the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or
+     * the <link  linkend="apps-application-id-journeys-journey-id">Journey</link>
+     * resource, respectively.</p>
      */
     inline const CampaignLimits& GetLimits() const{ return m_limits; }
 
     /**
-     * <p>The default sending limits for campaigns in the application. To override
-     * these limits for a specific campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom limits for the campaign.</p>
+     * <p>The default sending limits for campaigns and journeys in the application. To
+     * override these limits and define custom limits for a specific campaign or
+     * journey, use the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or
+     * the <link  linkend="apps-application-id-journeys-journey-id">Journey</link>
+     * resource, respectively.</p>
      */
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
 
     /**
-     * <p>The default sending limits for campaigns in the application. To override
-     * these limits for a specific campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom limits for the campaign.</p>
+     * <p>The default sending limits for campaigns and journeys in the application. To
+     * override these limits and define custom limits for a specific campaign or
+     * journey, use the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or
+     * the <link  linkend="apps-application-id-journeys-journey-id">Journey</link>
+     * resource, respectively.</p>
      */
     inline void SetLimits(const CampaignLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
 
     /**
-     * <p>The default sending limits for campaigns in the application. To override
-     * these limits for a specific campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom limits for the campaign.</p>
+     * <p>The default sending limits for campaigns and journeys in the application. To
+     * override these limits and define custom limits for a specific campaign or
+     * journey, use the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or
+     * the <link  linkend="apps-application-id-journeys-journey-id">Journey</link>
+     * resource, respectively.</p>
      */
     inline void SetLimits(CampaignLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
 
     /**
-     * <p>The default sending limits for campaigns in the application. To override
-     * these limits for a specific campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom limits for the campaign.</p>
+     * <p>The default sending limits for campaigns and journeys in the application. To
+     * override these limits and define custom limits for a specific campaign or
+     * journey, use the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or
+     * the <link  linkend="apps-application-id-journeys-journey-id">Journey</link>
+     * resource, respectively.</p>
      */
     inline WriteApplicationSettingsRequest& WithLimits(const CampaignLimits& value) { SetLimits(value); return *this;}
 
     /**
-     * <p>The default sending limits for campaigns in the application. To override
-     * these limits for a specific campaign, use the <link 
-     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource to
-     * define custom limits for the campaign.</p>
+     * <p>The default sending limits for campaigns and journeys in the application. To
+     * override these limits and define custom limits for a specific campaign or
+     * journey, use the <link 
+     * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or
+     * the <link  linkend="apps-application-id-journeys-journey-id">Journey</link>
+     * resource, respectively.</p>
      */
     inline WriteApplicationSettingsRequest& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
 

@@ -47,22 +47,26 @@ namespace Model
 
 
     /**
-     * <p>The minimum capacity.</p>
+     * <p>The minimum capacity.</p> <p>For Lambda provisioned concurrency, the minimum
+     * value allowed is 0. For all other resources, the minimum value allowed is 1.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
-     * <p>The minimum capacity.</p>
+     * <p>The minimum capacity.</p> <p>For Lambda provisioned concurrency, the minimum
+     * value allowed is 0. For all other resources, the minimum value allowed is 1.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
     /**
-     * <p>The minimum capacity.</p>
+     * <p>The minimum capacity.</p> <p>For Lambda provisioned concurrency, the minimum
+     * value allowed is 0. For all other resources, the minimum value allowed is 1.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
-     * <p>The minimum capacity.</p>
+     * <p>The minimum capacity.</p> <p>For Lambda provisioned concurrency, the minimum
+     * value allowed is 0. For all other resources, the minimum value allowed is 1.</p>
      */
     inline ScalableTargetAction& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 

@@ -139,56 +139,38 @@ namespace Model
 
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline ScalingPolicy& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline ScalingPolicy& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
@@ -230,7 +212,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -271,7 +255,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
@@ -312,7 +298,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -353,7 +341,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -394,7 +384,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -435,7 +427,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline ScalingPolicy& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -476,7 +470,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline ScalingPolicy& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -517,7 +513,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline ScalingPolicy& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -550,7 +548,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -582,7 +584,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
 
@@ -614,7 +620,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -646,7 +656,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -678,7 +692,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline ScalingPolicy& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -710,7 +728,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline ScalingPolicy& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

@@ -29,6 +29,7 @@ namespace Model
 {
 
 TreatmentResource::TreatmentResource() : 
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_idHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
     m_scheduleHasBeenSet(false),
@@ -42,6 +43,7 @@ TreatmentResource::TreatmentResource() :
 }
 
 TreatmentResource::TreatmentResource(JsonView jsonValue) : 
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_idHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
     m_scheduleHasBeenSet(false),
@@ -57,6 +59,13 @@ TreatmentResource::TreatmentResource(JsonView jsonValue) :
 
 TreatmentResource& TreatmentResource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
+  {
+    m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
+
+    m_customDeliveryConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
@@ -119,6 +128,12 @@ TreatmentResource& TreatmentResource::operator =(JsonView jsonValue)
 JsonValue TreatmentResource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customDeliveryConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDeliveryConfiguration", m_customDeliveryConfiguration.Jsonize());
+
+  }
 
   if(m_idHasBeenSet)
   {

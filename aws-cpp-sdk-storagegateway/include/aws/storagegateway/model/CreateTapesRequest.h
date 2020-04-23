@@ -108,25 +108,25 @@ namespace Model
 
     /**
      * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
      */
     inline long long GetTapeSizeInBytes() const{ return m_tapeSizeInBytes; }
 
     /**
      * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
      */
     inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
 
     /**
      * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
      */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
      * <p>The size, in bytes, of the virtual tapes that you want to create.</p> <note>
-     * <p>The size must be aligned by gigabyte (1024*1024*1024 byte).</p> </note>
+     * <p>The size must be aligned by gigabyte (1024*1024*1024 bytes).</p> </note>
      */
     inline CreateTapesRequest& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
 
@@ -283,82 +283,82 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline CreateTapesRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline CreateTapesRequest& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline CreateTapesRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline CreateTapesRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
@@ -368,8 +368,8 @@ namespace Model
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive) that
-     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
+     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
 
@@ -377,8 +377,8 @@ namespace Model
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive) that
-     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
+     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
 
@@ -386,8 +386,8 @@ namespace Model
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive) that
-     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
+     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
 
@@ -395,8 +395,8 @@ namespace Model
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive) that
-     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
+     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
 
@@ -404,8 +404,8 @@ namespace Model
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive) that
-     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
+     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
 
@@ -413,8 +413,8 @@ namespace Model
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive) that
-     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
+     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline CreateTapesRequest& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
 
@@ -422,8 +422,8 @@ namespace Model
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive) that
-     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
+     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline CreateTapesRequest& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
 
@@ -431,8 +431,8 @@ namespace Model
      * <p>The ID of the pool that you want to add your tape to for archiving. The tape
      * in this pool is archived in the S3 storage class that is associated with the
      * pool. When you use your backup application to eject the tape, the tape is
-     * archived directly into the storage class (Glacier or Deep Archive) that
-     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     * archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive)
+     * that corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
      */
     inline CreateTapesRequest& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 

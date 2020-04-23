@@ -240,6 +240,71 @@ namespace Model
 
 
     /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified AWS
+     * Region.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified AWS
+     * Region.</p>
+     */
+    inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified AWS
+     * Region.</p>
+     */
+    inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified AWS
+     * Region.</p>
+     */
+    inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified AWS
+     * Region.</p>
+     */
+    inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified AWS
+     * Region.</p>
+     */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified AWS
+     * Region.</p>
+     */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The Availability Zone group associated with a Local Zone. Specify this
+     * parameter to retrieve available offerings for the Local Zones in the group.</p>
+     * <p>Omit this parameter to show the available offerings in the specified AWS
+     * Region.</p>
+     */
+    inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
+
+
+    /**
      * <p>A value that indicates whether to show only VPC or non-VPC offerings.</p>
      */
     inline bool GetVpc() const{ return m_vpc; }
@@ -415,6 +480,9 @@ namespace Model
 
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet;
+
+    Aws::String m_availabilityZoneGroup;
+    bool m_availabilityZoneGroupHasBeenSet;
 
     bool m_vpc;
     bool m_vpcHasBeenSet;

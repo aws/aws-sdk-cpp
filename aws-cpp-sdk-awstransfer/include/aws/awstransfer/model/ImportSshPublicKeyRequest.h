@@ -45,42 +45,50 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline ImportSshPublicKeyRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline ImportSshPublicKeyRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline ImportSshPublicKeyRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
@@ -127,42 +135,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the user account that is assigned to one or more file transfer
+     * protocol-enabled servers.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the user account that is assigned to one or more file transfer
+     * protocol-enabled servers.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the user account that is assigned to one or more file transfer
+     * protocol-enabled servers.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the user account that is assigned to one or more file transfer
+     * protocol-enabled servers.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the user account that is assigned to one or more file transfer
+     * protocol-enabled servers.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the user account that is assigned to one or more file transfer
+     * protocol-enabled servers.</p>
      */
     inline ImportSshPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the user account that is assigned to one or more file transfer
+     * protocol-enabled servers.</p>
      */
     inline ImportSshPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the user account that is assigned to one or more file transfer
+     * protocol-enabled servers.</p>
      */
     inline ImportSshPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

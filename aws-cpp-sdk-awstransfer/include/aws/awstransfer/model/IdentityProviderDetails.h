@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>Returns information related to the type of user authentication that is in use
-   * for a server's users. A server can have only one method of
-   * authentication.</p><p><h3>See Also:</h3>   <a
+   * for a file transfer protocol-enabled server's users. A server can have only one
+   * method of authentication.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/IdentityProviderDetails">AWS
    * API Reference</a></p>
    */
@@ -50,99 +50,91 @@ namespace Model
 
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Contains the location of the service endpoint used to authenticate users.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Contains the location of the service endpoint used to authenticate users.</p>
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Contains the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Contains the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Contains the location of the service endpoint used to authenticate users.</p>
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Contains the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Contains the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>Url</code> parameter provides contains the location of the service
-     * endpoint used to authenticate users.</p>
+     * <p>Contains the location of the service endpoint used to authenticate users.</p>
      */
     inline IdentityProviderDetails& WithUrl(const char* value) { SetUrl(value); return *this;}
 
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline const Aws::String& GetInvocationRole() const{ return m_invocationRole; }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline bool InvocationRoleHasBeenSet() const { return m_invocationRoleHasBeenSet; }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline void SetInvocationRole(const Aws::String& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = value; }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline void SetInvocationRole(Aws::String&& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = std::move(value); }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline void SetInvocationRole(const char* value) { m_invocationRoleHasBeenSet = true; m_invocationRole.assign(value); }
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(const Aws::String& value) { SetInvocationRole(value); return *this;}
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(Aws::String&& value) { SetInvocationRole(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>InvocationRole</code> parameter provides the type of
-     * <code>InvocationRole</code> used to authenticate the user account.</p>
+     * <p>Provides the type of <code>InvocationRole</code> used to authenticate the
+     * user account.</p>
      */
     inline IdentityProviderDetails& WithInvocationRole(const char* value) { SetInvocationRole(value); return *this;}
 

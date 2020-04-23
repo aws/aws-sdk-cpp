@@ -44,6 +44,8 @@ namespace Aws
         static const int AppStreamAverageCapacityUtilization_HASH = HashingUtils::HashString("AppStreamAverageCapacityUtilization");
         static const int ComprehendInferenceUtilization_HASH = HashingUtils::HashString("ComprehendInferenceUtilization");
         static const int LambdaProvisionedConcurrencyUtilization_HASH = HashingUtils::HashString("LambdaProvisionedConcurrencyUtilization");
+        static const int CassandraReadCapacityUtilization_HASH = HashingUtils::HashString("CassandraReadCapacityUtilization");
+        static const int CassandraWriteCapacityUtilization_HASH = HashingUtils::HashString("CassandraWriteCapacityUtilization");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -105,6 +107,14 @@ namespace Aws
           {
             return MetricType::LambdaProvisionedConcurrencyUtilization;
           }
+          else if (hashCode == CassandraReadCapacityUtilization_HASH)
+          {
+            return MetricType::CassandraReadCapacityUtilization;
+          }
+          else if (hashCode == CassandraWriteCapacityUtilization_HASH)
+          {
+            return MetricType::CassandraWriteCapacityUtilization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -147,6 +157,10 @@ namespace Aws
             return "ComprehendInferenceUtilization";
           case MetricType::LambdaProvisionedConcurrencyUtilization:
             return "LambdaProvisionedConcurrencyUtilization";
+          case MetricType::CassandraReadCapacityUtilization:
+            return "CassandraReadCapacityUtilization";
+          case MetricType::CassandraWriteCapacityUtilization:
+            return "CassandraWriteCapacityUtilization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

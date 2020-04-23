@@ -17,6 +17,7 @@
 #include <aws/mediapackage-vod/MediaPackageVod_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediapackage-vod/model/EgressEndpoint.h>
 #include <utility>
 
@@ -331,6 +332,43 @@ namespace Model
      */
     inline CreateAssetResult& WithSourceRoleArn(const char* value) { SetSourceRoleArn(value); return *this;}
 
+
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    
+    inline CreateAssetResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    
+    inline CreateAssetResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    
+    inline CreateAssetResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    
+    inline CreateAssetResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    
+    inline CreateAssetResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    
+    inline CreateAssetResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline CreateAssetResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    
+    inline CreateAssetResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    
+    inline CreateAssetResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -348,6 +386,8 @@ namespace Model
     Aws::String m_sourceArn;
 
     Aws::String m_sourceRoleArn;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

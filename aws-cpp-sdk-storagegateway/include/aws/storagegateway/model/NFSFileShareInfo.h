@@ -173,25 +173,25 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional. </p>
      */
     inline NFSFileShareInfo& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}

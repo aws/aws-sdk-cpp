@@ -35,7 +35,8 @@ namespace Model
 
   /**
    * <p>Specifies the schema to which you want Kinesis Data Firehose to configure
-   * your data before it writes it to Amazon S3.</p><p><h3>See Also:</h3>   <a
+   * your data before it writes it to Amazon S3. This parameter is required if
+   * <code>Enabled</code> is set to true.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SchemaConfiguration">AWS
    * API Reference</a></p>
    */

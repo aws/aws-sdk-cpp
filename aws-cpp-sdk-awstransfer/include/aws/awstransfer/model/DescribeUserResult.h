@@ -44,44 +44,44 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server that has this user
-     * assigned.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server that has this user assigned.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server that has this user
-     * assigned.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server that has this user assigned.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server that has this user
-     * assigned.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server that has this user assigned.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server that has this user
-     * assigned.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server that has this user assigned.</p>
      */
     inline void SetServerId(const char* value) { m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server that has this user
-     * assigned.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server that has this user assigned.</p>
      */
     inline DescribeUserResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server that has this user
-     * assigned.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server that has this user assigned.</p>
      */
     inline DescribeUserResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server that has this user
-     * assigned.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server that has this user assigned.</p>
      */
     inline DescribeUserResult& WithServerId(const char* value) { SetServerId(value); return *this;}
 

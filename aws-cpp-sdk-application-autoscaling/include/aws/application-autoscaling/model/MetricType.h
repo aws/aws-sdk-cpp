@@ -39,7 +39,9 @@ namespace Model
     ECSServiceAverageMemoryUtilization,
     AppStreamAverageCapacityUtilization,
     ComprehendInferenceUtilization,
-    LambdaProvisionedConcurrencyUtilization
+    LambdaProvisionedConcurrencyUtilization,
+    CassandraReadCapacityUtilization,
+    CassandraWriteCapacityUtilization
   };
 
 namespace MetricTypeMapper

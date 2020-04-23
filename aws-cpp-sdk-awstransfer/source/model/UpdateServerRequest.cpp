@@ -23,12 +23,14 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateServerRequest::UpdateServerRequest() : 
+    m_certificateHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
     m_hostKeyHasBeenSet(false),
     m_identityProviderDetailsHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_protocolsHasBeenSet(false),
     m_serverIdHasBeenSet(false)
 {
 }
@@ -36,6 +38,12 @@ UpdateServerRequest::UpdateServerRequest() :
 Aws::String UpdateServerRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithString("Certificate", m_certificate);
+
+  }
 
   if(m_endpointDetailsHasBeenSet)
   {
@@ -63,6 +71,17 @@ Aws::String UpdateServerRequest::SerializePayload() const
   if(m_loggingRoleHasBeenSet)
   {
    payload.WithString("LoggingRole", m_loggingRole);
+
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
 
   }
 

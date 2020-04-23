@@ -47,6 +47,7 @@
 #include <aws/storagegateway/model/CreateStorediSCSIVolumeRequest.h>
 #include <aws/storagegateway/model/CreateTapeWithBarcodeRequest.h>
 #include <aws/storagegateway/model/CreateTapesRequest.h>
+#include <aws/storagegateway/model/DeleteAutomaticTapeCreationPolicyRequest.h>
 #include <aws/storagegateway/model/DeleteBandwidthRateLimitRequest.h>
 #include <aws/storagegateway/model/DeleteChapCredentialsRequest.h>
 #include <aws/storagegateway/model/DeleteFileShareRequest.h>
@@ -76,6 +77,7 @@
 #include <aws/storagegateway/model/DetachVolumeRequest.h>
 #include <aws/storagegateway/model/DisableGatewayRequest.h>
 #include <aws/storagegateway/model/JoinDomainRequest.h>
+#include <aws/storagegateway/model/ListAutomaticTapeCreationPoliciesRequest.h>
 #include <aws/storagegateway/model/ListFileSharesRequest.h>
 #include <aws/storagegateway/model/ListGatewaysRequest.h>
 #include <aws/storagegateway/model/ListLocalDisksRequest.h>
@@ -95,6 +97,7 @@
 #include <aws/storagegateway/model/ShutdownGatewayRequest.h>
 #include <aws/storagegateway/model/StartAvailabilityMonitorTestRequest.h>
 #include <aws/storagegateway/model/StartGatewayRequest.h>
+#include <aws/storagegateway/model/UpdateAutomaticTapeCreationPolicyRequest.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitRequest.h>
 #include <aws/storagegateway/model/UpdateChapCredentialsRequest.h>
 #include <aws/storagegateway/model/UpdateGatewayInformationRequest.h>
@@ -771,6 +774,41 @@ void StorageGatewayClient::CreateTapesAsync(const CreateTapesRequest& request, c
 void StorageGatewayClient::CreateTapesAsyncHelper(const CreateTapesRequest& request, const CreateTapesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateTapes(request), context);
+}
+
+DeleteAutomaticTapeCreationPolicyOutcome StorageGatewayClient::DeleteAutomaticTapeCreationPolicy(const DeleteAutomaticTapeCreationPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAutomaticTapeCreationPolicyOutcome(DeleteAutomaticTapeCreationPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteAutomaticTapeCreationPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteAutomaticTapeCreationPolicyOutcomeCallable StorageGatewayClient::DeleteAutomaticTapeCreationPolicyCallable(const DeleteAutomaticTapeCreationPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAutomaticTapeCreationPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAutomaticTapeCreationPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DeleteAutomaticTapeCreationPolicyAsync(const DeleteAutomaticTapeCreationPolicyRequest& request, const DeleteAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAutomaticTapeCreationPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DeleteAutomaticTapeCreationPolicyAsyncHelper(const DeleteAutomaticTapeCreationPolicyRequest& request, const DeleteAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAutomaticTapeCreationPolicy(request), context);
 }
 
 DeleteBandwidthRateLimitOutcome StorageGatewayClient::DeleteBandwidthRateLimit(const DeleteBandwidthRateLimitRequest& request) const
@@ -1788,6 +1826,41 @@ void StorageGatewayClient::JoinDomainAsyncHelper(const JoinDomainRequest& reques
   handler(this, request, JoinDomain(request), context);
 }
 
+ListAutomaticTapeCreationPoliciesOutcome StorageGatewayClient::ListAutomaticTapeCreationPolicies(const ListAutomaticTapeCreationPoliciesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAutomaticTapeCreationPoliciesOutcome(ListAutomaticTapeCreationPoliciesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAutomaticTapeCreationPoliciesOutcome(outcome.GetError());
+  }
+}
+
+ListAutomaticTapeCreationPoliciesOutcomeCallable StorageGatewayClient::ListAutomaticTapeCreationPoliciesCallable(const ListAutomaticTapeCreationPoliciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAutomaticTapeCreationPoliciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAutomaticTapeCreationPolicies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::ListAutomaticTapeCreationPoliciesAsync(const ListAutomaticTapeCreationPoliciesRequest& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAutomaticTapeCreationPoliciesAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::ListAutomaticTapeCreationPoliciesAsyncHelper(const ListAutomaticTapeCreationPoliciesRequest& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAutomaticTapeCreationPolicies(request), context);
+}
+
 ListFileSharesOutcome StorageGatewayClient::ListFileShares(const ListFileSharesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2451,6 +2524,41 @@ void StorageGatewayClient::StartGatewayAsync(const StartGatewayRequest& request,
 void StorageGatewayClient::StartGatewayAsyncHelper(const StartGatewayRequest& request, const StartGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartGateway(request), context);
+}
+
+UpdateAutomaticTapeCreationPolicyOutcome StorageGatewayClient::UpdateAutomaticTapeCreationPolicy(const UpdateAutomaticTapeCreationPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateAutomaticTapeCreationPolicyOutcome(UpdateAutomaticTapeCreationPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateAutomaticTapeCreationPolicyOutcome(outcome.GetError());
+  }
+}
+
+UpdateAutomaticTapeCreationPolicyOutcomeCallable StorageGatewayClient::UpdateAutomaticTapeCreationPolicyCallable(const UpdateAutomaticTapeCreationPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAutomaticTapeCreationPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAutomaticTapeCreationPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::UpdateAutomaticTapeCreationPolicyAsync(const UpdateAutomaticTapeCreationPolicyRequest& request, const UpdateAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAutomaticTapeCreationPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::UpdateAutomaticTapeCreationPolicyAsyncHelper(const UpdateAutomaticTapeCreationPolicyRequest& request, const UpdateAutomaticTapeCreationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAutomaticTapeCreationPolicy(request), context);
 }
 
 UpdateBandwidthRateLimitOutcome StorageGatewayClient::UpdateBandwidthRateLimit(const UpdateBandwidthRateLimitRequest& request) const

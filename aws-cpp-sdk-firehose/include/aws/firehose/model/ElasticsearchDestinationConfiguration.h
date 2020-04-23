@@ -23,6 +23,7 @@
 #include <aws/firehose/model/S3DestinationConfiguration.h>
 #include <aws/firehose/model/ProcessingConfiguration.h>
 #include <aws/firehose/model/CloudWatchLoggingOptions.h>
+#include <aws/firehose/model/VpcConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -714,6 +715,37 @@ namespace Model
      */
     inline ElasticsearchDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline ElasticsearchDestinationConfiguration& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
+
+    /**
+     * <p>The details of the VPC of the Amazon ES destination.</p>
+     */
+    inline ElasticsearchDestinationConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_roleARN;
@@ -751,6 +783,9 @@ namespace Model
 
     CloudWatchLoggingOptions m_cloudWatchLoggingOptions;
     bool m_cloudWatchLoggingOptionsHasBeenSet;
+
+    VpcConfiguration m_vpcConfiguration;
+    bool m_vpcConfigurationHasBeenSet;
   };
 
 } // namespace Model

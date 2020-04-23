@@ -17,6 +17,7 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/Protocol.h>
 #include <utility>
 
 namespace Aws
@@ -45,91 +46,99 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned identifier for a specific server. That server's user
-     * authentication method is tested with a user name and password.</p>
+     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
+     * server. That server's user authentication method is tested with a user name and
+     * password.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned identifier for a specific server. That server's user
-     * authentication method is tested with a user name and password.</p>
+     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
+     * server. That server's user authentication method is tested with a user name and
+     * password.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A system-assigned identifier for a specific server. That server's user
-     * authentication method is tested with a user name and password.</p>
+     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
+     * server. That server's user authentication method is tested with a user name and
+     * password.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A system-assigned identifier for a specific server. That server's user
-     * authentication method is tested with a user name and password.</p>
+     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
+     * server. That server's user authentication method is tested with a user name and
+     * password.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned identifier for a specific server. That server's user
-     * authentication method is tested with a user name and password.</p>
+     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
+     * server. That server's user authentication method is tested with a user name and
+     * password.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned identifier for a specific server. That server's user
-     * authentication method is tested with a user name and password.</p>
+     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
+     * server. That server's user authentication method is tested with a user name and
+     * password.</p>
      */
     inline TestIdentityProviderRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned identifier for a specific server. That server's user
-     * authentication method is tested with a user name and password.</p>
+     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
+     * server. That server's user authentication method is tested with a user name and
+     * password.</p>
      */
     inline TestIdentityProviderRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned identifier for a specific server. That server's user
-     * authentication method is tested with a user name and password.</p>
+     * <p>A system-assigned identifier for a specific file transfer protocol-enabled
+     * server. That server's user authentication method is tested with a user name and
+     * password.</p>
      */
     inline TestIdentityProviderRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline TestIdentityProviderRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline TestIdentityProviderRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>This request parameter is the name of the user account to be tested.</p>
+     * <p>The name of the user account to be tested.</p>
      */
     inline TestIdentityProviderRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -174,6 +183,55 @@ namespace Model
      */
     inline TestIdentityProviderRequest& WithUserPassword(const char* value) { SetUserPassword(value); return *this;}
 
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline const Protocol& GetServerProtocol() const{ return m_serverProtocol; }
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline bool ServerProtocolHasBeenSet() const { return m_serverProtocolHasBeenSet; }
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline void SetServerProtocol(const Protocol& value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = value; }
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline void SetServerProtocol(Protocol&& value) { m_serverProtocolHasBeenSet = true; m_serverProtocol = std::move(value); }
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline TestIdentityProviderRequest& WithServerProtocol(const Protocol& value) { SetServerProtocol(value); return *this;}
+
+    /**
+     * <p>The type of file transfer protocol to be tested.</p> <p>The available
+     * protocols are:</p> <ul> <li> <p>Secure Shell (SSH) File Transfer Protocol
+     * (SFTP)</p> </li> <li> <p>File Transfer Protocol Secure (FTPS)</p> </li> <li>
+     * <p>File Transfer Protocol (FTP)</p> </li> </ul>
+     */
+    inline TestIdentityProviderRequest& WithServerProtocol(Protocol&& value) { SetServerProtocol(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serverId;
@@ -184,6 +242,9 @@ namespace Model
 
     Aws::String m_userPassword;
     bool m_userPasswordHasBeenSet;
+
+    Protocol m_serverProtocol;
+    bool m_serverProtocolHasBeenSet;
   };
 
 } // namespace Model

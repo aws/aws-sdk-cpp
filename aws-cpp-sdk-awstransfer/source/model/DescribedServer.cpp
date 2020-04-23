@@ -30,6 +30,7 @@ namespace Model
 
 DescribedServer::DescribedServer() : 
     m_arnHasBeenSet(false),
+    m_certificateHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -38,6 +39,7 @@ DescribedServer::DescribedServer() :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_protocolsHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
@@ -49,6 +51,7 @@ DescribedServer::DescribedServer() :
 
 DescribedServer::DescribedServer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_certificateHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -57,6 +60,7 @@ DescribedServer::DescribedServer(JsonView jsonValue) :
     m_identityProviderType(IdentityProviderType::NOT_SET),
     m_identityProviderTypeHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
+    m_protocolsHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_state(State::NOT_SET),
     m_stateHasBeenSet(false),
@@ -74,6 +78,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Certificate"))
+  {
+    m_certificate = jsonValue.GetString("Certificate");
+
+    m_certificateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EndpointDetails"))
@@ -116,6 +127,16 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_loggingRole = jsonValue.GetString("LoggingRole");
 
     m_loggingRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Protocols"))
+  {
+    Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+    {
+      m_protocols.push_back(ProtocolMapper::GetProtocolForName(protocolsJsonList[protocolsIndex].AsString()));
+    }
+    m_protocolsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ServerId"))
@@ -162,6 +183,12 @@ JsonValue DescribedServer::Jsonize() const
 
   }
 
+  if(m_certificateHasBeenSet)
+  {
+   payload.WithString("Certificate", m_certificate);
+
+  }
+
   if(m_endpointDetailsHasBeenSet)
   {
    payload.WithObject("EndpointDetails", m_endpointDetails.Jsonize());
@@ -193,6 +220,17 @@ JsonValue DescribedServer::Jsonize() const
   if(m_loggingRoleHasBeenSet)
   {
    payload.WithString("LoggingRole", m_loggingRole);
+
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
 
   }
 

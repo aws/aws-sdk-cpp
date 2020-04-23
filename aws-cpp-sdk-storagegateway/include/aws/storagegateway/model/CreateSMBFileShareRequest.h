@@ -141,82 +141,82 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline CreateSMBFileShareRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline CreateSMBFileShareRequest& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline CreateSMBFileShareRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
-     * side encryption. This value can only be set when KMSEncrypted is true.
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3
+     * server-side encryption. This value can only be set when KMSEncrypted is true.
      * Optional.</p>
      */
     inline CreateSMBFileShareRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
@@ -714,7 +714,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInvalidUserList() const{ return m_invalidUserList; }
@@ -722,7 +722,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline bool InvalidUserListHasBeenSet() const { return m_invalidUserListHasBeenSet; }
@@ -730,7 +730,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline void SetInvalidUserList(const Aws::Vector<Aws::String>& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList = value; }
@@ -738,7 +738,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline void SetInvalidUserList(Aws::Vector<Aws::String>&& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList = std::move(value); }
@@ -746,7 +746,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline CreateSMBFileShareRequest& WithInvalidUserList(const Aws::Vector<Aws::String>& value) { SetInvalidUserList(value); return *this;}
@@ -754,7 +754,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline CreateSMBFileShareRequest& WithInvalidUserList(Aws::Vector<Aws::String>&& value) { SetInvalidUserList(std::move(value)); return *this;}
@@ -762,7 +762,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline CreateSMBFileShareRequest& AddInvalidUserList(const Aws::String& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(value); return *this; }
@@ -770,7 +770,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline CreateSMBFileShareRequest& AddInvalidUserList(Aws::String&& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(std::move(value)); return *this; }
@@ -778,7 +778,7 @@ namespace Model
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to
      * access the file share. A group must be prefixed with the @ character. For
-     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * example, <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
     inline CreateSMBFileShareRequest& AddInvalidUserList(const char* value) { m_invalidUserListHasBeenSet = true; m_invalidUserList.push_back(value); return *this; }

@@ -410,74 +410,74 @@ namespace Model
 
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline bool GetKMSEncrypted() const{ return m_kMSEncrypted; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
-     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * <p>True to use Amazon S3 server-side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithKMSEncrypted(bool value) { SetKMSEncrypted(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline void SetKMSKey(Aws::String&& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline void SetKMSKey(const char* value) { m_kMSKeyHasBeenSet = true; m_kMSKey.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithKMSKey(const Aws::String& value) { SetKMSKey(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithKMSKey(Aws::String&& value) { SetKMSKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server-side
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}

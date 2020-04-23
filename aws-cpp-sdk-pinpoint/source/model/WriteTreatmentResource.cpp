@@ -29,6 +29,7 @@ namespace Model
 {
 
 WriteTreatmentResource::WriteTreatmentResource() : 
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_sizePercent(0),
@@ -40,6 +41,7 @@ WriteTreatmentResource::WriteTreatmentResource() :
 }
 
 WriteTreatmentResource::WriteTreatmentResource(JsonView jsonValue) : 
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_messageConfigurationHasBeenSet(false),
     m_scheduleHasBeenSet(false),
     m_sizePercent(0),
@@ -53,6 +55,13 @@ WriteTreatmentResource::WriteTreatmentResource(JsonView jsonValue) :
 
 WriteTreatmentResource& WriteTreatmentResource::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
+  {
+    m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
+
+    m_customDeliveryConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("MessageConfiguration"))
   {
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
@@ -101,6 +110,12 @@ WriteTreatmentResource& WriteTreatmentResource::operator =(JsonView jsonValue)
 JsonValue WriteTreatmentResource::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customDeliveryConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDeliveryConfiguration", m_customDeliveryConfiguration.Jsonize());
+
+  }
 
   if(m_messageConfigurationHasBeenSet)
   {

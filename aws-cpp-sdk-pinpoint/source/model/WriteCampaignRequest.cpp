@@ -30,6 +30,7 @@ namespace Model
 
 WriteCampaignRequest::WriteCampaignRequest() : 
     m_additionalTreatmentsHasBeenSet(false),
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
     m_holdoutPercentHasBeenSet(false),
@@ -52,6 +53,7 @@ WriteCampaignRequest::WriteCampaignRequest() :
 
 WriteCampaignRequest::WriteCampaignRequest(JsonView jsonValue) : 
     m_additionalTreatmentsHasBeenSet(false),
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
     m_holdoutPercentHasBeenSet(false),
@@ -83,6 +85,13 @@ WriteCampaignRequest& WriteCampaignRequest::operator =(JsonView jsonValue)
       m_additionalTreatments.push_back(additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject());
     }
     m_additionalTreatmentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
+  {
+    m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
+
+    m_customDeliveryConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -201,6 +210,12 @@ JsonValue WriteCampaignRequest::Jsonize() const
      additionalTreatmentsJsonList[additionalTreatmentsIndex].AsObject(m_additionalTreatments[additionalTreatmentsIndex].Jsonize());
    }
    payload.WithArray("AdditionalTreatments", std::move(additionalTreatmentsJsonList));
+
+  }
+
+  if(m_customDeliveryConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDeliveryConfiguration", m_customDeliveryConfiguration.Jsonize());
 
   }
 

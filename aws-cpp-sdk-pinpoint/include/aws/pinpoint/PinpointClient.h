@@ -3421,8 +3421,9 @@ namespace Model
         /**
          * <p>Creates a new endpoint for an application or updates the settings and
          * attributes of an existing endpoint for an application. You can also use this
-         * operation to define custom attributes (Attributes, Metrics, and UserAttributes
-         * properties) for an endpoint.</p><p><h3>See Also:</h3>   <a
+         * operation to define custom attributes for an endpoint. If an update includes one
+         * or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any
+         * existing values with the new values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -3431,8 +3432,9 @@ namespace Model
         /**
          * <p>Creates a new endpoint for an application or updates the settings and
          * attributes of an existing endpoint for an application. You can also use this
-         * operation to define custom attributes (Attributes, Metrics, and UserAttributes
-         * properties) for an endpoint.</p><p><h3>See Also:</h3>   <a
+         * operation to define custom attributes for an endpoint. If an update includes one
+         * or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any
+         * existing values with the new values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3443,8 +3445,9 @@ namespace Model
         /**
          * <p>Creates a new endpoint for an application or updates the settings and
          * attributes of an existing endpoint for an application. You can also use this
-         * operation to define custom attributes (Attributes, Metrics, and UserAttributes
-         * properties) for an endpoint.</p><p><h3>See Also:</h3>   <a
+         * operation to define custom attributes for an endpoint. If an update includes one
+         * or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any
+         * existing values with the new values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3455,9 +3458,10 @@ namespace Model
         /**
          * <p>Creates a new batch of endpoints for an application or updates the settings
          * and attributes of a batch of existing endpoints for an application. You can also
-         * use this operation to define custom attributes (Attributes, Metrics, and
-         * UserAttributes properties) for a batch of endpoints.</p><p><h3>See Also:</h3>  
-         * <a
+         * use this operation to define custom attributes for a batch of endpoints. If an
+         * update includes one or more values for a custom attribute, Amazon Pinpoint
+         * replaces (overwrites) any existing values with the new values.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">AWS
          * API Reference</a></p>
          */
@@ -3466,9 +3470,10 @@ namespace Model
         /**
          * <p>Creates a new batch of endpoints for an application or updates the settings
          * and attributes of a batch of existing endpoints for an application. You can also
-         * use this operation to define custom attributes (Attributes, Metrics, and
-         * UserAttributes properties) for a batch of endpoints.</p><p><h3>See Also:</h3>  
-         * <a
+         * use this operation to define custom attributes for a batch of endpoints. If an
+         * update includes one or more values for a custom attribute, Amazon Pinpoint
+         * replaces (overwrites) any existing values with the new values.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">AWS
          * API Reference</a></p>
          *
@@ -3479,9 +3484,10 @@ namespace Model
         /**
          * <p>Creates a new batch of endpoints for an application or updates the settings
          * and attributes of a batch of existing endpoints for an application. You can also
-         * use this operation to define custom attributes (Attributes, Metrics, and
-         * UserAttributes properties) for a batch of endpoints.</p><p><h3>See Also:</h3>  
-         * <a
+         * use this operation to define custom attributes for a batch of endpoints. If an
+         * update includes one or more values for a custom attribute, Amazon Pinpoint
+         * replaces (overwrites) any existing values with the new values.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEndpointsBatch">AWS
          * API Reference</a></p>
          *

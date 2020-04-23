@@ -45,42 +45,50 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline DescribeServerRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline DescribeServerRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for an SFTP server.</p>
+     * <p>A system-assigned unique identifier for a file transfer protocol-enabled
+     * server.</p>
      */
     inline DescribeServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 

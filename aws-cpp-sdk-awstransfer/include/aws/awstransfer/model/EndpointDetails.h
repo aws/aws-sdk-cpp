@@ -36,10 +36,10 @@ namespace Model
 
   /**
    * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-   * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
-   * server and resources only within your VPC. To control incoming internet traffic,
-   * invoke the <code>UpdateServer</code> API and attach an Elastic IP to your
-   * server's endpoint. </p><p><h3>See Also:</h3>   <a
+   * your file transfer protocol-enabled server. With a VPC endpoint, you can
+   * restrict access to your server and resources only within your VPC. To control
+   * incoming internet traffic, invoke the <code>UpdateServer</code> API and attach
+   * an Elastic IP to your server's endpoint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails">AWS
    * API Reference</a></p>
    */
@@ -54,128 +54,128 @@ namespace Model
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetAddressAllocationIds() const{ return m_addressAllocationIds; }
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline bool AddressAllocationIdsHasBeenSet() const { return m_addressAllocationIdsHasBeenSet; }
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline void SetAddressAllocationIds(const Aws::Vector<Aws::String>& value) { m_addressAllocationIdsHasBeenSet = true; m_addressAllocationIds = value; }
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline void SetAddressAllocationIds(Aws::Vector<Aws::String>&& value) { m_addressAllocationIdsHasBeenSet = true; m_addressAllocationIds = std::move(value); }
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline EndpointDetails& WithAddressAllocationIds(const Aws::Vector<Aws::String>& value) { SetAddressAllocationIds(value); return *this;}
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline EndpointDetails& WithAddressAllocationIds(Aws::Vector<Aws::String>&& value) { SetAddressAllocationIds(std::move(value)); return *this;}
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline EndpointDetails& AddAddressAllocationIds(const Aws::String& value) { m_addressAllocationIdsHasBeenSet = true; m_addressAllocationIds.push_back(value); return *this; }
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline EndpointDetails& AddAddressAllocationIds(Aws::String&& value) { m_addressAllocationIdsHasBeenSet = true; m_addressAllocationIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of address allocation IDs that are required to attach an Elastic IP
-     * address to your SFTP server's endpoint. This is only valid in the
-     * <code>UpdateServer</code> API.</p> <note> <p>This property can only be use when
-     * <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
+     * address to your file transfer protocol-enabled server's endpoint. This is only
+     * valid in the <code>UpdateServer</code> API.</p> <note> <p>This property can only
+     * be use when <code>EndpointType</code> is set to <code>VPC</code>.</p> </note>
      */
     inline EndpointDetails& AddAddressAllocationIds(const char* value) { m_addressAllocationIdsHasBeenSet = true; m_addressAllocationIds.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline EndpointDetails& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline EndpointDetails& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline EndpointDetails& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline EndpointDetails& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of subnet IDs that are required to host your SFTP server endpoint in
-     * your VPC.</p>
+     * <p>A list of subnet IDs that are required to host your file transfer
+     * protocol-enabled server endpoint in your VPC.</p>
      */
     inline EndpointDetails& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -222,50 +222,50 @@ namespace Model
 
 
     /**
-     * <p>The VPC ID of the virtual private cloud in which the SFTP server's endpoint
-     * will be hosted.</p>
+     * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
+     * endpoint will be hosted.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The VPC ID of the virtual private cloud in which the SFTP server's endpoint
-     * will be hosted.</p>
+     * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
+     * endpoint will be hosted.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>The VPC ID of the virtual private cloud in which the SFTP server's endpoint
-     * will be hosted.</p>
+     * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
+     * endpoint will be hosted.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The VPC ID of the virtual private cloud in which the SFTP server's endpoint
-     * will be hosted.</p>
+     * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
+     * endpoint will be hosted.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The VPC ID of the virtual private cloud in which the SFTP server's endpoint
-     * will be hosted.</p>
+     * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
+     * endpoint will be hosted.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The VPC ID of the virtual private cloud in which the SFTP server's endpoint
-     * will be hosted.</p>
+     * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
+     * endpoint will be hosted.</p>
      */
     inline EndpointDetails& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The VPC ID of the virtual private cloud in which the SFTP server's endpoint
-     * will be hosted.</p>
+     * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
+     * endpoint will be hosted.</p>
      */
     inline EndpointDetails& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The VPC ID of the virtual private cloud in which the SFTP server's endpoint
-     * will be hosted.</p>
+     * <p>The VPC ID of the VPC in which a file transfer protocol-enabled server's
+     * endpoint will be hosted.</p>
      */
     inline EndpointDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 

@@ -153,25 +153,25 @@ namespace Model
 
 
     /**
-     * <p>Specifies that the number of virtual tapes descried be limited to the
+     * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Specifies that the number of virtual tapes descried be limited to the
+     * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>Specifies that the number of virtual tapes descried be limited to the
+     * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Specifies that the number of virtual tapes descried be limited to the
+     * <p>Specifies that the number of virtual tapes described be limited to the
      * specified number.</p>
      */
     inline DescribeTapeArchivesRequest& WithLimit(int value) { SetLimit(value); return *this;}

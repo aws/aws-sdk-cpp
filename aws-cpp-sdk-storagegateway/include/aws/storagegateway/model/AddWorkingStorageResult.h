@@ -35,8 +35,8 @@ namespace StorageGateway
 namespace Model
 {
   /**
-   * <p>A JSON object containing the of the gateway for which working storage was
-   * configured.</p><p><h3>See Also:</h3>   <a
+   * <p>A JSON object containing the Amazon Resource Name (ARN) of the gateway for
+   * which working storage was configured.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddWorkingStorageOutput">AWS
    * API Reference</a></p>
    */

@@ -28,7 +28,8 @@ CreatePackagingConfigurationRequest::CreatePackagingConfigurationRequest() :
     m_hlsPackageHasBeenSet(false),
     m_idHasBeenSet(false),
     m_mssPackageHasBeenSet(false),
-    m_packagingGroupIdHasBeenSet(false)
+    m_packagingGroupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,17 @@ Aws::String CreatePackagingConfigurationRequest::SerializePayload() const
   if(m_packagingGroupIdHasBeenSet)
   {
    payload.WithString("packagingGroupId", m_packagingGroupId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

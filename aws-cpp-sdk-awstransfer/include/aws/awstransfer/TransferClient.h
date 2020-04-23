@@ -152,16 +152,16 @@ namespace Model
     typedef std::function<void(const TransferClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
 
   /**
-   * <p>AWS Transfer for SFTP is a fully managed service that enables the transfer of
-   * files directly into and out of Amazon S3 using the Secure File Transfer Protocol
-   * (SFTP)—also known as Secure Shell (SSH) File Transfer Protocol. AWS helps you
-   * seamlessly migrate your file transfer workflows to AWS Transfer for SFTP—by
-   * integrating with existing authentication systems, and providing DNS routing with
-   * Amazon Route 53—so nothing changes for your customers and partners, or their
-   * applications. With your data in S3, you can use it with AWS services for
-   * processing, analytics, machine learning, and archiving. Getting started with AWS
-   * Transfer for SFTP (AWS SFTP) is easy; there is no infrastructure to buy and set
-   * up. </p>
+   * <p>AWS Transfer Family is a fully managed service that enables the transfer of
+   * files over the the File Transfer Protocol (FTP), File Transfer Protocol over SSL
+   * (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
+   * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly
+   * migrate your file transfer workflows to AWS Transfer Family by integrating with
+   * existing authentication systems, and providing DNS routing with Amazon Route 53
+   * so nothing changes for your customers and partners, or their applications. With
+   * your data in Amazon S3, you can use it with AWS services for processing,
+   * analytics, machine learning, and archiving. Getting started with AWS Transfer
+   * Family is easy since there is no infrastructure to buy and set up.</p>
    */
   class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient
   {
@@ -193,20 +193,22 @@ namespace Model
 
 
         /**
-         * <p>Instantiates an autoscaling virtual server based on Secure File Transfer
-         * Protocol (SFTP) in AWS. When you make updates to your server or when you work
-         * with users, use the service-generated <code>ServerId</code> property that is
-         * assigned to the newly created server.</p><p><h3>See Also:</h3>   <a
+         * <p>Instantiates an autoscaling virtual server based on the selected file
+         * transfer protocol in AWS. When you make updates to your file transfer
+         * protocol-enabled server or when you work with users, use the service-generated
+         * <code>ServerId</code> property that is assigned to the newly created
+         * server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateServerOutcome CreateServer(const Model::CreateServerRequest& request) const;
 
         /**
-         * <p>Instantiates an autoscaling virtual server based on Secure File Transfer
-         * Protocol (SFTP) in AWS. When you make updates to your server or when you work
-         * with users, use the service-generated <code>ServerId</code> property that is
-         * assigned to the newly created server.</p><p><h3>See Also:</h3>   <a
+         * <p>Instantiates an autoscaling virtual server based on the selected file
+         * transfer protocol in AWS. When you make updates to your file transfer
+         * protocol-enabled server or when you work with users, use the service-generated
+         * <code>ServerId</code> property that is assigned to the newly created
+         * server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">AWS
          * API Reference</a></p>
          *
@@ -215,10 +217,11 @@ namespace Model
         virtual Model::CreateServerOutcomeCallable CreateServerCallable(const Model::CreateServerRequest& request) const;
 
         /**
-         * <p>Instantiates an autoscaling virtual server based on Secure File Transfer
-         * Protocol (SFTP) in AWS. When you make updates to your server or when you work
-         * with users, use the service-generated <code>ServerId</code> property that is
-         * assigned to the newly created server.</p><p><h3>See Also:</h3>   <a
+         * <p>Instantiates an autoscaling virtual server based on the selected file
+         * transfer protocol in AWS. When you make updates to your file transfer
+         * protocol-enabled server or when you work with users, use the service-generated
+         * <code>ServerId</code> property that is assigned to the newly created
+         * server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer">AWS
          * API Reference</a></p>
          *
@@ -227,9 +230,9 @@ namespace Model
         virtual void CreateServerAsync(const Model::CreateServerRequest& request, const CreateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a user and associates them with an existing Secure File Transfer
-         * Protocol (SFTP) server. You can only create and associate users with SFTP
-         * servers that have the <code>IdentityProviderType</code> set to
+         * <p>Creates a user and associates them with an existing file transfer
+         * protocol-enabled server. You can only create and associate users with servers
+         * that have the <code>IdentityProviderType</code> set to
          * <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>, you
          * can specify the user name, set the home directory, store the user's public key,
          * and assign the user's AWS Identity and Access Management (IAM) role. You can
@@ -241,9 +244,9 @@ namespace Model
         virtual Model::CreateUserOutcome CreateUser(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a user and associates them with an existing Secure File Transfer
-         * Protocol (SFTP) server. You can only create and associate users with SFTP
-         * servers that have the <code>IdentityProviderType</code> set to
+         * <p>Creates a user and associates them with an existing file transfer
+         * protocol-enabled server. You can only create and associate users with servers
+         * that have the <code>IdentityProviderType</code> set to
          * <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>, you
          * can specify the user name, set the home directory, store the user's public key,
          * and assign the user's AWS Identity and Access Management (IAM) role. You can
@@ -257,9 +260,9 @@ namespace Model
         virtual Model::CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request) const;
 
         /**
-         * <p>Creates a user and associates them with an existing Secure File Transfer
-         * Protocol (SFTP) server. You can only create and associate users with SFTP
-         * servers that have the <code>IdentityProviderType</code> set to
+         * <p>Creates a user and associates them with an existing file transfer
+         * protocol-enabled server. You can only create and associate users with servers
+         * that have the <code>IdentityProviderType</code> set to
          * <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>, you
          * can specify the user name, set the home directory, store the user's public key,
          * and assign the user's AWS Identity and Access Management (IAM) role. You can
@@ -273,16 +276,16 @@ namespace Model
         virtual void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Secure File Transfer Protocol (SFTP) server that you specify.</p>
-         * <p>No response returns from this operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the file transfer protocol-enabled server that you specify.</p> <p>No
+         * response returns from this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteServerOutcome DeleteServer(const Model::DeleteServerRequest& request) const;
 
         /**
-         * <p>Deletes the Secure File Transfer Protocol (SFTP) server that you specify.</p>
-         * <p>No response returns from this operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the file transfer protocol-enabled server that you specify.</p> <p>No
+         * response returns from this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">AWS
          * API Reference</a></p>
          *
@@ -291,8 +294,8 @@ namespace Model
         virtual Model::DeleteServerOutcomeCallable DeleteServerCallable(const Model::DeleteServerRequest& request) const;
 
         /**
-         * <p>Deletes the Secure File Transfer Protocol (SFTP) server that you specify.</p>
-         * <p>No response returns from this operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the file transfer protocol-enabled server that you specify.</p> <p>No
+         * response returns from this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteServer">AWS
          * API Reference</a></p>
          *
@@ -329,18 +332,20 @@ namespace Model
         virtual void DeleteSshPublicKeyAsync(const Model::DeleteSshPublicKeyRequest& request, const DeleteSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the user belonging to the server you specify.</p> <p>No response
-         * returns from this operation.</p> <note> <p>When you delete a user from a server,
-         * the user's information is lost.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the user belonging to a file transfer protocol-enabled server you
+         * specify.</p> <p>No response returns from this operation.</p> <note> <p>When you
+         * delete a user from a server, the user's information is lost.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes the user belonging to the server you specify.</p> <p>No response
-         * returns from this operation.</p> <note> <p>When you delete a user from a server,
-         * the user's information is lost.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the user belonging to a file transfer protocol-enabled server you
+         * specify.</p> <p>No response returns from this operation.</p> <note> <p>When you
+         * delete a user from a server, the user's information is lost.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">AWS
          * API Reference</a></p>
          *
@@ -349,9 +354,10 @@ namespace Model
         virtual Model::DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request) const;
 
         /**
-         * <p>Deletes the user belonging to the server you specify.</p> <p>No response
-         * returns from this operation.</p> <note> <p>When you delete a user from a server,
-         * the user's information is lost.</p> </note><p><h3>See Also:</h3>   <a
+         * <p>Deletes the user belonging to a file transfer protocol-enabled server you
+         * specify.</p> <p>No response returns from this operation.</p> <note> <p>When you
+         * delete a user from a server, the user's information is lost.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteUser">AWS
          * API Reference</a></p>
          *
@@ -360,20 +366,22 @@ namespace Model
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the server that you specify by passing the <code>ServerId</code>
-         * parameter.</p> <p>The response contains a description of the server's
-         * properties. When you set <code>EndpointType</code> to VPC, the response will
-         * contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a file transfer protocol-enabled server that you specify by passing
+         * the <code>ServerId</code> parameter.</p> <p>The response contains a description
+         * of a server's properties. When you set <code>EndpointType</code> to VPC, the
+         * response will contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeServerOutcome DescribeServer(const Model::DescribeServerRequest& request) const;
 
         /**
-         * <p>Describes the server that you specify by passing the <code>ServerId</code>
-         * parameter.</p> <p>The response contains a description of the server's
-         * properties. When you set <code>EndpointType</code> to VPC, the response will
-         * contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a file transfer protocol-enabled server that you specify by passing
+         * the <code>ServerId</code> parameter.</p> <p>The response contains a description
+         * of a server's properties. When you set <code>EndpointType</code> to VPC, the
+         * response will contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">AWS
          * API Reference</a></p>
          *
@@ -382,10 +390,11 @@ namespace Model
         virtual Model::DescribeServerOutcomeCallable DescribeServerCallable(const Model::DescribeServerRequest& request) const;
 
         /**
-         * <p>Describes the server that you specify by passing the <code>ServerId</code>
-         * parameter.</p> <p>The response contains a description of the server's
-         * properties. When you set <code>EndpointType</code> to VPC, the response will
-         * contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a file transfer protocol-enabled server that you specify by passing
+         * the <code>ServerId</code> parameter.</p> <p>The response contains a description
+         * of a server's properties. When you set <code>EndpointType</code> to VPC, the
+         * response will contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">AWS
          * API Reference</a></p>
          *
@@ -394,20 +403,20 @@ namespace Model
         virtual void DescribeServerAsync(const Model::DescribeServerRequest& request, const DescribeServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the user assigned to a specific server, as identified by its
-         * <code>ServerId</code> property.</p> <p>The response from this call returns the
-         * properties of the user associated with the <code>ServerId</code> value that was
-         * specified.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the user assigned to the specific file transfer protocol-enabled
+         * server, as identified by its <code>ServerId</code> property.</p> <p>The response
+         * from this call returns the properties of the user associated with the
+         * <code>ServerId</code> value that was specified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest& request) const;
 
         /**
-         * <p>Describes the user assigned to a specific server, as identified by its
-         * <code>ServerId</code> property.</p> <p>The response from this call returns the
-         * properties of the user associated with the <code>ServerId</code> value that was
-         * specified.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the user assigned to the specific file transfer protocol-enabled
+         * server, as identified by its <code>ServerId</code> property.</p> <p>The response
+         * from this call returns the properties of the user associated with the
+         * <code>ServerId</code> value that was specified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">AWS
          * API Reference</a></p>
          *
@@ -416,10 +425,10 @@ namespace Model
         virtual Model::DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request) const;
 
         /**
-         * <p>Describes the user assigned to a specific server, as identified by its
-         * <code>ServerId</code> property.</p> <p>The response from this call returns the
-         * properties of the user associated with the <code>ServerId</code> value that was
-         * specified.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the user assigned to the specific file transfer protocol-enabled
+         * server, as identified by its <code>ServerId</code> property.</p> <p>The response
+         * from this call returns the properties of the user associated with the
+         * <code>ServerId</code> value that was specified.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeUser">AWS
          * API Reference</a></p>
          *
@@ -429,10 +438,11 @@ namespace Model
 
         /**
          * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
-         * <code>UserName</code> value assigned to a specific server, identified by
-         * <code>ServerId</code>.</p> <p>The response returns the <code>UserName</code>
-         * value, the <code>ServerId</code> value, and the name of the
-         * <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>UserName</code> value assigned to the specific file transfer
+         * protocol-enabled server, identified by <code>ServerId</code>.</p> <p>The
+         * response returns the <code>UserName</code> value, the <code>ServerId</code>
+         * value, and the name of the <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">AWS
          * API Reference</a></p>
          */
@@ -440,10 +450,11 @@ namespace Model
 
         /**
          * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
-         * <code>UserName</code> value assigned to a specific server, identified by
-         * <code>ServerId</code>.</p> <p>The response returns the <code>UserName</code>
-         * value, the <code>ServerId</code> value, and the name of the
-         * <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>UserName</code> value assigned to the specific file transfer
+         * protocol-enabled server, identified by <code>ServerId</code>.</p> <p>The
+         * response returns the <code>UserName</code> value, the <code>ServerId</code>
+         * value, and the name of the <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">AWS
          * API Reference</a></p>
          *
@@ -453,10 +464,11 @@ namespace Model
 
         /**
          * <p>Adds a Secure Shell (SSH) public key to a user account identified by a
-         * <code>UserName</code> value assigned to a specific server, identified by
-         * <code>ServerId</code>.</p> <p>The response returns the <code>UserName</code>
-         * value, the <code>ServerId</code> value, and the name of the
-         * <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>UserName</code> value assigned to the specific file transfer
+         * protocol-enabled server, identified by <code>ServerId</code>.</p> <p>The
+         * response returns the <code>UserName</code> value, the <code>ServerId</code>
+         * value, and the name of the <code>SshPublicKeyId</code>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey">AWS
          * API Reference</a></p>
          *
@@ -465,16 +477,16 @@ namespace Model
         virtual void ImportSshPublicKeyAsync(const Model::ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Secure File Transfer Protocol (SFTP) servers that are associated
-         * with your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the file transfer protocol-enabled servers that are associated with
+         * your AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListServersOutcome ListServers(const Model::ListServersRequest& request) const;
 
         /**
-         * <p>Lists the Secure File Transfer Protocol (SFTP) servers that are associated
-         * with your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the file transfer protocol-enabled servers that are associated with
+         * your AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">AWS
          * API Reference</a></p>
          *
@@ -483,8 +495,8 @@ namespace Model
         virtual Model::ListServersOutcomeCallable ListServersCallable(const Model::ListServersRequest& request) const;
 
         /**
-         * <p>Lists the Secure File Transfer Protocol (SFTP) servers that are associated
-         * with your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the file transfer protocol-enabled servers that are associated with
+         * your AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListServers">AWS
          * API Reference</a></p>
          *
@@ -524,16 +536,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the users for the server that you specify by passing the
-         * <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users for a file transfer protocol-enabled server that you specify
+         * by passing the <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the users for the server that you specify by passing the
-         * <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users for a file transfer protocol-enabled server that you specify
+         * by passing the <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">AWS
          * API Reference</a></p>
          *
@@ -542,8 +554,8 @@ namespace Model
         virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the users for the server that you specify by passing the
-         * <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users for a file transfer protocol-enabled server that you specify
+         * by passing the <code>ServerId</code> parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListUsers">AWS
          * API Reference</a></p>
          *
@@ -552,28 +564,28 @@ namespace Model
         virtual void ListUsersAsync(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the state of a Secure File Transfer Protocol (SFTP) server from
-         * <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on an SFTP server
-         * that is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept
-         * and process file transfer jobs.</p> <p>The state of <code>STARTING</code>
-         * indicates that the server is in an intermediate state, either not fully able to
-         * respond, or not fully online. The values of <code>START_FAILED</code> can
-         * indicate an error condition. </p> <p>No response is returned from this
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the state of a file transfer protocol-enabled server from
+         * <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on a server that
+         * is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and
+         * process file transfer jobs.</p> <p>The state of <code>STARTING</code> indicates
+         * that the server is in an intermediate state, either not fully able to respond,
+         * or not fully online. The values of <code>START_FAILED</code> can indicate an
+         * error condition.</p> <p>No response is returned from this call.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">AWS
          * API Reference</a></p>
          */
         virtual Model::StartServerOutcome StartServer(const Model::StartServerRequest& request) const;
 
         /**
-         * <p>Changes the state of a Secure File Transfer Protocol (SFTP) server from
-         * <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on an SFTP server
-         * that is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept
-         * and process file transfer jobs.</p> <p>The state of <code>STARTING</code>
-         * indicates that the server is in an intermediate state, either not fully able to
-         * respond, or not fully online. The values of <code>START_FAILED</code> can
-         * indicate an error condition. </p> <p>No response is returned from this
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the state of a file transfer protocol-enabled server from
+         * <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on a server that
+         * is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and
+         * process file transfer jobs.</p> <p>The state of <code>STARTING</code> indicates
+         * that the server is in an intermediate state, either not fully able to respond,
+         * or not fully online. The values of <code>START_FAILED</code> can indicate an
+         * error condition.</p> <p>No response is returned from this call.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">AWS
          * API Reference</a></p>
          *
@@ -582,14 +594,14 @@ namespace Model
         virtual Model::StartServerOutcomeCallable StartServerCallable(const Model::StartServerRequest& request) const;
 
         /**
-         * <p>Changes the state of a Secure File Transfer Protocol (SFTP) server from
-         * <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on an SFTP server
-         * that is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept
-         * and process file transfer jobs.</p> <p>The state of <code>STARTING</code>
-         * indicates that the server is in an intermediate state, either not fully able to
-         * respond, or not fully online. The values of <code>START_FAILED</code> can
-         * indicate an error condition. </p> <p>No response is returned from this
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the state of a file transfer protocol-enabled server from
+         * <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on a server that
+         * is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and
+         * process file transfer jobs.</p> <p>The state of <code>STARTING</code> indicates
+         * that the server is in an intermediate state, either not fully able to respond,
+         * or not fully online. The values of <code>START_FAILED</code> can indicate an
+         * error condition.</p> <p>No response is returned from this call.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer">AWS
          * API Reference</a></p>
          *
@@ -598,30 +610,32 @@ namespace Model
         virtual void StartServerAsync(const Model::StartServerRequest& request, const StartServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the state of an SFTP server from <code>ONLINE</code> to
-         * <code>OFFLINE</code>. An <code>OFFLINE</code> server cannot accept and process
-         * file transfer jobs. Information tied to your server such as server and user
-         * properties are not affected by stopping your server. Stopping a server will not
-         * reduce or impact your Secure File Transfer Protocol (SFTP) endpoint billing.</p>
-         * <p>The state of <code>STOPPING</code> indicates that the server is in an
-         * intermediate state, either not fully able to respond, or not fully offline. The
-         * values of <code>STOP_FAILED</code> can indicate an error condition.</p> <p>No
-         * response is returned from this call.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the state of a file transfer protocol-enabled server from
+         * <code>ONLINE</code> to <code>OFFLINE</code>. An <code>OFFLINE</code> server
+         * cannot accept and process file transfer jobs. Information tied to your server,
+         * such as server and user properties, are not affected by stopping your server.
+         * Stopping the server will not reduce or impact your file transfer protocol
+         * endpoint billing.</p> <p>The state of <code>STOPPING</code> indicates that the
+         * server is in an intermediate state, either not fully able to respond, or not
+         * fully offline. The values of <code>STOP_FAILED</code> can indicate an error
+         * condition.</p> <p>No response is returned from this call.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">AWS
          * API Reference</a></p>
          */
         virtual Model::StopServerOutcome StopServer(const Model::StopServerRequest& request) const;
 
         /**
-         * <p>Changes the state of an SFTP server from <code>ONLINE</code> to
-         * <code>OFFLINE</code>. An <code>OFFLINE</code> server cannot accept and process
-         * file transfer jobs. Information tied to your server such as server and user
-         * properties are not affected by stopping your server. Stopping a server will not
-         * reduce or impact your Secure File Transfer Protocol (SFTP) endpoint billing.</p>
-         * <p>The state of <code>STOPPING</code> indicates that the server is in an
-         * intermediate state, either not fully able to respond, or not fully offline. The
-         * values of <code>STOP_FAILED</code> can indicate an error condition.</p> <p>No
-         * response is returned from this call.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the state of a file transfer protocol-enabled server from
+         * <code>ONLINE</code> to <code>OFFLINE</code>. An <code>OFFLINE</code> server
+         * cannot accept and process file transfer jobs. Information tied to your server,
+         * such as server and user properties, are not affected by stopping your server.
+         * Stopping the server will not reduce or impact your file transfer protocol
+         * endpoint billing.</p> <p>The state of <code>STOPPING</code> indicates that the
+         * server is in an intermediate state, either not fully able to respond, or not
+         * fully offline. The values of <code>STOP_FAILED</code> can indicate an error
+         * condition.</p> <p>No response is returned from this call.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">AWS
          * API Reference</a></p>
          *
@@ -630,15 +644,16 @@ namespace Model
         virtual Model::StopServerOutcomeCallable StopServerCallable(const Model::StopServerRequest& request) const;
 
         /**
-         * <p>Changes the state of an SFTP server from <code>ONLINE</code> to
-         * <code>OFFLINE</code>. An <code>OFFLINE</code> server cannot accept and process
-         * file transfer jobs. Information tied to your server such as server and user
-         * properties are not affected by stopping your server. Stopping a server will not
-         * reduce or impact your Secure File Transfer Protocol (SFTP) endpoint billing.</p>
-         * <p>The state of <code>STOPPING</code> indicates that the server is in an
-         * intermediate state, either not fully able to respond, or not fully offline. The
-         * values of <code>STOP_FAILED</code> can indicate an error condition.</p> <p>No
-         * response is returned from this call.</p><p><h3>See Also:</h3>   <a
+         * <p>Changes the state of a file transfer protocol-enabled server from
+         * <code>ONLINE</code> to <code>OFFLINE</code>. An <code>OFFLINE</code> server
+         * cannot accept and process file transfer jobs. Information tied to your server,
+         * such as server and user properties, are not affected by stopping your server.
+         * Stopping the server will not reduce or impact your file transfer protocol
+         * endpoint billing.</p> <p>The state of <code>STOPPING</code> indicates that the
+         * server is in an intermediate state, either not fully able to respond, or not
+         * fully offline. The values of <code>STOP_FAILED</code> can indicate an error
+         * condition.</p> <p>No response is returned from this call.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer">AWS
          * API Reference</a></p>
          *
@@ -678,24 +693,24 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>If the <code>IdentityProviderType</code> of the server is
-         * <code>API_Gateway</code>, tests whether your API Gateway is set up successfully.
-         * We highly recommend that you call this operation to test your authentication
-         * method as soon as you create your server. By doing so, you can troubleshoot
-         * issues with the API Gateway integration to ensure that your users can
-         * successfully use the service.</p><p><h3>See Also:</h3>   <a
+         * <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled
+         * server is <code>API_Gateway</code>, tests whether your API Gateway is set up
+         * successfully. We highly recommend that you call this operation to test your
+         * authentication method as soon as you create your server. By doing so, you can
+         * troubleshoot issues with the API Gateway integration to ensure that your users
+         * can successfully use the service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">AWS
          * API Reference</a></p>
          */
         virtual Model::TestIdentityProviderOutcome TestIdentityProvider(const Model::TestIdentityProviderRequest& request) const;
 
         /**
-         * <p>If the <code>IdentityProviderType</code> of the server is
-         * <code>API_Gateway</code>, tests whether your API Gateway is set up successfully.
-         * We highly recommend that you call this operation to test your authentication
-         * method as soon as you create your server. By doing so, you can troubleshoot
-         * issues with the API Gateway integration to ensure that your users can
-         * successfully use the service.</p><p><h3>See Also:</h3>   <a
+         * <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled
+         * server is <code>API_Gateway</code>, tests whether your API Gateway is set up
+         * successfully. We highly recommend that you call this operation to test your
+         * authentication method as soon as you create your server. By doing so, you can
+         * troubleshoot issues with the API Gateway integration to ensure that your users
+         * can successfully use the service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">AWS
          * API Reference</a></p>
          *
@@ -704,12 +719,12 @@ namespace Model
         virtual Model::TestIdentityProviderOutcomeCallable TestIdentityProviderCallable(const Model::TestIdentityProviderRequest& request) const;
 
         /**
-         * <p>If the <code>IdentityProviderType</code> of the server is
-         * <code>API_Gateway</code>, tests whether your API Gateway is set up successfully.
-         * We highly recommend that you call this operation to test your authentication
-         * method as soon as you create your server. By doing so, you can troubleshoot
-         * issues with the API Gateway integration to ensure that your users can
-         * successfully use the service.</p><p><h3>See Also:</h3>   <a
+         * <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled
+         * server is <code>API_Gateway</code>, tests whether your API Gateway is set up
+         * successfully. We highly recommend that you call this operation to test your
+         * authentication method as soon as you create your server. By doing so, you can
+         * troubleshoot issues with the API Gateway integration to ensure that your users
+         * can successfully use the service.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestIdentityProvider">AWS
          * API Reference</a></p>
          *
@@ -752,18 +767,18 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the server properties after that server has been created.</p> <p>The
-         * <code>UpdateServer</code> call returns the <code>ServerId</code> of the Secure
-         * File Transfer Protocol (SFTP) server you updated.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the file transfer protocol-enabled server's properties after that
+         * server has been created.</p> <p>The <code>UpdateServer</code> call returns the
+         * <code>ServerId</code> of the server you updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateServerOutcome UpdateServer(const Model::UpdateServerRequest& request) const;
 
         /**
-         * <p>Updates the server properties after that server has been created.</p> <p>The
-         * <code>UpdateServer</code> call returns the <code>ServerId</code> of the Secure
-         * File Transfer Protocol (SFTP) server you updated.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the file transfer protocol-enabled server's properties after that
+         * server has been created.</p> <p>The <code>UpdateServer</code> call returns the
+         * <code>ServerId</code> of the server you updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">AWS
          * API Reference</a></p>
          *
@@ -772,9 +787,9 @@ namespace Model
         virtual Model::UpdateServerOutcomeCallable UpdateServerCallable(const Model::UpdateServerRequest& request) const;
 
         /**
-         * <p>Updates the server properties after that server has been created.</p> <p>The
-         * <code>UpdateServer</code> call returns the <code>ServerId</code> of the Secure
-         * File Transfer Protocol (SFTP) server you updated.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the file transfer protocol-enabled server's properties after that
+         * server has been created.</p> <p>The <code>UpdateServer</code> call returns the
+         * <code>ServerId</code> of the server you updated.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer">AWS
          * API Reference</a></p>
          *

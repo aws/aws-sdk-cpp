@@ -134,56 +134,38 @@ namespace Model
 
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline bool ServiceNamespaceHasBeenSet() const { return m_serviceNamespaceHasBeenSet; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline ScheduledAction& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
 
     /**
-     * <p>The namespace of the AWS service that provides the resource or
-     * <code>custom-resource</code> for a resource provided by your own application or
-     * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * <p>The namespace of the AWS service that provides the resource, or a
+     * <code>custom-resource</code>.</p>
      */
     inline ScheduledAction& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
 
@@ -195,12 +177,15 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
+     * examples of using these expressions, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
@@ -211,12 +196,15 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
+     * examples of using these expressions, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
@@ -227,12 +215,15 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
+     * examples of using these expressions, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
@@ -243,12 +234,15 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
+     * examples of using these expressions, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
@@ -259,12 +253,15 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
+     * examples of using these expressions, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
 
@@ -275,12 +272,15 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
+     * examples of using these expressions, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline ScheduledAction& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
@@ -291,12 +291,15 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
+     * examples of using these expressions, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline ScheduledAction& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
@@ -307,12 +310,15 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
+     * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p> <p>For
+     * examples of using these expressions, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
+     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline ScheduledAction& WithSchedule(const char* value) { SetSchedule(value); return *this;}
 
@@ -354,7 +360,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -395,7 +403,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
@@ -436,7 +446,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -477,7 +489,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -518,7 +532,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -559,7 +575,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline ScheduledAction& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -600,7 +618,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline ScheduledAction& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -641,7 +661,9 @@ namespace Model
      * <code>function</code> and the unique identifier is the function name with a
      * function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or
-     * <code>function:my-function:1</code>.</p> </li> </ul>
+     * <code>function:my-function:1</code>.</p> </li> <li> <p>Amazon Keyspaces table -
+     * The resource type is <code>table</code> and the unique identifier is the table
+     * name. Example: <code>keyspace/mykeyspace/table/mytable</code>.</p> </li> </ul>
      */
     inline ScheduledAction& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -674,7 +696,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -706,7 +732,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
 
@@ -738,7 +768,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -770,7 +804,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -802,7 +840,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline ScheduledAction& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -834,7 +876,11 @@ namespace Model
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
      * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
-     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
+     * - The provisioned concurrency for a Lambda function.</p> </li> <li> <p>
+     * <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity
+     * for an Amazon Keyspaces table.</p> </li> <li> <p>
+     * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity
+     * for an Amazon Keyspaces table.</p> </li> </ul>
      */
     inline ScheduledAction& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
@@ -902,56 +948,56 @@ namespace Model
 
 
     /**
-     * <p>The new minimum and maximum capacity. You can set both values or just one.
-     * During the scheduled time, if the current capacity is below the minimum
-     * capacity, Application Auto Scaling scales out to the minimum capacity. If the
-     * current capacity is above the maximum capacity, Application Auto Scaling scales
-     * in to the maximum capacity.</p>
+     * <p>The new minimum and maximum capacity. You can set both values or just one. At
+     * the scheduled time, if the current capacity is below the minimum capacity,
+     * Application Auto Scaling scales out to the minimum capacity. If the current
+     * capacity is above the maximum capacity, Application Auto Scaling scales in to
+     * the maximum capacity.</p>
      */
     inline const ScalableTargetAction& GetScalableTargetAction() const{ return m_scalableTargetAction; }
 
     /**
-     * <p>The new minimum and maximum capacity. You can set both values or just one.
-     * During the scheduled time, if the current capacity is below the minimum
-     * capacity, Application Auto Scaling scales out to the minimum capacity. If the
-     * current capacity is above the maximum capacity, Application Auto Scaling scales
-     * in to the maximum capacity.</p>
+     * <p>The new minimum and maximum capacity. You can set both values or just one. At
+     * the scheduled time, if the current capacity is below the minimum capacity,
+     * Application Auto Scaling scales out to the minimum capacity. If the current
+     * capacity is above the maximum capacity, Application Auto Scaling scales in to
+     * the maximum capacity.</p>
      */
     inline bool ScalableTargetActionHasBeenSet() const { return m_scalableTargetActionHasBeenSet; }
 
     /**
-     * <p>The new minimum and maximum capacity. You can set both values or just one.
-     * During the scheduled time, if the current capacity is below the minimum
-     * capacity, Application Auto Scaling scales out to the minimum capacity. If the
-     * current capacity is above the maximum capacity, Application Auto Scaling scales
-     * in to the maximum capacity.</p>
+     * <p>The new minimum and maximum capacity. You can set both values or just one. At
+     * the scheduled time, if the current capacity is below the minimum capacity,
+     * Application Auto Scaling scales out to the minimum capacity. If the current
+     * capacity is above the maximum capacity, Application Auto Scaling scales in to
+     * the maximum capacity.</p>
      */
     inline void SetScalableTargetAction(const ScalableTargetAction& value) { m_scalableTargetActionHasBeenSet = true; m_scalableTargetAction = value; }
 
     /**
-     * <p>The new minimum and maximum capacity. You can set both values or just one.
-     * During the scheduled time, if the current capacity is below the minimum
-     * capacity, Application Auto Scaling scales out to the minimum capacity. If the
-     * current capacity is above the maximum capacity, Application Auto Scaling scales
-     * in to the maximum capacity.</p>
+     * <p>The new minimum and maximum capacity. You can set both values or just one. At
+     * the scheduled time, if the current capacity is below the minimum capacity,
+     * Application Auto Scaling scales out to the minimum capacity. If the current
+     * capacity is above the maximum capacity, Application Auto Scaling scales in to
+     * the maximum capacity.</p>
      */
     inline void SetScalableTargetAction(ScalableTargetAction&& value) { m_scalableTargetActionHasBeenSet = true; m_scalableTargetAction = std::move(value); }
 
     /**
-     * <p>The new minimum and maximum capacity. You can set both values or just one.
-     * During the scheduled time, if the current capacity is below the minimum
-     * capacity, Application Auto Scaling scales out to the minimum capacity. If the
-     * current capacity is above the maximum capacity, Application Auto Scaling scales
-     * in to the maximum capacity.</p>
+     * <p>The new minimum and maximum capacity. You can set both values or just one. At
+     * the scheduled time, if the current capacity is below the minimum capacity,
+     * Application Auto Scaling scales out to the minimum capacity. If the current
+     * capacity is above the maximum capacity, Application Auto Scaling scales in to
+     * the maximum capacity.</p>
      */
     inline ScheduledAction& WithScalableTargetAction(const ScalableTargetAction& value) { SetScalableTargetAction(value); return *this;}
 
     /**
-     * <p>The new minimum and maximum capacity. You can set both values or just one.
-     * During the scheduled time, if the current capacity is below the minimum
-     * capacity, Application Auto Scaling scales out to the minimum capacity. If the
-     * current capacity is above the maximum capacity, Application Auto Scaling scales
-     * in to the maximum capacity.</p>
+     * <p>The new minimum and maximum capacity. You can set both values or just one. At
+     * the scheduled time, if the current capacity is below the minimum capacity,
+     * Application Auto Scaling scales out to the minimum capacity. If the current
+     * capacity is above the maximum capacity, Application Auto Scaling scales in to
+     * the maximum capacity.</p>
      */
     inline ScheduledAction& WithScalableTargetAction(ScalableTargetAction&& value) { SetScalableTargetAction(std::move(value)); return *this;}
 

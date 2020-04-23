@@ -38,6 +38,7 @@
 #include <aws/ram/model/ListPermissionsResult.h>
 #include <aws/ram/model/ListPrincipalsResult.h>
 #include <aws/ram/model/ListResourceSharePermissionsResult.h>
+#include <aws/ram/model/ListResourceTypesResult.h>
 #include <aws/ram/model/ListResourcesResult.h>
 #include <aws/ram/model/PromoteResourceShareCreatedFromPolicyResult.h>
 #include <aws/ram/model/RejectResourceShareInvitationResult.h>
@@ -100,6 +101,7 @@ namespace Model
         class ListPermissionsRequest;
         class ListPrincipalsRequest;
         class ListResourceSharePermissionsRequest;
+        class ListResourceTypesRequest;
         class ListResourcesRequest;
         class PromoteResourceShareCreatedFromPolicyRequest;
         class RejectResourceShareInvitationRequest;
@@ -124,6 +126,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPermissionsResult, Aws::Client::AWSError<RAMErrors>> ListPermissionsOutcome;
         typedef Aws::Utils::Outcome<ListPrincipalsResult, Aws::Client::AWSError<RAMErrors>> ListPrincipalsOutcome;
         typedef Aws::Utils::Outcome<ListResourceSharePermissionsResult, Aws::Client::AWSError<RAMErrors>> ListResourceSharePermissionsOutcome;
+        typedef Aws::Utils::Outcome<ListResourceTypesResult, Aws::Client::AWSError<RAMErrors>> ListResourceTypesOutcome;
         typedef Aws::Utils::Outcome<ListResourcesResult, Aws::Client::AWSError<RAMErrors>> ListResourcesOutcome;
         typedef Aws::Utils::Outcome<PromoteResourceShareCreatedFromPolicyResult, Aws::Client::AWSError<RAMErrors>> PromoteResourceShareCreatedFromPolicyOutcome;
         typedef Aws::Utils::Outcome<RejectResourceShareInvitationResult, Aws::Client::AWSError<RAMErrors>> RejectResourceShareInvitationOutcome;
@@ -148,6 +151,7 @@ namespace Model
         typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
         typedef std::future<ListPrincipalsOutcome> ListPrincipalsOutcomeCallable;
         typedef std::future<ListResourceSharePermissionsOutcome> ListResourceSharePermissionsOutcomeCallable;
+        typedef std::future<ListResourceTypesOutcome> ListResourceTypesOutcomeCallable;
         typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
         typedef std::future<PromoteResourceShareCreatedFromPolicyOutcome> PromoteResourceShareCreatedFromPolicyOutcomeCallable;
         typedef std::future<RejectResourceShareInvitationOutcome> RejectResourceShareInvitationOutcomeCallable;
@@ -175,6 +179,7 @@ namespace Model
     typedef std::function<void(const RAMClient*, const Model::ListPermissionsRequest&, const Model::ListPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListPrincipalsRequest&, const Model::ListPrincipalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPrincipalsResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListResourceSharePermissionsRequest&, const Model::ListResourceSharePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceSharePermissionsResponseReceivedHandler;
+    typedef std::function<void(const RAMClient*, const Model::ListResourceTypesRequest&, const Model::ListResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceTypesResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::ListResourcesRequest&, const Model::ListResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourcesResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::PromoteResourceShareCreatedFromPolicyRequest&, const Model::PromoteResourceShareCreatedFromPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromoteResourceShareCreatedFromPolicyResponseReceivedHandler;
     typedef std::function<void(const RAMClient*, const Model::RejectResourceShareInvitationRequest&, const Model::RejectResourceShareInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectResourceShareInvitationResponseReceivedHandler;
@@ -686,6 +691,34 @@ namespace Model
         virtual void ListResourceSharePermissionsAsync(const Model::ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the shareable resource types supported by AWS RAM.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceTypesOutcome ListResourceTypes(const Model::ListResourceTypesRequest& request) const;
+
+        /**
+         * <p>Lists the shareable resource types supported by AWS RAM.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResourceTypesOutcomeCallable ListResourceTypesCallable(const Model::ListResourceTypesRequest& request) const;
+
+        /**
+         * <p>Lists the shareable resource types supported by AWS RAM.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResourceTypesAsync(const Model::ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the resources that you added to a resource shares or the resources that
          * are shared with you.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">AWS
@@ -886,6 +919,7 @@ namespace Model
         void ListPermissionsAsyncHelper(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPrincipalsAsyncHelper(const Model::ListPrincipalsRequest& request, const ListPrincipalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceSharePermissionsAsyncHelper(const Model::ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResourceTypesAsyncHelper(const Model::ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourcesAsyncHelper(const Model::ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PromoteResourceShareCreatedFromPolicyAsyncHelper(const Model::PromoteResourceShareCreatedFromPolicyRequest& request, const PromoteResourceShareCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectResourceShareInvitationAsyncHelper(const Model::RejectResourceShareInvitationRequest& request, const RejectResourceShareInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

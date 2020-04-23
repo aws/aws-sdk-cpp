@@ -49,58 +49,66 @@ namespace Model
 
 
     /**
-     * <p>The configuration set that you want to apply to email that you send through
-     * the channel by using the <a href="emailAPIreference.html">Amazon Pinpoint Email
-     * API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that you want to apply to messages that you send
+     * through the channel.</p>
      */
     inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
 
     /**
-     * <p>The configuration set that you want to apply to email that you send through
-     * the channel by using the <a href="emailAPIreference.html">Amazon Pinpoint Email
-     * API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that you want to apply to messages that you send
+     * through the channel.</p>
      */
     inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
 
     /**
-     * <p>The configuration set that you want to apply to email that you send through
-     * the channel by using the <a href="emailAPIreference.html">Amazon Pinpoint Email
-     * API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that you want to apply to messages that you send
+     * through the channel.</p>
      */
     inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
 
     /**
-     * <p>The configuration set that you want to apply to email that you send through
-     * the channel by using the <a href="emailAPIreference.html">Amazon Pinpoint Email
-     * API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that you want to apply to messages that you send
+     * through the channel.</p>
      */
     inline void SetConfigurationSet(Aws::String&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
 
     /**
-     * <p>The configuration set that you want to apply to email that you send through
-     * the channel by using the <a href="emailAPIreference.html">Amazon Pinpoint Email
-     * API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that you want to apply to messages that you send
+     * through the channel.</p>
      */
     inline void SetConfigurationSet(const char* value) { m_configurationSetHasBeenSet = true; m_configurationSet.assign(value); }
 
     /**
-     * <p>The configuration set that you want to apply to email that you send through
-     * the channel by using the <a href="emailAPIreference.html">Amazon Pinpoint Email
-     * API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that you want to apply to messages that you send
+     * through the channel.</p>
      */
     inline EmailChannelRequest& WithConfigurationSet(const Aws::String& value) { SetConfigurationSet(value); return *this;}
 
     /**
-     * <p>The configuration set that you want to apply to email that you send through
-     * the channel by using the <a href="emailAPIreference.html">Amazon Pinpoint Email
-     * API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that you want to apply to messages that you send
+     * through the channel.</p>
      */
     inline EmailChannelRequest& WithConfigurationSet(Aws::String&& value) { SetConfigurationSet(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration set that you want to apply to email that you send through
-     * the channel by using the <a href="emailAPIreference.html">Amazon Pinpoint Email
-     * API</a>.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon
+     * SES configuration set</a> that you want to apply to messages that you send
+     * through the channel.</p>
      */
     inline EmailChannelRequest& WithConfigurationSet(const char* value) { SetConfigurationSet(value); return *this;}
 

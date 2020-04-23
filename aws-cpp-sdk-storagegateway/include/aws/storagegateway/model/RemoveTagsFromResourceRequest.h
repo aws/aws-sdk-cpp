@@ -99,55 +99,55 @@ namespace Model
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline RemoveTagsFromResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline RemoveTagsFromResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline RemoveTagsFromResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline RemoveTagsFromResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The keys of the tags you want to remove from the specified resource. A tag is
-     * composed of a key/value pair.</p>
+     * composed of a key-value pair.</p>
      */
     inline RemoveTagsFromResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 

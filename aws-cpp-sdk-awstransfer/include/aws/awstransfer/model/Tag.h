@@ -94,50 +94,42 @@ namespace Model
 
 
     /**
-     * <p>This property contains one or more values that you assigned to the key name
-     * you create.</p>
+     * <p>Contains one or more values that you assigned to the key name you create.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>This property contains one or more values that you assigned to the key name
-     * you create.</p>
+     * <p>Contains one or more values that you assigned to the key name you create.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>This property contains one or more values that you assigned to the key name
-     * you create.</p>
+     * <p>Contains one or more values that you assigned to the key name you create.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>This property contains one or more values that you assigned to the key name
-     * you create.</p>
+     * <p>Contains one or more values that you assigned to the key name you create.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>This property contains one or more values that you assigned to the key name
-     * you create.</p>
+     * <p>Contains one or more values that you assigned to the key name you create.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>This property contains one or more values that you assigned to the key name
-     * you create.</p>
+     * <p>Contains one or more values that you assigned to the key name you create.</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>This property contains one or more values that you assigned to the key name
-     * you create.</p>
+     * <p>Contains one or more values that you assigned to the key name you create.</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>This property contains one or more values that you assigned to the key name
-     * you create.</p>
+     * <p>Contains one or more values that you assigned to the key name you create.</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

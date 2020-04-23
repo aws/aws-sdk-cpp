@@ -43,6 +43,8 @@ namespace Aws
         static const int custom_resource_ResourceType_Property_HASH = HashingUtils::HashString("custom-resource:ResourceType:Property");
         static const int comprehend_document_classifier_endpoint_DesiredInferenceUnits_HASH = HashingUtils::HashString("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
         static const int lambda_function_ProvisionedConcurrency_HASH = HashingUtils::HashString("lambda:function:ProvisionedConcurrency");
+        static const int cassandra_table_ReadCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:ReadCapacityUnits");
+        static const int cassandra_table_WriteCapacityUnits_HASH = HashingUtils::HashString("cassandra:table:WriteCapacityUnits");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
@@ -100,6 +102,14 @@ namespace Aws
           {
             return ScalableDimension::lambda_function_ProvisionedConcurrency;
           }
+          else if (hashCode == cassandra_table_ReadCapacityUnits_HASH)
+          {
+            return ScalableDimension::cassandra_table_ReadCapacityUnits;
+          }
+          else if (hashCode == cassandra_table_WriteCapacityUnits_HASH)
+          {
+            return ScalableDimension::cassandra_table_WriteCapacityUnits;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -140,6 +150,10 @@ namespace Aws
             return "comprehend:document-classifier-endpoint:DesiredInferenceUnits";
           case ScalableDimension::lambda_function_ProvisionedConcurrency:
             return "lambda:function:ProvisionedConcurrency";
+          case ScalableDimension::cassandra_table_ReadCapacityUnits:
+            return "cassandra:table:ReadCapacityUnits";
+          case ScalableDimension::cassandra_table_WriteCapacityUnits:
+            return "cassandra:table:WriteCapacityUnits";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

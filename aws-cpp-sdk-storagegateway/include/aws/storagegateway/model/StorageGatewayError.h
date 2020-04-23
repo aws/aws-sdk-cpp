@@ -37,8 +37,8 @@ namespace Model
 
   /**
    * <p>Provides additional information about an error that was returned by the
-   * service as an or. See the <code>errorCode</code> and <code>errorDetails</code>
-   * members for more information about the error.</p><p><h3>See Also:</h3>   <a
+   * service. See the <code>errorCode</code> and <code>errorDetails</code> members
+   * for more information about the error.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StorageGatewayError">AWS
    * API Reference</a></p>
    */

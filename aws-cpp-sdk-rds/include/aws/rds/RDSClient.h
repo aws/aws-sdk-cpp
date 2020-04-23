@@ -5536,8 +5536,17 @@ namespace Aws
          * be created using the Percona XtraBackup utility as described in <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html">
          * Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora
-         * User Guide</i>.</p> <note> <p>This action only applies to Aurora DB
-         * clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * User Guide</i>.</p> <note> <p>This action only restores the DB cluster, not the
+         * DB instances for that DB cluster. You must invoke the
+         * <code>CreateDBInstance</code> action to create DB instances for the restored DB
+         * cluster, specifying the identifier of the restored DB cluster in
+         * <code>DBClusterIdentifier</code>. You can create DB instances only after the
+         * <code>RestoreDBClusterFromS3</code> action has completed and the DB cluster is
+         * available.</p> </note> <p>For more information on Amazon Aurora, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
+         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
          * API Reference</a></p>
          */
@@ -5549,8 +5558,17 @@ namespace Aws
          * be created using the Percona XtraBackup utility as described in <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html">
          * Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora
-         * User Guide</i>.</p> <note> <p>This action only applies to Aurora DB
-         * clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * User Guide</i>.</p> <note> <p>This action only restores the DB cluster, not the
+         * DB instances for that DB cluster. You must invoke the
+         * <code>CreateDBInstance</code> action to create DB instances for the restored DB
+         * cluster, specifying the identifier of the restored DB cluster in
+         * <code>DBClusterIdentifier</code>. You can create DB instances only after the
+         * <code>RestoreDBClusterFromS3</code> action has completed and the DB cluster is
+         * available.</p> </note> <p>For more information on Amazon Aurora, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
+         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
          * API Reference</a></p>
          *
@@ -5564,8 +5582,17 @@ namespace Aws
          * be created using the Percona XtraBackup utility as described in <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html">
          * Migrating Data to an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora
-         * User Guide</i>.</p> <note> <p>This action only applies to Aurora DB
-         * clusters.</p> </note><p><h3>See Also:</h3>   <a
+         * User Guide</i>.</p> <note> <p>This action only restores the DB cluster, not the
+         * DB instances for that DB cluster. You must invoke the
+         * <code>CreateDBInstance</code> action to create DB instances for the restored DB
+         * cluster, specifying the identifier of the restored DB cluster in
+         * <code>DBClusterIdentifier</code>. You can create DB instances only after the
+         * <code>RestoreDBClusterFromS3</code> action has completed and the DB cluster is
+         * available.</p> </note> <p>For more information on Amazon Aurora, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
+         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">AWS
          * API Reference</a></p>
          *
@@ -5587,8 +5614,9 @@ namespace Aws
          * cluster is available.</p> </note> <p>For more information on Amazon Aurora, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
-         * </p><p><h3>See Also:</h3>   <a
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
+         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -5608,8 +5636,9 @@ namespace Aws
          * cluster is available.</p> </note> <p>For more information on Amazon Aurora, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
-         * </p><p><h3>See Also:</h3>   <a
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
+         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -5631,8 +5660,9 @@ namespace Aws
          * cluster is available.</p> </note> <p>For more information on Amazon Aurora, see
          * <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
-         * </p><p><h3>See Also:</h3>   <a
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
+         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot">AWS
          * API Reference</a></p>
          *

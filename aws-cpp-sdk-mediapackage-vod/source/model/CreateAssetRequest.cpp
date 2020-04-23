@@ -27,7 +27,8 @@ CreateAssetRequest::CreateAssetRequest() :
     m_packagingGroupIdHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
-    m_sourceRoleArnHasBeenSet(false)
+    m_sourceRoleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String CreateAssetRequest::SerializePayload() const
   if(m_sourceRoleArnHasBeenSet)
   {
    payload.WithString("sourceRoleArn", m_sourceRoleArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

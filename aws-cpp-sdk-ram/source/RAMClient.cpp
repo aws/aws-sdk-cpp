@@ -47,6 +47,7 @@
 #include <aws/ram/model/ListPermissionsRequest.h>
 #include <aws/ram/model/ListPrincipalsRequest.h>
 #include <aws/ram/model/ListResourceSharePermissionsRequest.h>
+#include <aws/ram/model/ListResourceTypesRequest.h>
 #include <aws/ram/model/ListResourcesRequest.h>
 #include <aws/ram/model/PromoteResourceShareCreatedFromPolicyRequest.h>
 #include <aws/ram/model/RejectResourceShareInvitationRequest.h>
@@ -724,6 +725,41 @@ void RAMClient::ListResourceSharePermissionsAsync(const ListResourceSharePermiss
 void RAMClient::ListResourceSharePermissionsAsyncHelper(const ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListResourceSharePermissions(request), context);
+}
+
+ListResourceTypesOutcome RAMClient::ListResourceTypes(const ListResourceTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listresourcetypes";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListResourceTypesOutcome(ListResourceTypesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourceTypesOutcome(outcome.GetError());
+  }
+}
+
+ListResourceTypesOutcomeCallable RAMClient::ListResourceTypesCallable(const ListResourceTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::ListResourceTypesAsync(const ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourceTypesAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::ListResourceTypesAsyncHelper(const ListResourceTypesRequest& request, const ListResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourceTypes(request), context);
 }
 
 ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& request) const

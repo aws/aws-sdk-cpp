@@ -29,7 +29,8 @@ namespace Model
     UNCOMPRESSED,
     GZIP,
     ZIP,
-    Snappy
+    Snappy,
+    HADOOP_SNAPPY
   };
 
 namespace CompressionFormatMapper

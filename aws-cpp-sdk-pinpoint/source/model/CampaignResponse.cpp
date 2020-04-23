@@ -33,6 +33,7 @@ CampaignResponse::CampaignResponse() :
     m_applicationIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_defaultStateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
@@ -64,6 +65,7 @@ CampaignResponse::CampaignResponse(JsonView jsonValue) :
     m_applicationIdHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_customDeliveryConfigurationHasBeenSet(false),
     m_defaultStateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_holdoutPercent(0),
@@ -122,6 +124,13 @@ CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
     m_creationDate = jsonValue.GetString("CreationDate");
 
     m_creationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
+  {
+    m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
+
+    m_customDeliveryConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DefaultState"))
@@ -293,6 +302,12 @@ JsonValue CampaignResponse::Jsonize() const
   if(m_creationDateHasBeenSet)
   {
    payload.WithString("CreationDate", m_creationDate);
+
+  }
+
+  if(m_customDeliveryConfigurationHasBeenSet)
+  {
+   payload.WithObject("CustomDeliveryConfiguration", m_customDeliveryConfiguration.Jsonize());
 
   }
 

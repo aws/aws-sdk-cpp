@@ -750,38 +750,38 @@ namespace Model
 
 
     /**
-     * <p>One or more custom user attributes that describe the user who's associated
-     * with the endpoint.</p>
+     * <p>One or more custom attributes that describe the user who's associated with
+     * the endpoint.</p>
      */
     inline const EndpointUser& GetUser() const{ return m_user; }
 
     /**
-     * <p>One or more custom user attributes that describe the user who's associated
-     * with the endpoint.</p>
+     * <p>One or more custom attributes that describe the user who's associated with
+     * the endpoint.</p>
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
-     * <p>One or more custom user attributes that describe the user who's associated
-     * with the endpoint.</p>
+     * <p>One or more custom attributes that describe the user who's associated with
+     * the endpoint.</p>
      */
     inline void SetUser(const EndpointUser& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
-     * <p>One or more custom user attributes that describe the user who's associated
-     * with the endpoint.</p>
+     * <p>One or more custom attributes that describe the user who's associated with
+     * the endpoint.</p>
      */
     inline void SetUser(EndpointUser&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
-     * <p>One or more custom user attributes that describe the user who's associated
-     * with the endpoint.</p>
+     * <p>One or more custom attributes that describe the user who's associated with
+     * the endpoint.</p>
      */
     inline EndpointBatchItem& WithUser(const EndpointUser& value) { SetUser(value); return *this;}
 
     /**
-     * <p>One or more custom user attributes that describe the user who's associated
-     * with the endpoint.</p>
+     * <p>One or more custom attributes that describe the user who's associated with
+     * the endpoint.</p>
      */
     inline EndpointBatchItem& WithUser(EndpointUser&& value) { SetUser(std::move(value)); return *this;}
 
