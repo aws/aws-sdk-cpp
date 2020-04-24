@@ -30,6 +30,9 @@
 #include <aws/elastic-inference/ElasticInferenceClient.h>
 #include <aws/elastic-inference/ElasticInferenceEndpoint.h>
 #include <aws/elastic-inference/ElasticInferenceErrorMarshaller.h>
+#include <aws/elastic-inference/model/DescribeAcceleratorOfferingsRequest.h>
+#include <aws/elastic-inference/model/DescribeAcceleratorTypesRequest.h>
+#include <aws/elastic-inference/model/DescribeAcceleratorsRequest.h>
 #include <aws/elastic-inference/model/ListTagsForResourceRequest.h>
 #include <aws/elastic-inference/model/TagResourceRequest.h>
 #include <aws/elastic-inference/model/UntagResourceRequest.h>
@@ -104,6 +107,111 @@ void ElasticInferenceClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+DescribeAcceleratorOfferingsOutcome ElasticInferenceClient::DescribeAcceleratorOfferings(const DescribeAcceleratorOfferingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describe-accelerator-offerings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAcceleratorOfferingsOutcome(DescribeAcceleratorOfferingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAcceleratorOfferingsOutcome(outcome.GetError());
+  }
+}
+
+DescribeAcceleratorOfferingsOutcomeCallable ElasticInferenceClient::DescribeAcceleratorOfferingsCallable(const DescribeAcceleratorOfferingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorOfferingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAcceleratorOfferings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticInferenceClient::DescribeAcceleratorOfferingsAsync(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorOfferingsAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticInferenceClient::DescribeAcceleratorOfferingsAsyncHelper(const DescribeAcceleratorOfferingsRequest& request, const DescribeAcceleratorOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAcceleratorOfferings(request), context);
+}
+
+DescribeAcceleratorTypesOutcome ElasticInferenceClient::DescribeAcceleratorTypes(const DescribeAcceleratorTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describe-accelerator-types";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAcceleratorTypesOutcome(DescribeAcceleratorTypesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAcceleratorTypesOutcome(outcome.GetError());
+  }
+}
+
+DescribeAcceleratorTypesOutcomeCallable ElasticInferenceClient::DescribeAcceleratorTypesCallable(const DescribeAcceleratorTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAcceleratorTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticInferenceClient::DescribeAcceleratorTypesAsync(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorTypesAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticInferenceClient::DescribeAcceleratorTypesAsyncHelper(const DescribeAcceleratorTypesRequest& request, const DescribeAcceleratorTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAcceleratorTypes(request), context);
+}
+
+DescribeAcceleratorsOutcome ElasticInferenceClient::DescribeAccelerators(const DescribeAcceleratorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describe-accelerators";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAcceleratorsOutcome(DescribeAcceleratorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAcceleratorsOutcome(outcome.GetError());
+  }
+}
+
+DescribeAcceleratorsOutcomeCallable ElasticInferenceClient::DescribeAcceleratorsCallable(const DescribeAcceleratorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAcceleratorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccelerators(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticInferenceClient::DescribeAcceleratorsAsync(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAcceleratorsAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticInferenceClient::DescribeAcceleratorsAsyncHelper(const DescribeAcceleratorsRequest& request, const DescribeAcceleratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccelerators(request), context);
 }
 
 ListTagsForResourceOutcome ElasticInferenceClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

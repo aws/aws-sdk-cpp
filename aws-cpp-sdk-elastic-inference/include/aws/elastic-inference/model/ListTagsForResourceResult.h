@@ -44,62 +44,62 @@ namespace Model
 
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * The tags of the Elastic Inference Accelerator.
+     * <p> The tags of the Elastic Inference Accelerator. </p>
      */
     inline ListTagsForResourceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 

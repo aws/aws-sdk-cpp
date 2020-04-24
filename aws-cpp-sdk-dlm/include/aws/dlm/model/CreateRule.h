@@ -50,26 +50,26 @@ namespace Model
 
 
     /**
-     * <p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12,
-     * and 24.</p>
+     * <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8,
+     * 12, and 24.</p>
      */
     inline int GetInterval() const{ return m_interval; }
 
     /**
-     * <p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12,
-     * and 24.</p>
+     * <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8,
+     * 12, and 24.</p>
      */
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
 
     /**
-     * <p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12,
-     * and 24.</p>
+     * <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8,
+     * 12, and 24.</p>
      */
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**
-     * <p>The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12,
-     * and 24.</p>
+     * <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8,
+     * 12, and 24.</p>
      */
     inline CreateRule& WithInterval(int value) { SetInterval(value); return *this;}
 

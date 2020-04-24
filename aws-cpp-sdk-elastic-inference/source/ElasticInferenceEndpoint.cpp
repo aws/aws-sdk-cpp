@@ -37,7 +37,7 @@ namespace ElasticInferenceEndpoint
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
 
     Aws::StringStream ss;
-    ss << "elastic-inference" << ".";
+    ss << "api.elastic-inference" << ".";
 
     if(useDualStack)
     {
