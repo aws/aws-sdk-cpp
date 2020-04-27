@@ -26,6 +26,7 @@
 #include <aws/dms/model/KinesisSettings.h>
 #include <aws/dms/model/KafkaSettings.h>
 #include <aws/dms/model/ElasticsearchSettings.h>
+#include <aws/dms/model/NeptuneSettings.h>
 #include <aws/dms/model/RedshiftSettings.h>
 #include <utility>
 
@@ -971,110 +972,110 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration User Guide.</i> </p>
      */
     inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration User Guide.</i> </p>
      */
     inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration User Guide.</i> </p>
      */
     inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration User Guide.</i> </p>
      */
     inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
 
     /**
      * <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data
-     * Streams. For information about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using
-     * Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
-     * Database Migration User Guide.</i> </p>
+     * Streams. For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using
+     * Amazon Kinesis Data Streams as a Target for AWS Database Migration Service</a>
+     * in the <i>AWS Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline const KafkaSettings& GetKafkaSettings() const{ return m_kafkaSettings; }
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline bool KafkaSettingsHasBeenSet() const { return m_kafkaSettingsHasBeenSet; }
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetKafkaSettings(const KafkaSettings& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = value; }
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetKafkaSettings(KafkaSettings&& value) { m_kafkaSettingsHasBeenSet = true; m_kafkaSettings = std::move(value); }
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithKafkaSettings(const KafkaSettings& value) { SetKafkaSettings(value); return *this;}
 
     /**
-     * <p>Settings in JSON format for the target Apache Kafka endpoint. For information
-     * about other available settings, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using
-     * Object Mapping to Migrate Data to Apache Kafka</a> in the <i>AWS Database
-     * Migration User Guide.</i> </p>
+     * <p>Settings in JSON format for the target Apache Kafka endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithKafkaSettings(KafkaSettings&& value) { SetKafkaSettings(std::move(value)); return *this;}
 
@@ -1132,6 +1133,55 @@ namespace Model
      * the <i>AWS Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline const NeptuneSettings& GetNeptuneSettings() const{ return m_neptuneSettings; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool NeptuneSettingsHasBeenSet() const { return m_neptuneSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetNeptuneSettings(const NeptuneSettings& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline void SetNeptuneSettings(NeptuneSettings&& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithNeptuneSettings(const NeptuneSettings& value) { SetNeptuneSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Neptune endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings</a>
+     * in the <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithNeptuneSettings(NeptuneSettings&& value) { SetNeptuneSettings(std::move(value)); return *this;}
 
 
     
@@ -1216,6 +1266,9 @@ namespace Model
 
     ElasticsearchSettings m_elasticsearchSettings;
     bool m_elasticsearchSettingsHasBeenSet;
+
+    NeptuneSettings m_neptuneSettings;
+    bool m_neptuneSettingsHasBeenSet;
 
     RedshiftSettings m_redshiftSettings;
     bool m_redshiftSettingsHasBeenSet;

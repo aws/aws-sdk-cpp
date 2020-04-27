@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/accessanalyzer/model/ResourceType.h>
 #include <aws/accessanalyzer/model/FindingStatus.h>
+#include <aws/accessanalyzer/model/FindingSource.h>
 #include <utility>
 
 namespace Aws
@@ -548,6 +549,55 @@ namespace Model
 
 
     /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline const Aws::Vector<FindingSource>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline void SetSources(const Aws::Vector<FindingSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline void SetSources(Aws::Vector<FindingSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline Finding& WithSources(const Aws::Vector<FindingSource>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline Finding& WithSources(Aws::Vector<FindingSource>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline Finding& AddSources(const FindingSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>The sources of the finding. This indicates how the access that generated the
+     * finding is granted. It is populated for Amazon S3 bucket findings.</p>
+     */
+    inline Finding& AddSources(FindingSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The current status of the finding.</p>
      */
     inline const FindingStatus& GetStatus() const{ return m_status; }
@@ -642,6 +692,9 @@ namespace Model
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Vector<FindingSource> m_sources;
+    bool m_sourcesHasBeenSet;
 
     FindingStatus m_status;
     bool m_statusHasBeenSet;

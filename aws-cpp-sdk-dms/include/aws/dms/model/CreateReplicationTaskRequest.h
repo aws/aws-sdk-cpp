@@ -294,114 +294,130 @@ namespace Model
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
      */
     inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
      */
     inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
      */
     inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
      */
     inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
 
     /**
      * <p>The table mappings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Table
-     * Mapping</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using
+     * Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline const Aws::String& GetReplicationTaskSettings() const{ return m_replicationTaskSettings; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline bool ReplicationTaskSettingsHasBeenSet() const { return m_replicationTaskSettingsHasBeenSet; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = std::move(value); }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(const char* value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings.assign(value); }
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const Aws::String& value) { SetReplicationTaskSettings(value); return *this;}
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(std::move(value)); return *this;}
 
     /**
      * <p>Overall settings for the task, in JSON format. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings</a> in the <i>AWS Database Migration User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying
+     * Task Settings for AWS Database Migration Service Tasks</a> in the <i>AWS
+     * Database Migration User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
 
@@ -721,6 +737,79 @@ namespace Model
      */
     inline CreateReplicationTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline const Aws::String& GetTaskData() const{ return m_taskData; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline bool TaskDataHasBeenSet() const { return m_taskDataHasBeenSet; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline void SetTaskData(const Aws::String& value) { m_taskDataHasBeenSet = true; m_taskData = value; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline void SetTaskData(Aws::String&& value) { m_taskDataHasBeenSet = true; m_taskData = std::move(value); }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline void SetTaskData(const char* value) { m_taskDataHasBeenSet = true; m_taskData.assign(value); }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline CreateReplicationTaskRequest& WithTaskData(const Aws::String& value) { SetTaskData(value); return *this;}
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline CreateReplicationTaskRequest& WithTaskData(Aws::String&& value) { SetTaskData(std::move(value)); return *this;}
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline CreateReplicationTaskRequest& WithTaskData(const char* value) { SetTaskData(value); return *this;}
+
   private:
 
     Aws::String m_replicationTaskIdentifier;
@@ -755,6 +844,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_taskData;
+    bool m_taskDataHasBeenSet;
   };
 
 } // namespace Model

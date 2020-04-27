@@ -34,7 +34,8 @@ CreateReplicationTaskRequest::CreateReplicationTaskRequest() :
     m_cdcStartTimeHasBeenSet(false),
     m_cdcStartPositionHasBeenSet(false),
     m_cdcStopPositionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_taskDataHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,12 @@ Aws::String CreateReplicationTaskRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_taskDataHasBeenSet)
+  {
+   payload.WithString("TaskData", m_taskData);
 
   }
 

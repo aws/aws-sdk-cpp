@@ -29,14 +29,14 @@ namespace Model
 {
 
 ResourceSpec::ResourceSpec() : 
-    m_environmentArnHasBeenSet(false),
+    m_sageMakerImageArnHasBeenSet(false),
     m_instanceType(AppInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false)
 {
 }
 
 ResourceSpec::ResourceSpec(JsonView jsonValue) : 
-    m_environmentArnHasBeenSet(false),
+    m_sageMakerImageArnHasBeenSet(false),
     m_instanceType(AppInstanceType::NOT_SET),
     m_instanceTypeHasBeenSet(false)
 {
@@ -45,11 +45,11 @@ ResourceSpec::ResourceSpec(JsonView jsonValue) :
 
 ResourceSpec& ResourceSpec::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("EnvironmentArn"))
+  if(jsonValue.ValueExists("SageMakerImageArn"))
   {
-    m_environmentArn = jsonValue.GetString("EnvironmentArn");
+    m_sageMakerImageArn = jsonValue.GetString("SageMakerImageArn");
 
-    m_environmentArnHasBeenSet = true;
+    m_sageMakerImageArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InstanceType"))
@@ -66,9 +66,9 @@ JsonValue ResourceSpec::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_environmentArnHasBeenSet)
+  if(m_sageMakerImageArnHasBeenSet)
   {
-   payload.WithString("EnvironmentArn", m_environmentArn);
+   payload.WithString("SageMakerImageArn", m_sageMakerImageArn);
 
   }
 

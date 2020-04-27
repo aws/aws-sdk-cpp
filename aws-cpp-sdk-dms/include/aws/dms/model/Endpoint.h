@@ -25,6 +25,7 @@
 #include <aws/dms/model/KinesisSettings.h>
 #include <aws/dms/model/KafkaSettings.h>
 #include <aws/dms/model/ElasticsearchSettings.h>
+#include <aws/dms/model/NeptuneSettings.h>
 #include <aws/dms/model/RedshiftSettings.h>
 #include <utility>
 
@@ -1200,6 +1201,43 @@ namespace Model
 
 
     /**
+     * <p>The settings for the MongoDB source endpoint. For more information, see the
+     * <code>NeptuneSettings</code> structure.</p>
+     */
+    inline const NeptuneSettings& GetNeptuneSettings() const{ return m_neptuneSettings; }
+
+    /**
+     * <p>The settings for the MongoDB source endpoint. For more information, see the
+     * <code>NeptuneSettings</code> structure.</p>
+     */
+    inline bool NeptuneSettingsHasBeenSet() const { return m_neptuneSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the MongoDB source endpoint. For more information, see the
+     * <code>NeptuneSettings</code> structure.</p>
+     */
+    inline void SetNeptuneSettings(const NeptuneSettings& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = value; }
+
+    /**
+     * <p>The settings for the MongoDB source endpoint. For more information, see the
+     * <code>NeptuneSettings</code> structure.</p>
+     */
+    inline void SetNeptuneSettings(NeptuneSettings&& value) { m_neptuneSettingsHasBeenSet = true; m_neptuneSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the MongoDB source endpoint. For more information, see the
+     * <code>NeptuneSettings</code> structure.</p>
+     */
+    inline Endpoint& WithNeptuneSettings(const NeptuneSettings& value) { SetNeptuneSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the MongoDB source endpoint. For more information, see the
+     * <code>NeptuneSettings</code> structure.</p>
+     */
+    inline Endpoint& WithNeptuneSettings(NeptuneSettings&& value) { SetNeptuneSettings(std::move(value)); return *this;}
+
+
+    /**
      * <p>Settings for the Amazon Redshift endpoint.</p>
      */
     inline const RedshiftSettings& GetRedshiftSettings() const{ return m_redshiftSettings; }
@@ -1302,6 +1340,9 @@ namespace Model
 
     ElasticsearchSettings m_elasticsearchSettings;
     bool m_elasticsearchSettingsHasBeenSet;
+
+    NeptuneSettings m_neptuneSettings;
+    bool m_neptuneSettingsHasBeenSet;
 
     RedshiftSettings m_redshiftSettings;
     bool m_redshiftSettingsHasBeenSet;

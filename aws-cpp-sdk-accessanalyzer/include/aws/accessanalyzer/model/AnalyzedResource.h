@@ -348,47 +348,56 @@ namespace Model
 
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSharedVia() const{ return m_sharedVia; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline bool SharedViaHasBeenSet() const { return m_sharedViaHasBeenSet; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline void SetSharedVia(const Aws::Vector<Aws::String>& value) { m_sharedViaHasBeenSet = true; m_sharedVia = value; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline void SetSharedVia(Aws::Vector<Aws::String>&& value) { m_sharedViaHasBeenSet = true; m_sharedVia = std::move(value); }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& WithSharedVia(const Aws::Vector<Aws::String>& value) { SetSharedVia(value); return *this;}
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& WithSharedVia(Aws::Vector<Aws::String>&& value) { SetSharedVia(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& AddSharedVia(const Aws::String& value) { m_sharedViaHasBeenSet = true; m_sharedVia.push_back(value); return *this; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& AddSharedVia(Aws::String&& value) { m_sharedViaHasBeenSet = true; m_sharedVia.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Indicates how the access that generated the finding is granted.</p>
+     * <p>Indicates how the access that generated the finding is granted. This is
+     * populated for Amazon S3 bucket findings.</p>
      */
     inline AnalyzedResource& AddSharedVia(const char* value) { m_sharedViaHasBeenSet = true; m_sharedVia.push_back(value); return *this; }
 

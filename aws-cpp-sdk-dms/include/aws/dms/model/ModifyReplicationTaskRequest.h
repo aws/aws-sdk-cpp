@@ -258,49 +258,49 @@ namespace Model
 
 
     /**
-     * <p>JSON file that contains settings for the task, such as target metadata
+     * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
     inline const Aws::String& GetReplicationTaskSettings() const{ return m_replicationTaskSettings; }
 
     /**
-     * <p>JSON file that contains settings for the task, such as target metadata
+     * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
     inline bool ReplicationTaskSettingsHasBeenSet() const { return m_replicationTaskSettingsHasBeenSet; }
 
     /**
-     * <p>JSON file that contains settings for the task, such as target metadata
+     * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
     inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
     /**
-     * <p>JSON file that contains settings for the task, such as target metadata
+     * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
     inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = std::move(value); }
 
     /**
-     * <p>JSON file that contains settings for the task, such as target metadata
+     * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
     inline void SetReplicationTaskSettings(const char* value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings.assign(value); }
 
     /**
-     * <p>JSON file that contains settings for the task, such as target metadata
+     * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(const Aws::String& value) { SetReplicationTaskSettings(value); return *this;}
 
     /**
-     * <p>JSON file that contains settings for the task, such as target metadata
+     * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(std::move(value)); return *this;}
 
     /**
-     * <p>JSON file that contains settings for the task, such as target metadata
+     * <p>JSON file that contains settings for the task, such as task metadata
      * settings.</p>
      */
     inline ModifyReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
@@ -580,6 +580,79 @@ namespace Model
      */
     inline ModifyReplicationTaskRequest& WithCdcStopPosition(const char* value) { SetCdcStopPosition(value); return *this;}
 
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline const Aws::String& GetTaskData() const{ return m_taskData; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline bool TaskDataHasBeenSet() const { return m_taskDataHasBeenSet; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline void SetTaskData(const Aws::String& value) { m_taskDataHasBeenSet = true; m_taskData = value; }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline void SetTaskData(Aws::String&& value) { m_taskDataHasBeenSet = true; m_taskData = std::move(value); }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline void SetTaskData(const char* value) { m_taskDataHasBeenSet = true; m_taskData.assign(value); }
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline ModifyReplicationTaskRequest& WithTaskData(const Aws::String& value) { SetTaskData(value); return *this;}
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline ModifyReplicationTaskRequest& WithTaskData(Aws::String&& value) { SetTaskData(std::move(value)); return *this;}
+
+    /**
+     * <p>Supplemental information that the task requires to migrate the data for
+     * certain source and target endpoints. For more information, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying
+     * Supplemental Data for Task Settings</a> in the <i>AWS Database Migration User
+     * Guide.</i> </p>
+     */
+    inline ModifyReplicationTaskRequest& WithTaskData(const char* value) { SetTaskData(value); return *this;}
+
   private:
 
     Aws::String m_replicationTaskArn;
@@ -605,6 +678,9 @@ namespace Model
 
     Aws::String m_cdcStopPosition;
     bool m_cdcStopPositionHasBeenSet;
+
+    Aws::String m_taskData;
+    bool m_taskDataHasBeenSet;
   };
 
 } // namespace Model

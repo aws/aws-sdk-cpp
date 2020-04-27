@@ -34,6 +34,7 @@ SupportedEndpointType::SupportedEndpointType() :
     m_supportsCDCHasBeenSet(false),
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
+    m_replicationInstanceEngineMinimumVersionHasBeenSet(false),
     m_engineDisplayNameHasBeenSet(false)
 {
 }
@@ -44,6 +45,7 @@ SupportedEndpointType::SupportedEndpointType(JsonView jsonValue) :
     m_supportsCDCHasBeenSet(false),
     m_endpointType(ReplicationEndpointTypeValue::NOT_SET),
     m_endpointTypeHasBeenSet(false),
+    m_replicationInstanceEngineMinimumVersionHasBeenSet(false),
     m_engineDisplayNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -70,6 +72,13 @@ SupportedEndpointType& SupportedEndpointType::operator =(JsonView jsonValue)
     m_endpointType = ReplicationEndpointTypeValueMapper::GetReplicationEndpointTypeValueForName(jsonValue.GetString("EndpointType"));
 
     m_endpointTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicationInstanceEngineMinimumVersion"))
+  {
+    m_replicationInstanceEngineMinimumVersion = jsonValue.GetString("ReplicationInstanceEngineMinimumVersion");
+
+    m_replicationInstanceEngineMinimumVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EngineDisplayName"))
@@ -101,6 +110,12 @@ JsonValue SupportedEndpointType::Jsonize() const
   if(m_endpointTypeHasBeenSet)
   {
    payload.WithString("EndpointType", ReplicationEndpointTypeValueMapper::GetNameForReplicationEndpointTypeValue(m_endpointType));
+  }
+
+  if(m_replicationInstanceEngineMinimumVersionHasBeenSet)
+  {
+   payload.WithString("ReplicationInstanceEngineMinimumVersion", m_replicationInstanceEngineMinimumVersion);
+
   }
 
   if(m_engineDisplayNameHasBeenSet)

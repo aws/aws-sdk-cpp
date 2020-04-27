@@ -42,6 +42,7 @@ FindingSummary::FindingSummary() :
     m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -62,6 +63,7 @@ FindingSummary::FindingSummary(JsonView jsonValue) :
     m_resourceOwnerAccountHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_status(FindingStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -155,6 +157,16 @@ FindingSummary& FindingSummary::operator =(JsonView jsonValue)
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
 
     m_resourceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sources"))
+  {
+    Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
+    m_sourcesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -254,6 +266,17 @@ JsonValue FindingSummary::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
+  }
+
+  if(m_sourcesHasBeenSet)
+  {
+   Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+   {
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+   }
+   payload.WithArray("sources", std::move(sourcesJsonList));
+
   }
 
   if(m_statusHasBeenSet)

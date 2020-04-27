@@ -195,42 +195,42 @@ namespace Model
 
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline JobError& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline JobError& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * The unqiue identifier for the resource related to the error.
+     * The unique identifier for the resource related to the error.
      */
     inline JobError& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

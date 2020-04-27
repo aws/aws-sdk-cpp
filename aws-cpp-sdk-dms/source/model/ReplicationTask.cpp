@@ -46,7 +46,8 @@ ReplicationTask::ReplicationTask() :
     m_cdcStopPositionHasBeenSet(false),
     m_recoveryCheckpointHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
-    m_replicationTaskStatsHasBeenSet(false)
+    m_replicationTaskStatsHasBeenSet(false),
+    m_taskDataHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ ReplicationTask::ReplicationTask(JsonView jsonValue) :
     m_cdcStopPositionHasBeenSet(false),
     m_recoveryCheckpointHasBeenSet(false),
     m_replicationTaskArnHasBeenSet(false),
-    m_replicationTaskStatsHasBeenSet(false)
+    m_replicationTaskStatsHasBeenSet(false),
+    m_taskDataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -194,6 +196,13 @@ ReplicationTask& ReplicationTask::operator =(JsonView jsonValue)
     m_replicationTaskStatsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TaskData"))
+  {
+    m_taskData = jsonValue.GetString("TaskData");
+
+    m_taskDataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -297,6 +306,12 @@ JsonValue ReplicationTask::Jsonize() const
   if(m_replicationTaskStatsHasBeenSet)
   {
    payload.WithObject("ReplicationTaskStats", m_replicationTaskStats.Jsonize());
+
+  }
+
+  if(m_taskDataHasBeenSet)
+  {
+   payload.WithString("TaskData", m_taskData);
 
   }
 

@@ -48,6 +48,7 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_kinesisSettingsHasBeenSet(false),
     m_kafkaSettingsHasBeenSet(false),
     m_elasticsearchSettingsHasBeenSet(false),
+    m_neptuneSettingsHasBeenSet(false),
     m_redshiftSettingsHasBeenSet(false)
 {
 }
@@ -188,6 +189,12 @@ Aws::String CreateEndpointRequest::SerializePayload() const
   if(m_elasticsearchSettingsHasBeenSet)
   {
    payload.WithObject("ElasticsearchSettings", m_elasticsearchSettings.Jsonize());
+
+  }
+
+  if(m_neptuneSettingsHasBeenSet)
+  {
+   payload.WithObject("NeptuneSettings", m_neptuneSettings.Jsonize());
 
   }
 

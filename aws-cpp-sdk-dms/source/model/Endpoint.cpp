@@ -56,6 +56,7 @@ Endpoint::Endpoint() :
     m_kinesisSettingsHasBeenSet(false),
     m_kafkaSettingsHasBeenSet(false),
     m_elasticsearchSettingsHasBeenSet(false),
+    m_neptuneSettingsHasBeenSet(false),
     m_redshiftSettingsHasBeenSet(false)
 {
 }
@@ -88,6 +89,7 @@ Endpoint::Endpoint(JsonView jsonValue) :
     m_kinesisSettingsHasBeenSet(false),
     m_kafkaSettingsHasBeenSet(false),
     m_elasticsearchSettingsHasBeenSet(false),
+    m_neptuneSettingsHasBeenSet(false),
     m_redshiftSettingsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -263,6 +265,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_elasticsearchSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NeptuneSettings"))
+  {
+    m_neptuneSettings = jsonValue.GetObject("NeptuneSettings");
+
+    m_neptuneSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RedshiftSettings"))
   {
     m_redshiftSettings = jsonValue.GetObject("RedshiftSettings");
@@ -416,6 +425,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_elasticsearchSettingsHasBeenSet)
   {
    payload.WithObject("ElasticsearchSettings", m_elasticsearchSettings.Jsonize());
+
+  }
+
+  if(m_neptuneSettingsHasBeenSet)
+  {
+   payload.WithObject("NeptuneSettings", m_neptuneSettings.Jsonize());
 
   }
 

@@ -31,6 +31,7 @@ namespace Model
 ExportAssetsToS3ResponseDetails::ExportAssetsToS3ResponseDetails() : 
     m_assetDestinationsHasBeenSet(false),
     m_dataSetIdHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
     m_revisionIdHasBeenSet(false)
 {
 }
@@ -38,6 +39,7 @@ ExportAssetsToS3ResponseDetails::ExportAssetsToS3ResponseDetails() :
 ExportAssetsToS3ResponseDetails::ExportAssetsToS3ResponseDetails(JsonView jsonValue) : 
     m_assetDestinationsHasBeenSet(false),
     m_dataSetIdHasBeenSet(false),
+    m_encryptionHasBeenSet(false),
     m_revisionIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -60,6 +62,13 @@ ExportAssetsToS3ResponseDetails& ExportAssetsToS3ResponseDetails::operator =(Jso
     m_dataSetId = jsonValue.GetString("DataSetId");
 
     m_dataSetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Encryption"))
+  {
+    m_encryption = jsonValue.GetObject("Encryption");
+
+    m_encryptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RevisionId"))
@@ -90,6 +99,12 @@ JsonValue ExportAssetsToS3ResponseDetails::Jsonize() const
   if(m_dataSetIdHasBeenSet)
   {
    payload.WithString("DataSetId", m_dataSetId);
+
+  }
+
+  if(m_encryptionHasBeenSet)
+  {
+   payload.WithObject("Encryption", m_encryption.Jsonize());
 
   }
 

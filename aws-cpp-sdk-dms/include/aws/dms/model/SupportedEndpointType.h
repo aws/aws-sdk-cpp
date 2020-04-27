@@ -207,6 +207,63 @@ namespace Model
 
 
     /**
+     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
+     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
+     * return a value for this parameter.</p>
+     */
+    inline const Aws::String& GetReplicationInstanceEngineMinimumVersion() const{ return m_replicationInstanceEngineMinimumVersion; }
+
+    /**
+     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
+     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
+     * return a value for this parameter.</p>
+     */
+    inline bool ReplicationInstanceEngineMinimumVersionHasBeenSet() const { return m_replicationInstanceEngineMinimumVersionHasBeenSet; }
+
+    /**
+     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
+     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
+     * return a value for this parameter.</p>
+     */
+    inline void SetReplicationInstanceEngineMinimumVersion(const Aws::String& value) { m_replicationInstanceEngineMinimumVersionHasBeenSet = true; m_replicationInstanceEngineMinimumVersion = value; }
+
+    /**
+     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
+     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
+     * return a value for this parameter.</p>
+     */
+    inline void SetReplicationInstanceEngineMinimumVersion(Aws::String&& value) { m_replicationInstanceEngineMinimumVersionHasBeenSet = true; m_replicationInstanceEngineMinimumVersion = std::move(value); }
+
+    /**
+     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
+     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
+     * return a value for this parameter.</p>
+     */
+    inline void SetReplicationInstanceEngineMinimumVersion(const char* value) { m_replicationInstanceEngineMinimumVersionHasBeenSet = true; m_replicationInstanceEngineMinimumVersion.assign(value); }
+
+    /**
+     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
+     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
+     * return a value for this parameter.</p>
+     */
+    inline SupportedEndpointType& WithReplicationInstanceEngineMinimumVersion(const Aws::String& value) { SetReplicationInstanceEngineMinimumVersion(value); return *this;}
+
+    /**
+     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
+     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
+     * return a value for this parameter.</p>
+     */
+    inline SupportedEndpointType& WithReplicationInstanceEngineMinimumVersion(Aws::String&& value) { SetReplicationInstanceEngineMinimumVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The earliest AWS DMS engine version that supports this endpoint engine. Note
+     * that endpoint engines released with AWS DMS versions earlier than 3.1.1 do not
+     * return a value for this parameter.</p>
+     */
+    inline SupportedEndpointType& WithReplicationInstanceEngineMinimumVersion(const char* value) { SetReplicationInstanceEngineMinimumVersion(value); return *this;}
+
+
+    /**
      * <p>The expanded name for the engine name. For example, if the
      * <code>EngineName</code> parameter is "aurora," this value would be "Amazon
      * Aurora MySQL."</p>
@@ -272,6 +329,9 @@ namespace Model
 
     ReplicationEndpointTypeValue m_endpointType;
     bool m_endpointTypeHasBeenSet;
+
+    Aws::String m_replicationInstanceEngineMinimumVersion;
+    bool m_replicationInstanceEngineMinimumVersionHasBeenSet;
 
     Aws::String m_engineDisplayName;
     bool m_engineDisplayNameHasBeenSet;

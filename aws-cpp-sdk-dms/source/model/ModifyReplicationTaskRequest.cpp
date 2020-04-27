@@ -31,7 +31,8 @@ ModifyReplicationTaskRequest::ModifyReplicationTaskRequest() :
     m_replicationTaskSettingsHasBeenSet(false),
     m_cdcStartTimeHasBeenSet(false),
     m_cdcStartPositionHasBeenSet(false),
-    m_cdcStopPositionHasBeenSet(false)
+    m_cdcStopPositionHasBeenSet(false),
+    m_taskDataHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,12 @@ Aws::String ModifyReplicationTaskRequest::SerializePayload() const
   if(m_cdcStopPositionHasBeenSet)
   {
    payload.WithString("CdcStopPosition", m_cdcStopPosition);
+
+  }
+
+  if(m_taskDataHasBeenSet)
+  {
+   payload.WithString("TaskData", m_taskData);
 
   }
 
