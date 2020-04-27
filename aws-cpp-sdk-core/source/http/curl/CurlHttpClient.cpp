@@ -445,7 +445,8 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxyKeyPasswd(clientConfig.proxySSLKeyPassword),
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile),
-    m_disableExpectHeader(clientConfig.disableExpectHeader)
+    m_disableExpectHeader(clientConfig.disableExpectHeader),
+    m_perRequestConfiguration(clientConfig.perRequestConfiguration)
 {
     if (clientConfig.followRedirects == FollowRedirectsPolicy::NEVER ||
        (clientConfig.followRedirects == FollowRedirectsPolicy::DEFAULT && clientConfig.region == Aws::Region::AWS_GLOBAL))
@@ -458,6 +459,13 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     }
 }
 
+template<typename T>
+static inline T try_redefine(const T & origin, const T & redefined, const T & default_value = T {})
+{
+    if (redefined != default_value && redefined != origin)
+        return redefined;
+    return origin;
+}
 
 std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<HttpRequest>& request,
     Aws::Utils::RateLimits::RateLimiterInterface* readLimiter,
@@ -513,6 +521,7 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
 
     if (connectionHandle)
     {
+        auto requestConfiguration = m_perRequestConfiguration(*request);
         AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Obtained connection handle " << connectionHandle);
 
         if (headers)
@@ -576,12 +585,13 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
         curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
 #endif
-        if (m_isUsingProxy)
+        bool usingProxy = !try_redefine(m_proxyHost, requestConfiguration.proxyHost).empty();
+        if (usingProxy)
         {
             Aws::StringStream ss;
-            ss << m_proxyScheme << "://" << m_proxyHost;
+            ss << m_proxyScheme << "://" << try_redefine(m_proxyHost, requestConfiguration.proxyHost);
             curl_easy_setopt(connectionHandle, CURLOPT_PROXY, ss.str().c_str());
-            curl_easy_setopt(connectionHandle, CURLOPT_PROXYPORT, (long) m_proxyPort);
+            curl_easy_setopt(connectionHandle, CURLOPT_PROXYPORT, (long) try_redefine(m_proxyPort, requestConfiguration.proxyPort, 0U));
             if (!m_proxyUserName.empty() || !m_proxyPassword.empty())
             {
                 curl_easy_setopt(connectionHandle, CURLOPT_PROXYUSERNAME, m_proxyUserName.c_str());
