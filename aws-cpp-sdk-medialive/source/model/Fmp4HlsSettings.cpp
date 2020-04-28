@@ -29,12 +29,20 @@ namespace Model
 {
 
 Fmp4HlsSettings::Fmp4HlsSettings() : 
-    m_audioRenditionSetsHasBeenSet(false)
+    m_audioRenditionSetsHasBeenSet(false),
+    m_nielsenId3Behavior(Fmp4NielsenId3Behavior::NOT_SET),
+    m_nielsenId3BehaviorHasBeenSet(false),
+    m_timedMetadataBehavior(Fmp4TimedMetadataBehavior::NOT_SET),
+    m_timedMetadataBehaviorHasBeenSet(false)
 {
 }
 
 Fmp4HlsSettings::Fmp4HlsSettings(JsonView jsonValue) : 
-    m_audioRenditionSetsHasBeenSet(false)
+    m_audioRenditionSetsHasBeenSet(false),
+    m_nielsenId3Behavior(Fmp4NielsenId3Behavior::NOT_SET),
+    m_nielsenId3BehaviorHasBeenSet(false),
+    m_timedMetadataBehavior(Fmp4TimedMetadataBehavior::NOT_SET),
+    m_timedMetadataBehaviorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +56,20 @@ Fmp4HlsSettings& Fmp4HlsSettings::operator =(JsonView jsonValue)
     m_audioRenditionSetsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("nielsenId3Behavior"))
+  {
+    m_nielsenId3Behavior = Fmp4NielsenId3BehaviorMapper::GetFmp4NielsenId3BehaviorForName(jsonValue.GetString("nielsenId3Behavior"));
+
+    m_nielsenId3BehaviorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("timedMetadataBehavior"))
+  {
+    m_timedMetadataBehavior = Fmp4TimedMetadataBehaviorMapper::GetFmp4TimedMetadataBehaviorForName(jsonValue.GetString("timedMetadataBehavior"));
+
+    m_timedMetadataBehaviorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -59,6 +81,16 @@ JsonValue Fmp4HlsSettings::Jsonize() const
   {
    payload.WithString("audioRenditionSets", m_audioRenditionSets);
 
+  }
+
+  if(m_nielsenId3BehaviorHasBeenSet)
+  {
+   payload.WithString("nielsenId3Behavior", Fmp4NielsenId3BehaviorMapper::GetNameForFmp4NielsenId3Behavior(m_nielsenId3Behavior));
+  }
+
+  if(m_timedMetadataBehaviorHasBeenSet)
+  {
+   payload.WithString("timedMetadataBehavior", Fmp4TimedMetadataBehaviorMapper::GetNameForFmp4TimedMetadataBehavior(m_timedMetadataBehavior));
   }
 
   return payload;

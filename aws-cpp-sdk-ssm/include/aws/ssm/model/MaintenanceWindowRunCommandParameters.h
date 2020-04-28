@@ -328,83 +328,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket.</p>
+     * <p>The name of the S3 bucket.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
 
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline const Aws::String& GetOutputS3KeyPrefix() const{ return m_outputS3KeyPrefix; }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline bool OutputS3KeyPrefixHasBeenSet() const { return m_outputS3KeyPrefixHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline void SetOutputS3KeyPrefix(const Aws::String& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = value; }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline void SetOutputS3KeyPrefix(Aws::String&& value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline void SetOutputS3KeyPrefix(const char* value) { m_outputS3KeyPrefixHasBeenSet = true; m_outputS3KeyPrefix.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3KeyPrefix(const Aws::String& value) { SetOutputS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3KeyPrefix(Aws::String&& value) { SetOutputS3KeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket subfolder.</p>
+     * <p>The S3 bucket subfolder.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithOutputS3KeyPrefix(const char* value) { SetOutputS3KeyPrefix(value); return *this;}
 

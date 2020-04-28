@@ -382,7 +382,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
 
@@ -390,7 +391,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
@@ -398,7 +400,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
@@ -406,7 +409,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
@@ -414,7 +418,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
 
@@ -422,7 +427,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
 
@@ -430,7 +436,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
@@ -438,7 +445,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentIdentifier& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 

@@ -30,13 +30,15 @@ namespace Model
 
 AudioSelectorSettings::AudioSelectorSettings() : 
     m_audioLanguageSelectionHasBeenSet(false),
-    m_audioPidSelectionHasBeenSet(false)
+    m_audioPidSelectionHasBeenSet(false),
+    m_audioTrackSelectionHasBeenSet(false)
 {
 }
 
 AudioSelectorSettings::AudioSelectorSettings(JsonView jsonValue) : 
     m_audioLanguageSelectionHasBeenSet(false),
-    m_audioPidSelectionHasBeenSet(false)
+    m_audioPidSelectionHasBeenSet(false),
+    m_audioTrackSelectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ AudioSelectorSettings& AudioSelectorSettings::operator =(JsonView jsonValue)
     m_audioPidSelectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("audioTrackSelection"))
+  {
+    m_audioTrackSelection = jsonValue.GetObject("audioTrackSelection");
+
+    m_audioTrackSelectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue AudioSelectorSettings::Jsonize() const
   if(m_audioPidSelectionHasBeenSet)
   {
    payload.WithObject("audioPidSelection", m_audioPidSelection.Jsonize());
+
+  }
+
+  if(m_audioTrackSelectionHasBeenSet)
+  {
+   payload.WithObject("audioTrackSelection", m_audioTrackSelection.Jsonize());
 
   }
 

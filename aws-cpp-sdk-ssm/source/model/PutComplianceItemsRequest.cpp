@@ -28,7 +28,9 @@ PutComplianceItemsRequest::PutComplianceItemsRequest() :
     m_complianceTypeHasBeenSet(false),
     m_executionSummaryHasBeenSet(false),
     m_itemsHasBeenSet(false),
-    m_itemContentHashHasBeenSet(false)
+    m_itemContentHashHasBeenSet(false),
+    m_uploadType(ComplianceUploadType::NOT_SET),
+    m_uploadTypeHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,11 @@ Aws::String PutComplianceItemsRequest::SerializePayload() const
   {
    payload.WithString("ItemContentHash", m_itemContentHash);
 
+  }
+
+  if(m_uploadTypeHasBeenSet)
+  {
+   payload.WithString("UploadType", ComplianceUploadTypeMapper::GetNameForComplianceUploadType(m_uploadType));
   }
 
   return payload.View().WriteReadable();

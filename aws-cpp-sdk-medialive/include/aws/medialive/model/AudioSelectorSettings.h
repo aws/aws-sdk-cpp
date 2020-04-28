@@ -17,6 +17,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AudioLanguageSelection.h>
 #include <aws/medialive/model/AudioPidSelection.h>
+#include <aws/medialive/model/AudioTrackSelection.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +86,25 @@ namespace Model
     
     inline AudioSelectorSettings& WithAudioPidSelection(AudioPidSelection&& value) { SetAudioPidSelection(std::move(value)); return *this;}
 
+
+    
+    inline const AudioTrackSelection& GetAudioTrackSelection() const{ return m_audioTrackSelection; }
+
+    
+    inline bool AudioTrackSelectionHasBeenSet() const { return m_audioTrackSelectionHasBeenSet; }
+
+    
+    inline void SetAudioTrackSelection(const AudioTrackSelection& value) { m_audioTrackSelectionHasBeenSet = true; m_audioTrackSelection = value; }
+
+    
+    inline void SetAudioTrackSelection(AudioTrackSelection&& value) { m_audioTrackSelectionHasBeenSet = true; m_audioTrackSelection = std::move(value); }
+
+    
+    inline AudioSelectorSettings& WithAudioTrackSelection(const AudioTrackSelection& value) { SetAudioTrackSelection(value); return *this;}
+
+    
+    inline AudioSelectorSettings& WithAudioTrackSelection(AudioTrackSelection&& value) { SetAudioTrackSelection(std::move(value)); return *this;}
+
   private:
 
     AudioLanguageSelection m_audioLanguageSelection;
@@ -92,6 +112,9 @@ namespace Model
 
     AudioPidSelection m_audioPidSelection;
     bool m_audioPidSelectionHasBeenSet;
+
+    AudioTrackSelection m_audioTrackSelection;
+    bool m_audioTrackSelectionHasBeenSet;
   };
 
 } // namespace Model

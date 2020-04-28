@@ -239,8 +239,8 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline const InventoryDeletionSummary& GetDeletionSummary() const{ return m_deletionSummary; }
@@ -248,8 +248,8 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline bool DeletionSummaryHasBeenSet() const { return m_deletionSummaryHasBeenSet; }
@@ -257,8 +257,8 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetDeletionSummary(const InventoryDeletionSummary& value) { m_deletionSummaryHasBeenSet = true; m_deletionSummary = value; }
@@ -266,8 +266,8 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetDeletionSummary(InventoryDeletionSummary&& value) { m_deletionSummaryHasBeenSet = true; m_deletionSummary = std::move(value); }
@@ -275,8 +275,8 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline InventoryDeletionStatusItem& WithDeletionSummary(const InventoryDeletionSummary& value) { SetDeletionSummary(value); return *this;}
@@ -284,8 +284,8 @@ namespace Model
     /**
      * <p>Information about the delete operation. For more information about this
      * summary, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
-     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding
+     * the delete inventory summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline InventoryDeletionStatusItem& WithDeletionSummary(InventoryDeletionSummary&& value) { SetDeletionSummary(std::move(value)); return *this;}

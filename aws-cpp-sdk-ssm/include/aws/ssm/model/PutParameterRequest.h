@@ -62,13 +62,13 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -88,13 +88,13 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -114,13 +114,13 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -140,13 +140,13 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -166,13 +166,13 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -192,13 +192,13 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -218,13 +218,13 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -244,13 +244,13 @@ namespace Model
      * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
      * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
      * values for parameter names, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
-     * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
-     * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
-     * capacity for additional system attributes that are not part of the name. The
-     * maximum length for a parameter name, including the full length of the parameter
-     * ARN, is 1011 characters. For example, the length of the following parameter name
-     * is 65 characters, not 20 characters:</p> <p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
+     * requirements and constraints for parameter names</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p> <note> <p>The maximum length constraint listed below
+     * includes capacity for additional system attributes that are not part of the
+     * name. The maximum length for a parameter name, including the full length of the
+     * parameter ARN, is 1011 characters. For example, the length of the following
+     * parameter name is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -758,24 +758,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -791,8 +791,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const ParameterTier& GetTier() const{ return m_tier; }
 
@@ -806,24 +806,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -839,8 +839,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
@@ -854,24 +854,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -887,8 +887,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetTier(const ParameterTier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
@@ -902,24 +902,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -935,8 +935,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetTier(ParameterTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
@@ -950,24 +950,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -983,8 +983,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PutParameterRequest& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
 
@@ -998,24 +998,24 @@ namespace Model
      * parameter policies. You can create a maximum of 100,000 advanced parameters for
      * each Region in an AWS account. Advanced parameters incur a charge. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p>You
-     * can change a standard parameter to an advanced parameter any time. But you can't
-     * revert an advanced parameter to a standard parameter. Reverting an advanced
-     * parameter to a standard parameter would result in data loss because the system
-     * would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a
-     * different form of encryption than standard parameters. </p> <p>If you no longer
-     * need an advanced parameter, or if you no longer want to incur charges for an
-     * advanced parameter, you must delete it and recreate it as a new standard
-     * parameter. </p> <p> <b>Using the Default Tier Configuration</b> </p> <p>In
-     * <code>PutParameter</code> requests, you can specify the tier to create the
-     * parameter in. Whenever you specify a tier in the request, Parameter Store
-     * creates or updates the parameter according to that request. However, if you do
-     * not specify a tier in a request, Parameter Store assigns the tier based on the
-     * current Parameter Store default tier configuration.</p> <p>The default tier when
-     * you begin using Parameter Store is the standard-parameter tier. If you use the
-     * advanced-parameter tier, you can specify one of the following as the
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
+     * and advanced parameter tiers</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based
+     * on the current Parameter Store default tier configuration.</p> <p>The default
+     * tier when you begin using Parameter Store is the standard-parameter tier. If you
+     * use the advanced-parameter tier, you can specify one of the following as the
      * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
      * evaluates all requests as advanced parameters. </p> </li> <li> <p>
      * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
@@ -1031,8 +1031,8 @@ namespace Model
      * uses a parameter policy.</p> </li> <li> <p>More than 10,000 parameters already
      * exist in your AWS account in the current Region.</p> </li> </ul> <p>For more
      * information about configuring the default tier option, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
-     * a Default Parameter Tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * a default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PutParameterRequest& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
 
@@ -1053,8 +1053,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline const Aws::String& GetPolicies() const{ return m_policies; }
 
@@ -1074,8 +1074,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
 
@@ -1095,8 +1095,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline void SetPolicies(const Aws::String& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
@@ -1116,8 +1116,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline void SetPolicies(Aws::String&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
 
@@ -1137,8 +1137,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline void SetPolicies(const char* value) { m_policiesHasBeenSet = true; m_policies.assign(value); }
 
@@ -1158,8 +1158,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline PutParameterRequest& WithPolicies(const Aws::String& value) { SetPolicies(value); return *this;}
 
@@ -1179,8 +1179,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline PutParameterRequest& WithPolicies(Aws::String&& value) { SetPolicies(std::move(value)); return *this;}
 
@@ -1200,8 +1200,8 @@ namespace Model
      * needs to be changed within a period of time, but it has not been changed.</p>
      * <p>All existing policies are preserved until you send new policies or an empty
      * policy. For more information about parameter policies, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-policies.html">Working
-     * with Parameter Policies</a>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
+     * parameter policies</a>. </p>
      */
     inline PutParameterRequest& WithPolicies(const char* value) { SetPolicies(value); return *this;}
 

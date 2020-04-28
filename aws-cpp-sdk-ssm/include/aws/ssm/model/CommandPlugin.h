@@ -142,8 +142,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
@@ -176,8 +176,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
@@ -210,8 +210,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
@@ -244,8 +244,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
@@ -278,8 +278,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
@@ -312,8 +312,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
@@ -346,8 +346,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
@@ -380,8 +380,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
@@ -542,56 +542,56 @@ namespace Model
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If the Amazon S3 bucket for the command was not specified, then this string is
+     * If the S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
     inline const Aws::String& GetStandardOutputUrl() const{ return m_standardOutputUrl; }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If the Amazon S3 bucket for the command was not specified, then this string is
+     * If the S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
     inline bool StandardOutputUrlHasBeenSet() const { return m_standardOutputUrlHasBeenSet; }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If the Amazon S3 bucket for the command was not specified, then this string is
+     * If the S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
     inline void SetStandardOutputUrl(const Aws::String& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = value; }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If the Amazon S3 bucket for the command was not specified, then this string is
+     * If the S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
     inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = std::move(value); }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If the Amazon S3 bucket for the command was not specified, then this string is
+     * If the S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
     inline void SetStandardOutputUrl(const char* value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl.assign(value); }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If the Amazon S3 bucket for the command was not specified, then this string is
+     * If the S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
     inline CommandPlugin& WithStandardOutputUrl(const Aws::String& value) { SetStandardOutputUrl(value); return *this;}
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If the Amazon S3 bucket for the command was not specified, then this string is
+     * If the S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
     inline CommandPlugin& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If the Amazon S3 bucket for the command was not specified, then this string is
+     * If the S3 bucket for the command was not specified, then this string is
      * empty.</p>
      */
     inline CommandPlugin& WithStandardOutputUrl(const char* value) { SetStandardOutputUrl(value); return *this;}
@@ -648,57 +648,49 @@ namespace Model
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the S3 bucket region.</p>
      */
     inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the S3 bucket region.</p>
      */
     inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the S3 bucket region.</p>
      */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the S3 bucket region.</p>
      */
     inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the S3 bucket region.</p>
      */
     inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the S3 bucket region.</p>
      */
     inline CommandPlugin& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the S3 bucket region.</p>
      */
     inline CommandPlugin& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the S3 bucket region.</p>
      */
     inline CommandPlugin& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
@@ -708,8 +700,8 @@ namespace Model
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -720,8 +712,8 @@ namespace Model
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -732,8 +724,8 @@ namespace Model
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -744,8 +736,8 @@ namespace Model
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -756,8 +748,8 @@ namespace Model
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -768,8 +760,8 @@ namespace Model
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -780,8 +772,8 @@ namespace Model
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -792,8 +784,8 @@ namespace Model
      * This was requested when issuing the command. For example, in the following
      * response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -805,8 +797,8 @@ namespace Model
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -817,8 +809,8 @@ namespace Model
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -829,8 +821,8 @@ namespace Model
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -841,8 +833,8 @@ namespace Model
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -853,8 +845,8 @@ namespace Model
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -865,8 +857,8 @@ namespace Model
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -877,8 +869,8 @@ namespace Model
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */
@@ -889,8 +881,8 @@ namespace Model
      * executions should be stored. This was requested when issuing the command. For
      * example, in the following response:</p> <p>
      * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
-     * </p> <p>test_folder is the name of the Amazon S3 bucket;</p> <p>
-     * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
+     * </p> <p>test_folder is the name of the S3 bucket;</p>
+     * <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
      * <p>i-1234567876543 is the instance ID;</p> <p>awsrunShellScript is the name of
      * the plugin.</p>
      */

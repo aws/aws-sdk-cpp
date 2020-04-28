@@ -1415,8 +1415,11 @@ VOD
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANTMANIFESTSANDSEGMENTS: Generates
+     * media manifests for this output group, but not a master manifest.
+
+SEGMENTSONLY:
+     * Does not generate any manifests for this output group.
      */
     inline const HlsOutputSelection& GetOutputSelection() const{ return m_outputSelection; }
 
@@ -1424,8 +1427,11 @@ SEGMENTSONLY: Does not generate any
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANTMANIFESTSANDSEGMENTS: Generates
+     * media manifests for this output group, but not a master manifest.
+
+SEGMENTSONLY:
+     * Does not generate any manifests for this output group.
      */
     inline bool OutputSelectionHasBeenSet() const { return m_outputSelectionHasBeenSet; }
 
@@ -1433,8 +1439,11 @@ SEGMENTSONLY: Does not generate any
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANTMANIFESTSANDSEGMENTS: Generates
+     * media manifests for this output group, but not a master manifest.
+
+SEGMENTSONLY:
+     * Does not generate any manifests for this output group.
      */
     inline void SetOutputSelection(const HlsOutputSelection& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = value; }
 
@@ -1442,8 +1451,11 @@ SEGMENTSONLY: Does not generate any
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANTMANIFESTSANDSEGMENTS: Generates
+     * media manifests for this output group, but not a master manifest.
+
+SEGMENTSONLY:
+     * Does not generate any manifests for this output group.
      */
     inline void SetOutputSelection(HlsOutputSelection&& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = std::move(value); }
 
@@ -1451,8 +1463,11 @@ SEGMENTSONLY: Does not generate any
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANTMANIFESTSANDSEGMENTS: Generates
+     * media manifests for this output group, but not a master manifest.
+
+SEGMENTSONLY:
+     * Does not generate any manifests for this output group.
      */
     inline HlsGroupSettings& WithOutputSelection(const HlsOutputSelection& value) { SetOutputSelection(value); return *this;}
 
@@ -1460,8 +1475,11 @@ SEGMENTSONLY: Does not generate any
      * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-SEGMENTSONLY: Does not generate any
-     * manifests for this output group.
+VARIANTMANIFESTSANDSEGMENTS: Generates
+     * media manifests for this output group, but not a master manifest.
+
+SEGMENTSONLY:
+     * Does not generate any manifests for this output group.
      */
     inline HlsGroupSettings& WithOutputSelection(HlsOutputSelection&& value) { SetOutputSelection(std::move(value)); return *this;}
 

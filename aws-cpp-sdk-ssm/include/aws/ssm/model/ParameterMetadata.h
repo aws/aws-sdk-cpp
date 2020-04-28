@@ -95,38 +95,38 @@ namespace Model
 
 
     /**
-     * <p>The type of parameter. Valid parameter types include the following: String,
-     * String list, Secure string.</p>
+     * <p>The type of parameter. Valid parameter types include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline const ParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter. Valid parameter types include the following: String,
-     * String list, Secure string.</p>
+     * <p>The type of parameter. Valid parameter types include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of parameter. Valid parameter types include the following: String,
-     * String list, Secure string.</p>
+     * <p>The type of parameter. Valid parameter types include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter. Valid parameter types include the following: String,
-     * String list, Secure string.</p>
+     * <p>The type of parameter. Valid parameter types include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of parameter. Valid parameter types include the following: String,
-     * String list, Secure string.</p>
+     * <p>The type of parameter. Valid parameter types include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline ParameterMetadata& WithType(const ParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter. Valid parameter types include the following: String,
-     * String list, Secure string.</p>
+     * <p>The type of parameter. Valid parameter types include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline ParameterMetadata& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 

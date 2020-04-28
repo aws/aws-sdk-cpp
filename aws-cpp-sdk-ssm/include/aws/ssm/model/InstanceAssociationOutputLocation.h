@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon S3 bucket where you want to store the results of this
+   * <p>An S3 bucket where you want to store the results of this
    * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociationOutputLocation">AWS
    * API Reference</a></p>
@@ -49,32 +49,32 @@ namespace Model
 
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     * <p>An S3 bucket where you want to store the results of this request.</p>
      */
     inline const S3OutputLocation& GetS3Location() const{ return m_s3Location; }
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     * <p>An S3 bucket where you want to store the results of this request.</p>
      */
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     * <p>An S3 bucket where you want to store the results of this request.</p>
      */
     inline void SetS3Location(const S3OutputLocation& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     * <p>An S3 bucket where you want to store the results of this request.</p>
      */
     inline void SetS3Location(S3OutputLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     * <p>An S3 bucket where you want to store the results of this request.</p>
      */
     inline InstanceAssociationOutputLocation& WithS3Location(const S3OutputLocation& value) { SetS3Location(value); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     * <p>An S3 bucket where you want to store the results of this request.</p>
      */
     inline InstanceAssociationOutputLocation& WithS3Location(S3OutputLocation&& value) { SetS3Location(std::move(value)); return *this;}
 

@@ -48,7 +48,7 @@ namespace Model
    * in the results. If you specify more than two values for a key, documents that
    * are identified by any of the values are returned in the results.</p> <p>To
    * specify a custom key and value pair, use the format
-   * <code>Key=tag:[tagName],Values=[valueName]</code>.</p> <p>For example, if you
+   * <code>Key=tag:tagName,Values=valueName</code>.</p> <p>For example, if you
    * created a Key called region and are using the AWS CLI to call the
    * <code>list-documents</code> command: </p> <p> <code>aws ssm list-documents
    * --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>

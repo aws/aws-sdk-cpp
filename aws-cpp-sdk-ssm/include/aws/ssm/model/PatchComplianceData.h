@@ -225,48 +225,48 @@ namespace Model
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const PatchComplianceDataState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetState(const PatchComplianceDataState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetState(PatchComplianceDataState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PatchComplianceData& WithState(const PatchComplianceDataState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
      * <p>For descriptions of each patch state, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
-     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline PatchComplianceData& WithState(PatchComplianceDataState&& value) { SetState(std::move(value)); return *this;}
 

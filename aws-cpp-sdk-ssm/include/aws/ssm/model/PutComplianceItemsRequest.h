@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ComplianceExecutionSummary.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/ComplianceUploadType.h>
 #include <aws/ssm/model/ComplianceItemEntry.h>
 #include <utility>
 
@@ -246,56 +247,56 @@ namespace Model
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline const Aws::Vector<ComplianceItemEntry>& GetItems() const{ return m_items; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline void SetItems(const Aws::Vector<ComplianceItemEntry>& value) { m_itemsHasBeenSet = true; m_items = value; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline void SetItems(Aws::Vector<ComplianceItemEntry>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline PutComplianceItemsRequest& WithItems(const Aws::Vector<ComplianceItemEntry>& value) { SetItems(value); return *this;}
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline PutComplianceItemsRequest& WithItems(Aws::Vector<ComplianceItemEntry>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline PutComplianceItemsRequest& AddItems(const ComplianceItemEntry& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
 
     /**
      * <p>Information about the compliance as defined by the resource type. For
      * example, for a patch compliance type, <code>Items</code> includes information
-     * about the PatchSeverity, Classification, etc.</p>
+     * about the PatchSeverity, Classification, and so on.</p>
      */
     inline PutComplianceItemsRequest& AddItems(ComplianceItemEntry&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
 
@@ -356,6 +357,85 @@ namespace Model
      */
     inline PutComplianceItemsRequest& WithItemContentHash(const char* value) { SetItemContentHash(value); return *this;}
 
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
+     * association compliance.</p> </note>
+     */
+    inline const ComplianceUploadType& GetUploadType() const{ return m_uploadType; }
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
+     * association compliance.</p> </note>
+     */
+    inline bool UploadTypeHasBeenSet() const { return m_uploadTypeHasBeenSet; }
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
+     * association compliance.</p> </note>
+     */
+    inline void SetUploadType(const ComplianceUploadType& value) { m_uploadTypeHasBeenSet = true; m_uploadType = value; }
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
+     * association compliance.</p> </note>
+     */
+    inline void SetUploadType(ComplianceUploadType&& value) { m_uploadTypeHasBeenSet = true; m_uploadType = std::move(value); }
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
+     * association compliance.</p> </note>
+     */
+    inline PutComplianceItemsRequest& WithUploadType(const ComplianceUploadType& value) { SetUploadType(value); return *this;}
+
+    /**
+     * <p>The mode for uploading compliance items. You can specify
+     * <code>COMPLETE</code> or <code>PARTIAL</code>. In <code>COMPLETE</code> mode,
+     * the system overwrites all existing compliance information for the resource. You
+     * must provide a full list of compliance items each time you send the request.</p>
+     * <p>In <code>PARTIAL</code> mode, the system overwrites compliance information
+     * for a specific association. The association must be configured with
+     * <code>SyncCompliance</code> set to <code>MANUAL</code>. By default, all requests
+     * use <code>COMPLETE</code> mode.</p> <note> <p>This attribute is only valid for
+     * association compliance.</p> </note>
+     */
+    inline PutComplianceItemsRequest& WithUploadType(ComplianceUploadType&& value) { SetUploadType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceId;
@@ -375,6 +455,9 @@ namespace Model
 
     Aws::String m_itemContentHash;
     bool m_itemContentHashHasBeenSet;
+
+    ComplianceUploadType m_uploadType;
+    bool m_uploadTypeHasBeenSet;
   };
 
 } // namespace Model

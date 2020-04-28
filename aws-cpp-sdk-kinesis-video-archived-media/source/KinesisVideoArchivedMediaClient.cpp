@@ -30,6 +30,7 @@
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaClient.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaEndpoint.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMediaErrorMarshaller.h>
+#include <aws/kinesis-video-archived-media/model/GetClipRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetDASHStreamingSessionURLRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLRequest.h>
 #include <aws/kinesis-video-archived-media/model/GetMediaForFragmentListRequest.h>
@@ -105,6 +106,41 @@ void KinesisVideoArchivedMediaClient::OverrideEndpoint(const Aws::String& endpoi
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/getClip";
+  uri.SetPath(uri.GetPath() + ss.str());
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetClipOutcome(GetClipResult(outcome.GetResultWithOwnership()));
+  }
+  else
+  {
+    return GetClipOutcome(outcome.GetError());
+  }
+}
+
+GetClipOutcomeCallable KinesisVideoArchivedMediaClient::GetClipCallable(const GetClipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetClipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetClip(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoArchivedMediaClient::GetClipAsync(const GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetClipAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoArchivedMediaClient::GetClipAsyncHelper(const GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetClip(request), context);
 }
 
 GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURL(const GetDASHStreamingSessionURLRequest& request) const

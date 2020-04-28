@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The URL of Amazon S3 bucket where you want to store the results of this
+   * <p>The URL of S3 bucket where you want to store the results of this
    * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociationOutputUrl">AWS
    * API Reference</a></p>
@@ -49,38 +49,32 @@ namespace Model
 
 
     /**
-     * <p>The URL of Amazon S3 bucket where you want to store the results of this
-     * request.</p>
+     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
      */
     inline const S3OutputUrl& GetS3OutputUrl() const{ return m_s3OutputUrl; }
 
     /**
-     * <p>The URL of Amazon S3 bucket where you want to store the results of this
-     * request.</p>
+     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
      */
     inline bool S3OutputUrlHasBeenSet() const { return m_s3OutputUrlHasBeenSet; }
 
     /**
-     * <p>The URL of Amazon S3 bucket where you want to store the results of this
-     * request.</p>
+     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
      */
     inline void SetS3OutputUrl(const S3OutputUrl& value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl = value; }
 
     /**
-     * <p>The URL of Amazon S3 bucket where you want to store the results of this
-     * request.</p>
+     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
      */
     inline void SetS3OutputUrl(S3OutputUrl&& value) { m_s3OutputUrlHasBeenSet = true; m_s3OutputUrl = std::move(value); }
 
     /**
-     * <p>The URL of Amazon S3 bucket where you want to store the results of this
-     * request.</p>
+     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
      */
     inline InstanceAssociationOutputUrl& WithS3OutputUrl(const S3OutputUrl& value) { SetS3OutputUrl(value); return *this;}
 
     /**
-     * <p>The URL of Amazon S3 bucket where you want to store the results of this
-     * request.</p>
+     * <p>The URL of S3 bucket where you want to store the results of this request.</p>
      */
     inline InstanceAssociationOutputUrl& WithS3OutputUrl(S3OutputUrl&& value) { SetS3OutputUrl(std::move(value)); return *this;}
 

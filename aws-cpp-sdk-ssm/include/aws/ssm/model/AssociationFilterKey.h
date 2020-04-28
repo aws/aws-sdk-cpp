@@ -32,7 +32,8 @@ namespace Model
     AssociationStatusName,
     LastExecutedBefore,
     LastExecutedAfter,
-    AssociationName
+    AssociationName,
+    ResourceGroupName
   };
 
 namespace AssociationFilterKeyMapper

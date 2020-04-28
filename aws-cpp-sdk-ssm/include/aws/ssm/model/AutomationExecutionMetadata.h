@@ -319,42 +319,42 @@ namespace Model
 
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline const Aws::String& GetLogFile() const{ return m_logFile; }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline bool LogFileHasBeenSet() const { return m_logFileHasBeenSet; }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline void SetLogFile(const Aws::String& value) { m_logFileHasBeenSet = true; m_logFile = value; }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline void SetLogFile(Aws::String&& value) { m_logFileHasBeenSet = true; m_logFile = std::move(value); }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline void SetLogFile(const char* value) { m_logFileHasBeenSet = true; m_logFile.assign(value); }
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline AutomationExecutionMetadata& WithLogFile(const Aws::String& value) { SetLogFile(value); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline AutomationExecutionMetadata& WithLogFile(Aws::String&& value) { SetLogFile(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket where execution information is stored.</p>
+     * <p>An S3 bucket where execution information is stored.</p>
      */
     inline AutomationExecutionMetadata& WithLogFile(const char* value) { SetLogFile(value); return *this;}
 
@@ -912,9 +912,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline const AutomationType& GetAutomationType() const{ return m_automationType; }
 
@@ -922,9 +922,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline bool AutomationTypeHasBeenSet() const { return m_automationTypeHasBeenSet; }
 
@@ -932,9 +932,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline void SetAutomationType(const AutomationType& value) { m_automationTypeHasBeenSet = true; m_automationType = value; }
 
@@ -942,9 +942,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline void SetAutomationType(AutomationType&& value) { m_automationTypeHasBeenSet = true; m_automationType = std::move(value); }
 
@@ -952,9 +952,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline AutomationExecutionMetadata& WithAutomationType(const AutomationType& value) { SetAutomationType(value); return *this;}
 
@@ -962,9 +962,9 @@ namespace Model
      * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
      * Local or CrossAccount. CrossAccount is an Automation that runs in multiple AWS
      * Regions and accounts. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Executing
-     * Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems
-     * Manager User Guide</i>. </p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running
+     * Automation workflows in multiple AWS Regions and accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
      */
     inline AutomationExecutionMetadata& WithAutomationType(AutomationType&& value) { SetAutomationType(std::move(value)); return *this;}
 

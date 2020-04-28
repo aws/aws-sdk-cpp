@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a filter.</p><p><h3>See Also:</h3>   <a
+   * <p>This data type is deprecated. Instead, use
+   * <a>DocumentKeyValuesFilter</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentFilter">AWS
    * API Reference</a></p>
    */

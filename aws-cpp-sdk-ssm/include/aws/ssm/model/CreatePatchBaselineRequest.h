@@ -197,9 +197,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApprovedPatches() const{ return m_approvedPatches; }
 
@@ -207,9 +207,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool ApprovedPatchesHasBeenSet() const { return m_approvedPatchesHasBeenSet; }
 
@@ -217,9 +217,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetApprovedPatches(const Aws::Vector<Aws::String>& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = value; }
 
@@ -227,9 +227,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetApprovedPatches(Aws::Vector<Aws::String>&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = std::move(value); }
 
@@ -237,9 +237,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& WithApprovedPatches(const Aws::Vector<Aws::String>& value) { SetApprovedPatches(value); return *this;}
 
@@ -247,9 +247,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& WithApprovedPatches(Aws::Vector<Aws::String>&& value) { SetApprovedPatches(std::move(value)); return *this;}
 
@@ -257,9 +257,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddApprovedPatches(const Aws::String& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
 
@@ -267,9 +267,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddApprovedPatches(Aws::String&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(std::move(value)); return *this; }
 
@@ -277,9 +277,9 @@ namespace Model
      * <p>A list of explicitly approved patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddApprovedPatches(const char* value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
 
@@ -360,9 +360,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRejectedPatches() const{ return m_rejectedPatches; }
 
@@ -370,9 +370,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool RejectedPatchesHasBeenSet() const { return m_rejectedPatchesHasBeenSet; }
 
@@ -380,9 +380,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetRejectedPatches(const Aws::Vector<Aws::String>& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = value; }
 
@@ -390,9 +390,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetRejectedPatches(Aws::Vector<Aws::String>&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = std::move(value); }
 
@@ -400,9 +400,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& WithRejectedPatches(const Aws::Vector<Aws::String>& value) { SetRejectedPatches(value); return *this;}
 
@@ -410,9 +410,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& WithRejectedPatches(Aws::Vector<Aws::String>&& value) { SetRejectedPatches(std::move(value)); return *this;}
 
@@ -420,9 +420,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddRejectedPatches(const Aws::String& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(value); return *this; }
 
@@ -430,9 +430,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddRejectedPatches(Aws::String&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(std::move(value)); return *this; }
 
@@ -440,9 +440,9 @@ namespace Model
      * <p>A list of explicitly rejected patches for the baseline.</p> <p>For
      * information about accepted formats for lists of approved patches and rejected
      * patches, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">Package
-     * Name Formats for Approved and Rejected Patch Lists</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
+     * package name formats for approved and rejected patch lists</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreatePatchBaselineRequest& AddRejectedPatches(const char* value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(value); return *this; }
 

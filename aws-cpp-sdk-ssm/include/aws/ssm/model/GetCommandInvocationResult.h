@@ -82,49 +82,49 @@ namespace Model
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
-     * can be an Amazon EC2 instance or an instance in your hybrid environment that is
+     * can be an EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
-     * can be an Amazon EC2 instance or an instance in your hybrid environment that is
+     * can be an EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
-     * can be an Amazon EC2 instance or an instance in your hybrid environment that is
+     * can be an EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
-     * can be an Amazon EC2 instance or an instance in your hybrid environment that is
+     * can be an EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
-     * can be an Amazon EC2 instance or an instance in your hybrid environment that is
+     * can be an EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
     inline GetCommandInvocationResult& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
-     * can be an Amazon EC2 instance or an instance in your hybrid environment that is
+     * can be an EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
     inline GetCommandInvocationResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the managed instance targeted by the command. A managed instance
-     * can be an Amazon EC2 instance or an instance in your hybrid environment that is
+     * can be an EC2 instance or an instance in your hybrid environment that is
      * configured for Systems Manager.</p>
      */
     inline GetCommandInvocationResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
@@ -517,36 +517,36 @@ namespace Model
      * includes more information than Status because it includes states resulting from
      * error and concurrency control parameters. StatusDetails can show different
      * results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
      * <p>Delayed: The system attempted to send the command to the target, but the
      * target was not available. The instance might not be available because of network
-     * issues, the instance was stopped, etc. The system will try to deliver the
-     * command again.</p> </li> <li> <p>Success: The command or plugin was run
-     * successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out:
-     * The command was not delivered to the instance before the delivery timeout
-     * expired. Delivery timeouts do not count against the parent command's MaxErrors
-     * limit, but they do contribute to whether the parent command status is Success or
-     * Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The
-     * command started to run on the instance, but the execution was not complete
-     * before the timeout expired. Execution timeouts count against the MaxErrors limit
-     * of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The
-     * command wasn't run successfully on the instance. For a plugin, this indicates
-     * that the result code was not zero. For a command invocation, this indicates that
-     * the result code for one or more plugins was not zero. Invocation failures count
-     * against the MaxErrors limit of the parent command. This is a terminal state.</p>
-     * </li> <li> <p>Canceled: The command was terminated before it was completed. This
-     * is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be
-     * delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command's
-     * MaxErrors limit and don't contribute to whether the parent command status is
-     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated:
-     * The parent command exceeded its MaxErrors limit and subsequent command
-     * invocations were canceled by the system. This is a terminal state.</p> </li>
-     * </ul>
+     * issues, because the instance was stopped, or for similar reasons. The system
+     * will try to send the command again.</p> </li> <li> <p>Success: The command or
+     * plugin ran successfully. This is a terminal state.</p> </li> <li> <p>Delivery
+     * Timed Out: The command was not delivered to the instance before the delivery
+     * timeout expired. Delivery timeouts do not count against the parent command's
+     * MaxErrors limit, but they do contribute to whether the parent command status is
+     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution
+     * Timed Out: The command started to run on the instance, but the execution was not
+     * complete before the timeout expired. Execution timeouts count against the
+     * MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li>
+     * <p>Failed: The command wasn't run successfully on the instance. For a plugin,
+     * this indicates that the result code was not zero. For a command invocation, this
+     * indicates that the result code for one or more plugins was not zero. Invocation
+     * failures count against the MaxErrors limit of the parent command. This is a
+     * terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it
+     * was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
+     * command can't be delivered to the instance. The instance might not exist or
+     * might not be responding. Undeliverable invocations don't count against the
+     * parent command's MaxErrors limit and don't contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.</p> </li>
+     * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
+     * subsequent command invocations were canceled by the system. This is a terminal
+     * state.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
 
@@ -555,36 +555,36 @@ namespace Model
      * includes more information than Status because it includes states resulting from
      * error and concurrency control parameters. StatusDetails can show different
      * results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
      * <p>Delayed: The system attempted to send the command to the target, but the
      * target was not available. The instance might not be available because of network
-     * issues, the instance was stopped, etc. The system will try to deliver the
-     * command again.</p> </li> <li> <p>Success: The command or plugin was run
-     * successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out:
-     * The command was not delivered to the instance before the delivery timeout
-     * expired. Delivery timeouts do not count against the parent command's MaxErrors
-     * limit, but they do contribute to whether the parent command status is Success or
-     * Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The
-     * command started to run on the instance, but the execution was not complete
-     * before the timeout expired. Execution timeouts count against the MaxErrors limit
-     * of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The
-     * command wasn't run successfully on the instance. For a plugin, this indicates
-     * that the result code was not zero. For a command invocation, this indicates that
-     * the result code for one or more plugins was not zero. Invocation failures count
-     * against the MaxErrors limit of the parent command. This is a terminal state.</p>
-     * </li> <li> <p>Canceled: The command was terminated before it was completed. This
-     * is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be
-     * delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command's
-     * MaxErrors limit and don't contribute to whether the parent command status is
-     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated:
-     * The parent command exceeded its MaxErrors limit and subsequent command
-     * invocations were canceled by the system. This is a terminal state.</p> </li>
-     * </ul>
+     * issues, because the instance was stopped, or for similar reasons. The system
+     * will try to send the command again.</p> </li> <li> <p>Success: The command or
+     * plugin ran successfully. This is a terminal state.</p> </li> <li> <p>Delivery
+     * Timed Out: The command was not delivered to the instance before the delivery
+     * timeout expired. Delivery timeouts do not count against the parent command's
+     * MaxErrors limit, but they do contribute to whether the parent command status is
+     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution
+     * Timed Out: The command started to run on the instance, but the execution was not
+     * complete before the timeout expired. Execution timeouts count against the
+     * MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li>
+     * <p>Failed: The command wasn't run successfully on the instance. For a plugin,
+     * this indicates that the result code was not zero. For a command invocation, this
+     * indicates that the result code for one or more plugins was not zero. Invocation
+     * failures count against the MaxErrors limit of the parent command. This is a
+     * terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it
+     * was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
+     * command can't be delivered to the instance. The instance might not exist or
+     * might not be responding. Undeliverable invocations don't count against the
+     * parent command's MaxErrors limit and don't contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.</p> </li>
+     * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
+     * subsequent command invocations were canceled by the system. This is a terminal
+     * state.</p> </li> </ul>
      */
     inline void SetStatusDetails(const Aws::String& value) { m_statusDetails = value; }
 
@@ -593,36 +593,36 @@ namespace Model
      * includes more information than Status because it includes states resulting from
      * error and concurrency control parameters. StatusDetails can show different
      * results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
      * <p>Delayed: The system attempted to send the command to the target, but the
      * target was not available. The instance might not be available because of network
-     * issues, the instance was stopped, etc. The system will try to deliver the
-     * command again.</p> </li> <li> <p>Success: The command or plugin was run
-     * successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out:
-     * The command was not delivered to the instance before the delivery timeout
-     * expired. Delivery timeouts do not count against the parent command's MaxErrors
-     * limit, but they do contribute to whether the parent command status is Success or
-     * Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The
-     * command started to run on the instance, but the execution was not complete
-     * before the timeout expired. Execution timeouts count against the MaxErrors limit
-     * of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The
-     * command wasn't run successfully on the instance. For a plugin, this indicates
-     * that the result code was not zero. For a command invocation, this indicates that
-     * the result code for one or more plugins was not zero. Invocation failures count
-     * against the MaxErrors limit of the parent command. This is a terminal state.</p>
-     * </li> <li> <p>Canceled: The command was terminated before it was completed. This
-     * is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be
-     * delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command's
-     * MaxErrors limit and don't contribute to whether the parent command status is
-     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated:
-     * The parent command exceeded its MaxErrors limit and subsequent command
-     * invocations were canceled by the system. This is a terminal state.</p> </li>
-     * </ul>
+     * issues, because the instance was stopped, or for similar reasons. The system
+     * will try to send the command again.</p> </li> <li> <p>Success: The command or
+     * plugin ran successfully. This is a terminal state.</p> </li> <li> <p>Delivery
+     * Timed Out: The command was not delivered to the instance before the delivery
+     * timeout expired. Delivery timeouts do not count against the parent command's
+     * MaxErrors limit, but they do contribute to whether the parent command status is
+     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution
+     * Timed Out: The command started to run on the instance, but the execution was not
+     * complete before the timeout expired. Execution timeouts count against the
+     * MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li>
+     * <p>Failed: The command wasn't run successfully on the instance. For a plugin,
+     * this indicates that the result code was not zero. For a command invocation, this
+     * indicates that the result code for one or more plugins was not zero. Invocation
+     * failures count against the MaxErrors limit of the parent command. This is a
+     * terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it
+     * was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
+     * command can't be delivered to the instance. The instance might not exist or
+     * might not be responding. Undeliverable invocations don't count against the
+     * parent command's MaxErrors limit and don't contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.</p> </li>
+     * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
+     * subsequent command invocations were canceled by the system. This is a terminal
+     * state.</p> </li> </ul>
      */
     inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = std::move(value); }
 
@@ -631,36 +631,36 @@ namespace Model
      * includes more information than Status because it includes states resulting from
      * error and concurrency control parameters. StatusDetails can show different
      * results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
      * <p>Delayed: The system attempted to send the command to the target, but the
      * target was not available. The instance might not be available because of network
-     * issues, the instance was stopped, etc. The system will try to deliver the
-     * command again.</p> </li> <li> <p>Success: The command or plugin was run
-     * successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out:
-     * The command was not delivered to the instance before the delivery timeout
-     * expired. Delivery timeouts do not count against the parent command's MaxErrors
-     * limit, but they do contribute to whether the parent command status is Success or
-     * Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The
-     * command started to run on the instance, but the execution was not complete
-     * before the timeout expired. Execution timeouts count against the MaxErrors limit
-     * of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The
-     * command wasn't run successfully on the instance. For a plugin, this indicates
-     * that the result code was not zero. For a command invocation, this indicates that
-     * the result code for one or more plugins was not zero. Invocation failures count
-     * against the MaxErrors limit of the parent command. This is a terminal state.</p>
-     * </li> <li> <p>Canceled: The command was terminated before it was completed. This
-     * is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be
-     * delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command's
-     * MaxErrors limit and don't contribute to whether the parent command status is
-     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated:
-     * The parent command exceeded its MaxErrors limit and subsequent command
-     * invocations were canceled by the system. This is a terminal state.</p> </li>
-     * </ul>
+     * issues, because the instance was stopped, or for similar reasons. The system
+     * will try to send the command again.</p> </li> <li> <p>Success: The command or
+     * plugin ran successfully. This is a terminal state.</p> </li> <li> <p>Delivery
+     * Timed Out: The command was not delivered to the instance before the delivery
+     * timeout expired. Delivery timeouts do not count against the parent command's
+     * MaxErrors limit, but they do contribute to whether the parent command status is
+     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution
+     * Timed Out: The command started to run on the instance, but the execution was not
+     * complete before the timeout expired. Execution timeouts count against the
+     * MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li>
+     * <p>Failed: The command wasn't run successfully on the instance. For a plugin,
+     * this indicates that the result code was not zero. For a command invocation, this
+     * indicates that the result code for one or more plugins was not zero. Invocation
+     * failures count against the MaxErrors limit of the parent command. This is a
+     * terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it
+     * was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
+     * command can't be delivered to the instance. The instance might not exist or
+     * might not be responding. Undeliverable invocations don't count against the
+     * parent command's MaxErrors limit and don't contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.</p> </li>
+     * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
+     * subsequent command invocations were canceled by the system. This is a terminal
+     * state.</p> </li> </ul>
      */
     inline void SetStatusDetails(const char* value) { m_statusDetails.assign(value); }
 
@@ -669,36 +669,36 @@ namespace Model
      * includes more information than Status because it includes states resulting from
      * error and concurrency control parameters. StatusDetails can show different
      * results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
      * <p>Delayed: The system attempted to send the command to the target, but the
      * target was not available. The instance might not be available because of network
-     * issues, the instance was stopped, etc. The system will try to deliver the
-     * command again.</p> </li> <li> <p>Success: The command or plugin was run
-     * successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out:
-     * The command was not delivered to the instance before the delivery timeout
-     * expired. Delivery timeouts do not count against the parent command's MaxErrors
-     * limit, but they do contribute to whether the parent command status is Success or
-     * Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The
-     * command started to run on the instance, but the execution was not complete
-     * before the timeout expired. Execution timeouts count against the MaxErrors limit
-     * of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The
-     * command wasn't run successfully on the instance. For a plugin, this indicates
-     * that the result code was not zero. For a command invocation, this indicates that
-     * the result code for one or more plugins was not zero. Invocation failures count
-     * against the MaxErrors limit of the parent command. This is a terminal state.</p>
-     * </li> <li> <p>Canceled: The command was terminated before it was completed. This
-     * is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be
-     * delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command's
-     * MaxErrors limit and don't contribute to whether the parent command status is
-     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated:
-     * The parent command exceeded its MaxErrors limit and subsequent command
-     * invocations were canceled by the system. This is a terminal state.</p> </li>
-     * </ul>
+     * issues, because the instance was stopped, or for similar reasons. The system
+     * will try to send the command again.</p> </li> <li> <p>Success: The command or
+     * plugin ran successfully. This is a terminal state.</p> </li> <li> <p>Delivery
+     * Timed Out: The command was not delivered to the instance before the delivery
+     * timeout expired. Delivery timeouts do not count against the parent command's
+     * MaxErrors limit, but they do contribute to whether the parent command status is
+     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution
+     * Timed Out: The command started to run on the instance, but the execution was not
+     * complete before the timeout expired. Execution timeouts count against the
+     * MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li>
+     * <p>Failed: The command wasn't run successfully on the instance. For a plugin,
+     * this indicates that the result code was not zero. For a command invocation, this
+     * indicates that the result code for one or more plugins was not zero. Invocation
+     * failures count against the MaxErrors limit of the parent command. This is a
+     * terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it
+     * was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
+     * command can't be delivered to the instance. The instance might not exist or
+     * might not be responding. Undeliverable invocations don't count against the
+     * parent command's MaxErrors limit and don't contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.</p> </li>
+     * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
+     * subsequent command invocations were canceled by the system. This is a terminal
+     * state.</p> </li> </ul>
      */
     inline GetCommandInvocationResult& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
 
@@ -707,36 +707,36 @@ namespace Model
      * includes more information than Status because it includes states resulting from
      * error and concurrency control parameters. StatusDetails can show different
      * results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
      * <p>Delayed: The system attempted to send the command to the target, but the
      * target was not available. The instance might not be available because of network
-     * issues, the instance was stopped, etc. The system will try to deliver the
-     * command again.</p> </li> <li> <p>Success: The command or plugin was run
-     * successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out:
-     * The command was not delivered to the instance before the delivery timeout
-     * expired. Delivery timeouts do not count against the parent command's MaxErrors
-     * limit, but they do contribute to whether the parent command status is Success or
-     * Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The
-     * command started to run on the instance, but the execution was not complete
-     * before the timeout expired. Execution timeouts count against the MaxErrors limit
-     * of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The
-     * command wasn't run successfully on the instance. For a plugin, this indicates
-     * that the result code was not zero. For a command invocation, this indicates that
-     * the result code for one or more plugins was not zero. Invocation failures count
-     * against the MaxErrors limit of the parent command. This is a terminal state.</p>
-     * </li> <li> <p>Canceled: The command was terminated before it was completed. This
-     * is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be
-     * delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command's
-     * MaxErrors limit and don't contribute to whether the parent command status is
-     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated:
-     * The parent command exceeded its MaxErrors limit and subsequent command
-     * invocations were canceled by the system. This is a terminal state.</p> </li>
-     * </ul>
+     * issues, because the instance was stopped, or for similar reasons. The system
+     * will try to send the command again.</p> </li> <li> <p>Success: The command or
+     * plugin ran successfully. This is a terminal state.</p> </li> <li> <p>Delivery
+     * Timed Out: The command was not delivered to the instance before the delivery
+     * timeout expired. Delivery timeouts do not count against the parent command's
+     * MaxErrors limit, but they do contribute to whether the parent command status is
+     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution
+     * Timed Out: The command started to run on the instance, but the execution was not
+     * complete before the timeout expired. Execution timeouts count against the
+     * MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li>
+     * <p>Failed: The command wasn't run successfully on the instance. For a plugin,
+     * this indicates that the result code was not zero. For a command invocation, this
+     * indicates that the result code for one or more plugins was not zero. Invocation
+     * failures count against the MaxErrors limit of the parent command. This is a
+     * terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it
+     * was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
+     * command can't be delivered to the instance. The instance might not exist or
+     * might not be responding. Undeliverable invocations don't count against the
+     * parent command's MaxErrors limit and don't contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.</p> </li>
+     * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
+     * subsequent command invocations were canceled by the system. This is a terminal
+     * state.</p> </li> </ul>
      */
     inline GetCommandInvocationResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
 
@@ -745,36 +745,36 @@ namespace Model
      * includes more information than Status because it includes states resulting from
      * error and concurrency control parameters. StatusDetails can show different
      * results than Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
      * been sent to the instance but has not reached a terminal state.</p> </li> <li>
      * <p>Delayed: The system attempted to send the command to the target, but the
      * target was not available. The instance might not be available because of network
-     * issues, the instance was stopped, etc. The system will try to deliver the
-     * command again.</p> </li> <li> <p>Success: The command or plugin was run
-     * successfully. This is a terminal state.</p> </li> <li> <p>Delivery Timed Out:
-     * The command was not delivered to the instance before the delivery timeout
-     * expired. Delivery timeouts do not count against the parent command's MaxErrors
-     * limit, but they do contribute to whether the parent command status is Success or
-     * Incomplete. This is a terminal state.</p> </li> <li> <p>Execution Timed Out: The
-     * command started to run on the instance, but the execution was not complete
-     * before the timeout expired. Execution timeouts count against the MaxErrors limit
-     * of the parent command. This is a terminal state.</p> </li> <li> <p>Failed: The
-     * command wasn't run successfully on the instance. For a plugin, this indicates
-     * that the result code was not zero. For a command invocation, this indicates that
-     * the result code for one or more plugins was not zero. Invocation failures count
-     * against the MaxErrors limit of the parent command. This is a terminal state.</p>
-     * </li> <li> <p>Canceled: The command was terminated before it was completed. This
-     * is a terminal state.</p> </li> <li> <p>Undeliverable: The command can't be
-     * delivered to the instance. The instance might not exist or might not be
-     * responding. Undeliverable invocations don't count against the parent command's
-     * MaxErrors limit and don't contribute to whether the parent command status is
-     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated:
-     * The parent command exceeded its MaxErrors limit and subsequent command
-     * invocations were canceled by the system. This is a terminal state.</p> </li>
-     * </ul>
+     * issues, because the instance was stopped, or for similar reasons. The system
+     * will try to send the command again.</p> </li> <li> <p>Success: The command or
+     * plugin ran successfully. This is a terminal state.</p> </li> <li> <p>Delivery
+     * Timed Out: The command was not delivered to the instance before the delivery
+     * timeout expired. Delivery timeouts do not count against the parent command's
+     * MaxErrors limit, but they do contribute to whether the parent command status is
+     * Success or Incomplete. This is a terminal state.</p> </li> <li> <p>Execution
+     * Timed Out: The command started to run on the instance, but the execution was not
+     * complete before the timeout expired. Execution timeouts count against the
+     * MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li>
+     * <p>Failed: The command wasn't run successfully on the instance. For a plugin,
+     * this indicates that the result code was not zero. For a command invocation, this
+     * indicates that the result code for one or more plugins was not zero. Invocation
+     * failures count against the MaxErrors limit of the parent command. This is a
+     * terminal state.</p> </li> <li> <p>Canceled: The command was terminated before it
+     * was completed. This is a terminal state.</p> </li> <li> <p>Undeliverable: The
+     * command can't be delivered to the instance. The instance might not exist or
+     * might not be responding. Undeliverable invocations don't count against the
+     * parent command's MaxErrors limit and don't contribute to whether the parent
+     * command status is Success or Incomplete. This is a terminal state.</p> </li>
+     * <li> <p>Terminated: The parent command exceeded its MaxErrors limit and
+     * subsequent command invocations were canceled by the system. This is a terminal
+     * state.</p> </li> </ul>
      */
     inline GetCommandInvocationResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
 
@@ -831,43 +831,43 @@ namespace Model
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If an Amazon S3 bucket was not specified, then this string is empty.</p>
+     * If an S3 bucket was not specified, then this string is empty.</p>
      */
     inline const Aws::String& GetStandardOutputUrl() const{ return m_standardOutputUrl; }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If an Amazon S3 bucket was not specified, then this string is empty.</p>
+     * If an S3 bucket was not specified, then this string is empty.</p>
      */
     inline void SetStandardOutputUrl(const Aws::String& value) { m_standardOutputUrl = value; }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If an Amazon S3 bucket was not specified, then this string is empty.</p>
+     * If an S3 bucket was not specified, then this string is empty.</p>
      */
     inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrl = std::move(value); }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If an Amazon S3 bucket was not specified, then this string is empty.</p>
+     * If an S3 bucket was not specified, then this string is empty.</p>
      */
     inline void SetStandardOutputUrl(const char* value) { m_standardOutputUrl.assign(value); }
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If an Amazon S3 bucket was not specified, then this string is empty.</p>
+     * If an S3 bucket was not specified, then this string is empty.</p>
      */
     inline GetCommandInvocationResult& WithStandardOutputUrl(const Aws::String& value) { SetStandardOutputUrl(value); return *this;}
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If an Amazon S3 bucket was not specified, then this string is empty.</p>
+     * If an S3 bucket was not specified, then this string is empty.</p>
      */
     inline GetCommandInvocationResult& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(std::move(value)); return *this;}
 
     /**
      * <p>The URL for the complete text written by the plugin to stdout in Amazon S3.
-     * If an Amazon S3 bucket was not specified, then this string is empty.</p>
+     * If an S3 bucket was not specified, then this string is empty.</p>
      */
     inline GetCommandInvocationResult& WithStandardOutputUrl(const char* value) { SetStandardOutputUrl(value); return *this;}
 

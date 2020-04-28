@@ -512,8 +512,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
@@ -540,8 +540,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
@@ -568,8 +568,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
@@ -596,8 +596,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
@@ -624,8 +624,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
@@ -652,8 +652,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
@@ -680,8 +680,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
@@ -708,8 +708,8 @@ namespace Model
      * information than Status because it includes states resulting from error and
      * concurrency control parameters. StatusDetails can show different results than
      * Status. For more information about these statuses, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
-     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * command statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
      * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
      * not been sent to any instances.</p> </li> <li> <p>In Progress: The command has
      * been sent to at least one instance but has not reached a final state on all
@@ -734,57 +734,57 @@ namespace Model
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline Command& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline Command& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline Command& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
@@ -892,8 +892,8 @@ namespace Model
      * same time. You can specify a number of instances, such as 10, or a percentage of
      * instances, such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
@@ -903,8 +903,8 @@ namespace Model
      * same time. You can specify a number of instances, such as 10, or a percentage of
      * instances, such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
@@ -914,8 +914,8 @@ namespace Model
      * same time. You can specify a number of instances, such as 10, or a percentage of
      * instances, such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
@@ -925,8 +925,8 @@ namespace Model
      * same time. You can specify a number of instances, such as 10, or a percentage of
      * instances, such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
@@ -936,8 +936,8 @@ namespace Model
      * same time. You can specify a number of instances, such as 10, or a percentage of
      * instances, such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
@@ -947,8 +947,8 @@ namespace Model
      * same time. You can specify a number of instances, such as 10, or a percentage of
      * instances, such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
@@ -958,8 +958,8 @@ namespace Model
      * same time. You can specify a number of instances, such as 10, or a percentage of
      * instances, such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
@@ -969,8 +969,8 @@ namespace Model
      * same time. You can specify a number of instances, such as 10, or a percentage of
      * instances, such as 10%. The default value is 50. For more information about how
      * to use MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
@@ -981,8 +981,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
@@ -992,8 +992,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
@@ -1003,8 +1003,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
@@ -1014,8 +1014,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
@@ -1025,8 +1025,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
@@ -1036,8 +1036,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
@@ -1047,8 +1047,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
@@ -1058,8 +1058,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is 0. For more
      * information about how to use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * Commands Using Systems Manager Run Command</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+     * commands using Systems Manager Run Command</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}

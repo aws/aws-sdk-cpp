@@ -55,8 +55,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
@@ -65,8 +66,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
@@ -75,8 +77,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
@@ -85,8 +88,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
@@ -95,8 +99,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
@@ -105,8 +110,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
@@ -115,8 +121,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
@@ -125,8 +132,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
@@ -135,8 +143,9 @@ namespace Model
      * 50 IDs. If you prefer not to list individual instance IDs, you can instead send
      * commands to a fleet of instances using the Targets parameter, which accepts EC2
      * tags. For more information about how to use targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
+     * targets and rate controls to send commands to a fleet</a> in the <i>AWS Systems
+     * Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
@@ -146,8 +155,8 @@ namespace Model
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
      * targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
@@ -156,8 +165,8 @@ namespace Model
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
      * targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
@@ -166,8 +175,8 @@ namespace Model
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
      * targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
@@ -176,8 +185,8 @@ namespace Model
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
      * targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
@@ -186,8 +195,8 @@ namespace Model
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
      * targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
@@ -196,8 +205,8 @@ namespace Model
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
      * targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
@@ -206,8 +215,8 @@ namespace Model
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
      * targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
@@ -216,8 +225,8 @@ namespace Model
      * Key,Value combination that you specify. Targets is required if you don't provide
      * one or more instance IDs in the call. For more information about how to use
      * targets, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * commands to a fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -569,57 +578,57 @@ namespace Model
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline const Aws::String& GetOutputS3Region() const{ return m_outputS3Region; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline bool OutputS3RegionHasBeenSet() const { return m_outputS3RegionHasBeenSet; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline void SetOutputS3Region(const Aws::String& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = value; }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline void SetOutputS3Region(Aws::String&& value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region = std::move(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline void SetOutputS3Region(const char* value) { m_outputS3RegionHasBeenSet = true; m_outputS3Region.assign(value); }
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(const Aws::String& value) { SetOutputS3Region(value); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(Aws::String&& value) { SetOutputS3Region(std::move(value)); return *this;}
 
     /**
      * <p>(Deprecated) You can no longer specify this parameter. The system ignores it.
-     * Instead, Systems Manager automatically determines the Amazon S3 bucket
-     * region.</p>
+     * Instead, Systems Manager automatically determines the Region of the S3
+     * bucket.</p>
      */
     inline SendCommandRequest& WithOutputS3Region(const char* value) { SetOutputS3Region(value); return *this;}
 
@@ -727,8 +736,8 @@ namespace Model
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
@@ -737,8 +746,8 @@ namespace Model
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
 
@@ -747,8 +756,8 @@ namespace Model
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
@@ -757,8 +766,8 @@ namespace Model
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
@@ -767,8 +776,8 @@ namespace Model
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
@@ -777,8 +786,8 @@ namespace Model
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
@@ -787,8 +796,8 @@ namespace Model
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
@@ -797,8 +806,8 @@ namespace Model
      * command at the same time. You can specify a number such as 10 or a percentage
      * such as 10%. The default value is 50. For more information about how to use
      * MaxConcurrency, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-     * Concurrency Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+     * concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
@@ -809,8 +818,8 @@ namespace Model
      * sending the command to additional targets. You can specify a number like 10 or a
      * percentage like 10%. The default value is 0. For more information about how to
      * use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
 
@@ -820,8 +829,8 @@ namespace Model
      * sending the command to additional targets. You can specify a number like 10 or a
      * percentage like 10%. The default value is 0. For more information about how to
      * use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
@@ -831,8 +840,8 @@ namespace Model
      * sending the command to additional targets. You can specify a number like 10 or a
      * percentage like 10%. The default value is 0. For more information about how to
      * use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
 
@@ -842,8 +851,8 @@ namespace Model
      * sending the command to additional targets. You can specify a number like 10 or a
      * percentage like 10%. The default value is 0. For more information about how to
      * use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
 
@@ -853,8 +862,8 @@ namespace Model
      * sending the command to additional targets. You can specify a number like 10 or a
      * percentage like 10%. The default value is 0. For more information about how to
      * use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
 
@@ -864,8 +873,8 @@ namespace Model
      * sending the command to additional targets. You can specify a number like 10 or a
      * percentage like 10%. The default value is 0. For more information about how to
      * use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
 
@@ -875,8 +884,8 @@ namespace Model
      * sending the command to additional targets. You can specify a number like 10 or a
      * percentage like 10%. The default value is 0. For more information about how to
      * use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
 
@@ -886,8 +895,8 @@ namespace Model
      * sending the command to additional targets. You can specify a number like 10 or a
      * percentage like 10%. The default value is 0. For more information about how to
      * use MaxErrors, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-     * Error Controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+     * error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline SendCommandRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 

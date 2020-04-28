@@ -36,6 +36,7 @@ namespace Aws
         static const int GET_MEDIA_FOR_FRAGMENT_LIST_HASH = HashingUtils::HashString("GET_MEDIA_FOR_FRAGMENT_LIST");
         static const int GET_HLS_STREAMING_SESSION_URL_HASH = HashingUtils::HashString("GET_HLS_STREAMING_SESSION_URL");
         static const int GET_DASH_STREAMING_SESSION_URL_HASH = HashingUtils::HashString("GET_DASH_STREAMING_SESSION_URL");
+        static const int GET_CLIP_HASH = HashingUtils::HashString("GET_CLIP");
 
 
         APIName GetAPINameForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return APIName::GET_DASH_STREAMING_SESSION_URL;
           }
+          else if (hashCode == GET_CLIP_HASH)
+          {
+            return APIName::GET_CLIP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "GET_HLS_STREAMING_SESSION_URL";
           case APIName::GET_DASH_STREAMING_SESSION_URL:
             return "GET_DASH_STREAMING_SESSION_URL";
+          case APIName::GET_CLIP:
+            return "GET_CLIP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -235,104 +235,96 @@ namespace Model
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an Amazon S3
-     * bucket in YAML format and specify in the SSM document
-     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
-     * default patch baseline.</p> <p>For more information about the
-     * <code>InstallOverrideList</code> parameter, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * installed. This patch installation list, which you maintain in an S3 bucket in
+     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+     * overrides the patches specified by the default patch baseline.</p> <p>For more
+     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetInstallOverrideList() const{ return m_installOverrideList; }
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an Amazon S3
-     * bucket in YAML format and specify in the SSM document
-     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
-     * default patch baseline.</p> <p>For more information about the
-     * <code>InstallOverrideList</code> parameter, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * installed. This patch installation list, which you maintain in an S3 bucket in
+     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+     * overrides the patches specified by the default patch baseline.</p> <p>For more
+     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline bool InstallOverrideListHasBeenSet() const { return m_installOverrideListHasBeenSet; }
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an Amazon S3
-     * bucket in YAML format and specify in the SSM document
-     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
-     * default patch baseline.</p> <p>For more information about the
-     * <code>InstallOverrideList</code> parameter, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * installed. This patch installation list, which you maintain in an S3 bucket in
+     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+     * overrides the patches specified by the default patch baseline.</p> <p>For more
+     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetInstallOverrideList(const Aws::String& value) { m_installOverrideListHasBeenSet = true; m_installOverrideList = value; }
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an Amazon S3
-     * bucket in YAML format and specify in the SSM document
-     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
-     * default patch baseline.</p> <p>For more information about the
-     * <code>InstallOverrideList</code> parameter, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * installed. This patch installation list, which you maintain in an S3 bucket in
+     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+     * overrides the patches specified by the default patch baseline.</p> <p>For more
+     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetInstallOverrideList(Aws::String&& value) { m_installOverrideListHasBeenSet = true; m_installOverrideList = std::move(value); }
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an Amazon S3
-     * bucket in YAML format and specify in the SSM document
-     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
-     * default patch baseline.</p> <p>For more information about the
-     * <code>InstallOverrideList</code> parameter, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * installed. This patch installation list, which you maintain in an S3 bucket in
+     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+     * overrides the patches specified by the default patch baseline.</p> <p>For more
+     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetInstallOverrideList(const char* value) { m_installOverrideListHasBeenSet = true; m_installOverrideList.assign(value); }
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an Amazon S3
-     * bucket in YAML format and specify in the SSM document
-     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
-     * default patch baseline.</p> <p>For more information about the
-     * <code>InstallOverrideList</code> parameter, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * installed. This patch installation list, which you maintain in an S3 bucket in
+     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+     * overrides the patches specified by the default patch baseline.</p> <p>For more
+     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(const Aws::String& value) { SetInstallOverrideList(value); return *this;}
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an Amazon S3
-     * bucket in YAML format and specify in the SSM document
-     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
-     * default patch baseline.</p> <p>For more information about the
-     * <code>InstallOverrideList</code> parameter, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * installed. This patch installation list, which you maintain in an S3 bucket in
+     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+     * overrides the patches specified by the default patch baseline.</p> <p>For more
+     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(Aws::String&& value) { SetInstallOverrideList(std::move(value)); return *this;}
 
     /**
      * <p>An https URL or an Amazon S3 path-style URL to a list of patches to be
-     * installed. This patch installation list, which you maintain in an Amazon S3
-     * bucket in YAML format and specify in the SSM document
-     * <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the
-     * default patch baseline.</p> <p>For more information about the
-     * <code>InstallOverrideList</code> parameter, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the SSM Document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
+     * installed. This patch installation list, which you maintain in an S3 bucket in
+     * YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+     * overrides the patches specified by the default patch baseline.</p> <p>For more
+     * information about the <code>InstallOverrideList</code> parameter, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+     * the SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(const char* value) { SetInstallOverrideList(value); return *this;}

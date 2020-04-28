@@ -44,42 +44,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the signaling channel that you want to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * update.</p>
      */
     inline const Aws::String& GetChannelARN() const{ return m_channelARN; }
 
     /**
-     * <p>The ARN of the signaling channel that you want to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * update.</p>
      */
     inline bool ChannelARNHasBeenSet() const { return m_channelARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the signaling channel that you want to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * update.</p>
      */
     inline void SetChannelARN(const Aws::String& value) { m_channelARNHasBeenSet = true; m_channelARN = value; }
 
     /**
-     * <p>The ARN of the signaling channel that you want to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * update.</p>
      */
     inline void SetChannelARN(Aws::String&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::move(value); }
 
     /**
-     * <p>The ARN of the signaling channel that you want to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * update.</p>
      */
     inline void SetChannelARN(const char* value) { m_channelARNHasBeenSet = true; m_channelARN.assign(value); }
 
     /**
-     * <p>The ARN of the signaling channel that you want to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * update.</p>
      */
     inline UpdateSignalingChannelRequest& WithChannelARN(const Aws::String& value) { SetChannelARN(value); return *this;}
 
     /**
-     * <p>The ARN of the signaling channel that you want to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * update.</p>
      */
     inline UpdateSignalingChannelRequest& WithChannelARN(Aws::String&& value) { SetChannelARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the signaling channel that you want to update.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * update.</p>
      */
     inline UpdateSignalingChannelRequest& WithChannelARN(const char* value) { SetChannelARN(value); return *this;}
 

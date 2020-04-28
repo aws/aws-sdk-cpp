@@ -108,8 +108,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, OpsItemDataValue>& GetOperationalData() const{ return m_operationalData; }
 
@@ -130,8 +130,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool OperationalDataHasBeenSet() const { return m_operationalDataHasBeenSet; }
 
@@ -152,8 +152,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { m_operationalDataHasBeenSet = true; m_operationalData = value; }
 
@@ -174,8 +174,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { m_operationalDataHasBeenSet = true; m_operationalData = std::move(value); }
 
@@ -196,8 +196,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& WithOperationalData(const Aws::Map<Aws::String, OpsItemDataValue>& value) { SetOperationalData(value); return *this;}
 
@@ -218,8 +218,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& WithOperationalData(Aws::Map<Aws::String, OpsItemDataValue>&& value) { SetOperationalData(std::move(value)); return *this;}
 
@@ -240,8 +240,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(const Aws::String& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 
@@ -262,8 +262,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(Aws::String&& key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), value); return *this; }
 
@@ -284,8 +284,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(const Aws::String& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
 
@@ -306,8 +306,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(Aws::String&& key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -328,8 +328,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(const char* key, OpsItemDataValue&& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, std::move(value)); return *this; }
 
@@ -350,8 +350,8 @@ namespace Model
      * related resource in the request. Use the <code>/aws/automations</code> key in
      * OperationalData to associate an Automation runbook with the OpsItem. To view AWS
      * CLI example commands that use these keys, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
-     * OpsItems Manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating
+     * OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateOpsItemRequest& AddOperationalData(const char* key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 
@@ -488,42 +488,58 @@ namespace Model
 
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager.</p>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager.</p>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager.</p>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager.</p>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager.</p>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager.</p>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline CreateOpsItemRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager.</p>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline CreateOpsItemRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The origin of the OpsItem, such as Amazon EC2 or AWS Systems Manager.</p>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline CreateOpsItemRequest& WithSource(const char* value) { SetSource(value); return *this;}
 
@@ -581,8 +597,8 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can restrict access to
      * OpsItems by using an inline IAM policy that specifies tags. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
-     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
      * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
      * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
@@ -593,8 +609,8 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can restrict access to
      * OpsItems by using an inline IAM policy that specifies tags. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
-     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
      * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
      * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
@@ -605,8 +621,8 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can restrict access to
      * OpsItems by using an inline IAM policy that specifies tags. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
-     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
      * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
      * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
@@ -617,8 +633,8 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can restrict access to
      * OpsItems by using an inline IAM policy that specifies tags. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
-     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
      * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
      * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
@@ -629,8 +645,8 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can restrict access to
      * OpsItems by using an inline IAM policy that specifies tags. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
-     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
      * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
      * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
@@ -641,8 +657,8 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can restrict access to
      * OpsItems by using an inline IAM policy that specifies tags. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
-     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
      * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
      * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
@@ -653,8 +669,8 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can restrict access to
      * OpsItems by using an inline IAM policy that specifies tags. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
-     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
      * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
      * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>
@@ -665,8 +681,8 @@ namespace Model
      * <p>Optional metadata that you assign to a resource. You can restrict access to
      * OpsItems by using an inline IAM policy that specifies tags. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
-     * Started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting
+     * started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      * <p>Tags use a key-value pair. For example:</p> <p>
      * <code>Key=Department,Value=Finance</code> </p> <note> <p>To add tags to an
      * existing OpsItem, use the <a>AddTagsToResource</a> action.</p> </note>

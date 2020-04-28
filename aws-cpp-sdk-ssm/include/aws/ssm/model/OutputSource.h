@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     * <p>The ID of the output source, for example the URL of an S3 bucket.</p>
      */
     inline const Aws::String& GetOutputSourceId() const{ return m_outputSourceId; }
 
     /**
-     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     * <p>The ID of the output source, for example the URL of an S3 bucket.</p>
      */
     inline bool OutputSourceIdHasBeenSet() const { return m_outputSourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     * <p>The ID of the output source, for example the URL of an S3 bucket.</p>
      */
     inline void SetOutputSourceId(const Aws::String& value) { m_outputSourceIdHasBeenSet = true; m_outputSourceId = value; }
 
     /**
-     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     * <p>The ID of the output source, for example the URL of an S3 bucket.</p>
      */
     inline void SetOutputSourceId(Aws::String&& value) { m_outputSourceIdHasBeenSet = true; m_outputSourceId = std::move(value); }
 
     /**
-     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     * <p>The ID of the output source, for example the URL of an S3 bucket.</p>
      */
     inline void SetOutputSourceId(const char* value) { m_outputSourceIdHasBeenSet = true; m_outputSourceId.assign(value); }
 
     /**
-     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     * <p>The ID of the output source, for example the URL of an S3 bucket.</p>
      */
     inline OutputSource& WithOutputSourceId(const Aws::String& value) { SetOutputSourceId(value); return *this;}
 
     /**
-     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     * <p>The ID of the output source, for example the URL of an S3 bucket.</p>
      */
     inline OutputSource& WithOutputSourceId(Aws::String&& value) { SetOutputSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     * <p>The ID of the output source, for example the URL of an S3 bucket.</p>
      */
     inline OutputSource& WithOutputSourceId(const char* value) { SetOutputSourceId(value); return *this;}
 

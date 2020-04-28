@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
+#include <aws/ssm/model/AssociationSyncCompliance.h>
 #include <aws/ssm/model/Target.h>
 #include <utility>
 
@@ -757,6 +758,97 @@ namespace Model
      */
     inline AssociationVersionInfo& WithComplianceSeverity(AssociationComplianceSeverity&& value) { SetComplianceSeverity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline const AssociationSyncCompliance& GetSyncCompliance() const{ return m_syncCompliance; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline bool SyncComplianceHasBeenSet() const { return m_syncComplianceHasBeenSet; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline void SetSyncCompliance(const AssociationSyncCompliance& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = value; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline void SetSyncCompliance(AssociationSyncCompliance&& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = std::move(value); }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline AssociationVersionInfo& WithSyncCompliance(const AssociationSyncCompliance& value) { SetSyncCompliance(value); return *this;}
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline AssociationVersionInfo& WithSyncCompliance(AssociationSyncCompliance&& value) { SetSyncCompliance(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_associationId;
@@ -797,6 +889,9 @@ namespace Model
 
     AssociationComplianceSeverity m_complianceSeverity;
     bool m_complianceSeverityHasBeenSet;
+
+    AssociationSyncCompliance m_syncCompliance;
+    bool m_syncComplianceHasBeenSet;
   };
 
 } // namespace Model

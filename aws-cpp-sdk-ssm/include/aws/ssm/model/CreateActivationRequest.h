@@ -174,8 +174,8 @@ namespace Model
      * to the managed instance. This IAM role must provide AssumeRole permissions for
      * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
@@ -185,8 +185,8 @@ namespace Model
      * to the managed instance. This IAM role must provide AssumeRole permissions for
      * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
@@ -196,8 +196,8 @@ namespace Model
      * to the managed instance. This IAM role must provide AssumeRole permissions for
      * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
@@ -207,8 +207,8 @@ namespace Model
      * to the managed instance. This IAM role must provide AssumeRole permissions for
      * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
@@ -218,8 +218,8 @@ namespace Model
      * to the managed instance. This IAM role must provide AssumeRole permissions for
      * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
@@ -229,8 +229,8 @@ namespace Model
      * to the managed instance. This IAM role must provide AssumeRole permissions for
      * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline CreateActivationRequest& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
@@ -240,8 +240,8 @@ namespace Model
      * to the managed instance. This IAM role must provide AssumeRole permissions for
      * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline CreateActivationRequest& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
@@ -251,8 +251,8 @@ namespace Model
      * to the managed instance. This IAM role must provide AssumeRole permissions for
      * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
-     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM service role for a hybrid environment</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline CreateActivationRequest& WithIamRole(const char* value) { SetIamRole(value); return *this;}

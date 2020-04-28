@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the signaling channel that you want to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * delete.</p>
      */
     inline const Aws::String& GetChannelARN() const{ return m_channelARN; }
 
     /**
-     * <p>The ARN of the signaling channel that you want to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * delete.</p>
      */
     inline bool ChannelARNHasBeenSet() const { return m_channelARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the signaling channel that you want to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * delete.</p>
      */
     inline void SetChannelARN(const Aws::String& value) { m_channelARNHasBeenSet = true; m_channelARN = value; }
 
     /**
-     * <p>The ARN of the signaling channel that you want to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * delete.</p>
      */
     inline void SetChannelARN(Aws::String&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::move(value); }
 
     /**
-     * <p>The ARN of the signaling channel that you want to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * delete.</p>
      */
     inline void SetChannelARN(const char* value) { m_channelARNHasBeenSet = true; m_channelARN.assign(value); }
 
     /**
-     * <p>The ARN of the signaling channel that you want to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * delete.</p>
      */
     inline DeleteSignalingChannelRequest& WithChannelARN(const Aws::String& value) { SetChannelARN(value); return *this;}
 
     /**
-     * <p>The ARN of the signaling channel that you want to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * delete.</p>
      */
     inline DeleteSignalingChannelRequest& WithChannelARN(Aws::String&& value) { SetChannelARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the signaling channel that you want to delete.</p>
+     * <p>The Amazon Resource Name (ARN) of the signaling channel that you want to
+     * delete.</p>
      */
     inline DeleteSignalingChannelRequest& WithChannelARN(const char* value) { SetChannelARN(value); return *this;}
 
@@ -86,56 +94,56 @@ namespace Model
     /**
      * <p>The current version of the signaling channel that you want to delete. You can
      * obtain the current version by invoking the <code>DescribeSignalingChannel</code>
-     * or <code>ListSignalingChannels</code> APIs.</p>
+     * or <code>ListSignalingChannels</code> API operations.</p>
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
 
     /**
      * <p>The current version of the signaling channel that you want to delete. You can
      * obtain the current version by invoking the <code>DescribeSignalingChannel</code>
-     * or <code>ListSignalingChannels</code> APIs.</p>
+     * or <code>ListSignalingChannels</code> API operations.</p>
      */
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
 
     /**
      * <p>The current version of the signaling channel that you want to delete. You can
      * obtain the current version by invoking the <code>DescribeSignalingChannel</code>
-     * or <code>ListSignalingChannels</code> APIs.</p>
+     * or <code>ListSignalingChannels</code> API operations.</p>
      */
     inline void SetCurrentVersion(const Aws::String& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
 
     /**
      * <p>The current version of the signaling channel that you want to delete. You can
      * obtain the current version by invoking the <code>DescribeSignalingChannel</code>
-     * or <code>ListSignalingChannels</code> APIs.</p>
+     * or <code>ListSignalingChannels</code> API operations.</p>
      */
     inline void SetCurrentVersion(Aws::String&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
 
     /**
      * <p>The current version of the signaling channel that you want to delete. You can
      * obtain the current version by invoking the <code>DescribeSignalingChannel</code>
-     * or <code>ListSignalingChannels</code> APIs.</p>
+     * or <code>ListSignalingChannels</code> API operations.</p>
      */
     inline void SetCurrentVersion(const char* value) { m_currentVersionHasBeenSet = true; m_currentVersion.assign(value); }
 
     /**
      * <p>The current version of the signaling channel that you want to delete. You can
      * obtain the current version by invoking the <code>DescribeSignalingChannel</code>
-     * or <code>ListSignalingChannels</code> APIs.</p>
+     * or <code>ListSignalingChannels</code> API operations.</p>
      */
     inline DeleteSignalingChannelRequest& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
 
     /**
      * <p>The current version of the signaling channel that you want to delete. You can
      * obtain the current version by invoking the <code>DescribeSignalingChannel</code>
-     * or <code>ListSignalingChannels</code> APIs.</p>
+     * or <code>ListSignalingChannels</code> API operations.</p>
      */
     inline DeleteSignalingChannelRequest& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
 
     /**
      * <p>The current version of the signaling channel that you want to delete. You can
      * obtain the current version by invoking the <code>DescribeSignalingChannel</code>
-     * or <code>ListSignalingChannels</code> APIs.</p>
+     * or <code>ListSignalingChannels</code> API operations.</p>
      */
     inline DeleteSignalingChannelRequest& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
 

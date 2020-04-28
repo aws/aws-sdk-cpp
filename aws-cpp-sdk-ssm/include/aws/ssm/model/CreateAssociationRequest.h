@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/InstanceAssociationOutputLocation.h>
 #include <aws/ssm/model/AssociationComplianceSeverity.h>
+#include <aws/ssm/model/AssociationSyncCompliance.h>
 #include <aws/ssm/model/Target.h>
 #include <utility>
 
@@ -394,58 +395,82 @@ namespace Model
 
 
     /**
-     * <p>The targets (either instances or tags) for the association. You must specify
-     * a value for <code>Targets</code> if you don't specify a value for
-     * <code>InstanceId</code>.</p>
+     * <p>The targets for the association. You can target instances by using tags, AWS
+     * Resource Groups, all instances in an AWS account, or individual instance IDs.
+     * For more information about choosing targets for an association, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+     * targets and rate controls with State Manager associations</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets (either instances or tags) for the association. You must specify
-     * a value for <code>Targets</code> if you don't specify a value for
-     * <code>InstanceId</code>.</p>
+     * <p>The targets for the association. You can target instances by using tags, AWS
+     * Resource Groups, all instances in an AWS account, or individual instance IDs.
+     * For more information about choosing targets for an association, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+     * targets and rate controls with State Manager associations</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
-     * <p>The targets (either instances or tags) for the association. You must specify
-     * a value for <code>Targets</code> if you don't specify a value for
-     * <code>InstanceId</code>.</p>
+     * <p>The targets for the association. You can target instances by using tags, AWS
+     * Resource Groups, all instances in an AWS account, or individual instance IDs.
+     * For more information about choosing targets for an association, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+     * targets and rate controls with State Manager associations</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
-     * <p>The targets (either instances or tags) for the association. You must specify
-     * a value for <code>Targets</code> if you don't specify a value for
-     * <code>InstanceId</code>.</p>
+     * <p>The targets for the association. You can target instances by using tags, AWS
+     * Resource Groups, all instances in an AWS account, or individual instance IDs.
+     * For more information about choosing targets for an association, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+     * targets and rate controls with State Manager associations</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
     /**
-     * <p>The targets (either instances or tags) for the association. You must specify
-     * a value for <code>Targets</code> if you don't specify a value for
-     * <code>InstanceId</code>.</p>
+     * <p>The targets for the association. You can target instances by using tags, AWS
+     * Resource Groups, all instances in an AWS account, or individual instance IDs.
+     * For more information about choosing targets for an association, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+     * targets and rate controls with State Manager associations</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreateAssociationRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets (either instances or tags) for the association. You must specify
-     * a value for <code>Targets</code> if you don't specify a value for
-     * <code>InstanceId</code>.</p>
+     * <p>The targets for the association. You can target instances by using tags, AWS
+     * Resource Groups, all instances in an AWS account, or individual instance IDs.
+     * For more information about choosing targets for an association, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+     * targets and rate controls with State Manager associations</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreateAssociationRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets (either instances or tags) for the association. You must specify
-     * a value for <code>Targets</code> if you don't specify a value for
-     * <code>InstanceId</code>.</p>
+     * <p>The targets for the association. You can target instances by using tags, AWS
+     * Resource Groups, all instances in an AWS account, or individual instance IDs.
+     * For more information about choosing targets for an association, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+     * targets and rate controls with State Manager associations</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreateAssociationRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets (either instances or tags) for the association. You must specify
-     * a value for <code>Targets</code> if you don't specify a value for
-     * <code>InstanceId</code>.</p>
+     * <p>The targets for the association. You can target instances by using tags, AWS
+     * Resource Groups, all instances in an AWS account, or individual instance IDs.
+     * For more information about choosing targets for an association, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
+     * targets and rate controls with State Manager associations</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline CreateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
@@ -492,38 +517,32 @@ namespace Model
 
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the output details of the
-     * request.</p>
+     * <p>An S3 bucket where you want to store the output details of the request.</p>
      */
     inline const InstanceAssociationOutputLocation& GetOutputLocation() const{ return m_outputLocation; }
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the output details of the
-     * request.</p>
+     * <p>An S3 bucket where you want to store the output details of the request.</p>
      */
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the output details of the
-     * request.</p>
+     * <p>An S3 bucket where you want to store the output details of the request.</p>
      */
     inline void SetOutputLocation(const InstanceAssociationOutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the output details of the
-     * request.</p>
+     * <p>An S3 bucket where you want to store the output details of the request.</p>
      */
     inline void SetOutputLocation(InstanceAssociationOutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the output details of the
-     * request.</p>
+     * <p>An S3 bucket where you want to store the output details of the request.</p>
      */
     inline CreateAssociationRequest& WithOutputLocation(const InstanceAssociationOutputLocation& value) { SetOutputLocation(value); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket where you want to store the output details of the
-     * request.</p>
+     * <p>An S3 bucket where you want to store the output details of the request.</p>
      */
     inline CreateAssociationRequest& WithOutputLocation(InstanceAssociationOutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
 
@@ -882,6 +901,97 @@ namespace Model
      */
     inline CreateAssociationRequest& WithComplianceSeverity(AssociationComplianceSeverity&& value) { SetComplianceSeverity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline const AssociationSyncCompliance& GetSyncCompliance() const{ return m_syncCompliance; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline bool SyncComplianceHasBeenSet() const { return m_syncComplianceHasBeenSet; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline void SetSyncCompliance(const AssociationSyncCompliance& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = value; }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline void SetSyncCompliance(AssociationSyncCompliance&& value) { m_syncComplianceHasBeenSet = true; m_syncCompliance = std::move(value); }
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline CreateAssociationRequest& WithSyncCompliance(const AssociationSyncCompliance& value) { SetSyncCompliance(value); return *this;}
+
+    /**
+     * <p>The mode for generating association compliance. You can specify
+     * <code>AUTO</code> or <code>MANUAL</code>. In <code>AUTO</code> mode, the system
+     * uses the status of the association execution to determine the compliance status.
+     * If the association execution runs successfully, then the association is
+     * <code>COMPLIANT</code>. If the association execution doesn't run successfully,
+     * the association is <code>NON-COMPLIANT</code>.</p> <p>In <code>MANUAL</code>
+     * mode, you must specify the <code>AssociationId</code> as a parameter for the
+     * <a>PutComplianceItems</a> API action. In this case, compliance data is not
+     * managed by State Manager. It is managed by your direct call to the
+     * <a>PutComplianceItems</a> API action.</p> <p>By default, all associations use
+     * <code>AUTO</code> mode.</p>
+     */
+    inline CreateAssociationRequest& WithSyncCompliance(AssociationSyncCompliance&& value) { SetSyncCompliance(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -919,6 +1029,9 @@ namespace Model
 
     AssociationComplianceSeverity m_complianceSeverity;
     bool m_complianceSeverityHasBeenSet;
+
+    AssociationSyncCompliance m_syncCompliance;
+    bool m_syncComplianceHasBeenSet;
   };
 
 } // namespace Model

@@ -403,43 +403,43 @@ namespace Model
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline const Aws::Vector<AttachmentContent>& GetAttachmentsContent() const{ return m_attachmentsContent; }
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline void SetAttachmentsContent(const Aws::Vector<AttachmentContent>& value) { m_attachmentsContent = value; }
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline void SetAttachmentsContent(Aws::Vector<AttachmentContent>&& value) { m_attachmentsContent = std::move(value); }
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline GetDocumentResult& WithAttachmentsContent(const Aws::Vector<AttachmentContent>& value) { SetAttachmentsContent(value); return *this;}
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline GetDocumentResult& WithAttachmentsContent(Aws::Vector<AttachmentContent>&& value) { SetAttachmentsContent(std::move(value)); return *this;}
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline GetDocumentResult& AddAttachmentsContent(const AttachmentContent& value) { m_attachmentsContent.push_back(value); return *this; }
 
     /**
      * <p>A description of the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline GetDocumentResult& AddAttachmentsContent(AttachmentContent&& value) { m_attachmentsContent.push_back(std::move(value)); return *this; }
 

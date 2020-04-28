@@ -451,37 +451,37 @@ namespace Model
 
 
     /**
-     * <p>A URL for an Amazon S3 bucket where you want to store the results of this
+     * <p>A URL for an S3 bucket where you want to store the results of this
      * request.</p>
      */
     inline const InstanceAssociationOutputUrl& GetOutputUrl() const{ return m_outputUrl; }
 
     /**
-     * <p>A URL for an Amazon S3 bucket where you want to store the results of this
+     * <p>A URL for an S3 bucket where you want to store the results of this
      * request.</p>
      */
     inline bool OutputUrlHasBeenSet() const { return m_outputUrlHasBeenSet; }
 
     /**
-     * <p>A URL for an Amazon S3 bucket where you want to store the results of this
+     * <p>A URL for an S3 bucket where you want to store the results of this
      * request.</p>
      */
     inline void SetOutputUrl(const InstanceAssociationOutputUrl& value) { m_outputUrlHasBeenSet = true; m_outputUrl = value; }
 
     /**
-     * <p>A URL for an Amazon S3 bucket where you want to store the results of this
+     * <p>A URL for an S3 bucket where you want to store the results of this
      * request.</p>
      */
     inline void SetOutputUrl(InstanceAssociationOutputUrl&& value) { m_outputUrlHasBeenSet = true; m_outputUrl = std::move(value); }
 
     /**
-     * <p>A URL for an Amazon S3 bucket where you want to store the results of this
+     * <p>A URL for an S3 bucket where you want to store the results of this
      * request.</p>
      */
     inline InstanceAssociationStatusInfo& WithOutputUrl(const InstanceAssociationOutputUrl& value) { SetOutputUrl(value); return *this;}
 
     /**
-     * <p>A URL for an Amazon S3 bucket where you want to store the results of this
+     * <p>A URL for an S3 bucket where you want to store the results of this
      * request.</p>
      */
     inline InstanceAssociationStatusInfo& WithOutputUrl(InstanceAssociationOutputUrl&& value) { SetOutputUrl(std::move(value)); return *this;}

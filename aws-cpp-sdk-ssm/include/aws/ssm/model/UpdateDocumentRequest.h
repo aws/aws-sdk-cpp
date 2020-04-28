@@ -236,42 +236,58 @@ namespace Model
 
 
     /**
-     * <p>(Required) The version of the document that you want to update. </p>
+     * <p>(Required) The latest version of the document that you want to update. The
+     * latest document version can be specified using the $LATEST variable or by the
+     * version number. Updating a previous version of a document is not supported.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>(Required) The version of the document that you want to update. </p>
+     * <p>(Required) The latest version of the document that you want to update. The
+     * latest document version can be specified using the $LATEST variable or by the
+     * version number. Updating a previous version of a document is not supported.</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>(Required) The version of the document that you want to update. </p>
+     * <p>(Required) The latest version of the document that you want to update. The
+     * latest document version can be specified using the $LATEST variable or by the
+     * version number. Updating a previous version of a document is not supported.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>(Required) The version of the document that you want to update. </p>
+     * <p>(Required) The latest version of the document that you want to update. The
+     * latest document version can be specified using the $LATEST variable or by the
+     * version number. Updating a previous version of a document is not supported.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>(Required) The version of the document that you want to update. </p>
+     * <p>(Required) The latest version of the document that you want to update. The
+     * latest document version can be specified using the $LATEST variable or by the
+     * version number. Updating a previous version of a document is not supported.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>(Required) The version of the document that you want to update. </p>
+     * <p>(Required) The latest version of the document that you want to update. The
+     * latest document version can be specified using the $LATEST variable or by the
+     * version number. Updating a previous version of a document is not supported.</p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>(Required) The version of the document that you want to update. </p>
+     * <p>(Required) The latest version of the document that you want to update. The
+     * latest document version can be specified using the $LATEST variable or by the
+     * version number. Updating a previous version of a document is not supported.</p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>(Required) The version of the document that you want to update. </p>
+     * <p>(Required) The latest version of the document that you want to update. The
+     * latest document version can be specified using the $LATEST variable or by the
+     * version number. Updating a previous version of a document is not supported.</p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 

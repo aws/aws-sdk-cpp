@@ -141,7 +141,7 @@ namespace Model
      * </code> </p> </note> <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
@@ -167,7 +167,7 @@ namespace Model
      * </code> </p> </note> <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
@@ -193,7 +193,7 @@ namespace Model
      * </code> </p> </note> <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
@@ -219,7 +219,7 @@ namespace Model
      * </code> </p> </note> <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
@@ -245,7 +245,7 @@ namespace Model
      * </code> </p> </note> <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
@@ -271,7 +271,7 @@ namespace Model
      * </code> </p> </note> <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
@@ -297,7 +297,7 @@ namespace Model
      * </code> </p> </note> <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
@@ -323,7 +323,7 @@ namespace Model
      * </code> </p> </note> <p>For more information about these examples formats,
      * including the best use case for each one, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples:
-     * Register Targets with a Maintenance Window</a> in the <i>AWS Systems Manager
+     * Register targets with a maintenance window</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
     inline RegisterTargetWithMaintenanceWindowRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }

@@ -81,44 +81,32 @@ namespace Model
 
 
     /**
-     * <p>A compliance severity level for all approved patches in a patch baseline.
-     * Valid compliance severity levels include the following: Unspecified, Critical,
-     * High, Medium, Low, and Informational.</p>
+     * <p>A compliance severity level for all approved patches in a patch baseline.</p>
      */
     inline const PatchComplianceLevel& GetComplianceLevel() const{ return m_complianceLevel; }
 
     /**
-     * <p>A compliance severity level for all approved patches in a patch baseline.
-     * Valid compliance severity levels include the following: Unspecified, Critical,
-     * High, Medium, Low, and Informational.</p>
+     * <p>A compliance severity level for all approved patches in a patch baseline.</p>
      */
     inline bool ComplianceLevelHasBeenSet() const { return m_complianceLevelHasBeenSet; }
 
     /**
-     * <p>A compliance severity level for all approved patches in a patch baseline.
-     * Valid compliance severity levels include the following: Unspecified, Critical,
-     * High, Medium, Low, and Informational.</p>
+     * <p>A compliance severity level for all approved patches in a patch baseline.</p>
      */
     inline void SetComplianceLevel(const PatchComplianceLevel& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = value; }
 
     /**
-     * <p>A compliance severity level for all approved patches in a patch baseline.
-     * Valid compliance severity levels include the following: Unspecified, Critical,
-     * High, Medium, Low, and Informational.</p>
+     * <p>A compliance severity level for all approved patches in a patch baseline.</p>
      */
     inline void SetComplianceLevel(PatchComplianceLevel&& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = std::move(value); }
 
     /**
-     * <p>A compliance severity level for all approved patches in a patch baseline.
-     * Valid compliance severity levels include the following: Unspecified, Critical,
-     * High, Medium, Low, and Informational.</p>
+     * <p>A compliance severity level for all approved patches in a patch baseline.</p>
      */
     inline PatchRule& WithComplianceLevel(const PatchComplianceLevel& value) { SetComplianceLevel(value); return *this;}
 
     /**
-     * <p>A compliance severity level for all approved patches in a patch baseline.
-     * Valid compliance severity levels include the following: Unspecified, Critical,
-     * High, Medium, Low, and Informational.</p>
+     * <p>A compliance severity level for all approved patches in a patch baseline.</p>
      */
     inline PatchRule& WithComplianceLevel(PatchComplianceLevel&& value) { SetComplianceLevel(std::move(value)); return *this;}
 
@@ -127,7 +115,7 @@ namespace Model
      * <p>The number of days after the release date of each patch matched by the rule
      * that the patch is marked as approved in the patch baseline. For example, a value
      * of <code>7</code> means that patches are approved seven days after they are
-     * released. </p>
+     * released. Not supported on Ubuntu Server.</p>
      */
     inline int GetApproveAfterDays() const{ return m_approveAfterDays; }
 
@@ -135,7 +123,7 @@ namespace Model
      * <p>The number of days after the release date of each patch matched by the rule
      * that the patch is marked as approved in the patch baseline. For example, a value
      * of <code>7</code> means that patches are approved seven days after they are
-     * released. </p>
+     * released. Not supported on Ubuntu Server.</p>
      */
     inline bool ApproveAfterDaysHasBeenSet() const { return m_approveAfterDaysHasBeenSet; }
 
@@ -143,7 +131,7 @@ namespace Model
      * <p>The number of days after the release date of each patch matched by the rule
      * that the patch is marked as approved in the patch baseline. For example, a value
      * of <code>7</code> means that patches are approved seven days after they are
-     * released. </p>
+     * released. Not supported on Ubuntu Server.</p>
      */
     inline void SetApproveAfterDays(int value) { m_approveAfterDaysHasBeenSet = true; m_approveAfterDays = value; }
 
@@ -151,48 +139,72 @@ namespace Model
      * <p>The number of days after the release date of each patch matched by the rule
      * that the patch is marked as approved in the patch baseline. For example, a value
      * of <code>7</code> means that patches are approved seven days after they are
-     * released. </p>
+     * released. Not supported on Ubuntu Server.</p>
      */
     inline PatchRule& WithApproveAfterDays(int value) { SetApproveAfterDays(value); return *this;}
 
 
     /**
-     * <p>Example API</p>
+     * <p>The cutoff date for auto approval of released patches. Any patches released
+     * on or before this date are installed automatically. Not supported on Ubuntu
+     * Server.</p> <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
+     * <code>2020-12-31</code>.</p>
      */
     inline const Aws::String& GetApproveUntilDate() const{ return m_approveUntilDate; }
 
     /**
-     * <p>Example API</p>
+     * <p>The cutoff date for auto approval of released patches. Any patches released
+     * on or before this date are installed automatically. Not supported on Ubuntu
+     * Server.</p> <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
+     * <code>2020-12-31</code>.</p>
      */
     inline bool ApproveUntilDateHasBeenSet() const { return m_approveUntilDateHasBeenSet; }
 
     /**
-     * <p>Example API</p>
+     * <p>The cutoff date for auto approval of released patches. Any patches released
+     * on or before this date are installed automatically. Not supported on Ubuntu
+     * Server.</p> <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
+     * <code>2020-12-31</code>.</p>
      */
     inline void SetApproveUntilDate(const Aws::String& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = value; }
 
     /**
-     * <p>Example API</p>
+     * <p>The cutoff date for auto approval of released patches. Any patches released
+     * on or before this date are installed automatically. Not supported on Ubuntu
+     * Server.</p> <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
+     * <code>2020-12-31</code>.</p>
      */
     inline void SetApproveUntilDate(Aws::String&& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = std::move(value); }
 
     /**
-     * <p>Example API</p>
+     * <p>The cutoff date for auto approval of released patches. Any patches released
+     * on or before this date are installed automatically. Not supported on Ubuntu
+     * Server.</p> <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
+     * <code>2020-12-31</code>.</p>
      */
     inline void SetApproveUntilDate(const char* value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate.assign(value); }
 
     /**
-     * <p>Example API</p>
+     * <p>The cutoff date for auto approval of released patches. Any patches released
+     * on or before this date are installed automatically. Not supported on Ubuntu
+     * Server.</p> <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
+     * <code>2020-12-31</code>.</p>
      */
     inline PatchRule& WithApproveUntilDate(const Aws::String& value) { SetApproveUntilDate(value); return *this;}
 
     /**
-     * <p>Example API</p>
+     * <p>The cutoff date for auto approval of released patches. Any patches released
+     * on or before this date are installed automatically. Not supported on Ubuntu
+     * Server.</p> <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
+     * <code>2020-12-31</code>.</p>
      */
     inline PatchRule& WithApproveUntilDate(Aws::String&& value) { SetApproveUntilDate(std::move(value)); return *this;}
 
     /**
-     * <p>Example API</p>
+     * <p>The cutoff date for auto approval of released patches. Any patches released
+     * on or before this date are installed automatically. Not supported on Ubuntu
+     * Server.</p> <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
+     * <code>2020-12-31</code>.</p>
      */
     inline PatchRule& WithApproveUntilDate(const char* value) { SetApproveUntilDate(value); return *this;}
 

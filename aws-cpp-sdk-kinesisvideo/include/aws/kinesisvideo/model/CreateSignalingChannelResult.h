@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the created channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the created channel.</p>
      */
     inline const Aws::String& GetChannelARN() const{ return m_channelARN; }
 
     /**
-     * <p>The ARN of the created channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the created channel.</p>
      */
     inline void SetChannelARN(const Aws::String& value) { m_channelARN = value; }
 
     /**
-     * <p>The ARN of the created channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the created channel.</p>
      */
     inline void SetChannelARN(Aws::String&& value) { m_channelARN = std::move(value); }
 
     /**
-     * <p>The ARN of the created channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the created channel.</p>
      */
     inline void SetChannelARN(const char* value) { m_channelARN.assign(value); }
 
     /**
-     * <p>The ARN of the created channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the created channel.</p>
      */
     inline CreateSignalingChannelResult& WithChannelARN(const Aws::String& value) { SetChannelARN(value); return *this;}
 
     /**
-     * <p>The ARN of the created channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the created channel.</p>
      */
     inline CreateSignalingChannelResult& WithChannelARN(Aws::String&& value) { SetChannelARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the created channel.</p>
+     * <p>The Amazon Resource Name (ARN) of the created channel.</p>
      */
     inline CreateSignalingChannelResult& WithChannelARN(const char* value) { SetChannelARN(value); return *this;}
 

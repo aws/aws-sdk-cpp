@@ -350,8 +350,8 @@ namespace Model
 
         /**
          * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
+         * specify either the name or the Amazon Resource Name (ARN) of the channel that
+         * you want to describe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
          * API Reference</a></p>
          */
@@ -359,8 +359,8 @@ namespace Model
 
         /**
          * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
+         * specify either the name or the Amazon Resource Name (ARN) of the channel that
+         * you want to describe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
          * API Reference</a></p>
          *
@@ -370,8 +370,8 @@ namespace Model
 
         /**
          * <p>Returns the most current information about the signaling channel. You must
-         * specify either the name or the ARN of the channel that you want to
-         * describe.</p><p><h3>See Also:</h3>   <a
+         * specify either the name or the Amazon Resource Name (ARN) of the channel that
+         * you want to describe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeSignalingChannel">AWS
          * API Reference</a></p>
          *
@@ -462,14 +462,14 @@ namespace Model
          * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
          * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
          * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
+         * example, if you specify <code>WSS</code> as the protocol, this API produces a
+         * secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol,
+         * this API generates an HTTPS endpoint. </p> <p> <code>Role</code> determines the
+         * messaging permissions. A <code>MASTER</code> role results in this API generating
+         * an endpoint that a client can use to communicate with any of the viewers on the
+         * channel. A <code>VIEWER</code> role results in this API generating an endpoint
+         * that a client can use to communicate only with a <code>MASTER</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
          * API Reference</a></p>
          */
@@ -481,14 +481,14 @@ namespace Model
          * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
          * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
          * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
+         * example, if you specify <code>WSS</code> as the protocol, this API produces a
+         * secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol,
+         * this API generates an HTTPS endpoint. </p> <p> <code>Role</code> determines the
+         * messaging permissions. A <code>MASTER</code> role results in this API generating
+         * an endpoint that a client can use to communicate with any of the viewers on the
+         * channel. A <code>VIEWER</code> role results in this API generating an endpoint
+         * that a client can use to communicate only with a <code>MASTER</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
          * API Reference</a></p>
          *
@@ -502,14 +502,14 @@ namespace Model
          * <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which
          * consists of the <code>Protocols</code> and <code>Role</code> properties.</p> <p>
          * <code>Protocols</code> is used to determine the communication mechanism. For
-         * example, specifying <code>WSS</code> as the protocol, results in this API
-         * producing a secure websocket endpoint, and specifying <code>HTTPS</code> as the
-         * protocol, results in this API generating an HTTPS endpoint. </p> <p>
-         * <code>Role</code> determines the messaging permissions. A <code>MASTER</code>
-         * role results in this API generating an endpoint that a client can use to
-         * communicate with any of the viewers on the channel. A <code>VIEWER</code> role
-         * results in this API generating an endpoint that a client can use to communicate
-         * only with a <code>MASTER</code>. </p><p><h3>See Also:</h3>   <a
+         * example, if you specify <code>WSS</code> as the protocol, this API produces a
+         * secure websocket endpoint. If you specify <code>HTTPS</code> as the protocol,
+         * this API generates an HTTPS endpoint. </p> <p> <code>Role</code> determines the
+         * messaging permissions. A <code>MASTER</code> role results in this API generating
+         * an endpoint that a client can use to communicate with any of the viewers on the
+         * channel. A <code>VIEWER</code> role results in this API generating an endpoint
+         * that a client can use to communicate only with a <code>MASTER</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/GetSignalingChannelEndpoint">AWS
          * API Reference</a></p>
          *
@@ -874,10 +874,9 @@ namespace Model
         /**
          * <p>Updates the existing signaling channel. This is an asynchronous operation and
          * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
+         * updated (either increased or reduced), it only applies to new messages sent via
+         * this channel after it's been updated. Existing messages are still expired as per
+         * the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
          * API Reference</a></p>
          */
@@ -886,10 +885,9 @@ namespace Model
         /**
          * <p>Updates the existing signaling channel. This is an asynchronous operation and
          * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
+         * updated (either increased or reduced), it only applies to new messages sent via
+         * this channel after it's been updated. Existing messages are still expired as per
+         * the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
          * API Reference</a></p>
          *
@@ -900,10 +898,9 @@ namespace Model
         /**
          * <p>Updates the existing signaling channel. This is an asynchronous operation and
          * takes time to complete. </p> <p>If the <code>MessageTtlSeconds</code> value is
-         * updated (either increased or reduced), then it only applies to new messages sent
-         * via this channel after it's been updated. Existing messages are still expire as
-         * per the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3> 
-         * <a
+         * updated (either increased or reduced), it only applies to new messages sent via
+         * this channel after it's been updated. Existing messages are still expired as per
+         * the previous <code>MessageTtlSeconds</code> value.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateSignalingChannel">AWS
          * API Reference</a></p>
          *

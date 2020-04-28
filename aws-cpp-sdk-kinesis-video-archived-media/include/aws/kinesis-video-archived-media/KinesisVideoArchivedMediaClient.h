@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kinesis-video-archived-media/model/GetClipResult.h>
 #include <aws/kinesis-video-archived-media/model/GetDASHStreamingSessionURLResult.h>
 #include <aws/kinesis-video-archived-media/model/GetHLSStreamingSessionURLResult.h>
 #include <aws/kinesis-video-archived-media/model/GetMediaForFragmentListResult.h>
@@ -64,16 +65,19 @@ namespace KinesisVideoArchivedMedia
 
 namespace Model
 {
+        class GetClipRequest;
         class GetDASHStreamingSessionURLRequest;
         class GetHLSStreamingSessionURLRequest;
         class GetMediaForFragmentListRequest;
         class ListFragmentsRequest;
 
+        typedef Aws::Utils::Outcome<GetClipResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> GetClipOutcome;
         typedef Aws::Utils::Outcome<GetDASHStreamingSessionURLResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> GetDASHStreamingSessionURLOutcome;
         typedef Aws::Utils::Outcome<GetHLSStreamingSessionURLResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> GetHLSStreamingSessionURLOutcome;
         typedef Aws::Utils::Outcome<GetMediaForFragmentListResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> GetMediaForFragmentListOutcome;
         typedef Aws::Utils::Outcome<ListFragmentsResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> ListFragmentsOutcome;
 
+        typedef std::future<GetClipOutcome> GetClipOutcomeCallable;
         typedef std::future<GetDASHStreamingSessionURLOutcome> GetDASHStreamingSessionURLOutcomeCallable;
         typedef std::future<GetHLSStreamingSessionURLOutcome> GetHLSStreamingSessionURLOutcomeCallable;
         typedef std::future<GetMediaForFragmentListOutcome> GetMediaForFragmentListOutcomeCallable;
@@ -82,6 +86,7 @@ namespace Model
 
   class KinesisVideoArchivedMediaClient;
 
+    typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetClipRequest&, Model::GetClipOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClipResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetDASHStreamingSessionURLRequest&, const Model::GetDASHStreamingSessionURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDASHStreamingSessionURLResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetHLSStreamingSessionURLRequest&, const Model::GetHLSStreamingSessionURLOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHLSStreamingSessionURLResponseReceivedHandler;
     typedef std::function<void(const KinesisVideoArchivedMediaClient*, const Model::GetMediaForFragmentListRequest&, Model::GetMediaForFragmentListOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMediaForFragmentListResponseReceivedHandler;
@@ -118,6 +123,127 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "Kinesis Video Archived Media"; }
 
+
+        /**
+         * <p>Downloads an MP4 file (clip) containing the archived, on-demand media from
+         * the specified video stream over the specified time range. </p> <p>Both the
+         * StreamName and the StreamARN parameters are optional, but you must specify
+         * either the StreamName or the StreamARN when invoking this API operation. </p>
+         * <p>As a prerequsite to using GetCLip API, you must obtain an endpoint using
+         * <code>GetDataEndpoint</code>, specifying GET_CLIP for<code/> the
+         * <code>APIName</code> parameter. </p> <p>An Amazon Kinesis video stream has the
+         * following requirements for providing data through MP4:</p> <ul> <li> <p>The
+         * media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
+         * encoded audio. Specifically, the codec ID of track 1 should be
+         * <code>V_MPEG/ISO/AVC</code> (for h.264) or V_MPEGH/ISO/HEVC (for H.265).
+         * Optionally, the codec ID of track 2 should be <code>A_AAC</code> (for AAC) or
+         * A_MS/ACM (for G.711).</p> </li> <li> <p>Data retention must be greater than
+         * 0.</p> </li> <li> <p>The video track of each fragment must contain codec private
+         * data in the Advanced Video Coding (AVC) for H.264 format and HEVC for H.265
+         * format. For more information, see <a
+         * href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC
+         * 14496-15</a>. For information about adapting stream data to a given format, see
+         * <a
+         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL
+         * Adaptation Flags</a>.</p> </li> <li> <p>The audio track (if present) of each
+         * fragment must contain codec private data in the AAC format (<a
+         * href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC
+         * 13818-7</a>) or the <a
+         * href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">MS
+         * Wave format</a>.</p> </li> </ul> <p>You can monitor the amount of outgoing data
+         * by monitoring the <code>GetClip.OutgoingBytes</code> Amazon CloudWatch metric.
+         * For information about using CloudWatch to monitor Kinesis Video Streams, see <a
+         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
+         * Kinesis Video Streams</a>. For pricing information, see <a
+         * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon Kinesis
+         * Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">AWS
+         * Pricing</a>. Charges for outgoing AWS data apply.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetClip">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetClipOutcome GetClip(const Model::GetClipRequest& request) const;
+
+        /**
+         * <p>Downloads an MP4 file (clip) containing the archived, on-demand media from
+         * the specified video stream over the specified time range. </p> <p>Both the
+         * StreamName and the StreamARN parameters are optional, but you must specify
+         * either the StreamName or the StreamARN when invoking this API operation. </p>
+         * <p>As a prerequsite to using GetCLip API, you must obtain an endpoint using
+         * <code>GetDataEndpoint</code>, specifying GET_CLIP for<code/> the
+         * <code>APIName</code> parameter. </p> <p>An Amazon Kinesis video stream has the
+         * following requirements for providing data through MP4:</p> <ul> <li> <p>The
+         * media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
+         * encoded audio. Specifically, the codec ID of track 1 should be
+         * <code>V_MPEG/ISO/AVC</code> (for h.264) or V_MPEGH/ISO/HEVC (for H.265).
+         * Optionally, the codec ID of track 2 should be <code>A_AAC</code> (for AAC) or
+         * A_MS/ACM (for G.711).</p> </li> <li> <p>Data retention must be greater than
+         * 0.</p> </li> <li> <p>The video track of each fragment must contain codec private
+         * data in the Advanced Video Coding (AVC) for H.264 format and HEVC for H.265
+         * format. For more information, see <a
+         * href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC
+         * 14496-15</a>. For information about adapting stream data to a given format, see
+         * <a
+         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL
+         * Adaptation Flags</a>.</p> </li> <li> <p>The audio track (if present) of each
+         * fragment must contain codec private data in the AAC format (<a
+         * href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC
+         * 13818-7</a>) or the <a
+         * href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">MS
+         * Wave format</a>.</p> </li> </ul> <p>You can monitor the amount of outgoing data
+         * by monitoring the <code>GetClip.OutgoingBytes</code> Amazon CloudWatch metric.
+         * For information about using CloudWatch to monitor Kinesis Video Streams, see <a
+         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
+         * Kinesis Video Streams</a>. For pricing information, see <a
+         * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon Kinesis
+         * Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">AWS
+         * Pricing</a>. Charges for outgoing AWS data apply.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetClip">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetClipOutcomeCallable GetClipCallable(const Model::GetClipRequest& request) const;
+
+        /**
+         * <p>Downloads an MP4 file (clip) containing the archived, on-demand media from
+         * the specified video stream over the specified time range. </p> <p>Both the
+         * StreamName and the StreamARN parameters are optional, but you must specify
+         * either the StreamName or the StreamARN when invoking this API operation. </p>
+         * <p>As a prerequsite to using GetCLip API, you must obtain an endpoint using
+         * <code>GetDataEndpoint</code>, specifying GET_CLIP for<code/> the
+         * <code>APIName</code> parameter. </p> <p>An Amazon Kinesis video stream has the
+         * following requirements for providing data through MP4:</p> <ul> <li> <p>The
+         * media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
+         * encoded audio. Specifically, the codec ID of track 1 should be
+         * <code>V_MPEG/ISO/AVC</code> (for h.264) or V_MPEGH/ISO/HEVC (for H.265).
+         * Optionally, the codec ID of track 2 should be <code>A_AAC</code> (for AAC) or
+         * A_MS/ACM (for G.711).</p> </li> <li> <p>Data retention must be greater than
+         * 0.</p> </li> <li> <p>The video track of each fragment must contain codec private
+         * data in the Advanced Video Coding (AVC) for H.264 format and HEVC for H.265
+         * format. For more information, see <a
+         * href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC
+         * 14496-15</a>. For information about adapting stream data to a given format, see
+         * <a
+         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL
+         * Adaptation Flags</a>.</p> </li> <li> <p>The audio track (if present) of each
+         * fragment must contain codec private data in the AAC format (<a
+         * href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC
+         * 13818-7</a>) or the <a
+         * href="http://www-mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/WAVE.html">MS
+         * Wave format</a>.</p> </li> </ul> <p>You can monitor the amount of outgoing data
+         * by monitoring the <code>GetClip.OutgoingBytes</code> Amazon CloudWatch metric.
+         * For information about using CloudWatch to monitor Kinesis Video Streams, see <a
+         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
+         * Kinesis Video Streams</a>. For pricing information, see <a
+         * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon Kinesis
+         * Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">AWS
+         * Pricing</a>. Charges for outgoing AWS data apply.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/GetClip">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetClipAsync(const Model::GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves an MPEG Dynamic Adaptive Streaming over HTTP (DASH) URL for the
@@ -1069,6 +1195,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void GetClipAsyncHelper(const Model::GetClipRequest& request, const GetClipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDASHStreamingSessionURLAsyncHelper(const Model::GetDASHStreamingSessionURLRequest& request, const GetDASHStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHLSStreamingSessionURLAsyncHelper(const Model::GetHLSStreamingSessionURLRequest& request, const GetHLSStreamingSessionURLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMediaForFragmentListAsyncHelper(const Model::GetMediaForFragmentListRequest& request, const GetMediaForFragmentListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

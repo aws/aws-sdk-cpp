@@ -35,6 +35,7 @@ static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedEx
 static const int UNSUPPORTED_STREAM_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedStreamMediaTypeException");
 static const int INVALID_ARGUMENT_HASH = HashingUtils::HashString("InvalidArgumentException");
 static const int CLIENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClientLimitExceededException");
+static const int INVALID_MEDIA_FRAME_HASH = HashingUtils::HashString("InvalidMediaFrameException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -68,6 +69,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::CLIENT_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_MEDIA_FRAME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoArchivedMediaErrors::INVALID_MEDIA_FRAME), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -35,7 +35,9 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_maxErrorsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_complianceSeverity(AssociationComplianceSeverity::NOT_SET),
-    m_complianceSeverityHasBeenSet(false)
+    m_complianceSeverityHasBeenSet(false),
+    m_syncCompliance(AssociationSyncCompliance::NOT_SET),
+    m_syncComplianceHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,11 @@ Aws::String CreateAssociationRequest::SerializePayload() const
   if(m_complianceSeverityHasBeenSet)
   {
    payload.WithString("ComplianceSeverity", AssociationComplianceSeverityMapper::GetNameForAssociationComplianceSeverity(m_complianceSeverity));
+  }
+
+  if(m_syncComplianceHasBeenSet)
+  {
+   payload.WithString("SyncCompliance", AssociationSyncComplianceMapper::GetNameForAssociationSyncCompliance(m_syncCompliance));
   }
 
   return payload.View().WriteReadable();

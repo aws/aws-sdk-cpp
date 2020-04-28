@@ -36,10 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>An Amazon EC2 Systems Manager parameter in Parameter Store.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Parameter">AWS API
-   * Reference</a></p>
+   * <p>An Systems Manager parameter in Parameter Store.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Parameter">AWS
+   * API Reference</a></p>
    */
   class AWS_SSM_API Parameter
   {
@@ -92,38 +91,38 @@ namespace Model
 
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline const ParameterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline Parameter& WithType(const ParameterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of parameter. Valid values include the following: String, String
-     * list, Secure string.</p>
+     * <p>The type of parameter. Valid values include the following:
+     * <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>
      */
     inline Parameter& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
 

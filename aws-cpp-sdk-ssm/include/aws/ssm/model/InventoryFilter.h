@@ -156,32 +156,50 @@ namespace Model
 
 
     /**
-     * <p>The type of filter.</p>
+     * <p>The type of filter.</p> <note> <p>The <code>Exists</code> filter must be used
+     * with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note>
      */
     inline const InventoryQueryOperatorType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of filter.</p>
+     * <p>The type of filter.</p> <note> <p>The <code>Exists</code> filter must be used
+     * with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of filter.</p>
+     * <p>The type of filter.</p> <note> <p>The <code>Exists</code> filter must be used
+     * with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note>
      */
     inline void SetType(const InventoryQueryOperatorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of filter.</p>
+     * <p>The type of filter.</p> <note> <p>The <code>Exists</code> filter must be used
+     * with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note>
      */
     inline void SetType(InventoryQueryOperatorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of filter.</p>
+     * <p>The type of filter.</p> <note> <p>The <code>Exists</code> filter must be used
+     * with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note>
      */
     inline InventoryFilter& WithType(const InventoryQueryOperatorType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of filter.</p>
+     * <p>The type of filter.</p> <note> <p>The <code>Exists</code> filter must be used
+     * with aggregators. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating
+     * inventory data</a> in the <i>AWS Systems Manager User Guide</i>.</p> </note>
      */
     inline InventoryFilter& WithType(InventoryQueryOperatorType&& value) { SetType(std::move(value)); return *this;}
 

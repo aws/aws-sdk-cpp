@@ -40,7 +40,8 @@ namespace Model
   /**
    * <p>Information about the compliance as defined by the resource type. For
    * example, for a patch resource type, <code>Items</code> includes information
-   * about the PatchSeverity, Classification, etc.</p><p><h3>See Also:</h3>   <a
+   * about the PatchSeverity, Classification, and so on.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ComplianceItem">AWS
    * API Reference</a></p>
    */

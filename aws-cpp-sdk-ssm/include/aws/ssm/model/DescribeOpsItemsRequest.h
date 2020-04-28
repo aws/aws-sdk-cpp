@@ -47,7 +47,7 @@ namespace Model
 
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -66,7 +66,7 @@ namespace Model
     inline const Aws::Vector<OpsItemFilter>& GetOpsItemFilters() const{ return m_opsItemFilters; }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -85,7 +85,7 @@ namespace Model
     inline bool OpsItemFiltersHasBeenSet() const { return m_opsItemFiltersHasBeenSet; }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -104,7 +104,7 @@ namespace Model
     inline void SetOpsItemFilters(const Aws::Vector<OpsItemFilter>& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters = value; }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -123,7 +123,7 @@ namespace Model
     inline void SetOpsItemFilters(Aws::Vector<OpsItemFilter>&& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters = std::move(value); }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -142,7 +142,7 @@ namespace Model
     inline DescribeOpsItemsRequest& WithOpsItemFilters(const Aws::Vector<OpsItemFilter>& value) { SetOpsItemFilters(value); return *this;}
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -161,7 +161,7 @@ namespace Model
     inline DescribeOpsItemsRequest& WithOpsItemFilters(Aws::Vector<OpsItemFilter>&& value) { SetOpsItemFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
@@ -180,7 +180,7 @@ namespace Model
     inline DescribeOpsItemsRequest& AddOpsItemFilters(const OpsItemFilter& value) { m_opsItemFiltersHasBeenSet = true; m_opsItemFilters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters to limit the reponse.</p> <ul> <li> <p>Key:
+     * <p>One or more filters to limit the response.</p> <ul> <li> <p>Key:
      * CreatedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:
      * LastModifiedBy</p> <p>Operations: Contains, Equals</p> </li> <li> <p>Key:
      * LastModifiedTime</p> <p>Operations: GreaterThan, LessThan</p> </li> <li> <p>Key:

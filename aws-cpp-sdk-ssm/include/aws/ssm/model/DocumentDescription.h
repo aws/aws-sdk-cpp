@@ -788,7 +788,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
 
@@ -796,7 +797,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
@@ -804,7 +806,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
@@ -812,7 +815,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
@@ -820,7 +824,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
 
@@ -828,7 +833,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
 
@@ -836,7 +842,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
@@ -844,7 +851,8 @@ namespace Model
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline DocumentDescription& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
@@ -892,49 +900,49 @@ namespace Model
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline const Aws::Vector<AttachmentInformation>& GetAttachmentsInformation() const{ return m_attachmentsInformation; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline bool AttachmentsInformationHasBeenSet() const { return m_attachmentsInformationHasBeenSet; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline void SetAttachmentsInformation(const Aws::Vector<AttachmentInformation>& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = value; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline void SetAttachmentsInformation(Aws::Vector<AttachmentInformation>&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = std::move(value); }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline DocumentDescription& WithAttachmentsInformation(const Aws::Vector<AttachmentInformation>& value) { SetAttachmentsInformation(value); return *this;}
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline DocumentDescription& WithAttachmentsInformation(Aws::Vector<AttachmentInformation>&& value) { SetAttachmentsInformation(std::move(value)); return *this;}
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline DocumentDescription& AddAttachmentsInformation(const AttachmentInformation& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.push_back(value); return *this; }
 
     /**
      * <p>Details about the document attachments, including names, locations, sizes,
-     * etc.</p>
+     * and so on.</p>
      */
     inline DocumentDescription& AddAttachmentsInformation(AttachmentInformation&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.push_back(std::move(value)); return *this; }
 

@@ -51,99 +51,211 @@ namespace Model
 
 
     /**
-     * <p>A valid JSON or YAML string.</p>
+     * <p>The content for the new SSM document in JSON or YAML format. We recommend
+     * storing the contents for your new document in an external JSON or YAML file and
+     * referencing the file in a command.</p> <p>For examples, see the following topics
+     * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (API)</a> </p> </li> </ul>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
-     * <p>A valid JSON or YAML string.</p>
+     * <p>The content for the new SSM document in JSON or YAML format. We recommend
+     * storing the contents for your new document in an external JSON or YAML file and
+     * referencing the file in a command.</p> <p>For examples, see the following topics
+     * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (API)</a> </p> </li> </ul>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
-     * <p>A valid JSON or YAML string.</p>
+     * <p>The content for the new SSM document in JSON or YAML format. We recommend
+     * storing the contents for your new document in an external JSON or YAML file and
+     * referencing the file in a command.</p> <p>For examples, see the following topics
+     * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (API)</a> </p> </li> </ul>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
-     * <p>A valid JSON or YAML string.</p>
+     * <p>The content for the new SSM document in JSON or YAML format. We recommend
+     * storing the contents for your new document in an external JSON or YAML file and
+     * referencing the file in a command.</p> <p>For examples, see the following topics
+     * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (API)</a> </p> </li> </ul>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
-     * <p>A valid JSON or YAML string.</p>
+     * <p>The content for the new SSM document in JSON or YAML format. We recommend
+     * storing the contents for your new document in an external JSON or YAML file and
+     * referencing the file in a command.</p> <p>For examples, see the following topics
+     * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (API)</a> </p> </li> </ul>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
-     * <p>A valid JSON or YAML string.</p>
+     * <p>The content for the new SSM document in JSON or YAML format. We recommend
+     * storing the contents for your new document in an external JSON or YAML file and
+     * referencing the file in a command.</p> <p>For examples, see the following topics
+     * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (API)</a> </p> </li> </ul>
      */
     inline CreateDocumentRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
-     * <p>A valid JSON or YAML string.</p>
+     * <p>The content for the new SSM document in JSON or YAML format. We recommend
+     * storing the contents for your new document in an external JSON or YAML file and
+     * referencing the file in a command.</p> <p>For examples, see the following topics
+     * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (API)</a> </p> </li> </ul>
      */
     inline CreateDocumentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
-     * <p>A valid JSON or YAML string.</p>
+     * <p>The content for the new SSM document in JSON or YAML format. We recommend
+     * storing the contents for your new document in an external JSON or YAML file and
+     * referencing the file in a command.</p> <p>For examples, see the following topics
+     * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
+     * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (API)</a> </p> </li> </ul>
      */
     inline CreateDocumentRequest& WithContent(const char* value) { SetContent(value); return *this;}
 
 
     /**
-     * <p>A list of SSM documents required by a document. For example, an
-     * <code>ApplicationConfiguration</code> document requires an
-     * <code>ApplicationConfigurationSchema</code> document.</p>
+     * <p>A list of SSM documents required by a document. This parameter is used
+     * exclusively by AWS AppConfig. When a user creates an AppConfig configuration in
+     * an SSM document, the user must also specify a required document for validation
+     * purposes. In this case, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document for validation
+     * purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+     * AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<DocumentRequires>& GetRequires() const{ return m_requires; }
 
     /**
-     * <p>A list of SSM documents required by a document. For example, an
-     * <code>ApplicationConfiguration</code> document requires an
-     * <code>ApplicationConfigurationSchema</code> document.</p>
+     * <p>A list of SSM documents required by a document. This parameter is used
+     * exclusively by AWS AppConfig. When a user creates an AppConfig configuration in
+     * an SSM document, the user must also specify a required document for validation
+     * purposes. In this case, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document for validation
+     * purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+     * AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline bool RequiresHasBeenSet() const { return m_requiresHasBeenSet; }
 
     /**
-     * <p>A list of SSM documents required by a document. For example, an
-     * <code>ApplicationConfiguration</code> document requires an
-     * <code>ApplicationConfigurationSchema</code> document.</p>
+     * <p>A list of SSM documents required by a document. This parameter is used
+     * exclusively by AWS AppConfig. When a user creates an AppConfig configuration in
+     * an SSM document, the user must also specify a required document for validation
+     * purposes. In this case, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document for validation
+     * purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+     * AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetRequires(const Aws::Vector<DocumentRequires>& value) { m_requiresHasBeenSet = true; m_requires = value; }
 
     /**
-     * <p>A list of SSM documents required by a document. For example, an
-     * <code>ApplicationConfiguration</code> document requires an
-     * <code>ApplicationConfigurationSchema</code> document.</p>
+     * <p>A list of SSM documents required by a document. This parameter is used
+     * exclusively by AWS AppConfig. When a user creates an AppConfig configuration in
+     * an SSM document, the user must also specify a required document for validation
+     * purposes. In this case, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document for validation
+     * purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+     * AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline void SetRequires(Aws::Vector<DocumentRequires>&& value) { m_requiresHasBeenSet = true; m_requires = std::move(value); }
 
     /**
-     * <p>A list of SSM documents required by a document. For example, an
-     * <code>ApplicationConfiguration</code> document requires an
-     * <code>ApplicationConfigurationSchema</code> document.</p>
+     * <p>A list of SSM documents required by a document. This parameter is used
+     * exclusively by AWS AppConfig. When a user creates an AppConfig configuration in
+     * an SSM document, the user must also specify a required document for validation
+     * purposes. In this case, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document for validation
+     * purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+     * AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateDocumentRequest& WithRequires(const Aws::Vector<DocumentRequires>& value) { SetRequires(value); return *this;}
 
     /**
-     * <p>A list of SSM documents required by a document. For example, an
-     * <code>ApplicationConfiguration</code> document requires an
-     * <code>ApplicationConfigurationSchema</code> document.</p>
+     * <p>A list of SSM documents required by a document. This parameter is used
+     * exclusively by AWS AppConfig. When a user creates an AppConfig configuration in
+     * an SSM document, the user must also specify a required document for validation
+     * purposes. In this case, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document for validation
+     * purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+     * AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateDocumentRequest& WithRequires(Aws::Vector<DocumentRequires>&& value) { SetRequires(std::move(value)); return *this;}
 
     /**
-     * <p>A list of SSM documents required by a document. For example, an
-     * <code>ApplicationConfiguration</code> document requires an
-     * <code>ApplicationConfigurationSchema</code> document.</p>
+     * <p>A list of SSM documents required by a document. This parameter is used
+     * exclusively by AWS AppConfig. When a user creates an AppConfig configuration in
+     * an SSM document, the user must also specify a required document for validation
+     * purposes. In this case, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document for validation
+     * purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+     * AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateDocumentRequest& AddRequires(const DocumentRequires& value) { m_requiresHasBeenSet = true; m_requires.push_back(value); return *this; }
 
     /**
-     * <p>A list of SSM documents required by a document. For example, an
-     * <code>ApplicationConfiguration</code> document requires an
-     * <code>ApplicationConfigurationSchema</code> document.</p>
+     * <p>A list of SSM documents required by a document. This parameter is used
+     * exclusively by AWS AppConfig. When a user creates an AppConfig configuration in
+     * an SSM document, the user must also specify a required document for validation
+     * purposes. In this case, an <code>ApplicationConfiguration</code> document
+     * requires an <code>ApplicationConfigurationSchema</code> document for validation
+     * purposes. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS
+     * AppConfig</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
     inline CreateDocumentRequest& AddRequires(DocumentRequires&& value) { m_requiresHasBeenSet = true; m_requires.push_back(std::move(value)); return *this; }
 
@@ -198,72 +310,72 @@ namespace Model
 
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
-     * following to begin the names of documents you create. They are reserved by AWS
-     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * following strings as document name prefixes. These are reserved by AWS for use
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
-     * following to begin the names of documents you create. They are reserved by AWS
-     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * following strings as document name prefixes. These are reserved by AWS for use
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
-     * following to begin the names of documents you create. They are reserved by AWS
-     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * following strings as document name prefixes. These are reserved by AWS for use
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
-     * following to begin the names of documents you create. They are reserved by AWS
-     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * following strings as document name prefixes. These are reserved by AWS for use
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
-     * following to begin the names of documents you create. They are reserved by AWS
-     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * following strings as document name prefixes. These are reserved by AWS for use
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
-     * following to begin the names of documents you create. They are reserved by AWS
-     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * following strings as document name prefixes. These are reserved by AWS for use
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
     inline CreateDocumentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
-     * following to begin the names of documents you create. They are reserved by AWS
-     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * following strings as document name prefixes. These are reserved by AWS for use
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
     inline CreateDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A name for the Systems Manager document.</p> <important> <p>Do not use the
-     * following to begin the names of documents you create. They are reserved by AWS
-     * for use as document prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
+     * following strings as document name prefixes. These are reserved by AWS for use
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
@@ -402,7 +514,8 @@ namespace Model
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
 
@@ -413,7 +526,8 @@ namespace Model
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
@@ -424,7 +538,8 @@ namespace Model
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
@@ -435,7 +550,8 @@ namespace Model
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
@@ -446,7 +562,8 @@ namespace Model
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
 
@@ -457,7 +574,8 @@ namespace Model
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline CreateDocumentRequest& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
 
@@ -468,7 +586,8 @@ namespace Model
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline CreateDocumentRequest& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
 
@@ -479,7 +598,8 @@ namespace Model
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     * resource and property types reference</a> in the <i>AWS CloudFormation User
+     * Guide</i>. </p>
      */
     inline CreateDocumentRequest& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 

@@ -111,9 +111,9 @@ namespace Model
      * <p>The different events for which you can receive notifications. These events
      * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
      * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<NotificationEvent>& GetNotificationEvents() const{ return m_notificationEvents; }
 
@@ -121,9 +121,9 @@ namespace Model
      * <p>The different events for which you can receive notifications. These events
      * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
      * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline bool NotificationEventsHasBeenSet() const { return m_notificationEventsHasBeenSet; }
 
@@ -131,9 +131,9 @@ namespace Model
      * <p>The different events for which you can receive notifications. These events
      * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
      * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetNotificationEvents(const Aws::Vector<NotificationEvent>& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = value; }
 
@@ -141,9 +141,9 @@ namespace Model
      * <p>The different events for which you can receive notifications. These events
      * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
      * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline void SetNotificationEvents(Aws::Vector<NotificationEvent>&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents = std::move(value); }
 
@@ -151,9 +151,9 @@ namespace Model
      * <p>The different events for which you can receive notifications. These events
      * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
      * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline NotificationConfig& WithNotificationEvents(const Aws::Vector<NotificationEvent>& value) { SetNotificationEvents(value); return *this;}
 
@@ -161,9 +161,9 @@ namespace Model
      * <p>The different events for which you can receive notifications. These events
      * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
      * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline NotificationConfig& WithNotificationEvents(Aws::Vector<NotificationEvent>&& value) { SetNotificationEvents(std::move(value)); return *this;}
 
@@ -171,9 +171,9 @@ namespace Model
      * <p>The different events for which you can receive notifications. These events
      * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
      * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline NotificationConfig& AddNotificationEvents(const NotificationEvent& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(value); return *this; }
 
@@ -181,9 +181,9 @@ namespace Model
      * <p>The different events for which you can receive notifications. These events
      * include the following: All (events), InProgress, Success, TimedOut, Cancelled,
      * Failed. To learn more about these events, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Configuring
-     * Amazon SNS Notifications for AWS Systems Manager</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+     * Systems Manager status changes using Amazon SNS notifications</a> in the <i>AWS
+     * Systems Manager User Guide</i>.</p>
      */
     inline NotificationConfig& AddNotificationEvents(NotificationEvent&& value) { m_notificationEventsHasBeenSet = true; m_notificationEvents.push_back(std::move(value)); return *this; }
 

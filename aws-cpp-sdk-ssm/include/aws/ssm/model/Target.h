@@ -58,16 +58,15 @@ namespace Model
    * <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li>
    * <p>(Maintenance window targets only)
    * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-   * </code> </p> <p>This example demonstrates how to target only Amazon EC2
-   * instances and VPCs in your maintenance window.</p> </li> <li> <p>(State Manager
-   * association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code> </p>
-   * <p>This example demonstrates how to target all managed instances in the AWS
-   * Region where the association was created.</p> </li> </ul> <p>For information
-   * about how to send commands that target instances using <code>Key,Value</code>
-   * parameters, see <a
-   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Using
-   * Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems
-   * Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * </code> </p> <p>This example demonstrates how to target only EC2 instances and
+   * VPCs in your maintenance window.</p> </li> <li> <p>(State Manager association
+   * targets only) <code>Key=InstanceIds,Values=<i>*</i> </code> </p> <p>This example
+   * demonstrates how to target all managed instances in the AWS Region where the
+   * association was created.</p> </li> </ul> <p>For information about how to send
+   * commands that target instances using <code>Key,Value</code> parameters, see <a
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+   * multiple instances</a> in the <i>AWS Systems Manager User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/Target">AWS API
    * Reference</a></p>
    */
@@ -132,72 +131,72 @@ namespace Model
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline Target& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline Target& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline Target& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline Target& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
-     * <code>value:WebServer</code> to run a command on instances that include Amazon
-     * EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     * <code>value:WebServer</code> to run a command on instances that include EC2 tags
+     * of <code>ServerRole,WebServer</code>. </p>
      */
     inline Target& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

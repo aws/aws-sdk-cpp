@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * Settings to configure an action so that it occurs immediately. This is only
-   * supported for input switch actions currently.<p><h3>See Also:</h3>   <a
+   * Settings to configure an action so that it occurs as soon as possible.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ImmediateModeScheduleActionStartSettings">AWS
    * API Reference</a></p>
    */

@@ -446,9 +446,9 @@ namespace Model
 
 
     /**
-     * <p>Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
-     * <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to
-     * contain logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>Information about an S3 bucket to write task-level logs to.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -457,9 +457,9 @@ namespace Model
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
-     * <p>Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
-     * <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to
-     * contain logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>Information about an S3 bucket to write task-level logs to.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -468,9 +468,9 @@ namespace Model
     inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
 
     /**
-     * <p>Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
-     * <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to
-     * contain logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>Information about an S3 bucket to write task-level logs to.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -479,9 +479,9 @@ namespace Model
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
 
     /**
-     * <p>Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
-     * <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to
-     * contain logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>Information about an S3 bucket to write task-level logs to.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -490,9 +490,9 @@ namespace Model
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
 
     /**
-     * <p>Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
-     * <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to
-     * contain logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>Information about an S3 bucket to write task-level logs to.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -501,9 +501,9 @@ namespace Model
     inline MaintenanceWindowTask& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
-     * <p>Information about an Amazon S3 bucket to write task-level logs to.</p> <note>
-     * <p> <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to
-     * contain logs, instead use the <code>OutputS3BucketName</code> and
+     * <p>Information about an S3 bucket to write task-level logs to.</p> <note> <p>
+     * <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain
+     * logs, instead use the <code>OutputS3BucketName</code> and
      * <code>OutputS3KeyPrefix</code> options in the
      * <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task

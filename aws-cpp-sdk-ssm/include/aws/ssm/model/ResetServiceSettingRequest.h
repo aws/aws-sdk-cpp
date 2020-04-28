@@ -49,42 +49,74 @@ namespace Model
 
 
     /**
-     * <p>The ID of the service setting to reset.</p>
+     * <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting
+     * ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     * <code>/ssm/managed-instance/activation-tier</code>. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
      */
     inline const Aws::String& GetSettingId() const{ return m_settingId; }
 
     /**
-     * <p>The ID of the service setting to reset.</p>
+     * <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting
+     * ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     * <code>/ssm/managed-instance/activation-tier</code>. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
      */
     inline bool SettingIdHasBeenSet() const { return m_settingIdHasBeenSet; }
 
     /**
-     * <p>The ID of the service setting to reset.</p>
+     * <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting
+     * ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     * <code>/ssm/managed-instance/activation-tier</code>. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
      */
     inline void SetSettingId(const Aws::String& value) { m_settingIdHasBeenSet = true; m_settingId = value; }
 
     /**
-     * <p>The ID of the service setting to reset.</p>
+     * <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting
+     * ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     * <code>/ssm/managed-instance/activation-tier</code>. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
      */
     inline void SetSettingId(Aws::String&& value) { m_settingIdHasBeenSet = true; m_settingId = std::move(value); }
 
     /**
-     * <p>The ID of the service setting to reset.</p>
+     * <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting
+     * ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     * <code>/ssm/managed-instance/activation-tier</code>. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
      */
     inline void SetSettingId(const char* value) { m_settingIdHasBeenSet = true; m_settingId.assign(value); }
 
     /**
-     * <p>The ID of the service setting to reset.</p>
+     * <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting
+     * ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     * <code>/ssm/managed-instance/activation-tier</code>. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
      */
     inline ResetServiceSettingRequest& WithSettingId(const Aws::String& value) { SetSettingId(value); return *this;}
 
     /**
-     * <p>The ID of the service setting to reset.</p>
+     * <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting
+     * ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     * <code>/ssm/managed-instance/activation-tier</code>. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
      */
     inline ResetServiceSettingRequest& WithSettingId(Aws::String&& value) { SetSettingId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the service setting to reset.</p>
+     * <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting
+     * ID can be <code>/ssm/parameter-store/default-parameter-tier</code>,
+     * <code>/ssm/parameter-store/high-throughput-enabled</code>, or
+     * <code>/ssm/managed-instance/activation-tier</code>. For example,
+     * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>.</p>
      */
     inline ResetServiceSettingRequest& WithSettingId(const char* value) { SetSettingId(value); return *this;}
 

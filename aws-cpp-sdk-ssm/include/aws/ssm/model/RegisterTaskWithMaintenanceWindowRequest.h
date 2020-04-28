@@ -223,11 +223,11 @@ namespace Model
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
      * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
      * <ul> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I use a service-linked role or a custom service role to run maintenance window
+     * tasks? </a> </p> </li> </ul>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
@@ -239,11 +239,11 @@ namespace Model
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
      * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
      * <ul> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I use a service-linked role or a custom service role to run maintenance window
+     * tasks? </a> </p> </li> </ul>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
@@ -255,11 +255,11 @@ namespace Model
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
      * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
      * <ul> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I use a service-linked role or a custom service role to run maintenance window
+     * tasks? </a> </p> </li> </ul>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
@@ -271,11 +271,11 @@ namespace Model
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
      * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
      * <ul> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I use a service-linked role or a custom service role to run maintenance window
+     * tasks? </a> </p> </li> </ul>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
@@ -287,11 +287,11 @@ namespace Model
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
      * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
      * <ul> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I use a service-linked role or a custom service role to run maintenance window
+     * tasks? </a> </p> </li> </ul>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
@@ -303,11 +303,11 @@ namespace Model
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
      * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
      * <ul> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I use a service-linked role or a custom service role to run maintenance window
+     * tasks? </a> </p> </li> </ul>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
@@ -319,11 +319,11 @@ namespace Model
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
      * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
      * <ul> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I use a service-linked role or a custom service role to run maintenance window
+     * tasks? </a> </p> </li> </ul>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
@@ -335,11 +335,11 @@ namespace Model
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
      * the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
      * <ul> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Service-Linked
-     * Role Permissions for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window
-     * Tasks? </a> </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
+     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
+     * I use a service-linked role or a custom service role to run maintenance window
+     * tasks? </a> </p> </li> </ul>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
@@ -653,9 +653,9 @@ namespace Model
 
 
     /**
-     * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <p>A structure containing information about an S3 bucket to write instance-level
+     * logs to. </p> <note> <p> <code>LoggingInfo</code> has been deprecated. To
+     * specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -664,9 +664,9 @@ namespace Model
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
     /**
-     * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <p>A structure containing information about an S3 bucket to write instance-level
+     * logs to. </p> <note> <p> <code>LoggingInfo</code> has been deprecated. To
+     * specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -675,9 +675,9 @@ namespace Model
     inline bool LoggingInfoHasBeenSet() const { return m_loggingInfoHasBeenSet; }
 
     /**
-     * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <p>A structure containing information about an S3 bucket to write instance-level
+     * logs to. </p> <note> <p> <code>LoggingInfo</code> has been deprecated. To
+     * specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -686,9 +686,9 @@ namespace Model
     inline void SetLoggingInfo(const LoggingInfo& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = value; }
 
     /**
-     * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <p>A structure containing information about an S3 bucket to write instance-level
+     * logs to. </p> <note> <p> <code>LoggingInfo</code> has been deprecated. To
+     * specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -697,9 +697,9 @@ namespace Model
     inline void SetLoggingInfo(LoggingInfo&& value) { m_loggingInfoHasBeenSet = true; m_loggingInfo = std::move(value); }
 
     /**
-     * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <p>A structure containing information about an S3 bucket to write instance-level
+     * logs to. </p> <note> <p> <code>LoggingInfo</code> has been deprecated. To
+     * specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task
@@ -708,9 +708,9 @@ namespace Model
     inline RegisterTaskWithMaintenanceWindowRequest& WithLoggingInfo(const LoggingInfo& value) { SetLoggingInfo(value); return *this;}
 
     /**
-     * <p>A structure containing information about an Amazon S3 bucket to write
-     * instance-level logs to. </p> <note> <p> <code>LoggingInfo</code> has been
-     * deprecated. To specify an S3 bucket to contain logs, instead use the
+     * <p>A structure containing information about an S3 bucket to write instance-level
+     * logs to. </p> <note> <p> <code>LoggingInfo</code> has been deprecated. To
+     * specify an S3 bucket to contain logs, instead use the
      * <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in
      * the <code>TaskInvocationParameters</code> structure. For information about how
      * Systems Manager handles these options for the supported maintenance window task

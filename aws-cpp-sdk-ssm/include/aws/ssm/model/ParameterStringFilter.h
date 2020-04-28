@@ -45,8 +45,8 @@ namespace Model
    * <code>Key</code> are not valid: <code>Name</code>, <code>Path</code>, and
    * <code>Tier</code>.</p> <p>For examples of CLI commands demonstrating valid
    * parameter filter constructions, see <a
-   * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
-   * for Systems Manager Parameters</a> in the <i>AWS Systems Manager User
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching
+   * for Systems Manager parameters</a> in the <i>AWS Systems Manager User
    * Guide</i>.</p> </important><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ParameterStringFilter">AWS
    * API Reference</a></p>

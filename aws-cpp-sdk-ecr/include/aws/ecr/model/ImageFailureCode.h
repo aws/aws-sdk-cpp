@@ -30,7 +30,8 @@ namespace Model
     InvalidImageTag,
     ImageTagDoesNotMatchDigest,
     ImageNotFound,
-    MissingDigestAndTag
+    MissingDigestAndTag,
+    ImageReferencedByManifestList
   };
 
 namespace ImageFailureCodeMapper

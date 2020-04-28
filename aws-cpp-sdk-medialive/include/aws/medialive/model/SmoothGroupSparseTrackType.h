@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     NONE,
-    SCTE_35
+    SCTE_35,
+    SCTE_35_WITHOUT_SEGMENTATION
   };
 
 namespace SmoothGroupSparseTrackTypeMapper
