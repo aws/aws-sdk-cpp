@@ -48,49 +48,65 @@ namespace Model
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive.</p>
+     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * as a previous vocabulary you will receive a <code>ConflictException</code>
+     * error.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive.</p>
+     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * as a previous vocabulary you will receive a <code>ConflictException</code>
+     * error.</p>
      */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive.</p>
+     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * as a previous vocabulary you will receive a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive.</p>
+     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * as a previous vocabulary you will receive a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive.</p>
+     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * as a previous vocabulary you will receive a <code>ConflictException</code>
+     * error.</p>
      */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive.</p>
+     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * as a previous vocabulary you will receive a <code>ConflictException</code>
+     * error.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive.</p>
+     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * as a previous vocabulary you will receive a <code>ConflictException</code>
+     * error.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the vocabulary. The name must be unique within an AWS account.
-     * The name is case-sensitive.</p>
+     * The name is case-sensitive. If you try to create a vocabulary with the same name
+     * as a previous vocabulary you will receive a <code>ConflictException</code>
+     * error.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
 

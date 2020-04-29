@@ -46,42 +46,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the vocabulary filter to update.</p>
+     * <p>The name of the vocabulary filter to update. If you try to update a
+     * vocabulary filter with the same name as a previous vocabulary filter you will
+     * receive a <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
 
     /**
-     * <p>The name of the vocabulary filter to update.</p>
+     * <p>The name of the vocabulary filter to update. If you try to update a
+     * vocabulary filter with the same name as a previous vocabulary filter you will
+     * receive a <code>ConflictException</code> error.</p>
      */
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
 
     /**
-     * <p>The name of the vocabulary filter to update.</p>
+     * <p>The name of the vocabulary filter to update. If you try to update a
+     * vocabulary filter with the same name as a previous vocabulary filter you will
+     * receive a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
 
     /**
-     * <p>The name of the vocabulary filter to update.</p>
+     * <p>The name of the vocabulary filter to update. If you try to update a
+     * vocabulary filter with the same name as a previous vocabulary filter you will
+     * receive a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
 
     /**
-     * <p>The name of the vocabulary filter to update.</p>
+     * <p>The name of the vocabulary filter to update. If you try to update a
+     * vocabulary filter with the same name as a previous vocabulary filter you will
+     * receive a <code>ConflictException</code> error.</p>
      */
     inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
 
     /**
-     * <p>The name of the vocabulary filter to update.</p>
+     * <p>The name of the vocabulary filter to update. If you try to update a
+     * vocabulary filter with the same name as a previous vocabulary filter you will
+     * receive a <code>ConflictException</code> error.</p>
      */
     inline UpdateVocabularyFilterRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
 
     /**
-     * <p>The name of the vocabulary filter to update.</p>
+     * <p>The name of the vocabulary filter to update. If you try to update a
+     * vocabulary filter with the same name as a previous vocabulary filter you will
+     * receive a <code>ConflictException</code> error.</p>
      */
     inline UpdateVocabularyFilterRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the vocabulary filter to update.</p>
+     * <p>The name of the vocabulary filter to update. If you try to update a
+     * vocabulary filter with the same name as a previous vocabulary filter you will
+     * receive a <code>ConflictException</code> error.</p>
      */
     inline UpdateVocabularyFilterRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
 

@@ -38,7 +38,8 @@ MedicalTranscriptionSetting::MedicalTranscriptionSetting() :
     m_showAlternatives(false),
     m_showAlternativesHasBeenSet(false),
     m_maxAlternatives(0),
-    m_maxAlternativesHasBeenSet(false)
+    m_maxAlternativesHasBeenSet(false),
+    m_vocabularyNameHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ MedicalTranscriptionSetting::MedicalTranscriptionSetting(JsonView jsonValue) :
     m_showAlternatives(false),
     m_showAlternativesHasBeenSet(false),
     m_maxAlternatives(0),
-    m_maxAlternativesHasBeenSet(false)
+    m_maxAlternativesHasBeenSet(false),
+    m_vocabularyNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +96,13 @@ MedicalTranscriptionSetting& MedicalTranscriptionSetting::operator =(JsonView js
     m_maxAlternativesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VocabularyName"))
+  {
+    m_vocabularyName = jsonValue.GetString("VocabularyName");
+
+    m_vocabularyNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +137,12 @@ JsonValue MedicalTranscriptionSetting::Jsonize() const
   if(m_maxAlternativesHasBeenSet)
   {
    payload.WithInteger("MaxAlternatives", m_maxAlternatives);
+
+  }
+
+  if(m_vocabularyNameHasBeenSet)
+  {
+   payload.WithString("VocabularyName", m_vocabularyName);
 
   }
 

@@ -21,18 +21,22 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/transcribe/model/CreateMedicalVocabularyResult.h>
 #include <aws/transcribe/model/CreateVocabularyResult.h>
 #include <aws/transcribe/model/CreateVocabularyFilterResult.h>
 #include <aws/transcribe/model/GetMedicalTranscriptionJobResult.h>
+#include <aws/transcribe/model/GetMedicalVocabularyResult.h>
 #include <aws/transcribe/model/GetTranscriptionJobResult.h>
 #include <aws/transcribe/model/GetVocabularyResult.h>
 #include <aws/transcribe/model/GetVocabularyFilterResult.h>
 #include <aws/transcribe/model/ListMedicalTranscriptionJobsResult.h>
+#include <aws/transcribe/model/ListMedicalVocabulariesResult.h>
 #include <aws/transcribe/model/ListTranscriptionJobsResult.h>
 #include <aws/transcribe/model/ListVocabulariesResult.h>
 #include <aws/transcribe/model/ListVocabularyFiltersResult.h>
 #include <aws/transcribe/model/StartMedicalTranscriptionJobResult.h>
 #include <aws/transcribe/model/StartTranscriptionJobResult.h>
+#include <aws/transcribe/model/UpdateMedicalVocabularyResult.h>
 #include <aws/transcribe/model/UpdateVocabularyResult.h>
 #include <aws/transcribe/model/UpdateVocabularyFilterResult.h>
 #include <aws/core/NoResult.h>
@@ -75,82 +79,102 @@ namespace TranscribeService
 
 namespace Model
 {
+        class CreateMedicalVocabularyRequest;
         class CreateVocabularyRequest;
         class CreateVocabularyFilterRequest;
         class DeleteMedicalTranscriptionJobRequest;
+        class DeleteMedicalVocabularyRequest;
         class DeleteTranscriptionJobRequest;
         class DeleteVocabularyRequest;
         class DeleteVocabularyFilterRequest;
         class GetMedicalTranscriptionJobRequest;
+        class GetMedicalVocabularyRequest;
         class GetTranscriptionJobRequest;
         class GetVocabularyRequest;
         class GetVocabularyFilterRequest;
         class ListMedicalTranscriptionJobsRequest;
+        class ListMedicalVocabulariesRequest;
         class ListTranscriptionJobsRequest;
         class ListVocabulariesRequest;
         class ListVocabularyFiltersRequest;
         class StartMedicalTranscriptionJobRequest;
         class StartTranscriptionJobRequest;
+        class UpdateMedicalVocabularyRequest;
         class UpdateVocabularyRequest;
         class UpdateVocabularyFilterRequest;
 
+        typedef Aws::Utils::Outcome<CreateMedicalVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> CreateMedicalVocabularyOutcome;
         typedef Aws::Utils::Outcome<CreateVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> CreateVocabularyOutcome;
         typedef Aws::Utils::Outcome<CreateVocabularyFilterResult, Aws::Client::AWSError<TranscribeServiceErrors>> CreateVocabularyFilterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeServiceErrors>> DeleteMedicalTranscriptionJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeServiceErrors>> DeleteMedicalVocabularyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeServiceErrors>> DeleteTranscriptionJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeServiceErrors>> DeleteVocabularyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeServiceErrors>> DeleteVocabularyFilterOutcome;
         typedef Aws::Utils::Outcome<GetMedicalTranscriptionJobResult, Aws::Client::AWSError<TranscribeServiceErrors>> GetMedicalTranscriptionJobOutcome;
+        typedef Aws::Utils::Outcome<GetMedicalVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> GetMedicalVocabularyOutcome;
         typedef Aws::Utils::Outcome<GetTranscriptionJobResult, Aws::Client::AWSError<TranscribeServiceErrors>> GetTranscriptionJobOutcome;
         typedef Aws::Utils::Outcome<GetVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> GetVocabularyOutcome;
         typedef Aws::Utils::Outcome<GetVocabularyFilterResult, Aws::Client::AWSError<TranscribeServiceErrors>> GetVocabularyFilterOutcome;
         typedef Aws::Utils::Outcome<ListMedicalTranscriptionJobsResult, Aws::Client::AWSError<TranscribeServiceErrors>> ListMedicalTranscriptionJobsOutcome;
+        typedef Aws::Utils::Outcome<ListMedicalVocabulariesResult, Aws::Client::AWSError<TranscribeServiceErrors>> ListMedicalVocabulariesOutcome;
         typedef Aws::Utils::Outcome<ListTranscriptionJobsResult, Aws::Client::AWSError<TranscribeServiceErrors>> ListTranscriptionJobsOutcome;
         typedef Aws::Utils::Outcome<ListVocabulariesResult, Aws::Client::AWSError<TranscribeServiceErrors>> ListVocabulariesOutcome;
         typedef Aws::Utils::Outcome<ListVocabularyFiltersResult, Aws::Client::AWSError<TranscribeServiceErrors>> ListVocabularyFiltersOutcome;
         typedef Aws::Utils::Outcome<StartMedicalTranscriptionJobResult, Aws::Client::AWSError<TranscribeServiceErrors>> StartMedicalTranscriptionJobOutcome;
         typedef Aws::Utils::Outcome<StartTranscriptionJobResult, Aws::Client::AWSError<TranscribeServiceErrors>> StartTranscriptionJobOutcome;
+        typedef Aws::Utils::Outcome<UpdateMedicalVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> UpdateMedicalVocabularyOutcome;
         typedef Aws::Utils::Outcome<UpdateVocabularyResult, Aws::Client::AWSError<TranscribeServiceErrors>> UpdateVocabularyOutcome;
         typedef Aws::Utils::Outcome<UpdateVocabularyFilterResult, Aws::Client::AWSError<TranscribeServiceErrors>> UpdateVocabularyFilterOutcome;
 
+        typedef std::future<CreateMedicalVocabularyOutcome> CreateMedicalVocabularyOutcomeCallable;
         typedef std::future<CreateVocabularyOutcome> CreateVocabularyOutcomeCallable;
         typedef std::future<CreateVocabularyFilterOutcome> CreateVocabularyFilterOutcomeCallable;
         typedef std::future<DeleteMedicalTranscriptionJobOutcome> DeleteMedicalTranscriptionJobOutcomeCallable;
+        typedef std::future<DeleteMedicalVocabularyOutcome> DeleteMedicalVocabularyOutcomeCallable;
         typedef std::future<DeleteTranscriptionJobOutcome> DeleteTranscriptionJobOutcomeCallable;
         typedef std::future<DeleteVocabularyOutcome> DeleteVocabularyOutcomeCallable;
         typedef std::future<DeleteVocabularyFilterOutcome> DeleteVocabularyFilterOutcomeCallable;
         typedef std::future<GetMedicalTranscriptionJobOutcome> GetMedicalTranscriptionJobOutcomeCallable;
+        typedef std::future<GetMedicalVocabularyOutcome> GetMedicalVocabularyOutcomeCallable;
         typedef std::future<GetTranscriptionJobOutcome> GetTranscriptionJobOutcomeCallable;
         typedef std::future<GetVocabularyOutcome> GetVocabularyOutcomeCallable;
         typedef std::future<GetVocabularyFilterOutcome> GetVocabularyFilterOutcomeCallable;
         typedef std::future<ListMedicalTranscriptionJobsOutcome> ListMedicalTranscriptionJobsOutcomeCallable;
+        typedef std::future<ListMedicalVocabulariesOutcome> ListMedicalVocabulariesOutcomeCallable;
         typedef std::future<ListTranscriptionJobsOutcome> ListTranscriptionJobsOutcomeCallable;
         typedef std::future<ListVocabulariesOutcome> ListVocabulariesOutcomeCallable;
         typedef std::future<ListVocabularyFiltersOutcome> ListVocabularyFiltersOutcomeCallable;
         typedef std::future<StartMedicalTranscriptionJobOutcome> StartMedicalTranscriptionJobOutcomeCallable;
         typedef std::future<StartTranscriptionJobOutcome> StartTranscriptionJobOutcomeCallable;
+        typedef std::future<UpdateMedicalVocabularyOutcome> UpdateMedicalVocabularyOutcomeCallable;
         typedef std::future<UpdateVocabularyOutcome> UpdateVocabularyOutcomeCallable;
         typedef std::future<UpdateVocabularyFilterOutcome> UpdateVocabularyFilterOutcomeCallable;
 } // namespace Model
 
   class TranscribeServiceClient;
 
+    typedef std::function<void(const TranscribeServiceClient*, const Model::CreateMedicalVocabularyRequest&, const Model::CreateMedicalVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMedicalVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::CreateVocabularyRequest&, const Model::CreateVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::CreateVocabularyFilterRequest&, const Model::CreateVocabularyFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVocabularyFilterResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteMedicalTranscriptionJobRequest&, const Model::DeleteMedicalTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMedicalTranscriptionJobResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteMedicalVocabularyRequest&, const Model::DeleteMedicalVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMedicalVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteTranscriptionJobRequest&, const Model::DeleteTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteVocabularyRequest&, const Model::DeleteVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::DeleteVocabularyFilterRequest&, const Model::DeleteVocabularyFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVocabularyFilterResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetMedicalTranscriptionJobRequest&, const Model::GetMedicalTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMedicalTranscriptionJobResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::GetMedicalVocabularyRequest&, const Model::GetMedicalVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMedicalVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetTranscriptionJobRequest&, const Model::GetTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetVocabularyRequest&, const Model::GetVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::GetVocabularyFilterRequest&, const Model::GetVocabularyFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVocabularyFilterResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListMedicalTranscriptionJobsRequest&, const Model::ListMedicalTranscriptionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMedicalTranscriptionJobsResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::ListMedicalVocabulariesRequest&, const Model::ListMedicalVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMedicalVocabulariesResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListTranscriptionJobsRequest&, const Model::ListTranscriptionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTranscriptionJobsResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListVocabulariesRequest&, const Model::ListVocabulariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVocabulariesResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::ListVocabularyFiltersRequest&, const Model::ListVocabularyFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVocabularyFiltersResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::StartMedicalTranscriptionJobRequest&, const Model::StartMedicalTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMedicalTranscriptionJobResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::StartTranscriptionJobRequest&, const Model::StartTranscriptionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartTranscriptionJobResponseReceivedHandler;
+    typedef std::function<void(const TranscribeServiceClient*, const Model::UpdateMedicalVocabularyRequest&, const Model::UpdateMedicalVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMedicalVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::UpdateVocabularyRequest&, const Model::UpdateVocabularyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVocabularyResponseReceivedHandler;
     typedef std::function<void(const TranscribeServiceClient*, const Model::UpdateVocabularyFilterRequest&, const Model::UpdateVocabularyFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVocabularyFilterResponseReceivedHandler;
 
@@ -185,6 +209,34 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "Transcribe"; }
 
+
+        /**
+         * <p>Creates a new custom vocabulary that you can use to change how Amazon
+         * Transcribe Medical transcribes your audio file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMedicalVocabularyOutcome CreateMedicalVocabulary(const Model::CreateMedicalVocabularyRequest& request) const;
+
+        /**
+         * <p>Creates a new custom vocabulary that you can use to change how Amazon
+         * Transcribe Medical transcribes your audio file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMedicalVocabularyOutcomeCallable CreateMedicalVocabularyCallable(const Model::CreateMedicalVocabularyRequest& request) const;
+
+        /**
+         * <p>Creates a new custom vocabulary that you can use to change how Amazon
+         * Transcribe Medical transcribes your audio file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMedicalVocabularyAsync(const Model::CreateMedicalVocabularyRequest& request, const CreateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new custom vocabulary that you can use to change the way Amazon
@@ -275,6 +327,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteMedicalTranscriptionJobAsync(const Model::DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a vocabulary from Amazon Transcribe Medical.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMedicalVocabularyOutcome DeleteMedicalVocabulary(const Model::DeleteMedicalVocabularyRequest& request) const;
+
+        /**
+         * <p>Deletes a vocabulary from Amazon Transcribe Medical.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMedicalVocabularyOutcomeCallable DeleteMedicalVocabularyCallable(const Model::DeleteMedicalVocabularyRequest& request) const;
+
+        /**
+         * <p>Deletes a vocabulary from Amazon Transcribe Medical.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteMedicalVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMedicalVocabularyAsync(const Model::DeleteMedicalVocabularyRequest& request, const DeleteMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a previously submitted transcription job along with any other
@@ -395,6 +475,34 @@ namespace Model
         virtual void GetMedicalTranscriptionJobAsync(const Model::GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieve information about a medical vocabulary.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMedicalVocabularyOutcome GetMedicalVocabulary(const Model::GetMedicalVocabularyRequest& request) const;
+
+        /**
+         * <p>Retrieve information about a medical vocabulary.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMedicalVocabularyOutcomeCallable GetMedicalVocabularyCallable(const Model::GetMedicalVocabularyRequest& request) const;
+
+        /**
+         * <p>Retrieve information about a medical vocabulary.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/GetMedicalVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMedicalVocabularyAsync(const Model::GetMedicalVocabularyRequest& request, const GetMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a transcription job. To see the status of the job,
          * check the <code>TranscriptionJobStatus</code> field. If the status is
          * <code>COMPLETED</code>, the job is finished and you can find the results at the
@@ -511,6 +619,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListMedicalTranscriptionJobsAsync(const Model::ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of vocabularies that match the specified criteria. You get the
+         * entire list of vocabularies if you don't enter a value in any of the request
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMedicalVocabulariesOutcome ListMedicalVocabularies(const Model::ListMedicalVocabulariesRequest& request) const;
+
+        /**
+         * <p>Returns a list of vocabularies that match the specified criteria. You get the
+         * entire list of vocabularies if you don't enter a value in any of the request
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMedicalVocabulariesOutcomeCallable ListMedicalVocabulariesCallable(const Model::ListMedicalVocabulariesRequest& request) const;
+
+        /**
+         * <p>Returns a list of vocabularies that match the specified criteria. You get the
+         * entire list of vocabularies if you don't enter a value in any of the request
+         * parameters.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListMedicalVocabularies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMedicalVocabulariesAsync(const Model::ListMedicalVocabulariesRequest& request, const ListMedicalVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists transcription jobs with the specified status.</p><p><h3>See Also:</h3> 
@@ -653,6 +792,40 @@ namespace Model
         virtual void StartTranscriptionJobAsync(const Model::StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an existing vocabulary with new values in a different text file. The
+         * <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing
+         * information with the values that you provide in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMedicalVocabularyOutcome UpdateMedicalVocabulary(const Model::UpdateMedicalVocabularyRequest& request) const;
+
+        /**
+         * <p>Updates an existing vocabulary with new values in a different text file. The
+         * <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing
+         * information with the values that you provide in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMedicalVocabularyOutcomeCallable UpdateMedicalVocabularyCallable(const Model::UpdateMedicalVocabularyRequest& request) const;
+
+        /**
+         * <p>Updates an existing vocabulary with new values in a different text file. The
+         * <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing
+         * information with the values that you provide in the request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMedicalVocabularyAsync(const Model::UpdateMedicalVocabularyRequest& request, const UpdateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing vocabulary with new values. The
          * <code>UpdateVocabulary</code> operation overwrites all of the existing
          * information with the values that you provide in the request. </p><p><h3>See
@@ -718,22 +891,27 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateMedicalVocabularyAsyncHelper(const Model::CreateMedicalVocabularyRequest& request, const CreateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVocabularyAsyncHelper(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVocabularyFilterAsyncHelper(const Model::CreateVocabularyFilterRequest& request, const CreateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMedicalTranscriptionJobAsyncHelper(const Model::DeleteMedicalTranscriptionJobRequest& request, const DeleteMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMedicalVocabularyAsyncHelper(const Model::DeleteMedicalVocabularyRequest& request, const DeleteMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTranscriptionJobAsyncHelper(const Model::DeleteTranscriptionJobRequest& request, const DeleteTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVocabularyAsyncHelper(const Model::DeleteVocabularyRequest& request, const DeleteVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVocabularyFilterAsyncHelper(const Model::DeleteVocabularyFilterRequest& request, const DeleteVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMedicalTranscriptionJobAsyncHelper(const Model::GetMedicalTranscriptionJobRequest& request, const GetMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMedicalVocabularyAsyncHelper(const Model::GetMedicalVocabularyRequest& request, const GetMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTranscriptionJobAsyncHelper(const Model::GetTranscriptionJobRequest& request, const GetTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVocabularyAsyncHelper(const Model::GetVocabularyRequest& request, const GetVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVocabularyFilterAsyncHelper(const Model::GetVocabularyFilterRequest& request, const GetVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMedicalTranscriptionJobsAsyncHelper(const Model::ListMedicalTranscriptionJobsRequest& request, const ListMedicalTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMedicalVocabulariesAsyncHelper(const Model::ListMedicalVocabulariesRequest& request, const ListMedicalVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTranscriptionJobsAsyncHelper(const Model::ListTranscriptionJobsRequest& request, const ListTranscriptionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVocabulariesAsyncHelper(const Model::ListVocabulariesRequest& request, const ListVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVocabularyFiltersAsyncHelper(const Model::ListVocabularyFiltersRequest& request, const ListVocabularyFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMedicalTranscriptionJobAsyncHelper(const Model::StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartTranscriptionJobAsyncHelper(const Model::StartTranscriptionJobRequest& request, const StartTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMedicalVocabularyAsyncHelper(const Model::UpdateMedicalVocabularyRequest& request, const UpdateMedicalVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVocabularyAsyncHelper(const Model::UpdateVocabularyRequest& request, const UpdateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVocabularyFilterAsyncHelper(const Model::UpdateVocabularyFilterRequest& request, const UpdateVocabularyFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

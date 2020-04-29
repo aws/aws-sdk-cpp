@@ -36,8 +36,9 @@ namespace Model
 
   /**
    * <p>A complex type that contains information about an operation that matches the
-   * criteria that you specified in a <a>ListOperations</a> request.</p><p><h3>See
-   * Also:</h3>   <a
+   * criteria that you specified in a <a
+   * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html">ListOperations</a>
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/OperationSummary">AWS
    * API Reference</a></p>
    */

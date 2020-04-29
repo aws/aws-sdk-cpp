@@ -38,6 +38,7 @@ static const int W_A_F_INVALID_OPERATION_HASH = HashingUtils::HashString("WAFInv
 static const int W_A_F_DISALLOWED_NAME_HASH = HashingUtils::HashString("WAFDisallowedNameException");
 static const int W_A_F_NONEXISTENT_CONTAINER_HASH = HashingUtils::HashString("WAFNonexistentContainerException");
 static const int W_A_F_SUBSCRIPTION_NOT_FOUND_HASH = HashingUtils::HashString("WAFSubscriptionNotFoundException");
+static const int W_A_F_ENTITY_MIGRATION_HASH = HashingUtils::HashString("WAFEntityMigrationException");
 static const int W_A_F_INTERNAL_ERROR_HASH = HashingUtils::HashString("WAFInternalErrorException");
 static const int W_A_F_TAG_OPERATION_HASH = HashingUtils::HashString("WAFTagOperationException");
 static const int W_A_F_INVALID_PERMISSION_POLICY_HASH = HashingUtils::HashString("WAFInvalidPermissionPolicyException");
@@ -92,6 +93,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == W_A_F_SUBSCRIPTION_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_SUBSCRIPTION_NOT_FOUND), false);
+  }
+  else if (hashCode == W_A_F_ENTITY_MIGRATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFRegionalErrors::W_A_F_ENTITY_MIGRATION), false);
   }
   else if (hashCode == W_A_F_INTERNAL_ERROR_HASH)
   {

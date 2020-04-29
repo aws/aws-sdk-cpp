@@ -91,7 +91,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetInstances() const{ return m_instances; }
@@ -101,7 +102,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
@@ -111,7 +113,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline void SetInstances(const Aws::Vector<Aws::String>& value) { m_instancesHasBeenSet = true; m_instances = value; }
@@ -121,7 +124,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline void SetInstances(Aws::Vector<Aws::String>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
@@ -131,7 +135,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& WithInstances(const Aws::Vector<Aws::String>& value) { SetInstances(value); return *this;}
@@ -141,7 +146,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& WithInstances(Aws::Vector<Aws::String>&& value) { SetInstances(std::move(value)); return *this;}
@@ -151,7 +157,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& AddInstances(const Aws::String& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
@@ -161,7 +168,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& AddInstances(Aws::String&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
@@ -171,7 +179,8 @@ namespace Model
      * health status for.</p> <p>If you omit <code>Instances</code>, AWS Cloud Map
      * returns the health status for all the instances that are associated with the
      * specified service.</p> <note> <p>To get the IDs for the instances that you've
-     * registered by using a specified service, submit a <a>ListInstances</a>
+     * registered by using a specified service, submit a <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html">ListInstances</a>
      * request.</p> </note>
      */
     inline GetInstancesHealthStatusRequest& AddInstances(const char* value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }

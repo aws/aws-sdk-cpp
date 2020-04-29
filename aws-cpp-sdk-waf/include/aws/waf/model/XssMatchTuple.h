@@ -35,9 +35,17 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the part of a web request that you want AWS WAF to inspect for
-   * cross-site scripting attacks and, if you want AWS WAF to inspect a header, the
-   * name of the header.</p><p><h3>See Also:</h3>   <a
+   * <note> <p>This is <b>AWS WAF Classic</b> documentation. For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html">AWS
+   * WAF Classic</a> in the developer guide.</p> <p> <b>For the latest version of AWS
+   * WAF</b>, use the AWS WAFV2 API and see the <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+   * WAF Developer Guide</a>. With the latest version, AWS WAF has a single set of
+   * endpoints for regional and global use. </p> </note> <p>Specifies the part of a
+   * web request that you want AWS WAF to inspect for cross-site scripting attacks
+   * and, if you want AWS WAF to inspect a header, the name of the
+   * header.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/XssMatchTuple">AWS
    * API Reference</a></p>
    */
@@ -91,16 +99,16 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p>You can only specify a single
-     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
-     * concerned that attackers are injecting an operating system command line command
-     * and using unusual formatting to disguise some or all of the command, use this
-     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
-     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
-     * following characters: / (</p> </li> <li> <p>Replace the following characters
-     * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
-     * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
-     * <p> <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
+     * before inspecting it for a match.</p> <p>You can only specify a single type of
+     * TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're concerned that
+     * attackers are injecting an operating system command line command and using
+     * unusual formatting to disguise some or all of the command, use this option to
+     * perform the following transformations:</p> <ul> <li> <p>Delete the following
+     * characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the following
+     * characters: / (</p> </li> <li> <p>Replace the following characters with a space:
+     * , ;</p> </li> <li> <p>Replace multiple spaces with one space</p> </li> <li>
+     * <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul> <p>
+     * <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
      * characters with a space character (decimal 32):</p> <ul> <li> <p>\f, formfeed,
      * decimal 12</p> </li> <li> <p>\t, tab, decimal 9</p> </li> <li> <p>\n, newline,
      * decimal 10</p> </li> <li> <p>\r, carriage return, decimal 13</p> </li> <li>
@@ -128,16 +136,16 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p>You can only specify a single
-     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
-     * concerned that attackers are injecting an operating system command line command
-     * and using unusual formatting to disguise some or all of the command, use this
-     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
-     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
-     * following characters: / (</p> </li> <li> <p>Replace the following characters
-     * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
-     * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
-     * <p> <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
+     * before inspecting it for a match.</p> <p>You can only specify a single type of
+     * TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're concerned that
+     * attackers are injecting an operating system command line command and using
+     * unusual formatting to disguise some or all of the command, use this option to
+     * perform the following transformations:</p> <ul> <li> <p>Delete the following
+     * characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the following
+     * characters: / (</p> </li> <li> <p>Replace the following characters with a space:
+     * , ;</p> </li> <li> <p>Replace multiple spaces with one space</p> </li> <li>
+     * <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul> <p>
+     * <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
      * characters with a space character (decimal 32):</p> <ul> <li> <p>\f, formfeed,
      * decimal 12</p> </li> <li> <p>\t, tab, decimal 9</p> </li> <li> <p>\n, newline,
      * decimal 10</p> </li> <li> <p>\r, carriage return, decimal 13</p> </li> <li>
@@ -165,16 +173,16 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p>You can only specify a single
-     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
-     * concerned that attackers are injecting an operating system command line command
-     * and using unusual formatting to disguise some or all of the command, use this
-     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
-     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
-     * following characters: / (</p> </li> <li> <p>Replace the following characters
-     * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
-     * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
-     * <p> <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
+     * before inspecting it for a match.</p> <p>You can only specify a single type of
+     * TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're concerned that
+     * attackers are injecting an operating system command line command and using
+     * unusual formatting to disguise some or all of the command, use this option to
+     * perform the following transformations:</p> <ul> <li> <p>Delete the following
+     * characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the following
+     * characters: / (</p> </li> <li> <p>Replace the following characters with a space:
+     * , ;</p> </li> <li> <p>Replace multiple spaces with one space</p> </li> <li>
+     * <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul> <p>
+     * <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
      * characters with a space character (decimal 32):</p> <ul> <li> <p>\f, formfeed,
      * decimal 12</p> </li> <li> <p>\t, tab, decimal 9</p> </li> <li> <p>\n, newline,
      * decimal 10</p> </li> <li> <p>\r, carriage return, decimal 13</p> </li> <li>
@@ -202,16 +210,16 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p>You can only specify a single
-     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
-     * concerned that attackers are injecting an operating system command line command
-     * and using unusual formatting to disguise some or all of the command, use this
-     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
-     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
-     * following characters: / (</p> </li> <li> <p>Replace the following characters
-     * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
-     * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
-     * <p> <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
+     * before inspecting it for a match.</p> <p>You can only specify a single type of
+     * TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're concerned that
+     * attackers are injecting an operating system command line command and using
+     * unusual formatting to disguise some or all of the command, use this option to
+     * perform the following transformations:</p> <ul> <li> <p>Delete the following
+     * characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the following
+     * characters: / (</p> </li> <li> <p>Replace the following characters with a space:
+     * , ;</p> </li> <li> <p>Replace multiple spaces with one space</p> </li> <li>
+     * <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul> <p>
+     * <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
      * characters with a space character (decimal 32):</p> <ul> <li> <p>\f, formfeed,
      * decimal 12</p> </li> <li> <p>\t, tab, decimal 9</p> </li> <li> <p>\n, newline,
      * decimal 10</p> </li> <li> <p>\r, carriage return, decimal 13</p> </li> <li>
@@ -239,16 +247,16 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p>You can only specify a single
-     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
-     * concerned that attackers are injecting an operating system command line command
-     * and using unusual formatting to disguise some or all of the command, use this
-     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
-     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
-     * following characters: / (</p> </li> <li> <p>Replace the following characters
-     * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
-     * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
-     * <p> <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
+     * before inspecting it for a match.</p> <p>You can only specify a single type of
+     * TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're concerned that
+     * attackers are injecting an operating system command line command and using
+     * unusual formatting to disguise some or all of the command, use this option to
+     * perform the following transformations:</p> <ul> <li> <p>Delete the following
+     * characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the following
+     * characters: / (</p> </li> <li> <p>Replace the following characters with a space:
+     * , ;</p> </li> <li> <p>Replace multiple spaces with one space</p> </li> <li>
+     * <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul> <p>
+     * <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
      * characters with a space character (decimal 32):</p> <ul> <li> <p>\f, formfeed,
      * decimal 12</p> </li> <li> <p>\t, tab, decimal 9</p> </li> <li> <p>\n, newline,
      * decimal 10</p> </li> <li> <p>\r, carriage return, decimal 13</p> </li> <li>
@@ -276,16 +284,16 @@ namespace Model
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass AWS WAF. If you specify a
      * transformation, AWS WAF performs the transformation on <code>FieldToMatch</code>
-     * before inspecting a request for a match.</p> <p>You can only specify a single
-     * type of TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're
-     * concerned that attackers are injecting an operating system command line command
-     * and using unusual formatting to disguise some or all of the command, use this
-     * option to perform the following transformations:</p> <ul> <li> <p>Delete the
-     * following characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the
-     * following characters: / (</p> </li> <li> <p>Replace the following characters
-     * with a space: , ;</p> </li> <li> <p>Replace multiple spaces with one space</p>
-     * </li> <li> <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul>
-     * <p> <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
+     * before inspecting it for a match.</p> <p>You can only specify a single type of
+     * TextTransformation.</p> <p> <b>CMD_LINE</b> </p> <p>When you're concerned that
+     * attackers are injecting an operating system command line command and using
+     * unusual formatting to disguise some or all of the command, use this option to
+     * perform the following transformations:</p> <ul> <li> <p>Delete the following
+     * characters: \ " ' ^</p> </li> <li> <p>Delete spaces before the following
+     * characters: / (</p> </li> <li> <p>Replace the following characters with a space:
+     * , ;</p> </li> <li> <p>Replace multiple spaces with one space</p> </li> <li>
+     * <p>Convert uppercase letters (A-Z) to lowercase (a-z)</p> </li> </ul> <p>
+     * <b>COMPRESS_WHITE_SPACE</b> </p> <p>Use this option to replace the following
      * characters with a space character (decimal 32):</p> <ul> <li> <p>\f, formfeed,
      * decimal 12</p> </li> <li> <p>\t, tab, decimal 9</p> </li> <li> <p>\n, newline,
      * decimal 10</p> </li> <li> <p>\r, carriage return, decimal 13</p> </li> <li>

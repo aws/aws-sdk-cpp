@@ -35,14 +35,14 @@ namespace Model
 {
 
   /**
-   * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-   * an optional health check. If you specify settings for a health check, AWS Cloud
-   * Map associates the health check with the records that you specify in
-   * <code>DnsConfig</code>.</p> <important> <p>If you specify a health check
-   * configuration, you can specify either <code>HealthCheckCustomConfig</code> or
-   * <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health checks
-   * are basic Route 53 health checks that monitor an AWS endpoint. For information
-   * about pricing for health checks, see <a
+   * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+   * settings for an optional health check. If you specify settings for a health
+   * check, AWS Cloud Map associates the health check with the records that you
+   * specify in <code>DnsConfig</code>.</p> <important> <p>If you specify a health
+   * check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+   * or <code>HealthCheckConfig</code> but not both.</p> </important> <p>Health
+   * checks are basic Route 53 health checks that monitor an AWS endpoint. For
+   * information about pricing for health checks, see <a
    * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
    * <p>Note the following about configuring health checks.</p> <p> <b>A and AAAA
    * records</b> </p> <p>If <code>DnsConfig</code> includes configurations for both A
@@ -61,7 +61,7 @@ namespace Model
    * no health checks at all.</p> <p> <b>Health checking regions</b> </p> <p>Health
    * checkers perform checks from all Route 53 health-checking regions. For a list of
    * the current regions, see <a
-   * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p>
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions">Regions</a>.</p>
    * <p> <b>Alias records</b> </p> <p>When you register an instance, if you include
    * the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53
    * alias record. Note the following:</p> <ul> <li> <p>Route 53 automatically sets
@@ -69,7 +69,7 @@ namespace Model
    * <code>EvaluateTargetHealth</code> is true, the alias record inherits the health
    * of the referenced AWS resource. such as an ELB load balancer. For more
    * information, see <a
-   * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p>
+   * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.</p>
    * </li> <li> <p>If you include <code>HealthCheckConfig</code> and then use the
    * service to register an instance that creates an alias record, Route 53 doesn't
    * create the health check.</p> </li> </ul> <p> <b>Charges for health checks</b>
@@ -104,7 +104,7 @@ namespace Model
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -125,7 +125,7 @@ namespace Model
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -146,7 +146,7 @@ namespace Model
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -167,7 +167,7 @@ namespace Model
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -188,7 +188,7 @@ namespace Model
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -209,7 +209,7 @@ namespace Model
      * <b>TCP</b>: Route 53 tries to establish a TCP connection.</p> <p>If you specify
      * <code>TCP</code> for <code>Type</code>, don't specify a value for
      * <code>ResourcePath</code>.</p> </li> </ul> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -317,7 +317,7 @@ namespace Model
      * <p>The number of consecutive health checks that an endpoint must pass or fail
      * for Route 53 to change the current status of the endpoint from unhealthy to
      * healthy or vice versa. For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -327,7 +327,7 @@ namespace Model
      * <p>The number of consecutive health checks that an endpoint must pass or fail
      * for Route 53 to change the current status of the endpoint from unhealthy to
      * healthy or vice versa. For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -337,7 +337,7 @@ namespace Model
      * <p>The number of consecutive health checks that an endpoint must pass or fail
      * for Route 53 to change the current status of the endpoint from unhealthy to
      * healthy or vice versa. For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */
@@ -347,7 +347,7 @@ namespace Model
      * <p>The number of consecutive health checks that an endpoint must pass or fail
      * for Route 53 to change the current status of the endpoint from unhealthy to
      * healthy or vice versa. For more information, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53
      * Developer Guide</i>.</p>
      */

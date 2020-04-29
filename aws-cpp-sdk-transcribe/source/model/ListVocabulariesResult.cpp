@@ -27,12 +27,12 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 ListVocabulariesResult::ListVocabulariesResult() : 
-    m_status(TranscriptionJobStatus::NOT_SET)
+    m_status(VocabularyState::NOT_SET)
 {
 }
 
 ListVocabulariesResult::ListVocabulariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(TranscriptionJobStatus::NOT_SET)
+    m_status(VocabularyState::NOT_SET)
 {
   *this = result;
 }
@@ -42,7 +42,7 @@ ListVocabulariesResult& ListVocabulariesResult::operator =(const Aws::AmazonWebS
   JsonView jsonValue = result.GetPayload().View();
   if(jsonValue.ValueExists("Status"))
   {
-    m_status = TranscriptionJobStatusMapper::GetTranscriptionJobStatusForName(jsonValue.GetString("Status"));
+    m_status = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("Status"));
 
   }
 

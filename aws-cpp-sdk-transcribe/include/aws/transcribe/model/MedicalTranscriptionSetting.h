@@ -15,6 +15,8 @@
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -242,6 +244,55 @@ namespace Model
      */
     inline MedicalTranscriptionSetting& WithMaxAlternatives(int value) { SetMaxAlternatives(value); return *this;}
 
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline MedicalTranscriptionSetting& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline MedicalTranscriptionSetting& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the vocabulary to use when processing a medical transcription
+     * job.</p>
+     */
+    inline MedicalTranscriptionSetting& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+
   private:
 
     bool m_showSpeakerLabels;
@@ -258,6 +309,9 @@ namespace Model
 
     int m_maxAlternatives;
     bool m_maxAlternativesHasBeenSet;
+
+    Aws::String m_vocabularyName;
+    bool m_vocabularyNameHasBeenSet;
   };
 
 } // namespace Model

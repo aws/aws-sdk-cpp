@@ -41,6 +41,7 @@
 #include <aws/waf/model/CreateSizeConstraintSetRequest.h>
 #include <aws/waf/model/CreateSqlInjectionMatchSetRequest.h>
 #include <aws/waf/model/CreateWebACLRequest.h>
+#include <aws/waf/model/CreateWebACLMigrationStackRequest.h>
 #include <aws/waf/model/CreateXssMatchSetRequest.h>
 #include <aws/waf/model/DeleteByteMatchSetRequest.h>
 #include <aws/waf/model/DeleteGeoMatchSetRequest.h>
@@ -562,6 +563,41 @@ void WAFClient::CreateWebACLAsync(const CreateWebACLRequest& request, const Crea
 void WAFClient::CreateWebACLAsyncHelper(const CreateWebACLRequest& request, const CreateWebACLResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateWebACL(request), context);
+}
+
+CreateWebACLMigrationStackOutcome WAFClient::CreateWebACLMigrationStack(const CreateWebACLMigrationStackRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateWebACLMigrationStackOutcome(CreateWebACLMigrationStackResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateWebACLMigrationStackOutcome(outcome.GetError());
+  }
+}
+
+CreateWebACLMigrationStackOutcomeCallable WAFClient::CreateWebACLMigrationStackCallable(const CreateWebACLMigrationStackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateWebACLMigrationStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateWebACLMigrationStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WAFClient::CreateWebACLMigrationStackAsync(const CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateWebACLMigrationStackAsyncHelper( request, handler, context ); } );
+}
+
+void WAFClient::CreateWebACLMigrationStackAsyncHelper(const CreateWebACLMigrationStackRequest& request, const CreateWebACLMigrationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateWebACLMigrationStack(request), context);
 }
 
 CreateXssMatchSetOutcome WAFClient::CreateXssMatchSet(const CreateXssMatchSetRequest& request) const

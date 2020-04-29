@@ -67,7 +67,7 @@ namespace Model
      * <p>If you don't define a health check for the service, Route 53 assumes that all
      * instances are healthy and returns the values for up to eight instances.</p>
      * <p>For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
      * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
      * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
@@ -81,7 +81,7 @@ namespace Model
      * assumes that all instances are healthy and returns the applicable value for one
      * randomly selected instance.</p> <p>For more information about the weighted
      * routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
      * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline const RoutingPolicy& GetRoutingPolicy() const{ return m_routingPolicy; }
@@ -102,7 +102,7 @@ namespace Model
      * <p>If you don't define a health check for the service, Route 53 assumes that all
      * instances are healthy and returns the values for up to eight instances.</p>
      * <p>For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
      * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
      * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
@@ -116,7 +116,7 @@ namespace Model
      * assumes that all instances are healthy and returns the applicable value for one
      * randomly selected instance.</p> <p>For more information about the weighted
      * routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
      * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline bool RoutingPolicyHasBeenSet() const { return m_routingPolicyHasBeenSet; }
@@ -137,7 +137,7 @@ namespace Model
      * <p>If you don't define a health check for the service, Route 53 assumes that all
      * instances are healthy and returns the values for up to eight instances.</p>
      * <p>For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
      * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
      * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
@@ -151,7 +151,7 @@ namespace Model
      * assumes that all instances are healthy and returns the applicable value for one
      * randomly selected instance.</p> <p>For more information about the weighted
      * routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
      * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline void SetRoutingPolicy(const RoutingPolicy& value) { m_routingPolicyHasBeenSet = true; m_routingPolicy = value; }
@@ -172,7 +172,7 @@ namespace Model
      * <p>If you don't define a health check for the service, Route 53 assumes that all
      * instances are healthy and returns the values for up to eight instances.</p>
      * <p>For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
      * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
      * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
@@ -186,7 +186,7 @@ namespace Model
      * assumes that all instances are healthy and returns the applicable value for one
      * randomly selected instance.</p> <p>For more information about the weighted
      * routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
      * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline void SetRoutingPolicy(RoutingPolicy&& value) { m_routingPolicyHasBeenSet = true; m_routingPolicy = std::move(value); }
@@ -207,7 +207,7 @@ namespace Model
      * <p>If you don't define a health check for the service, Route 53 assumes that all
      * instances are healthy and returns the values for up to eight instances.</p>
      * <p>For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
      * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
      * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
@@ -221,7 +221,7 @@ namespace Model
      * assumes that all instances are healthy and returns the applicable value for one
      * randomly selected instance.</p> <p>For more information about the weighted
      * routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
      * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline DnsConfig& WithRoutingPolicy(const RoutingPolicy& value) { SetRoutingPolicy(value); return *this;}
@@ -242,7 +242,7 @@ namespace Model
      * <p>If you don't define a health check for the service, Route 53 assumes that all
      * instances are healthy and returns the values for up to eight instances.</p>
      * <p>For more information about the multivalue routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-multivalue">Multivalue
      * Answer Routing</a> in the <i>Route 53 Developer Guide</i>.</p> <p>
      * <b>WEIGHTED</b> </p> <p>Route 53 returns the applicable value from one randomly
      * selected instance from among the instances that you registered using the same
@@ -256,7 +256,7 @@ namespace Model
      * assumes that all instances are healthy and returns the applicable value for one
      * randomly selected instance.</p> <p>For more information about the weighted
      * routing policy, see <a
-     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-weighted">Weighted
      * Routing</a> in the <i>Route 53 Developer Guide</i>.</p>
      */
     inline DnsConfig& WithRoutingPolicy(RoutingPolicy&& value) { SetRoutingPolicy(std::move(value)); return *this;}

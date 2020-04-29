@@ -227,28 +227,32 @@ namespace Model
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline ServiceSummary& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 

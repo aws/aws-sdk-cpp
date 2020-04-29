@@ -53,56 +53,72 @@ namespace Model
     /**
      * <p>The name of the medical transcription job. You can't use the strings "." or
      * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * account. If you try to create a medical transcription job with the same name as
+     * a previous medical transcription job you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline const Aws::String& GetMedicalTranscriptionJobName() const{ return m_medicalTranscriptionJobName; }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings "." or
      * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * account. If you try to create a medical transcription job with the same name as
+     * a previous medical transcription job you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline bool MedicalTranscriptionJobNameHasBeenSet() const { return m_medicalTranscriptionJobNameHasBeenSet; }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings "." or
      * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * account. If you try to create a medical transcription job with the same name as
+     * a previous medical transcription job you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(const Aws::String& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = value; }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings "." or
      * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * account. If you try to create a medical transcription job with the same name as
+     * a previous medical transcription job you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(Aws::String&& value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName = std::move(value); }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings "." or
      * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * account. If you try to create a medical transcription job with the same name as
+     * a previous medical transcription job you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline void SetMedicalTranscriptionJobName(const char* value) { m_medicalTranscriptionJobNameHasBeenSet = true; m_medicalTranscriptionJobName.assign(value); }
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings "." or
      * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * account. If you try to create a medical transcription job with the same name as
+     * a previous medical transcription job you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const Aws::String& value) { SetMedicalTranscriptionJobName(value); return *this;}
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings "." or
      * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * account. If you try to create a medical transcription job with the same name as
+     * a previous medical transcription job you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(Aws::String&& value) { SetMedicalTranscriptionJobName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the medical transcription job. You can't use the strings "." or
      * ".." by themselves as the job name. The name must also be unique within an AWS
-     * account.</p>
+     * account. If you try to create a medical transcription job with the same name as
+     * a previous medical transcription job you will receive a
+     * <code>ConflictException</code> error.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithMedicalTranscriptionJobName(const char* value) { SetMedicalTranscriptionJobName(value); return *this;}
 
@@ -602,44 +618,50 @@ namespace Model
 
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * <p>The speech of clinician in the input audio. <code>CONVERSATION</code> refers
-     * to conversations clinicians have with patients. <code>DICTATION</code> refers to
-     * medical professionals dictating their notes about a patient encounter.</p>
+     * <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to
+     * conversations between two or more speakers, e.g., a conversations between
+     * doctors and patients. <code>DICTATION</code> refers to single-speaker dictated
+     * speech, e.g., for clinical notes.</p>
      */
     inline StartMedicalTranscriptionJobRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

@@ -268,28 +268,32 @@ namespace Model
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
      * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count.</p>
+     * deleted are not included in the count. The count might not reflect pending
+     * registrations and deregistrations.</p>
      */
     inline Service& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
@@ -332,62 +336,62 @@ namespace Model
 
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
+     * 53 Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
+     * 53 Pricing</a>.</p>
      */
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
+     * 53 Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
+     * 53 Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
+     * 53 Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
     /**
-     * <p> <i>Public DNS namespaces only.</i> A complex type that contains settings for
-     * an optional health check. If you specify settings for a health check, AWS Cloud
-     * Map associates the health check with the records that you specify in
-     * <code>DnsConfig</code>.</p> <p>For information about the charges for health
-     * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53
-     * Pricing</a>.</p>
+     * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
+     * settings for an optional health check. If you specify settings for a health
+     * check, AWS Cloud Map associates the health check with the records that you
+     * specify in <code>DnsConfig</code>.</p> <p>For information about the charges for
+     * health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route
+     * 53 Pricing</a>.</p>
      */
     inline Service& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 

@@ -15,7 +15,7 @@
 
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
-#include <aws/transcribe/model/TranscriptionJobStatus.h>
+#include <aws/transcribe/model/VocabularyState.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/transcribe/model/VocabularyInfo.h>
@@ -48,27 +48,27 @@ namespace Model
     /**
      * <p>The requested vocabulary state.</p>
      */
-    inline const TranscriptionJobStatus& GetStatus() const{ return m_status; }
+    inline const VocabularyState& GetStatus() const{ return m_status; }
 
     /**
      * <p>The requested vocabulary state.</p>
      */
-    inline void SetStatus(const TranscriptionJobStatus& value) { m_status = value; }
+    inline void SetStatus(const VocabularyState& value) { m_status = value; }
 
     /**
      * <p>The requested vocabulary state.</p>
      */
-    inline void SetStatus(TranscriptionJobStatus&& value) { m_status = std::move(value); }
+    inline void SetStatus(VocabularyState&& value) { m_status = std::move(value); }
 
     /**
      * <p>The requested vocabulary state.</p>
      */
-    inline ListVocabulariesResult& WithStatus(const TranscriptionJobStatus& value) { SetStatus(value); return *this;}
+    inline ListVocabulariesResult& WithStatus(const VocabularyState& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The requested vocabulary state.</p>
      */
-    inline ListVocabulariesResult& WithStatus(TranscriptionJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ListVocabulariesResult& WithStatus(VocabularyState&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -186,7 +186,7 @@ namespace Model
 
   private:
 
-    TranscriptionJobStatus m_status;
+    VocabularyState m_status;
 
     Aws::String m_nextToken;
 

@@ -92,16 +92,17 @@ namespace Model
      * following:</p> <ul> <li> <p>If the service that is specified by
      * <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the
-     * SRV record. For more information, see <a>DnsRecord$Type</a>.</p> </li> <li>
-     * <p>You can use this value to update an existing instance.</p> </li> <li> <p>To
-     * register a new instance, you must specify a value that is unique among instances
-     * that you register by using the same service. </p> </li> <li> <p>If you specify
-     * an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS Cloud Map
-     * updates the existing DNS records, if any. If there's also an existing health
-     * check, AWS Cloud Map deletes the old health check and creates a new one. </p>
-     * <note> <p>The health check isn't deleted immediately, so it will still appear
-     * for a while if you submit a <code>ListHealthChecks</code> request, for
-     * example.</p> </note> </li> </ul>
+     * SRV record. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.</p> </li> <li> <p>You can use this value to update an existing
+     * instance.</p> </li> <li> <p>To register a new instance, you must specify a value
+     * that is unique among instances that you register by using the same service. </p>
+     * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
+     * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records, if any.
+     * If there's also an existing health check, AWS Cloud Map deletes the old health
+     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * immediately, so it will still appear for a while if you submit a
+     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
@@ -110,16 +111,17 @@ namespace Model
      * following:</p> <ul> <li> <p>If the service that is specified by
      * <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the
-     * SRV record. For more information, see <a>DnsRecord$Type</a>.</p> </li> <li>
-     * <p>You can use this value to update an existing instance.</p> </li> <li> <p>To
-     * register a new instance, you must specify a value that is unique among instances
-     * that you register by using the same service. </p> </li> <li> <p>If you specify
-     * an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS Cloud Map
-     * updates the existing DNS records, if any. If there's also an existing health
-     * check, AWS Cloud Map deletes the old health check and creates a new one. </p>
-     * <note> <p>The health check isn't deleted immediately, so it will still appear
-     * for a while if you submit a <code>ListHealthChecks</code> request, for
-     * example.</p> </note> </li> </ul>
+     * SRV record. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.</p> </li> <li> <p>You can use this value to update an existing
+     * instance.</p> </li> <li> <p>To register a new instance, you must specify a value
+     * that is unique among instances that you register by using the same service. </p>
+     * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
+     * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records, if any.
+     * If there's also an existing health check, AWS Cloud Map deletes the old health
+     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * immediately, so it will still appear for a while if you submit a
+     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
@@ -128,16 +130,17 @@ namespace Model
      * following:</p> <ul> <li> <p>If the service that is specified by
      * <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the
-     * SRV record. For more information, see <a>DnsRecord$Type</a>.</p> </li> <li>
-     * <p>You can use this value to update an existing instance.</p> </li> <li> <p>To
-     * register a new instance, you must specify a value that is unique among instances
-     * that you register by using the same service. </p> </li> <li> <p>If you specify
-     * an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS Cloud Map
-     * updates the existing DNS records, if any. If there's also an existing health
-     * check, AWS Cloud Map deletes the old health check and creates a new one. </p>
-     * <note> <p>The health check isn't deleted immediately, so it will still appear
-     * for a while if you submit a <code>ListHealthChecks</code> request, for
-     * example.</p> </note> </li> </ul>
+     * SRV record. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.</p> </li> <li> <p>You can use this value to update an existing
+     * instance.</p> </li> <li> <p>To register a new instance, you must specify a value
+     * that is unique among instances that you register by using the same service. </p>
+     * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
+     * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records, if any.
+     * If there's also an existing health check, AWS Cloud Map deletes the old health
+     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * immediately, so it will still appear for a while if you submit a
+     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
@@ -146,16 +149,17 @@ namespace Model
      * following:</p> <ul> <li> <p>If the service that is specified by
      * <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the
-     * SRV record. For more information, see <a>DnsRecord$Type</a>.</p> </li> <li>
-     * <p>You can use this value to update an existing instance.</p> </li> <li> <p>To
-     * register a new instance, you must specify a value that is unique among instances
-     * that you register by using the same service. </p> </li> <li> <p>If you specify
-     * an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS Cloud Map
-     * updates the existing DNS records, if any. If there's also an existing health
-     * check, AWS Cloud Map deletes the old health check and creates a new one. </p>
-     * <note> <p>The health check isn't deleted immediately, so it will still appear
-     * for a while if you submit a <code>ListHealthChecks</code> request, for
-     * example.</p> </note> </li> </ul>
+     * SRV record. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.</p> </li> <li> <p>You can use this value to update an existing
+     * instance.</p> </li> <li> <p>To register a new instance, you must specify a value
+     * that is unique among instances that you register by using the same service. </p>
+     * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
+     * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records, if any.
+     * If there's also an existing health check, AWS Cloud Map deletes the old health
+     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * immediately, so it will still appear for a while if you submit a
+     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
@@ -164,16 +168,17 @@ namespace Model
      * following:</p> <ul> <li> <p>If the service that is specified by
      * <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the
-     * SRV record. For more information, see <a>DnsRecord$Type</a>.</p> </li> <li>
-     * <p>You can use this value to update an existing instance.</p> </li> <li> <p>To
-     * register a new instance, you must specify a value that is unique among instances
-     * that you register by using the same service. </p> </li> <li> <p>If you specify
-     * an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS Cloud Map
-     * updates the existing DNS records, if any. If there's also an existing health
-     * check, AWS Cloud Map deletes the old health check and creates a new one. </p>
-     * <note> <p>The health check isn't deleted immediately, so it will still appear
-     * for a while if you submit a <code>ListHealthChecks</code> request, for
-     * example.</p> </note> </li> </ul>
+     * SRV record. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.</p> </li> <li> <p>You can use this value to update an existing
+     * instance.</p> </li> <li> <p>To register a new instance, you must specify a value
+     * that is unique among instances that you register by using the same service. </p>
+     * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
+     * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records, if any.
+     * If there's also an existing health check, AWS Cloud Map deletes the old health
+     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * immediately, so it will still appear for a while if you submit a
+     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
@@ -182,16 +187,17 @@ namespace Model
      * following:</p> <ul> <li> <p>If the service that is specified by
      * <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the
-     * SRV record. For more information, see <a>DnsRecord$Type</a>.</p> </li> <li>
-     * <p>You can use this value to update an existing instance.</p> </li> <li> <p>To
-     * register a new instance, you must specify a value that is unique among instances
-     * that you register by using the same service. </p> </li> <li> <p>If you specify
-     * an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS Cloud Map
-     * updates the existing DNS records, if any. If there's also an existing health
-     * check, AWS Cloud Map deletes the old health check and creates a new one. </p>
-     * <note> <p>The health check isn't deleted immediately, so it will still appear
-     * for a while if you submit a <code>ListHealthChecks</code> request, for
-     * example.</p> </note> </li> </ul>
+     * SRV record. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.</p> </li> <li> <p>You can use this value to update an existing
+     * instance.</p> </li> <li> <p>To register a new instance, you must specify a value
+     * that is unique among instances that you register by using the same service. </p>
+     * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
+     * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records, if any.
+     * If there's also an existing health check, AWS Cloud Map deletes the old health
+     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * immediately, so it will still appear for a while if you submit a
+     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
      */
     inline RegisterInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
@@ -200,16 +206,17 @@ namespace Model
      * following:</p> <ul> <li> <p>If the service that is specified by
      * <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the
-     * SRV record. For more information, see <a>DnsRecord$Type</a>.</p> </li> <li>
-     * <p>You can use this value to update an existing instance.</p> </li> <li> <p>To
-     * register a new instance, you must specify a value that is unique among instances
-     * that you register by using the same service. </p> </li> <li> <p>If you specify
-     * an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS Cloud Map
-     * updates the existing DNS records, if any. If there's also an existing health
-     * check, AWS Cloud Map deletes the old health check and creates a new one. </p>
-     * <note> <p>The health check isn't deleted immediately, so it will still appear
-     * for a while if you submit a <code>ListHealthChecks</code> request, for
-     * example.</p> </note> </li> </ul>
+     * SRV record. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.</p> </li> <li> <p>You can use this value to update an existing
+     * instance.</p> </li> <li> <p>To register a new instance, you must specify a value
+     * that is unique among instances that you register by using the same service. </p>
+     * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
+     * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records, if any.
+     * If there's also an existing health check, AWS Cloud Map deletes the old health
+     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * immediately, so it will still appear for a while if you submit a
+     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
      */
     inline RegisterInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
@@ -218,16 +225,17 @@ namespace Model
      * following:</p> <ul> <li> <p>If the service that is specified by
      * <code>ServiceId</code> includes settings for an SRV record, the value of
      * <code>InstanceId</code> is automatically included as part of the value for the
-     * SRV record. For more information, see <a>DnsRecord$Type</a>.</p> </li> <li>
-     * <p>You can use this value to update an existing instance.</p> </li> <li> <p>To
-     * register a new instance, you must specify a value that is unique among instances
-     * that you register by using the same service. </p> </li> <li> <p>If you specify
-     * an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS Cloud Map
-     * updates the existing DNS records, if any. If there's also an existing health
-     * check, AWS Cloud Map deletes the old health check and creates a new one. </p>
-     * <note> <p>The health check isn't deleted immediately, so it will still appear
-     * for a while if you submit a <code>ListHealthChecks</code> request, for
-     * example.</p> </note> </li> </ul>
+     * SRV record. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.</p> </li> <li> <p>You can use this value to update an existing
+     * instance.</p> </li> <li> <p>To register a new instance, you must specify a value
+     * that is unique among instances that you register by using the same service. </p>
+     * </li> <li> <p>If you specify an existing <code>InstanceId</code> and
+     * <code>ServiceId</code>, AWS Cloud Map updates the existing DNS records, if any.
+     * If there's also an existing health check, AWS Cloud Map deletes the old health
+     * check and creates a new one. </p> <note> <p>The health check isn't deleted
+     * immediately, so it will still appear for a while if you submit a
+     * <code>ListHealthChecks</code> request, for example.</p> </note> </li> </ul>
      */
     inline RegisterInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -331,7 +339,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -371,10 +379,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -388,7 +396,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -428,10 +436,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -445,7 +453,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -485,10 +493,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -502,7 +510,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -542,10 +550,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -559,7 +567,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -599,10 +607,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -616,7 +624,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -656,10 +664,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -673,7 +681,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -713,10 +721,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -730,7 +738,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -770,10 +778,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -787,7 +795,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -827,10 +835,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -844,7 +852,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -884,10 +892,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -901,7 +909,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -941,10 +949,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -958,7 +966,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -998,10 +1006,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -1015,7 +1023,7 @@ namespace Model
      * routes traffic to an Elastic Load Balancing load balancer, specify the DNS name
      * that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
-     * href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
      * in the <i>Route 53 API Reference</i>.</p> <p>Note the following:</p> <ul> <li>
      * <p>The configuration for the service that is specified by <code>ServiceId</code>
      * must include settings for an A record, an AAAA record, or both.</p> </li> <li>
@@ -1055,10 +1063,10 @@ namespace Model
      * return for the port.</p> <p>If the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      * to send requests to. </p> <p>This value is required if you specified settings
-     * for an SRV record when you created the service.</p> <p> <b>Custom attributes</b>
-     * </p> <p>You can add up to 30 custom attributes. For each key-value pair, the
-     * maximum length of the attribute name is 255 characters, and the maximum length
-     * of the attribute value is 1,024 characters. </p>
+     * for an SRV record or a Route 53 health check when you created the service.</p>
+     * <p> <b>Custom attributes</b> </p> <p>You can add up to 30 custom attributes. For
+     * each key-value pair, the maximum length of the attribute name is 255 characters,
+     * and the maximum length of the attribute value is 1,024 characters. </p>
      */
     inline RegisterInstanceRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

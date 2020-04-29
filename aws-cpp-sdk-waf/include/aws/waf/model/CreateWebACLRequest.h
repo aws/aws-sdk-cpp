@@ -261,28 +261,44 @@ namespace Model
     inline CreateWebACLRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CreateWebACLRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CreateWebACLRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CreateWebACLRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline CreateWebACLRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
