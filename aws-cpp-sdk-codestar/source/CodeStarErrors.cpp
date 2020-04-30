@@ -60,7 +60,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == PROJECT_NOT_FOUND_HASH)
   {

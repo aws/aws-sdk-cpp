@@ -43,22 +43,34 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The date the schema version was created.</p>
+     */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
-    
+    /**
+     * <p>The date the schema version was created.</p>
+     */
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
 
-    
+    /**
+     * <p>The date the schema version was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
-    
+    /**
+     * <p>The date the schema version was created.</p>
+     */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
 
-    
+    /**
+     * <p>The date the schema version was created.</p>
+     */
     inline SearchSchemaVersionSummary& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
-    
+    /**
+     * <p>The date the schema version was created.</p>
+     */
     inline SearchSchemaVersionSummary& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
 

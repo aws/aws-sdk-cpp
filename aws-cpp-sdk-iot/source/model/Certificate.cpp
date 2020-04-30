@@ -33,6 +33,8 @@ Certificate::Certificate() :
     m_certificateIdHasBeenSet(false),
     m_status(CertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_certificateMode(CertificateMode::NOT_SET),
+    m_certificateModeHasBeenSet(false),
     m_creationDateHasBeenSet(false)
 {
 }
@@ -42,6 +44,8 @@ Certificate::Certificate(JsonView jsonValue) :
     m_certificateIdHasBeenSet(false),
     m_status(CertificateStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_certificateMode(CertificateMode::NOT_SET),
+    m_certificateModeHasBeenSet(false),
     m_creationDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -68,6 +72,13 @@ Certificate& Certificate::operator =(JsonView jsonValue)
     m_status = CertificateStatusMapper::GetCertificateStatusForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("certificateMode"))
+  {
+    m_certificateMode = CertificateModeMapper::GetCertificateModeForName(jsonValue.GetString("certificateMode"));
+
+    m_certificateModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("creationDate"))
@@ -99,6 +110,11 @@ JsonValue Certificate::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", CertificateStatusMapper::GetNameForCertificateStatus(m_status));
+  }
+
+  if(m_certificateModeHasBeenSet)
+  {
+   payload.WithString("certificateMode", CertificateModeMapper::GetNameForCertificateMode(m_certificateMode));
   }
 
   if(m_creationDateHasBeenSet)

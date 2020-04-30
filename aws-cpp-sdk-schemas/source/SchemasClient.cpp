@@ -35,6 +35,7 @@
 #include <aws/schemas/model/CreateSchemaRequest.h>
 #include <aws/schemas/model/DeleteDiscovererRequest.h>
 #include <aws/schemas/model/DeleteRegistryRequest.h>
+#include <aws/schemas/model/DeleteResourcePolicyRequest.h>
 #include <aws/schemas/model/DeleteSchemaRequest.h>
 #include <aws/schemas/model/DeleteSchemaVersionRequest.h>
 #include <aws/schemas/model/DescribeCodeBindingRequest.h>
@@ -43,18 +44,18 @@
 #include <aws/schemas/model/DescribeSchemaRequest.h>
 #include <aws/schemas/model/GetCodeBindingSourceRequest.h>
 #include <aws/schemas/model/GetDiscoveredSchemaRequest.h>
+#include <aws/schemas/model/GetResourcePolicyRequest.h>
 #include <aws/schemas/model/ListDiscoverersRequest.h>
 #include <aws/schemas/model/ListRegistriesRequest.h>
 #include <aws/schemas/model/ListSchemaVersionsRequest.h>
 #include <aws/schemas/model/ListSchemasRequest.h>
 #include <aws/schemas/model/ListTagsForResourceRequest.h>
-#include <aws/schemas/model/LockServiceLinkedRoleRequest.h>
 #include <aws/schemas/model/PutCodeBindingRequest.h>
+#include <aws/schemas/model/PutResourcePolicyRequest.h>
 #include <aws/schemas/model/SearchSchemasRequest.h>
 #include <aws/schemas/model/StartDiscovererRequest.h>
 #include <aws/schemas/model/StopDiscovererRequest.h>
 #include <aws/schemas/model/TagResourceRequest.h>
-#include <aws/schemas/model/UnlockServiceLinkedRoleRequest.h>
 #include <aws/schemas/model/UntagResourceRequest.h>
 #include <aws/schemas/model/UpdateDiscovererRequest.h>
 #include <aws/schemas/model/UpdateRegistryRequest.h>
@@ -336,6 +337,41 @@ void SchemasClient::DeleteRegistryAsync(const DeleteRegistryRequest& request, co
 void SchemasClient::DeleteRegistryAsyncHelper(const DeleteRegistryRequest& request, const DeleteRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRegistry(request), context);
+}
+
+DeleteResourcePolicyOutcome SchemasClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteResourcePolicyOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteResourcePolicyOutcomeCallable SchemasClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SchemasClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void SchemasClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourcePolicy(request), context);
 }
 
 DeleteSchemaOutcome SchemasClient::DeleteSchema(const DeleteSchemaRequest& request) const
@@ -717,6 +753,41 @@ void SchemasClient::GetDiscoveredSchemaAsyncHelper(const GetDiscoveredSchemaRequ
   handler(this, request, GetDiscoveredSchema(request), context);
 }
 
+GetResourcePolicyOutcome SchemasClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetResourcePolicyOutcome(GetResourcePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+GetResourcePolicyOutcomeCallable SchemasClient::GetResourcePolicyCallable(const GetResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SchemasClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void SchemasClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourcePolicy(request), context);
+}
+
 ListDiscoverersOutcome SchemasClient::ListDiscoverers(const ListDiscoverersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -919,41 +990,6 @@ void SchemasClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequ
   handler(this, request, ListTagsForResource(request), context);
 }
 
-LockServiceLinkedRoleOutcome SchemasClient::LockServiceLinkedRole(const LockServiceLinkedRoleRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slr-deletion/lock";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return LockServiceLinkedRoleOutcome(LockServiceLinkedRoleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return LockServiceLinkedRoleOutcome(outcome.GetError());
-  }
-}
-
-LockServiceLinkedRoleOutcomeCallable SchemasClient::LockServiceLinkedRoleCallable(const LockServiceLinkedRoleRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< LockServiceLinkedRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->LockServiceLinkedRole(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void SchemasClient::LockServiceLinkedRoleAsync(const LockServiceLinkedRoleRequest& request, const LockServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->LockServiceLinkedRoleAsyncHelper( request, handler, context ); } );
-}
-
-void SchemasClient::LockServiceLinkedRoleAsyncHelper(const LockServiceLinkedRoleRequest& request, const LockServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, LockServiceLinkedRole(request), context);
-}
-
 PutCodeBindingOutcome SchemasClient::PutCodeBinding(const PutCodeBindingRequest& request) const
 {
   if (!request.LanguageHasBeenSet())
@@ -1007,6 +1043,41 @@ void SchemasClient::PutCodeBindingAsync(const PutCodeBindingRequest& request, co
 void SchemasClient::PutCodeBindingAsyncHelper(const PutCodeBindingRequest& request, const PutCodeBindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutCodeBinding(request), context);
+}
+
+PutResourcePolicyOutcome SchemasClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutResourcePolicyOutcome(PutResourcePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+PutResourcePolicyOutcomeCallable SchemasClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SchemasClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void SchemasClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutResourcePolicy(request), context);
 }
 
 SearchSchemasOutcome SchemasClient::SearchSchemas(const SearchSchemasRequest& request) const
@@ -1179,41 +1250,6 @@ void SchemasClient::TagResourceAsync(const TagResourceRequest& request, const Ta
 void SchemasClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TagResource(request), context);
-}
-
-UnlockServiceLinkedRoleOutcome SchemasClient::UnlockServiceLinkedRole(const UnlockServiceLinkedRoleRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/slr-deletion/unlock";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UnlockServiceLinkedRoleOutcome(UnlockServiceLinkedRoleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UnlockServiceLinkedRoleOutcome(outcome.GetError());
-  }
-}
-
-UnlockServiceLinkedRoleOutcomeCallable SchemasClient::UnlockServiceLinkedRoleCallable(const UnlockServiceLinkedRoleRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< UnlockServiceLinkedRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UnlockServiceLinkedRole(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void SchemasClient::UnlockServiceLinkedRoleAsync(const UnlockServiceLinkedRoleRequest& request, const UnlockServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->UnlockServiceLinkedRoleAsyncHelper( request, handler, context ); } );
-}
-
-void SchemasClient::UnlockServiceLinkedRoleAsyncHelper(const UnlockServiceLinkedRoleRequest& request, const UnlockServiceLinkedRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, UnlockServiceLinkedRole(request), context);
 }
 
 UntagResourceOutcome SchemasClient::UntagResource(const UntagResourceRequest& request) const

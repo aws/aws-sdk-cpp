@@ -37,7 +37,8 @@ ContainerSettings::ContainerSettings() :
     m_m3u8SettingsHasBeenSet(false),
     m_movSettingsHasBeenSet(false),
     m_mp4SettingsHasBeenSet(false),
-    m_mpdSettingsHasBeenSet(false)
+    m_mpdSettingsHasBeenSet(false),
+    m_mxfSettingsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ContainerSettings::ContainerSettings(JsonView jsonValue) :
     m_m3u8SettingsHasBeenSet(false),
     m_movSettingsHasBeenSet(false),
     m_mp4SettingsHasBeenSet(false),
-    m_mpdSettingsHasBeenSet(false)
+    m_mpdSettingsHasBeenSet(false),
+    m_mxfSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +115,13 @@ ContainerSettings& ContainerSettings::operator =(JsonView jsonValue)
     m_mpdSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mxfSettings"))
+  {
+    m_mxfSettings = jsonValue.GetObject("mxfSettings");
+
+    m_mxfSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +173,12 @@ JsonValue ContainerSettings::Jsonize() const
   if(m_mpdSettingsHasBeenSet)
   {
    payload.WithObject("mpdSettings", m_mpdSettings.Jsonize());
+
+  }
+
+  if(m_mxfSettingsHasBeenSet)
+  {
+   payload.WithObject("mxfSettings", m_mxfSettings.Jsonize());
 
   }
 

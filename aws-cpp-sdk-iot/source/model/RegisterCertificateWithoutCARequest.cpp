@@ -13,32 +13,40 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/schemas/model/UnlockServiceLinkedRoleResult.h>
+#include <aws/iot/model/RegisterCertificateWithoutCARequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/AmazonWebServiceResult.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
-using namespace Aws::Schemas::Model;
+using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
-using namespace Aws;
 
-UnlockServiceLinkedRoleResult::UnlockServiceLinkedRoleResult()
+RegisterCertificateWithoutCARequest::RegisterCertificateWithoutCARequest() : 
+    m_certificatePemHasBeenSet(false),
+    m_status(CertificateStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
-UnlockServiceLinkedRoleResult::UnlockServiceLinkedRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+Aws::String RegisterCertificateWithoutCARequest::SerializePayload() const
 {
-  *this = result;
+  JsonValue payload;
+
+  if(m_certificatePemHasBeenSet)
+  {
+   payload.WithString("certificatePem", m_certificatePem);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", CertificateStatusMapper::GetNameForCertificateStatus(m_status));
+  }
+
+  return payload.View().WriteReadable();
 }
 
-UnlockServiceLinkedRoleResult& UnlockServiceLinkedRoleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
-{
-  AWS_UNREFERENCED_PARAM(result);
 
 
-  return *this;
-}
+

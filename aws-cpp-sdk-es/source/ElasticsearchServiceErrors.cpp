@@ -63,7 +63,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == INVALID_TYPE_HASH)
   {

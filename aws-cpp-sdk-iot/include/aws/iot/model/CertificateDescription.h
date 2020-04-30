@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/TransferData.h>
 #include <aws/iot/model/CertificateValidity.h>
+#include <aws/iot/model/CertificateMode.h>
 #include <utility>
 
 namespace Aws
@@ -513,6 +514,37 @@ namespace Model
      */
     inline CertificateDescription& WithValidity(CertificateValidity&& value) { SetValidity(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline const CertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline void SetCertificateMode(const CertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline void SetCertificateMode(CertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline CertificateDescription& WithCertificateMode(const CertificateMode& value) { SetCertificateMode(value); return *this;}
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline CertificateDescription& WithCertificateMode(CertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_certificateArn;
@@ -553,6 +585,9 @@ namespace Model
 
     CertificateValidity m_validity;
     bool m_validityHasBeenSet;
+
+    CertificateMode m_certificateMode;
+    bool m_certificateModeHasBeenSet;
   };
 
 } // namespace Model

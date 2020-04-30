@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/iotevents/model/TagrisStatus.h>
+#include <aws/mediaconvert/model/MxfAfdSignaling.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -23,46 +23,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace IoTEvents
+  namespace MediaConvert
   {
     namespace Model
     {
-      namespace TagrisStatusMapper
+      namespace MxfAfdSignalingMapper
       {
 
-        static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
-        static const int NOT_ACTIVE_HASH = HashingUtils::HashString("NOT_ACTIVE");
+        static const int NO_COPY_HASH = HashingUtils::HashString("NO_COPY");
+        static const int COPY_FROM_VIDEO_HASH = HashingUtils::HashString("COPY_FROM_VIDEO");
 
 
-        TagrisStatus GetTagrisStatusForName(const Aws::String& name)
+        MxfAfdSignaling GetMxfAfdSignalingForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ACTIVE_HASH)
+          if (hashCode == NO_COPY_HASH)
           {
-            return TagrisStatus::ACTIVE;
+            return MxfAfdSignaling::NO_COPY;
           }
-          else if (hashCode == NOT_ACTIVE_HASH)
+          else if (hashCode == COPY_FROM_VIDEO_HASH)
           {
-            return TagrisStatus::NOT_ACTIVE;
+            return MxfAfdSignaling::COPY_FROM_VIDEO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<TagrisStatus>(hashCode);
+            return static_cast<MxfAfdSignaling>(hashCode);
           }
 
-          return TagrisStatus::NOT_SET;
+          return MxfAfdSignaling::NOT_SET;
         }
 
-        Aws::String GetNameForTagrisStatus(TagrisStatus enumValue)
+        Aws::String GetNameForMxfAfdSignaling(MxfAfdSignaling enumValue)
         {
           switch(enumValue)
           {
-          case TagrisStatus::ACTIVE:
-            return "ACTIVE";
-          case TagrisStatus::NOT_ACTIVE:
-            return "NOT_ACTIVE";
+          case MxfAfdSignaling::NO_COPY:
+            return "NO_COPY";
+          case MxfAfdSignaling::COPY_FROM_VIDEO:
+            return "COPY_FROM_VIDEO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -74,7 +74,7 @@ namespace Aws
           }
         }
 
-      } // namespace TagrisStatusMapper
+      } // namespace MxfAfdSignalingMapper
     } // namespace Model
-  } // namespace IoTEvents
+  } // namespace MediaConvert
 } // namespace Aws

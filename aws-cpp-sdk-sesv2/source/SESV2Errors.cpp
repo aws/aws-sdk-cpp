@@ -63,7 +63,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
@@ -71,7 +71,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::TOO_MANY_REQUESTS), true);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {

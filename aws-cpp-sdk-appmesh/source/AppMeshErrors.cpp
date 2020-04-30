@@ -57,7 +57,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppMeshErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppMeshErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
@@ -65,7 +65,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppMeshErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppMeshErrors::TOO_MANY_REQUESTS), true);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {

@@ -49,7 +49,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ComprehendMedicalErrors::TOO_MANY_REQUESTS), true);
   }
   else if (hashCode == TEXT_SIZE_LIMIT_EXCEEDED_HASH)
   {

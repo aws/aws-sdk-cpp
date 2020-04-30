@@ -13,41 +13,39 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/schemas/model/LockServiceLinkedRoleRequest.h>
+#include <aws/schemas/model/GetResourcePolicyRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws::Http;
 
-LockServiceLinkedRoleRequest::LockServiceLinkedRoleRequest() : 
-    m_roleArnHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
+GetResourcePolicyRequest::GetResourcePolicyRequest() : 
+    m_registryNameHasBeenSet(false)
 {
 }
 
-Aws::String LockServiceLinkedRoleRequest::SerializePayload() const
+Aws::String GetResourcePolicyRequest::SerializePayload() const
 {
-  JsonValue payload;
-
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("RoleArn", m_roleArn);
-
-  }
-
-  if(m_timeoutHasBeenSet)
-  {
-   payload.WithInteger("Timeout", m_timeout);
-
-  }
-
-  return payload.View().WriteReadable();
+  return {};
 }
 
+void GetResourcePolicyRequest::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+    if(m_registryNameHasBeenSet)
+    {
+      ss << m_registryName;
+      uri.AddQueryStringParameter("registryName", ss.str());
+      ss.str("");
+    }
+
+}
 
 
 

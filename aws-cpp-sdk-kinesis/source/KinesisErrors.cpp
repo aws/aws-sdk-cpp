@@ -72,7 +72,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == K_M_S_THROTTLING_HASH)
   {

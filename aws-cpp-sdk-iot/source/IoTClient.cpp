@@ -190,6 +190,7 @@
 #include <aws/iot/model/ListViolationEventsRequest.h>
 #include <aws/iot/model/RegisterCACertificateRequest.h>
 #include <aws/iot/model/RegisterCertificateRequest.h>
+#include <aws/iot/model/RegisterCertificateWithoutCARequest.h>
 #include <aws/iot/model/RegisterThingRequest.h>
 #include <aws/iot/model/RejectCertificateTransferRequest.h>
 #include <aws/iot/model/RemoveThingFromBillingGroupRequest.h>
@@ -6693,6 +6694,41 @@ void IoTClient::RegisterCertificateAsync(const RegisterCertificateRequest& reque
 void IoTClient::RegisterCertificateAsyncHelper(const RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RegisterCertificate(request), context);
+}
+
+RegisterCertificateWithoutCAOutcome IoTClient::RegisterCertificateWithoutCA(const RegisterCertificateWithoutCARequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/certificate/register-no-ca";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RegisterCertificateWithoutCAOutcome(RegisterCertificateWithoutCAResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterCertificateWithoutCAOutcome(outcome.GetError());
+  }
+}
+
+RegisterCertificateWithoutCAOutcomeCallable IoTClient::RegisterCertificateWithoutCACallable(const RegisterCertificateWithoutCARequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterCertificateWithoutCAOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterCertificateWithoutCA(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::RegisterCertificateWithoutCAAsync(const RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterCertificateWithoutCAAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::RegisterCertificateWithoutCAAsyncHelper(const RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterCertificateWithoutCA(request), context);
 }
 
 RegisterThingOutcome IoTClient::RegisterThing(const RegisterThingRequest& request) const

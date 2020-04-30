@@ -129,49 +129,49 @@ namespace Model
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline const Aws::String& GetTokenSignature() const{ return m_tokenSignature; }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline bool TokenSignatureHasBeenSet() const { return m_tokenSignatureHasBeenSet; }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline void SetTokenSignature(const Aws::String& value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature = value; }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline void SetTokenSignature(Aws::String&& value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature = std::move(value); }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline void SetTokenSignature(const char* value) { m_tokenSignatureHasBeenSet = true; m_tokenSignature.assign(value); }
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline TestInvokeAuthorizerRequest& WithTokenSignature(const Aws::String& value) { SetTokenSignature(value); return *this;}
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline TestInvokeAuthorizerRequest& WithTokenSignature(Aws::String&& value) { SetTokenSignature(std::move(value)); return *this;}
 
     /**
      * <p>The signature made with the token and your custom authentication service's
-     * private key.</p>
+     * private key. This value must be Base-64-encoded.</p>
      */
     inline TestInvokeAuthorizerRequest& WithTokenSignature(const char* value) { SetTokenSignature(value); return *this;}
 

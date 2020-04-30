@@ -65,7 +65,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {

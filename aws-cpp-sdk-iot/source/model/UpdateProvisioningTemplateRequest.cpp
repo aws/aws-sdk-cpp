@@ -29,7 +29,10 @@ UpdateProvisioningTemplateRequest::UpdateProvisioningTemplateRequest() :
     m_enabledHasBeenSet(false),
     m_defaultVersionId(0),
     m_defaultVersionIdHasBeenSet(false),
-    m_provisioningRoleArnHasBeenSet(false)
+    m_provisioningRoleArnHasBeenSet(false),
+    m_preProvisioningHookHasBeenSet(false),
+    m_removePreProvisioningHook(false),
+    m_removePreProvisioningHookHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,18 @@ Aws::String UpdateProvisioningTemplateRequest::SerializePayload() const
   if(m_provisioningRoleArnHasBeenSet)
   {
    payload.WithString("provisioningRoleArn", m_provisioningRoleArn);
+
+  }
+
+  if(m_preProvisioningHookHasBeenSet)
+  {
+   payload.WithObject("preProvisioningHook", m_preProvisioningHook.Jsonize());
+
+  }
+
+  if(m_removePreProvisioningHookHasBeenSet)
+  {
+   payload.WithBool("removePreProvisioningHook", m_removePreProvisioningHook);
 
   }
 

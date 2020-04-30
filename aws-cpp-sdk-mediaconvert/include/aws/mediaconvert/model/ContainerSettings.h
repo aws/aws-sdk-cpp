@@ -23,6 +23,7 @@
 #include <aws/mediaconvert/model/MovSettings.h>
 #include <aws/mediaconvert/model/Mp4Settings.h>
 #include <aws/mediaconvert/model/MpdSettings.h>
+#include <aws/mediaconvert/model/MxfSettings.h>
 #include <utility>
 
 namespace Aws
@@ -367,6 +368,37 @@ namespace Model
      */
     inline ContainerSettings& WithMpdSettings(MpdSettings&& value) { SetMpdSettings(std::move(value)); return *this;}
 
+
+    /**
+     * MXF settings
+     */
+    inline const MxfSettings& GetMxfSettings() const{ return m_mxfSettings; }
+
+    /**
+     * MXF settings
+     */
+    inline bool MxfSettingsHasBeenSet() const { return m_mxfSettingsHasBeenSet; }
+
+    /**
+     * MXF settings
+     */
+    inline void SetMxfSettings(const MxfSettings& value) { m_mxfSettingsHasBeenSet = true; m_mxfSettings = value; }
+
+    /**
+     * MXF settings
+     */
+    inline void SetMxfSettings(MxfSettings&& value) { m_mxfSettingsHasBeenSet = true; m_mxfSettings = std::move(value); }
+
+    /**
+     * MXF settings
+     */
+    inline ContainerSettings& WithMxfSettings(const MxfSettings& value) { SetMxfSettings(value); return *this;}
+
+    /**
+     * MXF settings
+     */
+    inline ContainerSettings& WithMxfSettings(MxfSettings&& value) { SetMxfSettings(std::move(value)); return *this;}
+
   private:
 
     CmfcSettings m_cmfcSettings;
@@ -392,6 +424,9 @@ namespace Model
 
     MpdSettings m_mpdSettings;
     bool m_mpdSettingsHasBeenSet;
+
+    MxfSettings m_mxfSettings;
+    bool m_mxfSettingsHasBeenSet;
   };
 
 } // namespace Model

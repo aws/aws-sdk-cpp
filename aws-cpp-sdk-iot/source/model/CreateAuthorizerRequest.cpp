@@ -29,6 +29,7 @@ CreateAuthorizerRequest::CreateAuthorizerRequest() :
     m_tokenSigningPublicKeysHasBeenSet(false),
     m_status(AuthorizerStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_signingDisabled(false),
     m_signingDisabledHasBeenSet(false)
 {
@@ -64,6 +65,17 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", AuthorizerStatusMapper::GetNameForAuthorizerStatus(m_status));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   if(m_signingDisabledHasBeenSet)

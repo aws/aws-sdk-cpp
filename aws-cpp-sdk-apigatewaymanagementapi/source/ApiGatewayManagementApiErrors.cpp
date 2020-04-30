@@ -52,7 +52,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApiGatewayManagementApiErrors::LIMIT_EXCEEDED), true);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

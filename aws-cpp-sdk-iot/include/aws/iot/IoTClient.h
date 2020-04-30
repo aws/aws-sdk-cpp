@@ -166,6 +166,7 @@
 #include <aws/iot/model/ListViolationEventsResult.h>
 #include <aws/iot/model/RegisterCACertificateResult.h>
 #include <aws/iot/model/RegisterCertificateResult.h>
+#include <aws/iot/model/RegisterCertificateWithoutCAResult.h>
 #include <aws/iot/model/RegisterThingResult.h>
 #include <aws/iot/model/RemoveThingFromBillingGroupResult.h>
 #include <aws/iot/model/RemoveThingFromThingGroupResult.h>
@@ -399,6 +400,7 @@ namespace Model
         class ListViolationEventsRequest;
         class RegisterCACertificateRequest;
         class RegisterCertificateRequest;
+        class RegisterCertificateWithoutCARequest;
         class RegisterThingRequest;
         class RejectCertificateTransferRequest;
         class RemoveThingFromBillingGroupRequest;
@@ -602,6 +604,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListViolationEventsResult, Aws::Client::AWSError<IoTErrors>> ListViolationEventsOutcome;
         typedef Aws::Utils::Outcome<RegisterCACertificateResult, Aws::Client::AWSError<IoTErrors>> RegisterCACertificateOutcome;
         typedef Aws::Utils::Outcome<RegisterCertificateResult, Aws::Client::AWSError<IoTErrors>> RegisterCertificateOutcome;
+        typedef Aws::Utils::Outcome<RegisterCertificateWithoutCAResult, Aws::Client::AWSError<IoTErrors>> RegisterCertificateWithoutCAOutcome;
         typedef Aws::Utils::Outcome<RegisterThingResult, Aws::Client::AWSError<IoTErrors>> RegisterThingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTErrors>> RejectCertificateTransferOutcome;
         typedef Aws::Utils::Outcome<RemoveThingFromBillingGroupResult, Aws::Client::AWSError<IoTErrors>> RemoveThingFromBillingGroupOutcome;
@@ -805,6 +808,7 @@ namespace Model
         typedef std::future<ListViolationEventsOutcome> ListViolationEventsOutcomeCallable;
         typedef std::future<RegisterCACertificateOutcome> RegisterCACertificateOutcomeCallable;
         typedef std::future<RegisterCertificateOutcome> RegisterCertificateOutcomeCallable;
+        typedef std::future<RegisterCertificateWithoutCAOutcome> RegisterCertificateWithoutCAOutcomeCallable;
         typedef std::future<RegisterThingOutcome> RegisterThingOutcomeCallable;
         typedef std::future<RejectCertificateTransferOutcome> RejectCertificateTransferOutcomeCallable;
         typedef std::future<RemoveThingFromBillingGroupOutcome> RemoveThingFromBillingGroupOutcomeCallable;
@@ -1011,6 +1015,7 @@ namespace Model
     typedef std::function<void(const IoTClient*, const Model::ListViolationEventsRequest&, const Model::ListViolationEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListViolationEventsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterCACertificateRequest&, const Model::RegisterCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCACertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterCertificateRequest&, const Model::RegisterCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCertificateResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::RegisterCertificateWithoutCARequest&, const Model::RegisterCertificateWithoutCAOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterCertificateWithoutCAResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RegisterThingRequest&, const Model::RegisterThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterThingResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RejectCertificateTransferRequest&, const Model::RejectCertificateTransferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectCertificateTransferResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::RemoveThingFromBillingGroupRequest&, const Model::RemoveThingFromBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveThingFromBillingGroupResponseReceivedHandler;
@@ -5765,6 +5770,34 @@ namespace Model
         virtual void RegisterCertificateAsync(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Register a certificate that does not have a certificate authority
+         * (CA).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterCertificateWithoutCAOutcome RegisterCertificateWithoutCA(const Model::RegisterCertificateWithoutCARequest& request) const;
+
+        /**
+         * <p>Register a certificate that does not have a certificate authority
+         * (CA).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterCertificateWithoutCAOutcomeCallable RegisterCertificateWithoutCACallable(const Model::RegisterCertificateWithoutCARequest& request) const;
+
+        /**
+         * <p>Register a certificate that does not have a certificate authority
+         * (CA).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RegisterCertificateWithoutCA">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterCertificateWithoutCAAsync(const Model::RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provisions a thing in the device registry. RegisterThing calls other AWS IoT
          * control plane APIs. These calls might exceed your account level <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot">
@@ -7140,6 +7173,7 @@ namespace Model
         void ListViolationEventsAsyncHelper(const Model::ListViolationEventsRequest& request, const ListViolationEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterCACertificateAsyncHelper(const Model::RegisterCACertificateRequest& request, const RegisterCACertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterCertificateAsyncHelper(const Model::RegisterCertificateRequest& request, const RegisterCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterCertificateWithoutCAAsyncHelper(const Model::RegisterCertificateWithoutCARequest& request, const RegisterCertificateWithoutCAResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterThingAsyncHelper(const Model::RegisterThingRequest& request, const RegisterThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectCertificateTransferAsyncHelper(const Model::RejectCertificateTransferRequest& request, const RejectCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveThingFromBillingGroupAsyncHelper(const Model::RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

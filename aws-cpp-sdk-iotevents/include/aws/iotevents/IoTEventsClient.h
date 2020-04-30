@@ -36,7 +36,6 @@
 #include <aws/iotevents/model/UntagResourceResult.h>
 #include <aws/iotevents/model/UpdateDetectorModelResult.h>
 #include <aws/iotevents/model/UpdateInputResult.h>
-#include <aws/iotevents/model/VerifyResourcesExistForTagrisResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -93,7 +92,6 @@ namespace Model
         class UntagResourceRequest;
         class UpdateDetectorModelRequest;
         class UpdateInputRequest;
-        class VerifyResourcesExistForTagrisRequest;
 
         typedef Aws::Utils::Outcome<CreateDetectorModelResult, Aws::Client::AWSError<IoTEventsErrors>> CreateDetectorModelOutcome;
         typedef Aws::Utils::Outcome<CreateInputResult, Aws::Client::AWSError<IoTEventsErrors>> CreateInputOutcome;
@@ -111,7 +109,6 @@ namespace Model
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoTEventsErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDetectorModelResult, Aws::Client::AWSError<IoTEventsErrors>> UpdateDetectorModelOutcome;
         typedef Aws::Utils::Outcome<UpdateInputResult, Aws::Client::AWSError<IoTEventsErrors>> UpdateInputOutcome;
-        typedef Aws::Utils::Outcome<VerifyResourcesExistForTagrisResult, Aws::Client::AWSError<IoTEventsErrors>> VerifyResourcesExistForTagrisOutcome;
 
         typedef std::future<CreateDetectorModelOutcome> CreateDetectorModelOutcomeCallable;
         typedef std::future<CreateInputOutcome> CreateInputOutcomeCallable;
@@ -129,7 +126,6 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDetectorModelOutcome> UpdateDetectorModelOutcomeCallable;
         typedef std::future<UpdateInputOutcome> UpdateInputOutcomeCallable;
-        typedef std::future<VerifyResourcesExistForTagrisOutcome> VerifyResourcesExistForTagrisOutcomeCallable;
 } // namespace Model
 
   class IoTEventsClient;
@@ -150,7 +146,6 @@ namespace Model
     typedef std::function<void(const IoTEventsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::UpdateDetectorModelRequest&, const Model::UpdateDetectorModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDetectorModelResponseReceivedHandler;
     typedef std::function<void(const IoTEventsClient*, const Model::UpdateInputRequest&, const Model::UpdateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputResponseReceivedHandler;
-    typedef std::function<void(const IoTEventsClient*, const Model::VerifyResourcesExistForTagrisRequest&, const Model::VerifyResourcesExistForTagrisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyResourcesExistForTagrisResponseReceivedHandler;
 
   /**
    * <p>AWS IoT Events monitors your equipment or device fleets for failures or
@@ -635,25 +630,6 @@ namespace Model
          */
         virtual void UpdateInputAsync(const Model::UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-        /**
-         * 
-         */
-        virtual Model::VerifyResourcesExistForTagrisOutcome VerifyResourcesExistForTagris(const Model::VerifyResourcesExistForTagrisRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::VerifyResourcesExistForTagrisOutcomeCallable VerifyResourcesExistForTagrisCallable(const Model::VerifyResourcesExistForTagrisRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void VerifyResourcesExistForTagrisAsync(const Model::VerifyResourcesExistForTagrisRequest& request, const VerifyResourcesExistForTagrisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -674,7 +650,6 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDetectorModelAsyncHelper(const Model::UpdateDetectorModelRequest& request, const UpdateDetectorModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInputAsyncHelper(const Model::UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void VerifyResourcesExistForTagrisAsyncHelper(const Model::VerifyResourcesExistForTagrisRequest& request, const VerifyResourcesExistForTagrisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

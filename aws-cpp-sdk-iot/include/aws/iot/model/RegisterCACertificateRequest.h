@@ -18,6 +18,8 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/RegistrationConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +213,79 @@ namespace Model
      */
     inline RegisterCACertificateRequest& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline RegisterCACertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline RegisterCACertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline RegisterCACertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For
+     * URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For
+     * the CLI command-line parameter use format: &amp;&amp;tags
+     * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
+     * "tags": "key1=value1&amp;key2=value2..."</p> </note>
+     */
+    inline RegisterCACertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_caCertificate;
@@ -227,6 +302,9 @@ namespace Model
 
     RegistrationConfig m_registrationConfig;
     bool m_registrationConfigHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

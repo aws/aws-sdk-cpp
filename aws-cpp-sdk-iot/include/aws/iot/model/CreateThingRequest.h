@@ -47,42 +47,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the thing to create.</p>
+     * <p>The name of the thing to create.</p> <p>You can't change a thing's name after
+     * you create it. To change a thing's name, you must create a new thing, give it
+     * the new name, and then delete the old thing.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
 
     /**
-     * <p>The name of the thing to create.</p>
+     * <p>The name of the thing to create.</p> <p>You can't change a thing's name after
+     * you create it. To change a thing's name, you must create a new thing, give it
+     * the new name, and then delete the old thing.</p>
      */
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
-     * <p>The name of the thing to create.</p>
+     * <p>The name of the thing to create.</p> <p>You can't change a thing's name after
+     * you create it. To change a thing's name, you must create a new thing, give it
+     * the new name, and then delete the old thing.</p>
      */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
-     * <p>The name of the thing to create.</p>
+     * <p>The name of the thing to create.</p> <p>You can't change a thing's name after
+     * you create it. To change a thing's name, you must create a new thing, give it
+     * the new name, and then delete the old thing.</p>
      */
     inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
 
     /**
-     * <p>The name of the thing to create.</p>
+     * <p>The name of the thing to create.</p> <p>You can't change a thing's name after
+     * you create it. To change a thing's name, you must create a new thing, give it
+     * the new name, and then delete the old thing.</p>
      */
     inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
 
     /**
-     * <p>The name of the thing to create.</p>
+     * <p>The name of the thing to create.</p> <p>You can't change a thing's name after
+     * you create it. To change a thing's name, you must create a new thing, give it
+     * the new name, and then delete the old thing.</p>
      */
     inline CreateThingRequest& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
 
     /**
-     * <p>The name of the thing to create.</p>
+     * <p>The name of the thing to create.</p> <p>You can't change a thing's name after
+     * you create it. To change a thing's name, you must create a new thing, give it
+     * the new name, and then delete the old thing.</p>
      */
     inline CreateThingRequest& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the thing to create.</p>
+     * <p>The name of the thing to create.</p> <p>You can't change a thing's name after
+     * you create it. To change a thing's name, you must create a new thing, give it
+     * the new name, and then delete the old thing.</p>
      */
     inline CreateThingRequest& WithThingName(const char* value) { SetThingName(value); return *this;}
 

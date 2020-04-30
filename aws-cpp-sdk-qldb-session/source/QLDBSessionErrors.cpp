@@ -41,7 +41,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBSessionErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == INVALID_SESSION_HASH)
   {

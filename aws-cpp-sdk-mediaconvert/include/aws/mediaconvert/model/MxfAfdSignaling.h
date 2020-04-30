@@ -14,28 +14,28 @@
 */
 
 #pragma once
-#include <aws/iotevents/IoTEvents_EXPORTS.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace IoTEvents
+namespace MediaConvert
 {
 namespace Model
 {
-  enum class TagrisStatus
+  enum class MxfAfdSignaling
   {
     NOT_SET,
-    ACTIVE,
-    NOT_ACTIVE
+    NO_COPY,
+    COPY_FROM_VIDEO
   };
 
-namespace TagrisStatusMapper
+namespace MxfAfdSignalingMapper
 {
-AWS_IOTEVENTS_API TagrisStatus GetTagrisStatusForName(const Aws::String& name);
+AWS_MEDIACONVERT_API MxfAfdSignaling GetMxfAfdSignalingForName(const Aws::String& name);
 
-AWS_IOTEVENTS_API Aws::String GetNameForTagrisStatus(TagrisStatus value);
-} // namespace TagrisStatusMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForMxfAfdSignaling(MxfAfdSignaling value);
+} // namespace MxfAfdSignalingMapper
 } // namespace Model
-} // namespace IoTEvents
+} // namespace MediaConvert
 } // namespace Aws

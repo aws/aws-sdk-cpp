@@ -40,7 +40,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastQueryServiceErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ForecastQueryServiceErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {

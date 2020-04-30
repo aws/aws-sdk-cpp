@@ -29,6 +29,7 @@ CreateProvisioningTemplateRequest::CreateProvisioningTemplateRequest() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_provisioningRoleArnHasBeenSet(false),
+    m_preProvisioningHookHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -64,6 +65,12 @@ Aws::String CreateProvisioningTemplateRequest::SerializePayload() const
   if(m_provisioningRoleArnHasBeenSet)
   {
    payload.WithString("provisioningRoleArn", m_provisioningRoleArn);
+
+  }
+
+  if(m_preProvisioningHookHasBeenSet)
+  {
+   payload.WithObject("preProvisioningHook", m_preProvisioningHook.Jsonize());
 
   }
 

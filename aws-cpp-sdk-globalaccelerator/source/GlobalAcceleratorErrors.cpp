@@ -50,7 +50,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlobalAcceleratorErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == ACCELERATOR_NOT_FOUND_HASH)
   {

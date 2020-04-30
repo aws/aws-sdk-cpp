@@ -96,6 +96,12 @@ DescribeProvisioningTemplateResult& DescribeProvisioningTemplateResult::operator
 
   }
 
+  if(jsonValue.ValueExists("preProvisioningHook"))
+  {
+    m_preProvisioningHook = jsonValue.GetObject("preProvisioningHook");
+
+  }
+
 
 
   return *this;

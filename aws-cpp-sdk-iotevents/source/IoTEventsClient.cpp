@@ -46,7 +46,6 @@
 #include <aws/iotevents/model/UntagResourceRequest.h>
 #include <aws/iotevents/model/UpdateDetectorModelRequest.h>
 #include <aws/iotevents/model/UpdateInputRequest.h>
-#include <aws/iotevents/model/VerifyResourcesExistForTagrisRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -741,40 +740,5 @@ void IoTEventsClient::UpdateInputAsync(const UpdateInputRequest& request, const 
 void IoTEventsClient::UpdateInputAsyncHelper(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInput(request), context);
-}
-
-VerifyResourcesExistForTagrisOutcome IoTEventsClient::VerifyResourcesExistForTagris(const VerifyResourcesExistForTagrisRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/internal/tags/resource-status";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return VerifyResourcesExistForTagrisOutcome(VerifyResourcesExistForTagrisResult(outcome.GetResult()));
-  }
-  else
-  {
-    return VerifyResourcesExistForTagrisOutcome(outcome.GetError());
-  }
-}
-
-VerifyResourcesExistForTagrisOutcomeCallable IoTEventsClient::VerifyResourcesExistForTagrisCallable(const VerifyResourcesExistForTagrisRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< VerifyResourcesExistForTagrisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VerifyResourcesExistForTagris(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTEventsClient::VerifyResourcesExistForTagrisAsync(const VerifyResourcesExistForTagrisRequest& request, const VerifyResourcesExistForTagrisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->VerifyResourcesExistForTagrisAsyncHelper( request, handler, context ); } );
-}
-
-void IoTEventsClient::VerifyResourcesExistForTagrisAsyncHelper(const VerifyResourcesExistForTagrisRequest& request, const VerifyResourcesExistForTagrisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, VerifyResourcesExistForTagris(request), context);
 }
 

@@ -27,6 +27,9 @@ namespace Model
 {
 
   /**
+   * <p>Updates the registry.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateRegistryRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_SCHEMAS_API UpdateRegistryRequest : public SchemasRequest
   {
@@ -83,28 +86,44 @@ namespace Model
     inline UpdateRegistryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the registry.</p>
+     */
     inline const Aws::String& GetRegistryName() const{ return m_registryName; }
 
-    
+    /**
+     * <p>The name of the registry.</p>
+     */
     inline bool RegistryNameHasBeenSet() const { return m_registryNameHasBeenSet; }
 
-    
+    /**
+     * <p>The name of the registry.</p>
+     */
     inline void SetRegistryName(const Aws::String& value) { m_registryNameHasBeenSet = true; m_registryName = value; }
 
-    
+    /**
+     * <p>The name of the registry.</p>
+     */
     inline void SetRegistryName(Aws::String&& value) { m_registryNameHasBeenSet = true; m_registryName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the registry.</p>
+     */
     inline void SetRegistryName(const char* value) { m_registryNameHasBeenSet = true; m_registryName.assign(value); }
 
-    
+    /**
+     * <p>The name of the registry.</p>
+     */
     inline UpdateRegistryRequest& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the registry.</p>
+     */
     inline UpdateRegistryRequest& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the registry.</p>
+     */
     inline UpdateRegistryRequest& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
 
   private:

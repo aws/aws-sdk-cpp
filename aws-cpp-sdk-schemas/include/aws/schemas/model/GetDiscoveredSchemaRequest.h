@@ -45,47 +45,65 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEvents() const{ return m_events; }
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline void SetEvents(const Aws::Vector<Aws::String>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline void SetEvents(Aws::Vector<Aws::String>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline GetDiscoveredSchemaRequest& WithEvents(const Aws::Vector<Aws::String>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline GetDiscoveredSchemaRequest& WithEvents(Aws::Vector<Aws::String>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline GetDiscoveredSchemaRequest& AddEvents(const Aws::String& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline GetDiscoveredSchemaRequest& AddEvents(Aws::String&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that</p>
+     * <p>An array of strings where each string is a JSON event. These are the events
+     * that were used to generate the schema. The array includes a single type of event
+     * and has a maximum size of 10 events.</p>
      */
     inline GetDiscoveredSchemaRequest& AddEvents(const char* value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 

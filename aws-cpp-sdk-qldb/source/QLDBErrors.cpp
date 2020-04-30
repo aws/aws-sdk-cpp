@@ -49,7 +49,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QLDBErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == RESOURCE_PRECONDITION_NOT_MET_HASH)
   {

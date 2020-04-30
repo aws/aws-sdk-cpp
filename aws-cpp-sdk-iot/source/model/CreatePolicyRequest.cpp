@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreatePolicyRequest::CreatePolicyRequest() : 
     m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
+    m_policyDocumentHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,17 @@ Aws::String CreatePolicyRequest::SerializePayload() const
   if(m_policyDocumentHasBeenSet)
   {
    payload.WithString("policyDocument", m_policyDocument);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

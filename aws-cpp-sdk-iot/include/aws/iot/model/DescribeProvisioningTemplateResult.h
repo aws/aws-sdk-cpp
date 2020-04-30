@@ -17,6 +17,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iot/model/ProvisioningHook.h>
 #include <utility>
 
 namespace Aws
@@ -313,6 +314,32 @@ namespace Model
      */
     inline DescribeProvisioningTemplateResult& WithProvisioningRoleArn(const char* value) { SetProvisioningRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Gets information about a pre-provisioned hook.</p>
+     */
+    inline const ProvisioningHook& GetPreProvisioningHook() const{ return m_preProvisioningHook; }
+
+    /**
+     * <p>Gets information about a pre-provisioned hook.</p>
+     */
+    inline void SetPreProvisioningHook(const ProvisioningHook& value) { m_preProvisioningHook = value; }
+
+    /**
+     * <p>Gets information about a pre-provisioned hook.</p>
+     */
+    inline void SetPreProvisioningHook(ProvisioningHook&& value) { m_preProvisioningHook = std::move(value); }
+
+    /**
+     * <p>Gets information about a pre-provisioned hook.</p>
+     */
+    inline DescribeProvisioningTemplateResult& WithPreProvisioningHook(const ProvisioningHook& value) { SetPreProvisioningHook(value); return *this;}
+
+    /**
+     * <p>Gets information about a pre-provisioned hook.</p>
+     */
+    inline DescribeProvisioningTemplateResult& WithPreProvisioningHook(ProvisioningHook&& value) { SetPreProvisioningHook(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_templateArn;
@@ -332,6 +359,8 @@ namespace Model
     bool m_enabled;
 
     Aws::String m_provisioningRoleArn;
+
+    ProvisioningHook m_preProvisioningHook;
   };
 
 } // namespace Model

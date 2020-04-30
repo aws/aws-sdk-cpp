@@ -77,7 +77,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == PLATFORM_TASK_DEFINITION_INCOMPATIBILITY_HASH)
   {

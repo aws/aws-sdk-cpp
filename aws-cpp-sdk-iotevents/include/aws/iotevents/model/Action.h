@@ -560,37 +560,37 @@ namespace Model
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     * triggered the action to an asset property in AWS IoT SiteWise .</p>
      */
     inline const IotSiteWiseAction& GetIotSiteWise() const{ return m_iotSiteWise; }
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     * triggered the action to an asset property in AWS IoT SiteWise .</p>
      */
     inline bool IotSiteWiseHasBeenSet() const { return m_iotSiteWiseHasBeenSet; }
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     * triggered the action to an asset property in AWS IoT SiteWise .</p>
      */
     inline void SetIotSiteWise(const IotSiteWiseAction& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = value; }
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     * triggered the action to an asset property in AWS IoT SiteWise .</p>
      */
     inline void SetIotSiteWise(IotSiteWiseAction&& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = std::move(value); }
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     * triggered the action to an asset property in AWS IoT SiteWise .</p>
      */
     inline Action& WithIotSiteWise(const IotSiteWiseAction& value) { SetIotSiteWise(value); return *this;}
 
     /**
      * <p>Sends information about the detector model instance and the event that
-     * triggered the action to an AWS IoT SiteWise asset property.</p>
+     * triggered the action to an asset property in AWS IoT SiteWise .</p>
      */
     inline Action& WithIotSiteWise(IotSiteWiseAction&& value) { SetIotSiteWise(std::move(value)); return *this;}
 

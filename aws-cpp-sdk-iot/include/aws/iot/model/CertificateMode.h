@@ -14,33 +14,28 @@
 */
 
 #pragma once
-#include <aws/schemas/Schemas_EXPORTS.h>
+#include <aws/iot/IoT_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-template<typename RESULT_TYPE>
-class AmazonWebServiceResult;
-
-namespace Utils
-{
-namespace Json
-{
-  class JsonValue;
-} // namespace Json
-} // namespace Utils
-namespace Schemas
+namespace IoT
 {
 namespace Model
 {
-  class AWS_SCHEMAS_API UnlockServiceLinkedRoleResult
+  enum class CertificateMode
   {
-  public:
-    UnlockServiceLinkedRoleResult();
-    UnlockServiceLinkedRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    UnlockServiceLinkedRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
+    NOT_SET,
+    DEFAULT,
+    SNI_ONLY
   };
 
+namespace CertificateModeMapper
+{
+AWS_IOT_API CertificateMode GetCertificateModeForName(const Aws::String& name);
+
+AWS_IOT_API Aws::String GetNameForCertificateMode(CertificateMode value);
+} // namespace CertificateModeMapper
 } // namespace Model
-} // namespace Schemas
+} // namespace IoT
 } // namespace Aws

@@ -29,7 +29,8 @@ CreateDomainConfigurationRequest::CreateDomainConfigurationRequest() :
     m_validationCertificateArnHasBeenSet(false),
     m_authorizerConfigHasBeenSet(false),
     m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false)
+    m_serviceTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,17 @@ Aws::String CreateDomainConfigurationRequest::SerializePayload() const
   if(m_serviceTypeHasBeenSet)
   {
    payload.WithString("serviceType", ServiceTypeMapper::GetNameForServiceType(m_serviceType));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

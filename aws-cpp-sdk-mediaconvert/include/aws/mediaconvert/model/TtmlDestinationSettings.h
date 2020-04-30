@@ -50,37 +50,37 @@ namespace Model
 
     /**
      * Pass through style and position information from a TTML-like input source (TTML,
-     * SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
+     * SMPTE-TT) to the TTML output.
      */
     inline const TtmlStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
 
     /**
      * Pass through style and position information from a TTML-like input source (TTML,
-     * SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
+     * SMPTE-TT) to the TTML output.
      */
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
 
     /**
      * Pass through style and position information from a TTML-like input source (TTML,
-     * SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
+     * SMPTE-TT) to the TTML output.
      */
     inline void SetStylePassthrough(const TtmlStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
 
     /**
      * Pass through style and position information from a TTML-like input source (TTML,
-     * SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
+     * SMPTE-TT) to the TTML output.
      */
     inline void SetStylePassthrough(TtmlStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
 
     /**
      * Pass through style and position information from a TTML-like input source (TTML,
-     * SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
+     * SMPTE-TT) to the TTML output.
      */
     inline TtmlDestinationSettings& WithStylePassthrough(const TtmlStylePassthrough& value) { SetStylePassthrough(value); return *this;}
 
     /**
      * Pass through style and position information from a TTML-like input source (TTML,
-     * SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.
+     * SMPTE-TT) to the TTML output.
      */
     inline TtmlDestinationSettings& WithStylePassthrough(TtmlStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 

@@ -222,7 +222,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == PRIOR_REQUEST_NOT_COMPLETE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::PRIOR_REQUEST_NOT_COMPLETE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(Route53Errors::PRIOR_REQUEST_NOT_COMPLETE), true);
   }
   else if (hashCode == TOO_MANY_V_P_C_ASSOCIATION_AUTHORIZATIONS_HASH)
   {

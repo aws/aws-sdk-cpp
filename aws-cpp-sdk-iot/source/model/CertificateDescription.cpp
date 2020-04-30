@@ -43,7 +43,9 @@ CertificateDescription::CertificateDescription() :
     m_customerVersionHasBeenSet(false),
     m_transferDataHasBeenSet(false),
     m_generationIdHasBeenSet(false),
-    m_validityHasBeenSet(false)
+    m_validityHasBeenSet(false),
+    m_certificateMode(CertificateMode::NOT_SET),
+    m_certificateModeHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ CertificateDescription::CertificateDescription(JsonView jsonValue) :
     m_customerVersionHasBeenSet(false),
     m_transferDataHasBeenSet(false),
     m_generationIdHasBeenSet(false),
-    m_validityHasBeenSet(false)
+    m_validityHasBeenSet(false),
+    m_certificateMode(CertificateMode::NOT_SET),
+    m_certificateModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -160,6 +164,13 @@ CertificateDescription& CertificateDescription::operator =(JsonView jsonValue)
     m_validityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("certificateMode"))
+  {
+    m_certificateMode = CertificateModeMapper::GetCertificateModeForName(jsonValue.GetString("certificateMode"));
+
+    m_certificateModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -240,6 +251,11 @@ JsonValue CertificateDescription::Jsonize() const
   {
    payload.WithObject("validity", m_validity.Jsonize());
 
+  }
+
+  if(m_certificateModeHasBeenSet)
+  {
+   payload.WithString("certificateMode", CertificateModeMapper::GetNameForCertificateMode(m_certificateMode));
   }
 
   return payload;

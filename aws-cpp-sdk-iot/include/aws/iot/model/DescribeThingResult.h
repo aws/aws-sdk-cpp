@@ -49,37 +49,79 @@ namespace Model
 
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your AWS IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline const Aws::String& GetDefaultClientId() const{ return m_defaultClientId; }
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your AWS IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline void SetDefaultClientId(const Aws::String& value) { m_defaultClientId = value; }
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your AWS IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline void SetDefaultClientId(Aws::String&& value) { m_defaultClientId = std::move(value); }
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your AWS IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline void SetDefaultClientId(const char* value) { m_defaultClientId.assign(value); }
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your AWS IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline DescribeThingResult& WithDefaultClientId(const Aws::String& value) { SetDefaultClientId(value); return *this;}
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your AWS IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline DescribeThingResult& WithDefaultClientId(Aws::String&& value) { SetDefaultClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The default client ID.</p>
+     * <p>The default MQTT client ID. For a typical device, the thing name is also used
+     * as the default MQTT client ID. Although we don’t require a mapping between a
+     * thing's registry name and its use of MQTT client IDs, certificates, or shadow
+     * state, we recommend that you choose a thing name and use it as the MQTT client
+     * ID for the registry and the Device Shadow service.</p> <p>This lets you better
+     * organize your AWS IoT fleet without removing the flexibility of the underlying
+     * device certificate model or shadows.</p>
      */
     inline DescribeThingResult& WithDefaultClientId(const char* value) { SetDefaultClientId(value); return *this;}
 

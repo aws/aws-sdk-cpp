@@ -17,6 +17,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/CertificateStatus.h>
+#include <aws/iot/model/CertificateMode.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -177,6 +178,37 @@ namespace Model
 
 
     /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline const CertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline void SetCertificateMode(const CertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline void SetCertificateMode(CertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline Certificate& WithCertificateMode(const CertificateMode& value) { SetCertificateMode(value); return *this;}
+
+    /**
+     * <p>The mode of the certificate.</p>
+     */
+    inline Certificate& WithCertificateMode(CertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date and time the certificate was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
@@ -216,6 +248,9 @@ namespace Model
 
     CertificateStatus m_status;
     bool m_statusHasBeenSet;
+
+    CertificateMode m_certificateMode;
+    bool m_certificateModeHasBeenSet;
 
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;

@@ -45,7 +45,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == ALREADY_EXISTS_HASH)
   {

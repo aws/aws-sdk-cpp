@@ -47,7 +47,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBStreamsErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBStreamsErrors::LIMIT_EXCEEDED), true);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

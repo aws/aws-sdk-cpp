@@ -167,22 +167,34 @@ namespace Model
     inline DiscovererSummary& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline const DiscovererState& GetState() const{ return m_state; }
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline void SetState(const DiscovererState& value) { m_stateHasBeenSet = true; m_state = value; }
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline void SetState(DiscovererState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline DiscovererSummary& WithState(const DiscovererState& value) { SetState(value); return *this;}
 
-    
+    /**
+     * <p>The state of the discoverer.</p>
+     */
     inline DiscovererSummary& WithState(DiscovererState&& value) { SetState(std::move(value)); return *this;}
 
 

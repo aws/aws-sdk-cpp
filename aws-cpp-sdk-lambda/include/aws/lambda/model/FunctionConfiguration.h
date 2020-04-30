@@ -316,26 +316,26 @@ namespace Model
 
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The amount of time that Lambda allows a function to run before stopping
-     * it.</p>
+     * <p>The amount of time in seconds that Lambda allows a function to run before
+     * stopping it.</p>
      */
     inline FunctionConfiguration& WithTimeout(int value) { SetTimeout(value); return *this;}
 

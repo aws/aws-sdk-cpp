@@ -32,6 +32,7 @@ static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int UNAUTHORIZED_HASH = HashingUtils::HashString("UnauthorizedException");
 static const int FORBIDDEN_HASH = HashingUtils::HashString("ForbiddenException");
+static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
 static const int GONE_HASH = HashingUtils::HashString("GoneException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
@@ -58,13 +59,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::FORBIDDEN), false);
   }
+  else if (hashCode == PRECONDITION_FAILED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::PRECONDITION_FAILED), false);
+  }
   else if (hashCode == GONE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::GONE), false);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::TOO_MANY_REQUESTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::TOO_MANY_REQUESTS), true);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {

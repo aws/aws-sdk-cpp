@@ -44,25 +44,39 @@ namespace Model
     DescribeSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The source of the schema definition.</p>
+     */
     inline const Aws::String& GetContent() const{ return m_content; }
 
-    
+    /**
+     * <p>The source of the schema definition.</p>
+     */
     inline void SetContent(const Aws::String& value) { m_content = value; }
 
-    
+    /**
+     * <p>The source of the schema definition.</p>
+     */
     inline void SetContent(Aws::String&& value) { m_content = std::move(value); }
 
-    
+    /**
+     * <p>The source of the schema definition.</p>
+     */
     inline void SetContent(const char* value) { m_content.assign(value); }
 
-    
+    /**
+     * <p>The source of the schema definition.</p>
+     */
     inline DescribeSchemaResult& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
-    
+    /**
+     * <p>The source of the schema definition.</p>
+     */
     inline DescribeSchemaResult& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The source of the schema definition.</p>
+     */
     inline DescribeSchemaResult& WithContent(const char* value) { SetContent(value); return *this;}
 
 

@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/schemas/model/LockServiceLinkedRoleResult.h>
+#include <aws/schemas/model/PutResourcePolicyResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,39 +26,28 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-LockServiceLinkedRoleResult::LockServiceLinkedRoleResult() : 
-    m_canBeDeleted(false)
+PutResourcePolicyResult::PutResourcePolicyResult()
 {
 }
 
-LockServiceLinkedRoleResult::LockServiceLinkedRoleResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_canBeDeleted(false)
+PutResourcePolicyResult::PutResourcePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-LockServiceLinkedRoleResult& LockServiceLinkedRoleResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+PutResourcePolicyResult& PutResourcePolicyResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("CanBeDeleted"))
+  if(jsonValue.ValueExists("Policy"))
   {
-    m_canBeDeleted = jsonValue.GetBool("CanBeDeleted");
+    m_policy = jsonValue.GetString("Policy");
 
   }
 
-  if(jsonValue.ValueExists("ReasonOfFailure"))
+  if(jsonValue.ValueExists("RevisionId"))
   {
-    m_reasonOfFailure = jsonValue.GetString("ReasonOfFailure");
+    m_revisionId = jsonValue.GetString("RevisionId");
 
-  }
-
-  if(jsonValue.ValueExists("RelatedResources"))
-  {
-    Array<JsonView> relatedResourcesJsonList = jsonValue.GetArray("RelatedResources");
-    for(unsigned relatedResourcesIndex = 0; relatedResourcesIndex < relatedResourcesJsonList.GetLength(); ++relatedResourcesIndex)
-    {
-      m_relatedResources.push_back(relatedResourcesJsonList[relatedResourcesIndex].AsObject());
-    }
   }
 
 

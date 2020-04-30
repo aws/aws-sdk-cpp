@@ -17,6 +17,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/ProvisioningHook.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
@@ -238,6 +239,37 @@ namespace Model
 
 
     /**
+     * <p>Creates a pre-provisioning hook template.</p>
+     */
+    inline const ProvisioningHook& GetPreProvisioningHook() const{ return m_preProvisioningHook; }
+
+    /**
+     * <p>Creates a pre-provisioning hook template.</p>
+     */
+    inline bool PreProvisioningHookHasBeenSet() const { return m_preProvisioningHookHasBeenSet; }
+
+    /**
+     * <p>Creates a pre-provisioning hook template.</p>
+     */
+    inline void SetPreProvisioningHook(const ProvisioningHook& value) { m_preProvisioningHookHasBeenSet = true; m_preProvisioningHook = value; }
+
+    /**
+     * <p>Creates a pre-provisioning hook template.</p>
+     */
+    inline void SetPreProvisioningHook(ProvisioningHook&& value) { m_preProvisioningHookHasBeenSet = true; m_preProvisioningHook = std::move(value); }
+
+    /**
+     * <p>Creates a pre-provisioning hook template.</p>
+     */
+    inline CreateProvisioningTemplateRequest& WithPreProvisioningHook(const ProvisioningHook& value) { SetPreProvisioningHook(value); return *this;}
+
+    /**
+     * <p>Creates a pre-provisioning hook template.</p>
+     */
+    inline CreateProvisioningTemplateRequest& WithPreProvisioningHook(ProvisioningHook&& value) { SetPreProvisioningHook(std::move(value)); return *this;}
+
+
+    /**
      * <p>Metadata which can be used to manage the fleet provisioning template.</p>
      * <note> <p>For URI Request parameters use format:
      * ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use
@@ -333,6 +365,9 @@ namespace Model
 
     Aws::String m_provisioningRoleArn;
     bool m_provisioningRoleArnHasBeenSet;
+
+    ProvisioningHook m_preProvisioningHook;
+    bool m_preProvisioningHookHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

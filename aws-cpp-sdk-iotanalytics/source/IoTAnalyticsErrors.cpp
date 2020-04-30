@@ -43,7 +43,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTAnalyticsErrors::LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTAnalyticsErrors::LIMIT_EXCEEDED), true);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
