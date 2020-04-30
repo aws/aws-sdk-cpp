@@ -38,6 +38,7 @@ namespace Model
     cn_north_1,
     eu_central_1,
     eu_west_3,
+    eu_north_1,
     eu_west_2,
     ap_northeast_2,
     ca_central_1,

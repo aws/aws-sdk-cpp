@@ -73,7 +73,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         bucketLocationConstraints.add("cn-northwest-1");
         bucketLocationConstraints.add("ca-central-1");
         bucketLocationConstraints.add("us-gov-west-1");
-        bucketLocationConstraints.add("EU");
+        bucketLocationConstraints.add("eu-north-1");
     }
 
     public S3RestXmlCppClientGenerator() throws Exception {
