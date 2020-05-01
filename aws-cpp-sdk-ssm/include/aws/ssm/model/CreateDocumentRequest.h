@@ -55,8 +55,8 @@ namespace Model
      * storing the contents for your new document in an external JSON or YAML file and
      * referencing the file in a command.</p> <p>For examples, see the following topics
      * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
-     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (AWS API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
      * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
@@ -69,8 +69,8 @@ namespace Model
      * storing the contents for your new document in an external JSON or YAML file and
      * referencing the file in a command.</p> <p>For examples, see the following topics
      * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
-     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (AWS API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
      * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
@@ -83,8 +83,8 @@ namespace Model
      * storing the contents for your new document in an external JSON or YAML file and
      * referencing the file in a command.</p> <p>For examples, see the following topics
      * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
-     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (AWS API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
      * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
@@ -97,8 +97,8 @@ namespace Model
      * storing the contents for your new document in an external JSON or YAML file and
      * referencing the file in a command.</p> <p>For examples, see the following topics
      * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
-     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (AWS API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
      * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
@@ -111,8 +111,8 @@ namespace Model
      * storing the contents for your new document in an external JSON or YAML file and
      * referencing the file in a command.</p> <p>For examples, see the following topics
      * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
-     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (AWS API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
      * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
@@ -125,8 +125,8 @@ namespace Model
      * storing the contents for your new document in an external JSON or YAML file and
      * referencing the file in a command.</p> <p>For examples, see the following topics
      * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
-     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (AWS API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
      * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
@@ -139,8 +139,8 @@ namespace Model
      * storing the contents for your new document in an external JSON or YAML file and
      * referencing the file in a command.</p> <p>For examples, see the following topics
      * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
-     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (AWS API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
      * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
@@ -153,8 +153,8 @@ namespace Model
      * storing the contents for your new document in an external JSON or YAML file and
      * referencing the file in a command.</p> <p>For examples, see the following topics
      * in the <i>AWS Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-console.html">Create
-     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * an SSM document (AWS API)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
      * an SSM document (AWS CLI)</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create

@@ -1277,6 +1277,27 @@ namespace Model
      */
     inline Command& WithCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { SetCloudWatchOutputConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
+     */
+    inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
+
+    /**
+     * <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
+     */
+    inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
+
+    /**
+     * <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
+     */
+    inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
+
+    /**
+     * <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
+     */
+    inline Command& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
+
   private:
 
     Aws::String m_commandId;
@@ -1347,6 +1368,9 @@ namespace Model
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
     bool m_cloudWatchOutputConfigHasBeenSet;
+
+    int m_timeoutSeconds;
+    bool m_timeoutSecondsHasBeenSet;
   };
 
 } // namespace Model

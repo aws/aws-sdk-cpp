@@ -56,7 +56,9 @@ Command::Command() :
     m_deliveryTimedOutCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false)
+    m_cloudWatchOutputConfigHasBeenSet(false),
+    m_timeoutSeconds(0),
+    m_timeoutSecondsHasBeenSet(false)
 {
 }
 
@@ -88,7 +90,9 @@ Command::Command(JsonView jsonValue) :
     m_deliveryTimedOutCountHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notificationConfigHasBeenSet(false),
-    m_cloudWatchOutputConfigHasBeenSet(false)
+    m_cloudWatchOutputConfigHasBeenSet(false),
+    m_timeoutSeconds(0),
+    m_timeoutSecondsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -272,6 +276,13 @@ Command& Command::operator =(JsonView jsonValue)
     m_cloudWatchOutputConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TimeoutSeconds"))
+  {
+    m_timeoutSeconds = jsonValue.GetInteger("TimeoutSeconds");
+
+    m_timeoutSecondsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -431,6 +442,12 @@ JsonValue Command::Jsonize() const
   if(m_cloudWatchOutputConfigHasBeenSet)
   {
    payload.WithObject("CloudWatchOutputConfig", m_cloudWatchOutputConfig.Jsonize());
+
+  }
+
+  if(m_timeoutSecondsHasBeenSet)
+  {
+   payload.WithInteger("TimeoutSeconds", m_timeoutSeconds);
 
   }
 

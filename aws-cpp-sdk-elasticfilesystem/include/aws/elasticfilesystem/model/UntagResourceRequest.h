@@ -22,6 +22,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace EFS
 {
 namespace Model
@@ -41,6 +45,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UntagResource"; }
 
     Aws::String SerializePayload() const override;
+
+    void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
