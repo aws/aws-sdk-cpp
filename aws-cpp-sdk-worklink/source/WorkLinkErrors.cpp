@@ -18,8 +18,8 @@
 #include <aws/worklink/WorkLinkErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::WorkLink;
 using namespace Aws::Utils;
+using namespace Aws::WorkLink;
 
 namespace Aws
 {

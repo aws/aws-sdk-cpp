@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elasticache/ElastiCache_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ElastiCacheErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -110,6 +111,20 @@ enum class ElastiCacheErrors
   TAG_QUOTA_PER_RESOURCE_EXCEEDED,
   TEST_FAILOVER_NOT_AVAILABLE_FAULT
 };
+
+class AWS_ELASTICACHE_API ElastiCacheError : public Aws::Client::AWSError<ElastiCacheErrors>
+{
+public:
+  ElastiCacheError() {}
+  ElastiCacheError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElastiCacheErrors>(rhs) {}
+  ElastiCacheError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElastiCacheErrors>(rhs) {}
+  ElastiCacheError(const Aws::Client::AWSError<ElastiCacheErrors>& rhs) : Aws::Client::AWSError<ElastiCacheErrors>(rhs) {}
+  ElastiCacheError(Aws::Client::AWSError<ElastiCacheErrors>&& rhs) : Aws::Client::AWSError<ElastiCacheErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ElastiCacheErrorMapper
 {
   AWS_ELASTICACHE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -18,8 +18,8 @@
 #include <aws/polly/PollyErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Polly;
 using namespace Aws::Utils;
+using namespace Aws::Polly;
 
 namespace Aws
 {

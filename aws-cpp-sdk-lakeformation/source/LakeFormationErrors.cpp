@@ -18,8 +18,8 @@
 #include <aws/lakeformation/LakeFormationErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::LakeFormation;
 using namespace Aws::Utils;
+using namespace Aws::LakeFormation;
 
 namespace Aws
 {

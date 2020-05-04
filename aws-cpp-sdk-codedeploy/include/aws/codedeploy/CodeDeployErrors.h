@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/codedeploy/CodeDeploy_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CodeDeployErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -161,6 +162,20 @@ enum class CodeDeployErrors
   TRIGGER_TARGETS_LIMIT_EXCEEDED,
   UNSUPPORTED_ACTION_FOR_DEPLOYMENT_TYPE
 };
+
+class AWS_CODEDEPLOY_API CodeDeployError : public Aws::Client::AWSError<CodeDeployErrors>
+{
+public:
+  CodeDeployError() {}
+  CodeDeployError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeDeployErrors>(rhs) {}
+  CodeDeployError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeDeployErrors>(rhs) {}
+  CodeDeployError(const Aws::Client::AWSError<CodeDeployErrors>& rhs) : Aws::Client::AWSError<CodeDeployErrors>(rhs) {}
+  CodeDeployError(Aws::Client::AWSError<CodeDeployErrors>&& rhs) : Aws::Client::AWSError<CodeDeployErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CodeDeployErrorMapper
 {
   AWS_CODEDEPLOY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

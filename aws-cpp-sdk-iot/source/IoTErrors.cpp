@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/iot/IoTErrors.h>
+#include <aws/iot/model/ResourceAlreadyExistsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoT;
 using namespace Aws::Utils;
+using namespace Aws::IoT;
+using namespace Aws::IoT::Model;
 
 namespace Aws
 {
 namespace IoT
 {
+template<> AWS_IOT_API ResourceAlreadyExistsException IoTError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTErrors::RESOURCE_ALREADY_EXISTS);
+  return ResourceAlreadyExistsException(this->GetJsonPayload().View());
+}
+
 namespace IoTErrorMapper
 {
 

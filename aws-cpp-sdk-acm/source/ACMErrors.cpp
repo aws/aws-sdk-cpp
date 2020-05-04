@@ -18,8 +18,8 @@
 #include <aws/acm/ACMErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ACM;
 using namespace Aws::Utils;
+using namespace Aws::ACM;
 
 namespace Aws
 {

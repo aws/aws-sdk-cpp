@@ -91,21 +91,21 @@ namespace Model
         class UntagResourceRequest;
         class UpdateLedgerRequest;
 
-        typedef Aws::Utils::Outcome<CreateLedgerResult, Aws::Client::AWSError<QLDBErrors>> CreateLedgerOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<QLDBErrors>> DeleteLedgerOutcome;
-        typedef Aws::Utils::Outcome<DescribeJournalS3ExportResult, Aws::Client::AWSError<QLDBErrors>> DescribeJournalS3ExportOutcome;
-        typedef Aws::Utils::Outcome<DescribeLedgerResult, Aws::Client::AWSError<QLDBErrors>> DescribeLedgerOutcome;
-        typedef Aws::Utils::Outcome<ExportJournalToS3Result, Aws::Client::AWSError<QLDBErrors>> ExportJournalToS3Outcome;
-        typedef Aws::Utils::Outcome<GetBlockResult, Aws::Client::AWSError<QLDBErrors>> GetBlockOutcome;
-        typedef Aws::Utils::Outcome<GetDigestResult, Aws::Client::AWSError<QLDBErrors>> GetDigestOutcome;
-        typedef Aws::Utils::Outcome<GetRevisionResult, Aws::Client::AWSError<QLDBErrors>> GetRevisionOutcome;
-        typedef Aws::Utils::Outcome<ListJournalS3ExportsResult, Aws::Client::AWSError<QLDBErrors>> ListJournalS3ExportsOutcome;
-        typedef Aws::Utils::Outcome<ListJournalS3ExportsForLedgerResult, Aws::Client::AWSError<QLDBErrors>> ListJournalS3ExportsForLedgerOutcome;
-        typedef Aws::Utils::Outcome<ListLedgersResult, Aws::Client::AWSError<QLDBErrors>> ListLedgersOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<QLDBErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<QLDBErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<QLDBErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateLedgerResult, Aws::Client::AWSError<QLDBErrors>> UpdateLedgerOutcome;
+        typedef Aws::Utils::Outcome<CreateLedgerResult, QLDBError> CreateLedgerOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, QLDBError> DeleteLedgerOutcome;
+        typedef Aws::Utils::Outcome<DescribeJournalS3ExportResult, QLDBError> DescribeJournalS3ExportOutcome;
+        typedef Aws::Utils::Outcome<DescribeLedgerResult, QLDBError> DescribeLedgerOutcome;
+        typedef Aws::Utils::Outcome<ExportJournalToS3Result, QLDBError> ExportJournalToS3Outcome;
+        typedef Aws::Utils::Outcome<GetBlockResult, QLDBError> GetBlockOutcome;
+        typedef Aws::Utils::Outcome<GetDigestResult, QLDBError> GetDigestOutcome;
+        typedef Aws::Utils::Outcome<GetRevisionResult, QLDBError> GetRevisionOutcome;
+        typedef Aws::Utils::Outcome<ListJournalS3ExportsResult, QLDBError> ListJournalS3ExportsOutcome;
+        typedef Aws::Utils::Outcome<ListJournalS3ExportsForLedgerResult, QLDBError> ListJournalS3ExportsForLedgerOutcome;
+        typedef Aws::Utils::Outcome<ListLedgersResult, QLDBError> ListLedgersOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, QLDBError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, QLDBError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, QLDBError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateLedgerResult, QLDBError> UpdateLedgerOutcome;
 
         typedef std::future<CreateLedgerOutcome> CreateLedgerOutcomeCallable;
         typedef std::future<DeleteLedgerOutcome> DeleteLedgerOutcomeCallable;

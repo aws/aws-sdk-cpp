@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/clouddirectory/CloudDirectoryErrors.h>
+#include <aws/clouddirectory/model/BatchWriteException.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudDirectory;
 using namespace Aws::Utils;
+using namespace Aws::CloudDirectory;
+using namespace Aws::CloudDirectory::Model;
 
 namespace Aws
 {
 namespace CloudDirectory
 {
+template<> AWS_CLOUDDIRECTORY_API BatchWriteException CloudDirectoryError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudDirectoryErrors::BATCH_WRITE);
+  return BatchWriteException(this->GetJsonPayload().View());
+}
+
 namespace CloudDirectoryErrorMapper
 {
 

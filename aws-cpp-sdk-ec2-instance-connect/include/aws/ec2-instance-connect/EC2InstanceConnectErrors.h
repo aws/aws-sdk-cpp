@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ec2-instance-connect/EC2InstanceConnect_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class EC2InstanceConnectErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,20 @@ enum class EC2InstanceConnectErrors
   INVALID_ARGS,
   SERVICE
 };
+
+class AWS_EC2INSTANCECONNECT_API EC2InstanceConnectError : public Aws::Client::AWSError<EC2InstanceConnectErrors>
+{
+public:
+  EC2InstanceConnectError() {}
+  EC2InstanceConnectError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EC2InstanceConnectErrors>(rhs) {}
+  EC2InstanceConnectError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EC2InstanceConnectErrors>(rhs) {}
+  EC2InstanceConnectError(const Aws::Client::AWSError<EC2InstanceConnectErrors>& rhs) : Aws::Client::AWSError<EC2InstanceConnectErrors>(rhs) {}
+  EC2InstanceConnectError(Aws::Client::AWSError<EC2InstanceConnectErrors>&& rhs) : Aws::Client::AWSError<EC2InstanceConnectErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace EC2InstanceConnectErrorMapper
 {
   AWS_EC2INSTANCECONNECT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

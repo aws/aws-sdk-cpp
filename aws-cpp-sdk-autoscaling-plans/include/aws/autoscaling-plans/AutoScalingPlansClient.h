@@ -73,12 +73,12 @@ namespace Model
         class GetScalingPlanResourceForecastDataRequest;
         class UpdateScalingPlanRequest;
 
-        typedef Aws::Utils::Outcome<CreateScalingPlanResult, Aws::Client::AWSError<AutoScalingPlansErrors>> CreateScalingPlanOutcome;
-        typedef Aws::Utils::Outcome<DeleteScalingPlanResult, Aws::Client::AWSError<AutoScalingPlansErrors>> DeleteScalingPlanOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingPlanResourcesResult, Aws::Client::AWSError<AutoScalingPlansErrors>> DescribeScalingPlanResourcesOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingPlansResult, Aws::Client::AWSError<AutoScalingPlansErrors>> DescribeScalingPlansOutcome;
-        typedef Aws::Utils::Outcome<GetScalingPlanResourceForecastDataResult, Aws::Client::AWSError<AutoScalingPlansErrors>> GetScalingPlanResourceForecastDataOutcome;
-        typedef Aws::Utils::Outcome<UpdateScalingPlanResult, Aws::Client::AWSError<AutoScalingPlansErrors>> UpdateScalingPlanOutcome;
+        typedef Aws::Utils::Outcome<CreateScalingPlanResult, AutoScalingPlansError> CreateScalingPlanOutcome;
+        typedef Aws::Utils::Outcome<DeleteScalingPlanResult, AutoScalingPlansError> DeleteScalingPlanOutcome;
+        typedef Aws::Utils::Outcome<DescribeScalingPlanResourcesResult, AutoScalingPlansError> DescribeScalingPlanResourcesOutcome;
+        typedef Aws::Utils::Outcome<DescribeScalingPlansResult, AutoScalingPlansError> DescribeScalingPlansOutcome;
+        typedef Aws::Utils::Outcome<GetScalingPlanResourceForecastDataResult, AutoScalingPlansError> GetScalingPlanResourceForecastDataOutcome;
+        typedef Aws::Utils::Outcome<UpdateScalingPlanResult, AutoScalingPlansError> UpdateScalingPlanOutcome;
 
         typedef std::future<CreateScalingPlanOutcome> CreateScalingPlanOutcomeCallable;
         typedef std::future<DeleteScalingPlanOutcome> DeleteScalingPlanOutcomeCallable;

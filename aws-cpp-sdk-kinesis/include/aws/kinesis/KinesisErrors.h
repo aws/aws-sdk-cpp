@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesis/Kinesis_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class KinesisErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69,6 +70,20 @@ enum class KinesisErrors
   PROVISIONED_THROUGHPUT_EXCEEDED,
   RESOURCE_IN_USE
 };
+
+class AWS_KINESIS_API KinesisError : public Aws::Client::AWSError<KinesisErrors>
+{
+public:
+  KinesisError() {}
+  KinesisError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisErrors>(rhs) {}
+  KinesisError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisErrors>(rhs) {}
+  KinesisError(const Aws::Client::AWSError<KinesisErrors>& rhs) : Aws::Client::AWSError<KinesisErrors>(rhs) {}
+  KinesisError(Aws::Client::AWSError<KinesisErrors>&& rhs) : Aws::Client::AWSError<KinesisErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KinesisErrorMapper
 {
   AWS_KINESIS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

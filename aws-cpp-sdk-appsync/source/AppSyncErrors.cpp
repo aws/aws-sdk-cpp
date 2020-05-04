@@ -18,8 +18,8 @@
 #include <aws/appsync/AppSyncErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::AppSync;
 using namespace Aws::Utils;
+using namespace Aws::AppSync;
 
 namespace Aws
 {

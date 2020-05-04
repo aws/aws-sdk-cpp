@@ -16,15 +16,233 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ds/DirectoryServiceErrors.h>
+#include <aws/ds/model/ClientException.h>
+#include <aws/ds/model/EntityAlreadyExistsException.h>
+#include <aws/ds/model/DirectoryAlreadySharedException.h>
+#include <aws/ds/model/InvalidLDAPSStatusException.h>
+#include <aws/ds/model/DirectoryUnavailableException.h>
+#include <aws/ds/model/UserDoesNotExistException.h>
+#include <aws/ds/model/EntityDoesNotExistException.h>
+#include <aws/ds/model/AuthenticationFailedException.h>
+#include <aws/ds/model/InsufficientPermissionsException.h>
+#include <aws/ds/model/InvalidNextTokenException.h>
+#include <aws/ds/model/InvalidParameterException.h>
+#include <aws/ds/model/TagLimitExceededException.h>
+#include <aws/ds/model/InvalidCertificateException.h>
+#include <aws/ds/model/AccessDeniedException.h>
+#include <aws/ds/model/UnsupportedOperationException.h>
+#include <aws/ds/model/CertificateDoesNotExistException.h>
+#include <aws/ds/model/CertificateAlreadyExistsException.h>
+#include <aws/ds/model/InvalidPasswordException.h>
+#include <aws/ds/model/DirectoryLimitExceededException.h>
+#include <aws/ds/model/DirectoryNotSharedException.h>
+#include <aws/ds/model/CertificateInUseException.h>
+#include <aws/ds/model/ShareLimitExceededException.h>
+#include <aws/ds/model/DirectoryDoesNotExistException.h>
+#include <aws/ds/model/NoAvailableCertificateException.h>
+#include <aws/ds/model/OrganizationsException.h>
+#include <aws/ds/model/InvalidTargetException.h>
+#include <aws/ds/model/DomainControllerLimitExceededException.h>
+#include <aws/ds/model/ServiceException.h>
+#include <aws/ds/model/IpRouteLimitExceededException.h>
+#include <aws/ds/model/SnapshotLimitExceededException.h>
+#include <aws/ds/model/CertificateLimitExceededException.h>
 
 using namespace Aws::Client;
-using namespace Aws::DirectoryService;
 using namespace Aws::Utils;
+using namespace Aws::DirectoryService;
+using namespace Aws::DirectoryService::Model;
 
 namespace Aws
 {
 namespace DirectoryService
 {
+template<> AWS_DIRECTORYSERVICE_API ClientException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::CLIENT);
+  return ClientException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API EntityAlreadyExistsException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::ENTITY_ALREADY_EXISTS);
+  return EntityAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API DirectoryAlreadySharedException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_ALREADY_SHARED);
+  return DirectoryAlreadySharedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API InvalidLDAPSStatusException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_L_D_A_P_S_STATUS);
+  return InvalidLDAPSStatusException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API DirectoryUnavailableException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_UNAVAILABLE);
+  return DirectoryUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API UserDoesNotExistException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::USER_DOES_NOT_EXIST);
+  return UserDoesNotExistException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API EntityDoesNotExistException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::ENTITY_DOES_NOT_EXIST);
+  return EntityDoesNotExistException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API AuthenticationFailedException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::AUTHENTICATION_FAILED);
+  return AuthenticationFailedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API InsufficientPermissionsException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INSUFFICIENT_PERMISSIONS);
+  return InsufficientPermissionsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API InvalidNextTokenException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_NEXT_TOKEN);
+  return InvalidNextTokenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API InvalidParameterException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_PARAMETER);
+  return InvalidParameterException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API TagLimitExceededException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::TAG_LIMIT_EXCEEDED);
+  return TagLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API InvalidCertificateException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_CERTIFICATE);
+  return InvalidCertificateException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API AccessDeniedException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API UnsupportedOperationException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::UNSUPPORTED_OPERATION);
+  return UnsupportedOperationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API CertificateDoesNotExistException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::CERTIFICATE_DOES_NOT_EXIST);
+  return CertificateDoesNotExistException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API CertificateAlreadyExistsException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::CERTIFICATE_ALREADY_EXISTS);
+  return CertificateAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API InvalidPasswordException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_PASSWORD);
+  return InvalidPasswordException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API DirectoryLimitExceededException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_LIMIT_EXCEEDED);
+  return DirectoryLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API DirectoryNotSharedException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_NOT_SHARED);
+  return DirectoryNotSharedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API CertificateInUseException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::CERTIFICATE_IN_USE);
+  return CertificateInUseException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API ShareLimitExceededException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::SHARE_LIMIT_EXCEEDED);
+  return ShareLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API DirectoryDoesNotExistException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DIRECTORY_DOES_NOT_EXIST);
+  return DirectoryDoesNotExistException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API NoAvailableCertificateException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::NO_AVAILABLE_CERTIFICATE);
+  return NoAvailableCertificateException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API OrganizationsException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::ORGANIZATIONS);
+  return OrganizationsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API InvalidTargetException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::INVALID_TARGET);
+  return InvalidTargetException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API DomainControllerLimitExceededException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::DOMAIN_CONTROLLER_LIMIT_EXCEEDED);
+  return DomainControllerLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API ServiceException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::SERVICE);
+  return ServiceException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API IpRouteLimitExceededException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::IP_ROUTE_LIMIT_EXCEEDED);
+  return IpRouteLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API SnapshotLimitExceededException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::SNAPSHOT_LIMIT_EXCEEDED);
+  return SnapshotLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DIRECTORYSERVICE_API CertificateLimitExceededException DirectoryServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DirectoryServiceErrors::CERTIFICATE_LIMIT_EXCEEDED);
+  return CertificateLimitExceededException(this->GetJsonPayload().View());
+}
+
 namespace DirectoryServiceErrorMapper
 {
 

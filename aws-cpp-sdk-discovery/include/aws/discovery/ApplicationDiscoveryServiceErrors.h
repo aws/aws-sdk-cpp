@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/discovery/ApplicationDiscoveryService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ApplicationDiscoveryServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class ApplicationDiscoveryServiceErrors
   RESOURCE_IN_USE,
   SERVER_INTERNAL_ERROR
 };
+
+class AWS_APPLICATIONDISCOVERYSERVICE_API ApplicationDiscoveryServiceError : public Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>
+{
+public:
+  ApplicationDiscoveryServiceError() {}
+  ApplicationDiscoveryServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
+  ApplicationDiscoveryServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
+  ApplicationDiscoveryServiceError(const Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>& rhs) : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
+  ApplicationDiscoveryServiceError(Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>&& rhs) : Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ApplicationDiscoveryServiceErrorMapper
 {
   AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

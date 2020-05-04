@@ -18,8 +18,8 @@
 #include <aws/managedblockchain/ManagedBlockchainErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ManagedBlockchain;
 using namespace Aws::Utils;
+using namespace Aws::ManagedBlockchain;
 
 namespace Aws
 {

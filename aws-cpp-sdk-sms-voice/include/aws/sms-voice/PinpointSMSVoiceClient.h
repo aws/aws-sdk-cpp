@@ -77,14 +77,14 @@ namespace Model
         class SendVoiceMessageRequest;
         class UpdateConfigurationSetEventDestinationRequest;
 
-        typedef Aws::Utils::Outcome<CreateConfigurationSetResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> CreateConfigurationSetOutcome;
-        typedef Aws::Utils::Outcome<CreateConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> CreateConfigurationSetEventDestinationOutcome;
-        typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> DeleteConfigurationSetOutcome;
-        typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> DeleteConfigurationSetEventDestinationOutcome;
-        typedef Aws::Utils::Outcome<GetConfigurationSetEventDestinationsResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> GetConfigurationSetEventDestinationsOutcome;
-        typedef Aws::Utils::Outcome<ListConfigurationSetsResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> ListConfigurationSetsOutcome;
-        typedef Aws::Utils::Outcome<SendVoiceMessageResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> SendVoiceMessageOutcome;
-        typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> UpdateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationSetResult, PinpointSMSVoiceError> CreateConfigurationSetOutcome;
+        typedef Aws::Utils::Outcome<CreateConfigurationSetEventDestinationResult, PinpointSMSVoiceError> CreateConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, PinpointSMSVoiceError> DeleteConfigurationSetOutcome;
+        typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, PinpointSMSVoiceError> DeleteConfigurationSetEventDestinationOutcome;
+        typedef Aws::Utils::Outcome<GetConfigurationSetEventDestinationsResult, PinpointSMSVoiceError> GetConfigurationSetEventDestinationsOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationSetsResult, PinpointSMSVoiceError> ListConfigurationSetsOutcome;
+        typedef Aws::Utils::Outcome<SendVoiceMessageResult, PinpointSMSVoiceError> SendVoiceMessageOutcome;
+        typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, PinpointSMSVoiceError> UpdateConfigurationSetEventDestinationOutcome;
 
         typedef std::future<CreateConfigurationSetOutcome> CreateConfigurationSetOutcomeCallable;
         typedef std::future<CreateConfigurationSetEventDestinationOutcome> CreateConfigurationSetEventDestinationOutcomeCallable;

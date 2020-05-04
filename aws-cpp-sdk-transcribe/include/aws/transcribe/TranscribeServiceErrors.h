@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class TranscribeServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,20 @@ enum class TranscribeServiceErrors
   LIMIT_EXCEEDED,
   NOT_FOUND
 };
+
+class AWS_TRANSCRIBESERVICE_API TranscribeServiceError : public Aws::Client::AWSError<TranscribeServiceErrors>
+{
+public:
+  TranscribeServiceError() {}
+  TranscribeServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<TranscribeServiceErrors>(rhs) {}
+  TranscribeServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<TranscribeServiceErrors>(rhs) {}
+  TranscribeServiceError(const Aws::Client::AWSError<TranscribeServiceErrors>& rhs) : Aws::Client::AWSError<TranscribeServiceErrors>(rhs) {}
+  TranscribeServiceError(Aws::Client::AWSError<TranscribeServiceErrors>&& rhs) : Aws::Client::AWSError<TranscribeServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace TranscribeServiceErrorMapper
 {
   AWS_TRANSCRIBESERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

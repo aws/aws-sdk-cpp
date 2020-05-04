@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/waf/WAFErrors.h>
+#include <aws/waf/model/WAFInvalidParameterException.h>
+#include <aws/waf/model/WAFEntityMigrationException.h>
 
 using namespace Aws::Client;
-using namespace Aws::WAF;
 using namespace Aws::Utils;
+using namespace Aws::WAF;
+using namespace Aws::WAF::Model;
 
 namespace Aws
 {
 namespace WAF
 {
+template<> AWS_WAF_API WAFInvalidParameterException WAFError::GetModeledError()
+{
+  assert(this->GetErrorType() == WAFErrors::W_A_F_INVALID_PARAMETER);
+  return WAFInvalidParameterException(this->GetJsonPayload().View());
+}
+
+template<> AWS_WAF_API WAFEntityMigrationException WAFError::GetModeledError()
+{
+  assert(this->GetErrorType() == WAFErrors::W_A_F_ENTITY_MIGRATION);
+  return WAFEntityMigrationException(this->GetJsonPayload().View());
+}
+
 namespace WAFErrorMapper
 {
 

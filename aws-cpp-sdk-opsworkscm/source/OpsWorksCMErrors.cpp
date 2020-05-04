@@ -18,8 +18,8 @@
 #include <aws/opsworkscm/OpsWorksCMErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::OpsWorksCM;
 using namespace Aws::Utils;
+using namespace Aws::OpsWorksCM;
 
 namespace Aws
 {

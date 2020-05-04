@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/translate/TranslateErrors.h>
+#include <aws/translate/model/UnsupportedLanguagePairException.h>
+#include <aws/translate/model/DetectedLanguageLowConfidenceException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Translate;
 using namespace Aws::Utils;
+using namespace Aws::Translate;
+using namespace Aws::Translate::Model;
 
 namespace Aws
 {
 namespace Translate
 {
+template<> AWS_TRANSLATE_API UnsupportedLanguagePairException TranslateError::GetModeledError()
+{
+  assert(this->GetErrorType() == TranslateErrors::UNSUPPORTED_LANGUAGE_PAIR);
+  return UnsupportedLanguagePairException(this->GetJsonPayload().View());
+}
+
+template<> AWS_TRANSLATE_API DetectedLanguageLowConfidenceException TranslateError::GetModeledError()
+{
+  assert(this->GetErrorType() == TranslateErrors::DETECTED_LANGUAGE_LOW_CONFIDENCE);
+  return DetectedLanguageLowConfidenceException(this->GetJsonPayload().View());
+}
+
 namespace TranslateErrorMapper
 {
 

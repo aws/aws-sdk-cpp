@@ -69,10 +69,10 @@ namespace Model
         class ModifyReportDefinitionRequest;
         class PutReportDefinitionRequest;
 
-        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> DeleteReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> DescribeReportDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> ModifyReportDefinitionOutcome;
-        typedef Aws::Utils::Outcome<PutReportDefinitionResult, Aws::Client::AWSError<CostandUsageReportServiceErrors>> PutReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteReportDefinitionResult, CostandUsageReportServiceError> DeleteReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeReportDefinitionsResult, CostandUsageReportServiceError> DescribeReportDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ModifyReportDefinitionResult, CostandUsageReportServiceError> ModifyReportDefinitionOutcome;
+        typedef Aws::Utils::Outcome<PutReportDefinitionResult, CostandUsageReportServiceError> PutReportDefinitionOutcome;
 
         typedef std::future<DeleteReportDefinitionOutcome> DeleteReportDefinitionOutcomeCallable;
         typedef std::future<DescribeReportDefinitionsOutcome> DescribeReportDefinitionsOutcomeCallable;

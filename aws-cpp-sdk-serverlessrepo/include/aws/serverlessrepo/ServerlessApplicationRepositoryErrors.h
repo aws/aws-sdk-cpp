@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepository_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ServerlessApplicationRepositoryErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class ServerlessApplicationRepositoryErrors
   NOT_FOUND,
   TOO_MANY_REQUESTS
 };
+
+class AWS_SERVERLESSAPPLICATIONREPOSITORY_API ServerlessApplicationRepositoryError : public Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>
+{
+public:
+  ServerlessApplicationRepositoryError() {}
+  ServerlessApplicationRepositoryError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(rhs) {}
+  ServerlessApplicationRepositoryError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(rhs) {}
+  ServerlessApplicationRepositoryError(const Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>& rhs) : Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(rhs) {}
+  ServerlessApplicationRepositoryError(Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>&& rhs) : Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ServerlessApplicationRepositoryErrorMapper
 {
   AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -87,19 +87,19 @@ namespace Model
         class UntagResourceRequest;
         class UpdateCanaryRequest;
 
-        typedef Aws::Utils::Outcome<CreateCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> CreateCanaryOutcome;
-        typedef Aws::Utils::Outcome<DeleteCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> DeleteCanaryOutcome;
-        typedef Aws::Utils::Outcome<DescribeCanariesResult, Aws::Client::AWSError<SyntheticsErrors>> DescribeCanariesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCanariesLastRunResult, Aws::Client::AWSError<SyntheticsErrors>> DescribeCanariesLastRunOutcome;
-        typedef Aws::Utils::Outcome<DescribeRuntimeVersionsResult, Aws::Client::AWSError<SyntheticsErrors>> DescribeRuntimeVersionsOutcome;
-        typedef Aws::Utils::Outcome<GetCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> GetCanaryOutcome;
-        typedef Aws::Utils::Outcome<GetCanaryRunsResult, Aws::Client::AWSError<SyntheticsErrors>> GetCanaryRunsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SyntheticsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<StartCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> StartCanaryOutcome;
-        typedef Aws::Utils::Outcome<StopCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> StopCanaryOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SyntheticsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SyntheticsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateCanaryResult, Aws::Client::AWSError<SyntheticsErrors>> UpdateCanaryOutcome;
+        typedef Aws::Utils::Outcome<CreateCanaryResult, SyntheticsError> CreateCanaryOutcome;
+        typedef Aws::Utils::Outcome<DeleteCanaryResult, SyntheticsError> DeleteCanaryOutcome;
+        typedef Aws::Utils::Outcome<DescribeCanariesResult, SyntheticsError> DescribeCanariesOutcome;
+        typedef Aws::Utils::Outcome<DescribeCanariesLastRunResult, SyntheticsError> DescribeCanariesLastRunOutcome;
+        typedef Aws::Utils::Outcome<DescribeRuntimeVersionsResult, SyntheticsError> DescribeRuntimeVersionsOutcome;
+        typedef Aws::Utils::Outcome<GetCanaryResult, SyntheticsError> GetCanaryOutcome;
+        typedef Aws::Utils::Outcome<GetCanaryRunsResult, SyntheticsError> GetCanaryRunsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SyntheticsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartCanaryResult, SyntheticsError> StartCanaryOutcome;
+        typedef Aws::Utils::Outcome<StopCanaryResult, SyntheticsError> StopCanaryOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, SyntheticsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, SyntheticsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateCanaryResult, SyntheticsError> UpdateCanaryOutcome;
 
         typedef std::future<CreateCanaryOutcome> CreateCanaryOutcomeCallable;
         typedef std::future<DeleteCanaryOutcome> DeleteCanaryOutcomeCallable;

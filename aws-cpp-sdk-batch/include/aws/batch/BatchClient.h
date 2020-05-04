@@ -93,22 +93,22 @@ namespace Model
         class UpdateComputeEnvironmentRequest;
         class UpdateJobQueueRequest;
 
-        typedef Aws::Utils::Outcome<CancelJobResult, Aws::Client::AWSError<BatchErrors>> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateComputeEnvironmentResult, Aws::Client::AWSError<BatchErrors>> CreateComputeEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<CreateJobQueueResult, Aws::Client::AWSError<BatchErrors>> CreateJobQueueOutcome;
-        typedef Aws::Utils::Outcome<DeleteComputeEnvironmentResult, Aws::Client::AWSError<BatchErrors>> DeleteComputeEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteJobQueueResult, Aws::Client::AWSError<BatchErrors>> DeleteJobQueueOutcome;
-        typedef Aws::Utils::Outcome<DeregisterJobDefinitionResult, Aws::Client::AWSError<BatchErrors>> DeregisterJobDefinitionOutcome;
-        typedef Aws::Utils::Outcome<DescribeComputeEnvironmentsResult, Aws::Client::AWSError<BatchErrors>> DescribeComputeEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobDefinitionsResult, Aws::Client::AWSError<BatchErrors>> DescribeJobDefinitionsOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobQueuesResult, Aws::Client::AWSError<BatchErrors>> DescribeJobQueuesOutcome;
-        typedef Aws::Utils::Outcome<DescribeJobsResult, Aws::Client::AWSError<BatchErrors>> DescribeJobsOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<BatchErrors>> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<RegisterJobDefinitionResult, Aws::Client::AWSError<BatchErrors>> RegisterJobDefinitionOutcome;
-        typedef Aws::Utils::Outcome<SubmitJobResult, Aws::Client::AWSError<BatchErrors>> SubmitJobOutcome;
-        typedef Aws::Utils::Outcome<TerminateJobResult, Aws::Client::AWSError<BatchErrors>> TerminateJobOutcome;
-        typedef Aws::Utils::Outcome<UpdateComputeEnvironmentResult, Aws::Client::AWSError<BatchErrors>> UpdateComputeEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobQueueResult, Aws::Client::AWSError<BatchErrors>> UpdateJobQueueOutcome;
+        typedef Aws::Utils::Outcome<CancelJobResult, BatchError> CancelJobOutcome;
+        typedef Aws::Utils::Outcome<CreateComputeEnvironmentResult, BatchError> CreateComputeEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<CreateJobQueueResult, BatchError> CreateJobQueueOutcome;
+        typedef Aws::Utils::Outcome<DeleteComputeEnvironmentResult, BatchError> DeleteComputeEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<DeleteJobQueueResult, BatchError> DeleteJobQueueOutcome;
+        typedef Aws::Utils::Outcome<DeregisterJobDefinitionResult, BatchError> DeregisterJobDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeComputeEnvironmentsResult, BatchError> DescribeComputeEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeJobDefinitionsResult, BatchError> DescribeJobDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeJobQueuesResult, BatchError> DescribeJobQueuesOutcome;
+        typedef Aws::Utils::Outcome<DescribeJobsResult, BatchError> DescribeJobsOutcome;
+        typedef Aws::Utils::Outcome<ListJobsResult, BatchError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<RegisterJobDefinitionResult, BatchError> RegisterJobDefinitionOutcome;
+        typedef Aws::Utils::Outcome<SubmitJobResult, BatchError> SubmitJobOutcome;
+        typedef Aws::Utils::Outcome<TerminateJobResult, BatchError> TerminateJobOutcome;
+        typedef Aws::Utils::Outcome<UpdateComputeEnvironmentResult, BatchError> UpdateComputeEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<UpdateJobQueueResult, BatchError> UpdateJobQueueOutcome;
 
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
         typedef std::future<CreateComputeEnvironmentOutcome> CreateComputeEnvironmentOutcomeCallable;

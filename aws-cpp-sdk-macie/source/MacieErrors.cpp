@@ -16,15 +16,44 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/macie/MacieErrors.h>
+#include <aws/macie/model/InternalException.h>
+#include <aws/macie/model/LimitExceededException.h>
+#include <aws/macie/model/AccessDeniedException.h>
+#include <aws/macie/model/InvalidInputException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Macie;
 using namespace Aws::Utils;
+using namespace Aws::Macie;
+using namespace Aws::Macie::Model;
 
 namespace Aws
 {
 namespace Macie
 {
+template<> AWS_MACIE_API InternalException MacieError::GetModeledError()
+{
+  assert(this->GetErrorType() == MacieErrors::INTERNAL);
+  return InternalException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MACIE_API LimitExceededException MacieError::GetModeledError()
+{
+  assert(this->GetErrorType() == MacieErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MACIE_API AccessDeniedException MacieError::GetModeledError()
+{
+  assert(this->GetErrorType() == MacieErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MACIE_API InvalidInputException MacieError::GetModeledError()
+{
+  assert(this->GetErrorType() == MacieErrors::INVALID_INPUT);
+  return InvalidInputException(this->GetJsonPayload().View());
+}
+
 namespace MacieErrorMapper
 {
 

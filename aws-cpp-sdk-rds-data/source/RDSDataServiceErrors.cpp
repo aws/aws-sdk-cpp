@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/rds-data/RDSDataServiceErrors.h>
+#include <aws/rds-data/model/StatementTimeoutException.h>
 
 using namespace Aws::Client;
-using namespace Aws::RDSDataService;
 using namespace Aws::Utils;
+using namespace Aws::RDSDataService;
+using namespace Aws::RDSDataService::Model;
 
 namespace Aws
 {
 namespace RDSDataService
 {
+template<> AWS_RDSDATASERVICE_API StatementTimeoutException RDSDataServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == RDSDataServiceErrors::STATEMENT_TIMEOUT);
+  return StatementTimeoutException(this->GetJsonPayload().View());
+}
+
 namespace RDSDataServiceErrorMapper
 {
 

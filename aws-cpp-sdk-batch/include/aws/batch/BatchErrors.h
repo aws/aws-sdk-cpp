@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/batch/Batch_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class BatchErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CLIENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVER
 };
+
+class AWS_BATCH_API BatchError : public Aws::Client::AWSError<BatchErrors>
+{
+public:
+  BatchError() {}
+  BatchError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<BatchErrors>(rhs) {}
+  BatchError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<BatchErrors>(rhs) {}
+  BatchError(const Aws::Client::AWSError<BatchErrors>& rhs) : Aws::Client::AWSError<BatchErrors>(rhs) {}
+  BatchError(Aws::Client::AWSError<BatchErrors>&& rhs) : Aws::Client::AWSError<BatchErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace BatchErrorMapper
 {
   AWS_BATCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

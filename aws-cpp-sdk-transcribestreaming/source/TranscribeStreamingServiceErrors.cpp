@@ -18,8 +18,8 @@
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::TranscribeStreamingService;
 using namespace Aws::Utils;
+using namespace Aws::TranscribeStreamingService;
 
 namespace Aws
 {

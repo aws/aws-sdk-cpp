@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/neptune/Neptune_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class NeptuneErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -116,6 +117,20 @@ enum class NeptuneErrors
   S_N_S_NO_AUTHORIZATION_FAULT,
   S_N_S_TOPIC_ARN_NOT_FOUND_FAULT
 };
+
+class AWS_NEPTUNE_API NeptuneError : public Aws::Client::AWSError<NeptuneErrors>
+{
+public:
+  NeptuneError() {}
+  NeptuneError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<NeptuneErrors>(rhs) {}
+  NeptuneError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<NeptuneErrors>(rhs) {}
+  NeptuneError(const Aws::Client::AWSError<NeptuneErrors>& rhs) : Aws::Client::AWSError<NeptuneErrors>(rhs) {}
+  NeptuneError(Aws::Client::AWSError<NeptuneErrors>&& rhs) : Aws::Client::AWSError<NeptuneErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace NeptuneErrorMapper
 {
   AWS_NEPTUNE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

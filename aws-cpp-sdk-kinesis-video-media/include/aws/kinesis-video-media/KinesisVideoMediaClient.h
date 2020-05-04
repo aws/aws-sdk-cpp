@@ -63,7 +63,7 @@ namespace Model
 {
         class GetMediaRequest;
 
-        typedef Aws::Utils::Outcome<GetMediaResult, Aws::Client::AWSError<KinesisVideoMediaErrors>> GetMediaOutcome;
+        typedef Aws::Utils::Outcome<GetMediaResult, KinesisVideoMediaError> GetMediaOutcome;
 
         typedef std::future<GetMediaOutcome> GetMediaOutcomeCallable;
 } // namespace Model

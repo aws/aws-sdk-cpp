@@ -63,7 +63,7 @@ namespace Model
 {
         class GetRawMessageContentRequest;
 
-        typedef Aws::Utils::Outcome<GetRawMessageContentResult, Aws::Client::AWSError<WorkMailMessageFlowErrors>> GetRawMessageContentOutcome;
+        typedef Aws::Utils::Outcome<GetRawMessageContentResult, WorkMailMessageFlowError> GetRawMessageContentOutcome;
 
         typedef std::future<GetRawMessageContentOutcome> GetRawMessageContentOutcomeCallable;
 } // namespace Model

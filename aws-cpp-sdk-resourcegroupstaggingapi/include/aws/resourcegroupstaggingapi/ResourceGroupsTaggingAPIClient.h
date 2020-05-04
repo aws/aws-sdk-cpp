@@ -77,14 +77,14 @@ namespace Model
         class TagResourcesRequest;
         class UntagResourcesRequest;
 
-        typedef Aws::Utils::Outcome<DescribeReportCreationResult, Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>> DescribeReportCreationOutcome;
-        typedef Aws::Utils::Outcome<GetComplianceSummaryResult, Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>> GetComplianceSummaryOutcome;
-        typedef Aws::Utils::Outcome<GetResourcesResult, Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>> GetResourcesOutcome;
-        typedef Aws::Utils::Outcome<GetTagKeysResult, Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>> GetTagKeysOutcome;
-        typedef Aws::Utils::Outcome<GetTagValuesResult, Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>> GetTagValuesOutcome;
-        typedef Aws::Utils::Outcome<StartReportCreationResult, Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>> StartReportCreationOutcome;
-        typedef Aws::Utils::Outcome<TagResourcesResult, Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>> TagResourcesOutcome;
-        typedef Aws::Utils::Outcome<UntagResourcesResult, Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>> UntagResourcesOutcome;
+        typedef Aws::Utils::Outcome<DescribeReportCreationResult, ResourceGroupsTaggingAPIError> DescribeReportCreationOutcome;
+        typedef Aws::Utils::Outcome<GetComplianceSummaryResult, ResourceGroupsTaggingAPIError> GetComplianceSummaryOutcome;
+        typedef Aws::Utils::Outcome<GetResourcesResult, ResourceGroupsTaggingAPIError> GetResourcesOutcome;
+        typedef Aws::Utils::Outcome<GetTagKeysResult, ResourceGroupsTaggingAPIError> GetTagKeysOutcome;
+        typedef Aws::Utils::Outcome<GetTagValuesResult, ResourceGroupsTaggingAPIError> GetTagValuesOutcome;
+        typedef Aws::Utils::Outcome<StartReportCreationResult, ResourceGroupsTaggingAPIError> StartReportCreationOutcome;
+        typedef Aws::Utils::Outcome<TagResourcesResult, ResourceGroupsTaggingAPIError> TagResourcesOutcome;
+        typedef Aws::Utils::Outcome<UntagResourcesResult, ResourceGroupsTaggingAPIError> UntagResourcesOutcome;
 
         typedef std::future<DescribeReportCreationOutcome> DescribeReportCreationOutcomeCallable;
         typedef std::future<GetComplianceSummaryOutcome> GetComplianceSummaryOutcomeCallable;

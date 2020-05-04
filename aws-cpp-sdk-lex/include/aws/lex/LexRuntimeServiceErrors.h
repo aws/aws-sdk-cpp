@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class LexRuntimeServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,6 +67,20 @@ enum class LexRuntimeServiceErrors
   NOT_FOUND,
   UNSUPPORTED_MEDIA_TYPE
 };
+
+class AWS_LEXRUNTIMESERVICE_API LexRuntimeServiceError : public Aws::Client::AWSError<LexRuntimeServiceErrors>
+{
+public:
+  LexRuntimeServiceError() {}
+  LexRuntimeServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LexRuntimeServiceErrors>(rhs) {}
+  LexRuntimeServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LexRuntimeServiceErrors>(rhs) {}
+  LexRuntimeServiceError(const Aws::Client::AWSError<LexRuntimeServiceErrors>& rhs) : Aws::Client::AWSError<LexRuntimeServiceErrors>(rhs) {}
+  LexRuntimeServiceError(Aws::Client::AWSError<LexRuntimeServiceErrors>&& rhs) : Aws::Client::AWSError<LexRuntimeServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace LexRuntimeServiceErrorMapper
 {
   AWS_LEXRUNTIMESERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

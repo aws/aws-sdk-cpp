@@ -85,18 +85,18 @@ namespace Model
         class StopEntitiesDetectionV2JobRequest;
         class StopPHIDetectionJobRequest;
 
-        typedef Aws::Utils::Outcome<DescribeEntitiesDetectionV2JobResult, Aws::Client::AWSError<ComprehendMedicalErrors>> DescribeEntitiesDetectionV2JobOutcome;
-        typedef Aws::Utils::Outcome<DescribePHIDetectionJobResult, Aws::Client::AWSError<ComprehendMedicalErrors>> DescribePHIDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<DetectEntitiesV2Result, Aws::Client::AWSError<ComprehendMedicalErrors>> DetectEntitiesV2Outcome;
-        typedef Aws::Utils::Outcome<DetectPHIResult, Aws::Client::AWSError<ComprehendMedicalErrors>> DetectPHIOutcome;
-        typedef Aws::Utils::Outcome<InferICD10CMResult, Aws::Client::AWSError<ComprehendMedicalErrors>> InferICD10CMOutcome;
-        typedef Aws::Utils::Outcome<InferRxNormResult, Aws::Client::AWSError<ComprehendMedicalErrors>> InferRxNormOutcome;
-        typedef Aws::Utils::Outcome<ListEntitiesDetectionV2JobsResult, Aws::Client::AWSError<ComprehendMedicalErrors>> ListEntitiesDetectionV2JobsOutcome;
-        typedef Aws::Utils::Outcome<ListPHIDetectionJobsResult, Aws::Client::AWSError<ComprehendMedicalErrors>> ListPHIDetectionJobsOutcome;
-        typedef Aws::Utils::Outcome<StartEntitiesDetectionV2JobResult, Aws::Client::AWSError<ComprehendMedicalErrors>> StartEntitiesDetectionV2JobOutcome;
-        typedef Aws::Utils::Outcome<StartPHIDetectionJobResult, Aws::Client::AWSError<ComprehendMedicalErrors>> StartPHIDetectionJobOutcome;
-        typedef Aws::Utils::Outcome<StopEntitiesDetectionV2JobResult, Aws::Client::AWSError<ComprehendMedicalErrors>> StopEntitiesDetectionV2JobOutcome;
-        typedef Aws::Utils::Outcome<StopPHIDetectionJobResult, Aws::Client::AWSError<ComprehendMedicalErrors>> StopPHIDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeEntitiesDetectionV2JobResult, ComprehendMedicalError> DescribeEntitiesDetectionV2JobOutcome;
+        typedef Aws::Utils::Outcome<DescribePHIDetectionJobResult, ComprehendMedicalError> DescribePHIDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<DetectEntitiesV2Result, ComprehendMedicalError> DetectEntitiesV2Outcome;
+        typedef Aws::Utils::Outcome<DetectPHIResult, ComprehendMedicalError> DetectPHIOutcome;
+        typedef Aws::Utils::Outcome<InferICD10CMResult, ComprehendMedicalError> InferICD10CMOutcome;
+        typedef Aws::Utils::Outcome<InferRxNormResult, ComprehendMedicalError> InferRxNormOutcome;
+        typedef Aws::Utils::Outcome<ListEntitiesDetectionV2JobsResult, ComprehendMedicalError> ListEntitiesDetectionV2JobsOutcome;
+        typedef Aws::Utils::Outcome<ListPHIDetectionJobsResult, ComprehendMedicalError> ListPHIDetectionJobsOutcome;
+        typedef Aws::Utils::Outcome<StartEntitiesDetectionV2JobResult, ComprehendMedicalError> StartEntitiesDetectionV2JobOutcome;
+        typedef Aws::Utils::Outcome<StartPHIDetectionJobResult, ComprehendMedicalError> StartPHIDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopEntitiesDetectionV2JobResult, ComprehendMedicalError> StopEntitiesDetectionV2JobOutcome;
+        typedef Aws::Utils::Outcome<StopPHIDetectionJobResult, ComprehendMedicalError> StopPHIDetectionJobOutcome;
 
         typedef std::future<DescribeEntitiesDetectionV2JobOutcome> DescribeEntitiesDetectionV2JobOutcomeCallable;
         typedef std::future<DescribePHIDetectionJobOutcome> DescribePHIDetectionJobOutcomeCallable;

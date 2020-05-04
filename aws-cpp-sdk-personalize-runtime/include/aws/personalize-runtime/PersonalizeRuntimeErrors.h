@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/personalize-runtime/PersonalizeRuntime_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class PersonalizeRuntimeErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INVALID_INPUT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
+
+class AWS_PERSONALIZERUNTIME_API PersonalizeRuntimeError : public Aws::Client::AWSError<PersonalizeRuntimeErrors>
+{
+public:
+  PersonalizeRuntimeError() {}
+  PersonalizeRuntimeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PersonalizeRuntimeErrors>(rhs) {}
+  PersonalizeRuntimeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PersonalizeRuntimeErrors>(rhs) {}
+  PersonalizeRuntimeError(const Aws::Client::AWSError<PersonalizeRuntimeErrors>& rhs) : Aws::Client::AWSError<PersonalizeRuntimeErrors>(rhs) {}
+  PersonalizeRuntimeError(Aws::Client::AWSError<PersonalizeRuntimeErrors>&& rhs) : Aws::Client::AWSError<PersonalizeRuntimeErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace PersonalizeRuntimeErrorMapper
 {
   AWS_PERSONALIZERUNTIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

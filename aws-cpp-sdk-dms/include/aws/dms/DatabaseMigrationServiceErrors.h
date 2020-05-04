@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class DatabaseMigrationServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -77,6 +78,20 @@ enum class DatabaseMigrationServiceErrors
   S_N_S_NO_AUTHORIZATION_FAULT,
   UPGRADE_DEPENDENCY_FAILURE_FAULT
 };
+
+class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceError : public Aws::Client::AWSError<DatabaseMigrationServiceErrors>
+{
+public:
+  DatabaseMigrationServiceError() {}
+  DatabaseMigrationServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
+  DatabaseMigrationServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
+  DatabaseMigrationServiceError(const Aws::Client::AWSError<DatabaseMigrationServiceErrors>& rhs) : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
+  DatabaseMigrationServiceError(Aws::Client::AWSError<DatabaseMigrationServiceErrors>&& rhs) : Aws::Client::AWSError<DatabaseMigrationServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace DatabaseMigrationServiceErrorMapper
 {
   AWS_DATABASEMIGRATIONSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -16,15 +16,86 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/inspector/InspectorErrors.h>
+#include <aws/inspector/model/InternalException.h>
+#include <aws/inspector/model/AgentsAlreadyRunningAssessmentException.h>
+#include <aws/inspector/model/UnsupportedFeatureException.h>
+#include <aws/inspector/model/NoSuchEntityException.h>
+#include <aws/inspector/model/LimitExceededException.h>
+#include <aws/inspector/model/AccessDeniedException.h>
+#include <aws/inspector/model/AssessmentRunInProgressException.h>
+#include <aws/inspector/model/InvalidInputException.h>
+#include <aws/inspector/model/ServiceTemporarilyUnavailableException.h>
+#include <aws/inspector/model/InvalidCrossAccountRoleException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Inspector;
 using namespace Aws::Utils;
+using namespace Aws::Inspector;
+using namespace Aws::Inspector::Model;
 
 namespace Aws
 {
 namespace Inspector
 {
+template<> AWS_INSPECTOR_API InternalException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::INTERNAL);
+  return InternalException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API AgentsAlreadyRunningAssessmentException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::AGENTS_ALREADY_RUNNING_ASSESSMENT);
+  return AgentsAlreadyRunningAssessmentException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API UnsupportedFeatureException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::UNSUPPORTED_FEATURE);
+  return UnsupportedFeatureException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API NoSuchEntityException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::NO_SUCH_ENTITY);
+  return NoSuchEntityException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API LimitExceededException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API AccessDeniedException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API AssessmentRunInProgressException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::ASSESSMENT_RUN_IN_PROGRESS);
+  return AssessmentRunInProgressException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API InvalidInputException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::INVALID_INPUT);
+  return InvalidInputException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API ServiceTemporarilyUnavailableException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::SERVICE_TEMPORARILY_UNAVAILABLE);
+  return ServiceTemporarilyUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_INSPECTOR_API InvalidCrossAccountRoleException InspectorError::GetModeledError()
+{
+  assert(this->GetErrorType() == InspectorErrors::INVALID_CROSS_ACCOUNT_ROLE);
+  return InvalidCrossAccountRoleException(this->GetJsonPayload().View());
+}
+
 namespace InspectorErrorMapper
 {
 

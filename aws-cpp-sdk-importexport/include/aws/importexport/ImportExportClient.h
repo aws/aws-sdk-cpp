@@ -80,12 +80,12 @@ namespace Model
         class ListJobsRequest;
         class UpdateJobRequest;
 
-        typedef Aws::Utils::Outcome<CancelJobResult, Aws::Client::AWSError<ImportExportErrors>> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateJobResult, Aws::Client::AWSError<ImportExportErrors>> CreateJobOutcome;
-        typedef Aws::Utils::Outcome<GetShippingLabelResult, Aws::Client::AWSError<ImportExportErrors>> GetShippingLabelOutcome;
-        typedef Aws::Utils::Outcome<GetStatusResult, Aws::Client::AWSError<ImportExportErrors>> GetStatusOutcome;
-        typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<ImportExportErrors>> ListJobsOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobResult, Aws::Client::AWSError<ImportExportErrors>> UpdateJobOutcome;
+        typedef Aws::Utils::Outcome<CancelJobResult, ImportExportError> CancelJobOutcome;
+        typedef Aws::Utils::Outcome<CreateJobResult, ImportExportError> CreateJobOutcome;
+        typedef Aws::Utils::Outcome<GetShippingLabelResult, ImportExportError> GetShippingLabelOutcome;
+        typedef Aws::Utils::Outcome<GetStatusResult, ImportExportError> GetStatusOutcome;
+        typedef Aws::Utils::Outcome<ListJobsResult, ImportExportError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<UpdateJobResult, ImportExportError> UpdateJobOutcome;
 
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
@@ -351,7 +351,7 @@ namespace Model
          */
         virtual void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

@@ -69,10 +69,10 @@ namespace Model
         class RegisterUsageRequest;
         class ResolveCustomerRequest;
 
-        typedef Aws::Utils::Outcome<BatchMeterUsageResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> BatchMeterUsageOutcome;
-        typedef Aws::Utils::Outcome<MeterUsageResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> MeterUsageOutcome;
-        typedef Aws::Utils::Outcome<RegisterUsageResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> RegisterUsageOutcome;
-        typedef Aws::Utils::Outcome<ResolveCustomerResult, Aws::Client::AWSError<MarketplaceMeteringErrors>> ResolveCustomerOutcome;
+        typedef Aws::Utils::Outcome<BatchMeterUsageResult, MarketplaceMeteringError> BatchMeterUsageOutcome;
+        typedef Aws::Utils::Outcome<MeterUsageResult, MarketplaceMeteringError> MeterUsageOutcome;
+        typedef Aws::Utils::Outcome<RegisterUsageResult, MarketplaceMeteringError> RegisterUsageOutcome;
+        typedef Aws::Utils::Outcome<ResolveCustomerResult, MarketplaceMeteringError> ResolveCustomerOutcome;
 
         typedef std::future<BatchMeterUsageOutcome> BatchMeterUsageOutcomeCallable;
         typedef std::future<MeterUsageOutcome> MeterUsageOutcomeCallable;

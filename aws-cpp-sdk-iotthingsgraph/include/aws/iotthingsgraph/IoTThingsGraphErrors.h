@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iotthingsgraph/IoTThingsGraph_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class IoTThingsGraphErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,20 @@ enum class IoTThingsGraphErrors
   RESOURCE_ALREADY_EXISTS,
   RESOURCE_IN_USE
 };
+
+class AWS_IOTTHINGSGRAPH_API IoTThingsGraphError : public Aws::Client::AWSError<IoTThingsGraphErrors>
+{
+public:
+  IoTThingsGraphError() {}
+  IoTThingsGraphError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTThingsGraphErrors>(rhs) {}
+  IoTThingsGraphError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTThingsGraphErrors>(rhs) {}
+  IoTThingsGraphError(const Aws::Client::AWSError<IoTThingsGraphErrors>& rhs) : Aws::Client::AWSError<IoTThingsGraphErrors>(rhs) {}
+  IoTThingsGraphError(Aws::Client::AWSError<IoTThingsGraphErrors>&& rhs) : Aws::Client::AWSError<IoTThingsGraphErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace IoTThingsGraphErrorMapper
 {
   AWS_IOTTHINGSGRAPH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/AWSMigrationHub/MigrationHubErrors.h>
+#include <aws/AWSMigrationHub/model/ThrottlingException.h>
 
 using namespace Aws::Client;
-using namespace Aws::MigrationHub;
 using namespace Aws::Utils;
+using namespace Aws::MigrationHub;
+using namespace Aws::MigrationHub::Model;
 
 namespace Aws
 {
 namespace MigrationHub
 {
+template<> AWS_MIGRATIONHUB_API ThrottlingException MigrationHubError::GetModeledError()
+{
+  assert(this->GetErrorType() == MigrationHubErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
 namespace MigrationHubErrorMapper
 {
 

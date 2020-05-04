@@ -18,8 +18,8 @@
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ResourceGroupsTaggingAPI;
 using namespace Aws::Utils;
+using namespace Aws::ResourceGroupsTaggingAPI;
 
 namespace Aws
 {

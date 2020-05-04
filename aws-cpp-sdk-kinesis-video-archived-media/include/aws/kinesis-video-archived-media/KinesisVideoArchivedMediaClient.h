@@ -71,11 +71,11 @@ namespace Model
         class GetMediaForFragmentListRequest;
         class ListFragmentsRequest;
 
-        typedef Aws::Utils::Outcome<GetClipResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> GetClipOutcome;
-        typedef Aws::Utils::Outcome<GetDASHStreamingSessionURLResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> GetDASHStreamingSessionURLOutcome;
-        typedef Aws::Utils::Outcome<GetHLSStreamingSessionURLResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> GetHLSStreamingSessionURLOutcome;
-        typedef Aws::Utils::Outcome<GetMediaForFragmentListResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> GetMediaForFragmentListOutcome;
-        typedef Aws::Utils::Outcome<ListFragmentsResult, Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>> ListFragmentsOutcome;
+        typedef Aws::Utils::Outcome<GetClipResult, KinesisVideoArchivedMediaError> GetClipOutcome;
+        typedef Aws::Utils::Outcome<GetDASHStreamingSessionURLResult, KinesisVideoArchivedMediaError> GetDASHStreamingSessionURLOutcome;
+        typedef Aws::Utils::Outcome<GetHLSStreamingSessionURLResult, KinesisVideoArchivedMediaError> GetHLSStreamingSessionURLOutcome;
+        typedef Aws::Utils::Outcome<GetMediaForFragmentListResult, KinesisVideoArchivedMediaError> GetMediaForFragmentListOutcome;
+        typedef Aws::Utils::Outcome<ListFragmentsResult, KinesisVideoArchivedMediaError> ListFragmentsOutcome;
 
         typedef std::future<GetClipOutcome> GetClipOutcomeCallable;
         typedef std::future<GetDASHStreamingSessionURLOutcome> GetDASHStreamingSessionURLOutcomeCallable;

@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/sagemaker-runtime/SageMakerRuntimeErrors.h>
+#include <aws/sagemaker-runtime/model/ModelError.h>
 
 using namespace Aws::Client;
-using namespace Aws::SageMakerRuntime;
 using namespace Aws::Utils;
+using namespace Aws::SageMakerRuntime;
+using namespace Aws::SageMakerRuntime::Model;
 
 namespace Aws
 {
 namespace SageMakerRuntime
 {
+template<> AWS_SAGEMAKERRUNTIME_API ModelError SageMakerRuntimeError::GetModeledError()
+{
+  assert(this->GetErrorType() == SageMakerRuntimeErrors::MODEL);
+  return ModelError(this->GetJsonPayload().View());
+}
+
 namespace SageMakerRuntimeErrorMapper
 {
 

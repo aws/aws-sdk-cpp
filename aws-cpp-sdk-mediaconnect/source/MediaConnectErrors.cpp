@@ -18,8 +18,8 @@
 #include <aws/mediaconnect/MediaConnectErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MediaConnect;
 using namespace Aws::Utils;
+using namespace Aws::MediaConnect;
 
 namespace Aws
 {

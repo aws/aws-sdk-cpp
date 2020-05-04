@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/xray/XRay_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class XRayErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INVALID_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   RULE_LIMIT_EXCEEDED
 };
+
+class AWS_XRAY_API XRayError : public Aws::Client::AWSError<XRayErrors>
+{
+public:
+  XRayError() {}
+  XRayError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<XRayErrors>(rhs) {}
+  XRayError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<XRayErrors>(rhs) {}
+  XRayError(const Aws::Client::AWSError<XRayErrors>& rhs) : Aws::Client::AWSError<XRayErrors>(rhs) {}
+  XRayError(Aws::Client::AWSError<XRayErrors>&& rhs) : Aws::Client::AWSError<XRayErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace XRayErrorMapper
 {
   AWS_XRAY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

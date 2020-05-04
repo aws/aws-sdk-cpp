@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class MediaTailorErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
+
+class AWS_MEDIATAILOR_API MediaTailorError : public Aws::Client::AWSError<MediaTailorErrors>
+{
+public:
+  MediaTailorError() {}
+  MediaTailorError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MediaTailorErrors>(rhs) {}
+  MediaTailorError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MediaTailorErrors>(rhs) {}
+  MediaTailorError(const Aws::Client::AWSError<MediaTailorErrors>& rhs) : Aws::Client::AWSError<MediaTailorErrors>(rhs) {}
+  MediaTailorError(Aws::Client::AWSError<MediaTailorErrors>&& rhs) : Aws::Client::AWSError<MediaTailorErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MediaTailorErrorMapper
 {
   AWS_MEDIATAILOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

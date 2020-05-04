@@ -75,13 +75,13 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CloseTunnelResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> CloseTunnelOutcome;
-        typedef Aws::Utils::Outcome<DescribeTunnelResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> DescribeTunnelOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTunnelsResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> ListTunnelsOutcome;
-        typedef Aws::Utils::Outcome<OpenTunnelResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> OpenTunnelOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoTSecureTunnelingErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CloseTunnelResult, IoTSecureTunnelingError> CloseTunnelOutcome;
+        typedef Aws::Utils::Outcome<DescribeTunnelResult, IoTSecureTunnelingError> DescribeTunnelOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTSecureTunnelingError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTunnelsResult, IoTSecureTunnelingError> ListTunnelsOutcome;
+        typedef Aws::Utils::Outcome<OpenTunnelResult, IoTSecureTunnelingError> OpenTunnelOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, IoTSecureTunnelingError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, IoTSecureTunnelingError> UntagResourceOutcome;
 
         typedef std::future<CloseTunnelOutcome> CloseTunnelOutcomeCallable;
         typedef std::future<DescribeTunnelOutcome> DescribeTunnelOutcomeCallable;

@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/amplify/AmplifyErrors.h>
+#include <aws/amplify/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Amplify;
 using namespace Aws::Utils;
+using namespace Aws::Amplify;
+using namespace Aws::Amplify::Model;
 
 namespace Aws
 {
 namespace Amplify
 {
+template<> AWS_AMPLIFY_API ResourceNotFoundException AmplifyError::GetModeledError()
+{
+  assert(this->GetErrorType() == AmplifyErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
 namespace AmplifyErrorMapper
 {
 

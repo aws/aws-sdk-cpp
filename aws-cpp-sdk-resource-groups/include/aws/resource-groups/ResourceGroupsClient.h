@@ -85,18 +85,18 @@ namespace Model
         class UpdateGroupRequest;
         class UpdateGroupQueryRequest;
 
-        typedef Aws::Utils::Outcome<CreateGroupResult, Aws::Client::AWSError<ResourceGroupsErrors>> CreateGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteGroupResult, Aws::Client::AWSError<ResourceGroupsErrors>> DeleteGroupOutcome;
-        typedef Aws::Utils::Outcome<GetGroupResult, Aws::Client::AWSError<ResourceGroupsErrors>> GetGroupOutcome;
-        typedef Aws::Utils::Outcome<GetGroupQueryResult, Aws::Client::AWSError<ResourceGroupsErrors>> GetGroupQueryOutcome;
-        typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<ResourceGroupsErrors>> GetTagsOutcome;
-        typedef Aws::Utils::Outcome<ListGroupResourcesResult, Aws::Client::AWSError<ResourceGroupsErrors>> ListGroupResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListGroupsResult, Aws::Client::AWSError<ResourceGroupsErrors>> ListGroupsOutcome;
-        typedef Aws::Utils::Outcome<SearchResourcesResult, Aws::Client::AWSError<ResourceGroupsErrors>> SearchResourcesOutcome;
-        typedef Aws::Utils::Outcome<TagResult, Aws::Client::AWSError<ResourceGroupsErrors>> TagOutcome;
-        typedef Aws::Utils::Outcome<UntagResult, Aws::Client::AWSError<ResourceGroupsErrors>> UntagOutcome;
-        typedef Aws::Utils::Outcome<UpdateGroupResult, Aws::Client::AWSError<ResourceGroupsErrors>> UpdateGroupOutcome;
-        typedef Aws::Utils::Outcome<UpdateGroupQueryResult, Aws::Client::AWSError<ResourceGroupsErrors>> UpdateGroupQueryOutcome;
+        typedef Aws::Utils::Outcome<CreateGroupResult, ResourceGroupsError> CreateGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteGroupResult, ResourceGroupsError> DeleteGroupOutcome;
+        typedef Aws::Utils::Outcome<GetGroupResult, ResourceGroupsError> GetGroupOutcome;
+        typedef Aws::Utils::Outcome<GetGroupQueryResult, ResourceGroupsError> GetGroupQueryOutcome;
+        typedef Aws::Utils::Outcome<GetTagsResult, ResourceGroupsError> GetTagsOutcome;
+        typedef Aws::Utils::Outcome<ListGroupResourcesResult, ResourceGroupsError> ListGroupResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListGroupsResult, ResourceGroupsError> ListGroupsOutcome;
+        typedef Aws::Utils::Outcome<SearchResourcesResult, ResourceGroupsError> SearchResourcesOutcome;
+        typedef Aws::Utils::Outcome<TagResult, ResourceGroupsError> TagOutcome;
+        typedef Aws::Utils::Outcome<UntagResult, ResourceGroupsError> UntagOutcome;
+        typedef Aws::Utils::Outcome<UpdateGroupResult, ResourceGroupsError> UpdateGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateGroupQueryResult, ResourceGroupsError> UpdateGroupQueryOutcome;
 
         typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
         typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;

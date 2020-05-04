@@ -18,8 +18,8 @@
 #include <aws/docdb/DocDBErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::DocDB;
 using namespace Aws::Utils;
+using namespace Aws::DocDB;
 
 namespace Aws
 {

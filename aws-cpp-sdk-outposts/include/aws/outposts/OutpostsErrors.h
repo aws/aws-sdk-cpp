@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/outposts/Outposts_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class OutpostsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class OutpostsErrors
   NOT_FOUND,
   SERVICE_QUOTA_EXCEEDED
 };
+
+class AWS_OUTPOSTS_API OutpostsError : public Aws::Client::AWSError<OutpostsErrors>
+{
+public:
+  OutpostsError() {}
+  OutpostsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<OutpostsErrors>(rhs) {}
+  OutpostsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<OutpostsErrors>(rhs) {}
+  OutpostsError(const Aws::Client::AWSError<OutpostsErrors>& rhs) : Aws::Client::AWSError<OutpostsErrors>(rhs) {}
+  OutpostsError(Aws::Client::AWSError<OutpostsErrors>&& rhs) : Aws::Client::AWSError<OutpostsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace OutpostsErrorMapper
 {
   AWS_OUTPOSTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

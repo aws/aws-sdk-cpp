@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/qldb-session/QLDBSessionErrors.h>
+#include <aws/qldb-session/model/InvalidSessionException.h>
+#include <aws/qldb-session/model/BadRequestException.h>
 
 using namespace Aws::Client;
-using namespace Aws::QLDBSession;
 using namespace Aws::Utils;
+using namespace Aws::QLDBSession;
+using namespace Aws::QLDBSession::Model;
 
 namespace Aws
 {
 namespace QLDBSession
 {
+template<> AWS_QLDBSESSION_API InvalidSessionException QLDBSessionError::GetModeledError()
+{
+  assert(this->GetErrorType() == QLDBSessionErrors::INVALID_SESSION);
+  return InvalidSessionException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QLDBSESSION_API BadRequestException QLDBSessionError::GetModeledError()
+{
+  assert(this->GetErrorType() == QLDBSessionErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
 namespace QLDBSessionErrorMapper
 {
 

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/marketplace-entitlement/MarketplaceEntitlementService_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class MarketplaceEntitlementServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INTERNAL_SERVICE_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_PARAMETER
 };
+
+class AWS_MARKETPLACEENTITLEMENTSERVICE_API MarketplaceEntitlementServiceError : public Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>
+{
+public:
+  MarketplaceEntitlementServiceError() {}
+  MarketplaceEntitlementServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>(rhs) {}
+  MarketplaceEntitlementServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>(rhs) {}
+  MarketplaceEntitlementServiceError(const Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>& rhs) : Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>(rhs) {}
+  MarketplaceEntitlementServiceError(Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>&& rhs) : Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MarketplaceEntitlementServiceErrorMapper
 {
   AWS_MARKETPLACEENTITLEMENTSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

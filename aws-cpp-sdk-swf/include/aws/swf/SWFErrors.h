@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/swf/SWF_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SWFErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,6 +68,20 @@ enum class SWFErrors
   UNKNOWN_RESOURCE_FAULT,
   WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT
 };
+
+class AWS_SWF_API SWFError : public Aws::Client::AWSError<SWFErrors>
+{
+public:
+  SWFError() {}
+  SWFError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SWFErrors>(rhs) {}
+  SWFError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SWFErrors>(rhs) {}
+  SWFError(const Aws::Client::AWSError<SWFErrors>& rhs) : Aws::Client::AWSError<SWFErrors>(rhs) {}
+  SWFError(Aws::Client::AWSError<SWFErrors>&& rhs) : Aws::Client::AWSError<SWFErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SWFErrorMapper
 {
   AWS_SWF_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

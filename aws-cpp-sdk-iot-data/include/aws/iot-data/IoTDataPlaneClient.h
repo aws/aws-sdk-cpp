@@ -69,10 +69,10 @@ namespace Model
         class PublishRequest;
         class UpdateThingShadowRequest;
 
-        typedef Aws::Utils::Outcome<DeleteThingShadowResult, Aws::Client::AWSError<IoTDataPlaneErrors>> DeleteThingShadowOutcome;
-        typedef Aws::Utils::Outcome<GetThingShadowResult, Aws::Client::AWSError<IoTDataPlaneErrors>> GetThingShadowOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTDataPlaneErrors>> PublishOutcome;
-        typedef Aws::Utils::Outcome<UpdateThingShadowResult, Aws::Client::AWSError<IoTDataPlaneErrors>> UpdateThingShadowOutcome;
+        typedef Aws::Utils::Outcome<DeleteThingShadowResult, IoTDataPlaneError> DeleteThingShadowOutcome;
+        typedef Aws::Utils::Outcome<GetThingShadowResult, IoTDataPlaneError> GetThingShadowOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTDataPlaneError> PublishOutcome;
+        typedef Aws::Utils::Outcome<UpdateThingShadowResult, IoTDataPlaneError> UpdateThingShadowOutcome;
 
         typedef std::future<DeleteThingShadowOutcome> DeleteThingShadowOutcomeCallable;
         typedef std::future<GetThingShadowOutcome> GetThingShadowOutcomeCallable;

@@ -71,11 +71,11 @@ namespace Model
         class ExecuteStatementRequest;
         class RollbackTransactionRequest;
 
-        typedef Aws::Utils::Outcome<BatchExecuteStatementResult, Aws::Client::AWSError<RDSDataServiceErrors>> BatchExecuteStatementOutcome;
-        typedef Aws::Utils::Outcome<BeginTransactionResult, Aws::Client::AWSError<RDSDataServiceErrors>> BeginTransactionOutcome;
-        typedef Aws::Utils::Outcome<CommitTransactionResult, Aws::Client::AWSError<RDSDataServiceErrors>> CommitTransactionOutcome;
-        typedef Aws::Utils::Outcome<ExecuteStatementResult, Aws::Client::AWSError<RDSDataServiceErrors>> ExecuteStatementOutcome;
-        typedef Aws::Utils::Outcome<RollbackTransactionResult, Aws::Client::AWSError<RDSDataServiceErrors>> RollbackTransactionOutcome;
+        typedef Aws::Utils::Outcome<BatchExecuteStatementResult, RDSDataServiceError> BatchExecuteStatementOutcome;
+        typedef Aws::Utils::Outcome<BeginTransactionResult, RDSDataServiceError> BeginTransactionOutcome;
+        typedef Aws::Utils::Outcome<CommitTransactionResult, RDSDataServiceError> CommitTransactionOutcome;
+        typedef Aws::Utils::Outcome<ExecuteStatementResult, RDSDataServiceError> ExecuteStatementOutcome;
+        typedef Aws::Utils::Outcome<RollbackTransactionResult, RDSDataServiceError> RollbackTransactionOutcome;
 
         typedef std::future<BatchExecuteStatementOutcome> BatchExecuteStatementOutcomeCallable;
         typedef std::future<BeginTransactionOutcome> BeginTransactionOutcomeCallable;

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elasticmapreduce/EMR_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class EMRErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_REQUEST
 };
+
+class AWS_EMR_API EMRError : public Aws::Client::AWSError<EMRErrors>
+{
+public:
+  EMRError() {}
+  EMRError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EMRErrors>(rhs) {}
+  EMRError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EMRErrors>(rhs) {}
+  EMRError(const Aws::Client::AWSError<EMRErrors>& rhs) : Aws::Client::AWSError<EMRErrors>(rhs) {}
+  EMRError(Aws::Client::AWSError<EMRErrors>&& rhs) : Aws::Client::AWSError<EMRErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace EMRErrorMapper
 {
   AWS_EMR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

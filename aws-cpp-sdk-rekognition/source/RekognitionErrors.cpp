@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/rekognition/RekognitionErrors.h>
+#include <aws/rekognition/model/HumanLoopQuotaExceededException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Rekognition;
 using namespace Aws::Utils;
+using namespace Aws::Rekognition;
+using namespace Aws::Rekognition::Model;
 
 namespace Aws
 {
 namespace Rekognition
 {
+template<> AWS_REKOGNITION_API HumanLoopQuotaExceededException RekognitionError::GetModeledError()
+{
+  assert(this->GetErrorType() == RekognitionErrors::HUMAN_LOOP_QUOTA_EXCEEDED);
+  return HumanLoopQuotaExceededException(this->GetJsonPayload().View());
+}
+
 namespace RekognitionErrorMapper
 {
 

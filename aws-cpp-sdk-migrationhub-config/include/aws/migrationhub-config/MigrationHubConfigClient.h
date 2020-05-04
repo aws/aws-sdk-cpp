@@ -67,9 +67,9 @@ namespace Model
         class DescribeHomeRegionControlsRequest;
         class GetHomeRegionRequest;
 
-        typedef Aws::Utils::Outcome<CreateHomeRegionControlResult, Aws::Client::AWSError<MigrationHubConfigErrors>> CreateHomeRegionControlOutcome;
-        typedef Aws::Utils::Outcome<DescribeHomeRegionControlsResult, Aws::Client::AWSError<MigrationHubConfigErrors>> DescribeHomeRegionControlsOutcome;
-        typedef Aws::Utils::Outcome<GetHomeRegionResult, Aws::Client::AWSError<MigrationHubConfigErrors>> GetHomeRegionOutcome;
+        typedef Aws::Utils::Outcome<CreateHomeRegionControlResult, MigrationHubConfigError> CreateHomeRegionControlOutcome;
+        typedef Aws::Utils::Outcome<DescribeHomeRegionControlsResult, MigrationHubConfigError> DescribeHomeRegionControlsOutcome;
+        typedef Aws::Utils::Outcome<GetHomeRegionResult, MigrationHubConfigError> GetHomeRegionOutcome;
 
         typedef std::future<CreateHomeRegionControlOutcome> CreateHomeRegionControlOutcomeCallable;
         typedef std::future<DescribeHomeRegionControlsOutcome> DescribeHomeRegionControlsOutcomeCallable;

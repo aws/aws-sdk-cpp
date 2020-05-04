@@ -16,15 +16,51 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/organizations/OrganizationsErrors.h>
+#include <aws/organizations/model/ConstraintViolationException.h>
+#include <aws/organizations/model/HandshakeConstraintViolationException.h>
+#include <aws/organizations/model/InvalidInputException.h>
+#include <aws/organizations/model/AccessDeniedForDependencyException.h>
+#include <aws/organizations/model/TooManyRequestsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Organizations;
 using namespace Aws::Utils;
+using namespace Aws::Organizations;
+using namespace Aws::Organizations::Model;
 
 namespace Aws
 {
 namespace Organizations
 {
+template<> AWS_ORGANIZATIONS_API ConstraintViolationException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::CONSTRAINT_VIOLATION);
+  return ConstraintViolationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ORGANIZATIONS_API HandshakeConstraintViolationException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::HANDSHAKE_CONSTRAINT_VIOLATION);
+  return HandshakeConstraintViolationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ORGANIZATIONS_API InvalidInputException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::INVALID_INPUT);
+  return InvalidInputException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ORGANIZATIONS_API AccessDeniedForDependencyException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::ACCESS_DENIED_FOR_DEPENDENCY);
+  return AccessDeniedForDependencyException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ORGANIZATIONS_API TooManyRequestsException OrganizationsError::GetModeledError()
+{
+  assert(this->GetErrorType() == OrganizationsErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
 namespace OrganizationsErrorMapper
 {
 

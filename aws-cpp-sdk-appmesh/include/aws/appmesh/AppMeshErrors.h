@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AppMeshErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,6 +67,20 @@ enum class AppMeshErrors
   TOO_MANY_REQUESTS,
   TOO_MANY_TAGS
 };
+
+class AWS_APPMESH_API AppMeshError : public Aws::Client::AWSError<AppMeshErrors>
+{
+public:
+  AppMeshError() {}
+  AppMeshError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AppMeshErrors>(rhs) {}
+  AppMeshError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AppMeshErrors>(rhs) {}
+  AppMeshError(const Aws::Client::AWSError<AppMeshErrors>& rhs) : Aws::Client::AWSError<AppMeshErrors>(rhs) {}
+  AppMeshError(Aws::Client::AWSError<AppMeshErrors>&& rhs) : Aws::Client::AWSError<AppMeshErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AppMeshErrorMapper
 {
   AWS_APPMESH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

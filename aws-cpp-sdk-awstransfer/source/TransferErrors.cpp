@@ -16,15 +16,37 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/awstransfer/TransferErrors.h>
+#include <aws/awstransfer/model/ResourceExistsException.h>
+#include <aws/awstransfer/model/ThrottlingException.h>
+#include <aws/awstransfer/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Transfer;
 using namespace Aws::Utils;
+using namespace Aws::Transfer;
+using namespace Aws::Transfer::Model;
 
 namespace Aws
 {
 namespace Transfer
 {
+template<> AWS_TRANSFER_API ResourceExistsException TransferError::GetModeledError()
+{
+  assert(this->GetErrorType() == TransferErrors::RESOURCE_EXISTS);
+  return ResourceExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_TRANSFER_API ThrottlingException TransferError::GetModeledError()
+{
+  assert(this->GetErrorType() == TransferErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_TRANSFER_API ResourceNotFoundException TransferError::GetModeledError()
+{
+  assert(this->GetErrorType() == TransferErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
 namespace TransferErrorMapper
 {
 

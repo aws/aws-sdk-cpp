@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/route53/Route53Errors.h>
+#include <aws/route53/model/InvalidChangeBatch.h>
 
 using namespace Aws::Client;
-using namespace Aws::Route53;
 using namespace Aws::Utils;
+using namespace Aws::Route53;
+using namespace Aws::Route53::Model;
 
 namespace Aws
 {
 namespace Route53
 {
+template<> AWS_ROUTE53_API InvalidChangeBatch Route53Error::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53Errors::INVALID_CHANGE_BATCH);
+  return InvalidChangeBatch(this->GetXmlPayload().GetRootElement());
+}
+
 namespace Route53ErrorMapper
 {
 

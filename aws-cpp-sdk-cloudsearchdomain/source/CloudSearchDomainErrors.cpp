@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/cloudsearchdomain/CloudSearchDomainErrors.h>
+#include <aws/cloudsearchdomain/model/DocumentServiceException.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudSearchDomain;
 using namespace Aws::Utils;
+using namespace Aws::CloudSearchDomain;
+using namespace Aws::CloudSearchDomain::Model;
 
 namespace Aws
 {
 namespace CloudSearchDomain
 {
+template<> AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException CloudSearchDomainError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudSearchDomainErrors::DOCUMENT_SERVICE);
+  return DocumentServiceException(this->GetJsonPayload().View());
+}
+
 namespace CloudSearchDomainErrorMapper
 {
 

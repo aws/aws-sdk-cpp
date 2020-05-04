@@ -18,8 +18,8 @@
 #include <aws/dynamodbstreams/DynamoDBStreamsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::DynamoDBStreams;
 using namespace Aws::Utils;
+using namespace Aws::DynamoDBStreams;
 
 namespace Aws
 {

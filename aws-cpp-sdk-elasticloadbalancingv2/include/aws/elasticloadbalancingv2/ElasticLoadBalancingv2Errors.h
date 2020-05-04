@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ElasticLoadBalancingv2Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -93,6 +94,20 @@ enum class ElasticLoadBalancingv2Errors
   TOO_MANY_UNIQUE_TARGET_GROUPS_PER_LOAD_BALANCER,
   UNSUPPORTED_PROTOCOL
 };
+
+class AWS_ELASTICLOADBALANCINGV2_API ElasticLoadBalancingv2Error : public Aws::Client::AWSError<ElasticLoadBalancingv2Errors>
+{
+public:
+  ElasticLoadBalancingv2Error() {}
+  ElasticLoadBalancingv2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElasticLoadBalancingv2Errors>(rhs) {}
+  ElasticLoadBalancingv2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElasticLoadBalancingv2Errors>(rhs) {}
+  ElasticLoadBalancingv2Error(const Aws::Client::AWSError<ElasticLoadBalancingv2Errors>& rhs) : Aws::Client::AWSError<ElasticLoadBalancingv2Errors>(rhs) {}
+  ElasticLoadBalancingv2Error(Aws::Client::AWSError<ElasticLoadBalancingv2Errors>&& rhs) : Aws::Client::AWSError<ElasticLoadBalancingv2Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ElasticLoadBalancingv2ErrorMapper
 {
   AWS_ELASTICLOADBALANCINGV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

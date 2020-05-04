@@ -18,8 +18,8 @@
 #include <aws/sns/SNSErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SNS;
 using namespace Aws::Utils;
+using namespace Aws::SNS;
 
 namespace Aws
 {

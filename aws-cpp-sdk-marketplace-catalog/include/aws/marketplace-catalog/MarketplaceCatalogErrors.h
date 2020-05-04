@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/marketplace-catalog/MarketplaceCatalog_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class MarketplaceCatalogErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,20 @@ enum class MarketplaceCatalogErrors
   RESOURCE_NOT_SUPPORTED,
   SERVICE_QUOTA_EXCEEDED
 };
+
+class AWS_MARKETPLACECATALOG_API MarketplaceCatalogError : public Aws::Client::AWSError<MarketplaceCatalogErrors>
+{
+public:
+  MarketplaceCatalogError() {}
+  MarketplaceCatalogError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MarketplaceCatalogErrors>(rhs) {}
+  MarketplaceCatalogError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MarketplaceCatalogErrors>(rhs) {}
+  MarketplaceCatalogError(const Aws::Client::AWSError<MarketplaceCatalogErrors>& rhs) : Aws::Client::AWSError<MarketplaceCatalogErrors>(rhs) {}
+  MarketplaceCatalogError(Aws::Client::AWSError<MarketplaceCatalogErrors>&& rhs) : Aws::Client::AWSError<MarketplaceCatalogErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MarketplaceCatalogErrorMapper
 {
   AWS_MARKETPLACECATALOG_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

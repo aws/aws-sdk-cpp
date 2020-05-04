@@ -18,8 +18,8 @@
 #include <aws/xray/XRayErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::XRay;
 using namespace Aws::Utils;
+using namespace Aws::XRay;
 
 namespace Aws
 {

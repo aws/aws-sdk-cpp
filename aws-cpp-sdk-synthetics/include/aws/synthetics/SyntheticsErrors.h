@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/synthetics/Synthetics_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class SyntheticsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER
 };
+
+class AWS_SYNTHETICS_API SyntheticsError : public Aws::Client::AWSError<SyntheticsErrors>
+{
+public:
+  SyntheticsError() {}
+  SyntheticsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SyntheticsErrors>(rhs) {}
+  SyntheticsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SyntheticsErrors>(rhs) {}
+  SyntheticsError(const Aws::Client::AWSError<SyntheticsErrors>& rhs) : Aws::Client::AWSError<SyntheticsErrors>(rhs) {}
+  SyntheticsError(Aws::Client::AWSError<SyntheticsErrors>&& rhs) : Aws::Client::AWSError<SyntheticsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SyntheticsErrorMapper
 {
   AWS_SYNTHETICS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

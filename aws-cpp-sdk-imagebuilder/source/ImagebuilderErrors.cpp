@@ -18,8 +18,8 @@
 #include <aws/imagebuilder/ImagebuilderErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::imagebuilder;
 using namespace Aws::Utils;
+using namespace Aws::imagebuilder;
 
 namespace Aws
 {

@@ -16,15 +16,37 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/logs/CloudWatchLogsErrors.h>
+#include <aws/logs/model/InvalidSequenceTokenException.h>
+#include <aws/logs/model/DataAlreadyAcceptedException.h>
+#include <aws/logs/model/MalformedQueryException.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudWatchLogs;
 using namespace Aws::Utils;
+using namespace Aws::CloudWatchLogs;
+using namespace Aws::CloudWatchLogs::Model;
 
 namespace Aws
 {
 namespace CloudWatchLogs
 {
+template<> AWS_CLOUDWATCHLOGS_API InvalidSequenceTokenException CloudWatchLogsError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchLogsErrors::INVALID_SEQUENCE_TOKEN);
+  return InvalidSequenceTokenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CLOUDWATCHLOGS_API DataAlreadyAcceptedException CloudWatchLogsError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchLogsErrors::DATA_ALREADY_ACCEPTED);
+  return DataAlreadyAcceptedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_CLOUDWATCHLOGS_API MalformedQueryException CloudWatchLogsError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchLogsErrors::MALFORMED_QUERY);
+  return MalformedQueryException(this->GetJsonPayload().View());
+}
+
 namespace CloudWatchLogsErrorMapper
 {
 

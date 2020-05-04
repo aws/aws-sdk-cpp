@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/signer/Signer_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SignerErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class SignerErrors
   INTERNAL_SERVICE_ERROR,
   NOT_FOUND
 };
+
+class AWS_SIGNER_API SignerError : public Aws::Client::AWSError<SignerErrors>
+{
+public:
+  SignerError() {}
+  SignerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SignerErrors>(rhs) {}
+  SignerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SignerErrors>(rhs) {}
+  SignerError(const Aws::Client::AWSError<SignerErrors>& rhs) : Aws::Client::AWSError<SignerErrors>(rhs) {}
+  SignerError(Aws::Client::AWSError<SignerErrors>&& rhs) : Aws::Client::AWSError<SignerErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SignerErrorMapper
 {
   AWS_SIGNER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

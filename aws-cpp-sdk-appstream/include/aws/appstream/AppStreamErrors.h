@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/appstream/AppStream_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AppStreamErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,6 +67,20 @@ enum class AppStreamErrors
   RESOURCE_IN_USE,
   RESOURCE_NOT_AVAILABLE
 };
+
+class AWS_APPSTREAM_API AppStreamError : public Aws::Client::AWSError<AppStreamErrors>
+{
+public:
+  AppStreamError() {}
+  AppStreamError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AppStreamErrors>(rhs) {}
+  AppStreamError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AppStreamErrors>(rhs) {}
+  AppStreamError(const Aws::Client::AWSError<AppStreamErrors>& rhs) : Aws::Client::AWSError<AppStreamErrors>(rhs) {}
+  AppStreamError(Aws::Client::AWSError<AppStreamErrors>&& rhs) : Aws::Client::AWSError<AppStreamErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AppStreamErrorMapper
 {
   AWS_APPSTREAM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

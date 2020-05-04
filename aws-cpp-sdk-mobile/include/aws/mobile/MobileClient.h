@@ -79,15 +79,15 @@ namespace Model
         class ListProjectsRequest;
         class UpdateProjectRequest;
 
-        typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<MobileErrors>> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<MobileErrors>> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeBundleResult, Aws::Client::AWSError<MobileErrors>> DescribeBundleOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectResult, Aws::Client::AWSError<MobileErrors>> DescribeProjectOutcome;
-        typedef Aws::Utils::Outcome<ExportBundleResult, Aws::Client::AWSError<MobileErrors>> ExportBundleOutcome;
-        typedef Aws::Utils::Outcome<ExportProjectResult, Aws::Client::AWSError<MobileErrors>> ExportProjectOutcome;
-        typedef Aws::Utils::Outcome<ListBundlesResult, Aws::Client::AWSError<MobileErrors>> ListBundlesOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<MobileErrors>> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<MobileErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectResult, MobileError> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectResult, MobileError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DescribeBundleResult, MobileError> DescribeBundleOutcome;
+        typedef Aws::Utils::Outcome<DescribeProjectResult, MobileError> DescribeProjectOutcome;
+        typedef Aws::Utils::Outcome<ExportBundleResult, MobileError> ExportBundleOutcome;
+        typedef Aws::Utils::Outcome<ExportProjectResult, MobileError> ExportProjectOutcome;
+        typedef Aws::Utils::Outcome<ListBundlesResult, MobileError> ListBundlesOutcome;
+        typedef Aws::Utils::Outcome<ListProjectsResult, MobileError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<UpdateProjectResult, MobileError> UpdateProjectOutcome;
 
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;

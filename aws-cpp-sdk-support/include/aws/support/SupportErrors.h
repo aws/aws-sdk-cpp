@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/support/Support_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SupportErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,20 @@ enum class SupportErrors
   CASE_ID_NOT_FOUND,
   DESCRIBE_ATTACHMENT_LIMIT_EXCEEDED
 };
+
+class AWS_SUPPORT_API SupportError : public Aws::Client::AWSError<SupportErrors>
+{
+public:
+  SupportError() {}
+  SupportError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SupportErrors>(rhs) {}
+  SupportError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SupportErrors>(rhs) {}
+  SupportError(const Aws::Client::AWSError<SupportErrors>& rhs) : Aws::Client::AWSError<SupportErrors>(rhs) {}
+  SupportError(Aws::Client::AWSError<SupportErrors>&& rhs) : Aws::Client::AWSError<SupportErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SupportErrorMapper
 {
   AWS_SUPPORT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

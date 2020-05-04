@@ -34,7 +34,9 @@ namespace WorkDocsEndpoint
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
-    auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
+    // Fallback to us-east-1 if global endpoint does not exists.
+    Aws::String region = regionName == Aws::Region::AWS_GLOBAL ? Aws::Region::US_EAST_1 : regionName;
+    auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
 
     Aws::StringStream ss;
     ss << "workdocs" << ".";
@@ -44,7 +46,7 @@ namespace WorkDocsEndpoint
       ss << "dualstack.";
     }
 
-    ss << regionName;
+    ss << region;
 
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
     {

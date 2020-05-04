@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class MediaConvertErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class MediaConvertErrors
   NOT_FOUND,
   TOO_MANY_REQUESTS
 };
+
+class AWS_MEDIACONVERT_API MediaConvertError : public Aws::Client::AWSError<MediaConvertErrors>
+{
+public:
+  MediaConvertError() {}
+  MediaConvertError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MediaConvertErrors>(rhs) {}
+  MediaConvertError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MediaConvertErrors>(rhs) {}
+  MediaConvertError(const Aws::Client::AWSError<MediaConvertErrors>& rhs) : Aws::Client::AWSError<MediaConvertErrors>(rhs) {}
+  MediaConvertError(Aws::Client::AWSError<MediaConvertErrors>&& rhs) : Aws::Client::AWSError<MediaConvertErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MediaConvertErrorMapper
 {
   AWS_MEDIACONVERT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/elasticmapreduce/EMRErrors.h>
+#include <aws/elasticmapreduce/model/InvalidRequestException.h>
 
 using namespace Aws::Client;
-using namespace Aws::EMR;
 using namespace Aws::Utils;
+using namespace Aws::EMR;
+using namespace Aws::EMR::Model;
 
 namespace Aws
 {
 namespace EMR
 {
+template<> AWS_EMR_API InvalidRequestException EMRError::GetModeledError()
+{
+  assert(this->GetErrorType() == EMRErrors::INVALID_REQUEST);
+  return InvalidRequestException(this->GetJsonPayload().View());
+}
+
 namespace EMRErrorMapper
 {
 

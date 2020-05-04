@@ -71,11 +71,11 @@ namespace Model
         class SendEventRequest;
         class SendMessageRequest;
 
-        typedef Aws::Utils::Outcome<CreateParticipantConnectionResult, Aws::Client::AWSError<ConnectParticipantErrors>> CreateParticipantConnectionOutcome;
-        typedef Aws::Utils::Outcome<DisconnectParticipantResult, Aws::Client::AWSError<ConnectParticipantErrors>> DisconnectParticipantOutcome;
-        typedef Aws::Utils::Outcome<GetTranscriptResult, Aws::Client::AWSError<ConnectParticipantErrors>> GetTranscriptOutcome;
-        typedef Aws::Utils::Outcome<SendEventResult, Aws::Client::AWSError<ConnectParticipantErrors>> SendEventOutcome;
-        typedef Aws::Utils::Outcome<SendMessageResult, Aws::Client::AWSError<ConnectParticipantErrors>> SendMessageOutcome;
+        typedef Aws::Utils::Outcome<CreateParticipantConnectionResult, ConnectParticipantError> CreateParticipantConnectionOutcome;
+        typedef Aws::Utils::Outcome<DisconnectParticipantResult, ConnectParticipantError> DisconnectParticipantOutcome;
+        typedef Aws::Utils::Outcome<GetTranscriptResult, ConnectParticipantError> GetTranscriptOutcome;
+        typedef Aws::Utils::Outcome<SendEventResult, ConnectParticipantError> SendEventOutcome;
+        typedef Aws::Utils::Outcome<SendMessageResult, ConnectParticipantError> SendMessageOutcome;
 
         typedef std::future<CreateParticipantConnectionOutcome> CreateParticipantConnectionOutcomeCallable;
         typedef std::future<DisconnectParticipantOutcome> DisconnectParticipantOutcomeCallable;

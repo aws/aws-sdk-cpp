@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/resource-groups/ResourceGroups_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ResourceGroupsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class ResourceGroupsErrors
   TOO_MANY_REQUESTS,
   UNAUTHORIZED
 };
+
+class AWS_RESOURCEGROUPS_API ResourceGroupsError : public Aws::Client::AWSError<ResourceGroupsErrors>
+{
+public:
+  ResourceGroupsError() {}
+  ResourceGroupsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ResourceGroupsErrors>(rhs) {}
+  ResourceGroupsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ResourceGroupsErrors>(rhs) {}
+  ResourceGroupsError(const Aws::Client::AWSError<ResourceGroupsErrors>& rhs) : Aws::Client::AWSError<ResourceGroupsErrors>(rhs) {}
+  ResourceGroupsError(Aws::Client::AWSError<ResourceGroupsErrors>&& rhs) : Aws::Client::AWSError<ResourceGroupsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ResourceGroupsErrorMapper
 {
   AWS_RESOURCEGROUPS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

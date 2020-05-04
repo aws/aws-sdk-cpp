@@ -18,8 +18,8 @@
 #include <aws/cloud9/Cloud9Errors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Cloud9;
 using namespace Aws::Utils;
+using namespace Aws::Cloud9;
 
 namespace Aws
 {

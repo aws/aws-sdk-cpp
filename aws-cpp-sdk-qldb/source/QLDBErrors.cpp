@@ -16,15 +16,58 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/qldb/QLDBErrors.h>
+#include <aws/qldb/model/ResourceNotFoundException.h>
+#include <aws/qldb/model/InvalidParameterException.h>
+#include <aws/qldb/model/ResourceAlreadyExistsException.h>
+#include <aws/qldb/model/LimitExceededException.h>
+#include <aws/qldb/model/ResourcePreconditionNotMetException.h>
+#include <aws/qldb/model/ResourceInUseException.h>
 
 using namespace Aws::Client;
-using namespace Aws::QLDB;
 using namespace Aws::Utils;
+using namespace Aws::QLDB;
+using namespace Aws::QLDB::Model;
 
 namespace Aws
 {
 namespace QLDB
 {
+template<> AWS_QLDB_API ResourceNotFoundException QLDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == QLDBErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QLDB_API InvalidParameterException QLDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == QLDBErrors::INVALID_PARAMETER);
+  return InvalidParameterException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QLDB_API ResourceAlreadyExistsException QLDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == QLDBErrors::RESOURCE_ALREADY_EXISTS);
+  return ResourceAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QLDB_API LimitExceededException QLDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == QLDBErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QLDB_API ResourcePreconditionNotMetException QLDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == QLDBErrors::RESOURCE_PRECONDITION_NOT_MET);
+  return ResourcePreconditionNotMetException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QLDB_API ResourceInUseException QLDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == QLDBErrors::RESOURCE_IN_USE);
+  return ResourceInUseException(this->GetJsonPayload().View());
+}
+
 namespace QLDBErrorMapper
 {
 

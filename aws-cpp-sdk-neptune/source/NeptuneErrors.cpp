@@ -18,8 +18,8 @@
 #include <aws/neptune/NeptuneErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Neptune;
 using namespace Aws::Utils;
+using namespace Aws::Neptune;
 
 namespace Aws
 {

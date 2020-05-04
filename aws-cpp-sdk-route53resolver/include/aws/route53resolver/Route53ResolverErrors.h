@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/route53resolver/Route53Resolver_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class Route53ResolverErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -68,6 +69,20 @@ enum class Route53ResolverErrors
   RESOURCE_UNAVAILABLE,
   UNKNOWN_RESOURCE
 };
+
+class AWS_ROUTE53RESOLVER_API Route53ResolverError : public Aws::Client::AWSError<Route53ResolverErrors>
+{
+public:
+  Route53ResolverError() {}
+  Route53ResolverError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<Route53ResolverErrors>(rhs) {}
+  Route53ResolverError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<Route53ResolverErrors>(rhs) {}
+  Route53ResolverError(const Aws::Client::AWSError<Route53ResolverErrors>& rhs) : Aws::Client::AWSError<Route53ResolverErrors>(rhs) {}
+  Route53ResolverError(Aws::Client::AWSError<Route53ResolverErrors>&& rhs) : Aws::Client::AWSError<Route53ResolverErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace Route53ResolverErrorMapper
 {
   AWS_ROUTE53RESOLVER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

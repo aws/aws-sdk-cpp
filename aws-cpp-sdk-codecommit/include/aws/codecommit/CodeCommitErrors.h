@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/codecommit/CodeCommit_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CodeCommitErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -238,6 +239,20 @@ enum class CodeCommitErrors
   TITLE_REQUIRED,
   TOO_MANY_TAGS
 };
+
+class AWS_CODECOMMIT_API CodeCommitError : public Aws::Client::AWSError<CodeCommitErrors>
+{
+public:
+  CodeCommitError() {}
+  CodeCommitError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeCommitErrors>(rhs) {}
+  CodeCommitError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeCommitErrors>(rhs) {}
+  CodeCommitError(const Aws::Client::AWSError<CodeCommitErrors>& rhs) : Aws::Client::AWSError<CodeCommitErrors>(rhs) {}
+  CodeCommitError(Aws::Client::AWSError<CodeCommitErrors>&& rhs) : Aws::Client::AWSError<CodeCommitErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CodeCommitErrorMapper
 {
   AWS_CODECOMMIT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

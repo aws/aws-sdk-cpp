@@ -73,12 +73,12 @@ namespace Model
         class StartDocumentAnalysisRequest;
         class StartDocumentTextDetectionRequest;
 
-        typedef Aws::Utils::Outcome<AnalyzeDocumentResult, Aws::Client::AWSError<TextractErrors>> AnalyzeDocumentOutcome;
-        typedef Aws::Utils::Outcome<DetectDocumentTextResult, Aws::Client::AWSError<TextractErrors>> DetectDocumentTextOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, Aws::Client::AWSError<TextractErrors>> GetDocumentAnalysisOutcome;
-        typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, Aws::Client::AWSError<TextractErrors>> GetDocumentTextDetectionOutcome;
-        typedef Aws::Utils::Outcome<StartDocumentAnalysisResult, Aws::Client::AWSError<TextractErrors>> StartDocumentAnalysisOutcome;
-        typedef Aws::Utils::Outcome<StartDocumentTextDetectionResult, Aws::Client::AWSError<TextractErrors>> StartDocumentTextDetectionOutcome;
+        typedef Aws::Utils::Outcome<AnalyzeDocumentResult, TextractError> AnalyzeDocumentOutcome;
+        typedef Aws::Utils::Outcome<DetectDocumentTextResult, TextractError> DetectDocumentTextOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentAnalysisResult, TextractError> GetDocumentAnalysisOutcome;
+        typedef Aws::Utils::Outcome<GetDocumentTextDetectionResult, TextractError> GetDocumentTextDetectionOutcome;
+        typedef Aws::Utils::Outcome<StartDocumentAnalysisResult, TextractError> StartDocumentAnalysisOutcome;
+        typedef Aws::Utils::Outcome<StartDocumentTextDetectionResult, TextractError> StartDocumentTextDetectionOutcome;
 
         typedef std::future<AnalyzeDocumentOutcome> AnalyzeDocumentOutcomeCallable;
         typedef std::future<DetectDocumentTextOutcome> DetectDocumentTextOutcomeCallable;

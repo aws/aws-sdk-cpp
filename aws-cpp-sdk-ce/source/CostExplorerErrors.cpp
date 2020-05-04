@@ -18,8 +18,8 @@
 #include <aws/ce/CostExplorerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CostExplorer;
 using namespace Aws::Utils;
+using namespace Aws::CostExplorer;
 
 namespace Aws
 {

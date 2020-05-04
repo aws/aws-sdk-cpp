@@ -18,8 +18,8 @@
 #include <aws/appmesh/AppMeshErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::AppMesh;
 using namespace Aws::Utils;
+using namespace Aws::AppMesh;
 
 namespace Aws
 {

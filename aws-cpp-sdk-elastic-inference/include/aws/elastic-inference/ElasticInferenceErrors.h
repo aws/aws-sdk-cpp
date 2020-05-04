@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elastic-inference/ElasticInference_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class ElasticInferenceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER
 };
+
+class AWS_ELASTICINFERENCE_API ElasticInferenceError : public Aws::Client::AWSError<ElasticInferenceErrors>
+{
+public:
+  ElasticInferenceError() {}
+  ElasticInferenceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElasticInferenceErrors>(rhs) {}
+  ElasticInferenceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElasticInferenceErrors>(rhs) {}
+  ElasticInferenceError(const Aws::Client::AWSError<ElasticInferenceErrors>& rhs) : Aws::Client::AWSError<ElasticInferenceErrors>(rhs) {}
+  ElasticInferenceError(Aws::Client::AWSError<ElasticInferenceErrors>&& rhs) : Aws::Client::AWSError<ElasticInferenceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ElasticInferenceErrorMapper
 {
   AWS_ELASTICINFERENCE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

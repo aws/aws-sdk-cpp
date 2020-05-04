@@ -18,8 +18,8 @@
 #include <aws/glue/GlueErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Glue;
 using namespace Aws::Utils;
+using namespace Aws::Glue;
 
 namespace Aws
 {

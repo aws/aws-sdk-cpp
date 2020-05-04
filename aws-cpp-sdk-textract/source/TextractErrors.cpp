@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/textract/TextractErrors.h>
+#include <aws/textract/model/HumanLoopQuotaExceededException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Textract;
 using namespace Aws::Utils;
+using namespace Aws::Textract;
+using namespace Aws::Textract::Model;
 
 namespace Aws
 {
 namespace Textract
 {
+template<> AWS_TEXTRACT_API HumanLoopQuotaExceededException TextractError::GetModeledError()
+{
+  assert(this->GetErrorType() == TextractErrors::HUMAN_LOOP_QUOTA_EXCEEDED);
+  return HumanLoopQuotaExceededException(this->GetJsonPayload().View());
+}
+
 namespace TextractErrorMapper
 {
 

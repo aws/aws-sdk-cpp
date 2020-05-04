@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/datasync/DataSyncErrors.h>
+#include <aws/datasync/model/InternalException.h>
+#include <aws/datasync/model/InvalidRequestException.h>
 
 using namespace Aws::Client;
-using namespace Aws::DataSync;
 using namespace Aws::Utils;
+using namespace Aws::DataSync;
+using namespace Aws::DataSync::Model;
 
 namespace Aws
 {
 namespace DataSync
 {
+template<> AWS_DATASYNC_API InternalException DataSyncError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataSyncErrors::INTERNAL);
+  return InternalException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DATASYNC_API InvalidRequestException DataSyncError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataSyncErrors::INVALID_REQUEST);
+  return InvalidRequestException(this->GetJsonPayload().View());
+}
+
 namespace DataSyncErrorMapper
 {
 

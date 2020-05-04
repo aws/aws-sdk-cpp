@@ -49,7 +49,7 @@ static const char* ALLOCATION_TAG = "EBSClient";
 EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -59,7 +59,7 @@ EBSClient::EBSClient(const Client::ClientConfiguration& clientConfiguration) :
 EBSClient::EBSClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -70,7 +70,7 @@ EBSClient::EBSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<EBSErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -130,15 +130,7 @@ GetSnapshotBlockOutcome EBSClient::GetSnapshotBlock(const GetSnapshotBlockReques
   ss << "/blocks/";
   ss << request.GetBlockIndex();
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetSnapshotBlockOutcome(GetSnapshotBlockResult(outcome.GetResultWithOwnership()));
-  }
-  else
-  {
-    return GetSnapshotBlockOutcome(outcome.GetError());
-  }
+  return GetSnapshotBlockOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetSnapshotBlockOutcomeCallable EBSClient::GetSnapshotBlockCallable(const GetSnapshotBlockRequest& request) const
@@ -172,15 +164,7 @@ ListChangedBlocksOutcome EBSClient::ListChangedBlocks(const ListChangedBlocksReq
   ss << request.GetSecondSnapshotId();
   ss << "/changedblocks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListChangedBlocksOutcome(ListChangedBlocksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListChangedBlocksOutcome(outcome.GetError());
-  }
+  return ListChangedBlocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListChangedBlocksOutcomeCallable EBSClient::ListChangedBlocksCallable(const ListChangedBlocksRequest& request) const
@@ -214,15 +198,7 @@ ListSnapshotBlocksOutcome EBSClient::ListSnapshotBlocks(const ListSnapshotBlocks
   ss << request.GetSnapshotId();
   ss << "/blocks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSnapshotBlocksOutcome(ListSnapshotBlocksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSnapshotBlocksOutcome(outcome.GetError());
-  }
+  return ListSnapshotBlocksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSnapshotBlocksOutcomeCallable EBSClient::ListSnapshotBlocksCallable(const ListSnapshotBlocksRequest& request) const

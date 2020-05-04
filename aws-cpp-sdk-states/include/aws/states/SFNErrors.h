@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/states/SFN_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SFNErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -79,6 +80,20 @@ enum class SFNErrors
   TASK_TIMED_OUT,
   TOO_MANY_TAGS
 };
+
+class AWS_SFN_API SFNError : public Aws::Client::AWSError<SFNErrors>
+{
+public:
+  SFNError() {}
+  SFNError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SFNErrors>(rhs) {}
+  SFNError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SFNErrors>(rhs) {}
+  SFNError(const Aws::Client::AWSError<SFNErrors>& rhs) : Aws::Client::AWSError<SFNErrors>(rhs) {}
+  SFNError(Aws::Client::AWSError<SFNErrors>&& rhs) : Aws::Client::AWSError<SFNErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SFNErrorMapper
 {
   AWS_SFN_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

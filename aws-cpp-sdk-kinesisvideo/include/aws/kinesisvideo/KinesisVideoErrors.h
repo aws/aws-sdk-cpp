@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class KinesisVideoErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -68,6 +69,20 @@ enum class KinesisVideoErrors
   TAGS_PER_RESOURCE_EXCEEDED_LIMIT,
   VERSION_MISMATCH
 };
+
+class AWS_KINESISVIDEO_API KinesisVideoError : public Aws::Client::AWSError<KinesisVideoErrors>
+{
+public:
+  KinesisVideoError() {}
+  KinesisVideoError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisVideoErrors>(rhs) {}
+  KinesisVideoError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoErrors>(rhs) {}
+  KinesisVideoError(const Aws::Client::AWSError<KinesisVideoErrors>& rhs) : Aws::Client::AWSError<KinesisVideoErrors>(rhs) {}
+  KinesisVideoError(Aws::Client::AWSError<KinesisVideoErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KinesisVideoErrorMapper
 {
   AWS_KINESISVIDEO_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

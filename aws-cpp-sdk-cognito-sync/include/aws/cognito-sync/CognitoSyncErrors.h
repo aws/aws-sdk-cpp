@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cognito-sync/CognitoSync_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CognitoSyncErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69,6 +70,20 @@ enum class CognitoSyncErrors
   RESOURCE_CONFLICT,
   TOO_MANY_REQUESTS
 };
+
+class AWS_COGNITOSYNC_API CognitoSyncError : public Aws::Client::AWSError<CognitoSyncErrors>
+{
+public:
+  CognitoSyncError() {}
+  CognitoSyncError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CognitoSyncErrors>(rhs) {}
+  CognitoSyncError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CognitoSyncErrors>(rhs) {}
+  CognitoSyncError(const Aws::Client::AWSError<CognitoSyncErrors>& rhs) : Aws::Client::AWSError<CognitoSyncErrors>(rhs) {}
+  CognitoSyncError(Aws::Client::AWSError<CognitoSyncErrors>&& rhs) : Aws::Client::AWSError<CognitoSyncErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CognitoSyncErrorMapper
 {
   AWS_COGNITOSYNC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

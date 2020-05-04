@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cloudtrail/CloudTrail_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CloudTrailErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -97,6 +98,20 @@ enum class CloudTrailErrors
   TRAIL_NOT_PROVIDED,
   UNSUPPORTED_OPERATION
 };
+
+class AWS_CLOUDTRAIL_API CloudTrailError : public Aws::Client::AWSError<CloudTrailErrors>
+{
+public:
+  CloudTrailError() {}
+  CloudTrailError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
+  CloudTrailError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
+  CloudTrailError(const Aws::Client::AWSError<CloudTrailErrors>& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
+  CloudTrailError(Aws::Client::AWSError<CloudTrailErrors>&& rhs) : Aws::Client::AWSError<CloudTrailErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudTrailErrorMapper
 {
   AWS_CLOUDTRAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

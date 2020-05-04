@@ -89,20 +89,20 @@ namespace Model
         class RefreshTrustedAdvisorCheckRequest;
         class ResolveCaseRequest;
 
-        typedef Aws::Utils::Outcome<AddAttachmentsToSetResult, Aws::Client::AWSError<SupportErrors>> AddAttachmentsToSetOutcome;
-        typedef Aws::Utils::Outcome<AddCommunicationToCaseResult, Aws::Client::AWSError<SupportErrors>> AddCommunicationToCaseOutcome;
-        typedef Aws::Utils::Outcome<CreateCaseResult, Aws::Client::AWSError<SupportErrors>> CreateCaseOutcome;
-        typedef Aws::Utils::Outcome<DescribeAttachmentResult, Aws::Client::AWSError<SupportErrors>> DescribeAttachmentOutcome;
-        typedef Aws::Utils::Outcome<DescribeCasesResult, Aws::Client::AWSError<SupportErrors>> DescribeCasesOutcome;
-        typedef Aws::Utils::Outcome<DescribeCommunicationsResult, Aws::Client::AWSError<SupportErrors>> DescribeCommunicationsOutcome;
-        typedef Aws::Utils::Outcome<DescribeServicesResult, Aws::Client::AWSError<SupportErrors>> DescribeServicesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSeverityLevelsResult, Aws::Client::AWSError<SupportErrors>> DescribeSeverityLevelsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckRefreshStatusesResult, Aws::Client::AWSError<SupportErrors>> DescribeTrustedAdvisorCheckRefreshStatusesOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckResultResult, Aws::Client::AWSError<SupportErrors>> DescribeTrustedAdvisorCheckResultOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckSummariesResult, Aws::Client::AWSError<SupportErrors>> DescribeTrustedAdvisorCheckSummariesOutcome;
-        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorChecksResult, Aws::Client::AWSError<SupportErrors>> DescribeTrustedAdvisorChecksOutcome;
-        typedef Aws::Utils::Outcome<RefreshTrustedAdvisorCheckResult, Aws::Client::AWSError<SupportErrors>> RefreshTrustedAdvisorCheckOutcome;
-        typedef Aws::Utils::Outcome<ResolveCaseResult, Aws::Client::AWSError<SupportErrors>> ResolveCaseOutcome;
+        typedef Aws::Utils::Outcome<AddAttachmentsToSetResult, SupportError> AddAttachmentsToSetOutcome;
+        typedef Aws::Utils::Outcome<AddCommunicationToCaseResult, SupportError> AddCommunicationToCaseOutcome;
+        typedef Aws::Utils::Outcome<CreateCaseResult, SupportError> CreateCaseOutcome;
+        typedef Aws::Utils::Outcome<DescribeAttachmentResult, SupportError> DescribeAttachmentOutcome;
+        typedef Aws::Utils::Outcome<DescribeCasesResult, SupportError> DescribeCasesOutcome;
+        typedef Aws::Utils::Outcome<DescribeCommunicationsResult, SupportError> DescribeCommunicationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeServicesResult, SupportError> DescribeServicesOutcome;
+        typedef Aws::Utils::Outcome<DescribeSeverityLevelsResult, SupportError> DescribeSeverityLevelsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckRefreshStatusesResult, SupportError> DescribeTrustedAdvisorCheckRefreshStatusesOutcome;
+        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckResultResult, SupportError> DescribeTrustedAdvisorCheckResultOutcome;
+        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckSummariesResult, SupportError> DescribeTrustedAdvisorCheckSummariesOutcome;
+        typedef Aws::Utils::Outcome<DescribeTrustedAdvisorChecksResult, SupportError> DescribeTrustedAdvisorChecksOutcome;
+        typedef Aws::Utils::Outcome<RefreshTrustedAdvisorCheckResult, SupportError> RefreshTrustedAdvisorCheckOutcome;
+        typedef Aws::Utils::Outcome<ResolveCaseResult, SupportError> ResolveCaseOutcome;
 
         typedef std::future<AddAttachmentsToSetOutcome> AddAttachmentsToSetOutcomeCallable;
         typedef std::future<AddCommunicationToCaseOutcome> AddCommunicationToCaseOutcomeCallable;

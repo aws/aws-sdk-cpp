@@ -73,12 +73,12 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<DescribeAcceleratorOfferingsResult, Aws::Client::AWSError<ElasticInferenceErrors>> DescribeAcceleratorOfferingsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAcceleratorTypesResult, Aws::Client::AWSError<ElasticInferenceErrors>> DescribeAcceleratorTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAcceleratorsResult, Aws::Client::AWSError<ElasticInferenceErrors>> DescribeAcceleratorsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<ElasticInferenceErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorOfferingsResult, ElasticInferenceError> DescribeAcceleratorOfferingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorTypesResult, ElasticInferenceError> DescribeAcceleratorTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAcceleratorsResult, ElasticInferenceError> DescribeAcceleratorsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ElasticInferenceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ElasticInferenceError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ElasticInferenceError> UntagResourceOutcome;
 
         typedef std::future<DescribeAcceleratorOfferingsOutcome> DescribeAcceleratorOfferingsOutcomeCallable;
         typedef std::future<DescribeAcceleratorTypesOutcome> DescribeAcceleratorTypesOutcomeCallable;

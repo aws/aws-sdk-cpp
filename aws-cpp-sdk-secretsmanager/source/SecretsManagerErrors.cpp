@@ -18,8 +18,8 @@
 #include <aws/secretsmanager/SecretsManagerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SecretsManager;
 using namespace Aws::Utils;
+using namespace Aws::SecretsManager;
 
 namespace Aws
 {

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sso-oidc/SSOOIDC_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SSOOIDCErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,6 +68,20 @@ enum class SSOOIDCErrors
   UNAUTHORIZED_CLIENT,
   UNSUPPORTED_GRANT_TYPE
 };
+
+class AWS_SSOOIDC_API SSOOIDCError : public Aws::Client::AWSError<SSOOIDCErrors>
+{
+public:
+  SSOOIDCError() {}
+  SSOOIDCError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SSOOIDCErrors>(rhs) {}
+  SSOOIDCError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SSOOIDCErrors>(rhs) {}
+  SSOOIDCError(const Aws::Client::AWSError<SSOOIDCErrors>& rhs) : Aws::Client::AWSError<SSOOIDCErrors>(rhs) {}
+  SSOOIDCError(Aws::Client::AWSError<SSOOIDCErrors>&& rhs) : Aws::Client::AWSError<SSOOIDCErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SSOOIDCErrorMapper
 {
   AWS_SSOOIDC_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

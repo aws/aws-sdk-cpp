@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/docdb/DocDB_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class DocDBErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -101,6 +102,20 @@ enum class DocDBErrors
   STORAGE_TYPE_NOT_SUPPORTED_FAULT,
   SUBNET_ALREADY_IN_USE
 };
+
+class AWS_DOCDB_API DocDBError : public Aws::Client::AWSError<DocDBErrors>
+{
+public:
+  DocDBError() {}
+  DocDBError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
+  DocDBError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
+  DocDBError(const Aws::Client::AWSError<DocDBErrors>& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
+  DocDBError(Aws::Client::AWSError<DocDBErrors>&& rhs) : Aws::Client::AWSError<DocDBErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace DocDBErrorMapper
 {
   AWS_DOCDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

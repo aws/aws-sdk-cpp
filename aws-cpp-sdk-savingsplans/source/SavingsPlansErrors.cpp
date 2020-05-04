@@ -18,8 +18,8 @@
 #include <aws/savingsplans/SavingsPlansErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SavingsPlans;
 using namespace Aws::Utils;
+using namespace Aws::SavingsPlans;
 
 namespace Aws
 {

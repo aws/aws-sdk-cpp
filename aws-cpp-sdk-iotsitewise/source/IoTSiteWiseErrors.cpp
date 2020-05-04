@@ -16,15 +16,37 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/iotsitewise/IoTSiteWiseErrors.h>
+#include <aws/iotsitewise/model/ResourceAlreadyExistsException.h>
+#include <aws/iotsitewise/model/TooManyTagsException.h>
+#include <aws/iotsitewise/model/ConflictingOperationException.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoTSiteWise;
 using namespace Aws::Utils;
+using namespace Aws::IoTSiteWise;
+using namespace Aws::IoTSiteWise::Model;
 
 namespace Aws
 {
 namespace IoTSiteWise
 {
+template<> AWS_IOTSITEWISE_API ResourceAlreadyExistsException IoTSiteWiseError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTSiteWiseErrors::RESOURCE_ALREADY_EXISTS);
+  return ResourceAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IOTSITEWISE_API TooManyTagsException IoTSiteWiseError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTSiteWiseErrors::TOO_MANY_TAGS);
+  return TooManyTagsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_IOTSITEWISE_API ConflictingOperationException IoTSiteWiseError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTSiteWiseErrors::CONFLICTING_OPERATION);
+  return ConflictingOperationException(this->GetJsonPayload().View());
+}
+
 namespace IoTSiteWiseErrorMapper
 {
 

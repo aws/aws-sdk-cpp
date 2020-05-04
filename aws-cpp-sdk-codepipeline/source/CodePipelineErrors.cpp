@@ -18,8 +18,8 @@
 #include <aws/codepipeline/CodePipelineErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodePipeline;
 using namespace Aws::Utils;
+using namespace Aws::CodePipeline;
 
 namespace Aws
 {

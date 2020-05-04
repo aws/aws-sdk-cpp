@@ -18,8 +18,8 @@
 #include <aws/forecastquery/ForecastQueryServiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ForecastQueryService;
 using namespace Aws::Utils;
+using namespace Aws::ForecastQueryService;
 
 namespace Aws
 {

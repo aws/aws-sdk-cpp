@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iot1click-projects/IoT1ClickProjects_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class IoT1ClickProjectsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class IoT1ClickProjectsErrors
   RESOURCE_CONFLICT,
   TOO_MANY_REQUESTS
 };
+
+class AWS_IOT1CLICKPROJECTS_API IoT1ClickProjectsError : public Aws::Client::AWSError<IoT1ClickProjectsErrors>
+{
+public:
+  IoT1ClickProjectsError() {}
+  IoT1ClickProjectsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoT1ClickProjectsErrors>(rhs) {}
+  IoT1ClickProjectsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoT1ClickProjectsErrors>(rhs) {}
+  IoT1ClickProjectsError(const Aws::Client::AWSError<IoT1ClickProjectsErrors>& rhs) : Aws::Client::AWSError<IoT1ClickProjectsErrors>(rhs) {}
+  IoT1ClickProjectsError(Aws::Client::AWSError<IoT1ClickProjectsErrors>&& rhs) : Aws::Client::AWSError<IoT1ClickProjectsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace IoT1ClickProjectsErrorMapper
 {
   AWS_IOT1CLICKPROJECTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

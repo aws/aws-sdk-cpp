@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesis-video-archived-media/KinesisVideoArchivedMedia_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class KinesisVideoArchivedMediaErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,20 @@ enum class KinesisVideoArchivedMediaErrors
   NO_DATA_RETENTION,
   UNSUPPORTED_STREAM_MEDIA_TYPE
 };
+
+class AWS_KINESISVIDEOARCHIVEDMEDIA_API KinesisVideoArchivedMediaError : public Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>
+{
+public:
+  KinesisVideoArchivedMediaError() {}
+  KinesisVideoArchivedMediaError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>(rhs) {}
+  KinesisVideoArchivedMediaError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>(rhs) {}
+  KinesisVideoArchivedMediaError(const Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>& rhs) : Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>(rhs) {}
+  KinesisVideoArchivedMediaError(Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoArchivedMediaErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KinesisVideoArchivedMediaErrorMapper
 {
   AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

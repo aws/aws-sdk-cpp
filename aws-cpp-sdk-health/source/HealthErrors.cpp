@@ -18,8 +18,8 @@
 #include <aws/health/HealthErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Health;
 using namespace Aws::Utils;
+using namespace Aws::Health;
 
 namespace Aws
 {

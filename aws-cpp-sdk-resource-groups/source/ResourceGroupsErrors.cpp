@@ -18,8 +18,8 @@
 #include <aws/resource-groups/ResourceGroupsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ResourceGroups;
 using namespace Aws::Utils;
+using namespace Aws::ResourceGroups;
 
 namespace Aws
 {

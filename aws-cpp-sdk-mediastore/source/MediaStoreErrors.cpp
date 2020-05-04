@@ -18,8 +18,8 @@
 #include <aws/mediastore/MediaStoreErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MediaStore;
 using namespace Aws::Utils;
+using namespace Aws::MediaStore;
 
 namespace Aws
 {

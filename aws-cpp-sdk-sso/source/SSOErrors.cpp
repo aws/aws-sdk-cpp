@@ -18,8 +18,8 @@
 #include <aws/sso/SSOErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SSO;
 using namespace Aws::Utils;
+using namespace Aws::SSO;
 
 namespace Aws
 {

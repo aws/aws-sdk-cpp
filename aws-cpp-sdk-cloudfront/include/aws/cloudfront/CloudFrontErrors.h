@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CloudFrontErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -137,6 +138,20 @@ enum class CloudFrontErrors
   TOO_MANY_TRUSTED_SIGNERS,
   TRUSTED_SIGNER_DOES_NOT_EXIST
 };
+
+class AWS_CLOUDFRONT_API CloudFrontError : public Aws::Client::AWSError<CloudFrontErrors>
+{
+public:
+  CloudFrontError() {}
+  CloudFrontError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudFrontErrors>(rhs) {}
+  CloudFrontError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudFrontErrors>(rhs) {}
+  CloudFrontError(const Aws::Client::AWSError<CloudFrontErrors>& rhs) : Aws::Client::AWSError<CloudFrontErrors>(rhs) {}
+  CloudFrontError(Aws::Client::AWSError<CloudFrontErrors>&& rhs) : Aws::Client::AWSError<CloudFrontErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudFrontErrorMapper
 {
   AWS_CLOUDFRONT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

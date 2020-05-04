@@ -87,19 +87,19 @@ namespace Model
         class RevokePermissionsRequest;
         class UpdateResourceRequest;
 
-        typedef Aws::Utils::Outcome<BatchGrantPermissionsResult, Aws::Client::AWSError<LakeFormationErrors>> BatchGrantPermissionsOutcome;
-        typedef Aws::Utils::Outcome<BatchRevokePermissionsResult, Aws::Client::AWSError<LakeFormationErrors>> BatchRevokePermissionsOutcome;
-        typedef Aws::Utils::Outcome<DeregisterResourceResult, Aws::Client::AWSError<LakeFormationErrors>> DeregisterResourceOutcome;
-        typedef Aws::Utils::Outcome<DescribeResourceResult, Aws::Client::AWSError<LakeFormationErrors>> DescribeResourceOutcome;
-        typedef Aws::Utils::Outcome<GetDataLakeSettingsResult, Aws::Client::AWSError<LakeFormationErrors>> GetDataLakeSettingsOutcome;
-        typedef Aws::Utils::Outcome<GetEffectivePermissionsForPathResult, Aws::Client::AWSError<LakeFormationErrors>> GetEffectivePermissionsForPathOutcome;
-        typedef Aws::Utils::Outcome<GrantPermissionsResult, Aws::Client::AWSError<LakeFormationErrors>> GrantPermissionsOutcome;
-        typedef Aws::Utils::Outcome<ListPermissionsResult, Aws::Client::AWSError<LakeFormationErrors>> ListPermissionsOutcome;
-        typedef Aws::Utils::Outcome<ListResourcesResult, Aws::Client::AWSError<LakeFormationErrors>> ListResourcesOutcome;
-        typedef Aws::Utils::Outcome<PutDataLakeSettingsResult, Aws::Client::AWSError<LakeFormationErrors>> PutDataLakeSettingsOutcome;
-        typedef Aws::Utils::Outcome<RegisterResourceResult, Aws::Client::AWSError<LakeFormationErrors>> RegisterResourceOutcome;
-        typedef Aws::Utils::Outcome<RevokePermissionsResult, Aws::Client::AWSError<LakeFormationErrors>> RevokePermissionsOutcome;
-        typedef Aws::Utils::Outcome<UpdateResourceResult, Aws::Client::AWSError<LakeFormationErrors>> UpdateResourceOutcome;
+        typedef Aws::Utils::Outcome<BatchGrantPermissionsResult, LakeFormationError> BatchGrantPermissionsOutcome;
+        typedef Aws::Utils::Outcome<BatchRevokePermissionsResult, LakeFormationError> BatchRevokePermissionsOutcome;
+        typedef Aws::Utils::Outcome<DeregisterResourceResult, LakeFormationError> DeregisterResourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeResourceResult, LakeFormationError> DescribeResourceOutcome;
+        typedef Aws::Utils::Outcome<GetDataLakeSettingsResult, LakeFormationError> GetDataLakeSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetEffectivePermissionsForPathResult, LakeFormationError> GetEffectivePermissionsForPathOutcome;
+        typedef Aws::Utils::Outcome<GrantPermissionsResult, LakeFormationError> GrantPermissionsOutcome;
+        typedef Aws::Utils::Outcome<ListPermissionsResult, LakeFormationError> ListPermissionsOutcome;
+        typedef Aws::Utils::Outcome<ListResourcesResult, LakeFormationError> ListResourcesOutcome;
+        typedef Aws::Utils::Outcome<PutDataLakeSettingsResult, LakeFormationError> PutDataLakeSettingsOutcome;
+        typedef Aws::Utils::Outcome<RegisterResourceResult, LakeFormationError> RegisterResourceOutcome;
+        typedef Aws::Utils::Outcome<RevokePermissionsResult, LakeFormationError> RevokePermissionsOutcome;
+        typedef Aws::Utils::Outcome<UpdateResourceResult, LakeFormationError> UpdateResourceOutcome;
 
         typedef std::future<BatchGrantPermissionsOutcome> BatchGrantPermissionsOutcomeCallable;
         typedef std::future<BatchRevokePermissionsOutcome> BatchRevokePermissionsOutcomeCallable;

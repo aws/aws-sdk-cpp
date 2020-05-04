@@ -50,7 +50,7 @@ static const char* ALLOCATION_TAG = "SSOClient";
 SSOClient::SSOClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -60,7 +60,7 @@ SSOClient::SSOClient(const Client::ClientConfiguration& clientConfiguration) :
 SSOClient::SSOClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -71,7 +71,7 @@ SSOClient::SSOClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -128,15 +128,7 @@ GetRoleCredentialsOutcome SSOClient::GetRoleCredentials(const GetRoleCredentials
   Aws::StringStream ss;
   ss << "/federation/credentials";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRoleCredentialsOutcome(GetRoleCredentialsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRoleCredentialsOutcome(outcome.GetError());
-  }
+  return GetRoleCredentialsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
 GetRoleCredentialsOutcomeCallable SSOClient::GetRoleCredentialsCallable(const GetRoleCredentialsRequest& request) const
@@ -173,15 +165,7 @@ ListAccountRolesOutcome SSOClient::ListAccountRoles(const ListAccountRolesReques
   Aws::StringStream ss;
   ss << "/assignment/roles";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAccountRolesOutcome(ListAccountRolesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAccountRolesOutcome(outcome.GetError());
-  }
+  return ListAccountRolesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
 ListAccountRolesOutcomeCallable SSOClient::ListAccountRolesCallable(const ListAccountRolesRequest& request) const
@@ -213,15 +197,7 @@ ListAccountsOutcome SSOClient::ListAccounts(const ListAccountsRequest& request) 
   Aws::StringStream ss;
   ss << "/assignment/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAccountsOutcome(ListAccountsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAccountsOutcome(outcome.GetError());
-  }
+  return ListAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::NULL_SIGNER));
 }
 
 ListAccountsOutcomeCallable SSOClient::ListAccountsCallable(const ListAccountsRequest& request) const
@@ -253,15 +229,7 @@ LogoutOutcome SSOClient::Logout(const LogoutRequest& request) const
   Aws::StringStream ss;
   ss << "/logout";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return LogoutOutcome(NoResult());
-  }
-  else
-  {
-    return LogoutOutcome(outcome.GetError());
-  }
+  return LogoutOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 LogoutOutcomeCallable SSOClient::LogoutCallable(const LogoutRequest& request) const

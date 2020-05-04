@@ -18,8 +18,8 @@
 #include <aws/marketplace-catalog/MarketplaceCatalogErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MarketplaceCatalog;
 using namespace Aws::Utils;
+using namespace Aws::MarketplaceCatalog;
 
 namespace Aws
 {

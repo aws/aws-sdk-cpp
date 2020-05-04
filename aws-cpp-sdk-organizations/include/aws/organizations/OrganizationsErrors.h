@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/organizations/Organizations_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class OrganizationsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -100,6 +101,20 @@ enum class OrganizationsErrors
   TOO_MANY_REQUESTS,
   UNSUPPORTED_A_P_I_ENDPOINT
 };
+
+class AWS_ORGANIZATIONS_API OrganizationsError : public Aws::Client::AWSError<OrganizationsErrors>
+{
+public:
+  OrganizationsError() {}
+  OrganizationsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<OrganizationsErrors>(rhs) {}
+  OrganizationsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<OrganizationsErrors>(rhs) {}
+  OrganizationsError(const Aws::Client::AWSError<OrganizationsErrors>& rhs) : Aws::Client::AWSError<OrganizationsErrors>(rhs) {}
+  OrganizationsError(Aws::Client::AWSError<OrganizationsErrors>&& rhs) : Aws::Client::AWSError<OrganizationsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace OrganizationsErrorMapper
 {
   AWS_ORGANIZATIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

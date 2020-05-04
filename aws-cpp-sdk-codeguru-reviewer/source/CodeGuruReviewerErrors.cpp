@@ -18,8 +18,8 @@
 #include <aws/codeguru-reviewer/CodeGuruReviewerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeGuruReviewer;
 using namespace Aws::Utils;
+using namespace Aws::CodeGuruReviewer;
 
 namespace Aws
 {

@@ -1,0 +1,195 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/glacier/Glacier_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace Glacier
+{
+namespace Model
+{
+
+  /**
+   * <p>Returned if the request results in a vault or account limit being
+   * exceeded.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/LimitExceededException">AWS
+   * API Reference</a></p>
+   */
+  class AWS_GLACIER_API LimitExceededException
+  {
+  public:
+    LimitExceededException();
+    LimitExceededException(Aws::Utils::Json::JsonView jsonValue);
+    LimitExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Client</p>
+     */
+    inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>Client</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Client</p>
+     */
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Client</p>
+     */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Client</p>
+     */
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+
+    /**
+     * <p>Client</p>
+     */
+    inline LimitExceededException& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Client</p>
+     */
+    inline LimitExceededException& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>Client</p>
+     */
+    inline LimitExceededException& WithType(const char* value) { SetType(value); return *this;}
+
+
+    /**
+     * <p>400 Bad Request</p>
+     */
+    inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>400 Bad Request</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>400 Bad Request</p>
+     */
+    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /**
+     * <p>400 Bad Request</p>
+     */
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+
+    /**
+     * <p>400 Bad Request</p>
+     */
+    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
+
+    /**
+     * <p>400 Bad Request</p>
+     */
+    inline LimitExceededException& WithCode(const Aws::String& value) { SetCode(value); return *this;}
+
+    /**
+     * <p>400 Bad Request</p>
+     */
+    inline LimitExceededException& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
+
+    /**
+     * <p>400 Bad Request</p>
+     */
+    inline LimitExceededException& WithCode(const char* value) { SetCode(value); return *this;}
+
+
+    /**
+     * <p>Returned if the request results in a vault limit or tags limit being
+     * exceeded.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Returned if the request results in a vault limit or tags limit being
+     * exceeded.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>Returned if the request results in a vault limit or tags limit being
+     * exceeded.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /**
+     * <p>Returned if the request results in a vault limit or tags limit being
+     * exceeded.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+
+    /**
+     * <p>Returned if the request results in a vault limit or tags limit being
+     * exceeded.</p>
+     */
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    /**
+     * <p>Returned if the request results in a vault limit or tags limit being
+     * exceeded.</p>
+     */
+    inline LimitExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>Returned if the request results in a vault limit or tags limit being
+     * exceeded.</p>
+     */
+    inline LimitExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>Returned if the request results in a vault limit or tags limit being
+     * exceeded.</p>
+     */
+    inline LimitExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+  private:
+
+    Aws::String m_type;
+    bool m_typeHasBeenSet;
+
+    Aws::String m_code;
+    bool m_codeHasBeenSet;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Glacier
+} // namespace Aws

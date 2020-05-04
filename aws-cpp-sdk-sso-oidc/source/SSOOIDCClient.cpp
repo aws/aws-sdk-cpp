@@ -49,7 +49,7 @@ static const char* ALLOCATION_TAG = "SSOOIDCClient";
 SSOOIDCClient::SSOOIDCClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOOIDCErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -59,7 +59,7 @@ SSOOIDCClient::SSOOIDCClient(const Client::ClientConfiguration& clientConfigurat
 SSOOIDCClient::SSOOIDCClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOOIDCErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -70,7 +70,7 @@ SSOOIDCClient::SSOOIDCClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SSOOIDCErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -112,15 +112,7 @@ CreateTokenOutcome SSOOIDCClient::CreateToken(const CreateTokenRequest& request)
   Aws::StringStream ss;
   ss << "/token";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateTokenOutcome(CreateTokenResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateTokenOutcome(outcome.GetError());
-  }
+  return CreateTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 CreateTokenOutcomeCallable SSOOIDCClient::CreateTokenCallable(const CreateTokenRequest& request) const
@@ -147,15 +139,7 @@ RegisterClientOutcome SSOOIDCClient::RegisterClient(const RegisterClientRequest&
   Aws::StringStream ss;
   ss << "/client/register";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterClientOutcome(RegisterClientResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterClientOutcome(outcome.GetError());
-  }
+  return RegisterClientOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 RegisterClientOutcomeCallable SSOOIDCClient::RegisterClientCallable(const RegisterClientRequest& request) const
@@ -182,15 +166,7 @@ StartDeviceAuthorizationOutcome SSOOIDCClient::StartDeviceAuthorization(const St
   Aws::StringStream ss;
   ss << "/device_authorization";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartDeviceAuthorizationOutcome(StartDeviceAuthorizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartDeviceAuthorizationOutcome(outcome.GetError());
-  }
+  return StartDeviceAuthorizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::NULL_SIGNER));
 }
 
 StartDeviceAuthorizationOutcomeCallable SSOOIDCClient::StartDeviceAuthorizationCallable(const StartDeviceAuthorizationRequest& request) const

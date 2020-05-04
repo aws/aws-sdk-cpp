@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/glue/Glue_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class GlueErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -77,6 +78,20 @@ enum class GlueErrors
   SCHEDULER_TRANSITIONING,
   VERSION_MISMATCH
 };
+
+class AWS_GLUE_API GlueError : public Aws::Client::AWSError<GlueErrors>
+{
+public:
+  GlueError() {}
+  GlueError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GlueErrors>(rhs) {}
+  GlueError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GlueErrors>(rhs) {}
+  GlueError(const Aws::Client::AWSError<GlueErrors>& rhs) : Aws::Client::AWSError<GlueErrors>(rhs) {}
+  GlueError(Aws::Client::AWSError<GlueErrors>&& rhs) : Aws::Client::AWSError<GlueErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace GlueErrorMapper
 {
   AWS_GLUE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

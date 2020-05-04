@@ -80,18 +80,18 @@ namespace Model
         class RejectInvitationRequest;
         class StartMonitoringMemberRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> AcceptInvitationOutcome;
-        typedef Aws::Utils::Outcome<CreateGraphResult, Aws::Client::AWSError<DetectiveErrors>> CreateGraphOutcome;
-        typedef Aws::Utils::Outcome<CreateMembersResult, Aws::Client::AWSError<DetectiveErrors>> CreateMembersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> DeleteGraphOutcome;
-        typedef Aws::Utils::Outcome<DeleteMembersResult, Aws::Client::AWSError<DetectiveErrors>> DeleteMembersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> DisassociateMembershipOutcome;
-        typedef Aws::Utils::Outcome<GetMembersResult, Aws::Client::AWSError<DetectiveErrors>> GetMembersOutcome;
-        typedef Aws::Utils::Outcome<ListGraphsResult, Aws::Client::AWSError<DetectiveErrors>> ListGraphsOutcome;
-        typedef Aws::Utils::Outcome<ListInvitationsResult, Aws::Client::AWSError<DetectiveErrors>> ListInvitationsOutcome;
-        typedef Aws::Utils::Outcome<ListMembersResult, Aws::Client::AWSError<DetectiveErrors>> ListMembersOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> RejectInvitationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DetectiveErrors>> StartMonitoringMemberOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> AcceptInvitationOutcome;
+        typedef Aws::Utils::Outcome<CreateGraphResult, DetectiveError> CreateGraphOutcome;
+        typedef Aws::Utils::Outcome<CreateMembersResult, DetectiveError> CreateMembersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DeleteGraphOutcome;
+        typedef Aws::Utils::Outcome<DeleteMembersResult, DetectiveError> DeleteMembersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DisassociateMembershipOutcome;
+        typedef Aws::Utils::Outcome<GetMembersResult, DetectiveError> GetMembersOutcome;
+        typedef Aws::Utils::Outcome<ListGraphsResult, DetectiveError> ListGraphsOutcome;
+        typedef Aws::Utils::Outcome<ListInvitationsResult, DetectiveError> ListInvitationsOutcome;
+        typedef Aws::Utils::Outcome<ListMembersResult, DetectiveError> ListMembersOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> RejectInvitationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> StartMonitoringMemberOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
         typedef std::future<CreateGraphOutcome> CreateGraphOutcomeCallable;

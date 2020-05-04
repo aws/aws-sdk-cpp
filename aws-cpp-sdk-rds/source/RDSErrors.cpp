@@ -18,8 +18,8 @@
 #include <aws/rds/RDSErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::RDS;
 using namespace Aws::Utils;
+using namespace Aws::RDS;
 
 namespace Aws
 {

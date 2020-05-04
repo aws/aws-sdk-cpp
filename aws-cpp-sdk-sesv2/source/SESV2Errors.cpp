@@ -18,8 +18,8 @@
 #include <aws/sesv2/SESV2Errors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SESV2;
 using namespace Aws::Utils;
+using namespace Aws::SESV2;
 
 namespace Aws
 {

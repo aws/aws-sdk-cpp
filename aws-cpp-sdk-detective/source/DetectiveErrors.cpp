@@ -18,8 +18,8 @@
 #include <aws/detective/DetectiveErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Detective;
 using namespace Aws::Utils;
+using namespace Aws::Detective;
 
 namespace Aws
 {

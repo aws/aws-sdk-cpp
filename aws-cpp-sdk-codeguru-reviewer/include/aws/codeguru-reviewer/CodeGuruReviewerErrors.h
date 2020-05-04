@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CodeGuruReviewerErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class CodeGuruReviewerErrors
   INTERNAL_SERVER,
   NOT_FOUND
 };
+
+class AWS_CODEGURUREVIEWER_API CodeGuruReviewerError : public Aws::Client::AWSError<CodeGuruReviewerErrors>
+{
+public:
+  CodeGuruReviewerError() {}
+  CodeGuruReviewerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeGuruReviewerErrors>(rhs) {}
+  CodeGuruReviewerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeGuruReviewerErrors>(rhs) {}
+  CodeGuruReviewerError(const Aws::Client::AWSError<CodeGuruReviewerErrors>& rhs) : Aws::Client::AWSError<CodeGuruReviewerErrors>(rhs) {}
+  CodeGuruReviewerError(Aws::Client::AWSError<CodeGuruReviewerErrors>&& rhs) : Aws::Client::AWSError<CodeGuruReviewerErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CodeGuruReviewerErrorMapper
 {
   AWS_CODEGURUREVIEWER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

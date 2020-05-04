@@ -16,15 +16,72 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/glacier/GlacierErrors.h>
+#include <aws/glacier/model/ServiceUnavailableException.h>
+#include <aws/glacier/model/ResourceNotFoundException.h>
+#include <aws/glacier/model/InsufficientCapacityException.h>
+#include <aws/glacier/model/RequestTimeoutException.h>
+#include <aws/glacier/model/LimitExceededException.h>
+#include <aws/glacier/model/PolicyEnforcedException.h>
+#include <aws/glacier/model/InvalidParameterValueException.h>
+#include <aws/glacier/model/MissingParameterValueException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Glacier;
 using namespace Aws::Utils;
+using namespace Aws::Glacier;
+using namespace Aws::Glacier::Model;
 
 namespace Aws
 {
 namespace Glacier
 {
+template<> AWS_GLACIER_API ServiceUnavailableException GlacierError::GetModeledError()
+{
+  assert(this->GetErrorType() == GlacierErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GLACIER_API ResourceNotFoundException GlacierError::GetModeledError()
+{
+  assert(this->GetErrorType() == GlacierErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GLACIER_API InsufficientCapacityException GlacierError::GetModeledError()
+{
+  assert(this->GetErrorType() == GlacierErrors::INSUFFICIENT_CAPACITY);
+  return InsufficientCapacityException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GLACIER_API RequestTimeoutException GlacierError::GetModeledError()
+{
+  assert(this->GetErrorType() == GlacierErrors::REQUEST_TIMEOUT);
+  return RequestTimeoutException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GLACIER_API LimitExceededException GlacierError::GetModeledError()
+{
+  assert(this->GetErrorType() == GlacierErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GLACIER_API PolicyEnforcedException GlacierError::GetModeledError()
+{
+  assert(this->GetErrorType() == GlacierErrors::POLICY_ENFORCED);
+  return PolicyEnforcedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GLACIER_API InvalidParameterValueException GlacierError::GetModeledError()
+{
+  assert(this->GetErrorType() == GlacierErrors::INVALID_PARAMETER_VALUE);
+  return InvalidParameterValueException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GLACIER_API MissingParameterValueException GlacierError::GetModeledError()
+{
+  assert(this->GetErrorType() == GlacierErrors::MISSING_PARAMETER_VALUE);
+  return MissingParameterValueException(this->GetJsonPayload().View());
+}
+
 namespace GlacierErrorMapper
 {
 

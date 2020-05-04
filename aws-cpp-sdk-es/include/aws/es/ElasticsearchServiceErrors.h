@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ElasticsearchServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class ElasticsearchServiceErrors
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
+
+class AWS_ELASTICSEARCHSERVICE_API ElasticsearchServiceError : public Aws::Client::AWSError<ElasticsearchServiceErrors>
+{
+public:
+  ElasticsearchServiceError() {}
+  ElasticsearchServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElasticsearchServiceErrors>(rhs) {}
+  ElasticsearchServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElasticsearchServiceErrors>(rhs) {}
+  ElasticsearchServiceError(const Aws::Client::AWSError<ElasticsearchServiceErrors>& rhs) : Aws::Client::AWSError<ElasticsearchServiceErrors>(rhs) {}
+  ElasticsearchServiceError(Aws::Client::AWSError<ElasticsearchServiceErrors>&& rhs) : Aws::Client::AWSError<ElasticsearchServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ElasticsearchServiceErrorMapper
 {
   AWS_ELASTICSEARCHSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

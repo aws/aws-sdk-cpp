@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class QuickSightErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69,6 +70,20 @@ enum class QuickSightErrors
   SESSION_LIFETIME_IN_MINUTES_INVALID,
   UNSUPPORTED_USER_EDITION
 };
+
+class AWS_QUICKSIGHT_API QuickSightError : public Aws::Client::AWSError<QuickSightErrors>
+{
+public:
+  QuickSightError() {}
+  QuickSightError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<QuickSightErrors>(rhs) {}
+  QuickSightError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<QuickSightErrors>(rhs) {}
+  QuickSightError(const Aws::Client::AWSError<QuickSightErrors>& rhs) : Aws::Client::AWSError<QuickSightErrors>(rhs) {}
+  QuickSightError(Aws::Client::AWSError<QuickSightErrors>&& rhs) : Aws::Client::AWSError<QuickSightErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace QuickSightErrorMapper
 {
   AWS_QUICKSIGHT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

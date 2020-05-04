@@ -18,8 +18,8 @@
 #include <aws/cur/CostandUsageReportServiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CostandUsageReportService;
 using namespace Aws::Utils;
+using namespace Aws::CostandUsageReportService;
 
 namespace Aws
 {

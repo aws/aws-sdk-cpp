@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class ComputeOptimizerErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
+
+class AWS_COMPUTEOPTIMIZER_API ComputeOptimizerError : public Aws::Client::AWSError<ComputeOptimizerErrors>
+{
+public:
+  ComputeOptimizerError() {}
+  ComputeOptimizerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ComputeOptimizerErrors>(rhs) {}
+  ComputeOptimizerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ComputeOptimizerErrors>(rhs) {}
+  ComputeOptimizerError(const Aws::Client::AWSError<ComputeOptimizerErrors>& rhs) : Aws::Client::AWSError<ComputeOptimizerErrors>(rhs) {}
+  ComputeOptimizerError(Aws::Client::AWSError<ComputeOptimizerErrors>&& rhs) : Aws::Client::AWSError<ComputeOptimizerErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ComputeOptimizerErrorMapper
 {
   AWS_COMPUTEOPTIMIZER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

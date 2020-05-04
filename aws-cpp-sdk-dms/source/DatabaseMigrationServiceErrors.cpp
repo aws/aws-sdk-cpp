@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/dms/DatabaseMigrationServiceErrors.h>
+#include <aws/dms/model/ResourceAlreadyExistsFault.h>
 
 using namespace Aws::Client;
-using namespace Aws::DatabaseMigrationService;
 using namespace Aws::Utils;
+using namespace Aws::DatabaseMigrationService;
+using namespace Aws::DatabaseMigrationService::Model;
 
 namespace Aws
 {
 namespace DatabaseMigrationService
 {
+template<> AWS_DATABASEMIGRATIONSERVICE_API ResourceAlreadyExistsFault DatabaseMigrationServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == DatabaseMigrationServiceErrors::RESOURCE_ALREADY_EXISTS_FAULT);
+  return ResourceAlreadyExistsFault(this->GetJsonPayload().View());
+}
+
 namespace DatabaseMigrationServiceErrorMapper
 {
 

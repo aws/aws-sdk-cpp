@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mobile/Mobile_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class MobileErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class MobileErrors
   TOO_MANY_REQUESTS,
   UNAUTHORIZED
 };
+
+class AWS_MOBILE_API MobileError : public Aws::Client::AWSError<MobileErrors>
+{
+public:
+  MobileError() {}
+  MobileError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MobileErrors>(rhs) {}
+  MobileError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MobileErrors>(rhs) {}
+  MobileError(const Aws::Client::AWSError<MobileErrors>& rhs) : Aws::Client::AWSError<MobileErrors>(rhs) {}
+  MobileError(Aws::Client::AWSError<MobileErrors>&& rhs) : Aws::Client::AWSError<MobileErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MobileErrorMapper
 {
   AWS_MOBILE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

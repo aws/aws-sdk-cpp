@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/apigatewayv2/ApiGatewayV2Errors.h>
+#include <aws/apigatewayv2/model/NotFoundException.h>
+#include <aws/apigatewayv2/model/TooManyRequestsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::ApiGatewayV2;
 using namespace Aws::Utils;
+using namespace Aws::ApiGatewayV2;
+using namespace Aws::ApiGatewayV2::Model;
 
 namespace Aws
 {
 namespace ApiGatewayV2
 {
+template<> AWS_APIGATEWAYV2_API NotFoundException ApiGatewayV2Error::GetModeledError()
+{
+  assert(this->GetErrorType() == ApiGatewayV2Errors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_APIGATEWAYV2_API TooManyRequestsException ApiGatewayV2Error::GetModeledError()
+{
+  assert(this->GetErrorType() == ApiGatewayV2Errors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
 namespace ApiGatewayV2ErrorMapper
 {
 

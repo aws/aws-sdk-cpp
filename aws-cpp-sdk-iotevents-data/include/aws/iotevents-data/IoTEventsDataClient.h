@@ -69,10 +69,10 @@ namespace Model
         class DescribeDetectorRequest;
         class ListDetectorsRequest;
 
-        typedef Aws::Utils::Outcome<BatchPutMessageResult, Aws::Client::AWSError<IoTEventsDataErrors>> BatchPutMessageOutcome;
-        typedef Aws::Utils::Outcome<BatchUpdateDetectorResult, Aws::Client::AWSError<IoTEventsDataErrors>> BatchUpdateDetectorOutcome;
-        typedef Aws::Utils::Outcome<DescribeDetectorResult, Aws::Client::AWSError<IoTEventsDataErrors>> DescribeDetectorOutcome;
-        typedef Aws::Utils::Outcome<ListDetectorsResult, Aws::Client::AWSError<IoTEventsDataErrors>> ListDetectorsOutcome;
+        typedef Aws::Utils::Outcome<BatchPutMessageResult, IoTEventsDataError> BatchPutMessageOutcome;
+        typedef Aws::Utils::Outcome<BatchUpdateDetectorResult, IoTEventsDataError> BatchUpdateDetectorOutcome;
+        typedef Aws::Utils::Outcome<DescribeDetectorResult, IoTEventsDataError> DescribeDetectorOutcome;
+        typedef Aws::Utils::Outcome<ListDetectorsResult, IoTEventsDataError> ListDetectorsOutcome;
 
         typedef std::future<BatchPutMessageOutcome> BatchPutMessageOutcomeCallable;
         typedef std::future<BatchUpdateDetectorOutcome> BatchUpdateDetectorOutcomeCallable;

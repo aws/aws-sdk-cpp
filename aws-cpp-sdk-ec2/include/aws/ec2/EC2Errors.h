@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class EC2Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -230,6 +231,20 @@ enum class EC2Errors
   V_P_C_ID_NOT_SPECIFIED,
   V_P_C_RESOURCE_NOT_SPECIFIED
 };
+
+class AWS_EC2_API EC2Error : public Aws::Client::AWSError<EC2Errors>
+{
+public:
+  EC2Error() {}
+  EC2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EC2Errors>(rhs) {}
+  EC2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EC2Errors>(rhs) {}
+  EC2Error(const Aws::Client::AWSError<EC2Errors>& rhs) : Aws::Client::AWSError<EC2Errors>(rhs) {}
+  EC2Error(Aws::Client::AWSError<EC2Errors>&& rhs) : Aws::Client::AWSError<EC2Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace EC2ErrorMapper
 {
   AWS_EC2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

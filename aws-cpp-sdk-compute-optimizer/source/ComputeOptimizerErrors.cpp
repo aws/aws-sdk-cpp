@@ -18,8 +18,8 @@
 #include <aws/compute-optimizer/ComputeOptimizerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ComputeOptimizer;
 using namespace Aws::Utils;
+using namespace Aws::ComputeOptimizer;
 
 namespace Aws
 {

@@ -79,15 +79,15 @@ namespace Model
         class StopTextTranslationJobRequest;
         class TranslateTextRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranslateErrors>> DeleteTerminologyOutcome;
-        typedef Aws::Utils::Outcome<DescribeTextTranslationJobResult, Aws::Client::AWSError<TranslateErrors>> DescribeTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<GetTerminologyResult, Aws::Client::AWSError<TranslateErrors>> GetTerminologyOutcome;
-        typedef Aws::Utils::Outcome<ImportTerminologyResult, Aws::Client::AWSError<TranslateErrors>> ImportTerminologyOutcome;
-        typedef Aws::Utils::Outcome<ListTerminologiesResult, Aws::Client::AWSError<TranslateErrors>> ListTerminologiesOutcome;
-        typedef Aws::Utils::Outcome<ListTextTranslationJobsResult, Aws::Client::AWSError<TranslateErrors>> ListTextTranslationJobsOutcome;
-        typedef Aws::Utils::Outcome<StartTextTranslationJobResult, Aws::Client::AWSError<TranslateErrors>> StartTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<StopTextTranslationJobResult, Aws::Client::AWSError<TranslateErrors>> StopTextTranslationJobOutcome;
-        typedef Aws::Utils::Outcome<TranslateTextResult, Aws::Client::AWSError<TranslateErrors>> TranslateTextOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, TranslateError> DeleteTerminologyOutcome;
+        typedef Aws::Utils::Outcome<DescribeTextTranslationJobResult, TranslateError> DescribeTextTranslationJobOutcome;
+        typedef Aws::Utils::Outcome<GetTerminologyResult, TranslateError> GetTerminologyOutcome;
+        typedef Aws::Utils::Outcome<ImportTerminologyResult, TranslateError> ImportTerminologyOutcome;
+        typedef Aws::Utils::Outcome<ListTerminologiesResult, TranslateError> ListTerminologiesOutcome;
+        typedef Aws::Utils::Outcome<ListTextTranslationJobsResult, TranslateError> ListTextTranslationJobsOutcome;
+        typedef Aws::Utils::Outcome<StartTextTranslationJobResult, TranslateError> StartTextTranslationJobOutcome;
+        typedef Aws::Utils::Outcome<StopTextTranslationJobResult, TranslateError> StopTextTranslationJobOutcome;
+        typedef Aws::Utils::Outcome<TranslateTextResult, TranslateError> TranslateTextOutcome;
 
         typedef std::future<DeleteTerminologyOutcome> DeleteTerminologyOutcomeCallable;
         typedef std::future<DescribeTextTranslationJobOutcome> DescribeTextTranslationJobOutcomeCallable;

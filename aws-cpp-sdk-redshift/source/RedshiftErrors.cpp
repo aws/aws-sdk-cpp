@@ -18,8 +18,8 @@
 #include <aws/redshift/RedshiftErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Redshift;
 using namespace Aws::Utils;
+using namespace Aws::Redshift;
 
 namespace Aws
 {

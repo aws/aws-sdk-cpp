@@ -65,8 +65,8 @@ namespace Model
         class DescribeDimensionKeysRequest;
         class GetResourceMetricsRequest;
 
-        typedef Aws::Utils::Outcome<DescribeDimensionKeysResult, Aws::Client::AWSError<PIErrors>> DescribeDimensionKeysOutcome;
-        typedef Aws::Utils::Outcome<GetResourceMetricsResult, Aws::Client::AWSError<PIErrors>> GetResourceMetricsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDimensionKeysResult, PIError> DescribeDimensionKeysOutcome;
+        typedef Aws::Utils::Outcome<GetResourceMetricsResult, PIError> GetResourceMetricsOutcome;
 
         typedef std::future<DescribeDimensionKeysOutcome> DescribeDimensionKeysOutcomeCallable;
         typedef std::future<GetResourceMetricsOutcome> GetResourceMetricsOutcomeCallable;

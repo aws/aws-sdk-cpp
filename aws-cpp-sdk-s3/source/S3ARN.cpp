@@ -14,6 +14,7 @@
 */
 
 #include <cassert>
+#include <aws/core/Region.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/StringUtils.h>
@@ -31,7 +32,7 @@ namespace Aws
         S3ARNOutcome S3ARN::Validate(const char* clientRegion) const
         {
             // Take pseudo region into consideration here.
-            if (this->GetRegion() != clientRegion && "fips-" + this->GetRegion() != clientRegion && this->GetRegion() + "-fips" != clientRegion)
+            if (this->GetRegion() != Aws::Region::ComputeSignerRegion(clientRegion))
             {
                 Aws::StringStream ss;
                 ss << "Region mismatch between \"" << this->GetRegion() << "\" defined in ARN and \""

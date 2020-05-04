@@ -112,7 +112,7 @@ static const char* ALLOCATION_TAG = "QuickSightClient";
 QuickSightClient::QuickSightClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<QuickSightErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -122,7 +122,7 @@ QuickSightClient::QuickSightClient(const Client::ClientConfiguration& clientConf
 QuickSightClient::QuickSightClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<QuickSightErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -133,7 +133,7 @@ QuickSightClient::QuickSightClient(const std::shared_ptr<AWSCredentialsProvider>
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<QuickSightErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -195,15 +195,7 @@ CancelIngestionOutcome QuickSightClient::CancelIngestion(const CancelIngestionRe
   ss << "/ingestions/";
   ss << request.GetIngestionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelIngestionOutcome(CancelIngestionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelIngestionOutcome(outcome.GetError());
-  }
+  return CancelIngestionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelIngestionOutcomeCallable QuickSightClient::CancelIngestionCallable(const CancelIngestionRequest& request) const
@@ -243,15 +235,7 @@ CreateDashboardOutcome QuickSightClient::CreateDashboard(const CreateDashboardRe
   ss << "/dashboards/";
   ss << request.GetDashboardId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDashboardOutcome(CreateDashboardResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDashboardOutcome(outcome.GetError());
-  }
+  return CreateDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDashboardOutcomeCallable QuickSightClient::CreateDashboardCallable(const CreateDashboardRequest& request) const
@@ -285,15 +269,7 @@ CreateDataSetOutcome QuickSightClient::CreateDataSet(const CreateDataSetRequest&
   ss << request.GetAwsAccountId();
   ss << "/data-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDataSetOutcome(CreateDataSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDataSetOutcome(outcome.GetError());
-  }
+  return CreateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDataSetOutcomeCallable QuickSightClient::CreateDataSetCallable(const CreateDataSetRequest& request) const
@@ -327,15 +303,7 @@ CreateDataSourceOutcome QuickSightClient::CreateDataSource(const CreateDataSourc
   ss << request.GetAwsAccountId();
   ss << "/data-sources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDataSourceOutcome(CreateDataSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDataSourceOutcome(outcome.GetError());
-  }
+  return CreateDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDataSourceOutcomeCallable QuickSightClient::CreateDataSourceCallable(const CreateDataSourceRequest& request) const
@@ -376,15 +344,7 @@ CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& reque
   ss << request.GetNamespace();
   ss << "/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGroupOutcome(CreateGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGroupOutcome(outcome.GetError());
-  }
+  return CreateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGroupOutcomeCallable QuickSightClient::CreateGroupCallable(const CreateGroupRequest& request) const
@@ -438,15 +398,7 @@ CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const Creat
   ss << "/members/";
   ss << request.GetMemberName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateGroupMembershipOutcome(CreateGroupMembershipResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGroupMembershipOutcome(outcome.GetError());
-  }
+  return CreateGroupMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateGroupMembershipOutcomeCallable QuickSightClient::CreateGroupMembershipCallable(const CreateGroupMembershipRequest& request) const
@@ -487,15 +439,7 @@ CreateIAMPolicyAssignmentOutcome QuickSightClient::CreateIAMPolicyAssignment(con
   ss << request.GetNamespace();
   ss << "/iam-policy-assignments/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateIAMPolicyAssignmentOutcome(CreateIAMPolicyAssignmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateIAMPolicyAssignmentOutcome(outcome.GetError());
-  }
+  return CreateIAMPolicyAssignmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateIAMPolicyAssignmentOutcomeCallable QuickSightClient::CreateIAMPolicyAssignmentCallable(const CreateIAMPolicyAssignmentRequest& request) const
@@ -542,15 +486,7 @@ CreateIngestionOutcome QuickSightClient::CreateIngestion(const CreateIngestionRe
   ss << "/ingestions/";
   ss << request.GetIngestionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateIngestionOutcome(CreateIngestionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateIngestionOutcome(outcome.GetError());
-  }
+  return CreateIngestionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateIngestionOutcomeCallable QuickSightClient::CreateIngestionCallable(const CreateIngestionRequest& request) const
@@ -590,15 +526,7 @@ CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateReque
   ss << "/templates/";
   ss << request.GetTemplateId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateTemplateOutcome(CreateTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateTemplateOutcome(outcome.GetError());
-  }
+  return CreateTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTemplateOutcomeCallable QuickSightClient::CreateTemplateCallable(const CreateTemplateRequest& request) const
@@ -645,15 +573,7 @@ CreateTemplateAliasOutcome QuickSightClient::CreateTemplateAlias(const CreateTem
   ss << "/aliases/";
   ss << request.GetAliasName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateTemplateAliasOutcome(CreateTemplateAliasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateTemplateAliasOutcome(outcome.GetError());
-  }
+  return CreateTemplateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateTemplateAliasOutcomeCallable QuickSightClient::CreateTemplateAliasCallable(const CreateTemplateAliasRequest& request) const
@@ -693,15 +613,7 @@ DeleteDashboardOutcome QuickSightClient::DeleteDashboard(const DeleteDashboardRe
   ss << "/dashboards/";
   ss << request.GetDashboardId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDashboardOutcome(DeleteDashboardResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDashboardOutcome(outcome.GetError());
-  }
+  return DeleteDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDashboardOutcomeCallable QuickSightClient::DeleteDashboardCallable(const DeleteDashboardRequest& request) const
@@ -741,15 +653,7 @@ DeleteDataSetOutcome QuickSightClient::DeleteDataSet(const DeleteDataSetRequest&
   ss << "/data-sets/";
   ss << request.GetDataSetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDataSetOutcome(DeleteDataSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDataSetOutcome(outcome.GetError());
-  }
+  return DeleteDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDataSetOutcomeCallable QuickSightClient::DeleteDataSetCallable(const DeleteDataSetRequest& request) const
@@ -789,15 +693,7 @@ DeleteDataSourceOutcome QuickSightClient::DeleteDataSource(const DeleteDataSourc
   ss << "/data-sources/";
   ss << request.GetDataSourceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDataSourceOutcome(DeleteDataSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDataSourceOutcome(outcome.GetError());
-  }
+  return DeleteDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDataSourceOutcomeCallable QuickSightClient::DeleteDataSourceCallable(const DeleteDataSourceRequest& request) const
@@ -844,15 +740,7 @@ DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& reque
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGroupOutcome(DeleteGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteGroupOutcome(outcome.GetError());
-  }
+  return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGroupOutcomeCallable QuickSightClient::DeleteGroupCallable(const DeleteGroupRequest& request) const
@@ -906,15 +794,7 @@ DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const Delet
   ss << "/members/";
   ss << request.GetMemberName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGroupMembershipOutcome(DeleteGroupMembershipResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteGroupMembershipOutcome(outcome.GetError());
-  }
+  return DeleteGroupMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGroupMembershipOutcomeCallable QuickSightClient::DeleteGroupMembershipCallable(const DeleteGroupMembershipRequest& request) const
@@ -961,15 +841,7 @@ DeleteIAMPolicyAssignmentOutcome QuickSightClient::DeleteIAMPolicyAssignment(con
   ss << "/iam-policy-assignments/";
   ss << request.GetAssignmentName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteIAMPolicyAssignmentOutcome(DeleteIAMPolicyAssignmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteIAMPolicyAssignmentOutcome(outcome.GetError());
-  }
+  return DeleteIAMPolicyAssignmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteIAMPolicyAssignmentOutcomeCallable QuickSightClient::DeleteIAMPolicyAssignmentCallable(const DeleteIAMPolicyAssignmentRequest& request) const
@@ -1009,15 +881,7 @@ DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateReque
   ss << "/templates/";
   ss << request.GetTemplateId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteTemplateOutcome(DeleteTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteTemplateOutcome(outcome.GetError());
-  }
+  return DeleteTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTemplateOutcomeCallable QuickSightClient::DeleteTemplateCallable(const DeleteTemplateRequest& request) const
@@ -1064,15 +928,7 @@ DeleteTemplateAliasOutcome QuickSightClient::DeleteTemplateAlias(const DeleteTem
   ss << "/aliases/";
   ss << request.GetAliasName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteTemplateAliasOutcome(DeleteTemplateAliasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteTemplateAliasOutcome(outcome.GetError());
-  }
+  return DeleteTemplateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTemplateAliasOutcomeCallable QuickSightClient::DeleteTemplateAliasCallable(const DeleteTemplateAliasRequest& request) const
@@ -1119,15 +975,7 @@ DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request)
   ss << "/users/";
   ss << request.GetUserName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserOutcome(DeleteUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteUserOutcome(outcome.GetError());
-  }
+  return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserOutcomeCallable QuickSightClient::DeleteUserCallable(const DeleteUserRequest& request) const
@@ -1174,15 +1022,7 @@ DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const D
   ss << "/user-principals/";
   ss << request.GetPrincipalId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteUserByPrincipalIdOutcome(DeleteUserByPrincipalIdResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteUserByPrincipalIdOutcome(outcome.GetError());
-  }
+  return DeleteUserByPrincipalIdOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteUserByPrincipalIdOutcomeCallable QuickSightClient::DeleteUserByPrincipalIdCallable(const DeleteUserByPrincipalIdRequest& request) const
@@ -1222,15 +1062,7 @@ DescribeDashboardOutcome QuickSightClient::DescribeDashboard(const DescribeDashb
   ss << "/dashboards/";
   ss << request.GetDashboardId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDashboardOutcome(DescribeDashboardResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDashboardOutcome(outcome.GetError());
-  }
+  return DescribeDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDashboardOutcomeCallable QuickSightClient::DescribeDashboardCallable(const DescribeDashboardRequest& request) const
@@ -1271,15 +1103,7 @@ DescribeDashboardPermissionsOutcome QuickSightClient::DescribeDashboardPermissio
   ss << request.GetDashboardId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDashboardPermissionsOutcome(DescribeDashboardPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDashboardPermissionsOutcome(outcome.GetError());
-  }
+  return DescribeDashboardPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDashboardPermissionsOutcomeCallable QuickSightClient::DescribeDashboardPermissionsCallable(const DescribeDashboardPermissionsRequest& request) const
@@ -1319,15 +1143,7 @@ DescribeDataSetOutcome QuickSightClient::DescribeDataSet(const DescribeDataSetRe
   ss << "/data-sets/";
   ss << request.GetDataSetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDataSetOutcome(DescribeDataSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDataSetOutcome(outcome.GetError());
-  }
+  return DescribeDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDataSetOutcomeCallable QuickSightClient::DescribeDataSetCallable(const DescribeDataSetRequest& request) const
@@ -1368,15 +1184,7 @@ DescribeDataSetPermissionsOutcome QuickSightClient::DescribeDataSetPermissions(c
   ss << request.GetDataSetId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDataSetPermissionsOutcome(DescribeDataSetPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDataSetPermissionsOutcome(outcome.GetError());
-  }
+  return DescribeDataSetPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDataSetPermissionsOutcomeCallable QuickSightClient::DescribeDataSetPermissionsCallable(const DescribeDataSetPermissionsRequest& request) const
@@ -1416,15 +1224,7 @@ DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDat
   ss << "/data-sources/";
   ss << request.GetDataSourceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDataSourceOutcome(DescribeDataSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDataSourceOutcome(outcome.GetError());
-  }
+  return DescribeDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDataSourceOutcomeCallable QuickSightClient::DescribeDataSourceCallable(const DescribeDataSourceRequest& request) const
@@ -1465,15 +1265,7 @@ DescribeDataSourcePermissionsOutcome QuickSightClient::DescribeDataSourcePermiss
   ss << request.GetDataSourceId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDataSourcePermissionsOutcome(DescribeDataSourcePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDataSourcePermissionsOutcome(outcome.GetError());
-  }
+  return DescribeDataSourcePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDataSourcePermissionsOutcomeCallable QuickSightClient::DescribeDataSourcePermissionsCallable(const DescribeDataSourcePermissionsRequest& request) const
@@ -1520,15 +1312,7 @@ DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest&
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeGroupOutcome(DescribeGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeGroupOutcome(outcome.GetError());
-  }
+  return DescribeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeGroupOutcomeCallable QuickSightClient::DescribeGroupCallable(const DescribeGroupRequest& request) const
@@ -1575,15 +1359,7 @@ DescribeIAMPolicyAssignmentOutcome QuickSightClient::DescribeIAMPolicyAssignment
   ss << "/iam-policy-assignments/";
   ss << request.GetAssignmentName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeIAMPolicyAssignmentOutcome(DescribeIAMPolicyAssignmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeIAMPolicyAssignmentOutcome(outcome.GetError());
-  }
+  return DescribeIAMPolicyAssignmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeIAMPolicyAssignmentOutcomeCallable QuickSightClient::DescribeIAMPolicyAssignmentCallable(const DescribeIAMPolicyAssignmentRequest& request) const
@@ -1630,15 +1406,7 @@ DescribeIngestionOutcome QuickSightClient::DescribeIngestion(const DescribeInges
   ss << "/ingestions/";
   ss << request.GetIngestionId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeIngestionOutcome(DescribeIngestionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeIngestionOutcome(outcome.GetError());
-  }
+  return DescribeIngestionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeIngestionOutcomeCallable QuickSightClient::DescribeIngestionCallable(const DescribeIngestionRequest& request) const
@@ -1678,15 +1446,7 @@ DescribeTemplateOutcome QuickSightClient::DescribeTemplate(const DescribeTemplat
   ss << "/templates/";
   ss << request.GetTemplateId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeTemplateOutcome(DescribeTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeTemplateOutcome(outcome.GetError());
-  }
+  return DescribeTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTemplateOutcomeCallable QuickSightClient::DescribeTemplateCallable(const DescribeTemplateRequest& request) const
@@ -1733,15 +1493,7 @@ DescribeTemplateAliasOutcome QuickSightClient::DescribeTemplateAlias(const Descr
   ss << "/aliases/";
   ss << request.GetAliasName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeTemplateAliasOutcome(DescribeTemplateAliasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeTemplateAliasOutcome(outcome.GetError());
-  }
+  return DescribeTemplateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTemplateAliasOutcomeCallable QuickSightClient::DescribeTemplateAliasCallable(const DescribeTemplateAliasRequest& request) const
@@ -1782,15 +1534,7 @@ DescribeTemplatePermissionsOutcome QuickSightClient::DescribeTemplatePermissions
   ss << request.GetTemplateId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeTemplatePermissionsOutcome(DescribeTemplatePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeTemplatePermissionsOutcome(outcome.GetError());
-  }
+  return DescribeTemplatePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTemplatePermissionsOutcomeCallable QuickSightClient::DescribeTemplatePermissionsCallable(const DescribeTemplatePermissionsRequest& request) const
@@ -1837,15 +1581,7 @@ DescribeUserOutcome QuickSightClient::DescribeUser(const DescribeUserRequest& re
   ss << "/users/";
   ss << request.GetUserName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeUserOutcome(DescribeUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeUserOutcome(outcome.GetError());
-  }
+  return DescribeUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeUserOutcomeCallable QuickSightClient::DescribeUserCallable(const DescribeUserRequest& request) const
@@ -1891,15 +1627,7 @@ GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDash
   ss << request.GetDashboardId();
   ss << "/embed-url";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDashboardEmbedUrlOutcome(GetDashboardEmbedUrlResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDashboardEmbedUrlOutcome(outcome.GetError());
-  }
+  return GetDashboardEmbedUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDashboardEmbedUrlOutcomeCallable QuickSightClient::GetDashboardEmbedUrlCallable(const GetDashboardEmbedUrlRequest& request) const
@@ -1940,15 +1668,7 @@ ListDashboardVersionsOutcome QuickSightClient::ListDashboardVersions(const ListD
   ss << request.GetDashboardId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDashboardVersionsOutcome(ListDashboardVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDashboardVersionsOutcome(outcome.GetError());
-  }
+  return ListDashboardVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDashboardVersionsOutcomeCallable QuickSightClient::ListDashboardVersionsCallable(const ListDashboardVersionsRequest& request) const
@@ -1982,15 +1702,7 @@ ListDashboardsOutcome QuickSightClient::ListDashboards(const ListDashboardsReque
   ss << request.GetAwsAccountId();
   ss << "/dashboards";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDashboardsOutcome(ListDashboardsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDashboardsOutcome(outcome.GetError());
-  }
+  return ListDashboardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDashboardsOutcomeCallable QuickSightClient::ListDashboardsCallable(const ListDashboardsRequest& request) const
@@ -2024,15 +1736,7 @@ ListDataSetsOutcome QuickSightClient::ListDataSets(const ListDataSetsRequest& re
   ss << request.GetAwsAccountId();
   ss << "/data-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDataSetsOutcome(ListDataSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDataSetsOutcome(outcome.GetError());
-  }
+  return ListDataSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDataSetsOutcomeCallable QuickSightClient::ListDataSetsCallable(const ListDataSetsRequest& request) const
@@ -2066,15 +1770,7 @@ ListDataSourcesOutcome QuickSightClient::ListDataSources(const ListDataSourcesRe
   ss << request.GetAwsAccountId();
   ss << "/data-sources";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDataSourcesOutcome(ListDataSourcesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDataSourcesOutcome(outcome.GetError());
-  }
+  return ListDataSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDataSourcesOutcomeCallable QuickSightClient::ListDataSourcesCallable(const ListDataSourcesRequest& request) const
@@ -2122,15 +1818,7 @@ ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGro
   ss << request.GetGroupName();
   ss << "/members";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGroupMembershipsOutcome(ListGroupMembershipsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGroupMembershipsOutcome(outcome.GetError());
-  }
+  return ListGroupMembershipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGroupMembershipsOutcomeCallable QuickSightClient::ListGroupMembershipsCallable(const ListGroupMembershipsRequest& request) const
@@ -2171,15 +1859,7 @@ ListGroupsOutcome QuickSightClient::ListGroups(const ListGroupsRequest& request)
   ss << request.GetNamespace();
   ss << "/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGroupsOutcome(ListGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGroupsOutcome(outcome.GetError());
-  }
+  return ListGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGroupsOutcomeCallable QuickSightClient::ListGroupsCallable(const ListGroupsRequest& request) const
@@ -2220,15 +1900,7 @@ ListIAMPolicyAssignmentsOutcome QuickSightClient::ListIAMPolicyAssignments(const
   ss << request.GetNamespace();
   ss << "/iam-policy-assignments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListIAMPolicyAssignmentsOutcome(ListIAMPolicyAssignmentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListIAMPolicyAssignmentsOutcome(outcome.GetError());
-  }
+  return ListIAMPolicyAssignmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIAMPolicyAssignmentsOutcomeCallable QuickSightClient::ListIAMPolicyAssignmentsCallable(const ListIAMPolicyAssignmentsRequest& request) const
@@ -2276,15 +1948,7 @@ ListIAMPolicyAssignmentsForUserOutcome QuickSightClient::ListIAMPolicyAssignment
   ss << request.GetUserName();
   ss << "/iam-policy-assignments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListIAMPolicyAssignmentsForUserOutcome(ListIAMPolicyAssignmentsForUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListIAMPolicyAssignmentsForUserOutcome(outcome.GetError());
-  }
+  return ListIAMPolicyAssignmentsForUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIAMPolicyAssignmentsForUserOutcomeCallable QuickSightClient::ListIAMPolicyAssignmentsForUserCallable(const ListIAMPolicyAssignmentsForUserRequest& request) const
@@ -2325,15 +1989,7 @@ ListIngestionsOutcome QuickSightClient::ListIngestions(const ListIngestionsReque
   ss << request.GetDataSetId();
   ss << "/ingestions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListIngestionsOutcome(ListIngestionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListIngestionsOutcome(outcome.GetError());
-  }
+  return ListIngestionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListIngestionsOutcomeCallable QuickSightClient::ListIngestionsCallable(const ListIngestionsRequest& request) const
@@ -2367,15 +2023,7 @@ ListTagsForResourceOutcome QuickSightClient::ListTagsForResource(const ListTagsF
   ss << request.GetResourceArn();
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable QuickSightClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -2416,15 +2064,7 @@ ListTemplateAliasesOutcome QuickSightClient::ListTemplateAliases(const ListTempl
   ss << request.GetTemplateId();
   ss << "/aliases";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTemplateAliasesOutcome(ListTemplateAliasesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTemplateAliasesOutcome(outcome.GetError());
-  }
+  return ListTemplateAliasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTemplateAliasesOutcomeCallable QuickSightClient::ListTemplateAliasesCallable(const ListTemplateAliasesRequest& request) const
@@ -2465,15 +2105,7 @@ ListTemplateVersionsOutcome QuickSightClient::ListTemplateVersions(const ListTem
   ss << request.GetTemplateId();
   ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTemplateVersionsOutcome(ListTemplateVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTemplateVersionsOutcome(outcome.GetError());
-  }
+  return ListTemplateVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTemplateVersionsOutcomeCallable QuickSightClient::ListTemplateVersionsCallable(const ListTemplateVersionsRequest& request) const
@@ -2507,15 +2139,7 @@ ListTemplatesOutcome QuickSightClient::ListTemplates(const ListTemplatesRequest&
   ss << request.GetAwsAccountId();
   ss << "/templates";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTemplatesOutcome(ListTemplatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTemplatesOutcome(outcome.GetError());
-  }
+  return ListTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTemplatesOutcomeCallable QuickSightClient::ListTemplatesCallable(const ListTemplatesRequest& request) const
@@ -2563,15 +2187,7 @@ ListUserGroupsOutcome QuickSightClient::ListUserGroups(const ListUserGroupsReque
   ss << request.GetUserName();
   ss << "/groups";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUserGroupsOutcome(ListUserGroupsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUserGroupsOutcome(outcome.GetError());
-  }
+  return ListUserGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUserGroupsOutcomeCallable QuickSightClient::ListUserGroupsCallable(const ListUserGroupsRequest& request) const
@@ -2612,15 +2228,7 @@ ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) co
   ss << request.GetNamespace();
   ss << "/users";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListUsersOutcome(ListUsersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListUsersOutcome(outcome.GetError());
-  }
+  return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListUsersOutcomeCallable QuickSightClient::ListUsersCallable(const ListUsersRequest& request) const
@@ -2661,15 +2269,7 @@ RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& re
   ss << request.GetNamespace();
   ss << "/users";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterUserOutcome(RegisterUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterUserOutcome(outcome.GetError());
-  }
+  return RegisterUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterUserOutcomeCallable QuickSightClient::RegisterUserCallable(const RegisterUserRequest& request) const
@@ -2703,15 +2303,7 @@ SearchDashboardsOutcome QuickSightClient::SearchDashboards(const SearchDashboard
   ss << request.GetAwsAccountId();
   ss << "/search/dashboards";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SearchDashboardsOutcome(SearchDashboardsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SearchDashboardsOutcome(outcome.GetError());
-  }
+  return SearchDashboardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SearchDashboardsOutcomeCallable QuickSightClient::SearchDashboardsCallable(const SearchDashboardsRequest& request) const
@@ -2745,15 +2337,7 @@ TagResourceOutcome QuickSightClient::TagResource(const TagResourceRequest& reque
   ss << request.GetResourceArn();
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable QuickSightClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -2792,15 +2376,7 @@ UntagResourceOutcome QuickSightClient::UntagResource(const UntagResourceRequest&
   ss << request.GetResourceArn();
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable QuickSightClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2840,15 +2416,7 @@ UpdateDashboardOutcome QuickSightClient::UpdateDashboard(const UpdateDashboardRe
   ss << "/dashboards/";
   ss << request.GetDashboardId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDashboardOutcome(UpdateDashboardResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDashboardOutcome(outcome.GetError());
-  }
+  return UpdateDashboardOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDashboardOutcomeCallable QuickSightClient::UpdateDashboardCallable(const UpdateDashboardRequest& request) const
@@ -2889,15 +2457,7 @@ UpdateDashboardPermissionsOutcome QuickSightClient::UpdateDashboardPermissions(c
   ss << request.GetDashboardId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDashboardPermissionsOutcome(UpdateDashboardPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDashboardPermissionsOutcome(outcome.GetError());
-  }
+  return UpdateDashboardPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDashboardPermissionsOutcomeCallable QuickSightClient::UpdateDashboardPermissionsCallable(const UpdateDashboardPermissionsRequest& request) const
@@ -2944,15 +2504,7 @@ UpdateDashboardPublishedVersionOutcome QuickSightClient::UpdateDashboardPublishe
   ss << "/versions/";
   ss << request.GetVersionNumber();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDashboardPublishedVersionOutcome(UpdateDashboardPublishedVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDashboardPublishedVersionOutcome(outcome.GetError());
-  }
+  return UpdateDashboardPublishedVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDashboardPublishedVersionOutcomeCallable QuickSightClient::UpdateDashboardPublishedVersionCallable(const UpdateDashboardPublishedVersionRequest& request) const
@@ -2992,15 +2544,7 @@ UpdateDataSetOutcome QuickSightClient::UpdateDataSet(const UpdateDataSetRequest&
   ss << "/data-sets/";
   ss << request.GetDataSetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDataSetOutcome(UpdateDataSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDataSetOutcome(outcome.GetError());
-  }
+  return UpdateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDataSetOutcomeCallable QuickSightClient::UpdateDataSetCallable(const UpdateDataSetRequest& request) const
@@ -3041,15 +2585,7 @@ UpdateDataSetPermissionsOutcome QuickSightClient::UpdateDataSetPermissions(const
   ss << request.GetDataSetId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDataSetPermissionsOutcome(UpdateDataSetPermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDataSetPermissionsOutcome(outcome.GetError());
-  }
+  return UpdateDataSetPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDataSetPermissionsOutcomeCallable QuickSightClient::UpdateDataSetPermissionsCallable(const UpdateDataSetPermissionsRequest& request) const
@@ -3089,15 +2625,7 @@ UpdateDataSourceOutcome QuickSightClient::UpdateDataSource(const UpdateDataSourc
   ss << "/data-sources/";
   ss << request.GetDataSourceId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDataSourceOutcome(UpdateDataSourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDataSourceOutcome(outcome.GetError());
-  }
+  return UpdateDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDataSourceOutcomeCallable QuickSightClient::UpdateDataSourceCallable(const UpdateDataSourceRequest& request) const
@@ -3138,15 +2666,7 @@ UpdateDataSourcePermissionsOutcome QuickSightClient::UpdateDataSourcePermissions
   ss << request.GetDataSourceId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDataSourcePermissionsOutcome(UpdateDataSourcePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDataSourcePermissionsOutcome(outcome.GetError());
-  }
+  return UpdateDataSourcePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDataSourcePermissionsOutcomeCallable QuickSightClient::UpdateDataSourcePermissionsCallable(const UpdateDataSourcePermissionsRequest& request) const
@@ -3193,15 +2713,7 @@ UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& reque
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateGroupOutcome(UpdateGroupResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateGroupOutcome(outcome.GetError());
-  }
+  return UpdateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateGroupOutcomeCallable QuickSightClient::UpdateGroupCallable(const UpdateGroupRequest& request) const
@@ -3248,15 +2760,7 @@ UpdateIAMPolicyAssignmentOutcome QuickSightClient::UpdateIAMPolicyAssignment(con
   ss << "/iam-policy-assignments/";
   ss << request.GetAssignmentName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateIAMPolicyAssignmentOutcome(UpdateIAMPolicyAssignmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateIAMPolicyAssignmentOutcome(outcome.GetError());
-  }
+  return UpdateIAMPolicyAssignmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIAMPolicyAssignmentOutcomeCallable QuickSightClient::UpdateIAMPolicyAssignmentCallable(const UpdateIAMPolicyAssignmentRequest& request) const
@@ -3296,15 +2800,7 @@ UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateReque
   ss << "/templates/";
   ss << request.GetTemplateId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateTemplateOutcome(UpdateTemplateResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateTemplateOutcome(outcome.GetError());
-  }
+  return UpdateTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTemplateOutcomeCallable QuickSightClient::UpdateTemplateCallable(const UpdateTemplateRequest& request) const
@@ -3351,15 +2847,7 @@ UpdateTemplateAliasOutcome QuickSightClient::UpdateTemplateAlias(const UpdateTem
   ss << "/aliases/";
   ss << request.GetAliasName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateTemplateAliasOutcome(UpdateTemplateAliasResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateTemplateAliasOutcome(outcome.GetError());
-  }
+  return UpdateTemplateAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTemplateAliasOutcomeCallable QuickSightClient::UpdateTemplateAliasCallable(const UpdateTemplateAliasRequest& request) const
@@ -3400,15 +2888,7 @@ UpdateTemplatePermissionsOutcome QuickSightClient::UpdateTemplatePermissions(con
   ss << request.GetTemplateId();
   ss << "/permissions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateTemplatePermissionsOutcome(UpdateTemplatePermissionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateTemplatePermissionsOutcome(outcome.GetError());
-  }
+  return UpdateTemplatePermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTemplatePermissionsOutcomeCallable QuickSightClient::UpdateTemplatePermissionsCallable(const UpdateTemplatePermissionsRequest& request) const
@@ -3455,15 +2935,7 @@ UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request)
   ss << "/users/";
   ss << request.GetUserName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateUserOutcome(UpdateUserResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateUserOutcome(outcome.GetError());
-  }
+  return UpdateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateUserOutcomeCallable QuickSightClient::UpdateUserCallable(const UpdateUserRequest& request) const

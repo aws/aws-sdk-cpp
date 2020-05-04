@@ -18,8 +18,8 @@
 #include <aws/cloudtrail/CloudTrailErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudTrail;
 using namespace Aws::Utils;
+using namespace Aws::CloudTrail;
 
 namespace Aws
 {

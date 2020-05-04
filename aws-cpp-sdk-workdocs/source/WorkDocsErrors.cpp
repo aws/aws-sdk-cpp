@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/workdocs/WorkDocsErrors.h>
+#include <aws/workdocs/model/EntityNotExistsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::WorkDocs;
 using namespace Aws::Utils;
+using namespace Aws::WorkDocs;
+using namespace Aws::WorkDocs::Model;
 
 namespace Aws
 {
 namespace WorkDocs
 {
+template<> AWS_WORKDOCS_API EntityNotExistsException WorkDocsError::GetModeledError()
+{
+  assert(this->GetErrorType() == WorkDocsErrors::ENTITY_NOT_EXISTS);
+  return EntityNotExistsException(this->GetJsonPayload().View());
+}
+
 namespace WorkDocsErrorMapper
 {
 

@@ -18,8 +18,8 @@
 #include <aws/cloudfront/CloudFrontErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudFront;
 using namespace Aws::Utils;
+using namespace Aws::CloudFront;
 
 namespace Aws
 {

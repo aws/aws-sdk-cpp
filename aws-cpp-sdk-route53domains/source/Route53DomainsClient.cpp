@@ -74,7 +74,7 @@ static const char* ALLOCATION_TAG = "Route53DomainsClient";
 Route53DomainsClient::Route53DomainsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<Route53DomainsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -84,7 +84,7 @@ Route53DomainsClient::Route53DomainsClient(const Client::ClientConfiguration& cl
 Route53DomainsClient::Route53DomainsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<Route53DomainsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -95,7 +95,7 @@ Route53DomainsClient::Route53DomainsClient(const std::shared_ptr<AWSCredentialsP
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<Route53DomainsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -137,15 +137,7 @@ AcceptDomainTransferFromAnotherAwsAccountOutcome Route53DomainsClient::AcceptDom
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AcceptDomainTransferFromAnotherAwsAccountOutcome(AcceptDomainTransferFromAnotherAwsAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return AcceptDomainTransferFromAnotherAwsAccountOutcome(outcome.GetError());
-  }
+  return AcceptDomainTransferFromAnotherAwsAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 AcceptDomainTransferFromAnotherAwsAccountOutcomeCallable Route53DomainsClient::AcceptDomainTransferFromAnotherAwsAccountCallable(const AcceptDomainTransferFromAnotherAwsAccountRequest& request) const
@@ -172,15 +164,7 @@ CancelDomainTransferToAnotherAwsAccountOutcome Route53DomainsClient::CancelDomai
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelDomainTransferToAnotherAwsAccountOutcome(CancelDomainTransferToAnotherAwsAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelDomainTransferToAnotherAwsAccountOutcome(outcome.GetError());
-  }
+  return CancelDomainTransferToAnotherAwsAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelDomainTransferToAnotherAwsAccountOutcomeCallable Route53DomainsClient::CancelDomainTransferToAnotherAwsAccountCallable(const CancelDomainTransferToAnotherAwsAccountRequest& request) const
@@ -207,15 +191,7 @@ CheckDomainAvailabilityOutcome Route53DomainsClient::CheckDomainAvailability(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CheckDomainAvailabilityOutcome(CheckDomainAvailabilityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CheckDomainAvailabilityOutcome(outcome.GetError());
-  }
+  return CheckDomainAvailabilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CheckDomainAvailabilityOutcomeCallable Route53DomainsClient::CheckDomainAvailabilityCallable(const CheckDomainAvailabilityRequest& request) const
@@ -242,15 +218,7 @@ CheckDomainTransferabilityOutcome Route53DomainsClient::CheckDomainTransferabili
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CheckDomainTransferabilityOutcome(CheckDomainTransferabilityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CheckDomainTransferabilityOutcome(outcome.GetError());
-  }
+  return CheckDomainTransferabilityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CheckDomainTransferabilityOutcomeCallable Route53DomainsClient::CheckDomainTransferabilityCallable(const CheckDomainTransferabilityRequest& request) const
@@ -277,15 +245,7 @@ DeleteTagsForDomainOutcome Route53DomainsClient::DeleteTagsForDomain(const Delet
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteTagsForDomainOutcome(DeleteTagsForDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteTagsForDomainOutcome(outcome.GetError());
-  }
+  return DeleteTagsForDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTagsForDomainOutcomeCallable Route53DomainsClient::DeleteTagsForDomainCallable(const DeleteTagsForDomainRequest& request) const
@@ -312,15 +272,7 @@ DisableDomainAutoRenewOutcome Route53DomainsClient::DisableDomainAutoRenew(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableDomainAutoRenewOutcome(DisableDomainAutoRenewResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisableDomainAutoRenewOutcome(outcome.GetError());
-  }
+  return DisableDomainAutoRenewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableDomainAutoRenewOutcomeCallable Route53DomainsClient::DisableDomainAutoRenewCallable(const DisableDomainAutoRenewRequest& request) const
@@ -347,15 +299,7 @@ DisableDomainTransferLockOutcome Route53DomainsClient::DisableDomainTransferLock
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisableDomainTransferLockOutcome(DisableDomainTransferLockResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisableDomainTransferLockOutcome(outcome.GetError());
-  }
+  return DisableDomainTransferLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisableDomainTransferLockOutcomeCallable Route53DomainsClient::DisableDomainTransferLockCallable(const DisableDomainTransferLockRequest& request) const
@@ -382,15 +326,7 @@ EnableDomainAutoRenewOutcome Route53DomainsClient::EnableDomainAutoRenew(const E
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableDomainAutoRenewOutcome(EnableDomainAutoRenewResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableDomainAutoRenewOutcome(outcome.GetError());
-  }
+  return EnableDomainAutoRenewOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableDomainAutoRenewOutcomeCallable Route53DomainsClient::EnableDomainAutoRenewCallable(const EnableDomainAutoRenewRequest& request) const
@@ -417,15 +353,7 @@ EnableDomainTransferLockOutcome Route53DomainsClient::EnableDomainTransferLock(c
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return EnableDomainTransferLockOutcome(EnableDomainTransferLockResult(outcome.GetResult()));
-  }
-  else
-  {
-    return EnableDomainTransferLockOutcome(outcome.GetError());
-  }
+  return EnableDomainTransferLockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 EnableDomainTransferLockOutcomeCallable Route53DomainsClient::EnableDomainTransferLockCallable(const EnableDomainTransferLockRequest& request) const
@@ -452,15 +380,7 @@ GetContactReachabilityStatusOutcome Route53DomainsClient::GetContactReachability
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetContactReachabilityStatusOutcome(GetContactReachabilityStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetContactReachabilityStatusOutcome(outcome.GetError());
-  }
+  return GetContactReachabilityStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetContactReachabilityStatusOutcomeCallable Route53DomainsClient::GetContactReachabilityStatusCallable(const GetContactReachabilityStatusRequest& request) const
@@ -487,15 +407,7 @@ GetDomainDetailOutcome Route53DomainsClient::GetDomainDetail(const GetDomainDeta
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainDetailOutcome(GetDomainDetailResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainDetailOutcome(outcome.GetError());
-  }
+  return GetDomainDetailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainDetailOutcomeCallable Route53DomainsClient::GetDomainDetailCallable(const GetDomainDetailRequest& request) const
@@ -522,15 +434,7 @@ GetDomainSuggestionsOutcome Route53DomainsClient::GetDomainSuggestions(const Get
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainSuggestionsOutcome(GetDomainSuggestionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainSuggestionsOutcome(outcome.GetError());
-  }
+  return GetDomainSuggestionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainSuggestionsOutcomeCallable Route53DomainsClient::GetDomainSuggestionsCallable(const GetDomainSuggestionsRequest& request) const
@@ -557,15 +461,7 @@ GetOperationDetailOutcome Route53DomainsClient::GetOperationDetail(const GetOper
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetOperationDetailOutcome(GetOperationDetailResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetOperationDetailOutcome(outcome.GetError());
-  }
+  return GetOperationDetailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetOperationDetailOutcomeCallable Route53DomainsClient::GetOperationDetailCallable(const GetOperationDetailRequest& request) const
@@ -592,15 +488,7 @@ ListDomainsOutcome Route53DomainsClient::ListDomains(const ListDomainsRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDomainsOutcome(ListDomainsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDomainsOutcome(outcome.GetError());
-  }
+  return ListDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDomainsOutcomeCallable Route53DomainsClient::ListDomainsCallable(const ListDomainsRequest& request) const
@@ -627,15 +515,7 @@ ListOperationsOutcome Route53DomainsClient::ListOperations(const ListOperationsR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListOperationsOutcome(ListOperationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListOperationsOutcome(outcome.GetError());
-  }
+  return ListOperationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListOperationsOutcomeCallable Route53DomainsClient::ListOperationsCallable(const ListOperationsRequest& request) const
@@ -662,15 +542,7 @@ ListTagsForDomainOutcome Route53DomainsClient::ListTagsForDomain(const ListTagsF
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForDomainOutcome(ListTagsForDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForDomainOutcome(outcome.GetError());
-  }
+  return ListTagsForDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForDomainOutcomeCallable Route53DomainsClient::ListTagsForDomainCallable(const ListTagsForDomainRequest& request) const
@@ -697,15 +569,7 @@ RegisterDomainOutcome Route53DomainsClient::RegisterDomain(const RegisterDomainR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterDomainOutcome(RegisterDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterDomainOutcome(outcome.GetError());
-  }
+  return RegisterDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterDomainOutcomeCallable Route53DomainsClient::RegisterDomainCallable(const RegisterDomainRequest& request) const
@@ -732,15 +596,7 @@ RejectDomainTransferFromAnotherAwsAccountOutcome Route53DomainsClient::RejectDom
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RejectDomainTransferFromAnotherAwsAccountOutcome(RejectDomainTransferFromAnotherAwsAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RejectDomainTransferFromAnotherAwsAccountOutcome(outcome.GetError());
-  }
+  return RejectDomainTransferFromAnotherAwsAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RejectDomainTransferFromAnotherAwsAccountOutcomeCallable Route53DomainsClient::RejectDomainTransferFromAnotherAwsAccountCallable(const RejectDomainTransferFromAnotherAwsAccountRequest& request) const
@@ -767,15 +623,7 @@ RenewDomainOutcome Route53DomainsClient::RenewDomain(const RenewDomainRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RenewDomainOutcome(RenewDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RenewDomainOutcome(outcome.GetError());
-  }
+  return RenewDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RenewDomainOutcomeCallable Route53DomainsClient::RenewDomainCallable(const RenewDomainRequest& request) const
@@ -802,15 +650,7 @@ ResendContactReachabilityEmailOutcome Route53DomainsClient::ResendContactReachab
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ResendContactReachabilityEmailOutcome(ResendContactReachabilityEmailResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ResendContactReachabilityEmailOutcome(outcome.GetError());
-  }
+  return ResendContactReachabilityEmailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ResendContactReachabilityEmailOutcomeCallable Route53DomainsClient::ResendContactReachabilityEmailCallable(const ResendContactReachabilityEmailRequest& request) const
@@ -837,15 +677,7 @@ RetrieveDomainAuthCodeOutcome Route53DomainsClient::RetrieveDomainAuthCode(const
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RetrieveDomainAuthCodeOutcome(RetrieveDomainAuthCodeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RetrieveDomainAuthCodeOutcome(outcome.GetError());
-  }
+  return RetrieveDomainAuthCodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RetrieveDomainAuthCodeOutcomeCallable Route53DomainsClient::RetrieveDomainAuthCodeCallable(const RetrieveDomainAuthCodeRequest& request) const
@@ -872,15 +704,7 @@ TransferDomainOutcome Route53DomainsClient::TransferDomain(const TransferDomainR
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TransferDomainOutcome(TransferDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TransferDomainOutcome(outcome.GetError());
-  }
+  return TransferDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TransferDomainOutcomeCallable Route53DomainsClient::TransferDomainCallable(const TransferDomainRequest& request) const
@@ -907,15 +731,7 @@ TransferDomainToAnotherAwsAccountOutcome Route53DomainsClient::TransferDomainToA
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TransferDomainToAnotherAwsAccountOutcome(TransferDomainToAnotherAwsAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TransferDomainToAnotherAwsAccountOutcome(outcome.GetError());
-  }
+  return TransferDomainToAnotherAwsAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TransferDomainToAnotherAwsAccountOutcomeCallable Route53DomainsClient::TransferDomainToAnotherAwsAccountCallable(const TransferDomainToAnotherAwsAccountRequest& request) const
@@ -942,15 +758,7 @@ UpdateDomainContactOutcome Route53DomainsClient::UpdateDomainContact(const Updat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDomainContactOutcome(UpdateDomainContactResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDomainContactOutcome(outcome.GetError());
-  }
+  return UpdateDomainContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDomainContactOutcomeCallable Route53DomainsClient::UpdateDomainContactCallable(const UpdateDomainContactRequest& request) const
@@ -977,15 +785,7 @@ UpdateDomainContactPrivacyOutcome Route53DomainsClient::UpdateDomainContactPriva
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDomainContactPrivacyOutcome(UpdateDomainContactPrivacyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDomainContactPrivacyOutcome(outcome.GetError());
-  }
+  return UpdateDomainContactPrivacyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDomainContactPrivacyOutcomeCallable Route53DomainsClient::UpdateDomainContactPrivacyCallable(const UpdateDomainContactPrivacyRequest& request) const
@@ -1012,15 +812,7 @@ UpdateDomainNameserversOutcome Route53DomainsClient::UpdateDomainNameservers(con
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDomainNameserversOutcome(UpdateDomainNameserversResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDomainNameserversOutcome(outcome.GetError());
-  }
+  return UpdateDomainNameserversOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDomainNameserversOutcomeCallable Route53DomainsClient::UpdateDomainNameserversCallable(const UpdateDomainNameserversRequest& request) const
@@ -1047,15 +839,7 @@ UpdateTagsForDomainOutcome Route53DomainsClient::UpdateTagsForDomain(const Updat
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateTagsForDomainOutcome(UpdateTagsForDomainResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateTagsForDomainOutcome(outcome.GetError());
-  }
+  return UpdateTagsForDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTagsForDomainOutcomeCallable Route53DomainsClient::UpdateTagsForDomainCallable(const UpdateTagsForDomainRequest& request) const
@@ -1082,15 +866,7 @@ ViewBillingOutcome Route53DomainsClient::ViewBilling(const ViewBillingRequest& r
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ViewBillingOutcome(ViewBillingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ViewBillingOutcome(outcome.GetError());
-  }
+  return ViewBillingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ViewBillingOutcomeCallable Route53DomainsClient::ViewBillingCallable(const ViewBillingRequest& request) const

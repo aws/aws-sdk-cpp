@@ -56,7 +56,7 @@ static const char* ALLOCATION_TAG = "HealthClient";
 HealthClient::HealthClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<HealthErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -66,7 +66,7 @@ HealthClient::HealthClient(const Client::ClientConfiguration& clientConfiguratio
 HealthClient::HealthClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<HealthErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -77,7 +77,7 @@ HealthClient::HealthClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<HealthErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -119,15 +119,7 @@ DescribeAffectedAccountsForOrganizationOutcome HealthClient::DescribeAffectedAcc
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAffectedAccountsForOrganizationOutcome(DescribeAffectedAccountsForOrganizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAffectedAccountsForOrganizationOutcome(outcome.GetError());
-  }
+  return DescribeAffectedAccountsForOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAffectedAccountsForOrganizationOutcomeCallable HealthClient::DescribeAffectedAccountsForOrganizationCallable(const DescribeAffectedAccountsForOrganizationRequest& request) const
@@ -154,15 +146,7 @@ DescribeAffectedEntitiesOutcome HealthClient::DescribeAffectedEntities(const Des
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAffectedEntitiesOutcome(DescribeAffectedEntitiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAffectedEntitiesOutcome(outcome.GetError());
-  }
+  return DescribeAffectedEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAffectedEntitiesOutcomeCallable HealthClient::DescribeAffectedEntitiesCallable(const DescribeAffectedEntitiesRequest& request) const
@@ -189,15 +173,7 @@ DescribeAffectedEntitiesForOrganizationOutcome HealthClient::DescribeAffectedEnt
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeAffectedEntitiesForOrganizationOutcome(DescribeAffectedEntitiesForOrganizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeAffectedEntitiesForOrganizationOutcome(outcome.GetError());
-  }
+  return DescribeAffectedEntitiesForOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeAffectedEntitiesForOrganizationOutcomeCallable HealthClient::DescribeAffectedEntitiesForOrganizationCallable(const DescribeAffectedEntitiesForOrganizationRequest& request) const
@@ -224,15 +200,7 @@ DescribeEntityAggregatesOutcome HealthClient::DescribeEntityAggregates(const Des
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEntityAggregatesOutcome(DescribeEntityAggregatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEntityAggregatesOutcome(outcome.GetError());
-  }
+  return DescribeEntityAggregatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEntityAggregatesOutcomeCallable HealthClient::DescribeEntityAggregatesCallable(const DescribeEntityAggregatesRequest& request) const
@@ -259,15 +227,7 @@ DescribeEventAggregatesOutcome HealthClient::DescribeEventAggregates(const Descr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventAggregatesOutcome(DescribeEventAggregatesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventAggregatesOutcome(outcome.GetError());
-  }
+  return DescribeEventAggregatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEventAggregatesOutcomeCallable HealthClient::DescribeEventAggregatesCallable(const DescribeEventAggregatesRequest& request) const
@@ -294,15 +254,7 @@ DescribeEventDetailsOutcome HealthClient::DescribeEventDetails(const DescribeEve
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventDetailsOutcome(DescribeEventDetailsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventDetailsOutcome(outcome.GetError());
-  }
+  return DescribeEventDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEventDetailsOutcomeCallable HealthClient::DescribeEventDetailsCallable(const DescribeEventDetailsRequest& request) const
@@ -329,15 +281,7 @@ DescribeEventDetailsForOrganizationOutcome HealthClient::DescribeEventDetailsFor
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventDetailsForOrganizationOutcome(DescribeEventDetailsForOrganizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventDetailsForOrganizationOutcome(outcome.GetError());
-  }
+  return DescribeEventDetailsForOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEventDetailsForOrganizationOutcomeCallable HealthClient::DescribeEventDetailsForOrganizationCallable(const DescribeEventDetailsForOrganizationRequest& request) const
@@ -364,15 +308,7 @@ DescribeEventTypesOutcome HealthClient::DescribeEventTypes(const DescribeEventTy
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventTypesOutcome(DescribeEventTypesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventTypesOutcome(outcome.GetError());
-  }
+  return DescribeEventTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEventTypesOutcomeCallable HealthClient::DescribeEventTypesCallable(const DescribeEventTypesRequest& request) const
@@ -399,15 +335,7 @@ DescribeEventsOutcome HealthClient::DescribeEvents(const DescribeEventsRequest& 
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventsOutcome(DescribeEventsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventsOutcome(outcome.GetError());
-  }
+  return DescribeEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEventsOutcomeCallable HealthClient::DescribeEventsCallable(const DescribeEventsRequest& request) const
@@ -434,15 +362,7 @@ DescribeEventsForOrganizationOutcome HealthClient::DescribeEventsForOrganization
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeEventsForOrganizationOutcome(DescribeEventsForOrganizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeEventsForOrganizationOutcome(outcome.GetError());
-  }
+  return DescribeEventsForOrganizationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeEventsForOrganizationOutcomeCallable HealthClient::DescribeEventsForOrganizationCallable(const DescribeEventsForOrganizationRequest& request) const
@@ -467,15 +387,7 @@ DescribeHealthServiceStatusForOrganizationOutcome HealthClient::DescribeHealthSe
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeHealthServiceStatusForOrganization");
-  if(outcome.IsSuccess())
-  {
-    return DescribeHealthServiceStatusForOrganizationOutcome(DescribeHealthServiceStatusForOrganizationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeHealthServiceStatusForOrganizationOutcome(outcome.GetError());
-  }
+  return DescribeHealthServiceStatusForOrganizationOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DescribeHealthServiceStatusForOrganization"));
 }
 
 DescribeHealthServiceStatusForOrganizationOutcomeCallable HealthClient::DescribeHealthServiceStatusForOrganizationCallable() const
@@ -500,15 +412,7 @@ DisableHealthServiceAccessForOrganizationOutcome HealthClient::DisableHealthServ
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DisableHealthServiceAccessForOrganization");
-  if(outcome.IsSuccess())
-  {
-    return DisableHealthServiceAccessForOrganizationOutcome(NoResult());
-  }
-  else
-  {
-    return DisableHealthServiceAccessForOrganizationOutcome(outcome.GetError());
-  }
+  return DisableHealthServiceAccessForOrganizationOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "DisableHealthServiceAccessForOrganization"));
 }
 
 DisableHealthServiceAccessForOrganizationOutcomeCallable HealthClient::DisableHealthServiceAccessForOrganizationCallable() const
@@ -533,15 +437,7 @@ EnableHealthServiceAccessForOrganizationOutcome HealthClient::EnableHealthServic
 {
   Aws::StringStream ss;
   ss << m_uri << "/";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "EnableHealthServiceAccessForOrganization");
-  if(outcome.IsSuccess())
-  {
-    return EnableHealthServiceAccessForOrganizationOutcome(NoResult());
-  }
-  else
-  {
-    return EnableHealthServiceAccessForOrganizationOutcome(outcome.GetError());
-  }
+  return EnableHealthServiceAccessForOrganizationOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "EnableHealthServiceAccessForOrganization"));
 }
 
 EnableHealthServiceAccessForOrganizationOutcomeCallable HealthClient::EnableHealthServiceAccessForOrganizationCallable() const

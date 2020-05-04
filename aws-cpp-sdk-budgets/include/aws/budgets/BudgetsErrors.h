@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/budgets/Budgets_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class BudgetsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class BudgetsErrors
   INVALID_PARAMETER,
   NOT_FOUND
 };
+
+class AWS_BUDGETS_API BudgetsError : public Aws::Client::AWSError<BudgetsErrors>
+{
+public:
+  BudgetsError() {}
+  BudgetsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<BudgetsErrors>(rhs) {}
+  BudgetsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<BudgetsErrors>(rhs) {}
+  BudgetsError(const Aws::Client::AWSError<BudgetsErrors>& rhs) : Aws::Client::AWSError<BudgetsErrors>(rhs) {}
+  BudgetsError(Aws::Client::AWSError<BudgetsErrors>&& rhs) : Aws::Client::AWSError<BudgetsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace BudgetsErrorMapper
 {
   AWS_BUDGETS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

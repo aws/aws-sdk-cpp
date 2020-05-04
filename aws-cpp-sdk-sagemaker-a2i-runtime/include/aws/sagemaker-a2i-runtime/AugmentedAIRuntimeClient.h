@@ -71,11 +71,11 @@ namespace Model
         class StartHumanLoopRequest;
         class StopHumanLoopRequest;
 
-        typedef Aws::Utils::Outcome<DeleteHumanLoopResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> DeleteHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<DescribeHumanLoopResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> DescribeHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<ListHumanLoopsResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> ListHumanLoopsOutcome;
-        typedef Aws::Utils::Outcome<StartHumanLoopResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> StartHumanLoopOutcome;
-        typedef Aws::Utils::Outcome<StopHumanLoopResult, Aws::Client::AWSError<AugmentedAIRuntimeErrors>> StopHumanLoopOutcome;
+        typedef Aws::Utils::Outcome<DeleteHumanLoopResult, AugmentedAIRuntimeError> DeleteHumanLoopOutcome;
+        typedef Aws::Utils::Outcome<DescribeHumanLoopResult, AugmentedAIRuntimeError> DescribeHumanLoopOutcome;
+        typedef Aws::Utils::Outcome<ListHumanLoopsResult, AugmentedAIRuntimeError> ListHumanLoopsOutcome;
+        typedef Aws::Utils::Outcome<StartHumanLoopResult, AugmentedAIRuntimeError> StartHumanLoopOutcome;
+        typedef Aws::Utils::Outcome<StopHumanLoopResult, AugmentedAIRuntimeError> StopHumanLoopOutcome;
 
         typedef std::future<DeleteHumanLoopOutcome> DeleteHumanLoopOutcomeCallable;
         typedef std::future<DescribeHumanLoopOutcome> DescribeHumanLoopOutcomeCallable;

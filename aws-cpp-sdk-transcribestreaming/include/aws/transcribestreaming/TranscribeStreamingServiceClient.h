@@ -69,7 +69,7 @@ namespace Model
         class StartStreamTranscriptionRequest;
         class AudioStream;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<TranscribeStreamingServiceErrors>> StartStreamTranscriptionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, TranscribeStreamingServiceError> StartStreamTranscriptionOutcome;
 
         typedef std::future<StartStreamTranscriptionOutcome> StartStreamTranscriptionOutcomeCallable;
 } // namespace Model

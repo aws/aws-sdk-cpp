@@ -35,6 +35,7 @@ namespace S3Endpoint
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
   static const int US_GOV_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-east-1");
   static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
+  static const int AWS_GLOBAL_HASH = Aws::Utils::HashingUtils::HashString("aws-global");
 
   Aws::String ForAccessPointArn(const S3ARN& arn, const Aws::String& regionNameOverride, bool useDualStack)
   {
@@ -74,6 +75,10 @@ namespace S3Endpoint
       if(hash == US_GOV_EAST_1_HASH)
       {
         return "s3.us-gov-east-1.amazonaws.com";
+      }
+      if (hash == AWS_GLOBAL_HASH)
+      {
+        return "s3.amazonaws.com";
       }
       if(hash == US_EAST_1_HASH)
       {

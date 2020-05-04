@@ -18,8 +18,8 @@
 #include <aws/fms/FMSErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::FMS;
 using namespace Aws::Utils;
+using namespace Aws::FMS;
 
 namespace Aws
 {

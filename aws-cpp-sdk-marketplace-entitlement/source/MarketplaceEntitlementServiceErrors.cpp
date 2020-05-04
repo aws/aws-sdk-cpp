@@ -18,8 +18,8 @@
 #include <aws/marketplace-entitlement/MarketplaceEntitlementServiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MarketplaceEntitlementService;
 using namespace Aws::Utils;
+using namespace Aws::MarketplaceEntitlementService;
 
 namespace Aws
 {

@@ -16,15 +16,58 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/route53resolver/Route53ResolverErrors.h>
+#include <aws/route53resolver/model/ResourceExistsException.h>
+#include <aws/route53resolver/model/ResourceNotFoundException.h>
+#include <aws/route53resolver/model/LimitExceededException.h>
+#include <aws/route53resolver/model/InvalidParameterException.h>
+#include <aws/route53resolver/model/ResourceInUseException.h>
+#include <aws/route53resolver/model/ResourceUnavailableException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Route53Resolver;
 using namespace Aws::Utils;
+using namespace Aws::Route53Resolver;
+using namespace Aws::Route53Resolver::Model;
 
 namespace Aws
 {
 namespace Route53Resolver
 {
+template<> AWS_ROUTE53RESOLVER_API ResourceExistsException Route53ResolverError::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53ResolverErrors::RESOURCE_EXISTS);
+  return ResourceExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ROUTE53RESOLVER_API ResourceNotFoundException Route53ResolverError::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53ResolverErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ROUTE53RESOLVER_API LimitExceededException Route53ResolverError::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53ResolverErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ROUTE53RESOLVER_API InvalidParameterException Route53ResolverError::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53ResolverErrors::INVALID_PARAMETER);
+  return InvalidParameterException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ROUTE53RESOLVER_API ResourceInUseException Route53ResolverError::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53ResolverErrors::RESOURCE_IN_USE);
+  return ResourceInUseException(this->GetJsonPayload().View());
+}
+
+template<> AWS_ROUTE53RESOLVER_API ResourceUnavailableException Route53ResolverError::GetModeledError()
+{
+  assert(this->GetErrorType() == Route53ResolverErrors::RESOURCE_UNAVAILABLE);
+  return ResourceUnavailableException(this->GetJsonPayload().View());
+}
+
 namespace Route53ResolverErrorMapper
 {
 

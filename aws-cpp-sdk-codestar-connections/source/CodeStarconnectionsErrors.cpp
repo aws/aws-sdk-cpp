@@ -18,8 +18,8 @@
 #include <aws/codestar-connections/CodeStarconnectionsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeStarconnections;
 using namespace Aws::Utils;
+using namespace Aws::CodeStarconnections;
 
 namespace Aws
 {

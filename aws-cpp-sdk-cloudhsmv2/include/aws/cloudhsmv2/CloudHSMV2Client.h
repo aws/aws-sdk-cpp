@@ -87,19 +87,19 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CopyBackupToRegionResult, Aws::Client::AWSError<CloudHSMV2Errors>> CopyBackupToRegionOutcome;
-        typedef Aws::Utils::Outcome<CreateClusterResult, Aws::Client::AWSError<CloudHSMV2Errors>> CreateClusterOutcome;
-        typedef Aws::Utils::Outcome<CreateHsmResult, Aws::Client::AWSError<CloudHSMV2Errors>> CreateHsmOutcome;
-        typedef Aws::Utils::Outcome<DeleteBackupResult, Aws::Client::AWSError<CloudHSMV2Errors>> DeleteBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<CloudHSMV2Errors>> DeleteClusterOutcome;
-        typedef Aws::Utils::Outcome<DeleteHsmResult, Aws::Client::AWSError<CloudHSMV2Errors>> DeleteHsmOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupsResult, Aws::Client::AWSError<CloudHSMV2Errors>> DescribeBackupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeClustersResult, Aws::Client::AWSError<CloudHSMV2Errors>> DescribeClustersOutcome;
-        typedef Aws::Utils::Outcome<InitializeClusterResult, Aws::Client::AWSError<CloudHSMV2Errors>> InitializeClusterOutcome;
-        typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<CloudHSMV2Errors>> ListTagsOutcome;
-        typedef Aws::Utils::Outcome<RestoreBackupResult, Aws::Client::AWSError<CloudHSMV2Errors>> RestoreBackupOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CloudHSMV2Errors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CloudHSMV2Errors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CopyBackupToRegionResult, CloudHSMV2Error> CopyBackupToRegionOutcome;
+        typedef Aws::Utils::Outcome<CreateClusterResult, CloudHSMV2Error> CreateClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateHsmResult, CloudHSMV2Error> CreateHsmOutcome;
+        typedef Aws::Utils::Outcome<DeleteBackupResult, CloudHSMV2Error> DeleteBackupOutcome;
+        typedef Aws::Utils::Outcome<DeleteClusterResult, CloudHSMV2Error> DeleteClusterOutcome;
+        typedef Aws::Utils::Outcome<DeleteHsmResult, CloudHSMV2Error> DeleteHsmOutcome;
+        typedef Aws::Utils::Outcome<DescribeBackupsResult, CloudHSMV2Error> DescribeBackupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClustersResult, CloudHSMV2Error> DescribeClustersOutcome;
+        typedef Aws::Utils::Outcome<InitializeClusterResult, CloudHSMV2Error> InitializeClusterOutcome;
+        typedef Aws::Utils::Outcome<ListTagsResult, CloudHSMV2Error> ListTagsOutcome;
+        typedef Aws::Utils::Outcome<RestoreBackupResult, CloudHSMV2Error> RestoreBackupOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CloudHSMV2Error> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CloudHSMV2Error> UntagResourceOutcome;
 
         typedef std::future<CopyBackupToRegionOutcome> CopyBackupToRegionOutcomeCallable;
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;

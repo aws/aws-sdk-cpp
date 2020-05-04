@@ -73,12 +73,12 @@ namespace Model
         class ListEntitiesRequest;
         class StartChangeSetRequest;
 
-        typedef Aws::Utils::Outcome<CancelChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> CancelChangeSetOutcome;
-        typedef Aws::Utils::Outcome<DescribeChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> DescribeChangeSetOutcome;
-        typedef Aws::Utils::Outcome<DescribeEntityResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> DescribeEntityOutcome;
-        typedef Aws::Utils::Outcome<ListChangeSetsResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> ListChangeSetsOutcome;
-        typedef Aws::Utils::Outcome<ListEntitiesResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> ListEntitiesOutcome;
-        typedef Aws::Utils::Outcome<StartChangeSetResult, Aws::Client::AWSError<MarketplaceCatalogErrors>> StartChangeSetOutcome;
+        typedef Aws::Utils::Outcome<CancelChangeSetResult, MarketplaceCatalogError> CancelChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeChangeSetResult, MarketplaceCatalogError> DescribeChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeEntityResult, MarketplaceCatalogError> DescribeEntityOutcome;
+        typedef Aws::Utils::Outcome<ListChangeSetsResult, MarketplaceCatalogError> ListChangeSetsOutcome;
+        typedef Aws::Utils::Outcome<ListEntitiesResult, MarketplaceCatalogError> ListEntitiesOutcome;
+        typedef Aws::Utils::Outcome<StartChangeSetResult, MarketplaceCatalogError> StartChangeSetOutcome;
 
         typedef std::future<CancelChangeSetOutcome> CancelChangeSetOutcomeCallable;
         typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;

@@ -81,16 +81,16 @@ namespace Model
         class PutScheduledActionRequest;
         class RegisterScalableTargetRequest;
 
-        typedef Aws::Utils::Outcome<DeleteScalingPolicyResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DeleteScalingPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteScheduledActionResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DeleteScheduledActionOutcome;
-        typedef Aws::Utils::Outcome<DeregisterScalableTargetResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DeregisterScalableTargetOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalableTargetsResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DescribeScalableTargetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingActivitiesResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DescribeScalingActivitiesOutcome;
-        typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DescribeScalingPoliciesOutcome;
-        typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> DescribeScheduledActionsOutcome;
-        typedef Aws::Utils::Outcome<PutScalingPolicyResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> PutScalingPolicyOutcome;
-        typedef Aws::Utils::Outcome<PutScheduledActionResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> PutScheduledActionOutcome;
-        typedef Aws::Utils::Outcome<RegisterScalableTargetResult, Aws::Client::AWSError<ApplicationAutoScalingErrors>> RegisterScalableTargetOutcome;
+        typedef Aws::Utils::Outcome<DeleteScalingPolicyResult, ApplicationAutoScalingError> DeleteScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteScheduledActionResult, ApplicationAutoScalingError> DeleteScheduledActionOutcome;
+        typedef Aws::Utils::Outcome<DeregisterScalableTargetResult, ApplicationAutoScalingError> DeregisterScalableTargetOutcome;
+        typedef Aws::Utils::Outcome<DescribeScalableTargetsResult, ApplicationAutoScalingError> DescribeScalableTargetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeScalingActivitiesResult, ApplicationAutoScalingError> DescribeScalingActivitiesOutcome;
+        typedef Aws::Utils::Outcome<DescribeScalingPoliciesResult, ApplicationAutoScalingError> DescribeScalingPoliciesOutcome;
+        typedef Aws::Utils::Outcome<DescribeScheduledActionsResult, ApplicationAutoScalingError> DescribeScheduledActionsOutcome;
+        typedef Aws::Utils::Outcome<PutScalingPolicyResult, ApplicationAutoScalingError> PutScalingPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutScheduledActionResult, ApplicationAutoScalingError> PutScheduledActionOutcome;
+        typedef Aws::Utils::Outcome<RegisterScalableTargetResult, ApplicationAutoScalingError> RegisterScalableTargetOutcome;
 
         typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
         typedef std::future<DeleteScheduledActionOutcome> DeleteScheduledActionOutcomeCallable;

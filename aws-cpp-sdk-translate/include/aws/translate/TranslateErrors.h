@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/translate/Translate_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class TranslateErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,20 @@ enum class TranslateErrors
   TOO_MANY_REQUESTS,
   UNSUPPORTED_LANGUAGE_PAIR
 };
+
+class AWS_TRANSLATE_API TranslateError : public Aws::Client::AWSError<TranslateErrors>
+{
+public:
+  TranslateError() {}
+  TranslateError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<TranslateErrors>(rhs) {}
+  TranslateError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<TranslateErrors>(rhs) {}
+  TranslateError(const Aws::Client::AWSError<TranslateErrors>& rhs) : Aws::Client::AWSError<TranslateErrors>(rhs) {}
+  TranslateError(Aws::Client::AWSError<TranslateErrors>&& rhs) : Aws::Client::AWSError<TranslateErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace TranslateErrorMapper
 {
   AWS_TRANSLATE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

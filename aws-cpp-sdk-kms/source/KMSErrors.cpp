@@ -18,8 +18,8 @@
 #include <aws/kms/KMSErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::KMS;
 using namespace Aws::Utils;
+using namespace Aws::KMS;
 
 namespace Aws
 {

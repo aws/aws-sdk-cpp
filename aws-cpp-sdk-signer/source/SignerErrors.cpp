@@ -18,8 +18,8 @@
 #include <aws/signer/SignerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::signer;
 using namespace Aws::Utils;
+using namespace Aws::signer;
 
 namespace Aws
 {

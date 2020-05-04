@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/polly/Polly_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class PollyErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -78,6 +79,20 @@ enum class PollyErrors
   UNSUPPORTED_PLS_ALPHABET,
   UNSUPPORTED_PLS_LANGUAGE
 };
+
+class AWS_POLLY_API PollyError : public Aws::Client::AWSError<PollyErrors>
+{
+public:
+  PollyError() {}
+  PollyError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PollyErrors>(rhs) {}
+  PollyError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PollyErrors>(rhs) {}
+  PollyError(const Aws::Client::AWSError<PollyErrors>& rhs) : Aws::Client::AWSError<PollyErrors>(rhs) {}
+  PollyError(Aws::Client::AWSError<PollyErrors>&& rhs) : Aws::Client::AWSError<PollyErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace PollyErrorMapper
 {
   AWS_POLLY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

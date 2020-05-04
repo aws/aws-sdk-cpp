@@ -19,8 +19,8 @@
 #include <aws/core/utils/UnreferencedParam.h>
 
 using namespace Aws::Client;
-using namespace Aws::OpsWorks;
 using namespace Aws::Utils;
+using namespace Aws::OpsWorks;
 
 namespace Aws
 {

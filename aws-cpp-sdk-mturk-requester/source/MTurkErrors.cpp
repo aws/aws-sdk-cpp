@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/mturk-requester/MTurkErrors.h>
+#include <aws/mturk-requester/model/ServiceFault.h>
+#include <aws/mturk-requester/model/RequestError.h>
 
 using namespace Aws::Client;
-using namespace Aws::MTurk;
 using namespace Aws::Utils;
+using namespace Aws::MTurk;
+using namespace Aws::MTurk::Model;
 
 namespace Aws
 {
 namespace MTurk
 {
+template<> AWS_MTURK_API ServiceFault MTurkError::GetModeledError()
+{
+  assert(this->GetErrorType() == MTurkErrors::SERVICE_FAULT);
+  return ServiceFault(this->GetJsonPayload().View());
+}
+
+template<> AWS_MTURK_API RequestError MTurkError::GetModeledError()
+{
+  assert(this->GetErrorType() == MTurkErrors::REQUEST);
+  return RequestError(this->GetJsonPayload().View());
+}
+
 namespace MTurkErrorMapper
 {
 

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sms/SMS_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SMSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,6 +68,20 @@ enum class SMSErrors
   TEMPORARILY_UNAVAILABLE,
   UNAUTHORIZED_OPERATION
 };
+
+class AWS_SMS_API SMSError : public Aws::Client::AWSError<SMSErrors>
+{
+public:
+  SMSError() {}
+  SMSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SMSErrors>(rhs) {}
+  SMSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SMSErrors>(rhs) {}
+  SMSError(const Aws::Client::AWSError<SMSErrors>& rhs) : Aws::Client::AWSError<SMSErrors>(rhs) {}
+  SMSError(Aws::Client::AWSError<SMSErrors>&& rhs) : Aws::Client::AWSError<SMSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SMSErrorMapper
 {
   AWS_SMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

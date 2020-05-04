@@ -63,7 +63,7 @@ namespace Model
 {
         class SendSSHPublicKeyRequest;
 
-        typedef Aws::Utils::Outcome<SendSSHPublicKeyResult, Aws::Client::AWSError<EC2InstanceConnectErrors>> SendSSHPublicKeyOutcome;
+        typedef Aws::Utils::Outcome<SendSSHPublicKeyResult, EC2InstanceConnectError> SendSSHPublicKeyOutcome;
 
         typedef std::future<SendSSHPublicKeyOutcome> SendSSHPublicKeyOutcomeCallable;
 } // namespace Model

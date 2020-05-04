@@ -18,8 +18,8 @@
 #include <aws/sms-voice/PinpointSMSVoiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::PinpointSMSVoice;
 using namespace Aws::Utils;
+using namespace Aws::PinpointSMSVoice;
 
 namespace Aws
 {

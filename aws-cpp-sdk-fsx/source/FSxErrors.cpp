@@ -16,15 +16,72 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/fsx/FSxErrors.h>
+#include <aws/fsx/model/IncompatibleParameterError.h>
+#include <aws/fsx/model/ResourceNotFound.h>
+#include <aws/fsx/model/BackupRestoring.h>
+#include <aws/fsx/model/ServiceLimitExceeded.h>
+#include <aws/fsx/model/ActiveDirectoryError.h>
+#include <aws/fsx/model/InvalidNetworkSettings.h>
+#include <aws/fsx/model/NotServiceResourceError.h>
+#include <aws/fsx/model/ResourceDoesNotSupportTagging.h>
 
 using namespace Aws::Client;
-using namespace Aws::FSx;
 using namespace Aws::Utils;
+using namespace Aws::FSx;
+using namespace Aws::FSx::Model;
 
 namespace Aws
 {
 namespace FSx
 {
+template<> AWS_FSX_API IncompatibleParameterError FSxError::GetModeledError()
+{
+  assert(this->GetErrorType() == FSxErrors::INCOMPATIBLE_PARAMETER);
+  return IncompatibleParameterError(this->GetJsonPayload().View());
+}
+
+template<> AWS_FSX_API ResourceNotFound FSxError::GetModeledError()
+{
+  assert(this->GetErrorType() == FSxErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_FSX_API BackupRestoring FSxError::GetModeledError()
+{
+  assert(this->GetErrorType() == FSxErrors::BACKUP_RESTORING);
+  return BackupRestoring(this->GetJsonPayload().View());
+}
+
+template<> AWS_FSX_API ServiceLimitExceeded FSxError::GetModeledError()
+{
+  assert(this->GetErrorType() == FSxErrors::SERVICE_LIMIT_EXCEEDED);
+  return ServiceLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_FSX_API ActiveDirectoryError FSxError::GetModeledError()
+{
+  assert(this->GetErrorType() == FSxErrors::ACTIVE_DIRECTORY);
+  return ActiveDirectoryError(this->GetJsonPayload().View());
+}
+
+template<> AWS_FSX_API InvalidNetworkSettings FSxError::GetModeledError()
+{
+  assert(this->GetErrorType() == FSxErrors::INVALID_NETWORK_SETTINGS);
+  return InvalidNetworkSettings(this->GetJsonPayload().View());
+}
+
+template<> AWS_FSX_API NotServiceResourceError FSxError::GetModeledError()
+{
+  assert(this->GetErrorType() == FSxErrors::NOT_SERVICE_RESOURCE);
+  return NotServiceResourceError(this->GetJsonPayload().View());
+}
+
+template<> AWS_FSX_API ResourceDoesNotSupportTagging FSxError::GetModeledError()
+{
+  assert(this->GetErrorType() == FSxErrors::RESOURCE_DOES_NOT_SUPPORT_TAGGING);
+  return ResourceDoesNotSupportTagging(this->GetJsonPayload().View());
+}
+
 namespace FSxErrorMapper
 {
 

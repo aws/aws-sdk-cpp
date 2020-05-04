@@ -18,8 +18,8 @@
 #include <aws/outposts/OutpostsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Outposts;
 using namespace Aws::Utils;
+using namespace Aws::Outposts;
 
 namespace Aws
 {

@@ -18,8 +18,8 @@
 #include <aws/cloudformation/CloudFormationErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudFormation;
 using namespace Aws::Utils;
+using namespace Aws::CloudFormation;
 
 namespace Aws
 {

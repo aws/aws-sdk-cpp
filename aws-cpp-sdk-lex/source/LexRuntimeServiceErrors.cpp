@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/lex/LexRuntimeServiceErrors.h>
+#include <aws/lex/model/LimitExceededException.h>
 
 using namespace Aws::Client;
-using namespace Aws::LexRuntimeService;
 using namespace Aws::Utils;
+using namespace Aws::LexRuntimeService;
+using namespace Aws::LexRuntimeService::Model;
 
 namespace Aws
 {
 namespace LexRuntimeService
 {
+template<> AWS_LEXRUNTIMESERVICE_API LimitExceededException LexRuntimeServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == LexRuntimeServiceErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
 namespace LexRuntimeServiceErrorMapper
 {
 

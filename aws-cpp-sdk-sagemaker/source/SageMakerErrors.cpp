@@ -18,8 +18,8 @@
 #include <aws/sagemaker/SageMakerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SageMaker;
 using namespace Aws::Utils;
+using namespace Aws::SageMaker;
 
 namespace Aws
 {

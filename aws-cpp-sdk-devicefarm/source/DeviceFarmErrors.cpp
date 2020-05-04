@@ -16,15 +16,37 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/devicefarm/DeviceFarmErrors.h>
+#include <aws/devicefarm/model/TooManyTagsException.h>
+#include <aws/devicefarm/model/TagOperationException.h>
+#include <aws/devicefarm/model/TagPolicyException.h>
 
 using namespace Aws::Client;
-using namespace Aws::DeviceFarm;
 using namespace Aws::Utils;
+using namespace Aws::DeviceFarm;
+using namespace Aws::DeviceFarm::Model;
 
 namespace Aws
 {
 namespace DeviceFarm
 {
+template<> AWS_DEVICEFARM_API TooManyTagsException DeviceFarmError::GetModeledError()
+{
+  assert(this->GetErrorType() == DeviceFarmErrors::TOO_MANY_TAGS);
+  return TooManyTagsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DEVICEFARM_API TagOperationException DeviceFarmError::GetModeledError()
+{
+  assert(this->GetErrorType() == DeviceFarmErrors::TAG_OPERATION);
+  return TagOperationException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DEVICEFARM_API TagPolicyException DeviceFarmError::GetModeledError()
+{
+  assert(this->GetErrorType() == DeviceFarmErrors::TAG_POLICY);
+  return TagPolicyException(this->GetJsonPayload().View());
+}
+
 namespace DeviceFarmErrorMapper
 {
 

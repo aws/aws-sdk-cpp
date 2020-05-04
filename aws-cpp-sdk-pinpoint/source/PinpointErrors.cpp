@@ -16,15 +16,65 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/pinpoint/PinpointErrors.h>
+#include <aws/pinpoint/model/NotFoundException.h>
+#include <aws/pinpoint/model/ForbiddenException.h>
+#include <aws/pinpoint/model/PayloadTooLargeException.h>
+#include <aws/pinpoint/model/TooManyRequestsException.h>
+#include <aws/pinpoint/model/BadRequestException.h>
+#include <aws/pinpoint/model/InternalServerErrorException.h>
+#include <aws/pinpoint/model/MethodNotAllowedException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Pinpoint;
 using namespace Aws::Utils;
+using namespace Aws::Pinpoint;
+using namespace Aws::Pinpoint::Model;
 
 namespace Aws
 {
 namespace Pinpoint
 {
+template<> AWS_PINPOINT_API NotFoundException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API ForbiddenException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::FORBIDDEN);
+  return ForbiddenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API PayloadTooLargeException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::PAYLOAD_TOO_LARGE);
+  return PayloadTooLargeException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API TooManyRequestsException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API BadRequestException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API InternalServerErrorException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::INTERNAL_SERVER_ERROR);
+  return InternalServerErrorException(this->GetJsonPayload().View());
+}
+
+template<> AWS_PINPOINT_API MethodNotAllowedException PinpointError::GetModeledError()
+{
+  assert(this->GetErrorType() == PinpointErrors::METHOD_NOT_ALLOWED);
+  return MethodNotAllowedException(this->GetJsonPayload().View());
+}
+
 namespace PinpointErrorMapper
 {
 

@@ -78,7 +78,7 @@ static const char* ALLOCATION_TAG = "FraudDetectorClient";
 FraudDetectorClient::FraudDetectorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<FraudDetectorErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -88,7 +88,7 @@ FraudDetectorClient::FraudDetectorClient(const Client::ClientConfiguration& clie
 FraudDetectorClient::FraudDetectorClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<FraudDetectorErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -99,7 +99,7 @@ FraudDetectorClient::FraudDetectorClient(const std::shared_ptr<AWSCredentialsPro
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<FraudDetectorErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -141,15 +141,7 @@ BatchCreateVariableOutcome FraudDetectorClient::BatchCreateVariable(const BatchC
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchCreateVariableOutcome(BatchCreateVariableResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchCreateVariableOutcome(outcome.GetError());
-  }
+  return BatchCreateVariableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchCreateVariableOutcomeCallable FraudDetectorClient::BatchCreateVariableCallable(const BatchCreateVariableRequest& request) const
@@ -176,15 +168,7 @@ BatchGetVariableOutcome FraudDetectorClient::BatchGetVariable(const BatchGetVari
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return BatchGetVariableOutcome(BatchGetVariableResult(outcome.GetResult()));
-  }
-  else
-  {
-    return BatchGetVariableOutcome(outcome.GetError());
-  }
+  return BatchGetVariableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 BatchGetVariableOutcomeCallable FraudDetectorClient::BatchGetVariableCallable(const BatchGetVariableRequest& request) const
@@ -211,15 +195,7 @@ CreateDetectorVersionOutcome FraudDetectorClient::CreateDetectorVersion(const Cr
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDetectorVersionOutcome(CreateDetectorVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDetectorVersionOutcome(outcome.GetError());
-  }
+  return CreateDetectorVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDetectorVersionOutcomeCallable FraudDetectorClient::CreateDetectorVersionCallable(const CreateDetectorVersionRequest& request) const
@@ -246,15 +222,7 @@ CreateModelVersionOutcome FraudDetectorClient::CreateModelVersion(const CreateMo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateModelVersionOutcome(CreateModelVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateModelVersionOutcome(outcome.GetError());
-  }
+  return CreateModelVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateModelVersionOutcomeCallable FraudDetectorClient::CreateModelVersionCallable(const CreateModelVersionRequest& request) const
@@ -281,15 +249,7 @@ CreateRuleOutcome FraudDetectorClient::CreateRule(const CreateRuleRequest& reque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateRuleOutcome(CreateRuleResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateRuleOutcome(outcome.GetError());
-  }
+  return CreateRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateRuleOutcomeCallable FraudDetectorClient::CreateRuleCallable(const CreateRuleRequest& request) const
@@ -316,15 +276,7 @@ CreateVariableOutcome FraudDetectorClient::CreateVariable(const CreateVariableRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateVariableOutcome(CreateVariableResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateVariableOutcome(outcome.GetError());
-  }
+  return CreateVariableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateVariableOutcomeCallable FraudDetectorClient::CreateVariableCallable(const CreateVariableRequest& request) const
@@ -351,15 +303,7 @@ DeleteDetectorOutcome FraudDetectorClient::DeleteDetector(const DeleteDetectorRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDetectorOutcome(DeleteDetectorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDetectorOutcome(outcome.GetError());
-  }
+  return DeleteDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDetectorOutcomeCallable FraudDetectorClient::DeleteDetectorCallable(const DeleteDetectorRequest& request) const
@@ -386,15 +330,7 @@ DeleteDetectorVersionOutcome FraudDetectorClient::DeleteDetectorVersion(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDetectorVersionOutcome(DeleteDetectorVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDetectorVersionOutcome(outcome.GetError());
-  }
+  return DeleteDetectorVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDetectorVersionOutcomeCallable FraudDetectorClient::DeleteDetectorVersionCallable(const DeleteDetectorVersionRequest& request) const
@@ -421,15 +357,7 @@ DeleteEventOutcome FraudDetectorClient::DeleteEvent(const DeleteEventRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEventOutcome(DeleteEventResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteEventOutcome(outcome.GetError());
-  }
+  return DeleteEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEventOutcomeCallable FraudDetectorClient::DeleteEventCallable(const DeleteEventRequest& request) const
@@ -456,15 +384,7 @@ DeleteRuleVersionOutcome FraudDetectorClient::DeleteRuleVersion(const DeleteRule
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteRuleVersionOutcome(DeleteRuleVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteRuleVersionOutcome(outcome.GetError());
-  }
+  return DeleteRuleVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteRuleVersionOutcomeCallable FraudDetectorClient::DeleteRuleVersionCallable(const DeleteRuleVersionRequest& request) const
@@ -491,15 +411,7 @@ DescribeDetectorOutcome FraudDetectorClient::DescribeDetector(const DescribeDete
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeDetectorOutcome(DescribeDetectorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeDetectorOutcome(outcome.GetError());
-  }
+  return DescribeDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDetectorOutcomeCallable FraudDetectorClient::DescribeDetectorCallable(const DescribeDetectorRequest& request) const
@@ -526,15 +438,7 @@ DescribeModelVersionsOutcome FraudDetectorClient::DescribeModelVersions(const De
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeModelVersionsOutcome(DescribeModelVersionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeModelVersionsOutcome(outcome.GetError());
-  }
+  return DescribeModelVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeModelVersionsOutcomeCallable FraudDetectorClient::DescribeModelVersionsCallable(const DescribeModelVersionsRequest& request) const
@@ -561,15 +465,7 @@ GetDetectorVersionOutcome FraudDetectorClient::GetDetectorVersion(const GetDetec
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDetectorVersionOutcome(GetDetectorVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDetectorVersionOutcome(outcome.GetError());
-  }
+  return GetDetectorVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDetectorVersionOutcomeCallable FraudDetectorClient::GetDetectorVersionCallable(const GetDetectorVersionRequest& request) const
@@ -596,15 +492,7 @@ GetDetectorsOutcome FraudDetectorClient::GetDetectors(const GetDetectorsRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDetectorsOutcome(GetDetectorsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDetectorsOutcome(outcome.GetError());
-  }
+  return GetDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDetectorsOutcomeCallable FraudDetectorClient::GetDetectorsCallable(const GetDetectorsRequest& request) const
@@ -631,15 +519,7 @@ GetExternalModelsOutcome FraudDetectorClient::GetExternalModels(const GetExterna
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetExternalModelsOutcome(GetExternalModelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetExternalModelsOutcome(outcome.GetError());
-  }
+  return GetExternalModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetExternalModelsOutcomeCallable FraudDetectorClient::GetExternalModelsCallable(const GetExternalModelsRequest& request) const
@@ -666,15 +546,7 @@ GetModelVersionOutcome FraudDetectorClient::GetModelVersion(const GetModelVersio
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetModelVersionOutcome(GetModelVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetModelVersionOutcome(outcome.GetError());
-  }
+  return GetModelVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelVersionOutcomeCallable FraudDetectorClient::GetModelVersionCallable(const GetModelVersionRequest& request) const
@@ -701,15 +573,7 @@ GetModelsOutcome FraudDetectorClient::GetModels(const GetModelsRequest& request)
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetModelsOutcome(GetModelsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetModelsOutcome(outcome.GetError());
-  }
+  return GetModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetModelsOutcomeCallable FraudDetectorClient::GetModelsCallable(const GetModelsRequest& request) const
@@ -736,15 +600,7 @@ GetOutcomesOutcome FraudDetectorClient::GetOutcomes(const GetOutcomesRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetOutcomesOutcome(GetOutcomesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetOutcomesOutcome(outcome.GetError());
-  }
+  return GetOutcomesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetOutcomesOutcomeCallable FraudDetectorClient::GetOutcomesCallable(const GetOutcomesRequest& request) const
@@ -771,15 +627,7 @@ GetPredictionOutcome FraudDetectorClient::GetPrediction(const GetPredictionReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetPredictionOutcome(GetPredictionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPredictionOutcome(outcome.GetError());
-  }
+  return GetPredictionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPredictionOutcomeCallable FraudDetectorClient::GetPredictionCallable(const GetPredictionRequest& request) const
@@ -806,15 +654,7 @@ GetRulesOutcome FraudDetectorClient::GetRules(const GetRulesRequest& request) co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetRulesOutcome(GetRulesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetRulesOutcome(outcome.GetError());
-  }
+  return GetRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetRulesOutcomeCallable FraudDetectorClient::GetRulesCallable(const GetRulesRequest& request) const
@@ -841,15 +681,7 @@ GetVariablesOutcome FraudDetectorClient::GetVariables(const GetVariablesRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetVariablesOutcome(GetVariablesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetVariablesOutcome(outcome.GetError());
-  }
+  return GetVariablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetVariablesOutcomeCallable FraudDetectorClient::GetVariablesCallable(const GetVariablesRequest& request) const
@@ -876,15 +708,7 @@ PutDetectorOutcome FraudDetectorClient::PutDetector(const PutDetectorRequest& re
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutDetectorOutcome(PutDetectorResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutDetectorOutcome(outcome.GetError());
-  }
+  return PutDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDetectorOutcomeCallable FraudDetectorClient::PutDetectorCallable(const PutDetectorRequest& request) const
@@ -911,15 +735,7 @@ PutExternalModelOutcome FraudDetectorClient::PutExternalModel(const PutExternalM
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutExternalModelOutcome(PutExternalModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutExternalModelOutcome(outcome.GetError());
-  }
+  return PutExternalModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutExternalModelOutcomeCallable FraudDetectorClient::PutExternalModelCallable(const PutExternalModelRequest& request) const
@@ -946,15 +762,7 @@ PutModelOutcome FraudDetectorClient::PutModel(const PutModelRequest& request) co
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutModelOutcome(PutModelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutModelOutcome(outcome.GetError());
-  }
+  return PutModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutModelOutcomeCallable FraudDetectorClient::PutModelCallable(const PutModelRequest& request) const
@@ -981,15 +789,7 @@ PutOutcomeOutcome FraudDetectorClient::PutOutcome(const PutOutcomeRequest& reque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutOutcomeOutcome(PutOutcomeResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutOutcomeOutcome(outcome.GetError());
-  }
+  return PutOutcomeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutOutcomeOutcomeCallable FraudDetectorClient::PutOutcomeCallable(const PutOutcomeRequest& request) const
@@ -1016,15 +816,7 @@ UpdateDetectorVersionOutcome FraudDetectorClient::UpdateDetectorVersion(const Up
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDetectorVersionOutcome(UpdateDetectorVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDetectorVersionOutcome(outcome.GetError());
-  }
+  return UpdateDetectorVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDetectorVersionOutcomeCallable FraudDetectorClient::UpdateDetectorVersionCallable(const UpdateDetectorVersionRequest& request) const
@@ -1051,15 +843,7 @@ UpdateDetectorVersionMetadataOutcome FraudDetectorClient::UpdateDetectorVersionM
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDetectorVersionMetadataOutcome(UpdateDetectorVersionMetadataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDetectorVersionMetadataOutcome(outcome.GetError());
-  }
+  return UpdateDetectorVersionMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDetectorVersionMetadataOutcomeCallable FraudDetectorClient::UpdateDetectorVersionMetadataCallable(const UpdateDetectorVersionMetadataRequest& request) const
@@ -1086,15 +870,7 @@ UpdateDetectorVersionStatusOutcome FraudDetectorClient::UpdateDetectorVersionSta
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDetectorVersionStatusOutcome(UpdateDetectorVersionStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDetectorVersionStatusOutcome(outcome.GetError());
-  }
+  return UpdateDetectorVersionStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDetectorVersionStatusOutcomeCallable FraudDetectorClient::UpdateDetectorVersionStatusCallable(const UpdateDetectorVersionStatusRequest& request) const
@@ -1121,15 +897,7 @@ UpdateModelVersionOutcome FraudDetectorClient::UpdateModelVersion(const UpdateMo
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateModelVersionOutcome(UpdateModelVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateModelVersionOutcome(outcome.GetError());
-  }
+  return UpdateModelVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateModelVersionOutcomeCallable FraudDetectorClient::UpdateModelVersionCallable(const UpdateModelVersionRequest& request) const
@@ -1156,15 +924,7 @@ UpdateRuleMetadataOutcome FraudDetectorClient::UpdateRuleMetadata(const UpdateRu
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRuleMetadataOutcome(UpdateRuleMetadataResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRuleMetadataOutcome(outcome.GetError());
-  }
+  return UpdateRuleMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRuleMetadataOutcomeCallable FraudDetectorClient::UpdateRuleMetadataCallable(const UpdateRuleMetadataRequest& request) const
@@ -1191,15 +951,7 @@ UpdateRuleVersionOutcome FraudDetectorClient::UpdateRuleVersion(const UpdateRule
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateRuleVersionOutcome(UpdateRuleVersionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateRuleVersionOutcome(outcome.GetError());
-  }
+  return UpdateRuleVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateRuleVersionOutcomeCallable FraudDetectorClient::UpdateRuleVersionCallable(const UpdateRuleVersionRequest& request) const
@@ -1226,15 +978,7 @@ UpdateVariableOutcome FraudDetectorClient::UpdateVariable(const UpdateVariableRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateVariableOutcome(UpdateVariableResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateVariableOutcome(outcome.GetError());
-  }
+  return UpdateVariableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateVariableOutcomeCallable FraudDetectorClient::UpdateVariableCallable(const UpdateVariableRequest& request) const

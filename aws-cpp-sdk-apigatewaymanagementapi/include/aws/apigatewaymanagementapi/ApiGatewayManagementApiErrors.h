@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApi_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ApiGatewayManagementApiErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,20 @@ enum class ApiGatewayManagementApiErrors
   LIMIT_EXCEEDED,
   PAYLOAD_TOO_LARGE
 };
+
+class AWS_APIGATEWAYMANAGEMENTAPI_API ApiGatewayManagementApiError : public Aws::Client::AWSError<ApiGatewayManagementApiErrors>
+{
+public:
+  ApiGatewayManagementApiError() {}
+  ApiGatewayManagementApiError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ApiGatewayManagementApiErrors>(rhs) {}
+  ApiGatewayManagementApiError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ApiGatewayManagementApiErrors>(rhs) {}
+  ApiGatewayManagementApiError(const Aws::Client::AWSError<ApiGatewayManagementApiErrors>& rhs) : Aws::Client::AWSError<ApiGatewayManagementApiErrors>(rhs) {}
+  ApiGatewayManagementApiError(Aws::Client::AWSError<ApiGatewayManagementApiErrors>&& rhs) : Aws::Client::AWSError<ApiGatewayManagementApiErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ApiGatewayManagementApiErrorMapper
 {
   AWS_APIGATEWAYMANAGEMENTAPI_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

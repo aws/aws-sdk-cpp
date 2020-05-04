@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ServiceCatalogErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class ServiceCatalogErrors
   RESOURCE_IN_USE,
   TAG_OPTION_NOT_MIGRATED
 };
+
+class AWS_SERVICECATALOG_API ServiceCatalogError : public Aws::Client::AWSError<ServiceCatalogErrors>
+{
+public:
+  ServiceCatalogError() {}
+  ServiceCatalogError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServiceCatalogErrors>(rhs) {}
+  ServiceCatalogError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServiceCatalogErrors>(rhs) {}
+  ServiceCatalogError(const Aws::Client::AWSError<ServiceCatalogErrors>& rhs) : Aws::Client::AWSError<ServiceCatalogErrors>(rhs) {}
+  ServiceCatalogError(Aws::Client::AWSError<ServiceCatalogErrors>&& rhs) : Aws::Client::AWSError<ServiceCatalogErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ServiceCatalogErrorMapper
 {
   AWS_SERVICECATALOG_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

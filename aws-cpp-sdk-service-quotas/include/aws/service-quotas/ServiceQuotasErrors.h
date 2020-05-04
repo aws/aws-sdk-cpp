@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/service-quotas/ServiceQuotas_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ServiceQuotasErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -71,6 +72,20 @@ enum class ServiceQuotasErrors
   TEMPLATES_NOT_AVAILABLE_IN_REGION,
   TOO_MANY_REQUESTS
 };
+
+class AWS_SERVICEQUOTAS_API ServiceQuotasError : public Aws::Client::AWSError<ServiceQuotasErrors>
+{
+public:
+  ServiceQuotasError() {}
+  ServiceQuotasError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServiceQuotasErrors>(rhs) {}
+  ServiceQuotasError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServiceQuotasErrors>(rhs) {}
+  ServiceQuotasError(const Aws::Client::AWSError<ServiceQuotasErrors>& rhs) : Aws::Client::AWSError<ServiceQuotasErrors>(rhs) {}
+  ServiceQuotasError(Aws::Client::AWSError<ServiceQuotasErrors>&& rhs) : Aws::Client::AWSError<ServiceQuotasErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ServiceQuotasErrorMapper
 {
   AWS_SERVICEQUOTAS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

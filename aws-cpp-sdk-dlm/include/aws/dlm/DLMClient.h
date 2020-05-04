@@ -77,14 +77,14 @@ namespace Model
         class UntagResourceRequest;
         class UpdateLifecyclePolicyRequest;
 
-        typedef Aws::Utils::Outcome<CreateLifecyclePolicyResult, Aws::Client::AWSError<DLMErrors>> CreateLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, Aws::Client::AWSError<DLMErrors>> DeleteLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<GetLifecyclePoliciesResult, Aws::Client::AWSError<DLMErrors>> GetLifecyclePoliciesOutcome;
-        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, Aws::Client::AWSError<DLMErrors>> GetLifecyclePolicyOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DLMErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<DLMErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<DLMErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateLifecyclePolicyResult, Aws::Client::AWSError<DLMErrors>> UpdateLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<CreateLifecyclePolicyResult, DLMError> CreateLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, DLMError> DeleteLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePoliciesResult, DLMError> GetLifecyclePoliciesOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, DLMError> GetLifecyclePolicyOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, DLMError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, DLMError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, DLMError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateLifecyclePolicyResult, DLMError> UpdateLifecyclePolicyOutcome;
 
         typedef std::future<CreateLifecyclePolicyOutcome> CreateLifecyclePolicyOutcomeCallable;
         typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;

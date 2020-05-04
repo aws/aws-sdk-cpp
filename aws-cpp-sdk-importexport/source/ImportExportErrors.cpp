@@ -18,8 +18,8 @@
 #include <aws/importexport/ImportExportErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ImportExport;
 using namespace Aws::Utils;
+using namespace Aws::ImportExport;
 
 namespace Aws
 {

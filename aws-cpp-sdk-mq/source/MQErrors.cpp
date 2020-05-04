@@ -16,15 +16,58 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/mq/MQErrors.h>
+#include <aws/mq/model/ConflictException.h>
+#include <aws/mq/model/NotFoundException.h>
+#include <aws/mq/model/UnauthorizedException.h>
+#include <aws/mq/model/ForbiddenException.h>
+#include <aws/mq/model/BadRequestException.h>
+#include <aws/mq/model/InternalServerErrorException.h>
 
 using namespace Aws::Client;
-using namespace Aws::MQ;
 using namespace Aws::Utils;
+using namespace Aws::MQ;
+using namespace Aws::MQ::Model;
 
 namespace Aws
 {
 namespace MQ
 {
+template<> AWS_MQ_API ConflictException MQError::GetModeledError()
+{
+  assert(this->GetErrorType() == MQErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MQ_API NotFoundException MQError::GetModeledError()
+{
+  assert(this->GetErrorType() == MQErrors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MQ_API UnauthorizedException MQError::GetModeledError()
+{
+  assert(this->GetErrorType() == MQErrors::UNAUTHORIZED);
+  return UnauthorizedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MQ_API ForbiddenException MQError::GetModeledError()
+{
+  assert(this->GetErrorType() == MQErrors::FORBIDDEN);
+  return ForbiddenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MQ_API BadRequestException MQError::GetModeledError()
+{
+  assert(this->GetErrorType() == MQErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MQ_API InternalServerErrorException MQError::GetModeledError()
+{
+  assert(this->GetErrorType() == MQErrors::INTERNAL_SERVER_ERROR);
+  return InternalServerErrorException(this->GetJsonPayload().View());
+}
+
 namespace MQErrorMapper
 {
 

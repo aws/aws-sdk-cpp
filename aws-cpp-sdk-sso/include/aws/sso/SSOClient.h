@@ -69,10 +69,10 @@ namespace Model
         class ListAccountsRequest;
         class LogoutRequest;
 
-        typedef Aws::Utils::Outcome<GetRoleCredentialsResult, Aws::Client::AWSError<SSOErrors>> GetRoleCredentialsOutcome;
-        typedef Aws::Utils::Outcome<ListAccountRolesResult, Aws::Client::AWSError<SSOErrors>> ListAccountRolesOutcome;
-        typedef Aws::Utils::Outcome<ListAccountsResult, Aws::Client::AWSError<SSOErrors>> ListAccountsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SSOErrors>> LogoutOutcome;
+        typedef Aws::Utils::Outcome<GetRoleCredentialsResult, SSOError> GetRoleCredentialsOutcome;
+        typedef Aws::Utils::Outcome<ListAccountRolesResult, SSOError> ListAccountRolesOutcome;
+        typedef Aws::Utils::Outcome<ListAccountsResult, SSOError> ListAccountsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SSOError> LogoutOutcome;
 
         typedef std::future<GetRoleCredentialsOutcome> GetRoleCredentialsOutcomeCallable;
         typedef std::future<ListAccountRolesOutcome> ListAccountRolesOutcomeCallable;

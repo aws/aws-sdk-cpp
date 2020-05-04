@@ -66,7 +66,7 @@ static const char* ALLOCATION_TAG = "S3ControlClient";
 S3ControlClient::S3ControlClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
     Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -76,7 +76,7 @@ S3ControlClient::S3ControlClient(const Client::ClientConfiguration& clientConfig
 S3ControlClient::S3ControlClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
     Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -87,7 +87,7 @@ S3ControlClient::S3ControlClient(const std::shared_ptr<AWSCredentialsProvider>& 
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent, false),
     Aws::MakeShared<S3ControlErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -153,15 +153,7 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
   ss << "/v20180820/accesspoint/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return CreateAccessPointOutcome(NoResult());
-  }
-  else
-  {
-    return CreateAccessPointOutcome(outcome.GetError());
-  }
+  return CreateAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 CreateAccessPointOutcomeCallable S3ControlClient::CreateAccessPointCallable(const CreateAccessPointRequest& request) const
@@ -198,15 +190,7 @@ CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) con
   Aws::StringStream ss;
   ss << "/v20180820/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateJobOutcome(outcome.GetError());
-  }
+  return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateJobOutcomeCallable S3ControlClient::CreateJobCallable(const CreateJobRequest& request) const
@@ -249,15 +233,7 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
   ss << "/v20180820/accesspoint/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAccessPointOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteAccessPointOutcome(outcome.GetError());
-  }
+  return DeleteAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteAccessPointOutcomeCallable S3ControlClient::DeleteAccessPointCallable(const DeleteAccessPointRequest& request) const
@@ -301,15 +277,7 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
   ss << request.GetName();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAccessPointPolicyOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteAccessPointPolicyOutcome(outcome.GetError());
-  }
+  return DeleteAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteAccessPointPolicyOutcomeCallable S3ControlClient::DeleteAccessPointPolicyCallable(const DeleteAccessPointPolicyRequest& request) const
@@ -353,15 +321,7 @@ DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTagging
   ss << request.GetJobId();
   ss << "/tagging";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteJobTaggingOutcome(DeleteJobTaggingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteJobTaggingOutcome(outcome.GetError());
-  }
+  return DeleteJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteJobTaggingOutcomeCallable S3ControlClient::DeleteJobTaggingCallable(const DeleteJobTaggingRequest& request) const
@@ -398,15 +358,7 @@ DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const De
   Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeletePublicAccessBlockOutcome(NoResult());
-  }
-  else
-  {
-    return DeletePublicAccessBlockOutcome(outcome.GetError());
-  }
+  return DeletePublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeletePublicAccessBlockOutcomeCallable S3ControlClient::DeletePublicAccessBlockCallable(const DeletePublicAccessBlockRequest& request) const
@@ -449,15 +401,7 @@ DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& reques
   ss << "/v20180820/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return DescribeJobOutcome(DescribeJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeJobOutcome(outcome.GetError());
-  }
+  return DescribeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 DescribeJobOutcomeCallable S3ControlClient::DescribeJobCallable(const DescribeJobRequest& request) const
@@ -500,15 +444,7 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
   ss << "/v20180820/accesspoint/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetAccessPointOutcome(GetAccessPointResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAccessPointOutcome(outcome.GetError());
-  }
+  return GetAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetAccessPointOutcomeCallable S3ControlClient::GetAccessPointCallable(const GetAccessPointRequest& request) const
@@ -552,15 +488,7 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
   ss << request.GetName();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetAccessPointPolicyOutcome(GetAccessPointPolicyResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAccessPointPolicyOutcome(outcome.GetError());
-  }
+  return GetAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetAccessPointPolicyOutcomeCallable S3ControlClient::GetAccessPointPolicyCallable(const GetAccessPointPolicyRequest& request) const
@@ -604,15 +532,7 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
   ss << request.GetName();
   ss << "/policyStatus";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetAccessPointPolicyStatusOutcome(GetAccessPointPolicyStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAccessPointPolicyStatusOutcome(outcome.GetError());
-  }
+  return GetAccessPointPolicyStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetAccessPointPolicyStatusOutcomeCallable S3ControlClient::GetAccessPointPolicyStatusCallable(const GetAccessPointPolicyStatusRequest& request) const
@@ -656,15 +576,7 @@ GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& 
   ss << request.GetJobId();
   ss << "/tagging";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetJobTaggingOutcome(GetJobTaggingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJobTaggingOutcome(outcome.GetError());
-  }
+  return GetJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetJobTaggingOutcomeCallable S3ControlClient::GetJobTaggingCallable(const GetJobTaggingRequest& request) const
@@ -701,15 +613,7 @@ GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPubli
   Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetPublicAccessBlockOutcome(GetPublicAccessBlockResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPublicAccessBlockOutcome(outcome.GetError());
-  }
+  return GetPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetPublicAccessBlockOutcomeCallable S3ControlClient::GetPublicAccessBlockCallable(const GetPublicAccessBlockRequest& request) const
@@ -746,15 +650,7 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
   Aws::StringStream ss;
   ss << "/v20180820/accesspoint";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListAccessPointsOutcome(ListAccessPointsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAccessPointsOutcome(outcome.GetError());
-  }
+  return ListAccessPointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListAccessPointsOutcomeCallable S3ControlClient::ListAccessPointsCallable(const ListAccessPointsRequest& request) const
@@ -791,15 +687,7 @@ ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
   Aws::StringStream ss;
   ss << "/v20180820/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobsOutcome(outcome.GetError());
-  }
+  return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListJobsOutcomeCallable S3ControlClient::ListJobsCallable(const ListJobsRequest& request) const
@@ -843,15 +731,7 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
   ss << request.GetName();
   ss << "/policy";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return PutAccessPointPolicyOutcome(NoResult());
-  }
-  else
-  {
-    return PutAccessPointPolicyOutcome(outcome.GetError());
-  }
+  return PutAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 PutAccessPointPolicyOutcomeCallable S3ControlClient::PutAccessPointPolicyCallable(const PutAccessPointPolicyRequest& request) const
@@ -895,15 +775,7 @@ PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& 
   ss << request.GetJobId();
   ss << "/tagging";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return PutJobTaggingOutcome(PutJobTaggingResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutJobTaggingOutcome(outcome.GetError());
-  }
+  return PutJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 PutJobTaggingOutcomeCallable S3ControlClient::PutJobTaggingCallable(const PutJobTaggingRequest& request) const
@@ -940,15 +812,7 @@ PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPubli
   Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return PutPublicAccessBlockOutcome(NoResult());
-  }
-  else
-  {
-    return PutPublicAccessBlockOutcome(outcome.GetError());
-  }
+  return PutPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 PutPublicAccessBlockOutcomeCallable S3ControlClient::PutPublicAccessBlockCallable(const PutPublicAccessBlockRequest& request) const
@@ -997,15 +861,7 @@ UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPrior
   ss << request.GetJobId();
   ss << "/priority";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return UpdateJobPriorityOutcome(UpdateJobPriorityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateJobPriorityOutcome(outcome.GetError());
-  }
+  return UpdateJobPriorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 UpdateJobPriorityOutcomeCallable S3ControlClient::UpdateJobPriorityCallable(const UpdateJobPriorityRequest& request) const
@@ -1054,15 +910,7 @@ UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusReq
   ss << request.GetJobId();
   ss << "/status";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return UpdateJobStatusOutcome(UpdateJobStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateJobStatusOutcome(outcome.GetError());
-  }
+  return UpdateJobStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 UpdateJobStatusOutcomeCallable S3ControlClient::UpdateJobStatusCallable(const UpdateJobStatusRequest& request) const

@@ -18,8 +18,8 @@
 #include <aws/iotevents-data/IoTEventsDataErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoTEventsData;
 using namespace Aws::Utils;
+using namespace Aws::IoTEventsData;
 
 namespace Aws
 {

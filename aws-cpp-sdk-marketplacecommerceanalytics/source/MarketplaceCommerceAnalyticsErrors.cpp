@@ -18,8 +18,8 @@
 #include <aws/marketplacecommerceanalytics/MarketplaceCommerceAnalyticsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MarketplaceCommerceAnalytics;
 using namespace Aws::Utils;
+using namespace Aws::MarketplaceCommerceAnalytics;
 
 namespace Aws
 {

@@ -84,14 +84,14 @@ namespace Model
         class GetFederationTokenRequest;
         class GetSessionTokenRequest;
 
-        typedef Aws::Utils::Outcome<AssumeRoleResult, Aws::Client::AWSError<STSErrors>> AssumeRoleOutcome;
-        typedef Aws::Utils::Outcome<AssumeRoleWithSAMLResult, Aws::Client::AWSError<STSErrors>> AssumeRoleWithSAMLOutcome;
-        typedef Aws::Utils::Outcome<AssumeRoleWithWebIdentityResult, Aws::Client::AWSError<STSErrors>> AssumeRoleWithWebIdentityOutcome;
-        typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, Aws::Client::AWSError<STSErrors>> DecodeAuthorizationMessageOutcome;
-        typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, Aws::Client::AWSError<STSErrors>> GetAccessKeyInfoOutcome;
-        typedef Aws::Utils::Outcome<GetCallerIdentityResult, Aws::Client::AWSError<STSErrors>> GetCallerIdentityOutcome;
-        typedef Aws::Utils::Outcome<GetFederationTokenResult, Aws::Client::AWSError<STSErrors>> GetFederationTokenOutcome;
-        typedef Aws::Utils::Outcome<GetSessionTokenResult, Aws::Client::AWSError<STSErrors>> GetSessionTokenOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleResult, STSError> AssumeRoleOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleWithSAMLResult, STSError> AssumeRoleWithSAMLOutcome;
+        typedef Aws::Utils::Outcome<AssumeRoleWithWebIdentityResult, STSError> AssumeRoleWithWebIdentityOutcome;
+        typedef Aws::Utils::Outcome<DecodeAuthorizationMessageResult, STSError> DecodeAuthorizationMessageOutcome;
+        typedef Aws::Utils::Outcome<GetAccessKeyInfoResult, STSError> GetAccessKeyInfoOutcome;
+        typedef Aws::Utils::Outcome<GetCallerIdentityResult, STSError> GetCallerIdentityOutcome;
+        typedef Aws::Utils::Outcome<GetFederationTokenResult, STSError> GetFederationTokenOutcome;
+        typedef Aws::Utils::Outcome<GetSessionTokenResult, STSError> GetSessionTokenOutcome;
 
         typedef std::future<AssumeRoleOutcome> AssumeRoleOutcomeCallable;
         typedef std::future<AssumeRoleWithSAMLOutcome> AssumeRoleWithSAMLOutcomeCallable;
@@ -1929,7 +1929,7 @@ namespace Model
          */
         virtual void GetSessionTokenAsync(const Model::GetSessionTokenRequest& request, const GetSessionTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

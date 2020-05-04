@@ -18,8 +18,8 @@
 #include <aws/eventbridge/EventBridgeErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::EventBridge;
 using namespace Aws::Utils;
+using namespace Aws::EventBridge;
 
 namespace Aws
 {

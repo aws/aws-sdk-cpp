@@ -67,9 +67,9 @@ namespace Model
         class GetAttributeValuesRequest;
         class GetProductsRequest;
 
-        typedef Aws::Utils::Outcome<DescribeServicesResult, Aws::Client::AWSError<PricingErrors>> DescribeServicesOutcome;
-        typedef Aws::Utils::Outcome<GetAttributeValuesResult, Aws::Client::AWSError<PricingErrors>> GetAttributeValuesOutcome;
-        typedef Aws::Utils::Outcome<GetProductsResult, Aws::Client::AWSError<PricingErrors>> GetProductsOutcome;
+        typedef Aws::Utils::Outcome<DescribeServicesResult, PricingError> DescribeServicesOutcome;
+        typedef Aws::Utils::Outcome<GetAttributeValuesResult, PricingError> GetAttributeValuesOutcome;
+        typedef Aws::Utils::Outcome<GetProductsResult, PricingError> GetProductsOutcome;
 
         typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
         typedef std::future<GetAttributeValuesOutcome> GetAttributeValuesOutcomeCallable;

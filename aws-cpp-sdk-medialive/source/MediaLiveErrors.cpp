@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/medialive/MediaLiveErrors.h>
+#include <aws/medialive/model/UnprocessableEntityException.h>
 
 using namespace Aws::Client;
-using namespace Aws::MediaLive;
 using namespace Aws::Utils;
+using namespace Aws::MediaLive;
+using namespace Aws::MediaLive::Model;
 
 namespace Aws
 {
 namespace MediaLive
 {
+template<> AWS_MEDIALIVE_API UnprocessableEntityException MediaLiveError::GetModeledError()
+{
+  assert(this->GetErrorType() == MediaLiveErrors::UNPROCESSABLE_ENTITY);
+  return UnprocessableEntityException(this->GetJsonPayload().View());
+}
+
 namespace MediaLiveErrorMapper
 {
 

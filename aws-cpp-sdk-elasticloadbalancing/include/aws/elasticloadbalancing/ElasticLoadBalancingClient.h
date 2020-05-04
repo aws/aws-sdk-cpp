@@ -126,35 +126,35 @@ namespace Model
         class SetLoadBalancerPoliciesForBackendServerRequest;
         class SetLoadBalancerPoliciesOfListenerRequest;
 
-        typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<ApplySecurityGroupsToLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> ApplySecurityGroupsToLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<AttachLoadBalancerToSubnetsResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> AttachLoadBalancerToSubnetsOutcome;
-        typedef Aws::Utils::Outcome<ConfigureHealthCheckResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> ConfigureHealthCheckOutcome;
-        typedef Aws::Utils::Outcome<CreateAppCookieStickinessPolicyResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> CreateAppCookieStickinessPolicyOutcome;
-        typedef Aws::Utils::Outcome<CreateLBCookieStickinessPolicyResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> CreateLBCookieStickinessPolicyOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> CreateLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerListenersResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> CreateLoadBalancerListenersOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerPolicyResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> CreateLoadBalancerPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DeleteLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerListenersResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DeleteLoadBalancerListenersOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerPolicyResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DeleteLoadBalancerPolicyOutcome;
-        typedef Aws::Utils::Outcome<DeregisterInstancesFromLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DeregisterInstancesFromLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DescribeAccountLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInstanceHealthResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DescribeInstanceHealthOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancerAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DescribeLoadBalancerAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancerPoliciesResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DescribeLoadBalancerPoliciesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancerPolicyTypesResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DescribeLoadBalancerPolicyTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DescribeLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<DetachLoadBalancerFromSubnetsResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DetachLoadBalancerFromSubnetsOutcome;
-        typedef Aws::Utils::Outcome<DisableAvailabilityZonesForLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> DisableAvailabilityZonesForLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<EnableAvailabilityZonesForLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> EnableAvailabilityZonesForLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<ModifyLoadBalancerAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> ModifyLoadBalancerAttributesOutcome;
-        typedef Aws::Utils::Outcome<RegisterInstancesWithLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> RegisterInstancesWithLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> RemoveTagsOutcome;
-        typedef Aws::Utils::Outcome<SetLoadBalancerListenerSSLCertificateResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> SetLoadBalancerListenerSSLCertificateOutcome;
-        typedef Aws::Utils::Outcome<SetLoadBalancerPoliciesForBackendServerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> SetLoadBalancerPoliciesForBackendServerOutcome;
-        typedef Aws::Utils::Outcome<SetLoadBalancerPoliciesOfListenerResult, Aws::Client::AWSError<ElasticLoadBalancingErrors>> SetLoadBalancerPoliciesOfListenerOutcome;
+        typedef Aws::Utils::Outcome<AddTagsResult, ElasticLoadBalancingError> AddTagsOutcome;
+        typedef Aws::Utils::Outcome<ApplySecurityGroupsToLoadBalancerResult, ElasticLoadBalancingError> ApplySecurityGroupsToLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<AttachLoadBalancerToSubnetsResult, ElasticLoadBalancingError> AttachLoadBalancerToSubnetsOutcome;
+        typedef Aws::Utils::Outcome<ConfigureHealthCheckResult, ElasticLoadBalancingError> ConfigureHealthCheckOutcome;
+        typedef Aws::Utils::Outcome<CreateAppCookieStickinessPolicyResult, ElasticLoadBalancingError> CreateAppCookieStickinessPolicyOutcome;
+        typedef Aws::Utils::Outcome<CreateLBCookieStickinessPolicyResult, ElasticLoadBalancingError> CreateLBCookieStickinessPolicyOutcome;
+        typedef Aws::Utils::Outcome<CreateLoadBalancerResult, ElasticLoadBalancingError> CreateLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<CreateLoadBalancerListenersResult, ElasticLoadBalancingError> CreateLoadBalancerListenersOutcome;
+        typedef Aws::Utils::Outcome<CreateLoadBalancerPolicyResult, ElasticLoadBalancingError> CreateLoadBalancerPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, ElasticLoadBalancingError> DeleteLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<DeleteLoadBalancerListenersResult, ElasticLoadBalancingError> DeleteLoadBalancerListenersOutcome;
+        typedef Aws::Utils::Outcome<DeleteLoadBalancerPolicyResult, ElasticLoadBalancingError> DeleteLoadBalancerPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeregisterInstancesFromLoadBalancerResult, ElasticLoadBalancingError> DeregisterInstancesFromLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, ElasticLoadBalancingError> DescribeAccountLimitsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstanceHealthResult, ElasticLoadBalancingError> DescribeInstanceHealthOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoadBalancerAttributesResult, ElasticLoadBalancingError> DescribeLoadBalancerAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoadBalancerPoliciesResult, ElasticLoadBalancingError> DescribeLoadBalancerPoliciesOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoadBalancerPolicyTypesResult, ElasticLoadBalancingError> DescribeLoadBalancerPolicyTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, ElasticLoadBalancingError> DescribeLoadBalancersOutcome;
+        typedef Aws::Utils::Outcome<DescribeTagsResult, ElasticLoadBalancingError> DescribeTagsOutcome;
+        typedef Aws::Utils::Outcome<DetachLoadBalancerFromSubnetsResult, ElasticLoadBalancingError> DetachLoadBalancerFromSubnetsOutcome;
+        typedef Aws::Utils::Outcome<DisableAvailabilityZonesForLoadBalancerResult, ElasticLoadBalancingError> DisableAvailabilityZonesForLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<EnableAvailabilityZonesForLoadBalancerResult, ElasticLoadBalancingError> EnableAvailabilityZonesForLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<ModifyLoadBalancerAttributesResult, ElasticLoadBalancingError> ModifyLoadBalancerAttributesOutcome;
+        typedef Aws::Utils::Outcome<RegisterInstancesWithLoadBalancerResult, ElasticLoadBalancingError> RegisterInstancesWithLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<RemoveTagsResult, ElasticLoadBalancingError> RemoveTagsOutcome;
+        typedef Aws::Utils::Outcome<SetLoadBalancerListenerSSLCertificateResult, ElasticLoadBalancingError> SetLoadBalancerListenerSSLCertificateOutcome;
+        typedef Aws::Utils::Outcome<SetLoadBalancerPoliciesForBackendServerResult, ElasticLoadBalancingError> SetLoadBalancerPoliciesForBackendServerOutcome;
+        typedef Aws::Utils::Outcome<SetLoadBalancerPoliciesOfListenerResult, ElasticLoadBalancingError> SetLoadBalancerPoliciesOfListenerOutcome;
 
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
         typedef std::future<ApplySecurityGroupsToLoadBalancerOutcome> ApplySecurityGroupsToLoadBalancerOutcomeCallable;
@@ -1586,7 +1586,7 @@ namespace Model
          */
         virtual void SetLoadBalancerPoliciesOfListenerAsync(const Model::SetLoadBalancerPoliciesOfListenerRequest& request, const SetLoadBalancerPoliciesOfListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

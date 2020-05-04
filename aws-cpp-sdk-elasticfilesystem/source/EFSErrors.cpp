@@ -16,15 +16,198 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/elasticfilesystem/EFSErrors.h>
+#include <aws/elasticfilesystem/model/SecurityGroupLimitExceeded.h>
+#include <aws/elasticfilesystem/model/SecurityGroupNotFound.h>
+#include <aws/elasticfilesystem/model/AccessPointAlreadyExists.h>
+#include <aws/elasticfilesystem/model/NoFreeAddressesInSubnet.h>
+#include <aws/elasticfilesystem/model/DependencyTimeout.h>
+#include <aws/elasticfilesystem/model/InternalServerError.h>
+#include <aws/elasticfilesystem/model/InsufficientThroughputCapacity.h>
+#include <aws/elasticfilesystem/model/MountTargetNotFound.h>
+#include <aws/elasticfilesystem/model/FileSystemNotFound.h>
+#include <aws/elasticfilesystem/model/IncorrectFileSystemLifeCycleState.h>
+#include <aws/elasticfilesystem/model/FileSystemLimitExceeded.h>
+#include <aws/elasticfilesystem/model/UnsupportedAvailabilityZone.h>
+#include <aws/elasticfilesystem/model/FileSystemAlreadyExists.h>
+#include <aws/elasticfilesystem/model/PolicyNotFound.h>
+#include <aws/elasticfilesystem/model/AccessPointNotFound.h>
+#include <aws/elasticfilesystem/model/AccessPointLimitExceeded.h>
+#include <aws/elasticfilesystem/model/IpAddressInUse.h>
+#include <aws/elasticfilesystem/model/IncorrectMountTargetState.h>
+#include <aws/elasticfilesystem/model/MountTargetConflict.h>
+#include <aws/elasticfilesystem/model/InvalidPolicyException.h>
+#include <aws/elasticfilesystem/model/ThroughputLimitExceeded.h>
+#include <aws/elasticfilesystem/model/FileSystemInUse.h>
+#include <aws/elasticfilesystem/model/NetworkInterfaceLimitExceeded.h>
+#include <aws/elasticfilesystem/model/TooManyRequests.h>
+#include <aws/elasticfilesystem/model/SubnetNotFound.h>
+#include <aws/elasticfilesystem/model/BadRequest.h>
 
 using namespace Aws::Client;
-using namespace Aws::EFS;
 using namespace Aws::Utils;
+using namespace Aws::EFS;
+using namespace Aws::EFS::Model;
 
 namespace Aws
 {
 namespace EFS
 {
+template<> AWS_EFS_API SecurityGroupLimitExceeded EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::SECURITY_GROUP_LIMIT_EXCEEDED);
+  return SecurityGroupLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API SecurityGroupNotFound EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::SECURITY_GROUP_NOT_FOUND);
+  return SecurityGroupNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API AccessPointAlreadyExists EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::ACCESS_POINT_ALREADY_EXISTS);
+  return AccessPointAlreadyExists(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API NoFreeAddressesInSubnet EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::NO_FREE_ADDRESSES_IN_SUBNET);
+  return NoFreeAddressesInSubnet(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API DependencyTimeout EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::DEPENDENCY_TIMEOUT);
+  return DependencyTimeout(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API InternalServerError EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::INTERNAL_FAILURE);
+  return InternalServerError(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API InsufficientThroughputCapacity EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::INSUFFICIENT_THROUGHPUT_CAPACITY);
+  return InsufficientThroughputCapacity(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API MountTargetNotFound EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::MOUNT_TARGET_NOT_FOUND);
+  return MountTargetNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API FileSystemNotFound EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::FILE_SYSTEM_NOT_FOUND);
+  return FileSystemNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API IncorrectFileSystemLifeCycleState EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::INCORRECT_FILE_SYSTEM_LIFE_CYCLE_STATE);
+  return IncorrectFileSystemLifeCycleState(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API FileSystemLimitExceeded EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::FILE_SYSTEM_LIMIT_EXCEEDED);
+  return FileSystemLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API UnsupportedAvailabilityZone EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::UNSUPPORTED_AVAILABILITY_ZONE);
+  return UnsupportedAvailabilityZone(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API FileSystemAlreadyExists EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::FILE_SYSTEM_ALREADY_EXISTS);
+  return FileSystemAlreadyExists(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API PolicyNotFound EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::POLICY_NOT_FOUND);
+  return PolicyNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API AccessPointNotFound EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::ACCESS_POINT_NOT_FOUND);
+  return AccessPointNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API AccessPointLimitExceeded EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::ACCESS_POINT_LIMIT_EXCEEDED);
+  return AccessPointLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API IpAddressInUse EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::IP_ADDRESS_IN_USE);
+  return IpAddressInUse(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API IncorrectMountTargetState EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::INCORRECT_MOUNT_TARGET_STATE);
+  return IncorrectMountTargetState(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API MountTargetConflict EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::MOUNT_TARGET_CONFLICT);
+  return MountTargetConflict(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API InvalidPolicyException EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::INVALID_POLICY);
+  return InvalidPolicyException(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API ThroughputLimitExceeded EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::THROUGHPUT_LIMIT_EXCEEDED);
+  return ThroughputLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API FileSystemInUse EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::FILE_SYSTEM_IN_USE);
+  return FileSystemInUse(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API NetworkInterfaceLimitExceeded EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::NETWORK_INTERFACE_LIMIT_EXCEEDED);
+  return NetworkInterfaceLimitExceeded(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API TooManyRequests EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::TOO_MANY_REQUESTS);
+  return TooManyRequests(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API SubnetNotFound EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::SUBNET_NOT_FOUND);
+  return SubnetNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_EFS_API BadRequest EFSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EFSErrors::BAD_REQUEST);
+  return BadRequest(this->GetJsonPayload().View());
+}
+
 namespace EFSErrorMapper
 {
 

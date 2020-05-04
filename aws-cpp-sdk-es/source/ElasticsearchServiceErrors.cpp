@@ -18,8 +18,8 @@
 #include <aws/es/ElasticsearchServiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ElasticsearchService;
 using namespace Aws::Utils;
+using namespace Aws::ElasticsearchService;
 
 namespace Aws
 {

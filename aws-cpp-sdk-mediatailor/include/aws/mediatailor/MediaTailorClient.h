@@ -74,13 +74,13 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<DeletePlaybackConfigurationResult, Aws::Client::AWSError<MediaTailorErrors>> DeletePlaybackConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetPlaybackConfigurationResult, Aws::Client::AWSError<MediaTailorErrors>> GetPlaybackConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ListPlaybackConfigurationsResult, Aws::Client::AWSError<MediaTailorErrors>> ListPlaybackConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaTailorErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutPlaybackConfigurationResult, Aws::Client::AWSError<MediaTailorErrors>> PutPlaybackConfigurationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaTailorErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaTailorErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<DeletePlaybackConfigurationResult, MediaTailorError> DeletePlaybackConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetPlaybackConfigurationResult, MediaTailorError> GetPlaybackConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ListPlaybackConfigurationsResult, MediaTailorError> ListPlaybackConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaTailorError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutPlaybackConfigurationResult, MediaTailorError> PutPlaybackConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MediaTailorError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MediaTailorError> UntagResourceOutcome;
 
         typedef std::future<DeletePlaybackConfigurationOutcome> DeletePlaybackConfigurationOutcomeCallable;
         typedef std::future<GetPlaybackConfigurationOutcome> GetPlaybackConfigurationOutcomeCallable;

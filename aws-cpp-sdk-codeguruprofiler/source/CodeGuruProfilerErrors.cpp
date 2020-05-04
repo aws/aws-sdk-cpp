@@ -18,8 +18,8 @@
 #include <aws/codeguruprofiler/CodeGuruProfilerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeGuruProfiler;
 using namespace Aws::Utils;
+using namespace Aws::CodeGuruProfiler;
 
 namespace Aws
 {

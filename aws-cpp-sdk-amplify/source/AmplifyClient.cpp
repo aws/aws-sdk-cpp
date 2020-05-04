@@ -83,7 +83,7 @@ static const char* ALLOCATION_TAG = "AmplifyClient";
 AmplifyClient::AmplifyClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AmplifyErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -93,7 +93,7 @@ AmplifyClient::AmplifyClient(const Client::ClientConfiguration& clientConfigurat
 AmplifyClient::AmplifyClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AmplifyErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -104,7 +104,7 @@ AmplifyClient::AmplifyClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<AmplifyErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -146,15 +146,7 @@ CreateAppOutcome AmplifyClient::CreateApp(const CreateAppRequest& request) const
   Aws::StringStream ss;
   ss << "/apps";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateAppOutcome(CreateAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateAppOutcome(outcome.GetError());
-  }
+  return CreateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateAppOutcomeCallable AmplifyClient::CreateAppCallable(const CreateAppRequest& request) const
@@ -188,15 +180,7 @@ CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const Cr
   ss << request.GetAppId();
   ss << "/backendenvironments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateBackendEnvironmentOutcome(CreateBackendEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateBackendEnvironmentOutcome(outcome.GetError());
-  }
+  return CreateBackendEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBackendEnvironmentOutcomeCallable AmplifyClient::CreateBackendEnvironmentCallable(const CreateBackendEnvironmentRequest& request) const
@@ -230,15 +214,7 @@ CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& reque
   ss << request.GetAppId();
   ss << "/branches";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateBranchOutcome(CreateBranchResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateBranchOutcome(outcome.GetError());
-  }
+  return CreateBranchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBranchOutcomeCallable AmplifyClient::CreateBranchCallable(const CreateBranchRequest& request) const
@@ -279,15 +255,7 @@ CreateDeploymentOutcome AmplifyClient::CreateDeployment(const CreateDeploymentRe
   ss << request.GetBranchName();
   ss << "/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDeploymentOutcome(CreateDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDeploymentOutcome(outcome.GetError());
-  }
+  return CreateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDeploymentOutcomeCallable AmplifyClient::CreateDeploymentCallable(const CreateDeploymentRequest& request) const
@@ -321,15 +289,7 @@ CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const Crea
   ss << request.GetAppId();
   ss << "/domains";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDomainAssociationOutcome(CreateDomainAssociationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDomainAssociationOutcome(outcome.GetError());
-  }
+  return CreateDomainAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDomainAssociationOutcomeCallable AmplifyClient::CreateDomainAssociationCallable(const CreateDomainAssociationRequest& request) const
@@ -363,15 +323,7 @@ CreateWebhookOutcome AmplifyClient::CreateWebhook(const CreateWebhookRequest& re
   ss << request.GetAppId();
   ss << "/webhooks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateWebhookOutcome(CreateWebhookResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateWebhookOutcome(outcome.GetError());
-  }
+  return CreateWebhookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateWebhookOutcomeCallable AmplifyClient::CreateWebhookCallable(const CreateWebhookRequest& request) const
@@ -404,15 +356,7 @@ DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteAppOutcome(DeleteAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteAppOutcome(outcome.GetError());
-  }
+  return DeleteAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAppOutcomeCallable AmplifyClient::DeleteAppCallable(const DeleteAppRequest& request) const
@@ -452,15 +396,7 @@ DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const De
   ss << "/backendenvironments/";
   ss << request.GetEnvironmentName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBackendEnvironmentOutcome(DeleteBackendEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteBackendEnvironmentOutcome(outcome.GetError());
-  }
+  return DeleteBackendEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBackendEnvironmentOutcomeCallable AmplifyClient::DeleteBackendEnvironmentCallable(const DeleteBackendEnvironmentRequest& request) const
@@ -500,15 +436,7 @@ DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& reque
   ss << "/branches/";
   ss << request.GetBranchName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBranchOutcome(DeleteBranchResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteBranchOutcome(outcome.GetError());
-  }
+  return DeleteBranchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBranchOutcomeCallable AmplifyClient::DeleteBranchCallable(const DeleteBranchRequest& request) const
@@ -548,15 +476,7 @@ DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const Dele
   ss << "/domains/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDomainAssociationOutcome(DeleteDomainAssociationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDomainAssociationOutcome(outcome.GetError());
-  }
+  return DeleteDomainAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDomainAssociationOutcomeCallable AmplifyClient::DeleteDomainAssociationCallable(const DeleteDomainAssociationRequest& request) const
@@ -603,15 +523,7 @@ DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteJobOutcome(DeleteJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteJobOutcome(outcome.GetError());
-  }
+  return DeleteJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteJobOutcomeCallable AmplifyClient::DeleteJobCallable(const DeleteJobRequest& request) const
@@ -644,15 +556,7 @@ DeleteWebhookOutcome AmplifyClient::DeleteWebhook(const DeleteWebhookRequest& re
   ss << "/webhooks/";
   ss << request.GetWebhookId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteWebhookOutcome(DeleteWebhookResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteWebhookOutcome(outcome.GetError());
-  }
+  return DeleteWebhookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteWebhookOutcomeCallable AmplifyClient::DeleteWebhookCallable(const DeleteWebhookRequest& request) const
@@ -686,15 +590,7 @@ GenerateAccessLogsOutcome AmplifyClient::GenerateAccessLogs(const GenerateAccess
   ss << request.GetAppId();
   ss << "/accesslogs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GenerateAccessLogsOutcome(GenerateAccessLogsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GenerateAccessLogsOutcome(outcome.GetError());
-  }
+  return GenerateAccessLogsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GenerateAccessLogsOutcomeCallable AmplifyClient::GenerateAccessLogsCallable(const GenerateAccessLogsRequest& request) const
@@ -727,15 +623,7 @@ GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAppOutcome(GetAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAppOutcome(outcome.GetError());
-  }
+  return GetAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAppOutcomeCallable AmplifyClient::GetAppCallable(const GetAppRequest& request) const
@@ -768,15 +656,7 @@ GetArtifactUrlOutcome AmplifyClient::GetArtifactUrl(const GetArtifactUrlRequest&
   ss << "/artifacts/";
   ss << request.GetArtifactId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetArtifactUrlOutcome(GetArtifactUrlResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetArtifactUrlOutcome(outcome.GetError());
-  }
+  return GetArtifactUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetArtifactUrlOutcomeCallable AmplifyClient::GetArtifactUrlCallable(const GetArtifactUrlRequest& request) const
@@ -816,15 +696,7 @@ GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBacke
   ss << "/backendenvironments/";
   ss << request.GetEnvironmentName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBackendEnvironmentOutcome(GetBackendEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBackendEnvironmentOutcome(outcome.GetError());
-  }
+  return GetBackendEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBackendEnvironmentOutcomeCallable AmplifyClient::GetBackendEnvironmentCallable(const GetBackendEnvironmentRequest& request) const
@@ -864,15 +736,7 @@ GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
   ss << "/branches/";
   ss << request.GetBranchName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBranchOutcome(GetBranchResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBranchOutcome(outcome.GetError());
-  }
+  return GetBranchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBranchOutcomeCallable AmplifyClient::GetBranchCallable(const GetBranchRequest& request) const
@@ -912,15 +776,7 @@ GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainA
   ss << "/domains/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainAssociationOutcome(GetDomainAssociationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainAssociationOutcome(outcome.GetError());
-  }
+  return GetDomainAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainAssociationOutcomeCallable AmplifyClient::GetDomainAssociationCallable(const GetDomainAssociationRequest& request) const
@@ -967,15 +823,7 @@ GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetJobOutcome(GetJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetJobOutcome(outcome.GetError());
-  }
+  return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetJobOutcomeCallable AmplifyClient::GetJobCallable(const GetJobRequest& request) const
@@ -1008,15 +856,7 @@ GetWebhookOutcome AmplifyClient::GetWebhook(const GetWebhookRequest& request) co
   ss << "/webhooks/";
   ss << request.GetWebhookId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetWebhookOutcome(GetWebhookResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetWebhookOutcome(outcome.GetError());
-  }
+  return GetWebhookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetWebhookOutcomeCallable AmplifyClient::GetWebhookCallable(const GetWebhookRequest& request) const
@@ -1043,15 +883,7 @@ ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
   Aws::StringStream ss;
   ss << "/apps";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListAppsOutcome(ListAppsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListAppsOutcome(outcome.GetError());
-  }
+  return ListAppsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListAppsOutcomeCallable AmplifyClient::ListAppsCallable(const ListAppsRequest& request) const
@@ -1099,15 +931,7 @@ ListArtifactsOutcome AmplifyClient::ListArtifacts(const ListArtifactsRequest& re
   ss << request.GetJobId();
   ss << "/artifacts";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListArtifactsOutcome(ListArtifactsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListArtifactsOutcome(outcome.GetError());
-  }
+  return ListArtifactsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListArtifactsOutcomeCallable AmplifyClient::ListArtifactsCallable(const ListArtifactsRequest& request) const
@@ -1141,15 +965,7 @@ ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const List
   ss << request.GetAppId();
   ss << "/backendenvironments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBackendEnvironmentsOutcome(ListBackendEnvironmentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBackendEnvironmentsOutcome(outcome.GetError());
-  }
+  return ListBackendEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBackendEnvironmentsOutcomeCallable AmplifyClient::ListBackendEnvironmentsCallable(const ListBackendEnvironmentsRequest& request) const
@@ -1183,15 +999,7 @@ ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& reque
   ss << request.GetAppId();
   ss << "/branches";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListBranchesOutcome(ListBranchesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListBranchesOutcome(outcome.GetError());
-  }
+  return ListBranchesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListBranchesOutcomeCallable AmplifyClient::ListBranchesCallable(const ListBranchesRequest& request) const
@@ -1225,15 +1033,7 @@ ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDo
   ss << request.GetAppId();
   ss << "/domains";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDomainAssociationsOutcome(ListDomainAssociationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDomainAssociationsOutcome(outcome.GetError());
-  }
+  return ListDomainAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDomainAssociationsOutcomeCallable AmplifyClient::ListDomainAssociationsCallable(const ListDomainAssociationsRequest& request) const
@@ -1274,15 +1074,7 @@ ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
   ss << request.GetBranchName();
   ss << "/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobsOutcome(outcome.GetError());
-  }
+  return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobsOutcomeCallable AmplifyClient::ListJobsCallable(const ListJobsRequest& request) const
@@ -1315,15 +1107,7 @@ ListTagsForResourceOutcome AmplifyClient::ListTagsForResource(const ListTagsForR
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable AmplifyClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1357,15 +1141,7 @@ ListWebhooksOutcome AmplifyClient::ListWebhooks(const ListWebhooksRequest& reque
   ss << request.GetAppId();
   ss << "/webhooks";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListWebhooksOutcome(ListWebhooksResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListWebhooksOutcome(outcome.GetError());
-  }
+  return ListWebhooksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListWebhooksOutcomeCallable AmplifyClient::ListWebhooksCallable(const ListWebhooksRequest& request) const
@@ -1406,15 +1182,7 @@ StartDeploymentOutcome AmplifyClient::StartDeployment(const StartDeploymentReque
   ss << request.GetBranchName();
   ss << "/deployments/start";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartDeploymentOutcome(StartDeploymentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartDeploymentOutcome(outcome.GetError());
-  }
+  return StartDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartDeploymentOutcomeCallable AmplifyClient::StartDeploymentCallable(const StartDeploymentRequest& request) const
@@ -1455,15 +1223,7 @@ StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
   ss << request.GetBranchName();
   ss << "/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartJobOutcome(StartJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StartJobOutcome(outcome.GetError());
-  }
+  return StartJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartJobOutcomeCallable AmplifyClient::StartJobCallable(const StartJobRequest& request) const
@@ -1511,15 +1271,7 @@ StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
   ss << request.GetJobId();
   ss << "/stop";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StopJobOutcome(StopJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return StopJobOutcome(outcome.GetError());
-  }
+  return StopJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 StopJobOutcomeCallable AmplifyClient::StopJobCallable(const StopJobRequest& request) const
@@ -1552,15 +1304,7 @@ TagResourceOutcome AmplifyClient::TagResource(const TagResourceRequest& request)
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable AmplifyClient::TagResourceCallable(const TagResourceRequest& request) const
@@ -1598,15 +1342,7 @@ UntagResourceOutcome AmplifyClient::UntagResource(const UntagResourceRequest& re
   ss << "/tags/";
   ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable AmplifyClient::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -1639,15 +1375,7 @@ UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateAppOutcome(UpdateAppResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateAppOutcome(outcome.GetError());
-  }
+  return UpdateAppOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateAppOutcomeCallable AmplifyClient::UpdateAppCallable(const UpdateAppRequest& request) const
@@ -1687,15 +1415,7 @@ UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& reque
   ss << "/branches/";
   ss << request.GetBranchName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateBranchOutcome(UpdateBranchResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateBranchOutcome(outcome.GetError());
-  }
+  return UpdateBranchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBranchOutcomeCallable AmplifyClient::UpdateBranchCallable(const UpdateBranchRequest& request) const
@@ -1735,15 +1455,7 @@ UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const Upda
   ss << "/domains/";
   ss << request.GetDomainName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDomainAssociationOutcome(UpdateDomainAssociationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDomainAssociationOutcome(outcome.GetError());
-  }
+  return UpdateDomainAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateDomainAssociationOutcomeCallable AmplifyClient::UpdateDomainAssociationCallable(const UpdateDomainAssociationRequest& request) const
@@ -1776,15 +1488,7 @@ UpdateWebhookOutcome AmplifyClient::UpdateWebhook(const UpdateWebhookRequest& re
   ss << "/webhooks/";
   ss << request.GetWebhookId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateWebhookOutcome(UpdateWebhookResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateWebhookOutcome(outcome.GetError());
-  }
+  return UpdateWebhookOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateWebhookOutcomeCallable AmplifyClient::UpdateWebhookCallable(const UpdateWebhookRequest& request) const

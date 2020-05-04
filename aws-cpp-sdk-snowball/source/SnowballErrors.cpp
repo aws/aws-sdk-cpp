@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/snowball/SnowballErrors.h>
+#include <aws/snowball/model/InvalidResourceException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Snowball;
 using namespace Aws::Utils;
+using namespace Aws::Snowball;
+using namespace Aws::Snowball::Model;
 
 namespace Aws
 {
 namespace Snowball
 {
+template<> AWS_SNOWBALL_API InvalidResourceException SnowballError::GetModeledError()
+{
+  assert(this->GetErrorType() == SnowballErrors::INVALID_RESOURCE);
+  return InvalidResourceException(this->GetJsonPayload().View());
+}
+
 namespace SnowballErrorMapper
 {
 

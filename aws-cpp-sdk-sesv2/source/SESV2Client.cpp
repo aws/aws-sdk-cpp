@@ -95,7 +95,7 @@ static const char* ALLOCATION_TAG = "SESV2Client";
 SESV2Client::SESV2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -105,7 +105,7 @@ SESV2Client::SESV2Client(const Client::ClientConfiguration& clientConfiguration)
 SESV2Client::SESV2Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -116,7 +116,7 @@ SESV2Client::SESV2Client(const std::shared_ptr<AWSCredentialsProvider>& credenti
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<SESV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -158,15 +158,7 @@ CreateConfigurationSetOutcome SESV2Client::CreateConfigurationSet(const CreateCo
   Aws::StringStream ss;
   ss << "/v2/email/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateConfigurationSetOutcome(CreateConfigurationSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateConfigurationSetOutcome(outcome.GetError());
-  }
+  return CreateConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateConfigurationSetOutcomeCallable SESV2Client::CreateConfigurationSetCallable(const CreateConfigurationSetRequest& request) const
@@ -200,15 +192,7 @@ CreateConfigurationSetEventDestinationOutcome SESV2Client::CreateConfigurationSe
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateConfigurationSetEventDestinationOutcome(CreateConfigurationSetEventDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateConfigurationSetEventDestinationOutcome(outcome.GetError());
-  }
+  return CreateConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateConfigurationSetEventDestinationOutcomeCallable SESV2Client::CreateConfigurationSetEventDestinationCallable(const CreateConfigurationSetEventDestinationRequest& request) const
@@ -235,15 +219,7 @@ CreateDedicatedIpPoolOutcome SESV2Client::CreateDedicatedIpPool(const CreateDedi
   Aws::StringStream ss;
   ss << "/v2/email/dedicated-ip-pools";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDedicatedIpPoolOutcome(CreateDedicatedIpPoolResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDedicatedIpPoolOutcome(outcome.GetError());
-  }
+  return CreateDedicatedIpPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDedicatedIpPoolOutcomeCallable SESV2Client::CreateDedicatedIpPoolCallable(const CreateDedicatedIpPoolRequest& request) const
@@ -270,15 +246,7 @@ CreateDeliverabilityTestReportOutcome SESV2Client::CreateDeliverabilityTestRepor
   Aws::StringStream ss;
   ss << "/v2/email/deliverability-dashboard/test";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateDeliverabilityTestReportOutcome(CreateDeliverabilityTestReportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDeliverabilityTestReportOutcome(outcome.GetError());
-  }
+  return CreateDeliverabilityTestReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateDeliverabilityTestReportOutcomeCallable SESV2Client::CreateDeliverabilityTestReportCallable(const CreateDeliverabilityTestReportRequest& request) const
@@ -305,15 +273,7 @@ CreateEmailIdentityOutcome SESV2Client::CreateEmailIdentity(const CreateEmailIde
   Aws::StringStream ss;
   ss << "/v2/email/identities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateEmailIdentityOutcome(CreateEmailIdentityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateEmailIdentityOutcome(outcome.GetError());
-  }
+  return CreateEmailIdentityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateEmailIdentityOutcomeCallable SESV2Client::CreateEmailIdentityCallable(const CreateEmailIdentityRequest& request) const
@@ -346,15 +306,7 @@ DeleteConfigurationSetOutcome SESV2Client::DeleteConfigurationSet(const DeleteCo
   ss << "/v2/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConfigurationSetOutcome(DeleteConfigurationSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteConfigurationSetOutcome(outcome.GetError());
-  }
+  return DeleteConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConfigurationSetOutcomeCallable SESV2Client::DeleteConfigurationSetCallable(const DeleteConfigurationSetRequest& request) const
@@ -394,15 +346,7 @@ DeleteConfigurationSetEventDestinationOutcome SESV2Client::DeleteConfigurationSe
   ss << "/event-destinations/";
   ss << request.GetEventDestinationName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteConfigurationSetEventDestinationOutcome(DeleteConfigurationSetEventDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteConfigurationSetEventDestinationOutcome(outcome.GetError());
-  }
+  return DeleteConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteConfigurationSetEventDestinationOutcomeCallable SESV2Client::DeleteConfigurationSetEventDestinationCallable(const DeleteConfigurationSetEventDestinationRequest& request) const
@@ -435,15 +379,7 @@ DeleteDedicatedIpPoolOutcome SESV2Client::DeleteDedicatedIpPool(const DeleteDedi
   ss << "/v2/email/dedicated-ip-pools/";
   ss << request.GetPoolName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDedicatedIpPoolOutcome(DeleteDedicatedIpPoolResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteDedicatedIpPoolOutcome(outcome.GetError());
-  }
+  return DeleteDedicatedIpPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteDedicatedIpPoolOutcomeCallable SESV2Client::DeleteDedicatedIpPoolCallable(const DeleteDedicatedIpPoolRequest& request) const
@@ -476,15 +412,7 @@ DeleteEmailIdentityOutcome SESV2Client::DeleteEmailIdentity(const DeleteEmailIde
   ss << "/v2/email/identities/";
   ss << request.GetEmailIdentity();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteEmailIdentityOutcome(DeleteEmailIdentityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteEmailIdentityOutcome(outcome.GetError());
-  }
+  return DeleteEmailIdentityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteEmailIdentityOutcomeCallable SESV2Client::DeleteEmailIdentityCallable(const DeleteEmailIdentityRequest& request) const
@@ -517,15 +445,7 @@ DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(cons
   ss << "/v2/email/suppression/addresses/";
   ss << request.GetEmailAddress();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSuppressedDestinationOutcome(DeleteSuppressedDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSuppressedDestinationOutcome(outcome.GetError());
-  }
+  return DeleteSuppressedDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSuppressedDestinationOutcomeCallable SESV2Client::DeleteSuppressedDestinationCallable(const DeleteSuppressedDestinationRequest& request) const
@@ -552,15 +472,7 @@ GetAccountOutcome SESV2Client::GetAccount(const GetAccountRequest& request) cons
   Aws::StringStream ss;
   ss << "/v2/email/account";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetAccountOutcome(GetAccountResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetAccountOutcome(outcome.GetError());
-  }
+  return GetAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetAccountOutcomeCallable SESV2Client::GetAccountCallable(const GetAccountRequest& request) const
@@ -592,15 +504,7 @@ GetBlacklistReportsOutcome SESV2Client::GetBlacklistReports(const GetBlacklistRe
   Aws::StringStream ss;
   ss << "/v2/email/deliverability-dashboard/blacklist-report";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetBlacklistReportsOutcome(GetBlacklistReportsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetBlacklistReportsOutcome(outcome.GetError());
-  }
+  return GetBlacklistReportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetBlacklistReportsOutcomeCallable SESV2Client::GetBlacklistReportsCallable(const GetBlacklistReportsRequest& request) const
@@ -633,15 +537,7 @@ GetConfigurationSetOutcome SESV2Client::GetConfigurationSet(const GetConfigurati
   ss << "/v2/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetConfigurationSetOutcome(GetConfigurationSetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetConfigurationSetOutcome(outcome.GetError());
-  }
+  return GetConfigurationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConfigurationSetOutcomeCallable SESV2Client::GetConfigurationSetCallable(const GetConfigurationSetRequest& request) const
@@ -675,15 +571,7 @@ GetConfigurationSetEventDestinationsOutcome SESV2Client::GetConfigurationSetEven
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetConfigurationSetEventDestinationsOutcome(GetConfigurationSetEventDestinationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetConfigurationSetEventDestinationsOutcome(outcome.GetError());
-  }
+  return GetConfigurationSetEventDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetConfigurationSetEventDestinationsOutcomeCallable SESV2Client::GetConfigurationSetEventDestinationsCallable(const GetConfigurationSetEventDestinationsRequest& request) const
@@ -716,15 +604,7 @@ GetDedicatedIpOutcome SESV2Client::GetDedicatedIp(const GetDedicatedIpRequest& r
   ss << "/v2/email/dedicated-ips/";
   ss << request.GetIp();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDedicatedIpOutcome(GetDedicatedIpResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDedicatedIpOutcome(outcome.GetError());
-  }
+  return GetDedicatedIpOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDedicatedIpOutcomeCallable SESV2Client::GetDedicatedIpCallable(const GetDedicatedIpRequest& request) const
@@ -751,15 +631,7 @@ GetDedicatedIpsOutcome SESV2Client::GetDedicatedIps(const GetDedicatedIpsRequest
   Aws::StringStream ss;
   ss << "/v2/email/dedicated-ips";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDedicatedIpsOutcome(GetDedicatedIpsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDedicatedIpsOutcome(outcome.GetError());
-  }
+  return GetDedicatedIpsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDedicatedIpsOutcomeCallable SESV2Client::GetDedicatedIpsCallable(const GetDedicatedIpsRequest& request) const
@@ -786,15 +658,7 @@ GetDeliverabilityDashboardOptionsOutcome SESV2Client::GetDeliverabilityDashboard
   Aws::StringStream ss;
   ss << "/v2/email/deliverability-dashboard";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDeliverabilityDashboardOptionsOutcome(GetDeliverabilityDashboardOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDeliverabilityDashboardOptionsOutcome(outcome.GetError());
-  }
+  return GetDeliverabilityDashboardOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeliverabilityDashboardOptionsOutcomeCallable SESV2Client::GetDeliverabilityDashboardOptionsCallable(const GetDeliverabilityDashboardOptionsRequest& request) const
@@ -827,15 +691,7 @@ GetDeliverabilityTestReportOutcome SESV2Client::GetDeliverabilityTestReport(cons
   ss << "/v2/email/deliverability-dashboard/test-reports/";
   ss << request.GetReportId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDeliverabilityTestReportOutcome(GetDeliverabilityTestReportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDeliverabilityTestReportOutcome(outcome.GetError());
-  }
+  return GetDeliverabilityTestReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDeliverabilityTestReportOutcomeCallable SESV2Client::GetDeliverabilityTestReportCallable(const GetDeliverabilityTestReportRequest& request) const
@@ -868,15 +724,7 @@ GetDomainDeliverabilityCampaignOutcome SESV2Client::GetDomainDeliverabilityCampa
   ss << "/v2/email/deliverability-dashboard/campaigns/";
   ss << request.GetCampaignId();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainDeliverabilityCampaignOutcome(GetDomainDeliverabilityCampaignResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainDeliverabilityCampaignOutcome(outcome.GetError());
-  }
+  return GetDomainDeliverabilityCampaignOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainDeliverabilityCampaignOutcomeCallable SESV2Client::GetDomainDeliverabilityCampaignCallable(const GetDomainDeliverabilityCampaignRequest& request) const
@@ -919,15 +767,7 @@ GetDomainStatisticsReportOutcome SESV2Client::GetDomainStatisticsReport(const Ge
   ss << "/v2/email/deliverability-dashboard/statistics-report/";
   ss << request.GetDomain();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetDomainStatisticsReportOutcome(GetDomainStatisticsReportResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDomainStatisticsReportOutcome(outcome.GetError());
-  }
+  return GetDomainStatisticsReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetDomainStatisticsReportOutcomeCallable SESV2Client::GetDomainStatisticsReportCallable(const GetDomainStatisticsReportRequest& request) const
@@ -960,15 +800,7 @@ GetEmailIdentityOutcome SESV2Client::GetEmailIdentity(const GetEmailIdentityRequ
   ss << "/v2/email/identities/";
   ss << request.GetEmailIdentity();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetEmailIdentityOutcome(GetEmailIdentityResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetEmailIdentityOutcome(outcome.GetError());
-  }
+  return GetEmailIdentityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetEmailIdentityOutcomeCallable SESV2Client::GetEmailIdentityCallable(const GetEmailIdentityRequest& request) const
@@ -1001,15 +833,7 @@ GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetS
   ss << "/v2/email/suppression/addresses/";
   ss << request.GetEmailAddress();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetSuppressedDestinationOutcome(GetSuppressedDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetSuppressedDestinationOutcome(outcome.GetError());
-  }
+  return GetSuppressedDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetSuppressedDestinationOutcomeCallable SESV2Client::GetSuppressedDestinationCallable(const GetSuppressedDestinationRequest& request) const
@@ -1036,15 +860,7 @@ ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfig
   Aws::StringStream ss;
   ss << "/v2/email/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListConfigurationSetsOutcome(ListConfigurationSetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListConfigurationSetsOutcome(outcome.GetError());
-  }
+  return ListConfigurationSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListConfigurationSetsOutcomeCallable SESV2Client::ListConfigurationSetsCallable(const ListConfigurationSetsRequest& request) const
@@ -1071,15 +887,7 @@ ListDedicatedIpPoolsOutcome SESV2Client::ListDedicatedIpPools(const ListDedicate
   Aws::StringStream ss;
   ss << "/v2/email/dedicated-ip-pools";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDedicatedIpPoolsOutcome(ListDedicatedIpPoolsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDedicatedIpPoolsOutcome(outcome.GetError());
-  }
+  return ListDedicatedIpPoolsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDedicatedIpPoolsOutcomeCallable SESV2Client::ListDedicatedIpPoolsCallable(const ListDedicatedIpPoolsRequest& request) const
@@ -1106,15 +914,7 @@ ListDeliverabilityTestReportsOutcome SESV2Client::ListDeliverabilityTestReports(
   Aws::StringStream ss;
   ss << "/v2/email/deliverability-dashboard/test-reports";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDeliverabilityTestReportsOutcome(ListDeliverabilityTestReportsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDeliverabilityTestReportsOutcome(outcome.GetError());
-  }
+  return ListDeliverabilityTestReportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDeliverabilityTestReportsOutcomeCallable SESV2Client::ListDeliverabilityTestReportsCallable(const ListDeliverabilityTestReportsRequest& request) const
@@ -1158,15 +958,7 @@ ListDomainDeliverabilityCampaignsOutcome SESV2Client::ListDomainDeliverabilityCa
   ss << request.GetSubscribedDomain();
   ss << "/campaigns";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListDomainDeliverabilityCampaignsOutcome(ListDomainDeliverabilityCampaignsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDomainDeliverabilityCampaignsOutcome(outcome.GetError());
-  }
+  return ListDomainDeliverabilityCampaignsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDomainDeliverabilityCampaignsOutcomeCallable SESV2Client::ListDomainDeliverabilityCampaignsCallable(const ListDomainDeliverabilityCampaignsRequest& request) const
@@ -1193,15 +985,7 @@ ListEmailIdentitiesOutcome SESV2Client::ListEmailIdentities(const ListEmailIdent
   Aws::StringStream ss;
   ss << "/v2/email/identities";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListEmailIdentitiesOutcome(ListEmailIdentitiesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListEmailIdentitiesOutcome(outcome.GetError());
-  }
+  return ListEmailIdentitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListEmailIdentitiesOutcomeCallable SESV2Client::ListEmailIdentitiesCallable(const ListEmailIdentitiesRequest& request) const
@@ -1228,15 +1012,7 @@ ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const 
   Aws::StringStream ss;
   ss << "/v2/email/suppression/addresses";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListSuppressedDestinationsOutcome(ListSuppressedDestinationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListSuppressedDestinationsOutcome(outcome.GetError());
-  }
+  return ListSuppressedDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListSuppressedDestinationsOutcomeCallable SESV2Client::ListSuppressedDestinationsCallable(const ListSuppressedDestinationsRequest& request) const
@@ -1268,15 +1044,7 @@ ListTagsForResourceOutcome SESV2Client::ListTagsForResource(const ListTagsForRes
   Aws::StringStream ss;
   ss << "/v2/email/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResourceOutcome(outcome.GetError());
-  }
+  return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcomeCallable SESV2Client::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
@@ -1303,15 +1071,7 @@ PutAccountDedicatedIpWarmupAttributesOutcome SESV2Client::PutAccountDedicatedIpW
   Aws::StringStream ss;
   ss << "/v2/email/account/dedicated-ips/warmup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAccountDedicatedIpWarmupAttributesOutcome(PutAccountDedicatedIpWarmupAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAccountDedicatedIpWarmupAttributesOutcome(outcome.GetError());
-  }
+  return PutAccountDedicatedIpWarmupAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAccountDedicatedIpWarmupAttributesOutcomeCallable SESV2Client::PutAccountDedicatedIpWarmupAttributesCallable(const PutAccountDedicatedIpWarmupAttributesRequest& request) const
@@ -1338,15 +1098,7 @@ PutAccountSendingAttributesOutcome SESV2Client::PutAccountSendingAttributes(cons
   Aws::StringStream ss;
   ss << "/v2/email/account/sending";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAccountSendingAttributesOutcome(PutAccountSendingAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAccountSendingAttributesOutcome(outcome.GetError());
-  }
+  return PutAccountSendingAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAccountSendingAttributesOutcomeCallable SESV2Client::PutAccountSendingAttributesCallable(const PutAccountSendingAttributesRequest& request) const
@@ -1373,15 +1125,7 @@ PutAccountSuppressionAttributesOutcome SESV2Client::PutAccountSuppressionAttribu
   Aws::StringStream ss;
   ss << "/v2/email/account/suppression";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutAccountSuppressionAttributesOutcome(PutAccountSuppressionAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutAccountSuppressionAttributesOutcome(outcome.GetError());
-  }
+  return PutAccountSuppressionAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutAccountSuppressionAttributesOutcomeCallable SESV2Client::PutAccountSuppressionAttributesCallable(const PutAccountSuppressionAttributesRequest& request) const
@@ -1415,15 +1159,7 @@ PutConfigurationSetDeliveryOptionsOutcome SESV2Client::PutConfigurationSetDelive
   ss << request.GetConfigurationSetName();
   ss << "/delivery-options";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConfigurationSetDeliveryOptionsOutcome(PutConfigurationSetDeliveryOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutConfigurationSetDeliveryOptionsOutcome(outcome.GetError());
-  }
+  return PutConfigurationSetDeliveryOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConfigurationSetDeliveryOptionsOutcomeCallable SESV2Client::PutConfigurationSetDeliveryOptionsCallable(const PutConfigurationSetDeliveryOptionsRequest& request) const
@@ -1457,15 +1193,7 @@ PutConfigurationSetReputationOptionsOutcome SESV2Client::PutConfigurationSetRepu
   ss << request.GetConfigurationSetName();
   ss << "/reputation-options";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConfigurationSetReputationOptionsOutcome(PutConfigurationSetReputationOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutConfigurationSetReputationOptionsOutcome(outcome.GetError());
-  }
+  return PutConfigurationSetReputationOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConfigurationSetReputationOptionsOutcomeCallable SESV2Client::PutConfigurationSetReputationOptionsCallable(const PutConfigurationSetReputationOptionsRequest& request) const
@@ -1499,15 +1227,7 @@ PutConfigurationSetSendingOptionsOutcome SESV2Client::PutConfigurationSetSending
   ss << request.GetConfigurationSetName();
   ss << "/sending";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConfigurationSetSendingOptionsOutcome(PutConfigurationSetSendingOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutConfigurationSetSendingOptionsOutcome(outcome.GetError());
-  }
+  return PutConfigurationSetSendingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConfigurationSetSendingOptionsOutcomeCallable SESV2Client::PutConfigurationSetSendingOptionsCallable(const PutConfigurationSetSendingOptionsRequest& request) const
@@ -1541,15 +1261,7 @@ PutConfigurationSetSuppressionOptionsOutcome SESV2Client::PutConfigurationSetSup
   ss << request.GetConfigurationSetName();
   ss << "/suppression-options";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConfigurationSetSuppressionOptionsOutcome(PutConfigurationSetSuppressionOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutConfigurationSetSuppressionOptionsOutcome(outcome.GetError());
-  }
+  return PutConfigurationSetSuppressionOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConfigurationSetSuppressionOptionsOutcomeCallable SESV2Client::PutConfigurationSetSuppressionOptionsCallable(const PutConfigurationSetSuppressionOptionsRequest& request) const
@@ -1583,15 +1295,7 @@ PutConfigurationSetTrackingOptionsOutcome SESV2Client::PutConfigurationSetTracki
   ss << request.GetConfigurationSetName();
   ss << "/tracking-options";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutConfigurationSetTrackingOptionsOutcome(PutConfigurationSetTrackingOptionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutConfigurationSetTrackingOptionsOutcome(outcome.GetError());
-  }
+  return PutConfigurationSetTrackingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutConfigurationSetTrackingOptionsOutcomeCallable SESV2Client::PutConfigurationSetTrackingOptionsCallable(const PutConfigurationSetTrackingOptionsRequest& request) const
@@ -1625,15 +1329,7 @@ PutDedicatedIpInPoolOutcome SESV2Client::PutDedicatedIpInPool(const PutDedicated
   ss << request.GetIp();
   ss << "/pool";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutDedicatedIpInPoolOutcome(PutDedicatedIpInPoolResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutDedicatedIpInPoolOutcome(outcome.GetError());
-  }
+  return PutDedicatedIpInPoolOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDedicatedIpInPoolOutcomeCallable SESV2Client::PutDedicatedIpInPoolCallable(const PutDedicatedIpInPoolRequest& request) const
@@ -1667,15 +1363,7 @@ PutDedicatedIpWarmupAttributesOutcome SESV2Client::PutDedicatedIpWarmupAttribute
   ss << request.GetIp();
   ss << "/warmup";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutDedicatedIpWarmupAttributesOutcome(PutDedicatedIpWarmupAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutDedicatedIpWarmupAttributesOutcome(outcome.GetError());
-  }
+  return PutDedicatedIpWarmupAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDedicatedIpWarmupAttributesOutcomeCallable SESV2Client::PutDedicatedIpWarmupAttributesCallable(const PutDedicatedIpWarmupAttributesRequest& request) const
@@ -1702,15 +1390,7 @@ PutDeliverabilityDashboardOptionOutcome SESV2Client::PutDeliverabilityDashboardO
   Aws::StringStream ss;
   ss << "/v2/email/deliverability-dashboard";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutDeliverabilityDashboardOptionOutcome(PutDeliverabilityDashboardOptionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutDeliverabilityDashboardOptionOutcome(outcome.GetError());
-  }
+  return PutDeliverabilityDashboardOptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDeliverabilityDashboardOptionOutcomeCallable SESV2Client::PutDeliverabilityDashboardOptionCallable(const PutDeliverabilityDashboardOptionRequest& request) const
@@ -1744,15 +1424,7 @@ PutEmailIdentityDkimAttributesOutcome SESV2Client::PutEmailIdentityDkimAttribute
   ss << request.GetEmailIdentity();
   ss << "/dkim";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutEmailIdentityDkimAttributesOutcome(PutEmailIdentityDkimAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutEmailIdentityDkimAttributesOutcome(outcome.GetError());
-  }
+  return PutEmailIdentityDkimAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutEmailIdentityDkimAttributesOutcomeCallable SESV2Client::PutEmailIdentityDkimAttributesCallable(const PutEmailIdentityDkimAttributesRequest& request) const
@@ -1786,15 +1458,7 @@ PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSi
   ss << request.GetEmailIdentity();
   ss << "/dkim/signing";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutEmailIdentityDkimSigningAttributesOutcome(PutEmailIdentityDkimSigningAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutEmailIdentityDkimSigningAttributesOutcome(outcome.GetError());
-  }
+  return PutEmailIdentityDkimSigningAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutEmailIdentityDkimSigningAttributesOutcomeCallable SESV2Client::PutEmailIdentityDkimSigningAttributesCallable(const PutEmailIdentityDkimSigningAttributesRequest& request) const
@@ -1828,15 +1492,7 @@ PutEmailIdentityFeedbackAttributesOutcome SESV2Client::PutEmailIdentityFeedbackA
   ss << request.GetEmailIdentity();
   ss << "/feedback";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutEmailIdentityFeedbackAttributesOutcome(PutEmailIdentityFeedbackAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutEmailIdentityFeedbackAttributesOutcome(outcome.GetError());
-  }
+  return PutEmailIdentityFeedbackAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutEmailIdentityFeedbackAttributesOutcomeCallable SESV2Client::PutEmailIdentityFeedbackAttributesCallable(const PutEmailIdentityFeedbackAttributesRequest& request) const
@@ -1870,15 +1526,7 @@ PutEmailIdentityMailFromAttributesOutcome SESV2Client::PutEmailIdentityMailFromA
   ss << request.GetEmailIdentity();
   ss << "/mail-from";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutEmailIdentityMailFromAttributesOutcome(PutEmailIdentityMailFromAttributesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutEmailIdentityMailFromAttributesOutcome(outcome.GetError());
-  }
+  return PutEmailIdentityMailFromAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutEmailIdentityMailFromAttributesOutcomeCallable SESV2Client::PutEmailIdentityMailFromAttributesCallable(const PutEmailIdentityMailFromAttributesRequest& request) const
@@ -1905,15 +1553,7 @@ PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutS
   Aws::StringStream ss;
   ss << "/v2/email/suppression/addresses";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return PutSuppressedDestinationOutcome(PutSuppressedDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return PutSuppressedDestinationOutcome(outcome.GetError());
-  }
+  return PutSuppressedDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutSuppressedDestinationOutcomeCallable SESV2Client::PutSuppressedDestinationCallable(const PutSuppressedDestinationRequest& request) const
@@ -1940,15 +1580,7 @@ SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const
   Aws::StringStream ss;
   ss << "/v2/email/outbound-emails";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SendEmailOutcome(SendEmailResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SendEmailOutcome(outcome.GetError());
-  }
+  return SendEmailOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendEmailOutcomeCallable SESV2Client::SendEmailCallable(const SendEmailRequest& request) const
@@ -1975,15 +1607,7 @@ TagResourceOutcome SESV2Client::TagResource(const TagResourceRequest& request) c
   Aws::StringStream ss;
   ss << "/v2/email/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TagResourceOutcome(outcome.GetError());
-  }
+  return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcomeCallable SESV2Client::TagResourceCallable(const TagResourceRequest& request) const
@@ -2020,15 +1644,7 @@ UntagResourceOutcome SESV2Client::UntagResource(const UntagResourceRequest& requ
   Aws::StringStream ss;
   ss << "/v2/email/tags";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UntagResourceOutcome(outcome.GetError());
-  }
+  return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 UntagResourceOutcomeCallable SESV2Client::UntagResourceCallable(const UntagResourceRequest& request) const
@@ -2068,15 +1684,7 @@ UpdateConfigurationSetEventDestinationOutcome SESV2Client::UpdateConfigurationSe
   ss << "/event-destinations/";
   ss << request.GetEventDestinationName();
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateConfigurationSetEventDestinationOutcome(UpdateConfigurationSetEventDestinationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateConfigurationSetEventDestinationOutcome(outcome.GetError());
-  }
+  return UpdateConfigurationSetEventDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateConfigurationSetEventDestinationOutcomeCallable SESV2Client::UpdateConfigurationSetEventDestinationCallable(const UpdateConfigurationSetEventDestinationRequest& request) const

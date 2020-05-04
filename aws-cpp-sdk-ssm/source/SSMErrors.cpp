@@ -16,15 +16,79 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ssm/SSMErrors.h>
+#include <aws/ssm/model/ResourceDataSyncNotFoundException.h>
+#include <aws/ssm/model/OpsItemAlreadyExistsException.h>
+#include <aws/ssm/model/ItemSizeLimitExceededException.h>
+#include <aws/ssm/model/UnsupportedInventoryItemContextException.h>
+#include <aws/ssm/model/ResourceDataSyncAlreadyExistsException.h>
+#include <aws/ssm/model/OpsItemLimitExceededException.h>
+#include <aws/ssm/model/ItemContentMismatchException.h>
+#include <aws/ssm/model/InvalidItemContentException.h>
+#include <aws/ssm/model/OpsItemInvalidParameterException.h>
 
 using namespace Aws::Client;
-using namespace Aws::SSM;
 using namespace Aws::Utils;
+using namespace Aws::SSM;
+using namespace Aws::SSM::Model;
 
 namespace Aws
 {
 namespace SSM
 {
+template<> AWS_SSM_API ResourceDataSyncNotFoundException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND);
+  return ResourceDataSyncNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API OpsItemAlreadyExistsException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::OPS_ITEM_ALREADY_EXISTS);
+  return OpsItemAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ItemSizeLimitExceededException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::ITEM_SIZE_LIMIT_EXCEEDED);
+  return ItemSizeLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API UnsupportedInventoryItemContextException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::UNSUPPORTED_INVENTORY_ITEM_CONTEXT);
+  return UnsupportedInventoryItemContextException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ResourceDataSyncAlreadyExistsException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::RESOURCE_DATA_SYNC_ALREADY_EXISTS);
+  return ResourceDataSyncAlreadyExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API OpsItemLimitExceededException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::OPS_ITEM_LIMIT_EXCEEDED);
+  return OpsItemLimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API ItemContentMismatchException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::ITEM_CONTENT_MISMATCH);
+  return ItemContentMismatchException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API InvalidItemContentException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::INVALID_ITEM_CONTENT);
+  return InvalidItemContentException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSM_API OpsItemInvalidParameterException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::OPS_ITEM_INVALID_PARAMETER);
+  return OpsItemInvalidParameterException(this->GetJsonPayload().View());
+}
+
 namespace SSMErrorMapper
 {
 

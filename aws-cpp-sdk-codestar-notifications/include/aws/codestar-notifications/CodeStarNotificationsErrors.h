@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/codestar-notifications/CodeStarNotifications_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CodeStarNotificationsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class CodeStarNotificationsErrors
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
+
+class AWS_CODESTARNOTIFICATIONS_API CodeStarNotificationsError : public Aws::Client::AWSError<CodeStarNotificationsErrors>
+{
+public:
+  CodeStarNotificationsError() {}
+  CodeStarNotificationsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeStarNotificationsErrors>(rhs) {}
+  CodeStarNotificationsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeStarNotificationsErrors>(rhs) {}
+  CodeStarNotificationsError(const Aws::Client::AWSError<CodeStarNotificationsErrors>& rhs) : Aws::Client::AWSError<CodeStarNotificationsErrors>(rhs) {}
+  CodeStarNotificationsError(Aws::Client::AWSError<CodeStarNotificationsErrors>&& rhs) : Aws::Client::AWSError<CodeStarNotificationsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CodeStarNotificationsErrorMapper
 {
   AWS_CODESTARNOTIFICATIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

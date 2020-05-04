@@ -71,11 +71,11 @@ namespace Model
         class PostTextRequest;
         class PutSessionRequest;
 
-        typedef Aws::Utils::Outcome<DeleteSessionResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> DeleteSessionOutcome;
-        typedef Aws::Utils::Outcome<GetSessionResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> GetSessionOutcome;
-        typedef Aws::Utils::Outcome<PostContentResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> PostContentOutcome;
-        typedef Aws::Utils::Outcome<PostTextResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> PostTextOutcome;
-        typedef Aws::Utils::Outcome<PutSessionResult, Aws::Client::AWSError<LexRuntimeServiceErrors>> PutSessionOutcome;
+        typedef Aws::Utils::Outcome<DeleteSessionResult, LexRuntimeServiceError> DeleteSessionOutcome;
+        typedef Aws::Utils::Outcome<GetSessionResult, LexRuntimeServiceError> GetSessionOutcome;
+        typedef Aws::Utils::Outcome<PostContentResult, LexRuntimeServiceError> PostContentOutcome;
+        typedef Aws::Utils::Outcome<PostTextResult, LexRuntimeServiceError> PostTextOutcome;
+        typedef Aws::Utils::Outcome<PutSessionResult, LexRuntimeServiceError> PutSessionOutcome;
 
         typedef std::future<DeleteSessionOutcome> DeleteSessionOutcomeCallable;
         typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;

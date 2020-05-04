@@ -67,9 +67,9 @@ namespace Model
         class ListChangedBlocksRequest;
         class ListSnapshotBlocksRequest;
 
-        typedef Aws::Utils::Outcome<GetSnapshotBlockResult, Aws::Client::AWSError<EBSErrors>> GetSnapshotBlockOutcome;
-        typedef Aws::Utils::Outcome<ListChangedBlocksResult, Aws::Client::AWSError<EBSErrors>> ListChangedBlocksOutcome;
-        typedef Aws::Utils::Outcome<ListSnapshotBlocksResult, Aws::Client::AWSError<EBSErrors>> ListSnapshotBlocksOutcome;
+        typedef Aws::Utils::Outcome<GetSnapshotBlockResult, EBSError> GetSnapshotBlockOutcome;
+        typedef Aws::Utils::Outcome<ListChangedBlocksResult, EBSError> ListChangedBlocksOutcome;
+        typedef Aws::Utils::Outcome<ListSnapshotBlocksResult, EBSError> ListSnapshotBlocksOutcome;
 
         typedef std::future<GetSnapshotBlockOutcome> GetSnapshotBlockOutcomeCallable;
         typedef std::future<ListChangedBlocksOutcome> ListChangedBlocksOutcomeCallable;

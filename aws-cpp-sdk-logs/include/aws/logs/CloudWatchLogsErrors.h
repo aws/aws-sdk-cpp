@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/logs/CloudWatchLogs_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CloudWatchLogsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,20 @@ enum class CloudWatchLogsErrors
   OPERATION_ABORTED,
   RESOURCE_ALREADY_EXISTS
 };
+
+class AWS_CLOUDWATCHLOGS_API CloudWatchLogsError : public Aws::Client::AWSError<CloudWatchLogsErrors>
+{
+public:
+  CloudWatchLogsError() {}
+  CloudWatchLogsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudWatchLogsErrors>(rhs) {}
+  CloudWatchLogsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudWatchLogsErrors>(rhs) {}
+  CloudWatchLogsError(const Aws::Client::AWSError<CloudWatchLogsErrors>& rhs) : Aws::Client::AWSError<CloudWatchLogsErrors>(rhs) {}
+  CloudWatchLogsError(Aws::Client::AWSError<CloudWatchLogsErrors>&& rhs) : Aws::Client::AWSError<CloudWatchLogsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudWatchLogsErrorMapper
 {
   AWS_CLOUDWATCHLOGS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

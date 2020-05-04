@@ -83,19 +83,19 @@ namespace Model
         class DescribeEventsRequest;
         class DescribeEventsForOrganizationRequest;
 
-        typedef Aws::Utils::Outcome<DescribeAffectedAccountsForOrganizationResult, Aws::Client::AWSError<HealthErrors>> DescribeAffectedAccountsForOrganizationOutcome;
-        typedef Aws::Utils::Outcome<DescribeAffectedEntitiesResult, Aws::Client::AWSError<HealthErrors>> DescribeAffectedEntitiesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAffectedEntitiesForOrganizationResult, Aws::Client::AWSError<HealthErrors>> DescribeAffectedEntitiesForOrganizationOutcome;
-        typedef Aws::Utils::Outcome<DescribeEntityAggregatesResult, Aws::Client::AWSError<HealthErrors>> DescribeEntityAggregatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventAggregatesResult, Aws::Client::AWSError<HealthErrors>> DescribeEventAggregatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventDetailsResult, Aws::Client::AWSError<HealthErrors>> DescribeEventDetailsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventDetailsForOrganizationResult, Aws::Client::AWSError<HealthErrors>> DescribeEventDetailsForOrganizationOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventTypesResult, Aws::Client::AWSError<HealthErrors>> DescribeEventTypesOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<HealthErrors>> DescribeEventsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEventsForOrganizationResult, Aws::Client::AWSError<HealthErrors>> DescribeEventsForOrganizationOutcome;
-        typedef Aws::Utils::Outcome<DescribeHealthServiceStatusForOrganizationResult, Aws::Client::AWSError<HealthErrors>> DescribeHealthServiceStatusForOrganizationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<HealthErrors>> DisableHealthServiceAccessForOrganizationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<HealthErrors>> EnableHealthServiceAccessForOrganizationOutcome;
+        typedef Aws::Utils::Outcome<DescribeAffectedAccountsForOrganizationResult, HealthError> DescribeAffectedAccountsForOrganizationOutcome;
+        typedef Aws::Utils::Outcome<DescribeAffectedEntitiesResult, HealthError> DescribeAffectedEntitiesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAffectedEntitiesForOrganizationResult, HealthError> DescribeAffectedEntitiesForOrganizationOutcome;
+        typedef Aws::Utils::Outcome<DescribeEntityAggregatesResult, HealthError> DescribeEntityAggregatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventAggregatesResult, HealthError> DescribeEventAggregatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventDetailsResult, HealthError> DescribeEventDetailsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventDetailsForOrganizationResult, HealthError> DescribeEventDetailsForOrganizationOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventTypesResult, HealthError> DescribeEventTypesOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsResult, HealthError> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEventsForOrganizationResult, HealthError> DescribeEventsForOrganizationOutcome;
+        typedef Aws::Utils::Outcome<DescribeHealthServiceStatusForOrganizationResult, HealthError> DescribeHealthServiceStatusForOrganizationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, HealthError> DisableHealthServiceAccessForOrganizationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, HealthError> EnableHealthServiceAccessForOrganizationOutcome;
 
         typedef std::future<DescribeAffectedAccountsForOrganizationOutcome> DescribeAffectedAccountsForOrganizationOutcomeCallable;
         typedef std::future<DescribeAffectedEntitiesOutcome> DescribeAffectedEntitiesOutcomeCallable;

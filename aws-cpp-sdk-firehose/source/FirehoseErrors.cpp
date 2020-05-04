@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/firehose/FirehoseErrors.h>
+#include <aws/firehose/model/InvalidKMSResourceException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Firehose;
 using namespace Aws::Utils;
+using namespace Aws::Firehose;
+using namespace Aws::Firehose::Model;
 
 namespace Aws
 {
 namespace Firehose
 {
+template<> AWS_FIREHOSE_API InvalidKMSResourceException FirehoseError::GetModeledError()
+{
+  assert(this->GetErrorType() == FirehoseErrors::INVALID_K_M_S_RESOURCE);
+  return InvalidKMSResourceException(this->GetJsonPayload().View());
+}
+
 namespace FirehoseErrorMapper
 {
 

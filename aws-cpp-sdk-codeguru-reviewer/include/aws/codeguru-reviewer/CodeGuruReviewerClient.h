@@ -81,16 +81,16 @@ namespace Model
         class ListRepositoryAssociationsRequest;
         class PutRecommendationFeedbackRequest;
 
-        typedef Aws::Utils::Outcome<AssociateRepositoryResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> AssociateRepositoryOutcome;
-        typedef Aws::Utils::Outcome<DescribeCodeReviewResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> DescribeCodeReviewOutcome;
-        typedef Aws::Utils::Outcome<DescribeRecommendationFeedbackResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> DescribeRecommendationFeedbackOutcome;
-        typedef Aws::Utils::Outcome<DescribeRepositoryAssociationResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> DescribeRepositoryAssociationOutcome;
-        typedef Aws::Utils::Outcome<DisassociateRepositoryResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> DisassociateRepositoryOutcome;
-        typedef Aws::Utils::Outcome<ListCodeReviewsResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> ListCodeReviewsOutcome;
-        typedef Aws::Utils::Outcome<ListRecommendationFeedbackResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> ListRecommendationFeedbackOutcome;
-        typedef Aws::Utils::Outcome<ListRecommendationsResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> ListRecommendationsOutcome;
-        typedef Aws::Utils::Outcome<ListRepositoryAssociationsResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> ListRepositoryAssociationsOutcome;
-        typedef Aws::Utils::Outcome<PutRecommendationFeedbackResult, Aws::Client::AWSError<CodeGuruReviewerErrors>> PutRecommendationFeedbackOutcome;
+        typedef Aws::Utils::Outcome<AssociateRepositoryResult, CodeGuruReviewerError> AssociateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeCodeReviewResult, CodeGuruReviewerError> DescribeCodeReviewOutcome;
+        typedef Aws::Utils::Outcome<DescribeRecommendationFeedbackResult, CodeGuruReviewerError> DescribeRecommendationFeedbackOutcome;
+        typedef Aws::Utils::Outcome<DescribeRepositoryAssociationResult, CodeGuruReviewerError> DescribeRepositoryAssociationOutcome;
+        typedef Aws::Utils::Outcome<DisassociateRepositoryResult, CodeGuruReviewerError> DisassociateRepositoryOutcome;
+        typedef Aws::Utils::Outcome<ListCodeReviewsResult, CodeGuruReviewerError> ListCodeReviewsOutcome;
+        typedef Aws::Utils::Outcome<ListRecommendationFeedbackResult, CodeGuruReviewerError> ListRecommendationFeedbackOutcome;
+        typedef Aws::Utils::Outcome<ListRecommendationsResult, CodeGuruReviewerError> ListRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<ListRepositoryAssociationsResult, CodeGuruReviewerError> ListRepositoryAssociationsOutcome;
+        typedef Aws::Utils::Outcome<PutRecommendationFeedbackResult, CodeGuruReviewerError> PutRecommendationFeedbackOutcome;
 
         typedef std::future<AssociateRepositoryOutcome> AssociateRepositoryOutcomeCallable;
         typedef std::future<DescribeCodeReviewOutcome> DescribeCodeReviewOutcomeCallable;

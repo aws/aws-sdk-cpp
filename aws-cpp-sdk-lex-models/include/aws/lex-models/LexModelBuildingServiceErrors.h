@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class LexModelBuildingServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class LexModelBuildingServiceErrors
   PRECONDITION_FAILED,
   RESOURCE_IN_USE
 };
+
+class AWS_LEXMODELBUILDINGSERVICE_API LexModelBuildingServiceError : public Aws::Client::AWSError<LexModelBuildingServiceErrors>
+{
+public:
+  LexModelBuildingServiceError() {}
+  LexModelBuildingServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LexModelBuildingServiceErrors>(rhs) {}
+  LexModelBuildingServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LexModelBuildingServiceErrors>(rhs) {}
+  LexModelBuildingServiceError(const Aws::Client::AWSError<LexModelBuildingServiceErrors>& rhs) : Aws::Client::AWSError<LexModelBuildingServiceErrors>(rhs) {}
+  LexModelBuildingServiceError(Aws::Client::AWSError<LexModelBuildingServiceErrors>&& rhs) : Aws::Client::AWSError<LexModelBuildingServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace LexModelBuildingServiceErrorMapper
 {
   AWS_LEXMODELBUILDINGSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

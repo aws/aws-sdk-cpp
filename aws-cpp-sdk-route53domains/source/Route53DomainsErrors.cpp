@@ -18,8 +18,8 @@
 #include <aws/route53domains/Route53DomainsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Route53Domains;
 using namespace Aws::Utils;
+using namespace Aws::Route53Domains;
 
 namespace Aws
 {

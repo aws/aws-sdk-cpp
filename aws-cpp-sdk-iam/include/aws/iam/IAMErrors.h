@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iam/IAM_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class IAMErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -84,6 +85,20 @@ enum class IAMErrors
   UNMODIFIABLE_ENTITY,
   UNRECOGNIZED_PUBLIC_KEY_ENCODING
 };
+
+class AWS_IAM_API IAMError : public Aws::Client::AWSError<IAMErrors>
+{
+public:
+  IAMError() {}
+  IAMError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IAMErrors>(rhs) {}
+  IAMError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IAMErrors>(rhs) {}
+  IAMError(const Aws::Client::AWSError<IAMErrors>& rhs) : Aws::Client::AWSError<IAMErrors>(rhs) {}
+  IAMError(Aws::Client::AWSError<IAMErrors>&& rhs) : Aws::Client::AWSError<IAMErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace IAMErrorMapper
 {
   AWS_IAM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

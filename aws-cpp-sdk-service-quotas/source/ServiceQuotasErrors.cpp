@@ -18,8 +18,8 @@
 #include <aws/service-quotas/ServiceQuotasErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ServiceQuotas;
 using namespace Aws::Utils;
+using namespace Aws::ServiceQuotas;
 
 namespace Aws
 {

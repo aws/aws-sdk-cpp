@@ -63,7 +63,7 @@ namespace Model
 {
         class InvokeEndpointRequest;
 
-        typedef Aws::Utils::Outcome<InvokeEndpointResult, Aws::Client::AWSError<SageMakerRuntimeErrors>> InvokeEndpointOutcome;
+        typedef Aws::Utils::Outcome<InvokeEndpointResult, SageMakerRuntimeError> InvokeEndpointOutcome;
 
         typedef std::future<InvokeEndpointOutcome> InvokeEndpointOutcomeCallable;
 } // namespace Model

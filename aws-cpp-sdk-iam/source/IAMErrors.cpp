@@ -18,8 +18,8 @@
 #include <aws/iam/IAMErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::IAM;
 using namespace Aws::Utils;
+using namespace Aws::IAM;
 
 namespace Aws
 {

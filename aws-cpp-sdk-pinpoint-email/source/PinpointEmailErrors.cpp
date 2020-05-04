@@ -18,8 +18,8 @@
 #include <aws/pinpoint-email/PinpointEmailErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::PinpointEmail;
 using namespace Aws::Utils;
+using namespace Aws::PinpointEmail;
 
 namespace Aws
 {

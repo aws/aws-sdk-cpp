@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ebs/EBS_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class EBSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
 
 };
+
+class AWS_EBS_API EBSError : public Aws::Client::AWSError<EBSErrors>
+{
+public:
+  EBSError() {}
+  EBSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EBSErrors>(rhs) {}
+  EBSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EBSErrors>(rhs) {}
+  EBSError(const Aws::Client::AWSError<EBSErrors>& rhs) : Aws::Client::AWSError<EBSErrors>(rhs) {}
+  EBSError(Aws::Client::AWSError<EBSErrors>&& rhs) : Aws::Client::AWSError<EBSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace EBSErrorMapper
 {
   AWS_EBS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/events/CloudWatchEvents_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CloudWatchEventsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,20 @@ enum class CloudWatchEventsErrors
   POLICY_LENGTH_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
+
+class AWS_CLOUDWATCHEVENTS_API CloudWatchEventsError : public Aws::Client::AWSError<CloudWatchEventsErrors>
+{
+public:
+  CloudWatchEventsError() {}
+  CloudWatchEventsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudWatchEventsErrors>(rhs) {}
+  CloudWatchEventsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudWatchEventsErrors>(rhs) {}
+  CloudWatchEventsError(const Aws::Client::AWSError<CloudWatchEventsErrors>& rhs) : Aws::Client::AWSError<CloudWatchEventsErrors>(rhs) {}
+  CloudWatchEventsError(Aws::Client::AWSError<CloudWatchEventsErrors>&& rhs) : Aws::Client::AWSError<CloudWatchEventsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudWatchEventsErrorMapper
 {
   AWS_CLOUDWATCHEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

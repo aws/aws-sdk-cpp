@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mturk-requester/MTurk_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class MTurkErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVICE_FAULT
 };
+
+class AWS_MTURK_API MTurkError : public Aws::Client::AWSError<MTurkErrors>
+{
+public:
+  MTurkError() {}
+  MTurkError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MTurkErrors>(rhs) {}
+  MTurkError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MTurkErrors>(rhs) {}
+  MTurkError(const Aws::Client::AWSError<MTurkErrors>& rhs) : Aws::Client::AWSError<MTurkErrors>(rhs) {}
+  MTurkError(Aws::Client::AWSError<MTurkErrors>&& rhs) : Aws::Client::AWSError<MTurkErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MTurkErrorMapper
 {
   AWS_MTURK_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

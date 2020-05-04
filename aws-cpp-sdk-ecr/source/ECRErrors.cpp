@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ecr/ECRErrors.h>
+#include <aws/ecr/model/InvalidLayerPartException.h>
 
 using namespace Aws::Client;
-using namespace Aws::ECR;
 using namespace Aws::Utils;
+using namespace Aws::ECR;
+using namespace Aws::ECR::Model;
 
 namespace Aws
 {
 namespace ECR
 {
+template<> AWS_ECR_API InvalidLayerPartException ECRError::GetModeledError()
+{
+  assert(this->GetErrorType() == ECRErrors::INVALID_LAYER_PART);
+  return InvalidLayerPartException(this->GetJsonPayload().View());
+}
+
 namespace ECRErrorMapper
 {
 

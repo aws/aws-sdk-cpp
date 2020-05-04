@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/machinelearning/MachineLearning_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class MachineLearningErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class MachineLearningErrors
   PREDICTOR_NOT_MOUNTED,
   TAG_LIMIT_EXCEEDED
 };
+
+class AWS_MACHINELEARNING_API MachineLearningError : public Aws::Client::AWSError<MachineLearningErrors>
+{
+public:
+  MachineLearningError() {}
+  MachineLearningError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MachineLearningErrors>(rhs) {}
+  MachineLearningError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MachineLearningErrors>(rhs) {}
+  MachineLearningError(const Aws::Client::AWSError<MachineLearningErrors>& rhs) : Aws::Client::AWSError<MachineLearningErrors>(rhs) {}
+  MachineLearningError(Aws::Client::AWSError<MachineLearningErrors>&& rhs) : Aws::Client::AWSError<MachineLearningErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MachineLearningErrorMapper
 {
   AWS_MACHINELEARNING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

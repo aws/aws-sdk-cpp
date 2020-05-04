@@ -63,7 +63,7 @@ namespace Model
 {
         class GetEntitlementsRequest;
 
-        typedef Aws::Utils::Outcome<GetEntitlementsResult, Aws::Client::AWSError<MarketplaceEntitlementServiceErrors>> GetEntitlementsOutcome;
+        typedef Aws::Utils::Outcome<GetEntitlementsResult, MarketplaceEntitlementServiceError> GetEntitlementsOutcome;
 
         typedef std::future<GetEntitlementsOutcome> GetEntitlementsOutcomeCallable;
 } // namespace Model

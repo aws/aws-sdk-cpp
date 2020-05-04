@@ -18,8 +18,8 @@
 #include <aws/s3control/S3ControlErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::S3Control;
 using namespace Aws::Utils;
+using namespace Aws::S3Control;
 
 namespace Aws
 {

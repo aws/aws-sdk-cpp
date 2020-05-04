@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ApiGatewayV2Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,20 @@ enum class ApiGatewayV2Errors
   NOT_FOUND,
   TOO_MANY_REQUESTS
 };
+
+class AWS_APIGATEWAYV2_API ApiGatewayV2Error : public Aws::Client::AWSError<ApiGatewayV2Errors>
+{
+public:
+  ApiGatewayV2Error() {}
+  ApiGatewayV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ApiGatewayV2Errors>(rhs) {}
+  ApiGatewayV2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ApiGatewayV2Errors>(rhs) {}
+  ApiGatewayV2Error(const Aws::Client::AWSError<ApiGatewayV2Errors>& rhs) : Aws::Client::AWSError<ApiGatewayV2Errors>(rhs) {}
+  ApiGatewayV2Error(Aws::Client::AWSError<ApiGatewayV2Errors>&& rhs) : Aws::Client::AWSError<ApiGatewayV2Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ApiGatewayV2ErrorMapper
 {
   AWS_APIGATEWAYV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

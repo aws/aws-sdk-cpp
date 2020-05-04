@@ -93,22 +93,22 @@ namespace Model
         class UpdatePlacementRequest;
         class UpdateProjectRequest;
 
-        typedef Aws::Utils::Outcome<AssociateDeviceWithPlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> AssociateDeviceWithPlacementOutcome;
-        typedef Aws::Utils::Outcome<CreatePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> CreatePlacementOutcome;
-        typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> CreateProjectOutcome;
-        typedef Aws::Utils::Outcome<DeletePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DeletePlacementOutcome;
-        typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DeleteProjectOutcome;
-        typedef Aws::Utils::Outcome<DescribePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DescribePlacementOutcome;
-        typedef Aws::Utils::Outcome<DescribeProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DescribeProjectOutcome;
-        typedef Aws::Utils::Outcome<DisassociateDeviceFromPlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> DisassociateDeviceFromPlacementOutcome;
-        typedef Aws::Utils::Outcome<GetDevicesInPlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> GetDevicesInPlacementOutcome;
-        typedef Aws::Utils::Outcome<ListPlacementsResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListPlacementsOutcome;
-        typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListProjectsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdatePlacementResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UpdatePlacementOutcome;
-        typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<IoT1ClickProjectsErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<AssociateDeviceWithPlacementResult, IoT1ClickProjectsError> AssociateDeviceWithPlacementOutcome;
+        typedef Aws::Utils::Outcome<CreatePlacementResult, IoT1ClickProjectsError> CreatePlacementOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectResult, IoT1ClickProjectsError> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<DeletePlacementResult, IoT1ClickProjectsError> DeletePlacementOutcome;
+        typedef Aws::Utils::Outcome<DeleteProjectResult, IoT1ClickProjectsError> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DescribePlacementResult, IoT1ClickProjectsError> DescribePlacementOutcome;
+        typedef Aws::Utils::Outcome<DescribeProjectResult, IoT1ClickProjectsError> DescribeProjectOutcome;
+        typedef Aws::Utils::Outcome<DisassociateDeviceFromPlacementResult, IoT1ClickProjectsError> DisassociateDeviceFromPlacementOutcome;
+        typedef Aws::Utils::Outcome<GetDevicesInPlacementResult, IoT1ClickProjectsError> GetDevicesInPlacementOutcome;
+        typedef Aws::Utils::Outcome<ListPlacementsResult, IoT1ClickProjectsError> ListPlacementsOutcome;
+        typedef Aws::Utils::Outcome<ListProjectsResult, IoT1ClickProjectsError> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoT1ClickProjectsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, IoT1ClickProjectsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, IoT1ClickProjectsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdatePlacementResult, IoT1ClickProjectsError> UpdatePlacementOutcome;
+        typedef Aws::Utils::Outcome<UpdateProjectResult, IoT1ClickProjectsError> UpdateProjectOutcome;
 
         typedef std::future<AssociateDeviceWithPlacementOutcome> AssociateDeviceWithPlacementOutcomeCallable;
         typedef std::future<CreatePlacementOutcome> CreatePlacementOutcomeCallable;

@@ -85,18 +85,18 @@ namespace Model
         class RemovePermissionRequest;
         class UpdateProfilingGroupRequest;
 
-        typedef Aws::Utils::Outcome<ConfigureAgentResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> ConfigureAgentOutcome;
-        typedef Aws::Utils::Outcome<CreateProfilingGroupResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> CreateProfilingGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteProfilingGroupResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> DeleteProfilingGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeProfilingGroupResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> DescribeProfilingGroupOutcome;
-        typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> GetPolicyOutcome;
-        typedef Aws::Utils::Outcome<GetProfileResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> GetProfileOutcome;
-        typedef Aws::Utils::Outcome<ListProfileTimesResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> ListProfileTimesOutcome;
-        typedef Aws::Utils::Outcome<ListProfilingGroupsResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> ListProfilingGroupsOutcome;
-        typedef Aws::Utils::Outcome<PostAgentProfileResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> PostAgentProfileOutcome;
-        typedef Aws::Utils::Outcome<PutPermissionResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> PutPermissionOutcome;
-        typedef Aws::Utils::Outcome<RemovePermissionResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> RemovePermissionOutcome;
-        typedef Aws::Utils::Outcome<UpdateProfilingGroupResult, Aws::Client::AWSError<CodeGuruProfilerErrors>> UpdateProfilingGroupOutcome;
+        typedef Aws::Utils::Outcome<ConfigureAgentResult, CodeGuruProfilerError> ConfigureAgentOutcome;
+        typedef Aws::Utils::Outcome<CreateProfilingGroupResult, CodeGuruProfilerError> CreateProfilingGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteProfilingGroupResult, CodeGuruProfilerError> DeleteProfilingGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeProfilingGroupResult, CodeGuruProfilerError> DescribeProfilingGroupOutcome;
+        typedef Aws::Utils::Outcome<GetPolicyResult, CodeGuruProfilerError> GetPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetProfileResult, CodeGuruProfilerError> GetProfileOutcome;
+        typedef Aws::Utils::Outcome<ListProfileTimesResult, CodeGuruProfilerError> ListProfileTimesOutcome;
+        typedef Aws::Utils::Outcome<ListProfilingGroupsResult, CodeGuruProfilerError> ListProfilingGroupsOutcome;
+        typedef Aws::Utils::Outcome<PostAgentProfileResult, CodeGuruProfilerError> PostAgentProfileOutcome;
+        typedef Aws::Utils::Outcome<PutPermissionResult, CodeGuruProfilerError> PutPermissionOutcome;
+        typedef Aws::Utils::Outcome<RemovePermissionResult, CodeGuruProfilerError> RemovePermissionOutcome;
+        typedef Aws::Utils::Outcome<UpdateProfilingGroupResult, CodeGuruProfilerError> UpdateProfilingGroupOutcome;
 
         typedef std::future<ConfigureAgentOutcome> ConfigureAgentOutcomeCallable;
         typedef std::future<CreateProfilingGroupOutcome> CreateProfilingGroupOutcomeCallable;

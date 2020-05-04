@@ -93,22 +93,22 @@ namespace Model
         class PutServiceQuotaIncreaseRequestIntoTemplateRequest;
         class RequestServiceQuotaIncreaseRequest;
 
-        typedef Aws::Utils::Outcome<AssociateServiceQuotaTemplateResult, Aws::Client::AWSError<ServiceQuotasErrors>> AssociateServiceQuotaTemplateOutcome;
-        typedef Aws::Utils::Outcome<DeleteServiceQuotaIncreaseRequestFromTemplateResult, Aws::Client::AWSError<ServiceQuotasErrors>> DeleteServiceQuotaIncreaseRequestFromTemplateOutcome;
-        typedef Aws::Utils::Outcome<DisassociateServiceQuotaTemplateResult, Aws::Client::AWSError<ServiceQuotasErrors>> DisassociateServiceQuotaTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetAWSDefaultServiceQuotaResult, Aws::Client::AWSError<ServiceQuotasErrors>> GetAWSDefaultServiceQuotaOutcome;
-        typedef Aws::Utils::Outcome<GetAssociationForServiceQuotaTemplateResult, Aws::Client::AWSError<ServiceQuotasErrors>> GetAssociationForServiceQuotaTemplateOutcome;
-        typedef Aws::Utils::Outcome<GetRequestedServiceQuotaChangeResult, Aws::Client::AWSError<ServiceQuotasErrors>> GetRequestedServiceQuotaChangeOutcome;
-        typedef Aws::Utils::Outcome<GetServiceQuotaResult, Aws::Client::AWSError<ServiceQuotasErrors>> GetServiceQuotaOutcome;
-        typedef Aws::Utils::Outcome<GetServiceQuotaIncreaseRequestFromTemplateResult, Aws::Client::AWSError<ServiceQuotasErrors>> GetServiceQuotaIncreaseRequestFromTemplateOutcome;
-        typedef Aws::Utils::Outcome<ListAWSDefaultServiceQuotasResult, Aws::Client::AWSError<ServiceQuotasErrors>> ListAWSDefaultServiceQuotasOutcome;
-        typedef Aws::Utils::Outcome<ListRequestedServiceQuotaChangeHistoryResult, Aws::Client::AWSError<ServiceQuotasErrors>> ListRequestedServiceQuotaChangeHistoryOutcome;
-        typedef Aws::Utils::Outcome<ListRequestedServiceQuotaChangeHistoryByQuotaResult, Aws::Client::AWSError<ServiceQuotasErrors>> ListRequestedServiceQuotaChangeHistoryByQuotaOutcome;
-        typedef Aws::Utils::Outcome<ListServiceQuotaIncreaseRequestsInTemplateResult, Aws::Client::AWSError<ServiceQuotasErrors>> ListServiceQuotaIncreaseRequestsInTemplateOutcome;
-        typedef Aws::Utils::Outcome<ListServiceQuotasResult, Aws::Client::AWSError<ServiceQuotasErrors>> ListServiceQuotasOutcome;
-        typedef Aws::Utils::Outcome<ListServicesResult, Aws::Client::AWSError<ServiceQuotasErrors>> ListServicesOutcome;
-        typedef Aws::Utils::Outcome<PutServiceQuotaIncreaseRequestIntoTemplateResult, Aws::Client::AWSError<ServiceQuotasErrors>> PutServiceQuotaIncreaseRequestIntoTemplateOutcome;
-        typedef Aws::Utils::Outcome<RequestServiceQuotaIncreaseResult, Aws::Client::AWSError<ServiceQuotasErrors>> RequestServiceQuotaIncreaseOutcome;
+        typedef Aws::Utils::Outcome<AssociateServiceQuotaTemplateResult, ServiceQuotasError> AssociateServiceQuotaTemplateOutcome;
+        typedef Aws::Utils::Outcome<DeleteServiceQuotaIncreaseRequestFromTemplateResult, ServiceQuotasError> DeleteServiceQuotaIncreaseRequestFromTemplateOutcome;
+        typedef Aws::Utils::Outcome<DisassociateServiceQuotaTemplateResult, ServiceQuotasError> DisassociateServiceQuotaTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetAWSDefaultServiceQuotaResult, ServiceQuotasError> GetAWSDefaultServiceQuotaOutcome;
+        typedef Aws::Utils::Outcome<GetAssociationForServiceQuotaTemplateResult, ServiceQuotasError> GetAssociationForServiceQuotaTemplateOutcome;
+        typedef Aws::Utils::Outcome<GetRequestedServiceQuotaChangeResult, ServiceQuotasError> GetRequestedServiceQuotaChangeOutcome;
+        typedef Aws::Utils::Outcome<GetServiceQuotaResult, ServiceQuotasError> GetServiceQuotaOutcome;
+        typedef Aws::Utils::Outcome<GetServiceQuotaIncreaseRequestFromTemplateResult, ServiceQuotasError> GetServiceQuotaIncreaseRequestFromTemplateOutcome;
+        typedef Aws::Utils::Outcome<ListAWSDefaultServiceQuotasResult, ServiceQuotasError> ListAWSDefaultServiceQuotasOutcome;
+        typedef Aws::Utils::Outcome<ListRequestedServiceQuotaChangeHistoryResult, ServiceQuotasError> ListRequestedServiceQuotaChangeHistoryOutcome;
+        typedef Aws::Utils::Outcome<ListRequestedServiceQuotaChangeHistoryByQuotaResult, ServiceQuotasError> ListRequestedServiceQuotaChangeHistoryByQuotaOutcome;
+        typedef Aws::Utils::Outcome<ListServiceQuotaIncreaseRequestsInTemplateResult, ServiceQuotasError> ListServiceQuotaIncreaseRequestsInTemplateOutcome;
+        typedef Aws::Utils::Outcome<ListServiceQuotasResult, ServiceQuotasError> ListServiceQuotasOutcome;
+        typedef Aws::Utils::Outcome<ListServicesResult, ServiceQuotasError> ListServicesOutcome;
+        typedef Aws::Utils::Outcome<PutServiceQuotaIncreaseRequestIntoTemplateResult, ServiceQuotasError> PutServiceQuotaIncreaseRequestIntoTemplateOutcome;
+        typedef Aws::Utils::Outcome<RequestServiceQuotaIncreaseResult, ServiceQuotasError> RequestServiceQuotaIncreaseOutcome;
 
         typedef std::future<AssociateServiceQuotaTemplateOutcome> AssociateServiceQuotaTemplateOutcomeCallable;
         typedef std::future<DeleteServiceQuotaIncreaseRequestFromTemplateOutcome> DeleteServiceQuotaIncreaseRequestFromTemplateOutcomeCallable;

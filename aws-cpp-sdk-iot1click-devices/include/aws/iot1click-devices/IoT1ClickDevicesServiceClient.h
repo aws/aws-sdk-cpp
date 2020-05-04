@@ -86,19 +86,19 @@ namespace Model
         class UntagResourceRequest;
         class UpdateDeviceStateRequest;
 
-        typedef Aws::Utils::Outcome<ClaimDevicesByClaimCodeResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ClaimDevicesByClaimCodeOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeviceResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> DescribeDeviceOutcome;
-        typedef Aws::Utils::Outcome<FinalizeDeviceClaimResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> FinalizeDeviceClaimOutcome;
-        typedef Aws::Utils::Outcome<GetDeviceMethodsResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> GetDeviceMethodsOutcome;
-        typedef Aws::Utils::Outcome<InitiateDeviceClaimResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> InitiateDeviceClaimOutcome;
-        typedef Aws::Utils::Outcome<InvokeDeviceMethodResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> InvokeDeviceMethodOutcome;
-        typedef Aws::Utils::Outcome<ListDeviceEventsResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListDeviceEventsOutcome;
-        typedef Aws::Utils::Outcome<ListDevicesResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListDevicesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UnclaimDeviceResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UnclaimDeviceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDeviceStateResult, Aws::Client::AWSError<IoT1ClickDevicesServiceErrors>> UpdateDeviceStateOutcome;
+        typedef Aws::Utils::Outcome<ClaimDevicesByClaimCodeResult, IoT1ClickDevicesServiceError> ClaimDevicesByClaimCodeOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeviceResult, IoT1ClickDevicesServiceError> DescribeDeviceOutcome;
+        typedef Aws::Utils::Outcome<FinalizeDeviceClaimResult, IoT1ClickDevicesServiceError> FinalizeDeviceClaimOutcome;
+        typedef Aws::Utils::Outcome<GetDeviceMethodsResult, IoT1ClickDevicesServiceError> GetDeviceMethodsOutcome;
+        typedef Aws::Utils::Outcome<InitiateDeviceClaimResult, IoT1ClickDevicesServiceError> InitiateDeviceClaimOutcome;
+        typedef Aws::Utils::Outcome<InvokeDeviceMethodResult, IoT1ClickDevicesServiceError> InvokeDeviceMethodOutcome;
+        typedef Aws::Utils::Outcome<ListDeviceEventsResult, IoT1ClickDevicesServiceError> ListDeviceEventsOutcome;
+        typedef Aws::Utils::Outcome<ListDevicesResult, IoT1ClickDevicesServiceError> ListDevicesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoT1ClickDevicesServiceError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoT1ClickDevicesServiceError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UnclaimDeviceResult, IoT1ClickDevicesServiceError> UnclaimDeviceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoT1ClickDevicesServiceError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDeviceStateResult, IoT1ClickDevicesServiceError> UpdateDeviceStateOutcome;
 
         typedef std::future<ClaimDevicesByClaimCodeOutcome> ClaimDevicesByClaimCodeOutcomeCallable;
         typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;

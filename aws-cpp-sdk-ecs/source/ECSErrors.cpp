@@ -18,8 +18,8 @@
 #include <aws/ecs/ECSErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ECS;
 using namespace Aws::Utils;
+using namespace Aws::ECS;
 
 namespace Aws
 {

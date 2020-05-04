@@ -16,15 +16,72 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/kafka/KafkaErrors.h>
+#include <aws/kafka/model/ServiceUnavailableException.h>
+#include <aws/kafka/model/ConflictException.h>
+#include <aws/kafka/model/NotFoundException.h>
+#include <aws/kafka/model/UnauthorizedException.h>
+#include <aws/kafka/model/ForbiddenException.h>
+#include <aws/kafka/model/TooManyRequestsException.h>
+#include <aws/kafka/model/BadRequestException.h>
+#include <aws/kafka/model/InternalServerErrorException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Kafka;
 using namespace Aws::Utils;
+using namespace Aws::Kafka;
+using namespace Aws::Kafka::Model;
 
 namespace Aws
 {
 namespace Kafka
 {
+template<> AWS_KAFKA_API ServiceUnavailableException KafkaError::GetModeledError()
+{
+  assert(this->GetErrorType() == KafkaErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_KAFKA_API ConflictException KafkaError::GetModeledError()
+{
+  assert(this->GetErrorType() == KafkaErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_KAFKA_API NotFoundException KafkaError::GetModeledError()
+{
+  assert(this->GetErrorType() == KafkaErrors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_KAFKA_API UnauthorizedException KafkaError::GetModeledError()
+{
+  assert(this->GetErrorType() == KafkaErrors::UNAUTHORIZED);
+  return UnauthorizedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_KAFKA_API ForbiddenException KafkaError::GetModeledError()
+{
+  assert(this->GetErrorType() == KafkaErrors::FORBIDDEN);
+  return ForbiddenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_KAFKA_API TooManyRequestsException KafkaError::GetModeledError()
+{
+  assert(this->GetErrorType() == KafkaErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_KAFKA_API BadRequestException KafkaError::GetModeledError()
+{
+  assert(this->GetErrorType() == KafkaErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
+template<> AWS_KAFKA_API InternalServerErrorException KafkaError::GetModeledError()
+{
+  assert(this->GetErrorType() == KafkaErrors::INTERNAL_SERVER_ERROR);
+  return InternalServerErrorException(this->GetJsonPayload().View());
+}
+
 namespace KafkaErrorMapper
 {
 

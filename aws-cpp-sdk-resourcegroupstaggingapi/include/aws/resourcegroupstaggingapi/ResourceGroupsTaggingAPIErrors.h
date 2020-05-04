@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ResourceGroupsTaggingAPIErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class ResourceGroupsTaggingAPIErrors
   INVALID_PARAMETER,
   PAGINATION_TOKEN_EXPIRED
 };
+
+class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIError : public Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>
+{
+public:
+  ResourceGroupsTaggingAPIError() {}
+  ResourceGroupsTaggingAPIError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
+  ResourceGroupsTaggingAPIError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
+  ResourceGroupsTaggingAPIError(const Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>& rhs) : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
+  ResourceGroupsTaggingAPIError(Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>&& rhs) : Aws::Client::AWSError<ResourceGroupsTaggingAPIErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ResourceGroupsTaggingAPIErrorMapper
 {
   AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

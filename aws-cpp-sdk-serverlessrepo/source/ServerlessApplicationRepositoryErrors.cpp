@@ -16,15 +16,58 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/serverlessrepo/ServerlessApplicationRepositoryErrors.h>
+#include <aws/serverlessrepo/model/ConflictException.h>
+#include <aws/serverlessrepo/model/NotFoundException.h>
+#include <aws/serverlessrepo/model/ForbiddenException.h>
+#include <aws/serverlessrepo/model/TooManyRequestsException.h>
+#include <aws/serverlessrepo/model/BadRequestException.h>
+#include <aws/serverlessrepo/model/InternalServerErrorException.h>
 
 using namespace Aws::Client;
-using namespace Aws::ServerlessApplicationRepository;
 using namespace Aws::Utils;
+using namespace Aws::ServerlessApplicationRepository;
+using namespace Aws::ServerlessApplicationRepository::Model;
 
 namespace Aws
 {
 namespace ServerlessApplicationRepository
 {
+template<> AWS_SERVERLESSAPPLICATIONREPOSITORY_API ConflictException ServerlessApplicationRepositoryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServerlessApplicationRepositoryErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SERVERLESSAPPLICATIONREPOSITORY_API NotFoundException ServerlessApplicationRepositoryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServerlessApplicationRepositoryErrors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SERVERLESSAPPLICATIONREPOSITORY_API ForbiddenException ServerlessApplicationRepositoryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServerlessApplicationRepositoryErrors::FORBIDDEN);
+  return ForbiddenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SERVERLESSAPPLICATIONREPOSITORY_API TooManyRequestsException ServerlessApplicationRepositoryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServerlessApplicationRepositoryErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SERVERLESSAPPLICATIONREPOSITORY_API BadRequestException ServerlessApplicationRepositoryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServerlessApplicationRepositoryErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SERVERLESSAPPLICATIONREPOSITORY_API InternalServerErrorException ServerlessApplicationRepositoryError::GetModeledError()
+{
+  assert(this->GetErrorType() == ServerlessApplicationRepositoryErrors::INTERNAL_SERVER_ERROR);
+  return InternalServerErrorException(this->GetJsonPayload().View());
+}
+
 namespace ServerlessApplicationRepositoryErrorMapper
 {
 

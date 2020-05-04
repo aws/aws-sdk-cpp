@@ -18,8 +18,8 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ElasticBeanstalk;
 using namespace Aws::Utils;
+using namespace Aws::ElasticBeanstalk;
 
 namespace Aws
 {

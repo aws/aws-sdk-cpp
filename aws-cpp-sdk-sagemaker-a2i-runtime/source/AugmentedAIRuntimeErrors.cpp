@@ -18,8 +18,8 @@
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntimeErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::AugmentedAIRuntime;
 using namespace Aws::Utils;
+using namespace Aws::AugmentedAIRuntime;
 
 namespace Aws
 {

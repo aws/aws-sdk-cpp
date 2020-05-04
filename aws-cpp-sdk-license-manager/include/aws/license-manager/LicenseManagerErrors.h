@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class LicenseManagerErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,20 @@ enum class LicenseManagerErrors
   RESOURCE_LIMIT_EXCEEDED,
   SERVER_INTERNAL
 };
+
+class AWS_LICENSEMANAGER_API LicenseManagerError : public Aws::Client::AWSError<LicenseManagerErrors>
+{
+public:
+  LicenseManagerError() {}
+  LicenseManagerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LicenseManagerErrors>(rhs) {}
+  LicenseManagerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LicenseManagerErrors>(rhs) {}
+  LicenseManagerError(const Aws::Client::AWSError<LicenseManagerErrors>& rhs) : Aws::Client::AWSError<LicenseManagerErrors>(rhs) {}
+  LicenseManagerError(Aws::Client::AWSError<LicenseManagerErrors>&& rhs) : Aws::Client::AWSError<LicenseManagerErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace LicenseManagerErrorMapper
 {
   AWS_LICENSEMANAGER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

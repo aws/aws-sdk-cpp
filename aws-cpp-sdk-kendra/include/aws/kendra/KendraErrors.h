@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kendra/Kendra_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class KendraErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class KendraErrors
   RESOURCE_UNAVAILABLE,
   SERVICE_QUOTA_EXCEEDED
 };
+
+class AWS_KENDRA_API KendraError : public Aws::Client::AWSError<KendraErrors>
+{
+public:
+  KendraError() {}
+  KendraError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KendraErrors>(rhs) {}
+  KendraError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KendraErrors>(rhs) {}
+  KendraError(const Aws::Client::AWSError<KendraErrors>& rhs) : Aws::Client::AWSError<KendraErrors>(rhs) {}
+  KendraError(Aws::Client::AWSError<KendraErrors>&& rhs) : Aws::Client::AWSError<KendraErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KendraErrorMapper
 {
   AWS_KENDRA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

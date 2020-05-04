@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class Cloud9Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class Cloud9Errors
   NOT_FOUND,
   TOO_MANY_REQUESTS
 };
+
+class AWS_CLOUD9_API Cloud9Error : public Aws::Client::AWSError<Cloud9Errors>
+{
+public:
+  Cloud9Error() {}
+  Cloud9Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<Cloud9Errors>(rhs) {}
+  Cloud9Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<Cloud9Errors>(rhs) {}
+  Cloud9Error(const Aws::Client::AWSError<Cloud9Errors>& rhs) : Aws::Client::AWSError<Cloud9Errors>(rhs) {}
+  Cloud9Error(Aws::Client::AWSError<Cloud9Errors>&& rhs) : Aws::Client::AWSError<Cloud9Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace Cloud9ErrorMapper
 {
   AWS_CLOUD9_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

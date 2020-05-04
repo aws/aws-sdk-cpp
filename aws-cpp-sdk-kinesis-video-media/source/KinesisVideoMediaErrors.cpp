@@ -18,8 +18,8 @@
 #include <aws/kinesis-video-media/KinesisVideoMediaErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::KinesisVideoMedia;
 using namespace Aws::Utils;
+using namespace Aws::KinesisVideoMedia;
 
 namespace Aws
 {

@@ -93,22 +93,22 @@ namespace Model
         class UpdateLicenseSpecificationsForResourceRequest;
         class UpdateServiceSettingsRequest;
 
-        typedef Aws::Utils::Outcome<CreateLicenseConfigurationResult, Aws::Client::AWSError<LicenseManagerErrors>> CreateLicenseConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeleteLicenseConfigurationResult, Aws::Client::AWSError<LicenseManagerErrors>> DeleteLicenseConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetLicenseConfigurationResult, Aws::Client::AWSError<LicenseManagerErrors>> GetLicenseConfigurationOutcome;
-        typedef Aws::Utils::Outcome<GetServiceSettingsResult, Aws::Client::AWSError<LicenseManagerErrors>> GetServiceSettingsOutcome;
-        typedef Aws::Utils::Outcome<ListAssociationsForLicenseConfigurationResult, Aws::Client::AWSError<LicenseManagerErrors>> ListAssociationsForLicenseConfigurationOutcome;
-        typedef Aws::Utils::Outcome<ListFailuresForLicenseConfigurationOperationsResult, Aws::Client::AWSError<LicenseManagerErrors>> ListFailuresForLicenseConfigurationOperationsOutcome;
-        typedef Aws::Utils::Outcome<ListLicenseConfigurationsResult, Aws::Client::AWSError<LicenseManagerErrors>> ListLicenseConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListLicenseSpecificationsForResourceResult, Aws::Client::AWSError<LicenseManagerErrors>> ListLicenseSpecificationsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListResourceInventoryResult, Aws::Client::AWSError<LicenseManagerErrors>> ListResourceInventoryOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<LicenseManagerErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListUsageForLicenseConfigurationResult, Aws::Client::AWSError<LicenseManagerErrors>> ListUsageForLicenseConfigurationOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<LicenseManagerErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<LicenseManagerErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateLicenseConfigurationResult, Aws::Client::AWSError<LicenseManagerErrors>> UpdateLicenseConfigurationOutcome;
-        typedef Aws::Utils::Outcome<UpdateLicenseSpecificationsForResourceResult, Aws::Client::AWSError<LicenseManagerErrors>> UpdateLicenseSpecificationsForResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateServiceSettingsResult, Aws::Client::AWSError<LicenseManagerErrors>> UpdateServiceSettingsOutcome;
+        typedef Aws::Utils::Outcome<CreateLicenseConfigurationResult, LicenseManagerError> CreateLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteLicenseConfigurationResult, LicenseManagerError> DeleteLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetLicenseConfigurationResult, LicenseManagerError> GetLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetServiceSettingsResult, LicenseManagerError> GetServiceSettingsOutcome;
+        typedef Aws::Utils::Outcome<ListAssociationsForLicenseConfigurationResult, LicenseManagerError> ListAssociationsForLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ListFailuresForLicenseConfigurationOperationsResult, LicenseManagerError> ListFailuresForLicenseConfigurationOperationsOutcome;
+        typedef Aws::Utils::Outcome<ListLicenseConfigurationsResult, LicenseManagerError> ListLicenseConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListLicenseSpecificationsForResourceResult, LicenseManagerError> ListLicenseSpecificationsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListResourceInventoryResult, LicenseManagerError> ListResourceInventoryOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, LicenseManagerError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListUsageForLicenseConfigurationResult, LicenseManagerError> ListUsageForLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, LicenseManagerError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, LicenseManagerError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateLicenseConfigurationResult, LicenseManagerError> UpdateLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateLicenseSpecificationsForResourceResult, LicenseManagerError> UpdateLicenseSpecificationsForResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateServiceSettingsResult, LicenseManagerError> UpdateServiceSettingsOutcome;
 
         typedef std::future<CreateLicenseConfigurationOutcome> CreateLicenseConfigurationOutcomeCallable;
         typedef std::future<DeleteLicenseConfigurationOutcome> DeleteLicenseConfigurationOutcomeCallable;

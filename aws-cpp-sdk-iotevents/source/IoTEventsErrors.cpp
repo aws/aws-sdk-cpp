@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/iotevents/IoTEventsErrors.h>
+#include <aws/iotevents/model/ResourceAlreadyExistsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoTEvents;
 using namespace Aws::Utils;
+using namespace Aws::IoTEvents;
+using namespace Aws::IoTEvents::Model;
 
 namespace Aws
 {
 namespace IoTEvents
 {
+template<> AWS_IOTEVENTS_API ResourceAlreadyExistsException IoTEventsError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTEventsErrors::RESOURCE_ALREADY_EXISTS);
+  return ResourceAlreadyExistsException(this->GetJsonPayload().View());
+}
+
 namespace IoTEventsErrorMapper
 {
 

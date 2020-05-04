@@ -16,15 +16,37 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/apigateway/APIGatewayErrors.h>
+#include <aws/apigateway/model/ServiceUnavailableException.h>
+#include <aws/apigateway/model/LimitExceededException.h>
+#include <aws/apigateway/model/TooManyRequestsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::APIGateway;
 using namespace Aws::Utils;
+using namespace Aws::APIGateway;
+using namespace Aws::APIGateway::Model;
 
 namespace Aws
 {
 namespace APIGateway
 {
+template<> AWS_APIGATEWAY_API ServiceUnavailableException APIGatewayError::GetModeledError()
+{
+  assert(this->GetErrorType() == APIGatewayErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_APIGATEWAY_API LimitExceededException APIGatewayError::GetModeledError()
+{
+  assert(this->GetErrorType() == APIGatewayErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_APIGATEWAY_API TooManyRequestsException APIGatewayError::GetModeledError()
+{
+  assert(this->GetErrorType() == APIGatewayErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
 namespace APIGatewayErrorMapper
 {
 

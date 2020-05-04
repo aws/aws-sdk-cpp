@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/savingsplans/SavingsPlans_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class SavingsPlansErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SERVICE_QUOTA_EXCEEDED
 };
+
+class AWS_SAVINGSPLANS_API SavingsPlansError : public Aws::Client::AWSError<SavingsPlansErrors>
+{
+public:
+  SavingsPlansError() {}
+  SavingsPlansError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SavingsPlansErrors>(rhs) {}
+  SavingsPlansError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SavingsPlansErrors>(rhs) {}
+  SavingsPlansError(const Aws::Client::AWSError<SavingsPlansErrors>& rhs) : Aws::Client::AWSError<SavingsPlansErrors>(rhs) {}
+  SavingsPlansError(Aws::Client::AWSError<SavingsPlansErrors>&& rhs) : Aws::Client::AWSError<SavingsPlansErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SavingsPlansErrorMapper
 {
   AWS_SAVINGSPLANS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

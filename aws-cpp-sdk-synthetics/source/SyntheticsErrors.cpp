@@ -18,8 +18,8 @@
 #include <aws/synthetics/SyntheticsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Synthetics;
 using namespace Aws::Utils;
+using namespace Aws::Synthetics;
 
 namespace Aws
 {

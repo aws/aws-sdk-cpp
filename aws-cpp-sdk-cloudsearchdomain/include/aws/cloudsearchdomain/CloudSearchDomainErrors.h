@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cloudsearchdomain/CloudSearchDomain_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class CloudSearchDomainErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DOCUMENT_SERVICE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   SEARCH
 };
+
+class AWS_CLOUDSEARCHDOMAIN_API CloudSearchDomainError : public Aws::Client::AWSError<CloudSearchDomainErrors>
+{
+public:
+  CloudSearchDomainError() {}
+  CloudSearchDomainError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudSearchDomainErrors>(rhs) {}
+  CloudSearchDomainError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudSearchDomainErrors>(rhs) {}
+  CloudSearchDomainError(const Aws::Client::AWSError<CloudSearchDomainErrors>& rhs) : Aws::Client::AWSError<CloudSearchDomainErrors>(rhs) {}
+  CloudSearchDomainError(Aws::Client::AWSError<CloudSearchDomainErrors>&& rhs) : Aws::Client::AWSError<CloudSearchDomainErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudSearchDomainErrorMapper
 {
   AWS_CLOUDSEARCHDOMAIN_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

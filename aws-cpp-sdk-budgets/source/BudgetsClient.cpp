@@ -60,7 +60,7 @@ static const char* ALLOCATION_TAG = "BudgetsClient";
 BudgetsClient::BudgetsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BudgetsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -70,7 +70,7 @@ BudgetsClient::BudgetsClient(const Client::ClientConfiguration& clientConfigurat
 BudgetsClient::BudgetsClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BudgetsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -81,7 +81,7 @@ BudgetsClient::BudgetsClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BudgetsErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -123,15 +123,7 @@ CreateBudgetOutcome BudgetsClient::CreateBudget(const CreateBudgetRequest& reque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateBudgetOutcome(CreateBudgetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateBudgetOutcome(outcome.GetError());
-  }
+  return CreateBudgetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateBudgetOutcomeCallable BudgetsClient::CreateBudgetCallable(const CreateBudgetRequest& request) const
@@ -158,15 +150,7 @@ CreateNotificationOutcome BudgetsClient::CreateNotification(const CreateNotifica
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateNotificationOutcome(CreateNotificationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateNotificationOutcome(outcome.GetError());
-  }
+  return CreateNotificationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateNotificationOutcomeCallable BudgetsClient::CreateNotificationCallable(const CreateNotificationRequest& request) const
@@ -193,15 +177,7 @@ CreateSubscriberOutcome BudgetsClient::CreateSubscriber(const CreateSubscriberRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateSubscriberOutcome(CreateSubscriberResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateSubscriberOutcome(outcome.GetError());
-  }
+  return CreateSubscriberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateSubscriberOutcomeCallable BudgetsClient::CreateSubscriberCallable(const CreateSubscriberRequest& request) const
@@ -228,15 +204,7 @@ DeleteBudgetOutcome BudgetsClient::DeleteBudget(const DeleteBudgetRequest& reque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteBudgetOutcome(DeleteBudgetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteBudgetOutcome(outcome.GetError());
-  }
+  return DeleteBudgetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteBudgetOutcomeCallable BudgetsClient::DeleteBudgetCallable(const DeleteBudgetRequest& request) const
@@ -263,15 +231,7 @@ DeleteNotificationOutcome BudgetsClient::DeleteNotification(const DeleteNotifica
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteNotificationOutcome(DeleteNotificationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteNotificationOutcome(outcome.GetError());
-  }
+  return DeleteNotificationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteNotificationOutcomeCallable BudgetsClient::DeleteNotificationCallable(const DeleteNotificationRequest& request) const
@@ -298,15 +258,7 @@ DeleteSubscriberOutcome BudgetsClient::DeleteSubscriber(const DeleteSubscriberRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteSubscriberOutcome(DeleteSubscriberResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteSubscriberOutcome(outcome.GetError());
-  }
+  return DeleteSubscriberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteSubscriberOutcomeCallable BudgetsClient::DeleteSubscriberCallable(const DeleteSubscriberRequest& request) const
@@ -333,15 +285,7 @@ DescribeBudgetOutcome BudgetsClient::DescribeBudget(const DescribeBudgetRequest&
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeBudgetOutcome(DescribeBudgetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeBudgetOutcome(outcome.GetError());
-  }
+  return DescribeBudgetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBudgetOutcomeCallable BudgetsClient::DescribeBudgetCallable(const DescribeBudgetRequest& request) const
@@ -368,15 +312,7 @@ DescribeBudgetPerformanceHistoryOutcome BudgetsClient::DescribeBudgetPerformance
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeBudgetPerformanceHistoryOutcome(DescribeBudgetPerformanceHistoryResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeBudgetPerformanceHistoryOutcome(outcome.GetError());
-  }
+  return DescribeBudgetPerformanceHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBudgetPerformanceHistoryOutcomeCallable BudgetsClient::DescribeBudgetPerformanceHistoryCallable(const DescribeBudgetPerformanceHistoryRequest& request) const
@@ -403,15 +339,7 @@ DescribeBudgetsOutcome BudgetsClient::DescribeBudgets(const DescribeBudgetsReque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeBudgetsOutcome(DescribeBudgetsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeBudgetsOutcome(outcome.GetError());
-  }
+  return DescribeBudgetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeBudgetsOutcomeCallable BudgetsClient::DescribeBudgetsCallable(const DescribeBudgetsRequest& request) const
@@ -438,15 +366,7 @@ DescribeNotificationsForBudgetOutcome BudgetsClient::DescribeNotificationsForBud
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeNotificationsForBudgetOutcome(DescribeNotificationsForBudgetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeNotificationsForBudgetOutcome(outcome.GetError());
-  }
+  return DescribeNotificationsForBudgetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeNotificationsForBudgetOutcomeCallable BudgetsClient::DescribeNotificationsForBudgetCallable(const DescribeNotificationsForBudgetRequest& request) const
@@ -473,15 +393,7 @@ DescribeSubscribersForNotificationOutcome BudgetsClient::DescribeSubscribersForN
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeSubscribersForNotificationOutcome(DescribeSubscribersForNotificationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeSubscribersForNotificationOutcome(outcome.GetError());
-  }
+  return DescribeSubscribersForNotificationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeSubscribersForNotificationOutcomeCallable BudgetsClient::DescribeSubscribersForNotificationCallable(const DescribeSubscribersForNotificationRequest& request) const
@@ -508,15 +420,7 @@ UpdateBudgetOutcome BudgetsClient::UpdateBudget(const UpdateBudgetRequest& reque
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateBudgetOutcome(UpdateBudgetResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateBudgetOutcome(outcome.GetError());
-  }
+  return UpdateBudgetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateBudgetOutcomeCallable BudgetsClient::UpdateBudgetCallable(const UpdateBudgetRequest& request) const
@@ -543,15 +447,7 @@ UpdateNotificationOutcome BudgetsClient::UpdateNotification(const UpdateNotifica
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateNotificationOutcome(UpdateNotificationResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateNotificationOutcome(outcome.GetError());
-  }
+  return UpdateNotificationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateNotificationOutcomeCallable BudgetsClient::UpdateNotificationCallable(const UpdateNotificationRequest& request) const
@@ -578,15 +474,7 @@ UpdateSubscriberOutcome BudgetsClient::UpdateSubscriber(const UpdateSubscriberRe
   Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateSubscriberOutcome(UpdateSubscriberResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateSubscriberOutcome(outcome.GetError());
-  }
+  return UpdateSubscriberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateSubscriberOutcomeCallable BudgetsClient::UpdateSubscriberCallable(const UpdateSubscriberRequest& request) const

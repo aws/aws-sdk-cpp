@@ -18,8 +18,8 @@
 #include <aws/personalize-runtime/PersonalizeRuntimeErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::PersonalizeRuntime;
 using namespace Aws::Utils;
+using namespace Aws::PersonalizeRuntime;
 
 namespace Aws
 {

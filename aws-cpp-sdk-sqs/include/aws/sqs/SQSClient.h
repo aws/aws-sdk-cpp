@@ -100,26 +100,26 @@ namespace Model
         class TagQueueRequest;
         class UntagQueueRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> AddPermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> ChangeMessageVisibilityOutcome;
-        typedef Aws::Utils::Outcome<ChangeMessageVisibilityBatchResult, Aws::Client::AWSError<SQSErrors>> ChangeMessageVisibilityBatchOutcome;
-        typedef Aws::Utils::Outcome<CreateQueueResult, Aws::Client::AWSError<SQSErrors>> CreateQueueOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> DeleteMessageOutcome;
-        typedef Aws::Utils::Outcome<DeleteMessageBatchResult, Aws::Client::AWSError<SQSErrors>> DeleteMessageBatchOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> DeleteQueueOutcome;
-        typedef Aws::Utils::Outcome<GetQueueAttributesResult, Aws::Client::AWSError<SQSErrors>> GetQueueAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetQueueUrlResult, Aws::Client::AWSError<SQSErrors>> GetQueueUrlOutcome;
-        typedef Aws::Utils::Outcome<ListDeadLetterSourceQueuesResult, Aws::Client::AWSError<SQSErrors>> ListDeadLetterSourceQueuesOutcome;
-        typedef Aws::Utils::Outcome<ListQueueTagsResult, Aws::Client::AWSError<SQSErrors>> ListQueueTagsOutcome;
-        typedef Aws::Utils::Outcome<ListQueuesResult, Aws::Client::AWSError<SQSErrors>> ListQueuesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> PurgeQueueOutcome;
-        typedef Aws::Utils::Outcome<ReceiveMessageResult, Aws::Client::AWSError<SQSErrors>> ReceiveMessageOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> RemovePermissionOutcome;
-        typedef Aws::Utils::Outcome<SendMessageResult, Aws::Client::AWSError<SQSErrors>> SendMessageOutcome;
-        typedef Aws::Utils::Outcome<SendMessageBatchResult, Aws::Client::AWSError<SQSErrors>> SendMessageBatchOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> SetQueueAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> TagQueueOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SQSErrors>> UntagQueueOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> AddPermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> ChangeMessageVisibilityOutcome;
+        typedef Aws::Utils::Outcome<ChangeMessageVisibilityBatchResult, SQSError> ChangeMessageVisibilityBatchOutcome;
+        typedef Aws::Utils::Outcome<CreateQueueResult, SQSError> CreateQueueOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> DeleteMessageOutcome;
+        typedef Aws::Utils::Outcome<DeleteMessageBatchResult, SQSError> DeleteMessageBatchOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> DeleteQueueOutcome;
+        typedef Aws::Utils::Outcome<GetQueueAttributesResult, SQSError> GetQueueAttributesOutcome;
+        typedef Aws::Utils::Outcome<GetQueueUrlResult, SQSError> GetQueueUrlOutcome;
+        typedef Aws::Utils::Outcome<ListDeadLetterSourceQueuesResult, SQSError> ListDeadLetterSourceQueuesOutcome;
+        typedef Aws::Utils::Outcome<ListQueueTagsResult, SQSError> ListQueueTagsOutcome;
+        typedef Aws::Utils::Outcome<ListQueuesResult, SQSError> ListQueuesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> PurgeQueueOutcome;
+        typedef Aws::Utils::Outcome<ReceiveMessageResult, SQSError> ReceiveMessageOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> RemovePermissionOutcome;
+        typedef Aws::Utils::Outcome<SendMessageResult, SQSError> SendMessageOutcome;
+        typedef Aws::Utils::Outcome<SendMessageBatchResult, SQSError> SendMessageBatchOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> SetQueueAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> TagQueueOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SQSError> UntagQueueOutcome;
 
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
         typedef std::future<ChangeMessageVisibilityOutcome> ChangeMessageVisibilityOutcomeCallable;
@@ -1644,7 +1644,7 @@ namespace Model
          */
         virtual void UntagQueueAsync(const Model::UntagQueueRequest& request, const UntagQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

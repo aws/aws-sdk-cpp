@@ -18,8 +18,8 @@
 #include <aws/s3/S3Errors.h>
 
 using namespace Aws::Client;
-using namespace Aws::S3;
 using namespace Aws::Utils;
+using namespace Aws::S3;
 
 namespace Aws
 {

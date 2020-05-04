@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class WAFRegionalErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -77,6 +78,20 @@ enum class WAFRegionalErrors
   W_A_F_TAG_OPERATION_INTERNAL_ERROR,
   W_A_F_UNAVAILABLE_ENTITY
 };
+
+class AWS_WAFREGIONAL_API WAFRegionalError : public Aws::Client::AWSError<WAFRegionalErrors>
+{
+public:
+  WAFRegionalError() {}
+  WAFRegionalError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WAFRegionalErrors>(rhs) {}
+  WAFRegionalError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WAFRegionalErrors>(rhs) {}
+  WAFRegionalError(const Aws::Client::AWSError<WAFRegionalErrors>& rhs) : Aws::Client::AWSError<WAFRegionalErrors>(rhs) {}
+  WAFRegionalError(Aws::Client::AWSError<WAFRegionalErrors>&& rhs) : Aws::Client::AWSError<WAFRegionalErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace WAFRegionalErrorMapper
 {
   AWS_WAFREGIONAL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

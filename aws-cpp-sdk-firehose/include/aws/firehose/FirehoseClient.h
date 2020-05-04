@@ -85,18 +85,18 @@ namespace Model
         class UntagDeliveryStreamRequest;
         class UpdateDestinationRequest;
 
-        typedef Aws::Utils::Outcome<CreateDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> CreateDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<DeleteDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> DeleteDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<DescribeDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> DescribeDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<ListDeliveryStreamsResult, Aws::Client::AWSError<FirehoseErrors>> ListDeliveryStreamsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> ListTagsForDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<PutRecordResult, Aws::Client::AWSError<FirehoseErrors>> PutRecordOutcome;
-        typedef Aws::Utils::Outcome<PutRecordBatchResult, Aws::Client::AWSError<FirehoseErrors>> PutRecordBatchOutcome;
-        typedef Aws::Utils::Outcome<StartDeliveryStreamEncryptionResult, Aws::Client::AWSError<FirehoseErrors>> StartDeliveryStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<StopDeliveryStreamEncryptionResult, Aws::Client::AWSError<FirehoseErrors>> StopDeliveryStreamEncryptionOutcome;
-        typedef Aws::Utils::Outcome<TagDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> TagDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<UntagDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> UntagDeliveryStreamOutcome;
-        typedef Aws::Utils::Outcome<UpdateDestinationResult, Aws::Client::AWSError<FirehoseErrors>> UpdateDestinationOutcome;
+        typedef Aws::Utils::Outcome<CreateDeliveryStreamResult, FirehoseError> CreateDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<DeleteDeliveryStreamResult, FirehoseError> DeleteDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<DescribeDeliveryStreamResult, FirehoseError> DescribeDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<ListDeliveryStreamsResult, FirehoseError> ListDeliveryStreamsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForDeliveryStreamResult, FirehoseError> ListTagsForDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<PutRecordResult, FirehoseError> PutRecordOutcome;
+        typedef Aws::Utils::Outcome<PutRecordBatchResult, FirehoseError> PutRecordBatchOutcome;
+        typedef Aws::Utils::Outcome<StartDeliveryStreamEncryptionResult, FirehoseError> StartDeliveryStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<StopDeliveryStreamEncryptionResult, FirehoseError> StopDeliveryStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<TagDeliveryStreamResult, FirehoseError> TagDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<UntagDeliveryStreamResult, FirehoseError> UntagDeliveryStreamOutcome;
+        typedef Aws::Utils::Outcome<UpdateDestinationResult, FirehoseError> UpdateDestinationOutcome;
 
         typedef std::future<CreateDeliveryStreamOutcome> CreateDeliveryStreamOutcomeCallable;
         typedef std::future<DeleteDeliveryStreamOutcome> DeleteDeliveryStreamOutcomeCallable;

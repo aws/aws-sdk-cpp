@@ -18,8 +18,8 @@
 #include <aws/support/SupportErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Support;
 using namespace Aws::Utils;
+using namespace Aws::Support;
 
 namespace Aws
 {

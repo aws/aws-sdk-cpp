@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class IoTAnalyticsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class IoTAnalyticsErrors
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
+
+class AWS_IOTANALYTICS_API IoTAnalyticsError : public Aws::Client::AWSError<IoTAnalyticsErrors>
+{
+public:
+  IoTAnalyticsError() {}
+  IoTAnalyticsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTAnalyticsErrors>(rhs) {}
+  IoTAnalyticsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTAnalyticsErrors>(rhs) {}
+  IoTAnalyticsError(const Aws::Client::AWSError<IoTAnalyticsErrors>& rhs) : Aws::Client::AWSError<IoTAnalyticsErrors>(rhs) {}
+  IoTAnalyticsError(Aws::Client::AWSError<IoTAnalyticsErrors>&& rhs) : Aws::Client::AWSError<IoTAnalyticsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace IoTAnalyticsErrorMapper
 {
   AWS_IOTANALYTICS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -18,8 +18,8 @@
 #include <aws/robomaker/RoboMakerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::RoboMaker;
 using namespace Aws::Utils;
+using namespace Aws::RoboMaker;
 
 namespace Aws
 {

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class GreengrassErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER_ERROR
 };
+
+class AWS_GREENGRASS_API GreengrassError : public Aws::Client::AWSError<GreengrassErrors>
+{
+public:
+  GreengrassError() {}
+  GreengrassError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GreengrassErrors>(rhs) {}
+  GreengrassError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GreengrassErrors>(rhs) {}
+  GreengrassError(const Aws::Client::AWSError<GreengrassErrors>& rhs) : Aws::Client::AWSError<GreengrassErrors>(rhs) {}
+  GreengrassError(Aws::Client::AWSError<GreengrassErrors>&& rhs) : Aws::Client::AWSError<GreengrassErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace GreengrassErrorMapper
 {
   AWS_GREENGRASS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

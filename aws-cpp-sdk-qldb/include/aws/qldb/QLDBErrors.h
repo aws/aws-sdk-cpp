@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/qldb/QLDB_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class QLDBErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class QLDBErrors
   RESOURCE_IN_USE,
   RESOURCE_PRECONDITION_NOT_MET
 };
+
+class AWS_QLDB_API QLDBError : public Aws::Client::AWSError<QLDBErrors>
+{
+public:
+  QLDBError() {}
+  QLDBError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<QLDBErrors>(rhs) {}
+  QLDBError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<QLDBErrors>(rhs) {}
+  QLDBError(const Aws::Client::AWSError<QLDBErrors>& rhs) : Aws::Client::AWSError<QLDBErrors>(rhs) {}
+  QLDBError(Aws::Client::AWSError<QLDBErrors>&& rhs) : Aws::Client::AWSError<QLDBErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace QLDBErrorMapper
 {
   AWS_QLDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

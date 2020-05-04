@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/iotanalytics/IoTAnalyticsErrors.h>
+#include <aws/iotanalytics/model/ResourceAlreadyExistsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoTAnalytics;
 using namespace Aws::Utils;
+using namespace Aws::IoTAnalytics;
+using namespace Aws::IoTAnalytics::Model;
 
 namespace Aws
 {
 namespace IoTAnalytics
 {
+template<> AWS_IOTANALYTICS_API ResourceAlreadyExistsException IoTAnalyticsError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTAnalyticsErrors::RESOURCE_ALREADY_EXISTS);
+  return ResourceAlreadyExistsException(this->GetJsonPayload().View());
+}
+
 namespace IoTAnalyticsErrorMapper
 {
 

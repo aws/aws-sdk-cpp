@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sdb/SimpleDB_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SimpleDBErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -71,6 +72,20 @@ enum class SimpleDBErrors
   NUMBER_SUBMITTED_ITEMS_EXCEEDED,
   TOO_MANY_REQUESTED_ATTRIBUTES
 };
+
+class AWS_SIMPLEDB_API SimpleDBError : public Aws::Client::AWSError<SimpleDBErrors>
+{
+public:
+  SimpleDBError() {}
+  SimpleDBError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SimpleDBErrors>(rhs) {}
+  SimpleDBError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SimpleDBErrors>(rhs) {}
+  SimpleDBError(const Aws::Client::AWSError<SimpleDBErrors>& rhs) : Aws::Client::AWSError<SimpleDBErrors>(rhs) {}
+  SimpleDBError(Aws::Client::AWSError<SimpleDBErrors>&& rhs) : Aws::Client::AWSError<SimpleDBErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SimpleDBErrorMapper
 {
   AWS_SIMPLEDB_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

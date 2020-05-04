@@ -18,8 +18,8 @@
 #include <aws/swf/SWFErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SWF;
 using namespace Aws::Utils;
+using namespace Aws::SWF;
 
 namespace Aws
 {

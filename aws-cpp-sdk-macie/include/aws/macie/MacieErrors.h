@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/macie/Macie_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class MacieErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class MacieErrors
   INVALID_INPUT,
   LIMIT_EXCEEDED
 };
+
+class AWS_MACIE_API MacieError : public Aws::Client::AWSError<MacieErrors>
+{
+public:
+  MacieError() {}
+  MacieError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MacieErrors>(rhs) {}
+  MacieError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MacieErrors>(rhs) {}
+  MacieError(const Aws::Client::AWSError<MacieErrors>& rhs) : Aws::Client::AWSError<MacieErrors>(rhs) {}
+  MacieError(Aws::Client::AWSError<MacieErrors>&& rhs) : Aws::Client::AWSError<MacieErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MacieErrorMapper
 {
   AWS_MACIE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

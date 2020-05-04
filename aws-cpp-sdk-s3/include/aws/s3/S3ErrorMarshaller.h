@@ -27,6 +27,8 @@ class AWS_S3_API S3ErrorMarshaller : public Aws::Client::XmlErrorMarshaller
 {
 public:
   Aws::Client::AWSError<Aws::Client::CoreErrors> FindErrorByName(const char* exceptionName) const override;
+  virtual Aws::String ExtractRegion(const AWSError<CoreErrors>&) const override;
+  virtual Aws::String ExtractEndpoint(const AWSError<CoreErrors>&) const override;
 };
 
 } // namespace Client

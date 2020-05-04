@@ -63,7 +63,7 @@ namespace Model
 {
         class QueryForecastRequest;
 
-        typedef Aws::Utils::Outcome<QueryForecastResult, Aws::Client::AWSError<ForecastQueryServiceErrors>> QueryForecastOutcome;
+        typedef Aws::Utils::Outcome<QueryForecastResult, ForecastQueryServiceError> QueryForecastOutcome;
 
         typedef std::future<QueryForecastOutcome> QueryForecastOutcomeCallable;
 } // namespace Model

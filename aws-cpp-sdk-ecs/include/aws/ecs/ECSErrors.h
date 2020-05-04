@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ECSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -78,6 +79,20 @@ enum class ECSErrors
   UNSUPPORTED_FEATURE,
   UPDATE_IN_PROGRESS
 };
+
+class AWS_ECS_API ECSError : public Aws::Client::AWSError<ECSErrors>
+{
+public:
+  ECSError() {}
+  ECSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ECSErrors>(rhs) {}
+  ECSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ECSErrors>(rhs) {}
+  ECSError(const Aws::Client::AWSError<ECSErrors>& rhs) : Aws::Client::AWSError<ECSErrors>(rhs) {}
+  ECSError(Aws::Client::AWSError<ECSErrors>&& rhs) : Aws::Client::AWSError<ECSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ECSErrorMapper
 {
   AWS_ECS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

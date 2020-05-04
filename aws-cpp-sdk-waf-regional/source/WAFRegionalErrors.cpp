@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/waf-regional/WAFRegionalErrors.h>
+#include <aws/waf-regional/model/WAFInvalidParameterException.h>
+#include <aws/waf-regional/model/WAFEntityMigrationException.h>
 
 using namespace Aws::Client;
-using namespace Aws::WAFRegional;
 using namespace Aws::Utils;
+using namespace Aws::WAFRegional;
+using namespace Aws::WAFRegional::Model;
 
 namespace Aws
 {
 namespace WAFRegional
 {
+template<> AWS_WAFREGIONAL_API WAFInvalidParameterException WAFRegionalError::GetModeledError()
+{
+  assert(this->GetErrorType() == WAFRegionalErrors::W_A_F_INVALID_PARAMETER);
+  return WAFInvalidParameterException(this->GetJsonPayload().View());
+}
+
+template<> AWS_WAFREGIONAL_API WAFEntityMigrationException WAFRegionalError::GetModeledError()
+{
+  assert(this->GetErrorType() == WAFRegionalErrors::W_A_F_ENTITY_MIGRATION);
+  return WAFEntityMigrationException(this->GetJsonPayload().View());
+}
+
 namespace WAFRegionalErrorMapper
 {
 

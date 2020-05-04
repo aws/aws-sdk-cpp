@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CognitoIdentityProviderErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -93,6 +94,20 @@ enum class CognitoIdentityProviderErrors
   USER_POOL_ADD_ON_NOT_ENABLED,
   USER_POOL_TAGGING
 };
+
+class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderError : public Aws::Client::AWSError<CognitoIdentityProviderErrors>
+{
+public:
+  CognitoIdentityProviderError() {}
+  CognitoIdentityProviderError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CognitoIdentityProviderErrors>(rhs) {}
+  CognitoIdentityProviderError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CognitoIdentityProviderErrors>(rhs) {}
+  CognitoIdentityProviderError(const Aws::Client::AWSError<CognitoIdentityProviderErrors>& rhs) : Aws::Client::AWSError<CognitoIdentityProviderErrors>(rhs) {}
+  CognitoIdentityProviderError(Aws::Client::AWSError<CognitoIdentityProviderErrors>&& rhs) : Aws::Client::AWSError<CognitoIdentityProviderErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CognitoIdentityProviderErrorMapper
 {
   AWS_COGNITOIDENTITYPROVIDER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/inspector/Inspector_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class InspectorErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -67,6 +68,20 @@ enum class InspectorErrors
   SERVICE_TEMPORARILY_UNAVAILABLE,
   UNSUPPORTED_FEATURE
 };
+
+class AWS_INSPECTOR_API InspectorError : public Aws::Client::AWSError<InspectorErrors>
+{
+public:
+  InspectorError() {}
+  InspectorError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<InspectorErrors>(rhs) {}
+  InspectorError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<InspectorErrors>(rhs) {}
+  InspectorError(const Aws::Client::AWSError<InspectorErrors>& rhs) : Aws::Client::AWSError<InspectorErrors>(rhs) {}
+  InspectorError(Aws::Client::AWSError<InspectorErrors>&& rhs) : Aws::Client::AWSError<InspectorErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace InspectorErrorMapper
 {
   AWS_INSPECTOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

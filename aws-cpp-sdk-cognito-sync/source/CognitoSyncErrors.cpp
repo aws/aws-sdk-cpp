@@ -18,8 +18,8 @@
 #include <aws/cognito-sync/CognitoSyncErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CognitoSync;
 using namespace Aws::Utils;
+using namespace Aws::CognitoSync;
 
 namespace Aws
 {

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/fms/FMS_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class FMSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class FMSErrors
   INVALID_TYPE,
   LIMIT_EXCEEDED
 };
+
+class AWS_FMS_API FMSError : public Aws::Client::AWSError<FMSErrors>
+{
+public:
+  FMSError() {}
+  FMSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<FMSErrors>(rhs) {}
+  FMSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<FMSErrors>(rhs) {}
+  FMSError(const Aws::Client::AWSError<FMSErrors>& rhs) : Aws::Client::AWSError<FMSErrors>(rhs) {}
+  FMSError(Aws::Client::AWSError<FMSErrors>&& rhs) : Aws::Client::AWSError<FMSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace FMSErrorMapper
 {
   AWS_FMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

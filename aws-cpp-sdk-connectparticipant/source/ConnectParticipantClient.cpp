@@ -51,7 +51,7 @@ static const char* ALLOCATION_TAG = "ConnectParticipantClient";
 ConnectParticipantClient::ConnectParticipantClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -61,7 +61,7 @@ ConnectParticipantClient::ConnectParticipantClient(const Client::ClientConfigura
 ConnectParticipantClient::ConnectParticipantClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -72,7 +72,7 @@ ConnectParticipantClient::ConnectParticipantClient(const std::shared_ptr<AWSCred
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ConnectParticipantErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -119,15 +119,7 @@ CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantCo
   Aws::StringStream ss;
   ss << "/participant/connection";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateParticipantConnectionOutcome(CreateParticipantConnectionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateParticipantConnectionOutcome(outcome.GetError());
-  }
+  return CreateParticipantConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateParticipantConnectionOutcomeCallable ConnectParticipantClient::CreateParticipantConnectionCallable(const CreateParticipantConnectionRequest& request) const
@@ -159,15 +151,7 @@ DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(con
   Aws::StringStream ss;
   ss << "/participant/disconnect";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisconnectParticipantOutcome(DisconnectParticipantResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DisconnectParticipantOutcome(outcome.GetError());
-  }
+  return DisconnectParticipantOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisconnectParticipantOutcomeCallable ConnectParticipantClient::DisconnectParticipantCallable(const DisconnectParticipantRequest& request) const
@@ -199,15 +183,7 @@ GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscript
   Aws::StringStream ss;
   ss << "/participant/transcript";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetTranscriptOutcome(GetTranscriptResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetTranscriptOutcome(outcome.GetError());
-  }
+  return GetTranscriptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTranscriptOutcomeCallable ConnectParticipantClient::GetTranscriptCallable(const GetTranscriptRequest& request) const
@@ -239,15 +215,7 @@ SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& req
   Aws::StringStream ss;
   ss << "/participant/event";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SendEventOutcome(SendEventResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SendEventOutcome(outcome.GetError());
-  }
+  return SendEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendEventOutcomeCallable ConnectParticipantClient::SendEventCallable(const SendEventRequest& request) const
@@ -279,15 +247,7 @@ SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageReques
   Aws::StringStream ss;
   ss << "/participant/message";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SendMessageOutcome(SendMessageResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SendMessageOutcome(outcome.GetError());
-  }
+  return SendMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SendMessageOutcomeCallable ConnectParticipantClient::SendMessageCallable(const SendMessageRequest& request) const

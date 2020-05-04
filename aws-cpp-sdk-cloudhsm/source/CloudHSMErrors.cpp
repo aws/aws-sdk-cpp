@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/cloudhsm/CloudHSMErrors.h>
+#include <aws/cloudhsm/model/CloudHsmServiceException.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudHSM;
 using namespace Aws::Utils;
+using namespace Aws::CloudHSM;
+using namespace Aws::CloudHSM::Model;
 
 namespace Aws
 {
 namespace CloudHSM
 {
+template<> AWS_CLOUDHSM_API CloudHsmServiceException CloudHSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudHSMErrors::CLOUD_HSM_SERVICE);
+  return CloudHsmServiceException(this->GetJsonPayload().View());
+}
+
 namespace CloudHSMErrorMapper
 {
 

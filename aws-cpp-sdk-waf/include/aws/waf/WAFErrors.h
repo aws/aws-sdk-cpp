@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/waf/WAF_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class WAFErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -76,6 +77,20 @@ enum class WAFErrors
   W_A_F_TAG_OPERATION,
   W_A_F_TAG_OPERATION_INTERNAL_ERROR
 };
+
+class AWS_WAF_API WAFError : public Aws::Client::AWSError<WAFErrors>
+{
+public:
+  WAFError() {}
+  WAFError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WAFErrors>(rhs) {}
+  WAFError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WAFErrors>(rhs) {}
+  WAFError(const Aws::Client::AWSError<WAFErrors>& rhs) : Aws::Client::AWSError<WAFErrors>(rhs) {}
+  WAFError(Aws::Client::AWSError<WAFErrors>&& rhs) : Aws::Client::AWSError<WAFErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace WAFErrorMapper
 {
   AWS_WAF_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

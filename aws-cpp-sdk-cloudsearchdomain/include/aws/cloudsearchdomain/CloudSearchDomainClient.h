@@ -67,9 +67,9 @@ namespace Model
         class SuggestRequest;
         class UploadDocumentsRequest;
 
-        typedef Aws::Utils::Outcome<SearchResult, Aws::Client::AWSError<CloudSearchDomainErrors>> SearchOutcome;
-        typedef Aws::Utils::Outcome<SuggestResult, Aws::Client::AWSError<CloudSearchDomainErrors>> SuggestOutcome;
-        typedef Aws::Utils::Outcome<UploadDocumentsResult, Aws::Client::AWSError<CloudSearchDomainErrors>> UploadDocumentsOutcome;
+        typedef Aws::Utils::Outcome<SearchResult, CloudSearchDomainError> SearchOutcome;
+        typedef Aws::Utils::Outcome<SuggestResult, CloudSearchDomainError> SuggestOutcome;
+        typedef Aws::Utils::Outcome<UploadDocumentsResult, CloudSearchDomainError> UploadDocumentsOutcome;
 
         typedef std::future<SearchOutcome> SearchOutcomeCallable;
         typedef std::future<SuggestOutcome> SuggestOutcomeCallable;

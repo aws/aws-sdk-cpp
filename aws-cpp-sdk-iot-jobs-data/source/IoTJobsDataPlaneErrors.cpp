@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlaneErrors.h>
+#include <aws/iot-jobs-data/model/ThrottlingException.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoTJobsDataPlane;
 using namespace Aws::Utils;
+using namespace Aws::IoTJobsDataPlane;
+using namespace Aws::IoTJobsDataPlane::Model;
 
 namespace Aws
 {
 namespace IoTJobsDataPlane
 {
+template<> AWS_IOTJOBSDATAPLANE_API ThrottlingException IoTJobsDataPlaneError::GetModeledError()
+{
+  assert(this->GetErrorType() == IoTJobsDataPlaneErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
 namespace IoTJobsDataPlaneErrorMapper
 {
 

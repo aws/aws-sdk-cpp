@@ -18,8 +18,8 @@
 #include <aws/discovery/ApplicationDiscoveryServiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ApplicationDiscoveryService;
 using namespace Aws::Utils;
+using namespace Aws::ApplicationDiscoveryService;
 
 namespace Aws
 {

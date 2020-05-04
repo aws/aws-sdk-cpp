@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/monitoring/CloudWatchErrors.h>
+#include <aws/monitoring/model/ResourceNotFoundException.h>
+#include <aws/monitoring/model/DashboardInvalidInputError.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudWatch;
 using namespace Aws::Utils;
+using namespace Aws::CloudWatch;
+using namespace Aws::CloudWatch::Model;
 
 namespace Aws
 {
 namespace CloudWatch
 {
+template<> AWS_CLOUDWATCH_API ResourceNotFoundException CloudWatchError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetXmlPayload().GetRootElement());
+}
+
+template<> AWS_CLOUDWATCH_API DashboardInvalidInputError CloudWatchError::GetModeledError()
+{
+  assert(this->GetErrorType() == CloudWatchErrors::DASHBOARD_INVALID_INPUT);
+  return DashboardInvalidInputError(this->GetXmlPayload().GetRootElement());
+}
+
 namespace CloudWatchErrorMapper
 {
 

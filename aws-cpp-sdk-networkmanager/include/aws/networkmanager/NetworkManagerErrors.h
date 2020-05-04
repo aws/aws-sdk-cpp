@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class NetworkManagerErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class NetworkManagerErrors
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
+
+class AWS_NETWORKMANAGER_API NetworkManagerError : public Aws::Client::AWSError<NetworkManagerErrors>
+{
+public:
+  NetworkManagerError() {}
+  NetworkManagerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<NetworkManagerErrors>(rhs) {}
+  NetworkManagerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<NetworkManagerErrors>(rhs) {}
+  NetworkManagerError(const Aws::Client::AWSError<NetworkManagerErrors>& rhs) : Aws::Client::AWSError<NetworkManagerErrors>(rhs) {}
+  NetworkManagerError(Aws::Client::AWSError<NetworkManagerErrors>&& rhs) : Aws::Client::AWSError<NetworkManagerErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace NetworkManagerErrorMapper
 {
   AWS_NETWORKMANAGER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

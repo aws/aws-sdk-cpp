@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class GroundStationErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class GroundStationErrors
   INVALID_PARAMETER,
   RESOURCE_LIMIT_EXCEEDED
 };
+
+class AWS_GROUNDSTATION_API GroundStationError : public Aws::Client::AWSError<GroundStationErrors>
+{
+public:
+  GroundStationError() {}
+  GroundStationError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GroundStationErrors>(rhs) {}
+  GroundStationError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GroundStationErrors>(rhs) {}
+  GroundStationError(const Aws::Client::AWSError<GroundStationErrors>& rhs) : Aws::Client::AWSError<GroundStationErrors>(rhs) {}
+  GroundStationError(Aws::Client::AWSError<GroundStationErrors>&& rhs) : Aws::Client::AWSError<GroundStationErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace GroundStationErrorMapper
 {
   AWS_GROUNDSTATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -16,15 +16,44 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/dlm/DLMErrors.h>
+#include <aws/dlm/model/InternalServerException.h>
+#include <aws/dlm/model/ResourceNotFoundException.h>
+#include <aws/dlm/model/LimitExceededException.h>
+#include <aws/dlm/model/InvalidRequestException.h>
 
 using namespace Aws::Client;
-using namespace Aws::DLM;
 using namespace Aws::Utils;
+using namespace Aws::DLM;
+using namespace Aws::DLM::Model;
 
 namespace Aws
 {
 namespace DLM
 {
+template<> AWS_DLM_API InternalServerException DLMError::GetModeledError()
+{
+  assert(this->GetErrorType() == DLMErrors::INTERNAL_SERVER);
+  return InternalServerException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DLM_API ResourceNotFoundException DLMError::GetModeledError()
+{
+  assert(this->GetErrorType() == DLMErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DLM_API LimitExceededException DLMError::GetModeledError()
+{
+  assert(this->GetErrorType() == DLMErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DLM_API InvalidRequestException DLMError::GetModeledError()
+{
+  assert(this->GetErrorType() == DLMErrors::INVALID_REQUEST);
+  return InvalidRequestException(this->GetJsonPayload().View());
+}
+
 namespace DLMErrorMapper
 {
 

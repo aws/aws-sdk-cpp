@@ -18,8 +18,8 @@
 #include <aws/cognito-identity/CognitoIdentityErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CognitoIdentity;
 using namespace Aws::Utils;
+using namespace Aws::CognitoIdentity;
 
 namespace Aws
 {

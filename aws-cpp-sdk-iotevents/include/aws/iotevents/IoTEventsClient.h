@@ -93,22 +93,22 @@ namespace Model
         class UpdateDetectorModelRequest;
         class UpdateInputRequest;
 
-        typedef Aws::Utils::Outcome<CreateDetectorModelResult, Aws::Client::AWSError<IoTEventsErrors>> CreateDetectorModelOutcome;
-        typedef Aws::Utils::Outcome<CreateInputResult, Aws::Client::AWSError<IoTEventsErrors>> CreateInputOutcome;
-        typedef Aws::Utils::Outcome<DeleteDetectorModelResult, Aws::Client::AWSError<IoTEventsErrors>> DeleteDetectorModelOutcome;
-        typedef Aws::Utils::Outcome<DeleteInputResult, Aws::Client::AWSError<IoTEventsErrors>> DeleteInputOutcome;
-        typedef Aws::Utils::Outcome<DescribeDetectorModelResult, Aws::Client::AWSError<IoTEventsErrors>> DescribeDetectorModelOutcome;
-        typedef Aws::Utils::Outcome<DescribeInputResult, Aws::Client::AWSError<IoTEventsErrors>> DescribeInputOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoggingOptionsResult, Aws::Client::AWSError<IoTEventsErrors>> DescribeLoggingOptionsOutcome;
-        typedef Aws::Utils::Outcome<ListDetectorModelVersionsResult, Aws::Client::AWSError<IoTEventsErrors>> ListDetectorModelVersionsOutcome;
-        typedef Aws::Utils::Outcome<ListDetectorModelsResult, Aws::Client::AWSError<IoTEventsErrors>> ListDetectorModelsOutcome;
-        typedef Aws::Utils::Outcome<ListInputsResult, Aws::Client::AWSError<IoTEventsErrors>> ListInputsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<IoTEventsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IoTEventsErrors>> PutLoggingOptionsOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<IoTEventsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<IoTEventsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateDetectorModelResult, Aws::Client::AWSError<IoTEventsErrors>> UpdateDetectorModelOutcome;
-        typedef Aws::Utils::Outcome<UpdateInputResult, Aws::Client::AWSError<IoTEventsErrors>> UpdateInputOutcome;
+        typedef Aws::Utils::Outcome<CreateDetectorModelResult, IoTEventsError> CreateDetectorModelOutcome;
+        typedef Aws::Utils::Outcome<CreateInputResult, IoTEventsError> CreateInputOutcome;
+        typedef Aws::Utils::Outcome<DeleteDetectorModelResult, IoTEventsError> DeleteDetectorModelOutcome;
+        typedef Aws::Utils::Outcome<DeleteInputResult, IoTEventsError> DeleteInputOutcome;
+        typedef Aws::Utils::Outcome<DescribeDetectorModelResult, IoTEventsError> DescribeDetectorModelOutcome;
+        typedef Aws::Utils::Outcome<DescribeInputResult, IoTEventsError> DescribeInputOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoggingOptionsResult, IoTEventsError> DescribeLoggingOptionsOutcome;
+        typedef Aws::Utils::Outcome<ListDetectorModelVersionsResult, IoTEventsError> ListDetectorModelVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListDetectorModelsResult, IoTEventsError> ListDetectorModelsOutcome;
+        typedef Aws::Utils::Outcome<ListInputsResult, IoTEventsError> ListInputsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTEventsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, IoTEventsError> PutLoggingOptionsOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, IoTEventsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, IoTEventsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateDetectorModelResult, IoTEventsError> UpdateDetectorModelOutcome;
+        typedef Aws::Utils::Outcome<UpdateInputResult, IoTEventsError> UpdateInputOutcome;
 
         typedef std::future<CreateDetectorModelOutcome> CreateDetectorModelOutcomeCallable;
         typedef std::future<CreateInputOutcome> CreateInputOutcomeCallable;

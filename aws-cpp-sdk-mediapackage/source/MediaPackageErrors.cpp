@@ -18,8 +18,8 @@
 #include <aws/mediapackage/MediaPackageErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MediaPackage;
 using namespace Aws::Utils;
+using namespace Aws::MediaPackage;
 
 namespace Aws
 {

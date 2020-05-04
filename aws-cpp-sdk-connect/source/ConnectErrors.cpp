@@ -18,8 +18,8 @@
 #include <aws/connect/ConnectErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Connect;
 using namespace Aws::Utils;
+using namespace Aws::Connect;
 
 namespace Aws
 {

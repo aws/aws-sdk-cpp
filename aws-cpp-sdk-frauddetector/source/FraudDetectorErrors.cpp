@@ -18,8 +18,8 @@
 #include <aws/frauddetector/FraudDetectorErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::FraudDetector;
 using namespace Aws::Utils;
+using namespace Aws::FraudDetector;
 
 namespace Aws
 {

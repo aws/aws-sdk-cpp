@@ -18,8 +18,8 @@
 #include <aws/globalaccelerator/GlobalAcceleratorErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::GlobalAccelerator;
 using namespace Aws::Utils;
+using namespace Aws::GlobalAccelerator;
 
 namespace Aws
 {

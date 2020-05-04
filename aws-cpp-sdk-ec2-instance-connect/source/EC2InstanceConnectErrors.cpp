@@ -18,8 +18,8 @@
 #include <aws/ec2-instance-connect/EC2InstanceConnectErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::EC2InstanceConnect;
 using namespace Aws::Utils;
+using namespace Aws::EC2InstanceConnect;
 
 namespace Aws
 {

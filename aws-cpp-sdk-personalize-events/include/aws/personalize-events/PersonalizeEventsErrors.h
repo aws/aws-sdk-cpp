@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/personalize-events/PersonalizeEvents_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class PersonalizeEventsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INVALID_INPUT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
+
+class AWS_PERSONALIZEEVENTS_API PersonalizeEventsError : public Aws::Client::AWSError<PersonalizeEventsErrors>
+{
+public:
+  PersonalizeEventsError() {}
+  PersonalizeEventsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PersonalizeEventsErrors>(rhs) {}
+  PersonalizeEventsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PersonalizeEventsErrors>(rhs) {}
+  PersonalizeEventsError(const Aws::Client::AWSError<PersonalizeEventsErrors>& rhs) : Aws::Client::AWSError<PersonalizeEventsErrors>(rhs) {}
+  PersonalizeEventsError(Aws::Client::AWSError<PersonalizeEventsErrors>&& rhs) : Aws::Client::AWSError<PersonalizeEventsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace PersonalizeEventsErrorMapper
 {
   AWS_PERSONALIZEEVENTS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

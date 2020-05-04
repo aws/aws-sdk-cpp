@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/s3/S3_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class S3Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class S3Errors
   OBJECT_ALREADY_IN_ACTIVE_TIER,
   OBJECT_NOT_IN_ACTIVE_TIER
 };
+
+class AWS_S3_API S3Error : public Aws::Client::AWSError<S3Errors>
+{
+public:
+  S3Error() {}
+  S3Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<S3Errors>(rhs) {}
+  S3Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<S3Errors>(rhs) {}
+  S3Error(const Aws::Client::AWSError<S3Errors>& rhs) : Aws::Client::AWSError<S3Errors>(rhs) {}
+  S3Error(Aws::Client::AWSError<S3Errors>&& rhs) : Aws::Client::AWSError<S3Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace S3ErrorMapper
 {
   AWS_S3_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

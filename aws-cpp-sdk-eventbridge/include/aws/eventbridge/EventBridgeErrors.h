@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class EventBridgeErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,20 @@ enum class EventBridgeErrors
   POLICY_LENGTH_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
+
+class AWS_EVENTBRIDGE_API EventBridgeError : public Aws::Client::AWSError<EventBridgeErrors>
+{
+public:
+  EventBridgeError() {}
+  EventBridgeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<EventBridgeErrors>(rhs) {}
+  EventBridgeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<EventBridgeErrors>(rhs) {}
+  EventBridgeError(const Aws::Client::AWSError<EventBridgeErrors>& rhs) : Aws::Client::AWSError<EventBridgeErrors>(rhs) {}
+  EventBridgeError(Aws::Client::AWSError<EventBridgeErrors>&& rhs) : Aws::Client::AWSError<EventBridgeErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace EventBridgeErrorMapper
 {
   AWS_EVENTBRIDGE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

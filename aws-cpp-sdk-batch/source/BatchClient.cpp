@@ -62,7 +62,7 @@ static const char* ALLOCATION_TAG = "BatchClient";
 BatchClient::BatchClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BatchErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -72,7 +72,7 @@ BatchClient::BatchClient(const Client::ClientConfiguration& clientConfiguration)
 BatchClient::BatchClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BatchErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -83,7 +83,7 @@ BatchClient::BatchClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<BatchErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -125,15 +125,7 @@ CancelJobOutcome BatchClient::CancelJob(const CancelJobRequest& request) const
   Aws::StringStream ss;
   ss << "/v1/canceljob";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CancelJobOutcome(CancelJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelJobOutcome(outcome.GetError());
-  }
+  return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelJobOutcomeCallable BatchClient::CancelJobCallable(const CancelJobRequest& request) const
@@ -160,15 +152,7 @@ CreateComputeEnvironmentOutcome BatchClient::CreateComputeEnvironment(const Crea
   Aws::StringStream ss;
   ss << "/v1/createcomputeenvironment";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateComputeEnvironmentOutcome(CreateComputeEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateComputeEnvironmentOutcome(outcome.GetError());
-  }
+  return CreateComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateComputeEnvironmentOutcomeCallable BatchClient::CreateComputeEnvironmentCallable(const CreateComputeEnvironmentRequest& request) const
@@ -195,15 +179,7 @@ CreateJobQueueOutcome BatchClient::CreateJobQueue(const CreateJobQueueRequest& r
   Aws::StringStream ss;
   ss << "/v1/createjobqueue";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateJobQueueOutcome(CreateJobQueueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateJobQueueOutcome(outcome.GetError());
-  }
+  return CreateJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateJobQueueOutcomeCallable BatchClient::CreateJobQueueCallable(const CreateJobQueueRequest& request) const
@@ -230,15 +206,7 @@ DeleteComputeEnvironmentOutcome BatchClient::DeleteComputeEnvironment(const Dele
   Aws::StringStream ss;
   ss << "/v1/deletecomputeenvironment";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteComputeEnvironmentOutcome(DeleteComputeEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteComputeEnvironmentOutcome(outcome.GetError());
-  }
+  return DeleteComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteComputeEnvironmentOutcomeCallable BatchClient::DeleteComputeEnvironmentCallable(const DeleteComputeEnvironmentRequest& request) const
@@ -265,15 +233,7 @@ DeleteJobQueueOutcome BatchClient::DeleteJobQueue(const DeleteJobQueueRequest& r
   Aws::StringStream ss;
   ss << "/v1/deletejobqueue";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteJobQueueOutcome(DeleteJobQueueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteJobQueueOutcome(outcome.GetError());
-  }
+  return DeleteJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteJobQueueOutcomeCallable BatchClient::DeleteJobQueueCallable(const DeleteJobQueueRequest& request) const
@@ -300,15 +260,7 @@ DeregisterJobDefinitionOutcome BatchClient::DeregisterJobDefinition(const Deregi
   Aws::StringStream ss;
   ss << "/v1/deregisterjobdefinition";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeregisterJobDefinitionOutcome(DeregisterJobDefinitionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeregisterJobDefinitionOutcome(outcome.GetError());
-  }
+  return DeregisterJobDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeregisterJobDefinitionOutcomeCallable BatchClient::DeregisterJobDefinitionCallable(const DeregisterJobDefinitionRequest& request) const
@@ -335,15 +287,7 @@ DescribeComputeEnvironmentsOutcome BatchClient::DescribeComputeEnvironments(cons
   Aws::StringStream ss;
   ss << "/v1/describecomputeenvironments";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeComputeEnvironmentsOutcome(DescribeComputeEnvironmentsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeComputeEnvironmentsOutcome(outcome.GetError());
-  }
+  return DescribeComputeEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeComputeEnvironmentsOutcomeCallable BatchClient::DescribeComputeEnvironmentsCallable(const DescribeComputeEnvironmentsRequest& request) const
@@ -370,15 +314,7 @@ DescribeJobDefinitionsOutcome BatchClient::DescribeJobDefinitions(const Describe
   Aws::StringStream ss;
   ss << "/v1/describejobdefinitions";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeJobDefinitionsOutcome(DescribeJobDefinitionsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeJobDefinitionsOutcome(outcome.GetError());
-  }
+  return DescribeJobDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeJobDefinitionsOutcomeCallable BatchClient::DescribeJobDefinitionsCallable(const DescribeJobDefinitionsRequest& request) const
@@ -405,15 +341,7 @@ DescribeJobQueuesOutcome BatchClient::DescribeJobQueues(const DescribeJobQueuesR
   Aws::StringStream ss;
   ss << "/v1/describejobqueues";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeJobQueuesOutcome(DescribeJobQueuesResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeJobQueuesOutcome(outcome.GetError());
-  }
+  return DescribeJobQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeJobQueuesOutcomeCallable BatchClient::DescribeJobQueuesCallable(const DescribeJobQueuesRequest& request) const
@@ -440,15 +368,7 @@ DescribeJobsOutcome BatchClient::DescribeJobs(const DescribeJobsRequest& request
   Aws::StringStream ss;
   ss << "/v1/describejobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DescribeJobsOutcome(DescribeJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DescribeJobsOutcome(outcome.GetError());
-  }
+  return DescribeJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeJobsOutcomeCallable BatchClient::DescribeJobsCallable(const DescribeJobsRequest& request) const
@@ -475,15 +395,7 @@ ListJobsOutcome BatchClient::ListJobs(const ListJobsRequest& request) const
   Aws::StringStream ss;
   ss << "/v1/listjobs";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobsOutcome(outcome.GetError());
-  }
+  return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobsOutcomeCallable BatchClient::ListJobsCallable(const ListJobsRequest& request) const
@@ -510,15 +422,7 @@ RegisterJobDefinitionOutcome BatchClient::RegisterJobDefinition(const RegisterJo
   Aws::StringStream ss;
   ss << "/v1/registerjobdefinition";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RegisterJobDefinitionOutcome(RegisterJobDefinitionResult(outcome.GetResult()));
-  }
-  else
-  {
-    return RegisterJobDefinitionOutcome(outcome.GetError());
-  }
+  return RegisterJobDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterJobDefinitionOutcomeCallable BatchClient::RegisterJobDefinitionCallable(const RegisterJobDefinitionRequest& request) const
@@ -545,15 +449,7 @@ SubmitJobOutcome BatchClient::SubmitJob(const SubmitJobRequest& request) const
   Aws::StringStream ss;
   ss << "/v1/submitjob";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SubmitJobOutcome(SubmitJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return SubmitJobOutcome(outcome.GetError());
-  }
+  return SubmitJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 SubmitJobOutcomeCallable BatchClient::SubmitJobCallable(const SubmitJobRequest& request) const
@@ -580,15 +476,7 @@ TerminateJobOutcome BatchClient::TerminateJob(const TerminateJobRequest& request
   Aws::StringStream ss;
   ss << "/v1/terminatejob";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return TerminateJobOutcome(TerminateJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return TerminateJobOutcome(outcome.GetError());
-  }
+  return TerminateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TerminateJobOutcomeCallable BatchClient::TerminateJobCallable(const TerminateJobRequest& request) const
@@ -615,15 +503,7 @@ UpdateComputeEnvironmentOutcome BatchClient::UpdateComputeEnvironment(const Upda
   Aws::StringStream ss;
   ss << "/v1/updatecomputeenvironment";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateComputeEnvironmentOutcome(UpdateComputeEnvironmentResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateComputeEnvironmentOutcome(outcome.GetError());
-  }
+  return UpdateComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateComputeEnvironmentOutcomeCallable BatchClient::UpdateComputeEnvironmentCallable(const UpdateComputeEnvironmentRequest& request) const
@@ -650,15 +530,7 @@ UpdateJobQueueOutcome BatchClient::UpdateJobQueue(const UpdateJobQueueRequest& r
   Aws::StringStream ss;
   ss << "/v1/updatejobqueue";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return UpdateJobQueueOutcome(UpdateJobQueueResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateJobQueueOutcome(outcome.GetError());
-  }
+  return UpdateJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateJobQueueOutcomeCallable BatchClient::UpdateJobQueueCallable(const UpdateJobQueueRequest& request) const

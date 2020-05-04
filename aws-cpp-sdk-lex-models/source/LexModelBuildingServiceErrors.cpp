@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/lex-models/LexModelBuildingServiceErrors.h>
+#include <aws/lex-models/model/LimitExceededException.h>
+#include <aws/lex-models/model/ResourceInUseException.h>
 
 using namespace Aws::Client;
-using namespace Aws::LexModelBuildingService;
 using namespace Aws::Utils;
+using namespace Aws::LexModelBuildingService;
+using namespace Aws::LexModelBuildingService::Model;
 
 namespace Aws
 {
 namespace LexModelBuildingService
 {
+template<> AWS_LEXMODELBUILDINGSERVICE_API LimitExceededException LexModelBuildingServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == LexModelBuildingServiceErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LEXMODELBUILDINGSERVICE_API ResourceInUseException LexModelBuildingServiceError::GetModeledError()
+{
+  assert(this->GetErrorType() == LexModelBuildingServiceErrors::RESOURCE_IN_USE);
+  return ResourceInUseException(this->GetJsonPayload().View());
+}
+
 namespace LexModelBuildingServiceErrorMapper
 {
 

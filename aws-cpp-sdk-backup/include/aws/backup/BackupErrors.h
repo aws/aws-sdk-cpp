@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/backup/Backup_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class BackupErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class BackupErrors
   LIMIT_EXCEEDED,
   MISSING_PARAMETER_VALUE
 };
+
+class AWS_BACKUP_API BackupError : public Aws::Client::AWSError<BackupErrors>
+{
+public:
+  BackupError() {}
+  BackupError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<BackupErrors>(rhs) {}
+  BackupError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<BackupErrors>(rhs) {}
+  BackupError(const Aws::Client::AWSError<BackupErrors>& rhs) : Aws::Client::AWSError<BackupErrors>(rhs) {}
+  BackupError(Aws::Client::AWSError<BackupErrors>&& rhs) : Aws::Client::AWSError<BackupErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace BackupErrorMapper
 {
   AWS_BACKUP_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

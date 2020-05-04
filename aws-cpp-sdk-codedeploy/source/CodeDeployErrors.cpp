@@ -18,8 +18,8 @@
 #include <aws/codedeploy/CodeDeployErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeDeploy;
 using namespace Aws::Utils;
+using namespace Aws::CodeDeploy;
 
 namespace Aws
 {

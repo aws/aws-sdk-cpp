@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/config/ConfigService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ConfigServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -105,6 +106,20 @@ enum class ConfigServiceErrors
   RESOURCE_NOT_DISCOVERED,
   TOO_MANY_TAGS
 };
+
+class AWS_CONFIGSERVICE_API ConfigServiceError : public Aws::Client::AWSError<ConfigServiceErrors>
+{
+public:
+  ConfigServiceError() {}
+  ConfigServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ConfigServiceErrors>(rhs) {}
+  ConfigServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ConfigServiceErrors>(rhs) {}
+  ConfigServiceError(const Aws::Client::AWSError<ConfigServiceErrors>& rhs) : Aws::Client::AWSError<ConfigServiceErrors>(rhs) {}
+  ConfigServiceError(Aws::Client::AWSError<ConfigServiceErrors>&& rhs) : Aws::Client::AWSError<ConfigServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ConfigServiceErrorMapper
 {
   AWS_CONFIGSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

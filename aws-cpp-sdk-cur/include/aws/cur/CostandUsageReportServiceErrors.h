@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cur/CostandUsageReportService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CostandUsageReportServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class CostandUsageReportServiceErrors
   INTERNAL_ERROR,
   REPORT_LIMIT_REACHED
 };
+
+class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceError : public Aws::Client::AWSError<CostandUsageReportServiceErrors>
+{
+public:
+  CostandUsageReportServiceError() {}
+  CostandUsageReportServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CostandUsageReportServiceErrors>(rhs) {}
+  CostandUsageReportServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CostandUsageReportServiceErrors>(rhs) {}
+  CostandUsageReportServiceError(const Aws::Client::AWSError<CostandUsageReportServiceErrors>& rhs) : Aws::Client::AWSError<CostandUsageReportServiceErrors>(rhs) {}
+  CostandUsageReportServiceError(Aws::Client::AWSError<CostandUsageReportServiceErrors>&& rhs) : Aws::Client::AWSError<CostandUsageReportServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CostandUsageReportServiceErrorMapper
 {
   AWS_COSTANDUSAGEREPORTSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

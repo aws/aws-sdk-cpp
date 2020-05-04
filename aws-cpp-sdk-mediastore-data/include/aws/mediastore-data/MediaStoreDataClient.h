@@ -71,11 +71,11 @@ namespace Model
         class ListItemsRequest;
         class PutObjectRequest;
 
-        typedef Aws::Utils::Outcome<DeleteObjectResult, Aws::Client::AWSError<MediaStoreDataErrors>> DeleteObjectOutcome;
-        typedef Aws::Utils::Outcome<DescribeObjectResult, Aws::Client::AWSError<MediaStoreDataErrors>> DescribeObjectOutcome;
-        typedef Aws::Utils::Outcome<GetObjectResult, Aws::Client::AWSError<MediaStoreDataErrors>> GetObjectOutcome;
-        typedef Aws::Utils::Outcome<ListItemsResult, Aws::Client::AWSError<MediaStoreDataErrors>> ListItemsOutcome;
-        typedef Aws::Utils::Outcome<PutObjectResult, Aws::Client::AWSError<MediaStoreDataErrors>> PutObjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteObjectResult, MediaStoreDataError> DeleteObjectOutcome;
+        typedef Aws::Utils::Outcome<DescribeObjectResult, MediaStoreDataError> DescribeObjectOutcome;
+        typedef Aws::Utils::Outcome<GetObjectResult, MediaStoreDataError> GetObjectOutcome;
+        typedef Aws::Utils::Outcome<ListItemsResult, MediaStoreDataError> ListItemsOutcome;
+        typedef Aws::Utils::Outcome<PutObjectResult, MediaStoreDataError> PutObjectOutcome;
 
         typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
         typedef std::future<DescribeObjectOutcome> DescribeObjectOutcomeCallable;

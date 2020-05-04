@@ -63,7 +63,7 @@ namespace Model
 {
         class PutEventsRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MobileAnalyticsErrors>> PutEventsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MobileAnalyticsError> PutEventsOutcome;
 
         typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
 } // namespace Model

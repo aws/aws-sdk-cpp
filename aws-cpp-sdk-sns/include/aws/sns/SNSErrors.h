@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sns/SNS_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SNSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -77,6 +78,20 @@ enum class SNSErrors
   TAG_POLICY,
   TOPIC_LIMIT_EXCEEDED
 };
+
+class AWS_SNS_API SNSError : public Aws::Client::AWSError<SNSErrors>
+{
+public:
+  SNSError() {}
+  SNSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
+  SNSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
+  SNSError(const Aws::Client::AWSError<SNSErrors>& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
+  SNSError(Aws::Client::AWSError<SNSErrors>&& rhs) : Aws::Client::AWSError<SNSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SNSErrorMapper
 {
   AWS_SNS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

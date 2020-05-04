@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sso/SSO_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SSOErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class SSOErrors
   TOO_MANY_REQUESTS,
   UNAUTHORIZED
 };
+
+class AWS_SSO_API SSOError : public Aws::Client::AWSError<SSOErrors>
+{
+public:
+  SSOError() {}
+  SSOError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SSOErrors>(rhs) {}
+  SSOError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SSOErrors>(rhs) {}
+  SSOError(const Aws::Client::AWSError<SSOErrors>& rhs) : Aws::Client::AWSError<SSOErrors>(rhs) {}
+  SSOError(Aws::Client::AWSError<SSOErrors>&& rhs) : Aws::Client::AWSError<SSOErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SSOErrorMapper
 {
   AWS_SSO_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class MediaPackageErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class MediaPackageErrors
   TOO_MANY_REQUESTS,
   UNPROCESSABLE_ENTITY
 };
+
+class AWS_MEDIAPACKAGE_API MediaPackageError : public Aws::Client::AWSError<MediaPackageErrors>
+{
+public:
+  MediaPackageError() {}
+  MediaPackageError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MediaPackageErrors>(rhs) {}
+  MediaPackageError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MediaPackageErrors>(rhs) {}
+  MediaPackageError(const Aws::Client::AWSError<MediaPackageErrors>& rhs) : Aws::Client::AWSError<MediaPackageErrors>(rhs) {}
+  MediaPackageError(Aws::Client::AWSError<MediaPackageErrors>&& rhs) : Aws::Client::AWSError<MediaPackageErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MediaPackageErrorMapper
 {
   AWS_MEDIAPACKAGE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

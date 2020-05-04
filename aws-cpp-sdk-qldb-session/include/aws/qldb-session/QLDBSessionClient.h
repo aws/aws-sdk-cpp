@@ -63,7 +63,7 @@ namespace Model
 {
         class SendCommandRequest;
 
-        typedef Aws::Utils::Outcome<SendCommandResult, Aws::Client::AWSError<QLDBSessionErrors>> SendCommandOutcome;
+        typedef Aws::Utils::Outcome<SendCommandResult, QLDBSessionError> SendCommandOutcome;
 
         typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
 } // namespace Model

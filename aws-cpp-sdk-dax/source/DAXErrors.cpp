@@ -18,8 +18,8 @@
 #include <aws/dax/DAXErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::DAX;
 using namespace Aws::Utils;
+using namespace Aws::DAX;
 
 namespace Aws
 {

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ServiceDiscoveryErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -68,6 +69,20 @@ enum class ServiceDiscoveryErrors
   SERVICE_ALREADY_EXISTS,
   SERVICE_NOT_FOUND
 };
+
+class AWS_SERVICEDISCOVERY_API ServiceDiscoveryError : public Aws::Client::AWSError<ServiceDiscoveryErrors>
+{
+public:
+  ServiceDiscoveryError() {}
+  ServiceDiscoveryError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
+  ServiceDiscoveryError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
+  ServiceDiscoveryError(const Aws::Client::AWSError<ServiceDiscoveryErrors>& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
+  ServiceDiscoveryError(Aws::Client::AWSError<ServiceDiscoveryErrors>&& rhs) : Aws::Client::AWSError<ServiceDiscoveryErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ServiceDiscoveryErrorMapper
 {
   AWS_SERVICEDISCOVERY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

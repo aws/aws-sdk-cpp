@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/migrationhub-config/MigrationHubConfig_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class MigrationHubConfigErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DRY_RUN_OPERATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INVALID_INPUT
 };
+
+class AWS_MIGRATIONHUBCONFIG_API MigrationHubConfigError : public Aws::Client::AWSError<MigrationHubConfigErrors>
+{
+public:
+  MigrationHubConfigError() {}
+  MigrationHubConfigError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<MigrationHubConfigErrors>(rhs) {}
+  MigrationHubConfigError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<MigrationHubConfigErrors>(rhs) {}
+  MigrationHubConfigError(const Aws::Client::AWSError<MigrationHubConfigErrors>& rhs) : Aws::Client::AWSError<MigrationHubConfigErrors>(rhs) {}
+  MigrationHubConfigError(Aws::Client::AWSError<MigrationHubConfigErrors>&& rhs) : Aws::Client::AWSError<MigrationHubConfigErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace MigrationHubConfigErrorMapper
 {
   AWS_MIGRATIONHUBCONFIG_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

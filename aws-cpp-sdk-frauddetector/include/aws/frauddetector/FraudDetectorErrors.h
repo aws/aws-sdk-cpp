@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/frauddetector/FraudDetector_EXPORTS.h>
 
@@ -52,13 +53,27 @@ enum class FraudDetectorErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER
 };
+
+class AWS_FRAUDDETECTOR_API FraudDetectorError : public Aws::Client::AWSError<FraudDetectorErrors>
+{
+public:
+  FraudDetectorError() {}
+  FraudDetectorError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<FraudDetectorErrors>(rhs) {}
+  FraudDetectorError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<FraudDetectorErrors>(rhs) {}
+  FraudDetectorError(const Aws::Client::AWSError<FraudDetectorErrors>& rhs) : Aws::Client::AWSError<FraudDetectorErrors>(rhs) {}
+  FraudDetectorError(Aws::Client::AWSError<FraudDetectorErrors>&& rhs) : Aws::Client::AWSError<FraudDetectorErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace FraudDetectorErrorMapper
 {
   AWS_FRAUDDETECTOR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

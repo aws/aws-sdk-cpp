@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cloudhsm/CloudHSM_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CloudHSMErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class CloudHSMErrors
   CLOUD_HSM_SERVICE,
   INVALID_REQUEST
 };
+
+class AWS_CLOUDHSM_API CloudHSMError : public Aws::Client::AWSError<CloudHSMErrors>
+{
+public:
+  CloudHSMError() {}
+  CloudHSMError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudHSMErrors>(rhs) {}
+  CloudHSMError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudHSMErrors>(rhs) {}
+  CloudHSMError(const Aws::Client::AWSError<CloudHSMErrors>& rhs) : Aws::Client::AWSError<CloudHSMErrors>(rhs) {}
+  CloudHSMError(Aws::Client::AWSError<CloudHSMErrors>&& rhs) : Aws::Client::AWSError<CloudHSMErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudHSMErrorMapper
 {
   AWS_CLOUDHSM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

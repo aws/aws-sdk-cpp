@@ -18,8 +18,8 @@
 #include <aws/datapipeline/DataPipelineErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::DataPipeline;
 using namespace Aws::Utils;
+using namespace Aws::DataPipeline;
 
 namespace Aws
 {

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class IoTSiteWiseErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class IoTSiteWiseErrors
   RESOURCE_ALREADY_EXISTS,
   TOO_MANY_TAGS
 };
+
+class AWS_IOTSITEWISE_API IoTSiteWiseError : public Aws::Client::AWSError<IoTSiteWiseErrors>
+{
+public:
+  IoTSiteWiseError() {}
+  IoTSiteWiseError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTSiteWiseErrors>(rhs) {}
+  IoTSiteWiseError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTSiteWiseErrors>(rhs) {}
+  IoTSiteWiseError(const Aws::Client::AWSError<IoTSiteWiseErrors>& rhs) : Aws::Client::AWSError<IoTSiteWiseErrors>(rhs) {}
+  IoTSiteWiseError(Aws::Client::AWSError<IoTSiteWiseErrors>&& rhs) : Aws::Client::AWSError<IoTSiteWiseErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace IoTSiteWiseErrorMapper
 {
   AWS_IOTSITEWISE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

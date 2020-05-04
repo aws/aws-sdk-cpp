@@ -93,22 +93,22 @@ namespace Model
         class UpdatePipelineNotificationsRequest;
         class UpdatePipelineStatusRequest;
 
-        typedef Aws::Utils::Outcome<CancelJobResult, Aws::Client::AWSError<ElasticTranscoderErrors>> CancelJobOutcome;
-        typedef Aws::Utils::Outcome<CreateJobResult, Aws::Client::AWSError<ElasticTranscoderErrors>> CreateJobOutcome;
-        typedef Aws::Utils::Outcome<CreatePipelineResult, Aws::Client::AWSError<ElasticTranscoderErrors>> CreatePipelineOutcome;
-        typedef Aws::Utils::Outcome<CreatePresetResult, Aws::Client::AWSError<ElasticTranscoderErrors>> CreatePresetOutcome;
-        typedef Aws::Utils::Outcome<DeletePipelineResult, Aws::Client::AWSError<ElasticTranscoderErrors>> DeletePipelineOutcome;
-        typedef Aws::Utils::Outcome<DeletePresetResult, Aws::Client::AWSError<ElasticTranscoderErrors>> DeletePresetOutcome;
-        typedef Aws::Utils::Outcome<ListJobsByPipelineResult, Aws::Client::AWSError<ElasticTranscoderErrors>> ListJobsByPipelineOutcome;
-        typedef Aws::Utils::Outcome<ListJobsByStatusResult, Aws::Client::AWSError<ElasticTranscoderErrors>> ListJobsByStatusOutcome;
-        typedef Aws::Utils::Outcome<ListPipelinesResult, Aws::Client::AWSError<ElasticTranscoderErrors>> ListPipelinesOutcome;
-        typedef Aws::Utils::Outcome<ListPresetsResult, Aws::Client::AWSError<ElasticTranscoderErrors>> ListPresetsOutcome;
-        typedef Aws::Utils::Outcome<ReadJobResult, Aws::Client::AWSError<ElasticTranscoderErrors>> ReadJobOutcome;
-        typedef Aws::Utils::Outcome<ReadPipelineResult, Aws::Client::AWSError<ElasticTranscoderErrors>> ReadPipelineOutcome;
-        typedef Aws::Utils::Outcome<ReadPresetResult, Aws::Client::AWSError<ElasticTranscoderErrors>> ReadPresetOutcome;
-        typedef Aws::Utils::Outcome<UpdatePipelineResult, Aws::Client::AWSError<ElasticTranscoderErrors>> UpdatePipelineOutcome;
-        typedef Aws::Utils::Outcome<UpdatePipelineNotificationsResult, Aws::Client::AWSError<ElasticTranscoderErrors>> UpdatePipelineNotificationsOutcome;
-        typedef Aws::Utils::Outcome<UpdatePipelineStatusResult, Aws::Client::AWSError<ElasticTranscoderErrors>> UpdatePipelineStatusOutcome;
+        typedef Aws::Utils::Outcome<CancelJobResult, ElasticTranscoderError> CancelJobOutcome;
+        typedef Aws::Utils::Outcome<CreateJobResult, ElasticTranscoderError> CreateJobOutcome;
+        typedef Aws::Utils::Outcome<CreatePipelineResult, ElasticTranscoderError> CreatePipelineOutcome;
+        typedef Aws::Utils::Outcome<CreatePresetResult, ElasticTranscoderError> CreatePresetOutcome;
+        typedef Aws::Utils::Outcome<DeletePipelineResult, ElasticTranscoderError> DeletePipelineOutcome;
+        typedef Aws::Utils::Outcome<DeletePresetResult, ElasticTranscoderError> DeletePresetOutcome;
+        typedef Aws::Utils::Outcome<ListJobsByPipelineResult, ElasticTranscoderError> ListJobsByPipelineOutcome;
+        typedef Aws::Utils::Outcome<ListJobsByStatusResult, ElasticTranscoderError> ListJobsByStatusOutcome;
+        typedef Aws::Utils::Outcome<ListPipelinesResult, ElasticTranscoderError> ListPipelinesOutcome;
+        typedef Aws::Utils::Outcome<ListPresetsResult, ElasticTranscoderError> ListPresetsOutcome;
+        typedef Aws::Utils::Outcome<ReadJobResult, ElasticTranscoderError> ReadJobOutcome;
+        typedef Aws::Utils::Outcome<ReadPipelineResult, ElasticTranscoderError> ReadPipelineOutcome;
+        typedef Aws::Utils::Outcome<ReadPresetResult, ElasticTranscoderError> ReadPresetOutcome;
+        typedef Aws::Utils::Outcome<UpdatePipelineResult, ElasticTranscoderError> UpdatePipelineOutcome;
+        typedef Aws::Utils::Outcome<UpdatePipelineNotificationsResult, ElasticTranscoderError> UpdatePipelineNotificationsOutcome;
+        typedef Aws::Utils::Outcome<UpdatePipelineStatusResult, ElasticTranscoderError> UpdatePipelineStatusOutcome;
 
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;

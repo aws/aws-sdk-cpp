@@ -18,8 +18,8 @@
 #include <aws/pi/PIErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::PI;
 using namespace Aws::Utils;
+using namespace Aws::PI;
 
 namespace Aws
 {

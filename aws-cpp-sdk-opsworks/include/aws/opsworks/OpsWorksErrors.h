@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/opsworks/OpsWorks_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class OpsWorksErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
 
 };
+
+class AWS_OPSWORKS_API OpsWorksError : public Aws::Client::AWSError<OpsWorksErrors>
+{
+public:
+  OpsWorksError() {}
+  OpsWorksError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<OpsWorksErrors>(rhs) {}
+  OpsWorksError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<OpsWorksErrors>(rhs) {}
+  OpsWorksError(const Aws::Client::AWSError<OpsWorksErrors>& rhs) : Aws::Client::AWSError<OpsWorksErrors>(rhs) {}
+  OpsWorksError(Aws::Client::AWSError<OpsWorksErrors>&& rhs) : Aws::Client::AWSError<OpsWorksErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace OpsWorksErrorMapper
 {
   AWS_OPSWORKS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

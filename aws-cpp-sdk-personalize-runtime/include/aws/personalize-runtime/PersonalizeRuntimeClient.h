@@ -65,8 +65,8 @@ namespace Model
         class GetPersonalizedRankingRequest;
         class GetRecommendationsRequest;
 
-        typedef Aws::Utils::Outcome<GetPersonalizedRankingResult, Aws::Client::AWSError<PersonalizeRuntimeErrors>> GetPersonalizedRankingOutcome;
-        typedef Aws::Utils::Outcome<GetRecommendationsResult, Aws::Client::AWSError<PersonalizeRuntimeErrors>> GetRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<GetPersonalizedRankingResult, PersonalizeRuntimeError> GetPersonalizedRankingOutcome;
+        typedef Aws::Utils::Outcome<GetRecommendationsResult, PersonalizeRuntimeError> GetRecommendationsOutcome;
 
         typedef std::future<GetPersonalizedRankingOutcome> GetPersonalizedRankingOutcomeCallable;
         typedef std::future<GetRecommendationsOutcome> GetRecommendationsOutcomeCallable;

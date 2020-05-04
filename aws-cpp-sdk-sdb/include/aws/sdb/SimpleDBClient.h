@@ -83,16 +83,16 @@ namespace Model
         class PutAttributesRequest;
         class SelectRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchDeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> BatchPutAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> CreateDomainOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> DeleteDomainOutcome;
-        typedef Aws::Utils::Outcome<DomainMetadataResult, Aws::Client::AWSError<SimpleDBErrors>> DomainMetadataOutcome;
-        typedef Aws::Utils::Outcome<GetAttributesResult, Aws::Client::AWSError<SimpleDBErrors>> GetAttributesOutcome;
-        typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<SimpleDBErrors>> ListDomainsOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SimpleDBErrors>> PutAttributesOutcome;
-        typedef Aws::Utils::Outcome<SelectResult, Aws::Client::AWSError<SimpleDBErrors>> SelectOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> BatchDeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> BatchPutAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> CreateDomainOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> DeleteAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> DeleteDomainOutcome;
+        typedef Aws::Utils::Outcome<DomainMetadataResult, SimpleDBError> DomainMetadataOutcome;
+        typedef Aws::Utils::Outcome<GetAttributesResult, SimpleDBError> GetAttributesOutcome;
+        typedef Aws::Utils::Outcome<ListDomainsResult, SimpleDBError> ListDomainsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SimpleDBError> PutAttributesOutcome;
+        typedef Aws::Utils::Outcome<SelectResult, SimpleDBError> SelectOutcome;
 
         typedef std::future<BatchDeleteAttributesOutcome> BatchDeleteAttributesOutcomeCallable;
         typedef std::future<BatchPutAttributesOutcome> BatchPutAttributesOutcomeCallable;
@@ -753,7 +753,7 @@ namespace Model
          */
         virtual void SelectAsync(const Model::SelectRequest& request, const SelectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

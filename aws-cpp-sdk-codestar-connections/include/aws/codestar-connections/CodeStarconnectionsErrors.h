@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class CodeStarconnectionsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   LIMIT_EXCEEDED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
+
+class AWS_CODESTARCONNECTIONS_API CodeStarconnectionsError : public Aws::Client::AWSError<CodeStarconnectionsErrors>
+{
+public:
+  CodeStarconnectionsError() {}
+  CodeStarconnectionsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
+  CodeStarconnectionsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
+  CodeStarconnectionsError(const Aws::Client::AWSError<CodeStarconnectionsErrors>& rhs) : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
+  CodeStarconnectionsError(Aws::Client::AWSError<CodeStarconnectionsErrors>&& rhs) : Aws::Client::AWSError<CodeStarconnectionsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CodeStarconnectionsErrorMapper
 {
   AWS_CODESTARCONNECTIONS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

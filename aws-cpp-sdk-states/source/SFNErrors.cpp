@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/states/SFNErrors.h>
+#include <aws/states/model/ResourceNotFound.h>
+#include <aws/states/model/TooManyTags.h>
 
 using namespace Aws::Client;
-using namespace Aws::SFN;
 using namespace Aws::Utils;
+using namespace Aws::SFN;
+using namespace Aws::SFN::Model;
 
 namespace Aws
 {
 namespace SFN
 {
+template<> AWS_SFN_API ResourceNotFound SFNError::GetModeledError()
+{
+  assert(this->GetErrorType() == SFNErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFound(this->GetJsonPayload().View());
+}
+
+template<> AWS_SFN_API TooManyTags SFNError::GetModeledError()
+{
+  assert(this->GetErrorType() == SFNErrors::TOO_MANY_TAGS);
+  return TooManyTags(this->GetJsonPayload().View());
+}
+
 namespace SFNErrorMapper
 {
 

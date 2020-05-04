@@ -87,19 +87,19 @@ namespace Model
         class UpdateEnvironmentRequest;
         class UpdateEnvironmentMembershipRequest;
 
-        typedef Aws::Utils::Outcome<CreateEnvironmentEC2Result, Aws::Client::AWSError<Cloud9Errors>> CreateEnvironmentEC2Outcome;
-        typedef Aws::Utils::Outcome<CreateEnvironmentMembershipResult, Aws::Client::AWSError<Cloud9Errors>> CreateEnvironmentMembershipOutcome;
-        typedef Aws::Utils::Outcome<DeleteEnvironmentResult, Aws::Client::AWSError<Cloud9Errors>> DeleteEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<DeleteEnvironmentMembershipResult, Aws::Client::AWSError<Cloud9Errors>> DeleteEnvironmentMembershipOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentMembershipsResult, Aws::Client::AWSError<Cloud9Errors>> DescribeEnvironmentMembershipsOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentStatusResult, Aws::Client::AWSError<Cloud9Errors>> DescribeEnvironmentStatusOutcome;
-        typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, Aws::Client::AWSError<Cloud9Errors>> DescribeEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListEnvironmentsResult, Aws::Client::AWSError<Cloud9Errors>> ListEnvironmentsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<Cloud9Errors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<Cloud9Errors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<Cloud9Errors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Aws::Client::AWSError<Cloud9Errors>> UpdateEnvironmentOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnvironmentMembershipResult, Aws::Client::AWSError<Cloud9Errors>> UpdateEnvironmentMembershipOutcome;
+        typedef Aws::Utils::Outcome<CreateEnvironmentEC2Result, Cloud9Error> CreateEnvironmentEC2Outcome;
+        typedef Aws::Utils::Outcome<CreateEnvironmentMembershipResult, Cloud9Error> CreateEnvironmentMembershipOutcome;
+        typedef Aws::Utils::Outcome<DeleteEnvironmentResult, Cloud9Error> DeleteEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<DeleteEnvironmentMembershipResult, Cloud9Error> DeleteEnvironmentMembershipOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentMembershipsResult, Cloud9Error> DescribeEnvironmentMembershipsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentStatusResult, Cloud9Error> DescribeEnvironmentStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeEnvironmentsResult, Cloud9Error> DescribeEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<ListEnvironmentsResult, Cloud9Error> ListEnvironmentsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Cloud9Error> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Cloud9Error> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Cloud9Error> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateEnvironmentResult, Cloud9Error> UpdateEnvironmentOutcome;
+        typedef Aws::Utils::Outcome<UpdateEnvironmentMembershipResult, Cloud9Error> UpdateEnvironmentMembershipOutcome;
 
         typedef std::future<CreateEnvironmentEC2Outcome> CreateEnvironmentEC2OutcomeCallable;
         typedef std::future<CreateEnvironmentMembershipOutcome> CreateEnvironmentMembershipOutcomeCallable;

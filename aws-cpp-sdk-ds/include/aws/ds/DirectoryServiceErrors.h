@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ds/DirectoryService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class DirectoryServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -87,6 +88,20 @@ enum class DirectoryServiceErrors
   UNSUPPORTED_OPERATION,
   USER_DOES_NOT_EXIST
 };
+
+class AWS_DIRECTORYSERVICE_API DirectoryServiceError : public Aws::Client::AWSError<DirectoryServiceErrors>
+{
+public:
+  DirectoryServiceError() {}
+  DirectoryServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DirectoryServiceErrors>(rhs) {}
+  DirectoryServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DirectoryServiceErrors>(rhs) {}
+  DirectoryServiceError(const Aws::Client::AWSError<DirectoryServiceErrors>& rhs) : Aws::Client::AWSError<DirectoryServiceErrors>(rhs) {}
+  DirectoryServiceError(Aws::Client::AWSError<DirectoryServiceErrors>&& rhs) : Aws::Client::AWSError<DirectoryServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace DirectoryServiceErrorMapper
 {
   AWS_DIRECTORYSERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

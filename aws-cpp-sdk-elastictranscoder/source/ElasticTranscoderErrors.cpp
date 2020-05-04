@@ -18,8 +18,8 @@
 #include <aws/elastictranscoder/ElasticTranscoderErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ElasticTranscoder;
 using namespace Aws::Utils;
+using namespace Aws::ElasticTranscoder;
 
 namespace Aws
 {

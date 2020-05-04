@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/wafv2/WAFV2Errors.h>
+#include <aws/wafv2/model/WAFInvalidParameterException.h>
 
 using namespace Aws::Client;
-using namespace Aws::WAFV2;
 using namespace Aws::Utils;
+using namespace Aws::WAFV2;
+using namespace Aws::WAFV2::Model;
 
 namespace Aws
 {
 namespace WAFV2
 {
+template<> AWS_WAFV2_API WAFInvalidParameterException WAFV2Error::GetModeledError()
+{
+  assert(this->GetErrorType() == WAFV2Errors::W_A_F_INVALID_PARAMETER);
+  return WAFInvalidParameterException(this->GetJsonPayload().View());
+}
+
 namespace WAFV2ErrorMapper
 {
 

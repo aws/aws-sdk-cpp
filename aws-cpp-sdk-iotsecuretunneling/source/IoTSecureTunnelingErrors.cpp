@@ -18,8 +18,8 @@
 #include <aws/iotsecuretunneling/IoTSecureTunnelingErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoTSecureTunneling;
 using namespace Aws::Utils;
+using namespace Aws::IoTSecureTunneling;
 
 namespace Aws
 {

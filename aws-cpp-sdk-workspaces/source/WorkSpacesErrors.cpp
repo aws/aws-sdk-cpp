@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/workspaces/WorkSpacesErrors.h>
+#include <aws/workspaces/model/ResourceNotFoundException.h>
+#include <aws/workspaces/model/ResourceUnavailableException.h>
 
 using namespace Aws::Client;
-using namespace Aws::WorkSpaces;
 using namespace Aws::Utils;
+using namespace Aws::WorkSpaces;
+using namespace Aws::WorkSpaces::Model;
 
 namespace Aws
 {
 namespace WorkSpaces
 {
+template<> AWS_WORKSPACES_API ResourceNotFoundException WorkSpacesError::GetModeledError()
+{
+  assert(this->GetErrorType() == WorkSpacesErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_WORKSPACES_API ResourceUnavailableException WorkSpacesError::GetModeledError()
+{
+  assert(this->GetErrorType() == WorkSpacesErrors::RESOURCE_UNAVAILABLE);
+  return ResourceUnavailableException(this->GetJsonPayload().View());
+}
+
 namespace WorkSpacesErrorMapper
 {
 

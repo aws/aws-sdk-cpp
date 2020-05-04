@@ -82,19 +82,19 @@ namespace Model
         class ResendValidationEmailRequest;
         class UpdateCertificateOptionsRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> AddTagsToCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> DeleteCertificateOutcome;
-        typedef Aws::Utils::Outcome<DescribeCertificateResult, Aws::Client::AWSError<ACMErrors>> DescribeCertificateOutcome;
-        typedef Aws::Utils::Outcome<ExportCertificateResult, Aws::Client::AWSError<ACMErrors>> ExportCertificateOutcome;
-        typedef Aws::Utils::Outcome<GetCertificateResult, Aws::Client::AWSError<ACMErrors>> GetCertificateOutcome;
-        typedef Aws::Utils::Outcome<ImportCertificateResult, Aws::Client::AWSError<ACMErrors>> ImportCertificateOutcome;
-        typedef Aws::Utils::Outcome<ListCertificatesResult, Aws::Client::AWSError<ACMErrors>> ListCertificatesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForCertificateResult, Aws::Client::AWSError<ACMErrors>> ListTagsForCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> RemoveTagsFromCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> RenewCertificateOutcome;
-        typedef Aws::Utils::Outcome<RequestCertificateResult, Aws::Client::AWSError<ACMErrors>> RequestCertificateOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> ResendValidationEmailOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMErrors>> UpdateCertificateOptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> AddTagsToCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> DeleteCertificateOutcome;
+        typedef Aws::Utils::Outcome<DescribeCertificateResult, ACMError> DescribeCertificateOutcome;
+        typedef Aws::Utils::Outcome<ExportCertificateResult, ACMError> ExportCertificateOutcome;
+        typedef Aws::Utils::Outcome<GetCertificateResult, ACMError> GetCertificateOutcome;
+        typedef Aws::Utils::Outcome<ImportCertificateResult, ACMError> ImportCertificateOutcome;
+        typedef Aws::Utils::Outcome<ListCertificatesResult, ACMError> ListCertificatesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForCertificateResult, ACMError> ListTagsForCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> RemoveTagsFromCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> RenewCertificateOutcome;
+        typedef Aws::Utils::Outcome<RequestCertificateResult, ACMError> RequestCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> ResendValidationEmailOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> UpdateCertificateOptionsOutcome;
 
         typedef std::future<AddTagsToCertificateOutcome> AddTagsToCertificateOutcomeCallable;
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;

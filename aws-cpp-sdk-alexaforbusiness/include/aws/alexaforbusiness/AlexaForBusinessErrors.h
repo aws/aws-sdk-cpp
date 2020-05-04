@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/alexaforbusiness/AlexaForBusiness_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AlexaForBusinessErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -72,6 +73,20 @@ enum class AlexaForBusinessErrors
   SKILL_NOT_LINKED,
   UNAUTHORIZED
 };
+
+class AWS_ALEXAFORBUSINESS_API AlexaForBusinessError : public Aws::Client::AWSError<AlexaForBusinessErrors>
+{
+public:
+  AlexaForBusinessError() {}
+  AlexaForBusinessError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AlexaForBusinessErrors>(rhs) {}
+  AlexaForBusinessError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AlexaForBusinessErrors>(rhs) {}
+  AlexaForBusinessError(const Aws::Client::AWSError<AlexaForBusinessErrors>& rhs) : Aws::Client::AWSError<AlexaForBusinessErrors>(rhs) {}
+  AlexaForBusinessError(Aws::Client::AWSError<AlexaForBusinessErrors>&& rhs) : Aws::Client::AWSError<AlexaForBusinessErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AlexaForBusinessErrorMapper
 {
   AWS_ALEXAFORBUSINESS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

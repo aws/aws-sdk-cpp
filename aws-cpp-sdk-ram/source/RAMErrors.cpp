@@ -18,8 +18,8 @@
 #include <aws/ram/RAMErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::RAM;
 using namespace Aws::Utils;
+using namespace Aws::RAM;
 
 namespace Aws
 {

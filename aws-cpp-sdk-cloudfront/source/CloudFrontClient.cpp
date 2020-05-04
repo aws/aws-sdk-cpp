@@ -92,7 +92,7 @@ static const char* ALLOCATION_TAG = "CloudFrontClient";
 CloudFrontClient::CloudFrontClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CloudFrontErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -102,7 +102,7 @@ CloudFrontClient::CloudFrontClient(const Client::ClientConfiguration& clientConf
 CloudFrontClient::CloudFrontClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CloudFrontErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -113,7 +113,7 @@ CloudFrontClient::CloudFrontClient(const std::shared_ptr<AWSCredentialsProvider>
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<CloudFrontErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -155,15 +155,7 @@ CreateCloudFrontOriginAccessIdentity2019_03_26Outcome CloudFrontClient::CreateCl
   Aws::StringStream ss;
   ss << "/2019-03-26/origin-access-identity/cloudfront";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateCloudFrontOriginAccessIdentity2019_03_26Outcome(CreateCloudFrontOriginAccessIdentity2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateCloudFrontOriginAccessIdentity2019_03_26Outcome(outcome.GetError());
-  }
+  return CreateCloudFrontOriginAccessIdentity2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable CloudFrontClient::CreateCloudFrontOriginAccessIdentity2019_03_26Callable(const CreateCloudFrontOriginAccessIdentity2019_03_26Request& request) const
@@ -190,15 +182,7 @@ CreateDistribution2019_03_26Outcome CloudFrontClient::CreateDistribution2019_03_
   Aws::StringStream ss;
   ss << "/2019-03-26/distribution";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateDistribution2019_03_26Outcome(CreateDistribution2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDistribution2019_03_26Outcome(outcome.GetError());
-  }
+  return CreateDistribution2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateDistribution2019_03_26OutcomeCallable CloudFrontClient::CreateDistribution2019_03_26Callable(const CreateDistribution2019_03_26Request& request) const
@@ -227,15 +211,7 @@ CreateDistributionWithTags2019_03_26Outcome CloudFrontClient::CreateDistribution
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?WithTags");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateDistributionWithTags2019_03_26Outcome(CreateDistributionWithTags2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateDistributionWithTags2019_03_26Outcome(outcome.GetError());
-  }
+  return CreateDistributionWithTags2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateDistributionWithTags2019_03_26OutcomeCallable CloudFrontClient::CreateDistributionWithTags2019_03_26Callable(const CreateDistributionWithTags2019_03_26Request& request) const
@@ -262,15 +238,7 @@ CreateFieldLevelEncryptionConfig2019_03_26Outcome CloudFrontClient::CreateFieldL
   Aws::StringStream ss;
   ss << "/2019-03-26/field-level-encryption";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateFieldLevelEncryptionConfig2019_03_26Outcome(CreateFieldLevelEncryptionConfig2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFieldLevelEncryptionConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return CreateFieldLevelEncryptionConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateFieldLevelEncryptionConfig2019_03_26OutcomeCallable CloudFrontClient::CreateFieldLevelEncryptionConfig2019_03_26Callable(const CreateFieldLevelEncryptionConfig2019_03_26Request& request) const
@@ -297,15 +265,7 @@ CreateFieldLevelEncryptionProfile2019_03_26Outcome CloudFrontClient::CreateField
   Aws::StringStream ss;
   ss << "/2019-03-26/field-level-encryption-profile";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateFieldLevelEncryptionProfile2019_03_26Outcome(CreateFieldLevelEncryptionProfile2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateFieldLevelEncryptionProfile2019_03_26Outcome(outcome.GetError());
-  }
+  return CreateFieldLevelEncryptionProfile2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateFieldLevelEncryptionProfile2019_03_26OutcomeCallable CloudFrontClient::CreateFieldLevelEncryptionProfile2019_03_26Callable(const CreateFieldLevelEncryptionProfile2019_03_26Request& request) const
@@ -339,15 +299,7 @@ CreateInvalidation2019_03_26Outcome CloudFrontClient::CreateInvalidation2019_03_
   ss << request.GetDistributionId();
   ss << "/invalidation";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateInvalidation2019_03_26Outcome(CreateInvalidation2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateInvalidation2019_03_26Outcome(outcome.GetError());
-  }
+  return CreateInvalidation2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateInvalidation2019_03_26OutcomeCallable CloudFrontClient::CreateInvalidation2019_03_26Callable(const CreateInvalidation2019_03_26Request& request) const
@@ -374,15 +326,7 @@ CreatePublicKey2019_03_26Outcome CloudFrontClient::CreatePublicKey2019_03_26(con
   Aws::StringStream ss;
   ss << "/2019-03-26/public-key";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreatePublicKey2019_03_26Outcome(CreatePublicKey2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreatePublicKey2019_03_26Outcome(outcome.GetError());
-  }
+  return CreatePublicKey2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreatePublicKey2019_03_26OutcomeCallable CloudFrontClient::CreatePublicKey2019_03_26Callable(const CreatePublicKey2019_03_26Request& request) const
@@ -409,15 +353,7 @@ CreateStreamingDistribution2019_03_26Outcome CloudFrontClient::CreateStreamingDi
   Aws::StringStream ss;
   ss << "/2019-03-26/streaming-distribution";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateStreamingDistribution2019_03_26Outcome(CreateStreamingDistribution2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateStreamingDistribution2019_03_26Outcome(outcome.GetError());
-  }
+  return CreateStreamingDistribution2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateStreamingDistribution2019_03_26OutcomeCallable CloudFrontClient::CreateStreamingDistribution2019_03_26Callable(const CreateStreamingDistribution2019_03_26Request& request) const
@@ -446,15 +382,7 @@ CreateStreamingDistributionWithTags2019_03_26Outcome CloudFrontClient::CreateStr
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?WithTags");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateStreamingDistributionWithTags2019_03_26Outcome(CreateStreamingDistributionWithTags2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateStreamingDistributionWithTags2019_03_26Outcome(outcome.GetError());
-  }
+  return CreateStreamingDistributionWithTags2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateStreamingDistributionWithTags2019_03_26OutcomeCallable CloudFrontClient::CreateStreamingDistributionWithTags2019_03_26Callable(const CreateStreamingDistributionWithTags2019_03_26Request& request) const
@@ -487,15 +415,7 @@ DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome CloudFrontClient::DeleteCl
   ss << "/2019-03-26/origin-access-identity/cloudfront/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome(NoResult());
-  }
-  else
-  {
-    return DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome(outcome.GetError());
-  }
+  return DeleteCloudFrontOriginAccessIdentity2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2019_03_26Callable(const DeleteCloudFrontOriginAccessIdentity2019_03_26Request& request) const
@@ -528,15 +448,7 @@ DeleteDistribution2019_03_26Outcome CloudFrontClient::DeleteDistribution2019_03_
   ss << "/2019-03-26/distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteDistribution2019_03_26Outcome(NoResult());
-  }
-  else
-  {
-    return DeleteDistribution2019_03_26Outcome(outcome.GetError());
-  }
+  return DeleteDistribution2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteDistribution2019_03_26OutcomeCallable CloudFrontClient::DeleteDistribution2019_03_26Callable(const DeleteDistribution2019_03_26Request& request) const
@@ -569,15 +481,7 @@ DeleteFieldLevelEncryptionConfig2019_03_26Outcome CloudFrontClient::DeleteFieldL
   ss << "/2019-03-26/field-level-encryption/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFieldLevelEncryptionConfig2019_03_26Outcome(NoResult());
-  }
-  else
-  {
-    return DeleteFieldLevelEncryptionConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return DeleteFieldLevelEncryptionConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteFieldLevelEncryptionConfig2019_03_26OutcomeCallable CloudFrontClient::DeleteFieldLevelEncryptionConfig2019_03_26Callable(const DeleteFieldLevelEncryptionConfig2019_03_26Request& request) const
@@ -610,15 +514,7 @@ DeleteFieldLevelEncryptionProfile2019_03_26Outcome CloudFrontClient::DeleteField
   ss << "/2019-03-26/field-level-encryption-profile/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteFieldLevelEncryptionProfile2019_03_26Outcome(NoResult());
-  }
-  else
-  {
-    return DeleteFieldLevelEncryptionProfile2019_03_26Outcome(outcome.GetError());
-  }
+  return DeleteFieldLevelEncryptionProfile2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteFieldLevelEncryptionProfile2019_03_26OutcomeCallable CloudFrontClient::DeleteFieldLevelEncryptionProfile2019_03_26Callable(const DeleteFieldLevelEncryptionProfile2019_03_26Request& request) const
@@ -651,15 +547,7 @@ DeletePublicKey2019_03_26Outcome CloudFrontClient::DeletePublicKey2019_03_26(con
   ss << "/2019-03-26/public-key/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeletePublicKey2019_03_26Outcome(NoResult());
-  }
-  else
-  {
-    return DeletePublicKey2019_03_26Outcome(outcome.GetError());
-  }
+  return DeletePublicKey2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeletePublicKey2019_03_26OutcomeCallable CloudFrontClient::DeletePublicKey2019_03_26Callable(const DeletePublicKey2019_03_26Request& request) const
@@ -692,15 +580,7 @@ DeleteStreamingDistribution2019_03_26Outcome CloudFrontClient::DeleteStreamingDi
   ss << "/2019-03-26/streaming-distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
-  if(outcome.IsSuccess())
-  {
-    return DeleteStreamingDistribution2019_03_26Outcome(NoResult());
-  }
-  else
-  {
-    return DeleteStreamingDistribution2019_03_26Outcome(outcome.GetError());
-  }
+  return DeleteStreamingDistribution2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
 DeleteStreamingDistribution2019_03_26OutcomeCallable CloudFrontClient::DeleteStreamingDistribution2019_03_26Callable(const DeleteStreamingDistribution2019_03_26Request& request) const
@@ -733,15 +613,7 @@ GetCloudFrontOriginAccessIdentity2019_03_26Outcome CloudFrontClient::GetCloudFro
   ss << "/2019-03-26/origin-access-identity/cloudfront/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetCloudFrontOriginAccessIdentity2019_03_26Outcome(GetCloudFrontOriginAccessIdentity2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCloudFrontOriginAccessIdentity2019_03_26Outcome(outcome.GetError());
-  }
+  return GetCloudFrontOriginAccessIdentity2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentity2019_03_26Callable(const GetCloudFrontOriginAccessIdentity2019_03_26Request& request) const
@@ -775,15 +647,7 @@ GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome CloudFrontClient::GetCl
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome(GetCloudFrontOriginAccessIdentityConfig2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return GetCloudFrontOriginAccessIdentityConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetCloudFrontOriginAccessIdentityConfig2019_03_26OutcomeCallable CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2019_03_26Callable(const GetCloudFrontOriginAccessIdentityConfig2019_03_26Request& request) const
@@ -816,15 +680,7 @@ GetDistribution2019_03_26Outcome CloudFrontClient::GetDistribution2019_03_26(con
   ss << "/2019-03-26/distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetDistribution2019_03_26Outcome(GetDistribution2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDistribution2019_03_26Outcome(outcome.GetError());
-  }
+  return GetDistribution2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetDistribution2019_03_26OutcomeCallable CloudFrontClient::GetDistribution2019_03_26Callable(const GetDistribution2019_03_26Request& request) const
@@ -858,15 +714,7 @@ GetDistributionConfig2019_03_26Outcome CloudFrontClient::GetDistributionConfig20
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetDistributionConfig2019_03_26Outcome(GetDistributionConfig2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetDistributionConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return GetDistributionConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetDistributionConfig2019_03_26OutcomeCallable CloudFrontClient::GetDistributionConfig2019_03_26Callable(const GetDistributionConfig2019_03_26Request& request) const
@@ -899,15 +747,7 @@ GetFieldLevelEncryption2019_03_26Outcome CloudFrontClient::GetFieldLevelEncrypti
   ss << "/2019-03-26/field-level-encryption/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetFieldLevelEncryption2019_03_26Outcome(GetFieldLevelEncryption2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFieldLevelEncryption2019_03_26Outcome(outcome.GetError());
-  }
+  return GetFieldLevelEncryption2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetFieldLevelEncryption2019_03_26OutcomeCallable CloudFrontClient::GetFieldLevelEncryption2019_03_26Callable(const GetFieldLevelEncryption2019_03_26Request& request) const
@@ -941,15 +781,7 @@ GetFieldLevelEncryptionConfig2019_03_26Outcome CloudFrontClient::GetFieldLevelEn
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetFieldLevelEncryptionConfig2019_03_26Outcome(GetFieldLevelEncryptionConfig2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFieldLevelEncryptionConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return GetFieldLevelEncryptionConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetFieldLevelEncryptionConfig2019_03_26OutcomeCallable CloudFrontClient::GetFieldLevelEncryptionConfig2019_03_26Callable(const GetFieldLevelEncryptionConfig2019_03_26Request& request) const
@@ -982,15 +814,7 @@ GetFieldLevelEncryptionProfile2019_03_26Outcome CloudFrontClient::GetFieldLevelE
   ss << "/2019-03-26/field-level-encryption-profile/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetFieldLevelEncryptionProfile2019_03_26Outcome(GetFieldLevelEncryptionProfile2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFieldLevelEncryptionProfile2019_03_26Outcome(outcome.GetError());
-  }
+  return GetFieldLevelEncryptionProfile2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetFieldLevelEncryptionProfile2019_03_26OutcomeCallable CloudFrontClient::GetFieldLevelEncryptionProfile2019_03_26Callable(const GetFieldLevelEncryptionProfile2019_03_26Request& request) const
@@ -1024,15 +848,7 @@ GetFieldLevelEncryptionProfileConfig2019_03_26Outcome CloudFrontClient::GetField
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetFieldLevelEncryptionProfileConfig2019_03_26Outcome(GetFieldLevelEncryptionProfileConfig2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetFieldLevelEncryptionProfileConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return GetFieldLevelEncryptionProfileConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetFieldLevelEncryptionProfileConfig2019_03_26OutcomeCallable CloudFrontClient::GetFieldLevelEncryptionProfileConfig2019_03_26Callable(const GetFieldLevelEncryptionProfileConfig2019_03_26Request& request) const
@@ -1072,15 +888,7 @@ GetInvalidation2019_03_26Outcome CloudFrontClient::GetInvalidation2019_03_26(con
   ss << "/invalidation/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetInvalidation2019_03_26Outcome(GetInvalidation2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetInvalidation2019_03_26Outcome(outcome.GetError());
-  }
+  return GetInvalidation2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetInvalidation2019_03_26OutcomeCallable CloudFrontClient::GetInvalidation2019_03_26Callable(const GetInvalidation2019_03_26Request& request) const
@@ -1113,15 +921,7 @@ GetPublicKey2019_03_26Outcome CloudFrontClient::GetPublicKey2019_03_26(const Get
   ss << "/2019-03-26/public-key/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetPublicKey2019_03_26Outcome(GetPublicKey2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPublicKey2019_03_26Outcome(outcome.GetError());
-  }
+  return GetPublicKey2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetPublicKey2019_03_26OutcomeCallable CloudFrontClient::GetPublicKey2019_03_26Callable(const GetPublicKey2019_03_26Request& request) const
@@ -1155,15 +955,7 @@ GetPublicKeyConfig2019_03_26Outcome CloudFrontClient::GetPublicKeyConfig2019_03_
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetPublicKeyConfig2019_03_26Outcome(GetPublicKeyConfig2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetPublicKeyConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return GetPublicKeyConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetPublicKeyConfig2019_03_26OutcomeCallable CloudFrontClient::GetPublicKeyConfig2019_03_26Callable(const GetPublicKeyConfig2019_03_26Request& request) const
@@ -1196,15 +988,7 @@ GetStreamingDistribution2019_03_26Outcome CloudFrontClient::GetStreamingDistribu
   ss << "/2019-03-26/streaming-distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetStreamingDistribution2019_03_26Outcome(GetStreamingDistribution2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetStreamingDistribution2019_03_26Outcome(outcome.GetError());
-  }
+  return GetStreamingDistribution2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetStreamingDistribution2019_03_26OutcomeCallable CloudFrontClient::GetStreamingDistribution2019_03_26Callable(const GetStreamingDistribution2019_03_26Request& request) const
@@ -1238,15 +1022,7 @@ GetStreamingDistributionConfig2019_03_26Outcome CloudFrontClient::GetStreamingDi
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return GetStreamingDistributionConfig2019_03_26Outcome(GetStreamingDistributionConfig2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return GetStreamingDistributionConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return GetStreamingDistributionConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 GetStreamingDistributionConfig2019_03_26OutcomeCallable CloudFrontClient::GetStreamingDistributionConfig2019_03_26Callable(const GetStreamingDistributionConfig2019_03_26Request& request) const
@@ -1273,15 +1049,7 @@ ListCloudFrontOriginAccessIdentities2019_03_26Outcome CloudFrontClient::ListClou
   Aws::StringStream ss;
   ss << "/2019-03-26/origin-access-identity/cloudfront";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListCloudFrontOriginAccessIdentities2019_03_26Outcome(ListCloudFrontOriginAccessIdentities2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListCloudFrontOriginAccessIdentities2019_03_26Outcome(outcome.GetError());
-  }
+  return ListCloudFrontOriginAccessIdentities2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListCloudFrontOriginAccessIdentities2019_03_26OutcomeCallable CloudFrontClient::ListCloudFrontOriginAccessIdentities2019_03_26Callable(const ListCloudFrontOriginAccessIdentities2019_03_26Request& request) const
@@ -1308,15 +1076,7 @@ ListDistributions2019_03_26Outcome CloudFrontClient::ListDistributions2019_03_26
   Aws::StringStream ss;
   ss << "/2019-03-26/distribution";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListDistributions2019_03_26Outcome(ListDistributions2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDistributions2019_03_26Outcome(outcome.GetError());
-  }
+  return ListDistributions2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListDistributions2019_03_26OutcomeCallable CloudFrontClient::ListDistributions2019_03_26Callable(const ListDistributions2019_03_26Request& request) const
@@ -1349,15 +1109,7 @@ ListDistributionsByWebACLId2019_03_26Outcome CloudFrontClient::ListDistributions
   ss << "/2019-03-26/distributionsByWebACLId/";
   ss << request.GetWebACLId();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListDistributionsByWebACLId2019_03_26Outcome(ListDistributionsByWebACLId2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListDistributionsByWebACLId2019_03_26Outcome(outcome.GetError());
-  }
+  return ListDistributionsByWebACLId2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListDistributionsByWebACLId2019_03_26OutcomeCallable CloudFrontClient::ListDistributionsByWebACLId2019_03_26Callable(const ListDistributionsByWebACLId2019_03_26Request& request) const
@@ -1384,15 +1136,7 @@ ListFieldLevelEncryptionConfigs2019_03_26Outcome CloudFrontClient::ListFieldLeve
   Aws::StringStream ss;
   ss << "/2019-03-26/field-level-encryption";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListFieldLevelEncryptionConfigs2019_03_26Outcome(ListFieldLevelEncryptionConfigs2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFieldLevelEncryptionConfigs2019_03_26Outcome(outcome.GetError());
-  }
+  return ListFieldLevelEncryptionConfigs2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListFieldLevelEncryptionConfigs2019_03_26OutcomeCallable CloudFrontClient::ListFieldLevelEncryptionConfigs2019_03_26Callable(const ListFieldLevelEncryptionConfigs2019_03_26Request& request) const
@@ -1419,15 +1163,7 @@ ListFieldLevelEncryptionProfiles2019_03_26Outcome CloudFrontClient::ListFieldLev
   Aws::StringStream ss;
   ss << "/2019-03-26/field-level-encryption-profile";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListFieldLevelEncryptionProfiles2019_03_26Outcome(ListFieldLevelEncryptionProfiles2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListFieldLevelEncryptionProfiles2019_03_26Outcome(outcome.GetError());
-  }
+  return ListFieldLevelEncryptionProfiles2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListFieldLevelEncryptionProfiles2019_03_26OutcomeCallable CloudFrontClient::ListFieldLevelEncryptionProfiles2019_03_26Callable(const ListFieldLevelEncryptionProfiles2019_03_26Request& request) const
@@ -1461,15 +1197,7 @@ ListInvalidations2019_03_26Outcome CloudFrontClient::ListInvalidations2019_03_26
   ss << request.GetDistributionId();
   ss << "/invalidation";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListInvalidations2019_03_26Outcome(ListInvalidations2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInvalidations2019_03_26Outcome(outcome.GetError());
-  }
+  return ListInvalidations2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListInvalidations2019_03_26OutcomeCallable CloudFrontClient::ListInvalidations2019_03_26Callable(const ListInvalidations2019_03_26Request& request) const
@@ -1496,15 +1224,7 @@ ListPublicKeys2019_03_26Outcome CloudFrontClient::ListPublicKeys2019_03_26(const
   Aws::StringStream ss;
   ss << "/2019-03-26/public-key";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListPublicKeys2019_03_26Outcome(ListPublicKeys2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListPublicKeys2019_03_26Outcome(outcome.GetError());
-  }
+  return ListPublicKeys2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListPublicKeys2019_03_26OutcomeCallable CloudFrontClient::ListPublicKeys2019_03_26Callable(const ListPublicKeys2019_03_26Request& request) const
@@ -1531,15 +1251,7 @@ ListStreamingDistributions2019_03_26Outcome CloudFrontClient::ListStreamingDistr
   Aws::StringStream ss;
   ss << "/2019-03-26/streaming-distribution";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListStreamingDistributions2019_03_26Outcome(ListStreamingDistributions2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListStreamingDistributions2019_03_26Outcome(outcome.GetError());
-  }
+  return ListStreamingDistributions2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListStreamingDistributions2019_03_26OutcomeCallable CloudFrontClient::ListStreamingDistributions2019_03_26Callable(const ListStreamingDistributions2019_03_26Request& request) const
@@ -1571,15 +1283,7 @@ ListTagsForResource2019_03_26Outcome CloudFrontClient::ListTagsForResource2019_0
   Aws::StringStream ss;
   ss << "/2019-03-26/tagging";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
-  if(outcome.IsSuccess())
-  {
-    return ListTagsForResource2019_03_26Outcome(ListTagsForResource2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return ListTagsForResource2019_03_26Outcome(outcome.GetError());
-  }
+  return ListTagsForResource2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
 ListTagsForResource2019_03_26OutcomeCallable CloudFrontClient::ListTagsForResource2019_03_26Callable(const ListTagsForResource2019_03_26Request& request) const
@@ -1613,15 +1317,7 @@ TagResource2019_03_26Outcome CloudFrontClient::TagResource2019_03_26(const TagRe
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=Tag");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return TagResource2019_03_26Outcome(NoResult());
-  }
-  else
-  {
-    return TagResource2019_03_26Outcome(outcome.GetError());
-  }
+  return TagResource2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 TagResource2019_03_26OutcomeCallable CloudFrontClient::TagResource2019_03_26Callable(const TagResource2019_03_26Request& request) const
@@ -1655,15 +1351,7 @@ UntagResource2019_03_26Outcome CloudFrontClient::UntagResource2019_03_26(const U
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=Untag");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return UntagResource2019_03_26Outcome(NoResult());
-  }
-  else
-  {
-    return UntagResource2019_03_26Outcome(outcome.GetError());
-  }
+  return UntagResource2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 UntagResource2019_03_26OutcomeCallable CloudFrontClient::UntagResource2019_03_26Callable(const UntagResource2019_03_26Request& request) const
@@ -1697,15 +1385,7 @@ UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome CloudFrontClient::UpdateCl
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome(UpdateCloudFrontOriginAccessIdentity2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome(outcome.GetError());
-  }
+  return UpdateCloudFrontOriginAccessIdentity2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 UpdateCloudFrontOriginAccessIdentity2019_03_26OutcomeCallable CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2019_03_26Callable(const UpdateCloudFrontOriginAccessIdentity2019_03_26Request& request) const
@@ -1739,15 +1419,7 @@ UpdateDistribution2019_03_26Outcome CloudFrontClient::UpdateDistribution2019_03_
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return UpdateDistribution2019_03_26Outcome(UpdateDistribution2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateDistribution2019_03_26Outcome(outcome.GetError());
-  }
+  return UpdateDistribution2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 UpdateDistribution2019_03_26OutcomeCallable CloudFrontClient::UpdateDistribution2019_03_26Callable(const UpdateDistribution2019_03_26Request& request) const
@@ -1781,15 +1453,7 @@ UpdateFieldLevelEncryptionConfig2019_03_26Outcome CloudFrontClient::UpdateFieldL
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFieldLevelEncryptionConfig2019_03_26Outcome(UpdateFieldLevelEncryptionConfig2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateFieldLevelEncryptionConfig2019_03_26Outcome(outcome.GetError());
-  }
+  return UpdateFieldLevelEncryptionConfig2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 UpdateFieldLevelEncryptionConfig2019_03_26OutcomeCallable CloudFrontClient::UpdateFieldLevelEncryptionConfig2019_03_26Callable(const UpdateFieldLevelEncryptionConfig2019_03_26Request& request) const
@@ -1823,15 +1487,7 @@ UpdateFieldLevelEncryptionProfile2019_03_26Outcome CloudFrontClient::UpdateField
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return UpdateFieldLevelEncryptionProfile2019_03_26Outcome(UpdateFieldLevelEncryptionProfile2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateFieldLevelEncryptionProfile2019_03_26Outcome(outcome.GetError());
-  }
+  return UpdateFieldLevelEncryptionProfile2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 UpdateFieldLevelEncryptionProfile2019_03_26OutcomeCallable CloudFrontClient::UpdateFieldLevelEncryptionProfile2019_03_26Callable(const UpdateFieldLevelEncryptionProfile2019_03_26Request& request) const
@@ -1865,15 +1521,7 @@ UpdatePublicKey2019_03_26Outcome CloudFrontClient::UpdatePublicKey2019_03_26(con
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return UpdatePublicKey2019_03_26Outcome(UpdatePublicKey2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdatePublicKey2019_03_26Outcome(outcome.GetError());
-  }
+  return UpdatePublicKey2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 UpdatePublicKey2019_03_26OutcomeCallable CloudFrontClient::UpdatePublicKey2019_03_26Callable(const UpdatePublicKey2019_03_26Request& request) const
@@ -1907,15 +1555,7 @@ UpdateStreamingDistribution2019_03_26Outcome CloudFrontClient::UpdateStreamingDi
   ss << request.GetId();
   ss << "/config";
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
-  if(outcome.IsSuccess())
-  {
-    return UpdateStreamingDistribution2019_03_26Outcome(UpdateStreamingDistribution2019_03_26Result(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateStreamingDistribution2019_03_26Outcome(outcome.GetError());
-  }
+  return UpdateStreamingDistribution2019_03_26Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
 }
 
 UpdateStreamingDistribution2019_03_26OutcomeCallable CloudFrontClient::UpdateStreamingDistribution2019_03_26Callable(const UpdateStreamingDistribution2019_03_26Request& request) const

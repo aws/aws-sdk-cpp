@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kms/KMS_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class KMSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -90,6 +91,20 @@ enum class KMSErrors
   TAG,
   UNSUPPORTED_OPERATION
 };
+
+class AWS_KMS_API KMSError : public Aws::Client::AWSError<KMSErrors>
+{
+public:
+  KMSError() {}
+  KMSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KMSErrors>(rhs) {}
+  KMSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KMSErrors>(rhs) {}
+  KMSError(const Aws::Client::AWSError<KMSErrors>& rhs) : Aws::Client::AWSError<KMSErrors>(rhs) {}
+  KMSError(Aws::Client::AWSError<KMSErrors>&& rhs) : Aws::Client::AWSError<KMSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KMSErrorMapper
 {
   AWS_KMS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

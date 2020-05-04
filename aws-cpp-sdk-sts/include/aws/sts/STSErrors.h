@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sts/STS_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class STSErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +66,20 @@ enum class STSErrors
   PACKED_POLICY_TOO_LARGE,
   REGION_DISABLED
 };
+
+class AWS_STS_API STSError : public Aws::Client::AWSError<STSErrors>
+{
+public:
+  STSError() {}
+  STSError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<STSErrors>(rhs) {}
+  STSError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<STSErrors>(rhs) {}
+  STSError(const Aws::Client::AWSError<STSErrors>& rhs) : Aws::Client::AWSError<STSErrors>(rhs) {}
+  STSError(Aws::Client::AWSError<STSErrors>&& rhs) : Aws::Client::AWSError<STSErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace STSErrorMapper
 {
   AWS_STS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

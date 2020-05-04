@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/apigateway/APIGateway_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class APIGatewayErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class APIGatewayErrors
   TOO_MANY_REQUESTS,
   UNAUTHORIZED
 };
+
+class AWS_APIGATEWAY_API APIGatewayError : public Aws::Client::AWSError<APIGatewayErrors>
+{
+public:
+  APIGatewayError() {}
+  APIGatewayError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<APIGatewayErrors>(rhs) {}
+  APIGatewayError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<APIGatewayErrors>(rhs) {}
+  APIGatewayError(const Aws::Client::AWSError<APIGatewayErrors>& rhs) : Aws::Client::AWSError<APIGatewayErrors>(rhs) {}
+  APIGatewayError(Aws::Client::AWSError<APIGatewayErrors>&& rhs) : Aws::Client::AWSError<APIGatewayErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace APIGatewayErrorMapper
 {
   AWS_APIGATEWAY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -75,13 +75,13 @@ namespace Model
         class ListOutpostsRequest;
         class ListSitesRequest;
 
-        typedef Aws::Utils::Outcome<CreateOutpostResult, Aws::Client::AWSError<OutpostsErrors>> CreateOutpostOutcome;
-        typedef Aws::Utils::Outcome<DeleteOutpostResult, Aws::Client::AWSError<OutpostsErrors>> DeleteOutpostOutcome;
-        typedef Aws::Utils::Outcome<DeleteSiteResult, Aws::Client::AWSError<OutpostsErrors>> DeleteSiteOutcome;
-        typedef Aws::Utils::Outcome<GetOutpostResult, Aws::Client::AWSError<OutpostsErrors>> GetOutpostOutcome;
-        typedef Aws::Utils::Outcome<GetOutpostInstanceTypesResult, Aws::Client::AWSError<OutpostsErrors>> GetOutpostInstanceTypesOutcome;
-        typedef Aws::Utils::Outcome<ListOutpostsResult, Aws::Client::AWSError<OutpostsErrors>> ListOutpostsOutcome;
-        typedef Aws::Utils::Outcome<ListSitesResult, Aws::Client::AWSError<OutpostsErrors>> ListSitesOutcome;
+        typedef Aws::Utils::Outcome<CreateOutpostResult, OutpostsError> CreateOutpostOutcome;
+        typedef Aws::Utils::Outcome<DeleteOutpostResult, OutpostsError> DeleteOutpostOutcome;
+        typedef Aws::Utils::Outcome<DeleteSiteResult, OutpostsError> DeleteSiteOutcome;
+        typedef Aws::Utils::Outcome<GetOutpostResult, OutpostsError> GetOutpostOutcome;
+        typedef Aws::Utils::Outcome<GetOutpostInstanceTypesResult, OutpostsError> GetOutpostInstanceTypesOutcome;
+        typedef Aws::Utils::Outcome<ListOutpostsResult, OutpostsError> ListOutpostsOutcome;
+        typedef Aws::Utils::Outcome<ListSitesResult, OutpostsError> ListSitesOutcome;
 
         typedef std::future<CreateOutpostOutcome> CreateOutpostOutcomeCallable;
         typedef std::future<DeleteOutpostOutcome> DeleteOutpostOutcomeCallable;

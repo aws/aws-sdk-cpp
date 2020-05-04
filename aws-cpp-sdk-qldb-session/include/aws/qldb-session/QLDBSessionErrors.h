@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/qldb-session/QLDBSession_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class QLDBSessionErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class QLDBSessionErrors
   OCC_CONFLICT,
   RATE_EXCEEDED
 };
+
+class AWS_QLDBSESSION_API QLDBSessionError : public Aws::Client::AWSError<QLDBSessionErrors>
+{
+public:
+  QLDBSessionError() {}
+  QLDBSessionError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<QLDBSessionErrors>(rhs) {}
+  QLDBSessionError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<QLDBSessionErrors>(rhs) {}
+  QLDBSessionError(const Aws::Client::AWSError<QLDBSessionErrors>& rhs) : Aws::Client::AWSError<QLDBSessionErrors>(rhs) {}
+  QLDBSessionError(Aws::Client::AWSError<QLDBSessionErrors>&& rhs) : Aws::Client::AWSError<QLDBSessionErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace QLDBSessionErrorMapper
 {
   AWS_QLDBSESSION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

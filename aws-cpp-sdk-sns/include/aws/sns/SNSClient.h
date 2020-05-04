@@ -125,39 +125,39 @@ namespace Model
         class UnsubscribeRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> AddPermissionOutcome;
-        typedef Aws::Utils::Outcome<CheckIfPhoneNumberIsOptedOutResult, Aws::Client::AWSError<SNSErrors>> CheckIfPhoneNumberIsOptedOutOutcome;
-        typedef Aws::Utils::Outcome<ConfirmSubscriptionResult, Aws::Client::AWSError<SNSErrors>> ConfirmSubscriptionOutcome;
-        typedef Aws::Utils::Outcome<CreatePlatformApplicationResult, Aws::Client::AWSError<SNSErrors>> CreatePlatformApplicationOutcome;
-        typedef Aws::Utils::Outcome<CreatePlatformEndpointResult, Aws::Client::AWSError<SNSErrors>> CreatePlatformEndpointOutcome;
-        typedef Aws::Utils::Outcome<CreateTopicResult, Aws::Client::AWSError<SNSErrors>> CreateTopicOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> DeleteEndpointOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> DeletePlatformApplicationOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> DeleteTopicOutcome;
-        typedef Aws::Utils::Outcome<GetEndpointAttributesResult, Aws::Client::AWSError<SNSErrors>> GetEndpointAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetPlatformApplicationAttributesResult, Aws::Client::AWSError<SNSErrors>> GetPlatformApplicationAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetSMSAttributesResult, Aws::Client::AWSError<SNSErrors>> GetSMSAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetSubscriptionAttributesResult, Aws::Client::AWSError<SNSErrors>> GetSubscriptionAttributesOutcome;
-        typedef Aws::Utils::Outcome<GetTopicAttributesResult, Aws::Client::AWSError<SNSErrors>> GetTopicAttributesOutcome;
-        typedef Aws::Utils::Outcome<ListEndpointsByPlatformApplicationResult, Aws::Client::AWSError<SNSErrors>> ListEndpointsByPlatformApplicationOutcome;
-        typedef Aws::Utils::Outcome<ListPhoneNumbersOptedOutResult, Aws::Client::AWSError<SNSErrors>> ListPhoneNumbersOptedOutOutcome;
-        typedef Aws::Utils::Outcome<ListPlatformApplicationsResult, Aws::Client::AWSError<SNSErrors>> ListPlatformApplicationsOutcome;
-        typedef Aws::Utils::Outcome<ListSubscriptionsResult, Aws::Client::AWSError<SNSErrors>> ListSubscriptionsOutcome;
-        typedef Aws::Utils::Outcome<ListSubscriptionsByTopicResult, Aws::Client::AWSError<SNSErrors>> ListSubscriptionsByTopicOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SNSErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTopicsResult, Aws::Client::AWSError<SNSErrors>> ListTopicsOutcome;
-        typedef Aws::Utils::Outcome<OptInPhoneNumberResult, Aws::Client::AWSError<SNSErrors>> OptInPhoneNumberOutcome;
-        typedef Aws::Utils::Outcome<PublishResult, Aws::Client::AWSError<SNSErrors>> PublishOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> RemovePermissionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetEndpointAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetPlatformApplicationAttributesOutcome;
-        typedef Aws::Utils::Outcome<SetSMSAttributesResult, Aws::Client::AWSError<SNSErrors>> SetSMSAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetSubscriptionAttributesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> SetTopicAttributesOutcome;
-        typedef Aws::Utils::Outcome<SubscribeResult, Aws::Client::AWSError<SNSErrors>> SubscribeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SNSErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SNSErrors>> UnsubscribeOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SNSErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> AddPermissionOutcome;
+        typedef Aws::Utils::Outcome<CheckIfPhoneNumberIsOptedOutResult, SNSError> CheckIfPhoneNumberIsOptedOutOutcome;
+        typedef Aws::Utils::Outcome<ConfirmSubscriptionResult, SNSError> ConfirmSubscriptionOutcome;
+        typedef Aws::Utils::Outcome<CreatePlatformApplicationResult, SNSError> CreatePlatformApplicationOutcome;
+        typedef Aws::Utils::Outcome<CreatePlatformEndpointResult, SNSError> CreatePlatformEndpointOutcome;
+        typedef Aws::Utils::Outcome<CreateTopicResult, SNSError> CreateTopicOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> DeleteEndpointOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> DeletePlatformApplicationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> DeleteTopicOutcome;
+        typedef Aws::Utils::Outcome<GetEndpointAttributesResult, SNSError> GetEndpointAttributesOutcome;
+        typedef Aws::Utils::Outcome<GetPlatformApplicationAttributesResult, SNSError> GetPlatformApplicationAttributesOutcome;
+        typedef Aws::Utils::Outcome<GetSMSAttributesResult, SNSError> GetSMSAttributesOutcome;
+        typedef Aws::Utils::Outcome<GetSubscriptionAttributesResult, SNSError> GetSubscriptionAttributesOutcome;
+        typedef Aws::Utils::Outcome<GetTopicAttributesResult, SNSError> GetTopicAttributesOutcome;
+        typedef Aws::Utils::Outcome<ListEndpointsByPlatformApplicationResult, SNSError> ListEndpointsByPlatformApplicationOutcome;
+        typedef Aws::Utils::Outcome<ListPhoneNumbersOptedOutResult, SNSError> ListPhoneNumbersOptedOutOutcome;
+        typedef Aws::Utils::Outcome<ListPlatformApplicationsResult, SNSError> ListPlatformApplicationsOutcome;
+        typedef Aws::Utils::Outcome<ListSubscriptionsResult, SNSError> ListSubscriptionsOutcome;
+        typedef Aws::Utils::Outcome<ListSubscriptionsByTopicResult, SNSError> ListSubscriptionsByTopicOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SNSError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTopicsResult, SNSError> ListTopicsOutcome;
+        typedef Aws::Utils::Outcome<OptInPhoneNumberResult, SNSError> OptInPhoneNumberOutcome;
+        typedef Aws::Utils::Outcome<PublishResult, SNSError> PublishOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> RemovePermissionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> SetEndpointAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> SetPlatformApplicationAttributesOutcome;
+        typedef Aws::Utils::Outcome<SetSMSAttributesResult, SNSError> SetSMSAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> SetSubscriptionAttributesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> SetTopicAttributesOutcome;
+        typedef Aws::Utils::Outcome<SubscribeResult, SNSError> SubscribeOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, SNSError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SNSError> UnsubscribeOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, SNSError> UntagResourceOutcome;
 
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
         typedef std::future<CheckIfPhoneNumberIsOptedOutOutcome> CheckIfPhoneNumberIsOptedOutOutcomeCallable;
@@ -1625,7 +1625,7 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

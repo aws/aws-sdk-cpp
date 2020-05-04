@@ -18,8 +18,8 @@
 #include <aws/batch/BatchErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Batch;
 using namespace Aws::Utils;
+using namespace Aws::Batch;
 
 namespace Aws
 {

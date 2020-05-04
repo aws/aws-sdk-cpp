@@ -136,40 +136,40 @@ namespace Model
         class SetSecurityGroupsRequest;
         class SetSubnetsRequest;
 
-        typedef Aws::Utils::Outcome<AddListenerCertificatesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> AddListenerCertificatesOutcome;
-        typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> AddTagsOutcome;
-        typedef Aws::Utils::Outcome<CreateListenerResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> CreateListenerOutcome;
-        typedef Aws::Utils::Outcome<CreateLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> CreateLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<CreateRuleResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> CreateRuleOutcome;
-        typedef Aws::Utils::Outcome<CreateTargetGroupResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> CreateTargetGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteListenerResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeleteListenerOutcome;
-        typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeleteLoadBalancerOutcome;
-        typedef Aws::Utils::Outcome<DeleteRuleResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeleteRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteTargetGroupResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeleteTargetGroupOutcome;
-        typedef Aws::Utils::Outcome<DeregisterTargetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DeregisterTargetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeAccountLimitsOutcome;
-        typedef Aws::Utils::Outcome<DescribeListenerCertificatesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeListenerCertificatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeListenersResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeListenersOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancerAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeLoadBalancerAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<DescribeRulesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSSLPoliciesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeSSLPoliciesOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeTagsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTargetGroupAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeTargetGroupAttributesOutcome;
-        typedef Aws::Utils::Outcome<DescribeTargetGroupsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeTargetGroupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTargetHealthResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeTargetHealthOutcome;
-        typedef Aws::Utils::Outcome<ModifyListenerResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyListenerOutcome;
-        typedef Aws::Utils::Outcome<ModifyLoadBalancerAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyLoadBalancerAttributesOutcome;
-        typedef Aws::Utils::Outcome<ModifyRuleResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyRuleOutcome;
-        typedef Aws::Utils::Outcome<ModifyTargetGroupResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyTargetGroupOutcome;
-        typedef Aws::Utils::Outcome<ModifyTargetGroupAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyTargetGroupAttributesOutcome;
-        typedef Aws::Utils::Outcome<RegisterTargetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RegisterTargetsOutcome;
-        typedef Aws::Utils::Outcome<RemoveListenerCertificatesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RemoveListenerCertificatesOutcome;
-        typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> RemoveTagsOutcome;
-        typedef Aws::Utils::Outcome<SetIpAddressTypeResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetIpAddressTypeOutcome;
-        typedef Aws::Utils::Outcome<SetRulePrioritiesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetRulePrioritiesOutcome;
-        typedef Aws::Utils::Outcome<SetSecurityGroupsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetSecurityGroupsOutcome;
-        typedef Aws::Utils::Outcome<SetSubnetsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> SetSubnetsOutcome;
+        typedef Aws::Utils::Outcome<AddListenerCertificatesResult, ElasticLoadBalancingv2Error> AddListenerCertificatesOutcome;
+        typedef Aws::Utils::Outcome<AddTagsResult, ElasticLoadBalancingv2Error> AddTagsOutcome;
+        typedef Aws::Utils::Outcome<CreateListenerResult, ElasticLoadBalancingv2Error> CreateListenerOutcome;
+        typedef Aws::Utils::Outcome<CreateLoadBalancerResult, ElasticLoadBalancingv2Error> CreateLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<CreateRuleResult, ElasticLoadBalancingv2Error> CreateRuleOutcome;
+        typedef Aws::Utils::Outcome<CreateTargetGroupResult, ElasticLoadBalancingv2Error> CreateTargetGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteListenerResult, ElasticLoadBalancingv2Error> DeleteListenerOutcome;
+        typedef Aws::Utils::Outcome<DeleteLoadBalancerResult, ElasticLoadBalancingv2Error> DeleteLoadBalancerOutcome;
+        typedef Aws::Utils::Outcome<DeleteRuleResult, ElasticLoadBalancingv2Error> DeleteRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteTargetGroupResult, ElasticLoadBalancingv2Error> DeleteTargetGroupOutcome;
+        typedef Aws::Utils::Outcome<DeregisterTargetsResult, ElasticLoadBalancingv2Error> DeregisterTargetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, ElasticLoadBalancingv2Error> DescribeAccountLimitsOutcome;
+        typedef Aws::Utils::Outcome<DescribeListenerCertificatesResult, ElasticLoadBalancingv2Error> DescribeListenerCertificatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeListenersResult, ElasticLoadBalancingv2Error> DescribeListenersOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoadBalancerAttributesResult, ElasticLoadBalancingv2Error> DescribeLoadBalancerAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, ElasticLoadBalancingv2Error> DescribeLoadBalancersOutcome;
+        typedef Aws::Utils::Outcome<DescribeRulesResult, ElasticLoadBalancingv2Error> DescribeRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeSSLPoliciesResult, ElasticLoadBalancingv2Error> DescribeSSLPoliciesOutcome;
+        typedef Aws::Utils::Outcome<DescribeTagsResult, ElasticLoadBalancingv2Error> DescribeTagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTargetGroupAttributesResult, ElasticLoadBalancingv2Error> DescribeTargetGroupAttributesOutcome;
+        typedef Aws::Utils::Outcome<DescribeTargetGroupsResult, ElasticLoadBalancingv2Error> DescribeTargetGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTargetHealthResult, ElasticLoadBalancingv2Error> DescribeTargetHealthOutcome;
+        typedef Aws::Utils::Outcome<ModifyListenerResult, ElasticLoadBalancingv2Error> ModifyListenerOutcome;
+        typedef Aws::Utils::Outcome<ModifyLoadBalancerAttributesResult, ElasticLoadBalancingv2Error> ModifyLoadBalancerAttributesOutcome;
+        typedef Aws::Utils::Outcome<ModifyRuleResult, ElasticLoadBalancingv2Error> ModifyRuleOutcome;
+        typedef Aws::Utils::Outcome<ModifyTargetGroupResult, ElasticLoadBalancingv2Error> ModifyTargetGroupOutcome;
+        typedef Aws::Utils::Outcome<ModifyTargetGroupAttributesResult, ElasticLoadBalancingv2Error> ModifyTargetGroupAttributesOutcome;
+        typedef Aws::Utils::Outcome<RegisterTargetsResult, ElasticLoadBalancingv2Error> RegisterTargetsOutcome;
+        typedef Aws::Utils::Outcome<RemoveListenerCertificatesResult, ElasticLoadBalancingv2Error> RemoveListenerCertificatesOutcome;
+        typedef Aws::Utils::Outcome<RemoveTagsResult, ElasticLoadBalancingv2Error> RemoveTagsOutcome;
+        typedef Aws::Utils::Outcome<SetIpAddressTypeResult, ElasticLoadBalancingv2Error> SetIpAddressTypeOutcome;
+        typedef Aws::Utils::Outcome<SetRulePrioritiesResult, ElasticLoadBalancingv2Error> SetRulePrioritiesOutcome;
+        typedef Aws::Utils::Outcome<SetSecurityGroupsResult, ElasticLoadBalancingv2Error> SetSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<SetSubnetsResult, ElasticLoadBalancingv2Error> SetSubnetsOutcome;
 
         typedef std::future<AddListenerCertificatesOutcome> AddListenerCertificatesOutcomeCallable;
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
@@ -1699,7 +1699,7 @@ namespace Model
          */
         virtual void SetSubnetsAsync(const Model::SetSubnetsRequest& request, const SetSubnetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

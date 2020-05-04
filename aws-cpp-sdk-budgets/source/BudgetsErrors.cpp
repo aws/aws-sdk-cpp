@@ -18,8 +18,8 @@
 #include <aws/budgets/BudgetsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Budgets;
 using namespace Aws::Utils;
+using namespace Aws::Budgets;
 
 namespace Aws
 {

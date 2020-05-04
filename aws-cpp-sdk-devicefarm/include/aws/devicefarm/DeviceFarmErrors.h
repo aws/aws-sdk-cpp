@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class DeviceFarmErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69,6 +70,20 @@ enum class DeviceFarmErrors
   TAG_POLICY,
   TOO_MANY_TAGS
 };
+
+class AWS_DEVICEFARM_API DeviceFarmError : public Aws::Client::AWSError<DeviceFarmErrors>
+{
+public:
+  DeviceFarmError() {}
+  DeviceFarmError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DeviceFarmErrors>(rhs) {}
+  DeviceFarmError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DeviceFarmErrors>(rhs) {}
+  DeviceFarmError(const Aws::Client::AWSError<DeviceFarmErrors>& rhs) : Aws::Client::AWSError<DeviceFarmErrors>(rhs) {}
+  DeviceFarmError(Aws::Client::AWSError<DeviceFarmErrors>&& rhs) : Aws::Client::AWSError<DeviceFarmErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace DeviceFarmErrorMapper
 {
   AWS_DEVICEFARM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

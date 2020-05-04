@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/firehose/Firehose_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class FirehoseErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class FirehoseErrors
   LIMIT_EXCEEDED,
   RESOURCE_IN_USE
 };
+
+class AWS_FIREHOSE_API FirehoseError : public Aws::Client::AWSError<FirehoseErrors>
+{
+public:
+  FirehoseError() {}
+  FirehoseError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<FirehoseErrors>(rhs) {}
+  FirehoseError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<FirehoseErrors>(rhs) {}
+  FirehoseError(const Aws::Client::AWSError<FirehoseErrors>& rhs) : Aws::Client::AWSError<FirehoseErrors>(rhs) {}
+  FirehoseError(Aws::Client::AWSError<FirehoseErrors>&& rhs) : Aws::Client::AWSError<FirehoseErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace FirehoseErrorMapper
 {
   AWS_FIREHOSE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

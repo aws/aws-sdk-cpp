@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/lakeformation/LakeFormation_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class LakeFormationErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class LakeFormationErrors
   INVALID_INPUT,
   OPERATION_TIMEOUT
 };
+
+class AWS_LAKEFORMATION_API LakeFormationError : public Aws::Client::AWSError<LakeFormationErrors>
+{
+public:
+  LakeFormationError() {}
+  LakeFormationError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LakeFormationErrors>(rhs) {}
+  LakeFormationError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LakeFormationErrors>(rhs) {}
+  LakeFormationError(const Aws::Client::AWSError<LakeFormationErrors>& rhs) : Aws::Client::AWSError<LakeFormationErrors>(rhs) {}
+  LakeFormationError(Aws::Client::AWSError<LakeFormationErrors>&& rhs) : Aws::Client::AWSError<LakeFormationErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace LakeFormationErrorMapper
 {
   AWS_LAKEFORMATION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

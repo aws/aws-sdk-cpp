@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/connectparticipant/ConnectParticipant_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class ConnectParticipantErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INTERNAL_SERVER= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
+
+class AWS_CONNECTPARTICIPANT_API ConnectParticipantError : public Aws::Client::AWSError<ConnectParticipantErrors>
+{
+public:
+  ConnectParticipantError() {}
+  ConnectParticipantError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ConnectParticipantErrors>(rhs) {}
+  ConnectParticipantError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ConnectParticipantErrors>(rhs) {}
+  ConnectParticipantError(const Aws::Client::AWSError<ConnectParticipantErrors>& rhs) : Aws::Client::AWSError<ConnectParticipantErrors>(rhs) {}
+  ConnectParticipantError(Aws::Client::AWSError<ConnectParticipantErrors>&& rhs) : Aws::Client::AWSError<ConnectParticipantErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ConnectParticipantErrorMapper
 {
   AWS_CONNECTPARTICIPANT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

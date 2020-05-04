@@ -18,8 +18,8 @@
 #include <aws/license-manager/LicenseManagerErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::LicenseManager;
 using namespace Aws::Utils;
+using namespace Aws::LicenseManager;
 
 namespace Aws
 {

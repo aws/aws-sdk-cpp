@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/sagemaker-a2i-runtime/AugmentedAIRuntime_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AugmentedAIRuntimeErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class AugmentedAIRuntimeErrors
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
+
+class AWS_AUGMENTEDAIRUNTIME_API AugmentedAIRuntimeError : public Aws::Client::AWSError<AugmentedAIRuntimeErrors>
+{
+public:
+  AugmentedAIRuntimeError() {}
+  AugmentedAIRuntimeError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
+  AugmentedAIRuntimeError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
+  AugmentedAIRuntimeError(const Aws::Client::AWSError<AugmentedAIRuntimeErrors>& rhs) : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
+  AugmentedAIRuntimeError(Aws::Client::AWSError<AugmentedAIRuntimeErrors>&& rhs) : Aws::Client::AWSError<AugmentedAIRuntimeErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AugmentedAIRuntimeErrorMapper
 {
   AWS_AUGMENTEDAIRUNTIME_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

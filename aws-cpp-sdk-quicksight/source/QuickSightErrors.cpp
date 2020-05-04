@@ -16,15 +16,135 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/quicksight/QuickSightErrors.h>
+#include <aws/quicksight/model/ResourceExistsException.h>
+#include <aws/quicksight/model/ConflictException.h>
+#include <aws/quicksight/model/ResourceNotFoundException.h>
+#include <aws/quicksight/model/LimitExceededException.h>
+#include <aws/quicksight/model/QuickSightUserNotFoundException.h>
+#include <aws/quicksight/model/IdentityTypeNotSupportedException.h>
+#include <aws/quicksight/model/InvalidParameterValueException.h>
+#include <aws/quicksight/model/InvalidNextTokenException.h>
+#include <aws/quicksight/model/InternalFailureException.h>
+#include <aws/quicksight/model/DomainNotWhitelistedException.h>
+#include <aws/quicksight/model/ThrottlingException.h>
+#include <aws/quicksight/model/UnsupportedUserEditionException.h>
+#include <aws/quicksight/model/SessionLifetimeInMinutesInvalidException.h>
+#include <aws/quicksight/model/AccessDeniedException.h>
+#include <aws/quicksight/model/PreconditionNotMetException.h>
+#include <aws/quicksight/model/ResourceUnavailableException.h>
+#include <aws/quicksight/model/ConcurrentUpdatingException.h>
 
 using namespace Aws::Client;
-using namespace Aws::QuickSight;
 using namespace Aws::Utils;
+using namespace Aws::QuickSight;
+using namespace Aws::QuickSight::Model;
 
 namespace Aws
 {
 namespace QuickSight
 {
+template<> AWS_QUICKSIGHT_API ResourceExistsException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::RESOURCE_EXISTS);
+  return ResourceExistsException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API ConflictException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API ResourceNotFoundException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API LimitExceededException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API QuickSightUserNotFoundException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::QUICK_SIGHT_USER_NOT_FOUND);
+  return QuickSightUserNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API IdentityTypeNotSupportedException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::IDENTITY_TYPE_NOT_SUPPORTED);
+  return IdentityTypeNotSupportedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API InvalidParameterValueException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::INVALID_PARAMETER_VALUE);
+  return InvalidParameterValueException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API InvalidNextTokenException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::INVALID_NEXT_TOKEN);
+  return InvalidNextTokenException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API InternalFailureException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::INTERNAL_FAILURE);
+  return InternalFailureException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API DomainNotWhitelistedException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::DOMAIN_NOT_WHITELISTED);
+  return DomainNotWhitelistedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API ThrottlingException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API UnsupportedUserEditionException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::UNSUPPORTED_USER_EDITION);
+  return UnsupportedUserEditionException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API SessionLifetimeInMinutesInvalidException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::SESSION_LIFETIME_IN_MINUTES_INVALID);
+  return SessionLifetimeInMinutesInvalidException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API AccessDeniedException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API PreconditionNotMetException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::PRECONDITION_NOT_MET);
+  return PreconditionNotMetException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API ResourceUnavailableException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::RESOURCE_UNAVAILABLE);
+  return ResourceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_QUICKSIGHT_API ConcurrentUpdatingException QuickSightError::GetModeledError()
+{
+  assert(this->GetErrorType() == QuickSightErrors::CONCURRENT_UPDATING);
+  return ConcurrentUpdatingException(this->GetJsonPayload().View());
+}
+
 namespace QuickSightErrorMapper
 {
 

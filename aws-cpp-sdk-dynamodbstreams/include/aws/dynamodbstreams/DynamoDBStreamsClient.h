@@ -69,10 +69,10 @@ namespace Model
         class GetShardIteratorRequest;
         class ListStreamsRequest;
 
-        typedef Aws::Utils::Outcome<DescribeStreamResult, Aws::Client::AWSError<DynamoDBStreamsErrors>> DescribeStreamOutcome;
-        typedef Aws::Utils::Outcome<GetRecordsResult, Aws::Client::AWSError<DynamoDBStreamsErrors>> GetRecordsOutcome;
-        typedef Aws::Utils::Outcome<GetShardIteratorResult, Aws::Client::AWSError<DynamoDBStreamsErrors>> GetShardIteratorOutcome;
-        typedef Aws::Utils::Outcome<ListStreamsResult, Aws::Client::AWSError<DynamoDBStreamsErrors>> ListStreamsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStreamResult, DynamoDBStreamsError> DescribeStreamOutcome;
+        typedef Aws::Utils::Outcome<GetRecordsResult, DynamoDBStreamsError> GetRecordsOutcome;
+        typedef Aws::Utils::Outcome<GetShardIteratorResult, DynamoDBStreamsError> GetShardIteratorOutcome;
+        typedef Aws::Utils::Outcome<ListStreamsResult, DynamoDBStreamsError> ListStreamsOutcome;
 
         typedef std::future<DescribeStreamOutcome> DescribeStreamOutcomeCallable;
         typedef std::future<GetRecordsOutcome> GetRecordsOutcomeCallable;

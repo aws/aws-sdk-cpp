@@ -77,14 +77,14 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CreateSavingsPlanResult, Aws::Client::AWSError<SavingsPlansErrors>> CreateSavingsPlanOutcome;
-        typedef Aws::Utils::Outcome<DescribeSavingsPlanRatesResult, Aws::Client::AWSError<SavingsPlansErrors>> DescribeSavingsPlanRatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSavingsPlansResult, Aws::Client::AWSError<SavingsPlansErrors>> DescribeSavingsPlansOutcome;
-        typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingRatesResult, Aws::Client::AWSError<SavingsPlansErrors>> DescribeSavingsPlansOfferingRatesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingsResult, Aws::Client::AWSError<SavingsPlansErrors>> DescribeSavingsPlansOfferingsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SavingsPlansErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SavingsPlansErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SavingsPlansErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateSavingsPlanResult, SavingsPlansError> CreateSavingsPlanOutcome;
+        typedef Aws::Utils::Outcome<DescribeSavingsPlanRatesResult, SavingsPlansError> DescribeSavingsPlanRatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeSavingsPlansResult, SavingsPlansError> DescribeSavingsPlansOutcome;
+        typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingRatesResult, SavingsPlansError> DescribeSavingsPlansOfferingRatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeSavingsPlansOfferingsResult, SavingsPlansError> DescribeSavingsPlansOfferingsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SavingsPlansError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, SavingsPlansError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, SavingsPlansError> UntagResourceOutcome;
 
         typedef std::future<CreateSavingsPlanOutcome> CreateSavingsPlanOutcomeCallable;
         typedef std::future<DescribeSavingsPlanRatesOutcome> DescribeSavingsPlanRatesOutcomeCallable;

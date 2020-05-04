@@ -18,8 +18,8 @@
 #include <aws/kendra/KendraErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::kendra;
 using namespace Aws::Utils;
+using namespace Aws::kendra;
 
 namespace Aws
 {

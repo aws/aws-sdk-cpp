@@ -18,8 +18,8 @@
 #include <aws/connectparticipant/ConnectParticipantErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ConnectParticipant;
 using namespace Aws::Utils;
+using namespace Aws::ConnectParticipant;
 
 namespace Aws
 {

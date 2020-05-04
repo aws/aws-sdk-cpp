@@ -18,8 +18,8 @@
 #include <aws/kinesis/KinesisErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Kinesis;
 using namespace Aws::Utils;
+using namespace Aws::Kinesis;
 
 namespace Aws
 {

@@ -18,8 +18,8 @@
 #include <aws/sqs/SQSErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::SQS;
 using namespace Aws::Utils;
+using namespace Aws::SQS;
 
 namespace Aws
 {

@@ -18,8 +18,8 @@
 #include <aws/cloudhsmv2/CloudHSMV2Errors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CloudHSMV2;
 using namespace Aws::Utils;
+using namespace Aws::CloudHSMV2;
 
 namespace Aws
 {

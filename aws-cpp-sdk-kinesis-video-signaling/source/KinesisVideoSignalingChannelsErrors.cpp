@@ -18,8 +18,8 @@
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannelsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::KinesisVideoSignalingChannels;
 using namespace Aws::Utils;
+using namespace Aws::KinesisVideoSignalingChannels;
 
 namespace Aws
 {

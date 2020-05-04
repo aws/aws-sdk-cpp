@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CloudHSMV2Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class CloudHSMV2Errors
   CLOUD_HSM_SERVICE,
   CLOUD_HSM_TAG
 };
+
+class AWS_CLOUDHSMV2_API CloudHSMV2Error : public Aws::Client::AWSError<CloudHSMV2Errors>
+{
+public:
+  CloudHSMV2Error() {}
+  CloudHSMV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudHSMV2Errors>(rhs) {}
+  CloudHSMV2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudHSMV2Errors>(rhs) {}
+  CloudHSMV2Error(const Aws::Client::AWSError<CloudHSMV2Errors>& rhs) : Aws::Client::AWSError<CloudHSMV2Errors>(rhs) {}
+  CloudHSMV2Error(Aws::Client::AWSError<CloudHSMV2Errors>&& rhs) : Aws::Client::AWSError<CloudHSMV2Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudHSMV2ErrorMapper
 {
   AWS_CLOUDHSMV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

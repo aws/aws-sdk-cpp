@@ -16,15 +16,37 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/dataexchange/DataExchangeErrors.h>
+#include <aws/dataexchange/model/ConflictException.h>
+#include <aws/dataexchange/model/ResourceNotFoundException.h>
+#include <aws/dataexchange/model/ServiceLimitExceededException.h>
 
 using namespace Aws::Client;
-using namespace Aws::DataExchange;
 using namespace Aws::Utils;
+using namespace Aws::DataExchange;
+using namespace Aws::DataExchange::Model;
 
 namespace Aws
 {
 namespace DataExchange
 {
+template<> AWS_DATAEXCHANGE_API ConflictException DataExchangeError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataExchangeErrors::CONFLICT);
+  return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DATAEXCHANGE_API ResourceNotFoundException DataExchangeError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataExchangeErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_DATAEXCHANGE_API ServiceLimitExceededException DataExchangeError::GetModeledError()
+{
+  assert(this->GetErrorType() == DataExchangeErrors::SERVICE_LIMIT_EXCEEDED);
+  return ServiceLimitExceededException(this->GetJsonPayload().View());
+}
+
 namespace DataExchangeErrorMapper
 {
 

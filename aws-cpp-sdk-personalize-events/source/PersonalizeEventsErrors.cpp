@@ -18,8 +18,8 @@
 #include <aws/personalize-events/PersonalizeEventsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::PersonalizeEvents;
 using namespace Aws::Utils;
+using namespace Aws::PersonalizeEvents;
 
 namespace Aws
 {

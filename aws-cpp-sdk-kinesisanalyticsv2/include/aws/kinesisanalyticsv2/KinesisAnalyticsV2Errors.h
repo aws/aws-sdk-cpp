@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class KinesisAnalyticsV2Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -68,6 +69,20 @@ enum class KinesisAnalyticsV2Errors
   UNABLE_TO_DETECT_SCHEMA,
   UNSUPPORTED_OPERATION
 };
+
+class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Error : public Aws::Client::AWSError<KinesisAnalyticsV2Errors>
+{
+public:
+  KinesisAnalyticsV2Error() {}
+  KinesisAnalyticsV2Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
+  KinesisAnalyticsV2Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
+  KinesisAnalyticsV2Error(const Aws::Client::AWSError<KinesisAnalyticsV2Errors>& rhs) : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
+  KinesisAnalyticsV2Error(Aws::Client::AWSError<KinesisAnalyticsV2Errors>&& rhs) : Aws::Client::AWSError<KinesisAnalyticsV2Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KinesisAnalyticsV2ErrorMapper
 {
   AWS_KINESISANALYTICSV2_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

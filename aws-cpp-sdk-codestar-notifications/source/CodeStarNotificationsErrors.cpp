@@ -18,8 +18,8 @@
 #include <aws/codestar-notifications/CodeStarNotificationsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeStarNotifications;
 using namespace Aws::Utils;
+using namespace Aws::CodeStarNotifications;
 
 namespace Aws
 {

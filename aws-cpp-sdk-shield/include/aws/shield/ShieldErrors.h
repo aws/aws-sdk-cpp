@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/shield/Shield_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ShieldErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -68,6 +69,20 @@ enum class ShieldErrors
   OPTIMISTIC_LOCK,
   RESOURCE_ALREADY_EXISTS
 };
+
+class AWS_SHIELD_API ShieldError : public Aws::Client::AWSError<ShieldErrors>
+{
+public:
+  ShieldError() {}
+  ShieldError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ShieldErrors>(rhs) {}
+  ShieldError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ShieldErrors>(rhs) {}
+  ShieldError(const Aws::Client::AWSError<ShieldErrors>& rhs) : Aws::Client::AWSError<ShieldErrors>(rhs) {}
+  ShieldError(Aws::Client::AWSError<ShieldErrors>&& rhs) : Aws::Client::AWSError<ShieldErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ShieldErrorMapper
 {
   AWS_SHIELD_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

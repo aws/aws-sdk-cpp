@@ -65,8 +65,8 @@ namespace Model
         class GetIceServerConfigRequest;
         class SendAlexaOfferToMasterRequest;
 
-        typedef Aws::Utils::Outcome<GetIceServerConfigResult, Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>> GetIceServerConfigOutcome;
-        typedef Aws::Utils::Outcome<SendAlexaOfferToMasterResult, Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>> SendAlexaOfferToMasterOutcome;
+        typedef Aws::Utils::Outcome<GetIceServerConfigResult, KinesisVideoSignalingChannelsError> GetIceServerConfigOutcome;
+        typedef Aws::Utils::Outcome<SendAlexaOfferToMasterResult, KinesisVideoSignalingChannelsError> SendAlexaOfferToMasterOutcome;
 
         typedef std::future<GetIceServerConfigOutcome> GetIceServerConfigOutcomeCallable;
         typedef std::future<SendAlexaOfferToMasterOutcome> SendAlexaOfferToMasterOutcomeCallable;

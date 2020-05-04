@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2Errors.h>
+#include <aws/kinesisanalyticsv2/model/UnableToDetectSchemaException.h>
 
 using namespace Aws::Client;
-using namespace Aws::KinesisAnalyticsV2;
 using namespace Aws::Utils;
+using namespace Aws::KinesisAnalyticsV2;
+using namespace Aws::KinesisAnalyticsV2::Model;
 
 namespace Aws
 {
 namespace KinesisAnalyticsV2
 {
+template<> AWS_KINESISANALYTICSV2_API UnableToDetectSchemaException KinesisAnalyticsV2Error::GetModeledError()
+{
+  assert(this->GetErrorType() == KinesisAnalyticsV2Errors::UNABLE_TO_DETECT_SCHEMA);
+  return UnableToDetectSchemaException(this->GetJsonPayload().View());
+}
+
 namespace KinesisAnalyticsV2ErrorMapper
 {
 

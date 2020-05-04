@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/kinesis-video-signaling/KinesisVideoSignalingChannels_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class KinesisVideoSignalingChannelsErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class KinesisVideoSignalingChannelsErrors
   NOT_AUTHORIZED,
   SESSION_EXPIRED
 };
+
+class AWS_KINESISVIDEOSIGNALINGCHANNELS_API KinesisVideoSignalingChannelsError : public Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>
+{
+public:
+  KinesisVideoSignalingChannelsError() {}
+  KinesisVideoSignalingChannelsError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
+  KinesisVideoSignalingChannelsError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
+  KinesisVideoSignalingChannelsError(const Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>& rhs) : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
+  KinesisVideoSignalingChannelsError(Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>&& rhs) : Aws::Client::AWSError<KinesisVideoSignalingChannelsErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace KinesisVideoSignalingChannelsErrorMapper
 {
   AWS_KINESISVIDEOSIGNALINGCHANNELS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

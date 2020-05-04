@@ -1,0 +1,112 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace CloudWatch
+{
+namespace Model
+{
+
+  /**
+   * <p>The named resource does not exist.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ResourceNotFoundException">AWS
+   * API Reference</a></p>
+   */
+  class AWS_CLOUDWATCH_API ResourceNotFoundException
+  {
+  public:
+    ResourceNotFoundException();
+    ResourceNotFoundException(const Aws::Utils::Xml::XmlNode& xmlNode);
+    ResourceNotFoundException& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    
+    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    
+    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
+
+    
+    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
+
+    
+    inline ResourceNotFoundException& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
+
+    
+    inline ResourceNotFoundException& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
+
+    
+    inline ResourceNotFoundException& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
+
+    
+    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    
+    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+
+    
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
+
+    
+    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
+
+    
+    inline ResourceNotFoundException& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+
+    
+    inline ResourceNotFoundException& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
+
+    
+    inline ResourceNotFoundException& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
+  private:
+
+    Aws::String m_resourceType;
+    bool m_resourceTypeHasBeenSet;
+
+    Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

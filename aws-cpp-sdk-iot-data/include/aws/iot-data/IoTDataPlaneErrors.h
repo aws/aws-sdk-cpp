@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iot-data/IoTDataPlane_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class IoTDataPlaneErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class IoTDataPlaneErrors
   UNAUTHORIZED,
   UNSUPPORTED_DOCUMENT_ENCODING
 };
+
+class AWS_IOTDATAPLANE_API IoTDataPlaneError : public Aws::Client::AWSError<IoTDataPlaneErrors>
+{
+public:
+  IoTDataPlaneError() {}
+  IoTDataPlaneError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTDataPlaneErrors>(rhs) {}
+  IoTDataPlaneError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTDataPlaneErrors>(rhs) {}
+  IoTDataPlaneError(const Aws::Client::AWSError<IoTDataPlaneErrors>& rhs) : Aws::Client::AWSError<IoTDataPlaneErrors>(rhs) {}
+  IoTDataPlaneError(Aws::Client::AWSError<IoTDataPlaneErrors>&& rhs) : Aws::Client::AWSError<IoTDataPlaneErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace IoTDataPlaneErrorMapper
 {
   AWS_IOTDATAPLANE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

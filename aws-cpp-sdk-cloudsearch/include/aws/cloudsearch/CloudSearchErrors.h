@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/cloudsearch/CloudSearch_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CloudSearchErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class CloudSearchErrors
   INVALID_TYPE,
   LIMIT_EXCEEDED
 };
+
+class AWS_CLOUDSEARCH_API CloudSearchError : public Aws::Client::AWSError<CloudSearchErrors>
+{
+public:
+  CloudSearchError() {}
+  CloudSearchError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CloudSearchErrors>(rhs) {}
+  CloudSearchError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CloudSearchErrors>(rhs) {}
+  CloudSearchError(const Aws::Client::AWSError<CloudSearchErrors>& rhs) : Aws::Client::AWSError<CloudSearchErrors>(rhs) {}
+  CloudSearchError(Aws::Client::AWSError<CloudSearchErrors>&& rhs) : Aws::Client::AWSError<CloudSearchErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CloudSearchErrorMapper
 {
   AWS_CLOUDSEARCH_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

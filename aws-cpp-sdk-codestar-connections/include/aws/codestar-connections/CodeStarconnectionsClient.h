@@ -69,10 +69,10 @@ namespace Model
         class GetConnectionRequest;
         class ListConnectionsRequest;
 
-        typedef Aws::Utils::Outcome<CreateConnectionResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> CreateConnectionOutcome;
-        typedef Aws::Utils::Outcome<DeleteConnectionResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> DeleteConnectionOutcome;
-        typedef Aws::Utils::Outcome<GetConnectionResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> GetConnectionOutcome;
-        typedef Aws::Utils::Outcome<ListConnectionsResult, Aws::Client::AWSError<CodeStarconnectionsErrors>> ListConnectionsOutcome;
+        typedef Aws::Utils::Outcome<CreateConnectionResult, CodeStarconnectionsError> CreateConnectionOutcome;
+        typedef Aws::Utils::Outcome<DeleteConnectionResult, CodeStarconnectionsError> DeleteConnectionOutcome;
+        typedef Aws::Utils::Outcome<GetConnectionResult, CodeStarconnectionsError> GetConnectionOutcome;
+        typedef Aws::Utils::Outcome<ListConnectionsResult, CodeStarconnectionsError> ListConnectionsOutcome;
 
         typedef std::future<CreateConnectionOutcome> CreateConnectionOutcomeCallable;
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/autoscaling/AutoScaling_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AutoScalingErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class AutoScalingErrors
   SCALING_ACTIVITY_IN_PROGRESS_FAULT,
   SERVICE_LINKED_ROLE_FAILURE
 };
+
+class AWS_AUTOSCALING_API AutoScalingError : public Aws::Client::AWSError<AutoScalingErrors>
+{
+public:
+  AutoScalingError() {}
+  AutoScalingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
+  AutoScalingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
+  AutoScalingError(const Aws::Client::AWSError<AutoScalingErrors>& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
+  AutoScalingError(Aws::Client::AWSError<AutoScalingErrors>&& rhs) : Aws::Client::AWSError<AutoScalingErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AutoScalingErrorMapper
 {
   AWS_AUTOSCALING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

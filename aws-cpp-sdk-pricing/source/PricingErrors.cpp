@@ -18,8 +18,8 @@
 #include <aws/pricing/PricingErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Pricing;
 using namespace Aws::Utils;
+using namespace Aws::Pricing;
 
 namespace Aws
 {

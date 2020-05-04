@@ -89,20 +89,20 @@ namespace Model
         class UntagResourceRequest;
         class UpdateFileSystemRequest;
 
-        typedef Aws::Utils::Outcome<CancelDataRepositoryTaskResult, Aws::Client::AWSError<FSxErrors>> CancelDataRepositoryTaskOutcome;
-        typedef Aws::Utils::Outcome<CreateBackupResult, Aws::Client::AWSError<FSxErrors>> CreateBackupOutcome;
-        typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, Aws::Client::AWSError<FSxErrors>> CreateDataRepositoryTaskOutcome;
-        typedef Aws::Utils::Outcome<CreateFileSystemResult, Aws::Client::AWSError<FSxErrors>> CreateFileSystemOutcome;
-        typedef Aws::Utils::Outcome<CreateFileSystemFromBackupResult, Aws::Client::AWSError<FSxErrors>> CreateFileSystemFromBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteBackupResult, Aws::Client::AWSError<FSxErrors>> DeleteBackupOutcome;
-        typedef Aws::Utils::Outcome<DeleteFileSystemResult, Aws::Client::AWSError<FSxErrors>> DeleteFileSystemOutcome;
-        typedef Aws::Utils::Outcome<DescribeBackupsResult, Aws::Client::AWSError<FSxErrors>> DescribeBackupsOutcome;
-        typedef Aws::Utils::Outcome<DescribeDataRepositoryTasksResult, Aws::Client::AWSError<FSxErrors>> DescribeDataRepositoryTasksOutcome;
-        typedef Aws::Utils::Outcome<DescribeFileSystemsResult, Aws::Client::AWSError<FSxErrors>> DescribeFileSystemsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<FSxErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<FSxErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<FSxErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateFileSystemResult, Aws::Client::AWSError<FSxErrors>> UpdateFileSystemOutcome;
+        typedef Aws::Utils::Outcome<CancelDataRepositoryTaskResult, FSxError> CancelDataRepositoryTaskOutcome;
+        typedef Aws::Utils::Outcome<CreateBackupResult, FSxError> CreateBackupOutcome;
+        typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, FSxError> CreateDataRepositoryTaskOutcome;
+        typedef Aws::Utils::Outcome<CreateFileSystemResult, FSxError> CreateFileSystemOutcome;
+        typedef Aws::Utils::Outcome<CreateFileSystemFromBackupResult, FSxError> CreateFileSystemFromBackupOutcome;
+        typedef Aws::Utils::Outcome<DeleteBackupResult, FSxError> DeleteBackupOutcome;
+        typedef Aws::Utils::Outcome<DeleteFileSystemResult, FSxError> DeleteFileSystemOutcome;
+        typedef Aws::Utils::Outcome<DescribeBackupsResult, FSxError> DescribeBackupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDataRepositoryTasksResult, FSxError> DescribeDataRepositoryTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeFileSystemsResult, FSxError> DescribeFileSystemsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, FSxError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, FSxError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, FSxError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateFileSystemResult, FSxError> UpdateFileSystemOutcome;
 
         typedef std::future<CancelDataRepositoryTaskOutcome> CancelDataRepositoryTaskOutcomeCallable;
         typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;

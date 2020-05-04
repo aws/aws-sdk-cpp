@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/dynamodb/DynamoDBErrors.h>
+#include <aws/dynamodb/model/TransactionCanceledException.h>
 
 using namespace Aws::Client;
-using namespace Aws::DynamoDB;
 using namespace Aws::Utils;
+using namespace Aws::DynamoDB;
+using namespace Aws::DynamoDB::Model;
 
 namespace Aws
 {
 namespace DynamoDB
 {
+template<> AWS_DYNAMODB_API TransactionCanceledException DynamoDBError::GetModeledError()
+{
+  assert(this->GetErrorType() == DynamoDBErrors::TRANSACTION_CANCELED);
+  return TransactionCanceledException(this->GetJsonPayload().View());
+}
+
 namespace DynamoDBErrorMapper
 {
 

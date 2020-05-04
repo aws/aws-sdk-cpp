@@ -18,8 +18,8 @@
 #include <aws/comprehend/ComprehendErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Comprehend;
 using namespace Aws::Utils;
+using namespace Aws::Comprehend;
 
 namespace Aws
 {

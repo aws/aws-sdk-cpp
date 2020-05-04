@@ -18,8 +18,8 @@
 #include <aws/codebuild/CodeBuildErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::CodeBuild;
 using namespace Aws::Utils;
+using namespace Aws::CodeBuild;
 
 namespace Aws
 {

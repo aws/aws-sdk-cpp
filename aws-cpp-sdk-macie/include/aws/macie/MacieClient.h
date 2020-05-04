@@ -74,13 +74,13 @@ namespace Model
         class ListS3ResourcesRequest;
         class UpdateS3ResourcesRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MacieErrors>> AssociateMemberAccountOutcome;
-        typedef Aws::Utils::Outcome<AssociateS3ResourcesResult, Aws::Client::AWSError<MacieErrors>> AssociateS3ResourcesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MacieErrors>> DisassociateMemberAccountOutcome;
-        typedef Aws::Utils::Outcome<DisassociateS3ResourcesResult, Aws::Client::AWSError<MacieErrors>> DisassociateS3ResourcesOutcome;
-        typedef Aws::Utils::Outcome<ListMemberAccountsResult, Aws::Client::AWSError<MacieErrors>> ListMemberAccountsOutcome;
-        typedef Aws::Utils::Outcome<ListS3ResourcesResult, Aws::Client::AWSError<MacieErrors>> ListS3ResourcesOutcome;
-        typedef Aws::Utils::Outcome<UpdateS3ResourcesResult, Aws::Client::AWSError<MacieErrors>> UpdateS3ResourcesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MacieError> AssociateMemberAccountOutcome;
+        typedef Aws::Utils::Outcome<AssociateS3ResourcesResult, MacieError> AssociateS3ResourcesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MacieError> DisassociateMemberAccountOutcome;
+        typedef Aws::Utils::Outcome<DisassociateS3ResourcesResult, MacieError> DisassociateS3ResourcesOutcome;
+        typedef Aws::Utils::Outcome<ListMemberAccountsResult, MacieError> ListMemberAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListS3ResourcesResult, MacieError> ListS3ResourcesOutcome;
+        typedef Aws::Utils::Outcome<UpdateS3ResourcesResult, MacieError> UpdateS3ResourcesOutcome;
 
         typedef std::future<AssociateMemberAccountOutcome> AssociateMemberAccountOutcomeCallable;
         typedef std::future<AssociateS3ResourcesOutcome> AssociateS3ResourcesOutcomeCallable;

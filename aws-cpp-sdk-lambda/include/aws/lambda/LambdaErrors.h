@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/lambda/Lambda_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class LambdaErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -82,6 +83,20 @@ enum class LambdaErrors
   TOO_MANY_REQUESTS,
   UNSUPPORTED_MEDIA_TYPE
 };
+
+class AWS_LAMBDA_API LambdaError : public Aws::Client::AWSError<LambdaErrors>
+{
+public:
+  LambdaError() {}
+  LambdaError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LambdaErrors>(rhs) {}
+  LambdaError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LambdaErrors>(rhs) {}
+  LambdaError(const Aws::Client::AWSError<LambdaErrors>& rhs) : Aws::Client::AWSError<LambdaErrors>(rhs) {}
+  LambdaError(Aws::Client::AWSError<LambdaErrors>&& rhs) : Aws::Client::AWSError<LambdaErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace LambdaErrorMapper
 {
   AWS_LAMBDA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -18,8 +18,8 @@
 #include <aws/mobileanalytics/MobileAnalyticsErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MobileAnalytics;
 using namespace Aws::Utils;
+using namespace Aws::MobileAnalytics;
 
 namespace Aws
 {

@@ -18,8 +18,8 @@
 #include <aws/mediapackage-vod/MediaPackageVodErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MediaPackageVod;
 using namespace Aws::Utils;
+using namespace Aws::MediaPackageVod;
 
 namespace Aws
 {

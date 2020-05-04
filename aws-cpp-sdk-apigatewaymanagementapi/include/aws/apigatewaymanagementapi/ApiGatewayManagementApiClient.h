@@ -66,9 +66,9 @@ namespace Model
         class GetConnectionRequest;
         class PostToConnectionRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> DeleteConnectionOutcome;
-        typedef Aws::Utils::Outcome<GetConnectionResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> GetConnectionOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ApiGatewayManagementApiErrors>> PostToConnectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayManagementApiError> DeleteConnectionOutcome;
+        typedef Aws::Utils::Outcome<GetConnectionResult, ApiGatewayManagementApiError> GetConnectionOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayManagementApiError> PostToConnectionOutcome;
 
         typedef std::future<DeleteConnectionOutcome> DeleteConnectionOutcomeCallable;
         typedef std::future<GetConnectionOutcome> GetConnectionOutcomeCallable;

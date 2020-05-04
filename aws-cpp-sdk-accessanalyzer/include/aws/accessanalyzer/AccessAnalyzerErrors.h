@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AccessAnalyzerErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class AccessAnalyzerErrors
   INTERNAL_SERVER,
   SERVICE_QUOTA_EXCEEDED
 };
+
+class AWS_ACCESSANALYZER_API AccessAnalyzerError : public Aws::Client::AWSError<AccessAnalyzerErrors>
+{
+public:
+  AccessAnalyzerError() {}
+  AccessAnalyzerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AccessAnalyzerErrors>(rhs) {}
+  AccessAnalyzerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AccessAnalyzerErrors>(rhs) {}
+  AccessAnalyzerError(const Aws::Client::AWSError<AccessAnalyzerErrors>& rhs) : Aws::Client::AWSError<AccessAnalyzerErrors>(rhs) {}
+  AccessAnalyzerError(Aws::Client::AWSError<AccessAnalyzerErrors>&& rhs) : Aws::Client::AWSError<AccessAnalyzerErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AccessAnalyzerErrorMapper
 {
   AWS_ACCESSANALYZER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -18,8 +18,8 @@
 #include <aws/apigatewaymanagementapi/ApiGatewayManagementApiErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ApiGatewayManagementApi;
 using namespace Aws::Utils;
+using namespace Aws::ApiGatewayManagementApi;
 
 namespace Aws
 {

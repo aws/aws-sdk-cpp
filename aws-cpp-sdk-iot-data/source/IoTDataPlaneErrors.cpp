@@ -18,8 +18,8 @@
 #include <aws/iot-data/IoTDataPlaneErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::IoTDataPlane;
 using namespace Aws::Utils;
+using namespace Aws::IoTDataPlane;
 
 namespace Aws
 {

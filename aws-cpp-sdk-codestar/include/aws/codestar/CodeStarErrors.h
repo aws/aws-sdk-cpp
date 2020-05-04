@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/codestar/CodeStar_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CodeStarErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -69,6 +70,20 @@ enum class CodeStarErrors
   USER_PROFILE_ALREADY_EXISTS,
   USER_PROFILE_NOT_FOUND
 };
+
+class AWS_CODESTAR_API CodeStarError : public Aws::Client::AWSError<CodeStarErrors>
+{
+public:
+  CodeStarError() {}
+  CodeStarError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CodeStarErrors>(rhs) {}
+  CodeStarError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CodeStarErrors>(rhs) {}
+  CodeStarError(const Aws::Client::AWSError<CodeStarErrors>& rhs) : Aws::Client::AWSError<CodeStarErrors>(rhs) {}
+  CodeStarError(Aws::Client::AWSError<CodeStarErrors>&& rhs) : Aws::Client::AWSError<CodeStarErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CodeStarErrorMapper
 {
   AWS_CODESTAR_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

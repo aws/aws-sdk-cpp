@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/workmail/WorkMail_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class WorkMailErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -75,6 +76,20 @@ enum class WorkMailErrors
   TOO_MANY_TAGS,
   UNSUPPORTED_OPERATION
 };
+
+class AWS_WORKMAIL_API WorkMailError : public Aws::Client::AWSError<WorkMailErrors>
+{
+public:
+  WorkMailError() {}
+  WorkMailError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<WorkMailErrors>(rhs) {}
+  WorkMailError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<WorkMailErrors>(rhs) {}
+  WorkMailError(const Aws::Client::AWSError<WorkMailErrors>& rhs) : Aws::Client::AWSError<WorkMailErrors>(rhs) {}
+  WorkMailError(Aws::Client::AWSError<WorkMailErrors>&& rhs) : Aws::Client::AWSError<WorkMailErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace WorkMailErrorMapper
 {
   AWS_WORKMAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

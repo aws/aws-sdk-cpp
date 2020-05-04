@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/route53/Route53_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class Route53Errors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -107,6 +108,20 @@ enum class Route53Errors
   V_P_C_ASSOCIATION_AUTHORIZATION_NOT_FOUND,
   V_P_C_ASSOCIATION_NOT_FOUND
 };
+
+class AWS_ROUTE53_API Route53Error : public Aws::Client::AWSError<Route53Errors>
+{
+public:
+  Route53Error() {}
+  Route53Error(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<Route53Errors>(rhs) {}
+  Route53Error(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<Route53Errors>(rhs) {}
+  Route53Error(const Aws::Client::AWSError<Route53Errors>& rhs) : Aws::Client::AWSError<Route53Errors>(rhs) {}
+  Route53Error(Aws::Client::AWSError<Route53Errors>&& rhs) : Aws::Client::AWSError<Route53Errors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace Route53ErrorMapper
 {
   AWS_ROUTE53_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

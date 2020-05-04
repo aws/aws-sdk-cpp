@@ -18,8 +18,8 @@
 #include <aws/elastic-inference/ElasticInferenceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ElasticInference;
 using namespace Aws::Utils;
+using namespace Aws::ElasticInference;
 
 namespace Aws
 {

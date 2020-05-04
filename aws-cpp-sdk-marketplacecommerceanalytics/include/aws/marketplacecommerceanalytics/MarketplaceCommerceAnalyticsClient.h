@@ -65,8 +65,8 @@ namespace Model
         class GenerateDataSetRequest;
         class StartSupportDataExportRequest;
 
-        typedef Aws::Utils::Outcome<GenerateDataSetResult, Aws::Client::AWSError<MarketplaceCommerceAnalyticsErrors>> GenerateDataSetOutcome;
-        typedef Aws::Utils::Outcome<StartSupportDataExportResult, Aws::Client::AWSError<MarketplaceCommerceAnalyticsErrors>> StartSupportDataExportOutcome;
+        typedef Aws::Utils::Outcome<GenerateDataSetResult, MarketplaceCommerceAnalyticsError> GenerateDataSetOutcome;
+        typedef Aws::Utils::Outcome<StartSupportDataExportResult, MarketplaceCommerceAnalyticsError> StartSupportDataExportOutcome;
 
         typedef std::future<GenerateDataSetOutcome> GenerateDataSetOutcomeCallable;
         typedef std::future<StartSupportDataExportOutcome> StartSupportDataExportOutcomeCallable;

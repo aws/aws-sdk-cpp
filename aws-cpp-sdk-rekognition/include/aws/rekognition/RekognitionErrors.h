@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class RekognitionErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -70,6 +71,20 @@ enum class RekognitionErrors
   RESOURCE_NOT_READY,
   VIDEO_TOO_LARGE
 };
+
+class AWS_REKOGNITION_API RekognitionError : public Aws::Client::AWSError<RekognitionErrors>
+{
+public:
+  RekognitionError() {}
+  RekognitionError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RekognitionErrors>(rhs) {}
+  RekognitionError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RekognitionErrors>(rhs) {}
+  RekognitionError(const Aws::Client::AWSError<RekognitionErrors>& rhs) : Aws::Client::AWSError<RekognitionErrors>(rhs) {}
+  RekognitionError(Aws::Client::AWSError<RekognitionErrors>&& rhs) : Aws::Client::AWSError<RekognitionErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace RekognitionErrorMapper
 {
   AWS_REKOGNITION_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

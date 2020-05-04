@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/athena/Athena_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AthenaErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class AthenaErrors
   INVALID_REQUEST,
   TOO_MANY_REQUESTS
 };
+
+class AWS_ATHENA_API AthenaError : public Aws::Client::AWSError<AthenaErrors>
+{
+public:
+  AthenaError() {}
+  AthenaError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AthenaErrors>(rhs) {}
+  AthenaError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AthenaErrors>(rhs) {}
+  AthenaError(const Aws::Client::AWSError<AthenaErrors>& rhs) : Aws::Client::AWSError<AthenaErrors>(rhs) {}
+  AthenaError(Aws::Client::AWSError<AthenaErrors>&& rhs) : Aws::Client::AWSError<AthenaErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AthenaErrorMapper
 {
   AWS_ATHENA_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -18,8 +18,8 @@
 #include <aws/autoscaling/AutoScalingErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::AutoScaling;
 using namespace Aws::Utils;
+using namespace Aws::AutoScaling;
 
 namespace Aws
 {

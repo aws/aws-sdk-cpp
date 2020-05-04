@@ -18,8 +18,8 @@
 #include <aws/acm-pca/ACMPCAErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ACMPCA;
 using namespace Aws::Utils;
+using namespace Aws::ACMPCA;
 
 namespace Aws
 {

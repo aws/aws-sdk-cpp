@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/shield/ShieldErrors.h>
+#include <aws/shield/model/LimitsExceededException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Shield;
 using namespace Aws::Utils;
+using namespace Aws::Shield;
+using namespace Aws::Shield::Model;
 
 namespace Aws
 {
 namespace Shield
 {
+template<> AWS_SHIELD_API LimitsExceededException ShieldError::GetModeledError()
+{
+  assert(this->GetErrorType() == ShieldErrors::LIMITS_EXCEEDED);
+  return LimitsExceededException(this->GetJsonPayload().View());
+}
+
 namespace ShieldErrorMapper
 {
 

@@ -16,15 +16,37 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/mobile/MobileErrors.h>
+#include <aws/mobile/model/ServiceUnavailableException.h>
+#include <aws/mobile/model/LimitExceededException.h>
+#include <aws/mobile/model/TooManyRequestsException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Mobile;
 using namespace Aws::Utils;
+using namespace Aws::Mobile;
+using namespace Aws::Mobile::Model;
 
 namespace Aws
 {
 namespace Mobile
 {
+template<> AWS_MOBILE_API ServiceUnavailableException MobileError::GetModeledError()
+{
+  assert(this->GetErrorType() == MobileErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailableException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MOBILE_API LimitExceededException MobileError::GetModeledError()
+{
+  assert(this->GetErrorType() == MobileErrors::LIMIT_EXCEEDED);
+  return LimitExceededException(this->GetJsonPayload().View());
+}
+
+template<> AWS_MOBILE_API TooManyRequestsException MobileError::GetModeledError()
+{
+  assert(this->GetErrorType() == MobileErrors::TOO_MANY_REQUESTS);
+  return TooManyRequestsException(this->GetJsonPayload().View());
+}
+
 namespace MobileErrorMapper
 {
 

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/gamelift/GameLift_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class GameLiftErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -72,6 +73,20 @@ enum class GameLiftErrors
   UNAUTHORIZED,
   UNSUPPORTED_REGION
 };
+
+class AWS_GAMELIFT_API GameLiftError : public Aws::Client::AWSError<GameLiftErrors>
+{
+public:
+  GameLiftError() {}
+  GameLiftError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<GameLiftErrors>(rhs) {}
+  GameLiftError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<GameLiftErrors>(rhs) {}
+  GameLiftError(const Aws::Client::AWSError<GameLiftErrors>& rhs) : Aws::Client::AWSError<GameLiftErrors>(rhs) {}
+  GameLiftError(Aws::Client::AWSError<GameLiftErrors>&& rhs) : Aws::Client::AWSError<GameLiftErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace GameLiftErrorMapper
 {
   AWS_GAMELIFT_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

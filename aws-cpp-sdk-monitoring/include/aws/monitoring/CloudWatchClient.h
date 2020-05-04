@@ -122,36 +122,36 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAlarmsOutcome;
-        typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<DeleteDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteDashboardsOutcome;
-        typedef Aws::Utils::Outcome<DeleteInsightRulesResult, Aws::Client::AWSError<CloudWatchErrors>> DeleteInsightRulesOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmHistoryOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlarmsResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsOutcome;
-        typedef Aws::Utils::Outcome<DescribeAlarmsForMetricResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAlarmsForMetricOutcome;
-        typedef Aws::Utils::Outcome<DescribeAnomalyDetectorsResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeAnomalyDetectorsOutcome;
-        typedef Aws::Utils::Outcome<DescribeInsightRulesResult, Aws::Client::AWSError<CloudWatchErrors>> DescribeInsightRulesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> DisableAlarmActionsOutcome;
-        typedef Aws::Utils::Outcome<DisableInsightRulesResult, Aws::Client::AWSError<CloudWatchErrors>> DisableInsightRulesOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> EnableAlarmActionsOutcome;
-        typedef Aws::Utils::Outcome<EnableInsightRulesResult, Aws::Client::AWSError<CloudWatchErrors>> EnableInsightRulesOutcome;
-        typedef Aws::Utils::Outcome<GetDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> GetDashboardOutcome;
-        typedef Aws::Utils::Outcome<GetInsightRuleReportResult, Aws::Client::AWSError<CloudWatchErrors>> GetInsightRuleReportOutcome;
-        typedef Aws::Utils::Outcome<GetMetricDataResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricDataOutcome;
-        typedef Aws::Utils::Outcome<GetMetricStatisticsResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricStatisticsOutcome;
-        typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, Aws::Client::AWSError<CloudWatchErrors>> GetMetricWidgetImageOutcome;
-        typedef Aws::Utils::Outcome<ListDashboardsResult, Aws::Client::AWSError<CloudWatchErrors>> ListDashboardsOutcome;
-        typedef Aws::Utils::Outcome<ListMetricsResult, Aws::Client::AWSError<CloudWatchErrors>> ListMetricsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CloudWatchErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutAnomalyDetectorResult, Aws::Client::AWSError<CloudWatchErrors>> PutAnomalyDetectorOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutCompositeAlarmOutcome;
-        typedef Aws::Utils::Outcome<PutDashboardResult, Aws::Client::AWSError<CloudWatchErrors>> PutDashboardOutcome;
-        typedef Aws::Utils::Outcome<PutInsightRuleResult, Aws::Client::AWSError<CloudWatchErrors>> PutInsightRuleOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricAlarmOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> PutMetricDataOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchErrors>> SetAlarmStateOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CloudWatchErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CloudWatchErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DeleteAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DeleteAnomalyDetectorResult, CloudWatchError> DeleteAnomalyDetectorOutcome;
+        typedef Aws::Utils::Outcome<DeleteDashboardsResult, CloudWatchError> DeleteDashboardsOutcome;
+        typedef Aws::Utils::Outcome<DeleteInsightRulesResult, CloudWatchError> DeleteInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmHistoryResult, CloudWatchError> DescribeAlarmHistoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmsResult, CloudWatchError> DescribeAlarmsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAlarmsForMetricResult, CloudWatchError> DescribeAlarmsForMetricOutcome;
+        typedef Aws::Utils::Outcome<DescribeAnomalyDetectorsResult, CloudWatchError> DescribeAnomalyDetectorsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInsightRulesResult, CloudWatchError> DescribeInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> DisableAlarmActionsOutcome;
+        typedef Aws::Utils::Outcome<DisableInsightRulesResult, CloudWatchError> DisableInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> EnableAlarmActionsOutcome;
+        typedef Aws::Utils::Outcome<EnableInsightRulesResult, CloudWatchError> EnableInsightRulesOutcome;
+        typedef Aws::Utils::Outcome<GetDashboardResult, CloudWatchError> GetDashboardOutcome;
+        typedef Aws::Utils::Outcome<GetInsightRuleReportResult, CloudWatchError> GetInsightRuleReportOutcome;
+        typedef Aws::Utils::Outcome<GetMetricDataResult, CloudWatchError> GetMetricDataOutcome;
+        typedef Aws::Utils::Outcome<GetMetricStatisticsResult, CloudWatchError> GetMetricStatisticsOutcome;
+        typedef Aws::Utils::Outcome<GetMetricWidgetImageResult, CloudWatchError> GetMetricWidgetImageOutcome;
+        typedef Aws::Utils::Outcome<ListDashboardsResult, CloudWatchError> ListDashboardsOutcome;
+        typedef Aws::Utils::Outcome<ListMetricsResult, CloudWatchError> ListMetricsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CloudWatchError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutAnomalyDetectorResult, CloudWatchError> PutAnomalyDetectorOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutCompositeAlarmOutcome;
+        typedef Aws::Utils::Outcome<PutDashboardResult, CloudWatchError> PutDashboardOutcome;
+        typedef Aws::Utils::Outcome<PutInsightRuleResult, CloudWatchError> PutInsightRuleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricAlarmOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> PutMetricDataOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CloudWatchError> SetAlarmStateOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CloudWatchError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CloudWatchError> UntagResourceOutcome;
 
         typedef std::future<DeleteAlarmsOutcome> DeleteAlarmsOutcomeCallable;
         typedef std::future<DeleteAnomalyDetectorOutcome> DeleteAnomalyDetectorOutcomeCallable;
@@ -1959,7 +1959,7 @@ namespace Model
          */
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-      
+
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);

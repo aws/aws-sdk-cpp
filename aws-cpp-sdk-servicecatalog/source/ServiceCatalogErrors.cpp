@@ -18,8 +18,8 @@
 #include <aws/servicecatalog/ServiceCatalogErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ServiceCatalog;
 using namespace Aws::Utils;
+using namespace Aws::ServiceCatalog;
 
 namespace Aws
 {

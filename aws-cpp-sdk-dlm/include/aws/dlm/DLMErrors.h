@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/dlm/DLM_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class DLMErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class DLMErrors
   INVALID_REQUEST,
   LIMIT_EXCEEDED
 };
+
+class AWS_DLM_API DLMError : public Aws::Client::AWSError<DLMErrors>
+{
+public:
+  DLMError() {}
+  DLMError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<DLMErrors>(rhs) {}
+  DLMError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<DLMErrors>(rhs) {}
+  DLMError(const Aws::Client::AWSError<DLMErrors>& rhs) : Aws::Client::AWSError<DLMErrors>(rhs) {}
+  DLMError(Aws::Client::AWSError<DLMErrors>&& rhs) : Aws::Client::AWSError<DLMErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace DLMErrorMapper
 {
   AWS_DLM_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

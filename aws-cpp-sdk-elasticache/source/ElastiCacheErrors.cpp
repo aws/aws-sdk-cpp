@@ -18,8 +18,8 @@
 #include <aws/elasticache/ElastiCacheErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ElastiCache;
 using namespace Aws::Utils;
+using namespace Aws::ElastiCache;
 
 namespace Aws
 {

@@ -18,8 +18,8 @@
 #include <aws/personalize/PersonalizeErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::Personalize;
 using namespace Aws::Utils;
+using namespace Aws::Personalize;
 
 namespace Aws
 {

@@ -18,8 +18,8 @@
 #include <aws/transcribe/TranscribeServiceErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::TranscribeService;
 using namespace Aws::Utils;
+using namespace Aws::TranscribeService;
 
 namespace Aws
 {

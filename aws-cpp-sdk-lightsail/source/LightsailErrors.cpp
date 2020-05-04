@@ -16,15 +16,65 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/lightsail/LightsailErrors.h>
+#include <aws/lightsail/model/OperationFailureException.h>
+#include <aws/lightsail/model/NotFoundException.h>
+#include <aws/lightsail/model/AccessDeniedException.h>
+#include <aws/lightsail/model/UnauthenticatedException.h>
+#include <aws/lightsail/model/InvalidInputException.h>
+#include <aws/lightsail/model/ServiceException.h>
+#include <aws/lightsail/model/AccountSetupInProgressException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Lightsail;
 using namespace Aws::Utils;
+using namespace Aws::Lightsail;
+using namespace Aws::Lightsail::Model;
 
 namespace Aws
 {
 namespace Lightsail
 {
+template<> AWS_LIGHTSAIL_API OperationFailureException LightsailError::GetModeledError()
+{
+  assert(this->GetErrorType() == LightsailErrors::OPERATION_FAILURE);
+  return OperationFailureException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LIGHTSAIL_API NotFoundException LightsailError::GetModeledError()
+{
+  assert(this->GetErrorType() == LightsailErrors::NOT_FOUND);
+  return NotFoundException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LIGHTSAIL_API AccessDeniedException LightsailError::GetModeledError()
+{
+  assert(this->GetErrorType() == LightsailErrors::ACCESS_DENIED);
+  return AccessDeniedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LIGHTSAIL_API UnauthenticatedException LightsailError::GetModeledError()
+{
+  assert(this->GetErrorType() == LightsailErrors::UNAUTHENTICATED);
+  return UnauthenticatedException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LIGHTSAIL_API InvalidInputException LightsailError::GetModeledError()
+{
+  assert(this->GetErrorType() == LightsailErrors::INVALID_INPUT);
+  return InvalidInputException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LIGHTSAIL_API ServiceException LightsailError::GetModeledError()
+{
+  assert(this->GetErrorType() == LightsailErrors::SERVICE);
+  return ServiceException(this->GetJsonPayload().View());
+}
+
+template<> AWS_LIGHTSAIL_API AccountSetupInProgressException LightsailError::GetModeledError()
+{
+  assert(this->GetErrorType() == LightsailErrors::ACCOUNT_SETUP_IN_PROGRESS);
+  return AccountSetupInProgressException(this->GetJsonPayload().View());
+}
+
 namespace LightsailErrorMapper
 {
 

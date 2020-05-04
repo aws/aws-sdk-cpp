@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class LightsailErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class LightsailErrors
   SERVICE,
   UNAUTHENTICATED
 };
+
+class AWS_LIGHTSAIL_API LightsailError : public Aws::Client::AWSError<LightsailErrors>
+{
+public:
+  LightsailError() {}
+  LightsailError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<LightsailErrors>(rhs) {}
+  LightsailError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<LightsailErrors>(rhs) {}
+  LightsailError(const Aws::Client::AWSError<LightsailErrors>& rhs) : Aws::Client::AWSError<LightsailErrors>(rhs) {}
+  LightsailError(Aws::Client::AWSError<LightsailErrors>&& rhs) : Aws::Client::AWSError<LightsailErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace LightsailErrorMapper
 {
   AWS_LIGHTSAIL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

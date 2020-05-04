@@ -18,8 +18,8 @@
 #include <aws/sts/STSErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::STS;
 using namespace Aws::Utils;
+using namespace Aws::STS;
 
 namespace Aws
 {

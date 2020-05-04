@@ -18,8 +18,8 @@
 #include <aws/elasticloadbalancing/ElasticLoadBalancingErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ElasticLoadBalancing;
 using namespace Aws::Utils;
+using namespace Aws::ElasticLoadBalancing;
 
 namespace Aws
 {

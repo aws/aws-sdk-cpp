@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/guardduty/GuardDutyErrors.h>
+#include <aws/guardduty/model/BadRequestException.h>
+#include <aws/guardduty/model/InternalServerErrorException.h>
 
 using namespace Aws::Client;
-using namespace Aws::GuardDuty;
 using namespace Aws::Utils;
+using namespace Aws::GuardDuty;
+using namespace Aws::GuardDuty::Model;
 
 namespace Aws
 {
 namespace GuardDuty
 {
+template<> AWS_GUARDDUTY_API BadRequestException GuardDutyError::GetModeledError()
+{
+  assert(this->GetErrorType() == GuardDutyErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GUARDDUTY_API InternalServerErrorException GuardDutyError::GetModeledError()
+{
+  assert(this->GetErrorType() == GuardDutyErrors::INTERNAL_SERVER_ERROR);
+  return InternalServerErrorException(this->GetJsonPayload().View());
+}
+
 namespace GuardDutyErrorMapper
 {
 

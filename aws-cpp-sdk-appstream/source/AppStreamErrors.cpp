@@ -18,8 +18,8 @@
 #include <aws/appstream/AppStreamErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::AppStream;
 using namespace Aws::Utils;
+using namespace Aws::AppStream;
 
 namespace Aws
 {

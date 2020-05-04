@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/robomaker/RoboMaker_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class RoboMakerErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,6 +64,20 @@ enum class RoboMakerErrors
   LIMIT_EXCEEDED,
   RESOURCE_ALREADY_EXISTS
 };
+
+class AWS_ROBOMAKER_API RoboMakerError : public Aws::Client::AWSError<RoboMakerErrors>
+{
+public:
+  RoboMakerError() {}
+  RoboMakerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RoboMakerErrors>(rhs) {}
+  RoboMakerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RoboMakerErrors>(rhs) {}
+  RoboMakerError(const Aws::Client::AWSError<RoboMakerErrors>& rhs) : Aws::Client::AWSError<RoboMakerErrors>(rhs) {}
+  RoboMakerError(Aws::Client::AWSError<RoboMakerErrors>&& rhs) : Aws::Client::AWSError<RoboMakerErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace RoboMakerErrorMapper
 {
   AWS_ROBOMAKER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

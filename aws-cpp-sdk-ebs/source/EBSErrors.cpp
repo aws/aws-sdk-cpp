@@ -17,15 +17,23 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ebs/EBSErrors.h>
 #include <aws/core/utils/UnreferencedParam.h>
+#include <aws/ebs/model/ValidationException.h>
 
 using namespace Aws::Client;
-using namespace Aws::EBS;
 using namespace Aws::Utils;
+using namespace Aws::EBS;
+using namespace Aws::EBS::Model;
 
 namespace Aws
 {
 namespace EBS
 {
+template<> AWS_EBS_API ValidationException EBSError::GetModeledError()
+{
+  assert(this->GetErrorType() == EBSErrors::VALIDATION);
+  return ValidationException(this->GetJsonPayload().View());
+}
+
 namespace EBSErrorMapper
 {
 

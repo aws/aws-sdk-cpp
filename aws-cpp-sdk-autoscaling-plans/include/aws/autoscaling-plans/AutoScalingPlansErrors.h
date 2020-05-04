@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AutoScalingPlansErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class AutoScalingPlansErrors
   LIMIT_EXCEEDED,
   OBJECT_NOT_FOUND
 };
+
+class AWS_AUTOSCALINGPLANS_API AutoScalingPlansError : public Aws::Client::AWSError<AutoScalingPlansErrors>
+{
+public:
+  AutoScalingPlansError() {}
+  AutoScalingPlansError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AutoScalingPlansErrors>(rhs) {}
+  AutoScalingPlansError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AutoScalingPlansErrors>(rhs) {}
+  AutoScalingPlansError(const Aws::Client::AWSError<AutoScalingPlansErrors>& rhs) : Aws::Client::AWSError<AutoScalingPlansErrors>(rhs) {}
+  AutoScalingPlansError(Aws::Client::AWSError<AutoScalingPlansErrors>&& rhs) : Aws::Client::AWSError<AutoScalingPlansErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AutoScalingPlansErrorMapper
 {
   AWS_AUTOSCALINGPLANS_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

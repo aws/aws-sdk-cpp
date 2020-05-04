@@ -16,15 +16,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/alexaforbusiness/AlexaForBusinessErrors.h>
+#include <aws/alexaforbusiness/model/ResourceInUseException.h>
 
 using namespace Aws::Client;
-using namespace Aws::AlexaForBusiness;
 using namespace Aws::Utils;
+using namespace Aws::AlexaForBusiness;
+using namespace Aws::AlexaForBusiness::Model;
 
 namespace Aws
 {
 namespace AlexaForBusiness
 {
+template<> AWS_ALEXAFORBUSINESS_API ResourceInUseException AlexaForBusinessError::GetModeledError()
+{
+  assert(this->GetErrorType() == AlexaForBusinessErrors::RESOURCE_IN_USE);
+  return ResourceInUseException(this->GetJsonPayload().View());
+}
+
 namespace AlexaForBusinessErrorMapper
 {
 

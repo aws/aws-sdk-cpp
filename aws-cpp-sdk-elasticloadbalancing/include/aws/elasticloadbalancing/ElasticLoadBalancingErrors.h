@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/elasticloadbalancing/ElasticLoadBalancing_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class ElasticLoadBalancingErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -79,6 +80,20 @@ enum class ElasticLoadBalancingErrors
   TOO_MANY_TAGS,
   UNSUPPORTED_PROTOCOL
 };
+
+class AWS_ELASTICLOADBALANCING_API ElasticLoadBalancingError : public Aws::Client::AWSError<ElasticLoadBalancingErrors>
+{
+public:
+  ElasticLoadBalancingError() {}
+  ElasticLoadBalancingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
+  ElasticLoadBalancingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
+  ElasticLoadBalancingError(const Aws::Client::AWSError<ElasticLoadBalancingErrors>& rhs) : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
+  ElasticLoadBalancingError(Aws::Client::AWSError<ElasticLoadBalancingErrors>&& rhs) : Aws::Client::AWSError<ElasticLoadBalancingErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace ElasticLoadBalancingErrorMapper
 {
   AWS_ELASTICLOADBALANCING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

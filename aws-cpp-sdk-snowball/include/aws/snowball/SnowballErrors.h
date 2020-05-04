@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/snowball/Snowball_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class SnowballErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,6 +67,20 @@ enum class SnowballErrors
   K_M_S_REQUEST_FAILED,
   UNSUPPORTED_ADDRESS
 };
+
+class AWS_SNOWBALL_API SnowballError : public Aws::Client::AWSError<SnowballErrors>
+{
+public:
+  SnowballError() {}
+  SnowballError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<SnowballErrors>(rhs) {}
+  SnowballError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<SnowballErrors>(rhs) {}
+  SnowballError(const Aws::Client::AWSError<SnowballErrors>& rhs) : Aws::Client::AWSError<SnowballErrors>(rhs) {}
+  SnowballError(Aws::Client::AWSError<SnowballErrors>&& rhs) : Aws::Client::AWSError<SnowballErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace SnowballErrorMapper
 {
   AWS_SNOWBALL_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

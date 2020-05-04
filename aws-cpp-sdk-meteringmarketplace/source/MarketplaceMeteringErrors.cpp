@@ -18,8 +18,8 @@
 #include <aws/meteringmarketplace/MarketplaceMeteringErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MarketplaceMetering;
 using namespace Aws::Utils;
+using namespace Aws::MarketplaceMetering;
 
 namespace Aws
 {

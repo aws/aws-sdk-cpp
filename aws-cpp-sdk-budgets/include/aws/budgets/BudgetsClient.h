@@ -89,20 +89,20 @@ namespace Model
         class UpdateNotificationRequest;
         class UpdateSubscriberRequest;
 
-        typedef Aws::Utils::Outcome<CreateBudgetResult, Aws::Client::AWSError<BudgetsErrors>> CreateBudgetOutcome;
-        typedef Aws::Utils::Outcome<CreateNotificationResult, Aws::Client::AWSError<BudgetsErrors>> CreateNotificationOutcome;
-        typedef Aws::Utils::Outcome<CreateSubscriberResult, Aws::Client::AWSError<BudgetsErrors>> CreateSubscriberOutcome;
-        typedef Aws::Utils::Outcome<DeleteBudgetResult, Aws::Client::AWSError<BudgetsErrors>> DeleteBudgetOutcome;
-        typedef Aws::Utils::Outcome<DeleteNotificationResult, Aws::Client::AWSError<BudgetsErrors>> DeleteNotificationOutcome;
-        typedef Aws::Utils::Outcome<DeleteSubscriberResult, Aws::Client::AWSError<BudgetsErrors>> DeleteSubscriberOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetResult, Aws::Client::AWSError<BudgetsErrors>> DescribeBudgetOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetPerformanceHistoryResult, Aws::Client::AWSError<BudgetsErrors>> DescribeBudgetPerformanceHistoryOutcome;
-        typedef Aws::Utils::Outcome<DescribeBudgetsResult, Aws::Client::AWSError<BudgetsErrors>> DescribeBudgetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeNotificationsForBudgetResult, Aws::Client::AWSError<BudgetsErrors>> DescribeNotificationsForBudgetOutcome;
-        typedef Aws::Utils::Outcome<DescribeSubscribersForNotificationResult, Aws::Client::AWSError<BudgetsErrors>> DescribeSubscribersForNotificationOutcome;
-        typedef Aws::Utils::Outcome<UpdateBudgetResult, Aws::Client::AWSError<BudgetsErrors>> UpdateBudgetOutcome;
-        typedef Aws::Utils::Outcome<UpdateNotificationResult, Aws::Client::AWSError<BudgetsErrors>> UpdateNotificationOutcome;
-        typedef Aws::Utils::Outcome<UpdateSubscriberResult, Aws::Client::AWSError<BudgetsErrors>> UpdateSubscriberOutcome;
+        typedef Aws::Utils::Outcome<CreateBudgetResult, BudgetsError> CreateBudgetOutcome;
+        typedef Aws::Utils::Outcome<CreateNotificationResult, BudgetsError> CreateNotificationOutcome;
+        typedef Aws::Utils::Outcome<CreateSubscriberResult, BudgetsError> CreateSubscriberOutcome;
+        typedef Aws::Utils::Outcome<DeleteBudgetResult, BudgetsError> DeleteBudgetOutcome;
+        typedef Aws::Utils::Outcome<DeleteNotificationResult, BudgetsError> DeleteNotificationOutcome;
+        typedef Aws::Utils::Outcome<DeleteSubscriberResult, BudgetsError> DeleteSubscriberOutcome;
+        typedef Aws::Utils::Outcome<DescribeBudgetResult, BudgetsError> DescribeBudgetOutcome;
+        typedef Aws::Utils::Outcome<DescribeBudgetPerformanceHistoryResult, BudgetsError> DescribeBudgetPerformanceHistoryOutcome;
+        typedef Aws::Utils::Outcome<DescribeBudgetsResult, BudgetsError> DescribeBudgetsOutcome;
+        typedef Aws::Utils::Outcome<DescribeNotificationsForBudgetResult, BudgetsError> DescribeNotificationsForBudgetOutcome;
+        typedef Aws::Utils::Outcome<DescribeSubscribersForNotificationResult, BudgetsError> DescribeSubscribersForNotificationOutcome;
+        typedef Aws::Utils::Outcome<UpdateBudgetResult, BudgetsError> UpdateBudgetOutcome;
+        typedef Aws::Utils::Outcome<UpdateNotificationResult, BudgetsError> UpdateNotificationOutcome;
+        typedef Aws::Utils::Outcome<UpdateSubscriberResult, BudgetsError> UpdateSubscriberOutcome;
 
         typedef std::future<CreateBudgetOutcome> CreateBudgetOutcomeCallable;
         typedef std::future<CreateNotificationOutcome> CreateNotificationOutcomeCallable;

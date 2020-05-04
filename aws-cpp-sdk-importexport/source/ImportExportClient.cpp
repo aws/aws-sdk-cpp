@@ -53,7 +53,7 @@ static const char* ALLOCATION_TAG = "ImportExportClient";
 ImportExportClient::ImportExportClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -63,7 +63,7 @@ ImportExportClient::ImportExportClient(const Client::ClientConfiguration& client
 ImportExportClient::ImportExportClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -74,7 +74,7 @@ ImportExportClient::ImportExportClient(const std::shared_ptr<AWSCredentialsProvi
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<ImportExportErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -128,15 +128,7 @@ CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=CancelJob");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CancelJobOutcome(CancelJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CancelJobOutcome(outcome.GetError());
-  }
+  return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CancelJobOutcomeCallable ImportExportClient::CancelJobCallable(const CancelJobRequest& request) const
@@ -165,15 +157,7 @@ CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=CreateJob");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return CreateJobOutcome(CreateJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateJobOutcome(outcome.GetError());
-  }
+  return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 CreateJobOutcomeCallable ImportExportClient::CreateJobCallable(const CreateJobRequest& request) const
@@ -202,15 +186,7 @@ GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLa
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=GetShippingLabel");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return GetShippingLabelOutcome(GetShippingLabelResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetShippingLabelOutcome(outcome.GetError());
-  }
+  return GetShippingLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 GetShippingLabelOutcomeCallable ImportExportClient::GetShippingLabelCallable(const GetShippingLabelRequest& request) const
@@ -239,15 +215,7 @@ GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=GetStatus");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return GetStatusOutcome(GetStatusResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetStatusOutcome(outcome.GetError());
-  }
+  return GetStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 GetStatusOutcomeCallable ImportExportClient::GetStatusCallable(const GetStatusRequest& request) const
@@ -276,15 +244,7 @@ ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) con
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=ListJobs");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return ListJobsOutcome(ListJobsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListJobsOutcome(outcome.GetError());
-  }
+  return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ListJobsOutcomeCallable ImportExportClient::ListJobsCallable(const ListJobsRequest& request) const
@@ -313,15 +273,7 @@ UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) 
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=UpdateJob");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
-  if(outcome.IsSuccess())
-  {
-    return UpdateJobOutcome(UpdateJobResult(outcome.GetResult()));
-  }
-  else
-  {
-    return UpdateJobOutcome(outcome.GetError());
-  }
+  return UpdateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
 UpdateJobOutcomeCallable ImportExportClient::UpdateJobCallable(const UpdateJobRequest& request) const

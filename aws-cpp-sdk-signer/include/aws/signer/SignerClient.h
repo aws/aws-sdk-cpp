@@ -85,18 +85,18 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SignerErrors>> CancelSigningProfileOutcome;
-        typedef Aws::Utils::Outcome<DescribeSigningJobResult, Aws::Client::AWSError<SignerErrors>> DescribeSigningJobOutcome;
-        typedef Aws::Utils::Outcome<GetSigningPlatformResult, Aws::Client::AWSError<SignerErrors>> GetSigningPlatformOutcome;
-        typedef Aws::Utils::Outcome<GetSigningProfileResult, Aws::Client::AWSError<SignerErrors>> GetSigningProfileOutcome;
-        typedef Aws::Utils::Outcome<ListSigningJobsResult, Aws::Client::AWSError<SignerErrors>> ListSigningJobsOutcome;
-        typedef Aws::Utils::Outcome<ListSigningPlatformsResult, Aws::Client::AWSError<SignerErrors>> ListSigningPlatformsOutcome;
-        typedef Aws::Utils::Outcome<ListSigningProfilesResult, Aws::Client::AWSError<SignerErrors>> ListSigningProfilesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SignerErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<PutSigningProfileResult, Aws::Client::AWSError<SignerErrors>> PutSigningProfileOutcome;
-        typedef Aws::Utils::Outcome<StartSigningJobResult, Aws::Client::AWSError<SignerErrors>> StartSigningJobOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SignerErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SignerErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, SignerError> CancelSigningProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeSigningJobResult, SignerError> DescribeSigningJobOutcome;
+        typedef Aws::Utils::Outcome<GetSigningPlatformResult, SignerError> GetSigningPlatformOutcome;
+        typedef Aws::Utils::Outcome<GetSigningProfileResult, SignerError> GetSigningProfileOutcome;
+        typedef Aws::Utils::Outcome<ListSigningJobsResult, SignerError> ListSigningJobsOutcome;
+        typedef Aws::Utils::Outcome<ListSigningPlatformsResult, SignerError> ListSigningPlatformsOutcome;
+        typedef Aws::Utils::Outcome<ListSigningProfilesResult, SignerError> ListSigningProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, SignerError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<PutSigningProfileResult, SignerError> PutSigningProfileOutcome;
+        typedef Aws::Utils::Outcome<StartSigningJobResult, SignerError> StartSigningJobOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, SignerError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, SignerError> UntagResourceOutcome;
 
         typedef std::future<CancelSigningProfileOutcome> CancelSigningProfileOutcomeCallable;
         typedef std::future<DescribeSigningJobOutcome> DescribeSigningJobOutcomeCallable;

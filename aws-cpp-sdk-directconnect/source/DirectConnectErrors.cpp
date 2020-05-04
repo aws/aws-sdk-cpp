@@ -18,8 +18,8 @@
 #include <aws/directconnect/DirectConnectErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::DirectConnect;
 using namespace Aws::Utils;
+using namespace Aws::DirectConnect;
 
 namespace Aws
 {

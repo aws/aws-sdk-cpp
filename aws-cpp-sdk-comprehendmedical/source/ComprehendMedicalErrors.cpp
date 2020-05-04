@@ -18,8 +18,8 @@
 #include <aws/comprehendmedical/ComprehendMedicalErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::ComprehendMedical;
 using namespace Aws::Utils;
+using namespace Aws::ComprehendMedical;
 
 namespace Aws
 {

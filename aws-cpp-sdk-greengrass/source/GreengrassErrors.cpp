@@ -16,15 +16,30 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/greengrass/GreengrassErrors.h>
+#include <aws/greengrass/model/BadRequestException.h>
+#include <aws/greengrass/model/InternalServerErrorException.h>
 
 using namespace Aws::Client;
-using namespace Aws::Greengrass;
 using namespace Aws::Utils;
+using namespace Aws::Greengrass;
+using namespace Aws::Greengrass::Model;
 
 namespace Aws
 {
 namespace Greengrass
 {
+template<> AWS_GREENGRASS_API BadRequestException GreengrassError::GetModeledError()
+{
+  assert(this->GetErrorType() == GreengrassErrors::BAD_REQUEST);
+  return BadRequestException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GREENGRASS_API InternalServerErrorException GreengrassError::GetModeledError()
+{
+  assert(this->GetErrorType() == GreengrassErrors::INTERNAL_SERVER_ERROR);
+  return InternalServerErrorException(this->GetJsonPayload().View());
+}
+
 namespace GreengrassErrorMapper
 {
 

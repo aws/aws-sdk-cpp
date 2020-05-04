@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/appconfig/AppConfig_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class AppConfigErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -60,6 +61,20 @@ enum class AppConfigErrors
   CONFLICT,
   INTERNAL_SERVER
 };
+
+class AWS_APPCONFIG_API AppConfigError : public Aws::Client::AWSError<AppConfigErrors>
+{
+public:
+  AppConfigError() {}
+  AppConfigError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<AppConfigErrors>(rhs) {}
+  AppConfigError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<AppConfigErrors>(rhs) {}
+  AppConfigError(const Aws::Client::AWSError<AppConfigErrors>& rhs) : Aws::Client::AWSError<AppConfigErrors>(rhs) {}
+  AppConfigError(Aws::Client::AWSError<AppConfigErrors>&& rhs) : Aws::Client::AWSError<AppConfigErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace AppConfigErrorMapper
 {
   AWS_APPCONFIG_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

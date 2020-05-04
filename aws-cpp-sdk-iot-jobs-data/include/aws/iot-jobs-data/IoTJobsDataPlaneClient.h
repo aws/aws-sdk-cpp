@@ -69,10 +69,10 @@ namespace Model
         class StartNextPendingJobExecutionRequest;
         class UpdateJobExecutionRequest;
 
-        typedef Aws::Utils::Outcome<DescribeJobExecutionResult, Aws::Client::AWSError<IoTJobsDataPlaneErrors>> DescribeJobExecutionOutcome;
-        typedef Aws::Utils::Outcome<GetPendingJobExecutionsResult, Aws::Client::AWSError<IoTJobsDataPlaneErrors>> GetPendingJobExecutionsOutcome;
-        typedef Aws::Utils::Outcome<StartNextPendingJobExecutionResult, Aws::Client::AWSError<IoTJobsDataPlaneErrors>> StartNextPendingJobExecutionOutcome;
-        typedef Aws::Utils::Outcome<UpdateJobExecutionResult, Aws::Client::AWSError<IoTJobsDataPlaneErrors>> UpdateJobExecutionOutcome;
+        typedef Aws::Utils::Outcome<DescribeJobExecutionResult, IoTJobsDataPlaneError> DescribeJobExecutionOutcome;
+        typedef Aws::Utils::Outcome<GetPendingJobExecutionsResult, IoTJobsDataPlaneError> GetPendingJobExecutionsOutcome;
+        typedef Aws::Utils::Outcome<StartNextPendingJobExecutionResult, IoTJobsDataPlaneError> StartNextPendingJobExecutionOutcome;
+        typedef Aws::Utils::Outcome<UpdateJobExecutionResult, IoTJobsDataPlaneError> UpdateJobExecutionOutcome;
 
         typedef std::future<DescribeJobExecutionOutcome> DescribeJobExecutionOutcomeCallable;
         typedef std::future<GetPendingJobExecutionsOutcome> GetPendingJobExecutionsOutcomeCallable;

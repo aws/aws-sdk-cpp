@@ -90,21 +90,21 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
-        typedef Aws::Utils::Outcome<CreateAssetResult, Aws::Client::AWSError<MediaPackageVodErrors>> CreateAssetOutcome;
-        typedef Aws::Utils::Outcome<CreatePackagingConfigurationResult, Aws::Client::AWSError<MediaPackageVodErrors>> CreatePackagingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<CreatePackagingGroupResult, Aws::Client::AWSError<MediaPackageVodErrors>> CreatePackagingGroupOutcome;
-        typedef Aws::Utils::Outcome<DeleteAssetResult, Aws::Client::AWSError<MediaPackageVodErrors>> DeleteAssetOutcome;
-        typedef Aws::Utils::Outcome<DeletePackagingConfigurationResult, Aws::Client::AWSError<MediaPackageVodErrors>> DeletePackagingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DeletePackagingGroupResult, Aws::Client::AWSError<MediaPackageVodErrors>> DeletePackagingGroupOutcome;
-        typedef Aws::Utils::Outcome<DescribeAssetResult, Aws::Client::AWSError<MediaPackageVodErrors>> DescribeAssetOutcome;
-        typedef Aws::Utils::Outcome<DescribePackagingConfigurationResult, Aws::Client::AWSError<MediaPackageVodErrors>> DescribePackagingConfigurationOutcome;
-        typedef Aws::Utils::Outcome<DescribePackagingGroupResult, Aws::Client::AWSError<MediaPackageVodErrors>> DescribePackagingGroupOutcome;
-        typedef Aws::Utils::Outcome<ListAssetsResult, Aws::Client::AWSError<MediaPackageVodErrors>> ListAssetsOutcome;
-        typedef Aws::Utils::Outcome<ListPackagingConfigurationsResult, Aws::Client::AWSError<MediaPackageVodErrors>> ListPackagingConfigurationsOutcome;
-        typedef Aws::Utils::Outcome<ListPackagingGroupsResult, Aws::Client::AWSError<MediaPackageVodErrors>> ListPackagingGroupsOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaPackageVodErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaPackageVodErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaPackageVodErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<CreateAssetResult, MediaPackageVodError> CreateAssetOutcome;
+        typedef Aws::Utils::Outcome<CreatePackagingConfigurationResult, MediaPackageVodError> CreatePackagingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<CreatePackagingGroupResult, MediaPackageVodError> CreatePackagingGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteAssetResult, MediaPackageVodError> DeleteAssetOutcome;
+        typedef Aws::Utils::Outcome<DeletePackagingConfigurationResult, MediaPackageVodError> DeletePackagingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeletePackagingGroupResult, MediaPackageVodError> DeletePackagingGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeAssetResult, MediaPackageVodError> DescribeAssetOutcome;
+        typedef Aws::Utils::Outcome<DescribePackagingConfigurationResult, MediaPackageVodError> DescribePackagingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DescribePackagingGroupResult, MediaPackageVodError> DescribePackagingGroupOutcome;
+        typedef Aws::Utils::Outcome<ListAssetsResult, MediaPackageVodError> ListAssetsOutcome;
+        typedef Aws::Utils::Outcome<ListPackagingConfigurationsResult, MediaPackageVodError> ListPackagingConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListPackagingGroupsResult, MediaPackageVodError> ListPackagingGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaPackageVodError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MediaPackageVodError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, MediaPackageVodError> UntagResourceOutcome;
 
         typedef std::future<CreateAssetOutcome> CreateAssetOutcomeCallable;
         typedef std::future<CreatePackagingConfigurationOutcome> CreatePackagingConfigurationOutcomeCallable;

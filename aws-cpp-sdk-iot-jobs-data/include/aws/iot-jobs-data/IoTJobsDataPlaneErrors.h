@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/iot-jobs-data/IoTJobsDataPlane_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class IoTJobsDataPlaneErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,6 +62,20 @@ enum class IoTJobsDataPlaneErrors
   INVALID_STATE_TRANSITION,
   TERMINAL_STATE
 };
+
+class AWS_IOTJOBSDATAPLANE_API IoTJobsDataPlaneError : public Aws::Client::AWSError<IoTJobsDataPlaneErrors>
+{
+public:
+  IoTJobsDataPlaneError() {}
+  IoTJobsDataPlaneError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<IoTJobsDataPlaneErrors>(rhs) {}
+  IoTJobsDataPlaneError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<IoTJobsDataPlaneErrors>(rhs) {}
+  IoTJobsDataPlaneError(const Aws::Client::AWSError<IoTJobsDataPlaneErrors>& rhs) : Aws::Client::AWSError<IoTJobsDataPlaneErrors>(rhs) {}
+  IoTJobsDataPlaneError(Aws::Client::AWSError<IoTJobsDataPlaneErrors>&& rhs) : Aws::Client::AWSError<IoTJobsDataPlaneErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace IoTJobsDataPlaneErrorMapper
 {
   AWS_IOTJOBSDATAPLANE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class RDSDataServiceErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class RDSDataServiceErrors
   NOT_FOUND,
   STATEMENT_TIMEOUT
 };
+
+class AWS_RDSDATASERVICE_API RDSDataServiceError : public Aws::Client::AWSError<RDSDataServiceErrors>
+{
+public:
+  RDSDataServiceError() {}
+  RDSDataServiceError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<RDSDataServiceErrors>(rhs) {}
+  RDSDataServiceError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<RDSDataServiceErrors>(rhs) {}
+  RDSDataServiceError(const Aws::Client::AWSError<RDSDataServiceErrors>& rhs) : Aws::Client::AWSError<RDSDataServiceErrors>(rhs) {}
+  RDSDataServiceError(Aws::Client::AWSError<RDSDataServiceErrors>&& rhs) : Aws::Client::AWSError<RDSDataServiceErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace RDSDataServiceErrorMapper
 {
   AWS_RDSDATASERVICE_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

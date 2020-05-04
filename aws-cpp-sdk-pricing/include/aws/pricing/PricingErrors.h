@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/pricing/Pricing_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class PricingErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,6 +63,20 @@ enum class PricingErrors
   INVALID_PARAMETER,
   NOT_FOUND
 };
+
+class AWS_PRICING_API PricingError : public Aws::Client::AWSError<PricingErrors>
+{
+public:
+  PricingError() {}
+  PricingError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<PricingErrors>(rhs) {}
+  PricingError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<PricingErrors>(rhs) {}
+  PricingError(const Aws::Client::AWSError<PricingErrors>& rhs) : Aws::Client::AWSError<PricingErrors>(rhs) {}
+  PricingError(Aws::Client::AWSError<PricingErrors>&& rhs) : Aws::Client::AWSError<PricingErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace PricingErrorMapper
 {
   AWS_PRICING_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

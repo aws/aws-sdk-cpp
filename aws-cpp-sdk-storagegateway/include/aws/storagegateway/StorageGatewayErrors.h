@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 
@@ -52,12 +53,26 @@ enum class StorageGatewayErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   INVALID_GATEWAY_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1
 };
+
+class AWS_STORAGEGATEWAY_API StorageGatewayError : public Aws::Client::AWSError<StorageGatewayErrors>
+{
+public:
+  StorageGatewayError() {}
+  StorageGatewayError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<StorageGatewayErrors>(rhs) {}
+  StorageGatewayError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<StorageGatewayErrors>(rhs) {}
+  StorageGatewayError(const Aws::Client::AWSError<StorageGatewayErrors>& rhs) : Aws::Client::AWSError<StorageGatewayErrors>(rhs) {}
+  StorageGatewayError(Aws::Client::AWSError<StorageGatewayErrors>&& rhs) : Aws::Client::AWSError<StorageGatewayErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace StorageGatewayErrorMapper
 {
   AWS_STORAGEGATEWAY_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

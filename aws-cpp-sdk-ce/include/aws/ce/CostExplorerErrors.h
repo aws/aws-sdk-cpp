@@ -15,6 +15,7 @@
 
 #pragma once
 
+#include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/ce/CostExplorer_EXPORTS.h>
 
@@ -52,7 +53,7 @@ enum class CostExplorerErrors
   INVALID_ACCESS_KEY_ID = 23,
   REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
-  
+
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,6 +65,20 @@ enum class CostExplorerErrors
   SERVICE_QUOTA_EXCEEDED,
   UNRESOLVABLE_USAGE_UNIT
 };
+
+class AWS_COSTEXPLORER_API CostExplorerError : public Aws::Client::AWSError<CostExplorerErrors>
+{
+public:
+  CostExplorerError() {}
+  CostExplorerError(const Aws::Client::AWSError<Aws::Client::CoreErrors>& rhs) : Aws::Client::AWSError<CostExplorerErrors>(rhs) {}
+  CostExplorerError(Aws::Client::AWSError<Aws::Client::CoreErrors>&& rhs) : Aws::Client::AWSError<CostExplorerErrors>(rhs) {}
+  CostExplorerError(const Aws::Client::AWSError<CostExplorerErrors>& rhs) : Aws::Client::AWSError<CostExplorerErrors>(rhs) {}
+  CostExplorerError(Aws::Client::AWSError<CostExplorerErrors>&& rhs) : Aws::Client::AWSError<CostExplorerErrors>(rhs) {}
+
+  template <typename T>
+  T GetModeledError();
+};
+
 namespace CostExplorerErrorMapper
 {
   AWS_COSTEXPLORER_API Aws::Client::AWSError<Aws::Client::CoreErrors> GetErrorForName(const char* errorName);

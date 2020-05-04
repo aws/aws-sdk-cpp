@@ -73,12 +73,12 @@ namespace Model
         class GetRecommendationSummariesRequest;
         class UpdateEnrollmentStatusRequest;
 
-        typedef Aws::Utils::Outcome<GetAutoScalingGroupRecommendationsResult, Aws::Client::AWSError<ComputeOptimizerErrors>> GetAutoScalingGroupRecommendationsOutcome;
-        typedef Aws::Utils::Outcome<GetEC2InstanceRecommendationsResult, Aws::Client::AWSError<ComputeOptimizerErrors>> GetEC2InstanceRecommendationsOutcome;
-        typedef Aws::Utils::Outcome<GetEC2RecommendationProjectedMetricsResult, Aws::Client::AWSError<ComputeOptimizerErrors>> GetEC2RecommendationProjectedMetricsOutcome;
-        typedef Aws::Utils::Outcome<GetEnrollmentStatusResult, Aws::Client::AWSError<ComputeOptimizerErrors>> GetEnrollmentStatusOutcome;
-        typedef Aws::Utils::Outcome<GetRecommendationSummariesResult, Aws::Client::AWSError<ComputeOptimizerErrors>> GetRecommendationSummariesOutcome;
-        typedef Aws::Utils::Outcome<UpdateEnrollmentStatusResult, Aws::Client::AWSError<ComputeOptimizerErrors>> UpdateEnrollmentStatusOutcome;
+        typedef Aws::Utils::Outcome<GetAutoScalingGroupRecommendationsResult, ComputeOptimizerError> GetAutoScalingGroupRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<GetEC2InstanceRecommendationsResult, ComputeOptimizerError> GetEC2InstanceRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<GetEC2RecommendationProjectedMetricsResult, ComputeOptimizerError> GetEC2RecommendationProjectedMetricsOutcome;
+        typedef Aws::Utils::Outcome<GetEnrollmentStatusResult, ComputeOptimizerError> GetEnrollmentStatusOutcome;
+        typedef Aws::Utils::Outcome<GetRecommendationSummariesResult, ComputeOptimizerError> GetRecommendationSummariesOutcome;
+        typedef Aws::Utils::Outcome<UpdateEnrollmentStatusResult, ComputeOptimizerError> UpdateEnrollmentStatusOutcome;
 
         typedef std::future<GetAutoScalingGroupRecommendationsOutcome> GetAutoScalingGroupRecommendationsOutcomeCallable;
         typedef std::future<GetEC2InstanceRecommendationsOutcome> GetEC2InstanceRecommendationsOutcomeCallable;

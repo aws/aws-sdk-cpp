@@ -18,8 +18,8 @@
 #include <aws/workmail/WorkMailErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::WorkMail;
 using namespace Aws::Utils;
+using namespace Aws::WorkMail;
 
 namespace Aws
 {

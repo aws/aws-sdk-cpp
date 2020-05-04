@@ -57,7 +57,7 @@ static const char* ALLOCATION_TAG = "DetectiveClient";
 DetectiveClient::DetectiveClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
-        SERVICE_NAME, clientConfiguration.region),
+        SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DetectiveErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -67,7 +67,7 @@ DetectiveClient::DetectiveClient(const Client::ClientConfiguration& clientConfig
 DetectiveClient::DetectiveClient(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DetectiveErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -78,7 +78,7 @@ DetectiveClient::DetectiveClient(const std::shared_ptr<AWSCredentialsProvider>& 
   const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
-         SERVICE_NAME, clientConfiguration.region),
+         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
     Aws::MakeShared<DetectiveErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor)
 {
@@ -120,15 +120,7 @@ AcceptInvitationOutcome DetectiveClient::AcceptInvitation(const AcceptInvitation
   Aws::StringStream ss;
   ss << "/invitation";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return AcceptInvitationOutcome(NoResult());
-  }
-  else
-  {
-    return AcceptInvitationOutcome(outcome.GetError());
-  }
+  return AcceptInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 AcceptInvitationOutcomeCallable DetectiveClient::AcceptInvitationCallable(const AcceptInvitationRequest& request) const
@@ -153,15 +145,7 @@ CreateGraphOutcome DetectiveClient::CreateGraph() const
 {
   Aws::StringStream ss;
   ss << m_uri << "/graph";
-  JsonOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "CreateGraph");
-  if(outcome.IsSuccess())
-  {
-    return CreateGraphOutcome(CreateGraphResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateGraphOutcome(outcome.GetError());
-  }
+  return CreateGraphOutcome(MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, "CreateGraph"));
 }
 
 CreateGraphOutcomeCallable DetectiveClient::CreateGraphCallable() const
@@ -188,15 +172,7 @@ CreateMembersOutcome DetectiveClient::CreateMembers(const CreateMembersRequest& 
   Aws::StringStream ss;
   ss << "/graph/members";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return CreateMembersOutcome(CreateMembersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return CreateMembersOutcome(outcome.GetError());
-  }
+  return CreateMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateMembersOutcomeCallable DetectiveClient::CreateMembersCallable(const CreateMembersRequest& request) const
@@ -223,15 +199,7 @@ DeleteGraphOutcome DetectiveClient::DeleteGraph(const DeleteGraphRequest& reques
   Aws::StringStream ss;
   ss << "/graph/removal";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteGraphOutcome(NoResult());
-  }
-  else
-  {
-    return DeleteGraphOutcome(outcome.GetError());
-  }
+  return DeleteGraphOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteGraphOutcomeCallable DetectiveClient::DeleteGraphCallable(const DeleteGraphRequest& request) const
@@ -258,15 +226,7 @@ DeleteMembersOutcome DetectiveClient::DeleteMembers(const DeleteMembersRequest& 
   Aws::StringStream ss;
   ss << "/graph/members/removal";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DeleteMembersOutcome(DeleteMembersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return DeleteMembersOutcome(outcome.GetError());
-  }
+  return DeleteMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteMembersOutcomeCallable DetectiveClient::DeleteMembersCallable(const DeleteMembersRequest& request) const
@@ -293,15 +253,7 @@ DisassociateMembershipOutcome DetectiveClient::DisassociateMembership(const Disa
   Aws::StringStream ss;
   ss << "/membership/removal";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return DisassociateMembershipOutcome(NoResult());
-  }
-  else
-  {
-    return DisassociateMembershipOutcome(outcome.GetError());
-  }
+  return DisassociateMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateMembershipOutcomeCallable DetectiveClient::DisassociateMembershipCallable(const DisassociateMembershipRequest& request) const
@@ -328,15 +280,7 @@ GetMembersOutcome DetectiveClient::GetMembers(const GetMembersRequest& request) 
   Aws::StringStream ss;
   ss << "/graph/members/get";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return GetMembersOutcome(GetMembersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return GetMembersOutcome(outcome.GetError());
-  }
+  return GetMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetMembersOutcomeCallable DetectiveClient::GetMembersCallable(const GetMembersRequest& request) const
@@ -363,15 +307,7 @@ ListGraphsOutcome DetectiveClient::ListGraphs(const ListGraphsRequest& request) 
   Aws::StringStream ss;
   ss << "/graphs/list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListGraphsOutcome(ListGraphsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListGraphsOutcome(outcome.GetError());
-  }
+  return ListGraphsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListGraphsOutcomeCallable DetectiveClient::ListGraphsCallable(const ListGraphsRequest& request) const
@@ -398,15 +334,7 @@ ListInvitationsOutcome DetectiveClient::ListInvitations(const ListInvitationsReq
   Aws::StringStream ss;
   ss << "/invitations/list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListInvitationsOutcome(ListInvitationsResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListInvitationsOutcome(outcome.GetError());
-  }
+  return ListInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListInvitationsOutcomeCallable DetectiveClient::ListInvitationsCallable(const ListInvitationsRequest& request) const
@@ -433,15 +361,7 @@ ListMembersOutcome DetectiveClient::ListMembers(const ListMembersRequest& reques
   Aws::StringStream ss;
   ss << "/graph/members/list";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return ListMembersOutcome(ListMembersResult(outcome.GetResult()));
-  }
-  else
-  {
-    return ListMembersOutcome(outcome.GetError());
-  }
+  return ListMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListMembersOutcomeCallable DetectiveClient::ListMembersCallable(const ListMembersRequest& request) const
@@ -468,15 +388,7 @@ RejectInvitationOutcome DetectiveClient::RejectInvitation(const RejectInvitation
   Aws::StringStream ss;
   ss << "/invitation/removal";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return RejectInvitationOutcome(NoResult());
-  }
-  else
-  {
-    return RejectInvitationOutcome(outcome.GetError());
-  }
+  return RejectInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 RejectInvitationOutcomeCallable DetectiveClient::RejectInvitationCallable(const RejectInvitationRequest& request) const
@@ -503,15 +415,7 @@ StartMonitoringMemberOutcome DetectiveClient::StartMonitoringMember(const StartM
   Aws::StringStream ss;
   ss << "/graph/member/monitoringstate";
   uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return StartMonitoringMemberOutcome(NoResult());
-  }
-  else
-  {
-    return StartMonitoringMemberOutcome(outcome.GetError());
-  }
+  return StartMonitoringMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartMonitoringMemberOutcomeCallable DetectiveClient::StartMonitoringMemberCallable(const StartMonitoringMemberRequest& request) const

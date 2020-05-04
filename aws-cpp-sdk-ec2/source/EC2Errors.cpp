@@ -18,8 +18,8 @@
 #include <aws/ec2/EC2Errors.h>
 
 using namespace Aws::Client;
-using namespace Aws::EC2;
 using namespace Aws::Utils;
+using namespace Aws::EC2;
 
 namespace Aws
 {

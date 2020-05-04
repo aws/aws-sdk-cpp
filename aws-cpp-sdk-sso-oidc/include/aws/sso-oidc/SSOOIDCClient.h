@@ -67,9 +67,9 @@ namespace Model
         class RegisterClientRequest;
         class StartDeviceAuthorizationRequest;
 
-        typedef Aws::Utils::Outcome<CreateTokenResult, Aws::Client::AWSError<SSOOIDCErrors>> CreateTokenOutcome;
-        typedef Aws::Utils::Outcome<RegisterClientResult, Aws::Client::AWSError<SSOOIDCErrors>> RegisterClientOutcome;
-        typedef Aws::Utils::Outcome<StartDeviceAuthorizationResult, Aws::Client::AWSError<SSOOIDCErrors>> StartDeviceAuthorizationOutcome;
+        typedef Aws::Utils::Outcome<CreateTokenResult, SSOOIDCError> CreateTokenOutcome;
+        typedef Aws::Utils::Outcome<RegisterClientResult, SSOOIDCError> RegisterClientOutcome;
+        typedef Aws::Utils::Outcome<StartDeviceAuthorizationResult, SSOOIDCError> StartDeviceAuthorizationOutcome;
 
         typedef std::future<CreateTokenOutcome> CreateTokenOutcomeCallable;
         typedef std::future<RegisterClientOutcome> RegisterClientOutcomeCallable;

@@ -18,8 +18,8 @@
 #include <aws/mediaconvert/MediaConvertErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MediaConvert;
 using namespace Aws::Utils;
+using namespace Aws::MediaConvert;
 
 namespace Aws
 {

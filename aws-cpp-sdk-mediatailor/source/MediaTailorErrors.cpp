@@ -18,8 +18,8 @@
 #include <aws/mediatailor/MediaTailorErrors.h>
 
 using namespace Aws::Client;
-using namespace Aws::MediaTailor;
 using namespace Aws::Utils;
+using namespace Aws::MediaTailor;
 
 namespace Aws
 {

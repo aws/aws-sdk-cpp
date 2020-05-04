@@ -87,19 +87,19 @@ namespace Model
         class UntagResourceRequest;
         class UpdateNotificationRuleRequest;
 
-        typedef Aws::Utils::Outcome<CreateNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> CreateNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DeleteNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<DeleteTargetResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DeleteTargetOutcome;
-        typedef Aws::Utils::Outcome<DescribeNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> DescribeNotificationRuleOutcome;
-        typedef Aws::Utils::Outcome<ListEventTypesResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListEventTypesOutcome;
-        typedef Aws::Utils::Outcome<ListNotificationRulesResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListNotificationRulesOutcome;
-        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTargetsResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> ListTargetsOutcome;
-        typedef Aws::Utils::Outcome<SubscribeResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> SubscribeOutcome;
-        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> TagResourceOutcome;
-        typedef Aws::Utils::Outcome<UnsubscribeResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UnsubscribeOutcome;
-        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UntagResourceOutcome;
-        typedef Aws::Utils::Outcome<UpdateNotificationRuleResult, Aws::Client::AWSError<CodeStarNotificationsErrors>> UpdateNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<CreateNotificationRuleResult, CodeStarNotificationsError> CreateNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteNotificationRuleResult, CodeStarNotificationsError> DeleteNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteTargetResult, CodeStarNotificationsError> DeleteTargetOutcome;
+        typedef Aws::Utils::Outcome<DescribeNotificationRuleResult, CodeStarNotificationsError> DescribeNotificationRuleOutcome;
+        typedef Aws::Utils::Outcome<ListEventTypesResult, CodeStarNotificationsError> ListEventTypesOutcome;
+        typedef Aws::Utils::Outcome<ListNotificationRulesResult, CodeStarNotificationsError> ListNotificationRulesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, CodeStarNotificationsError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTargetsResult, CodeStarNotificationsError> ListTargetsOutcome;
+        typedef Aws::Utils::Outcome<SubscribeResult, CodeStarNotificationsError> SubscribeOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, CodeStarNotificationsError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UnsubscribeResult, CodeStarNotificationsError> UnsubscribeOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, CodeStarNotificationsError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateNotificationRuleResult, CodeStarNotificationsError> UpdateNotificationRuleOutcome;
 
         typedef std::future<CreateNotificationRuleOutcome> CreateNotificationRuleOutcomeCallable;
         typedef std::future<DeleteNotificationRuleOutcome> DeleteNotificationRuleOutcomeCallable;
