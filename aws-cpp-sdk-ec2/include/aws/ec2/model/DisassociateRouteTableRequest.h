@@ -48,49 +48,49 @@ namespace Model
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline DisassociateRouteTableRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline DisassociateRouteTableRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
 
     /**
      * <p>The association ID representing the current association between the route
-     * table and subnet.</p>
+     * table and subnet or gateway.</p>
      */
     inline DisassociateRouteTableRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
 

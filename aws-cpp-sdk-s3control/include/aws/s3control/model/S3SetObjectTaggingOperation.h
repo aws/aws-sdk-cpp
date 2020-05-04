@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>Contains the configuration parameters for a Set Object Tagging operation.
-   * Amazon S3 batch operations passes each value through to the underlying PUT
+   * Amazon S3 Batch Operations passes each value through to the underlying PUT
    * Object tagging API. For more information about the parameters for this
    * operation, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT

@@ -23,24 +23,19 @@ namespace S3Control
 {
 namespace Model
 {
-  enum class OperationName
+  enum class S3ObjectLockRetentionMode
   {
     NOT_SET,
-    LambdaInvoke,
-    S3PutObjectCopy,
-    S3PutObjectAcl,
-    S3PutObjectTagging,
-    S3InitiateRestoreObject,
-    S3PutObjectLegalHold,
-    S3PutObjectRetention
+    COMPLIANCE,
+    GOVERNANCE
   };
 
-namespace OperationNameMapper
+namespace S3ObjectLockRetentionModeMapper
 {
-AWS_S3CONTROL_API OperationName GetOperationNameForName(const Aws::String& name);
+AWS_S3CONTROL_API S3ObjectLockRetentionMode GetS3ObjectLockRetentionModeForName(const Aws::String& name);
 
-AWS_S3CONTROL_API Aws::String GetNameForOperationName(OperationName value);
-} // namespace OperationNameMapper
+AWS_S3CONTROL_API Aws::String GetNameForS3ObjectLockRetentionMode(S3ObjectLockRetentionMode value);
+} // namespace S3ObjectLockRetentionModeMapper
 } // namespace Model
 } // namespace S3Control
 } // namespace Aws

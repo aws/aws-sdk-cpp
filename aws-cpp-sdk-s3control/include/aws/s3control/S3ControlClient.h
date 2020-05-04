@@ -224,14 +224,30 @@ namespace Aws
         virtual void CreateAccessPointAsync(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon S3 batch operations job.</p><p><h3>See Also:</h3>   <a
+         * <p>You can use Amazon S3 Batch Operations to perform large-scale Batch
+         * Operations on Amazon S3 objects. Amazon S3 Batch Operations can execute a single
+         * operation or action on lists of Amazon S3 objects that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p>Related actions include:</p> <ul> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>UpdateJobPriority</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
 
         /**
-         * <p>Creates an Amazon S3 batch operations job.</p><p><h3>See Also:</h3>   <a
+         * <p>You can use Amazon S3 Batch Operations to perform large-scale Batch
+         * Operations on Amazon S3 objects. Amazon S3 Batch Operations can execute a single
+         * operation or action on lists of Amazon S3 objects that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p>Related actions include:</p> <ul> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>UpdateJobPriority</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">AWS
          * API Reference</a></p>
          *
@@ -240,7 +256,15 @@ namespace Aws
         virtual Model::CreateJobOutcomeCallable CreateJobCallable(const Model::CreateJobRequest& request) const;
 
         /**
-         * <p>Creates an Amazon S3 batch operations job.</p><p><h3>See Also:</h3>   <a
+         * <p>You can use Amazon S3 Batch Operations to perform large-scale Batch
+         * Operations on Amazon S3 objects. Amazon S3 Batch Operations can execute a single
+         * operation or action on lists of Amazon S3 objects that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p>Related actions include:</p> <ul> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>UpdateJobPriority</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">AWS
          * API Reference</a></p>
          *
@@ -302,16 +326,28 @@ namespace Aws
         virtual void DeleteAccessPointPolicyAsync(const Model::DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete the tags on a Amazon S3 batch operations job, if any.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the entire tag set from the specified Amazon S3 Batch Operations job.
+         * To use this operation, you must have permission to perform the
+         * <code>s3:DeleteJobTagging</code> action. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the Amazon Simple Storage Service Developer Guide.</p> <p/>
+         * <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p> </li> <li>
+         * <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>PutJobTagging</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteJobTaggingOutcome DeleteJobTagging(const Model::DeleteJobTaggingRequest& request) const;
 
         /**
-         * <p>Delete the tags on a Amazon S3 batch operations job, if any.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the entire tag set from the specified Amazon S3 Batch Operations job.
+         * To use this operation, you must have permission to perform the
+         * <code>s3:DeleteJobTagging</code> action. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the Amazon Simple Storage Service Developer Guide.</p> <p/>
+         * <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p> </li> <li>
+         * <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>PutJobTagging</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">AWS
          * API Reference</a></p>
          *
@@ -320,8 +356,14 @@ namespace Aws
         virtual Model::DeleteJobTaggingOutcomeCallable DeleteJobTaggingCallable(const Model::DeleteJobTaggingRequest& request) const;
 
         /**
-         * <p>Delete the tags on a Amazon S3 batch operations job, if any.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes the entire tag set from the specified Amazon S3 Batch Operations job.
+         * To use this operation, you must have permission to perform the
+         * <code>s3:DeleteJobTagging</code> action. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the Amazon Simple Storage Service Developer Guide.</p> <p/>
+         * <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p> </li> <li>
+         * <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>PutJobTagging</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteJobTagging">AWS
          * API Reference</a></p>
          *
@@ -358,16 +400,28 @@ namespace Aws
         virtual void DeletePublicAccessBlockAsync(const Model::DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the configuration parameters and status for a batch operations
-         * job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the configuration parameters and status for a Batch Operations job.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>UpdateJobPriority</a>
+         * </p> </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeJobOutcome DescribeJob(const Model::DescribeJobRequest& request) const;
 
         /**
-         * <p>Retrieves the configuration parameters and status for a batch operations
-         * job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the configuration parameters and status for a Batch Operations job.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>UpdateJobPriority</a>
+         * </p> </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">AWS
          * API Reference</a></p>
          *
@@ -376,8 +430,14 @@ namespace Aws
         virtual Model::DescribeJobOutcomeCallable DescribeJobCallable(const Model::DescribeJobRequest& request) const;
 
         /**
-         * <p>Retrieves the configuration parameters and status for a batch operations
-         * job.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the configuration parameters and status for a Batch Operations job.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>UpdateJobPriority</a>
+         * </p> </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DescribeJob">AWS
          * API Reference</a></p>
          *
@@ -482,16 +542,28 @@ namespace Aws
         virtual void GetAccessPointPolicyStatusAsync(const Model::GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve the tags on a Amazon S3 batch operations job.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the tags on an Amazon S3 Batch Operations job. To use this operation,
+         * you must have permission to perform the <code>s3:GetJobTagging</code> action.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p> </li>
+         * <li> <p> <a>PutJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::GetJobTaggingOutcome GetJobTagging(const Model::GetJobTaggingRequest& request) const;
 
         /**
-         * <p>Retrieve the tags on a Amazon S3 batch operations job.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the tags on an Amazon S3 Batch Operations job. To use this operation,
+         * you must have permission to perform the <code>s3:GetJobTagging</code> action.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p> </li>
+         * <li> <p> <a>PutJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">AWS
          * API Reference</a></p>
          *
@@ -500,8 +572,14 @@ namespace Aws
         virtual Model::GetJobTaggingOutcomeCallable GetJobTaggingCallable(const Model::GetJobTaggingRequest& request) const;
 
         /**
-         * <p>Retrieve the tags on a Amazon S3 batch operations job.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the tags on an Amazon S3 Batch Operations job. To use this operation,
+         * you must have permission to perform the <code>s3:GetJobTagging</code> action.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+         * <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p> </li>
+         * <li> <p> <a>PutJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetJobTagging">AWS
          * API Reference</a></p>
          *
@@ -540,8 +618,8 @@ namespace Aws
         /**
          * <p>Returns a list of the access points currently associated with the specified
          * bucket. You can retrieve up to 1000 access points per call. If the specified
-         * bucket has more than 1000 access points (or the number specified in
-         * <code>maxResults</code>, whichever is less), then the response will include a
+         * bucket has more than 1,000 access points (or the number specified in
+         * <code>maxResults</code>, whichever is less), the response will include a
          * continuation token that you can use to list the additional access
          * points.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">AWS
@@ -552,8 +630,8 @@ namespace Aws
         /**
          * <p>Returns a list of the access points currently associated with the specified
          * bucket. You can retrieve up to 1000 access points per call. If the specified
-         * bucket has more than 1000 access points (or the number specified in
-         * <code>maxResults</code>, whichever is less), then the response will include a
+         * bucket has more than 1,000 access points (or the number specified in
+         * <code>maxResults</code>, whichever is less), the response will include a
          * continuation token that you can use to list the additional access
          * points.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">AWS
@@ -566,8 +644,8 @@ namespace Aws
         /**
          * <p>Returns a list of the access points currently associated with the specified
          * bucket. You can retrieve up to 1000 access points per call. If the specified
-         * bucket has more than 1000 access points (or the number specified in
-         * <code>maxResults</code>, whichever is less), then the response will include a
+         * bucket has more than 1,000 access points (or the number specified in
+         * <code>maxResults</code>, whichever is less), the response will include a
          * continuation token that you can use to list the additional access
          * points.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">AWS
@@ -578,16 +656,30 @@ namespace Aws
         virtual void ListAccessPointsAsync(const Model::ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists current jobs and jobs that have ended within the last 30 days for the
-         * AWS account making the request.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists current Amazon S3 Batch Operations jobs and jobs that have ended within
+         * the last 30 days for the AWS account making the request. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer
+         * Guide</i>.</p> <p>Related actions include:</p> <p/> <ul> <li> <p>
+         * <a>CreateJob</a> </p> </li> <li> <p> <a>DescribeJob</a> </p> </li> <li> <p>
+         * <a>UpdateJobPriority</a> </p> </li> <li> <p> <a>UpdateJobStatus</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Lists current jobs and jobs that have ended within the last 30 days for the
-         * AWS account making the request.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists current Amazon S3 Batch Operations jobs and jobs that have ended within
+         * the last 30 days for the AWS account making the request. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer
+         * Guide</i>.</p> <p>Related actions include:</p> <p/> <ul> <li> <p>
+         * <a>CreateJob</a> </p> </li> <li> <p> <a>DescribeJob</a> </p> </li> <li> <p>
+         * <a>UpdateJobPriority</a> </p> </li> <li> <p> <a>UpdateJobStatus</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">AWS
          * API Reference</a></p>
          *
@@ -596,8 +688,15 @@ namespace Aws
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Lists current jobs and jobs that have ended within the last 30 days for the
-         * AWS account making the request.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists current Amazon S3 Batch Operations jobs and jobs that have ended within
+         * the last 30 days for the AWS account making the request. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer
+         * Guide</i>.</p> <p>Related actions include:</p> <p/> <ul> <li> <p>
+         * <a>CreateJob</a> </p> </li> <li> <p> <a>DescribeJob</a> </p> </li> <li> <p>
+         * <a>UpdateJobPriority</a> </p> </li> <li> <p> <a>UpdateJobStatus</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListJobs">AWS
          * API Reference</a></p>
          *
@@ -640,16 +739,72 @@ namespace Aws
         virtual void PutAccessPointPolicyAsync(const Model::PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Replace the set of tags on a Amazon S3 batch operations job.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Set the supplied tag-set on an Amazon S3 Batch Operations job.</p> <p>A tag
+         * is a key-value pair. You can associate Amazon S3 Batch Operations tags with any
+         * job by sending a PUT request against the tagging subresource that is associated
+         * with the job. To modify the existing tag set, you can either replace the
+         * existing tag set entirely, or make changes within the existing tag set by
+         * retrieving the existing tag set using <a>GetJobTagging</a>, modify that tag set,
+         * and use this API action to replace the tag set with the one you have modified..
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the Amazon Simple Storage Service Developer Guide. </p> <p/>
+         * <note> <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
+         * deletes the existing tag set on the Batch Operations job. If you use this
+         * method, you will be charged for a Tier 1 Request (PUT). For more information,
+         * see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> </li>
+         * <li> <p>For deleting existing tags for your batch operations job,
+         * <a>DeleteJobTagging</a> request is preferred because it achieves the same result
+         * without incurring charges.</p> </li> <li> <p>A few things to consider about
+         * using tags:</p> <ul> <li> <p>Amazon S3 limits the maximum number of tags to 50
+         * tags per job.</p> </li> <li> <p>You can associate up to 50 tags with a job as
+         * long as they have unique tag keys.</p> </li> <li> <p>A tag key can be up to 128
+         * Unicode characters in length, and tag values can be up to 256 Unicode characters
+         * in length.</p> </li> <li> <p>The key and values are case sensitive.</p> </li>
+         * <li> <p>For tagging-related restrictions related to characters and encodings,
+         * see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul> </note> <p/> <p>To use this
+         * operation, you must have permission to perform the <code>s3:PutJobTagging</code>
+         * action.</p> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p>
+         * </li> <li> <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">AWS
          * API Reference</a></p>
          */
         virtual Model::PutJobTaggingOutcome PutJobTagging(const Model::PutJobTaggingRequest& request) const;
 
         /**
-         * <p>Replace the set of tags on a Amazon S3 batch operations job.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Set the supplied tag-set on an Amazon S3 Batch Operations job.</p> <p>A tag
+         * is a key-value pair. You can associate Amazon S3 Batch Operations tags with any
+         * job by sending a PUT request against the tagging subresource that is associated
+         * with the job. To modify the existing tag set, you can either replace the
+         * existing tag set entirely, or make changes within the existing tag set by
+         * retrieving the existing tag set using <a>GetJobTagging</a>, modify that tag set,
+         * and use this API action to replace the tag set with the one you have modified..
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the Amazon Simple Storage Service Developer Guide. </p> <p/>
+         * <note> <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
+         * deletes the existing tag set on the Batch Operations job. If you use this
+         * method, you will be charged for a Tier 1 Request (PUT). For more information,
+         * see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> </li>
+         * <li> <p>For deleting existing tags for your batch operations job,
+         * <a>DeleteJobTagging</a> request is preferred because it achieves the same result
+         * without incurring charges.</p> </li> <li> <p>A few things to consider about
+         * using tags:</p> <ul> <li> <p>Amazon S3 limits the maximum number of tags to 50
+         * tags per job.</p> </li> <li> <p>You can associate up to 50 tags with a job as
+         * long as they have unique tag keys.</p> </li> <li> <p>A tag key can be up to 128
+         * Unicode characters in length, and tag values can be up to 256 Unicode characters
+         * in length.</p> </li> <li> <p>The key and values are case sensitive.</p> </li>
+         * <li> <p>For tagging-related restrictions related to characters and encodings,
+         * see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul> </note> <p/> <p>To use this
+         * operation, you must have permission to perform the <code>s3:PutJobTagging</code>
+         * action.</p> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p>
+         * </li> <li> <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">AWS
          * API Reference</a></p>
          *
@@ -658,8 +813,36 @@ namespace Aws
         virtual Model::PutJobTaggingOutcomeCallable PutJobTaggingCallable(const Model::PutJobTaggingRequest& request) const;
 
         /**
-         * <p>Replace the set of tags on a Amazon S3 batch operations job.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Set the supplied tag-set on an Amazon S3 Batch Operations job.</p> <p>A tag
+         * is a key-value pair. You can associate Amazon S3 Batch Operations tags with any
+         * job by sending a PUT request against the tagging subresource that is associated
+         * with the job. To modify the existing tag set, you can either replace the
+         * existing tag set entirely, or make changes within the existing tag set by
+         * retrieving the existing tag set using <a>GetJobTagging</a>, modify that tag set,
+         * and use this API action to replace the tag set with the one you have modified..
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using
+         * Job Tags</a> in the Amazon Simple Storage Service Developer Guide. </p> <p/>
+         * <note> <ul> <li> <p>If you send this request with an empty tag set, Amazon S3
+         * deletes the existing tag set on the Batch Operations job. If you use this
+         * method, you will be charged for a Tier 1 Request (PUT). For more information,
+         * see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> </li>
+         * <li> <p>For deleting existing tags for your batch operations job,
+         * <a>DeleteJobTagging</a> request is preferred because it achieves the same result
+         * without incurring charges.</p> </li> <li> <p>A few things to consider about
+         * using tags:</p> <ul> <li> <p>Amazon S3 limits the maximum number of tags to 50
+         * tags per job.</p> </li> <li> <p>You can associate up to 50 tags with a job as
+         * long as they have unique tag keys.</p> </li> <li> <p>A tag key can be up to 128
+         * Unicode characters in length, and tag values can be up to 256 Unicode characters
+         * in length.</p> </li> <li> <p>The key and values are case sensitive.</p> </li>
+         * <li> <p>For tagging-related restrictions related to characters and encodings,
+         * see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+         * Tag Restrictions</a>.</p> </li> </ul> </li> </ul> </note> <p/> <p>To use this
+         * operation, you must have permission to perform the <code>s3:PutJobTagging</code>
+         * action.</p> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a> </p>
+         * </li> <li> <p> <a>GetJobTagging</a> </p> </li> <li> <p> <a>DeleteJobTagging</a>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging">AWS
          * API Reference</a></p>
          *
@@ -696,14 +879,26 @@ namespace Aws
         virtual void PutPublicAccessBlockAsync(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing job's priority.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Amazon S3 Batch Operations job's priority. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateJobPriorityOutcome UpdateJobPriority(const Model::UpdateJobPriorityRequest& request) const;
 
         /**
-         * <p>Updates an existing job's priority.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Amazon S3 Batch Operations job's priority. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">AWS
          * API Reference</a></p>
          *
@@ -712,7 +907,13 @@ namespace Aws
         virtual Model::UpdateJobPriorityOutcomeCallable UpdateJobPriorityCallable(const Model::UpdateJobPriorityRequest& request) const;
 
         /**
-         * <p>Updates an existing job's priority.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Amazon S3 Batch Operations job's priority. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobPriority">AWS
          * API Reference</a></p>
          *
@@ -722,8 +923,12 @@ namespace Aws
 
         /**
          * <p>Updates the status for the specified job. Use this operation to confirm that
-         * you want to run a job or to cancel an existing job.</p><p><h3>See Also:</h3>  
-         * <a
+         * you want to run a job or to cancel an existing job. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">AWS
          * API Reference</a></p>
          */
@@ -731,8 +936,12 @@ namespace Aws
 
         /**
          * <p>Updates the status for the specified job. Use this operation to confirm that
-         * you want to run a job or to cancel an existing job.</p><p><h3>See Also:</h3>  
-         * <a
+         * you want to run a job or to cancel an existing job. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">AWS
          * API Reference</a></p>
          *
@@ -742,8 +951,12 @@ namespace Aws
 
         /**
          * <p>Updates the status for the specified job. Use this operation to confirm that
-         * you want to run a job or to cancel an existing job.</p><p><h3>See Also:</h3>  
-         * <a
+         * you want to run a job or to cancel an existing job. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon
+         * S3 Batch Operations</a> in the Amazon Simple Storage Service Developer
+         * Guide.</p> <p/> <p>Related actions include:</p> <ul> <li> <p> <a>CreateJob</a>
+         * </p> </li> <li> <p> <a>ListJobs</a> </p> </li> <li> <p> <a>DescribeJob</a> </p>
+         * </li> <li> <p> <a>UpdateJobStatus</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/UpdateJobStatus">AWS
          * API Reference</a></p>
          *

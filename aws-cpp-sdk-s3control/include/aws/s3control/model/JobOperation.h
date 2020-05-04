@@ -20,6 +20,8 @@
 #include <aws/s3control/model/S3SetObjectAclOperation.h>
 #include <aws/s3control/model/S3SetObjectTaggingOperation.h>
 #include <aws/s3control/model/S3InitiateRestoreObjectOperation.h>
+#include <aws/s3control/model/S3SetObjectLegalHoldOperation.h>
+#include <aws/s3control/model/S3SetObjectRetentionOperation.h>
 #include <utility>
 
 namespace Aws
@@ -239,6 +241,44 @@ namespace Model
      */
     inline JobOperation& WithS3InitiateRestoreObject(S3InitiateRestoreObjectOperation&& value) { SetS3InitiateRestoreObject(std::move(value)); return *this;}
 
+
+    
+    inline const S3SetObjectLegalHoldOperation& GetS3PutObjectLegalHold() const{ return m_s3PutObjectLegalHold; }
+
+    
+    inline bool S3PutObjectLegalHoldHasBeenSet() const { return m_s3PutObjectLegalHoldHasBeenSet; }
+
+    
+    inline void SetS3PutObjectLegalHold(const S3SetObjectLegalHoldOperation& value) { m_s3PutObjectLegalHoldHasBeenSet = true; m_s3PutObjectLegalHold = value; }
+
+    
+    inline void SetS3PutObjectLegalHold(S3SetObjectLegalHoldOperation&& value) { m_s3PutObjectLegalHoldHasBeenSet = true; m_s3PutObjectLegalHold = std::move(value); }
+
+    
+    inline JobOperation& WithS3PutObjectLegalHold(const S3SetObjectLegalHoldOperation& value) { SetS3PutObjectLegalHold(value); return *this;}
+
+    
+    inline JobOperation& WithS3PutObjectLegalHold(S3SetObjectLegalHoldOperation&& value) { SetS3PutObjectLegalHold(std::move(value)); return *this;}
+
+
+    
+    inline const S3SetObjectRetentionOperation& GetS3PutObjectRetention() const{ return m_s3PutObjectRetention; }
+
+    
+    inline bool S3PutObjectRetentionHasBeenSet() const { return m_s3PutObjectRetentionHasBeenSet; }
+
+    
+    inline void SetS3PutObjectRetention(const S3SetObjectRetentionOperation& value) { m_s3PutObjectRetentionHasBeenSet = true; m_s3PutObjectRetention = value; }
+
+    
+    inline void SetS3PutObjectRetention(S3SetObjectRetentionOperation&& value) { m_s3PutObjectRetentionHasBeenSet = true; m_s3PutObjectRetention = std::move(value); }
+
+    
+    inline JobOperation& WithS3PutObjectRetention(const S3SetObjectRetentionOperation& value) { SetS3PutObjectRetention(value); return *this;}
+
+    
+    inline JobOperation& WithS3PutObjectRetention(S3SetObjectRetentionOperation&& value) { SetS3PutObjectRetention(std::move(value)); return *this;}
+
   private:
 
     LambdaInvokeOperation m_lambdaInvoke;
@@ -255,6 +295,12 @@ namespace Model
 
     S3InitiateRestoreObjectOperation m_s3InitiateRestoreObject;
     bool m_s3InitiateRestoreObjectHasBeenSet;
+
+    S3SetObjectLegalHoldOperation m_s3PutObjectLegalHold;
+    bool m_s3PutObjectLegalHoldHasBeenSet;
+
+    S3SetObjectRetentionOperation m_s3PutObjectRetention;
+    bool m_s3PutObjectRetentionHasBeenSet;
   };
 
 } // namespace Model

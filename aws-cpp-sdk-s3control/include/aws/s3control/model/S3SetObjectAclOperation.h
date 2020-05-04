@@ -34,7 +34,7 @@ namespace Model
 
   /**
    * <p>Contains the configuration parameters for a Set Object ACL operation. Amazon
-   * S3 batch operations passes each value through to the underlying PUT Object acl
+   * S3 Batch Operations passes each value through to the underlying PUT Object acl
    * API. For more information about the parameters for this operation, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html">PUT
    * Object acl</a>.</p><p><h3>See Also:</h3>   <a

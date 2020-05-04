@@ -179,37 +179,37 @@ namespace Model
 
     /**
      * <p>If you include this field, Amazon S3 restricts access to this access point to
-     * requests from the specified Virtual Private Cloud (VPC).</p>
+     * requests from the specified virtual private cloud (VPC).</p>
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
      * <p>If you include this field, Amazon S3 restricts access to this access point to
-     * requests from the specified Virtual Private Cloud (VPC).</p>
+     * requests from the specified virtual private cloud (VPC).</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
      * <p>If you include this field, Amazon S3 restricts access to this access point to
-     * requests from the specified Virtual Private Cloud (VPC).</p>
+     * requests from the specified virtual private cloud (VPC).</p>
      */
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
      * <p>If you include this field, Amazon S3 restricts access to this access point to
-     * requests from the specified Virtual Private Cloud (VPC).</p>
+     * requests from the specified virtual private cloud (VPC).</p>
      */
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
      * <p>If you include this field, Amazon S3 restricts access to this access point to
-     * requests from the specified Virtual Private Cloud (VPC).</p>
+     * requests from the specified virtual private cloud (VPC).</p>
      */
     inline CreateAccessPointRequest& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
      * <p>If you include this field, Amazon S3 restricts access to this access point to
-     * requests from the specified Virtual Private Cloud (VPC).</p>
+     * requests from the specified virtual private cloud (VPC).</p>
      */
     inline CreateAccessPointRequest& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
 

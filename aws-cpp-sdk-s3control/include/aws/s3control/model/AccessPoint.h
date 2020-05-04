@@ -91,98 +91,98 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline const NetworkOrigin& GetNetworkOrigin() const{ return m_networkOrigin; }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline bool NetworkOriginHasBeenSet() const { return m_networkOriginHasBeenSet; }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline void SetNetworkOrigin(const NetworkOrigin& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = value; }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline void SetNetworkOrigin(NetworkOrigin&& value) { m_networkOriginHasBeenSet = true; m_networkOrigin = std::move(value); }
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline AccessPoint& WithNetworkOrigin(const NetworkOrigin& value) { SetNetworkOrigin(value); return *this;}
 
     /**
-     * <p>Indicates whether this access point allows access from the public Internet.
+     * <p>Indicates whether this access point allows access from the public internet.
      * If <code>VpcConfiguration</code> is specified for this access point, then
      * <code>NetworkOrigin</code> is <code>VPC</code>, and the access point doesn't
-     * allow access from the public Internet. Otherwise, <code>NetworkOrigin</code> is
+     * allow access from the public internet. Otherwise, <code>NetworkOrigin</code> is
      * <code>Internet</code>, and the access point allows access from the public
-     * Internet, subject to the access point and bucket access policies.</p>
+     * internet, subject to the access point and bucket access policies.</p>
      */
     inline AccessPoint& WithNetworkOrigin(NetworkOrigin&& value) { SetNetworkOrigin(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
      * exists.</p>
      */
     inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
      * exists.</p>
      */
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
      * exists.</p>
      */
     inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
      * exists.</p>
      */
     inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
      * exists.</p>
      */
     inline AccessPoint& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
 
     /**
-     * <p>The Virtual Private Cloud (VPC) configuration for this access point, if one
+     * <p>The virtual private cloud (VPC) configuration for this access point, if one
      * exists.</p>
      */
     inline AccessPoint& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}

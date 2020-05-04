@@ -13194,8 +13194,8 @@ namespace Model
          * instance and instances in the VPC to which it's linked. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
-         * <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You must specify a
+         * VPC ID in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          */
@@ -13207,8 +13207,8 @@ namespace Model
          * instance and instances in the VPC to which it's linked. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
-         * <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You must specify a
+         * VPC ID in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          *
@@ -13222,8 +13222,8 @@ namespace Model
          * instance and instances in the VPC to which it's linked. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
-         * <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You must specify a
+         * VPC ID in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          *
@@ -13349,10 +13349,10 @@ namespace Model
         virtual void DisassociateIamInstanceProfileAsync(const Model::DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a subnet from a route table.</p> <p>After you perform this
-         * action, the subnet no longer uses the routes in the route table. Instead, it
-         * uses the routes in the VPC's main route table. For more information about route
-         * tables, see <a
+         * <p>Disassociates a subnet or gateway from a route table.</p> <p>After you
+         * perform this action, the subnet no longer uses the routes in the route table.
+         * Instead, it uses the routes in the VPC's main route table. For more information
+         * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -13362,10 +13362,10 @@ namespace Model
         virtual Model::DisassociateRouteTableOutcome DisassociateRouteTable(const Model::DisassociateRouteTableRequest& request) const;
 
         /**
-         * <p>Disassociates a subnet from a route table.</p> <p>After you perform this
-         * action, the subnet no longer uses the routes in the route table. Instead, it
-         * uses the routes in the VPC's main route table. For more information about route
-         * tables, see <a
+         * <p>Disassociates a subnet or gateway from a route table.</p> <p>After you
+         * perform this action, the subnet no longer uses the routes in the route table.
+         * Instead, it uses the routes in the VPC's main route table. For more information
+         * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -13377,10 +13377,10 @@ namespace Model
         virtual Model::DisassociateRouteTableOutcomeCallable DisassociateRouteTableCallable(const Model::DisassociateRouteTableRequest& request) const;
 
         /**
-         * <p>Disassociates a subnet from a route table.</p> <p>After you perform this
-         * action, the subnet no longer uses the routes in the route table. Instead, it
-         * uses the routes in the VPC's main route table. For more information about route
-         * tables, see <a
+         * <p>Disassociates a subnet or gateway from a route table.</p> <p>After you
+         * perform this action, the subnet no longer uses the routes in the route table.
+         * Instead, it uses the routes in the VPC's main route table. For more information
+         * about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -13778,8 +13778,8 @@ namespace Model
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
-         * <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You must specify a
+         * VPC ID in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          */
@@ -13793,8 +13793,8 @@ namespace Model
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
-         * <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You must specify a
+         * VPC ID in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          *
@@ -13810,8 +13810,8 @@ namespace Model
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
-         * <a
+         * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>You must specify a
+         * VPC ID in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">AWS
          * API Reference</a></p>
          *

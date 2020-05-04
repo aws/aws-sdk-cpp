@@ -363,99 +363,107 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role that batch operations will use to execute this job's operation on each
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role that Batch Operations will use to execute this job's operation on
+     * each object in the manifest.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role that batch operations will use to execute this job's operation on each
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role that Batch Operations will use to execute this job's operation on
+     * each object in the manifest.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role that batch operations will use to execute this job's operation on each
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role that Batch Operations will use to execute this job's operation on
+     * each object in the manifest.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role that batch operations will use to execute this job's operation on each
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role that Batch Operations will use to execute this job's operation on
+     * each object in the manifest.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role that batch operations will use to execute this job's operation on each
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role that Batch Operations will use to execute this job's operation on
+     * each object in the manifest.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role that batch operations will use to execute this job's operation on each
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role that Batch Operations will use to execute this job's operation on
+     * each object in the manifest.</p>
      */
     inline CreateJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role that batch operations will use to execute this job's operation on each
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role that Batch Operations will use to execute this job's operation on
+     * each object in the manifest.</p>
      */
     inline CreateJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM)
-     * Role that batch operations will use to execute this job's operation on each
-     * object in the manifest.</p>
+     * <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management
+     * (IAM) role that Batch Operations will use to execute this job's operation on
+     * each object in the manifest.</p>
      */
     inline CreateJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>An optional set of tags to associate with the job when it is created.</p>
+     * <p>A set of tags to associate with the Amazon S3 Batch Operations job. This is
+     * an optional parameter. </p>
      */
     inline const Aws::Vector<S3Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An optional set of tags to associate with the job when it is created.</p>
+     * <p>A set of tags to associate with the Amazon S3 Batch Operations job. This is
+     * an optional parameter. </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An optional set of tags to associate with the job when it is created.</p>
+     * <p>A set of tags to associate with the Amazon S3 Batch Operations job. This is
+     * an optional parameter. </p>
      */
     inline void SetTags(const Aws::Vector<S3Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An optional set of tags to associate with the job when it is created.</p>
+     * <p>A set of tags to associate with the Amazon S3 Batch Operations job. This is
+     * an optional parameter. </p>
      */
     inline void SetTags(Aws::Vector<S3Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An optional set of tags to associate with the job when it is created.</p>
+     * <p>A set of tags to associate with the Amazon S3 Batch Operations job. This is
+     * an optional parameter. </p>
      */
     inline CreateJobRequest& WithTags(const Aws::Vector<S3Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An optional set of tags to associate with the job when it is created.</p>
+     * <p>A set of tags to associate with the Amazon S3 Batch Operations job. This is
+     * an optional parameter. </p>
      */
     inline CreateJobRequest& WithTags(Aws::Vector<S3Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An optional set of tags to associate with the job when it is created.</p>
+     * <p>A set of tags to associate with the Amazon S3 Batch Operations job. This is
+     * an optional parameter. </p>
      */
     inline CreateJobRequest& AddTags(const S3Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An optional set of tags to associate with the job when it is created.</p>
+     * <p>A set of tags to associate with the Amazon S3 Batch Operations job. This is
+     * an optional parameter. </p>
      */
     inline CreateJobRequest& AddTags(S3Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

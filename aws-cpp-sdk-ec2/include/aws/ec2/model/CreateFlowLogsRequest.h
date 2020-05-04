@@ -650,8 +650,7 @@ namespace Model
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p> <p>Only applicable to flow logs that are
-     * published to an Amazon S3 bucket.</p>
+     * surround the parameter value.</p>
      */
     inline const Aws::String& GetLogFormat() const{ return m_logFormat; }
 
@@ -663,8 +662,7 @@ namespace Model
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p> <p>Only applicable to flow logs that are
-     * published to an Amazon S3 bucket.</p>
+     * surround the parameter value.</p>
      */
     inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
 
@@ -676,8 +674,7 @@ namespace Model
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p> <p>Only applicable to flow logs that are
-     * published to an Amazon S3 bucket.</p>
+     * surround the parameter value.</p>
      */
     inline void SetLogFormat(const Aws::String& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
 
@@ -689,8 +686,7 @@ namespace Model
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p> <p>Only applicable to flow logs that are
-     * published to an Amazon S3 bucket.</p>
+     * surround the parameter value.</p>
      */
     inline void SetLogFormat(Aws::String&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
 
@@ -702,8 +698,7 @@ namespace Model
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p> <p>Only applicable to flow logs that are
-     * published to an Amazon S3 bucket.</p>
+     * surround the parameter value.</p>
      */
     inline void SetLogFormat(const char* value) { m_logFormatHasBeenSet = true; m_logFormat.assign(value); }
 
@@ -715,8 +710,7 @@ namespace Model
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p> <p>Only applicable to flow logs that are
-     * published to an Amazon S3 bucket.</p>
+     * surround the parameter value.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(const Aws::String& value) { SetLogFormat(value); return *this;}
 
@@ -728,8 +722,7 @@ namespace Model
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p> <p>Only applicable to flow logs that are
-     * published to an Amazon S3 bucket.</p>
+     * surround the parameter value.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(Aws::String&& value) { SetLogFormat(std::move(value)); return *this;}
 
@@ -741,8 +734,7 @@ namespace Model
      * default format. If you specify this parameter, you must specify at least one
      * field.</p> <p>Specify the fields using the <code>${field-id}</code> format,
      * separated by spaces. For the AWS CLI, use single quotation marks (' ') to
-     * surround the parameter value.</p> <p>Only applicable to flow logs that are
-     * published to an Amazon S3 bucket.</p>
+     * surround the parameter value.</p>
      */
     inline CreateFlowLogsRequest& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
 

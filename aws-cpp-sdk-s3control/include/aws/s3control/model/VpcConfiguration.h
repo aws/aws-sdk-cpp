@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>The Virtual Private Cloud (VPC) configuration for an access
+   * <p>The virtual private cloud (VPC) configuration for an access
    * point.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/VpcConfiguration">AWS
    * API Reference</a></p>

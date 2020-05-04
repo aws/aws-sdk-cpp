@@ -45,91 +45,91 @@ namespace Model
 
 
     /**
-     * <p>The account ID for the Amazon Web Services account associated with the Amazon
-     * S3 batch operations job you want to retrieve tags for.</p>
+     * <p>The AWS account ID associated with the Amazon S3 Batch Operations job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The account ID for the Amazon Web Services account associated with the Amazon
-     * S3 batch operations job you want to retrieve tags for.</p>
+     * <p>The AWS account ID associated with the Amazon S3 Batch Operations job.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The account ID for the Amazon Web Services account associated with the Amazon
-     * S3 batch operations job you want to retrieve tags for.</p>
+     * <p>The AWS account ID associated with the Amazon S3 Batch Operations job.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The account ID for the Amazon Web Services account associated with the Amazon
-     * S3 batch operations job you want to retrieve tags for.</p>
+     * <p>The AWS account ID associated with the Amazon S3 Batch Operations job.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The account ID for the Amazon Web Services account associated with the Amazon
-     * S3 batch operations job you want to retrieve tags for.</p>
+     * <p>The AWS account ID associated with the Amazon S3 Batch Operations job.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The account ID for the Amazon Web Services account associated with the Amazon
-     * S3 batch operations job you want to retrieve tags for.</p>
+     * <p>The AWS account ID associated with the Amazon S3 Batch Operations job.</p>
      */
     inline GetJobTaggingRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The account ID for the Amazon Web Services account associated with the Amazon
-     * S3 batch operations job you want to retrieve tags for.</p>
+     * <p>The AWS account ID associated with the Amazon S3 Batch Operations job.</p>
      */
     inline GetJobTaggingRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID for the Amazon Web Services account associated with the Amazon
-     * S3 batch operations job you want to retrieve tags for.</p>
+     * <p>The AWS account ID associated with the Amazon S3 Batch Operations job.</p>
      */
     inline GetJobTaggingRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
-     * <p>The ID for the job whose tags you want to retrieve.</p>
+     * <p>The ID for the Amazon S3 Batch Operations job whose tags you want to
+     * retrieve.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>The ID for the job whose tags you want to retrieve.</p>
+     * <p>The ID for the Amazon S3 Batch Operations job whose tags you want to
+     * retrieve.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p>The ID for the job whose tags you want to retrieve.</p>
+     * <p>The ID for the Amazon S3 Batch Operations job whose tags you want to
+     * retrieve.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>The ID for the job whose tags you want to retrieve.</p>
+     * <p>The ID for the Amazon S3 Batch Operations job whose tags you want to
+     * retrieve.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>The ID for the job whose tags you want to retrieve.</p>
+     * <p>The ID for the Amazon S3 Batch Operations job whose tags you want to
+     * retrieve.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>The ID for the job whose tags you want to retrieve.</p>
+     * <p>The ID for the Amazon S3 Batch Operations job whose tags you want to
+     * retrieve.</p>
      */
     inline GetJobTaggingRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>The ID for the job whose tags you want to retrieve.</p>
+     * <p>The ID for the Amazon S3 Batch Operations job whose tags you want to
+     * retrieve.</p>
      */
     inline GetJobTaggingRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the job whose tags you want to retrieve.</p>
+     * <p>The ID for the Amazon S3 Batch Operations job whose tags you want to
+     * retrieve.</p>
      */
     inline GetJobTaggingRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 

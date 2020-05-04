@@ -35,6 +35,8 @@ namespace Aws
         static const int S3PutObjectAcl_HASH = HashingUtils::HashString("S3PutObjectAcl");
         static const int S3PutObjectTagging_HASH = HashingUtils::HashString("S3PutObjectTagging");
         static const int S3InitiateRestoreObject_HASH = HashingUtils::HashString("S3InitiateRestoreObject");
+        static const int S3PutObjectLegalHold_HASH = HashingUtils::HashString("S3PutObjectLegalHold");
+        static const int S3PutObjectRetention_HASH = HashingUtils::HashString("S3PutObjectRetention");
 
 
         OperationName GetOperationNameForName(const Aws::String& name)
@@ -60,6 +62,14 @@ namespace Aws
           {
             return OperationName::S3InitiateRestoreObject;
           }
+          else if (hashCode == S3PutObjectLegalHold_HASH)
+          {
+            return OperationName::S3PutObjectLegalHold;
+          }
+          else if (hashCode == S3PutObjectRetention_HASH)
+          {
+            return OperationName::S3PutObjectRetention;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +94,10 @@ namespace Aws
             return "S3PutObjectTagging";
           case OperationName::S3InitiateRestoreObject:
             return "S3InitiateRestoreObject";
+          case OperationName::S3PutObjectLegalHold:
+            return "S3PutObjectLegalHold";
+          case OperationName::S3PutObjectRetention:
+            return "S3PutObjectRetention";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

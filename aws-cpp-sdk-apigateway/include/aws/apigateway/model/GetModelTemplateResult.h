@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The Apache <a
-     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * href="https://velocity.apache.org/engine/devel/vtl-reference.html"
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */
@@ -60,7 +60,7 @@ namespace Model
 
     /**
      * <p>The Apache <a
-     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * href="https://velocity.apache.org/engine/devel/vtl-reference.html"
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The Apache <a
-     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * href="https://velocity.apache.org/engine/devel/vtl-reference.html"
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>The Apache <a
-     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * href="https://velocity.apache.org/engine/devel/vtl-reference.html"
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The Apache <a
-     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * href="https://velocity.apache.org/engine/devel/vtl-reference.html"
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The Apache <a
-     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * href="https://velocity.apache.org/engine/devel/vtl-reference.html"
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The Apache <a
-     * href="https://velocity.apache.org/engine/devel/vtl-reference-guide.html"
+     * href="https://velocity.apache.org/engine/devel/vtl-reference.html"
      * target="_blank">Velocity Template Language (VTL)</a> template content used for
      * the template resource.</p>
      */

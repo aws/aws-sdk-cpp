@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>The set of tags associated with the job.</p>
+     * <p>The set of tags associated with the Amazon S3 Batch Operations job.</p>
      */
     inline const Aws::Vector<S3Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The set of tags associated with the job.</p>
+     * <p>The set of tags associated with the Amazon S3 Batch Operations job.</p>
      */
     inline void SetTags(const Aws::Vector<S3Tag>& value) { m_tags = value; }
 
     /**
-     * <p>The set of tags associated with the job.</p>
+     * <p>The set of tags associated with the Amazon S3 Batch Operations job.</p>
      */
     inline void SetTags(Aws::Vector<S3Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>The set of tags associated with the job.</p>
+     * <p>The set of tags associated with the Amazon S3 Batch Operations job.</p>
      */
     inline GetJobTaggingResult& WithTags(const Aws::Vector<S3Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The set of tags associated with the job.</p>
+     * <p>The set of tags associated with the Amazon S3 Batch Operations job.</p>
      */
     inline GetJobTaggingResult& WithTags(Aws::Vector<S3Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The set of tags associated with the job.</p>
+     * <p>The set of tags associated with the Amazon S3 Batch Operations job.</p>
      */
     inline GetJobTaggingResult& AddTags(const S3Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The set of tags associated with the job.</p>
+     * <p>The set of tags associated with the Amazon S3 Batch Operations job.</p>
      */
     inline GetJobTaggingResult& AddTags(S3Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
