@@ -59,14 +59,15 @@ namespace Model
    * one of the values returned by the call to <a>DescribeSeverityLevels</a>. The
    * possible values are: <code>low</code>, <code>normal</code>, <code>high</code>,
    * <code>urgent</code>, and <code>critical</code>.</p> </li> <li> <p>
-   * <b>status.</b> The status of the case in the AWS Support Center. The possible
-   * values are: <code>resolved</code>, <code>pending-customer-action</code>,
-   * <code>opened</code>, <code>unassigned</code>, and
-   * <code>work-in-progress</code>.</p> </li> <li> <p> <b>subject.</b> The subject
-   * line of the case.</p> </li> <li> <p> <b>submittedBy.</b> The email address of
-   * the account that submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The
-   * time the case was created, in ISO-8601 format.</p> </li> </ul><p><h3>See
-   * Also:</h3>   <a
+   * <b>status.</b> The status of the case in the AWS Support Center. Valid
+   * values:</p> <ul> <li> <p> <code>opened</code> </p> </li> <li> <p>
+   * <code>pending-customer-action</code> </p> </li> <li> <p> <code>reopened</code>
+   * </p> </li> <li> <p> <code>resolved</code> </p> </li> <li> <p>
+   * <code>unassigned</code> </p> </li> <li> <p> <code>work-in-progress</code> </p>
+   * </li> </ul> </li> <li> <p> <b>subject.</b> The subject line of the case.</p>
+   * </li> <li> <p> <b>submittedBy.</b> The email address of the account that
+   * submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the case was
+   * created, in ISO-8601 format.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails">AWS
    * API Reference</a></p>
    */
@@ -227,58 +228,74 @@ namespace Model
 
 
     /**
-     * <p>The status of the case. Valid values: <code>resolved</code> |
-     * <code>pending-customer-action</code> | <code>opened</code> |
-     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
+     * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the case. Valid values: <code>resolved</code> |
-     * <code>pending-customer-action</code> | <code>opened</code> |
-     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
+     * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the case. Valid values: <code>resolved</code> |
-     * <code>pending-customer-action</code> | <code>opened</code> |
-     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
+     * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the case. Valid values: <code>resolved</code> |
-     * <code>pending-customer-action</code> | <code>opened</code> |
-     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
+     * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the case. Valid values: <code>resolved</code> |
-     * <code>pending-customer-action</code> | <code>opened</code> |
-     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
+     * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the case. Valid values: <code>resolved</code> |
-     * <code>pending-customer-action</code> | <code>opened</code> |
-     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
+     * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
      */
     inline CaseDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the case. Valid values: <code>resolved</code> |
-     * <code>pending-customer-action</code> | <code>opened</code> |
-     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
+     * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
      */
     inline CaseDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the case. Valid values: <code>resolved</code> |
-     * <code>pending-customer-action</code> | <code>opened</code> |
-     * <code>unassigned</code> | <code>work-in-progress</code>.</p>
+     * <p>The status of the case.</p> <p>Valid values:</p> <ul> <li> <p>
+     * <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code>
+     * </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p>
+     * <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li>
+     * <li> <p> <code>work-in-progress</code> </p> </li> </ul>
      */
     inline CaseDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
 

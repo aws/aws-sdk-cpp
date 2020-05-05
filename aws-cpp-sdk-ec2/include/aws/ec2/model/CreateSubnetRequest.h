@@ -54,7 +54,9 @@ namespace Model
      * <code>us-west-2-lax-1a</code>. For information about the Regions that support
      * Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
+     * create a subnet in an Outpost, set this value to the Availability Zone for the
+     * Outpost and specify the Outpost ARN.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
@@ -66,7 +68,9 @@ namespace Model
      * <code>us-west-2-lax-1a</code>. For information about the Regions that support
      * Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
+     * create a subnet in an Outpost, set this value to the Availability Zone for the
+     * Outpost and specify the Outpost ARN.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
@@ -78,7 +82,9 @@ namespace Model
      * <code>us-west-2-lax-1a</code>. For information about the Regions that support
      * Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
+     * create a subnet in an Outpost, set this value to the Availability Zone for the
+     * Outpost and specify the Outpost ARN.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
@@ -90,7 +96,9 @@ namespace Model
      * <code>us-west-2-lax-1a</code>. For information about the Regions that support
      * Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
+     * create a subnet in an Outpost, set this value to the Availability Zone for the
+     * Outpost and specify the Outpost ARN.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
@@ -102,7 +110,9 @@ namespace Model
      * <code>us-west-2-lax-1a</code>. For information about the Regions that support
      * Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
+     * create a subnet in an Outpost, set this value to the Availability Zone for the
+     * Outpost and specify the Outpost ARN.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
@@ -114,7 +124,9 @@ namespace Model
      * <code>us-west-2-lax-1a</code>. For information about the Regions that support
      * Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
+     * create a subnet in an Outpost, set this value to the Availability Zone for the
+     * Outpost and specify the Outpost ARN.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
@@ -126,7 +138,9 @@ namespace Model
      * <code>us-west-2-lax-1a</code>. For information about the Regions that support
      * Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
+     * create a subnet in an Outpost, set this value to the Availability Zone for the
+     * Outpost and specify the Outpost ARN.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
@@ -138,7 +152,9 @@ namespace Model
      * <code>us-west-2-lax-1a</code>. For information about the Regions that support
      * Local Zones, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
-     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>To
+     * create a subnet in an Outpost, set this value to the Availability Zone for the
+     * Outpost and specify the Outpost ARN.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

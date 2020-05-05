@@ -35,7 +35,8 @@ PutParameterRequest::PutParameterRequest() :
     m_tagsHasBeenSet(false),
     m_tier(ParameterTier::NOT_SET),
     m_tierHasBeenSet(false),
-    m_policiesHasBeenSet(false)
+    m_policiesHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,12 @@ Aws::String PutParameterRequest::SerializePayload() const
   if(m_policiesHasBeenSet)
   {
    payload.WithString("Policies", m_policies);
+
+  }
+
+  if(m_dataTypeHasBeenSet)
+  {
+   payload.WithString("DataType", m_dataType);
 
   }
 

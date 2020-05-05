@@ -1205,6 +1205,119 @@ namespace Model
      */
     inline PutParameterRequest& WithPolicies(const char* value) { SetPolicies(value); return *this;}
 
+
+    /**
+     * <p>The data type for a String parameter. Supported data types include plain text
+     * and Amazon Machine Image IDs.</p> <p> <b>The following data type values are
+     * supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li> <li> <p>
+     * <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a String
+     * parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
+     * parameter value you provide against that data type. The required format is
+     * <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type for a String parameter. Supported data types include plain text
+     * and Amazon Machine Image IDs.</p> <p> <b>The following data type values are
+     * supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li> <li> <p>
+     * <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a String
+     * parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
+     * parameter value you provide against that data type. The required format is
+     * <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type for a String parameter. Supported data types include plain text
+     * and Amazon Machine Image IDs.</p> <p> <b>The following data type values are
+     * supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li> <li> <p>
+     * <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a String
+     * parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
+     * parameter value you provide against that data type. The required format is
+     * <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /**
+     * <p>The data type for a String parameter. Supported data types include plain text
+     * and Amazon Machine Image IDs.</p> <p> <b>The following data type values are
+     * supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li> <li> <p>
+     * <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a String
+     * parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
+     * parameter value you provide against that data type. The required format is
+     * <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
+
+    /**
+     * <p>The data type for a String parameter. Supported data types include plain text
+     * and Amazon Machine Image IDs.</p> <p> <b>The following data type values are
+     * supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li> <li> <p>
+     * <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a String
+     * parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
+     * parameter value you provide against that data type. The required format is
+     * <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
+
+    /**
+     * <p>The data type for a String parameter. Supported data types include plain text
+     * and Amazon Machine Image IDs.</p> <p> <b>The following data type values are
+     * supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li> <li> <p>
+     * <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a String
+     * parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
+     * parameter value you provide against that data type. The required format is
+     * <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline PutParameterRequest& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /**
+     * <p>The data type for a String parameter. Supported data types include plain text
+     * and Amazon Machine Image IDs.</p> <p> <b>The following data type values are
+     * supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li> <li> <p>
+     * <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a String
+     * parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
+     * parameter value you provide against that data type. The required format is
+     * <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline PutParameterRequest& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type for a String parameter. Supported data types include plain text
+     * and Amazon Machine Image IDs.</p> <p> <b>The following data type values are
+     * supported.</b> </p> <ul> <li> <p> <code>text</code> </p> </li> <li> <p>
+     * <code>aws:ec2:image</code> </p> </li> </ul> <p>When you create a String
+     * parameter and specify <code>aws:ec2:image</code>, Systems Manager validates the
+     * parameter value you provide against that data type. The required format is
+     * <code>ami-12345abcdeEXAMPLE</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
+     */
+    inline PutParameterRequest& WithDataType(const char* value) { SetDataType(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1236,6 +1349,9 @@ namespace Model
 
     Aws::String m_policies;
     bool m_policiesHasBeenSet;
+
+    Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet;
   };
 
 } // namespace Model

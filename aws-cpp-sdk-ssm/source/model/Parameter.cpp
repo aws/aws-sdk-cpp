@@ -38,7 +38,8 @@ Parameter::Parameter() :
     m_selectorHasBeenSet(false),
     m_sourceResultHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Parameter::Parameter(JsonView jsonValue) :
     m_selectorHasBeenSet(false),
     m_sourceResultHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
-    m_aRNHasBeenSet(false)
+    m_aRNHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +117,13 @@ Parameter& Parameter::operator =(JsonView jsonValue)
     m_aRNHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataType"))
+  {
+    m_dataType = jsonValue.GetString("DataType");
+
+    m_dataTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -165,6 +174,12 @@ JsonValue Parameter::Jsonize() const
   if(m_aRNHasBeenSet)
   {
    payload.WithString("ARN", m_aRN);
+
+  }
+
+  if(m_dataTypeHasBeenSet)
+  {
+   payload.WithString("DataType", m_dataType);
 
   }
 

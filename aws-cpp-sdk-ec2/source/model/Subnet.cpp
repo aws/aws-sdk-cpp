@@ -40,6 +40,9 @@ Subnet::Subnet() :
     m_defaultForAzHasBeenSet(false),
     m_mapPublicIpOnLaunch(false),
     m_mapPublicIpOnLaunchHasBeenSet(false),
+    m_mapCustomerOwnedIpOnLaunch(false),
+    m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false),
     m_state(SubnetState::NOT_SET),
     m_stateHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -64,6 +67,9 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_defaultForAzHasBeenSet(false),
     m_mapPublicIpOnLaunch(false),
     m_mapPublicIpOnLaunchHasBeenSet(false),
+    m_mapCustomerOwnedIpOnLaunch(false),
+    m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false),
     m_state(SubnetState::NOT_SET),
     m_stateHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
@@ -120,6 +126,18 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_mapPublicIpOnLaunch = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mapPublicIpOnLaunchNode.GetText()).c_str()).c_str());
       m_mapPublicIpOnLaunchHasBeenSet = true;
+    }
+    XmlNode mapCustomerOwnedIpOnLaunchNode = resultNode.FirstChild("mapCustomerOwnedIpOnLaunch");
+    if(!mapCustomerOwnedIpOnLaunchNode.IsNull())
+    {
+      m_mapCustomerOwnedIpOnLaunch = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mapCustomerOwnedIpOnLaunchNode.GetText()).c_str()).c_str());
+      m_mapCustomerOwnedIpOnLaunchHasBeenSet = true;
+    }
+    XmlNode customerOwnedIpv4PoolNode = resultNode.FirstChild("customerOwnedIpv4Pool");
+    if(!customerOwnedIpv4PoolNode.IsNull())
+    {
+      m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
+      m_customerOwnedIpv4PoolHasBeenSet = true;
     }
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
@@ -224,6 +242,16 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
   }
 
+  if(m_mapCustomerOwnedIpOnLaunchHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MapCustomerOwnedIpOnLaunch=" << std::boolalpha << m_mapCustomerOwnedIpOnLaunch << "&";
+  }
+
+  if(m_customerOwnedIpv4PoolHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
+  }
+
   if(m_stateHasBeenSet)
   {
       oStream << location << index << locationValue << ".State=" << SubnetStateMapper::GetNameForSubnetState(m_state) << "&";
@@ -308,6 +336,14 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_mapPublicIpOnLaunchHasBeenSet)
   {
       oStream << location << ".MapPublicIpOnLaunch=" << std::boolalpha << m_mapPublicIpOnLaunch << "&";
+  }
+  if(m_mapCustomerOwnedIpOnLaunchHasBeenSet)
+  {
+      oStream << location << ".MapCustomerOwnedIpOnLaunch=" << std::boolalpha << m_mapCustomerOwnedIpOnLaunch << "&";
+  }
+  if(m_customerOwnedIpv4PoolHasBeenSet)
+  {
+      oStream << location << ".CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
   if(m_stateHasBeenSet)
   {

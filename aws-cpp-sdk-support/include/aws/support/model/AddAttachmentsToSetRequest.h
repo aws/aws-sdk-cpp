@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddAttachmentsToSetRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_SUPPORT_API AddAttachmentsToSetRequest : public SupportRequest
   {
@@ -115,50 +112,90 @@ namespace Model
 
 
     /**
-     * <p>One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.</p>
+     * <p>One or more attachments to add to the set. You can add up to three
+     * attachments per set. The size limit is 5 MB per attachment.</p> <p>In the
+     * <code>Attachment</code> object, use the <code>data</code> parameter to specify
+     * the contents of the attachment file. In the previous request syntax, the value
+     * for <code>data</code> appear as <code>blob</code>, which is represented as a
+     * base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
 
     /**
-     * <p>One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.</p>
+     * <p>One or more attachments to add to the set. You can add up to three
+     * attachments per set. The size limit is 5 MB per attachment.</p> <p>In the
+     * <code>Attachment</code> object, use the <code>data</code> parameter to specify
+     * the contents of the attachment file. In the previous request syntax, the value
+     * for <code>data</code> appear as <code>blob</code>, which is represented as a
+     * base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
 
     /**
-     * <p>One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.</p>
+     * <p>One or more attachments to add to the set. You can add up to three
+     * attachments per set. The size limit is 5 MB per attachment.</p> <p>In the
+     * <code>Attachment</code> object, use the <code>data</code> parameter to specify
+     * the contents of the attachment file. In the previous request syntax, the value
+     * for <code>data</code> appear as <code>blob</code>, which is represented as a
+     * base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
-     * <p>One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.</p>
+     * <p>One or more attachments to add to the set. You can add up to three
+     * attachments per set. The size limit is 5 MB per attachment.</p> <p>In the
+     * <code>Attachment</code> object, use the <code>data</code> parameter to specify
+     * the contents of the attachment file. In the previous request syntax, the value
+     * for <code>data</code> appear as <code>blob</code>, which is represented as a
+     * base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
-     * <p>One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.</p>
+     * <p>One or more attachments to add to the set. You can add up to three
+     * attachments per set. The size limit is 5 MB per attachment.</p> <p>In the
+     * <code>Attachment</code> object, use the <code>data</code> parameter to specify
+     * the contents of the attachment file. In the previous request syntax, the value
+     * for <code>data</code> appear as <code>blob</code>, which is represented as a
+     * base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline AddAttachmentsToSetRequest& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
 
     /**
-     * <p>One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.</p>
+     * <p>One or more attachments to add to the set. You can add up to three
+     * attachments per set. The size limit is 5 MB per attachment.</p> <p>In the
+     * <code>Attachment</code> object, use the <code>data</code> parameter to specify
+     * the contents of the attachment file. In the previous request syntax, the value
+     * for <code>data</code> appear as <code>blob</code>, which is represented as a
+     * base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline AddAttachmentsToSetRequest& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
-     * <p>One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.</p>
+     * <p>One or more attachments to add to the set. You can add up to three
+     * attachments per set. The size limit is 5 MB per attachment.</p> <p>In the
+     * <code>Attachment</code> object, use the <code>data</code> parameter to specify
+     * the contents of the attachment file. In the previous request syntax, the value
+     * for <code>data</code> appear as <code>blob</code>, which is represented as a
+     * base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline AddAttachmentsToSetRequest& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
 
     /**
-     * <p>One or more attachments to add to the set. The limit is 3 attachments per
-     * set, and the size limit is 5 MB per attachment.</p>
+     * <p>One or more attachments to add to the set. You can add up to three
+     * attachments per set. The size limit is 5 MB per attachment.</p> <p>In the
+     * <code>Attachment</code> object, use the <code>data</code> parameter to specify
+     * the contents of the attachment file. In the previous request syntax, the value
+     * for <code>data</code> appear as <code>blob</code>, which is represented as a
+     * base64-encoded string. The value for <code>fileName</code> is the name of the
+     * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline AddAttachmentsToSetRequest& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
 

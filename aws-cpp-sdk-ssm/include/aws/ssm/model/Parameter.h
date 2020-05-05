@@ -372,6 +372,55 @@ namespace Model
      */
     inline Parameter& WithARN(const char* value) { SetARN(value); return *this;}
 
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline Parameter& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline Parameter& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline Parameter& WithDataType(const char* value) { SetDataType(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -397,6 +446,9 @@ namespace Model
 
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
+    Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet;
   };
 
 } // namespace Model

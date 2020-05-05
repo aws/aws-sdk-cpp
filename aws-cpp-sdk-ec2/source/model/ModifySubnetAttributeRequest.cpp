@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 ModifySubnetAttributeRequest::ModifySubnetAttributeRequest() : 
     m_assignIpv6AddressOnCreationHasBeenSet(false),
     m_mapPublicIpOnLaunchHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_mapCustomerOwnedIpOnLaunchHasBeenSet(false),
+    m_customerOwnedIpv4PoolHasBeenSet(false)
 {
 }
 
@@ -44,6 +46,16 @@ Aws::String ModifySubnetAttributeRequest::SerializePayload() const
   if(m_subnetIdHasBeenSet)
   {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_mapCustomerOwnedIpOnLaunchHasBeenSet)
+  {
+    m_mapCustomerOwnedIpOnLaunch.OutputToStream(ss, "MapCustomerOwnedIpOnLaunch");
+  }
+
+  if(m_customerOwnedIpv4PoolHasBeenSet)
+  {
+    ss << "CustomerOwnedIpv4Pool=" << StringUtils::URLEncode(m_customerOwnedIpv4Pool.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

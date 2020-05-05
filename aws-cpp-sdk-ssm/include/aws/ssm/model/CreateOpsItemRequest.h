@@ -488,58 +488,58 @@ namespace Model
 
 
     /**
-     * <p>The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note> <p>The
-     * source name can't contain the following strings: aws, amazon, and amzn. </p>
-     * </note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note> <p>The
-     * source name can't contain the following strings: aws, amazon, and amzn. </p>
-     * </note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note> <p>The
-     * source name can't contain the following strings: aws, amazon, and amzn. </p>
-     * </note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note> <p>The
-     * source name can't contain the following strings: aws, amazon, and amzn. </p>
-     * </note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note> <p>The
-     * source name can't contain the following strings: aws, amazon, and amzn. </p>
-     * </note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note> <p>The
-     * source name can't contain the following strings: aws, amazon, and amzn. </p>
-     * </note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline CreateOpsItemRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note> <p>The
-     * source name can't contain the following strings: aws, amazon, and amzn. </p>
-     * </note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline CreateOpsItemRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>The origin of the OpsItem, such as EC2 or Systems Manager.</p> <note> <p>The
-     * source name can't contain the following strings: aws, amazon, and amzn. </p>
-     * </note>
+     * <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p> <note>
+     * <p>The source name can't contain the following strings: aws, amazon, and amzn.
+     * </p> </note>
      */
     inline CreateOpsItemRequest& WithSource(const char* value) { SetSource(value); return *this;}
 

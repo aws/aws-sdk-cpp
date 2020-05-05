@@ -43,7 +43,8 @@ ParameterHistory::ParameterHistory() :
     m_labelsHasBeenSet(false),
     m_tier(ParameterTier::NOT_SET),
     m_tierHasBeenSet(false),
-    m_policiesHasBeenSet(false)
+    m_policiesHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ ParameterHistory::ParameterHistory(JsonView jsonValue) :
     m_labelsHasBeenSet(false),
     m_tier(ParameterTier::NOT_SET),
     m_tierHasBeenSet(false),
-    m_policiesHasBeenSet(false)
+    m_policiesHasBeenSet(false),
+    m_dataTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +161,13 @@ ParameterHistory& ParameterHistory::operator =(JsonView jsonValue)
     m_policiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataType"))
+  {
+    m_dataType = jsonValue.GetString("DataType");
+
+    m_dataTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -242,6 +251,12 @@ JsonValue ParameterHistory::Jsonize() const
      policiesJsonList[policiesIndex].AsObject(m_policies[policiesIndex].Jsonize());
    }
    payload.WithArray("Policies", std::move(policiesJsonList));
+
+  }
+
+  if(m_dataTypeHasBeenSet)
+  {
+   payload.WithString("DataType", m_dataType);
 
   }
 

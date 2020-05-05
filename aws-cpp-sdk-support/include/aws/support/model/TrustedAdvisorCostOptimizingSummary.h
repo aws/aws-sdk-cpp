@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>The estimated cost savings that might be realized if the recommended actions
-   * are taken.</p><p><h3>See Also:</h3>   <a
+   * <p>The estimated cost savings that might be realized if the recommended
+   * operations are taken.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/TrustedAdvisorCostOptimizingSummary">AWS
    * API Reference</a></p>
    */
@@ -48,50 +48,50 @@ namespace Model
 
     /**
      * <p>The estimated monthly savings that might be realized if the recommended
-     * actions are taken.</p>
+     * operations are taken.</p>
      */
     inline double GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
 
     /**
      * <p>The estimated monthly savings that might be realized if the recommended
-     * actions are taken.</p>
+     * operations are taken.</p>
      */
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
 
     /**
      * <p>The estimated monthly savings that might be realized if the recommended
-     * actions are taken.</p>
+     * operations are taken.</p>
      */
     inline void SetEstimatedMonthlySavings(double value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
 
     /**
      * <p>The estimated monthly savings that might be realized if the recommended
-     * actions are taken.</p>
+     * operations are taken.</p>
      */
     inline TrustedAdvisorCostOptimizingSummary& WithEstimatedMonthlySavings(double value) { SetEstimatedMonthlySavings(value); return *this;}
 
 
     /**
      * <p>The estimated percentage of savings that might be realized if the recommended
-     * actions are taken.</p>
+     * operations are taken.</p>
      */
     inline double GetEstimatedPercentMonthlySavings() const{ return m_estimatedPercentMonthlySavings; }
 
     /**
      * <p>The estimated percentage of savings that might be realized if the recommended
-     * actions are taken.</p>
+     * operations are taken.</p>
      */
     inline bool EstimatedPercentMonthlySavingsHasBeenSet() const { return m_estimatedPercentMonthlySavingsHasBeenSet; }
 
     /**
      * <p>The estimated percentage of savings that might be realized if the recommended
-     * actions are taken.</p>
+     * operations are taken.</p>
      */
     inline void SetEstimatedPercentMonthlySavings(double value) { m_estimatedPercentMonthlySavingsHasBeenSet = true; m_estimatedPercentMonthlySavings = value; }
 
     /**
      * <p>The estimated percentage of savings that might be realized if the recommended
-     * actions are taken.</p>
+     * operations are taken.</p>
      */
     inline TrustedAdvisorCostOptimizingSummary& WithEstimatedPercentMonthlySavings(double value) { SetEstimatedPercentMonthlySavings(value); return *this;}
 

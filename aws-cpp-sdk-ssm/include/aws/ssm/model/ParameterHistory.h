@@ -530,6 +530,55 @@ namespace Model
      */
     inline ParameterHistory& AddPolicies(ParameterInlinePolicy&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline ParameterHistory& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline ParameterHistory& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type of the parameter, such as <code>text</code> or
+     * <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+     */
+    inline ParameterHistory& WithDataType(const char* value) { SetDataType(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -567,6 +616,9 @@ namespace Model
 
     Aws::Vector<ParameterInlinePolicy> m_policies;
     bool m_policiesHasBeenSet;
+
+    Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet;
   };
 
 } // namespace Model
