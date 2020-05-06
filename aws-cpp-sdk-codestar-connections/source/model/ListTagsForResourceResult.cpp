@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/codestar-connections/model/CreateConnectionResult.h>
+#include <aws/codestar-connections/model/ListTagsForResourceResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,24 +26,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConnectionResult::CreateConnectionResult()
+ListTagsForResourceResult::ListTagsForResourceResult()
 {
 }
 
-CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ConnectionArn"))
-  {
-    m_connectionArn = jsonValue.GetString("ConnectionArn");
-
-  }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");

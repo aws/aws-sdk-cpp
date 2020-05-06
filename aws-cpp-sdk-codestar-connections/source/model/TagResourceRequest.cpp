@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/codestar-connections/model/CreateConnectionRequest.h>
+#include <aws/codestar-connections/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,26 +22,19 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConnectionRequest::CreateConnectionRequest() : 
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateConnectionRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_providerTypeHasBeenSet)
+  if(m_resourceArnHasBeenSet)
   {
-   payload.WithString("ProviderType", ProviderTypeMapper::GetNameForProviderType(m_providerType));
-  }
-
-  if(m_connectionNameHasBeenSet)
-  {
-   payload.WithString("ConnectionName", m_connectionName);
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 
@@ -59,10 +52,10 @@ Aws::String CreateConnectionRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateConnectionRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.CreateConnection"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "com.amazonaws.codestar.connections.CodeStar_connections_20191201.TagResource"));
   return headers;
 
 }

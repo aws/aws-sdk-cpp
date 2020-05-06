@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/codestar-connections/model/CreateConnectionResult.h>
+#include <aws/codestar-connections/model/UntagResourceResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -26,33 +26,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConnectionResult::CreateConnectionResult()
+UntagResourceResult::UntagResourceResult()
 {
 }
 
-CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UntagResourceResult::UntagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+UntagResourceResult& UntagResourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ConnectionArn"))
-  {
-    m_connectionArn = jsonValue.GetString("ConnectionArn");
-
-  }
-
-  if(jsonValue.ValueExists("Tags"))
-  {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
-      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
-    }
-  }
-
+  AWS_UNREFERENCED_PARAM(result);
 
 
   return *this;

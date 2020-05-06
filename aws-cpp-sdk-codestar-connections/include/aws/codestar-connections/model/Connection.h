@@ -36,8 +36,11 @@ namespace Model
 {
 
   /**
-   * <p>The configuration that allows a service such as CodePipeline to connect to a
-   * third-party code repository.</p><p><h3>See Also:</h3>   <a
+   * <p>The AWS::CodeStarConnections::Connection resource can be used to connect
+   * external source providers with services like AWS CodePipeline.</p> <p>Note: A
+   * connection created through CloudFormation is in `PENDING` status by default. You
+   * can make its status `AVAILABLE` by editing the connection in the CodePipeline
+   * console.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/Connection">AWS
    * API Reference</a></p>
    */
@@ -194,58 +197,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the external provider where your third-party code repository is
-     * configured. For Bitbucket, this is the account ID of the owner of the Bitbucket
-     * repository.</p>
+     * <p>The identifier of the external provider where your third-party code
+     * repository is configured. For Bitbucket, this is the account ID of the owner of
+     * the Bitbucket repository.</p>
      */
     inline const Aws::String& GetOwnerAccountId() const{ return m_ownerAccountId; }
 
     /**
-     * <p>The name of the external provider where your third-party code repository is
-     * configured. For Bitbucket, this is the account ID of the owner of the Bitbucket
-     * repository.</p>
+     * <p>The identifier of the external provider where your third-party code
+     * repository is configured. For Bitbucket, this is the account ID of the owner of
+     * the Bitbucket repository.</p>
      */
     inline bool OwnerAccountIdHasBeenSet() const { return m_ownerAccountIdHasBeenSet; }
 
     /**
-     * <p>The name of the external provider where your third-party code repository is
-     * configured. For Bitbucket, this is the account ID of the owner of the Bitbucket
-     * repository.</p>
+     * <p>The identifier of the external provider where your third-party code
+     * repository is configured. For Bitbucket, this is the account ID of the owner of
+     * the Bitbucket repository.</p>
      */
     inline void SetOwnerAccountId(const Aws::String& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = value; }
 
     /**
-     * <p>The name of the external provider where your third-party code repository is
-     * configured. For Bitbucket, this is the account ID of the owner of the Bitbucket
-     * repository.</p>
+     * <p>The identifier of the external provider where your third-party code
+     * repository is configured. For Bitbucket, this is the account ID of the owner of
+     * the Bitbucket repository.</p>
      */
     inline void SetOwnerAccountId(Aws::String&& value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId = std::move(value); }
 
     /**
-     * <p>The name of the external provider where your third-party code repository is
-     * configured. For Bitbucket, this is the account ID of the owner of the Bitbucket
-     * repository.</p>
+     * <p>The identifier of the external provider where your third-party code
+     * repository is configured. For Bitbucket, this is the account ID of the owner of
+     * the Bitbucket repository.</p>
      */
     inline void SetOwnerAccountId(const char* value) { m_ownerAccountIdHasBeenSet = true; m_ownerAccountId.assign(value); }
 
     /**
-     * <p>The name of the external provider where your third-party code repository is
-     * configured. For Bitbucket, this is the account ID of the owner of the Bitbucket
-     * repository.</p>
+     * <p>The identifier of the external provider where your third-party code
+     * repository is configured. For Bitbucket, this is the account ID of the owner of
+     * the Bitbucket repository.</p>
      */
     inline Connection& WithOwnerAccountId(const Aws::String& value) { SetOwnerAccountId(value); return *this;}
 
     /**
-     * <p>The name of the external provider where your third-party code repository is
-     * configured. For Bitbucket, this is the account ID of the owner of the Bitbucket
-     * repository.</p>
+     * <p>The identifier of the external provider where your third-party code
+     * repository is configured. For Bitbucket, this is the account ID of the owner of
+     * the Bitbucket repository.</p>
      */
     inline Connection& WithOwnerAccountId(Aws::String&& value) { SetOwnerAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the external provider where your third-party code repository is
-     * configured. For Bitbucket, this is the account ID of the owner of the Bitbucket
-     * repository.</p>
+     * <p>The identifier of the external provider where your third-party code
+     * repository is configured. For Bitbucket, this is the account ID of the owner of
+     * the Bitbucket repository.</p>
      */
     inline Connection& WithOwnerAccountId(const char* value) { SetOwnerAccountId(value); return *this;}
 

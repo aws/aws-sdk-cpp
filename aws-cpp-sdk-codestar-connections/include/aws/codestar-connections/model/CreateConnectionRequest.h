@@ -18,6 +18,8 @@
 #include <aws/codestar-connections/CodeStarconnectionsRequest.h>
 #include <aws/codestar-connections/model/ProviderType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codestar-connections/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -130,6 +132,47 @@ namespace Model
      */
     inline CreateConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
+    /**
+     * <p>The key-value pair to use when tagging the resource.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The key-value pair to use when tagging the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The key-value pair to use when tagging the resource.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The key-value pair to use when tagging the resource.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The key-value pair to use when tagging the resource.</p>
+     */
+    inline CreateConnectionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The key-value pair to use when tagging the resource.</p>
+     */
+    inline CreateConnectionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The key-value pair to use when tagging the resource.</p>
+     */
+    inline CreateConnectionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The key-value pair to use when tagging the resource.</p>
+     */
+    inline CreateConnectionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     ProviderType m_providerType;
@@ -137,6 +180,9 @@ namespace Model
 
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

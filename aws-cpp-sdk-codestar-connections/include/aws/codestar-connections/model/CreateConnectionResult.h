@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/codestar-connections/CodeStarconnections_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codestar-connections/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -98,9 +100,47 @@ namespace Model
      */
     inline CreateConnectionResult& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
 
+
+    /**
+     * <p>Specifies the tags applied to the resource.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Specifies the tags applied to the resource.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>Specifies the tags applied to the resource.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Specifies the tags applied to the resource.</p>
+     */
+    inline CreateConnectionResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the resource.</p>
+     */
+    inline CreateConnectionResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the resource.</p>
+     */
+    inline CreateConnectionResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the tags applied to the resource.</p>
+     */
+    inline CreateConnectionResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_connectionArn;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

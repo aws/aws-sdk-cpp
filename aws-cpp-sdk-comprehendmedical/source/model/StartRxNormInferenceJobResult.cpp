@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/codestar-connections/model/CreateConnectionResult.h>
+#include <aws/comprehendmedical/model/StartRxNormInferenceJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -21,36 +21,27 @@
 
 #include <utility>
 
-using namespace Aws::CodeStarconnections::Model;
+using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConnectionResult::CreateConnectionResult()
+StartRxNormInferenceJobResult::StartRxNormInferenceJobResult()
 {
 }
 
-CreateConnectionResult::CreateConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+StartRxNormInferenceJobResult::StartRxNormInferenceJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-CreateConnectionResult& CreateConnectionResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+StartRxNormInferenceJobResult& StartRxNormInferenceJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("ConnectionArn"))
+  if(jsonValue.ValueExists("JobId"))
   {
-    m_connectionArn = jsonValue.GetString("ConnectionArn");
+    m_jobId = jsonValue.GetString("JobId");
 
-  }
-
-  if(jsonValue.ValueExists("Tags"))
-  {
-    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
-    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-    {
-      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
-    }
   }
 
 
