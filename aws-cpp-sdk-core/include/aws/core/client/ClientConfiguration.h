@@ -49,8 +49,12 @@ namespace Aws
         */
         struct AWS_CORE_API ClientConfigurationPerRequest
         {
-            ClientConfigurationPerRequest() : proxyPort(0) {}
+            ClientConfigurationPerRequest() : proxyScheme(Aws::Http::Scheme::HTTPS), proxyPort(0) {}
 
+            /**
+            * If you have users going through a proxy, set the proxy scheme here. Default HTTP
+            */
+            Aws::Http::Scheme proxyScheme;
             /**
              * If you have users going through a proxy, set the host here.
              */
