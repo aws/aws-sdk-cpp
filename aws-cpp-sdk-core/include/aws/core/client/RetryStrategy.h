@@ -17,6 +17,7 @@
 
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
+#include <memory>
 
 namespace Aws
 {
