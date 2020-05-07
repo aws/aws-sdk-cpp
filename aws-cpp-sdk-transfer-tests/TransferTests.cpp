@@ -202,6 +202,7 @@ protected:
 
     static bool AreFilesSame(const Aws::String& fileName, const Aws::String& fileName2)
     {
+
 #ifdef _MSC_VER
         Aws::FStream inFile1(Aws::Utils::StringUtils::ToWString(fileName.c_str()).c_str(), std::ios::binary | std::ios::in);
         Aws::FStream inFile2(Aws::Utils::StringUtils::ToWString(fileName2.c_str()).c_str(), std::ios::binary | std::ios::in);
@@ -209,16 +210,21 @@ protected:
         Aws::FStream inFile1(fileName.c_str(), std::ios::binary | std::ios::in);
         Aws::FStream inFile2(fileName2.c_str(), std::ios::binary | std::ios::in);
 #endif
-
+        bool rval;
         if (!inFile1.good() || !inFile2.good())
         {
-            return false;
+            rval = false;
+        } 
+        else 
+        {
+            rval = HashingUtils::CalculateSHA256(inFile1) == HashingUtils::CalculateSHA256(inFile2);
         }
-
-        return HashingUtils::CalculateSHA256(inFile1) == HashingUtils::CalculateSHA256(inFile2);
+        inFile1.close();
+        inFile2.close();
+        return rval;
     }
 
-        static bool SourceFileSameAsConcatenatedPartFiles(const Aws::String& sourceFileName, const int numParts)
+    static bool SourceFileSameAsConcatenatedPartFiles(const Aws::String& sourceFileName, const int numParts)
     {
 #ifdef _MSC_VER
         Aws::FStream sourceFile(Aws::Utils::StringUtils::ToWString(sourceFileName.c_str()).c_str(), std::ios::binary | std::ios::in);
@@ -226,7 +232,11 @@ protected:
         Aws::FStream sourceFile(sourceFileName.c_str(), std::ios::binary | std::ios::in);
 #endif
 
-        if (!sourceFile.good()) return false;
+        if (!sourceFile.good()) 
+        {
+            sourceFile.close();
+            return false;
+        }
 
 #ifdef _MSC_VER
         Aws::FStream concatenatedFile(Aws::Utils::StringUtils::ToWString(MakeDownloadFileName(sourceFileName).c_str()).c_str(), std::ios::binary | std::ios::out);
@@ -234,14 +244,19 @@ protected:
         Aws::FStream concatenatedFile(MakeDownloadFileName(sourceFileName).c_str(), std::ios::binary | std::ios::out);
 #endif
 
-        for (int i=0; i<numParts; i++) {
+        for (int i=0; i<numParts; i++) 
+        {
             auto inFileName = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i).c_str());
 #ifdef _MSC_VER
             Aws::FStream inFile(Aws::Utils::StringUtils::ToWString(inFileName.c_str()).c_str(), std::ios::binary | std::ios::in);
 #else
             Aws::FStream inFile(inFileName.c_str(), std::ios::binary | std::ios::in);
 #endif
-            if (!inFile.good()) return false;
+            if (!inFile.good()) 
+            {
+                inFile.close();
+                return false;
+            }
             
             concatenatedFile << inFile.rdbuf();
         }
@@ -253,7 +268,10 @@ protected:
 #else
         Aws::FStream concatenatedFileRead(MakeDownloadFileName(sourceFileName).c_str(), std::ios::binary | std::ios::in);
 #endif
-        return HashingUtils::CalculateSHA256(sourceFile) == HashingUtils::CalculateSHA256(concatenatedFileRead);
+        bool rval = HashingUtils::CalculateSHA256(sourceFile) == HashingUtils::CalculateSHA256(concatenatedFileRead);
+        sourceFile.close();
+        concatenatedFileRead.close();
+        return rval;
     }
 
     static Aws::String GetTestFilesDirectory()
@@ -375,22 +393,26 @@ protected:
             // download each part to its own file
             int offset = 0;
             
-            for (size_t i = 0; i < part_count; i++) {
+            for (size_t i = 0; i < part_count; i++) 
+            {
 
                 size_t part_size;
-                if (i == part_count - 1) {
+                if (i == part_count - 1) 
+                {
                     part_size = sourceLength - (buffer_size *i);
-                } else {
+                } 
+                else
+                {
                     part_size = buffer_size;
                 }
                 auto downloadPartFileName = MakeDownloadFileName(sourceFileName) + Aws::String(std::to_string(i).c_str());
                 auto create_stream_fn = [=](){
 #ifdef _MSC_VER
-                return Aws::New<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(downloadPartFileName.c_str()).c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+                    return Aws::New<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(downloadPartFileName.c_str()).c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
 #else
-                return Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadPartFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+                    return Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadPartFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
 #endif
-            };
+                };
                 std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, offset, part_size, create_stream_fn);
 
                 ASSERT_EQ(true, downloadPtr->ShouldContinue());

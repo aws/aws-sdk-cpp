@@ -126,14 +126,16 @@ namespace Aws
         {}
 
         
-        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, const uint64_t offset, const uint64_t totalSize,CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath) :
+        TransferHandle::TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, 
+            const uint64_t fileOffset, const uint64_t downloadBytes,
+            CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath) :
             m_isMultipart(false), 
             m_direction(TransferDirection::DOWNLOAD), 
             m_bytesTransferred(0), 
             m_lastPart(false),
-            m_bytesTotalSize(totalSize),
-            m_offset(offset),
-            m_bucket(bucketName), 
+            m_bytesTotalSize(downloadBytes),
+            m_offset(fileOffset),
+            m_bucket(bucketName),
             m_key(keyName), 
             m_fileName(targetFilePath),
             m_versionId(""),

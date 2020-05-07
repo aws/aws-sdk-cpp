@@ -120,14 +120,14 @@ namespace Aws
 
         std::shared_ptr<TransferHandle> TransferManager::DownloadFile(const Aws::String& bucketName, 
                                                                       const Aws::String& keyName, 
-                                                                      uint64_t offset, 
-                                                                      uint64_t numBytes,
+                                                                      uint64_t fileOffset, 
+                                                                      uint64_t downloadBytes,
                                                                       CreateDownloadStreamCallback writeToStreamfn, 
                                                                       const DownloadConfiguration& downloadConfig,
                                                                       const Aws::String& writeToFile,
                                                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context)
         {
-            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, offset, numBytes, writeToStreamfn, writeToFile);
+            auto handle = Aws::MakeShared<TransferHandle>(CLASS_TAG, bucketName, keyName, fileOffset, downloadBytes, writeToStreamfn, writeToFile);
             handle->ApplyDownloadConfiguration(downloadConfig);
             handle->SetContext(context);
 

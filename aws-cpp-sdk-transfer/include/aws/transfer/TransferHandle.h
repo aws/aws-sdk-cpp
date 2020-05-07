@@ -158,7 +158,7 @@ namespace Aws
              * Alternate DOWNLOAD constructor
              */
             TransferHandle(const Aws::String& bucketName, const Aws::String& keyName, 
-                const uint64_t offset, const uint64_t totalBytes, 
+                const uint64_t fileOffset, const uint64_t downloadBytes, 
                 CreateDownloadStreamCallback createDownloadStreamFn, const Aws::String& targetFilePath = "");
 
 
