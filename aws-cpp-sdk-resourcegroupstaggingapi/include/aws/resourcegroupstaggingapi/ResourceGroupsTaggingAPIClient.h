@@ -161,24 +161,26 @@ namespace Model
    * <li> <p>Amazon Inspector</p> </li> <li> <p>AWS IoT Analytics</p> </li> <li>
    * <p>AWS IoT Core</p> </li> <li> <p>AWS IoT Device Defender</p> </li> <li> <p>AWS
    * IoT Device Management</p> </li> <li> <p>AWS IoT Events</p> </li> <li> <p>AWS IoT
-   * Greengrass</p> </li> <li> <p>AWS IoT 1-Click</p> </li> <li> <p>AWS Key
-   * Management Service</p> </li> <li> <p>Amazon Kinesis</p> </li> <li> <p>Amazon
-   * Kinesis Data Analytics</p> </li> <li> <p>Amazon Kinesis Data Firehose</p> </li>
-   * <li> <p>AWS Lambda</p> </li> <li> <p>AWS License Manager</p> </li> <li>
-   * <p>Amazon Machine Learning</p> </li> <li> <p>Amazon MQ</p> </li> <li> <p>Amazon
-   * MSK</p> </li> <li> <p>Amazon Neptune</p> </li> <li> <p>AWS OpsWorks</p> </li>
-   * <li> <p>AWS Organizations</p> </li> <li> <p>Amazon Quantum Ledger Database
-   * (QLDB)</p> </li> <li> <p>Amazon RDS</p> </li> <li> <p>Amazon Redshift</p> </li>
-   * <li> <p>AWS Resource Access Manager</p> </li> <li> <p>AWS Resource Groups</p>
-   * </li> <li> <p>AWS RoboMaker</p> </li> <li> <p>Amazon Route 53</p> </li> <li>
-   * <p>Amazon Route 53 Resolver</p> </li> <li> <p>Amazon S3 (buckets only)</p> </li>
-   * <li> <p>Amazon SageMaker</p> </li> <li> <p>AWS Secrets Manager</p> </li> <li>
-   * <p>AWS Security Hub</p> </li> <li> <p>AWS Service Catalog</p> </li> <li>
+   * Greengrass</p> </li> <li> <p>AWS IoT 1-Click</p> </li> <li> <p>AWS IoT Things
+   * Graph</p> </li> <li> <p>AWS Key Management Service</p> </li> <li> <p>Amazon
+   * Kinesis</p> </li> <li> <p>Amazon Kinesis Data Analytics</p> </li> <li> <p>Amazon
+   * Kinesis Data Firehose</p> </li> <li> <p>AWS Lambda</p> </li> <li> <p>AWS License
+   * Manager</p> </li> <li> <p>Amazon Machine Learning</p> </li> <li> <p>Amazon
+   * MQ</p> </li> <li> <p>Amazon MSK</p> </li> <li> <p>Amazon Neptune</p> </li> <li>
+   * <p>AWS OpsWorks</p> </li> <li> <p>AWS Organizations</p> </li> <li> <p>Amazon
+   * Quantum Ledger Database (QLDB)</p> </li> <li> <p>Amazon RDS</p> </li> <li>
+   * <p>Amazon Redshift</p> </li> <li> <p>AWS Resource Access Manager</p> </li> <li>
+   * <p>AWS Resource Groups</p> </li> <li> <p>AWS RoboMaker</p> </li> <li> <p>Amazon
+   * Route 53</p> </li> <li> <p>Amazon Route 53 Resolver</p> </li> <li> <p>Amazon S3
+   * (buckets only)</p> </li> <li> <p>Amazon SageMaker</p> </li> <li> <p>AWS Secrets
+   * Manager</p> </li> <li> <p>AWS Security Hub</p> </li> <li> <p>AWS Service
+   * Catalog</p> </li> <li> <p>Amazon Simple Email Service (SES)</p> </li> <li>
    * <p>Amazon Simple Notification Service (SNS)</p> </li> <li> <p>Amazon Simple
    * Queue Service (SQS)</p> </li> <li> <p>Amazon Simple Workflow Service</p> </li>
    * <li> <p>AWS Step Functions</p> </li> <li> <p>AWS Storage Gateway</p> </li> <li>
    * <p>AWS Systems Manager</p> </li> <li> <p>AWS Transfer for SFTP</p> </li> <li>
-   * <p>Amazon VPC</p> </li> <li> <p>Amazon WorkSpaces</p> </li> </ul>
+   * <p>AWS WAF Regional</p> </li> <li> <p>Amazon VPC</p> </li> <li> <p>Amazon
+   * WorkSpaces</p> </li> </ul>
    */
   class AWS_RESOURCEGROUPSTAGGINGAPI_API ResourceGroupsTaggingAPIClient : public Aws::Client::AWSJsonClient
   {

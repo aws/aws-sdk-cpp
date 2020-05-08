@@ -48,32 +48,38 @@ namespace Model
 
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
+     * image created on the instance.</p>
      */
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
+     * image created on the instance.</p>
      */
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
+     * image created on the instance.</p>
      */
     inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
+     * image created on the instance.</p>
      */
     inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
+     * image created on the instance.</p>
      */
     inline KernelGatewayAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The default instance type and the Amazon Resource Name (ARN) of the SageMaker
+     * image created on the instance.</p>
      */
     inline KernelGatewayAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
 

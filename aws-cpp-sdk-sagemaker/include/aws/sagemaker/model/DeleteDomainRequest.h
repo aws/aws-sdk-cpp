@@ -87,43 +87,43 @@ namespace Model
 
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline const RetentionPolicy& GetRetentionPolicy() const{ return m_retentionPolicy; }
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline bool RetentionPolicyHasBeenSet() const { return m_retentionPolicyHasBeenSet; }
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline void SetRetentionPolicy(const RetentionPolicy& value) { m_retentionPolicyHasBeenSet = true; m_retentionPolicy = value; }
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline void SetRetentionPolicy(RetentionPolicy&& value) { m_retentionPolicyHasBeenSet = true; m_retentionPolicy = std::move(value); }
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline DeleteDomainRequest& WithRetentionPolicy(const RetentionPolicy& value) { SetRetentionPolicy(value); return *this;}
 
     /**
-     * <p>The retention policy for this domain, which specifies which resources will be
-     * retained after the Domain is deleted. By default, all resources are retained
+     * <p>The retention policy for this domain, which specifies whether resources will
+     * be retained after the Domain is deleted. By default, all resources are retained
      * (not automatically deleted). </p>
      */
     inline DeleteDomainRequest& WithRetentionPolicy(RetentionPolicy&& value) { SetRetentionPolicy(std::move(value)); return *this;}

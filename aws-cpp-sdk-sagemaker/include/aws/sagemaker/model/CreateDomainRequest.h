@@ -296,42 +296,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
+     * customer master key (CMK) is not supported.</p>
      */
     inline const Aws::String& GetHomeEfsFileSystemKmsKeyId() const{ return m_homeEfsFileSystemKmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
+     * customer master key (CMK) is not supported.</p>
      */
     inline bool HomeEfsFileSystemKmsKeyIdHasBeenSet() const { return m_homeEfsFileSystemKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
+     * customer master key (CMK) is not supported.</p>
      */
     inline void SetHomeEfsFileSystemKmsKeyId(const Aws::String& value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
+     * customer master key (CMK) is not supported.</p>
      */
     inline void SetHomeEfsFileSystemKmsKeyId(Aws::String&& value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
+     * customer master key (CMK) is not supported.</p>
      */
     inline void SetHomeEfsFileSystemKmsKeyId(const char* value) { m_homeEfsFileSystemKmsKeyIdHasBeenSet = true; m_homeEfsFileSystemKmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
+     * customer master key (CMK) is not supported.</p>
      */
     inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(const Aws::String& value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
+     * customer master key (CMK) is not supported.</p>
      */
     inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(Aws::String&& value) { SetHomeEfsFileSystemKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service encryption key ID.</p>
+     * <p>The AWS Key Management Service (KMS) encryption key ID. Encryption with a
+     * customer master key (CMK) is not supported.</p>
      */
     inline CreateDomainRequest& WithHomeEfsFileSystemKmsKeyId(const char* value) { SetHomeEfsFileSystemKmsKeyId(value); return *this;}
 

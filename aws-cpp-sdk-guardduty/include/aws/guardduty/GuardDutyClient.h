@@ -956,16 +956,16 @@ namespace Model
         virtual void DescribePublishingDestinationAsync(const Model::DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables GuardDuty administrator permissions for an AWS account within the
-         * Organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an AWS account within the Organization as the GuardDuty delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount(const Model::DisableOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Disables GuardDuty administrator permissions for an AWS account within the
-         * Organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an AWS account within the Organization as the GuardDuty delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -974,8 +974,8 @@ namespace Model
         virtual Model::DisableOrganizationAdminAccountOutcomeCallable DisableOrganizationAdminAccountCallable(const Model::DisableOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Disables GuardDuty administrator permissions for an AWS account within the
-         * Organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Disables an AWS account within the Organization as the GuardDuty delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1040,16 +1040,16 @@ namespace Model
         virtual void DisassociateMembersAsync(const Model::DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables GuardDuty administrator permissions for an AWS account within the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an AWS account within the organization as the GuardDuty delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableOrganizationAdminAccountOutcome EnableOrganizationAdminAccount(const Model::EnableOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Enables GuardDuty administrator permissions for an AWS account within the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an AWS account within the organization as the GuardDuty delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1058,8 +1058,8 @@ namespace Model
         virtual Model::EnableOrganizationAdminAccountOutcomeCallable EnableOrganizationAdminAccountCallable(const Model::EnableOrganizationAdminAccountRequest& request) const;
 
         /**
-         * <p>Enables GuardDuty administrator permissions for an AWS account within the
-         * organization.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables an AWS account within the organization as the GuardDuty delegated
+         * administrator.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
@@ -1528,7 +1528,7 @@ namespace Model
         virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the accounts configured as AWS Organization delegated
+         * <p>Lists the accounts configured as GuardDuty delegated
          * administrators.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
@@ -1536,7 +1536,7 @@ namespace Model
         virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request) const;
 
         /**
-         * <p>Lists the accounts configured as AWS Organization delegated
+         * <p>Lists the accounts configured as GuardDuty delegated
          * administrators.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
@@ -1546,7 +1546,7 @@ namespace Model
         virtual Model::ListOrganizationAdminAccountsOutcomeCallable ListOrganizationAdminAccountsCallable(const Model::ListOrganizationAdminAccountsRequest& request) const;
 
         /**
-         * <p>Lists the accounts configured as AWS Organization delegated
+         * <p>Lists the accounts configured as GuardDuty delegated
          * administrators.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>

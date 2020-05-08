@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>The metadata that you apply to AWS resources to help you categorize and
-   * organize them. Each tag consists of a key and an optional value, both of which
-   * you define. For more information, see <a
+   * organize them. Each tag consists of a key and a value, both of which you define.
+   * For more information, see <a
    * href="http://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
    * Resources</a> in the <i>AWS General Reference</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/resourcegroupstaggingapi-2017-01-26/Tag">AWS
@@ -101,50 +101,50 @@ namespace Model
 
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
-     * descriptor within a tag category (key).</p>
+     * <p>One part of a key-value pair that make up a tag. A value acts as a descriptor
+     * within a tag category (key). The value can be empty or null.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
-     * descriptor within a tag category (key).</p>
+     * <p>One part of a key-value pair that make up a tag. A value acts as a descriptor
+     * within a tag category (key). The value can be empty or null.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
-     * descriptor within a tag category (key).</p>
+     * <p>One part of a key-value pair that make up a tag. A value acts as a descriptor
+     * within a tag category (key). The value can be empty or null.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
-     * descriptor within a tag category (key).</p>
+     * <p>One part of a key-value pair that make up a tag. A value acts as a descriptor
+     * within a tag category (key). The value can be empty or null.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
-     * descriptor within a tag category (key).</p>
+     * <p>One part of a key-value pair that make up a tag. A value acts as a descriptor
+     * within a tag category (key). The value can be empty or null.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
-     * descriptor within a tag category (key).</p>
+     * <p>One part of a key-value pair that make up a tag. A value acts as a descriptor
+     * within a tag category (key). The value can be empty or null.</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
-     * descriptor within a tag category (key).</p>
+     * <p>One part of a key-value pair that make up a tag. A value acts as a descriptor
+     * within a tag category (key). The value can be empty or null.</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
-     * descriptor within a tag category (key).</p>
+     * <p>One part of a key-value pair that make up a tag. A value acts as a descriptor
+     * within a tag category (key). The value can be empty or null.</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

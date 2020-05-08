@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>The retention policy.</p><p><h3>See Also:</h3>   <a
+   * <p>The retention policy for data stored on an Amazon Elastic File System (EFS)
+   * volume.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RetentionPolicy">AWS
    * API Reference</a></p>
    */
@@ -48,32 +49,44 @@ namespace Model
 
 
     /**
-     * <p>The home Amazon Elastic File System (EFS).</p>
+     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
+     * on the EFS volume.</p> <p>Specify <code>Delete</code> to delete the data stored
+     * on the EFS volume.</p>
      */
     inline const RetentionType& GetHomeEfsFileSystem() const{ return m_homeEfsFileSystem; }
 
     /**
-     * <p>The home Amazon Elastic File System (EFS).</p>
+     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
+     * on the EFS volume.</p> <p>Specify <code>Delete</code> to delete the data stored
+     * on the EFS volume.</p>
      */
     inline bool HomeEfsFileSystemHasBeenSet() const { return m_homeEfsFileSystemHasBeenSet; }
 
     /**
-     * <p>The home Amazon Elastic File System (EFS).</p>
+     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
+     * on the EFS volume.</p> <p>Specify <code>Delete</code> to delete the data stored
+     * on the EFS volume.</p>
      */
     inline void SetHomeEfsFileSystem(const RetentionType& value) { m_homeEfsFileSystemHasBeenSet = true; m_homeEfsFileSystem = value; }
 
     /**
-     * <p>The home Amazon Elastic File System (EFS).</p>
+     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
+     * on the EFS volume.</p> <p>Specify <code>Delete</code> to delete the data stored
+     * on the EFS volume.</p>
      */
     inline void SetHomeEfsFileSystem(RetentionType&& value) { m_homeEfsFileSystemHasBeenSet = true; m_homeEfsFileSystem = std::move(value); }
 
     /**
-     * <p>The home Amazon Elastic File System (EFS).</p>
+     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
+     * on the EFS volume.</p> <p>Specify <code>Delete</code> to delete the data stored
+     * on the EFS volume.</p>
      */
     inline RetentionPolicy& WithHomeEfsFileSystem(const RetentionType& value) { SetHomeEfsFileSystem(value); return *this;}
 
     /**
-     * <p>The home Amazon Elastic File System (EFS).</p>
+     * <p>The default is <code>Retain</code>, which specifies to keep the data stored
+     * on the EFS volume.</p> <p>Specify <code>Delete</code> to delete the data stored
+     * on the EFS volume.</p>
      */
     inline RetentionPolicy& WithHomeEfsFileSystem(RetentionType&& value) { SetHomeEfsFileSystem(std::move(value)); return *this;}
 

@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>The instance type and the Amazon Resource Name (ARN) of the image created on
-   * the instance. The ARN is stored as metadata in Amazon SageMaker Studio
-   * notebooks.</p><p><h3>See Also:</h3>   <a
+   * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+   * created on the instance. The ARN is stored as metadata in Amazon SageMaker
+   * Studio notebooks.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceSpec">AWS
    * API Reference</a></p>
    */
@@ -51,42 +51,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image created on the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the SageMaker image created on the
+     * instance.</p>
      */
     inline const Aws::String& GetSageMakerImageArn() const{ return m_sageMakerImageArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image created on the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the SageMaker image created on the
+     * instance.</p>
      */
     inline bool SageMakerImageArnHasBeenSet() const { return m_sageMakerImageArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image created on the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the SageMaker image created on the
+     * instance.</p>
      */
     inline void SetSageMakerImageArn(const Aws::String& value) { m_sageMakerImageArnHasBeenSet = true; m_sageMakerImageArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image created on the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the SageMaker image created on the
+     * instance.</p>
      */
     inline void SetSageMakerImageArn(Aws::String&& value) { m_sageMakerImageArnHasBeenSet = true; m_sageMakerImageArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image created on the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the SageMaker image created on the
+     * instance.</p>
      */
     inline void SetSageMakerImageArn(const char* value) { m_sageMakerImageArnHasBeenSet = true; m_sageMakerImageArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image created on the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the SageMaker image created on the
+     * instance.</p>
      */
     inline ResourceSpec& WithSageMakerImageArn(const Aws::String& value) { SetSageMakerImageArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image created on the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the SageMaker image created on the
+     * instance.</p>
      */
     inline ResourceSpec& WithSageMakerImageArn(Aws::String&& value) { SetSageMakerImageArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image created on the instance.</p>
+     * <p>The Amazon Resource Name (ARN) of the SageMaker image created on the
+     * instance.</p>
      */
     inline ResourceSpec& WithSageMakerImageArn(const char* value) { SetSageMakerImageArn(value); return *this;}
 

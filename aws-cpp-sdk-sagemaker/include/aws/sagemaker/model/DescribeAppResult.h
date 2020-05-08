@@ -357,27 +357,32 @@ namespace Model
 
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline const ResourceSpec& GetResourceSpec() const{ return m_resourceSpec; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline void SetResourceSpec(const ResourceSpec& value) { m_resourceSpec = value; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline void SetResourceSpec(ResourceSpec&& value) { m_resourceSpec = std::move(value); }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline DescribeAppResult& WithResourceSpec(const ResourceSpec& value) { SetResourceSpec(value); return *this;}
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline DescribeAppResult& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
 

@@ -252,32 +252,38 @@ namespace Model
 
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline const ResourceSpec& GetResourceSpec() const{ return m_resourceSpec; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline bool ResourceSpecHasBeenSet() const { return m_resourceSpecHasBeenSet; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline void SetResourceSpec(const ResourceSpec& value) { m_resourceSpecHasBeenSet = true; m_resourceSpec = value; }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline void SetResourceSpec(ResourceSpec&& value) { m_resourceSpecHasBeenSet = true; m_resourceSpec = std::move(value); }
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline CreateAppRequest& WithResourceSpec(const ResourceSpec& value) { SetResourceSpec(value); return *this;}
 
     /**
-     * <p>The instance type and quantity.</p>
+     * <p>The instance type and the Amazon Resource Name (ARN) of the SageMaker image
+     * created on the instance.</p>
      */
     inline CreateAppRequest& WithResourceSpec(ResourceSpec&& value) { SetResourceSpec(std::move(value)); return *this;}
 
