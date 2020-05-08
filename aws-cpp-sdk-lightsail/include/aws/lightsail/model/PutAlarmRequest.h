@@ -426,13 +426,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -441,13 +441,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -456,13 +456,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -471,13 +471,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -486,13 +486,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -501,13 +501,13 @@ namespace Model
     /**
      * <p>Sets how this alarm will handle missing data points.</p> <p>An alarm can
      * treat missing data in the following ways:</p> <ul> <li> <p>
-     * <code>breaching</code> — Assume the missing data is not within the threshold.
+     * <code>breaching</code> - Assume the missing data is not within the threshold.
      * Missing data counts towards the number of times the metric is not within the
-     * threshold.</p> </li> <li> <p> <code>notBreaching</code> — Assume the missing
+     * threshold.</p> </li> <li> <p> <code>notBreaching</code> - Assume the missing
      * data is within the threshold. Missing data does not count towards the number of
      * times the metric is not within the threshold.</p> </li> <li> <p>
-     * <code>ignore</code> — Ignore the missing data. Maintains the current alarm
-     * state.</p> </li> <li> <p> <code>missing</code> — Missing data is treated as
+     * <code>ignore</code> - Ignore the missing data. Maintains the current alarm
+     * state.</p> </li> <li> <p> <code>missing</code> - Missing data is treated as
      * missing.</p> </li> </ul> <p>If <code>treatMissingData</code> is not specified,
      * the default behavior of <code>missing</code> is used.</p>
      */
@@ -621,11 +621,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -643,11 +643,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -665,11 +665,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -687,11 +687,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -709,11 +709,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -731,11 +731,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -753,11 +753,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the
@@ -775,11 +775,11 @@ namespace Model
 
     /**
      * <p>The alarm states that trigger a notification.</p> <p>An alarm has the
-     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> — The metric is
+     * following possible states:</p> <ul> <li> <p> <code>ALARM</code> - The metric is
      * outside of the defined threshold.</p> </li> <li> <p>
-     * <code>INSUFFICIENT_DATA</code> — The alarm has just started, the metric is not
+     * <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not
      * available, or not enough data is available for the metric to determine the alarm
-     * state.</p> </li> <li> <p> <code>OK</code> — The metric is within the defined
+     * state.</p> </li> <li> <p> <code>OK</code> - The metric is within the defined
      * threshold.</p> </li> </ul> <p>When you specify a notification trigger, the
      * <code>ALARM</code> state must be specified. The <code>INSUFFICIENT_DATA</code>
      * and <code>OK</code> states can be specified in addition to the

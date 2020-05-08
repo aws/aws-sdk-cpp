@@ -174,7 +174,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline const Aws::String& GetContactEndpoint() const{ return m_contactEndpoint; }
 
@@ -186,7 +186,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline bool ContactEndpointHasBeenSet() const { return m_contactEndpointHasBeenSet; }
 
@@ -198,7 +198,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline void SetContactEndpoint(const Aws::String& value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint = value; }
 
@@ -210,7 +210,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline void SetContactEndpoint(Aws::String&& value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint = std::move(value); }
 
@@ -222,7 +222,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline void SetContactEndpoint(const char* value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint.assign(value); }
 
@@ -234,7 +234,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline CreateContactMethodRequest& WithContactEndpoint(const Aws::String& value) { SetContactEndpoint(value); return *this;}
 
@@ -246,7 +246,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline CreateContactMethodRequest& WithContactEndpoint(Aws::String&& value) { SetContactEndpoint(std::move(value)); return *this;}
 
@@ -258,7 +258,7 @@ namespace Model
      * 15 digits, and they are prefixed with the plus character (+) and the country
      * code. For example, a U.S. phone number in E.164 format would be specified as
      * +1XXX5550100. For more information, see <a
-     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> in Wikipedia.</p>
+     * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
     inline CreateContactMethodRequest& WithContactEndpoint(const char* value) { SetContactEndpoint(value); return *this;}
 

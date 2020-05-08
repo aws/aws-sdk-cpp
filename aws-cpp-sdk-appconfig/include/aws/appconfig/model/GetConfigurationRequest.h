@@ -253,50 +253,154 @@ namespace Model
 
 
     /**
-     * <p>The configuration version returned in the most recent GetConfiguration
-     * response.</p>
+     * <p>The configuration version returned in the most recent
+     * <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses
+     * the value of the <code>ClientConfigurationVersion</code> parameter to identify
+     * the configuration version on your clients. If you don’t send
+     * <code>ClientConfigurationVersion</code> with each call to
+     * <code>GetConfiguration</code>, your clients receive the current configuration.
+     * You are charged each time your clients receive a configuration.</p> <p>To avoid
+     * excess charges, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to
+     * <code>GetConfiguration</code>. This value must be saved on your client.
+     * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+     * the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For
+     * more information about working with configurations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+     * the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
      */
     inline const Aws::String& GetClientConfigurationVersion() const{ return m_clientConfigurationVersion; }
 
     /**
-     * <p>The configuration version returned in the most recent GetConfiguration
-     * response.</p>
+     * <p>The configuration version returned in the most recent
+     * <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses
+     * the value of the <code>ClientConfigurationVersion</code> parameter to identify
+     * the configuration version on your clients. If you don’t send
+     * <code>ClientConfigurationVersion</code> with each call to
+     * <code>GetConfiguration</code>, your clients receive the current configuration.
+     * You are charged each time your clients receive a configuration.</p> <p>To avoid
+     * excess charges, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to
+     * <code>GetConfiguration</code>. This value must be saved on your client.
+     * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+     * the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For
+     * more information about working with configurations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+     * the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
      */
     inline bool ClientConfigurationVersionHasBeenSet() const { return m_clientConfigurationVersionHasBeenSet; }
 
     /**
-     * <p>The configuration version returned in the most recent GetConfiguration
-     * response.</p>
+     * <p>The configuration version returned in the most recent
+     * <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses
+     * the value of the <code>ClientConfigurationVersion</code> parameter to identify
+     * the configuration version on your clients. If you don’t send
+     * <code>ClientConfigurationVersion</code> with each call to
+     * <code>GetConfiguration</code>, your clients receive the current configuration.
+     * You are charged each time your clients receive a configuration.</p> <p>To avoid
+     * excess charges, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to
+     * <code>GetConfiguration</code>. This value must be saved on your client.
+     * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+     * the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For
+     * more information about working with configurations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+     * the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
      */
     inline void SetClientConfigurationVersion(const Aws::String& value) { m_clientConfigurationVersionHasBeenSet = true; m_clientConfigurationVersion = value; }
 
     /**
-     * <p>The configuration version returned in the most recent GetConfiguration
-     * response.</p>
+     * <p>The configuration version returned in the most recent
+     * <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses
+     * the value of the <code>ClientConfigurationVersion</code> parameter to identify
+     * the configuration version on your clients. If you don’t send
+     * <code>ClientConfigurationVersion</code> with each call to
+     * <code>GetConfiguration</code>, your clients receive the current configuration.
+     * You are charged each time your clients receive a configuration.</p> <p>To avoid
+     * excess charges, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to
+     * <code>GetConfiguration</code>. This value must be saved on your client.
+     * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+     * the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For
+     * more information about working with configurations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+     * the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
      */
     inline void SetClientConfigurationVersion(Aws::String&& value) { m_clientConfigurationVersionHasBeenSet = true; m_clientConfigurationVersion = std::move(value); }
 
     /**
-     * <p>The configuration version returned in the most recent GetConfiguration
-     * response.</p>
+     * <p>The configuration version returned in the most recent
+     * <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses
+     * the value of the <code>ClientConfigurationVersion</code> parameter to identify
+     * the configuration version on your clients. If you don’t send
+     * <code>ClientConfigurationVersion</code> with each call to
+     * <code>GetConfiguration</code>, your clients receive the current configuration.
+     * You are charged each time your clients receive a configuration.</p> <p>To avoid
+     * excess charges, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to
+     * <code>GetConfiguration</code>. This value must be saved on your client.
+     * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+     * the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For
+     * more information about working with configurations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+     * the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
      */
     inline void SetClientConfigurationVersion(const char* value) { m_clientConfigurationVersionHasBeenSet = true; m_clientConfigurationVersion.assign(value); }
 
     /**
-     * <p>The configuration version returned in the most recent GetConfiguration
-     * response.</p>
+     * <p>The configuration version returned in the most recent
+     * <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses
+     * the value of the <code>ClientConfigurationVersion</code> parameter to identify
+     * the configuration version on your clients. If you don’t send
+     * <code>ClientConfigurationVersion</code> with each call to
+     * <code>GetConfiguration</code>, your clients receive the current configuration.
+     * You are charged each time your clients receive a configuration.</p> <p>To avoid
+     * excess charges, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to
+     * <code>GetConfiguration</code>. This value must be saved on your client.
+     * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+     * the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For
+     * more information about working with configurations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+     * the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
      */
     inline GetConfigurationRequest& WithClientConfigurationVersion(const Aws::String& value) { SetClientConfigurationVersion(value); return *this;}
 
     /**
-     * <p>The configuration version returned in the most recent GetConfiguration
-     * response.</p>
+     * <p>The configuration version returned in the most recent
+     * <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses
+     * the value of the <code>ClientConfigurationVersion</code> parameter to identify
+     * the configuration version on your clients. If you don’t send
+     * <code>ClientConfigurationVersion</code> with each call to
+     * <code>GetConfiguration</code>, your clients receive the current configuration.
+     * You are charged each time your clients receive a configuration.</p> <p>To avoid
+     * excess charges, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to
+     * <code>GetConfiguration</code>. This value must be saved on your client.
+     * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+     * the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For
+     * more information about working with configurations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+     * the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
      */
     inline GetConfigurationRequest& WithClientConfigurationVersion(Aws::String&& value) { SetClientConfigurationVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration version returned in the most recent GetConfiguration
-     * response.</p>
+     * <p>The configuration version returned in the most recent
+     * <code>GetConfiguration</code> response.</p> <important> <p>AWS AppConfig uses
+     * the value of the <code>ClientConfigurationVersion</code> parameter to identify
+     * the configuration version on your clients. If you don’t send
+     * <code>ClientConfigurationVersion</code> with each call to
+     * <code>GetConfiguration</code>, your clients receive the current configuration.
+     * You are charged each time your clients receive a configuration.</p> <p>To avoid
+     * excess charges, we recommend that you include the
+     * <code>ClientConfigurationVersion</code> value with every call to
+     * <code>GetConfiguration</code>. This value must be saved on your client.
+     * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+     * the <code>ClientConfigurationVersion</code> parameter. </p> </important> <p>For
+     * more information about working with configurations, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-retrieving-the-configuration.html">Retrieving
+     * the Configuration</a> in the <i>AWS AppConfig User Guide</i>.</p>
      */
     inline GetConfigurationRequest& WithClientConfigurationVersion(const char* value) { SetClientConfigurationVersion(value); return *this;}
 

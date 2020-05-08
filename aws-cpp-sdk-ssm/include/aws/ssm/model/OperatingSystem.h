@@ -32,7 +32,9 @@ namespace Model
     UBUNTU,
     REDHAT_ENTERPRISE_LINUX,
     SUSE,
-    CENTOS
+    CENTOS,
+    ORACLE_LINUX,
+    DEBIAN
   };
 
 namespace OperatingSystemMapper

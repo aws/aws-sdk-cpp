@@ -61,15 +61,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline const EnvironmentType& GetType() const{ return m_type; }
 
@@ -80,15 +80,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -99,15 +99,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -118,15 +118,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -137,15 +137,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline ProjectEnvironment& WithType(const EnvironmentType& value) { SetType(value); return *this;}
 
@@ -156,15 +156,15 @@ namespace Model
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
      * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
      * type <code>build.general1.2xlarge</code> is available only in regions US East
-     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
-     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland),
+     * EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and China
+     * (Ningxia).</p> </li> <li> <p>The environment type
      * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
-     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
-     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
-     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
-     * China (Ningxia).</p> </li> </ul>
+     * Virginia), US East (Ohio), US West (Oregon), Canada (Central), EU (Ireland), EU
+     * (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul), Asia
+     * Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and China
+     * (Ningxia).</p> </li> </ul>
      */
     inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
 

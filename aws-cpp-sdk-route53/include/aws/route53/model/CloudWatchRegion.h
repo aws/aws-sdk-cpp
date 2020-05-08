@@ -48,6 +48,7 @@ namespace Model
     cn_northwest_1,
     cn_north_1,
     af_south_1,
+    eu_south_1,
     us_gov_west_1,
     us_gov_east_1,
     us_iso_east_1,

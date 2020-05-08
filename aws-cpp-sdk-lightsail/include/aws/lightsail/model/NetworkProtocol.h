@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     tcp,
     all,
-    udp
+    udp,
+    icmp
   };
 
 namespace NetworkProtocolMapper

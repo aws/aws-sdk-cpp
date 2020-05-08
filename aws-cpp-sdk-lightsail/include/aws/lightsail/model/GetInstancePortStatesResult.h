@@ -44,37 +44,44 @@ namespace Model
 
 
     /**
-     * <p>Information about the port states resulting from your request.</p>
+     * <p>An array of objects that describe the firewall port states for the specified
+     * instance.</p>
      */
     inline const Aws::Vector<InstancePortState>& GetPortStates() const{ return m_portStates; }
 
     /**
-     * <p>Information about the port states resulting from your request.</p>
+     * <p>An array of objects that describe the firewall port states for the specified
+     * instance.</p>
      */
     inline void SetPortStates(const Aws::Vector<InstancePortState>& value) { m_portStates = value; }
 
     /**
-     * <p>Information about the port states resulting from your request.</p>
+     * <p>An array of objects that describe the firewall port states for the specified
+     * instance.</p>
      */
     inline void SetPortStates(Aws::Vector<InstancePortState>&& value) { m_portStates = std::move(value); }
 
     /**
-     * <p>Information about the port states resulting from your request.</p>
+     * <p>An array of objects that describe the firewall port states for the specified
+     * instance.</p>
      */
     inline GetInstancePortStatesResult& WithPortStates(const Aws::Vector<InstancePortState>& value) { SetPortStates(value); return *this;}
 
     /**
-     * <p>Information about the port states resulting from your request.</p>
+     * <p>An array of objects that describe the firewall port states for the specified
+     * instance.</p>
      */
     inline GetInstancePortStatesResult& WithPortStates(Aws::Vector<InstancePortState>&& value) { SetPortStates(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the port states resulting from your request.</p>
+     * <p>An array of objects that describe the firewall port states for the specified
+     * instance.</p>
      */
     inline GetInstancePortStatesResult& AddPortStates(const InstancePortState& value) { m_portStates.push_back(value); return *this; }
 
     /**
-     * <p>Information about the port states resulting from your request.</p>
+     * <p>An array of objects that describe the firewall port states for the specified
+     * instance.</p>
      */
     inline GetInstancePortStatesResult& AddPortStates(InstancePortState&& value) { m_portStates.push_back(std::move(value)); return *this; }
 

@@ -35,6 +35,7 @@ namespace Aws
         static const int HEAD_REF_HASH = HashingUtils::HashString("HEAD_REF");
         static const int ACTOR_ACCOUNT_ID_HASH = HashingUtils::HashString("ACTOR_ACCOUNT_ID");
         static const int FILE_PATH_HASH = HashingUtils::HashString("FILE_PATH");
+        static const int COMMIT_MESSAGE_HASH = HashingUtils::HashString("COMMIT_MESSAGE");
 
 
         WebhookFilterType GetWebhookFilterTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return WebhookFilterType::FILE_PATH;
           }
+          else if (hashCode == COMMIT_MESSAGE_HASH)
+          {
+            return WebhookFilterType::COMMIT_MESSAGE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "ACTOR_ACCOUNT_ID";
           case WebhookFilterType::FILE_PATH:
             return "FILE_PATH";
+          case WebhookFilterType::COMMIT_MESSAGE:
+            return "COMMIT_MESSAGE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

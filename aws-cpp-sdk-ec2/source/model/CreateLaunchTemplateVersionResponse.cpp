@@ -53,6 +53,11 @@ CreateLaunchTemplateVersionResponse& CreateLaunchTemplateVersionResponse::operat
     {
       m_launchTemplateVersion = launchTemplateVersionNode;
     }
+    XmlNode warningNode = resultNode.FirstChild("warning");
+    if(!warningNode.IsNull())
+    {
+      m_warning = warningNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

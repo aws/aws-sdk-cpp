@@ -47,83 +47,91 @@ namespace Model
 
 
     /**
-     * <p>Specifies information about the public port(s).</p>
+     * <p>An array of objects to describe the ports to open for the specified
+     * instance.</p>
      */
     inline const Aws::Vector<PortInfo>& GetPortInfos() const{ return m_portInfos; }
 
     /**
-     * <p>Specifies information about the public port(s).</p>
+     * <p>An array of objects to describe the ports to open for the specified
+     * instance.</p>
      */
     inline bool PortInfosHasBeenSet() const { return m_portInfosHasBeenSet; }
 
     /**
-     * <p>Specifies information about the public port(s).</p>
+     * <p>An array of objects to describe the ports to open for the specified
+     * instance.</p>
      */
     inline void SetPortInfos(const Aws::Vector<PortInfo>& value) { m_portInfosHasBeenSet = true; m_portInfos = value; }
 
     /**
-     * <p>Specifies information about the public port(s).</p>
+     * <p>An array of objects to describe the ports to open for the specified
+     * instance.</p>
      */
     inline void SetPortInfos(Aws::Vector<PortInfo>&& value) { m_portInfosHasBeenSet = true; m_portInfos = std::move(value); }
 
     /**
-     * <p>Specifies information about the public port(s).</p>
+     * <p>An array of objects to describe the ports to open for the specified
+     * instance.</p>
      */
     inline PutInstancePublicPortsRequest& WithPortInfos(const Aws::Vector<PortInfo>& value) { SetPortInfos(value); return *this;}
 
     /**
-     * <p>Specifies information about the public port(s).</p>
+     * <p>An array of objects to describe the ports to open for the specified
+     * instance.</p>
      */
     inline PutInstancePublicPortsRequest& WithPortInfos(Aws::Vector<PortInfo>&& value) { SetPortInfos(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies information about the public port(s).</p>
+     * <p>An array of objects to describe the ports to open for the specified
+     * instance.</p>
      */
     inline PutInstancePublicPortsRequest& AddPortInfos(const PortInfo& value) { m_portInfosHasBeenSet = true; m_portInfos.push_back(value); return *this; }
 
     /**
-     * <p>Specifies information about the public port(s).</p>
+     * <p>An array of objects to describe the ports to open for the specified
+     * instance.</p>
      */
     inline PutInstancePublicPortsRequest& AddPortInfos(PortInfo&& value) { m_portInfosHasBeenSet = true; m_portInfos.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     * <p>The name of the instance for which to open ports.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
 
     /**
-     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     * <p>The name of the instance for which to open ports.</p>
      */
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
-     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     * <p>The name of the instance for which to open ports.</p>
      */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /**
-     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     * <p>The name of the instance for which to open ports.</p>
      */
     inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
 
     /**
-     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     * <p>The name of the instance for which to open ports.</p>
      */
     inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
 
     /**
-     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     * <p>The name of the instance for which to open ports.</p>
      */
     inline PutInstancePublicPortsRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
 
     /**
-     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     * <p>The name of the instance for which to open ports.</p>
      */
     inline PutInstancePublicPortsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
 
     /**
-     * <p>The Lightsail instance name of the public port(s) you are setting.</p>
+     * <p>The name of the instance for which to open ports.</p>
      */
     inline PutInstancePublicPortsRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 

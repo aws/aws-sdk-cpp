@@ -581,14 +581,36 @@ namespace Model
         virtual void GetApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve information about a configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Receive information about a configuration.</p> <important> <p>AWS AppConfig
+         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
+         * identify the configuration version on your clients. If you don’t send
+         * <code>ClientConfigurationVersion</code> with each call to
+         * <code>GetConfiguration</code>, your clients receive the current configuration.
+         * You are charged each time your clients receive a configuration.</p> <p>To avoid
+         * excess charges, we recommend that you include the
+         * <code>ClientConfigurationVersion</code> value with every call to
+         * <code>GetConfiguration</code>. This value must be saved on your client.
+         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+         * the <code>ClientConfigurationVersion</code> parameter. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetConfigurationOutcome GetConfiguration(const Model::GetConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieve information about a configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Receive information about a configuration.</p> <important> <p>AWS AppConfig
+         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
+         * identify the configuration version on your clients. If you don’t send
+         * <code>ClientConfigurationVersion</code> with each call to
+         * <code>GetConfiguration</code>, your clients receive the current configuration.
+         * You are charged each time your clients receive a configuration.</p> <p>To avoid
+         * excess charges, we recommend that you include the
+         * <code>ClientConfigurationVersion</code> value with every call to
+         * <code>GetConfiguration</code>. This value must be saved on your client.
+         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+         * the <code>ClientConfigurationVersion</code> parameter. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          *
@@ -597,7 +619,18 @@ namespace Model
         virtual Model::GetConfigurationOutcomeCallable GetConfigurationCallable(const Model::GetConfigurationRequest& request) const;
 
         /**
-         * <p>Retrieve information about a configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Receive information about a configuration.</p> <important> <p>AWS AppConfig
+         * uses the value of the <code>ClientConfigurationVersion</code> parameter to
+         * identify the configuration version on your clients. If you don’t send
+         * <code>ClientConfigurationVersion</code> with each call to
+         * <code>GetConfiguration</code>, your clients receive the current configuration.
+         * You are charged each time your clients receive a configuration.</p> <p>To avoid
+         * excess charges, we recommend that you include the
+         * <code>ClientConfigurationVersion</code> value with every call to
+         * <code>GetConfiguration</code>. This value must be saved on your client.
+         * Subsequent calls to <code>GetConfiguration</code> must pass this value by using
+         * the <code>ClientConfigurationVersion</code> parameter. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetConfiguration">AWS
          * API Reference</a></p>
          *

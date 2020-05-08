@@ -174,61 +174,91 @@ namespace Model
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
+     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
+     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
+     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul> <note> <p>If
+     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
+     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
+     * RDP clients to connect to your instance, that configuration is not carried over
+     * to your new Amazon EC2 instance.</p> </note>
      */
     inline const PortInfoSourceType& GetPortInfoSource() const{ return m_portInfoSource; }
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
+     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
+     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
+     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul> <note> <p>If
+     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
+     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
+     * RDP clients to connect to your instance, that configuration is not carried over
+     * to your new Amazon EC2 instance.</p> </note>
      */
     inline bool PortInfoSourceHasBeenSet() const { return m_portInfoSourceHasBeenSet; }
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
+     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
+     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
+     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul> <note> <p>If
+     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
+     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
+     * RDP clients to connect to your instance, that configuration is not carried over
+     * to your new Amazon EC2 instance.</p> </note>
      */
     inline void SetPortInfoSource(const PortInfoSourceType& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = value; }
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
+     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
+     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
+     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul> <note> <p>If
+     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
+     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
+     * RDP clients to connect to your instance, that configuration is not carried over
+     * to your new Amazon EC2 instance.</p> </note>
      */
     inline void SetPortInfoSource(PortInfoSourceType&& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = std::move(value); }
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
+     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
+     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
+     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul> <note> <p>If
+     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
+     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
+     * RDP clients to connect to your instance, that configuration is not carried over
+     * to your new Amazon EC2 instance.</p> </note>
      */
     inline InstanceEntry& WithPortInfoSource(const PortInfoSourceType& value) { SetPortInfoSource(value); return *this;}
 
     /**
      * <p>The port configuration to use for the new Amazon EC2 instance.</p> <p>The
-     * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
-     * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
-     * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
-     * </ul>
+     * following configuration options are available:</p> <ul> <li> <p>
+     * <code>DEFAULT</code> - Use the default firewall settings from the Lightsail
+     * instance blueprint.</p> </li> <li> <p> <code>INSTANCE</code> - Use the
+     * configured firewall settings from the source Lightsail instance.</p> </li> <li>
+     * <p> <code>NONE</code> - Use the default Amazon EC2 security group.</p> </li>
+     * <li> <p> <code>CLOSED</code> - All ports closed.</p> </li> </ul> <note> <p>If
+     * you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
+     * on your instance, or if you chose to allow the Lightsail browser-based SSH or
+     * RDP clients to connect to your instance, that configuration is not carried over
+     * to your new Amazon EC2 instance.</p> </note>
      */
     inline InstanceEntry& WithPortInfoSource(PortInfoSourceType&& value) { SetPortInfoSource(std::move(value)); return *this;}
 

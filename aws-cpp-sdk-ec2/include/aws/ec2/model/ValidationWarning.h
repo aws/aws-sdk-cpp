@@ -1,0 +1,103 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/ValidationError.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace EC2
+{
+namespace Model
+{
+
+  /**
+   * <p>The error codes and error messages that are returned for the parameters or
+   * parameter combinations that are not valid when a new launch template or new
+   * version of a launch template is created.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ValidationWarning">AWS
+   * API Reference</a></p>
+   */
+  class AWS_EC2_API ValidationWarning
+  {
+  public:
+    ValidationWarning();
+    ValidationWarning(const Aws::Utils::Xml::XmlNode& xmlNode);
+    ValidationWarning& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>The error codes and error messages.</p>
+     */
+    inline const Aws::Vector<ValidationError>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>The error codes and error messages.</p>
+     */
+    inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
+
+    /**
+     * <p>The error codes and error messages.</p>
+     */
+    inline void SetErrors(const Aws::Vector<ValidationError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
+
+    /**
+     * <p>The error codes and error messages.</p>
+     */
+    inline void SetErrors(Aws::Vector<ValidationError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
+
+    /**
+     * <p>The error codes and error messages.</p>
+     */
+    inline ValidationWarning& WithErrors(const Aws::Vector<ValidationError>& value) { SetErrors(value); return *this;}
+
+    /**
+     * <p>The error codes and error messages.</p>
+     */
+    inline ValidationWarning& WithErrors(Aws::Vector<ValidationError>&& value) { SetErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>The error codes and error messages.</p>
+     */
+    inline ValidationWarning& AddErrors(const ValidationError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
+
+    /**
+     * <p>The error codes and error messages.</p>
+     */
+    inline ValidationWarning& AddErrors(ValidationError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
+
+  private:
+
+    Aws::Vector<ValidationError> m_errors;
+    bool m_errorsHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

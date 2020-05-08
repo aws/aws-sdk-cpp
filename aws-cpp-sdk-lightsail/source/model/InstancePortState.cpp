@@ -36,7 +36,9 @@ InstancePortState::InstancePortState() :
     m_protocol(NetworkProtocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_state(PortState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_cidrsHasBeenSet(false),
+    m_cidrListAliasesHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ InstancePortState::InstancePortState(JsonView jsonValue) :
     m_protocol(NetworkProtocol::NOT_SET),
     m_protocolHasBeenSet(false),
     m_state(PortState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_cidrsHasBeenSet(false),
+    m_cidrListAliasesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +87,26 @@ InstancePortState& InstancePortState::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cidrs"))
+  {
+    Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
+    for(unsigned cidrsIndex = 0; cidrsIndex < cidrsJsonList.GetLength(); ++cidrsIndex)
+    {
+      m_cidrs.push_back(cidrsJsonList[cidrsIndex].AsString());
+    }
+    m_cidrsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cidrListAliases"))
+  {
+    Array<JsonView> cidrListAliasesJsonList = jsonValue.GetArray("cidrListAliases");
+    for(unsigned cidrListAliasesIndex = 0; cidrListAliasesIndex < cidrListAliasesJsonList.GetLength(); ++cidrListAliasesIndex)
+    {
+      m_cidrListAliases.push_back(cidrListAliasesJsonList[cidrListAliasesIndex].AsString());
+    }
+    m_cidrListAliasesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +134,28 @@ JsonValue InstancePortState::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", PortStateMapper::GetNameForPortState(m_state));
+  }
+
+  if(m_cidrsHasBeenSet)
+  {
+   Array<JsonValue> cidrsJsonList(m_cidrs.size());
+   for(unsigned cidrsIndex = 0; cidrsIndex < cidrsJsonList.GetLength(); ++cidrsIndex)
+   {
+     cidrsJsonList[cidrsIndex].AsString(m_cidrs[cidrsIndex]);
+   }
+   payload.WithArray("cidrs", std::move(cidrsJsonList));
+
+  }
+
+  if(m_cidrListAliasesHasBeenSet)
+  {
+   Array<JsonValue> cidrListAliasesJsonList(m_cidrListAliases.size());
+   for(unsigned cidrListAliasesIndex = 0; cidrListAliasesIndex < cidrListAliasesJsonList.GetLength(); ++cidrListAliasesIndex)
+   {
+     cidrListAliasesJsonList[cidrListAliasesIndex].AsString(m_cidrListAliases[cidrListAliasesIndex]);
+   }
+   payload.WithArray("cidrListAliases", std::move(cidrListAliasesJsonList));
+
   }
 
   return payload;

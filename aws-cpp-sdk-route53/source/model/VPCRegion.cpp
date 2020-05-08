@@ -55,6 +55,7 @@ namespace Aws
         static const int ca_central_1_HASH = HashingUtils::HashString("ca-central-1");
         static const int cn_north_1_HASH = HashingUtils::HashString("cn-north-1");
         static const int af_south_1_HASH = HashingUtils::HashString("af-south-1");
+        static const int eu_south_1_HASH = HashingUtils::HashString("eu-south-1");
 
 
         VPCRegion GetVPCRegionForName(const Aws::String& name)
@@ -160,6 +161,10 @@ namespace Aws
           {
             return VPCRegion::af_south_1;
           }
+          else if (hashCode == eu_south_1_HASH)
+          {
+            return VPCRegion::eu_south_1;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -224,6 +229,8 @@ namespace Aws
             return "cn-north-1";
           case VPCRegion::af_south_1:
             return "af-south-1";
+          case VPCRegion::eu_south_1:
+            return "eu-south-1";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

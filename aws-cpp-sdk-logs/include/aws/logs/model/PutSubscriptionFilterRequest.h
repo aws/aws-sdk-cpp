@@ -90,8 +90,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
 
@@ -99,8 +99,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
@@ -108,8 +108,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
@@ -117,8 +117,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
 
@@ -126,8 +126,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
 
@@ -135,8 +135,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
 
@@ -144,8 +144,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
 
@@ -153,8 +153,8 @@ namespace Model
      * <p>A name for the subscription filter. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the
      * call fails because you cannot associate a second filter with a log group. To
-     * find the name of the filter currently associated with a log group, use
-     * <a>DescribeSubscriptionFilters</a>.</p>
+     * find the name of the filter currently associated with a log group, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.</p>
      */
     inline PutSubscriptionFilterRequest& WithFilterName(const char* value) { SetFilterName(value); return *this;}
 

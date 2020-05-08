@@ -50,7 +50,8 @@ namespace Model
     sa_east_1,
     ca_central_1,
     cn_north_1,
-    af_south_1
+    af_south_1,
+    eu_south_1
   };
 
 namespace VPCRegionMapper

@@ -95,39 +95,39 @@ namespace Model
      * metric names are listed below, along with the most useful
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
-     * — The percentage of allocated compute units that are currently in use on the
+     * - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on
      * the instance. Tools in your operating system can show a lower percentage than
      * Lightsail when the instance is not allocated a full processor core.</p> <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> - The
      * number of bytes received on all network interfaces by the instance. This metric
      * identifies the volume of incoming network traffic to the instance. The number
      * reported is the number of bytes received during the period. Because this metric
      * is reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> - The
      * number of bytes sent out on all network interfaces by the instance. This metric
      * identifies the volume of outgoing network traffic from the instance. The number
      * reported is the number of bytes sent during the period. Because this metric is
      * reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> -
      * Reports whether the instance passed or failed both the instance status check and
      * the system status check. This metric can be either 0 (passed) or 1 (failed).
      * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance
      * passed or failed the instance status check. This metric can be either 0 (passed)
      * or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
-     * </b> — Reports whether the instance passed or failed the system status check.
+     * </b> - Reports whether the instance passed or failed the system status check.
      * This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
@@ -140,39 +140,39 @@ namespace Model
      * metric names are listed below, along with the most useful
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
-     * — The percentage of allocated compute units that are currently in use on the
+     * - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on
      * the instance. Tools in your operating system can show a lower percentage than
      * Lightsail when the instance is not allocated a full processor core.</p> <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> - The
      * number of bytes received on all network interfaces by the instance. This metric
      * identifies the volume of incoming network traffic to the instance. The number
      * reported is the number of bytes received during the period. Because this metric
      * is reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> - The
      * number of bytes sent out on all network interfaces by the instance. This metric
      * identifies the volume of outgoing network traffic from the instance. The number
      * reported is the number of bytes sent during the period. Because this metric is
      * reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> -
      * Reports whether the instance passed or failed both the instance status check and
      * the system status check. This metric can be either 0 (passed) or 1 (failed).
      * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance
      * passed or failed the instance status check. This metric can be either 0 (passed)
      * or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
-     * </b> — Reports whether the instance passed or failed the system status check.
+     * </b> - Reports whether the instance passed or failed the system status check.
      * This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
@@ -185,39 +185,39 @@ namespace Model
      * metric names are listed below, along with the most useful
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
-     * — The percentage of allocated compute units that are currently in use on the
+     * - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on
      * the instance. Tools in your operating system can show a lower percentage than
      * Lightsail when the instance is not allocated a full processor core.</p> <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> - The
      * number of bytes received on all network interfaces by the instance. This metric
      * identifies the volume of incoming network traffic to the instance. The number
      * reported is the number of bytes received during the period. Because this metric
      * is reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> - The
      * number of bytes sent out on all network interfaces by the instance. This metric
      * identifies the volume of outgoing network traffic from the instance. The number
      * reported is the number of bytes sent during the period. Because this metric is
      * reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> -
      * Reports whether the instance passed or failed both the instance status check and
      * the system status check. This metric can be either 0 (passed) or 1 (failed).
      * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance
      * passed or failed the instance status check. This metric can be either 0 (passed)
      * or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
-     * </b> — Reports whether the instance passed or failed the system status check.
+     * </b> - Reports whether the instance passed or failed the system status check.
      * This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
@@ -230,39 +230,39 @@ namespace Model
      * metric names are listed below, along with the most useful
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
-     * — The percentage of allocated compute units that are currently in use on the
+     * - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on
      * the instance. Tools in your operating system can show a lower percentage than
      * Lightsail when the instance is not allocated a full processor core.</p> <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> - The
      * number of bytes received on all network interfaces by the instance. This metric
      * identifies the volume of incoming network traffic to the instance. The number
      * reported is the number of bytes received during the period. Because this metric
      * is reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> - The
      * number of bytes sent out on all network interfaces by the instance. This metric
      * identifies the volume of outgoing network traffic from the instance. The number
      * reported is the number of bytes sent during the period. Because this metric is
      * reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> -
      * Reports whether the instance passed or failed both the instance status check and
      * the system status check. This metric can be either 0 (passed) or 1 (failed).
      * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance
      * passed or failed the instance status check. This metric can be either 0 (passed)
      * or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
-     * </b> — Reports whether the instance passed or failed the system status check.
+     * </b> - Reports whether the instance passed or failed the system status check.
      * This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
@@ -275,39 +275,39 @@ namespace Model
      * metric names are listed below, along with the most useful
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
-     * — The percentage of allocated compute units that are currently in use on the
+     * - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on
      * the instance. Tools in your operating system can show a lower percentage than
      * Lightsail when the instance is not allocated a full processor core.</p> <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> - The
      * number of bytes received on all network interfaces by the instance. This metric
      * identifies the volume of incoming network traffic to the instance. The number
      * reported is the number of bytes received during the period. Because this metric
      * is reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> - The
      * number of bytes sent out on all network interfaces by the instance. This metric
      * identifies the volume of outgoing network traffic from the instance. The number
      * reported is the number of bytes sent during the period. Because this metric is
      * reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> -
      * Reports whether the instance passed or failed both the instance status check and
      * the system status check. This metric can be either 0 (passed) or 1 (failed).
      * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance
      * passed or failed the instance status check. This metric can be either 0 (passed)
      * or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
-     * </b> — Reports whether the instance passed or failed the system status check.
+     * </b> - Reports whether the instance passed or failed the system status check.
      * This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
@@ -320,39 +320,39 @@ namespace Model
      * metric names are listed below, along with the most useful
      * <code>statistics</code> to include in your request, and the published
      * <code>unit</code> value.</p> <ul> <li> <p> <b> <code>CPUUtilization</code> </b>
-     * — The percentage of allocated compute units that are currently in use on the
+     * - The percentage of allocated compute units that are currently in use on the
      * instance. This metric identifies the processing power to run the applications on
      * the instance. Tools in your operating system can show a lower percentage than
      * Lightsail when the instance is not allocated a full processor core.</p> <p>
      * <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
      * <code>Average</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> — The
+     * <code>Percent</code>.</p> </li> <li> <p> <b> <code>NetworkIn</code> </b> - The
      * number of bytes received on all network interfaces by the instance. This metric
      * identifies the volume of incoming network traffic to the instance. The number
      * reported is the number of bytes received during the period. Because this metric
      * is reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> — The
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>NetworkOut</code> </b> - The
      * number of bytes sent out on all network interfaces by the instance. This metric
      * identifies the volume of outgoing network traffic from the instance. The number
      * reported is the number of bytes sent during the period. Because this metric is
      * reported in 5-minute intervals, divide the reported number by 300 to find
      * Bytes/second.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
-     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> —
+     * <code>Bytes</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed</code> </b> -
      * Reports whether the instance passed or failed both the instance status check and
      * the system status check. This metric can be either 0 (passed) or 1 (failed).
      * This metric data is available in 1-minute (60 seconds) granularity.</p> <p>
      * <code>Statistics</code>: The most useful statistic is <code>Sum</code>.</p> <p>
      * <code>Unit</code>: The published unit is <code>Count</code>.</p> </li> <li> <p>
-     * <b> <code>StatusCheckFailed_Instance</code> </b> — Reports whether the instance
+     * <b> <code>StatusCheckFailed_Instance</code> </b> - Reports whether the instance
      * passed or failed the instance status check. This metric can be either 0 (passed)
      * or 1 (failed). This metric data is available in 1-minute (60 seconds)
      * granularity.</p> <p> <code>Statistics</code>: The most useful statistic is
      * <code>Sum</code>.</p> <p> <code>Unit</code>: The published unit is
      * <code>Count</code>.</p> </li> <li> <p> <b> <code>StatusCheckFailed_System</code>
-     * </b> — Reports whether the instance passed or failed the system status check.
+     * </b> - Reports whether the instance passed or failed the system status check.
      * This metric can be either 0 (passed) or 1 (failed). This metric data is
      * available in 1-minute (60 seconds) granularity.</p> <p> <code>Statistics</code>:
      * The most useful statistic is <code>Sum</code>.</p> <p> <code>Unit</code>: The
@@ -462,61 +462,61 @@ namespace Model
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
-     * <code>metricName</code> parameter.</p>
+     * being requested. For the valid units to specify with each available metric, see
+     * the <code>metricName</code> parameter.</p>
      */
     inline const MetricUnit& GetUnit() const{ return m_unit; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
-     * <code>metricName</code> parameter.</p>
+     * being requested. For the valid units to specify with each available metric, see
+     * the <code>metricName</code> parameter.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
-     * <code>metricName</code> parameter.</p>
+     * being requested. For the valid units to specify with each available metric, see
+     * the <code>metricName</code> parameter.</p>
      */
     inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
-     * <code>metricName</code> parameter.</p>
+     * being requested. For the valid units to specify with each available metric, see
+     * the <code>metricName</code> parameter.</p>
      */
     inline void SetUnit(MetricUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
-     * <code>metricName</code> parameter.</p>
+     * being requested. For the valid units to specify with each available metric, see
+     * the <code>metricName</code> parameter.</p>
      */
     inline GetInstanceMetricDataRequest& WithUnit(const MetricUnit& value) { SetUnit(value); return *this;}
 
     /**
      * <p>The unit for the metric data request. Valid units depend on the metric data
-     * being required. For the valid units with each available metric, see the
-     * <code>metricName</code> parameter.</p>
+     * being requested. For the valid units to specify with each available metric, see
+     * the <code>metricName</code> parameter.</p>
      */
     inline GetInstanceMetricDataRequest& WithUnit(MetricUnit&& value) { SetUnit(std::move(value)); return *this;}
 
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -524,18 +524,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -543,18 +543,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -562,18 +562,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -581,18 +581,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -600,18 +600,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -619,18 +619,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */
@@ -638,18 +638,18 @@ namespace Model
 
     /**
      * <p>The statistic for the metric.</p> <p>The following statistics are
-     * available:</p> <ul> <li> <p> <code>Minimum</code> — The lowest value observed
+     * available:</p> <ul> <li> <p> <code>Minimum</code> - The lowest value observed
      * during the specified period. Use this value to determine low volumes of activity
-     * for your application.</p> </li> <li> <p> <code>Maximum</code> — The highest
+     * for your application.</p> </li> <li> <p> <code>Maximum</code> - The highest
      * value observed during the specified period. Use this value to determine high
-     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> —
+     * volumes of activity for your application.</p> </li> <li> <p> <code>Sum</code> -
      * All values submitted for the matching metric added together. You can use this
      * statistic to determine the total volume of a metric.</p> </li> <li> <p>
-     * <code>Average</code> — The value of Sum / SampleCount during the specified
+     * <code>Average</code> - The value of Sum / SampleCount during the specified
      * period. By comparing this statistic with the Minimum and Maximum values, you can
      * determine the full scope of a metric and how close the average use is to the
      * Minimum and Maximum values. This comparison helps you to know when to increase
-     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> — The
+     * or decrease your resources.</p> </li> <li> <p> <code>SampleCount</code> - The
      * count, or number, of data points used for the statistical calculation.</p> </li>
      * </ul>
      */

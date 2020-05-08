@@ -877,10 +877,10 @@ namespace Model
         virtual void AttachStaticIpAsync(const Model::AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
-         * <code>close instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Closes ports for a specific Amazon Lightsail instance.</p> <p>The
+         * <code>CloseInstancePublicPorts</code> action supports tag-based access control
+         * via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
@@ -889,10 +889,10 @@ namespace Model
         virtual Model::CloseInstancePublicPortsOutcome CloseInstancePublicPorts(const Model::CloseInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
-         * <code>close instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Closes ports for a specific Amazon Lightsail instance.</p> <p>The
+         * <code>CloseInstancePublicPorts</code> action supports tag-based access control
+         * via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
@@ -903,10 +903,10 @@ namespace Model
         virtual Model::CloseInstancePublicPortsOutcomeCallable CloseInstancePublicPortsCallable(const Model::CloseInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
-         * <code>close instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Closes ports for a specific Amazon Lightsail instance.</p> <p>The
+         * <code>CloseInstancePublicPorts</code> action supports tag-based access control
+         * via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
@@ -3205,16 +3205,18 @@ namespace Model
         virtual void GetInstanceMetricDataAsync(const Model::GetInstanceMetricDataRequest& request, const GetInstanceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the firewall port states for a specific Amazon Lightsail instance,
+         * the IP addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
          * API Reference</a></p>
          */
         virtual Model::GetInstancePortStatesOutcome GetInstancePortStates(const Model::GetInstancePortStatesRequest& request) const;
 
         /**
-         * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the firewall port states for a specific Amazon Lightsail instance,
+         * the IP addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
          * API Reference</a></p>
          *
@@ -3223,8 +3225,9 @@ namespace Model
         virtual Model::GetInstancePortStatesOutcomeCallable GetInstancePortStatesCallable(const Model::GetInstancePortStatesRequest& request) const;
 
         /**
-         * <p>Returns the port states for a specific virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the firewall port states for a specific Amazon Lightsail instance,
+         * the IP addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstancePortStates">AWS
          * API Reference</a></p>
          *
@@ -4124,10 +4127,11 @@ namespace Model
         virtual void IsVpcPeeredAsync(const Model::IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
-         * instance public ports</code> operation supports tag-based access control via
-         * resource tags applied to the resource identified by <code>instance name</code>.
-         * For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p> <p>The <code>OpenInstancePublicPorts</code> action supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
@@ -4136,10 +4140,11 @@ namespace Model
         virtual Model::OpenInstancePublicPortsOutcome OpenInstancePublicPorts(const Model::OpenInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
-         * instance public ports</code> operation supports tag-based access control via
-         * resource tags applied to the resource identified by <code>instance name</code>.
-         * For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p> <p>The <code>OpenInstancePublicPorts</code> action supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
@@ -4150,10 +4155,11 @@ namespace Model
         virtual Model::OpenInstancePublicPortsOutcomeCallable OpenInstancePublicPortsCallable(const Model::OpenInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
-         * instance public ports</code> operation supports tag-based access control via
-         * resource tags applied to the resource identified by <code>instance name</code>.
-         * For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol.</p> <p>The <code>OpenInstancePublicPorts</code> action supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
@@ -4253,11 +4259,15 @@ namespace Model
         virtual void PutAlarmAsync(const Model::PutAlarmRequest& request, const PutAlarmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p> <p>The
-         * <code>put instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol. This action also closes all currently open ports that are not included
+         * in the request. Include all of the ports and the protocols you want to open in
+         * your <code>PutInstancePublicPorts</code>request. Or use the
+         * <code>OpenInstancePublicPorts</code> action to open ports without closing
+         * currently open ports.</p> <p>The <code>PutInstancePublicPorts</code> action
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
@@ -4266,11 +4276,15 @@ namespace Model
         virtual Model::PutInstancePublicPortsOutcome PutInstancePublicPorts(const Model::PutInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p> <p>The
-         * <code>put instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol. This action also closes all currently open ports that are not included
+         * in the request. Include all of the ports and the protocols you want to open in
+         * your <code>PutInstancePublicPorts</code>request. Or use the
+         * <code>OpenInstancePublicPorts</code> action to open ports without closing
+         * currently open ports.</p> <p>The <code>PutInstancePublicPorts</code> action
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
@@ -4281,11 +4295,15 @@ namespace Model
         virtual Model::PutInstancePublicPortsOutcomeCallable PutInstancePublicPortsCallable(const Model::PutInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p> <p>The
-         * <code>put instance public ports</code> operation supports tag-based access
-         * control via resource tags applied to the resource identified by <code>instance
-         * name</code>. For more information, see the <a
+         * <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP
+         * addresses allowed to connect to the instance through the ports, and the
+         * protocol. This action also closes all currently open ports that are not included
+         * in the request. Include all of the ports and the protocols you want to open in
+         * your <code>PutInstancePublicPorts</code>request. Or use the
+         * <code>OpenInstancePublicPorts</code> action to open ports without closing
+         * currently open ports.</p> <p>The <code>PutInstancePublicPorts</code> action
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by <code>instanceName</code>. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
@@ -4401,8 +4419,8 @@ namespace Model
         virtual void ReleaseStaticIpAsync(const Model::ReleaseStaticIpRequest& request, const ReleaseStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends a verification request to an email contact method to ensure it’s owned
-         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * <p>Sends a verification request to an email contact method to ensure it's owned
+         * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
          * method in each AWS Region. However, SMS text messaging is not supported in some
@@ -4421,8 +4439,8 @@ namespace Model
         virtual Model::SendContactMethodVerificationOutcome SendContactMethodVerification(const Model::SendContactMethodVerificationRequest& request) const;
 
         /**
-         * <p>Sends a verification request to an email contact method to ensure it’s owned
-         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * <p>Sends a verification request to an email contact method to ensure it's owned
+         * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
          * method in each AWS Region. However, SMS text messaging is not supported in some
@@ -4443,8 +4461,8 @@ namespace Model
         virtual Model::SendContactMethodVerificationOutcomeCallable SendContactMethodVerificationCallable(const Model::SendContactMethodVerificationRequest& request) const;
 
         /**
-         * <p>Sends a verification request to an email contact method to ensure it’s owned
-         * by the requester. SMS contact methods don’t need to be verified.</p> <p>A
+         * <p>Sends a verification request to an email contact method to ensure it's owned
+         * by the requester. SMS contact methods don't need to be verified.</p> <p>A
          * contact method is used to send you notifications about your Amazon Lightsail
          * resources. You can add one email address and one mobile phone number contact
          * method in each AWS Region. However, SMS text messaging is not supported in some

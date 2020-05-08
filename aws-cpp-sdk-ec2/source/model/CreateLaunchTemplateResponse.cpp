@@ -53,6 +53,11 @@ CreateLaunchTemplateResponse& CreateLaunchTemplateResponse::operator =(const Aws
     {
       m_launchTemplate = launchTemplateNode;
     }
+    XmlNode warningNode = resultNode.FirstChild("warning");
+    if(!warningNode.IsNull())
+    {
+      m_warning = warningNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

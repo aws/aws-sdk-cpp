@@ -106,60 +106,60 @@ namespace Model
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline const ContactMethodStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline void SetStatus(const ContactMethodStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline void SetStatus(ContactMethodStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline ContactMethod& WithStatus(const ContactMethodStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the contact method.</p> <p>A contact method has the
-     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> —
+     * following possible status:</p> <ul> <li> <p> <code>PendingVerification</code> -
      * The contact method has not yet been verified, and the verification has not yet
-     * expired.</p> </li> <li> <p> <code>Valid</code> — The contact method has been
-     * verified.</p> </li> <li> <p> <code>InValid</code> — An attempt was made to
+     * expired.</p> </li> <li> <p> <code>Valid</code> - The contact method has been
+     * verified.</p> </li> <li> <p> <code>InValid</code> - An attempt was made to
      * verify the contact method, but the verification has expired.</p> </li> </ul>
      */
     inline ContactMethod& WithStatus(ContactMethodStatus&& value) { SetStatus(std::move(value)); return *this;}

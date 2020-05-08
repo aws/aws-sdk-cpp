@@ -39,6 +39,7 @@
 #include <aws/logs/model/DeleteLogGroupRequest.h>
 #include <aws/logs/model/DeleteLogStreamRequest.h>
 #include <aws/logs/model/DeleteMetricFilterRequest.h>
+#include <aws/logs/model/DeleteQueryDefinitionRequest.h>
 #include <aws/logs/model/DeleteResourcePolicyRequest.h>
 #include <aws/logs/model/DeleteRetentionPolicyRequest.h>
 #include <aws/logs/model/DeleteSubscriptionFilterRequest.h>
@@ -48,6 +49,7 @@
 #include <aws/logs/model/DescribeLogStreamsRequest.h>
 #include <aws/logs/model/DescribeMetricFiltersRequest.h>
 #include <aws/logs/model/DescribeQueriesRequest.h>
+#include <aws/logs/model/DescribeQueryDefinitionsRequest.h>
 #include <aws/logs/model/DescribeResourcePoliciesRequest.h>
 #include <aws/logs/model/DescribeSubscriptionFiltersRequest.h>
 #include <aws/logs/model/DisassociateKmsKeyRequest.h>
@@ -61,6 +63,7 @@
 #include <aws/logs/model/PutDestinationPolicyRequest.h>
 #include <aws/logs/model/PutLogEventsRequest.h>
 #include <aws/logs/model/PutMetricFilterRequest.h>
+#include <aws/logs/model/PutQueryDefinitionRequest.h>
 #include <aws/logs/model/PutResourcePolicyRequest.h>
 #include <aws/logs/model/PutRetentionPolicyRequest.h>
 #include <aws/logs/model/PutSubscriptionFilterRequest.h>
@@ -457,6 +460,41 @@ void CloudWatchLogsClient::DeleteMetricFilterAsyncHelper(const DeleteMetricFilte
   handler(this, request, DeleteMetricFilter(request), context);
 }
 
+DeleteQueryDefinitionOutcome CloudWatchLogsClient::DeleteQueryDefinition(const DeleteQueryDefinitionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteQueryDefinitionOutcome(DeleteQueryDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteQueryDefinitionOutcome(outcome.GetError());
+  }
+}
+
+DeleteQueryDefinitionOutcomeCallable CloudWatchLogsClient::DeleteQueryDefinitionCallable(const DeleteQueryDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteQueryDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteQueryDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::DeleteQueryDefinitionAsync(const DeleteQueryDefinitionRequest& request, const DeleteQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteQueryDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::DeleteQueryDefinitionAsyncHelper(const DeleteQueryDefinitionRequest& request, const DeleteQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteQueryDefinition(request), context);
+}
+
 DeleteResourcePolicyOutcome CloudWatchLogsClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -770,6 +808,41 @@ void CloudWatchLogsClient::DescribeQueriesAsync(const DescribeQueriesRequest& re
 void CloudWatchLogsClient::DescribeQueriesAsyncHelper(const DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeQueries(request), context);
+}
+
+DescribeQueryDefinitionsOutcome CloudWatchLogsClient::DescribeQueryDefinitions(const DescribeQueryDefinitionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeQueryDefinitionsOutcome(DescribeQueryDefinitionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeQueryDefinitionsOutcome(outcome.GetError());
+  }
+}
+
+DescribeQueryDefinitionsOutcomeCallable CloudWatchLogsClient::DescribeQueryDefinitionsCallable(const DescribeQueryDefinitionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeQueryDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeQueryDefinitions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::DescribeQueryDefinitionsAsync(const DescribeQueryDefinitionsRequest& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeQueryDefinitionsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::DescribeQueryDefinitionsAsyncHelper(const DescribeQueryDefinitionsRequest& request, const DescribeQueryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeQueryDefinitions(request), context);
 }
 
 DescribeResourcePoliciesOutcome CloudWatchLogsClient::DescribeResourcePolicies(const DescribeResourcePoliciesRequest& request) const
@@ -1225,6 +1298,41 @@ void CloudWatchLogsClient::PutMetricFilterAsync(const PutMetricFilterRequest& re
 void CloudWatchLogsClient::PutMetricFilterAsyncHelper(const PutMetricFilterRequest& request, const PutMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutMetricFilter(request), context);
+}
+
+PutQueryDefinitionOutcome CloudWatchLogsClient::PutQueryDefinition(const PutQueryDefinitionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutQueryDefinitionOutcome(PutQueryDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutQueryDefinitionOutcome(outcome.GetError());
+  }
+}
+
+PutQueryDefinitionOutcomeCallable CloudWatchLogsClient::PutQueryDefinitionCallable(const PutQueryDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutQueryDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutQueryDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::PutQueryDefinitionAsync(const PutQueryDefinitionRequest& request, const PutQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutQueryDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::PutQueryDefinitionAsyncHelper(const PutQueryDefinitionRequest& request, const PutQueryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutQueryDefinition(request), context);
 }
 
 PutResourcePolicyOutcome CloudWatchLogsClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
