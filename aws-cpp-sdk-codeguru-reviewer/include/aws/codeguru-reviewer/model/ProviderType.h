@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     CodeCommit,
-    GitHub
+    GitHub,
+    Bitbucket
   };
 
 namespace ProviderTypeMapper

@@ -31,7 +31,8 @@ namespace Model
     SYNCING,
     INCOMPLETE,
     STOPPING,
-    ABORTED
+    ABORTED,
+    SYNCING_INDEXING
   };
 
 namespace DataSourceSyncJobStatusMapper

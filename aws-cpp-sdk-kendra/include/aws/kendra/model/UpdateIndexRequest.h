@@ -18,6 +18,7 @@
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/CapacityUnitsConfiguration.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
 #include <utility>
 
@@ -258,6 +259,55 @@ namespace Model
      */
     inline UpdateIndexRequest& AddDocumentMetadataConfigurationUpdates(DocumentMetadataConfiguration&& value) { m_documentMetadataConfigurationUpdatesHasBeenSet = true; m_documentMetadataConfigurationUpdates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline const CapacityUnitsConfiguration& GetCapacityUnits() const{ return m_capacityUnits; }
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline bool CapacityUnitsHasBeenSet() const { return m_capacityUnitsHasBeenSet; }
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline void SetCapacityUnits(const CapacityUnitsConfiguration& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = value; }
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline void SetCapacityUnits(CapacityUnitsConfiguration&& value) { m_capacityUnitsHasBeenSet = true; m_capacityUnits = std::move(value); }
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline UpdateIndexRequest& WithCapacityUnits(const CapacityUnitsConfiguration& value) { SetCapacityUnits(value); return *this;}
+
+    /**
+     * <p>Sets the number of addtional storage and query capacity units that should be
+     * used by the index. You can change the capacity of the index up to 5 times per
+     * day.</p> <p>If you are using extra storage units, you can't reduce the storage
+     * capacity below that required to meet the storage needs for your index.</p>
+     */
+    inline UpdateIndexRequest& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -274,6 +324,9 @@ namespace Model
 
     Aws::Vector<DocumentMetadataConfiguration> m_documentMetadataConfigurationUpdates;
     bool m_documentMetadataConfigurationUpdatesHasBeenSet;
+
+    CapacityUnitsConfiguration m_capacityUnits;
+    bool m_capacityUnitsHasBeenSet;
   };
 
 } // namespace Model

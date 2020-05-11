@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 BatchDeleteDocumentRequest::BatchDeleteDocumentRequest() : 
     m_indexIdHasBeenSet(false),
-    m_documentIdListHasBeenSet(false)
+    m_documentIdListHasBeenSet(false),
+    m_dataSourceSyncJobMetricTargetHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String BatchDeleteDocumentRequest::SerializePayload() const
      documentIdListJsonList[documentIdListIndex].AsString(m_documentIdList[documentIdListIndex]);
    }
    payload.WithArray("DocumentIdList", std::move(documentIdListJsonList));
+
+  }
+
+  if(m_dataSourceSyncJobMetricTargetHasBeenSet)
+  {
+   payload.WithObject("DataSourceSyncJobMetricTarget", m_dataSourceSyncJobMetricTarget.Jsonize());
 
   }
 

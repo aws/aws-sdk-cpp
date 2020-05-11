@@ -27,11 +27,13 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeIndexResult::DescribeIndexResult() : 
+    m_edition(IndexEdition::NOT_SET),
     m_status(IndexStatus::NOT_SET)
 {
 }
 
 DescribeIndexResult::DescribeIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_edition(IndexEdition::NOT_SET),
     m_status(IndexStatus::NOT_SET)
 {
   *this = result;
@@ -49,6 +51,12 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
+
+  }
+
+  if(jsonValue.ValueExists("Edition"))
+  {
+    m_edition = IndexEditionMapper::GetIndexEditionForName(jsonValue.GetString("Edition"));
 
   }
 
@@ -106,6 +114,12 @@ DescribeIndexResult& DescribeIndexResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
+
+  }
+
+  if(jsonValue.ValueExists("CapacityUnits"))
+  {
+    m_capacityUnits = jsonValue.GetObject("CapacityUnits");
 
   }
 

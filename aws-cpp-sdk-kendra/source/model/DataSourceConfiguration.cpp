@@ -31,14 +31,20 @@ namespace Model
 DataSourceConfiguration::DataSourceConfiguration() : 
     m_s3ConfigurationHasBeenSet(false),
     m_sharePointConfigurationHasBeenSet(false),
-    m_databaseConfigurationHasBeenSet(false)
+    m_databaseConfigurationHasBeenSet(false),
+    m_salesforceConfigurationHasBeenSet(false),
+    m_oneDriveConfigurationHasBeenSet(false),
+    m_serviceNowConfigurationHasBeenSet(false)
 {
 }
 
 DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) : 
     m_s3ConfigurationHasBeenSet(false),
     m_sharePointConfigurationHasBeenSet(false),
-    m_databaseConfigurationHasBeenSet(false)
+    m_databaseConfigurationHasBeenSet(false),
+    m_salesforceConfigurationHasBeenSet(false),
+    m_oneDriveConfigurationHasBeenSet(false),
+    m_serviceNowConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +72,27 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_databaseConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SalesforceConfiguration"))
+  {
+    m_salesforceConfiguration = jsonValue.GetObject("SalesforceConfiguration");
+
+    m_salesforceConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OneDriveConfiguration"))
+  {
+    m_oneDriveConfiguration = jsonValue.GetObject("OneDriveConfiguration");
+
+    m_oneDriveConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceNowConfiguration"))
+  {
+    m_serviceNowConfiguration = jsonValue.GetObject("ServiceNowConfiguration");
+
+    m_serviceNowConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +115,24 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_databaseConfigurationHasBeenSet)
   {
    payload.WithObject("DatabaseConfiguration", m_databaseConfiguration.Jsonize());
+
+  }
+
+  if(m_salesforceConfigurationHasBeenSet)
+  {
+   payload.WithObject("SalesforceConfiguration", m_salesforceConfiguration.Jsonize());
+
+  }
+
+  if(m_oneDriveConfigurationHasBeenSet)
+  {
+   payload.WithObject("OneDriveConfiguration", m_oneDriveConfiguration.Jsonize());
+
+  }
+
+  if(m_serviceNowConfigurationHasBeenSet)
+  {
+   payload.WithObject("ServiceNowConfiguration", m_serviceNowConfiguration.Jsonize());
 
   }
 

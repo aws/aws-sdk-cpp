@@ -31,6 +31,7 @@ namespace Model
 RepositoryAssociation::RepositoryAssociation() : 
     m_associationIdHasBeenSet(false),
     m_associationArnHasBeenSet(false),
+    m_connectionArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_providerType(ProviderType::NOT_SET),
@@ -46,6 +47,7 @@ RepositoryAssociation::RepositoryAssociation() :
 RepositoryAssociation::RepositoryAssociation(JsonView jsonValue) : 
     m_associationIdHasBeenSet(false),
     m_associationArnHasBeenSet(false),
+    m_connectionArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_providerType(ProviderType::NOT_SET),
@@ -73,6 +75,13 @@ RepositoryAssociation& RepositoryAssociation::operator =(JsonView jsonValue)
     m_associationArn = jsonValue.GetString("AssociationArn");
 
     m_associationArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectionArn"))
+  {
+    m_connectionArn = jsonValue.GetString("ConnectionArn");
+
+    m_connectionArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -140,6 +149,12 @@ JsonValue RepositoryAssociation::Jsonize() const
   if(m_associationArnHasBeenSet)
   {
    payload.WithString("AssociationArn", m_associationArn);
+
+  }
+
+  if(m_connectionArnHasBeenSet)
+  {
+   payload.WithString("ConnectionArn", m_connectionArn);
 
   }
 

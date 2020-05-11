@@ -296,7 +296,16 @@ namespace Model
     inf1_xlarge,
     inf1_2xlarge,
     inf1_6xlarge,
-    inf1_24xlarge
+    inf1_24xlarge,
+    m6g_metal,
+    m6g_medium,
+    m6g_large,
+    m6g_xlarge,
+    m6g_2xlarge,
+    m6g_4xlarge,
+    m6g_8xlarge,
+    m6g_12xlarge,
+    m6g_16xlarge
   };
 
 namespace InstanceTypeMapper

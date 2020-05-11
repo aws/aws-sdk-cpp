@@ -30,6 +30,7 @@ namespace Model
 
 RepositoryAssociationSummary::RepositoryAssociationSummary() : 
     m_associationArnHasBeenSet(false),
+    m_connectionArnHasBeenSet(false),
     m_lastUpdatedTimeStampHasBeenSet(false),
     m_associationIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -43,6 +44,7 @@ RepositoryAssociationSummary::RepositoryAssociationSummary() :
 
 RepositoryAssociationSummary::RepositoryAssociationSummary(JsonView jsonValue) : 
     m_associationArnHasBeenSet(false),
+    m_connectionArnHasBeenSet(false),
     m_lastUpdatedTimeStampHasBeenSet(false),
     m_associationIdHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -62,6 +64,13 @@ RepositoryAssociationSummary& RepositoryAssociationSummary::operator =(JsonView 
     m_associationArn = jsonValue.GetString("AssociationArn");
 
     m_associationArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectionArn"))
+  {
+    m_connectionArn = jsonValue.GetString("ConnectionArn");
+
+    m_connectionArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastUpdatedTimeStamp"))
@@ -116,6 +125,12 @@ JsonValue RepositoryAssociationSummary::Jsonize() const
   if(m_associationArnHasBeenSet)
   {
    payload.WithString("AssociationArn", m_associationArn);
+
+  }
+
+  if(m_connectionArnHasBeenSet)
+  {
+   payload.WithString("ConnectionArn", m_connectionArn);
 
   }
 

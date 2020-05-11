@@ -27,7 +27,8 @@ UpdateIndexRequest::UpdateIndexRequest() :
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_documentMetadataConfigurationUpdatesHasBeenSet(false)
+    m_documentMetadataConfigurationUpdatesHasBeenSet(false),
+    m_capacityUnitsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,12 @@ Aws::String UpdateIndexRequest::SerializePayload() const
      documentMetadataConfigurationUpdatesJsonList[documentMetadataConfigurationUpdatesIndex].AsObject(m_documentMetadataConfigurationUpdates[documentMetadataConfigurationUpdatesIndex].Jsonize());
    }
    payload.WithArray("DocumentMetadataConfigurationUpdates", std::move(documentMetadataConfigurationUpdatesJsonList));
+
+  }
+
+  if(m_capacityUnitsHasBeenSet)
+  {
+   payload.WithObject("CapacityUnits", m_capacityUnits.Jsonize());
 
   }
 

@@ -34,6 +34,7 @@ namespace Aws
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int SYSTEM_UPDATING_HASH = HashingUtils::HashString("SYSTEM_UPDATING");
 
 
@@ -55,6 +56,10 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return IndexStatus::FAILED;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return IndexStatus::UPDATING;
           }
           else if (hashCode == SYSTEM_UPDATING_HASH)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "DELETING";
           case IndexStatus::FAILED:
             return "FAILED";
+          case IndexStatus::UPDATING:
+            return "UPDATING";
           case IndexStatus::SYSTEM_UPDATING:
             return "SYSTEM_UPDATING";
           default:

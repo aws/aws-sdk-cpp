@@ -30,6 +30,7 @@ namespace Model
     ACTIVE,
     DELETING,
     FAILED,
+    UPDATING,
     SYSTEM_UPDATING
   };
 

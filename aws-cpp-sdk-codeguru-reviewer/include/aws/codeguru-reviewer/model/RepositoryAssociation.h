@@ -133,6 +133,47 @@ namespace Model
 
 
     /**
+     * <p> The Amazon Resource Name (ARN) identifying the repository connection. </p>
+     */
+    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) identifying the repository connection. </p>
+     */
+    inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) identifying the repository connection. </p>
+     */
+    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) identifying the repository connection. </p>
+     */
+    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) identifying the repository connection. </p>
+     */
+    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) identifying the repository connection. </p>
+     */
+    inline RepositoryAssociation& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) identifying the repository connection. </p>
+     */
+    inline RepositoryAssociation& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) identifying the repository connection. </p>
+     */
+    inline RepositoryAssociation& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+
+
+    /**
      * <p>The name of the repository.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -397,6 +438,9 @@ namespace Model
 
     Aws::String m_associationArn;
     bool m_associationArnHasBeenSet;
+
+    Aws::String m_connectionArn;
+    bool m_connectionArnHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

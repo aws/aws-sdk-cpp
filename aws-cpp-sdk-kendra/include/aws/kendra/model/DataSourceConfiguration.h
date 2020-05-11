@@ -18,6 +18,9 @@
 #include <aws/kendra/model/S3DataSourceConfiguration.h>
 #include <aws/kendra/model/SharePointConfiguration.h>
 #include <aws/kendra/model/DatabaseConfiguration.h>
+#include <aws/kendra/model/SalesforceConfiguration.h>
+#include <aws/kendra/model/OneDriveConfiguration.h>
+#include <aws/kendra/model/ServiceNowConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -154,6 +157,117 @@ namespace Model
      */
     inline DataSourceConfiguration& WithDatabaseConfiguration(DatabaseConfiguration&& value) { SetDatabaseConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides configuration information for data sources that connect to a
+     * Salesforce site.</p>
+     */
+    inline const SalesforceConfiguration& GetSalesforceConfiguration() const{ return m_salesforceConfiguration; }
+
+    /**
+     * <p>Provides configuration information for data sources that connect to a
+     * Salesforce site.</p>
+     */
+    inline bool SalesforceConfigurationHasBeenSet() const { return m_salesforceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides configuration information for data sources that connect to a
+     * Salesforce site.</p>
+     */
+    inline void SetSalesforceConfiguration(const SalesforceConfiguration& value) { m_salesforceConfigurationHasBeenSet = true; m_salesforceConfiguration = value; }
+
+    /**
+     * <p>Provides configuration information for data sources that connect to a
+     * Salesforce site.</p>
+     */
+    inline void SetSalesforceConfiguration(SalesforceConfiguration&& value) { m_salesforceConfigurationHasBeenSet = true; m_salesforceConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides configuration information for data sources that connect to a
+     * Salesforce site.</p>
+     */
+    inline DataSourceConfiguration& WithSalesforceConfiguration(const SalesforceConfiguration& value) { SetSalesforceConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides configuration information for data sources that connect to a
+     * Salesforce site.</p>
+     */
+    inline DataSourceConfiguration& WithSalesforceConfiguration(SalesforceConfiguration&& value) { SetSalesforceConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provided configuration for data sources that connect to Microsoft
+     * OneDrive.</p>
+     */
+    inline const OneDriveConfiguration& GetOneDriveConfiguration() const{ return m_oneDriveConfiguration; }
+
+    /**
+     * <p>Provided configuration for data sources that connect to Microsoft
+     * OneDrive.</p>
+     */
+    inline bool OneDriveConfigurationHasBeenSet() const { return m_oneDriveConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provided configuration for data sources that connect to Microsoft
+     * OneDrive.</p>
+     */
+    inline void SetOneDriveConfiguration(const OneDriveConfiguration& value) { m_oneDriveConfigurationHasBeenSet = true; m_oneDriveConfiguration = value; }
+
+    /**
+     * <p>Provided configuration for data sources that connect to Microsoft
+     * OneDrive.</p>
+     */
+    inline void SetOneDriveConfiguration(OneDriveConfiguration&& value) { m_oneDriveConfigurationHasBeenSet = true; m_oneDriveConfiguration = std::move(value); }
+
+    /**
+     * <p>Provided configuration for data sources that connect to Microsoft
+     * OneDrive.</p>
+     */
+    inline DataSourceConfiguration& WithOneDriveConfiguration(const OneDriveConfiguration& value) { SetOneDriveConfiguration(value); return *this;}
+
+    /**
+     * <p>Provided configuration for data sources that connect to Microsoft
+     * OneDrive.</p>
+     */
+    inline DataSourceConfiguration& WithOneDriveConfiguration(OneDriveConfiguration&& value) { SetOneDriveConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides configuration for data sources that connect to ServiceNow
+     * instances.</p>
+     */
+    inline const ServiceNowConfiguration& GetServiceNowConfiguration() const{ return m_serviceNowConfiguration; }
+
+    /**
+     * <p>Provides configuration for data sources that connect to ServiceNow
+     * instances.</p>
+     */
+    inline bool ServiceNowConfigurationHasBeenSet() const { return m_serviceNowConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides configuration for data sources that connect to ServiceNow
+     * instances.</p>
+     */
+    inline void SetServiceNowConfiguration(const ServiceNowConfiguration& value) { m_serviceNowConfigurationHasBeenSet = true; m_serviceNowConfiguration = value; }
+
+    /**
+     * <p>Provides configuration for data sources that connect to ServiceNow
+     * instances.</p>
+     */
+    inline void SetServiceNowConfiguration(ServiceNowConfiguration&& value) { m_serviceNowConfigurationHasBeenSet = true; m_serviceNowConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides configuration for data sources that connect to ServiceNow
+     * instances.</p>
+     */
+    inline DataSourceConfiguration& WithServiceNowConfiguration(const ServiceNowConfiguration& value) { SetServiceNowConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides configuration for data sources that connect to ServiceNow
+     * instances.</p>
+     */
+    inline DataSourceConfiguration& WithServiceNowConfiguration(ServiceNowConfiguration&& value) { SetServiceNowConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -164,6 +278,15 @@ namespace Model
 
     DatabaseConfiguration m_databaseConfiguration;
     bool m_databaseConfigurationHasBeenSet;
+
+    SalesforceConfiguration m_salesforceConfiguration;
+    bool m_salesforceConfigurationHasBeenSet;
+
+    OneDriveConfiguration m_oneDriveConfiguration;
+    bool m_oneDriveConfigurationHasBeenSet;
+
+    ServiceNowConfiguration m_serviceNowConfiguration;
+    bool m_serviceNowConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -18,6 +18,7 @@
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/DataSourceSyncJobMetricTarget.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,25 @@ namespace Model
      */
     inline BatchDeleteDocumentRequest& AddDocumentIdList(const char* value) { m_documentIdListHasBeenSet = true; m_documentIdList.push_back(value); return *this; }
 
+
+    
+    inline const DataSourceSyncJobMetricTarget& GetDataSourceSyncJobMetricTarget() const{ return m_dataSourceSyncJobMetricTarget; }
+
+    
+    inline bool DataSourceSyncJobMetricTargetHasBeenSet() const { return m_dataSourceSyncJobMetricTargetHasBeenSet; }
+
+    
+    inline void SetDataSourceSyncJobMetricTarget(const DataSourceSyncJobMetricTarget& value) { m_dataSourceSyncJobMetricTargetHasBeenSet = true; m_dataSourceSyncJobMetricTarget = value; }
+
+    
+    inline void SetDataSourceSyncJobMetricTarget(DataSourceSyncJobMetricTarget&& value) { m_dataSourceSyncJobMetricTargetHasBeenSet = true; m_dataSourceSyncJobMetricTarget = std::move(value); }
+
+    
+    inline BatchDeleteDocumentRequest& WithDataSourceSyncJobMetricTarget(const DataSourceSyncJobMetricTarget& value) { SetDataSourceSyncJobMetricTarget(value); return *this;}
+
+    
+    inline BatchDeleteDocumentRequest& WithDataSourceSyncJobMetricTarget(DataSourceSyncJobMetricTarget&& value) { SetDataSourceSyncJobMetricTarget(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -138,6 +158,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_documentIdList;
     bool m_documentIdListHasBeenSet;
+
+    DataSourceSyncJobMetricTarget m_dataSourceSyncJobMetricTarget;
+    bool m_dataSourceSyncJobMetricTargetHasBeenSet;
   };
 
 } // namespace Model

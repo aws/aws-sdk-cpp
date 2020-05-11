@@ -29,12 +29,14 @@ namespace Model
 {
 
 Repository::Repository() : 
-    m_codeCommitHasBeenSet(false)
+    m_codeCommitHasBeenSet(false),
+    m_bitbucketHasBeenSet(false)
 {
 }
 
 Repository::Repository(JsonView jsonValue) : 
-    m_codeCommitHasBeenSet(false)
+    m_codeCommitHasBeenSet(false),
+    m_bitbucketHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ Repository& Repository::operator =(JsonView jsonValue)
     m_codeCommitHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Bitbucket"))
+  {
+    m_bitbucket = jsonValue.GetObject("Bitbucket");
+
+    m_bitbucketHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue Repository::Jsonize() const
   if(m_codeCommitHasBeenSet)
   {
    payload.WithObject("CodeCommit", m_codeCommit.Jsonize());
+
+  }
+
+  if(m_bitbucketHasBeenSet)
+  {
+   payload.WithObject("Bitbucket", m_bitbucket.Jsonize());
 
   }
 

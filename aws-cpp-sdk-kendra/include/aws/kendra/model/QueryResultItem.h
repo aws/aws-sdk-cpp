@@ -128,42 +128,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>One or more additional attribues associated with the query result.</p>
      */
     inline const Aws::Vector<AdditionalResultAttribute>& GetAdditionalAttributes() const{ return m_additionalAttributes; }
 
     /**
-     * <p/>
+     * <p>One or more additional attribues associated with the query result.</p>
      */
     inline bool AdditionalAttributesHasBeenSet() const { return m_additionalAttributesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>One or more additional attribues associated with the query result.</p>
      */
     inline void SetAdditionalAttributes(const Aws::Vector<AdditionalResultAttribute>& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = value; }
 
     /**
-     * <p/>
+     * <p>One or more additional attribues associated with the query result.</p>
      */
     inline void SetAdditionalAttributes(Aws::Vector<AdditionalResultAttribute>&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes = std::move(value); }
 
     /**
-     * <p/>
+     * <p>One or more additional attribues associated with the query result.</p>
      */
     inline QueryResultItem& WithAdditionalAttributes(const Aws::Vector<AdditionalResultAttribute>& value) { SetAdditionalAttributes(value); return *this;}
 
     /**
-     * <p/>
+     * <p>One or more additional attribues associated with the query result.</p>
      */
     inline QueryResultItem& WithAdditionalAttributes(Aws::Vector<AdditionalResultAttribute>&& value) { SetAdditionalAttributes(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>One or more additional attribues associated with the query result.</p>
      */
     inline QueryResultItem& AddAdditionalAttributes(const AdditionalResultAttribute& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>One or more additional attribues associated with the query result.</p>
      */
     inline QueryResultItem& AddAdditionalAttributes(AdditionalResultAttribute&& value) { m_additionalAttributesHasBeenSet = true; m_additionalAttributes.push_back(std::move(value)); return *this; }
 

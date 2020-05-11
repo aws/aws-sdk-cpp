@@ -36,6 +36,7 @@ namespace Aws
         static const int INCOMPLETE_HASH = HashingUtils::HashString("INCOMPLETE");
         static const int STOPPING_HASH = HashingUtils::HashString("STOPPING");
         static const int ABORTED_HASH = HashingUtils::HashString("ABORTED");
+        static const int SYNCING_INDEXING_HASH = HashingUtils::HashString("SYNCING_INDEXING");
 
 
         DataSourceSyncJobStatus GetDataSourceSyncJobStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return DataSourceSyncJobStatus::ABORTED;
           }
+          else if (hashCode == SYNCING_INDEXING_HASH)
+          {
+            return DataSourceSyncJobStatus::SYNCING_INDEXING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "STOPPING";
           case DataSourceSyncJobStatus::ABORTED:
             return "ABORTED";
+          case DataSourceSyncJobStatus::SYNCING_INDEXING:
+            return "SYNCING_INDEXING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

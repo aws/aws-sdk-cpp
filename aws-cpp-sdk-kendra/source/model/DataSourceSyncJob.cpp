@@ -37,7 +37,8 @@ DataSourceSyncJob::DataSourceSyncJob() :
     m_errorMessageHasBeenSet(false),
     m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
-    m_dataSourceErrorCodeHasBeenSet(false)
+    m_dataSourceErrorCodeHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ DataSourceSyncJob::DataSourceSyncJob(JsonView jsonValue) :
     m_errorMessageHasBeenSet(false),
     m_errorCode(ErrorCode::NOT_SET),
     m_errorCodeHasBeenSet(false),
-    m_dataSourceErrorCodeHasBeenSet(false)
+    m_dataSourceErrorCodeHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +108,13 @@ DataSourceSyncJob& DataSourceSyncJob::operator =(JsonView jsonValue)
     m_dataSourceErrorCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Metrics"))
+  {
+    m_metrics = jsonValue.GetObject("Metrics");
+
+    m_metricsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +157,12 @@ JsonValue DataSourceSyncJob::Jsonize() const
   if(m_dataSourceErrorCodeHasBeenSet)
   {
    payload.WithString("DataSourceErrorCode", m_dataSourceErrorCode);
+
+  }
+
+  if(m_metricsHasBeenSet)
+  {
+   payload.WithObject("Metrics", m_metrics.Jsonize());
 
   }
 

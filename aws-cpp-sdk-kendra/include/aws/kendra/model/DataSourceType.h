@@ -28,7 +28,10 @@ namespace Model
     NOT_SET,
     S3,
     SHAREPOINT,
-    DATABASE
+    DATABASE,
+    SALESFORCE,
+    ONEDRIVE,
+    SERVICENOW
   };
 
 namespace DataSourceTypeMapper

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kendra/model/IndexEdition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/kendra/model/IndexStatus.h>
 #include <utility>
@@ -148,6 +149,43 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the index is a enterprise edition index or a developer
+     * edition index. </p>
+     */
+    inline const IndexEdition& GetEdition() const{ return m_edition; }
+
+    /**
+     * <p>Indicates whether the index is a enterprise edition index or a developer
+     * edition index. </p>
+     */
+    inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the index is a enterprise edition index or a developer
+     * edition index. </p>
+     */
+    inline void SetEdition(const IndexEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
+
+    /**
+     * <p>Indicates whether the index is a enterprise edition index or a developer
+     * edition index. </p>
+     */
+    inline void SetEdition(IndexEdition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
+
+    /**
+     * <p>Indicates whether the index is a enterprise edition index or a developer
+     * edition index. </p>
+     */
+    inline IndexConfigurationSummary& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
+
+    /**
+     * <p>Indicates whether the index is a enterprise edition index or a developer
+     * edition index. </p>
+     */
+    inline IndexConfigurationSummary& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Unix timestamp when the index was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -258,6 +296,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    IndexEdition m_edition;
+    bool m_editionHasBeenSet;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;

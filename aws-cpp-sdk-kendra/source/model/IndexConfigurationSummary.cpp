@@ -31,6 +31,8 @@ namespace Model
 IndexConfigurationSummary::IndexConfigurationSummary() : 
     m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_edition(IndexEdition::NOT_SET),
+    m_editionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_status(IndexStatus::NOT_SET),
@@ -41,6 +43,8 @@ IndexConfigurationSummary::IndexConfigurationSummary() :
 IndexConfigurationSummary::IndexConfigurationSummary(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_edition(IndexEdition::NOT_SET),
+    m_editionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_status(IndexStatus::NOT_SET),
@@ -63,6 +67,13 @@ IndexConfigurationSummary& IndexConfigurationSummary::operator =(JsonView jsonVa
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Edition"))
+  {
+    m_edition = IndexEditionMapper::GetIndexEditionForName(jsonValue.GetString("Edition"));
+
+    m_editionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedAt"))
@@ -103,6 +114,11 @@ JsonValue IndexConfigurationSummary::Jsonize() const
   {
    payload.WithString("Id", m_id);
 
+  }
+
+  if(m_editionHasBeenSet)
+  {
+   payload.WithString("Edition", IndexEditionMapper::GetNameForIndexEdition(m_edition));
   }
 
   if(m_createdAtHasBeenSet)

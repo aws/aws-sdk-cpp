@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Information a document attribute</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a document attribute</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Facet">AWS API
    * Reference</a></p>
    */

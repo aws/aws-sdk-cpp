@@ -16,11 +16,13 @@
 #pragma once
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kendra/model/IndexEdition.h>
 #include <aws/kendra/model/ServerSideEncryptionConfiguration.h>
 #include <aws/kendra/model/IndexStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kendra/model/IndexStatistics.h>
+#include <aws/kendra/model/CapacityUnitsConfiguration.h>
 #include <aws/kendra/model/DocumentMetadataConfiguration.h>
 #include <utility>
 
@@ -118,6 +120,37 @@ namespace Model
      * <p>the name of the index.</p>
      */
     inline DescribeIndexResult& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Kendra edition used for the index. You decide the edition when you
+     * create the index.</p>
+     */
+    inline const IndexEdition& GetEdition() const{ return m_edition; }
+
+    /**
+     * <p>The Amazon Kendra edition used for the index. You decide the edition when you
+     * create the index.</p>
+     */
+    inline void SetEdition(const IndexEdition& value) { m_edition = value; }
+
+    /**
+     * <p>The Amazon Kendra edition used for the index. You decide the edition when you
+     * create the index.</p>
+     */
+    inline void SetEdition(IndexEdition&& value) { m_edition = std::move(value); }
+
+    /**
+     * <p>The Amazon Kendra edition used for the index. You decide the edition when you
+     * create the index.</p>
+     */
+    inline DescribeIndexResult& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
+
+    /**
+     * <p>The Amazon Kendra edition used for the index. You decide the edition when you
+     * create the index.</p>
+     */
+    inline DescribeIndexResult& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
 
 
     /**
@@ -439,11 +472,54 @@ namespace Model
      */
     inline DescribeIndexResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
+    /**
+     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * meet the needs of your application. This contains the capacity units used for
+     * the index. A 0 for the query capacity or the storage capacity indicates that the
+     * index is using the default capacity for the index.</p>
+     */
+    inline const CapacityUnitsConfiguration& GetCapacityUnits() const{ return m_capacityUnits; }
+
+    /**
+     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * meet the needs of your application. This contains the capacity units used for
+     * the index. A 0 for the query capacity or the storage capacity indicates that the
+     * index is using the default capacity for the index.</p>
+     */
+    inline void SetCapacityUnits(const CapacityUnitsConfiguration& value) { m_capacityUnits = value; }
+
+    /**
+     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * meet the needs of your application. This contains the capacity units used for
+     * the index. A 0 for the query capacity or the storage capacity indicates that the
+     * index is using the default capacity for the index.</p>
+     */
+    inline void SetCapacityUnits(CapacityUnitsConfiguration&& value) { m_capacityUnits = std::move(value); }
+
+    /**
+     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * meet the needs of your application. This contains the capacity units used for
+     * the index. A 0 for the query capacity or the storage capacity indicates that the
+     * index is using the default capacity for the index.</p>
+     */
+    inline DescribeIndexResult& WithCapacityUnits(const CapacityUnitsConfiguration& value) { SetCapacityUnits(value); return *this;}
+
+    /**
+     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * meet the needs of your application. This contains the capacity units used for
+     * the index. A 0 for the query capacity or the storage capacity indicates that the
+     * index is using the default capacity for the index.</p>
+     */
+    inline DescribeIndexResult& WithCapacityUnits(CapacityUnitsConfiguration&& value) { SetCapacityUnits(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
 
     Aws::String m_id;
+
+    IndexEdition m_edition;
 
     Aws::String m_roleArn;
 
@@ -462,6 +538,8 @@ namespace Model
     IndexStatistics m_indexStatistics;
 
     Aws::String m_errorMessage;
+
+    CapacityUnitsConfiguration m_capacityUnits;
   };
 
 } // namespace Model

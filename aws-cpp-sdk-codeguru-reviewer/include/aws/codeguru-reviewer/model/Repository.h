@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/CodeCommitRepository.h>
+#include <aws/codeguru-reviewer/model/ThirdPartySourceRepository.h>
 #include <utility>
 
 namespace Aws
@@ -77,10 +78,44 @@ namespace Model
      */
     inline Repository& WithCodeCommit(CodeCommitRepository&& value) { SetCodeCommit(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Information about a Bitbucket Cloud repository. </p>
+     */
+    inline const ThirdPartySourceRepository& GetBitbucket() const{ return m_bitbucket; }
+
+    /**
+     * <p> Information about a Bitbucket Cloud repository. </p>
+     */
+    inline bool BitbucketHasBeenSet() const { return m_bitbucketHasBeenSet; }
+
+    /**
+     * <p> Information about a Bitbucket Cloud repository. </p>
+     */
+    inline void SetBitbucket(const ThirdPartySourceRepository& value) { m_bitbucketHasBeenSet = true; m_bitbucket = value; }
+
+    /**
+     * <p> Information about a Bitbucket Cloud repository. </p>
+     */
+    inline void SetBitbucket(ThirdPartySourceRepository&& value) { m_bitbucketHasBeenSet = true; m_bitbucket = std::move(value); }
+
+    /**
+     * <p> Information about a Bitbucket Cloud repository. </p>
+     */
+    inline Repository& WithBitbucket(const ThirdPartySourceRepository& value) { SetBitbucket(value); return *this;}
+
+    /**
+     * <p> Information about a Bitbucket Cloud repository. </p>
+     */
+    inline Repository& WithBitbucket(ThirdPartySourceRepository&& value) { SetBitbucket(std::move(value)); return *this;}
+
   private:
 
     CodeCommitRepository m_codeCommit;
     bool m_codeCommitHasBeenSet;
+
+    ThirdPartySourceRepository m_bitbucket;
+    bool m_bitbucketHasBeenSet;
   };
 
 } // namespace Model

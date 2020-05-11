@@ -17,7 +17,10 @@
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kendra/model/IndexEdition.h>
 #include <aws/kendra/model/ServerSideEncryptionConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -85,6 +88,55 @@ namespace Model
      * <p>The name for the new index.</p>
      */
     inline CreateIndexRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Kendra edition to use for the index. Choose
+     * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     * databases. Once you set the edition for an index, it can't be changed. </p>
+     */
+    inline const IndexEdition& GetEdition() const{ return m_edition; }
+
+    /**
+     * <p>The Amazon Kendra edition to use for the index. Choose
+     * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     * databases. Once you set the edition for an index, it can't be changed. </p>
+     */
+    inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Kendra edition to use for the index. Choose
+     * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     * databases. Once you set the edition for an index, it can't be changed. </p>
+     */
+    inline void SetEdition(const IndexEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
+
+    /**
+     * <p>The Amazon Kendra edition to use for the index. Choose
+     * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     * databases. Once you set the edition for an index, it can't be changed. </p>
+     */
+    inline void SetEdition(IndexEdition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
+
+    /**
+     * <p>The Amazon Kendra edition to use for the index. Choose
+     * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     * databases. Once you set the edition for an index, it can't be changed. </p>
+     */
+    inline CreateIndexRequest& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
+
+    /**
+     * <p>The Amazon Kendra edition to use for the index. Choose
+     * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
+     * databases. Once you set the edition for an index, it can't be changed. </p>
+     */
+    inline CreateIndexRequest& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
 
 
     /**
@@ -292,10 +344,62 @@ namespace Model
      */
     inline CreateIndexRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>A list of key-value pairs that identify the index. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of key-value pairs that identify the index. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs that identify the index. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of key-value pairs that identify the index. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs that identify the index. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateIndexRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that identify the index. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateIndexRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that identify the index. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateIndexRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs that identify the index. You can use the tags to
+     * identify and organize your resources and to control access to resources.</p>
+     */
+    inline CreateIndexRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    IndexEdition m_edition;
+    bool m_editionHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
@@ -308,6 +412,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

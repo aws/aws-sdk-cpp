@@ -30,13 +30,17 @@ namespace Model
 
 TextDocumentStatistics::TextDocumentStatistics() : 
     m_indexedTextDocumentsCount(0),
-    m_indexedTextDocumentsCountHasBeenSet(false)
+    m_indexedTextDocumentsCountHasBeenSet(false),
+    m_indexedTextBytes(0),
+    m_indexedTextBytesHasBeenSet(false)
 {
 }
 
 TextDocumentStatistics::TextDocumentStatistics(JsonView jsonValue) : 
     m_indexedTextDocumentsCount(0),
-    m_indexedTextDocumentsCountHasBeenSet(false)
+    m_indexedTextDocumentsCountHasBeenSet(false),
+    m_indexedTextBytes(0),
+    m_indexedTextBytesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ TextDocumentStatistics& TextDocumentStatistics::operator =(JsonView jsonValue)
     m_indexedTextDocumentsCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IndexedTextBytes"))
+  {
+    m_indexedTextBytes = jsonValue.GetInt64("IndexedTextBytes");
+
+    m_indexedTextBytesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +71,12 @@ JsonValue TextDocumentStatistics::Jsonize() const
   if(m_indexedTextDocumentsCountHasBeenSet)
   {
    payload.WithInteger("IndexedTextDocumentsCount", m_indexedTextDocumentsCount);
+
+  }
+
+  if(m_indexedTextBytesHasBeenSet)
+  {
+   payload.WithInt64("IndexedTextBytes", m_indexedTextBytes);
 
   }
 

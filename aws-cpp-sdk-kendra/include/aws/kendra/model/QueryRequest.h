@@ -388,25 +388,29 @@ namespace Model
 
     /**
      * <p>Sets the number of results that are returned in each page of results. The
-     * default page size is 100.</p>
+     * default page size is 10. The maximum number of results returned is 100. If you
+     * ask for more than 100 results, only 100 are returned.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
 
     /**
      * <p>Sets the number of results that are returned in each page of results. The
-     * default page size is 100.</p>
+     * default page size is 10. The maximum number of results returned is 100. If you
+     * ask for more than 100 results, only 100 are returned.</p>
      */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>Sets the number of results that are returned in each page of results. The
-     * default page size is 100.</p>
+     * default page size is 10. The maximum number of results returned is 100. If you
+     * ask for more than 100 results, only 100 are returned.</p>
      */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
      * <p>Sets the number of results that are returned in each page of results. The
-     * default page size is 100.</p>
+     * default page size is 10. The maximum number of results returned is 100. If you
+     * ask for more than 100 results, only 100 are returned.</p>
      */
     inline QueryRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
 
