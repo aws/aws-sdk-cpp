@@ -1040,16 +1040,16 @@ namespace Model
         virtual void ListMailboxPermissionsAsync(const Model::ListMailboxPermissionsRequest& request, const ListMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns summaries of the customer's non-deleted organizations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns summaries of the customer's organizations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOrganizationsOutcome ListOrganizations(const Model::ListOrganizationsRequest& request) const;
 
         /**
-         * <p>Returns summaries of the customer's non-deleted organizations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns summaries of the customer's organizations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">AWS
          * API Reference</a></p>
          *
@@ -1058,8 +1058,8 @@ namespace Model
         virtual Model::ListOrganizationsOutcomeCallable ListOrganizationsCallable(const Model::ListOrganizationsRequest& request) const;
 
         /**
-         * <p>Returns summaries of the customer's non-deleted organizations.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns summaries of the customer's organizations.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListOrganizations">AWS
          * API Reference</a></p>
          *

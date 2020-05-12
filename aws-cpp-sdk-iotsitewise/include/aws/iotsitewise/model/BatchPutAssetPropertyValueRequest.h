@@ -45,65 +45,49 @@ namespace Model
 
     /**
      * <p>The list of asset property value entries for the batch put request. You can
-     * specify up to 10 entries per request. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * specify up to 10 entries per request.</p>
      */
     inline const Aws::Vector<PutAssetPropertyValueEntry>& GetEntries() const{ return m_entries; }
 
     /**
      * <p>The list of asset property value entries for the batch put request. You can
-     * specify up to 10 entries per request. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * specify up to 10 entries per request.</p>
      */
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
 
     /**
      * <p>The list of asset property value entries for the batch put request. You can
-     * specify up to 10 entries per request. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * specify up to 10 entries per request.</p>
      */
     inline void SetEntries(const Aws::Vector<PutAssetPropertyValueEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /**
      * <p>The list of asset property value entries for the batch put request. You can
-     * specify up to 10 entries per request. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * specify up to 10 entries per request.</p>
      */
     inline void SetEntries(Aws::Vector<PutAssetPropertyValueEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
 
     /**
      * <p>The list of asset property value entries for the batch put request. You can
-     * specify up to 10 entries per request. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * specify up to 10 entries per request.</p>
      */
     inline BatchPutAssetPropertyValueRequest& WithEntries(const Aws::Vector<PutAssetPropertyValueEntry>& value) { SetEntries(value); return *this;}
 
     /**
      * <p>The list of asset property value entries for the batch put request. You can
-     * specify up to 10 entries per request. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * specify up to 10 entries per request.</p>
      */
     inline BatchPutAssetPropertyValueRequest& WithEntries(Aws::Vector<PutAssetPropertyValueEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
      * <p>The list of asset property value entries for the batch put request. You can
-     * specify up to 10 entries per request. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * specify up to 10 entries per request.</p>
      */
     inline BatchPutAssetPropertyValueRequest& AddEntries(const PutAssetPropertyValueEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
 
     /**
      * <p>The list of asset property value entries for the batch put request. You can
-     * specify up to 10 entries per request. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * specify up to 10 entries per request.</p>
      */
     inline BatchPutAssetPropertyValueRequest& AddEntries(PutAssetPropertyValueEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
 

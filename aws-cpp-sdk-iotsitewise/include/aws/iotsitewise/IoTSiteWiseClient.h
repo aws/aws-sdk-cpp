@@ -1572,14 +1572,28 @@ namespace Model
         virtual void ListAssetModelsAsync(const Model::ListAssetModelsRequest& request, const ListAssetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of asset summaries.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of asset summaries.</p> <p>You can use this
+         * operation to do the following:</p> <ul> <li> <p>List assets based on a specific
+         * asset model.</p> </li> <li> <p>List top-level assets.</p> </li> </ul> <p>You
+         * can't use this operation to list all assets. To retrieve summaries for all of
+         * your assets, use <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a>
+         * to get all of your asset model IDs. Then, use ListAssets to get all assets for
+         * each asset model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssetsOutcome ListAssets(const Model::ListAssetsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of asset summaries.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of asset summaries.</p> <p>You can use this
+         * operation to do the following:</p> <ul> <li> <p>List assets based on a specific
+         * asset model.</p> </li> <li> <p>List top-level assets.</p> </li> </ul> <p>You
+         * can't use this operation to list all assets. To retrieve summaries for all of
+         * your assets, use <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a>
+         * to get all of your asset model IDs. Then, use ListAssets to get all assets for
+         * each asset model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssets">AWS
          * API Reference</a></p>
          *
@@ -1588,7 +1602,14 @@ namespace Model
         virtual Model::ListAssetsOutcomeCallable ListAssetsCallable(const Model::ListAssetsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of asset summaries.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a paginated list of asset summaries.</p> <p>You can use this
+         * operation to do the following:</p> <ul> <li> <p>List assets based on a specific
+         * asset model.</p> </li> <li> <p>List top-level assets.</p> </li> </ul> <p>You
+         * can't use this operation to list all assets. To retrieve summaries for all of
+         * your assets, use <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a>
+         * to get all of your asset model IDs. Then, use ListAssets to get all assets for
+         * each asset model.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssets">AWS
          * API Reference</a></p>
          *
@@ -1946,7 +1967,8 @@ namespace Model
          * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <important>
          * <p>This action overwrites the existing model with the provided model. To avoid
          * deleting your asset model's properties or hierarchies, you must include their
-         * definitions in the updated asset model payload. For more information, see <a
+         * IDs and definitions in the updated asset model payload. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
          * <p>If you remove a property from an asset model or update a property's formula
          * expression, AWS IoT SiteWise deletes all previous data for that property. If you
@@ -1967,7 +1989,8 @@ namespace Model
          * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <important>
          * <p>This action overwrites the existing model with the provided model. To avoid
          * deleting your asset model's properties or hierarchies, you must include their
-         * definitions in the updated asset model payload. For more information, see <a
+         * IDs and definitions in the updated asset model payload. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
          * <p>If you remove a property from an asset model or update a property's formula
          * expression, AWS IoT SiteWise deletes all previous data for that property. If you
@@ -1990,7 +2013,8 @@ namespace Model
          * Assets and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <important>
          * <p>This action overwrites the existing model with the provided model. To avoid
          * deleting your asset model's properties or hierarchies, you must include their
-         * definitions in the updated asset model payload. For more information, see <a
+         * IDs and definitions in the updated asset model payload. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
          * <p>If you remove a property from an asset model or update a property's formula
          * expression, AWS IoT SiteWise deletes all previous data for that property. If you
@@ -2006,16 +2030,26 @@ namespace Model
         virtual void UpdateAssetModelAsync(const Model::UpdateAssetModelRequest& request, const UpdateAssetModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an asset property's alias and notification state.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an asset property's alias and notification state.</p> <important>
+         * <p>This operation overwrites the property's existing alias and notification
+         * state. To keep your existing property's alias or notification state, you must
+         * include the existing values in the UpdateAssetProperty request. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateAssetPropertyOutcome UpdateAssetProperty(const Model::UpdateAssetPropertyRequest& request) const;
 
         /**
-         * <p>Updates an asset property's alias and notification state.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an asset property's alias and notification state.</p> <important>
+         * <p>This operation overwrites the property's existing alias and notification
+         * state. To keep your existing property's alias or notification state, you must
+         * include the existing values in the UpdateAssetProperty request. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">AWS
          * API Reference</a></p>
          *
@@ -2024,8 +2058,13 @@ namespace Model
         virtual Model::UpdateAssetPropertyOutcomeCallable UpdateAssetPropertyCallable(const Model::UpdateAssetPropertyRequest& request) const;
 
         /**
-         * <p>Updates an asset property's alias and notification state.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an asset property's alias and notification state.</p> <important>
+         * <p>This operation overwrites the property's existing alias and notification
+         * state. To keep your existing property's alias or notification state, you must
+         * include the existing values in the UpdateAssetProperty request. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetProperty">AWS
          * API Reference</a></p>
          *

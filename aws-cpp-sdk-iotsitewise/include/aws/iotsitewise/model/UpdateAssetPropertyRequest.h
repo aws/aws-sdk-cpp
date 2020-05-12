@@ -133,7 +133,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
      * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
+     * property.</p>
      */
     inline const Aws::String& GetPropertyAlias() const{ return m_propertyAlias; }
 
@@ -144,7 +145,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
      * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
+     * property.</p>
      */
     inline bool PropertyAliasHasBeenSet() const { return m_propertyAliasHasBeenSet; }
 
@@ -155,7 +157,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
      * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
+     * property.</p>
      */
     inline void SetPropertyAlias(const Aws::String& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = value; }
 
@@ -166,7 +169,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
      * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
+     * property.</p>
      */
     inline void SetPropertyAlias(Aws::String&& value) { m_propertyAliasHasBeenSet = true; m_propertyAlias = std::move(value); }
 
@@ -177,7 +181,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
      * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
+     * property.</p>
      */
     inline void SetPropertyAlias(const char* value) { m_propertyAliasHasBeenSet = true; m_propertyAlias.assign(value); }
 
@@ -188,7 +193,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
      * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
+     * property.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyAlias(const Aws::String& value) { SetPropertyAlias(value); return *this;}
 
@@ -199,7 +205,8 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
      * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
+     * property.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyAlias(Aws::String&& value) { SetPropertyAlias(std::move(value)); return *this;}
 
@@ -210,62 +217,69 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
      * Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If you omit this parameter, the alias is removed from the
+     * property.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyAlias(const char* value) { SetPropertyAlias(value); return *this;}
 
 
     /**
-     * <p>The updated MQTT notification state (enabled or disabled) for this asset
-     * property. When the notification state is enabled, AWS IoT SiteWise publishes
-     * property value updates to a unique MQTT topic. For more information, see <a
+     * <p>The MQTT notification state (enabled or disabled) for this asset property.
+     * When the notification state is enabled, AWS IoT SiteWise publishes property
+     * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline const PropertyNotificationState& GetPropertyNotificationState() const{ return m_propertyNotificationState; }
 
     /**
-     * <p>The updated MQTT notification state (enabled or disabled) for this asset
-     * property. When the notification state is enabled, AWS IoT SiteWise publishes
-     * property value updates to a unique MQTT topic. For more information, see <a
+     * <p>The MQTT notification state (enabled or disabled) for this asset property.
+     * When the notification state is enabled, AWS IoT SiteWise publishes property
+     * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline bool PropertyNotificationStateHasBeenSet() const { return m_propertyNotificationStateHasBeenSet; }
 
     /**
-     * <p>The updated MQTT notification state (enabled or disabled) for this asset
-     * property. When the notification state is enabled, AWS IoT SiteWise publishes
-     * property value updates to a unique MQTT topic. For more information, see <a
+     * <p>The MQTT notification state (enabled or disabled) for this asset property.
+     * When the notification state is enabled, AWS IoT SiteWise publishes property
+     * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline void SetPropertyNotificationState(const PropertyNotificationState& value) { m_propertyNotificationStateHasBeenSet = true; m_propertyNotificationState = value; }
 
     /**
-     * <p>The updated MQTT notification state (enabled or disabled) for this asset
-     * property. When the notification state is enabled, AWS IoT SiteWise publishes
-     * property value updates to a unique MQTT topic. For more information, see <a
+     * <p>The MQTT notification state (enabled or disabled) for this asset property.
+     * When the notification state is enabled, AWS IoT SiteWise publishes property
+     * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline void SetPropertyNotificationState(PropertyNotificationState&& value) { m_propertyNotificationStateHasBeenSet = true; m_propertyNotificationState = std::move(value); }
 
     /**
-     * <p>The updated MQTT notification state (enabled or disabled) for this asset
-     * property. When the notification state is enabled, AWS IoT SiteWise publishes
-     * property value updates to a unique MQTT topic. For more information, see <a
+     * <p>The MQTT notification state (enabled or disabled) for this asset property.
+     * When the notification state is enabled, AWS IoT SiteWise publishes property
+     * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyNotificationState(const PropertyNotificationState& value) { SetPropertyNotificationState(value); return *this;}
 
     /**
-     * <p>The updated MQTT notification state (enabled or disabled) for this asset
-     * property. When the notification state is enabled, AWS IoT SiteWise publishes
-     * property value updates to a unique MQTT topic. For more information, see <a
+     * <p>The MQTT notification state (enabled or disabled) for this asset property.
+     * When the notification state is enabled, AWS IoT SiteWise publishes property
+     * value updates to a unique MQTT topic. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting
-     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * with Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p> <p>If you
+     * omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
      */
     inline UpdateAssetPropertyRequest& WithPropertyNotificationState(PropertyNotificationState&& value) { SetPropertyNotificationState(std::move(value)); return *this;}
 

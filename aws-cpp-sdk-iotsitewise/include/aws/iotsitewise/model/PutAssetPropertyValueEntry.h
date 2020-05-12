@@ -274,65 +274,49 @@ namespace Model
 
     /**
      * <p>The list of property values to upload. You can specify up to 10
-     * <code>propertyValues</code> array elements. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * <code>propertyValues</code> array elements. </p>
      */
     inline const Aws::Vector<AssetPropertyValue>& GetPropertyValues() const{ return m_propertyValues; }
 
     /**
      * <p>The list of property values to upload. You can specify up to 10
-     * <code>propertyValues</code> array elements. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * <code>propertyValues</code> array elements. </p>
      */
     inline bool PropertyValuesHasBeenSet() const { return m_propertyValuesHasBeenSet; }
 
     /**
      * <p>The list of property values to upload. You can specify up to 10
-     * <code>propertyValues</code> array elements. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * <code>propertyValues</code> array elements. </p>
      */
     inline void SetPropertyValues(const Aws::Vector<AssetPropertyValue>& value) { m_propertyValuesHasBeenSet = true; m_propertyValues = value; }
 
     /**
      * <p>The list of property values to upload. You can specify up to 10
-     * <code>propertyValues</code> array elements. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * <code>propertyValues</code> array elements. </p>
      */
     inline void SetPropertyValues(Aws::Vector<AssetPropertyValue>&& value) { m_propertyValuesHasBeenSet = true; m_propertyValues = std::move(value); }
 
     /**
      * <p>The list of property values to upload. You can specify up to 10
-     * <code>propertyValues</code> array elements. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * <code>propertyValues</code> array elements. </p>
      */
     inline PutAssetPropertyValueEntry& WithPropertyValues(const Aws::Vector<AssetPropertyValue>& value) { SetPropertyValues(value); return *this;}
 
     /**
      * <p>The list of property values to upload. You can specify up to 10
-     * <code>propertyValues</code> array elements. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * <code>propertyValues</code> array elements. </p>
      */
     inline PutAssetPropertyValueEntry& WithPropertyValues(Aws::Vector<AssetPropertyValue>&& value) { SetPropertyValues(std::move(value)); return *this;}
 
     /**
      * <p>The list of property values to upload. You can specify up to 10
-     * <code>propertyValues</code> array elements. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * <code>propertyValues</code> array elements. </p>
      */
     inline PutAssetPropertyValueEntry& AddPropertyValues(const AssetPropertyValue& value) { m_propertyValuesHasBeenSet = true; m_propertyValues.push_back(value); return *this; }
 
     /**
      * <p>The list of property values to upload. You can specify up to 10
-     * <code>propertyValues</code> array elements. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a>
-     * in the <i>AWS IoT SiteWise User Guide</i>.</p>
+     * <code>propertyValues</code> array elements. </p>
      */
     inline PutAssetPropertyValueEntry& AddPropertyValues(AssetPropertyValue&& value) { m_propertyValuesHasBeenSet = true; m_propertyValues.push_back(std::move(value)); return *this; }
 

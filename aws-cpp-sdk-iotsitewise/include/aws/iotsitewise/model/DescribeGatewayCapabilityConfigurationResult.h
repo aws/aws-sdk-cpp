@@ -174,7 +174,7 @@ namespace Model
 
     /**
      * <p>The synchronization status of the capability configuration. The sync status
-     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> ��� The
+     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The
      * gateway is running the capability configuration.</p> </li> <li> <p>
      * <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability
      * configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway
@@ -184,7 +184,7 @@ namespace Model
 
     /**
      * <p>The synchronization status of the capability configuration. The sync status
-     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> ��� The
+     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The
      * gateway is running the capability configuration.</p> </li> <li> <p>
      * <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability
      * configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>The synchronization status of the capability configuration. The sync status
-     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> ��� The
+     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The
      * gateway is running the capability configuration.</p> </li> <li> <p>
      * <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability
      * configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway
@@ -204,7 +204,7 @@ namespace Model
 
     /**
      * <p>The synchronization status of the capability configuration. The sync status
-     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> ��� The
+     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The
      * gateway is running the capability configuration.</p> </li> <li> <p>
      * <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability
      * configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway
@@ -214,7 +214,7 @@ namespace Model
 
     /**
      * <p>The synchronization status of the capability configuration. The sync status
-     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> ��� The
+     * can be one of the following:</p> <ul> <li> <p> <code>IN_SYNC</code> – The
      * gateway is running the capability configuration.</p> </li> <li> <p>
      * <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability
      * configuration.</p> </li> <li> <p> <code>SYNC_FAILED</code> – The gateway
