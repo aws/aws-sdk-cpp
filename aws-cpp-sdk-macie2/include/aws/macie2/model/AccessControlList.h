@@ -1,0 +1,109 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/macie2/Macie2_EXPORTS.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace Macie2
+{
+namespace Model
+{
+
+  /**
+   * <p>Provides information about the permissions settings of the bucket-level
+   * access control list (ACL) for an S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AccessControlList">AWS
+   * API Reference</a></p>
+   */
+  class AWS_MACIE2_API AccessControlList
+  {
+  public:
+    AccessControlList();
+    AccessControlList(Aws::Utils::Json::JsonView jsonValue);
+    AccessControlList& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Specifies whether the ACL grants the general public with read access
+     * permissions for the bucket.</p>
+     */
+    inline bool GetAllowsPublicReadAccess() const{ return m_allowsPublicReadAccess; }
+
+    /**
+     * <p>Specifies whether the ACL grants the general public with read access
+     * permissions for the bucket.</p>
+     */
+    inline bool AllowsPublicReadAccessHasBeenSet() const { return m_allowsPublicReadAccessHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the ACL grants the general public with read access
+     * permissions for the bucket.</p>
+     */
+    inline void SetAllowsPublicReadAccess(bool value) { m_allowsPublicReadAccessHasBeenSet = true; m_allowsPublicReadAccess = value; }
+
+    /**
+     * <p>Specifies whether the ACL grants the general public with read access
+     * permissions for the bucket.</p>
+     */
+    inline AccessControlList& WithAllowsPublicReadAccess(bool value) { SetAllowsPublicReadAccess(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the ACL grants the general public with write access
+     * permissions for the bucket.</p>
+     */
+    inline bool GetAllowsPublicWriteAccess() const{ return m_allowsPublicWriteAccess; }
+
+    /**
+     * <p>Specifies whether the ACL grants the general public with write access
+     * permissions for the bucket.</p>
+     */
+    inline bool AllowsPublicWriteAccessHasBeenSet() const { return m_allowsPublicWriteAccessHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the ACL grants the general public with write access
+     * permissions for the bucket.</p>
+     */
+    inline void SetAllowsPublicWriteAccess(bool value) { m_allowsPublicWriteAccessHasBeenSet = true; m_allowsPublicWriteAccess = value; }
+
+    /**
+     * <p>Specifies whether the ACL grants the general public with write access
+     * permissions for the bucket.</p>
+     */
+    inline AccessControlList& WithAllowsPublicWriteAccess(bool value) { SetAllowsPublicWriteAccess(value); return *this;}
+
+  private:
+
+    bool m_allowsPublicReadAccess;
+    bool m_allowsPublicReadAccessHasBeenSet;
+
+    bool m_allowsPublicWriteAccess;
+    bool m_allowsPublicWriteAccessHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Macie2
+} // namespace Aws

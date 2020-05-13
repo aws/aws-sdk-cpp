@@ -571,9 +571,9 @@ namespace Model
      * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
      * a Redis (cluster mode enabled) replication group, you can use this parameter to
      * individually configure each node group (shard), or you can omit this parameter.
-     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
-     * you must configure each node group (shard) using this parameter because you must
-     * specify the slots for each node group.</p>
+     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
+     * a S3 rdb file. You must configure each node group (shard) using this parameter
+     * because you must specify the slots for each node group.</p>
      */
     inline const Aws::Vector<NodeGroupConfiguration>& GetNodeGroupConfiguration() const{ return m_nodeGroupConfiguration; }
 
@@ -584,9 +584,9 @@ namespace Model
      * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
      * a Redis (cluster mode enabled) replication group, you can use this parameter to
      * individually configure each node group (shard), or you can omit this parameter.
-     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
-     * you must configure each node group (shard) using this parameter because you must
-     * specify the slots for each node group.</p>
+     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
+     * a S3 rdb file. You must configure each node group (shard) using this parameter
+     * because you must specify the slots for each node group.</p>
      */
     inline bool NodeGroupConfigurationHasBeenSet() const { return m_nodeGroupConfigurationHasBeenSet; }
 
@@ -597,9 +597,9 @@ namespace Model
      * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
      * a Redis (cluster mode enabled) replication group, you can use this parameter to
      * individually configure each node group (shard), or you can omit this parameter.
-     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
-     * you must configure each node group (shard) using this parameter because you must
-     * specify the slots for each node group.</p>
+     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
+     * a S3 rdb file. You must configure each node group (shard) using this parameter
+     * because you must specify the slots for each node group.</p>
      */
     inline void SetNodeGroupConfiguration(const Aws::Vector<NodeGroupConfiguration>& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = value; }
 
@@ -610,9 +610,9 @@ namespace Model
      * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
      * a Redis (cluster mode enabled) replication group, you can use this parameter to
      * individually configure each node group (shard), or you can omit this parameter.
-     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
-     * you must configure each node group (shard) using this parameter because you must
-     * specify the slots for each node group.</p>
+     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
+     * a S3 rdb file. You must configure each node group (shard) using this parameter
+     * because you must specify the slots for each node group.</p>
      */
     inline void SetNodeGroupConfiguration(Aws::Vector<NodeGroupConfiguration>&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration = std::move(value); }
 
@@ -623,9 +623,9 @@ namespace Model
      * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
      * a Redis (cluster mode enabled) replication group, you can use this parameter to
      * individually configure each node group (shard), or you can omit this parameter.
-     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
-     * you must configure each node group (shard) using this parameter because you must
-     * specify the slots for each node group.</p>
+     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
+     * a S3 rdb file. You must configure each node group (shard) using this parameter
+     * because you must specify the slots for each node group.</p>
      */
     inline CreateReplicationGroupRequest& WithNodeGroupConfiguration(const Aws::Vector<NodeGroupConfiguration>& value) { SetNodeGroupConfiguration(value); return *this;}
 
@@ -636,9 +636,9 @@ namespace Model
      * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
      * a Redis (cluster mode enabled) replication group, you can use this parameter to
      * individually configure each node group (shard), or you can omit this parameter.
-     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
-     * you must configure each node group (shard) using this parameter because you must
-     * specify the slots for each node group.</p>
+     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
+     * a S3 rdb file. You must configure each node group (shard) using this parameter
+     * because you must specify the slots for each node group.</p>
      */
     inline CreateReplicationGroupRequest& WithNodeGroupConfiguration(Aws::Vector<NodeGroupConfiguration>&& value) { SetNodeGroupConfiguration(std::move(value)); return *this;}
 
@@ -649,9 +649,9 @@ namespace Model
      * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
      * a Redis (cluster mode enabled) replication group, you can use this parameter to
      * individually configure each node group (shard), or you can omit this parameter.
-     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
-     * you must configure each node group (shard) using this parameter because you must
-     * specify the slots for each node group.</p>
+     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
+     * a S3 rdb file. You must configure each node group (shard) using this parameter
+     * because you must specify the slots for each node group.</p>
      */
     inline CreateReplicationGroupRequest& AddNodeGroupConfiguration(const NodeGroupConfiguration& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration.push_back(value); return *this; }
 
@@ -662,9 +662,9 @@ namespace Model
      * <code>Slots</code>.</p> <p>If you're creating a Redis (cluster mode disabled) or
      * a Redis (cluster mode enabled) replication group, you can use this parameter to
      * individually configure each node group (shard), or you can omit this parameter.
-     * However, when seeding a Redis (cluster mode enabled) cluster from a S3 rdb file,
-     * you must configure each node group (shard) using this parameter because you must
-     * specify the slots for each node group.</p>
+     * However, it is required when seeding a Redis (cluster mode enabled) cluster from
+     * a S3 rdb file. You must configure each node group (shard) using this parameter
+     * because you must specify the slots for each node group.</p>
      */
     inline CreateReplicationGroupRequest& AddNodeGroupConfiguration(NodeGroupConfiguration&& value) { m_nodeGroupConfigurationHasBeenSet = true; m_nodeGroupConfiguration.push_back(std::move(value)); return *this; }
 

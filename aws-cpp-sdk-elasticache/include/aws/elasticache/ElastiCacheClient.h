@@ -937,9 +937,9 @@ namespace Model
          * see <a
          * href="/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters.html">Replication
          * Across Regions Using Global Datastore</a>. </p> <ul> <li> <p>The
-         * <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.</p> </li>
-         * <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the primary
-         * cluster that accepts writes and will replicate updates to the secondary
+         * <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.</p>
+         * </li> <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the
+         * primary cluster that accepts writes and will replicate updates to the secondary
          * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -954,9 +954,9 @@ namespace Model
          * see <a
          * href="/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters.html">Replication
          * Across Regions Using Global Datastore</a>. </p> <ul> <li> <p>The
-         * <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.</p> </li>
-         * <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the primary
-         * cluster that accepts writes and will replicate updates to the secondary
+         * <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.</p>
+         * </li> <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the
+         * primary cluster that accepts writes and will replicate updates to the secondary
          * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -973,9 +973,9 @@ namespace Model
          * see <a
          * href="/AmazonElastiCache/latest/red-ug/Redis-Global-Clusters.html">Replication
          * Across Regions Using Global Datastore</a>. </p> <ul> <li> <p>The
-         * <b>GlobalReplicationGroupId</b> is the name of the Global Datastore.</p> </li>
-         * <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the primary
-         * cluster that accepts writes and will replicate updates to the secondary
+         * <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.</p>
+         * </li> <li> <p>The <b>PrimaryReplicationGroupId</b> represents the name of the
+         * primary cluster that accepts writes and will replicate updates to the secondary
          * cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -1317,9 +1317,8 @@ namespace Model
          * cluster, you can delete the Global Datastore while retaining the primary by
          * setting <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a
          * successful response from this operation, Amazon ElastiCache immediately begins
-         * deleting the selected resources; you cannot cancel or revert this operation.</p>
-         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * deleting the selected resources; you cannot cancel or revert this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteGlobalReplicationGroup">AWS
          * API Reference</a></p>
          */
@@ -1335,9 +1334,8 @@ namespace Model
          * cluster, you can delete the Global Datastore while retaining the primary by
          * setting <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a
          * successful response from this operation, Amazon ElastiCache immediately begins
-         * deleting the selected resources; you cannot cancel or revert this operation.</p>
-         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * deleting the selected resources; you cannot cancel or revert this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteGlobalReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -1355,9 +1353,8 @@ namespace Model
          * cluster, you can delete the Global Datastore while retaining the primary by
          * setting <code>RetainPrimaryCluster=true</code>.</p> <p>When you receive a
          * successful response from this operation, Amazon ElastiCache immediately begins
-         * deleting the selected resources; you cannot cancel or revert this operation.</p>
-         * <note> <p>This operation is valid for Redis only.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * deleting the selected resources; you cannot cancel or revert this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteGlobalReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -1975,16 +1972,18 @@ namespace Model
         virtual void DisassociateGlobalReplicationGroupAsync(const Model::DisassociateGlobalReplicationGroupRequest& request, const DisassociateGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used to failover the primary region to a selected secondary
-         * region.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to failover the primary region to a selected secondary region. The
+         * selected secondary region will be come primary, and all other clusters will
+         * become secondary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::FailoverGlobalReplicationGroupOutcome FailoverGlobalReplicationGroup(const Model::FailoverGlobalReplicationGroupRequest& request) const;
 
         /**
-         * <p>Used to failover the primary region to a selected secondary
-         * region.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to failover the primary region to a selected secondary region. The
+         * selected secondary region will be come primary, and all other clusters will
+         * become secondary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -1993,8 +1992,9 @@ namespace Model
         virtual Model::FailoverGlobalReplicationGroupOutcomeCallable FailoverGlobalReplicationGroupCallable(const Model::FailoverGlobalReplicationGroupRequest& request) const;
 
         /**
-         * <p>Used to failover the primary region to a selected secondary
-         * region.</p><p><h3>See Also:</h3>   <a
+         * <p>Used to failover the primary region to a selected secondary region. The
+         * selected secondary region will be come primary, and all other clusters will
+         * become secondary.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/FailoverGlobalReplicationGroup">AWS
          * API Reference</a></p>
          *
@@ -2266,9 +2266,7 @@ namespace Model
         virtual void ModifyGlobalReplicationGroupAsync(const Model::ModifyGlobalReplicationGroupRequest& request, const ModifyGlobalReplicationGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the settings for a replication group.</p> <p>For Redis (cluster mode
-         * enabled) clusters, this operation cannot be used to change a cluster's node type
-         * or engine version. For more information, see:</p> <ul> <li> <p> <a
+         * <p>Modifies the settings for a replication group.</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
          * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
          * User Guide</p> </li> <li> <p> <a
@@ -2281,9 +2279,7 @@ namespace Model
         virtual Model::ModifyReplicationGroupOutcome ModifyReplicationGroup(const Model::ModifyReplicationGroupRequest& request) const;
 
         /**
-         * <p>Modifies the settings for a replication group.</p> <p>For Redis (cluster mode
-         * enabled) clusters, this operation cannot be used to change a cluster's node type
-         * or engine version. For more information, see:</p> <ul> <li> <p> <a
+         * <p>Modifies the settings for a replication group.</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
          * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
          * User Guide</p> </li> <li> <p> <a
@@ -2298,9 +2294,7 @@ namespace Model
         virtual Model::ModifyReplicationGroupOutcomeCallable ModifyReplicationGroupCallable(const Model::ModifyReplicationGroupRequest& request) const;
 
         /**
-         * <p>Modifies the settings for a replication group.</p> <p>For Redis (cluster mode
-         * enabled) clusters, this operation cannot be used to change a cluster's node type
-         * or engine version. For more information, see:</p> <ul> <li> <p> <a
+         * <p>Modifies the settings for a replication group.</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/scaling-redis-cluster-mode-enabled.html">Scaling
          * for Amazon ElastiCache for Redis (cluster mode enabled)</a> in the ElastiCache
          * User Guide</p> </li> <li> <p> <a
@@ -2374,7 +2368,7 @@ namespace Model
         virtual void PurchaseReservedCacheNodesOfferingAsync(const Model::PurchaseReservedCacheNodesOfferingRequest& request, const PurchaseReservedCacheNodesOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Redistribute slots to ensure unifirom distribution across existing shards in
+         * <p>Redistribute slots to ensure uniform distribution across existing shards in
          * the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebalanceSlotsInGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -2382,7 +2376,7 @@ namespace Model
         virtual Model::RebalanceSlotsInGlobalReplicationGroupOutcome RebalanceSlotsInGlobalReplicationGroup(const Model::RebalanceSlotsInGlobalReplicationGroupRequest& request) const;
 
         /**
-         * <p>Redistribute slots to ensure unifirom distribution across existing shards in
+         * <p>Redistribute slots to ensure uniform distribution across existing shards in
          * the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebalanceSlotsInGlobalReplicationGroup">AWS
          * API Reference</a></p>
@@ -2392,7 +2386,7 @@ namespace Model
         virtual Model::RebalanceSlotsInGlobalReplicationGroupOutcomeCallable RebalanceSlotsInGlobalReplicationGroupCallable(const Model::RebalanceSlotsInGlobalReplicationGroupRequest& request) const;
 
         /**
-         * <p>Redistribute slots to ensure unifirom distribution across existing shards in
+         * <p>Redistribute slots to ensure uniform distribution across existing shards in
          * the cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebalanceSlotsInGlobalReplicationGroup">AWS
          * API Reference</a></p>

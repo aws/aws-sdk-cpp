@@ -47,50 +47,50 @@ namespace Model
   public:
 
     /**
-     * <p>The suffix for name of a Global Datastore. The suffix guarantees uniqueness
-     * of the Global Datastore name across multiple regions.</p>
+     * <p>The suffix name of a Global Datastore. The suffix guarantees uniqueness of
+     * the Global Datastore name across multiple regions.</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupIdSuffix() const{ return m_globalReplicationGroupIdSuffix; }
 
     /**
-     * <p>The suffix for name of a Global Datastore. The suffix guarantees uniqueness
-     * of the Global Datastore name across multiple regions.</p>
+     * <p>The suffix name of a Global Datastore. The suffix guarantees uniqueness of
+     * the Global Datastore name across multiple regions.</p>
      */
     inline bool GlobalReplicationGroupIdSuffixHasBeenSet() const { return m_globalReplicationGroupIdSuffixHasBeenSet; }
 
     /**
-     * <p>The suffix for name of a Global Datastore. The suffix guarantees uniqueness
-     * of the Global Datastore name across multiple regions.</p>
+     * <p>The suffix name of a Global Datastore. The suffix guarantees uniqueness of
+     * the Global Datastore name across multiple regions.</p>
      */
     inline void SetGlobalReplicationGroupIdSuffix(const Aws::String& value) { m_globalReplicationGroupIdSuffixHasBeenSet = true; m_globalReplicationGroupIdSuffix = value; }
 
     /**
-     * <p>The suffix for name of a Global Datastore. The suffix guarantees uniqueness
-     * of the Global Datastore name across multiple regions.</p>
+     * <p>The suffix name of a Global Datastore. The suffix guarantees uniqueness of
+     * the Global Datastore name across multiple regions.</p>
      */
     inline void SetGlobalReplicationGroupIdSuffix(Aws::String&& value) { m_globalReplicationGroupIdSuffixHasBeenSet = true; m_globalReplicationGroupIdSuffix = std::move(value); }
 
     /**
-     * <p>The suffix for name of a Global Datastore. The suffix guarantees uniqueness
-     * of the Global Datastore name across multiple regions.</p>
+     * <p>The suffix name of a Global Datastore. The suffix guarantees uniqueness of
+     * the Global Datastore name across multiple regions.</p>
      */
     inline void SetGlobalReplicationGroupIdSuffix(const char* value) { m_globalReplicationGroupIdSuffixHasBeenSet = true; m_globalReplicationGroupIdSuffix.assign(value); }
 
     /**
-     * <p>The suffix for name of a Global Datastore. The suffix guarantees uniqueness
-     * of the Global Datastore name across multiple regions.</p>
+     * <p>The suffix name of a Global Datastore. The suffix guarantees uniqueness of
+     * the Global Datastore name across multiple regions.</p>
      */
     inline CreateGlobalReplicationGroupRequest& WithGlobalReplicationGroupIdSuffix(const Aws::String& value) { SetGlobalReplicationGroupIdSuffix(value); return *this;}
 
     /**
-     * <p>The suffix for name of a Global Datastore. The suffix guarantees uniqueness
-     * of the Global Datastore name across multiple regions.</p>
+     * <p>The suffix name of a Global Datastore. The suffix guarantees uniqueness of
+     * the Global Datastore name across multiple regions.</p>
      */
     inline CreateGlobalReplicationGroupRequest& WithGlobalReplicationGroupIdSuffix(Aws::String&& value) { SetGlobalReplicationGroupIdSuffix(std::move(value)); return *this;}
 
     /**
-     * <p>The suffix for name of a Global Datastore. The suffix guarantees uniqueness
-     * of the Global Datastore name across multiple regions.</p>
+     * <p>The suffix name of a Global Datastore. The suffix guarantees uniqueness of
+     * the Global Datastore name across multiple regions.</p>
      */
     inline CreateGlobalReplicationGroupRequest& WithGlobalReplicationGroupIdSuffix(const char* value) { SetGlobalReplicationGroupIdSuffix(value); return *this;}
 

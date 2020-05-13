@@ -31,7 +31,10 @@ namespace Model
     in_progress,
     stopping,
     stopped,
-    complete
+    complete,
+    scheduling,
+    scheduled,
+    not_applicable
   };
 
 namespace UpdateActionStatusMapper

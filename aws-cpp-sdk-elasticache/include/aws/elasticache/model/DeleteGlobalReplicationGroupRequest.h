@@ -88,26 +88,26 @@ namespace Model
 
 
     /**
-     * <p>If set to <code>true</code>, the primary replication is retained as a
-     * standalone replication group. </p>
+     * <p>The primary replication group is retained as a standalone replication group.
+     * </p>
      */
     inline bool GetRetainPrimaryReplicationGroup() const{ return m_retainPrimaryReplicationGroup; }
 
     /**
-     * <p>If set to <code>true</code>, the primary replication is retained as a
-     * standalone replication group. </p>
+     * <p>The primary replication group is retained as a standalone replication group.
+     * </p>
      */
     inline bool RetainPrimaryReplicationGroupHasBeenSet() const { return m_retainPrimaryReplicationGroupHasBeenSet; }
 
     /**
-     * <p>If set to <code>true</code>, the primary replication is retained as a
-     * standalone replication group. </p>
+     * <p>The primary replication group is retained as a standalone replication group.
+     * </p>
      */
     inline void SetRetainPrimaryReplicationGroup(bool value) { m_retainPrimaryReplicationGroupHasBeenSet = true; m_retainPrimaryReplicationGroup = value; }
 
     /**
-     * <p>If set to <code>true</code>, the primary replication is retained as a
-     * standalone replication group. </p>
+     * <p>The primary replication group is retained as a standalone replication group.
+     * </p>
      */
     inline DeleteGlobalReplicationGroupRequest& WithRetainPrimaryReplicationGroup(bool value) { SetRetainPrimaryReplicationGroup(value); return *this;}
 

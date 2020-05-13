@@ -40,7 +40,7 @@ namespace Model
    * <p>Consists of a primary cluster that accepts writes and an associated secondary
    * cluster that resides in a different AWS region. The secondary cluster accepts
    * only reads. The primary cluster automatically replicates updates to the
-   * secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupId</b>
+   * secondary cluster.</p> <ul> <li> <p>The <b>GlobalReplicationGroupIdSuffix</b>
    * represents the name of the Global Datastore, which is what you use to associate
    * a secondary cluster.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/GlobalReplicationGroup">AWS
@@ -222,42 +222,42 @@ namespace Model
 
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline GlobalReplicationGroup& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline GlobalReplicationGroup& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The Elasticache engine. For preview, it is Redis only.</p>
+     * <p>The Elasticache engine. For Redis only.</p>
      */
     inline GlobalReplicationGroup& WithEngine(const char* value) { SetEngine(value); return *this;}
 

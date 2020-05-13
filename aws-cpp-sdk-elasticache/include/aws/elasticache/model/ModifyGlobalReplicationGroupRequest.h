@@ -88,38 +88,34 @@ namespace Model
 
 
     /**
-     * <p>If true, this parameter causes the modifications in this request and any
-     * pending modifications to be applied, asynchronously and as soon as possible,
-     * regardless of the PreferredMaintenanceWindow setting for the replication group.
-     * If false, changes to the nodes in the replication group are applied on the next
-     * maintenance reboot, or the next failure reboot, whichever occurs first. </p>
+     * <p>This parameter causes the modifications in this request and any pending
+     * modifications to be applied, asynchronously and as soon as possible.
+     * Modifications to Global Replication Groups cannot be requested to be applied in
+     * PreferredMaintenceWindow. </p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
     /**
-     * <p>If true, this parameter causes the modifications in this request and any
-     * pending modifications to be applied, asynchronously and as soon as possible,
-     * regardless of the PreferredMaintenanceWindow setting for the replication group.
-     * If false, changes to the nodes in the replication group are applied on the next
-     * maintenance reboot, or the next failure reboot, whichever occurs first. </p>
+     * <p>This parameter causes the modifications in this request and any pending
+     * modifications to be applied, asynchronously and as soon as possible.
+     * Modifications to Global Replication Groups cannot be requested to be applied in
+     * PreferredMaintenceWindow. </p>
      */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
-     * <p>If true, this parameter causes the modifications in this request and any
-     * pending modifications to be applied, asynchronously and as soon as possible,
-     * regardless of the PreferredMaintenanceWindow setting for the replication group.
-     * If false, changes to the nodes in the replication group are applied on the next
-     * maintenance reboot, or the next failure reboot, whichever occurs first. </p>
+     * <p>This parameter causes the modifications in this request and any pending
+     * modifications to be applied, asynchronously and as soon as possible.
+     * Modifications to Global Replication Groups cannot be requested to be applied in
+     * PreferredMaintenceWindow. </p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
     /**
-     * <p>If true, this parameter causes the modifications in this request and any
-     * pending modifications to be applied, asynchronously and as soon as possible,
-     * regardless of the PreferredMaintenanceWindow setting for the replication group.
-     * If false, changes to the nodes in the replication group are applied on the next
-     * maintenance reboot, or the next failure reboot, whichever occurs first. </p>
+     * <p>This parameter causes the modifications in this request and any pending
+     * modifications to be applied, asynchronously and as soon as possible.
+     * Modifications to Global Replication Groups cannot be requested to be applied in
+     * PreferredMaintenceWindow. </p>
      */
     inline ModifyGlobalReplicationGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 

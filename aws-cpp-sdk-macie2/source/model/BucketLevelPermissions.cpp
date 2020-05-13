@@ -1,0 +1,99 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/macie2/model/BucketLevelPermissions.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Macie2
+{
+namespace Model
+{
+
+BucketLevelPermissions::BucketLevelPermissions() : 
+    m_accessControlListHasBeenSet(false),
+    m_blockPublicAccessHasBeenSet(false),
+    m_bucketPolicyHasBeenSet(false)
+{
+}
+
+BucketLevelPermissions::BucketLevelPermissions(JsonView jsonValue) : 
+    m_accessControlListHasBeenSet(false),
+    m_blockPublicAccessHasBeenSet(false),
+    m_bucketPolicyHasBeenSet(false)
+{
+  *this = jsonValue;
+}
+
+BucketLevelPermissions& BucketLevelPermissions::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("accessControlList"))
+  {
+    m_accessControlList = jsonValue.GetObject("accessControlList");
+
+    m_accessControlListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("blockPublicAccess"))
+  {
+    m_blockPublicAccess = jsonValue.GetObject("blockPublicAccess");
+
+    m_blockPublicAccessHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bucketPolicy"))
+  {
+    m_bucketPolicy = jsonValue.GetObject("bucketPolicy");
+
+    m_bucketPolicyHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue BucketLevelPermissions::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_accessControlListHasBeenSet)
+  {
+   payload.WithObject("accessControlList", m_accessControlList.Jsonize());
+
+  }
+
+  if(m_blockPublicAccessHasBeenSet)
+  {
+   payload.WithObject("blockPublicAccess", m_blockPublicAccess.Jsonize());
+
+  }
+
+  if(m_bucketPolicyHasBeenSet)
+  {
+   payload.WithObject("bucketPolicy", m_bucketPolicy.Jsonize());
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace Macie2
+} // namespace Aws
