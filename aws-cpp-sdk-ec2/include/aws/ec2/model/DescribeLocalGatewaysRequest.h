@@ -49,47 +49,119 @@ namespace Model
   public:
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetLocalGatewayIds() const{ return m_localGatewayIds; }
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline bool LocalGatewayIdsHasBeenSet() const { return m_localGatewayIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline void SetLocalGatewayIds(const Aws::Vector<Aws::String>& value) { m_localGatewayIdsHasBeenSet = true; m_localGatewayIds = value; }
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline void SetLocalGatewayIds(Aws::Vector<Aws::String>&& value) { m_localGatewayIdsHasBeenSet = true; m_localGatewayIds = std::move(value); }
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline DescribeLocalGatewaysRequest& WithLocalGatewayIds(const Aws::Vector<Aws::String>& value) { SetLocalGatewayIds(value); return *this;}
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline DescribeLocalGatewaysRequest& WithLocalGatewayIds(Aws::Vector<Aws::String>&& value) { SetLocalGatewayIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline DescribeLocalGatewaysRequest& AddLocalGatewayIds(const Aws::String& value) { m_localGatewayIdsHasBeenSet = true; m_localGatewayIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline DescribeLocalGatewaysRequest& AddLocalGatewayIds(Aws::String&& value) { m_localGatewayIdsHasBeenSet = true; m_localGatewayIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the local gateways.</p>
+     * <p>One or more filters.</p> <ul> <li> <p> <code>local-gateway-id</code> - The ID
+     * of a local gateway.</p> </li> <li> <p> <code>local-gateway-route-table-id</code>
+     * - The ID of the local gateway route table.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-association-id</code> -
+     * The ID of the association.</p> </li> <li> <p>
+     * <code>local-gateway-route-table-virtual-interface-group-id</code> - The ID of
+     * the virtual interface group.</p> </li> <li> <p> <code>outpost-arn</code> - The
+     * Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p> <code>state</code>
+     * - The state of the association.</p> </li> </ul>
      */
     inline DescribeLocalGatewaysRequest& AddLocalGatewayIds(const char* value) { m_localGatewayIdsHasBeenSet = true; m_localGatewayIds.push_back(value); return *this; }
 

@@ -34,6 +34,7 @@ ComponentSummary::ComponentSummary() :
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_supportedOsVersionsHasBeenSet(false),
     m_type(ComponentType::NOT_SET),
     m_typeHasBeenSet(false),
     m_ownerHasBeenSet(false),
@@ -50,6 +51,7 @@ ComponentSummary::ComponentSummary(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_supportedOsVersionsHasBeenSet(false),
     m_type(ComponentType::NOT_SET),
     m_typeHasBeenSet(false),
     m_ownerHasBeenSet(false),
@@ -89,6 +91,16 @@ ComponentSummary& ComponentSummary::operator =(JsonView jsonValue)
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
 
     m_platformHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedOsVersions"))
+  {
+    Array<JsonView> supportedOsVersionsJsonList = jsonValue.GetArray("supportedOsVersions");
+    for(unsigned supportedOsVersionsIndex = 0; supportedOsVersionsIndex < supportedOsVersionsJsonList.GetLength(); ++supportedOsVersionsIndex)
+    {
+      m_supportedOsVersions.push_back(supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString());
+    }
+    m_supportedOsVersionsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -164,6 +176,17 @@ JsonValue ComponentSummary::Jsonize() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
+  }
+
+  if(m_supportedOsVersionsHasBeenSet)
+  {
+   Array<JsonValue> supportedOsVersionsJsonList(m_supportedOsVersions.size());
+   for(unsigned supportedOsVersionsIndex = 0; supportedOsVersionsIndex < supportedOsVersionsJsonList.GetLength(); ++supportedOsVersionsIndex)
+   {
+     supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString(m_supportedOsVersions[supportedOsVersionsIndex]);
+   }
+   payload.WithArray("supportedOsVersions", std::move(supportedOsVersionsJsonList));
+
   }
 
   if(m_typeHasBeenSet)

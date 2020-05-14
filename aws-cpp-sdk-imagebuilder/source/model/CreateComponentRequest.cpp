@@ -29,6 +29,7 @@ CreateComponentRequest::CreateComponentRequest() :
     m_changeDescriptionHasBeenSet(false),
     m_platform(Platform::NOT_SET),
     m_platformHasBeenSet(false),
+    m_supportedOsVersionsHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_uriHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
@@ -69,6 +70,17 @@ Aws::String CreateComponentRequest::SerializePayload() const
   if(m_platformHasBeenSet)
   {
    payload.WithString("platform", PlatformMapper::GetNameForPlatform(m_platform));
+  }
+
+  if(m_supportedOsVersionsHasBeenSet)
+  {
+   Array<JsonValue> supportedOsVersionsJsonList(m_supportedOsVersions.size());
+   for(unsigned supportedOsVersionsIndex = 0; supportedOsVersionsIndex < supportedOsVersionsJsonList.GetLength(); ++supportedOsVersionsIndex)
+   {
+     supportedOsVersionsJsonList[supportedOsVersionsIndex].AsString(m_supportedOsVersions[supportedOsVersionsIndex]);
+   }
+   payload.WithArray("supportedOsVersions", std::move(supportedOsVersionsJsonList));
+
   }
 
   if(m_dataHasBeenSet)
