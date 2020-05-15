@@ -203,6 +203,22 @@ namespace Model
 
 
     /**
+     * <p>Whether the specified type version is set as the default version.</p>
+     */
+    inline bool GetIsDefaultVersion() const{ return m_isDefaultVersion; }
+
+    /**
+     * <p>Whether the specified type version is set as the default version.</p>
+     */
+    inline void SetIsDefaultVersion(bool value) { m_isDefaultVersion = value; }
+
+    /**
+     * <p>Whether the specified type version is set as the default version.</p>
+     */
+    inline DescribeTypeResult& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
+
+
+    /**
      * <p>The description of the registered type.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -732,6 +748,8 @@ namespace Model
     Aws::String m_typeName;
 
     Aws::String m_defaultVersionId;
+
+    bool m_isDefaultVersion;
 
     Aws::String m_description;
 

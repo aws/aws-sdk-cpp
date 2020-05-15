@@ -31,8 +31,9 @@ namespace Aws
       {
 
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
-        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
+        static const int CANCELLING_HASH = HashingUtils::HashString("CANCELLING");
         static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
+        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
 
 
@@ -43,13 +44,17 @@ namespace Aws
           {
             return CrawlState::RUNNING;
           }
-          else if (hashCode == SUCCEEDED_HASH)
+          else if (hashCode == CANCELLING_HASH)
           {
-            return CrawlState::SUCCEEDED;
+            return CrawlState::CANCELLING;
           }
           else if (hashCode == CANCELLED_HASH)
           {
             return CrawlState::CANCELLED;
+          }
+          else if (hashCode == SUCCEEDED_HASH)
+          {
+            return CrawlState::SUCCEEDED;
           }
           else if (hashCode == FAILED_HASH)
           {
@@ -71,10 +76,12 @@ namespace Aws
           {
           case CrawlState::RUNNING:
             return "RUNNING";
-          case CrawlState::SUCCEEDED:
-            return "SUCCEEDED";
+          case CrawlState::CANCELLING:
+            return "CANCELLING";
           case CrawlState::CANCELLED:
             return "CANCELLED";
+          case CrawlState::SUCCEEDED:
+            return "SUCCEEDED";
           case CrawlState::FAILED:
             return "FAILED";
           default:

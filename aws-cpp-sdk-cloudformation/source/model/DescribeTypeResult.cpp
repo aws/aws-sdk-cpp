@@ -29,6 +29,7 @@ using namespace Aws;
 
 DescribeTypeResult::DescribeTypeResult() : 
     m_type(RegistryType::NOT_SET),
+    m_isDefaultVersion(false),
     m_provisioningType(ProvisioningType::NOT_SET),
     m_deprecatedStatus(DeprecatedStatus::NOT_SET),
     m_visibility(Visibility::NOT_SET)
@@ -37,6 +38,7 @@ DescribeTypeResult::DescribeTypeResult() :
 
 DescribeTypeResult::DescribeTypeResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_type(RegistryType::NOT_SET),
+    m_isDefaultVersion(false),
     m_provisioningType(ProvisioningType::NOT_SET),
     m_deprecatedStatus(DeprecatedStatus::NOT_SET),
     m_visibility(Visibility::NOT_SET)
@@ -75,6 +77,11 @@ DescribeTypeResult& DescribeTypeResult::operator =(const Aws::AmazonWebServiceRe
     if(!defaultVersionIdNode.IsNull())
     {
       m_defaultVersionId = Aws::Utils::Xml::DecodeEscapedXmlText(defaultVersionIdNode.GetText());
+    }
+    XmlNode isDefaultVersionNode = resultNode.FirstChild("IsDefaultVersion");
+    if(!isDefaultVersionNode.IsNull())
+    {
+      m_isDefaultVersion = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isDefaultVersionNode.GetText()).c_str()).c_str());
     }
     XmlNode descriptionNode = resultNode.FirstChild("Description");
     if(!descriptionNode.IsNull())

@@ -32,7 +32,8 @@ Image::Image() :
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_imageIdHasBeenSet(false),
-    m_imageManifestHasBeenSet(false)
+    m_imageManifestHasBeenSet(false),
+    m_imageManifestMediaTypeHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ Image::Image(JsonView jsonValue) :
     m_registryIdHasBeenSet(false),
     m_repositoryNameHasBeenSet(false),
     m_imageIdHasBeenSet(false),
-    m_imageManifestHasBeenSet(false)
+    m_imageManifestHasBeenSet(false),
+    m_imageManifestMediaTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +77,13 @@ Image& Image::operator =(JsonView jsonValue)
     m_imageManifestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageManifestMediaType"))
+  {
+    m_imageManifestMediaType = jsonValue.GetString("imageManifestMediaType");
+
+    m_imageManifestMediaTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -103,6 +112,12 @@ JsonValue Image::Jsonize() const
   if(m_imageManifestHasBeenSet)
   {
    payload.WithString("imageManifest", m_imageManifest);
+
+  }
+
+  if(m_imageManifestMediaTypeHasBeenSet)
+  {
+   payload.WithString("imageManifestMediaType", m_imageManifestMediaType);
 
   }
 

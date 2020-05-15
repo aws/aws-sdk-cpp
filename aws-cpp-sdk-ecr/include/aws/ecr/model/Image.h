@@ -207,6 +207,47 @@ namespace Model
      */
     inline Image& WithImageManifest(const char* value) { SetImageManifest(value); return *this;}
 
+
+    /**
+     * <p>The media type associated with the image manifest.</p>
+     */
+    inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
+
+    /**
+     * <p>The media type associated with the image manifest.</p>
+     */
+    inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
+
+    /**
+     * <p>The media type associated with the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
+
+    /**
+     * <p>The media type associated with the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
+
+    /**
+     * <p>The media type associated with the image manifest.</p>
+     */
+    inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
+
+    /**
+     * <p>The media type associated with the image manifest.</p>
+     */
+    inline Image& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
+
+    /**
+     * <p>The media type associated with the image manifest.</p>
+     */
+    inline Image& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
+
+    /**
+     * <p>The media type associated with the image manifest.</p>
+     */
+    inline Image& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
+
   private:
 
     Aws::String m_registryId;
@@ -220,6 +261,9 @@ namespace Model
 
     Aws::String m_imageManifest;
     bool m_imageManifestHasBeenSet;
+
+    Aws::String m_imageManifestMediaType;
+    bool m_imageManifestMediaTypeHasBeenSet;
   };
 
 } // namespace Model

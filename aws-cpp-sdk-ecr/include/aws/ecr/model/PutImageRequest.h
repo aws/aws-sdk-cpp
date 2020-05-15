@@ -184,6 +184,63 @@ namespace Model
 
 
     /**
+     * <p>The media type of the image manifest. If you push an image manifest that does
+     * not contain the <code>mediaType</code> field, you must specify the
+     * <code>imageManifestMediaType</code> in the request.</p>
+     */
+    inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
+
+    /**
+     * <p>The media type of the image manifest. If you push an image manifest that does
+     * not contain the <code>mediaType</code> field, you must specify the
+     * <code>imageManifestMediaType</code> in the request.</p>
+     */
+    inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
+
+    /**
+     * <p>The media type of the image manifest. If you push an image manifest that does
+     * not contain the <code>mediaType</code> field, you must specify the
+     * <code>imageManifestMediaType</code> in the request.</p>
+     */
+    inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
+
+    /**
+     * <p>The media type of the image manifest. If you push an image manifest that does
+     * not contain the <code>mediaType</code> field, you must specify the
+     * <code>imageManifestMediaType</code> in the request.</p>
+     */
+    inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
+
+    /**
+     * <p>The media type of the image manifest. If you push an image manifest that does
+     * not contain the <code>mediaType</code> field, you must specify the
+     * <code>imageManifestMediaType</code> in the request.</p>
+     */
+    inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
+
+    /**
+     * <p>The media type of the image manifest. If you push an image manifest that does
+     * not contain the <code>mediaType</code> field, you must specify the
+     * <code>imageManifestMediaType</code> in the request.</p>
+     */
+    inline PutImageRequest& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
+
+    /**
+     * <p>The media type of the image manifest. If you push an image manifest that does
+     * not contain the <code>mediaType</code> field, you must specify the
+     * <code>imageManifestMediaType</code> in the request.</p>
+     */
+    inline PutImageRequest& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
+
+    /**
+     * <p>The media type of the image manifest. If you push an image manifest that does
+     * not contain the <code>mediaType</code> field, you must specify the
+     * <code>imageManifestMediaType</code> in the request.</p>
+     */
+    inline PutImageRequest& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
+
+
+    /**
      * <p>The tag to associate with the image. This parameter is required for images
      * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
      */
@@ -241,6 +298,9 @@ namespace Model
 
     Aws::String m_imageManifest;
     bool m_imageManifestHasBeenSet;
+
+    Aws::String m_imageManifestMediaType;
+    bool m_imageManifestMediaTypeHasBeenSet;
 
     Aws::String m_imageTag;
     bool m_imageTagHasBeenSet;

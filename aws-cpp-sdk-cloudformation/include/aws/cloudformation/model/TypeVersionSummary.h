@@ -182,6 +182,27 @@ namespace Model
 
 
     /**
+     * <p>Whether the specified type version is set as the default version.</p>
+     */
+    inline bool GetIsDefaultVersion() const{ return m_isDefaultVersion; }
+
+    /**
+     * <p>Whether the specified type version is set as the default version.</p>
+     */
+    inline bool IsDefaultVersionHasBeenSet() const { return m_isDefaultVersionHasBeenSet; }
+
+    /**
+     * <p>Whether the specified type version is set as the default version.</p>
+     */
+    inline void SetIsDefaultVersion(bool value) { m_isDefaultVersionHasBeenSet = true; m_isDefaultVersion = value; }
+
+    /**
+     * <p>Whether the specified type version is set as the default version.</p>
+     */
+    inline TypeVersionSummary& WithIsDefaultVersion(bool value) { SetIsDefaultVersion(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the type version.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -303,6 +324,9 @@ namespace Model
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
+    bool m_isDefaultVersion;
+    bool m_isDefaultVersionHasBeenSet;
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;

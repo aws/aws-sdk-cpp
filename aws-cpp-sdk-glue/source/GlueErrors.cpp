@@ -40,6 +40,7 @@ static const int CRAWLER_RUNNING_HASH = HashingUtils::HashString("CrawlerRunning
 static const int CONDITION_CHECK_FAILURE_HASH = HashingUtils::HashString("ConditionCheckFailureException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
 static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
+static const int ILLEGAL_WORKFLOW_STATE_HASH = HashingUtils::HashString("IllegalWorkflowStateException");
 static const int ENTITY_NOT_FOUND_HASH = HashingUtils::HashString("EntityNotFoundException");
 static const int SCHEDULER_TRANSITIONING_HASH = HashingUtils::HashString("SchedulerTransitioningException");
 static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
@@ -101,6 +102,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::INTERNAL_SERVICE), false);
+  }
+  else if (hashCode == ILLEGAL_WORKFLOW_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlueErrors::ILLEGAL_WORKFLOW_STATE), false);
   }
   else if (hashCode == ENTITY_NOT_FOUND_HASH)
   {

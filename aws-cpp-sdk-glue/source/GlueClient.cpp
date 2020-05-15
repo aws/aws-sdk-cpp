@@ -139,6 +139,7 @@
 #include <aws/glue/model/StopCrawlerRequest.h>
 #include <aws/glue/model/StopCrawlerScheduleRequest.h>
 #include <aws/glue/model/StopTriggerRequest.h>
+#include <aws/glue/model/StopWorkflowRunRequest.h>
 #include <aws/glue/model/TagResourceRequest.h>
 #include <aws/glue/model/UntagResourceRequest.h>
 #include <aws/glue/model/UpdateClassifierRequest.h>
@@ -4040,6 +4041,41 @@ void GlueClient::StopTriggerAsync(const StopTriggerRequest& request, const StopT
 void GlueClient::StopTriggerAsyncHelper(const StopTriggerRequest& request, const StopTriggerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopTrigger(request), context);
+}
+
+StopWorkflowRunOutcome GlueClient::StopWorkflowRun(const StopWorkflowRunRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopWorkflowRunOutcome(StopWorkflowRunResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopWorkflowRunOutcome(outcome.GetError());
+  }
+}
+
+StopWorkflowRunOutcomeCallable GlueClient::StopWorkflowRunCallable(const StopWorkflowRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopWorkflowRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopWorkflowRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GlueClient::StopWorkflowRunAsync(const StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopWorkflowRunAsyncHelper( request, handler, context ); } );
+}
+
+void GlueClient::StopWorkflowRunAsyncHelper(const StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopWorkflowRun(request), context);
 }
 
 TagResourceOutcome GlueClient::TagResource(const TagResourceRequest& request) const

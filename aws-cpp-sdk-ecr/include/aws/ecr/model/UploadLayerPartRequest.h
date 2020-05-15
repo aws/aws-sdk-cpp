@@ -193,43 +193,51 @@ namespace Model
 
 
     /**
-     * <p>The integer value of the first byte of the layer part.</p>
+     * <p>The position of the first byte of the layer part witin the overall image
+     * layer.</p>
      */
     inline long long GetPartFirstByte() const{ return m_partFirstByte; }
 
     /**
-     * <p>The integer value of the first byte of the layer part.</p>
+     * <p>The position of the first byte of the layer part witin the overall image
+     * layer.</p>
      */
     inline bool PartFirstByteHasBeenSet() const { return m_partFirstByteHasBeenSet; }
 
     /**
-     * <p>The integer value of the first byte of the layer part.</p>
+     * <p>The position of the first byte of the layer part witin the overall image
+     * layer.</p>
      */
     inline void SetPartFirstByte(long long value) { m_partFirstByteHasBeenSet = true; m_partFirstByte = value; }
 
     /**
-     * <p>The integer value of the first byte of the layer part.</p>
+     * <p>The position of the first byte of the layer part witin the overall image
+     * layer.</p>
      */
     inline UploadLayerPartRequest& WithPartFirstByte(long long value) { SetPartFirstByte(value); return *this;}
 
 
     /**
-     * <p>The integer value of the last byte of the layer part.</p>
+     * <p>The position of the last byte of the layer part within the overall image
+     * layer.</p>
      */
     inline long long GetPartLastByte() const{ return m_partLastByte; }
 
     /**
-     * <p>The integer value of the last byte of the layer part.</p>
+     * <p>The position of the last byte of the layer part within the overall image
+     * layer.</p>
      */
     inline bool PartLastByteHasBeenSet() const { return m_partLastByteHasBeenSet; }
 
     /**
-     * <p>The integer value of the last byte of the layer part.</p>
+     * <p>The position of the last byte of the layer part within the overall image
+     * layer.</p>
      */
     inline void SetPartLastByte(long long value) { m_partLastByteHasBeenSet = true; m_partLastByte = value; }
 
     /**
-     * <p>The integer value of the last byte of the layer part.</p>
+     * <p>The position of the last byte of the layer part within the overall image
+     * layer.</p>
      */
     inline UploadLayerPartRequest& WithPartLastByte(long long value) { SetPartLastByte(value); return *this;}
 

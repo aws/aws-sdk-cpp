@@ -27,7 +27,9 @@ namespace Model
   {
     NOT_SET,
     RUNNING,
-    COMPLETED
+    COMPLETED,
+    STOPPING,
+    STOPPED
   };
 
 namespace WorkflowRunStatusMapper
