@@ -37,7 +37,7 @@ namespace Model
    * <p>Provides information about the tags that are associated with an S3 bucket or
    * object. Each tag consists of a required tag key and an associated tag
    * value.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/KeyValuePair">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/KeyValuePair">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API KeyValuePair

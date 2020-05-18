@@ -41,7 +41,7 @@ namespace Model
    * <p>Provides detailed information about a sensitive data finding, including the
    * types and number of occurrences of the data that was found.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ClassificationResult">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationResult">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API ClassificationResult

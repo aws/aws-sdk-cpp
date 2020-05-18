@@ -40,7 +40,7 @@ namespace Model
    * <p>Provides data for a specific usage metric and the corresponding quota for an
    * account. The value for the metric is an aggregated value that reports usage
    * during the past 30 days.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UsageByAccount">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageByAccount">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API UsageByAccount

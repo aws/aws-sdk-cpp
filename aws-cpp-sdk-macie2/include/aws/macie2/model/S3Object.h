@@ -41,8 +41,8 @@ namespace Model
   /**
    * <p>Provides information about an S3 object that a finding applies
    * to.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/S3Object">AWS
-   * API Reference</a></p>
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Object">AWS API
+   * Reference</a></p>
    */
   class AWS_MACIE2_API S3Object
   {

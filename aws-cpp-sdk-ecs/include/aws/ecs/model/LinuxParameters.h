@@ -53,49 +53,55 @@ namespace Model
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p> <note> <p>If you are using
-     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
-     * but the <code>add</code> parameter is not supported.</p> </note>
+     * the default configuration provided by Docker.</p> <note> <p>For tasks that use
+     * the Fargate launch type, <code>capabilities</code> is supported for all platform
+     * versions but the <code>add</code> parameter is only supported if using platform
+     * version 1.4.0 or later.</p> </note>
      */
     inline const KernelCapabilities& GetCapabilities() const{ return m_capabilities; }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p> <note> <p>If you are using
-     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
-     * but the <code>add</code> parameter is not supported.</p> </note>
+     * the default configuration provided by Docker.</p> <note> <p>For tasks that use
+     * the Fargate launch type, <code>capabilities</code> is supported for all platform
+     * versions but the <code>add</code> parameter is only supported if using platform
+     * version 1.4.0 or later.</p> </note>
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p> <note> <p>If you are using
-     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
-     * but the <code>add</code> parameter is not supported.</p> </note>
+     * the default configuration provided by Docker.</p> <note> <p>For tasks that use
+     * the Fargate launch type, <code>capabilities</code> is supported for all platform
+     * versions but the <code>add</code> parameter is only supported if using platform
+     * version 1.4.0 or later.</p> </note>
      */
     inline void SetCapabilities(const KernelCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p> <note> <p>If you are using
-     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
-     * but the <code>add</code> parameter is not supported.</p> </note>
+     * the default configuration provided by Docker.</p> <note> <p>For tasks that use
+     * the Fargate launch type, <code>capabilities</code> is supported for all platform
+     * versions but the <code>add</code> parameter is only supported if using platform
+     * version 1.4.0 or later.</p> </note>
      */
     inline void SetCapabilities(KernelCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p> <note> <p>If you are using
-     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
-     * but the <code>add</code> parameter is not supported.</p> </note>
+     * the default configuration provided by Docker.</p> <note> <p>For tasks that use
+     * the Fargate launch type, <code>capabilities</code> is supported for all platform
+     * versions but the <code>add</code> parameter is only supported if using platform
+     * version 1.4.0 or later.</p> </note>
      */
     inline LinuxParameters& WithCapabilities(const KernelCapabilities& value) { SetCapabilities(value); return *this;}
 
     /**
      * <p>The Linux capabilities for the container that are added to or dropped from
-     * the default configuration provided by Docker.</p> <note> <p>If you are using
-     * tasks that use the Fargate launch type, <code>capabilities</code> is supported
-     * but the <code>add</code> parameter is not supported.</p> </note>
+     * the default configuration provided by Docker.</p> <note> <p>For tasks that use
+     * the Fargate launch type, <code>capabilities</code> is supported for all platform
+     * versions but the <code>add</code> parameter is only supported if using platform
+     * version 1.4.0 or later.</p> </note>
      */
     inline LinuxParameters& WithCapabilities(KernelCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
 

@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>Specifies which S3 buckets contain the objects that a classification job
    * analyzes, and the scope of that analysis.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/S3JobDefinition">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3JobDefinition">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API S3JobDefinition

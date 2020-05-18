@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Provides detailed information about a policy finding.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PolicyDetails">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PolicyDetails">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API PolicyDetails

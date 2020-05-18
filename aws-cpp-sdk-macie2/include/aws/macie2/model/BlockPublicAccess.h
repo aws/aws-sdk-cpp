@@ -38,7 +38,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">Using
    * Amazon S3 block public access</a> in the <i>Amazon Simple Storage Service
    * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BlockPublicAccess">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BlockPublicAccess">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API BlockPublicAccess

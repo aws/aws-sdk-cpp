@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Provides information about the status of a sensitive data
    * finding.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ClassificationResultStatus">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationResultStatus">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API ClassificationResultStatus

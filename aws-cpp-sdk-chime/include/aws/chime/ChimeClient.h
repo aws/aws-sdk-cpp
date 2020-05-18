@@ -94,6 +94,8 @@
 #include <aws/chime/model/PutVoiceConnectorProxyResult.h>
 #include <aws/chime/model/PutVoiceConnectorStreamingConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationResult.h>
+#include <aws/chime/model/RedactConversationMessageResult.h>
+#include <aws/chime/model/RedactRoomMessageResult.h>
 #include <aws/chime/model/RegenerateSecurityTokenResult.h>
 #include <aws/chime/model/ResetPersonalPINResult.h>
 #include <aws/chime/model/RestorePhoneNumberResult.h>
@@ -234,6 +236,8 @@ namespace Model
         class PutVoiceConnectorStreamingConfigurationRequest;
         class PutVoiceConnectorTerminationRequest;
         class PutVoiceConnectorTerminationCredentialsRequest;
+        class RedactConversationMessageRequest;
+        class RedactRoomMessageRequest;
         class RegenerateSecurityTokenRequest;
         class ResetPersonalPINRequest;
         class RestorePhoneNumberRequest;
@@ -346,6 +350,8 @@ namespace Model
         typedef Aws::Utils::Outcome<PutVoiceConnectorStreamingConfigurationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorStreamingConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorTerminationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorTerminationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorTerminationCredentialsOutcome;
+        typedef Aws::Utils::Outcome<RedactConversationMessageResult, Aws::Client::AWSError<ChimeErrors>> RedactConversationMessageOutcome;
+        typedef Aws::Utils::Outcome<RedactRoomMessageResult, Aws::Client::AWSError<ChimeErrors>> RedactRoomMessageOutcome;
         typedef Aws::Utils::Outcome<RegenerateSecurityTokenResult, Aws::Client::AWSError<ChimeErrors>> RegenerateSecurityTokenOutcome;
         typedef Aws::Utils::Outcome<ResetPersonalPINResult, Aws::Client::AWSError<ChimeErrors>> ResetPersonalPINOutcome;
         typedef Aws::Utils::Outcome<RestorePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> RestorePhoneNumberOutcome;
@@ -458,6 +464,8 @@ namespace Model
         typedef std::future<PutVoiceConnectorStreamingConfigurationOutcome> PutVoiceConnectorStreamingConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorTerminationOutcome> PutVoiceConnectorTerminationOutcomeCallable;
         typedef std::future<PutVoiceConnectorTerminationCredentialsOutcome> PutVoiceConnectorTerminationCredentialsOutcomeCallable;
+        typedef std::future<RedactConversationMessageOutcome> RedactConversationMessageOutcomeCallable;
+        typedef std::future<RedactRoomMessageOutcome> RedactRoomMessageOutcomeCallable;
         typedef std::future<RegenerateSecurityTokenOutcome> RegenerateSecurityTokenOutcomeCallable;
         typedef std::future<ResetPersonalPINOutcome> ResetPersonalPINOutcomeCallable;
         typedef std::future<RestorePhoneNumberOutcome> RestorePhoneNumberOutcomeCallable;
@@ -573,6 +581,8 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorStreamingConfigurationRequest&, const Model::PutVoiceConnectorStreamingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorStreamingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorTerminationRequest&, const Model::PutVoiceConnectorTerminationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorTerminationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorTerminationCredentialsRequest&, const Model::PutVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorTerminationCredentialsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::RedactConversationMessageRequest&, const Model::RedactConversationMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactConversationMessageResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::RedactRoomMessageRequest&, const Model::RedactRoomMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RedactRoomMessageResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::RegenerateSecurityTokenRequest&, const Model::RegenerateSecurityTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegenerateSecurityTokenResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ResetPersonalPINRequest&, const Model::ResetPersonalPINOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetPersonalPINResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::RestorePhoneNumberRequest&, const Model::RestorePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestorePhoneNumberResponseReceivedHandler;
@@ -3475,6 +3485,62 @@ namespace Model
         virtual void PutVoiceConnectorTerminationCredentialsAsync(const Model::PutVoiceConnectorTerminationCredentialsRequest& request, const PutVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Redacts the specified message from the specified Amazon Chime
+         * conversation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactConversationMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RedactConversationMessageOutcome RedactConversationMessage(const Model::RedactConversationMessageRequest& request) const;
+
+        /**
+         * <p>Redacts the specified message from the specified Amazon Chime
+         * conversation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactConversationMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RedactConversationMessageOutcomeCallable RedactConversationMessageCallable(const Model::RedactConversationMessageRequest& request) const;
+
+        /**
+         * <p>Redacts the specified message from the specified Amazon Chime
+         * conversation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactConversationMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RedactConversationMessageAsync(const Model::RedactConversationMessageRequest& request, const RedactConversationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Redacts the specified message from the specified Amazon Chime chat
+         * room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RedactRoomMessageOutcome RedactRoomMessage(const Model::RedactRoomMessageRequest& request) const;
+
+        /**
+         * <p>Redacts the specified message from the specified Amazon Chime chat
+         * room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RedactRoomMessageOutcomeCallable RedactRoomMessageCallable(const Model::RedactRoomMessageRequest& request) const;
+
+        /**
+         * <p>Redacts the specified message from the specified Amazon Chime chat
+         * room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactRoomMessage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RedactRoomMessageAsync(const Model::RedactRoomMessageRequest& request, const RedactRoomMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Regenerates the security token for a bot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RegenerateSecurityToken">AWS
          * API Reference</a></p>
@@ -4258,6 +4324,8 @@ namespace Model
         void PutVoiceConnectorStreamingConfigurationAsyncHelper(const Model::PutVoiceConnectorStreamingConfigurationRequest& request, const PutVoiceConnectorStreamingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorTerminationAsyncHelper(const Model::PutVoiceConnectorTerminationRequest& request, const PutVoiceConnectorTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorTerminationCredentialsAsyncHelper(const Model::PutVoiceConnectorTerminationCredentialsRequest& request, const PutVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RedactConversationMessageAsyncHelper(const Model::RedactConversationMessageRequest& request, const RedactConversationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RedactRoomMessageAsyncHelper(const Model::RedactRoomMessageRequest& request, const RedactRoomMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegenerateSecurityTokenAsyncHelper(const Model::RegenerateSecurityTokenRequest& request, const RegenerateSecurityTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResetPersonalPINAsyncHelper(const Model::ResetPersonalPINRequest& request, const ResetPersonalPINResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestorePhoneNumberAsyncHelper(const Model::RestorePhoneNumberRequest& request, const RestorePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

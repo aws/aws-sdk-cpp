@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Provides information about account-level permissions settings that apply to
    * an S3 bucket.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AccountLevelPermissions">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AccountLevelPermissions">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API AccountLevelPermissions

@@ -34,7 +34,7 @@ namespace Model
   /**
    * <p>Run the job once a month, on a specific day of the month. This value can be
    * an integer from 1 through 30.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/MonthlySchedule">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MonthlySchedule">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API MonthlySchedule

@@ -34,7 +34,7 @@ namespace Model
   /**
    * <p>Run the job once a day, every day. If specified, this is an empty
    * object.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DailySchedule">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DailySchedule">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API DailySchedule

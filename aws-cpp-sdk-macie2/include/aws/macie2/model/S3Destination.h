@@ -37,7 +37,7 @@ namespace Model
    * <p>Specifies an S3 bucket to export data classification results to, and the
    * encryption settings to use when storing results in that bucket.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/S3Destination">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3Destination">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API S3Destination

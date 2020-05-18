@@ -36,8 +36,8 @@ namespace Model
   /**
    * <p>Provides the numeric score and textual representation of a severity
    * value.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/Severity">AWS
-   * API Reference</a></p>
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Severity">AWS API
+   * Reference</a></p>
    */
   class AWS_MACIE2_API Severity
   {

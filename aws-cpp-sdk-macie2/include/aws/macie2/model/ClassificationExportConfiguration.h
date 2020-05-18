@@ -37,7 +37,7 @@ namespace Model
    * <p>Specifies where to export data classification results to, and the encryption
    * settings to use when storing results in that location. Currently, you can export
    * classification results only to an S3 bucket.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ClassificationExportConfiguration">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationExportConfiguration">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API ClassificationExportConfiguration

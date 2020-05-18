@@ -43,7 +43,7 @@ namespace Model
   /**
    * <p>Provides information about an S3 bucket that Amazon Macie monitors and
    * analyzes.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BucketMetadata">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketMetadata">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API BucketMetadata

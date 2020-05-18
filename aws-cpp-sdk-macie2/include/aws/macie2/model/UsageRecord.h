@@ -39,7 +39,7 @@ namespace Model
   /**
    * <p>Provides quota and aggregated usage data for an account.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UsageRecord">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageRecord">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API UsageRecord

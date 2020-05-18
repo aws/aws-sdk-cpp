@@ -35,7 +35,7 @@ namespace Model
    * <p>The total number of objects that are in the bucket, grouped by server-side
    * encryption type. This includes a grouping that reports the total number of
    * objects that aren't encrypted.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ObjectCountByEncryptionType">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ObjectCountByEncryptionType">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API ObjectCountByEncryptionType

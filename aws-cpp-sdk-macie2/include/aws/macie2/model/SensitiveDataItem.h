@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>Provides information about the category, type, and number of occurrences of
    * sensitive data that produced a finding.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/SensitiveDataItem">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SensitiveDataItem">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API SensitiveDataItem

@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Specifies the operator to use in a property-based condition that filters the
    * results of a query for findings.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CriterionAdditionalProperties">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CriterionAdditionalProperties">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API CriterionAdditionalProperties

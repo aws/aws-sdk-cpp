@@ -40,7 +40,7 @@ namespace Model
   /**
    * <p>Specifies a tag-based condition that determines whether an object is included
    * or excluded from a classification job.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagScopeTerm">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagScopeTerm">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API TagScopeTerm

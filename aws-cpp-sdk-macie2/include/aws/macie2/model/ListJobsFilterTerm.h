@@ -40,7 +40,7 @@ namespace Model
    * <p>Specifies a condition that filters the results of a request for information
    * about classification jobs. Each condition consists of a property, an operator,
    * and one or more values.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListJobsFilterTerm">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListJobsFilterTerm">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API ListJobsFilterTerm

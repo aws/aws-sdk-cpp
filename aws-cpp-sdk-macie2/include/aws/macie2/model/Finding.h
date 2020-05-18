@@ -42,8 +42,8 @@ namespace Model
 
   /**
    * <p>Provides information about a finding.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/Finding">AWS
-   * API Reference</a></p>
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Finding">AWS API
+   * Reference</a></p>
    */
   class AWS_MACIE2_API Finding
   {

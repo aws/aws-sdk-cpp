@@ -35,7 +35,7 @@ namespace Model
    * <p>The total number of buckets that are publicly accessible, based on a
    * combination of permissions settings for each bucket.</p><p><h3>See Also:</h3>  
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BucketCountByEffectivePermission">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEffectivePermission">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API BucketCountByEffectivePermission

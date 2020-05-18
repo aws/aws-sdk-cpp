@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/KeyValuePair.h>
+#include <aws/ecs/model/EnvironmentFile.h>
 #include <aws/ecs/model/ResourceRequirement.h>
 #include <utility>
 
@@ -233,6 +234,55 @@ namespace Model
 
 
     /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline const Aws::Vector<EnvironmentFile>& GetEnvironmentFiles() const{ return m_environmentFiles; }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline bool EnvironmentFilesHasBeenSet() const { return m_environmentFilesHasBeenSet; }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline void SetEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = value; }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline void SetEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = std::move(value); }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline ContainerOverride& WithEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { SetEnvironmentFiles(value); return *this;}
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline ContainerOverride& WithEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { SetEnvironmentFiles(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline ContainerOverride& AddEnvironmentFiles(const EnvironmentFile& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(value); return *this; }
+
+    /**
+     * <p>A list of files containing the environment variables to pass to a container,
+     * instead of the value from the container definition.</p>
+     */
+    inline ContainerOverride& AddEnvironmentFiles(EnvironmentFile&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The number of <code>cpu</code> units reserved for the container, instead of
      * the default value from the task definition. You must also specify a container
      * name.</p>
@@ -389,6 +439,9 @@ namespace Model
 
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;
+
+    Aws::Vector<EnvironmentFile> m_environmentFiles;
+    bool m_environmentFilesHasBeenSet;
 
     int m_cpu;
     bool m_cpuHasBeenSet;

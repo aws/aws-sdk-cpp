@@ -41,7 +41,7 @@ namespace Model
    * <p>The IP address of the device that the entity used to perform the action on
    * the affected resource. This object also provides information such as the owner
    * and geographical location for the IP address.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/IpAddressDetails">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpAddressDetails">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API IpAddressDetails

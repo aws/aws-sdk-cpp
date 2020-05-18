@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Specifies a tag key and value, as a pair, to use in a tag-based condition for
    * a classification job.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagValuePair">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagValuePair">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API TagValuePair

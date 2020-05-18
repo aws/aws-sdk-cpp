@@ -38,7 +38,7 @@ namespace Model
    * <p>Provides information about settings that define whether one or more objects
    * in an S3 bucket are replicated to S3 buckets for other AWS accounts and, if so,
    * which accounts.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ReplicationDetails">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ReplicationDetails">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API ReplicationDetails

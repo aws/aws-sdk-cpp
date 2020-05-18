@@ -30,18 +30,22 @@
 #include <aws/qldb/QLDBClient.h>
 #include <aws/qldb/QLDBEndpoint.h>
 #include <aws/qldb/QLDBErrorMarshaller.h>
+#include <aws/qldb/model/CancelJournalKinesisStreamRequest.h>
 #include <aws/qldb/model/CreateLedgerRequest.h>
 #include <aws/qldb/model/DeleteLedgerRequest.h>
+#include <aws/qldb/model/DescribeJournalKinesisStreamRequest.h>
 #include <aws/qldb/model/DescribeJournalS3ExportRequest.h>
 #include <aws/qldb/model/DescribeLedgerRequest.h>
 #include <aws/qldb/model/ExportJournalToS3Request.h>
 #include <aws/qldb/model/GetBlockRequest.h>
 #include <aws/qldb/model/GetDigestRequest.h>
 #include <aws/qldb/model/GetRevisionRequest.h>
+#include <aws/qldb/model/ListJournalKinesisStreamsForLedgerRequest.h>
 #include <aws/qldb/model/ListJournalS3ExportsRequest.h>
 #include <aws/qldb/model/ListJournalS3ExportsForLedgerRequest.h>
 #include <aws/qldb/model/ListLedgersRequest.h>
 #include <aws/qldb/model/ListTagsForResourceRequest.h>
+#include <aws/qldb/model/StreamJournalToKinesisRequest.h>
 #include <aws/qldb/model/TagResourceRequest.h>
 #include <aws/qldb/model/UntagResourceRequest.h>
 #include <aws/qldb/model/UpdateLedgerRequest.h>
@@ -118,6 +122,54 @@ void QLDBClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CancelJournalKinesisStreamOutcome QLDBClient::CancelJournalKinesisStream(const CancelJournalKinesisStreamRequest& request) const
+{
+  if (!request.LedgerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelJournalKinesisStream", "Required field: LedgerName, is not set");
+    return CancelJournalKinesisStreamOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LedgerName]", false));
+  }
+  if (!request.StreamIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelJournalKinesisStream", "Required field: StreamId, is not set");
+    return CancelJournalKinesisStreamOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ledgers/";
+  ss << request.GetLedgerName();
+  ss << "/journal-kinesis-streams/";
+  ss << request.GetStreamId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelJournalKinesisStreamOutcome(CancelJournalKinesisStreamResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelJournalKinesisStreamOutcome(outcome.GetError());
+  }
+}
+
+CancelJournalKinesisStreamOutcomeCallable QLDBClient::CancelJournalKinesisStreamCallable(const CancelJournalKinesisStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelJournalKinesisStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelJournalKinesisStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QLDBClient::CancelJournalKinesisStreamAsync(const CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelJournalKinesisStreamAsyncHelper( request, handler, context ); } );
+}
+
+void QLDBClient::CancelJournalKinesisStreamAsyncHelper(const CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelJournalKinesisStream(request), context);
+}
+
 CreateLedgerOutcome QLDBClient::CreateLedger(const CreateLedgerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -192,6 +244,54 @@ void QLDBClient::DeleteLedgerAsync(const DeleteLedgerRequest& request, const Del
 void QLDBClient::DeleteLedgerAsyncHelper(const DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteLedger(request), context);
+}
+
+DescribeJournalKinesisStreamOutcome QLDBClient::DescribeJournalKinesisStream(const DescribeJournalKinesisStreamRequest& request) const
+{
+  if (!request.LedgerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJournalKinesisStream", "Required field: LedgerName, is not set");
+    return DescribeJournalKinesisStreamOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LedgerName]", false));
+  }
+  if (!request.StreamIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJournalKinesisStream", "Required field: StreamId, is not set");
+    return DescribeJournalKinesisStreamOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ledgers/";
+  ss << request.GetLedgerName();
+  ss << "/journal-kinesis-streams/";
+  ss << request.GetStreamId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeJournalKinesisStreamOutcome(DescribeJournalKinesisStreamResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeJournalKinesisStreamOutcome(outcome.GetError());
+  }
+}
+
+DescribeJournalKinesisStreamOutcomeCallable QLDBClient::DescribeJournalKinesisStreamCallable(const DescribeJournalKinesisStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJournalKinesisStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJournalKinesisStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QLDBClient::DescribeJournalKinesisStreamAsync(const DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeJournalKinesisStreamAsyncHelper( request, handler, context ); } );
+}
+
+void QLDBClient::DescribeJournalKinesisStreamAsyncHelper(const DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeJournalKinesisStream(request), context);
 }
 
 DescribeJournalS3ExportOutcome QLDBClient::DescribeJournalS3Export(const DescribeJournalS3ExportRequest& request) const
@@ -451,6 +551,48 @@ void QLDBClient::GetRevisionAsyncHelper(const GetRevisionRequest& request, const
   handler(this, request, GetRevision(request), context);
 }
 
+ListJournalKinesisStreamsForLedgerOutcome QLDBClient::ListJournalKinesisStreamsForLedger(const ListJournalKinesisStreamsForLedgerRequest& request) const
+{
+  if (!request.LedgerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJournalKinesisStreamsForLedger", "Required field: LedgerName, is not set");
+    return ListJournalKinesisStreamsForLedgerOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LedgerName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ledgers/";
+  ss << request.GetLedgerName();
+  ss << "/journal-kinesis-streams";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListJournalKinesisStreamsForLedgerOutcome(ListJournalKinesisStreamsForLedgerResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListJournalKinesisStreamsForLedgerOutcome(outcome.GetError());
+  }
+}
+
+ListJournalKinesisStreamsForLedgerOutcomeCallable QLDBClient::ListJournalKinesisStreamsForLedgerCallable(const ListJournalKinesisStreamsForLedgerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListJournalKinesisStreamsForLedgerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJournalKinesisStreamsForLedger(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QLDBClient::ListJournalKinesisStreamsForLedgerAsync(const ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListJournalKinesisStreamsForLedgerAsyncHelper( request, handler, context ); } );
+}
+
+void QLDBClient::ListJournalKinesisStreamsForLedgerAsyncHelper(const ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListJournalKinesisStreamsForLedger(request), context);
+}
+
 ListJournalS3ExportsOutcome QLDBClient::ListJournalS3Exports(const ListJournalS3ExportsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -602,6 +744,48 @@ void QLDBClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& requ
 void QLDBClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+StreamJournalToKinesisOutcome QLDBClient::StreamJournalToKinesis(const StreamJournalToKinesisRequest& request) const
+{
+  if (!request.LedgerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StreamJournalToKinesis", "Required field: LedgerName, is not set");
+    return StreamJournalToKinesisOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LedgerName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ledgers/";
+  ss << request.GetLedgerName();
+  ss << "/journal-kinesis-streams";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StreamJournalToKinesisOutcome(StreamJournalToKinesisResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StreamJournalToKinesisOutcome(outcome.GetError());
+  }
+}
+
+StreamJournalToKinesisOutcomeCallable QLDBClient::StreamJournalToKinesisCallable(const StreamJournalToKinesisRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StreamJournalToKinesisOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StreamJournalToKinesis(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QLDBClient::StreamJournalToKinesisAsync(const StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StreamJournalToKinesisAsyncHelper( request, handler, context ); } );
+}
+
+void QLDBClient::StreamJournalToKinesisAsyncHelper(const StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StreamJournalToKinesis(request), context);
 }
 
 TagResourceOutcome QLDBClient::TagResource(const TagResourceRequest& request) const

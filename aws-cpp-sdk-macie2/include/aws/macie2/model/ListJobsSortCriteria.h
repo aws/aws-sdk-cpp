@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Specifies criteria for sorting the results of a request for information about
    * classification jobs.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListJobsSortCriteria">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListJobsSortCriteria">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API ListJobsSortCriteria

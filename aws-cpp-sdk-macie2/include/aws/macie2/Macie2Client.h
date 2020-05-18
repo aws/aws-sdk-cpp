@@ -367,7 +367,7 @@ namespace Model
         /**
          * <p>Accepts an Amazon Macie membership invitation that was received from a
          * specific account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">AWS
          * API Reference</a></p>
          */
         virtual Model::AcceptInvitationOutcome AcceptInvitation(const Model::AcceptInvitationRequest& request) const;
@@ -375,7 +375,7 @@ namespace Model
         /**
          * <p>Accepts an Amazon Macie membership invitation that was received from a
          * specific account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -385,7 +385,7 @@ namespace Model
         /**
          * <p>Accepts an Amazon Macie membership invitation that was received from a
          * specific account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/AcceptInvitation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/AcceptInvitation">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -394,14 +394,14 @@ namespace Model
 
         /**
          * <p>Archives one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::ArchiveFindingsOutcome ArchiveFindings(const Model::ArchiveFindingsRequest& request) const;
 
         /**
          * <p>Archives one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -410,7 +410,7 @@ namespace Model
 
         /**
          * <p>Archives one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ArchiveFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -420,7 +420,7 @@ namespace Model
         /**
          * <p>Retrieves information about one or more custom data
          * identifiers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchGetCustomDataIdentifiersOutcome BatchGetCustomDataIdentifiers(const Model::BatchGetCustomDataIdentifiersRequest& request) const;
@@ -428,7 +428,7 @@ namespace Model
         /**
          * <p>Retrieves information about one or more custom data
          * identifiers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -438,7 +438,7 @@ namespace Model
         /**
          * <p>Retrieves information about one or more custom data
          * identifiers.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BatchGetCustomDataIdentifiers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BatchGetCustomDataIdentifiers">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -448,7 +448,7 @@ namespace Model
         /**
          * <p>Creates and defines the settings for a classification job.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateClassificationJobOutcome CreateClassificationJob(const Model::CreateClassificationJobRequest& request) const;
@@ -456,7 +456,7 @@ namespace Model
         /**
          * <p>Creates and defines the settings for a classification job.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -466,7 +466,7 @@ namespace Model
         /**
          * <p>Creates and defines the settings for a classification job.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateClassificationJob">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -476,7 +476,7 @@ namespace Model
         /**
          * <p>Creates and defines the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCustomDataIdentifierOutcome CreateCustomDataIdentifier(const Model::CreateCustomDataIdentifierRequest& request) const;
@@ -484,7 +484,7 @@ namespace Model
         /**
          * <p>Creates and defines the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -494,7 +494,7 @@ namespace Model
         /**
          * <p>Creates and defines the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -504,7 +504,7 @@ namespace Model
         /**
          * <p>Creates and defines the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateFindingsFilterOutcome CreateFindingsFilter(const Model::CreateFindingsFilterRequest& request) const;
@@ -512,7 +512,7 @@ namespace Model
         /**
          * <p>Creates and defines the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -522,7 +522,7 @@ namespace Model
         /**
          * <p>Creates and defines the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateFindingsFilter">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -532,7 +532,7 @@ namespace Model
         /**
          * <p>Sends an Amazon Macie membership invitation to one or more
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateInvitationsOutcome CreateInvitations(const Model::CreateInvitationsRequest& request) const;
@@ -540,7 +540,7 @@ namespace Model
         /**
          * <p>Sends an Amazon Macie membership invitation to one or more
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -550,7 +550,7 @@ namespace Model
         /**
          * <p>Sends an Amazon Macie membership invitation to one or more
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateInvitations">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -560,7 +560,7 @@ namespace Model
         /**
          * <p>Associates an account with an Amazon Macie master account.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateMemberOutcome CreateMember(const Model::CreateMemberRequest& request) const;
@@ -568,7 +568,7 @@ namespace Model
         /**
          * <p>Associates an account with an Amazon Macie master account.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -578,7 +578,7 @@ namespace Model
         /**
          * <p>Associates an account with an Amazon Macie master account.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -587,14 +587,14 @@ namespace Model
 
         /**
          * <p>Creates sample findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSampleFindingsOutcome CreateSampleFindings(const Model::CreateSampleFindingsRequest& request) const;
 
         /**
          * <p>Creates sample findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -603,7 +603,7 @@ namespace Model
 
         /**
          * <p>Creates sample findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/CreateSampleFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateSampleFindings">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -613,7 +613,7 @@ namespace Model
         /**
          * <p>Declines Amazon Macie membership invitations that were received from specific
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::DeclineInvitationsOutcome DeclineInvitations(const Model::DeclineInvitationsRequest& request) const;
@@ -621,7 +621,7 @@ namespace Model
         /**
          * <p>Declines Amazon Macie membership invitations that were received from specific
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -631,7 +631,7 @@ namespace Model
         /**
          * <p>Declines Amazon Macie membership invitations that were received from specific
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeclineInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeclineInvitations">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -640,14 +640,14 @@ namespace Model
 
         /**
          * <p>Deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCustomDataIdentifierOutcome DeleteCustomDataIdentifier(const Model::DeleteCustomDataIdentifierRequest& request) const;
 
         /**
          * <p>Deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -656,7 +656,7 @@ namespace Model
 
         /**
          * <p>Deletes a custom data identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -665,14 +665,14 @@ namespace Model
 
         /**
          * <p>Deletes a findings filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteFindingsFilterOutcome DeleteFindingsFilter(const Model::DeleteFindingsFilterRequest& request) const;
 
         /**
          * <p>Deletes a findings filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -681,7 +681,7 @@ namespace Model
 
         /**
          * <p>Deletes a findings filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteFindingsFilter">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -691,7 +691,7 @@ namespace Model
         /**
          * <p>Deletes Amazon Macie membership invitations that were received from specific
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteInvitationsOutcome DeleteInvitations(const Model::DeleteInvitationsRequest& request) const;
@@ -699,7 +699,7 @@ namespace Model
         /**
          * <p>Deletes Amazon Macie membership invitations that were received from specific
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -709,7 +709,7 @@ namespace Model
         /**
          * <p>Deletes Amazon Macie membership invitations that were received from specific
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteInvitations">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -719,7 +719,7 @@ namespace Model
         /**
          * <p>Deletes the association between an Amazon Macie master account and an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteMemberOutcome DeleteMember(const Model::DeleteMemberRequest& request) const;
@@ -727,7 +727,7 @@ namespace Model
         /**
          * <p>Deletes the association between an Amazon Macie master account and an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -737,7 +737,7 @@ namespace Model
         /**
          * <p>Deletes the association between an Amazon Macie master account and an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DeleteMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -748,7 +748,7 @@ namespace Model
          * <p>Retrieves (queries) statistical data and other information about one or more
          * S3 buckets that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBucketsOutcome DescribeBuckets(const Model::DescribeBucketsRequest& request) const;
@@ -757,7 +757,7 @@ namespace Model
          * <p>Retrieves (queries) statistical data and other information about one or more
          * S3 buckets that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -768,7 +768,7 @@ namespace Model
          * <p>Retrieves (queries) statistical data and other information about one or more
          * S3 buckets that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeBuckets">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeBuckets">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -778,7 +778,7 @@ namespace Model
         /**
          * <p>Retrieves information about the status and settings for a classification
          * job.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeClassificationJobOutcome DescribeClassificationJob(const Model::DescribeClassificationJobRequest& request) const;
@@ -786,7 +786,7 @@ namespace Model
         /**
          * <p>Retrieves information about the status and settings for a classification
          * job.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -796,7 +796,7 @@ namespace Model
         /**
          * <p>Retrieves information about the status and settings for a classification
          * job.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeClassificationJob">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -806,7 +806,7 @@ namespace Model
         /**
          * <p>Retrieves information about the Amazon Macie configuration settings for an
          * AWS organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeOrganizationConfigurationOutcome DescribeOrganizationConfiguration(const Model::DescribeOrganizationConfigurationRequest& request) const;
@@ -814,7 +814,7 @@ namespace Model
         /**
          * <p>Retrieves information about the Amazon Macie configuration settings for an
          * AWS organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -824,7 +824,7 @@ namespace Model
         /**
          * <p>Retrieves information about the Amazon Macie configuration settings for an
          * AWS organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DescribeOrganizationConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -834,7 +834,7 @@ namespace Model
         /**
          * <p>Disables an Amazon Macie account and deletes Macie resources for the
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableMacieOutcome DisableMacie(const Model::DisableMacieRequest& request) const;
@@ -842,7 +842,7 @@ namespace Model
         /**
          * <p>Disables an Amazon Macie account and deletes Macie resources for the
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -852,7 +852,7 @@ namespace Model
         /**
          * <p>Disables an Amazon Macie account and deletes Macie resources for the
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableMacie">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableMacie">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -862,7 +862,7 @@ namespace Model
         /**
          * <p>Disables an account as a delegated administrator of Amazon Macie for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::DisableOrganizationAdminAccountOutcome DisableOrganizationAdminAccount(const Model::DisableOrganizationAdminAccountRequest& request) const;
@@ -870,7 +870,7 @@ namespace Model
         /**
          * <p>Disables an account as a delegated administrator of Amazon Macie for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -880,7 +880,7 @@ namespace Model
         /**
          * <p>Disables an account as a delegated administrator of Amazon Macie for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisableOrganizationAdminAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -890,7 +890,7 @@ namespace Model
         /**
          * <p>Disassociates a member account from its Amazon Macie master
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateFromMasterAccountOutcome DisassociateFromMasterAccount(const Model::DisassociateFromMasterAccountRequest& request) const;
@@ -898,7 +898,7 @@ namespace Model
         /**
          * <p>Disassociates a member account from its Amazon Macie master
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -908,7 +908,7 @@ namespace Model
         /**
          * <p>Disassociates a member account from its Amazon Macie master
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateFromMasterAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -918,7 +918,7 @@ namespace Model
         /**
          * <p>Disassociates an Amazon Macie master account from a member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateMemberOutcome DisassociateMember(const Model::DisassociateMemberRequest& request) const;
@@ -926,7 +926,7 @@ namespace Model
         /**
          * <p>Disassociates an Amazon Macie master account from a member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -936,7 +936,7 @@ namespace Model
         /**
          * <p>Disassociates an Amazon Macie master account from a member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DisassociateMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -946,7 +946,7 @@ namespace Model
         /**
          * <p>Enables Amazon Macie and specifies the configuration settings for a Macie
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableMacieOutcome EnableMacie(const Model::EnableMacieRequest& request) const;
@@ -954,7 +954,7 @@ namespace Model
         /**
          * <p>Enables Amazon Macie and specifies the configuration settings for a Macie
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -964,7 +964,7 @@ namespace Model
         /**
          * <p>Enables Amazon Macie and specifies the configuration settings for a Macie
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableMacie">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableMacie">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -974,7 +974,7 @@ namespace Model
         /**
          * <p>Enables an account as a delegated administrator of Amazon Macie for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::EnableOrganizationAdminAccountOutcome EnableOrganizationAdminAccount(const Model::EnableOrganizationAdminAccountRequest& request) const;
@@ -982,7 +982,7 @@ namespace Model
         /**
          * <p>Enables an account as a delegated administrator of Amazon Macie for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -992,7 +992,7 @@ namespace Model
         /**
          * <p>Enables an account as a delegated administrator of Amazon Macie for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/EnableOrganizationAdminAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/EnableOrganizationAdminAccount">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1002,7 +1002,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated statistical data for all the S3 buckets that
          * Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketStatisticsOutcome GetBucketStatistics(const Model::GetBucketStatisticsRequest& request) const;
@@ -1010,7 +1010,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated statistical data for all the S3 buckets that
          * Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1020,7 +1020,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated statistical data for all the S3 buckets that
          * Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetBucketStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetBucketStatistics">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1030,7 +1030,7 @@ namespace Model
         /**
          * <p>Retrieves the configuration settings for exporting data classification
          * results.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetClassificationExportConfigurationOutcome GetClassificationExportConfiguration(const Model::GetClassificationExportConfigurationRequest& request) const;
@@ -1038,7 +1038,7 @@ namespace Model
         /**
          * <p>Retrieves the configuration settings for exporting data classification
          * results.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1048,7 +1048,7 @@ namespace Model
         /**
          * <p>Retrieves the configuration settings for exporting data classification
          * results.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetClassificationExportConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationExportConfiguration">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1058,7 +1058,7 @@ namespace Model
         /**
          * <p>Retrieves information about the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">AWS
          * API Reference</a></p>
          */
         virtual Model::GetCustomDataIdentifierOutcome GetCustomDataIdentifier(const Model::GetCustomDataIdentifierRequest& request) const;
@@ -1066,7 +1066,7 @@ namespace Model
         /**
          * <p>Retrieves information about the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1076,7 +1076,7 @@ namespace Model
         /**
          * <p>Retrieves information about the criteria and other settings for a custom data
          * identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1086,7 +1086,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated statistical data about findings.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFindingStatisticsOutcome GetFindingStatistics(const Model::GetFindingStatisticsRequest& request) const;
@@ -1094,7 +1094,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated statistical data about findings.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1104,7 +1104,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated statistical data about findings.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingStatistics">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1114,7 +1114,7 @@ namespace Model
         /**
          * <p>Retrieves information about one or more findings.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFindingsOutcome GetFindings(const Model::GetFindingsRequest& request) const;
@@ -1122,7 +1122,7 @@ namespace Model
         /**
          * <p>Retrieves information about one or more findings.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1132,7 +1132,7 @@ namespace Model
         /**
          * <p>Retrieves information about one or more findings.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindings">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1142,7 +1142,7 @@ namespace Model
         /**
          * <p>Retrieves information about the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFindingsFilterOutcome GetFindingsFilter(const Model::GetFindingsFilterRequest& request) const;
@@ -1150,7 +1150,7 @@ namespace Model
         /**
          * <p>Retrieves information about the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1160,7 +1160,7 @@ namespace Model
         /**
          * <p>Retrieves information about the criteria and other settings for a findings
          * filter.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsFilter">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1170,7 +1170,7 @@ namespace Model
         /**
          * <p>Retrieves the count of Amazon Macie membership invitations that were received
          * by an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetInvitationsCountOutcome GetInvitationsCount(const Model::GetInvitationsCountRequest& request) const;
@@ -1178,7 +1178,7 @@ namespace Model
         /**
          * <p>Retrieves the count of Amazon Macie membership invitations that were received
          * by an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1188,7 +1188,7 @@ namespace Model
         /**
          * <p>Retrieves the count of Amazon Macie membership invitations that were received
          * by an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetInvitationsCount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1198,7 +1198,7 @@ namespace Model
         /**
          * <p>Retrieves information about the current status and configuration settings for
          * an Amazon Macie account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMacieSessionOutcome GetMacieSession(const Model::GetMacieSessionRequest& request) const;
@@ -1206,7 +1206,7 @@ namespace Model
         /**
          * <p>Retrieves information about the current status and configuration settings for
          * an Amazon Macie account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1216,7 +1216,7 @@ namespace Model
         /**
          * <p>Retrieves information about the current status and configuration settings for
          * an Amazon Macie account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMacieSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMacieSession">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1226,7 +1226,7 @@ namespace Model
         /**
          * <p>Retrieves information about the Amazon Macie master account for an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMasterAccountOutcome GetMasterAccount(const Model::GetMasterAccountRequest& request) const;
@@ -1234,7 +1234,7 @@ namespace Model
         /**
          * <p>Retrieves information about the Amazon Macie master account for an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1244,7 +1244,7 @@ namespace Model
         /**
          * <p>Retrieves information about the Amazon Macie master account for an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMasterAccount">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1254,7 +1254,7 @@ namespace Model
         /**
          * <p>Retrieves information about a member account that's associated with an Amazon
          * Macie master account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMemberOutcome GetMember(const Model::GetMemberRequest& request) const;
@@ -1262,7 +1262,7 @@ namespace Model
         /**
          * <p>Retrieves information about a member account that's associated with an Amazon
          * Macie master account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1272,7 +1272,7 @@ namespace Model
         /**
          * <p>Retrieves information about a member account that's associated with an Amazon
          * Macie master account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetMember">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1282,7 +1282,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) quotas and aggregated usage data for one or more
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">AWS
          * API Reference</a></p>
          */
         virtual Model::GetUsageStatisticsOutcome GetUsageStatistics(const Model::GetUsageStatisticsRequest& request) const;
@@ -1290,7 +1290,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) quotas and aggregated usage data for one or more
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1300,7 +1300,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) quotas and aggregated usage data for one or more
          * accounts.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageStatistics">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageStatistics">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1310,7 +1310,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated usage data for an account.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">AWS
          * API Reference</a></p>
          */
         virtual Model::GetUsageTotalsOutcome GetUsageTotals(const Model::GetUsageTotalsRequest& request) const;
@@ -1318,7 +1318,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated usage data for an account.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1328,7 +1328,7 @@ namespace Model
         /**
          * <p>Retrieves (queries) aggregated usage data for an account.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/GetUsageTotals">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetUsageTotals">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1338,7 +1338,7 @@ namespace Model
         /**
          * <p>Retrieves information about the status and settings for one or more
          * classification jobs.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">AWS
          * API Reference</a></p>
          */
         virtual Model::ListClassificationJobsOutcome ListClassificationJobs(const Model::ListClassificationJobsRequest& request) const;
@@ -1346,7 +1346,7 @@ namespace Model
         /**
          * <p>Retrieves information about the status and settings for one or more
          * classification jobs.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1356,7 +1356,7 @@ namespace Model
         /**
          * <p>Retrieves information about the status and settings for one or more
          * classification jobs.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListClassificationJobs">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationJobs">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1366,7 +1366,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about all the custom data identifiers for
          * an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCustomDataIdentifiersOutcome ListCustomDataIdentifiers(const Model::ListCustomDataIdentifiersRequest& request) const;
@@ -1374,7 +1374,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about all the custom data identifiers for
          * an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1384,7 +1384,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about all the custom data identifiers for
          * an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListCustomDataIdentifiers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListCustomDataIdentifiers">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1394,7 +1394,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about one or more findings.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::ListFindingsOutcome ListFindings(const Model::ListFindingsRequest& request) const;
@@ -1402,7 +1402,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about one or more findings.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1412,7 +1412,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about one or more findings.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindings">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1422,7 +1422,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about all the findings filters for an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">AWS
          * API Reference</a></p>
          */
         virtual Model::ListFindingsFiltersOutcome ListFindingsFilters(const Model::ListFindingsFiltersRequest& request) const;
@@ -1430,7 +1430,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about all the findings filters for an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1440,7 +1440,7 @@ namespace Model
         /**
          * <p>Retrieves a subset of information about all the findings filters for an
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListFindingsFilters">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListFindingsFilters">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1450,7 +1450,7 @@ namespace Model
         /**
          * <p>Retrieves information about all the Amazon Macie membership invitations that
          * were received by an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListInvitationsOutcome ListInvitations(const Model::ListInvitationsRequest& request) const;
@@ -1458,7 +1458,7 @@ namespace Model
         /**
          * <p>Retrieves information about all the Amazon Macie membership invitations that
          * were received by an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1468,7 +1468,7 @@ namespace Model
         /**
          * <p>Retrieves information about all the Amazon Macie membership invitations that
          * were received by an account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListInvitations">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListInvitations">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1478,7 +1478,7 @@ namespace Model
         /**
          * <p>Retrieves information about the accounts that are associated with an Amazon
          * Macie master account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
@@ -1486,7 +1486,7 @@ namespace Model
         /**
          * <p>Retrieves information about the accounts that are associated with an Amazon
          * Macie master account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1496,7 +1496,7 @@ namespace Model
         /**
          * <p>Retrieves information about the accounts that are associated with an Amazon
          * Macie master account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListMembers">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1507,7 +1507,7 @@ namespace Model
          * <p>Retrieves information about the account that's designated as the delegated
          * administrator of Amazon Macie for an AWS organization.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          */
         virtual Model::ListOrganizationAdminAccountsOutcome ListOrganizationAdminAccounts(const Model::ListOrganizationAdminAccountsRequest& request) const;
@@ -1516,7 +1516,7 @@ namespace Model
          * <p>Retrieves information about the account that's designated as the delegated
          * administrator of Amazon Macie for an AWS organization.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1527,7 +1527,7 @@ namespace Model
          * <p>Retrieves information about the account that's designated as the delegated
          * administrator of Amazon Macie for an AWS organization.</p><p><h3>See Also:</h3> 
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListOrganizationAdminAccounts">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListOrganizationAdminAccounts">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1538,7 +1538,7 @@ namespace Model
          * <p>Retrieves the tags (keys and values) that are associated with a
          * classification job, custom data identifier, findings filter, or member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
@@ -1547,7 +1547,7 @@ namespace Model
          * <p>Retrieves the tags (keys and values) that are associated with a
          * classification job, custom data identifier, findings filter, or member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1558,7 +1558,7 @@ namespace Model
          * <p>Retrieves the tags (keys and values) that are associated with a
          * classification job, custom data identifier, findings filter, or member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ListTagsForResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1568,7 +1568,7 @@ namespace Model
         /**
          * <p>Creates or updates the configuration settings for exporting data
          * classification results.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutClassificationExportConfigurationOutcome PutClassificationExportConfiguration(const Model::PutClassificationExportConfigurationRequest& request) const;
@@ -1576,7 +1576,7 @@ namespace Model
         /**
          * <p>Creates or updates the configuration settings for exporting data
          * classification results.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1586,7 +1586,7 @@ namespace Model
         /**
          * <p>Creates or updates the configuration settings for exporting data
          * classification results.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/PutClassificationExportConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutClassificationExportConfiguration">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1597,7 +1597,7 @@ namespace Model
          * <p>Adds or updates one or more tags (keys and values) that are associated with a
          * classification job, custom data identifier, findings filter, or member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
@@ -1606,7 +1606,7 @@ namespace Model
          * <p>Adds or updates one or more tags (keys and values) that are associated with a
          * classification job, custom data identifier, findings filter, or member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1617,7 +1617,7 @@ namespace Model
          * <p>Adds or updates one or more tags (keys and values) that are associated with a
          * classification job, custom data identifier, findings filter, or member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1626,14 +1626,14 @@ namespace Model
 
         /**
          * <p>Tests a custom data identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">AWS
          * API Reference</a></p>
          */
         virtual Model::TestCustomDataIdentifierOutcome TestCustomDataIdentifier(const Model::TestCustomDataIdentifierRequest& request) const;
 
         /**
          * <p>Tests a custom data identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1642,7 +1642,7 @@ namespace Model
 
         /**
          * <p>Tests a custom data identifier.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/TestCustomDataIdentifier">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TestCustomDataIdentifier">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1651,14 +1651,14 @@ namespace Model
 
         /**
          * <p>Reactivates (unarchives) one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::UnarchiveFindingsOutcome UnarchiveFindings(const Model::UnarchiveFindingsRequest& request) const;
 
         /**
          * <p>Reactivates (unarchives) one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1667,7 +1667,7 @@ namespace Model
 
         /**
          * <p>Reactivates (unarchives) one or more findings.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UnarchiveFindings">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1678,7 +1678,7 @@ namespace Model
          * <p>Removes one or more tags (keys and values) from a classification job, custom
          * data identifier, findings filter, or member account.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
@@ -1687,7 +1687,7 @@ namespace Model
          * <p>Removes one or more tags (keys and values) from a classification job, custom
          * data identifier, findings filter, or member account.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1698,7 +1698,7 @@ namespace Model
          * <p>Removes one or more tags (keys and values) from a classification job, custom
          * data identifier, findings filter, or member account.</p><p><h3>See Also:</h3>  
          * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UntagResource">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UntagResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1707,14 +1707,14 @@ namespace Model
 
         /**
          * <p>Cancels a classification job.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateClassificationJobOutcome UpdateClassificationJob(const Model::UpdateClassificationJobRequest& request) const;
 
         /**
          * <p>Cancels a classification job.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1723,7 +1723,7 @@ namespace Model
 
         /**
          * <p>Cancels a classification job.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateClassificationJob">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationJob">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1733,7 +1733,7 @@ namespace Model
         /**
          * <p>Updates the criteria and other settings for a findings filter.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFindingsFilterOutcome UpdateFindingsFilter(const Model::UpdateFindingsFilterRequest& request) const;
@@ -1741,7 +1741,7 @@ namespace Model
         /**
          * <p>Updates the criteria and other settings for a findings filter.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1751,7 +1751,7 @@ namespace Model
         /**
          * <p>Updates the criteria and other settings for a findings filter.</p><p><h3>See
          * Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateFindingsFilter">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateFindingsFilter">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1761,7 +1761,7 @@ namespace Model
         /**
          * <p>Suspends or re-enables an Amazon Macie account, or updates the configuration
          * settings for a Macie account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateMacieSessionOutcome UpdateMacieSession(const Model::UpdateMacieSessionRequest& request) const;
@@ -1769,7 +1769,7 @@ namespace Model
         /**
          * <p>Suspends or re-enables an Amazon Macie account, or updates the configuration
          * settings for a Macie account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1779,7 +1779,7 @@ namespace Model
         /**
          * <p>Suspends or re-enables an Amazon Macie account, or updates the configuration
          * settings for a Macie account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMacieSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMacieSession">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1789,7 +1789,7 @@ namespace Model
         /**
          * <p>Enables an Amazon Macie master account to suspend or re-enable a member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateMemberSessionOutcome UpdateMemberSession(const Model::UpdateMemberSessionRequest& request) const;
@@ -1797,7 +1797,7 @@ namespace Model
         /**
          * <p>Enables an Amazon Macie master account to suspend or re-enable a member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1807,7 +1807,7 @@ namespace Model
         /**
          * <p>Enables an Amazon Macie master account to suspend or re-enable a member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateMemberSession">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -1817,7 +1817,7 @@ namespace Model
         /**
          * <p>Updates Amazon Macie configuration settings for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateOrganizationConfigurationOutcome UpdateOrganizationConfiguration(const Model::UpdateOrganizationConfigurationRequest& request) const;
@@ -1825,7 +1825,7 @@ namespace Model
         /**
          * <p>Updates Amazon Macie configuration settings for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
@@ -1835,7 +1835,7 @@ namespace Model
         /**
          * <p>Updates Amazon Macie configuration settings for an AWS
          * organization.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UpdateOrganizationConfiguration">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateOrganizationConfiguration">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.

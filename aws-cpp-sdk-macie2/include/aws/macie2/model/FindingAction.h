@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Provides information about an action that occurred for a resource and
    * produced a policy finding.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/FindingAction">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingAction">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API FindingAction

@@ -28,10 +28,7 @@ JsonValue AttributeValueString::Jsonize() const
 {
     JsonValue value;
 
-    if (!m_s.empty())
-    {
-        value.WithString("S", m_s);
-    }
+    value.WithString("S", m_s);
 
     return value;
 }
@@ -65,10 +62,7 @@ JsonValue AttributeValueByteBuffer::Jsonize() const
 {
     JsonValue value;
 
-    if (m_b.GetLength() > 0)
-    {
-        value.WithString("B", HashingUtils::Base64Encode(m_b));
-    }
+    value.WithString("B", HashingUtils::Base64Encode(m_b));
 
     return value;
 }

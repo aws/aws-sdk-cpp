@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>Specifies criteria for filtering the results of a query for account quotas
    * and usage data.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/UsageStatisticsFilter">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageStatisticsFilter">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API UsageStatisticsFilter

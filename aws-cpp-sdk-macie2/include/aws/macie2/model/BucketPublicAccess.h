@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Provides information about permissions settings that determine whether an S3
    * bucket is publicly accessible.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BucketPublicAccess">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketPublicAccess">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API BucketPublicAccess

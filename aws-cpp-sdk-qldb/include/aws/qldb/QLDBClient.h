@@ -21,17 +21,21 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qldb/model/CancelJournalKinesisStreamResult.h>
 #include <aws/qldb/model/CreateLedgerResult.h>
+#include <aws/qldb/model/DescribeJournalKinesisStreamResult.h>
 #include <aws/qldb/model/DescribeJournalS3ExportResult.h>
 #include <aws/qldb/model/DescribeLedgerResult.h>
 #include <aws/qldb/model/ExportJournalToS3Result.h>
 #include <aws/qldb/model/GetBlockResult.h>
 #include <aws/qldb/model/GetDigestResult.h>
 #include <aws/qldb/model/GetRevisionResult.h>
+#include <aws/qldb/model/ListJournalKinesisStreamsForLedgerResult.h>
 #include <aws/qldb/model/ListJournalS3ExportsResult.h>
 #include <aws/qldb/model/ListJournalS3ExportsForLedgerResult.h>
 #include <aws/qldb/model/ListLedgersResult.h>
 #include <aws/qldb/model/ListTagsForResourceResult.h>
+#include <aws/qldb/model/StreamJournalToKinesisResult.h>
 #include <aws/qldb/model/TagResourceResult.h>
 #include <aws/qldb/model/UntagResourceResult.h>
 #include <aws/qldb/model/UpdateLedgerResult.h>
@@ -75,50 +79,62 @@ namespace QLDB
 
 namespace Model
 {
+        class CancelJournalKinesisStreamRequest;
         class CreateLedgerRequest;
         class DeleteLedgerRequest;
+        class DescribeJournalKinesisStreamRequest;
         class DescribeJournalS3ExportRequest;
         class DescribeLedgerRequest;
         class ExportJournalToS3Request;
         class GetBlockRequest;
         class GetDigestRequest;
         class GetRevisionRequest;
+        class ListJournalKinesisStreamsForLedgerRequest;
         class ListJournalS3ExportsRequest;
         class ListJournalS3ExportsForLedgerRequest;
         class ListLedgersRequest;
         class ListTagsForResourceRequest;
+        class StreamJournalToKinesisRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateLedgerRequest;
 
+        typedef Aws::Utils::Outcome<CancelJournalKinesisStreamResult, Aws::Client::AWSError<QLDBErrors>> CancelJournalKinesisStreamOutcome;
         typedef Aws::Utils::Outcome<CreateLedgerResult, Aws::Client::AWSError<QLDBErrors>> CreateLedgerOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<QLDBErrors>> DeleteLedgerOutcome;
+        typedef Aws::Utils::Outcome<DescribeJournalKinesisStreamResult, Aws::Client::AWSError<QLDBErrors>> DescribeJournalKinesisStreamOutcome;
         typedef Aws::Utils::Outcome<DescribeJournalS3ExportResult, Aws::Client::AWSError<QLDBErrors>> DescribeJournalS3ExportOutcome;
         typedef Aws::Utils::Outcome<DescribeLedgerResult, Aws::Client::AWSError<QLDBErrors>> DescribeLedgerOutcome;
         typedef Aws::Utils::Outcome<ExportJournalToS3Result, Aws::Client::AWSError<QLDBErrors>> ExportJournalToS3Outcome;
         typedef Aws::Utils::Outcome<GetBlockResult, Aws::Client::AWSError<QLDBErrors>> GetBlockOutcome;
         typedef Aws::Utils::Outcome<GetDigestResult, Aws::Client::AWSError<QLDBErrors>> GetDigestOutcome;
         typedef Aws::Utils::Outcome<GetRevisionResult, Aws::Client::AWSError<QLDBErrors>> GetRevisionOutcome;
+        typedef Aws::Utils::Outcome<ListJournalKinesisStreamsForLedgerResult, Aws::Client::AWSError<QLDBErrors>> ListJournalKinesisStreamsForLedgerOutcome;
         typedef Aws::Utils::Outcome<ListJournalS3ExportsResult, Aws::Client::AWSError<QLDBErrors>> ListJournalS3ExportsOutcome;
         typedef Aws::Utils::Outcome<ListJournalS3ExportsForLedgerResult, Aws::Client::AWSError<QLDBErrors>> ListJournalS3ExportsForLedgerOutcome;
         typedef Aws::Utils::Outcome<ListLedgersResult, Aws::Client::AWSError<QLDBErrors>> ListLedgersOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<QLDBErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StreamJournalToKinesisResult, Aws::Client::AWSError<QLDBErrors>> StreamJournalToKinesisOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<QLDBErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<QLDBErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateLedgerResult, Aws::Client::AWSError<QLDBErrors>> UpdateLedgerOutcome;
 
+        typedef std::future<CancelJournalKinesisStreamOutcome> CancelJournalKinesisStreamOutcomeCallable;
         typedef std::future<CreateLedgerOutcome> CreateLedgerOutcomeCallable;
         typedef std::future<DeleteLedgerOutcome> DeleteLedgerOutcomeCallable;
+        typedef std::future<DescribeJournalKinesisStreamOutcome> DescribeJournalKinesisStreamOutcomeCallable;
         typedef std::future<DescribeJournalS3ExportOutcome> DescribeJournalS3ExportOutcomeCallable;
         typedef std::future<DescribeLedgerOutcome> DescribeLedgerOutcomeCallable;
         typedef std::future<ExportJournalToS3Outcome> ExportJournalToS3OutcomeCallable;
         typedef std::future<GetBlockOutcome> GetBlockOutcomeCallable;
         typedef std::future<GetDigestOutcome> GetDigestOutcomeCallable;
         typedef std::future<GetRevisionOutcome> GetRevisionOutcomeCallable;
+        typedef std::future<ListJournalKinesisStreamsForLedgerOutcome> ListJournalKinesisStreamsForLedgerOutcomeCallable;
         typedef std::future<ListJournalS3ExportsOutcome> ListJournalS3ExportsOutcomeCallable;
         typedef std::future<ListJournalS3ExportsForLedgerOutcome> ListJournalS3ExportsForLedgerOutcomeCallable;
         typedef std::future<ListLedgersOutcome> ListLedgersOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<StreamJournalToKinesisOutcome> StreamJournalToKinesisOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateLedgerOutcome> UpdateLedgerOutcomeCallable;
@@ -126,18 +142,22 @@ namespace Model
 
   class QLDBClient;
 
+    typedef std::function<void(const QLDBClient*, const Model::CancelJournalKinesisStreamRequest&, const Model::CancelJournalKinesisStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJournalKinesisStreamResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::CreateLedgerRequest&, const Model::CreateLedgerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLedgerResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::DeleteLedgerRequest&, const Model::DeleteLedgerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLedgerResponseReceivedHandler;
+    typedef std::function<void(const QLDBClient*, const Model::DescribeJournalKinesisStreamRequest&, const Model::DescribeJournalKinesisStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJournalKinesisStreamResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::DescribeJournalS3ExportRequest&, const Model::DescribeJournalS3ExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJournalS3ExportResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::DescribeLedgerRequest&, const Model::DescribeLedgerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLedgerResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::ExportJournalToS3Request&, const Model::ExportJournalToS3Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportJournalToS3ResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::GetBlockRequest&, const Model::GetBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlockResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::GetDigestRequest&, const Model::GetDigestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDigestResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::GetRevisionRequest&, const Model::GetRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRevisionResponseReceivedHandler;
+    typedef std::function<void(const QLDBClient*, const Model::ListJournalKinesisStreamsForLedgerRequest&, const Model::ListJournalKinesisStreamsForLedgerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJournalKinesisStreamsForLedgerResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::ListJournalS3ExportsRequest&, const Model::ListJournalS3ExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJournalS3ExportsResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::ListJournalS3ExportsForLedgerRequest&, const Model::ListJournalS3ExportsForLedgerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJournalS3ExportsForLedgerResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::ListLedgersRequest&, const Model::ListLedgersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLedgersResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const QLDBClient*, const Model::StreamJournalToKinesisRequest&, const Model::StreamJournalToKinesisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StreamJournalToKinesisResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::UpdateLedgerRequest&, const Model::UpdateLedgerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLedgerResponseReceivedHandler;
@@ -173,6 +193,43 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "QLDB"; }
 
+
+        /**
+         * <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its
+         * current status must be <code>ACTIVE</code>.</p> <p>You can't restart a stream
+         * after you cancel it. Canceled QLDB stream resources are subject to a 7-day
+         * retention period, so they are automatically deleted after this limit
+         * expires.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelJournalKinesisStreamOutcome CancelJournalKinesisStream(const Model::CancelJournalKinesisStreamRequest& request) const;
+
+        /**
+         * <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its
+         * current status must be <code>ACTIVE</code>.</p> <p>You can't restart a stream
+         * after you cancel it. Canceled QLDB stream resources are subject to a 7-day
+         * retention period, so they are automatically deleted after this limit
+         * expires.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelJournalKinesisStreamOutcomeCallable CancelJournalKinesisStreamCallable(const Model::CancelJournalKinesisStreamRequest& request) const;
+
+        /**
+         * <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its
+         * current status must be <code>ACTIVE</code>.</p> <p>You can't restart a stream
+         * after you cancel it. Canceled QLDB stream resources are subject to a 7-day
+         * retention period, so they are automatically deleted after this limit
+         * expires.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CancelJournalKinesisStream">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelJournalKinesisStreamAsync(const Model::CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new ledger in your AWS account.</p><p><h3>See Also:</h3>   <a
@@ -243,11 +300,49 @@ namespace Model
         virtual void DeleteLedgerAsync(const Model::DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns detailed information about a given Amazon QLDB journal stream. The
+         * output includes the Amazon Resource Name (ARN), stream name, current status,
+         * creation time, and the parameters of your original stream creation
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeJournalKinesisStreamOutcome DescribeJournalKinesisStream(const Model::DescribeJournalKinesisStreamRequest& request) const;
+
+        /**
+         * <p>Returns detailed information about a given Amazon QLDB journal stream. The
+         * output includes the Amazon Resource Name (ARN), stream name, current status,
+         * creation time, and the parameters of your original stream creation
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeJournalKinesisStreamOutcomeCallable DescribeJournalKinesisStreamCallable(const Model::DescribeJournalKinesisStreamRequest& request) const;
+
+        /**
+         * <p>Returns detailed information about a given Amazon QLDB journal stream. The
+         * output includes the Amazon Resource Name (ARN), stream name, current status,
+         * creation time, and the parameters of your original stream creation
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeJournalKinesisStreamAsync(const Model::DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a journal export job, including the ledger name,
          * export ID, when it was created, current status, and its start and end time
-         * export parameters.</p> <p>If the export job with the given <code>ExportId</code>
-         * doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the
-         * ledger with the given <code>Name</code> doesn't exist, then throws
+         * export parameters.</p> <p>This action does not return any expired export jobs.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
+         * export job with the given <code>ExportId</code> doesn't exist, then throws
+         * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
+         * <code>Name</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export">AWS
          * API Reference</a></p>
@@ -257,9 +352,13 @@ namespace Model
         /**
          * <p>Returns information about a journal export job, including the ledger name,
          * export ID, when it was created, current status, and its start and end time
-         * export parameters.</p> <p>If the export job with the given <code>ExportId</code>
-         * doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the
-         * ledger with the given <code>Name</code> doesn't exist, then throws
+         * export parameters.</p> <p>This action does not return any expired export jobs.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
+         * export job with the given <code>ExportId</code> doesn't exist, then throws
+         * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
+         * <code>Name</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export">AWS
          * API Reference</a></p>
@@ -271,9 +370,13 @@ namespace Model
         /**
          * <p>Returns information about a journal export job, including the ledger name,
          * export ID, when it was created, current status, and its start and end time
-         * export parameters.</p> <p>If the export job with the given <code>ExportId</code>
-         * doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the
-         * ledger with the given <code>Name</code> doesn't exist, then throws
+         * export parameters.</p> <p>This action does not return any expired export jobs.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
+         * export job with the given <code>ExportId</code> doesn't exist, then throws
+         * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
+         * <code>Name</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalS3Export">AWS
          * API Reference</a></p>
@@ -474,11 +577,58 @@ namespace Model
         virtual void GetRevisionAsync(const Model::GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an array of all Amazon QLDB journal stream descriptors for a given
+         * ledger. The output of each stream descriptor includes the same details that are
+         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action
+         * returns a maximum of <code>MaxResults</code> items. It is paginated so that you
+         * can retrieve all the items by calling
+         * <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListJournalKinesisStreamsForLedgerOutcome ListJournalKinesisStreamsForLedger(const Model::ListJournalKinesisStreamsForLedgerRequest& request) const;
+
+        /**
+         * <p>Returns an array of all Amazon QLDB journal stream descriptors for a given
+         * ledger. The output of each stream descriptor includes the same details that are
+         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action
+         * returns a maximum of <code>MaxResults</code> items. It is paginated so that you
+         * can retrieve all the items by calling
+         * <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListJournalKinesisStreamsForLedgerOutcomeCallable ListJournalKinesisStreamsForLedgerCallable(const Model::ListJournalKinesisStreamsForLedgerRequest& request) const;
+
+        /**
+         * <p>Returns an array of all Amazon QLDB journal stream descriptors for a given
+         * ledger. The output of each stream descriptor includes the same details that are
+         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action
+         * returns a maximum of <code>MaxResults</code> items. It is paginated so that you
+         * can retrieve all the items by calling
+         * <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListJournalKinesisStreamsForLedgerAsync(const Model::ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an array of journal export job descriptions for all ledgers that are
          * associated with the current AWS account and Region.</p> <p>This action returns a
          * maximum of <code>MaxResults</code> items, and is paginated so that you can
          * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
-         * times.</p><p><h3>See Also:</h3>   <a
+         * times.</p> <p>This action does not return any expired export jobs. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">AWS
          * API Reference</a></p>
          */
@@ -489,7 +639,11 @@ namespace Model
          * associated with the current AWS account and Region.</p> <p>This action returns a
          * maximum of <code>MaxResults</code> items, and is paginated so that you can
          * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
-         * times.</p><p><h3>See Also:</h3>   <a
+         * times.</p> <p>This action does not return any expired export jobs. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">AWS
          * API Reference</a></p>
          *
@@ -502,7 +656,11 @@ namespace Model
          * associated with the current AWS account and Region.</p> <p>This action returns a
          * maximum of <code>MaxResults</code> items, and is paginated so that you can
          * retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
-         * times.</p><p><h3>See Also:</h3>   <a
+         * times.</p> <p>This action does not return any expired export jobs. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">AWS
          * API Reference</a></p>
          *
@@ -514,7 +672,10 @@ namespace Model
          * <p>Returns an array of journal export job descriptions for a specified
          * ledger.</p> <p>This action returns a maximum of <code>MaxResults</code> items,
          * and is paginated so that you can retrieve all the items by calling
-         * <code>ListJournalS3ExportsForLedger</code> multiple times.</p><p><h3>See
+         * <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action
+         * does not return any expired export jobs. For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">AWS
          * API Reference</a></p>
@@ -525,7 +686,10 @@ namespace Model
          * <p>Returns an array of journal export job descriptions for a specified
          * ledger.</p> <p>This action returns a maximum of <code>MaxResults</code> items,
          * and is paginated so that you can retrieve all the items by calling
-         * <code>ListJournalS3ExportsForLedger</code> multiple times.</p><p><h3>See
+         * <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action
+         * does not return any expired export jobs. For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">AWS
          * API Reference</a></p>
@@ -538,7 +702,10 @@ namespace Model
          * <p>Returns an array of journal export job descriptions for a specified
          * ledger.</p> <p>This action returns a maximum of <code>MaxResults</code> items,
          * and is paginated so that you can retrieve all the items by calling
-         * <code>ListJournalS3ExportsForLedger</code> multiple times.</p><p><h3>See
+         * <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action
+         * does not return any expired export jobs. For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
+         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">AWS
          * API Reference</a></p>
@@ -608,6 +775,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a stream for a given Amazon QLDB ledger that delivers the journal
+         * data to a specified Amazon Kinesis Data Streams resource. The stream captures
+         * every document revision that is committed to your journal and sends it to the
+         * Kinesis data stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StreamJournalToKinesisOutcome StreamJournalToKinesis(const Model::StreamJournalToKinesisRequest& request) const;
+
+        /**
+         * <p>Creates a stream for a given Amazon QLDB ledger that delivers the journal
+         * data to a specified Amazon Kinesis Data Streams resource. The stream captures
+         * every document revision that is committed to your journal and sends it to the
+         * Kinesis data stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StreamJournalToKinesisOutcomeCallable StreamJournalToKinesisCallable(const Model::StreamJournalToKinesisRequest& request) const;
+
+        /**
+         * <p>Creates a stream for a given Amazon QLDB ledger that delivers the journal
+         * data to a specified Amazon Kinesis Data Streams resource. The stream captures
+         * every document revision that is committed to your journal and sends it to the
+         * Kinesis data stream.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/StreamJournalToKinesis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StreamJournalToKinesisAsync(const Model::StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more tags to a specified Amazon QLDB resource.</p> <p>A resource
@@ -697,18 +898,22 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CancelJournalKinesisStreamAsyncHelper(const Model::CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLedgerAsyncHelper(const Model::CreateLedgerRequest& request, const CreateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLedgerAsyncHelper(const Model::DeleteLedgerRequest& request, const DeleteLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeJournalKinesisStreamAsyncHelper(const Model::DescribeJournalKinesisStreamRequest& request, const DescribeJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJournalS3ExportAsyncHelper(const Model::DescribeJournalS3ExportRequest& request, const DescribeJournalS3ExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLedgerAsyncHelper(const Model::DescribeLedgerRequest& request, const DescribeLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportJournalToS3AsyncHelper(const Model::ExportJournalToS3Request& request, const ExportJournalToS3ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlockAsyncHelper(const Model::GetBlockRequest& request, const GetBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDigestAsyncHelper(const Model::GetDigestRequest& request, const GetDigestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRevisionAsyncHelper(const Model::GetRevisionRequest& request, const GetRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListJournalKinesisStreamsForLedgerAsyncHelper(const Model::ListJournalKinesisStreamsForLedgerRequest& request, const ListJournalKinesisStreamsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJournalS3ExportsAsyncHelper(const Model::ListJournalS3ExportsRequest& request, const ListJournalS3ExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJournalS3ExportsForLedgerAsyncHelper(const Model::ListJournalS3ExportsForLedgerRequest& request, const ListJournalS3ExportsForLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLedgersAsyncHelper(const Model::ListLedgersRequest& request, const ListLedgersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StreamJournalToKinesisAsyncHelper(const Model::StreamJournalToKinesisRequest& request, const StreamJournalToKinesisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLedgerAsyncHelper(const Model::UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -116,6 +116,8 @@
 #include <aws/chime/model/PutVoiceConnectorStreamingConfigurationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorTerminationCredentialsRequest.h>
+#include <aws/chime/model/RedactConversationMessageRequest.h>
+#include <aws/chime/model/RedactRoomMessageRequest.h>
 #include <aws/chime/model/RegenerateSecurityTokenRequest.h>
 #include <aws/chime/model/ResetPersonalPINRequest.h>
 #include <aws/chime/model/RestorePhoneNumberRequest.h>
@@ -3951,6 +3953,120 @@ void ChimeClient::PutVoiceConnectorTerminationCredentialsAsync(const PutVoiceCon
 void ChimeClient::PutVoiceConnectorTerminationCredentialsAsyncHelper(const PutVoiceConnectorTerminationCredentialsRequest& request, const PutVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutVoiceConnectorTerminationCredentials(request), context);
+}
+
+RedactConversationMessageOutcome ChimeClient::RedactConversationMessage(const RedactConversationMessageRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RedactConversationMessage", "Required field: AccountId, is not set");
+    return RedactConversationMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.ConversationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RedactConversationMessage", "Required field: ConversationId, is not set");
+    return RedactConversationMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConversationId]", false));
+  }
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RedactConversationMessage", "Required field: MessageId, is not set");
+    return RedactConversationMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAccountId();
+  ss << "/conversations/";
+  ss << request.GetConversationId();
+  ss << "/messages/";
+  ss << request.GetMessageId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=redact");
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RedactConversationMessageOutcome(RedactConversationMessageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RedactConversationMessageOutcome(outcome.GetError());
+  }
+}
+
+RedactConversationMessageOutcomeCallable ChimeClient::RedactConversationMessageCallable(const RedactConversationMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RedactConversationMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RedactConversationMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::RedactConversationMessageAsync(const RedactConversationMessageRequest& request, const RedactConversationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RedactConversationMessageAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::RedactConversationMessageAsyncHelper(const RedactConversationMessageRequest& request, const RedactConversationMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RedactConversationMessage(request), context);
+}
+
+RedactRoomMessageOutcome ChimeClient::RedactRoomMessage(const RedactRoomMessageRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RedactRoomMessage", "Required field: AccountId, is not set");
+    return RedactRoomMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.RoomIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RedactRoomMessage", "Required field: RoomId, is not set");
+    return RedactRoomMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
+  }
+  if (!request.MessageIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RedactRoomMessage", "Required field: MessageId, is not set");
+    return RedactRoomMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAccountId();
+  ss << "/rooms/";
+  ss << request.GetRoomId();
+  ss << "/messages/";
+  ss << request.GetMessageId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=redact");
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RedactRoomMessageOutcome(RedactRoomMessageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RedactRoomMessageOutcome(outcome.GetError());
+  }
+}
+
+RedactRoomMessageOutcomeCallable ChimeClient::RedactRoomMessageCallable(const RedactRoomMessageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RedactRoomMessageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RedactRoomMessage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::RedactRoomMessageAsync(const RedactRoomMessageRequest& request, const RedactRoomMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RedactRoomMessageAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::RedactRoomMessageAsyncHelper(const RedactRoomMessageRequest& request, const RedactRoomMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RedactRoomMessage(request), context);
 }
 
 RegenerateSecurityTokenOutcome ChimeClient::RegenerateSecurityToken(const RegenerateSecurityTokenRequest& request) const

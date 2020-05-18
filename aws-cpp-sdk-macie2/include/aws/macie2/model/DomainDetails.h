@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>The DNS name of the entity that performed the action on the affected
    * resource.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/DomainDetails">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DomainDetails">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API DomainDetails

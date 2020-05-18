@@ -36,8 +36,8 @@ namespace Model
   /**
    * <p>An object that specifies conditions for including or excluding objects from
    * the job.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/Scoping">AWS
-   * API Reference</a></p>
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Scoping">AWS API
+   * Reference</a></p>
    */
   class AWS_MACIE2_API Scoping
   {

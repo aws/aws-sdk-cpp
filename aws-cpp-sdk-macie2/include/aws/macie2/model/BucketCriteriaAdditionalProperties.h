@@ -38,7 +38,7 @@ namespace Model
    * <p>Specifies the operator to use in an attribute-based condition that filters
    * the results of a query for information about S3 buckets.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/BucketCriteriaAdditionalProperties">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCriteriaAdditionalProperties">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API BucketCriteriaAdditionalProperties

@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Provides information about the resources that a finding applies
    * to.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01T00:00:00Z/ResourcesAffected">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ResourcesAffected">AWS
    * API Reference</a></p>
    */
   class AWS_MACIE2_API ResourcesAffected

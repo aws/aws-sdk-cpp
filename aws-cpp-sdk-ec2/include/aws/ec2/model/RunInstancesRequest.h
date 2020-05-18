@@ -38,6 +38,7 @@
 #include <aws/ec2/model/TagSpecification.h>
 #include <aws/ec2/model/LicenseConfigurationRequest.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
