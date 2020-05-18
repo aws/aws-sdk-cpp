@@ -17,6 +17,7 @@ import os
 import stat
 import subprocess
 import platform
+import random
 
 def ParseArguments():
     argMap = {}
@@ -54,6 +55,8 @@ def Main():
                  #"aws-cpp-sdk-redshift-integration-tests", # Don't run this test unless you really want to, it will cost you a lot of money. The test takes around a half hour to finish.
                  #"aws-cpp-sdk-cloudfront-integration-tests", # This test will cost you a lot of money as well.
                  "aws-cpp-sdk-ec2-integration-tests" ]
+    # Shuffle the list to avoid multiple jobs running the same tests in the testing pipeline.
+    random.shuffle(testList)
 
     for testName in testList:
         testExe = os.path.join(arguments[ "testDir" ], testName if testHasParentDir else "", testName) + exeExtension

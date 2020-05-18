@@ -258,10 +258,10 @@ namespace
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
-                HeadBucketRequest headBucketRequest;
-                headBucketRequest.SetBucket(bucketName);
-                HeadBucketOutcome headBucketOutcome = client->HeadBucket(headBucketRequest);
-                if (headBucketOutcome.IsSuccess())
+                ListObjectsRequest listObjectsRequest;
+                listObjectsRequest.SetBucket(bucketName);
+                ListObjectsOutcome listObjectsOutcome = client->ListObjects(listObjectsRequest);
+                if (listObjectsOutcome.IsSuccess())
                 {
                     return true;
                 }
@@ -277,16 +277,40 @@ namespace
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
-                HeadObjectRequest headObjectRequest;
-                headObjectRequest.SetBucket(bucketName);
-                headObjectRequest.SetKey(objectKey);
-                HeadObjectOutcome headObjectOutcome = Client->HeadObject(headObjectRequest);
-                if (headObjectOutcome.IsSuccess())
+                GetObjectRequest getObjectRequest;
+                getObjectRequest.SetBucket(bucketName);
+                getObjectRequest.SetKey(objectKey);
+                GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+                if (getObjectOutcome.IsSuccess())
                 {
                     return true;
                 }
 
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::seconds(5));
+            }
+
+            return false;
+        }
+
+        static bool WaitForObjectWithSSECToPropagate(const Aws::String& bucketName, const char* objectKey, const ByteBuffer& sseKey)
+        {
+            unsigned timeoutCount = 0;
+            Aws::String strBuffer(reinterpret_cast<char*>(sseKey.GetUnderlyingData()), sseKey.GetLength());
+            while (timeoutCount++ < TIMEOUT_MAX)
+            {
+                GetObjectRequest getObjectRequest;
+                getObjectRequest.SetBucket(bucketName);
+                getObjectRequest.SetKey(objectKey);
+                getObjectRequest.WithSSECustomerAlgorithm(Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256))
+                    .WithSSECustomerKey(HashingUtils::Base64Encode(sseKey))
+                    .WithSSECustomerKeyMD5(HashingUtils::Base64Encode(HashingUtils::CalculateMD5(strBuffer)));
+                GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+                if (getObjectOutcome.IsSuccess())
+                {
+                    return true;
+                }
+
+                std::this_thread::sleep_for(std::chrono::seconds(5));
             }
 
             return false;
@@ -324,7 +348,7 @@ namespace
 
                 if (listObjectsOutcome.GetResult().GetContents().size() > 0)
                 {
-                    std::this_thread::sleep_for(std::chrono::seconds(1));
+                    std::this_thread::sleep_for(std::chrono::seconds(5));
                 }
                 else
                 {
@@ -367,7 +391,7 @@ namespace
             EXPECT_TRUE(createBucketOutcome.IsSuccess());
             const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
             EXPECT_TRUE(!createBucketResult.GetLocation().empty());
-            WaitForBucketToPropagate(fullBucketName);
+            EXPECT_TRUE(WaitForBucketToPropagate(fullBucketName));
             return fullBucketName;
         }
 
@@ -386,7 +410,7 @@ namespace
 
             ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
-            WaitForObjectToPropagate(bucketName, TEST_OBJ_KEY);
+            ASSERT_TRUE(WaitForObjectToPropagate(bucketName, TEST_OBJ_KEY));
 
             // GetObject with presigned url
             Aws::String presignedUrlGet = Client->GeneratePresignedUrl(bucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET);
@@ -466,7 +490,7 @@ namespace
 
             ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
-            WaitForObjectToPropagate(fullBucketName, TEST_OBJ_KEY);
+            ASSERT_TRUE(WaitForObjectWithSSECToPropagate(fullBucketName, TEST_OBJ_KEY, sseKey));
 
             // Test GetObject with SSEC Presigned Url
             Aws::String presignedUrlGet = Client->GeneratePresignedUrlWithSSEC(fullBucketName, TEST_OBJ_KEY, HttpMethod::HTTP_GET, HashingUtils::Base64Encode(sseKey));
@@ -656,7 +680,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -682,7 +706,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -769,7 +793,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         //test unicode
         {
@@ -933,7 +957,7 @@ namespace
         const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
         ASSERT_TRUE(!createBucketResult.GetLocation().empty());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         CreateMultipartUploadRequest createMultipartUploadRequest;
         createMultipartUploadRequest.SetBucket(fullBucketName);
@@ -1001,7 +1025,7 @@ namespace
                 completeMultipartUploadRequest);
         ASSERT_TRUE(completeMultipartUploadOutcome.IsSuccess());
 
-        WaitForObjectToPropagate(fullBucketName, multipartKeyName);
+        ASSERT_TRUE(WaitForObjectToPropagate(fullBucketName, multipartKeyName));
 
         GetObjectRequest getObjectRequest;
         getObjectRequest.SetBucket(fullBucketName);
@@ -1180,7 +1204,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1214,7 +1238,7 @@ namespace
         createBucketRequest.SetACL(BucketCannedACL::private_);
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         PutObjectRequest putObjectRequest;
         putObjectRequest.SetBucket(fullBucketName);
@@ -1243,7 +1267,7 @@ namespace
         CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
 
-        WaitForBucketToPropagate(fullBucketName);
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
 
         auto objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
         *objectStream << "Test Japanese & Chinese Unicode keys";

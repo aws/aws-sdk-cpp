@@ -81,7 +81,7 @@ static const unsigned BIG_TEST_SIZE = MB5 * PARTS_IN_BIG_TEST;
 static const char* testString = "S3 MultiPart upload Test File ";
 static const uint32_t testStrLen = static_cast<uint32_t>(strlen(testString));
 static const std::chrono::seconds TEST_WAIT_TIMEOUT = std::chrono::seconds(10);
-static const unsigned WAIT_MAX_RETRIES = 10;
+static const unsigned WAIT_MAX_RETRIES = 20;
 
 namespace {
 static const char *ALLOCATION_TAG = "TransferTests";
@@ -479,7 +479,7 @@ protected:
         auto createBucketOutcome = m_s3Client->CreateBucket(createBucket);
         ASSERT_TRUE(createBucketOutcome.IsSuccess());
 
-        WaitForBucketToPropagate(GetTestBucketName());
+        ASSERT_TRUE(WaitForBucketToPropagate(GetTestBucketName()));
 
         auto testDirectory = GetTestFilesDirectory();
 
@@ -491,10 +491,10 @@ protected:
         unsigned timeoutCount = 0;
         while (timeoutCount++ < WAIT_MAX_RETRIES)
         {
-            HeadBucketRequest headBucketRequest;
-            headBucketRequest.SetBucket(bucketName);
-            HeadBucketOutcome headBucketOutcome = m_s3Client->HeadBucket(headBucketRequest);
-            if (headBucketOutcome.IsSuccess())
+            ListObjectsRequest listObjectsRequest;
+            listObjectsRequest.SetBucket(bucketName);
+            ListObjectsOutcome listObjectsOutcome = m_s3Client->ListObjects(listObjectsRequest);
+            if (listObjectsOutcome.IsSuccess())
             {
                 return true;
             }
@@ -510,16 +510,16 @@ protected:
         unsigned timeoutCount = 0;
         while (timeoutCount++ < WAIT_MAX_RETRIES)
         {
-            HeadObjectRequest headObjectRequest;
-            headObjectRequest.SetBucket(bucketName);
-            headObjectRequest.SetKey(objectKey);
-            HeadObjectOutcome headObjectOutcome = m_s3Client->HeadObject(headObjectRequest);
-            if (headObjectOutcome.IsSuccess())
+            GetObjectRequest getObjectRequest;
+            getObjectRequest.SetBucket(bucketName);
+            getObjectRequest.SetKey(objectKey);
+            GetObjectOutcome getObjectOutcome = m_s3Client->GetObject(getObjectRequest);
+            if (getObjectOutcome.IsSuccess())
             {
                 return true;
             }
 
-            std::this_thread::sleep_for(std::chrono::seconds(1));
+            std::this_thread::sleep_for(std::chrono::seconds(5));
         }
 
         return false;
@@ -580,7 +580,7 @@ protected:
 
             if (!listObjectsOutcome.IsSuccess() || listObjectsOutcome.GetResult().GetContents().size() > 0)
             {
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::seconds(5));
             }
             else
             {

@@ -28,8 +28,9 @@
 #include <aws/s3/S3Client.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
+#include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
-#include <aws/s3/model/HeadObjectRequest.h>
+#include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3control/model/GetPublicAccessBlockRequest.h>
@@ -106,10 +107,10 @@ namespace
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
-                S3::Model::HeadBucketRequest headBucketRequest;
-                headBucketRequest.SetBucket(bucketName);
-                auto headBucketOutcome = client.HeadBucket(headBucketRequest);
-                if (headBucketOutcome.IsSuccess())
+                S3::Model::ListObjectsRequest ListObjectsRequest;
+                ListObjectsRequest.SetBucket(bucketName);
+                auto listObjectsOutcome = client.ListObjects(ListObjectsRequest);
+                if (listObjectsOutcome.IsSuccess())
                 {
                     return true;
                 }
@@ -125,16 +126,16 @@ namespace
             unsigned timeoutCount = 0;
             while (timeoutCount++ < TIMEOUT_MAX)
             {
-                S3::Model::HeadObjectRequest headObjectRequest;
-                headObjectRequest.SetBucket(accessPointArn);
-                headObjectRequest.SetKey(objectKey);
-                auto headObjectOutcome = client.HeadObject(headObjectRequest);
-                if (headObjectOutcome.IsSuccess())
+                S3::Model::GetObjectRequest getObjectRequest;
+                getObjectRequest.SetBucket(accessPointArn);
+                getObjectRequest.SetKey(objectKey);
+                auto getObjectOutcome = client.GetObject(getObjectRequest);
+                if (getObjectOutcome.IsSuccess())
                 {
                     return true;
                 }
 
-                std::this_thread::sleep_for(std::chrono::seconds(1));
+                std::this_thread::sleep_for(std::chrono::seconds(5));
             }
 
             return false;
@@ -203,7 +204,7 @@ namespace
 
             ASSERT_EQ(HttpResponseCode::OK, putResponse->GetResponseCode());
 
-            WaitForObjectToPropagate(accessPointArn, TEST_OBJECT_KEY, m_s3Client);
+            ASSERT_TRUE(WaitForObjectToPropagate(accessPointArn, TEST_OBJECT_KEY, m_s3Client));
 
             // GetObject with presigned url
             Aws::String presignedUrlGet = m_s3Client.GeneratePresignedUrl(accessPointArn, TEST_OBJECT_KEY, HttpMethod::HTTP_GET);
