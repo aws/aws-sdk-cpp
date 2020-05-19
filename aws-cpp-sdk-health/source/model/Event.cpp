@@ -40,7 +40,9 @@ Event::Event() :
     m_endTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_statusCode(EventStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+    m_statusCodeHasBeenSet(false),
+    m_eventScopeCode(EventScopeCode::NOT_SET),
+    m_eventScopeCodeHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ Event::Event(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_statusCode(EventStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false)
+    m_statusCodeHasBeenSet(false),
+    m_eventScopeCode(EventScopeCode::NOT_SET),
+    m_eventScopeCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -133,6 +137,13 @@ Event& Event::operator =(JsonView jsonValue)
     m_statusCodeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("eventScopeCode"))
+  {
+    m_eventScopeCode = EventScopeCodeMapper::GetEventScopeCodeForName(jsonValue.GetString("eventScopeCode"));
+
+    m_eventScopeCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +204,11 @@ JsonValue Event::Jsonize() const
   if(m_statusCodeHasBeenSet)
   {
    payload.WithString("statusCode", EventStatusCodeMapper::GetNameForEventStatusCode(m_statusCode));
+  }
+
+  if(m_eventScopeCodeHasBeenSet)
+  {
+   payload.WithString("eventScopeCode", EventScopeCodeMapper::GetNameForEventScopeCode(m_eventScopeCode));
   }
 
   return payload;

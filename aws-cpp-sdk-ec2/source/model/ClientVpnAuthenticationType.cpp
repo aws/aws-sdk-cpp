@@ -32,6 +32,7 @@ namespace Aws
 
         static const int certificate_authentication_HASH = HashingUtils::HashString("certificate-authentication");
         static const int directory_service_authentication_HASH = HashingUtils::HashString("directory-service-authentication");
+        static const int federated_authentication_HASH = HashingUtils::HashString("federated-authentication");
 
 
         ClientVpnAuthenticationType GetClientVpnAuthenticationTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == directory_service_authentication_HASH)
           {
             return ClientVpnAuthenticationType::directory_service_authentication;
+          }
+          else if (hashCode == federated_authentication_HASH)
+          {
+            return ClientVpnAuthenticationType::federated_authentication;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "certificate-authentication";
           case ClientVpnAuthenticationType::directory_service_authentication:
             return "directory-service-authentication";
+          case ClientVpnAuthenticationType::federated_authentication:
+            return "federated-authentication";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

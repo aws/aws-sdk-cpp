@@ -146,8 +146,8 @@ namespace Model
      * location in the example URI here:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -163,8 +163,8 @@ namespace Model
      * location in the example URI here:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -180,8 +180,8 @@ namespace Model
      * location in the example URI here:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -197,8 +197,8 @@ namespace Model
      * location in the example URI here:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -214,8 +214,8 @@ namespace Model
      * location in the example URI here:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -231,8 +231,8 @@ namespace Model
      * location in the example URI here:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -248,8 +248,8 @@ namespace Model
      * location in the example URI here:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a
@@ -265,8 +265,8 @@ namespace Model
      * location in the example URI here:</p> <p> <code>
      * https://s3.&lt;aws-region&gt;.amazonaws.com/&lt;bucket-name&gt;/&lt;keyprefix&gt;/&lt;objectkey&gt;
      * </code> </p> <p>For example:</p> <p>
-     * <code>https://s3.us-east-1.amazonaws.com/examplebucket/vocab.txt</code> </p>
-     * <p>For more information about S3 object names, see <a
+     * <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+     * </p> <p>For more information about S3 object names, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies in Amazon Transcribe Medical, see <a

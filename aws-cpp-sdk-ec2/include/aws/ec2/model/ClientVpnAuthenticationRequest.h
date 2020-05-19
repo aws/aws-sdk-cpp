@@ -19,6 +19,7 @@
 #include <aws/ec2/model/ClientVpnAuthenticationType.h>
 #include <aws/ec2/model/DirectoryServiceAuthenticationRequest.h>
 #include <aws/ec2/model/CertificateAuthenticationRequest.h>
+#include <aws/ec2/model/FederatedAuthenticationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -36,9 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the authentication method to be used by a Client VPN endpoint.
-   * Client VPN supports Active Directory and mutual authentication. For more
-   * information, see <a
+   * <p>Describes the authentication method to be used by a Client VPN endpoint. For
+   * more information, see <a
    * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a>
    * in the <i>AWS Client VPN Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientVpnAuthenticationRequest">AWS
@@ -56,50 +56,32 @@ namespace Model
 
 
     /**
-     * <p>The type of client authentication to be used. Specify
-     * <code>certificate-authentication</code> to use certificate-based authentication,
-     * or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.</p>
+     * <p>The type of client authentication to be used.</p>
      */
     inline const ClientVpnAuthenticationType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of client authentication to be used. Specify
-     * <code>certificate-authentication</code> to use certificate-based authentication,
-     * or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.</p>
+     * <p>The type of client authentication to be used.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of client authentication to be used. Specify
-     * <code>certificate-authentication</code> to use certificate-based authentication,
-     * or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.</p>
+     * <p>The type of client authentication to be used.</p>
      */
     inline void SetType(const ClientVpnAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of client authentication to be used. Specify
-     * <code>certificate-authentication</code> to use certificate-based authentication,
-     * or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.</p>
+     * <p>The type of client authentication to be used.</p>
      */
     inline void SetType(ClientVpnAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of client authentication to be used. Specify
-     * <code>certificate-authentication</code> to use certificate-based authentication,
-     * or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.</p>
+     * <p>The type of client authentication to be used.</p>
      */
     inline ClientVpnAuthenticationRequest& WithType(const ClientVpnAuthenticationType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of client authentication to be used. Specify
-     * <code>certificate-authentication</code> to use certificate-based authentication,
-     * or <code>directory-service-authentication</code> to use Active Directory
-     * authentication.</p>
+     * <p>The type of client authentication to be used.</p>
      */
     inline ClientVpnAuthenticationRequest& WithType(ClientVpnAuthenticationType&& value) { SetType(std::move(value)); return *this;}
 
@@ -189,6 +171,49 @@ namespace Model
      */
     inline ClientVpnAuthenticationRequest& WithMutualAuthentication(CertificateAuthenticationRequest&& value) { SetMutualAuthentication(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the IAM SAML identity provider to be used, if applicable.
+     * You must provide this information if <b>Type</b> is
+     * <code>federated-authentication</code>.</p>
+     */
+    inline const FederatedAuthenticationRequest& GetFederatedAuthentication() const{ return m_federatedAuthentication; }
+
+    /**
+     * <p>Information about the IAM SAML identity provider to be used, if applicable.
+     * You must provide this information if <b>Type</b> is
+     * <code>federated-authentication</code>.</p>
+     */
+    inline bool FederatedAuthenticationHasBeenSet() const { return m_federatedAuthenticationHasBeenSet; }
+
+    /**
+     * <p>Information about the IAM SAML identity provider to be used, if applicable.
+     * You must provide this information if <b>Type</b> is
+     * <code>federated-authentication</code>.</p>
+     */
+    inline void SetFederatedAuthentication(const FederatedAuthenticationRequest& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = value; }
+
+    /**
+     * <p>Information about the IAM SAML identity provider to be used, if applicable.
+     * You must provide this information if <b>Type</b> is
+     * <code>federated-authentication</code>.</p>
+     */
+    inline void SetFederatedAuthentication(FederatedAuthenticationRequest&& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = std::move(value); }
+
+    /**
+     * <p>Information about the IAM SAML identity provider to be used, if applicable.
+     * You must provide this information if <b>Type</b> is
+     * <code>federated-authentication</code>.</p>
+     */
+    inline ClientVpnAuthenticationRequest& WithFederatedAuthentication(const FederatedAuthenticationRequest& value) { SetFederatedAuthentication(value); return *this;}
+
+    /**
+     * <p>Information about the IAM SAML identity provider to be used, if applicable.
+     * You must provide this information if <b>Type</b> is
+     * <code>federated-authentication</code>.</p>
+     */
+    inline ClientVpnAuthenticationRequest& WithFederatedAuthentication(FederatedAuthenticationRequest&& value) { SetFederatedAuthentication(std::move(value)); return *this;}
+
   private:
 
     ClientVpnAuthenticationType m_type;
@@ -199,6 +224,9 @@ namespace Model
 
     CertificateAuthenticationRequest m_mutualAuthentication;
     bool m_mutualAuthenticationHasBeenSet;
+
+    FederatedAuthenticationRequest m_federatedAuthentication;
+    bool m_federatedAuthenticationHasBeenSet;
   };
 
 } // namespace Model

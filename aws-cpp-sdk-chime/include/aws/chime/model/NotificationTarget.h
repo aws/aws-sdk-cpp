@@ -14,29 +14,29 @@
 */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace EC2
+namespace Chime
 {
 namespace Model
 {
-  enum class ClientVpnAuthenticationType
+  enum class NotificationTarget
   {
     NOT_SET,
-    certificate_authentication,
-    directory_service_authentication,
-    federated_authentication
+    EventBridge,
+    SNS,
+    SQS
   };
 
-namespace ClientVpnAuthenticationTypeMapper
+namespace NotificationTargetMapper
 {
-AWS_EC2_API ClientVpnAuthenticationType GetClientVpnAuthenticationTypeForName(const Aws::String& name);
+AWS_CHIME_API NotificationTarget GetNotificationTargetForName(const Aws::String& name);
 
-AWS_EC2_API Aws::String GetNameForClientVpnAuthenticationType(ClientVpnAuthenticationType value);
-} // namespace ClientVpnAuthenticationTypeMapper
+AWS_CHIME_API Aws::String GetNameForNotificationTarget(NotificationTarget value);
+} // namespace NotificationTargetMapper
 } // namespace Model
-} // namespace EC2
+} // namespace Chime
 } // namespace Aws

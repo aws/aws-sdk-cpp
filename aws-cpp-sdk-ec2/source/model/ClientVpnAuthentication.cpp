@@ -34,7 +34,8 @@ ClientVpnAuthentication::ClientVpnAuthentication() :
     m_type(ClientVpnAuthenticationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_activeDirectoryHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false)
+    m_mutualAuthenticationHasBeenSet(false),
+    m_federatedAuthenticationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ClientVpnAuthentication::ClientVpnAuthentication(const XmlNode& xmlNode) :
     m_type(ClientVpnAuthenticationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_activeDirectoryHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false)
+    m_mutualAuthenticationHasBeenSet(false),
+    m_federatedAuthenticationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -71,6 +73,12 @@ ClientVpnAuthentication& ClientVpnAuthentication::operator =(const XmlNode& xmlN
       m_mutualAuthentication = mutualAuthenticationNode;
       m_mutualAuthenticationHasBeenSet = true;
     }
+    XmlNode federatedAuthenticationNode = resultNode.FirstChild("federatedAuthentication");
+    if(!federatedAuthenticationNode.IsNull())
+    {
+      m_federatedAuthentication = federatedAuthenticationNode;
+      m_federatedAuthenticationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -97,6 +105,13 @@ void ClientVpnAuthentication::OutputToStream(Aws::OStream& oStream, const char* 
       m_mutualAuthentication.OutputToStream(oStream, mutualAuthenticationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_federatedAuthenticationHasBeenSet)
+  {
+      Aws::StringStream federatedAuthenticationLocationAndMemberSs;
+      federatedAuthenticationLocationAndMemberSs << location << index << locationValue << ".FederatedAuthentication";
+      m_federatedAuthentication.OutputToStream(oStream, federatedAuthenticationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ClientVpnAuthentication::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -116,6 +131,12 @@ void ClientVpnAuthentication::OutputToStream(Aws::OStream& oStream, const char* 
       Aws::String mutualAuthenticationLocationAndMember(location);
       mutualAuthenticationLocationAndMember += ".MutualAuthentication";
       m_mutualAuthentication.OutputToStream(oStream, mutualAuthenticationLocationAndMember.c_str());
+  }
+  if(m_federatedAuthenticationHasBeenSet)
+  {
+      Aws::String federatedAuthenticationLocationAndMember(location);
+      federatedAuthenticationLocationAndMember += ".FederatedAuthentication";
+      m_federatedAuthentication.OutputToStream(oStream, federatedAuthenticationLocationAndMember.c_str());
   }
 }
 

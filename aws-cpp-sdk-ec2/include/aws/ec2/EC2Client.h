@@ -8138,9 +8138,12 @@ namespace Model
          * you believe that the tunnel credentials for your VPN connection have been
          * compromised, you can delete the VPN connection and create a new one that has new
          * keys, without needing to delete the VPC or virtual private gateway. If you
-         * create a new VPN connection, you must reconfigure the customer gateway using the
-         * new configuration information returned with the new VPN connection
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * create a new VPN connection, you must reconfigure the customer gateway device
+         * using the new configuration information returned with the new VPN connection
+         * ID.</p> <p>For certificate-based authentication, delete all AWS Certificate
+         * Manager (ACM) private certificates used for the AWS-side tunnel endpoints for
+         * the VPN connection before deleting the VPN connection.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">AWS
          * API Reference</a></p>
          */
@@ -8153,9 +8156,12 @@ namespace Model
          * you believe that the tunnel credentials for your VPN connection have been
          * compromised, you can delete the VPN connection and create a new one that has new
          * keys, without needing to delete the VPC or virtual private gateway. If you
-         * create a new VPN connection, you must reconfigure the customer gateway using the
-         * new configuration information returned with the new VPN connection
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * create a new VPN connection, you must reconfigure the customer gateway device
+         * using the new configuration information returned with the new VPN connection
+         * ID.</p> <p>For certificate-based authentication, delete all AWS Certificate
+         * Manager (ACM) private certificates used for the AWS-side tunnel endpoints for
+         * the VPN connection before deleting the VPN connection.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -8170,9 +8176,12 @@ namespace Model
          * you believe that the tunnel credentials for your VPN connection have been
          * compromised, you can delete the VPN connection and create a new one that has new
          * keys, without needing to delete the VPC or virtual private gateway. If you
-         * create a new VPN connection, you must reconfigure the customer gateway using the
-         * new configuration information returned with the new VPN connection
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * create a new VPN connection, you must reconfigure the customer gateway device
+         * using the new configuration information returned with the new VPN connection
+         * ID.</p> <p>For certificate-based authentication, delete all AWS Certificate
+         * Manager (ACM) private certificates used for the AWS-side tunnel endpoints for
+         * the VPN connection before deleting the VPN connection.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpnConnection">AWS
          * API Reference</a></p>
          *
@@ -16675,22 +16684,22 @@ namespace Model
         virtual void ModifyVpcTenancyAsync(const Model::ModifyVpcTenancyRequest& request, const ModifyVpcTenancyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the target gateway of an AWS Site-to-Site VPN connection. The
-         * following migration options are available:</p> <ul> <li> <p>An existing virtual
-         * private gateway to a new virtual private gateway</p> </li> <li> <p>An existing
-         * virtual private gateway to a transit gateway</p> </li> <li> <p>An existing
-         * transit gateway to a new transit gateway</p> </li> <li> <p>An existing transit
-         * gateway to a virtual private gateway</p> </li> </ul> <p>Before you perform the
-         * migration to the new gateway, you must configure the new gateway. Use
-         * <a>CreateVpnGateway</a> to create a virtual private gateway, or
-         * <a>CreateTransitGateway</a> to create a transit gateway.</p> <p>This step is
-         * required when you migrate from a virtual private gateway with static routes to a
-         * transit gateway. </p> <p>You must delete the static routes before you migrate to
-         * the new gateway.</p> <p>Keep a copy of the static route before you delete it.
-         * You will need to add back these routes to the transit gateway after the VPN
-         * connection migration is complete.</p> <p>After you migrate to the new gateway,
-         * you might need to modify your VPC route table. Use <a>CreateRoute</a> and
-         * <a>DeleteRoute</a> to make the changes described in <a
+         * <p>Modifies the customer gateway or the target gateway of an AWS Site-to-Site
+         * VPN connection. To modify the target gateway, the following migration options
+         * are available:</p> <ul> <li> <p>An existing virtual private gateway to a new
+         * virtual private gateway</p> </li> <li> <p>An existing virtual private gateway to
+         * a transit gateway</p> </li> <li> <p>An existing transit gateway to a new transit
+         * gateway</p> </li> <li> <p>An existing transit gateway to a virtual private
+         * gateway</p> </li> </ul> <p>Before you perform the migration to the new gateway,
+         * you must configure the new gateway. Use <a>CreateVpnGateway</a> to create a
+         * virtual private gateway, or <a>CreateTransitGateway</a> to create a transit
+         * gateway.</p> <p>This step is required when you migrate from a virtual private
+         * gateway with static routes to a transit gateway. </p> <p>You must delete the
+         * static routes before you migrate to the new gateway.</p> <p>Keep a copy of the
+         * static route before you delete it. You will need to add back these routes to the
+         * transit gateway after the VPN connection migration is complete.</p> <p>After you
+         * migrate to the new gateway, you might need to modify your VPC route table. Use
+         * <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
          * Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS
          * Site-to-Site VPN User Guide</i>.</p> <p> When the new gateway is a transit
@@ -16708,22 +16717,22 @@ namespace Model
         virtual Model::ModifyVpnConnectionOutcome ModifyVpnConnection(const Model::ModifyVpnConnectionRequest& request) const;
 
         /**
-         * <p>Modifies the target gateway of an AWS Site-to-Site VPN connection. The
-         * following migration options are available:</p> <ul> <li> <p>An existing virtual
-         * private gateway to a new virtual private gateway</p> </li> <li> <p>An existing
-         * virtual private gateway to a transit gateway</p> </li> <li> <p>An existing
-         * transit gateway to a new transit gateway</p> </li> <li> <p>An existing transit
-         * gateway to a virtual private gateway</p> </li> </ul> <p>Before you perform the
-         * migration to the new gateway, you must configure the new gateway. Use
-         * <a>CreateVpnGateway</a> to create a virtual private gateway, or
-         * <a>CreateTransitGateway</a> to create a transit gateway.</p> <p>This step is
-         * required when you migrate from a virtual private gateway with static routes to a
-         * transit gateway. </p> <p>You must delete the static routes before you migrate to
-         * the new gateway.</p> <p>Keep a copy of the static route before you delete it.
-         * You will need to add back these routes to the transit gateway after the VPN
-         * connection migration is complete.</p> <p>After you migrate to the new gateway,
-         * you might need to modify your VPC route table. Use <a>CreateRoute</a> and
-         * <a>DeleteRoute</a> to make the changes described in <a
+         * <p>Modifies the customer gateway or the target gateway of an AWS Site-to-Site
+         * VPN connection. To modify the target gateway, the following migration options
+         * are available:</p> <ul> <li> <p>An existing virtual private gateway to a new
+         * virtual private gateway</p> </li> <li> <p>An existing virtual private gateway to
+         * a transit gateway</p> </li> <li> <p>An existing transit gateway to a new transit
+         * gateway</p> </li> <li> <p>An existing transit gateway to a virtual private
+         * gateway</p> </li> </ul> <p>Before you perform the migration to the new gateway,
+         * you must configure the new gateway. Use <a>CreateVpnGateway</a> to create a
+         * virtual private gateway, or <a>CreateTransitGateway</a> to create a transit
+         * gateway.</p> <p>This step is required when you migrate from a virtual private
+         * gateway with static routes to a transit gateway. </p> <p>You must delete the
+         * static routes before you migrate to the new gateway.</p> <p>Keep a copy of the
+         * static route before you delete it. You will need to add back these routes to the
+         * transit gateway after the VPN connection migration is complete.</p> <p>After you
+         * migrate to the new gateway, you might need to modify your VPC route table. Use
+         * <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
          * Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS
          * Site-to-Site VPN User Guide</i>.</p> <p> When the new gateway is a transit
@@ -16743,22 +16752,22 @@ namespace Model
         virtual Model::ModifyVpnConnectionOutcomeCallable ModifyVpnConnectionCallable(const Model::ModifyVpnConnectionRequest& request) const;
 
         /**
-         * <p>Modifies the target gateway of an AWS Site-to-Site VPN connection. The
-         * following migration options are available:</p> <ul> <li> <p>An existing virtual
-         * private gateway to a new virtual private gateway</p> </li> <li> <p>An existing
-         * virtual private gateway to a transit gateway</p> </li> <li> <p>An existing
-         * transit gateway to a new transit gateway</p> </li> <li> <p>An existing transit
-         * gateway to a virtual private gateway</p> </li> </ul> <p>Before you perform the
-         * migration to the new gateway, you must configure the new gateway. Use
-         * <a>CreateVpnGateway</a> to create a virtual private gateway, or
-         * <a>CreateTransitGateway</a> to create a transit gateway.</p> <p>This step is
-         * required when you migrate from a virtual private gateway with static routes to a
-         * transit gateway. </p> <p>You must delete the static routes before you migrate to
-         * the new gateway.</p> <p>Keep a copy of the static route before you delete it.
-         * You will need to add back these routes to the transit gateway after the VPN
-         * connection migration is complete.</p> <p>After you migrate to the new gateway,
-         * you might need to modify your VPC route table. Use <a>CreateRoute</a> and
-         * <a>DeleteRoute</a> to make the changes described in <a
+         * <p>Modifies the customer gateway or the target gateway of an AWS Site-to-Site
+         * VPN connection. To modify the target gateway, the following migration options
+         * are available:</p> <ul> <li> <p>An existing virtual private gateway to a new
+         * virtual private gateway</p> </li> <li> <p>An existing virtual private gateway to
+         * a transit gateway</p> </li> <li> <p>An existing transit gateway to a new transit
+         * gateway</p> </li> <li> <p>An existing transit gateway to a virtual private
+         * gateway</p> </li> </ul> <p>Before you perform the migration to the new gateway,
+         * you must configure the new gateway. Use <a>CreateVpnGateway</a> to create a
+         * virtual private gateway, or <a>CreateTransitGateway</a> to create a transit
+         * gateway.</p> <p>This step is required when you migrate from a virtual private
+         * gateway with static routes to a transit gateway. </p> <p>You must delete the
+         * static routes before you migrate to the new gateway.</p> <p>Keep a copy of the
+         * static route before you delete it. You will need to add back these routes to the
+         * transit gateway after the VPN connection migration is complete.</p> <p>After you
+         * migrate to the new gateway, you might need to modify your VPC route table. Use
+         * <a>CreateRoute</a> and <a>DeleteRoute</a> to make the changes described in <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/modify-vpn-target.html#step-update-routing">VPN
          * Gateway Target Modification Required VPC Route Table Updates</a> in the <i>AWS
          * Site-to-Site VPN User Guide</i>.</p> <p> When the new gateway is a transit

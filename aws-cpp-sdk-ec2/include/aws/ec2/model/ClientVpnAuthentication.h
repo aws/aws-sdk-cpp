@@ -19,6 +19,7 @@
 #include <aws/ec2/model/ClientVpnAuthenticationType.h>
 #include <aws/ec2/model/DirectoryServiceAuthentication.h>
 #include <aws/ec2/model/CertificateAuthentication.h>
+#include <aws/ec2/model/FederatedAuthentication.h>
 #include <utility>
 
 namespace Aws
@@ -36,9 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the authentication methods used by a Client VPN endpoint. Client
-   * VPN supports Active Directory and mutual authentication. For more information,
-   * see <a
+   * <p>Describes the authentication methods used by a Client VPN endpoint. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a>
    * in the <i>AWS Client VPN Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientVpnAuthentication">AWS
@@ -147,6 +147,37 @@ namespace Model
      */
     inline ClientVpnAuthentication& WithMutualAuthentication(CertificateAuthentication&& value) { SetMutualAuthentication(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the IAM SAML identity provider, if applicable.</p>
+     */
+    inline const FederatedAuthentication& GetFederatedAuthentication() const{ return m_federatedAuthentication; }
+
+    /**
+     * <p>Information about the IAM SAML identity provider, if applicable.</p>
+     */
+    inline bool FederatedAuthenticationHasBeenSet() const { return m_federatedAuthenticationHasBeenSet; }
+
+    /**
+     * <p>Information about the IAM SAML identity provider, if applicable.</p>
+     */
+    inline void SetFederatedAuthentication(const FederatedAuthentication& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = value; }
+
+    /**
+     * <p>Information about the IAM SAML identity provider, if applicable.</p>
+     */
+    inline void SetFederatedAuthentication(FederatedAuthentication&& value) { m_federatedAuthenticationHasBeenSet = true; m_federatedAuthentication = std::move(value); }
+
+    /**
+     * <p>Information about the IAM SAML identity provider, if applicable.</p>
+     */
+    inline ClientVpnAuthentication& WithFederatedAuthentication(const FederatedAuthentication& value) { SetFederatedAuthentication(value); return *this;}
+
+    /**
+     * <p>Information about the IAM SAML identity provider, if applicable.</p>
+     */
+    inline ClientVpnAuthentication& WithFederatedAuthentication(FederatedAuthentication&& value) { SetFederatedAuthentication(std::move(value)); return *this;}
+
   private:
 
     ClientVpnAuthenticationType m_type;
@@ -157,6 +188,9 @@ namespace Model
 
     CertificateAuthentication m_mutualAuthentication;
     bool m_mutualAuthenticationHasBeenSet;
+
+    FederatedAuthentication m_federatedAuthentication;
+    bool m_federatedAuthenticationHasBeenSet;
   };
 
 } // namespace Model

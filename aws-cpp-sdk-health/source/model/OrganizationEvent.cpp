@@ -34,6 +34,8 @@ OrganizationEvent::OrganizationEvent() :
     m_eventTypeCodeHasBeenSet(false),
     m_eventTypeCategory(EventTypeCategory::NOT_SET),
     m_eventTypeCategoryHasBeenSet(false),
+    m_eventScopeCode(EventScopeCode::NOT_SET),
+    m_eventScopeCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -49,6 +51,8 @@ OrganizationEvent::OrganizationEvent(JsonView jsonValue) :
     m_eventTypeCodeHasBeenSet(false),
     m_eventTypeCategory(EventTypeCategory::NOT_SET),
     m_eventTypeCategoryHasBeenSet(false),
+    m_eventScopeCode(EventScopeCode::NOT_SET),
+    m_eventScopeCodeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
@@ -87,6 +91,13 @@ OrganizationEvent& OrganizationEvent::operator =(JsonView jsonValue)
     m_eventTypeCategory = EventTypeCategoryMapper::GetEventTypeCategoryForName(jsonValue.GetString("eventTypeCategory"));
 
     m_eventTypeCategoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("eventScopeCode"))
+  {
+    m_eventScopeCode = EventScopeCodeMapper::GetEventScopeCodeForName(jsonValue.GetString("eventScopeCode"));
+
+    m_eventScopeCodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("region"))
@@ -152,6 +163,11 @@ JsonValue OrganizationEvent::Jsonize() const
   if(m_eventTypeCategoryHasBeenSet)
   {
    payload.WithString("eventTypeCategory", EventTypeCategoryMapper::GetNameForEventTypeCategory(m_eventTypeCategory));
+  }
+
+  if(m_eventScopeCodeHasBeenSet)
+  {
+   payload.WithString("eventScopeCode", EventScopeCodeMapper::GetNameForEventScopeCode(m_eventScopeCode));
   }
 
   if(m_regionHasBeenSet)

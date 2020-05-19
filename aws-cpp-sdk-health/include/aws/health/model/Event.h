@@ -19,6 +19,7 @@
 #include <aws/health/model/EventTypeCategory.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/health/model/EventStatusCode.h>
+#include <aws/health/model/EventScopeCode.h>
 #include <utility>
 
 namespace Aws
@@ -477,6 +478,25 @@ namespace Model
      */
     inline Event& WithStatusCode(EventStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
+
+    
+    inline const EventScopeCode& GetEventScopeCode() const{ return m_eventScopeCode; }
+
+    
+    inline bool EventScopeCodeHasBeenSet() const { return m_eventScopeCodeHasBeenSet; }
+
+    
+    inline void SetEventScopeCode(const EventScopeCode& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = value; }
+
+    
+    inline void SetEventScopeCode(EventScopeCode&& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = std::move(value); }
+
+    
+    inline Event& WithEventScopeCode(const EventScopeCode& value) { SetEventScopeCode(value); return *this;}
+
+    
+    inline Event& WithEventScopeCode(EventScopeCode&& value) { SetEventScopeCode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -508,6 +528,9 @@ namespace Model
 
     EventStatusCode m_statusCode;
     bool m_statusCodeHasBeenSet;
+
+    EventScopeCode m_eventScopeCode;
+    bool m_eventScopeCodeHasBeenSet;
   };
 
 } // namespace Model

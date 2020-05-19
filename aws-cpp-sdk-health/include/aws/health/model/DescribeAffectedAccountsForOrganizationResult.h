@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/health/model/EventScopeCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -84,6 +85,22 @@ namespace Model
     inline DescribeAffectedAccountsForOrganizationResult& AddAffectedAccounts(const char* value) { m_affectedAccounts.push_back(value); return *this; }
 
 
+    
+    inline const EventScopeCode& GetEventScopeCode() const{ return m_eventScopeCode; }
+
+    
+    inline void SetEventScopeCode(const EventScopeCode& value) { m_eventScopeCode = value; }
+
+    
+    inline void SetEventScopeCode(EventScopeCode&& value) { m_eventScopeCode = std::move(value); }
+
+    
+    inline DescribeAffectedAccountsForOrganizationResult& WithEventScopeCode(const EventScopeCode& value) { SetEventScopeCode(value); return *this;}
+
+    
+    inline DescribeAffectedAccountsForOrganizationResult& WithEventScopeCode(EventScopeCode&& value) { SetEventScopeCode(std::move(value)); return *this;}
+
+
     /**
      * <p>If the results of a search are large, only a portion of the results are
      * returned, and a <code>nextToken</code> pagination token is returned in the
@@ -150,6 +167,8 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_affectedAccounts;
+
+    EventScopeCode m_eventScopeCode;
 
     Aws::String m_nextToken;
   };

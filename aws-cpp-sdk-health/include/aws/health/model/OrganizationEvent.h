@@ -17,6 +17,7 @@
 #include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/health/model/EventTypeCategory.h>
+#include <aws/health/model/EventScopeCode.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/health/model/EventStatusCode.h>
 #include <utility>
@@ -253,6 +254,25 @@ namespace Model
     inline OrganizationEvent& WithEventTypeCategory(EventTypeCategory&& value) { SetEventTypeCategory(std::move(value)); return *this;}
 
 
+    
+    inline const EventScopeCode& GetEventScopeCode() const{ return m_eventScopeCode; }
+
+    
+    inline bool EventScopeCodeHasBeenSet() const { return m_eventScopeCodeHasBeenSet; }
+
+    
+    inline void SetEventScopeCode(const EventScopeCode& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = value; }
+
+    
+    inline void SetEventScopeCode(EventScopeCode&& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = std::move(value); }
+
+    
+    inline OrganizationEvent& WithEventScopeCode(const EventScopeCode& value) { SetEventScopeCode(value); return *this;}
+
+    
+    inline OrganizationEvent& WithEventScopeCode(EventScopeCode&& value) { SetEventScopeCode(std::move(value)); return *this;}
+
+
     /**
      * <p>The AWS Region name of the event.</p>
      */
@@ -436,6 +456,9 @@ namespace Model
 
     EventTypeCategory m_eventTypeCategory;
     bool m_eventTypeCategoryHasBeenSet;
+
+    EventScopeCode m_eventScopeCode;
+    bool m_eventScopeCodeHasBeenSet;
 
     Aws::String m_region;
     bool m_regionHasBeenSet;

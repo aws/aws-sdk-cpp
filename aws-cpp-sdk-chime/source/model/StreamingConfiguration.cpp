@@ -32,7 +32,8 @@ StreamingConfiguration::StreamingConfiguration() :
     m_dataRetentionInHours(0),
     m_dataRetentionInHoursHasBeenSet(false),
     m_disabled(false),
-    m_disabledHasBeenSet(false)
+    m_disabledHasBeenSet(false),
+    m_streamingNotificationTargetsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ StreamingConfiguration::StreamingConfiguration(JsonView jsonValue) :
     m_dataRetentionInHours(0),
     m_dataRetentionInHoursHasBeenSet(false),
     m_disabled(false),
-    m_disabledHasBeenSet(false)
+    m_disabledHasBeenSet(false),
+    m_streamingNotificationTargetsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,16 @@ StreamingConfiguration& StreamingConfiguration::operator =(JsonView jsonValue)
     m_disabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("StreamingNotificationTargets"))
+  {
+    Array<JsonView> streamingNotificationTargetsJsonList = jsonValue.GetArray("StreamingNotificationTargets");
+    for(unsigned streamingNotificationTargetsIndex = 0; streamingNotificationTargetsIndex < streamingNotificationTargetsJsonList.GetLength(); ++streamingNotificationTargetsIndex)
+    {
+      m_streamingNotificationTargets.push_back(streamingNotificationTargetsJsonList[streamingNotificationTargetsIndex].AsObject());
+    }
+    m_streamingNotificationTargetsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +89,17 @@ JsonValue StreamingConfiguration::Jsonize() const
   if(m_disabledHasBeenSet)
   {
    payload.WithBool("Disabled", m_disabled);
+
+  }
+
+  if(m_streamingNotificationTargetsHasBeenSet)
+  {
+   Array<JsonValue> streamingNotificationTargetsJsonList(m_streamingNotificationTargets.size());
+   for(unsigned streamingNotificationTargetsIndex = 0; streamingNotificationTargetsIndex < streamingNotificationTargetsJsonList.GetLength(); ++streamingNotificationTargetsIndex)
+   {
+     streamingNotificationTargetsJsonList[streamingNotificationTargetsIndex].AsObject(m_streamingNotificationTargets[streamingNotificationTargetsIndex].Jsonize());
+   }
+   payload.WithArray("StreamingNotificationTargets", std::move(streamingNotificationTargetsJsonList));
 
   }
 

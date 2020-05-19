@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrganizationResult()
+DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrganizationResult() : 
+    m_eventScopeCode(EventScopeCode::NOT_SET)
 {
 }
 
-DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeAffectedAccountsForOrganizationResult::DescribeAffectedAccountsForOrganizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_eventScopeCode(EventScopeCode::NOT_SET)
 {
   *this = result;
 }
@@ -45,6 +47,12 @@ DescribeAffectedAccountsForOrganizationResult& DescribeAffectedAccountsForOrgani
     {
       m_affectedAccounts.push_back(affectedAccountsJsonList[affectedAccountsIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("eventScopeCode"))
+  {
+    m_eventScopeCode = EventScopeCodeMapper::GetEventScopeCodeForName(jsonValue.GetString("eventScopeCode"));
+
   }
 
   if(jsonValue.ValueExists("nextToken"))

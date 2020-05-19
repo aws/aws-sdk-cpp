@@ -14,29 +14,29 @@
 */
 
 #pragma once
-#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/health/Health_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace EC2
+namespace Health
 {
 namespace Model
 {
-  enum class ClientVpnAuthenticationType
+  enum class EventScopeCode
   {
     NOT_SET,
-    certificate_authentication,
-    directory_service_authentication,
-    federated_authentication
+    PUBLIC_,
+    ACCOUNT_SPECIFIC,
+    NONE
   };
 
-namespace ClientVpnAuthenticationTypeMapper
+namespace EventScopeCodeMapper
 {
-AWS_EC2_API ClientVpnAuthenticationType GetClientVpnAuthenticationTypeForName(const Aws::String& name);
+AWS_HEALTH_API EventScopeCode GetEventScopeCodeForName(const Aws::String& name);
 
-AWS_EC2_API Aws::String GetNameForClientVpnAuthenticationType(ClientVpnAuthenticationType value);
-} // namespace ClientVpnAuthenticationTypeMapper
+AWS_HEALTH_API Aws::String GetNameForEventScopeCode(EventScopeCode value);
+} // namespace EventScopeCodeMapper
 } // namespace Model
-} // namespace EC2
+} // namespace Health
 } // namespace Aws
