@@ -130,28 +130,28 @@ namespace Model
     /**
      * <p>The number of minutes to wait before the status of a blue/green deployment is
      * changed to Stopped if rerouting is not started manually. Applies only to the
-     * STOP_DEPLOYMENT option for actionOnTimeout</p>
+     * <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
      */
     inline int GetWaitTimeInMinutes() const{ return m_waitTimeInMinutes; }
 
     /**
      * <p>The number of minutes to wait before the status of a blue/green deployment is
      * changed to Stopped if rerouting is not started manually. Applies only to the
-     * STOP_DEPLOYMENT option for actionOnTimeout</p>
+     * <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
      */
     inline bool WaitTimeInMinutesHasBeenSet() const { return m_waitTimeInMinutesHasBeenSet; }
 
     /**
      * <p>The number of minutes to wait before the status of a blue/green deployment is
      * changed to Stopped if rerouting is not started manually. Applies only to the
-     * STOP_DEPLOYMENT option for actionOnTimeout</p>
+     * <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
      */
     inline void SetWaitTimeInMinutes(int value) { m_waitTimeInMinutesHasBeenSet = true; m_waitTimeInMinutes = value; }
 
     /**
      * <p>The number of minutes to wait before the status of a blue/green deployment is
      * changed to Stopped if rerouting is not started manually. Applies only to the
-     * STOP_DEPLOYMENT option for actionOnTimeout</p>
+     * <code>STOP_DEPLOYMENT</code> option for <code>actionOnTimeout</code>.</p>
      */
     inline DeploymentReadyOption& WithWaitTimeInMinutes(int value) { SetWaitTimeInMinutes(value); return *this;}
 

@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 UpdateInputRequest::UpdateInputRequest() : 
     m_destinationsHasBeenSet(false),
+    m_inputDevicesHasBeenSet(false),
     m_inputIdHasBeenSet(false),
     m_inputSecurityGroupsHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
@@ -45,6 +46,17 @@ Aws::String UpdateInputRequest::SerializePayload() const
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
    }
    payload.WithArray("destinations", std::move(destinationsJsonList));
+
+  }
+
+  if(m_inputDevicesHasBeenSet)
+  {
+   Array<JsonValue> inputDevicesJsonList(m_inputDevices.size());
+   for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
+   {
+     inputDevicesJsonList[inputDevicesIndex].AsObject(m_inputDevices[inputDevicesIndex].Jsonize());
+   }
+   payload.WithArray("inputDevices", std::move(inputDevicesJsonList));
 
   }
 

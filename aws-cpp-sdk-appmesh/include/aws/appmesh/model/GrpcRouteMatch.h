@@ -93,49 +93,57 @@ namespace Model
 
     /**
      * <p>The method name to match from the request. If you specify a name, you must
-     * also specify a <code>serviceName</code>.</p>
+     * also specify
+         a <code>serviceName</code>.</p>
      */
     inline const Aws::String& GetMethodName() const{ return m_methodName; }
 
     /**
      * <p>The method name to match from the request. If you specify a name, you must
-     * also specify a <code>serviceName</code>.</p>
+     * also specify
+         a <code>serviceName</code>.</p>
      */
     inline bool MethodNameHasBeenSet() const { return m_methodNameHasBeenSet; }
 
     /**
      * <p>The method name to match from the request. If you specify a name, you must
-     * also specify a <code>serviceName</code>.</p>
+     * also specify
+         a <code>serviceName</code>.</p>
      */
     inline void SetMethodName(const Aws::String& value) { m_methodNameHasBeenSet = true; m_methodName = value; }
 
     /**
      * <p>The method name to match from the request. If you specify a name, you must
-     * also specify a <code>serviceName</code>.</p>
+     * also specify
+         a <code>serviceName</code>.</p>
      */
     inline void SetMethodName(Aws::String&& value) { m_methodNameHasBeenSet = true; m_methodName = std::move(value); }
 
     /**
      * <p>The method name to match from the request. If you specify a name, you must
-     * also specify a <code>serviceName</code>.</p>
+     * also specify
+         a <code>serviceName</code>.</p>
      */
     inline void SetMethodName(const char* value) { m_methodNameHasBeenSet = true; m_methodName.assign(value); }
 
     /**
      * <p>The method name to match from the request. If you specify a name, you must
-     * also specify a <code>serviceName</code>.</p>
+     * also specify
+         a <code>serviceName</code>.</p>
      */
     inline GrpcRouteMatch& WithMethodName(const Aws::String& value) { SetMethodName(value); return *this;}
 
     /**
      * <p>The method name to match from the request. If you specify a name, you must
-     * also specify a <code>serviceName</code>.</p>
+     * also specify
+         a <code>serviceName</code>.</p>
      */
     inline GrpcRouteMatch& WithMethodName(Aws::String&& value) { SetMethodName(std::move(value)); return *this;}
 
     /**
      * <p>The method name to match from the request. If you specify a name, you must
-     * also specify a <code>serviceName</code>.</p>
+     * also specify
+         a <code>serviceName</code>.</p>
      */
     inline GrpcRouteMatch& WithMethodName(const char* value) { SetMethodName(value); return *this;}
 

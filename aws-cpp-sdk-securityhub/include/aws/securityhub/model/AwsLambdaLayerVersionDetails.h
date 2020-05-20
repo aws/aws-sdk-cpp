@@ -70,7 +70,7 @@ namespace Model
 
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -80,7 +80,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetCompatibleRuntimes() const{ return m_compatibleRuntimes; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -90,7 +90,7 @@ namespace Model
     inline bool CompatibleRuntimesHasBeenSet() const { return m_compatibleRuntimesHasBeenSet; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -100,7 +100,7 @@ namespace Model
     inline void SetCompatibleRuntimes(const Aws::Vector<Aws::String>& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes = value; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -110,7 +110,7 @@ namespace Model
     inline void SetCompatibleRuntimes(Aws::Vector<Aws::String>&& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes = std::move(value); }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -120,7 +120,7 @@ namespace Model
     inline AwsLambdaLayerVersionDetails& WithCompatibleRuntimes(const Aws::Vector<Aws::String>& value) { SetCompatibleRuntimes(value); return *this;}
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -130,7 +130,7 @@ namespace Model
     inline AwsLambdaLayerVersionDetails& WithCompatibleRuntimes(Aws::Vector<Aws::String>&& value) { SetCompatibleRuntimes(std::move(value)); return *this;}
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -140,7 +140,7 @@ namespace Model
     inline AwsLambdaLayerVersionDetails& AddCompatibleRuntimes(const Aws::String& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes.push_back(value); return *this; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |
@@ -150,7 +150,7 @@ namespace Model
     inline AwsLambdaLayerVersionDetails& AddCompatibleRuntimes(Aws::String&& value) { m_compatibleRuntimesHasBeenSet = true; m_compatibleRuntimes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The layer's compatible runtimes. Maximum number of 5 items.</p> <p>Valid
+     * <p>The layer's compatible runtimes. Maximum number of five items.</p> <p>Valid
      * values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code> |
      * <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> |
      * <code>python3.7</code> | <code>python3.8</code> | <code>dotnetcore1.0</code> |

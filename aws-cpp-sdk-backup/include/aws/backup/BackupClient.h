@@ -30,6 +30,7 @@
 #include <aws/backup/model/DescribeCopyJobResult.h>
 #include <aws/backup/model/DescribeProtectedResourceResult.h>
 #include <aws/backup/model/DescribeRecoveryPointResult.h>
+#include <aws/backup/model/DescribeRegionSettingsResult.h>
 #include <aws/backup/model/DescribeRestoreJobResult.h>
 #include <aws/backup/model/ExportBackupPlanTemplateResult.h>
 #include <aws/backup/model/GetBackupPlanResult.h>
@@ -111,6 +112,7 @@ namespace Model
         class DescribeCopyJobRequest;
         class DescribeProtectedResourceRequest;
         class DescribeRecoveryPointRequest;
+        class DescribeRegionSettingsRequest;
         class DescribeRestoreJobRequest;
         class ExportBackupPlanTemplateRequest;
         class GetBackupPlanRequest;
@@ -142,6 +144,7 @@ namespace Model
         class UntagResourceRequest;
         class UpdateBackupPlanRequest;
         class UpdateRecoveryPointLifecycleRequest;
+        class UpdateRegionSettingsRequest;
 
         typedef Aws::Utils::Outcome<CreateBackupPlanResult, Aws::Client::AWSError<BackupErrors>> CreateBackupPlanOutcome;
         typedef Aws::Utils::Outcome<CreateBackupSelectionResult, Aws::Client::AWSError<BackupErrors>> CreateBackupSelectionOutcome;
@@ -157,6 +160,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeCopyJobResult, Aws::Client::AWSError<BackupErrors>> DescribeCopyJobOutcome;
         typedef Aws::Utils::Outcome<DescribeProtectedResourceResult, Aws::Client::AWSError<BackupErrors>> DescribeProtectedResourceOutcome;
         typedef Aws::Utils::Outcome<DescribeRecoveryPointResult, Aws::Client::AWSError<BackupErrors>> DescribeRecoveryPointOutcome;
+        typedef Aws::Utils::Outcome<DescribeRegionSettingsResult, Aws::Client::AWSError<BackupErrors>> DescribeRegionSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeRestoreJobResult, Aws::Client::AWSError<BackupErrors>> DescribeRestoreJobOutcome;
         typedef Aws::Utils::Outcome<ExportBackupPlanTemplateResult, Aws::Client::AWSError<BackupErrors>> ExportBackupPlanTemplateOutcome;
         typedef Aws::Utils::Outcome<GetBackupPlanResult, Aws::Client::AWSError<BackupErrors>> GetBackupPlanOutcome;
@@ -189,6 +193,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<BackupErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateBackupPlanResult, Aws::Client::AWSError<BackupErrors>> UpdateBackupPlanOutcome;
         typedef Aws::Utils::Outcome<UpdateRecoveryPointLifecycleResult, Aws::Client::AWSError<BackupErrors>> UpdateRecoveryPointLifecycleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<BackupErrors>> UpdateRegionSettingsOutcome;
 
         typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
         typedef std::future<CreateBackupSelectionOutcome> CreateBackupSelectionOutcomeCallable;
@@ -204,6 +209,7 @@ namespace Model
         typedef std::future<DescribeCopyJobOutcome> DescribeCopyJobOutcomeCallable;
         typedef std::future<DescribeProtectedResourceOutcome> DescribeProtectedResourceOutcomeCallable;
         typedef std::future<DescribeRecoveryPointOutcome> DescribeRecoveryPointOutcomeCallable;
+        typedef std::future<DescribeRegionSettingsOutcome> DescribeRegionSettingsOutcomeCallable;
         typedef std::future<DescribeRestoreJobOutcome> DescribeRestoreJobOutcomeCallable;
         typedef std::future<ExportBackupPlanTemplateOutcome> ExportBackupPlanTemplateOutcomeCallable;
         typedef std::future<GetBackupPlanOutcome> GetBackupPlanOutcomeCallable;
@@ -236,6 +242,7 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateBackupPlanOutcome> UpdateBackupPlanOutcomeCallable;
         typedef std::future<UpdateRecoveryPointLifecycleOutcome> UpdateRecoveryPointLifecycleOutcomeCallable;
+        typedef std::future<UpdateRegionSettingsOutcome> UpdateRegionSettingsOutcomeCallable;
 } // namespace Model
 
   class BackupClient;
@@ -254,6 +261,7 @@ namespace Model
     typedef std::function<void(const BackupClient*, const Model::DescribeCopyJobRequest&, const Model::DescribeCopyJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCopyJobResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DescribeProtectedResourceRequest&, const Model::DescribeProtectedResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProtectedResourceResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DescribeRecoveryPointRequest&, const Model::DescribeRecoveryPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecoveryPointResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::DescribeRegionSettingsRequest&, const Model::DescribeRegionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRegionSettingsResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::DescribeRestoreJobRequest&, const Model::DescribeRestoreJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRestoreJobResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::ExportBackupPlanTemplateRequest&, const Model::ExportBackupPlanTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportBackupPlanTemplateResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::GetBackupPlanRequest&, const Model::GetBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackupPlanResponseReceivedHandler;
@@ -286,6 +294,7 @@ namespace Model
     typedef std::function<void(const BackupClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::UpdateBackupPlanRequest&, const Model::UpdateBackupPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBackupPlanResponseReceivedHandler;
     typedef std::function<void(const BackupClient*, const Model::UpdateRecoveryPointLifecycleRequest&, const Model::UpdateRecoveryPointLifecycleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRecoveryPointLifecycleResponseReceivedHandler;
+    typedef std::function<void(const BackupClient*, const Model::UpdateRegionSettingsRequest&, const Model::UpdateRegionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRegionSettingsResponseReceivedHandler;
 
   /**
    * <fullname>AWS Backup</fullname> <p>AWS Backup is a unified backup service
@@ -732,7 +741,7 @@ namespace Model
 
         /**
          * <p>Returns information about a saved resource, including the last time it was
-         * backed-up, its Amazon Resource Name (ARN), and the AWS service type of the saved
+         * backed up, its Amazon Resource Name (ARN), and the AWS service type of the saved
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeProtectedResource">AWS
          * API Reference</a></p>
@@ -741,7 +750,7 @@ namespace Model
 
         /**
          * <p>Returns information about a saved resource, including the last time it was
-         * backed-up, its Amazon Resource Name (ARN), and the AWS service type of the saved
+         * backed up, its Amazon Resource Name (ARN), and the AWS service type of the saved
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeProtectedResource">AWS
          * API Reference</a></p>
@@ -752,7 +761,7 @@ namespace Model
 
         /**
          * <p>Returns information about a saved resource, including the last time it was
-         * backed-up, its Amazon Resource Name (ARN), and the AWS service type of the saved
+         * backed up, its Amazon Resource Name (ARN), and the AWS service type of the saved
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeProtectedResource">AWS
          * API Reference</a></p>
@@ -788,6 +797,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeRecoveryPointAsync(const Model::DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the current service opt-in settings for the region. If the service
+         * has a value set to true, AWS Backup will attempt to protect that service's
+         * resources in this region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to false for a service, AWS Backup will not
+         * attempt to protect that service's resources in this region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRegionSettingsOutcome DescribeRegionSettings(const Model::DescribeRegionSettingsRequest& request) const;
+
+        /**
+         * <p>Returns the current service opt-in settings for the region. If the service
+         * has a value set to true, AWS Backup will attempt to protect that service's
+         * resources in this region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to false for a service, AWS Backup will not
+         * attempt to protect that service's resources in this region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeRegionSettingsOutcomeCallable DescribeRegionSettingsCallable(const Model::DescribeRegionSettingsRequest& request) const;
+
+        /**
+         * <p>Returns the current service opt-in settings for the region. If the service
+         * has a value set to true, AWS Backup will attempt to protect that service's
+         * resources in this region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to false for a service, AWS Backup will not
+         * attempt to protect that service's resources in this region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeRegionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeRegionSettingsAsync(const Model::DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata associated with a restore job that is specified by a job
@@ -1384,7 +1433,8 @@ namespace Model
 
         /**
          * <p>Returns a list of key-value pairs assigned to a target recovery point, backup
-         * plan, or backup vault.</p><p><h3>See Also:</h3>   <a
+         * plan, or backup vault.</p> <note> <p> <code>ListTags</code> are currently only
+         * supported with Amazon EFS backups.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">AWS API
          * Reference</a></p>
          */
@@ -1392,7 +1442,8 @@ namespace Model
 
         /**
          * <p>Returns a list of key-value pairs assigned to a target recovery point, backup
-         * plan, or backup vault.</p><p><h3>See Also:</h3>   <a
+         * plan, or backup vault.</p> <note> <p> <code>ListTags</code> are currently only
+         * supported with Amazon EFS backups.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">AWS API
          * Reference</a></p>
          *
@@ -1402,7 +1453,8 @@ namespace Model
 
         /**
          * <p>Returns a list of key-value pairs assigned to a target recovery point, backup
-         * plan, or backup vault.</p><p><h3>See Also:</h3>   <a
+         * plan, or backup vault.</p> <note> <p> <code>ListTags</code> are currently only
+         * supported with Amazon EFS backups.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListTags">AWS API
          * Reference</a></p>
          *
@@ -1726,6 +1778,46 @@ namespace Model
          */
         virtual void UpdateRecoveryPointLifecycleAsync(const Model::UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the current service opt-in settings for the region. If the service
+         * has a value set to true, AWS Backup will attempt to protect that service's
+         * resources in this region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to false for a service, AWS Backup will not
+         * attempt to protect that service's resources in this region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRegionSettingsOutcome UpdateRegionSettings(const Model::UpdateRegionSettingsRequest& request) const;
+
+        /**
+         * <p>Updates the current service opt-in settings for the region. If the service
+         * has a value set to true, AWS Backup will attempt to protect that service's
+         * resources in this region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to false for a service, AWS Backup will not
+         * attempt to protect that service's resources in this region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRegionSettingsOutcomeCallable UpdateRegionSettingsCallable(const Model::UpdateRegionSettingsRequest& request) const;
+
+        /**
+         * <p>Updates the current service opt-in settings for the region. If the service
+         * has a value set to true, AWS Backup will attempt to protect that service's
+         * resources in this region, when included in an on-demand backup or scheduled
+         * backup plan. If the value is set to false for a service, AWS Backup will not
+         * attempt to protect that service's resources in this region.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRegionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRegionSettingsAsync(const Model::UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1744,6 +1836,7 @@ namespace Model
         void DescribeCopyJobAsyncHelper(const Model::DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProtectedResourceAsyncHelper(const Model::DescribeProtectedResourceRequest& request, const DescribeProtectedResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRecoveryPointAsyncHelper(const Model::DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeRegionSettingsAsyncHelper(const Model::DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRestoreJobAsyncHelper(const Model::DescribeRestoreJobRequest& request, const DescribeRestoreJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportBackupPlanTemplateAsyncHelper(const Model::ExportBackupPlanTemplateRequest& request, const ExportBackupPlanTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBackupPlanAsyncHelper(const Model::GetBackupPlanRequest& request, const GetBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1776,6 +1869,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBackupPlanAsyncHelper(const Model::UpdateBackupPlanRequest& request, const UpdateBackupPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRecoveryPointLifecycleAsyncHelper(const Model::UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRegionSettingsAsyncHelper(const Model::UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

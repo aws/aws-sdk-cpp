@@ -322,32 +322,32 @@ namespace Model
 
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      */
     inline const H264FilterSettings& GetFilterSettings() const{ return m_filterSettings; }
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      */
     inline bool FilterSettingsHasBeenSet() const { return m_filterSettingsHasBeenSet; }
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      */
     inline void SetFilterSettings(const H264FilterSettings& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = value; }
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      */
     inline void SetFilterSettings(H264FilterSettings&& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = std::move(value); }
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      */
     inline H264Settings& WithFilterSettings(const H264FilterSettings& value) { SetFilterSettings(value); return *this;}
 
     /**
-     * Settings associated with the specified filter.
+     * Optional filters that you can apply to an encode.
      */
     inline H264Settings& WithFilterSettings(H264FilterSettings&& value) { SetFilterSettings(std::move(value)); return *this;}
 
@@ -1061,44 +1061,74 @@ For VBR: Set the maximum bitrate in
 
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output
-     * cost. If this video is being delivered to a MediaLive Multiplex,
-     * "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
      */
     inline const H264QualityLevel& GetQualityLevel() const{ return m_qualityLevel; }
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output
-     * cost. If this video is being delivered to a MediaLive Multiplex,
-     * "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
      */
     inline bool QualityLevelHasBeenSet() const { return m_qualityLevelHasBeenSet; }
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output
-     * cost. If this video is being delivered to a MediaLive Multiplex,
-     * "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
      */
     inline void SetQualityLevel(const H264QualityLevel& value) { m_qualityLevelHasBeenSet = true; m_qualityLevel = value; }
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output
-     * cost. If this video is being delivered to a MediaLive Multiplex,
-     * "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
      */
     inline void SetQualityLevel(H264QualityLevel&& value) { m_qualityLevelHasBeenSet = true; m_qualityLevel = std::move(value); }
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output
-     * cost. If this video is being delivered to a MediaLive Multiplex,
-     * "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
      */
     inline H264Settings& WithQualityLevel(const H264QualityLevel& value) { SetQualityLevel(value); return *this;}
 
     /**
-     * If set to "ENHANCEDQUALITY," improves visual quality at an increased output
-     * cost. If this video is being delivered to a MediaLive Multiplex,
-     * "ENHANCEDQUALITY" is always used.
+     * Leave as STANDARD_QUALITY or choose a different value (which might result in
+     * additional costs to run the channel).
+- ENHANCED_QUALITY: Produces a slightly
+     * better video quality without an increase in the bitrate. Has an effect only when
+     * the Rate control mode is QVBR or CBR. If this channel is in a MediaLive
+     * multiplex, the value must be ENHANCED_QUALITY.
+- STANDARD_QUALITY: Valid for any
+     * Rate control mode.
      */
     inline H264Settings& WithQualityLevel(H264QualityLevel&& value) { SetQualityLevel(std::move(value)); return *this;}
 

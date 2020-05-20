@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a DeleteApplication operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the input of a <code>DeleteApplication</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeleteApplicationInput">AWS
    * API Reference</a></p>
    */

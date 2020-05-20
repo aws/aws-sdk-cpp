@@ -52,7 +52,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet
      * specific requirements and you must have proxy authorization enabled. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
      * Layer Security (TLS)</a>.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
@@ -61,7 +61,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet
      * specific requirements and you must have proxy authorization enabled. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
      * Layer Security (TLS)</a>.</p>
      */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
@@ -70,7 +70,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet
      * specific requirements and you must have proxy authorization enabled. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
      * Layer Security (TLS)</a>.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
@@ -79,7 +79,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet
      * specific requirements and you must have proxy authorization enabled. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
      * Layer Security (TLS)</a>.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
@@ -88,7 +88,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet
      * specific requirements and you must have proxy authorization enabled. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
      * Layer Security (TLS)</a>.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
@@ -97,7 +97,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet
      * specific requirements and you must have proxy authorization enabled. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
      * Layer Security (TLS)</a>.</p>
      */
     inline ListenerTlsAcmCertificate& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
@@ -106,7 +106,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet
      * specific requirements and you must have proxy authorization enabled. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
      * Layer Security (TLS)</a>.</p>
      */
     inline ListenerTlsAcmCertificate& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
@@ -115,7 +115,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate. The certificate must meet
      * specific requirements and you must have proxy authorization enabled. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
      * Layer Security (TLS)</a>.</p>
      */
     inline ListenerTlsAcmCertificate& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}

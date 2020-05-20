@@ -112,7 +112,7 @@ namespace Model
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
      * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * letters, numbers, and hyphens.</p>
      */
     inline const Aws::String& GetSourceBackupVaultName() const{ return m_sourceBackupVaultName; }
 
@@ -120,7 +120,7 @@ namespace Model
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
      * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * letters, numbers, and hyphens.</p>
      */
     inline bool SourceBackupVaultNameHasBeenSet() const { return m_sourceBackupVaultNameHasBeenSet; }
 
@@ -128,7 +128,7 @@ namespace Model
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
      * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetSourceBackupVaultName(const Aws::String& value) { m_sourceBackupVaultNameHasBeenSet = true; m_sourceBackupVaultName = value; }
 
@@ -136,7 +136,7 @@ namespace Model
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
      * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetSourceBackupVaultName(Aws::String&& value) { m_sourceBackupVaultNameHasBeenSet = true; m_sourceBackupVaultName = std::move(value); }
 
@@ -144,7 +144,7 @@ namespace Model
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
      * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * letters, numbers, and hyphens.</p>
      */
     inline void SetSourceBackupVaultName(const char* value) { m_sourceBackupVaultNameHasBeenSet = true; m_sourceBackupVaultName.assign(value); }
 
@@ -152,7 +152,7 @@ namespace Model
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
      * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * letters, numbers, and hyphens.</p>
      */
     inline StartCopyJobRequest& WithSourceBackupVaultName(const Aws::String& value) { SetSourceBackupVaultName(value); return *this;}
 
@@ -160,7 +160,7 @@ namespace Model
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
      * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * letters, numbers, and hyphens.</p>
      */
     inline StartCopyJobRequest& WithSourceBackupVaultName(Aws::String&& value) { SetSourceBackupVaultName(std::move(value)); return *this;}
 
@@ -168,7 +168,7 @@ namespace Model
      * <p>The name of a logical source container where backups are stored. Backup
      * vaults are identified by names that are unique to the account used to create
      * them and the AWS Region where they are created. They consist of lowercase
-     * letters, numbers, and hyphens. &gt;</p>
+     * letters, numbers, and hyphens.</p>
      */
     inline StartCopyJobRequest& WithSourceBackupVaultName(const char* value) { SetSourceBackupVaultName(value); return *this;}
 
@@ -232,49 +232,49 @@ namespace Model
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartCopyJobRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartCopyJobRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the IAM role ARN used to copy the target recovery point; for
-     * example, arn:aws:iam::123456789012:role/S3Access.</p>
+     * example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
      */
     inline StartCopyJobRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

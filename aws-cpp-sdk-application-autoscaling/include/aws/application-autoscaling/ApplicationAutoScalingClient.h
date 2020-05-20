@@ -127,7 +127,7 @@ namespace Model
    * <li> <p>Custom resources provided by your own applications or services</p> </li>
    * <li> <p>Amazon Comprehend document classification endpoints</p> </li> <li>
    * <p>AWS Lambda function provisioned concurrency</p> </li> <li> <p>Amazon
-   * Keyspaces for Apache Cassandra tables</p> </li> </ul> <p> <b>API Summary</b>
+   * Keyspaces (for Apache Cassandra) tables</p> </li> </ul> <p> <b>API Summary</b>
    * </p> <p>The Application Auto Scaling service API includes three key sets of
    * actions: </p> <ul> <li> <p>Register and manage scalable targets - Register AWS
    * or custom resources as scalable targets (a resource that Application Auto
@@ -480,8 +480,14 @@ namespace Model
          * largest capacity for both scale out and scale in. For example, if one policy
          * increases capacity by 3, another policy increases capacity by 200 percent, and
          * the current capacity is 10, Application Auto Scaling uses the policy with the
-         * highest calculated capacity (200% of 10 = 20) and scales out to 30. </p> <p>For
-         * more information, see <a
+         * highest calculated capacity (200% of 10 = 20) and scales out to 30. </p> <p>We
+         * recommend caution, however, when using target tracking scaling policies with
+         * step scaling policies because conflicts between these policies can cause
+         * undesirable behavior. For example, if the step scaling policy initiates a
+         * scale-in activity before the target tracking policy is ready to scale in, the
+         * scale-in activity will not be blocked. After the scale-in activity completes,
+         * the target tracking policy could instruct the scalable target to scale out
+         * again. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
          * Tracking Scaling Policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
@@ -508,8 +514,14 @@ namespace Model
          * largest capacity for both scale out and scale in. For example, if one policy
          * increases capacity by 3, another policy increases capacity by 200 percent, and
          * the current capacity is 10, Application Auto Scaling uses the policy with the
-         * highest calculated capacity (200% of 10 = 20) and scales out to 30. </p> <p>For
-         * more information, see <a
+         * highest calculated capacity (200% of 10 = 20) and scales out to 30. </p> <p>We
+         * recommend caution, however, when using target tracking scaling policies with
+         * step scaling policies because conflicts between these policies can cause
+         * undesirable behavior. For example, if the step scaling policy initiates a
+         * scale-in activity before the target tracking policy is ready to scale in, the
+         * scale-in activity will not be blocked. After the scale-in activity completes,
+         * the target tracking policy could instruct the scalable target to scale out
+         * again. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
          * Tracking Scaling Policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
@@ -538,8 +550,14 @@ namespace Model
          * largest capacity for both scale out and scale in. For example, if one policy
          * increases capacity by 3, another policy increases capacity by 200 percent, and
          * the current capacity is 10, Application Auto Scaling uses the policy with the
-         * highest calculated capacity (200% of 10 = 20) and scales out to 30. </p> <p>For
-         * more information, see <a
+         * highest calculated capacity (200% of 10 = 20) and scales out to 30. </p> <p>We
+         * recommend caution, however, when using target tracking scaling policies with
+         * step scaling policies because conflicts between these policies can cause
+         * undesirable behavior. For example, if the step scaling policy initiates a
+         * scale-in activity before the target tracking policy is ready to scale in, the
+         * scale-in activity will not be blocked. After the scale-in activity completes,
+         * the target tracking policy could instruct the scalable target to scale out
+         * again. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
          * Tracking Scaling Policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step

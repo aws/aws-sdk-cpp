@@ -92,50 +92,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon Simple Notification Service topic through which
-     * notifications about deployment or instance events are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * topic through which notifications about deployment or instance events are
+     * sent.</p>
      */
     inline const Aws::String& GetTriggerTargetArn() const{ return m_triggerTargetArn; }
 
     /**
-     * <p>The ARN of the Amazon Simple Notification Service topic through which
-     * notifications about deployment or instance events are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * topic through which notifications about deployment or instance events are
+     * sent.</p>
      */
     inline bool TriggerTargetArnHasBeenSet() const { return m_triggerTargetArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the Amazon Simple Notification Service topic through which
-     * notifications about deployment or instance events are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * topic through which notifications about deployment or instance events are
+     * sent.</p>
      */
     inline void SetTriggerTargetArn(const Aws::String& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = value; }
 
     /**
-     * <p>The ARN of the Amazon Simple Notification Service topic through which
-     * notifications about deployment or instance events are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * topic through which notifications about deployment or instance events are
+     * sent.</p>
      */
     inline void SetTriggerTargetArn(Aws::String&& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon Simple Notification Service topic through which
-     * notifications about deployment or instance events are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * topic through which notifications about deployment or instance events are
+     * sent.</p>
      */
     inline void SetTriggerTargetArn(const char* value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon Simple Notification Service topic through which
-     * notifications about deployment or instance events are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * topic through which notifications about deployment or instance events are
+     * sent.</p>
      */
     inline TriggerConfig& WithTriggerTargetArn(const Aws::String& value) { SetTriggerTargetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Simple Notification Service topic through which
-     * notifications about deployment or instance events are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * topic through which notifications about deployment or instance events are
+     * sent.</p>
      */
     inline TriggerConfig& WithTriggerTargetArn(Aws::String&& value) { SetTriggerTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Simple Notification Service topic through which
-     * notifications about deployment or instance events are sent.</p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * topic through which notifications about deployment or instance events are
+     * sent.</p>
      */
     inline TriggerConfig& WithTriggerTargetArn(const char* value) { SetTriggerTargetArn(value); return *this;}
 

@@ -172,43 +172,43 @@ namespace Model
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline CreateBackupPlanResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline CreateBackupPlanResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
-     * 1024 bytes long. They cannot be edited.</p>
+     * 1,024 bytes long. They cannot be edited.</p>
      */
     inline CreateBackupPlanResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

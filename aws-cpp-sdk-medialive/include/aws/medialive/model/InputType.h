@@ -32,7 +32,8 @@ namespace Model
     RTMP_PULL,
     URL_PULL,
     MP4_FILE,
-    MEDIACONNECT
+    MEDIACONNECT,
+    INPUT_DEVICE
   };
 
 namespace InputTypeMapper

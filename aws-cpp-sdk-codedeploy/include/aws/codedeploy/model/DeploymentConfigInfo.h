@@ -233,38 +233,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline bool TrafficRoutingConfigHasBeenSet() const { return m_trafficRoutingConfigHasBeenSet; }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline void SetTrafficRoutingConfig(const TrafficRoutingConfig& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = value; }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline void SetTrafficRoutingConfig(TrafficRoutingConfig&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::move(value); }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(const TrafficRoutingConfig& value) { SetTrafficRoutingConfig(value); return *this;}
 
     /**
-     * <p>The configuration that specifies how the deployment traffic is routed. Only
-     * deployments with a Lambda compute platform can specify this.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed. Used
+     * for deployments with a Lambda or ECS compute platform only.</p>
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}
 

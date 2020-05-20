@@ -46,6 +46,7 @@
 #include <aws/codedeploy/model/DeleteDeploymentConfigRequest.h>
 #include <aws/codedeploy/model/DeleteDeploymentGroupRequest.h>
 #include <aws/codedeploy/model/DeleteGitHubAccountTokenRequest.h>
+#include <aws/codedeploy/model/DeleteResourcesByExternalIdRequest.h>
 #include <aws/codedeploy/model/DeregisterOnPremisesInstanceRequest.h>
 #include <aws/codedeploy/model/GetApplicationRequest.h>
 #include <aws/codedeploy/model/GetApplicationRevisionRequest.h>
@@ -703,6 +704,41 @@ void CodeDeployClient::DeleteGitHubAccountTokenAsync(const DeleteGitHubAccountTo
 void CodeDeployClient::DeleteGitHubAccountTokenAsyncHelper(const DeleteGitHubAccountTokenRequest& request, const DeleteGitHubAccountTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteGitHubAccountToken(request), context);
+}
+
+DeleteResourcesByExternalIdOutcome CodeDeployClient::DeleteResourcesByExternalId(const DeleteResourcesByExternalIdRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteResourcesByExternalIdOutcome(DeleteResourcesByExternalIdResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteResourcesByExternalIdOutcome(outcome.GetError());
+  }
+}
+
+DeleteResourcesByExternalIdOutcomeCallable CodeDeployClient::DeleteResourcesByExternalIdCallable(const DeleteResourcesByExternalIdRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcesByExternalIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcesByExternalId(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeDeployClient::DeleteResourcesByExternalIdAsync(const DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcesByExternalIdAsyncHelper( request, handler, context ); } );
+}
+
+void CodeDeployClient::DeleteResourcesByExternalIdAsyncHelper(const DeleteResourcesByExternalIdRequest& request, const DeleteResourcesByExternalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourcesByExternalId(request), context);
 }
 
 DeregisterOnPremisesInstanceOutcome CodeDeployClient::DeregisterOnPremisesInstance(const DeregisterOnPremisesInstanceRequest& request) const

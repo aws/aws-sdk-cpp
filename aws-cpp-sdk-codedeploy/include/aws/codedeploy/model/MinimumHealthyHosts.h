@@ -69,16 +69,16 @@ namespace Model
 
 
     /**
-     * <p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum
-     * number of healthy instance as an absolute value.</p> </li> <li>
-     * <p>FLEET_PERCENT: The minimum number of healthy instance as a percentage of the
-     * total number of instance in the deployment.</p> </li> </ul> <p>In an example of
-     * nine instance, if a HOST_COUNT of six is specified, deploy to up to three
-     * instances at a time. The deployment is successful if six or more instances are
-     * deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of
-     * 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the
-     * deployment fails.</p> <note> <p>In a call to the
+     * <p>The minimum healthy instance type:</p> <ul> <li> <p> <code>HOST_COUNT</code>:
+     * The minimum number of healthy instances as an absolute value.</p> </li> <li> <p>
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
+     * percentage of the total number of instances in the deployment.</p> </li> </ul>
+     * <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy
+     * to up to three instances at a time. The deployment is successful if six or more
+     * instances are deployed to successfully. Otherwise, the deployment fails. If a
+     * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     * deployment is successful if four or more instances are deployed to successfully.
+     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -94,16 +94,16 @@ namespace Model
     inline const MinimumHealthyHostsType& GetType() const{ return m_type; }
 
     /**
-     * <p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum
-     * number of healthy instance as an absolute value.</p> </li> <li>
-     * <p>FLEET_PERCENT: The minimum number of healthy instance as a percentage of the
-     * total number of instance in the deployment.</p> </li> </ul> <p>In an example of
-     * nine instance, if a HOST_COUNT of six is specified, deploy to up to three
-     * instances at a time. The deployment is successful if six or more instances are
-     * deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of
-     * 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the
-     * deployment fails.</p> <note> <p>In a call to the
+     * <p>The minimum healthy instance type:</p> <ul> <li> <p> <code>HOST_COUNT</code>:
+     * The minimum number of healthy instances as an absolute value.</p> </li> <li> <p>
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
+     * percentage of the total number of instances in the deployment.</p> </li> </ul>
+     * <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy
+     * to up to three instances at a time. The deployment is successful if six or more
+     * instances are deployed to successfully. Otherwise, the deployment fails. If a
+     * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     * deployment is successful if four or more instances are deployed to successfully.
+     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -119,16 +119,16 @@ namespace Model
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum
-     * number of healthy instance as an absolute value.</p> </li> <li>
-     * <p>FLEET_PERCENT: The minimum number of healthy instance as a percentage of the
-     * total number of instance in the deployment.</p> </li> </ul> <p>In an example of
-     * nine instance, if a HOST_COUNT of six is specified, deploy to up to three
-     * instances at a time. The deployment is successful if six or more instances are
-     * deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of
-     * 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the
-     * deployment fails.</p> <note> <p>In a call to the
+     * <p>The minimum healthy instance type:</p> <ul> <li> <p> <code>HOST_COUNT</code>:
+     * The minimum number of healthy instances as an absolute value.</p> </li> <li> <p>
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
+     * percentage of the total number of instances in the deployment.</p> </li> </ul>
+     * <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy
+     * to up to three instances at a time. The deployment is successful if six or more
+     * instances are deployed to successfully. Otherwise, the deployment fails. If a
+     * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     * deployment is successful if four or more instances are deployed to successfully.
+     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -144,16 +144,16 @@ namespace Model
     inline void SetType(const MinimumHealthyHostsType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum
-     * number of healthy instance as an absolute value.</p> </li> <li>
-     * <p>FLEET_PERCENT: The minimum number of healthy instance as a percentage of the
-     * total number of instance in the deployment.</p> </li> </ul> <p>In an example of
-     * nine instance, if a HOST_COUNT of six is specified, deploy to up to three
-     * instances at a time. The deployment is successful if six or more instances are
-     * deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of
-     * 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the
-     * deployment fails.</p> <note> <p>In a call to the
+     * <p>The minimum healthy instance type:</p> <ul> <li> <p> <code>HOST_COUNT</code>:
+     * The minimum number of healthy instances as an absolute value.</p> </li> <li> <p>
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
+     * percentage of the total number of instances in the deployment.</p> </li> </ul>
+     * <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy
+     * to up to three instances at a time. The deployment is successful if six or more
+     * instances are deployed to successfully. Otherwise, the deployment fails. If a
+     * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     * deployment is successful if four or more instances are deployed to successfully.
+     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -169,16 +169,16 @@ namespace Model
     inline void SetType(MinimumHealthyHostsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum
-     * number of healthy instance as an absolute value.</p> </li> <li>
-     * <p>FLEET_PERCENT: The minimum number of healthy instance as a percentage of the
-     * total number of instance in the deployment.</p> </li> </ul> <p>In an example of
-     * nine instance, if a HOST_COUNT of six is specified, deploy to up to three
-     * instances at a time. The deployment is successful if six or more instances are
-     * deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of
-     * 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the
-     * deployment fails.</p> <note> <p>In a call to the
+     * <p>The minimum healthy instance type:</p> <ul> <li> <p> <code>HOST_COUNT</code>:
+     * The minimum number of healthy instances as an absolute value.</p> </li> <li> <p>
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
+     * percentage of the total number of instances in the deployment.</p> </li> </ul>
+     * <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy
+     * to up to three instances at a time. The deployment is successful if six or more
+     * instances are deployed to successfully. Otherwise, the deployment fails. If a
+     * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     * deployment is successful if four or more instances are deployed to successfully.
+     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to
@@ -194,16 +194,16 @@ namespace Model
     inline MinimumHealthyHosts& WithType(const MinimumHealthyHostsType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The minimum healthy instance type:</p> <ul> <li> <p>HOST_COUNT: The minimum
-     * number of healthy instance as an absolute value.</p> </li> <li>
-     * <p>FLEET_PERCENT: The minimum number of healthy instance as a percentage of the
-     * total number of instance in the deployment.</p> </li> </ul> <p>In an example of
-     * nine instance, if a HOST_COUNT of six is specified, deploy to up to three
-     * instances at a time. The deployment is successful if six or more instances are
-     * deployed to successfully. Otherwise, the deployment fails. If a FLEET_PERCENT of
-     * 40 is specified, deploy to up to five instance at a time. The deployment is
-     * successful if four or more instance are deployed to successfully. Otherwise, the
-     * deployment fails.</p> <note> <p>In a call to the
+     * <p>The minimum healthy instance type:</p> <ul> <li> <p> <code>HOST_COUNT</code>:
+     * The minimum number of healthy instances as an absolute value.</p> </li> <li> <p>
+     * <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a
+     * percentage of the total number of instances in the deployment.</p> </li> </ul>
+     * <p>In an example of nine instances, if a HOST_COUNT of six is specified, deploy
+     * to up to three instances at a time. The deployment is successful if six or more
+     * instances are deployed to successfully. Otherwise, the deployment fails. If a
+     * FLEET_PERCENT of 40 is specified, deploy to up to five instances at a time. The
+     * deployment is successful if four or more instances are deployed to successfully.
+     * Otherwise, the deployment fails.</p> <note> <p>In a call to the
      * <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns a minimum
      * healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
      * deployment to only one instance at a time. (You cannot set the type to

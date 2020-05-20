@@ -51,61 +51,65 @@ namespace Model
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't specified.</p>
+     * isn't
+         specified.</p>
      */
     inline bool GetEnforce() const{ return m_enforce; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't specified.</p>
+     * isn't
+         specified.</p>
      */
     inline bool EnforceHasBeenSet() const { return m_enforceHasBeenSet; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't specified.</p>
+     * isn't
+         specified.</p>
      */
     inline void SetEnforce(bool value) { m_enforceHasBeenSet = true; m_enforce = value; }
 
     /**
      * <p>Whether the policy is enforced. The default is <code>True</code>, if a value
-     * isn't specified.</p>
+     * isn't
+         specified.</p>
      */
     inline ClientPolicyTls& WithEnforce(bool value) { SetEnforce(value); return *this;}
 
 
     /**
-     * <p>The range of ports that the policy is enforced for.</p>
+     * <p>One or more ports that the policy is enforced for.</p>
      */
     inline const Aws::Vector<int>& GetPorts() const{ return m_ports; }
 
     /**
-     * <p>The range of ports that the policy is enforced for.</p>
+     * <p>One or more ports that the policy is enforced for.</p>
      */
     inline bool PortsHasBeenSet() const { return m_portsHasBeenSet; }
 
     /**
-     * <p>The range of ports that the policy is enforced for.</p>
+     * <p>One or more ports that the policy is enforced for.</p>
      */
     inline void SetPorts(const Aws::Vector<int>& value) { m_portsHasBeenSet = true; m_ports = value; }
 
     /**
-     * <p>The range of ports that the policy is enforced for.</p>
+     * <p>One or more ports that the policy is enforced for.</p>
      */
     inline void SetPorts(Aws::Vector<int>&& value) { m_portsHasBeenSet = true; m_ports = std::move(value); }
 
     /**
-     * <p>The range of ports that the policy is enforced for.</p>
+     * <p>One or more ports that the policy is enforced for.</p>
      */
     inline ClientPolicyTls& WithPorts(const Aws::Vector<int>& value) { SetPorts(value); return *this;}
 
     /**
-     * <p>The range of ports that the policy is enforced for.</p>
+     * <p>One or more ports that the policy is enforced for.</p>
      */
     inline ClientPolicyTls& WithPorts(Aws::Vector<int>&& value) { SetPorts(std::move(value)); return *this;}
 
     /**
-     * <p>The range of ports that the policy is enforced for.</p>
+     * <p>One or more ports that the policy is enforced for.</p>
      */
     inline ClientPolicyTls& AddPorts(int value) { m_portsHasBeenSet = true; m_ports.push_back(value); return *this; }
 

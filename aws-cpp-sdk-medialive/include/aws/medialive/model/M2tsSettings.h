@@ -1938,22 +1938,22 @@ When
 
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      */
     inline double GetSegmentationTime() const{ return m_segmentationTime; }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      */
     inline bool SegmentationTimeHasBeenSet() const { return m_segmentationTimeHasBeenSet; }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      */
     inline void SetSegmentationTime(double value) { m_segmentationTimeHasBeenSet = true; m_segmentationTime = value; }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to None_.
+     * The length in seconds of each segment. Required unless markers is set to _none_.
      */
     inline M2tsSettings& WithSegmentationTime(double value) { SetSegmentationTime(value); return *this;}
 

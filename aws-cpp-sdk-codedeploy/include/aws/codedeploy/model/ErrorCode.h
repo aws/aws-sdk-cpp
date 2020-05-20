@@ -58,7 +58,8 @@ namespace Model
     RESOURCE_LIMIT_EXCEEDED,
     REVISION_MISSING,
     THROTTLED,
-    TIMEOUT
+    TIMEOUT,
+    CLOUDFORMATION_STACK_FAILURE
   };
 
 namespace ErrorCodeMapper

@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an UpdateApplication operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the input of an <code>UpdateApplication</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateApplicationInput">AWS
    * API Reference</a></p>
    */

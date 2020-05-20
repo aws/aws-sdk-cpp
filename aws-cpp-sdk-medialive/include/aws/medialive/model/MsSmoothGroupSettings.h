@@ -58,50 +58,50 @@ namespace Model
 
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message
-     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if
+     * sparseTrackType is NONE.
      */
     inline const Aws::String& GetAcquisitionPointId() const{ return m_acquisitionPointId; }
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message
-     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if
+     * sparseTrackType is NONE.
      */
     inline bool AcquisitionPointIdHasBeenSet() const { return m_acquisitionPointIdHasBeenSet; }
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message
-     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if
+     * sparseTrackType is NONE.
      */
     inline void SetAcquisitionPointId(const Aws::String& value) { m_acquisitionPointIdHasBeenSet = true; m_acquisitionPointId = value; }
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message
-     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if
+     * sparseTrackType is NONE.
      */
     inline void SetAcquisitionPointId(Aws::String&& value) { m_acquisitionPointIdHasBeenSet = true; m_acquisitionPointId = std::move(value); }
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message
-     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if
+     * sparseTrackType is NONE.
      */
     inline void SetAcquisitionPointId(const char* value) { m_acquisitionPointIdHasBeenSet = true; m_acquisitionPointId.assign(value); }
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message
-     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if
+     * sparseTrackType is NONE.
      */
     inline MsSmoothGroupSettings& WithAcquisitionPointId(const Aws::String& value) { SetAcquisitionPointId(value); return *this;}
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message
-     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if
+     * sparseTrackType is NONE.
      */
     inline MsSmoothGroupSettings& WithAcquisitionPointId(Aws::String&& value) { SetAcquisitionPointId(std::move(value)); return *this;}
 
     /**
-     * The value of the "Acquisition Point Identity" element used in each message
-     * placed in the sparse track.  Only enabled if sparseTrackType is not "none".
+     * The ID to include in each message in the sparse track. Ignored if
+     * sparseTrackType is NONE.
      */
     inline MsSmoothGroupSettings& WithAcquisitionPointId(const char* value) { SetAcquisitionPointId(value); return *this;}
 
@@ -627,50 +627,80 @@ Options:
 
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in
-     * this group of MS-Smooth outputs. scte35WithoutSegmentation is the same as
-     * scte35, except EML will not start a new segment at a SCTE-35 marker. It will
-     * still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track:
+- SCTE35: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame
+     * to start a new segment.
+- SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages
+     * from the source content. With each message, insert an IDR frame but don't start
+     * a new segment.
+- NONE: Don't generate a sparse track for any outputs in this
+     * output group.
      */
     inline const SmoothGroupSparseTrackType& GetSparseTrackType() const{ return m_sparseTrackType; }
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in
-     * this group of MS-Smooth outputs. scte35WithoutSegmentation is the same as
-     * scte35, except EML will not start a new segment at a SCTE-35 marker. It will
-     * still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track:
+- SCTE35: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame
+     * to start a new segment.
+- SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages
+     * from the source content. With each message, insert an IDR frame but don't start
+     * a new segment.
+- NONE: Don't generate a sparse track for any outputs in this
+     * output group.
      */
     inline bool SparseTrackTypeHasBeenSet() const { return m_sparseTrackTypeHasBeenSet; }
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in
-     * this group of MS-Smooth outputs. scte35WithoutSegmentation is the same as
-     * scte35, except EML will not start a new segment at a SCTE-35 marker. It will
-     * still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track:
+- SCTE35: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame
+     * to start a new segment.
+- SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages
+     * from the source content. With each message, insert an IDR frame but don't start
+     * a new segment.
+- NONE: Don't generate a sparse track for any outputs in this
+     * output group.
      */
     inline void SetSparseTrackType(const SmoothGroupSparseTrackType& value) { m_sparseTrackTypeHasBeenSet = true; m_sparseTrackType = value; }
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in
-     * this group of MS-Smooth outputs. scte35WithoutSegmentation is the same as
-     * scte35, except EML will not start a new segment at a SCTE-35 marker. It will
-     * still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track:
+- SCTE35: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame
+     * to start a new segment.
+- SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages
+     * from the source content. With each message, insert an IDR frame but don't start
+     * a new segment.
+- NONE: Don't generate a sparse track for any outputs in this
+     * output group.
      */
     inline void SetSparseTrackType(SmoothGroupSparseTrackType&& value) { m_sparseTrackTypeHasBeenSet = true; m_sparseTrackType = std::move(value); }
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in
-     * this group of MS-Smooth outputs. scte35WithoutSegmentation is the same as
-     * scte35, except EML will not start a new segment at a SCTE-35 marker. It will
-     * still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track:
+- SCTE35: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame
+     * to start a new segment.
+- SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages
+     * from the source content. With each message, insert an IDR frame but don't start
+     * a new segment.
+- NONE: Don't generate a sparse track for any outputs in this
+     * output group.
      */
     inline MsSmoothGroupSettings& WithSparseTrackType(const SmoothGroupSparseTrackType& value) { SetSparseTrackType(value); return *this;}
 
     /**
-     * If set to scte35, use incoming SCTE-35 messages to generate a sparse track in
-     * this group of MS-Smooth outputs. scte35WithoutSegmentation is the same as
-     * scte35, except EML will not start a new segment at a SCTE-35 marker. It will
-     * still encode an IDR frame at a SCTE-35 marker.
+     * Identifies the type of data to place in the sparse track:
+- SCTE35: Insert
+     * SCTE-35 messages from the source content. With each message, insert an IDR frame
+     * to start a new segment.
+- SCTE35_WITHOUT_SEGMENTATION: Insert SCTE-35 messages
+     * from the source content. With each message, insert an IDR frame but don't start
+     * a new segment.
+- NONE: Don't generate a sparse track for any outputs in this
+     * output group.
      */
     inline MsSmoothGroupSettings& WithSparseTrackType(SmoothGroupSparseTrackType&& value) { SetSparseTrackType(std::move(value)); return *this;}
 

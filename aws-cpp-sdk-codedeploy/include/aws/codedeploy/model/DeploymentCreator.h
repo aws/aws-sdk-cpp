@@ -28,7 +28,10 @@ namespace Model
     NOT_SET,
     user,
     autoscaling,
-    codeDeployRollback
+    codeDeployRollback,
+    CodeDeploy,
+    CloudFormation,
+    CloudFormationRollback
   };
 
 namespace DeploymentCreatorMapper

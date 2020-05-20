@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -145,7 +145,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -170,7 +170,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -195,7 +195,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -220,7 +220,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -245,7 +245,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -270,7 +270,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -295,7 +295,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -320,7 +320,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -345,7 +345,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -370,7 +370,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource
@@ -395,7 +395,7 @@ namespace Model
     /**
      * <p>A set of metadata key-value pairs. Contains information, such as a resource
      * name, required to restore a recovery point.</p> <p> You can get configuration
-     * metadata about a resource at the time it was backed-up by calling
+     * metadata about a resource at the time it was backed up by calling
      * <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to
      * those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
      * to restore a resource. For example, you might need to provide a new resource

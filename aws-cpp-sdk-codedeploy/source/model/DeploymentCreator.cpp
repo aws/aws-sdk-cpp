@@ -33,6 +33,9 @@ namespace Aws
         static const int user_HASH = HashingUtils::HashString("user");
         static const int autoscaling_HASH = HashingUtils::HashString("autoscaling");
         static const int codeDeployRollback_HASH = HashingUtils::HashString("codeDeployRollback");
+        static const int CodeDeploy_HASH = HashingUtils::HashString("CodeDeploy");
+        static const int CloudFormation_HASH = HashingUtils::HashString("CloudFormation");
+        static const int CloudFormationRollback_HASH = HashingUtils::HashString("CloudFormationRollback");
 
 
         DeploymentCreator GetDeploymentCreatorForName(const Aws::String& name)
@@ -49,6 +52,18 @@ namespace Aws
           else if (hashCode == codeDeployRollback_HASH)
           {
             return DeploymentCreator::codeDeployRollback;
+          }
+          else if (hashCode == CodeDeploy_HASH)
+          {
+            return DeploymentCreator::CodeDeploy;
+          }
+          else if (hashCode == CloudFormation_HASH)
+          {
+            return DeploymentCreator::CloudFormation;
+          }
+          else if (hashCode == CloudFormationRollback_HASH)
+          {
+            return DeploymentCreator::CloudFormationRollback;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +85,12 @@ namespace Aws
             return "autoscaling";
           case DeploymentCreator::codeDeployRollback:
             return "codeDeployRollback";
+          case DeploymentCreator::CodeDeploy:
+            return "CodeDeploy";
+          case DeploymentCreator::CloudFormation:
+            return "CloudFormation";
+          case DeploymentCreator::CloudFormationRollback:
+            return "CloudFormationRollback";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

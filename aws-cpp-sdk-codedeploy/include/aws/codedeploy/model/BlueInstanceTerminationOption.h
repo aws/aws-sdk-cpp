@@ -52,55 +52,55 @@ namespace Model
 
     /**
      * <p>The action to take on instances in the original environment after a
-     * successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are
-     * terminated after a specified wait time.</p> </li> <li> <p>KEEP_ALIVE: Instances
-     * are left running after they are deregistered from the load balancer and removed
-     * from the deployment group.</p> </li> </ul>
+     * successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>:
+     * Instances are terminated after a specified wait time.</p> </li> <li> <p>
+     * <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered
+     * from the load balancer and removed from the deployment group.</p> </li> </ul>
      */
     inline const InstanceAction& GetAction() const{ return m_action; }
 
     /**
      * <p>The action to take on instances in the original environment after a
-     * successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are
-     * terminated after a specified wait time.</p> </li> <li> <p>KEEP_ALIVE: Instances
-     * are left running after they are deregistered from the load balancer and removed
-     * from the deployment group.</p> </li> </ul>
+     * successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>:
+     * Instances are terminated after a specified wait time.</p> </li> <li> <p>
+     * <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered
+     * from the load balancer and removed from the deployment group.</p> </li> </ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action to take on instances in the original environment after a
-     * successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are
-     * terminated after a specified wait time.</p> </li> <li> <p>KEEP_ALIVE: Instances
-     * are left running after they are deregistered from the load balancer and removed
-     * from the deployment group.</p> </li> </ul>
+     * successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>:
+     * Instances are terminated after a specified wait time.</p> </li> <li> <p>
+     * <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered
+     * from the load balancer and removed from the deployment group.</p> </li> </ul>
      */
     inline void SetAction(const InstanceAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
      * <p>The action to take on instances in the original environment after a
-     * successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are
-     * terminated after a specified wait time.</p> </li> <li> <p>KEEP_ALIVE: Instances
-     * are left running after they are deregistered from the load balancer and removed
-     * from the deployment group.</p> </li> </ul>
+     * successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>:
+     * Instances are terminated after a specified wait time.</p> </li> <li> <p>
+     * <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered
+     * from the load balancer and removed from the deployment group.</p> </li> </ul>
      */
     inline void SetAction(InstanceAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
      * <p>The action to take on instances in the original environment after a
-     * successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are
-     * terminated after a specified wait time.</p> </li> <li> <p>KEEP_ALIVE: Instances
-     * are left running after they are deregistered from the load balancer and removed
-     * from the deployment group.</p> </li> </ul>
+     * successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>:
+     * Instances are terminated after a specified wait time.</p> </li> <li> <p>
+     * <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered
+     * from the load balancer and removed from the deployment group.</p> </li> </ul>
      */
     inline BlueInstanceTerminationOption& WithAction(const InstanceAction& value) { SetAction(value); return *this;}
 
     /**
      * <p>The action to take on instances in the original environment after a
-     * successful blue/green deployment.</p> <ul> <li> <p>TERMINATE: Instances are
-     * terminated after a specified wait time.</p> </li> <li> <p>KEEP_ALIVE: Instances
-     * are left running after they are deregistered from the load balancer and removed
-     * from the deployment group.</p> </li> </ul>
+     * successful blue/green deployment.</p> <ul> <li> <p> <code>TERMINATE</code>:
+     * Instances are terminated after a specified wait time.</p> </li> <li> <p>
+     * <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered
+     * from the load balancer and removed from the deployment group.</p> </li> </ul>
      */
     inline BlueInstanceTerminationOption& WithAction(InstanceAction&& value) { SetAction(std::move(value)); return *this;}
 

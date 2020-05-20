@@ -35,7 +35,9 @@ Item::Item() :
     m_endTimeHasBeenSet(false),
     m_type(ItemType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_vocabularyFilterMatch(false),
+    m_vocabularyFilterMatchHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ Item::Item(JsonView jsonValue) :
     m_endTimeHasBeenSet(false),
     m_type(ItemType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_vocabularyFilterMatch(false),
+    m_vocabularyFilterMatchHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +85,13 @@ Item& Item::operator =(JsonView jsonValue)
     m_contentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VocabularyFilterMatch"))
+  {
+    m_vocabularyFilterMatch = jsonValue.GetBool("VocabularyFilterMatch");
+
+    m_vocabularyFilterMatchHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +119,12 @@ JsonValue Item::Jsonize() const
   if(m_contentHasBeenSet)
   {
    payload.WithString("Content", m_content);
+
+  }
+
+  if(m_vocabularyFilterMatchHasBeenSet)
+  {
+   payload.WithBool("VocabularyFilterMatch", m_vocabularyFilterMatch);
 
   }
 

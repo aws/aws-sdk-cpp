@@ -34,7 +34,8 @@ Severity::Severity() :
     m_label(SeverityLabel::NOT_SET),
     m_labelHasBeenSet(false),
     m_normalized(0),
-    m_normalizedHasBeenSet(false)
+    m_normalizedHasBeenSet(false),
+    m_originalHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Severity::Severity(JsonView jsonValue) :
     m_label(SeverityLabel::NOT_SET),
     m_labelHasBeenSet(false),
     m_normalized(0),
-    m_normalizedHasBeenSet(false)
+    m_normalizedHasBeenSet(false),
+    m_originalHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -72,6 +74,13 @@ Severity& Severity::operator =(JsonView jsonValue)
     m_normalizedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Original"))
+  {
+    m_original = jsonValue.GetString("Original");
+
+    m_originalHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +102,12 @@ JsonValue Severity::Jsonize() const
   if(m_normalizedHasBeenSet)
   {
    payload.WithInteger("Normalized", m_normalized);
+
+  }
+
+  if(m_originalHasBeenSet)
+  {
+   payload.WithString("Original", m_original);
 
   }
 

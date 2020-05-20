@@ -33,7 +33,8 @@ DeploymentTarget::DeploymentTarget() :
     m_deploymentTargetTypeHasBeenSet(false),
     m_instanceTargetHasBeenSet(false),
     m_lambdaTargetHasBeenSet(false),
-    m_ecsTargetHasBeenSet(false)
+    m_ecsTargetHasBeenSet(false),
+    m_cloudFormationTargetHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ DeploymentTarget::DeploymentTarget(JsonView jsonValue) :
     m_deploymentTargetTypeHasBeenSet(false),
     m_instanceTargetHasBeenSet(false),
     m_lambdaTargetHasBeenSet(false),
-    m_ecsTargetHasBeenSet(false)
+    m_ecsTargetHasBeenSet(false),
+    m_cloudFormationTargetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ DeploymentTarget& DeploymentTarget::operator =(JsonView jsonValue)
     m_ecsTargetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cloudFormationTarget"))
+  {
+    m_cloudFormationTarget = jsonValue.GetObject("cloudFormationTarget");
+
+    m_cloudFormationTargetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +113,12 @@ JsonValue DeploymentTarget::Jsonize() const
   if(m_ecsTargetHasBeenSet)
   {
    payload.WithObject("ecsTarget", m_ecsTarget.Jsonize());
+
+  }
+
+  if(m_cloudFormationTargetHasBeenSet)
+  {
+   payload.WithObject("cloudFormationTarget", m_cloudFormationTarget.Jsonize());
 
   }
 

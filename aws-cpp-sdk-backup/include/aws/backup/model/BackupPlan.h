@@ -95,49 +95,49 @@ namespace Model
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
-     * scheduled task that is used to back up a selection of resources.</p>
+     * scheduled task that is used to back up a selection of resources. </p>
      */
     inline const Aws::Vector<BackupRule>& GetRules() const{ return m_rules; }
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
-     * scheduled task that is used to back up a selection of resources.</p>
+     * scheduled task that is used to back up a selection of resources. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
-     * scheduled task that is used to back up a selection of resources.</p>
+     * scheduled task that is used to back up a selection of resources. </p>
      */
     inline void SetRules(const Aws::Vector<BackupRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
-     * scheduled task that is used to back up a selection of resources.</p>
+     * scheduled task that is used to back up a selection of resources. </p>
      */
     inline void SetRules(Aws::Vector<BackupRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
-     * scheduled task that is used to back up a selection of resources.</p>
+     * scheduled task that is used to back up a selection of resources. </p>
      */
     inline BackupPlan& WithRules(const Aws::Vector<BackupRule>& value) { SetRules(value); return *this;}
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
-     * scheduled task that is used to back up a selection of resources.</p>
+     * scheduled task that is used to back up a selection of resources. </p>
      */
     inline BackupPlan& WithRules(Aws::Vector<BackupRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
-     * scheduled task that is used to back up a selection of resources.</p>
+     * scheduled task that is used to back up a selection of resources. </p>
      */
     inline BackupPlan& AddRules(const BackupRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
-     * scheduled task that is used to back up a selection of resources.</p>
+     * scheduled task that is used to back up a selection of resources. </p>
      */
     inline BackupPlan& AddRules(BackupRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

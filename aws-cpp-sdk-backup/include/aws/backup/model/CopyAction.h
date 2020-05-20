@@ -70,56 +70,56 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetDestinationBackupVaultArn() const{ return m_destinationBackupVaultArn; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline bool DestinationBackupVaultArnHasBeenSet() const { return m_destinationBackupVaultArnHasBeenSet; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline void SetDestinationBackupVaultArn(const Aws::String& value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn = value; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline void SetDestinationBackupVaultArn(Aws::String&& value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn = std::move(value); }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline void SetDestinationBackupVaultArn(const char* value) { m_destinationBackupVaultArnHasBeenSet = true; m_destinationBackupVaultArn.assign(value); }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline CopyAction& WithDestinationBackupVaultArn(const Aws::String& value) { SetDestinationBackupVaultArn(value); return *this;}
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline CopyAction& WithDestinationBackupVaultArn(Aws::String&& value) { SetDestinationBackupVaultArn(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup
      * vault for the copied backup. For example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault.</p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline CopyAction& WithDestinationBackupVaultArn(const char* value) { SetDestinationBackupVaultArn(value); return *this;}
 

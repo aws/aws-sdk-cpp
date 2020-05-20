@@ -257,47 +257,51 @@ namespace Model
 
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline StartBackupJobRequest& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline long long GetCompleteWindowMinutes() const{ return m_completeWindowMinutes; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline bool CompleteWindowMinutesHasBeenSet() const { return m_completeWindowMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline void SetCompleteWindowMinutes(long long value) { m_completeWindowMinutesHasBeenSet = true; m_completeWindowMinutes = value; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline StartBackupJobRequest& WithCompleteWindowMinutes(long long value) { SetCompleteWindowMinutes(value); return *this;}
 

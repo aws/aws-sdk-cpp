@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     InstanceTarget,
     LambdaTarget,
-    ECSTarget
+    ECSTarget,
+    CloudFormationTarget
   };
 
 namespace DeploymentTargetTypeMapper

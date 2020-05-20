@@ -36,7 +36,7 @@ namespace CodeDeploy
 namespace Model
 {
   /**
-   * <p>Represents the output of a ListGitHubAccountTokenNames
+   * <p>Represents the output of a <code>ListGitHubAccountTokenNames</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListGitHubAccountTokenNamesOutput">AWS
    * API Reference</a></p>
@@ -92,50 +92,50 @@ namespace Model
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent ListGitHubAccountTokenNames call to return the
-     * next set of names in the list. </p>
+     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
+     * return the next set of names in the list. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent ListGitHubAccountTokenNames call to return the
-     * next set of names in the list. </p>
+     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
+     * return the next set of names in the list. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent ListGitHubAccountTokenNames call to return the
-     * next set of names in the list. </p>
+     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
+     * return the next set of names in the list. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent ListGitHubAccountTokenNames call to return the
-     * next set of names in the list. </p>
+     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
+     * return the next set of names in the list. </p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent ListGitHubAccountTokenNames call to return the
-     * next set of names in the list. </p>
+     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
+     * return the next set of names in the list. </p>
      */
     inline ListGitHubAccountTokenNamesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent ListGitHubAccountTokenNames call to return the
-     * next set of names in the list. </p>
+     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
+     * return the next set of names in the list. </p>
      */
     inline ListGitHubAccountTokenNamesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If a large amount of information is returned, an identifier is also returned.
-     * It can be used in a subsequent ListGitHubAccountTokenNames call to return the
-     * next set of names in the list. </p>
+     * It can be used in a subsequent <code>ListGitHubAccountTokenNames</code> call to
+     * return the next set of names in the list. </p>
      */
     inline ListGitHubAccountTokenNamesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

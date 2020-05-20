@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a DeregisterOnPremisesInstance
+   * <p>Represents the input of a <code>DeregisterOnPremisesInstance</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/DeregisterOnPremisesInstanceInput">AWS
    * API Reference</a></p>

@@ -20,6 +20,7 @@
 #include <aws/medialive/model/InputDenoiseFilter.h>
 #include <aws/medialive/model/InputFilter.h>
 #include <aws/medialive/model/NetworkInputSettings.h>
+#include <aws/medialive/model/Smpte2038DataPreference.h>
 #include <aws/medialive/model/InputSourceEndBehavior.h>
 #include <aws/medialive/model/VideoSelector.h>
 #include <aws/medialive/model/AudioSelector.h>
@@ -328,6 +329,73 @@ namespace Model
 
 
     /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline const Smpte2038DataPreference& GetSmpte2038DataPreference() const{ return m_smpte2038DataPreference; }
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline bool Smpte2038DataPreferenceHasBeenSet() const { return m_smpte2038DataPreferenceHasBeenSet; }
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline void SetSmpte2038DataPreference(const Smpte2038DataPreference& value) { m_smpte2038DataPreferenceHasBeenSet = true; m_smpte2038DataPreference = value; }
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline void SetSmpte2038DataPreference(Smpte2038DataPreference&& value) { m_smpte2038DataPreferenceHasBeenSet = true; m_smpte2038DataPreference = std::move(value); }
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline InputSettings& WithSmpte2038DataPreference(const Smpte2038DataPreference& value) { SetSmpte2038DataPreference(value); return *this;}
+
+    /**
+     * Specifies whether to extract applicable ancillary data from a SMPTE-2038 source
+     * in this input. Applicable data types are captions, timecode, AFD, and SCTE-104
+     * messages.
+- PREFER: Extract from SMPTE-2038 if present in this input, otherwise
+     * extract from another source (if any).
+- IGNORE: Never extract any ancillary data
+     * from SMPTE-2038.
+     */
+    inline InputSettings& WithSmpte2038DataPreference(Smpte2038DataPreference&& value) { SetSmpte2038DataPreference(std::move(value)); return *this;}
+
+
+    /**
      * Loop input if it is a file. This allows a file input to be streamed
      * indefinitely.
      */
@@ -422,6 +490,9 @@ namespace Model
 
     NetworkInputSettings m_networkInputSettings;
     bool m_networkInputSettingsHasBeenSet;
+
+    Smpte2038DataPreference m_smpte2038DataPreference;
+    bool m_smpte2038DataPreferenceHasBeenSet;
 
     InputSourceEndBehavior m_sourceEndBehavior;
     bool m_sourceEndBehaviorHasBeenSet;

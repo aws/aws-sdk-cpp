@@ -144,42 +144,42 @@ namespace Model
 
 
     /**
-     * <p> The ARN of the target. </p>
+     * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
-     * <p> The ARN of the target. </p>
+     * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
-     * <p> The ARN of the target. </p>
+     * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
-     * <p> The ARN of the target. </p>
+     * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
-     * <p> The ARN of the target. </p>
+     * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
-     * <p> The ARN of the target. </p>
+     * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
     inline LambdaTarget& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
-     * <p> The ARN of the target. </p>
+     * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
     inline LambdaTarget& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of the target. </p>
+     * <p> The Amazon Resource Name (ARN) of the target. </p>
      */
     inline LambdaTarget& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 

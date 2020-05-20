@@ -40,6 +40,8 @@ InputSettings::InputSettings() :
     m_inputFilter(InputFilter::NOT_SET),
     m_inputFilterHasBeenSet(false),
     m_networkInputSettingsHasBeenSet(false),
+    m_smpte2038DataPreference(Smpte2038DataPreference::NOT_SET),
+    m_smpte2038DataPreferenceHasBeenSet(false),
     m_sourceEndBehavior(InputSourceEndBehavior::NOT_SET),
     m_sourceEndBehaviorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
@@ -58,6 +60,8 @@ InputSettings::InputSettings(JsonView jsonValue) :
     m_inputFilter(InputFilter::NOT_SET),
     m_inputFilterHasBeenSet(false),
     m_networkInputSettingsHasBeenSet(false),
+    m_smpte2038DataPreference(Smpte2038DataPreference::NOT_SET),
+    m_smpte2038DataPreferenceHasBeenSet(false),
     m_sourceEndBehavior(InputSourceEndBehavior::NOT_SET),
     m_sourceEndBehaviorHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
@@ -120,6 +124,13 @@ InputSettings& InputSettings::operator =(JsonView jsonValue)
     m_networkInputSettings = jsonValue.GetObject("networkInputSettings");
 
     m_networkInputSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("smpte2038DataPreference"))
+  {
+    m_smpte2038DataPreference = Smpte2038DataPreferenceMapper::GetSmpte2038DataPreferenceForName(jsonValue.GetString("smpte2038DataPreference"));
+
+    m_smpte2038DataPreferenceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceEndBehavior"))
@@ -190,6 +201,11 @@ JsonValue InputSettings::Jsonize() const
   {
    payload.WithObject("networkInputSettings", m_networkInputSettings.Jsonize());
 
+  }
+
+  if(m_smpte2038DataPreferenceHasBeenSet)
+  {
+   payload.WithString("smpte2038DataPreference", Smpte2038DataPreferenceMapper::GetNameForSmpte2038DataPreference(m_smpte2038DataPreference));
   }
 
   if(m_sourceEndBehaviorHasBeenSet)

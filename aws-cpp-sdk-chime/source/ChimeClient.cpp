@@ -80,6 +80,7 @@
 #include <aws/chime/model/GetPhoneNumberRequest.h>
 #include <aws/chime/model/GetPhoneNumberOrderRequest.h>
 #include <aws/chime/model/GetProxySessionRequest.h>
+#include <aws/chime/model/GetRetentionSettingsRequest.h>
 #include <aws/chime/model/GetRoomRequest.h>
 #include <aws/chime/model/GetUserRequest.h>
 #include <aws/chime/model/GetUserSettingsRequest.h>
@@ -110,6 +111,7 @@
 #include <aws/chime/model/ListVoiceConnectorsRequest.h>
 #include <aws/chime/model/LogoutUserRequest.h>
 #include <aws/chime/model/PutEventsConfigurationRequest.h>
+#include <aws/chime/model/PutRetentionSettingsRequest.h>
 #include <aws/chime/model/PutVoiceConnectorLoggingConfigurationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorOriginationRequest.h>
 #include <aws/chime/model/PutVoiceConnectorProxyRequest.h>
@@ -2437,6 +2439,48 @@ void ChimeClient::GetProxySessionAsyncHelper(const GetProxySessionRequest& reque
   handler(this, request, GetProxySession(request), context);
 }
 
+GetRetentionSettingsOutcome ChimeClient::GetRetentionSettings(const GetRetentionSettingsRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetRetentionSettings", "Required field: AccountId, is not set");
+    return GetRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAccountId();
+  ss << "/retention-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetRetentionSettingsOutcome(GetRetentionSettingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetRetentionSettingsOutcome(outcome.GetError());
+  }
+}
+
+GetRetentionSettingsOutcomeCallable ChimeClient::GetRetentionSettingsCallable(const GetRetentionSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetRetentionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetRetentionSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetRetentionSettingsAsync(const GetRetentionSettingsRequest& request, const GetRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetRetentionSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetRetentionSettingsAsyncHelper(const GetRetentionSettingsRequest& request, const GetRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetRetentionSettings(request), context);
+}
+
 GetRoomOutcome ChimeClient::GetRoom(const GetRoomRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -3699,6 +3743,48 @@ void ChimeClient::PutEventsConfigurationAsync(const PutEventsConfigurationReques
 void ChimeClient::PutEventsConfigurationAsyncHelper(const PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEventsConfiguration(request), context);
+}
+
+PutRetentionSettingsOutcome ChimeClient::PutRetentionSettings(const PutRetentionSettingsRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutRetentionSettings", "Required field: AccountId, is not set");
+    return PutRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAccountId();
+  ss << "/retention-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutRetentionSettingsOutcome(PutRetentionSettingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutRetentionSettingsOutcome(outcome.GetError());
+  }
+}
+
+PutRetentionSettingsOutcomeCallable ChimeClient::PutRetentionSettingsCallable(const PutRetentionSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRetentionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRetentionSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::PutRetentionSettingsAsync(const PutRetentionSettingsRequest& request, const PutRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRetentionSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::PutRetentionSettingsAsyncHelper(const PutRetentionSettingsRequest& request, const PutRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRetentionSettings(request), context);
 }
 
 PutVoiceConnectorLoggingConfigurationOutcome ChimeClient::PutVoiceConnectorLoggingConfiguration(const PutVoiceConnectorLoggingConfigurationRequest& request) const

@@ -99,42 +99,42 @@ namespace Model
 
 
     /**
-     * <p>The action to perform if none of the Rules contained in the WebACL match.</p>
+     * <p>The action to perform if none of the rules contained in the WebACL match.</p>
      */
     inline const Aws::String& GetDefaultAction() const{ return m_defaultAction; }
 
     /**
-     * <p>The action to perform if none of the Rules contained in the WebACL match.</p>
+     * <p>The action to perform if none of the rules contained in the WebACL match.</p>
      */
     inline bool DefaultActionHasBeenSet() const { return m_defaultActionHasBeenSet; }
 
     /**
-     * <p>The action to perform if none of the Rules contained in the WebACL match.</p>
+     * <p>The action to perform if none of the rules contained in the WebACL match.</p>
      */
     inline void SetDefaultAction(const Aws::String& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
 
     /**
-     * <p>The action to perform if none of the Rules contained in the WebACL match.</p>
+     * <p>The action to perform if none of the rules contained in the WebACL match.</p>
      */
     inline void SetDefaultAction(Aws::String&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
 
     /**
-     * <p>The action to perform if none of the Rules contained in the WebACL match.</p>
+     * <p>The action to perform if none of the rules contained in the WebACL match.</p>
      */
     inline void SetDefaultAction(const char* value) { m_defaultActionHasBeenSet = true; m_defaultAction.assign(value); }
 
     /**
-     * <p>The action to perform if none of the Rules contained in the WebACL match.</p>
+     * <p>The action to perform if none of the rules contained in the WebACL match.</p>
      */
     inline AwsWafWebAclDetails& WithDefaultAction(const Aws::String& value) { SetDefaultAction(value); return *this;}
 
     /**
-     * <p>The action to perform if none of the Rules contained in the WebACL match.</p>
+     * <p>The action to perform if none of the rules contained in the WebACL match.</p>
      */
     inline AwsWafWebAclDetails& WithDefaultAction(Aws::String&& value) { SetDefaultAction(std::move(value)); return *this;}
 
     /**
-     * <p>The action to perform if none of the Rules contained in the WebACL match.</p>
+     * <p>The action to perform if none of the rules contained in the WebACL match.</p>
      */
     inline AwsWafWebAclDetails& WithDefaultAction(const char* value) { SetDefaultAction(value); return *this;}
 

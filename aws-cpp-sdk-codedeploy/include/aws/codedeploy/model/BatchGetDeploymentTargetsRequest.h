@@ -98,7 +98,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetTargetIds() const{ return m_targetIds; }
 
@@ -114,7 +116,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline bool TargetIdsHasBeenSet() const { return m_targetIdsHasBeenSet; }
 
@@ -130,7 +134,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline void SetTargetIds(const Aws::Vector<Aws::String>& value) { m_targetIdsHasBeenSet = true; m_targetIds = value; }
 
@@ -146,7 +152,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline void SetTargetIds(Aws::Vector<Aws::String>&& value) { m_targetIdsHasBeenSet = true; m_targetIds = std::move(value); }
 
@@ -162,7 +170,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline BatchGetDeploymentTargetsRequest& WithTargetIds(const Aws::Vector<Aws::String>& value) { SetTargetIds(value); return *this;}
 
@@ -178,7 +188,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline BatchGetDeploymentTargetsRequest& WithTargetIds(Aws::Vector<Aws::String>&& value) { SetTargetIds(std::move(value)); return *this;}
 
@@ -194,7 +206,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline BatchGetDeploymentTargetsRequest& AddTargetIds(const Aws::String& value) { m_targetIdsHasBeenSet = true; m_targetIds.push_back(value); return *this; }
 
@@ -210,7 +224,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline BatchGetDeploymentTargetsRequest& AddTargetIds(Aws::String&& value) { m_targetIdsHasBeenSet = true; m_targetIds.push_back(std::move(value)); return *this; }
 
@@ -226,7 +242,9 @@ namespace Model
      * deployments that use the Amazon ECS compute platform, the target IDs are pairs
      * of Amazon ECS clusters and services specified using the format
      * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. Their target type is
-     * <code>ecsTarget</code>. </p> </li> </ul>
+     * <code>ecsTarget</code>. </p> </li> <li> <p> For deployments that are deployed
+     * with AWS CloudFormation, the target IDs are CloudFormation stack IDs. Their
+     * target type is <code>cloudFormationTarget</code>. </p> </li> </ul>
      */
     inline BatchGetDeploymentTargetsRequest& AddTargetIds(const char* value) { m_targetIdsHasBeenSet = true; m_targetIds.push_back(value); return *this; }
 

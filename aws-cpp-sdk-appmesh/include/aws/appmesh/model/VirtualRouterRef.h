@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -87,6 +88,44 @@ namespace Model
      * <p>The full Amazon Resource Name (ARN) for the virtual router.</p>
      */
     inline VirtualRouterRef& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    
+    inline VirtualRouterRef& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    
+    inline VirtualRouterRef& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+
+    
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    
+    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
+
+    
+    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
+
+    
+    inline VirtualRouterRef& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
+
+    
+    inline VirtualRouterRef& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
 
     /**
@@ -214,8 +253,8 @@ namespace Model
     /**
      * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
      * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+               the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with Shared Meshes</a>.</p>
      */
@@ -224,8 +263,8 @@ namespace Model
     /**
      * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
      * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+               the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with Shared Meshes</a>.</p>
      */
@@ -234,8 +273,8 @@ namespace Model
     /**
      * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
      * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+               the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with Shared Meshes</a>.</p>
      */
@@ -244,8 +283,8 @@ namespace Model
     /**
      * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
      * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+               the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with Shared Meshes</a>.</p>
      */
@@ -254,8 +293,8 @@ namespace Model
     /**
      * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
      * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+               the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with Shared Meshes</a>.</p>
      */
@@ -264,8 +303,8 @@ namespace Model
     /**
      * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
      * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+               the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with Shared Meshes</a>.</p>
      */
@@ -274,8 +313,8 @@ namespace Model
     /**
      * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
      * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+               the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with Shared Meshes</a>.</p>
      */
@@ -284,12 +323,25 @@ namespace Model
     /**
      * <p>The AWS IAM account ID of the resource owner. If the account ID is not your
      * own, then it's
-               the ID of the mesh owner, or another account that
-     * the mesh is shared with. For more information about mesh sharing, see <a
+               the ID of the mesh owner or of another account
+     * that the mesh is shared with. For more information about mesh sharing, see <a
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with Shared Meshes</a>.</p>
      */
     inline VirtualRouterRef& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
+
+
+    
+    inline long long GetVersion() const{ return m_version; }
+
+    
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    
+    inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
+
+    
+    inline VirtualRouterRef& WithVersion(long long value) { SetVersion(value); return *this;}
 
 
     /**
@@ -337,6 +389,12 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet;
 
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet;
+
+    Aws::Utils::DateTime m_lastUpdatedAt;
+    bool m_lastUpdatedAtHasBeenSet;
+
     Aws::String m_meshName;
     bool m_meshNameHasBeenSet;
 
@@ -345,6 +403,9 @@ namespace Model
 
     Aws::String m_resourceOwner;
     bool m_resourceOwnerHasBeenSet;
+
+    long long m_version;
+    bool m_versionHasBeenSet;
 
     Aws::String m_virtualRouterName;
     bool m_virtualRouterNameHasBeenSet;

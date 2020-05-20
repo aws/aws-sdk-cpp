@@ -228,19 +228,19 @@ namespace Model
 
     /**
      * <p>The type of build environment to use for related builds.</p> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * environment type <code>ARM_CONTAINER</code> is available only in Regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe
      * (Frankfurt).</p> <p>The environment type <code>LINUX_CONTAINER</code> with
-     * compute type build.general1.2xlarge is available only in regions US East (N.
+     * compute type build.general1.2xlarge is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
      * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>Valid values:
      * <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
      * <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
@@ -249,19 +249,19 @@ namespace Model
 
     /**
      * <p>The type of build environment to use for related builds.</p> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * environment type <code>ARM_CONTAINER</code> is available only in Regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe
      * (Frankfurt).</p> <p>The environment type <code>LINUX_CONTAINER</code> with
-     * compute type build.general1.2xlarge is available only in regions US East (N.
+     * compute type build.general1.2xlarge is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
      * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>Valid values:
      * <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
      * <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
@@ -270,19 +270,19 @@ namespace Model
 
     /**
      * <p>The type of build environment to use for related builds.</p> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * environment type <code>ARM_CONTAINER</code> is available only in Regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe
      * (Frankfurt).</p> <p>The environment type <code>LINUX_CONTAINER</code> with
-     * compute type build.general1.2xlarge is available only in regions US East (N.
+     * compute type build.general1.2xlarge is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
      * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>Valid values:
      * <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
      * <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
@@ -291,19 +291,19 @@ namespace Model
 
     /**
      * <p>The type of build environment to use for related builds.</p> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * environment type <code>ARM_CONTAINER</code> is available only in Regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe
      * (Frankfurt).</p> <p>The environment type <code>LINUX_CONTAINER</code> with
-     * compute type build.general1.2xlarge is available only in regions US East (N.
+     * compute type build.general1.2xlarge is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
      * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>Valid values:
      * <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
      * <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
@@ -312,19 +312,19 @@ namespace Model
 
     /**
      * <p>The type of build environment to use for related builds.</p> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * environment type <code>ARM_CONTAINER</code> is available only in Regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe
      * (Frankfurt).</p> <p>The environment type <code>LINUX_CONTAINER</code> with
-     * compute type build.general1.2xlarge is available only in regions US East (N.
+     * compute type build.general1.2xlarge is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
      * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>Valid values:
      * <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
      * <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
@@ -333,19 +333,19 @@ namespace Model
 
     /**
      * <p>The type of build environment to use for related builds.</p> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * environment type <code>ARM_CONTAINER</code> is available only in Regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe
      * (Frankfurt).</p> <p>The environment type <code>LINUX_CONTAINER</code> with
-     * compute type build.general1.2xlarge is available only in regions US East (N.
+     * compute type build.general1.2xlarge is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
      * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>Valid values:
      * <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
      * <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
@@ -354,19 +354,19 @@ namespace Model
 
     /**
      * <p>The type of build environment to use for related builds.</p> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * environment type <code>ARM_CONTAINER</code> is available only in Regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe
      * (Frankfurt).</p> <p>The environment type <code>LINUX_CONTAINER</code> with
-     * compute type build.general1.2xlarge is available only in regions US East (N.
+     * compute type build.general1.2xlarge is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
      * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>Valid values:
      * <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
      * <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>
@@ -375,19 +375,19 @@ namespace Model
 
     /**
      * <p>The type of build environment to use for related builds.</p> <p>The
-     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * environment type <code>ARM_CONTAINER</code> is available only in Regions US East
      * (N. Virginia), US East (Ohio), US West (Oregon), Europe (Ireland), Asia Pacific
      * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and Europe
      * (Frankfurt).</p> <p>The environment type <code>LINUX_CONTAINER</code> with
-     * compute type build.general1.2xlarge is available only in regions US East (N.
+     * compute type build.general1.2xlarge is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
      * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>The environment type
-     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * <code>LINUX_GPU_CONTAINER</code> is available only in Regions US East (N.
      * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), Europe
      * (Ireland), Europe (London), Europe (Frankfurt), Asia Pacific (Tokyo), Asia
-     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China
+     * Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China
      * (Beijing), and China (Ningxia).</p> <p>Valid values:
      * <code>WINDOWS_CONTAINER</code> | <code>LINUX_CONTAINER</code> |
      * <code>LINUX_GPU_CONTAINER</code> | <code>ARM_CONTAINER</code> </p>

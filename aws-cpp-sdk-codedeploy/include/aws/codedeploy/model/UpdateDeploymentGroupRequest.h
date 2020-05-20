@@ -39,8 +39,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of an UpdateDeploymentGroup operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the input of an <code>UpdateDeploymentGroup</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/UpdateDeploymentGroupInput">AWS
    * API Reference</a></p>
    */
@@ -463,72 +463,72 @@ namespace Model
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
-     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
-     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline bool TriggerConfigurationsHasBeenSet() const { return m_triggerConfigurationsHasBeenSet; }
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
-     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline void SetTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
-     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline void SetTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = std::move(value); }
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
-     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline UpdateDeploymentGroupRequest& WithTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { SetTriggerConfigurations(value); return *this;}
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
-     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline UpdateDeploymentGroupRequest& WithTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { SetTriggerConfigurations(std::move(value)); return *this;}
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
-     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(const TriggerConfig& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
 
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
-     * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Edit
+     * a Trigger in a CodeDeploy Deployment Group</a> in the <i>AWS CodeDeploy User
+     * Guide</i>.</p>
      */
     inline UpdateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(std::move(value)); return *this; }
 

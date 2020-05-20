@@ -37,6 +37,7 @@ namespace Aws
         static const int URL_PULL_HASH = HashingUtils::HashString("URL_PULL");
         static const int MP4_FILE_HASH = HashingUtils::HashString("MP4_FILE");
         static const int MEDIACONNECT_HASH = HashingUtils::HashString("MEDIACONNECT");
+        static const int INPUT_DEVICE_HASH = HashingUtils::HashString("INPUT_DEVICE");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return InputType::MEDIACONNECT;
           }
+          else if (hashCode == INPUT_DEVICE_HASH)
+          {
+            return InputType::INPUT_DEVICE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +103,8 @@ namespace Aws
             return "MP4_FILE";
           case InputType::MEDIACONNECT:
             return "MEDIACONNECT";
+          case InputType::INPUT_DEVICE:
+            return "INPUT_DEVICE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -49,75 +49,99 @@ namespace Model
 
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality.
-     * This is most beneficial when using a noisy or compressed input source and low
-     * output bitrates.
+     * If you enable this filter, the results are the following:
+- If the source
+     * content is noisy (it contains excessive digital artifacts), the filter cleans up
+     * the source.
+- If the source content is already clean, the filter tends to
+     * decrease the bitrate, especially when the rate control mode is QVBR.
      */
     inline const TemporalFilterPostFilterSharpening& GetPostFilterSharpening() const{ return m_postFilterSharpening; }
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality.
-     * This is most beneficial when using a noisy or compressed input source and low
-     * output bitrates.
+     * If you enable this filter, the results are the following:
+- If the source
+     * content is noisy (it contains excessive digital artifacts), the filter cleans up
+     * the source.
+- If the source content is already clean, the filter tends to
+     * decrease the bitrate, especially when the rate control mode is QVBR.
      */
     inline bool PostFilterSharpeningHasBeenSet() const { return m_postFilterSharpeningHasBeenSet; }
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality.
-     * This is most beneficial when using a noisy or compressed input source and low
-     * output bitrates.
+     * If you enable this filter, the results are the following:
+- If the source
+     * content is noisy (it contains excessive digital artifacts), the filter cleans up
+     * the source.
+- If the source content is already clean, the filter tends to
+     * decrease the bitrate, especially when the rate control mode is QVBR.
      */
     inline void SetPostFilterSharpening(const TemporalFilterPostFilterSharpening& value) { m_postFilterSharpeningHasBeenSet = true; m_postFilterSharpening = value; }
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality.
-     * This is most beneficial when using a noisy or compressed input source and low
-     * output bitrates.
+     * If you enable this filter, the results are the following:
+- If the source
+     * content is noisy (it contains excessive digital artifacts), the filter cleans up
+     * the source.
+- If the source content is already clean, the filter tends to
+     * decrease the bitrate, especially when the rate control mode is QVBR.
      */
     inline void SetPostFilterSharpening(TemporalFilterPostFilterSharpening&& value) { m_postFilterSharpeningHasBeenSet = true; m_postFilterSharpening = std::move(value); }
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality.
-     * This is most beneficial when using a noisy or compressed input source and low
-     * output bitrates.
+     * If you enable this filter, the results are the following:
+- If the source
+     * content is noisy (it contains excessive digital artifacts), the filter cleans up
+     * the source.
+- If the source content is already clean, the filter tends to
+     * decrease the bitrate, especially when the rate control mode is QVBR.
      */
     inline TemporalFilterSettings& WithPostFilterSharpening(const TemporalFilterPostFilterSharpening& value) { SetPostFilterSharpening(value); return *this;}
 
     /**
-     * If set to "ENABLED," applies post-filter sharpening to improve visual quality.
-     * This is most beneficial when using a noisy or compressed input source and low
-     * output bitrates.
+     * If you enable this filter, the results are the following:
+- If the source
+     * content is noisy (it contains excessive digital artifacts), the filter cleans up
+     * the source.
+- If the source content is already clean, the filter tends to
+     * decrease the bitrate, especially when the rate control mode is QVBR.
      */
     inline TemporalFilterSettings& WithPostFilterSharpening(TemporalFilterPostFilterSharpening&& value) { SetPostFilterSharpening(std::move(value)); return *this;}
 
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength
+     * might take out good information, resulting in an image that is overly soft.
      */
     inline const TemporalFilterStrength& GetStrength() const{ return m_strength; }
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength
+     * might take out good information, resulting in an image that is overly soft.
      */
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength
+     * might take out good information, resulting in an image that is overly soft.
      */
     inline void SetStrength(const TemporalFilterStrength& value) { m_strengthHasBeenSet = true; m_strength = value; }
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength
+     * might take out good information, resulting in an image that is overly soft.
      */
     inline void SetStrength(TemporalFilterStrength&& value) { m_strengthHasBeenSet = true; m_strength = std::move(value); }
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength
+     * might take out good information, resulting in an image that is overly soft.
      */
     inline TemporalFilterSettings& WithStrength(const TemporalFilterStrength& value) { SetStrength(value); return *this;}
 
     /**
-     * Filter strength. A higher value produces stronger filtering.
+     * Choose a filter strength. We recommend a strength of 1 or 2. A higher strength
+     * might take out good information, resulting in an image that is overly soft.
      */
     inline TemporalFilterSettings& WithStrength(TemporalFilterStrength&& value) { SetStrength(std::move(value)); return *this;}
 

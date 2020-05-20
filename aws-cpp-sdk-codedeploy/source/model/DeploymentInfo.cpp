@@ -62,7 +62,8 @@ DeploymentInfo::DeploymentInfo() :
     m_fileExistsBehaviorHasBeenSet(false),
     m_deploymentStatusMessagesHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
+    m_computePlatformHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
 }
 
@@ -100,7 +101,8 @@ DeploymentInfo::DeploymentInfo(JsonView jsonValue) :
     m_fileExistsBehaviorHasBeenSet(false),
     m_deploymentStatusMessagesHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
+    m_computePlatformHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -299,6 +301,13 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
     m_computePlatformHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+
+    m_externalIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -464,6 +473,12 @@ JsonValue DeploymentInfo::Jsonize() const
   if(m_computePlatformHasBeenSet)
   {
    payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
+
   }
 
   return payload;

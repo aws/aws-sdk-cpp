@@ -29,6 +29,7 @@ namespace Model
     Created,
     Queued,
     InProgress,
+    Baking,
     Succeeded,
     Failed,
     Stopped,

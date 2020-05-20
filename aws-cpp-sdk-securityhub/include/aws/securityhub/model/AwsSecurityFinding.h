@@ -211,56 +211,56 @@ namespace Model
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline const Aws::String& GetGeneratorId() const{ return m_generatorId; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline void SetGeneratorId(const Aws::String& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline void SetGeneratorId(Aws::String&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline void SetGeneratorId(const char* value) { m_generatorIdHasBeenSet = true; m_generatorId.assign(value); }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline AwsSecurityFinding& WithGeneratorId(const Aws::String& value) { SetGeneratorId(value); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline AwsSecurityFinding& WithGeneratorId(Aws::String&& value) { SetGeneratorId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
      * that generated a finding. In various security-findings providers' solutions,
-     * this generator can be called a rule, a check, a detector, a plug-in, etc. </p>
+     * this generator can be called a rule, a check, a detector, a plugin, etc. </p>
      */
     inline AwsSecurityFinding& WithGeneratorId(const char* value) { SetGeneratorId(value); return *this;}
 

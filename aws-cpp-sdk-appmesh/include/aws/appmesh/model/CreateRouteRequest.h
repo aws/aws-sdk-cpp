@@ -429,64 +429,64 @@ request. Up to 36 letters, numbers, hyphens, and underscores are
 
     /**
      * <p>The name of the virtual router in which to create the route. If the virtual
-     * router is in a shared mesh,
-         then you must be the owner of the virtual
+     * router is in
+         a shared mesh, then you must be the owner of the virtual
      * router resource.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
 
     /**
      * <p>The name of the virtual router in which to create the route. If the virtual
-     * router is in a shared mesh,
-         then you must be the owner of the virtual
+     * router is in
+         a shared mesh, then you must be the owner of the virtual
      * router resource.</p>
      */
     inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
 
     /**
      * <p>The name of the virtual router in which to create the route. If the virtual
-     * router is in a shared mesh,
-         then you must be the owner of the virtual
+     * router is in
+         a shared mesh, then you must be the owner of the virtual
      * router resource.</p>
      */
     inline void SetVirtualRouterName(const Aws::String& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = value; }
 
     /**
      * <p>The name of the virtual router in which to create the route. If the virtual
-     * router is in a shared mesh,
-         then you must be the owner of the virtual
+     * router is in
+         a shared mesh, then you must be the owner of the virtual
      * router resource.</p>
      */
     inline void SetVirtualRouterName(Aws::String&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::move(value); }
 
     /**
      * <p>The name of the virtual router in which to create the route. If the virtual
-     * router is in a shared mesh,
-         then you must be the owner of the virtual
+     * router is in
+         a shared mesh, then you must be the owner of the virtual
      * router resource.</p>
      */
     inline void SetVirtualRouterName(const char* value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName.assign(value); }
 
     /**
      * <p>The name of the virtual router in which to create the route. If the virtual
-     * router is in a shared mesh,
-         then you must be the owner of the virtual
+     * router is in
+         a shared mesh, then you must be the owner of the virtual
      * router resource.</p>
      */
     inline CreateRouteRequest& WithVirtualRouterName(const Aws::String& value) { SetVirtualRouterName(value); return *this;}
 
     /**
      * <p>The name of the virtual router in which to create the route. If the virtual
-     * router is in a shared mesh,
-         then you must be the owner of the virtual
+     * router is in
+         a shared mesh, then you must be the owner of the virtual
      * router resource.</p>
      */
     inline CreateRouteRequest& WithVirtualRouterName(Aws::String&& value) { SetVirtualRouterName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the virtual router in which to create the route. If the virtual
-     * router is in a shared mesh,
-         then you must be the owner of the virtual
+     * router is in
+         a shared mesh, then you must be the owner of the virtual
      * router resource.</p>
      */
     inline CreateRouteRequest& WithVirtualRouterName(const char* value) { SetVirtualRouterName(value); return *this;}

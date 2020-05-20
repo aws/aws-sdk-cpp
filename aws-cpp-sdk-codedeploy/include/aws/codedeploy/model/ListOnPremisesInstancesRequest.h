@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a ListOnPremisesInstances operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the input of a <code>ListOnPremisesInstances</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstancesInput">AWS
    * API Reference</a></p>
    */
@@ -52,50 +52,50 @@ namespace Model
 
 
     /**
-     * <p>The registration status of the on-premises instances:</p> <ul> <li>
-     * <p>Deregistered: Include deregistered on-premises instances in the resulting
-     * list.</p> </li> <li> <p>Registered: Include registered on-premises instances in
-     * the resulting list.</p> </li> </ul>
+     * <p>The registration status of the on-premises instances:</p> <ul> <li> <p>
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the
+     * resulting list.</p> </li> <li> <p> <code>Registered</code>: Include registered
+     * on-premises instances in the resulting list.</p> </li> </ul>
      */
     inline const RegistrationStatus& GetRegistrationStatus() const{ return m_registrationStatus; }
 
     /**
-     * <p>The registration status of the on-premises instances:</p> <ul> <li>
-     * <p>Deregistered: Include deregistered on-premises instances in the resulting
-     * list.</p> </li> <li> <p>Registered: Include registered on-premises instances in
-     * the resulting list.</p> </li> </ul>
+     * <p>The registration status of the on-premises instances:</p> <ul> <li> <p>
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the
+     * resulting list.</p> </li> <li> <p> <code>Registered</code>: Include registered
+     * on-premises instances in the resulting list.</p> </li> </ul>
      */
     inline bool RegistrationStatusHasBeenSet() const { return m_registrationStatusHasBeenSet; }
 
     /**
-     * <p>The registration status of the on-premises instances:</p> <ul> <li>
-     * <p>Deregistered: Include deregistered on-premises instances in the resulting
-     * list.</p> </li> <li> <p>Registered: Include registered on-premises instances in
-     * the resulting list.</p> </li> </ul>
+     * <p>The registration status of the on-premises instances:</p> <ul> <li> <p>
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the
+     * resulting list.</p> </li> <li> <p> <code>Registered</code>: Include registered
+     * on-premises instances in the resulting list.</p> </li> </ul>
      */
     inline void SetRegistrationStatus(const RegistrationStatus& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = value; }
 
     /**
-     * <p>The registration status of the on-premises instances:</p> <ul> <li>
-     * <p>Deregistered: Include deregistered on-premises instances in the resulting
-     * list.</p> </li> <li> <p>Registered: Include registered on-premises instances in
-     * the resulting list.</p> </li> </ul>
+     * <p>The registration status of the on-premises instances:</p> <ul> <li> <p>
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the
+     * resulting list.</p> </li> <li> <p> <code>Registered</code>: Include registered
+     * on-premises instances in the resulting list.</p> </li> </ul>
      */
     inline void SetRegistrationStatus(RegistrationStatus&& value) { m_registrationStatusHasBeenSet = true; m_registrationStatus = std::move(value); }
 
     /**
-     * <p>The registration status of the on-premises instances:</p> <ul> <li>
-     * <p>Deregistered: Include deregistered on-premises instances in the resulting
-     * list.</p> </li> <li> <p>Registered: Include registered on-premises instances in
-     * the resulting list.</p> </li> </ul>
+     * <p>The registration status of the on-premises instances:</p> <ul> <li> <p>
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the
+     * resulting list.</p> </li> <li> <p> <code>Registered</code>: Include registered
+     * on-premises instances in the resulting list.</p> </li> </ul>
      */
     inline ListOnPremisesInstancesRequest& WithRegistrationStatus(const RegistrationStatus& value) { SetRegistrationStatus(value); return *this;}
 
     /**
-     * <p>The registration status of the on-premises instances:</p> <ul> <li>
-     * <p>Deregistered: Include deregistered on-premises instances in the resulting
-     * list.</p> </li> <li> <p>Registered: Include registered on-premises instances in
-     * the resulting list.</p> </li> </ul>
+     * <p>The registration status of the on-premises instances:</p> <ul> <li> <p>
+     * <code>Deregistered</code>: Include deregistered on-premises instances in the
+     * resulting list.</p> </li> <li> <p> <code>Registered</code>: Include registered
+     * on-premises instances in the resulting list.</p> </li> </ul>
      */
     inline ListOnPremisesInstancesRequest& WithRegistrationStatus(RegistrationStatus&& value) { SetRegistrationStatus(std::move(value)); return *this;}
 

@@ -28,13 +28,6 @@ namespace Model
     NOT_SET,
     AUTO,
     STRENGTH_1,
-    STRENGTH_10,
-    STRENGTH_11,
-    STRENGTH_12,
-    STRENGTH_13,
-    STRENGTH_14,
-    STRENGTH_15,
-    STRENGTH_16,
     STRENGTH_2,
     STRENGTH_3,
     STRENGTH_4,
@@ -42,7 +35,14 @@ namespace Model
     STRENGTH_6,
     STRENGTH_7,
     STRENGTH_8,
-    STRENGTH_9
+    STRENGTH_9,
+    STRENGTH_10,
+    STRENGTH_11,
+    STRENGTH_12,
+    STRENGTH_13,
+    STRENGTH_14,
+    STRENGTH_15,
+    STRENGTH_16
   };
 
 namespace TemporalFilterStrengthMapper

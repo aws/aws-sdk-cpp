@@ -33,6 +33,9 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_mediaEncodingHasBeenSet(false),
     m_vocabularyNameHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
+    m_vocabularyFilterNameHasBeenSet(false),
+    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
+    m_vocabularyFilterMethodHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -77,6 +80,18 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
     ss << m_sessionId;
     headers.emplace("x-amzn-transcribe-session-id",  ss.str());
     ss.str("");
+  }
+
+  if(m_vocabularyFilterNameHasBeenSet)
+  {
+    ss << m_vocabularyFilterName;
+    headers.emplace("x-amzn-transcribe-vocabulary-filter-name",  ss.str());
+    ss.str("");
+  }
+
+  if(m_vocabularyFilterMethodHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-vocabulary-filter-method", VocabularyFilterMethodMapper::GetNameForVocabularyFilterMethod(m_vocabularyFilterMethod));
   }
 
   return headers;

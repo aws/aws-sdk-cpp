@@ -34,10 +34,11 @@ namespace Model
 {
 
   /**
-   * <p>An object that represents a local file certificate. The certificate must meet
-   * specific requirements and you must have proxy authorization enabled. For more
-   * information, see <a
-   * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual-node-tls.html#virtual-node-tls-prerequisites">Transport
+   * <p>An object that represents a local file certificate.
+         The certificate
+   * must meet specific requirements and you must have proxy authorization enabled.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites">Transport
    * Layer Security (TLS)</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListenerTlsFileCertificate">AWS
    * API Reference</a></p>
@@ -94,49 +95,57 @@ namespace Model
 
     /**
      * <p>The private key for a certificate stored on the file system of the virtual
-     * node that the proxy is running on.</p>
+     * node that the
+         proxy is running on.</p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
 
     /**
      * <p>The private key for a certificate stored on the file system of the virtual
-     * node that the proxy is running on.</p>
+     * node that the
+         proxy is running on.</p>
      */
     inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
 
     /**
      * <p>The private key for a certificate stored on the file system of the virtual
-     * node that the proxy is running on.</p>
+     * node that the
+         proxy is running on.</p>
      */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /**
      * <p>The private key for a certificate stored on the file system of the virtual
-     * node that the proxy is running on.</p>
+     * node that the
+         proxy is running on.</p>
      */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
 
     /**
      * <p>The private key for a certificate stored on the file system of the virtual
-     * node that the proxy is running on.</p>
+     * node that the
+         proxy is running on.</p>
      */
     inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
 
     /**
      * <p>The private key for a certificate stored on the file system of the virtual
-     * node that the proxy is running on.</p>
+     * node that the
+         proxy is running on.</p>
      */
     inline ListenerTlsFileCertificate& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
 
     /**
      * <p>The private key for a certificate stored on the file system of the virtual
-     * node that the proxy is running on.</p>
+     * node that the
+         proxy is running on.</p>
      */
     inline ListenerTlsFileCertificate& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
 
     /**
      * <p>The private key for a certificate stored on the file system of the virtual
-     * node that the proxy is running on.</p>
+     * node that the
+         proxy is running on.</p>
      */
     inline ListenerTlsFileCertificate& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 

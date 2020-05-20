@@ -95,44 +95,50 @@ namespace Model
 
 
     /**
-     * <p> The status of the deployment's waiting period. READY_WAIT indicates the
-     * deployment is ready to start shifting traffic. TERMINATION_WAIT indicates the
-     * traffic is shifted, but the original target is not terminated. </p>
+     * <p> The status of the deployment's waiting period. <code>READY_WAIT</code>
+     * indicates that the deployment is ready to start shifting traffic.
+     * <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the
+     * original target is not terminated. </p>
      */
     inline const DeploymentWaitType& GetDeploymentWaitType() const{ return m_deploymentWaitType; }
 
     /**
-     * <p> The status of the deployment's waiting period. READY_WAIT indicates the
-     * deployment is ready to start shifting traffic. TERMINATION_WAIT indicates the
-     * traffic is shifted, but the original target is not terminated. </p>
+     * <p> The status of the deployment's waiting period. <code>READY_WAIT</code>
+     * indicates that the deployment is ready to start shifting traffic.
+     * <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the
+     * original target is not terminated. </p>
      */
     inline bool DeploymentWaitTypeHasBeenSet() const { return m_deploymentWaitTypeHasBeenSet; }
 
     /**
-     * <p> The status of the deployment's waiting period. READY_WAIT indicates the
-     * deployment is ready to start shifting traffic. TERMINATION_WAIT indicates the
-     * traffic is shifted, but the original target is not terminated. </p>
+     * <p> The status of the deployment's waiting period. <code>READY_WAIT</code>
+     * indicates that the deployment is ready to start shifting traffic.
+     * <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the
+     * original target is not terminated. </p>
      */
     inline void SetDeploymentWaitType(const DeploymentWaitType& value) { m_deploymentWaitTypeHasBeenSet = true; m_deploymentWaitType = value; }
 
     /**
-     * <p> The status of the deployment's waiting period. READY_WAIT indicates the
-     * deployment is ready to start shifting traffic. TERMINATION_WAIT indicates the
-     * traffic is shifted, but the original target is not terminated. </p>
+     * <p> The status of the deployment's waiting period. <code>READY_WAIT</code>
+     * indicates that the deployment is ready to start shifting traffic.
+     * <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the
+     * original target is not terminated. </p>
      */
     inline void SetDeploymentWaitType(DeploymentWaitType&& value) { m_deploymentWaitTypeHasBeenSet = true; m_deploymentWaitType = std::move(value); }
 
     /**
-     * <p> The status of the deployment's waiting period. READY_WAIT indicates the
-     * deployment is ready to start shifting traffic. TERMINATION_WAIT indicates the
-     * traffic is shifted, but the original target is not terminated. </p>
+     * <p> The status of the deployment's waiting period. <code>READY_WAIT</code>
+     * indicates that the deployment is ready to start shifting traffic.
+     * <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the
+     * original target is not terminated. </p>
      */
     inline ContinueDeploymentRequest& WithDeploymentWaitType(const DeploymentWaitType& value) { SetDeploymentWaitType(value); return *this;}
 
     /**
-     * <p> The status of the deployment's waiting period. READY_WAIT indicates the
-     * deployment is ready to start shifting traffic. TERMINATION_WAIT indicates the
-     * traffic is shifted, but the original target is not terminated. </p>
+     * <p> The status of the deployment's waiting period. <code>READY_WAIT</code>
+     * indicates that the deployment is ready to start shifting traffic.
+     * <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the
+     * original target is not terminated. </p>
      */
     inline ContinueDeploymentRequest& WithDeploymentWaitType(DeploymentWaitType&& value) { SetDeploymentWaitType(std::move(value)); return *this;}
 

@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a RemoveTagsFromOnPremisesInstances
+   * <p>Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/RemoveTagsFromOnPremisesInstancesInput">AWS
    * API Reference</a></p>

@@ -96,7 +96,7 @@ namespace Model
 
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>
@@ -130,7 +130,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetHttpRetryEvents() const{ return m_httpRetryEvents; }
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>
@@ -164,7 +164,7 @@ namespace Model
     inline bool HttpRetryEventsHasBeenSet() const { return m_httpRetryEventsHasBeenSet; }
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>
@@ -198,7 +198,7 @@ namespace Model
     inline void SetHttpRetryEvents(const Aws::Vector<Aws::String>& value) { m_httpRetryEventsHasBeenSet = true; m_httpRetryEvents = value; }
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>
@@ -232,7 +232,7 @@ namespace Model
     inline void SetHttpRetryEvents(Aws::Vector<Aws::String>&& value) { m_httpRetryEventsHasBeenSet = true; m_httpRetryEvents = std::move(value); }
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>
@@ -266,7 +266,7 @@ namespace Model
     inline GrpcRetryPolicy& WithHttpRetryEvents(const Aws::Vector<Aws::String>& value) { SetHttpRetryEvents(value); return *this;}
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>
@@ -300,7 +300,7 @@ namespace Model
     inline GrpcRetryPolicy& WithHttpRetryEvents(Aws::Vector<Aws::String>&& value) { SetHttpRetryEvents(std::move(value)); return *this;}
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>
@@ -334,7 +334,7 @@ namespace Model
     inline GrpcRetryPolicy& AddHttpRetryEvents(const Aws::String& value) { m_httpRetryEventsHasBeenSet = true; m_httpRetryEvents.push_back(value); return *this; }
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>
@@ -368,7 +368,7 @@ namespace Model
     inline GrpcRetryPolicy& AddHttpRetryEvents(Aws::String&& value) { m_httpRetryEventsHasBeenSet = true; m_httpRetryEvents.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specify at least one of the following values.</p>
+     * <p>Specify at least one of the following values.</p> 
          <ul>
            
      * <li>

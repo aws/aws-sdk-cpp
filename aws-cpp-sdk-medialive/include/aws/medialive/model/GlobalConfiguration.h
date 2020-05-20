@@ -167,10 +167,10 @@ namespace Model
     /**
      * Indicates how MediaLive pipelines are synchronized.
 
-PIPELINELOCKING - MediaLive
-     * will attempt to synchronize the output of each pipeline to the
+PIPELINE_LOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the
      * other.
-EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
      * pipeline to the Unix epoch.
      */
     inline const GlobalConfigurationOutputLockingMode& GetOutputLockingMode() const{ return m_outputLockingMode; }
@@ -178,10 +178,10 @@ EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
     /**
      * Indicates how MediaLive pipelines are synchronized.
 
-PIPELINELOCKING - MediaLive
-     * will attempt to synchronize the output of each pipeline to the
+PIPELINE_LOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the
      * other.
-EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
      * pipeline to the Unix epoch.
      */
     inline bool OutputLockingModeHasBeenSet() const { return m_outputLockingModeHasBeenSet; }
@@ -189,10 +189,10 @@ EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
     /**
      * Indicates how MediaLive pipelines are synchronized.
 
-PIPELINELOCKING - MediaLive
-     * will attempt to synchronize the output of each pipeline to the
+PIPELINE_LOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the
      * other.
-EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
      * pipeline to the Unix epoch.
      */
     inline void SetOutputLockingMode(const GlobalConfigurationOutputLockingMode& value) { m_outputLockingModeHasBeenSet = true; m_outputLockingMode = value; }
@@ -200,10 +200,10 @@ EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
     /**
      * Indicates how MediaLive pipelines are synchronized.
 
-PIPELINELOCKING - MediaLive
-     * will attempt to synchronize the output of each pipeline to the
+PIPELINE_LOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the
      * other.
-EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
      * pipeline to the Unix epoch.
      */
     inline void SetOutputLockingMode(GlobalConfigurationOutputLockingMode&& value) { m_outputLockingModeHasBeenSet = true; m_outputLockingMode = std::move(value); }
@@ -211,10 +211,10 @@ EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
     /**
      * Indicates how MediaLive pipelines are synchronized.
 
-PIPELINELOCKING - MediaLive
-     * will attempt to synchronize the output of each pipeline to the
+PIPELINE_LOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the
      * other.
-EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
      * pipeline to the Unix epoch.
      */
     inline GlobalConfiguration& WithOutputLockingMode(const GlobalConfigurationOutputLockingMode& value) { SetOutputLockingMode(value); return *this;}
@@ -222,10 +222,10 @@ EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
     /**
      * Indicates how MediaLive pipelines are synchronized.
 
-PIPELINELOCKING - MediaLive
-     * will attempt to synchronize the output of each pipeline to the
+PIPELINE_LOCKING -
+     * MediaLive will attempt to synchronize the output of each pipeline to the
      * other.
-EPOCHLOCKING - MediaLive will attempt to synchronize the output of each
+EPOCH_LOCKING - MediaLive will attempt to synchronize the output of each
      * pipeline to the Unix epoch.
      */
     inline GlobalConfiguration& WithOutputLockingMode(GlobalConfigurationOutputLockingMode&& value) { SetOutputLockingMode(std::move(value)); return *this;}

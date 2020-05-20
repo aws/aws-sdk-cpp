@@ -651,8 +651,8 @@ namespace Model
          * Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
          * the accounts to enable Security Hub and become member accounts in Security
          * Hub.</p> <p>If the account owner accepts the invitation, the account becomes a
-         * member account in Security Hub, and a permission policy is added that permits
-         * the master account to view the findings generated in the member account. When
+         * member account in Security Hub. A permissions policy is added that permits the
+         * master account to view the findings generated in the member account. When
          * Security Hub is enabled in the invited account, findings start to be sent to
          * both the member and master accounts.</p> <p>To remove the association between
          * the master and member accounts, use the <code>
@@ -673,8 +673,8 @@ namespace Model
          * Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
          * the accounts to enable Security Hub and become member accounts in Security
          * Hub.</p> <p>If the account owner accepts the invitation, the account becomes a
-         * member account in Security Hub, and a permission policy is added that permits
-         * the master account to view the findings generated in the member account. When
+         * member account in Security Hub. A permissions policy is added that permits the
+         * master account to view the findings generated in the member account. When
          * Security Hub is enabled in the invited account, findings start to be sent to
          * both the member and master accounts.</p> <p>To remove the association between
          * the master and member accounts, use the <code>
@@ -697,8 +697,8 @@ namespace Model
          * Hub, you must use the <code> <a>InviteMembers</a> </code> operation to invite
          * the accounts to enable Security Hub and become member accounts in Security
          * Hub.</p> <p>If the account owner accepts the invitation, the account becomes a
-         * member account in Security Hub, and a permission policy is added that permits
-         * the master account to view the findings generated in the member account. When
+         * member account in Security Hub. A permissions policy is added that permits the
+         * master account to view the findings generated in the member account. When
          * Security Hub is enabled in the invited account, findings start to be sent to
          * both the member and master accounts.</p> <p>To remove the association between
          * the master and member accounts, use the <code>
@@ -1148,7 +1148,7 @@ namespace Model
         /**
          * <p>Enables the integration of a partner product with Security Hub. Integrated
          * products send findings to Security Hub.</p> <p>When you enable a product
-         * integration, a permission policy that grants permission for the product to send
+         * integration, a permissions policy that grants permission for the product to send
          * findings to Security Hub is applied.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct">AWS
          * API Reference</a></p>
@@ -1158,7 +1158,7 @@ namespace Model
         /**
          * <p>Enables the integration of a partner product with Security Hub. Integrated
          * products send findings to Security Hub.</p> <p>When you enable a product
-         * integration, a permission policy that grants permission for the product to send
+         * integration, a permissions policy that grants permission for the product to send
          * findings to Security Hub is applied.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct">AWS
          * API Reference</a></p>
@@ -1170,7 +1170,7 @@ namespace Model
         /**
          * <p>Enables the integration of a partner product with Security Hub. Integrated
          * products send findings to Security Hub.</p> <p>When you enable a product
-         * integration, a permission policy that grants permission for the product to send
+         * integration, a permissions policy that grants permission for the product to send
          * findings to Security Hub is applied.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct">AWS
          * API Reference</a></p>
@@ -1185,13 +1185,15 @@ namespace Model
          * Security Hub the permissions necessary to gather findings from other services
          * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-         * automatically enable the CIS AWS Foundations standard. You do not enable the
-         * Payment Card Industry Data Security Standard (PCI DSS) standard. To not enable
-         * the CIS AWS Foundations standard, set <code>EnableDefaultStandards</code> to
-         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
-         * use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
-         * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.</p>
-         * <p>To learn more, see <a
+         * automatically enable the following standards.</p> <ul> <li> <p>CIS AWS
+         * Foundations</p> </li> <li> <p>AWS Foundational Security Best Practices</p> </li>
+         * </ul> <p>You do not enable the Payment Card Industry Data Security Standard (PCI
+         * DSS) standard. </p> <p>To not enable the automatically enabled standards, set
+         * <code>EnableDefaultStandards</code> to <code>false</code>.</p> <p>After you
+         * enable Security Hub, to enable a standard, use the <code>
+         * <a>BatchEnableStandards</a> </code> operation. To disable a standard, use the
+         * <code> <a>BatchDisableStandards</a> </code> operation.</p> <p>To learn more, see
+         * <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
          * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1206,13 +1208,15 @@ namespace Model
          * Security Hub the permissions necessary to gather findings from other services
          * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-         * automatically enable the CIS AWS Foundations standard. You do not enable the
-         * Payment Card Industry Data Security Standard (PCI DSS) standard. To not enable
-         * the CIS AWS Foundations standard, set <code>EnableDefaultStandards</code> to
-         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
-         * use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
-         * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.</p>
-         * <p>To learn more, see <a
+         * automatically enable the following standards.</p> <ul> <li> <p>CIS AWS
+         * Foundations</p> </li> <li> <p>AWS Foundational Security Best Practices</p> </li>
+         * </ul> <p>You do not enable the Payment Card Industry Data Security Standard (PCI
+         * DSS) standard. </p> <p>To not enable the automatically enabled standards, set
+         * <code>EnableDefaultStandards</code> to <code>false</code>.</p> <p>After you
+         * enable Security Hub, to enable a standard, use the <code>
+         * <a>BatchEnableStandards</a> </code> operation. To disable a standard, use the
+         * <code> <a>BatchDisableStandards</a> </code> operation.</p> <p>To learn more, see
+         * <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
          * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1229,13 +1233,15 @@ namespace Model
          * Security Hub the permissions necessary to gather findings from other services
          * that are integrated with Security Hub.</p> <p>When you use the
          * <code>EnableSecurityHub</code> operation to enable Security Hub, you also
-         * automatically enable the CIS AWS Foundations standard. You do not enable the
-         * Payment Card Industry Data Security Standard (PCI DSS) standard. To not enable
-         * the CIS AWS Foundations standard, set <code>EnableDefaultStandards</code> to
-         * <code>false</code>.</p> <p>After you enable Security Hub, to enable a standard,
-         * use the <code> <a>BatchEnableStandards</a> </code> operation. To disable a
-         * standard, use the <code> <a>BatchDisableStandards</a> </code> operation.</p>
-         * <p>To learn more, see <a
+         * automatically enable the following standards.</p> <ul> <li> <p>CIS AWS
+         * Foundations</p> </li> <li> <p>AWS Foundational Security Best Practices</p> </li>
+         * </ul> <p>You do not enable the Payment Card Industry Data Security Standard (PCI
+         * DSS) standard. </p> <p>To not enable the automatically enabled standards, set
+         * <code>EnableDefaultStandards</code> to <code>false</code>.</p> <p>After you
+         * enable Security Hub, to enable a standard, use the <code>
+         * <a>BatchEnableStandards</a> </code> operation. To disable a standard, use the
+         * <code> <a>BatchDisableStandards</a> </code> operation.</p> <p>To learn more, see
+         * <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html">Setting
          * Up AWS Security Hub</a> in the <i>AWS Security Hub User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a

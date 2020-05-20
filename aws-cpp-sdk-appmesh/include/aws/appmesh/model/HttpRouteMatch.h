@@ -39,8 +39,8 @@ namespace Model
 
   /**
    * <p>An object that represents the requirements for a route to match HTTP requests
-   * for a virtual
-         router.</p><p><h3>See Also:</h3>   <a
+   * for a
+         virtual router.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRouteMatch">AWS
    * API Reference</a></p>
    */

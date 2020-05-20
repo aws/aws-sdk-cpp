@@ -51,50 +51,58 @@ namespace Model
 
 
     /**
-     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
-     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     * <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+     * <code>BeforeInstall</code>, <code>AfterInstall</code>,
+     * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
     inline const Aws::String& GetLifecycleEventName() const{ return m_lifecycleEventName; }
 
     /**
-     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
-     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     * <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+     * <code>BeforeInstall</code>, <code>AfterInstall</code>,
+     * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
     inline bool LifecycleEventNameHasBeenSet() const { return m_lifecycleEventNameHasBeenSet; }
 
     /**
-     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
-     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     * <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+     * <code>BeforeInstall</code>, <code>AfterInstall</code>,
+     * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
     inline void SetLifecycleEventName(const Aws::String& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = value; }
 
     /**
-     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
-     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     * <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+     * <code>BeforeInstall</code>, <code>AfterInstall</code>,
+     * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
     inline void SetLifecycleEventName(Aws::String&& value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName = std::move(value); }
 
     /**
-     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
-     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     * <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+     * <code>BeforeInstall</code>, <code>AfterInstall</code>,
+     * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
     inline void SetLifecycleEventName(const char* value) { m_lifecycleEventNameHasBeenSet = true; m_lifecycleEventName.assign(value); }
 
     /**
-     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
-     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     * <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+     * <code>BeforeInstall</code>, <code>AfterInstall</code>,
+     * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
     inline LifecycleEvent& WithLifecycleEventName(const Aws::String& value) { SetLifecycleEventName(value); return *this;}
 
     /**
-     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
-     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     * <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+     * <code>BeforeInstall</code>, <code>AfterInstall</code>,
+     * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
     inline LifecycleEvent& WithLifecycleEventName(Aws::String&& value) { SetLifecycleEventName(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment lifecycle event name, such as ApplicationStop, BeforeInstall,
-     * AfterInstall, ApplicationStart, or ValidateService.</p>
+     * <p>The deployment lifecycle event name, such as <code>ApplicationStop</code>,
+     * <code>BeforeInstall</code>, <code>AfterInstall</code>,
+     * <code>ApplicationStart</code>, or <code>ValidateService</code>.</p>
      */
     inline LifecycleEvent& WithLifecycleEventName(const char* value) { SetLifecycleEventName(value); return *this;}
 

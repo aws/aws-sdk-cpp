@@ -63,6 +63,7 @@ namespace Aws
         static const int REVISION_MISSING_HASH = HashingUtils::HashString("REVISION_MISSING");
         static const int THROTTLED_HASH = HashingUtils::HashString("THROTTLED");
         static const int TIMEOUT_HASH = HashingUtils::HashString("TIMEOUT");
+        static const int CLOUDFORMATION_STACK_FAILURE_HASH = HashingUtils::HashString("CLOUDFORMATION_STACK_FAILURE");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -200,6 +201,10 @@ namespace Aws
           {
             return ErrorCode::TIMEOUT;
           }
+          else if (hashCode == CLOUDFORMATION_STACK_FAILURE_HASH)
+          {
+            return ErrorCode::CLOUDFORMATION_STACK_FAILURE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -280,6 +285,8 @@ namespace Aws
             return "THROTTLED";
           case ErrorCode::TIMEOUT:
             return "TIMEOUT";
+          case ErrorCode::CLOUDFORMATION_STACK_FAILURE:
+            return "CLOUDFORMATION_STACK_FAILURE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

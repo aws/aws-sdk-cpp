@@ -23,6 +23,7 @@
 #include <aws/transcribestreaming/model/MediaEncoding.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribestreaming/model/AudioStream.h>
+#include <aws/transcribestreaming/model/VocabularyFilterMethod.h>
 #include <utility>
 
 namespace Aws
@@ -276,6 +277,116 @@ namespace Model
      */
     StartStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
 
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the vocabulary filter you've created that is unique to your AWS
+     * accountf. Provide the name in this field to successfully use it in a stream.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
+
+    /**
+     * <p>The manner in which you use your vocabulary filter to filter words in your
+     * transcript. <code>Remove</code> removes filtered words from your transcription
+     * results. <code>Mask</code> masks those words with a <code>***</code> in your
+     * transcription results. <code>Tag</code> keeps the filtered words in your
+     * transcription results and tags them. The tag appears as
+     * <code>VocabularyFilterMatch</code> equal to <code>True</code> </p>
+     */
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+
   private:
 
     LanguageCode m_languageCode;
@@ -294,6 +405,12 @@ namespace Model
     bool m_sessionIdHasBeenSet;
 
     std::shared_ptr<AudioStream> m_audioStream;
+
+    Aws::String m_vocabularyFilterName;
+    bool m_vocabularyFilterNameHasBeenSet;
+
+    VocabularyFilterMethod m_vocabularyFilterMethod;
+    bool m_vocabularyFilterMethodHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

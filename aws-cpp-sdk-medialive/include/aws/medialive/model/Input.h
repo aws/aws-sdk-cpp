@@ -23,6 +23,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
 #include <aws/medialive/model/InputDestination.h>
+#include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/medialive/model/MediaConnectFlow.h>
 #include <aws/medialive/model/InputSource.h>
 #include <utility>
@@ -311,6 +312,47 @@ SINGLE_PIPELINE - You can
 
      */
     inline Input& WithInputClass(InputClass&& value) { SetInputClass(std::move(value)); return *this;}
+
+
+    /**
+     * Settings for the input devices.
+     */
+    inline const Aws::Vector<InputDeviceSettings>& GetInputDevices() const{ return m_inputDevices; }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline bool InputDevicesHasBeenSet() const { return m_inputDevicesHasBeenSet; }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline void SetInputDevices(const Aws::Vector<InputDeviceSettings>& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = value; }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline void SetInputDevices(Aws::Vector<InputDeviceSettings>&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices = std::move(value); }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline Input& WithInputDevices(const Aws::Vector<InputDeviceSettings>& value) { SetInputDevices(value); return *this;}
+
+    /**
+     * Settings for the input devices.
+     */
+    inline Input& WithInputDevices(Aws::Vector<InputDeviceSettings>&& value) { SetInputDevices(std::move(value)); return *this;}
+
+    /**
+     * Settings for the input devices.
+     */
+    inline Input& AddInputDevices(const InputDeviceSettings& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.push_back(value); return *this; }
+
+    /**
+     * Settings for the input devices.
+     */
+    inline Input& AddInputDevices(InputDeviceSettings&& value) { m_inputDevicesHasBeenSet = true; m_inputDevices.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -705,6 +747,9 @@ during input switch actions. Presently, this
 
     InputClass m_inputClass;
     bool m_inputClassHasBeenSet;
+
+    Aws::Vector<InputDeviceSettings> m_inputDevices;
+    bool m_inputDevicesHasBeenSet;
 
     InputSourceType m_inputSourceType;
     bool m_inputSourceTypeHasBeenSet;

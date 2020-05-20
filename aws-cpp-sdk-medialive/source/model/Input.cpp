@@ -35,6 +35,7 @@ Input::Input() :
     m_idHasBeenSet(false),
     m_inputClass(InputClass::NOT_SET),
     m_inputClassHasBeenSet(false),
+    m_inputDevicesHasBeenSet(false),
     m_inputSourceType(InputSourceType::NOT_SET),
     m_inputSourceTypeHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
@@ -57,6 +58,7 @@ Input::Input(JsonView jsonValue) :
     m_idHasBeenSet(false),
     m_inputClass(InputClass::NOT_SET),
     m_inputClassHasBeenSet(false),
+    m_inputDevicesHasBeenSet(false),
     m_inputSourceType(InputSourceType::NOT_SET),
     m_inputSourceTypeHasBeenSet(false),
     m_mediaConnectFlowsHasBeenSet(false),
@@ -114,6 +116,16 @@ Input& Input::operator =(JsonView jsonValue)
     m_inputClass = InputClassMapper::GetInputClassForName(jsonValue.GetString("inputClass"));
 
     m_inputClassHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inputDevices"))
+  {
+    Array<JsonView> inputDevicesJsonList = jsonValue.GetArray("inputDevices");
+    for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
+    {
+      m_inputDevices.push_back(inputDevicesJsonList[inputDevicesIndex].AsObject());
+    }
+    m_inputDevicesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputSourceType"))
@@ -235,6 +247,17 @@ JsonValue Input::Jsonize() const
   if(m_inputClassHasBeenSet)
   {
    payload.WithString("inputClass", InputClassMapper::GetNameForInputClass(m_inputClass));
+  }
+
+  if(m_inputDevicesHasBeenSet)
+  {
+   Array<JsonValue> inputDevicesJsonList(m_inputDevices.size());
+   for(unsigned inputDevicesIndex = 0; inputDevicesIndex < inputDevicesJsonList.GetLength(); ++inputDevicesIndex)
+   {
+     inputDevicesJsonList[inputDevicesIndex].AsObject(m_inputDevices[inputDevicesIndex].Jsonize());
+   }
+   payload.WithArray("inputDevices", std::move(inputDevicesJsonList));
+
   }
 
   if(m_inputSourceTypeHasBeenSet)

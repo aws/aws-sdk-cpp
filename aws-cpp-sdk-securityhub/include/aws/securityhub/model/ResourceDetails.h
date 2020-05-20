@@ -169,32 +169,32 @@ namespace Model
 
 
     /**
-     * <p>Details for an AWS EC2 network interface.</p>
+     * <p>Details for an Amazon EC2 network interface.</p>
      */
     inline const AwsEc2NetworkInterfaceDetails& GetAwsEc2NetworkInterface() const{ return m_awsEc2NetworkInterface; }
 
     /**
-     * <p>Details for an AWS EC2 network interface.</p>
+     * <p>Details for an Amazon EC2 network interface.</p>
      */
     inline bool AwsEc2NetworkInterfaceHasBeenSet() const { return m_awsEc2NetworkInterfaceHasBeenSet; }
 
     /**
-     * <p>Details for an AWS EC2 network interface.</p>
+     * <p>Details for an Amazon EC2 network interface.</p>
      */
     inline void SetAwsEc2NetworkInterface(const AwsEc2NetworkInterfaceDetails& value) { m_awsEc2NetworkInterfaceHasBeenSet = true; m_awsEc2NetworkInterface = value; }
 
     /**
-     * <p>Details for an AWS EC2 network interface.</p>
+     * <p>Details for an Amazon EC2 network interface.</p>
      */
     inline void SetAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails&& value) { m_awsEc2NetworkInterfaceHasBeenSet = true; m_awsEc2NetworkInterface = std::move(value); }
 
     /**
-     * <p>Details for an AWS EC2 network interface.</p>
+     * <p>Details for an Amazon EC2 network interface.</p>
      */
     inline ResourceDetails& WithAwsEc2NetworkInterface(const AwsEc2NetworkInterfaceDetails& value) { SetAwsEc2NetworkInterface(value); return *this;}
 
     /**
-     * <p>Details for an AWS EC2 network interface.</p>
+     * <p>Details for an Amazon EC2 network interface.</p>
      */
     inline ResourceDetails& WithAwsEc2NetworkInterface(AwsEc2NetworkInterfaceDetails&& value) { SetAwsEc2NetworkInterface(std::move(value)); return *this;}
 
@@ -293,32 +293,32 @@ namespace Model
 
 
     /**
-     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
+     * <p>Details about an Amazon S3 bucket related to a finding.</p>
      */
     inline const AwsS3BucketDetails& GetAwsS3Bucket() const{ return m_awsS3Bucket; }
 
     /**
-     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
+     * <p>Details about an Amazon S3 bucket related to a finding.</p>
      */
     inline bool AwsS3BucketHasBeenSet() const { return m_awsS3BucketHasBeenSet; }
 
     /**
-     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
+     * <p>Details about an Amazon S3 bucket related to a finding.</p>
      */
     inline void SetAwsS3Bucket(const AwsS3BucketDetails& value) { m_awsS3BucketHasBeenSet = true; m_awsS3Bucket = value; }
 
     /**
-     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
+     * <p>Details about an Amazon S3 bucket related to a finding.</p>
      */
     inline void SetAwsS3Bucket(AwsS3BucketDetails&& value) { m_awsS3BucketHasBeenSet = true; m_awsS3Bucket = std::move(value); }
 
     /**
-     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
+     * <p>Details about an Amazon S3 bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(const AwsS3BucketDetails& value) { SetAwsS3Bucket(value); return *this;}
 
     /**
-     * <p>Details about an Amazon S3 Bucket related to a finding.</p>
+     * <p>Details about an Amazon S3 bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(AwsS3BucketDetails&& value) { SetAwsS3Bucket(std::move(value)); return *this;}
 
@@ -510,32 +510,32 @@ namespace Model
 
 
     /**
-     * <p>Details for an RDS database instance.</p>
+     * <p>Details for an Amazon RDS database instance.</p>
      */
     inline const AwsRdsDbInstanceDetails& GetAwsRdsDbInstance() const{ return m_awsRdsDbInstance; }
 
     /**
-     * <p>Details for an RDS database instance.</p>
+     * <p>Details for an Amazon RDS database instance.</p>
      */
     inline bool AwsRdsDbInstanceHasBeenSet() const { return m_awsRdsDbInstanceHasBeenSet; }
 
     /**
-     * <p>Details for an RDS database instance.</p>
+     * <p>Details for an Amazon RDS database instance.</p>
      */
     inline void SetAwsRdsDbInstance(const AwsRdsDbInstanceDetails& value) { m_awsRdsDbInstanceHasBeenSet = true; m_awsRdsDbInstance = value; }
 
     /**
-     * <p>Details for an RDS database instance.</p>
+     * <p>Details for an Amazon RDS database instance.</p>
      */
     inline void SetAwsRdsDbInstance(AwsRdsDbInstanceDetails&& value) { m_awsRdsDbInstanceHasBeenSet = true; m_awsRdsDbInstance = std::move(value); }
 
     /**
-     * <p>Details for an RDS database instance.</p>
+     * <p>Details for an Amazon RDS database instance.</p>
      */
     inline ResourceDetails& WithAwsRdsDbInstance(const AwsRdsDbInstanceDetails& value) { SetAwsRdsDbInstance(value); return *this;}
 
     /**
-     * <p>Details for an RDS database instance.</p>
+     * <p>Details for an Amazon RDS database instance.</p>
      */
     inline ResourceDetails& WithAwsRdsDbInstance(AwsRdsDbInstanceDetails&& value) { SetAwsRdsDbInstance(std::move(value)); return *this;}
 

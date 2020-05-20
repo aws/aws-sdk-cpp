@@ -59,6 +59,7 @@
 #include <aws/chime/model/GetPhoneNumberOrderResult.h>
 #include <aws/chime/model/GetPhoneNumberSettingsResult.h>
 #include <aws/chime/model/GetProxySessionResult.h>
+#include <aws/chime/model/GetRetentionSettingsResult.h>
 #include <aws/chime/model/GetRoomResult.h>
 #include <aws/chime/model/GetUserResult.h>
 #include <aws/chime/model/GetUserSettingsResult.h>
@@ -89,6 +90,7 @@
 #include <aws/chime/model/ListVoiceConnectorsResult.h>
 #include <aws/chime/model/LogoutUserResult.h>
 #include <aws/chime/model/PutEventsConfigurationResult.h>
+#include <aws/chime/model/PutRetentionSettingsResult.h>
 #include <aws/chime/model/PutVoiceConnectorLoggingConfigurationResult.h>
 #include <aws/chime/model/PutVoiceConnectorOriginationResult.h>
 #include <aws/chime/model/PutVoiceConnectorProxyResult.h>
@@ -200,6 +202,7 @@ namespace Model
         class GetPhoneNumberRequest;
         class GetPhoneNumberOrderRequest;
         class GetProxySessionRequest;
+        class GetRetentionSettingsRequest;
         class GetRoomRequest;
         class GetUserRequest;
         class GetUserSettingsRequest;
@@ -230,6 +233,7 @@ namespace Model
         class ListVoiceConnectorsRequest;
         class LogoutUserRequest;
         class PutEventsConfigurationRequest;
+        class PutRetentionSettingsRequest;
         class PutVoiceConnectorLoggingConfigurationRequest;
         class PutVoiceConnectorOriginationRequest;
         class PutVoiceConnectorProxyRequest;
@@ -314,6 +318,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOrderOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberSettingsOutcome;
         typedef Aws::Utils::Outcome<GetProxySessionResult, Aws::Client::AWSError<ChimeErrors>> GetProxySessionOutcome;
+        typedef Aws::Utils::Outcome<GetRetentionSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetRetentionSettingsOutcome;
         typedef Aws::Utils::Outcome<GetRoomResult, Aws::Client::AWSError<ChimeErrors>> GetRoomOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<ChimeErrors>> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetUserSettingsOutcome;
@@ -344,6 +349,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListVoiceConnectorsResult, Aws::Client::AWSError<ChimeErrors>> ListVoiceConnectorsOutcome;
         typedef Aws::Utils::Outcome<LogoutUserResult, Aws::Client::AWSError<ChimeErrors>> LogoutUserOutcome;
         typedef Aws::Utils::Outcome<PutEventsConfigurationResult, Aws::Client::AWSError<ChimeErrors>> PutEventsConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutRetentionSettingsResult, Aws::Client::AWSError<ChimeErrors>> PutRetentionSettingsOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorLoggingConfigurationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorLoggingConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorOriginationResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorOriginationOutcome;
         typedef Aws::Utils::Outcome<PutVoiceConnectorProxyResult, Aws::Client::AWSError<ChimeErrors>> PutVoiceConnectorProxyOutcome;
@@ -428,6 +434,7 @@ namespace Model
         typedef std::future<GetPhoneNumberOrderOutcome> GetPhoneNumberOrderOutcomeCallable;
         typedef std::future<GetPhoneNumberSettingsOutcome> GetPhoneNumberSettingsOutcomeCallable;
         typedef std::future<GetProxySessionOutcome> GetProxySessionOutcomeCallable;
+        typedef std::future<GetRetentionSettingsOutcome> GetRetentionSettingsOutcomeCallable;
         typedef std::future<GetRoomOutcome> GetRoomOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserSettingsOutcome> GetUserSettingsOutcomeCallable;
@@ -458,6 +465,7 @@ namespace Model
         typedef std::future<ListVoiceConnectorsOutcome> ListVoiceConnectorsOutcomeCallable;
         typedef std::future<LogoutUserOutcome> LogoutUserOutcomeCallable;
         typedef std::future<PutEventsConfigurationOutcome> PutEventsConfigurationOutcomeCallable;
+        typedef std::future<PutRetentionSettingsOutcome> PutRetentionSettingsOutcomeCallable;
         typedef std::future<PutVoiceConnectorLoggingConfigurationOutcome> PutVoiceConnectorLoggingConfigurationOutcomeCallable;
         typedef std::future<PutVoiceConnectorOriginationOutcome> PutVoiceConnectorOriginationOutcomeCallable;
         typedef std::future<PutVoiceConnectorProxyOutcome> PutVoiceConnectorProxyOutcomeCallable;
@@ -545,6 +553,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberOrderRequest&, const Model::GetPhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberOrderResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetProxySessionRequest&, const Model::GetProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProxySessionResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetRetentionSettingsRequest&, const Model::GetRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRetentionSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetRoomRequest&, const Model::GetRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetUserSettingsRequest&, const Model::GetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserSettingsResponseReceivedHandler;
@@ -575,6 +584,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorsRequest&, const Model::ListVoiceConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::LogoutUserRequest&, const Model::LogoutUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LogoutUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutEventsConfigurationRequest&, const Model::PutEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventsConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::PutRetentionSettingsRequest&, const Model::PutRetentionSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorLoggingConfigurationRequest&, const Model::PutVoiceConnectorLoggingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorLoggingConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorOriginationRequest&, const Model::PutVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorOriginationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::PutVoiceConnectorProxyRequest&, const Model::PutVoiceConnectorProxyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutVoiceConnectorProxyResponseReceivedHandler;
@@ -2402,6 +2412,43 @@ namespace Model
         virtual void GetProxySessionAsync(const Model::GetProxySessionRequest& request, const GetProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the retention settings for the specified Amazon Chime Enterprise
+         * account. For more information about retention settings, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRetentionSettingsOutcome GetRetentionSettings(const Model::GetRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Gets the retention settings for the specified Amazon Chime Enterprise
+         * account. For more information about retention settings, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRetentionSettingsOutcomeCallable GetRetentionSettingsCallable(const Model::GetRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Gets the retention settings for the specified Amazon Chime Enterprise
+         * account. For more information about retention settings, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRetentionSettingsAsync(const Model::GetRetentionSettingsRequest& request, const GetRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves room details, such as the room name, for a room in an Amazon Chime
          * Enterprise account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom">AWS API
@@ -3306,6 +3353,64 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEventsConfigurationAsync(const Model::PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Puts retention settings for the specified Amazon Chime Enterprise account. We
+         * recommend using AWS CloudTrail to monitor usage of this API for your account.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
+         * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
+         * Administration Guide</i>.</p> <p>To turn off existing retention settings, remove
+         * the number of days from the corresponding <b>RetentionDays</b> field in the
+         * <b>RetentionSettings</b> object. For more information about retention settings,
+         * see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutRetentionSettingsOutcome PutRetentionSettings(const Model::PutRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Puts retention settings for the specified Amazon Chime Enterprise account. We
+         * recommend using AWS CloudTrail to monitor usage of this API for your account.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
+         * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
+         * Administration Guide</i>.</p> <p>To turn off existing retention settings, remove
+         * the number of days from the corresponding <b>RetentionDays</b> field in the
+         * <b>RetentionSettings</b> object. For more information about retention settings,
+         * see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutRetentionSettingsOutcomeCallable PutRetentionSettingsCallable(const Model::PutRetentionSettingsRequest& request) const;
+
+        /**
+         * <p>Puts retention settings for the specified Amazon Chime Enterprise account. We
+         * recommend using AWS CloudTrail to monitor usage of this API for your account.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
+         * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
+         * Administration Guide</i>.</p> <p>To turn off existing retention settings, remove
+         * the number of days from the corresponding <b>RetentionDays</b> field in the
+         * <b>RetentionSettings</b> object. For more information about retention settings,
+         * see <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutRetentionSettingsAsync(const Model::PutRetentionSettingsRequest& request, const PutRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a logging configuration for the specified Amazon Chime Voice Connector.
@@ -4288,6 +4393,7 @@ namespace Model
         void GetPhoneNumberOrderAsyncHelper(const Model::GetPhoneNumberOrderRequest& request, const GetPhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberSettingsAsyncHelper(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProxySessionAsyncHelper(const Model::GetProxySessionRequest& request, const GetProxySessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRetentionSettingsAsyncHelper(const Model::GetRetentionSettingsRequest& request, const GetRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRoomAsyncHelper(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserSettingsAsyncHelper(const Model::GetUserSettingsRequest& request, const GetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4318,6 +4424,7 @@ namespace Model
         void ListVoiceConnectorsAsyncHelper(const Model::ListVoiceConnectorsRequest& request, const ListVoiceConnectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void LogoutUserAsyncHelper(const Model::LogoutUserRequest& request, const LogoutUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventsConfigurationAsyncHelper(const Model::PutEventsConfigurationRequest& request, const PutEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutRetentionSettingsAsyncHelper(const Model::PutRetentionSettingsRequest& request, const PutRetentionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorLoggingConfigurationAsyncHelper(const Model::PutVoiceConnectorLoggingConfigurationRequest& request, const PutVoiceConnectorLoggingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorOriginationAsyncHelper(const Model::PutVoiceConnectorOriginationRequest& request, const PutVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutVoiceConnectorProxyAsyncHelper(const Model::PutVoiceConnectorProxyRequest& request, const PutVoiceConnectorProxyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

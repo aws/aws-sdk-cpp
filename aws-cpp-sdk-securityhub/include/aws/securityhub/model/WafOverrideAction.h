@@ -49,57 +49,57 @@ namespace Model
 
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a RuleGroup .</p> <p>If set to <code>NONE</code>, the rule's action takes
-     * place.</p>
+     * within a <code>RuleGroup</code> .</p> <p>If set to <code>NONE</code>, the rule's
+     * action takes place.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a RuleGroup .</p> <p>If set to <code>NONE</code>, the rule's action takes
-     * place.</p>
+     * within a <code>RuleGroup</code> .</p> <p>If set to <code>NONE</code>, the rule's
+     * action takes place.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a RuleGroup .</p> <p>If set to <code>NONE</code>, the rule's action takes
-     * place.</p>
+     * within a <code>RuleGroup</code> .</p> <p>If set to <code>NONE</code>, the rule's
+     * action takes place.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a RuleGroup .</p> <p>If set to <code>NONE</code>, the rule's action takes
-     * place.</p>
+     * within a <code>RuleGroup</code> .</p> <p>If set to <code>NONE</code>, the rule's
+     * action takes place.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a RuleGroup .</p> <p>If set to <code>NONE</code>, the rule's action takes
-     * place.</p>
+     * within a <code>RuleGroup</code> .</p> <p>If set to <code>NONE</code>, the rule's
+     * action takes place.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a RuleGroup .</p> <p>If set to <code>NONE</code>, the rule's action takes
-     * place.</p>
+     * within a <code>RuleGroup</code> .</p> <p>If set to <code>NONE</code>, the rule's
+     * action takes place.</p>
      */
     inline WafOverrideAction& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a RuleGroup .</p> <p>If set to <code>NONE</code>, the rule's action takes
-     * place.</p>
+     * within a <code>RuleGroup</code> .</p> <p>If set to <code>NONE</code>, the rule's
+     * action takes place.</p>
      */
     inline WafOverrideAction& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p> <code>COUNT</code> overrides the action specified by the individual rule
-     * within a RuleGroup .</p> <p>If set to <code>NONE</code>, the rule's action takes
-     * place.</p>
+     * within a <code>RuleGroup</code> .</p> <p>If set to <code>NONE</code>, the rule's
+     * action takes place.</p>
      */
     inline WafOverrideAction& WithType(const char* value) { SetType(value); return *this;}
 

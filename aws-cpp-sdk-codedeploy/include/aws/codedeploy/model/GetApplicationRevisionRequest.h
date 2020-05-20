@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a GetApplicationRevision operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the input of a <code>GetApplicationRevision</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetApplicationRevisionInput">AWS
    * API Reference</a></p>
    */

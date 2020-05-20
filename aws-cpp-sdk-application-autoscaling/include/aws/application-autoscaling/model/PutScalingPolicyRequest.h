@@ -700,7 +700,7 @@ namespace Model
      * policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
-     * or Amazon Keyspaces for Apache Cassandra.</p> <p>For more information, see <a
+     * or Amazon Keyspaces (for Apache Cassandra).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
      * Tracking Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
@@ -713,7 +713,7 @@ namespace Model
      * policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
-     * or Amazon Keyspaces for Apache Cassandra.</p> <p>For more information, see <a
+     * or Amazon Keyspaces (for Apache Cassandra).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
      * Tracking Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
@@ -726,7 +726,7 @@ namespace Model
      * policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
-     * or Amazon Keyspaces for Apache Cassandra.</p> <p>For more information, see <a
+     * or Amazon Keyspaces (for Apache Cassandra).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
      * Tracking Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
@@ -739,7 +739,7 @@ namespace Model
      * policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
-     * or Amazon Keyspaces for Apache Cassandra.</p> <p>For more information, see <a
+     * or Amazon Keyspaces (for Apache Cassandra).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
      * Tracking Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
@@ -752,7 +752,7 @@ namespace Model
      * policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
-     * or Amazon Keyspaces for Apache Cassandra.</p> <p>For more information, see <a
+     * or Amazon Keyspaces (for Apache Cassandra).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
      * Tracking Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
@@ -765,7 +765,7 @@ namespace Model
      * policy.</p> <p>The following policy types are supported: </p> <p>
      * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR</p> <p>
      * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda,
-     * or Amazon Keyspaces for Apache Cassandra.</p> <p>For more information, see <a
+     * or Amazon Keyspaces (for Apache Cassandra).</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
      * Tracking Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step

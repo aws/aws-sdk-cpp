@@ -51,37 +51,43 @@ namespace Model
 
     /**
      * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * an AWS Certicate Manager (ACM)
+         certificate.</p>
      */
     inline const TlsValidationContextAcmTrust& GetAcm() const{ return m_acm; }
 
     /**
      * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * an AWS Certicate Manager (ACM)
+         certificate.</p>
      */
     inline bool AcmHasBeenSet() const { return m_acmHasBeenSet; }
 
     /**
      * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * an AWS Certicate Manager (ACM)
+         certificate.</p>
      */
     inline void SetAcm(const TlsValidationContextAcmTrust& value) { m_acmHasBeenSet = true; m_acm = value; }
 
     /**
      * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * an AWS Certicate Manager (ACM)
+         certificate.</p>
      */
     inline void SetAcm(TlsValidationContextAcmTrust&& value) { m_acmHasBeenSet = true; m_acm = std::move(value); }
 
     /**
      * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * an AWS Certicate Manager (ACM)
+         certificate.</p>
      */
     inline TlsValidationContextTrust& WithAcm(const TlsValidationContextAcmTrust& value) { SetAcm(value); return *this;}
 
     /**
      * <p>A reference to an object that represents a TLS validation context trust for
-     * an AWS Certicate Manager (ACM) certificate.</p>
+     * an AWS Certicate Manager (ACM)
+         certificate.</p>
      */
     inline TlsValidationContextTrust& WithAcm(TlsValidationContextAcmTrust&& value) { SetAcm(std::move(value)); return *this;}
 

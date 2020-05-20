@@ -546,50 +546,56 @@ namespace Model
 
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
-     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
-     * created the deployment.</p> </li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>
+     * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
+     * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline const DeploymentCreator& GetCreator() const{ return m_creator; }
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
-     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
-     * created the deployment.</p> </li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>
+     * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
+     * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline bool CreatorHasBeenSet() const { return m_creatorHasBeenSet; }
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
-     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
-     * created the deployment.</p> </li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>
+     * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
+     * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline void SetCreator(const DeploymentCreator& value) { m_creatorHasBeenSet = true; m_creator = value; }
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
-     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
-     * created the deployment.</p> </li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>
+     * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
+     * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline void SetCreator(DeploymentCreator&& value) { m_creatorHasBeenSet = true; m_creator = std::move(value); }
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
-     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
-     * created the deployment.</p> </li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>
+     * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
+     * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline DeploymentInfo& WithCreator(const DeploymentCreator& value) { SetCreator(value); return *this;}
 
     /**
-     * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
-     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
-     * created the deployment.</p> </li> </ul>
+     * <p>The means by which the deployment was created:</p> <ul> <li> <p>
+     * <code>user</code>: A user created the deployment.</p> </li> <li> <p>
+     * <code>autoscaling</code>: Amazon EC2 Auto Scaling created the deployment.</p>
+     * </li> <li> <p> <code>codeDeployRollback</code>: A rollback process created the
+     * deployment.</p> </li> </ul>
      */
     inline DeploymentInfo& WithCreator(DeploymentCreator&& value) { SetCreator(std::move(value)); return *this;}
 
@@ -1017,72 +1023,72 @@ namespace Model
     /**
      * <p>Information about how AWS CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
-     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
-     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
-     * version of the file from the application revision currently being deployed
-     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
-     * version of the file already on the instance is kept and used as part of the new
-     * deployment.</p> </li> </ul>
+     * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
+     * is also the default behavior if no option is specified.</p> </li> <li> <p>
+     * <code>OVERWRITE</code>: The version of the file from the application revision
+     * currently being deployed replaces the version already on the instance.</p> </li>
+     * <li> <p> <code>RETAIN</code>: The version of the file already on the instance is
+     * kept and used as part of the new deployment.</p> </li> </ul>
      */
     inline const FileExistsBehavior& GetFileExistsBehavior() const{ return m_fileExistsBehavior; }
 
     /**
      * <p>Information about how AWS CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
-     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
-     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
-     * version of the file from the application revision currently being deployed
-     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
-     * version of the file already on the instance is kept and used as part of the new
-     * deployment.</p> </li> </ul>
+     * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
+     * is also the default behavior if no option is specified.</p> </li> <li> <p>
+     * <code>OVERWRITE</code>: The version of the file from the application revision
+     * currently being deployed replaces the version already on the instance.</p> </li>
+     * <li> <p> <code>RETAIN</code>: The version of the file already on the instance is
+     * kept and used as part of the new deployment.</p> </li> </ul>
      */
     inline bool FileExistsBehaviorHasBeenSet() const { return m_fileExistsBehaviorHasBeenSet; }
 
     /**
      * <p>Information about how AWS CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
-     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
-     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
-     * version of the file from the application revision currently being deployed
-     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
-     * version of the file already on the instance is kept and used as part of the new
-     * deployment.</p> </li> </ul>
+     * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
+     * is also the default behavior if no option is specified.</p> </li> <li> <p>
+     * <code>OVERWRITE</code>: The version of the file from the application revision
+     * currently being deployed replaces the version already on the instance.</p> </li>
+     * <li> <p> <code>RETAIN</code>: The version of the file already on the instance is
+     * kept and used as part of the new deployment.</p> </li> </ul>
      */
     inline void SetFileExistsBehavior(const FileExistsBehavior& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = value; }
 
     /**
      * <p>Information about how AWS CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
-     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
-     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
-     * version of the file from the application revision currently being deployed
-     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
-     * version of the file already on the instance is kept and used as part of the new
-     * deployment.</p> </li> </ul>
+     * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
+     * is also the default behavior if no option is specified.</p> </li> <li> <p>
+     * <code>OVERWRITE</code>: The version of the file from the application revision
+     * currently being deployed replaces the version already on the instance.</p> </li>
+     * <li> <p> <code>RETAIN</code>: The version of the file already on the instance is
+     * kept and used as part of the new deployment.</p> </li> </ul>
      */
     inline void SetFileExistsBehavior(FileExistsBehavior&& value) { m_fileExistsBehaviorHasBeenSet = true; m_fileExistsBehavior = std::move(value); }
 
     /**
      * <p>Information about how AWS CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
-     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
-     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
-     * version of the file from the application revision currently being deployed
-     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
-     * version of the file already on the instance is kept and used as part of the new
-     * deployment.</p> </li> </ul>
+     * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
+     * is also the default behavior if no option is specified.</p> </li> <li> <p>
+     * <code>OVERWRITE</code>: The version of the file from the application revision
+     * currently being deployed replaces the version already on the instance.</p> </li>
+     * <li> <p> <code>RETAIN</code>: The version of the file already on the instance is
+     * kept and used as part of the new deployment.</p> </li> </ul>
      */
     inline DeploymentInfo& WithFileExistsBehavior(const FileExistsBehavior& value) { SetFileExistsBehavior(value); return *this;}
 
     /**
      * <p>Information about how AWS CodeDeploy handles files that already exist in a
      * deployment target location but weren't part of the previous successful
-     * deployment.</p> <ul> <li> <p>DISALLOW: The deployment fails. This is also the
-     * default behavior if no option is specified.</p> </li> <li> <p>OVERWRITE: The
-     * version of the file from the application revision currently being deployed
-     * replaces the version already on the instance.</p> </li> <li> <p>RETAIN: The
-     * version of the file already on the instance is kept and used as part of the new
-     * deployment.</p> </li> </ul>
+     * deployment.</p> <ul> <li> <p> <code>DISALLOW</code>: The deployment fails. This
+     * is also the default behavior if no option is specified.</p> </li> <li> <p>
+     * <code>OVERWRITE</code>: The version of the file from the application revision
+     * currently being deployed replaces the version already on the instance.</p> </li>
+     * <li> <p> <code>RETAIN</code>: The version of the file already on the instance is
+     * kept and used as part of the new deployment.</p> </li> </ul>
      */
     inline DeploymentInfo& WithFileExistsBehavior(FileExistsBehavior&& value) { SetFileExistsBehavior(std::move(value)); return *this;}
 
@@ -1169,6 +1175,55 @@ namespace Model
      */
     inline DeploymentInfo& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The unique ID for an external resource (for example, a CloudFormation stack
+     * ID) that is linked to this deployment.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The unique ID for an external resource (for example, a CloudFormation stack
+     * ID) that is linked to this deployment.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID for an external resource (for example, a CloudFormation stack
+     * ID) that is linked to this deployment.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The unique ID for an external resource (for example, a CloudFormation stack
+     * ID) that is linked to this deployment.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The unique ID for an external resource (for example, a CloudFormation stack
+     * ID) that is linked to this deployment.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The unique ID for an external resource (for example, a CloudFormation stack
+     * ID) that is linked to this deployment.</p>
+     */
+    inline DeploymentInfo& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The unique ID for an external resource (for example, a CloudFormation stack
+     * ID) that is linked to this deployment.</p>
+     */
+    inline DeploymentInfo& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID for an external resource (for example, a CloudFormation stack
+     * ID) that is linked to this deployment.</p>
+     */
+    inline DeploymentInfo& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -1251,6 +1306,9 @@ namespace Model
 
     ComputePlatform m_computePlatform;
     bool m_computePlatformHasBeenSet;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet;
   };
 
 } // namespace Model

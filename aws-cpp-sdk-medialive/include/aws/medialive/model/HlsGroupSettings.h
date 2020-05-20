@@ -1412,74 +1412,74 @@ VOD
 
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-VARIANTMANIFESTSANDSEGMENTS: Generates
-     * media manifests for this output group, but not a master manifest.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
 
-SEGMENTSONLY:
-     * Does not generate any manifests for this output group.
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline const HlsOutputSelection& GetOutputSelection() const{ return m_outputSelection; }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-VARIANTMANIFESTSANDSEGMENTS: Generates
-     * media manifests for this output group, but not a master manifest.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
 
-SEGMENTSONLY:
-     * Does not generate any manifests for this output group.
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline bool OutputSelectionHasBeenSet() const { return m_outputSelectionHasBeenSet; }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-VARIANTMANIFESTSANDSEGMENTS: Generates
-     * media manifests for this output group, but not a master manifest.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
 
-SEGMENTSONLY:
-     * Does not generate any manifests for this output group.
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline void SetOutputSelection(const HlsOutputSelection& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = value; }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-VARIANTMANIFESTSANDSEGMENTS: Generates
-     * media manifests for this output group, but not a master manifest.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
 
-SEGMENTSONLY:
-     * Does not generate any manifests for this output group.
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline void SetOutputSelection(HlsOutputSelection&& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = std::move(value); }
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-VARIANTMANIFESTSANDSEGMENTS: Generates
-     * media manifests for this output group, but not a master manifest.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
 
-SEGMENTSONLY:
-     * Does not generate any manifests for this output group.
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline HlsGroupSettings& WithOutputSelection(const HlsOutputSelection& value) { SetOutputSelection(value); return *this;}
 
     /**
-     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * MANIFESTS_AND_SEGMENTS: Generates manifests (master manifest, if applicable, and
      * media manifests) for this output group.
 
-VARIANTMANIFESTSANDSEGMENTS: Generates
-     * media manifests for this output group, but not a master manifest.
+VARIANT_MANIFESTS_AND_SEGMENTS:
+     * Generates media manifests for this output group, but not a master
+     * manifest.
 
-SEGMENTSONLY:
-     * Does not generate any manifests for this output group.
+SEGMENTS_ONLY: Does not generate any manifests for this output group.
      */
     inline HlsGroupSettings& WithOutputSelection(HlsOutputSelection&& value) { SetOutputSelection(std::move(value)); return *this;}
 
@@ -1875,10 +1875,10 @@ For an HLS output group with
 
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1888,10 +1888,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline const HlsTsFileMode& GetTsFileMode() const{ return m_tsFileMode; }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1901,10 +1901,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline bool TsFileModeHasBeenSet() const { return m_tsFileModeHasBeenSet; }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1914,10 +1914,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline void SetTsFileMode(const HlsTsFileMode& value) { m_tsFileModeHasBeenSet = true; m_tsFileMode = value; }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1927,10 +1927,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline void SetTsFileMode(HlsTsFileMode&& value) { m_tsFileModeHasBeenSet = true; m_tsFileMode = std::move(value); }
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.
@@ -1940,10 +1940,10 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     inline HlsGroupSettings& WithTsFileMode(const HlsTsFileMode& value) { SetTsFileMode(value); return *this;}
 
     /**
-     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * SEGMENTED_FILES: Emit the program as segments - multiple .ts media
      * files.
 
-SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+SINGLE_FILE: Applies only if Mode field is VOD. Emit the program as a
      * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
      * index segments for playback. A typical use for this value is when sending the
      * output to AWS Elemental MediaConvert, which can accept only a single media file.

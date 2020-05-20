@@ -47,6 +47,7 @@
 #include <aws/medialive/model/DeleteTagsRequest.h>
 #include <aws/medialive/model/DescribeChannelRequest.h>
 #include <aws/medialive/model/DescribeInputRequest.h>
+#include <aws/medialive/model/DescribeInputDeviceRequest.h>
 #include <aws/medialive/model/DescribeInputSecurityGroupRequest.h>
 #include <aws/medialive/model/DescribeMultiplexRequest.h>
 #include <aws/medialive/model/DescribeMultiplexProgramRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/medialive/model/DescribeReservationRequest.h>
 #include <aws/medialive/model/DescribeScheduleRequest.h>
 #include <aws/medialive/model/ListChannelsRequest.h>
+#include <aws/medialive/model/ListInputDevicesRequest.h>
 #include <aws/medialive/model/ListInputSecurityGroupsRequest.h>
 #include <aws/medialive/model/ListInputsRequest.h>
 #include <aws/medialive/model/ListMultiplexProgramsRequest.h>
@@ -69,6 +71,7 @@
 #include <aws/medialive/model/UpdateChannelRequest.h>
 #include <aws/medialive/model/UpdateChannelClassRequest.h>
 #include <aws/medialive/model/UpdateInputRequest.h>
+#include <aws/medialive/model/UpdateInputDeviceRequest.h>
 #include <aws/medialive/model/UpdateInputSecurityGroupRequest.h>
 #include <aws/medialive/model/UpdateMultiplexRequest.h>
 #include <aws/medialive/model/UpdateMultiplexProgramRequest.h>
@@ -834,6 +837,47 @@ void MediaLiveClient::DescribeInputAsyncHelper(const DescribeInputRequest& reque
   handler(this, request, DescribeInput(request), context);
 }
 
+DescribeInputDeviceOutcome MediaLiveClient::DescribeInputDevice(const DescribeInputDeviceRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeInputDevice", "Required field: InputDeviceId, is not set");
+    return DescribeInputDeviceOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDevices/";
+  ss << request.GetInputDeviceId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeInputDeviceOutcome(DescribeInputDeviceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeInputDeviceOutcome(outcome.GetError());
+  }
+}
+
+DescribeInputDeviceOutcomeCallable MediaLiveClient::DescribeInputDeviceCallable(const DescribeInputDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeInputDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeInputDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::DescribeInputDeviceAsync(const DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeInputDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::DescribeInputDeviceAsyncHelper(const DescribeInputDeviceRequest& request, const DescribeInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeInputDevice(request), context);
+}
+
 DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(const DescribeInputSecurityGroupRequest& request) const
 {
   if (!request.InputSecurityGroupIdHasBeenSet())
@@ -1121,6 +1165,41 @@ void MediaLiveClient::ListChannelsAsync(const ListChannelsRequest& request, cons
 void MediaLiveClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListChannels(request), context);
+}
+
+ListInputDevicesOutcome MediaLiveClient::ListInputDevices(const ListInputDevicesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDevices";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListInputDevicesOutcome(ListInputDevicesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListInputDevicesOutcome(outcome.GetError());
+  }
+}
+
+ListInputDevicesOutcomeCallable MediaLiveClient::ListInputDevicesCallable(const ListInputDevicesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInputDevicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputDevices(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::ListInputDevicesAsync(const ListInputDevicesRequest& request, const ListInputDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListInputDevicesAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::ListInputDevicesAsyncHelper(const ListInputDevicesRequest& request, const ListInputDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListInputDevices(request), context);
 }
 
 ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const ListInputSecurityGroupsRequest& request) const
@@ -1713,6 +1792,47 @@ void MediaLiveClient::UpdateInputAsync(const UpdateInputRequest& request, const 
 void MediaLiveClient::UpdateInputAsyncHelper(const UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInput(request), context);
+}
+
+UpdateInputDeviceOutcome MediaLiveClient::UpdateInputDevice(const UpdateInputDeviceRequest& request) const
+{
+  if (!request.InputDeviceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateInputDevice", "Required field: InputDeviceId, is not set");
+    return UpdateInputDeviceOutcome(Aws::Client::AWSError<MediaLiveErrors>(MediaLiveErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InputDeviceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/prod/inputDevices/";
+  ss << request.GetInputDeviceId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateInputDeviceOutcome(UpdateInputDeviceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateInputDeviceOutcome(outcome.GetError());
+  }
+}
+
+UpdateInputDeviceOutcomeCallable MediaLiveClient::UpdateInputDeviceCallable(const UpdateInputDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateInputDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateInputDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaLiveClient::UpdateInputDeviceAsync(const UpdateInputDeviceRequest& request, const UpdateInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateInputDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void MediaLiveClient::UpdateInputDeviceAsyncHelper(const UpdateInputDeviceRequest& request, const UpdateInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateInputDevice(request), context);
 }
 
 UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const UpdateInputSecurityGroupRequest& request) const

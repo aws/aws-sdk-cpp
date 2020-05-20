@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/securityhub/model/SeverityLabel.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -48,26 +49,34 @@ namespace Model
 
 
     /**
-     * <p>The native severity as defined by the AWS service or integrated partner
-     * product that generated the finding.</p>
+     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
+     * as defined by the AWS service or integrated partner product that generated the
+     * finding.</p>
      */
     inline double GetProduct() const{ return m_product; }
 
     /**
-     * <p>The native severity as defined by the AWS service or integrated partner
-     * product that generated the finding.</p>
+     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
+     * as defined by the AWS service or integrated partner product that generated the
+     * finding.</p>
      */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
 
     /**
-     * <p>The native severity as defined by the AWS service or integrated partner
-     * product that generated the finding.</p>
+     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
+     * as defined by the AWS service or integrated partner product that generated the
+     * finding.</p>
      */
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
 
     /**
-     * <p>The native severity as defined by the AWS service or integrated partner
-     * product that generated the finding.</p>
+     * <p>Deprecated. This attribute is being deprecated. Instead of providing
+     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
+     * as defined by the AWS service or integrated partner product that generated the
+     * finding.</p>
      */
     inline Severity& WithProduct(double value) { SetProduct(value); return *this;}
 
@@ -183,6 +192,47 @@ namespace Model
      */
     inline Severity& WithNormalized(int value) { SetNormalized(value); return *this;}
 
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline const Aws::String& GetOriginal() const{ return m_original; }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline void SetOriginal(const Aws::String& value) { m_originalHasBeenSet = true; m_original = value; }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline void SetOriginal(Aws::String&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline void SetOriginal(const char* value) { m_originalHasBeenSet = true; m_original.assign(value); }
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline Severity& WithOriginal(const Aws::String& value) { SetOriginal(value); return *this;}
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline Severity& WithOriginal(Aws::String&& value) { SetOriginal(std::move(value)); return *this;}
+
+    /**
+     * <p>The native severity from the finding product that generated the finding.</p>
+     */
+    inline Severity& WithOriginal(const char* value) { SetOriginal(value); return *this;}
+
   private:
 
     double m_product;
@@ -193,6 +243,9 @@ namespace Model
 
     int m_normalized;
     bool m_normalizedHasBeenSet;
+
+    Aws::String m_original;
+    bool m_originalHasBeenSet;
   };
 
 } // namespace Model

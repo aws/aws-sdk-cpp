@@ -33,6 +33,7 @@ namespace Aws
         static const int InstanceTarget_HASH = HashingUtils::HashString("InstanceTarget");
         static const int LambdaTarget_HASH = HashingUtils::HashString("LambdaTarget");
         static const int ECSTarget_HASH = HashingUtils::HashString("ECSTarget");
+        static const int CloudFormationTarget_HASH = HashingUtils::HashString("CloudFormationTarget");
 
 
         DeploymentTargetType GetDeploymentTargetTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == ECSTarget_HASH)
           {
             return DeploymentTargetType::ECSTarget;
+          }
+          else if (hashCode == CloudFormationTarget_HASH)
+          {
+            return DeploymentTargetType::CloudFormationTarget;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "LambdaTarget";
           case DeploymentTargetType::ECSTarget:
             return "ECSTarget";
+          case DeploymentTargetType::CloudFormationTarget:
+            return "CloudFormationTarget";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

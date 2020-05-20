@@ -657,43 +657,43 @@ namespace Model
 
 
     /**
-     * <p>The minimum value to scale to in response to a scale-in event.</p>
+     * <p>The minimum value to scale to in response to a scale-in activity.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
-     * <p>The minimum value to scale to in response to a scale-in event.</p>
+     * <p>The minimum value to scale to in response to a scale-in activity.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
     /**
-     * <p>The minimum value to scale to in response to a scale-in event.</p>
+     * <p>The minimum value to scale to in response to a scale-in activity.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
-     * <p>The minimum value to scale to in response to a scale-in event.</p>
+     * <p>The minimum value to scale to in response to a scale-in activity.</p>
      */
     inline ScalableTarget& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 
 
     /**
-     * <p>The maximum value to scale to in response to a scale-out event.</p>
+     * <p>The maximum value to scale to in response to a scale-out activity.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The maximum value to scale to in response to a scale-out event.</p>
+     * <p>The maximum value to scale to in response to a scale-out activity.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
-     * <p>The maximum value to scale to in response to a scale-out event.</p>
+     * <p>The maximum value to scale to in response to a scale-out activity.</p>
      */
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The maximum value to scale to in response to a scale-out event.</p>
+     * <p>The maximum value to scale to in response to a scale-out activity.</p>
      */
     inline ScalableTarget& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
 

@@ -182,6 +182,35 @@ namespace Model
      */
     inline Item& WithContent(const char* value) { SetContent(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether a word in the item matches a word in the vocabulary filter
+     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * item matches your vocabulary filter.</p>
+     */
+    inline bool GetVocabularyFilterMatch() const{ return m_vocabularyFilterMatch; }
+
+    /**
+     * <p>Indicates whether a word in the item matches a word in the vocabulary filter
+     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * item matches your vocabulary filter.</p>
+     */
+    inline bool VocabularyFilterMatchHasBeenSet() const { return m_vocabularyFilterMatchHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a word in the item matches a word in the vocabulary filter
+     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * item matches your vocabulary filter.</p>
+     */
+    inline void SetVocabularyFilterMatch(bool value) { m_vocabularyFilterMatchHasBeenSet = true; m_vocabularyFilterMatch = value; }
+
+    /**
+     * <p>Indicates whether a word in the item matches a word in the vocabulary filter
+     * you've chosen for your real-time stream. If <code>true</code> then a word in the
+     * item matches your vocabulary filter.</p>
+     */
+    inline Item& WithVocabularyFilterMatch(bool value) { SetVocabularyFilterMatch(value); return *this;}
+
   private:
 
     double m_startTime;
@@ -195,6 +224,9 @@ namespace Model
 
     Aws::String m_content;
     bool m_contentHasBeenSet;
+
+    bool m_vocabularyFilterMatch;
+    bool m_vocabularyFilterMatchHasBeenSet;
   };
 
 } // namespace Model

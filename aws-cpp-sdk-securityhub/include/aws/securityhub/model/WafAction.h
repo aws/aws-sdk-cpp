@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>Details about the action that CloudFront or AWS WAF takes when a web request
-   * matches the conditions in the Rule. </p><p><h3>See Also:</h3>   <a
+   * matches the conditions in the rule. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/WafAction">AWS
    * API Reference</a></p>
    */
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
-     * in a Rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
+     * in a rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
      * <code>ALLOW</code> - AWS WAF allows requests</p> </li> <li> <p>
      * <code>BLOCK</code> - AWS WAF blocks requests</p> </li> <li> <p>
      * <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
@@ -62,7 +62,7 @@ namespace Model
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
-     * in a Rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
+     * in a rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
      * <code>ALLOW</code> - AWS WAF allows requests</p> </li> <li> <p>
      * <code>BLOCK</code> - AWS WAF blocks requests</p> </li> <li> <p>
      * <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
-     * in a Rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
+     * in a rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
      * <code>ALLOW</code> - AWS WAF allows requests</p> </li> <li> <p>
      * <code>BLOCK</code> - AWS WAF blocks requests</p> </li> <li> <p>
      * <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
-     * in a Rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
+     * in a rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
      * <code>ALLOW</code> - AWS WAF allows requests</p> </li> <li> <p>
      * <code>BLOCK</code> - AWS WAF blocks requests</p> </li> <li> <p>
      * <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
-     * in a Rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
+     * in a rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
      * <code>ALLOW</code> - AWS WAF allows requests</p> </li> <li> <p>
      * <code>BLOCK</code> - AWS WAF blocks requests</p> </li> <li> <p>
      * <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
-     * in a Rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
+     * in a rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
      * <code>ALLOW</code> - AWS WAF allows requests</p> </li> <li> <p>
      * <code>BLOCK</code> - AWS WAF blocks requests</p> </li> <li> <p>
      * <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
@@ -122,7 +122,7 @@ namespace Model
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
-     * in a Rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
+     * in a rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
      * <code>ALLOW</code> - AWS WAF allows requests</p> </li> <li> <p>
      * <code>BLOCK</code> - AWS WAF blocks requests</p> </li> <li> <p>
      * <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p>Specifies how you want AWS WAF to respond to requests that match the settings
-     * in a Rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
+     * in a rule.</p> <p>Valid settings include the following:</p> <ul> <li> <p>
      * <code>ALLOW</code> - AWS WAF allows requests</p> </li> <li> <p>
      * <code>BLOCK</code> - AWS WAF blocks requests</p> </li> <li> <p>
      * <code>COUNT</code> - AWS WAF increments a counter of the requests that match all

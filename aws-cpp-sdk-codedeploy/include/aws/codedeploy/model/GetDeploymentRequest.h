@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a GetDeployment operation.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Represents the input of a <code>GetDeployment</code> operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInput">AWS
    * API Reference</a></p>
    */

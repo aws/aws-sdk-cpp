@@ -174,8 +174,8 @@ namespace Model
     /**
      * Indicates how to respond to the AFD values in the input stream. RESPOND causes
      * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * ratio, and output display aspect ratio, and (except for FRAME_CAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAME_CAPTURE
      * codec) ignores the AFD values and includes the values in the output, so input
      * video is not clipped. NONE ignores the AFD values and does not include the
      * values through to the output, so input video is not clipped.
@@ -185,8 +185,8 @@ namespace Model
     /**
      * Indicates how to respond to the AFD values in the input stream. RESPOND causes
      * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * ratio, and output display aspect ratio, and (except for FRAME_CAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAME_CAPTURE
      * codec) ignores the AFD values and includes the values in the output, so input
      * video is not clipped. NONE ignores the AFD values and does not include the
      * values through to the output, so input video is not clipped.
@@ -196,8 +196,8 @@ namespace Model
     /**
      * Indicates how to respond to the AFD values in the input stream. RESPOND causes
      * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * ratio, and output display aspect ratio, and (except for FRAME_CAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAME_CAPTURE
      * codec) ignores the AFD values and includes the values in the output, so input
      * video is not clipped. NONE ignores the AFD values and does not include the
      * values through to the output, so input video is not clipped.
@@ -207,8 +207,8 @@ namespace Model
     /**
      * Indicates how to respond to the AFD values in the input stream. RESPOND causes
      * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * ratio, and output display aspect ratio, and (except for FRAME_CAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAME_CAPTURE
      * codec) ignores the AFD values and includes the values in the output, so input
      * video is not clipped. NONE ignores the AFD values and does not include the
      * values through to the output, so input video is not clipped.
@@ -218,8 +218,8 @@ namespace Model
     /**
      * Indicates how to respond to the AFD values in the input stream. RESPOND causes
      * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * ratio, and output display aspect ratio, and (except for FRAME_CAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAME_CAPTURE
      * codec) ignores the AFD values and includes the values in the output, so input
      * video is not clipped. NONE ignores the AFD values and does not include the
      * values through to the output, so input video is not clipped.
@@ -229,8 +229,8 @@ namespace Model
     /**
      * Indicates how to respond to the AFD values in the input stream. RESPOND causes
      * input video to be clipped, depending on the AFD value, input display aspect
-     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
-     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * ratio, and output display aspect ratio, and (except for FRAME_CAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAME_CAPTURE
      * codec) ignores the AFD values and includes the values in the output, so input
      * video is not clipped. NONE ignores the AFD values and does not include the
      * values through to the output, so input video is not clipped.
@@ -239,7 +239,7 @@ namespace Model
 
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -247,7 +247,7 @@ namespace Model
     inline const VideoDescriptionScalingBehavior& GetScalingBehavior() const{ return m_scalingBehavior; }
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -255,7 +255,7 @@ namespace Model
     inline bool ScalingBehaviorHasBeenSet() const { return m_scalingBehaviorHasBeenSet; }
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -263,7 +263,7 @@ namespace Model
     inline void SetScalingBehavior(const VideoDescriptionScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -271,7 +271,7 @@ namespace Model
     inline void SetScalingBehavior(VideoDescriptionScalingBehavior&& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = std::move(value); }
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.
@@ -279,7 +279,7 @@ namespace Model
     inline VideoDescription& WithScalingBehavior(const VideoDescriptionScalingBehavior& value) { SetScalingBehavior(value); return *this;}
 
     /**
-     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * STRETCH_TO_OUTPUT configures the output position to stretch the video to the
      * specified output resolution (height and width). This option will override any
      * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
      * around the video to provide the specified output resolution.

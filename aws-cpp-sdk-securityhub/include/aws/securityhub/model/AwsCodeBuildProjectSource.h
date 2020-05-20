@@ -176,8 +176,8 @@ namespace Model
      * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
      * CodePipeline uses the settings in a pipeline's source action instead of this
      * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the
-     * buildspec file (for example,
+     * HTTPS clone URL to the repository that contains the source code and the build
+     * spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -185,9 +185,9 @@ namespace Model
      * <li> <p> The path to the folder that contains the source code (for example,
      * <code>bucket-name/path/to/source-code/folder/</code>).</p> </li> </ul> </li>
      * <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file.</p> </li> <li>
+     * repository that contains the source and the build spec file.</p> </li> <li>
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file. </p> </li> </ul>
+     * repository that contains the source and the build spec file. </p> </li> </ul>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
@@ -198,8 +198,8 @@ namespace Model
      * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
      * CodePipeline uses the settings in a pipeline's source action instead of this
      * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the
-     * buildspec file (for example,
+     * HTTPS clone URL to the repository that contains the source code and the build
+     * spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -207,9 +207,9 @@ namespace Model
      * <li> <p> The path to the folder that contains the source code (for example,
      * <code>bucket-name/path/to/source-code/folder/</code>).</p> </li> </ul> </li>
      * <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file.</p> </li> <li>
+     * repository that contains the source and the build spec file.</p> </li> <li>
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file. </p> </li> </ul>
+     * repository that contains the source and the build spec file. </p> </li> </ul>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
@@ -220,8 +220,8 @@ namespace Model
      * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
      * CodePipeline uses the settings in a pipeline's source action instead of this
      * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the
-     * buildspec file (for example,
+     * HTTPS clone URL to the repository that contains the source code and the build
+     * spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -229,9 +229,9 @@ namespace Model
      * <li> <p> The path to the folder that contains the source code (for example,
      * <code>bucket-name/path/to/source-code/folder/</code>).</p> </li> </ul> </li>
      * <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file.</p> </li> <li>
+     * repository that contains the source and the build spec file.</p> </li> <li>
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file. </p> </li> </ul>
+     * repository that contains the source and the build spec file. </p> </li> </ul>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
@@ -242,8 +242,8 @@ namespace Model
      * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
      * CodePipeline uses the settings in a pipeline's source action instead of this
      * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the
-     * buildspec file (for example,
+     * HTTPS clone URL to the repository that contains the source code and the build
+     * spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -251,9 +251,9 @@ namespace Model
      * <li> <p> The path to the folder that contains the source code (for example,
      * <code>bucket-name/path/to/source-code/folder/</code>).</p> </li> </ul> </li>
      * <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file.</p> </li> <li>
+     * repository that contains the source and the build spec file.</p> </li> <li>
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file. </p> </li> </ul>
+     * repository that contains the source and the build spec file. </p> </li> </ul>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
@@ -264,8 +264,8 @@ namespace Model
      * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
      * CodePipeline uses the settings in a pipeline's source action instead of this
      * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the
-     * buildspec file (for example,
+     * HTTPS clone URL to the repository that contains the source code and the build
+     * spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -273,9 +273,9 @@ namespace Model
      * <li> <p> The path to the folder that contains the source code (for example,
      * <code>bucket-name/path/to/source-code/folder/</code>).</p> </li> </ul> </li>
      * <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file.</p> </li> <li>
+     * repository that contains the source and the build spec file.</p> </li> <li>
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file. </p> </li> </ul>
+     * repository that contains the source and the build spec file. </p> </li> </ul>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
@@ -286,8 +286,8 @@ namespace Model
      * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
      * CodePipeline uses the settings in a pipeline's source action instead of this
      * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the
-     * buildspec file (for example,
+     * HTTPS clone URL to the repository that contains the source code and the build
+     * spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -295,9 +295,9 @@ namespace Model
      * <li> <p> The path to the folder that contains the source code (for example,
      * <code>bucket-name/path/to/source-code/folder/</code>).</p> </li> </ul> </li>
      * <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file.</p> </li> <li>
+     * repository that contains the source and the build spec file.</p> </li> <li>
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file. </p> </li> </ul>
+     * repository that contains the source and the build spec file. </p> </li> </ul>
      */
     inline AwsCodeBuildProjectSource& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
@@ -308,8 +308,8 @@ namespace Model
      * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
      * CodePipeline uses the settings in a pipeline's source action instead of this
      * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the
-     * buildspec file (for example,
+     * HTTPS clone URL to the repository that contains the source code and the build
+     * spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -317,9 +317,9 @@ namespace Model
      * <li> <p> The path to the folder that contains the source code (for example,
      * <code>bucket-name/path/to/source-code/folder/</code>).</p> </li> </ul> </li>
      * <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file.</p> </li> <li>
+     * repository that contains the source and the build spec file.</p> </li> <li>
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file. </p> </li> </ul>
+     * repository that contains the source and the build spec file. </p> </li> </ul>
      */
     inline AwsCodeBuildProjectSource& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -330,8 +330,8 @@ namespace Model
      * specified. If it is specified, AWS CodePipeline ignores it. This is because AWS
      * CodePipeline uses the settings in a pipeline's source action instead of this
      * value.</p> </li> <li> <p>For source code in an AWS CodeCommit repository, the
-     * HTTPS clone URL to the repository that contains the source code and the
-     * buildspec file (for example,
+     * HTTPS clone URL to the repository that contains the source code and the build
+     * spec file (for example,
      * <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
      * ).</p> </li> <li> <p>For source code in an S3 input bucket, one of the
      * following.</p> <ul> <li> <p>The path to the ZIP file that contains the source
@@ -339,9 +339,9 @@ namespace Model
      * <li> <p> The path to the folder that contains the source code (for example,
      * <code>bucket-name/path/to/source-code/folder/</code>).</p> </li> </ul> </li>
      * <li> <p>For source code in a GitHub repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file.</p> </li> <li>
+     * repository that contains the source and the build spec file.</p> </li> <li>
      * <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
-     * repository that contains the source and the buildspec file. </p> </li> </ul>
+     * repository that contains the source and the build spec file. </p> </li> </ul>
      */
     inline AwsCodeBuildProjectSource& WithLocation(const char* value) { SetLocation(value); return *this;}
 

@@ -51,65 +51,65 @@ namespace Model
 
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline const Aws::Vector<Aws::String>& GetListenerArns() const{ return m_listenerArns; }
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline bool ListenerArnsHasBeenSet() const { return m_listenerArnsHasBeenSet; }
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline void SetListenerArns(const Aws::Vector<Aws::String>& value) { m_listenerArnsHasBeenSet = true; m_listenerArns = value; }
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline void SetListenerArns(Aws::Vector<Aws::String>&& value) { m_listenerArnsHasBeenSet = true; m_listenerArns = std::move(value); }
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline TrafficRoute& WithListenerArns(const Aws::Vector<Aws::String>& value) { SetListenerArns(value); return *this;}
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline TrafficRoute& WithListenerArns(Aws::Vector<Aws::String>&& value) { SetListenerArns(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline TrafficRoute& AddListenerArns(const Aws::String& value) { m_listenerArnsHasBeenSet = true; m_listenerArns.push_back(value); return *this; }
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline TrafficRoute& AddListenerArns(Aws::String&& value) { m_listenerArnsHasBeenSet = true; m_listenerArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The ARN of one listener. The listener identifies the route between a target
-     * group and a load balancer. This is an array of strings with a maximum size of
-     * one. </p>
+     * <p> The Amazon Resource Name (ARN) of one listener. The listener identifies the
+     * route between a target group and a load balancer. This is an array of strings
+     * with a maximum size of one. </p>
      */
     inline TrafficRoute& AddListenerArns(const char* value) { m_listenerArnsHasBeenSet = true; m_listenerArns.push_back(value); return *this; }
 

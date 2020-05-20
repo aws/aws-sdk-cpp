@@ -280,81 +280,73 @@ namespace Model
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
-     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
-     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
-     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
-     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
-     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
-     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
-     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
-     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
-     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
-     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
-     * Gateway</p> </li> </ul>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p>
+     * <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> </ul>
      */
     inline ListCopyJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
@@ -362,56 +354,56 @@ namespace Model
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
      */
     inline const Aws::String& GetByDestinationVaultArn() const{ return m_byDestinationVaultArn; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
      */
     inline bool ByDestinationVaultArnHasBeenSet() const { return m_byDestinationVaultArnHasBeenSet; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
      */
     inline void SetByDestinationVaultArn(const Aws::String& value) { m_byDestinationVaultArnHasBeenSet = true; m_byDestinationVaultArn = value; }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
      */
     inline void SetByDestinationVaultArn(Aws::String&& value) { m_byDestinationVaultArnHasBeenSet = true; m_byDestinationVaultArn = std::move(value); }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
      */
     inline void SetByDestinationVaultArn(const char* value) { m_byDestinationVaultArnHasBeenSet = true; m_byDestinationVaultArn.assign(value); }
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
      */
     inline ListCopyJobsRequest& WithByDestinationVaultArn(const Aws::String& value) { SetByDestinationVaultArn(value); return *this;}
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
      */
     inline ListCopyJobsRequest& WithByDestinationVaultArn(Aws::String&& value) { SetByDestinationVaultArn(std::move(value)); return *this;}
 
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault
      * to copy from; for example,
-     * arn:aws:backup:us-east-1:123456789012:vault:aBackupVault. </p>
+     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
      */
     inline ListCopyJobsRequest& WithByDestinationVaultArn(const char* value) { SetByDestinationVaultArn(value); return *this;}
 

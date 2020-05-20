@@ -780,56 +780,56 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
+     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
      * RDS) database.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
+     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
      * RDS) database.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
+     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
      * RDS) database.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
+     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
      * RDS) database.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
+     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
      * RDS) database.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
+     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
      * RDS) database.</p>
      */
     inline BackupJob& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
+     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
      * RDS) database.</p>
      */
     inline BackupJob& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of AWS resource to be backed-up; for example, an Amazon Elastic
+     * <p>The type of AWS resource to be backed up; for example, an Amazon Elastic
      * Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon
      * RDS) database.</p>
      */

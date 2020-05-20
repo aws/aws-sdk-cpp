@@ -30,18 +30,26 @@ namespace Model
 
 VirtualNodeRef::VirtualNodeRef() : 
     m_arnHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
     m_meshNameHasBeenSet(false),
     m_meshOwnerHasBeenSet(false),
     m_resourceOwnerHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false),
     m_virtualNodeNameHasBeenSet(false)
 {
 }
 
 VirtualNodeRef::VirtualNodeRef(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_lastUpdatedAtHasBeenSet(false),
     m_meshNameHasBeenSet(false),
     m_meshOwnerHasBeenSet(false),
     m_resourceOwnerHasBeenSet(false),
+    m_version(0),
+    m_versionHasBeenSet(false),
     m_virtualNodeNameHasBeenSet(false)
 {
   *this = jsonValue;
@@ -54,6 +62,20 @@ VirtualNodeRef& VirtualNodeRef::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetDouble("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastUpdatedAt"))
+  {
+    m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
+
+    m_lastUpdatedAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("meshName"))
@@ -77,6 +99,13 @@ VirtualNodeRef& VirtualNodeRef::operator =(JsonView jsonValue)
     m_resourceOwnerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("version"))
+  {
+    m_version = jsonValue.GetInt64("version");
+
+    m_versionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("virtualNodeName"))
   {
     m_virtualNodeName = jsonValue.GetString("virtualNodeName");
@@ -97,6 +126,16 @@ JsonValue VirtualNodeRef::Jsonize() const
 
   }
 
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_lastUpdatedAtHasBeenSet)
+  {
+   payload.WithDouble("lastUpdatedAt", m_lastUpdatedAt.SecondsWithMSPrecision());
+  }
+
   if(m_meshNameHasBeenSet)
   {
    payload.WithString("meshName", m_meshName);
@@ -112,6 +151,12 @@ JsonValue VirtualNodeRef::Jsonize() const
   if(m_resourceOwnerHasBeenSet)
   {
    payload.WithString("resourceOwner", m_resourceOwner);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithInt64("version", m_version);
 
   }
 

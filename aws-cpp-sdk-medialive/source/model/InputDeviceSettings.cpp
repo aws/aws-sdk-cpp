@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/medialive/model/MultiplexValidationError.h>
+#include <aws/medialive/model/InputDeviceSettings.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -28,51 +28,36 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexValidationError::MultiplexValidationError() : 
-    m_elementPathHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+InputDeviceSettings::InputDeviceSettings() : 
+    m_idHasBeenSet(false)
 {
 }
 
-MultiplexValidationError::MultiplexValidationError(JsonView jsonValue) : 
-    m_elementPathHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
+InputDeviceSettings::InputDeviceSettings(JsonView jsonValue) : 
+    m_idHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-MultiplexValidationError& MultiplexValidationError::operator =(JsonView jsonValue)
+InputDeviceSettings& InputDeviceSettings::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("elementPath"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_elementPath = jsonValue.GetString("elementPath");
+    m_id = jsonValue.GetString("id");
 
-    m_elementPathHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("errorMessage"))
-  {
-    m_errorMessage = jsonValue.GetString("errorMessage");
-
-    m_errorMessageHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue MultiplexValidationError::Jsonize() const
+JsonValue InputDeviceSettings::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_elementPathHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("elementPath", m_elementPath);
-
-  }
-
-  if(m_errorMessageHasBeenSet)
-  {
-   payload.WithString("errorMessage", m_errorMessage);
+   payload.WithString("id", m_id);
 
   }
 

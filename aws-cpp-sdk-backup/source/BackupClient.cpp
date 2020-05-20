@@ -44,6 +44,7 @@
 #include <aws/backup/model/DescribeCopyJobRequest.h>
 #include <aws/backup/model/DescribeProtectedResourceRequest.h>
 #include <aws/backup/model/DescribeRecoveryPointRequest.h>
+#include <aws/backup/model/DescribeRegionSettingsRequest.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
 #include <aws/backup/model/GetBackupPlanRequest.h>
@@ -75,6 +76,7 @@
 #include <aws/backup/model/UntagResourceRequest.h>
 #include <aws/backup/model/UpdateBackupPlanRequest.h>
 #include <aws/backup/model/UpdateRecoveryPointLifecycleRequest.h>
+#include <aws/backup/model/UpdateRegionSettingsRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -738,6 +740,41 @@ void BackupClient::DescribeRecoveryPointAsync(const DescribeRecoveryPointRequest
 void BackupClient::DescribeRecoveryPointAsyncHelper(const DescribeRecoveryPointRequest& request, const DescribeRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeRecoveryPoint(request), context);
+}
+
+DescribeRegionSettingsOutcome BackupClient::DescribeRegionSettings(const DescribeRegionSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/account-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeRegionSettingsOutcome(DescribeRegionSettingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeRegionSettingsOutcome(outcome.GetError());
+  }
+}
+
+DescribeRegionSettingsOutcomeCallable BackupClient::DescribeRegionSettingsCallable(const DescribeRegionSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRegionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRegionSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DescribeRegionSettingsAsync(const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRegionSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DescribeRegionSettingsAsyncHelper(const DescribeRegionSettingsRequest& request, const DescribeRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRegionSettings(request), context);
 }
 
 DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestoreJobRequest& request) const
@@ -2010,5 +2047,40 @@ void BackupClient::UpdateRecoveryPointLifecycleAsync(const UpdateRecoveryPointLi
 void BackupClient::UpdateRecoveryPointLifecycleAsyncHelper(const UpdateRecoveryPointLifecycleRequest& request, const UpdateRecoveryPointLifecycleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateRecoveryPointLifecycle(request), context);
+}
+
+UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegionSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/account-settings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateRegionSettingsOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateRegionSettingsOutcome(outcome.GetError());
+  }
+}
+
+UpdateRegionSettingsOutcomeCallable BackupClient::UpdateRegionSettingsCallable(const UpdateRegionSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateRegionSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateRegionSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::UpdateRegionSettingsAsync(const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateRegionSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::UpdateRegionSettingsAsyncHelper(const UpdateRegionSettingsRequest& request, const UpdateRegionSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateRegionSettings(request), context);
 }
 

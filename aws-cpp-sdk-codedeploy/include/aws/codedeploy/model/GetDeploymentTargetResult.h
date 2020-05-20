@@ -44,45 +44,45 @@ namespace Model
 
     /**
      * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecyle events, and when it was last updated. It also contains metadata
-     * about the deployment target. The deployment target metadata depends on the
-     * deployment target's type (<code>instanceTarget</code>,
+     * status, lifecycle events, and when it was last updated. It also contains
+     * metadata about the deployment target. The deployment target metadata depends on
+     * the deployment target's type (<code>instanceTarget</code>,
      * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
      */
     inline const DeploymentTarget& GetDeploymentTarget() const{ return m_deploymentTarget; }
 
     /**
      * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecyle events, and when it was last updated. It also contains metadata
-     * about the deployment target. The deployment target metadata depends on the
-     * deployment target's type (<code>instanceTarget</code>,
+     * status, lifecycle events, and when it was last updated. It also contains
+     * metadata about the deployment target. The deployment target metadata depends on
+     * the deployment target's type (<code>instanceTarget</code>,
      * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
      */
     inline void SetDeploymentTarget(const DeploymentTarget& value) { m_deploymentTarget = value; }
 
     /**
      * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecyle events, and when it was last updated. It also contains metadata
-     * about the deployment target. The deployment target metadata depends on the
-     * deployment target's type (<code>instanceTarget</code>,
+     * status, lifecycle events, and when it was last updated. It also contains
+     * metadata about the deployment target. The deployment target metadata depends on
+     * the deployment target's type (<code>instanceTarget</code>,
      * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
      */
     inline void SetDeploymentTarget(DeploymentTarget&& value) { m_deploymentTarget = std::move(value); }
 
     /**
      * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecyle events, and when it was last updated. It also contains metadata
-     * about the deployment target. The deployment target metadata depends on the
-     * deployment target's type (<code>instanceTarget</code>,
+     * status, lifecycle events, and when it was last updated. It also contains
+     * metadata about the deployment target. The deployment target metadata depends on
+     * the deployment target's type (<code>instanceTarget</code>,
      * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
      */
     inline GetDeploymentTargetResult& WithDeploymentTarget(const DeploymentTarget& value) { SetDeploymentTarget(value); return *this;}
 
     /**
      * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecyle events, and when it was last updated. It also contains metadata
-     * about the deployment target. The deployment target metadata depends on the
-     * deployment target's type (<code>instanceTarget</code>,
+     * status, lifecycle events, and when it was last updated. It also contains
+     * metadata about the deployment target. The deployment target metadata depends on
+     * the deployment target's type (<code>instanceTarget</code>,
      * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
      */
     inline GetDeploymentTargetResult& WithDeploymentTarget(DeploymentTarget&& value) { SetDeploymentTarget(std::move(value)); return *this;}

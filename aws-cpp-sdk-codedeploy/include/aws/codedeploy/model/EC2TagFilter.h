@@ -131,44 +131,44 @@ namespace Model
 
 
     /**
-     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
-     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
-     * </li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p>
+     * </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p>
+     * <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>
      */
     inline const EC2TagFilterType& GetType() const{ return m_type; }
 
     /**
-     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
-     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
-     * </li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p>
+     * </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p>
+     * <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
-     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
-     * </li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p>
+     * </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p>
+     * <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>
      */
     inline void SetType(const EC2TagFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
-     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
-     * </li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p>
+     * </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p>
+     * <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>
      */
     inline void SetType(EC2TagFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
-     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
-     * </li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p>
+     * </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p>
+     * <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>
      */
     inline EC2TagFilter& WithType(const EC2TagFilterType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key only.</p> </li> <li>
-     * <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE: Key and value.</p>
-     * </li> </ul>
+     * <p>The tag filter type:</p> <ul> <li> <p> <code>KEY_ONLY</code>: Key only.</p>
+     * </li> <li> <p> <code>VALUE_ONLY</code>: Value only.</p> </li> <li> <p>
+     * <code>KEY_AND_VALUE</code>: Key and value.</p> </li> </ul>
      */
     inline EC2TagFilter& WithType(EC2TagFilterType&& value) { SetType(std::move(value)); return *this;}
 

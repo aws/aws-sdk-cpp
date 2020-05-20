@@ -53,42 +53,42 @@ namespace Model
 
 
     /**
-     * <p>&gt;An optional display name for a backup rule.</p>
+     * <p>An optional display name for a backup rule.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
 
     /**
-     * <p>&gt;An optional display name for a backup rule.</p>
+     * <p>An optional display name for a backup rule.</p>
      */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
 
     /**
-     * <p>&gt;An optional display name for a backup rule.</p>
+     * <p>An optional display name for a backup rule.</p>
      */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
-     * <p>&gt;An optional display name for a backup rule.</p>
+     * <p>An optional display name for a backup rule.</p>
      */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
 
     /**
-     * <p>&gt;An optional display name for a backup rule.</p>
+     * <p>An optional display name for a backup rule.</p>
      */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
 
     /**
-     * <p>&gt;An optional display name for a backup rule.</p>
+     * <p>An optional display name for a backup rule.</p>
      */
     inline BackupRuleInput& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
 
     /**
-     * <p>&gt;An optional display name for a backup rule.</p>
+     * <p>An optional display name for a backup rule.</p>
      */
     inline BackupRuleInput& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>&gt;An optional display name for a backup rule.</p>
+     * <p>An optional display name for a backup rule.</p>
      */
     inline BackupRuleInput& WithRuleName(const char* value) { SetRuleName(value); return *this;}
 
@@ -200,47 +200,51 @@ namespace Model
 
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline long long GetStartWindowMinutes() const{ return m_startWindowMinutes; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline bool StartWindowMinutesHasBeenSet() const { return m_startWindowMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline void SetStartWindowMinutes(long long value) { m_startWindowMinutesHasBeenSet = true; m_startWindowMinutes = value; }
 
     /**
-     * <p>The amount of time in minutes before beginning a backup.</p>
+     * <p>A value in minutes after a backup is scheduled before a job will be canceled
+     * if it doesn't start successfully. This value is optional.</p>
      */
     inline BackupRuleInput& WithStartWindowMinutes(long long value) { SetStartWindowMinutes(value); return *this;}
 
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline long long GetCompletionWindowMinutes() const{ return m_completionWindowMinutes; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline bool CompletionWindowMinutesHasBeenSet() const { return m_completionWindowMinutesHasBeenSet; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline void SetCompletionWindowMinutes(long long value) { m_completionWindowMinutesHasBeenSet = true; m_completionWindowMinutes = value; }
 
     /**
-     * <p>The amount of time AWS Backup attempts a backup before canceling the job and
-     * returning an error.</p>
+     * <p>A value in minutes after a backup job is successfully started before it must
+     * be completed or it will be canceled by AWS Backup. This value is optional.</p>
      */
     inline BackupRuleInput& WithCompletionWindowMinutes(long long value) { SetCompletionWindowMinutes(value); return *this;}
 
@@ -251,8 +255,8 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days”. The “transition to cold after days” setting
-     * cannot be changed after a backup has been transitioned to cold. </p>
+     * the “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -262,8 +266,8 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days”. The “transition to cold after days” setting
-     * cannot be changed after a backup has been transitioned to cold. </p>
+     * the “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -273,8 +277,8 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days”. The “transition to cold after days” setting
-     * cannot be changed after a backup has been transitioned to cold. </p>
+     * the “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -284,8 +288,8 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days”. The “transition to cold after days” setting
-     * cannot be changed after a backup has been transitioned to cold. </p>
+     * the “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -295,8 +299,8 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days”. The “transition to cold after days” setting
-     * cannot be changed after a backup has been transitioned to cold. </p>
+     * the “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline BackupRuleInput& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -306,8 +310,8 @@ namespace Model
      * automatically according to the lifecycle that you define. </p> <p>Backups
      * transitioned to cold storage must be stored in cold storage for a minimum of 90
      * days. Therefore, the “expire after days” setting must be 90 days greater than
-     * the “transition to cold after days”. The “transition to cold after days” setting
-     * cannot be changed after a backup has been transitioned to cold. </p>
+     * the “transition to cold after days” setting. The “transition to cold after days”
+     * setting cannot be changed after a backup has been transitioned to cold. </p>
      */
     inline BackupRuleInput& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
