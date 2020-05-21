@@ -157,6 +157,15 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
   init(clientConfiguration);
 }
 
+S3Client::S3Client(const std::shared_ptr<AWSAuthSigner>& signer,
+  const Client::ClientConfiguration& clientConfiguration, bool useVirtualAddressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
+  BASECLASS(clientConfiguration, signer, Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
+    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+{
+  init(clientConfiguration);
+}
+
+
 S3Client::~S3Client()
 {
 }
