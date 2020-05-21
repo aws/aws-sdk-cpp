@@ -511,6 +511,14 @@ namespace Aws
         S3Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration(), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never, bool useVirtualAddressing = true, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
+        /**
+         * Initializes client to use specified auth signer with specified client config. If http client factory is not supplied,
+         * the default http client factory will be used
+         */
+        S3Client(const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer,
+        const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration(), bool useVirtualAddressing = true, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
+
+
         virtual ~S3Client();
 
         inline virtual const char* GetServiceClientName() const override { return "S3"; }
