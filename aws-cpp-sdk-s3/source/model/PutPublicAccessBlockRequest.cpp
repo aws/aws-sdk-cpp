@@ -28,7 +28,6 @@ using namespace Aws::Http;
 
 PutPublicAccessBlockRequest::PutPublicAccessBlockRequest() : 
     m_bucketHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
     m_publicAccessBlockConfigurationHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
@@ -72,16 +71,3 @@ void PutPublicAccessBlockRequest::AddQueryStringParameters(URI& uri) const
     }
 }
 
-Aws::Http::HeaderValueCollection PutPublicAccessBlockRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if(m_contentMD5HasBeenSet)
-  {
-    ss << m_contentMD5;
-    headers.emplace("content-md5",  ss.str());
-    ss.str("");
-  }
-
-  return headers;
-}

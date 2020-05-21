@@ -5722,10 +5722,11 @@ namespace Model
         virtual void CreateSubnetAsync(const Model::CreateSubnetRequest& request, const CreateSubnetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or overwrites the specified tags for the specified Amazon EC2 resource
-         * or resources. Each resource can have a maximum of 50 tags. Each tag consists of
-         * a key and optional value. Tag keys must be unique per resource.</p> <p>For more
-         * information about tags, see <a
+         * <p>Adds or overwrites only the specified tags for the specified Amazon EC2
+         * resource or resources. When you specify an existing tag key, the value is
+         * overwritten with the new value. Each resource can have a maximum of 50 tags.
+         * Each tag consists of a key and optional value. Tag keys must be unique per
+         * resource.</p> <p>For more information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
          * more information about creating IAM policies that control users' access to
@@ -5739,10 +5740,11 @@ namespace Model
         virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
 
         /**
-         * <p>Adds or overwrites the specified tags for the specified Amazon EC2 resource
-         * or resources. Each resource can have a maximum of 50 tags. Each tag consists of
-         * a key and optional value. Tag keys must be unique per resource.</p> <p>For more
-         * information about tags, see <a
+         * <p>Adds or overwrites only the specified tags for the specified Amazon EC2
+         * resource or resources. When you specify an existing tag key, the value is
+         * overwritten with the new value. Each resource can have a maximum of 50 tags.
+         * Each tag consists of a key and optional value. Tag keys must be unique per
+         * resource.</p> <p>For more information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
          * more information about creating IAM policies that control users' access to
@@ -5758,10 +5760,11 @@ namespace Model
         virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
 
         /**
-         * <p>Adds or overwrites the specified tags for the specified Amazon EC2 resource
-         * or resources. Each resource can have a maximum of 50 tags. Each tag consists of
-         * a key and optional value. Tag keys must be unique per resource.</p> <p>For more
-         * information about tags, see <a
+         * <p>Adds or overwrites only the specified tags for the specified Amazon EC2
+         * resource or resources. When you specify an existing tag key, the value is
+         * overwritten with the new value. Each resource can have a maximum of 50 tags.
+         * Each tag consists of a key and optional value. Tag keys must be unique per
+         * resource.</p> <p>For more information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
          * more information about creating IAM policies that control users' access to

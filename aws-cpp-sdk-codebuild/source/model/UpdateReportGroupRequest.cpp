@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 UpdateReportGroupRequest::UpdateReportGroupRequest() : 
     m_arnHasBeenSet(false),
-    m_exportConfigHasBeenSet(false)
+    m_exportConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String UpdateReportGroupRequest::SerializePayload() const
   if(m_exportConfigHasBeenSet)
   {
    payload.WithObject("exportConfig", m_exportConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

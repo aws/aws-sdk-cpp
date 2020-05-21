@@ -74,10 +74,38 @@ namespace Model
      */
     inline CanaryRunConfigInput& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
 
+
+    /**
+     * <p>The maximum amount of memory available to the canary while it is running, in
+     * MB. The value you specify must be a multiple of 64.</p>
+     */
+    inline int GetMemoryInMB() const{ return m_memoryInMB; }
+
+    /**
+     * <p>The maximum amount of memory available to the canary while it is running, in
+     * MB. The value you specify must be a multiple of 64.</p>
+     */
+    inline bool MemoryInMBHasBeenSet() const { return m_memoryInMBHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of memory available to the canary while it is running, in
+     * MB. The value you specify must be a multiple of 64.</p>
+     */
+    inline void SetMemoryInMB(int value) { m_memoryInMBHasBeenSet = true; m_memoryInMB = value; }
+
+    /**
+     * <p>The maximum amount of memory available to the canary while it is running, in
+     * MB. The value you specify must be a multiple of 64.</p>
+     */
+    inline CanaryRunConfigInput& WithMemoryInMB(int value) { SetMemoryInMB(value); return *this;}
+
   private:
 
     int m_timeoutInSeconds;
     bool m_timeoutInSecondsHasBeenSet;
+
+    int m_memoryInMB;
+    bool m_memoryInMBHasBeenSet;
   };
 
 } // namespace Model

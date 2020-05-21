@@ -49,8 +49,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
@@ -141,63 +139,6 @@ namespace Model
     inline PutBucketEncryptionRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
-    /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration. This parameter is auto-populated when using the command from the
-     * CLI.</p>
-     */
-    inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
-
-    /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration. This parameter is auto-populated when using the command from the
-     * CLI.</p>
-     */
-    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
-
-    /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration. This parameter is auto-populated when using the command from the
-     * CLI.</p>
-     */
-    inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
-
-    /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration. This parameter is auto-populated when using the command from the
-     * CLI.</p>
-     */
-    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
-
-    /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration. This parameter is auto-populated when using the command from the
-     * CLI.</p>
-     */
-    inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
-
-    /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration. This parameter is auto-populated when using the command from the
-     * CLI.</p>
-     */
-    inline PutBucketEncryptionRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
-
-    /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration. This parameter is auto-populated when using the command from the
-     * CLI.</p>
-     */
-    inline PutBucketEncryptionRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
-
-    /**
-     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration. This parameter is auto-populated when using the command from the
-     * CLI.</p>
-     */
-    inline PutBucketEncryptionRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
-
-
     
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
@@ -260,9 +201,6 @@ namespace Model
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
-
-    Aws::String m_contentMD5;
-    bool m_contentMD5HasBeenSet;
 
     ServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
     bool m_serverSideEncryptionConfigurationHasBeenSet;

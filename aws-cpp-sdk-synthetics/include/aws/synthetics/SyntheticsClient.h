@@ -184,11 +184,13 @@ namespace Model
          * your web services and troubleshoot anomalies by investigating load time data,
          * screenshots of the UI, logs, and metrics. You can set up a canary to run
          * continuously or just once. </p> <p>Do not use <code>CreateCanary</code> to
-         * modify an existing canary. Use <a>UpdateCanary</a> instead.</p> <p>To create
-         * canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy.
-         * If you are creating a new IAM role for the canary, you also need the the
-         * <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
-         * <code>iam:AttachRolePolicy</code> permissions. For more information, see <a
+         * modify an existing canary. Use <a
+         * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+         * instead.</p> <p>To create canaries, you must have the
+         * <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new
+         * IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+         * <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
          * Roles and Permissions</a>.</p> <p>Do not include secrets or proprietary
          * information in your canary names. The canary name makes up part of the Amazon
@@ -207,11 +209,13 @@ namespace Model
          * your web services and troubleshoot anomalies by investigating load time data,
          * screenshots of the UI, logs, and metrics. You can set up a canary to run
          * continuously or just once. </p> <p>Do not use <code>CreateCanary</code> to
-         * modify an existing canary. Use <a>UpdateCanary</a> instead.</p> <p>To create
-         * canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy.
-         * If you are creating a new IAM role for the canary, you also need the the
-         * <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
-         * <code>iam:AttachRolePolicy</code> permissions. For more information, see <a
+         * modify an existing canary. Use <a
+         * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+         * instead.</p> <p>To create canaries, you must have the
+         * <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new
+         * IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+         * <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
          * Roles and Permissions</a>.</p> <p>Do not include secrets or proprietary
          * information in your canary names. The canary name makes up part of the Amazon
@@ -232,11 +236,13 @@ namespace Model
          * your web services and troubleshoot anomalies by investigating load time data,
          * screenshots of the UI, logs, and metrics. You can set up a canary to run
          * continuously or just once. </p> <p>Do not use <code>CreateCanary</code> to
-         * modify an existing canary. Use <a>UpdateCanary</a> instead.</p> <p>To create
-         * canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code> policy.
-         * If you are creating a new IAM role for the canary, you also need the the
-         * <code>iam:CreateRole</code>, <code>iam:CreatePolicy</code> and
-         * <code>iam:AttachRolePolicy</code> permissions. For more information, see <a
+         * modify an existing canary. Use <a
+         * href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+         * instead.</p> <p>To create canaries, you must have the
+         * <code>CloudWatchSyntheticsFullAccess</code> policy. If you are creating a new
+         * IAM role for the canary, you also need the the <code>iam:CreateRole</code>,
+         * <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
          * Roles and Permissions</a>.</p> <p>Do not include secrets or proprietary
          * information in your canary names. The canary name makes up part of the Amazon

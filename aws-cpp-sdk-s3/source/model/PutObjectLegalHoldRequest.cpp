@@ -33,7 +33,6 @@ PutObjectLegalHoldRequest::PutObjectLegalHoldRequest() :
     m_requestPayer(RequestPayer::NOT_SET),
     m_requestPayerHasBeenSet(false),
     m_versionIdHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -90,13 +89,6 @@ Aws::Http::HeaderValueCollection PutObjectLegalHoldRequest::GetRequestSpecificHe
   if(m_requestPayerHasBeenSet)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
-  }
-
-  if(m_contentMD5HasBeenSet)
-  {
-    ss << m_contentMD5;
-    headers.emplace("content-md5",  ss.str());
-    ss.str("");
   }
 
   return headers;

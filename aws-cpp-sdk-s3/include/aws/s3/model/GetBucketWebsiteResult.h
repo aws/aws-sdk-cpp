@@ -78,53 +78,63 @@ namespace Model
 
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline void SetIndexDocument(const IndexDocument& value) { m_indexDocument = value; }
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline void SetIndexDocument(IndexDocument&& value) { m_indexDocument = std::move(value); }
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline GetBucketWebsiteResult& WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
 
     /**
-     * <p>The name of the index document for the website.</p>
+     * <p>The name of the index document for the website (for example
+     * <code>index.html</code>).</p>
      */
     inline GetBucketWebsiteResult& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline void SetErrorDocument(const ErrorDocument& value) { m_errorDocument = value; }
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline void SetErrorDocument(ErrorDocument&& value) { m_errorDocument = std::move(value); }
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline GetBucketWebsiteResult& WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
 
     /**
-     * <p>The name of the error document for the website.</p>
+     * <p>The object key name of the website error document to use for 4XX class
+     * errors.</p>
      */
     inline GetBucketWebsiteResult& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(std::move(value)); return *this;}
 

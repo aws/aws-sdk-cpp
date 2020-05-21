@@ -29,7 +29,6 @@ using namespace Aws::Http;
 PutBucketLoggingRequest::PutBucketLoggingRequest() : 
     m_bucketHasBeenSet(false),
     m_bucketLoggingStatusHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
 }
@@ -72,16 +71,3 @@ void PutBucketLoggingRequest::AddQueryStringParameters(URI& uri) const
     }
 }
 
-Aws::Http::HeaderValueCollection PutBucketLoggingRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if(m_contentMD5HasBeenSet)
-  {
-    ss << m_contentMD5;
-    headers.emplace("content-md5",  ss.str());
-    ss.str("");
-  }
-
-  return headers;
-}

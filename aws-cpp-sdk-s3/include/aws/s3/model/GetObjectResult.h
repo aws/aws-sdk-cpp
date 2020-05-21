@@ -920,31 +920,31 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline GetObjectResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p>
+     * header for all objects except for S3 Standard storage class objects.</p>
      */
     inline GetObjectResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 

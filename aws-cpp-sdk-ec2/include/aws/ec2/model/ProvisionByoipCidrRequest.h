@@ -18,6 +18,8 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/CidrAuthorizationContext.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -247,6 +249,47 @@ namespace Model
      */
     inline ProvisionByoipCidrRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The tags to apply to the address pool.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetPoolTagSpecifications() const{ return m_poolTagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the address pool.</p>
+     */
+    inline bool PoolTagSpecificationsHasBeenSet() const { return m_poolTagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to apply to the address pool.</p>
+     */
+    inline void SetPoolTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_poolTagSpecificationsHasBeenSet = true; m_poolTagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply to the address pool.</p>
+     */
+    inline void SetPoolTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_poolTagSpecificationsHasBeenSet = true; m_poolTagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to apply to the address pool.</p>
+     */
+    inline ProvisionByoipCidrRequest& WithPoolTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetPoolTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the address pool.</p>
+     */
+    inline ProvisionByoipCidrRequest& WithPoolTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetPoolTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to apply to the address pool.</p>
+     */
+    inline ProvisionByoipCidrRequest& AddPoolTagSpecifications(const TagSpecification& value) { m_poolTagSpecificationsHasBeenSet = true; m_poolTagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to apply to the address pool.</p>
+     */
+    inline ProvisionByoipCidrRequest& AddPoolTagSpecifications(TagSpecification&& value) { m_poolTagSpecificationsHasBeenSet = true; m_poolTagSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cidr;
@@ -263,6 +306,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<TagSpecification> m_poolTagSpecifications;
+    bool m_poolTagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

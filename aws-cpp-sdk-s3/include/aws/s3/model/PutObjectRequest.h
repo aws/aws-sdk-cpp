@@ -911,37 +911,37 @@ namespace Model
 
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * <p>If you don't specify, S3 Standard is the default storage class. Amazon S3
      * supports other storage classes.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * <p>If you don't specify, S3 Standard is the default storage class. Amazon S3
      * supports other storage classes.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * <p>If you don't specify, S3 Standard is the default storage class. Amazon S3
      * supports other storage classes.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * <p>If you don't specify, S3 Standard is the default storage class. Amazon S3
      * supports other storage classes.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * <p>If you don't specify, S3 Standard is the default storage class. Amazon S3
      * supports other storage classes.</p>
      */
     inline PutObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * <p>If you don't specify, S3 Standard is the default storage class. Amazon S3
      * supports other storage classes.</p>
      */
     inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}

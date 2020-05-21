@@ -832,50 +832,58 @@ namespace Model
 
 
     /**
-     * <p>The tags for this build project.</p> <p>These tags are available for use by
-     * AWS services that support AWS CodeBuild build project tags.</p>
+     * <p>A list of tag key and value pairs associated with this build project.</p>
+     * <p>These tags are available for use by AWS services that support AWS CodeBuild
+     * build project tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags for this build project.</p> <p>These tags are available for use by
-     * AWS services that support AWS CodeBuild build project tags.</p>
+     * <p>A list of tag key and value pairs associated with this build project.</p>
+     * <p>These tags are available for use by AWS services that support AWS CodeBuild
+     * build project tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags for this build project.</p> <p>These tags are available for use by
-     * AWS services that support AWS CodeBuild build project tags.</p>
+     * <p>A list of tag key and value pairs associated with this build project.</p>
+     * <p>These tags are available for use by AWS services that support AWS CodeBuild
+     * build project tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags for this build project.</p> <p>These tags are available for use by
-     * AWS services that support AWS CodeBuild build project tags.</p>
+     * <p>A list of tag key and value pairs associated with this build project.</p>
+     * <p>These tags are available for use by AWS services that support AWS CodeBuild
+     * build project tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags for this build project.</p> <p>These tags are available for use by
-     * AWS services that support AWS CodeBuild build project tags.</p>
+     * <p>A list of tag key and value pairs associated with this build project.</p>
+     * <p>These tags are available for use by AWS services that support AWS CodeBuild
+     * build project tags.</p>
      */
     inline Project& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags for this build project.</p> <p>These tags are available for use by
-     * AWS services that support AWS CodeBuild build project tags.</p>
+     * <p>A list of tag key and value pairs associated with this build project.</p>
+     * <p>These tags are available for use by AWS services that support AWS CodeBuild
+     * build project tags.</p>
      */
     inline Project& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags for this build project.</p> <p>These tags are available for use by
-     * AWS services that support AWS CodeBuild build project tags.</p>
+     * <p>A list of tag key and value pairs associated with this build project.</p>
+     * <p>These tags are available for use by AWS services that support AWS CodeBuild
+     * build project tags.</p>
      */
     inline Project& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags for this build project.</p> <p>These tags are available for use by
-     * AWS services that support AWS CodeBuild build project tags.</p>
+     * <p>A list of tag key and value pairs associated with this build project.</p>
+     * <p>These tags are available for use by AWS services that support AWS CodeBuild
+     * build project tags.</p>
      */
     inline Project& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

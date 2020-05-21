@@ -196,26 +196,30 @@ namespace Model
 
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * <p>Sets the maximum number of keys returned in the response. By default the API
+     * returns up to 1,000 key names. The response might contain fewer keys but will
+     * never contain more. </p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * <p>Sets the maximum number of keys returned in the response. By default the API
+     * returns up to 1,000 key names. The response might contain fewer keys but will
+     * never contain more. </p>
      */
     inline bool MaxKeysHasBeenSet() const { return m_maxKeysHasBeenSet; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * <p>Sets the maximum number of keys returned in the response. By default the API
+     * returns up to 1,000 key names. The response might contain fewer keys but will
+     * never contain more. </p>
      */
     inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
-     * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * <p>Sets the maximum number of keys returned in the response. By default the API
+     * returns up to 1,000 key names. The response might contain fewer keys but will
+     * never contain more. </p>
      */
     inline ListObjectsRequest& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 

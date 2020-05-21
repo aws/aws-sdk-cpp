@@ -38,6 +38,7 @@ PublicIpv4Pool::PublicIpv4Pool() :
     m_totalAddressCountHasBeenSet(false),
     m_totalAvailableAddressCount(0),
     m_totalAvailableAddressCountHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -50,6 +51,7 @@ PublicIpv4Pool::PublicIpv4Pool(const XmlNode& xmlNode) :
     m_totalAddressCountHasBeenSet(false),
     m_totalAvailableAddressCount(0),
     m_totalAvailableAddressCountHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -96,6 +98,12 @@ PublicIpv4Pool& PublicIpv4Pool::operator =(const XmlNode& xmlNode)
     {
       m_totalAvailableAddressCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalAvailableAddressCountNode.GetText()).c_str()).c_str());
       m_totalAvailableAddressCountHasBeenSet = true;
+    }
+    XmlNode networkBorderGroupNode = resultNode.FirstChild("networkBorderGroup");
+    if(!networkBorderGroupNode.IsNull())
+    {
+      m_networkBorderGroup = Aws::Utils::Xml::DecodeEscapedXmlText(networkBorderGroupNode.GetText());
+      m_networkBorderGroupHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -147,6 +155,11 @@ void PublicIpv4Pool::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".TotalAvailableAddressCount=" << m_totalAvailableAddressCount << "&";
   }
 
+  if(m_networkBorderGroupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -187,6 +200,10 @@ void PublicIpv4Pool::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_totalAvailableAddressCountHasBeenSet)
   {
       oStream << location << ".TotalAvailableAddressCount=" << m_totalAvailableAddressCount << "&";
+  }
+  if(m_networkBorderGroupHasBeenSet)
+  {
+      oStream << location << ".NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

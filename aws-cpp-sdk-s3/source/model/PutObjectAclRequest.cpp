@@ -31,7 +31,6 @@ PutObjectAclRequest::PutObjectAclRequest() :
     m_aCLHasBeenSet(false),
     m_accessControlPolicyHasBeenSet(false),
     m_bucketHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
     m_grantFullControlHasBeenSet(false),
     m_grantReadHasBeenSet(false),
     m_grantReadACPHasBeenSet(false),
@@ -97,13 +96,6 @@ Aws::Http::HeaderValueCollection PutObjectAclRequest::GetRequestSpecificHeaders(
   if(m_aCLHasBeenSet)
   {
     headers.emplace("x-amz-acl", ObjectCannedACLMapper::GetNameForObjectCannedACL(m_aCL));
-  }
-
-  if(m_contentMD5HasBeenSet)
-  {
-    ss << m_contentMD5;
-    headers.emplace("content-md5",  ss.str());
-    ss.str("");
   }
 
   if(m_grantFullControlHasBeenSet)

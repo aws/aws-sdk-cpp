@@ -94,71 +94,6 @@ namespace Model
 
 
     /**
-     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
-     * header as a message integrity check to verify that the request body was not
-     * corrupted in transit. For more information, see <a
-     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
-     */
-    inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
-
-    /**
-     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
-     * header as a message integrity check to verify that the request body was not
-     * corrupted in transit. For more information, see <a
-     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
-     */
-    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
-
-    /**
-     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
-     * header as a message integrity check to verify that the request body was not
-     * corrupted in transit. For more information, see <a
-     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
-     */
-    inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
-
-    /**
-     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
-     * header as a message integrity check to verify that the request body was not
-     * corrupted in transit. For more information, see <a
-     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
-     */
-    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
-
-    /**
-     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
-     * header as a message integrity check to verify that the request body was not
-     * corrupted in transit. For more information, see <a
-     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
-     */
-    inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
-
-    /**
-     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
-     * header as a message integrity check to verify that the request body was not
-     * corrupted in transit. For more information, see <a
-     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
-     */
-    inline PutBucketVersioningRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
-
-    /**
-     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
-     * header as a message integrity check to verify that the request body was not
-     * corrupted in transit. For more information, see <a
-     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
-     */
-    inline PutBucketVersioningRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
-
-    /**
-     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
-     * header as a message integrity check to verify that the request body was not
-     * corrupted in transit. For more information, see <a
-     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
-     */
-    inline PutBucketVersioningRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
-
-
-    /**
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device.</p>
      */
@@ -281,9 +216,6 @@ namespace Model
 
     Aws::String m_bucket;
     bool m_bucketHasBeenSet;
-
-    Aws::String m_contentMD5;
-    bool m_contentMD5HasBeenSet;
 
     Aws::String m_mFA;
     bool m_mFAHasBeenSet;

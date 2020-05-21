@@ -78,38 +78,38 @@ namespace Model
 
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline const GlacierJobParameters& GetGlacierJobParameters() const{ return m_glacierJobParameters; }
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline bool GlacierJobParametersHasBeenSet() const { return m_glacierJobParametersHasBeenSet; }
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline void SetGlacierJobParameters(const GlacierJobParameters& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = value; }
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline void SetGlacierJobParameters(GlacierJobParameters&& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = std::move(value); }
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline RestoreRequest& WithGlacierJobParameters(const GlacierJobParameters& value) { SetGlacierJobParameters(value); return *this;}
 
     /**
-     * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify <code>OutputLocation</code>.</p>
+     * <p>S3 Glacier related parameters pertaining to this job. Do not use with
+     * restores that specify <code>OutputLocation</code>.</p>
      */
     inline RestoreRequest& WithGlacierJobParameters(GlacierJobParameters&& value) { SetGlacierJobParameters(std::move(value)); return *this;}
 
@@ -146,32 +146,32 @@ namespace Model
 
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline const Tier& GetTier() const{ return m_tier; }
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline RestoreRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
-     * <p>Glacier retrieval tier at which the restore will be processed.</p>
+     * <p>S3 Glacier retrieval tier at which the restore will be processed.</p>
      */
     inline RestoreRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 

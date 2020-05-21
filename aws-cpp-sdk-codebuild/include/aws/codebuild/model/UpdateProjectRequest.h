@@ -817,58 +817,58 @@ namespace Model
 
 
     /**
-     * <p>The replacement set of tags for this build project.</p> <p>These tags are
-     * available for use by AWS services that support AWS CodeBuild build project
-     * tags.</p>
+     * <p>An updated list of tag key and value pairs associated with this build
+     * project.</p> <p>These tags are available for use by AWS services that support
+     * AWS CodeBuild build project tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The replacement set of tags for this build project.</p> <p>These tags are
-     * available for use by AWS services that support AWS CodeBuild build project
-     * tags.</p>
+     * <p>An updated list of tag key and value pairs associated with this build
+     * project.</p> <p>These tags are available for use by AWS services that support
+     * AWS CodeBuild build project tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The replacement set of tags for this build project.</p> <p>These tags are
-     * available for use by AWS services that support AWS CodeBuild build project
-     * tags.</p>
+     * <p>An updated list of tag key and value pairs associated with this build
+     * project.</p> <p>These tags are available for use by AWS services that support
+     * AWS CodeBuild build project tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The replacement set of tags for this build project.</p> <p>These tags are
-     * available for use by AWS services that support AWS CodeBuild build project
-     * tags.</p>
+     * <p>An updated list of tag key and value pairs associated with this build
+     * project.</p> <p>These tags are available for use by AWS services that support
+     * AWS CodeBuild build project tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The replacement set of tags for this build project.</p> <p>These tags are
-     * available for use by AWS services that support AWS CodeBuild build project
-     * tags.</p>
+     * <p>An updated list of tag key and value pairs associated with this build
+     * project.</p> <p>These tags are available for use by AWS services that support
+     * AWS CodeBuild build project tags.</p>
      */
     inline UpdateProjectRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The replacement set of tags for this build project.</p> <p>These tags are
-     * available for use by AWS services that support AWS CodeBuild build project
-     * tags.</p>
+     * <p>An updated list of tag key and value pairs associated with this build
+     * project.</p> <p>These tags are available for use by AWS services that support
+     * AWS CodeBuild build project tags.</p>
      */
     inline UpdateProjectRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The replacement set of tags for this build project.</p> <p>These tags are
-     * available for use by AWS services that support AWS CodeBuild build project
-     * tags.</p>
+     * <p>An updated list of tag key and value pairs associated with this build
+     * project.</p> <p>These tags are available for use by AWS services that support
+     * AWS CodeBuild build project tags.</p>
      */
     inline UpdateProjectRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The replacement set of tags for this build project.</p> <p>These tags are
-     * available for use by AWS services that support AWS CodeBuild build project
-     * tags.</p>
+     * <p>An updated list of tag key and value pairs associated with this build
+     * project.</p> <p>These tags are available for use by AWS services that support
+     * AWS CodeBuild build project tags.</p>
      */
     inline UpdateProjectRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

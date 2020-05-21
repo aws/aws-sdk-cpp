@@ -218,6 +218,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the location from which the address pool is advertised. A network
+     * border group is a unique set of Availability Zones or Local Zones from where AWS
+     * advertises public IP addresses.</p>
+     */
+    inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
+
+    /**
+     * <p>The name of the location from which the address pool is advertised. A network
+     * border group is a unique set of Availability Zones or Local Zones from where AWS
+     * advertises public IP addresses.</p>
+     */
+    inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the location from which the address pool is advertised. A network
+     * border group is a unique set of Availability Zones or Local Zones from where AWS
+     * advertises public IP addresses.</p>
+     */
+    inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
+
+    /**
+     * <p>The name of the location from which the address pool is advertised. A network
+     * border group is a unique set of Availability Zones or Local Zones from where AWS
+     * advertises public IP addresses.</p>
+     */
+    inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
+
+    /**
+     * <p>The name of the location from which the address pool is advertised. A network
+     * border group is a unique set of Availability Zones or Local Zones from where AWS
+     * advertises public IP addresses.</p>
+     */
+    inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
+
+    /**
+     * <p>The name of the location from which the address pool is advertised. A network
+     * border group is a unique set of Availability Zones or Local Zones from where AWS
+     * advertises public IP addresses.</p>
+     */
+    inline PublicIpv4Pool& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
+
+    /**
+     * <p>The name of the location from which the address pool is advertised. A network
+     * border group is a unique set of Availability Zones or Local Zones from where AWS
+     * advertises public IP addresses.</p>
+     */
+    inline PublicIpv4Pool& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the location from which the address pool is advertised. A network
+     * border group is a unique set of Availability Zones or Local Zones from where AWS
+     * advertises public IP addresses.</p>
+     */
+    inline PublicIpv4Pool& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
+
+
+    /**
      * <p>Any tags for the address pool.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -273,6 +330,9 @@ namespace Model
 
     int m_totalAvailableAddressCount;
     bool m_totalAvailableAddressCountHasBeenSet;
+
+    Aws::String m_networkBorderGroup;
+    bool m_networkBorderGroupHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

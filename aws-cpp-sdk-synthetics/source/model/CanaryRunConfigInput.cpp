@@ -30,13 +30,17 @@ namespace Model
 
 CanaryRunConfigInput::CanaryRunConfigInput() : 
     m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_memoryInMB(0),
+    m_memoryInMBHasBeenSet(false)
 {
 }
 
 CanaryRunConfigInput::CanaryRunConfigInput(JsonView jsonValue) : 
     m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false)
+    m_timeoutInSecondsHasBeenSet(false),
+    m_memoryInMB(0),
+    m_memoryInMBHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ CanaryRunConfigInput& CanaryRunConfigInput::operator =(JsonView jsonValue)
     m_timeoutInSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MemoryInMB"))
+  {
+    m_memoryInMB = jsonValue.GetInteger("MemoryInMB");
+
+    m_memoryInMBHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +71,12 @@ JsonValue CanaryRunConfigInput::Jsonize() const
   if(m_timeoutInSecondsHasBeenSet)
   {
    payload.WithInteger("TimeoutInSeconds", m_timeoutInSeconds);
+
+  }
+
+  if(m_memoryInMBHasBeenSet)
+  {
+   payload.WithInteger("MemoryInMB", m_memoryInMB);
 
   }
 

@@ -49,8 +49,6 @@ namespace Model
 
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
-    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
 
     /**
      * <p>The bucket name containing the object. </p> <p>When using this API with an
@@ -248,47 +246,6 @@ namespace Model
 
 
     /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline PutObjectTaggingRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline PutObjectTaggingRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline PutObjectTaggingRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
-
-
-    /**
      * <p>Container for the <code>TagSet</code> and <code>Tag</code> elements</p>
      */
     inline const Tagging& GetTagging() const{ return m_tagging; }
@@ -368,9 +325,6 @@ namespace Model
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
-
-    Aws::String m_contentMD5;
-    bool m_contentMD5HasBeenSet;
 
     Tagging m_tagging;
     bool m_taggingHasBeenSet;

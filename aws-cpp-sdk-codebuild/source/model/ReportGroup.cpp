@@ -35,7 +35,8 @@ ReportGroup::ReportGroup() :
     m_typeHasBeenSet(false),
     m_exportConfigHasBeenSet(false),
     m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+    m_lastModifiedHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ ReportGroup::ReportGroup(JsonView jsonValue) :
     m_typeHasBeenSet(false),
     m_exportConfigHasBeenSet(false),
     m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+    m_lastModifiedHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,16 @@ ReportGroup& ReportGroup::operator =(JsonView jsonValue)
     m_lastModifiedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +145,17 @@ JsonValue ReportGroup::Jsonize() const
   if(m_lastModifiedHasBeenSet)
   {
    payload.WithDouble("lastModified", m_lastModified.SecondsWithMSPrecision());
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload;

@@ -27,7 +27,8 @@ ProvisionByoipCidrRequest::ProvisionByoipCidrRequest() :
     m_publiclyAdvertisableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_poolTagSpecificationsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ Aws::String ProvisionByoipCidrRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_poolTagSpecificationsHasBeenSet)
+  {
+    unsigned poolTagSpecificationsCount = 1;
+    for(auto& item : m_poolTagSpecifications)
+    {
+      item.OutputToStream(ss, "PoolTagSpecification.", poolTagSpecificationsCount, "");
+      poolTagSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

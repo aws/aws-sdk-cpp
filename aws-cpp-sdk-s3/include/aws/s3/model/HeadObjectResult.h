@@ -941,7 +941,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -950,7 +950,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -959,7 +959,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -968,7 +968,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>
@@ -977,7 +977,7 @@ namespace Model
 
     /**
      * <p>Provides storage class information of the object. Amazon S3 returns this
-     * header for all objects except for Standard storage class objects.</p> <p>For
+     * header for all objects except for S3 Standard storage class objects.</p> <p>For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
      * Classes</a>.</p>

@@ -201,7 +201,7 @@ namespace Model
 
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -212,7 +212,7 @@ namespace Model
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -223,7 +223,7 @@ namespace Model
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -234,7 +234,7 @@ namespace Model
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -245,7 +245,7 @@ namespace Model
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a
@@ -256,7 +256,7 @@ namespace Model
     inline Destination& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p> The storage class to use when replicating objects, such as standard or
+     * <p> The storage class to use when replicating objects, such as S3 Standard or
      * reduced redundancy. By default, Amazon S3 uses the storage class of the source
      * object to create the object replica. </p> <p>For valid values, see the
      * <code>StorageClass</code> element of the <a

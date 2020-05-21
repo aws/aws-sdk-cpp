@@ -193,47 +193,6 @@ namespace Model
     inline PutObjectLockConfigurationRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
 
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline PutObjectLockConfigurationRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline PutObjectLockConfigurationRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
-
-    /**
-     * <p>The MD5 hash for the request body.</p>
-     */
-    inline PutObjectLockConfigurationRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
-
-
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -286,9 +245,6 @@ namespace Model
 
     Aws::String m_token;
     bool m_tokenHasBeenSet;
-
-    Aws::String m_contentMD5;
-    bool m_contentMD5HasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

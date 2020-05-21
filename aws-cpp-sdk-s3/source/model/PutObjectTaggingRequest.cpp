@@ -30,7 +30,6 @@ PutObjectTaggingRequest::PutObjectTaggingRequest() :
     m_bucketHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_versionIdHasBeenSet(false),
-    m_contentMD5HasBeenSet(false),
     m_taggingHasBeenSet(false),
     m_customizedAccessLogTagHasBeenSet(false)
 {
@@ -81,16 +80,3 @@ void PutObjectTaggingRequest::AddQueryStringParameters(URI& uri) const
     }
 }
 
-Aws::Http::HeaderValueCollection PutObjectTaggingRequest::GetRequestSpecificHeaders() const
-{
-  Aws::Http::HeaderValueCollection headers;
-  Aws::StringStream ss;
-  if(m_contentMD5HasBeenSet)
-  {
-    ss << m_contentMD5;
-    headers.emplace("content-md5",  ss.str());
-    ss.str("");
-  }
-
-  return headers;
-}
