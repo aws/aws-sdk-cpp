@@ -89,110 +89,182 @@ namespace Model
 
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline EnableMetricsCollectionRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline EnableMetricsCollectionRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline EnableMetricsCollectionRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline EnableMetricsCollectionRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more of the following metrics. If you omit this parameter, all metrics
-     * are enabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
-     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
-     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <p>Specifies which group-level metrics to start collecting. You can specify one
+     * or more of the following metrics:</p> <ul> <li> <p> <code>GroupMinSize</code>
+     * </p> </li> <li> <p> <code>GroupMaxSize</code> </p> </li> <li> <p>
+     * <code>GroupDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupInServiceInstances</code> </p> </li> <li> <p>
      * <code>GroupPendingInstances</code> </p> </li> <li> <p>
      * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
      * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
-     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     * <code>GroupTotalInstances</code> </p> </li> </ul> <p>The instance weighting
+     * feature supports the following additional metrics: </p> <ul> <li> <p>
+     * <code>GroupInServiceCapacity</code> </p> </li> <li> <p>
+     * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>GroupTotalCapacity</code> </p> </li> </ul> <p>If you omit this parameter,
+     * all metrics are enabled. </p>
      */
     inline EnableMetricsCollectionRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 

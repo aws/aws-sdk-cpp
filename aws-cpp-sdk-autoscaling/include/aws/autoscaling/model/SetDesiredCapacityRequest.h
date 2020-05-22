@@ -88,26 +88,26 @@ namespace Model
 
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling
-     * group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling
-     * group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling
-     * group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling
-     * group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain.</p>
      */
     inline SetDesiredCapacityRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 

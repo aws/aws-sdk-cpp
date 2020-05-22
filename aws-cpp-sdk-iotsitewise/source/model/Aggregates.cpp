@@ -38,7 +38,9 @@ Aggregates::Aggregates() :
     m_minimum(0.0),
     m_minimumHasBeenSet(false),
     m_sum(0.0),
-    m_sumHasBeenSet(false)
+    m_sumHasBeenSet(false),
+    m_standardDeviation(0.0),
+    m_standardDeviationHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ Aggregates::Aggregates(JsonView jsonValue) :
     m_minimum(0.0),
     m_minimumHasBeenSet(false),
     m_sum(0.0),
-    m_sumHasBeenSet(false)
+    m_sumHasBeenSet(false),
+    m_standardDeviation(0.0),
+    m_standardDeviationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -94,6 +98,13 @@ Aggregates& Aggregates::operator =(JsonView jsonValue)
     m_sumHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("standardDeviation"))
+  {
+    m_standardDeviation = jsonValue.GetDouble("standardDeviation");
+
+    m_standardDeviationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +139,12 @@ JsonValue Aggregates::Jsonize() const
   if(m_sumHasBeenSet)
   {
    payload.WithDouble("sum", m_sum);
+
+  }
+
+  if(m_standardDeviationHasBeenSet)
+  {
+   payload.WithDouble("standardDeviation", m_standardDeviation);
 
   }
 

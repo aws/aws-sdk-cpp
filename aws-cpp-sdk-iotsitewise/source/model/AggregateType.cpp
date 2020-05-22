@@ -35,6 +35,7 @@ namespace Aws
         static const int MAXIMUM_HASH = HashingUtils::HashString("MAXIMUM");
         static const int MINIMUM_HASH = HashingUtils::HashString("MINIMUM");
         static const int SUM_HASH = HashingUtils::HashString("SUM");
+        static const int STANDARD_DEVIATION_HASH = HashingUtils::HashString("STANDARD_DEVIATION");
 
 
         AggregateType GetAggregateTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return AggregateType::SUM;
           }
+          else if (hashCode == STANDARD_DEVIATION_HASH)
+          {
+            return AggregateType::STANDARD_DEVIATION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "MINIMUM";
           case AggregateType::SUM:
             return "SUM";
+          case AggregateType::STANDARD_DEVIATION:
+            return "STANDARD_DEVIATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -17,7 +17,7 @@
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/iotsitewise/model/ImageFile.h>
+#include <aws/iotsitewise/model/Image.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -208,41 +208,23 @@ namespace Model
     inline UpdatePortalRequest& WithPortalContactEmail(const char* value) { SetPortalContactEmail(value); return *this;}
 
 
-    /**
-     * <p>A logo image to display in the portal. Upload a square, high-resolution
-     * image. The image is displayed on a dark background.</p>
-     */
-    inline const ImageFile& GetPortalLogoImageFile() const{ return m_portalLogoImageFile; }
+    
+    inline const Image& GetPortalLogoImage() const{ return m_portalLogoImage; }
 
-    /**
-     * <p>A logo image to display in the portal. Upload a square, high-resolution
-     * image. The image is displayed on a dark background.</p>
-     */
-    inline bool PortalLogoImageFileHasBeenSet() const { return m_portalLogoImageFileHasBeenSet; }
+    
+    inline bool PortalLogoImageHasBeenSet() const { return m_portalLogoImageHasBeenSet; }
 
-    /**
-     * <p>A logo image to display in the portal. Upload a square, high-resolution
-     * image. The image is displayed on a dark background.</p>
-     */
-    inline void SetPortalLogoImageFile(const ImageFile& value) { m_portalLogoImageFileHasBeenSet = true; m_portalLogoImageFile = value; }
+    
+    inline void SetPortalLogoImage(const Image& value) { m_portalLogoImageHasBeenSet = true; m_portalLogoImage = value; }
 
-    /**
-     * <p>A logo image to display in the portal. Upload a square, high-resolution
-     * image. The image is displayed on a dark background.</p>
-     */
-    inline void SetPortalLogoImageFile(ImageFile&& value) { m_portalLogoImageFileHasBeenSet = true; m_portalLogoImageFile = std::move(value); }
+    
+    inline void SetPortalLogoImage(Image&& value) { m_portalLogoImageHasBeenSet = true; m_portalLogoImage = std::move(value); }
 
-    /**
-     * <p>A logo image to display in the portal. Upload a square, high-resolution
-     * image. The image is displayed on a dark background.</p>
-     */
-    inline UpdatePortalRequest& WithPortalLogoImageFile(const ImageFile& value) { SetPortalLogoImageFile(value); return *this;}
+    
+    inline UpdatePortalRequest& WithPortalLogoImage(const Image& value) { SetPortalLogoImage(value); return *this;}
 
-    /**
-     * <p>A logo image to display in the portal. Upload a square, high-resolution
-     * image. The image is displayed on a dark background.</p>
-     */
-    inline UpdatePortalRequest& WithPortalLogoImageFile(ImageFile&& value) { SetPortalLogoImageFile(std::move(value)); return *this;}
+    
+    inline UpdatePortalRequest& WithPortalLogoImage(Image&& value) { SetPortalLogoImage(std::move(value)); return *this;}
 
 
     /**
@@ -404,8 +386,8 @@ namespace Model
     Aws::String m_portalContactEmail;
     bool m_portalContactEmailHasBeenSet;
 
-    ImageFile m_portalLogoImageFile;
-    bool m_portalLogoImageFileHasBeenSet;
+    Image m_portalLogoImage;
+    bool m_portalLogoImageHasBeenSet;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;

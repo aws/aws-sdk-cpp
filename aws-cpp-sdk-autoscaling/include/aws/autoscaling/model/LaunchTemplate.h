@@ -96,58 +96,74 @@ namespace Model
 
 
     /**
-     * <p>An optional setting. Any parameters that you specify override the same
-     * parameters in the launch template. Currently, the only supported override is
-     * instance type. You can specify between 1 and 20 instance types.</p>
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. You can
+     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template to launch
+     * instances. </p>
      */
     inline const Aws::Vector<LaunchTemplateOverrides>& GetOverrides() const{ return m_overrides; }
 
     /**
-     * <p>An optional setting. Any parameters that you specify override the same
-     * parameters in the launch template. Currently, the only supported override is
-     * instance type. You can specify between 1 and 20 instance types.</p>
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. You can
+     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template to launch
+     * instances. </p>
      */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
-     * <p>An optional setting. Any parameters that you specify override the same
-     * parameters in the launch template. Currently, the only supported override is
-     * instance type. You can specify between 1 and 20 instance types.</p>
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. You can
+     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template to launch
+     * instances. </p>
      */
     inline void SetOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
 
     /**
-     * <p>An optional setting. Any parameters that you specify override the same
-     * parameters in the launch template. Currently, the only supported override is
-     * instance type. You can specify between 1 and 20 instance types.</p>
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. You can
+     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template to launch
+     * instances. </p>
      */
     inline void SetOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
 
     /**
-     * <p>An optional setting. Any parameters that you specify override the same
-     * parameters in the launch template. Currently, the only supported override is
-     * instance type. You can specify between 1 and 20 instance types.</p>
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. You can
+     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template to launch
+     * instances. </p>
      */
     inline LaunchTemplate& WithOverrides(const Aws::Vector<LaunchTemplateOverrides>& value) { SetOverrides(value); return *this;}
 
     /**
-     * <p>An optional setting. Any parameters that you specify override the same
-     * parameters in the launch template. Currently, the only supported override is
-     * instance type. You can specify between 1 and 20 instance types.</p>
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. You can
+     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template to launch
+     * instances. </p>
      */
     inline LaunchTemplate& WithOverrides(Aws::Vector<LaunchTemplateOverrides>&& value) { SetOverrides(std::move(value)); return *this;}
 
     /**
-     * <p>An optional setting. Any parameters that you specify override the same
-     * parameters in the launch template. Currently, the only supported override is
-     * instance type. You can specify between 1 and 20 instance types.</p>
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. You can
+     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template to launch
+     * instances. </p>
      */
     inline LaunchTemplate& AddOverrides(const LaunchTemplateOverrides& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
 
     /**
-     * <p>An optional setting. Any parameters that you specify override the same
-     * parameters in the launch template. Currently, the only supported override is
-     * instance type. You can specify between 1 and 20 instance types.</p>
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. You can
+     * specify between 1 and 20 instance types.</p> <p>If not provided, Amazon EC2 Auto
+     * Scaling will use the instance type specified in the launch template to launch
+     * instances. </p>
      */
     inline LaunchTemplate& AddOverrides(LaunchTemplateOverrides&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
 

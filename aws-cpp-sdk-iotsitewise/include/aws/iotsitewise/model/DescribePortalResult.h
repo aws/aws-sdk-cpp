@@ -18,7 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/PortalStatus.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/iotsitewise/model/Image.h>
+#include <aws/iotsitewise/model/ImageLocation.h>
 #include <utility>
 
 namespace Aws
@@ -416,29 +416,29 @@ namespace Model
 
 
     /**
-     * <p>The portal's logo image.</p>
+     * <p>The portal's logo image, which is available at a URL.</p>
      */
-    inline const Image& GetPortalLogoImage() const{ return m_portalLogoImage; }
+    inline const ImageLocation& GetPortalLogoImageLocation() const{ return m_portalLogoImageLocation; }
 
     /**
-     * <p>The portal's logo image.</p>
+     * <p>The portal's logo image, which is available at a URL.</p>
      */
-    inline void SetPortalLogoImage(const Image& value) { m_portalLogoImage = value; }
+    inline void SetPortalLogoImageLocation(const ImageLocation& value) { m_portalLogoImageLocation = value; }
 
     /**
-     * <p>The portal's logo image.</p>
+     * <p>The portal's logo image, which is available at a URL.</p>
      */
-    inline void SetPortalLogoImage(Image&& value) { m_portalLogoImage = std::move(value); }
+    inline void SetPortalLogoImageLocation(ImageLocation&& value) { m_portalLogoImageLocation = std::move(value); }
 
     /**
-     * <p>The portal's logo image.</p>
+     * <p>The portal's logo image, which is available at a URL.</p>
      */
-    inline DescribePortalResult& WithPortalLogoImage(const Image& value) { SetPortalLogoImage(value); return *this;}
+    inline DescribePortalResult& WithPortalLogoImageLocation(const ImageLocation& value) { SetPortalLogoImageLocation(value); return *this;}
 
     /**
-     * <p>The portal's logo image.</p>
+     * <p>The portal's logo image, which is available at a URL.</p>
      */
-    inline DescribePortalResult& WithPortalLogoImage(Image&& value) { SetPortalLogoImage(std::move(value)); return *this;}
+    inline DescribePortalResult& WithPortalLogoImageLocation(ImageLocation&& value) { SetPortalLogoImageLocation(std::move(value)); return *this;}
 
 
     /**
@@ -540,7 +540,7 @@ namespace Model
 
     Aws::Utils::DateTime m_portalLastUpdateDate;
 
-    Image m_portalLogoImage;
+    ImageLocation m_portalLogoImageLocation;
 
     Aws::String m_roleArn;
   };

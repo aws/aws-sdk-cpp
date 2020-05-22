@@ -34,30 +34,25 @@ namespace Model
 {
 
   /**
-   * <p>Describes a lifecycle hook. Used in combination with
-   * <a>CreateAutoScalingGroup</a>.</p> <p>A lifecycle hook tells Amazon EC2 Auto
-   * Scaling to perform an action on an instance when the instance launches (before
-   * it is put into service) or as the instance terminates (before it is fully
-   * terminated).</p> <p>This step is a part of the procedure for creating a
-   * lifecycle hook for an Auto Scaling group:</p> <ol> <li> <p>(Optional) Create a
-   * Lambda function and a rule that allows CloudWatch Events to invoke your Lambda
-   * function when Amazon EC2 Auto Scaling launches or terminates instances.</p>
-   * </li> <li> <p>(Optional) Create a notification target and an IAM role. The
-   * target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows
-   * Amazon EC2 Auto Scaling to publish lifecycle notifications to the target.</p>
-   * </li> <li> <p> <b>Create the lifecycle hook. Specify whether the hook is used
-   * when the instances launch or terminate.</b> </p> </li> <li> <p>If you need more
-   * time, record the lifecycle action heartbeat to keep the instance in a pending
-   * state using <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If you
-   * finish before the timeout period ends, complete the lifecycle action using
-   * <a>CompleteLifecycleAction</a>.</p> </li> </ol> <p>For more information, see <a
+   * <p>Describes information used to specify a lifecycle hook for an Auto Scaling
+   * group.</p> <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an
+   * action on an instance when the instance launches (before it is put into service)
+   * or as the instance terminates (before it is fully terminated).</p> <p>This step
+   * is a part of the procedure for creating a lifecycle hook for an Auto Scaling
+   * group:</p> <ol> <li> <p>(Optional) Create a Lambda function and a rule that
+   * allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto
+   * Scaling launches or terminates instances.</p> </li> <li> <p>(Optional) Create a
+   * notification target and an IAM role. The target can be either an Amazon SQS
+   * queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish
+   * lifecycle notifications to the target.</p> </li> <li> <p> <b>Create the
+   * lifecycle hook. Specify whether the hook is used when the instances launch or
+   * terminate.</b> </p> </li> <li> <p>If you need more time, record the lifecycle
+   * action heartbeat to keep the instance in a pending state.</p> </li> <li> <p>If
+   * you finish before the timeout period ends, complete the lifecycle action.</p>
+   * </li> </ol> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
    * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User
-   * Guide</i>.</p> <p>You can view the lifecycle hooks for an Auto Scaling group
-   * using <a>DescribeLifecycleHooks</a>. You can modify an existing lifecycle hook
-   * or create new lifecycle hooks using <a>PutLifecycleHook</a>. If you are no
-   * longer using a lifecycle hook, you can delete it using
-   * <a>DeleteLifecycleHook</a>.</p><p><h3>See Also:</h3>   <a
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHookSpecification">AWS
    * API Reference</a></p>
    */

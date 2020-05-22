@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/iotsitewise/model/Image.h>
+#include <aws/iotsitewise/model/ImageLocation.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -28,20 +28,20 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Image::Image() : 
+ImageLocation::ImageLocation() : 
     m_idHasBeenSet(false),
-    m_fileHasBeenSet(false)
+    m_urlHasBeenSet(false)
 {
 }
 
-Image::Image(JsonView jsonValue) : 
+ImageLocation::ImageLocation(JsonView jsonValue) : 
     m_idHasBeenSet(false),
-    m_fileHasBeenSet(false)
+    m_urlHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-Image& Image::operator =(JsonView jsonValue)
+ImageLocation& ImageLocation::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("id"))
   {
@@ -50,17 +50,17 @@ Image& Image::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("file"))
+  if(jsonValue.ValueExists("url"))
   {
-    m_file = jsonValue.GetObject("file");
+    m_url = jsonValue.GetString("url");
 
-    m_fileHasBeenSet = true;
+    m_urlHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue Image::Jsonize() const
+JsonValue ImageLocation::Jsonize() const
 {
   JsonValue payload;
 
@@ -70,9 +70,9 @@ JsonValue Image::Jsonize() const
 
   }
 
-  if(m_fileHasBeenSet)
+  if(m_urlHasBeenSet)
   {
-   payload.WithObject("file", m_file.Jsonize());
+   payload.WithString("url", m_url);
 
   }
 

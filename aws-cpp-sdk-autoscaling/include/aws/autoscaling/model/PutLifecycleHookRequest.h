@@ -426,7 +426,7 @@ namespace Model
      * value is <code>3600</code> seconds (1 hour).</p> <p>If the lifecycle hook times
      * out, Amazon EC2 Auto Scaling performs the action that you specified in the
      * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
      */
     inline int GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
@@ -436,7 +436,7 @@ namespace Model
      * value is <code>3600</code> seconds (1 hour).</p> <p>If the lifecycle hook times
      * out, Amazon EC2 Auto Scaling performs the action that you specified in the
      * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
      */
     inline bool HeartbeatTimeoutHasBeenSet() const { return m_heartbeatTimeoutHasBeenSet; }
 
@@ -446,7 +446,7 @@ namespace Model
      * value is <code>3600</code> seconds (1 hour).</p> <p>If the lifecycle hook times
      * out, Amazon EC2 Auto Scaling performs the action that you specified in the
      * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
      */
     inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
@@ -456,7 +456,7 @@ namespace Model
      * value is <code>3600</code> seconds (1 hour).</p> <p>If the lifecycle hook times
      * out, Amazon EC2 Auto Scaling performs the action that you specified in the
      * <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from
-     * timing out by calling <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * timing out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
      */
     inline PutLifecycleHookRequest& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
 

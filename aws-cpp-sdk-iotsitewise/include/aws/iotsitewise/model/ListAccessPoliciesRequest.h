@@ -51,145 +51,173 @@ namespace Model
 
 
     /**
-     * <p>The type of identity (user or group).</p>
+     * <p>The type of identity (user or group). This parameter is required if you
+     * specify <code>identityId</code>.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>The type of identity (user or group).</p>
+     * <p>The type of identity (user or group). This parameter is required if you
+     * specify <code>identityId</code>.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
-     * <p>The type of identity (user or group).</p>
+     * <p>The type of identity (user or group). This parameter is required if you
+     * specify <code>identityId</code>.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>The type of identity (user or group).</p>
+     * <p>The type of identity (user or group). This parameter is required if you
+     * specify <code>identityId</code>.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>The type of identity (user or group).</p>
+     * <p>The type of identity (user or group). This parameter is required if you
+     * specify <code>identityId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>The type of identity (user or group).</p>
+     * <p>The type of identity (user or group). This parameter is required if you
+     * specify <code>identityId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the identity.</p>
+     * <p>The ID of the identity. This parameter is required if you specify
+     * <code>identityType</code>.</p>
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
 
     /**
-     * <p>The ID of the identity.</p>
+     * <p>The ID of the identity. This parameter is required if you specify
+     * <code>identityType</code>.</p>
      */
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
 
     /**
-     * <p>The ID of the identity.</p>
+     * <p>The ID of the identity. This parameter is required if you specify
+     * <code>identityType</code>.</p>
      */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
-     * <p>The ID of the identity.</p>
+     * <p>The ID of the identity. This parameter is required if you specify
+     * <code>identityType</code>.</p>
      */
     inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
 
     /**
-     * <p>The ID of the identity.</p>
+     * <p>The ID of the identity. This parameter is required if you specify
+     * <code>identityType</code>.</p>
      */
     inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
 
     /**
-     * <p>The ID of the identity.</p>
+     * <p>The ID of the identity. This parameter is required if you specify
+     * <code>identityType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
 
     /**
-     * <p>The ID of the identity.</p>
+     * <p>The ID of the identity. This parameter is required if you specify
+     * <code>identityType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the identity.</p>
+     * <p>The ID of the identity. This parameter is required if you specify
+     * <code>identityType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
 
 
     /**
-     * <p>The type of resource (portal or project).</p>
+     * <p>The type of resource (portal or project). This parameter is required if you
+     * specify <code>resourceId</code>.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource (portal or project).</p>
+     * <p>The type of resource (portal or project). This parameter is required if you
+     * specify <code>resourceId</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of resource (portal or project).</p>
+     * <p>The type of resource (portal or project). This parameter is required if you
+     * specify <code>resourceId</code>.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource (portal or project).</p>
+     * <p>The type of resource (portal or project). This parameter is required if you
+     * specify <code>resourceId</code>.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource (portal or project).</p>
+     * <p>The type of resource (portal or project). This parameter is required if you
+     * specify <code>resourceId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource (portal or project).</p>
+     * <p>The type of resource (portal or project). This parameter is required if you
+     * specify <code>resourceId</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the resource. This parameter is required if you specify
+     * <code>resourceType</code>.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the resource. This parameter is required if you specify
+     * <code>resourceType</code>.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the resource. This parameter is required if you specify
+     * <code>resourceType</code>.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the resource. This parameter is required if you specify
+     * <code>resourceType</code>.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the resource. This parameter is required if you specify
+     * <code>resourceType</code>.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the resource. This parameter is required if you specify
+     * <code>resourceType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the resource. This parameter is required if you specify
+     * <code>resourceType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resource.</p>
+     * <p>The ID of the resource. This parameter is required if you specify
+     * <code>resourceType</code>.</p>
      */
     inline ListAccessPoliciesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

@@ -16,7 +16,7 @@
 #pragma once
 #include <aws/iotsitewise/IoTSiteWise_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
+#include <aws/iotsitewise/model/ImageFile.h>
 #include <utility>
 
 namespace Aws
@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains an image that is available at a URL.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains an image that is one of the following:</p> <ul> <li> <p>An image
+   * file. Choose this option to upload a new image.</p> </li> <li> <p>The ID of an
+   * existing image. Choose this option to keep an existing image.</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Image">AWS
    * API Reference</a></p>
    */
@@ -49,91 +52,79 @@ namespace Model
 
 
     /**
-     * <p>A URL at which the image is available. The URL is valid for 15 minutes for
-     * you to view and download the image.</p>
+     * <p>The ID of an existing image. Specify this parameter to keep an existing
+     * image.</p>
      */
-    inline const Aws::String& GetLocationUrl() const{ return m_locationUrl; }
+    inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>A URL at which the image is available. The URL is valid for 15 minutes for
-     * you to view and download the image.</p>
+     * <p>The ID of an existing image. Specify this parameter to keep an existing
+     * image.</p>
      */
-    inline bool LocationUrlHasBeenSet() const { return m_locationUrlHasBeenSet; }
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>A URL at which the image is available. The URL is valid for 15 minutes for
-     * you to view and download the image.</p>
+     * <p>The ID of an existing image. Specify this parameter to keep an existing
+     * image.</p>
      */
-    inline void SetLocationUrl(const Aws::String& value) { m_locationUrlHasBeenSet = true; m_locationUrl = value; }
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>A URL at which the image is available. The URL is valid for 15 minutes for
-     * you to view and download the image.</p>
+     * <p>The ID of an existing image. Specify this parameter to keep an existing
+     * image.</p>
      */
-    inline void SetLocationUrl(Aws::String&& value) { m_locationUrlHasBeenSet = true; m_locationUrl = std::move(value); }
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>A URL at which the image is available. The URL is valid for 15 minutes for
-     * you to view and download the image.</p>
+     * <p>The ID of an existing image. Specify this parameter to keep an existing
+     * image.</p>
      */
-    inline void SetLocationUrl(const char* value) { m_locationUrlHasBeenSet = true; m_locationUrl.assign(value); }
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>A URL at which the image is available. The URL is valid for 15 minutes for
-     * you to view and download the image.</p>
+     * <p>The ID of an existing image. Specify this parameter to keep an existing
+     * image.</p>
      */
-    inline Image& WithLocationUrl(const Aws::String& value) { SetLocationUrl(value); return *this;}
+    inline Image& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>A URL at which the image is available. The URL is valid for 15 minutes for
-     * you to view and download the image.</p>
+     * <p>The ID of an existing image. Specify this parameter to keep an existing
+     * image.</p>
      */
-    inline Image& WithLocationUrl(Aws::String&& value) { SetLocationUrl(std::move(value)); return *this;}
+    inline Image& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>A URL at which the image is available. The URL is valid for 15 minutes for
-     * you to view and download the image.</p>
+     * <p>The ID of an existing image. Specify this parameter to keep an existing
+     * image.</p>
      */
-    inline Image& WithLocationUrl(const char* value) { SetLocationUrl(value); return *this;}
+    inline Image& WithId(const char* value) { SetId(value); return *this;}
 
 
-    /**
-     * <p>The date the image was last updated, in Unix epoch time.</p>
-     */
-    inline const Aws::Utils::DateTime& GetLastUpdateDate() const{ return m_lastUpdateDate; }
+    
+    inline const ImageFile& GetFile() const{ return m_file; }
 
-    /**
-     * <p>The date the image was last updated, in Unix epoch time.</p>
-     */
-    inline bool LastUpdateDateHasBeenSet() const { return m_lastUpdateDateHasBeenSet; }
+    
+    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
 
-    /**
-     * <p>The date the image was last updated, in Unix epoch time.</p>
-     */
-    inline void SetLastUpdateDate(const Aws::Utils::DateTime& value) { m_lastUpdateDateHasBeenSet = true; m_lastUpdateDate = value; }
+    
+    inline void SetFile(const ImageFile& value) { m_fileHasBeenSet = true; m_file = value; }
 
-    /**
-     * <p>The date the image was last updated, in Unix epoch time.</p>
-     */
-    inline void SetLastUpdateDate(Aws::Utils::DateTime&& value) { m_lastUpdateDateHasBeenSet = true; m_lastUpdateDate = std::move(value); }
+    
+    inline void SetFile(ImageFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
 
-    /**
-     * <p>The date the image was last updated, in Unix epoch time.</p>
-     */
-    inline Image& WithLastUpdateDate(const Aws::Utils::DateTime& value) { SetLastUpdateDate(value); return *this;}
+    
+    inline Image& WithFile(const ImageFile& value) { SetFile(value); return *this;}
 
-    /**
-     * <p>The date the image was last updated, in Unix epoch time.</p>
-     */
-    inline Image& WithLastUpdateDate(Aws::Utils::DateTime&& value) { SetLastUpdateDate(std::move(value)); return *this;}
+    
+    inline Image& WithFile(ImageFile&& value) { SetFile(std::move(value)); return *this;}
 
   private:
 
-    Aws::String m_locationUrl;
-    bool m_locationUrlHasBeenSet;
+    Aws::String m_id;
+    bool m_idHasBeenSet;
 
-    Aws::Utils::DateTime m_lastUpdateDate;
-    bool m_lastUpdateDateHasBeenSet;
+    ImageFile m_file;
+    bool m_fileHasBeenSet;
   };
 
 } // namespace Model

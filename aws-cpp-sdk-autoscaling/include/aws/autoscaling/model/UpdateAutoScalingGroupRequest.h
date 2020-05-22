@@ -309,51 +309,75 @@ namespace Model
 
 
     /**
-     * <p>The maximum size of the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p> <note> <p>With a mixed
+     * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
+     * to go above <code>MaxSize</code> to meet your capacity requirements. In this
+     * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
+     * than your maximum instance weight (weights that define how many capacity units
+     * each instance contributes to the capacity of the group).</p> </note>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum size of the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p> <note> <p>With a mixed
+     * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
+     * to go above <code>MaxSize</code> to meet your capacity requirements. In this
+     * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
+     * than your maximum instance weight (weights that define how many capacity units
+     * each instance contributes to the capacity of the group).</p> </note>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum size of the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p> <note> <p>With a mixed
+     * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
+     * to go above <code>MaxSize</code> to meet your capacity requirements. In this
+     * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
+     * than your maximum instance weight (weights that define how many capacity units
+     * each instance contributes to the capacity of the group).</p> </note>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum size of the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p> <note> <p>With a mixed
+     * instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need
+     * to go above <code>MaxSize</code> to meet your capacity requirements. In this
+     * event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more
+     * than your maximum instance weight (weights that define how many capacity units
+     * each instance contributes to the capacity of the group).</p> </note>
      */
     inline UpdateAutoScalingGroupRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling group.
-     * This number must be greater than or equal to the minimum size of the group and
-     * less than or equal to the maximum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain.</p> <p>This
+     * number must be greater than or equal to the minimum size of the group and less
+     * than or equal to the maximum size of the group.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling group.
-     * This number must be greater than or equal to the minimum size of the group and
-     * less than or equal to the maximum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain.</p> <p>This
+     * number must be greater than or equal to the minimum size of the group and less
+     * than or equal to the maximum size of the group.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling group.
-     * This number must be greater than or equal to the minimum size of the group and
-     * less than or equal to the maximum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain.</p> <p>This
+     * number must be greater than or equal to the minimum size of the group and less
+     * than or equal to the maximum size of the group.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The number of EC2 instances that should be running in the Auto Scaling group.
-     * This number must be greater than or equal to the minimum size of the group and
-     * less than or equal to the maximum size of the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * this operation completes and the capacity it attempts to maintain.</p> <p>This
+     * number must be greater than or equal to the minimum size of the group and less
+     * than or equal to the maximum size of the group.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
@@ -907,42 +931,50 @@ namespace Model
 
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null.</p> <p>This parameter is optional, but if you specify a
+     * value for it, you must specify a value of at least 604,800 seconds (7 days). To
+     * clear a previously set value, specify a new value of 0.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
      * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null.</p> <p>This parameter is optional, but if you specify a
+     * value for it, you must specify a value of at least 604,800 seconds (7 days). To
+     * clear a previously set value, specify a new value of 0.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
      * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null.</p> <p>This parameter is optional, but if you specify a
+     * value for it, you must specify a value of at least 604,800 seconds (7 days). To
+     * clear a previously set value, specify a new value of 0.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
      * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
 
     /**
-     * <p>The maximum amount of time, in seconds, that an instance can be in
-     * service.</p> <p>For more information, see <a
+     * <p>The maximum amount of time, in seconds, that an instance can be in service.
+     * The default is null.</p> <p>This parameter is optional, but if you specify a
+     * value for it, you must specify a value of at least 604,800 seconds (7 days). To
+     * clear a previously set value, specify a new value of 0.</p> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing
      * Auto Scaling Instances Based on Maximum Instance Lifetime</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of
-     * 604800.</p>
+     * EC2 Auto Scaling User Guide</i>.</p> <p>Valid Range: Minimum value of 0.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
 

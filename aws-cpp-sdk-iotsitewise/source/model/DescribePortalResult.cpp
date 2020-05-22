@@ -98,9 +98,9 @@ DescribePortalResult& DescribePortalResult::operator =(const Aws::AmazonWebServi
 
   }
 
-  if(jsonValue.ValueExists("portalLogoImage"))
+  if(jsonValue.ValueExists("portalLogoImageLocation"))
   {
-    m_portalLogoImage = jsonValue.GetObject("portalLogoImage");
+    m_portalLogoImageLocation = jsonValue.GetObject("portalLogoImageLocation");
 
   }
 

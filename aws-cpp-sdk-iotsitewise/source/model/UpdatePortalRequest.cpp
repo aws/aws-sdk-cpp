@@ -27,7 +27,7 @@ UpdatePortalRequest::UpdatePortalRequest() :
     m_portalNameHasBeenSet(false),
     m_portalDescriptionHasBeenSet(false),
     m_portalContactEmailHasBeenSet(false),
-    m_portalLogoImageFileHasBeenSet(false),
+    m_portalLogoImageHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true)
@@ -56,9 +56,9 @@ Aws::String UpdatePortalRequest::SerializePayload() const
 
   }
 
-  if(m_portalLogoImageFileHasBeenSet)
+  if(m_portalLogoImageHasBeenSet)
   {
-   payload.WithObject("portalLogoImageFile", m_portalLogoImageFile.Jsonize());
+   payload.WithObject("portalLogoImage", m_portalLogoImage.Jsonize());
 
   }
 

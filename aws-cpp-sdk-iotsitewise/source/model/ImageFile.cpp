@@ -30,33 +30,33 @@ namespace Model
 {
 
 ImageFile::ImageFile() : 
-    m_encodedStringHasBeenSet(false),
-    m_fileType(ImageFileType::NOT_SET),
-    m_fileTypeHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_type(ImageFileType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
 ImageFile::ImageFile(JsonView jsonValue) : 
-    m_encodedStringHasBeenSet(false),
-    m_fileType(ImageFileType::NOT_SET),
-    m_fileTypeHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_type(ImageFileType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ImageFile& ImageFile::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("encodedString"))
+  if(jsonValue.ValueExists("data"))
   {
-    m_encodedString = HashingUtils::Base64Decode(jsonValue.GetString("encodedString"));
-    m_encodedStringHasBeenSet = true;
+    m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
+    m_dataHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("fileType"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_fileType = ImageFileTypeMapper::GetImageFileTypeForName(jsonValue.GetString("fileType"));
+    m_type = ImageFileTypeMapper::GetImageFileTypeForName(jsonValue.GetString("type"));
 
-    m_fileTypeHasBeenSet = true;
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -66,14 +66,14 @@ JsonValue ImageFile::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_encodedStringHasBeenSet)
+  if(m_dataHasBeenSet)
   {
-   payload.WithString("encodedString", HashingUtils::Base64Encode(m_encodedString));
+   payload.WithString("data", HashingUtils::Base64Encode(m_data));
   }
 
-  if(m_fileTypeHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("fileType", ImageFileTypeMapper::GetNameForImageFileType(m_fileType));
+   payload.WithString("type", ImageFileTypeMapper::GetNameForImageFileType(m_type));
   }
 
   return payload;

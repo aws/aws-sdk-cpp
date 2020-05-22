@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Amazon EBS volume. Used in combination with
-   * <a>BlockDeviceMapping</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes information used to set up an Amazon EBS volume specified in a
+   * block device mapping.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/Ebs">AWS API
    * Reference</a></p>
    */

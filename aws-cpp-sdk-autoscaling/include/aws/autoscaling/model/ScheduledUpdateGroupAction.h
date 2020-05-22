@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a scheduled scaling action. Used in response to
-   * <a>DescribeScheduledActions</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a scheduled scaling action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupAction">AWS
    * API Reference</a></p>
    */
@@ -345,64 +344,68 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of instances in the Auto Scaling group.</p>
+     * <p>The minimum size of the Auto Scaling group.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p>The minimum number of instances in the Auto Scaling group.</p>
+     * <p>The minimum size of the Auto Scaling group.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
-     * <p>The minimum number of instances in the Auto Scaling group.</p>
+     * <p>The minimum size of the Auto Scaling group.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p>The minimum number of instances in the Auto Scaling group.</p>
+     * <p>The minimum size of the Auto Scaling group.</p>
      */
     inline ScheduledUpdateGroupAction& WithMinSize(int value) { SetMinSize(value); return *this;}
 
 
     /**
-     * <p>The maximum number of instances in the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>The maximum number of instances in the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>The maximum number of instances in the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>The maximum number of instances in the Auto Scaling group.</p>
+     * <p>The maximum size of the Auto Scaling group.</p>
      */
     inline ScheduledUpdateGroupAction& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 
 
     /**
-     * <p>The number of instances you prefer to maintain in the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
     inline int GetDesiredCapacity() const{ return m_desiredCapacity; }
 
     /**
-     * <p>The number of instances you prefer to maintain in the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
     inline bool DesiredCapacityHasBeenSet() const { return m_desiredCapacityHasBeenSet; }
 
     /**
-     * <p>The number of instances you prefer to maintain in the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
     inline void SetDesiredCapacity(int value) { m_desiredCapacityHasBeenSet = true; m_desiredCapacity = value; }
 
     /**
-     * <p>The number of instances you prefer to maintain in the group.</p>
+     * <p>The desired capacity is the initial capacity of the Auto Scaling group after
+     * the scheduled action runs and the capacity it attempts to maintain.</p>
      */
     inline ScheduledUpdateGroupAction& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 

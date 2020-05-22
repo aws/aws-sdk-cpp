@@ -30,7 +30,8 @@ namespace Model
     COUNT,
     MAXIMUM,
     MINIMUM,
-    SUM
+    SUM,
+    STANDARD_DEVIATION
   };
 
 namespace AggregateTypeMapper

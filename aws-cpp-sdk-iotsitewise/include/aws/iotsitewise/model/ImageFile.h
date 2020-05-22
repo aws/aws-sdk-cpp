@@ -52,76 +52,76 @@ namespace Model
      * <p>The image file contents, represented as a base64-encoded string. The file
      * size must be less than 1 MB.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetEncodedString() const{ return m_encodedString; }
+    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
     /**
      * <p>The image file contents, represented as a base64-encoded string. The file
      * size must be less than 1 MB.</p>
      */
-    inline bool EncodedStringHasBeenSet() const { return m_encodedStringHasBeenSet; }
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
      * <p>The image file contents, represented as a base64-encoded string. The file
      * size must be less than 1 MB.</p>
      */
-    inline void SetEncodedString(const Aws::Utils::ByteBuffer& value) { m_encodedStringHasBeenSet = true; m_encodedString = value; }
+    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
      * <p>The image file contents, represented as a base64-encoded string. The file
      * size must be less than 1 MB.</p>
      */
-    inline void SetEncodedString(Aws::Utils::ByteBuffer&& value) { m_encodedStringHasBeenSet = true; m_encodedString = std::move(value); }
+    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The image file contents, represented as a base64-encoded string. The file
      * size must be less than 1 MB.</p>
      */
-    inline ImageFile& WithEncodedString(const Aws::Utils::ByteBuffer& value) { SetEncodedString(value); return *this;}
+    inline ImageFile& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
     /**
      * <p>The image file contents, represented as a base64-encoded string. The file
      * size must be less than 1 MB.</p>
      */
-    inline ImageFile& WithEncodedString(Aws::Utils::ByteBuffer&& value) { SetEncodedString(std::move(value)); return *this;}
+    inline ImageFile& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 
 
     /**
      * <p>The file type of the image.</p>
      */
-    inline const ImageFileType& GetFileType() const{ return m_fileType; }
+    inline const ImageFileType& GetType() const{ return m_type; }
 
     /**
      * <p>The file type of the image.</p>
      */
-    inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The file type of the image.</p>
      */
-    inline void SetFileType(const ImageFileType& value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
+    inline void SetType(const ImageFileType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The file type of the image.</p>
      */
-    inline void SetFileType(ImageFileType&& value) { m_fileTypeHasBeenSet = true; m_fileType = std::move(value); }
+    inline void SetType(ImageFileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The file type of the image.</p>
      */
-    inline ImageFile& WithFileType(const ImageFileType& value) { SetFileType(value); return *this;}
+    inline ImageFile& WithType(const ImageFileType& value) { SetType(value); return *this;}
 
     /**
      * <p>The file type of the image.</p>
      */
-    inline ImageFile& WithFileType(ImageFileType&& value) { SetFileType(std::move(value)); return *this;}
+    inline ImageFile& WithType(ImageFileType&& value) { SetType(std::move(value)); return *this;}
 
   private:
 
-    Aws::Utils::ByteBuffer m_encodedString;
-    bool m_encodedStringHasBeenSet;
+    Aws::Utils::ByteBuffer m_data;
+    bool m_dataHasBeenSet;
 
-    ImageFileType m_fileType;
-    bool m_fileTypeHasBeenSet;
+    ImageFileType m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model
