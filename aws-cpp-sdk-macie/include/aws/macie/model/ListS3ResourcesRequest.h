@@ -45,50 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
-     * list. </p>
+     * <p>The Amazon Macie Classic member account ID whose associated S3 resources you
+     * want to list. </p>
      */
     inline const Aws::String& GetMemberAccountId() const{ return m_memberAccountId; }
 
     /**
-     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
-     * list. </p>
+     * <p>The Amazon Macie Classic member account ID whose associated S3 resources you
+     * want to list. </p>
      */
     inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
-     * list. </p>
+     * <p>The Amazon Macie Classic member account ID whose associated S3 resources you
+     * want to list. </p>
      */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**
-     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
-     * list. </p>
+     * <p>The Amazon Macie Classic member account ID whose associated S3 resources you
+     * want to list. </p>
      */
     inline void SetMemberAccountId(Aws::String&& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = std::move(value); }
 
     /**
-     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
-     * list. </p>
+     * <p>The Amazon Macie Classic member account ID whose associated S3 resources you
+     * want to list. </p>
      */
     inline void SetMemberAccountId(const char* value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId.assign(value); }
 
     /**
-     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
-     * list. </p>
+     * <p>The Amazon Macie Classic member account ID whose associated S3 resources you
+     * want to list. </p>
      */
     inline ListS3ResourcesRequest& WithMemberAccountId(const Aws::String& value) { SetMemberAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
-     * list. </p>
+     * <p>The Amazon Macie Classic member account ID whose associated S3 resources you
+     * want to list. </p>
      */
     inline ListS3ResourcesRequest& WithMemberAccountId(Aws::String&& value) { SetMemberAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Macie member account ID whose associated S3 resources you want to
-     * list. </p>
+     * <p>The Amazon Macie Classic member account ID whose associated S3 resources you
+     * want to list. </p>
      */
     inline ListS3ResourcesRequest& WithMemberAccountId(const char* value) { SetMemberAccountId(value); return *this;}
 

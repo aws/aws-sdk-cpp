@@ -91,42 +91,58 @@ namespace Model
 
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Use VOLUME to create snapshots of individual volumes or
+     * use INSTANCE to create multi-volume snapshots from the volumes for an
+     * instance.</p>
      */
     inline const Aws::Vector<ResourceTypeValues>& GetResourceTypes() const{ return m_resourceTypes; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Use VOLUME to create snapshots of individual volumes or
+     * use INSTANCE to create multi-volume snapshots from the volumes for an
+     * instance.</p>
      */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Use VOLUME to create snapshots of individual volumes or
+     * use INSTANCE to create multi-volume snapshots from the volumes for an
+     * instance.</p>
      */
     inline void SetResourceTypes(const Aws::Vector<ResourceTypeValues>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Use VOLUME to create snapshots of individual volumes or
+     * use INSTANCE to create multi-volume snapshots from the volumes for an
+     * instance.</p>
      */
     inline void SetResourceTypes(Aws::Vector<ResourceTypeValues>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Use VOLUME to create snapshots of individual volumes or
+     * use INSTANCE to create multi-volume snapshots from the volumes for an
+     * instance.</p>
      */
     inline PolicyDetails& WithResourceTypes(const Aws::Vector<ResourceTypeValues>& value) { SetResourceTypes(value); return *this;}
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Use VOLUME to create snapshots of individual volumes or
+     * use INSTANCE to create multi-volume snapshots from the volumes for an
+     * instance.</p>
      */
     inline PolicyDetails& WithResourceTypes(Aws::Vector<ResourceTypeValues>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Use VOLUME to create snapshots of individual volumes or
+     * use INSTANCE to create multi-volume snapshots from the volumes for an
+     * instance.</p>
      */
     inline PolicyDetails& AddResourceTypes(const ResourceTypeValues& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
     /**
-     * <p>The resource type.</p>
+     * <p>The resource type. Use VOLUME to create snapshots of individual volumes or
+     * use INSTANCE to create multi-volume snapshots from the volumes for an
+     * instance.</p>
      */
     inline PolicyDetails& AddResourceTypes(ResourceTypeValues&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 

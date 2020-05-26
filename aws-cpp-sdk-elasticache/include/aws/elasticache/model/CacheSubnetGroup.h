@@ -224,6 +224,47 @@ namespace Model
      */
     inline CacheSubnetGroup& AddSubnets(Subnet&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline CacheSubnetGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline CacheSubnetGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache subnet group.</p>
+     */
+    inline CacheSubnetGroup& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_cacheSubnetGroupName;
@@ -237,6 +278,9 @@ namespace Model
 
     Aws::Vector<Subnet> m_subnets;
     bool m_subnetsHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

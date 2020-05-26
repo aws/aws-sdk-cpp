@@ -524,6 +524,47 @@ namespace Model
      */
     inline GlobalReplicationGroup& WithAtRestEncryptionEnabled(bool value) { SetAtRestEncryptionEnabled(value); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline GlobalReplicationGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline GlobalReplicationGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the global replication group.</p>
+     */
+    inline GlobalReplicationGroup& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_globalReplicationGroupId;
@@ -561,6 +602,9 @@ namespace Model
 
     bool m_atRestEncryptionEnabled;
     bool m_atRestEncryptionEnabledHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

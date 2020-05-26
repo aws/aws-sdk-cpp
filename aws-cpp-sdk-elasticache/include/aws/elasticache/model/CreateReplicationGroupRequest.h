@@ -335,9 +335,9 @@ namespace Model
 
 
     /**
-     * <p>The number of clusters this replication group initially has.</p> <p>This
-     * parameter is not used if there is more than one node group (shard). You should
-     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
+     * there is more than one node group (shard). You should use
+     * <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
      * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
      * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
      * <code>false</code> you can omit this parameter (it will default to 1), or you
@@ -347,9 +347,9 @@ namespace Model
     inline int GetNumCacheClusters() const{ return m_numCacheClusters; }
 
     /**
-     * <p>The number of clusters this replication group initially has.</p> <p>This
-     * parameter is not used if there is more than one node group (shard). You should
-     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
+     * there is more than one node group (shard). You should use
+     * <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
      * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
      * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
      * <code>false</code> you can omit this parameter (it will default to 1), or you
@@ -359,9 +359,9 @@ namespace Model
     inline bool NumCacheClustersHasBeenSet() const { return m_numCacheClustersHasBeenSet; }
 
     /**
-     * <p>The number of clusters this replication group initially has.</p> <p>This
-     * parameter is not used if there is more than one node group (shard). You should
-     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
+     * there is more than one node group (shard). You should use
+     * <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
      * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
      * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
      * <code>false</code> you can omit this parameter (it will default to 1), or you
@@ -371,9 +371,9 @@ namespace Model
     inline void SetNumCacheClusters(int value) { m_numCacheClustersHasBeenSet = true; m_numCacheClusters = value; }
 
     /**
-     * <p>The number of clusters this replication group initially has.</p> <p>This
-     * parameter is not used if there is more than one node group (shard). You should
-     * use <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
+     * <p>The number of nodes in the cluster.</p> <p>This parameter is not used if
+     * there is more than one node group (shard). You should use
+     * <code>ReplicasPerNodeGroup</code> instead.</p> <p>If
      * <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this
      * parameter must be at least 2. If <code>AutomaticFailoverEnabled</code> is
      * <code>false</code> you can omit this parameter (it will default to 1), or you

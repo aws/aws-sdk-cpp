@@ -34,7 +34,8 @@ CacheSubnetGroup::CacheSubnetGroup() :
     m_cacheSubnetGroupNameHasBeenSet(false),
     m_cacheSubnetGroupDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+    m_subnetsHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ CacheSubnetGroup::CacheSubnetGroup(const XmlNode& xmlNode) :
     m_cacheSubnetGroupNameHasBeenSet(false),
     m_cacheSubnetGroupDescriptionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
+    m_subnetsHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,6 +85,12 @@ CacheSubnetGroup& CacheSubnetGroup::operator =(const XmlNode& xmlNode)
 
       m_subnetsHasBeenSet = true;
     }
+    XmlNode aRNNode = resultNode.FirstChild("ARN");
+    if(!aRNNode.IsNull())
+    {
+      m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
+      m_aRNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -116,6 +124,11 @@ void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+
 }
 
 void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -141,6 +154,10 @@ void CacheSubnetGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
         subnetsSs << location <<  ".Subnet." << subnetsIdx++;
         item.OutputToStream(oStream, subnetsSs.str().c_str());
       }
+  }
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 }
 

@@ -33,7 +33,8 @@ CreateRule::CreateRule() :
     m_intervalHasBeenSet(false),
     m_intervalUnit(IntervalUnitValues::NOT_SET),
     m_intervalUnitHasBeenSet(false),
-    m_timesHasBeenSet(false)
+    m_timesHasBeenSet(false),
+    m_cronExpressionHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ CreateRule::CreateRule(JsonView jsonValue) :
     m_intervalHasBeenSet(false),
     m_intervalUnit(IntervalUnitValues::NOT_SET),
     m_intervalUnitHasBeenSet(false),
-    m_timesHasBeenSet(false)
+    m_timesHasBeenSet(false),
+    m_cronExpressionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +75,13 @@ CreateRule& CreateRule::operator =(JsonView jsonValue)
     m_timesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CronExpression"))
+  {
+    m_cronExpression = jsonValue.GetString("CronExpression");
+
+    m_cronExpressionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -99,6 +108,12 @@ JsonValue CreateRule::Jsonize() const
      timesJsonList[timesIndex].AsString(m_times[timesIndex]);
    }
    payload.WithArray("Times", std::move(timesJsonList));
+
+  }
+
+  if(m_cronExpressionHasBeenSet)
+  {
+   payload.WithString("CronExpression", m_cronExpression);
 
   }
 

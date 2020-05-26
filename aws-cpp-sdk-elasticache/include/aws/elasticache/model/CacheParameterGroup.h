@@ -221,6 +221,47 @@ namespace Model
      */
     inline CacheParameterGroup& WithIsGlobal(bool value) { SetIsGlobal(value); return *this;}
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline CacheParameterGroup& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline CacheParameterGroup& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the cache parameter group.</p>
+     */
+    inline CacheParameterGroup& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_cacheParameterGroupName;
@@ -234,6 +275,9 @@ namespace Model
 
     bool m_isGlobal;
     bool m_isGlobalHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

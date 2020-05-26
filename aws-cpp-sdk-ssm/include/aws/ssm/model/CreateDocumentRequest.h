@@ -312,7 +312,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
-     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
@@ -321,7 +321,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
-     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
@@ -330,7 +330,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
-     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
@@ -339,7 +339,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
-     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
@@ -348,7 +348,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
-     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
@@ -357,7 +357,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
-     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
@@ -366,7 +366,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
-     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */
@@ -375,7 +375,7 @@ namespace Model
     /**
      * <p>A name for the Systems Manager document.</p> <important> <p>You can't use the
      * following strings as document name prefixes. These are reserved by AWS for use
-     * as document name prefixes:</p> <ul> <li> <p> <code>aws</code> </p> </li> <li>
+     * as document name prefixes:</p> <ul> <li> <p> <code>aws-</code> </p> </li> <li>
      * <p> <code>amazon</code> </p> </li> <li> <p> <code>amzn</code> </p> </li> </ul>
      * </important>
      */

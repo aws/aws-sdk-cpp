@@ -132,42 +132,42 @@ namespace Model
 
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>A display name for the dashboard.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>A display name for the dashboard.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>A display name for the dashboard.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>A display name for the dashboard.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>A display name for the dashboard.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>A display name for the dashboard.</p>
      */
     inline Dashboard& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>A display name for the dashboard.</p>
      */
     inline Dashboard& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>A display name for the dashboard.</p>
      */
     inline Dashboard& WithName(const char* value) { SetName(value); return *this;}
 

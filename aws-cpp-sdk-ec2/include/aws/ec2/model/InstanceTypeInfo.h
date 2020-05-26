@@ -31,6 +31,7 @@
 #include <aws/ec2/model/InferenceAcceleratorInfo.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
+#include <aws/ec2/model/VirtualizationType.h>
 #include <utility>
 
 namespace Aws
@@ -228,6 +229,47 @@ namespace Model
      * <p>Indicates the supported root device types.</p>
      */
     inline InstanceTypeInfo& AddSupportedRootDeviceTypes(RootDeviceType&& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline const Aws::Vector<VirtualizationType>& GetSupportedVirtualizationTypes() const{ return m_supportedVirtualizationTypes; }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline bool SupportedVirtualizationTypesHasBeenSet() const { return m_supportedVirtualizationTypesHasBeenSet; }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline void SetSupportedVirtualizationTypes(const Aws::Vector<VirtualizationType>& value) { m_supportedVirtualizationTypesHasBeenSet = true; m_supportedVirtualizationTypes = value; }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline void SetSupportedVirtualizationTypes(Aws::Vector<VirtualizationType>&& value) { m_supportedVirtualizationTypesHasBeenSet = true; m_supportedVirtualizationTypes = std::move(value); }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline InstanceTypeInfo& WithSupportedVirtualizationTypes(const Aws::Vector<VirtualizationType>& value) { SetSupportedVirtualizationTypes(value); return *this;}
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline InstanceTypeInfo& WithSupportedVirtualizationTypes(Aws::Vector<VirtualizationType>&& value) { SetSupportedVirtualizationTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline InstanceTypeInfo& AddSupportedVirtualizationTypes(const VirtualizationType& value) { m_supportedVirtualizationTypesHasBeenSet = true; m_supportedVirtualizationTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The supported virtualization types.</p>
+     */
+    inline InstanceTypeInfo& AddSupportedVirtualizationTypes(VirtualizationType&& value) { m_supportedVirtualizationTypesHasBeenSet = true; m_supportedVirtualizationTypes.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -716,6 +758,9 @@ namespace Model
 
     Aws::Vector<RootDeviceType> m_supportedRootDeviceTypes;
     bool m_supportedRootDeviceTypesHasBeenSet;
+
+    Aws::Vector<VirtualizationType> m_supportedVirtualizationTypes;
+    bool m_supportedVirtualizationTypesHasBeenSet;
 
     bool m_bareMetal;
     bool m_bareMetalHasBeenSet;

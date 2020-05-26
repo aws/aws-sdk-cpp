@@ -30,6 +30,8 @@ namespace Aws
       namespace DashboardErrorTypeMapper
       {
 
+        static const int ACCESS_DENIED_HASH = HashingUtils::HashString("ACCESS_DENIED");
+        static const int SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("SOURCE_NOT_FOUND");
         static const int DATA_SET_NOT_FOUND_HASH = HashingUtils::HashString("DATA_SET_NOT_FOUND");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
         static const int PARAMETER_VALUE_INCOMPATIBLE_HASH = HashingUtils::HashString("PARAMETER_VALUE_INCOMPATIBLE");
@@ -43,7 +45,15 @@ namespace Aws
         DashboardErrorType GetDashboardErrorTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DATA_SET_NOT_FOUND_HASH)
+          if (hashCode == ACCESS_DENIED_HASH)
+          {
+            return DashboardErrorType::ACCESS_DENIED;
+          }
+          else if (hashCode == SOURCE_NOT_FOUND_HASH)
+          {
+            return DashboardErrorType::SOURCE_NOT_FOUND;
+          }
+          else if (hashCode == DATA_SET_NOT_FOUND_HASH)
           {
             return DashboardErrorType::DATA_SET_NOT_FOUND;
           }
@@ -89,6 +99,10 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashboardErrorType::ACCESS_DENIED:
+            return "ACCESS_DENIED";
+          case DashboardErrorType::SOURCE_NOT_FOUND:
+            return "SOURCE_NOT_FOUND";
           case DashboardErrorType::DATA_SET_NOT_FOUND:
             return "DATA_SET_NOT_FOUND";
           case DashboardErrorType::INTERNAL_FAILURE:

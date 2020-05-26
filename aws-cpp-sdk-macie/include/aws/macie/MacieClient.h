@@ -102,14 +102,19 @@ namespace Model
     typedef std::function<void(const MacieClient*, const Model::UpdateS3ResourcesRequest&, const Model::UpdateS3ResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateS3ResourcesResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon Macie</fullname> <p>Amazon Macie is a security service that
-   * uses machine learning to automatically discover, classify, and protect sensitive
-   * data in AWS. Macie recognizes sensitive data such as personally identifiable
-   * information (PII) or intellectual property, and provides you with dashboards and
-   * alerts that give visibility into how this data is being accessed or moved. For
-   * more information, see the <a
-   * href="https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html">Macie
-   * User Guide</a>. </p>
+   * <fullname>Amazon Macie Classic</fullname> <p>Amazon Macie Classic is a security
+   * service that uses machine learning to automatically discover, classify, and
+   * protect sensitive data in AWS. Macie Classic recognizes sensitive data such as
+   * personally identifiable information (PII) or intellectual property, and provides
+   * you with dashboards and alerts that give visibility into how this data is being
+   * accessed or moved. For more information, see the <a
+   * href="https://docs.aws.amazon.com/macie/latest/userguide/what-is-macie.html">Amazon
+   * Macie Classic User Guide</a>. </p> <p>A new Amazon Macie is now available with
+   * significant design improvements and additional features, at a lower price and in
+   * most AWS Regions. We encourage you to explore and use the new and improved
+   * features, and benefit from the reduced cost. To learn about features and pricing
+   * for the new Amazon Macie, see <a href="https://aws.amazon.com/macie/">Amazon
+   * Macie</a>.</p>
    */
   class AWS_MACIE_API MacieClient : public Aws::Client::AWSJsonClient
   {
@@ -141,7 +146,7 @@ namespace Model
 
 
         /**
-         * <p>Associates a specified AWS account with Amazon Macie as a member
+         * <p>Associates a specified AWS account with Amazon Macie Classic as a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">AWS
          * API Reference</a></p>
@@ -149,7 +154,7 @@ namespace Model
         virtual Model::AssociateMemberAccountOutcome AssociateMemberAccount(const Model::AssociateMemberAccountRequest& request) const;
 
         /**
-         * <p>Associates a specified AWS account with Amazon Macie as a member
+         * <p>Associates a specified AWS account with Amazon Macie Classic as a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">AWS
          * API Reference</a></p>
@@ -159,7 +164,7 @@ namespace Model
         virtual Model::AssociateMemberAccountOutcomeCallable AssociateMemberAccountCallable(const Model::AssociateMemberAccountRequest& request) const;
 
         /**
-         * <p>Associates a specified AWS account with Amazon Macie as a member
+         * <p>Associates a specified AWS account with Amazon Macie Classic as a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateMemberAccount">AWS
          * API Reference</a></p>
@@ -169,22 +174,24 @@ namespace Model
         virtual void AssociateMemberAccountAsync(const Model::AssociateMemberAccountRequest& request, const AssociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates specified S3 resources with Amazon Macie for monitoring and data
-         * classification. If memberAccountId isn't specified, the action associates
-         * specified S3 resources with Macie for the current master account. If
-         * memberAccountId is specified, the action associates specified S3 resources with
-         * Macie for the specified member account. </p><p><h3>See Also:</h3>   <a
+         * <p>Associates specified S3 resources with Amazon Macie Classic for monitoring
+         * and data classification. If memberAccountId isn't specified, the action
+         * associates specified S3 resources with Macie Classic for the current master
+         * account. If memberAccountId is specified, the action associates specified S3
+         * resources with Macie Classic for the specified member account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">AWS
          * API Reference</a></p>
          */
         virtual Model::AssociateS3ResourcesOutcome AssociateS3Resources(const Model::AssociateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Associates specified S3 resources with Amazon Macie for monitoring and data
-         * classification. If memberAccountId isn't specified, the action associates
-         * specified S3 resources with Macie for the current master account. If
-         * memberAccountId is specified, the action associates specified S3 resources with
-         * Macie for the specified member account. </p><p><h3>See Also:</h3>   <a
+         * <p>Associates specified S3 resources with Amazon Macie Classic for monitoring
+         * and data classification. If memberAccountId isn't specified, the action
+         * associates specified S3 resources with Macie Classic for the current master
+         * account. If memberAccountId is specified, the action associates specified S3
+         * resources with Macie Classic for the specified member account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">AWS
          * API Reference</a></p>
          *
@@ -193,11 +200,12 @@ namespace Model
         virtual Model::AssociateS3ResourcesOutcomeCallable AssociateS3ResourcesCallable(const Model::AssociateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Associates specified S3 resources with Amazon Macie for monitoring and data
-         * classification. If memberAccountId isn't specified, the action associates
-         * specified S3 resources with Macie for the current master account. If
-         * memberAccountId is specified, the action associates specified S3 resources with
-         * Macie for the specified member account. </p><p><h3>See Also:</h3>   <a
+         * <p>Associates specified S3 resources with Amazon Macie Classic for monitoring
+         * and data classification. If memberAccountId isn't specified, the action
+         * associates specified S3 resources with Macie Classic for the current master
+         * account. If memberAccountId is specified, the action associates specified S3
+         * resources with Macie Classic for the specified member account. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/AssociateS3Resources">AWS
          * API Reference</a></p>
          *
@@ -206,7 +214,7 @@ namespace Model
         virtual void AssociateS3ResourcesAsync(const Model::AssociateS3ResourcesRequest& request, const AssociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified member account from Amazon Macie.</p><p><h3>See
+         * <p>Removes the specified member account from Amazon Macie Classic.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">AWS
          * API Reference</a></p>
@@ -214,7 +222,7 @@ namespace Model
         virtual Model::DisassociateMemberAccountOutcome DisassociateMemberAccount(const Model::DisassociateMemberAccountRequest& request) const;
 
         /**
-         * <p>Removes the specified member account from Amazon Macie.</p><p><h3>See
+         * <p>Removes the specified member account from Amazon Macie Classic.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">AWS
          * API Reference</a></p>
@@ -224,7 +232,7 @@ namespace Model
         virtual Model::DisassociateMemberAccountOutcomeCallable DisassociateMemberAccountCallable(const Model::DisassociateMemberAccountRequest& request) const;
 
         /**
-         * <p>Removes the specified member account from Amazon Macie.</p><p><h3>See
+         * <p>Removes the specified member account from Amazon Macie Classic.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateMemberAccount">AWS
          * API Reference</a></p>
@@ -234,22 +242,22 @@ namespace Model
         virtual void DisassociateMemberAccountAsync(const Model::DisassociateMemberAccountRequest& request, const DisassociateMemberAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes specified S3 resources from being monitored by Amazon Macie. If
-         * memberAccountId isn't specified, the action removes specified S3 resources from
-         * Macie for the current master account. If memberAccountId is specified, the
-         * action removes specified S3 resources from Macie for the specified member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes specified S3 resources from being monitored by Amazon Macie Classic.
+         * If memberAccountId isn't specified, the action removes specified S3 resources
+         * from Macie Classic for the current master account. If memberAccountId is
+         * specified, the action removes specified S3 resources from Macie Classic for the
+         * specified member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateS3ResourcesOutcome DisassociateS3Resources(const Model::DisassociateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Removes specified S3 resources from being monitored by Amazon Macie. If
-         * memberAccountId isn't specified, the action removes specified S3 resources from
-         * Macie for the current master account. If memberAccountId is specified, the
-         * action removes specified S3 resources from Macie for the specified member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes specified S3 resources from being monitored by Amazon Macie Classic.
+         * If memberAccountId isn't specified, the action removes specified S3 resources
+         * from Macie Classic for the current master account. If memberAccountId is
+         * specified, the action removes specified S3 resources from Macie Classic for the
+         * specified member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">AWS
          * API Reference</a></p>
          *
@@ -258,11 +266,11 @@ namespace Model
         virtual Model::DisassociateS3ResourcesOutcomeCallable DisassociateS3ResourcesCallable(const Model::DisassociateS3ResourcesRequest& request) const;
 
         /**
-         * <p>Removes specified S3 resources from being monitored by Amazon Macie. If
-         * memberAccountId isn't specified, the action removes specified S3 resources from
-         * Macie for the current master account. If memberAccountId is specified, the
-         * action removes specified S3 resources from Macie for the specified member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes specified S3 resources from being monitored by Amazon Macie Classic.
+         * If memberAccountId isn't specified, the action removes specified S3 resources
+         * from Macie Classic for the current master account. If memberAccountId is
+         * specified, the action removes specified S3 resources from Macie Classic for the
+         * specified member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/DisassociateS3Resources">AWS
          * API Reference</a></p>
          *
@@ -271,16 +279,16 @@ namespace Model
         virtual void DisassociateS3ResourcesAsync(const Model::DisassociateS3ResourcesRequest& request, const DisassociateS3ResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all Amazon Macie member accounts for the current Amazon Macie master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all Amazon Macie Classic member accounts for the current Amazon Macie
+         * Classic master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMemberAccountsOutcome ListMemberAccounts(const Model::ListMemberAccountsRequest& request) const;
 
         /**
-         * <p>Lists all Amazon Macie member accounts for the current Amazon Macie master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all Amazon Macie Classic member accounts for the current Amazon Macie
+         * Classic master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">AWS
          * API Reference</a></p>
          *
@@ -289,8 +297,8 @@ namespace Model
         virtual Model::ListMemberAccountsOutcomeCallable ListMemberAccountsCallable(const Model::ListMemberAccountsRequest& request) const;
 
         /**
-         * <p>Lists all Amazon Macie member accounts for the current Amazon Macie master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all Amazon Macie Classic member accounts for the current Amazon Macie
+         * Classic master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListMemberAccounts">AWS
          * API Reference</a></p>
          *
@@ -299,22 +307,22 @@ namespace Model
         virtual void ListMemberAccountsAsync(const Model::ListMemberAccountsRequest& request, const ListMemberAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the S3 resources associated with Amazon Macie. If memberAccountId
-         * isn't specified, the action lists the S3 resources associated with Amazon Macie
-         * for the current master account. If memberAccountId is specified, the action
-         * lists the S3 resources associated with Amazon Macie for the specified member
-         * account. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the S3 resources associated with Amazon Macie Classic. If
+         * memberAccountId isn't specified, the action lists the S3 resources associated
+         * with Amazon Macie Classic for the current master account. If memberAccountId is
+         * specified, the action lists the S3 resources associated with Amazon Macie
+         * Classic for the specified member account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">AWS
          * API Reference</a></p>
          */
         virtual Model::ListS3ResourcesOutcome ListS3Resources(const Model::ListS3ResourcesRequest& request) const;
 
         /**
-         * <p>Lists all the S3 resources associated with Amazon Macie. If memberAccountId
-         * isn't specified, the action lists the S3 resources associated with Amazon Macie
-         * for the current master account. If memberAccountId is specified, the action
-         * lists the S3 resources associated with Amazon Macie for the specified member
-         * account. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the S3 resources associated with Amazon Macie Classic. If
+         * memberAccountId isn't specified, the action lists the S3 resources associated
+         * with Amazon Macie Classic for the current master account. If memberAccountId is
+         * specified, the action lists the S3 resources associated with Amazon Macie
+         * Classic for the specified member account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">AWS
          * API Reference</a></p>
          *
@@ -323,11 +331,11 @@ namespace Model
         virtual Model::ListS3ResourcesOutcomeCallable ListS3ResourcesCallable(const Model::ListS3ResourcesRequest& request) const;
 
         /**
-         * <p>Lists all the S3 resources associated with Amazon Macie. If memberAccountId
-         * isn't specified, the action lists the S3 resources associated with Amazon Macie
-         * for the current master account. If memberAccountId is specified, the action
-         * lists the S3 resources associated with Amazon Macie for the specified member
-         * account. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the S3 resources associated with Amazon Macie Classic. If
+         * memberAccountId isn't specified, the action lists the S3 resources associated
+         * with Amazon Macie Classic for the current master account. If memberAccountId is
+         * specified, the action lists the S3 resources associated with Amazon Macie
+         * Classic for the specified member account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ListS3Resources">AWS
          * API Reference</a></p>
          *
@@ -338,10 +346,10 @@ namespace Model
         /**
          * <p>Updates the classification types for the specified S3 resources. If
          * memberAccountId isn't specified, the action updates the classification types of
-         * the S3 resources associated with Amazon Macie for the current master account. If
-         * memberAccountId is specified, the action updates the classification types of the
-         * S3 resources associated with Amazon Macie for the specified member account.
-         * </p><p><h3>See Also:</h3>   <a
+         * the S3 resources associated with Amazon Macie Classic for the current master
+         * account. If memberAccountId is specified, the action updates the classification
+         * types of the S3 resources associated with Amazon Macie Classic for the specified
+         * member account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">AWS
          * API Reference</a></p>
          */
@@ -350,10 +358,10 @@ namespace Model
         /**
          * <p>Updates the classification types for the specified S3 resources. If
          * memberAccountId isn't specified, the action updates the classification types of
-         * the S3 resources associated with Amazon Macie for the current master account. If
-         * memberAccountId is specified, the action updates the classification types of the
-         * S3 resources associated with Amazon Macie for the specified member account.
-         * </p><p><h3>See Also:</h3>   <a
+         * the S3 resources associated with Amazon Macie Classic for the current master
+         * account. If memberAccountId is specified, the action updates the classification
+         * types of the S3 resources associated with Amazon Macie Classic for the specified
+         * member account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">AWS
          * API Reference</a></p>
          *
@@ -364,10 +372,10 @@ namespace Model
         /**
          * <p>Updates the classification types for the specified S3 resources. If
          * memberAccountId isn't specified, the action updates the classification types of
-         * the S3 resources associated with Amazon Macie for the current master account. If
-         * memberAccountId is specified, the action updates the classification types of the
-         * S3 resources associated with Amazon Macie for the specified member account.
-         * </p><p><h3>See Also:</h3>   <a
+         * the S3 resources associated with Amazon Macie Classic for the current master
+         * account. If memberAccountId is specified, the action updates the classification
+         * types of the S3 resources associated with Amazon Macie Classic for the specified
+         * member account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/UpdateS3Resources">AWS
          * API Reference</a></p>
          *

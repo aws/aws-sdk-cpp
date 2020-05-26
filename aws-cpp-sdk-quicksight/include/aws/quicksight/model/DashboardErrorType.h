@@ -26,6 +26,8 @@ namespace Model
   enum class DashboardErrorType
   {
     NOT_SET,
+    ACCESS_DENIED,
+    SOURCE_NOT_FOUND,
     DATA_SET_NOT_FOUND,
     INTERNAL_FAILURE,
     PARAMETER_VALUE_INCOMPATIBLE,

@@ -62,7 +62,8 @@ CacheCluster::CacheCluster() :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false)
+    m_atRestEncryptionEnabledHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ CacheCluster::CacheCluster(const XmlNode& xmlNode) :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_atRestEncryptionEnabled(false),
-    m_atRestEncryptionEnabledHasBeenSet(false)
+    m_atRestEncryptionEnabledHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -283,6 +285,12 @@ CacheCluster& CacheCluster::operator =(const XmlNode& xmlNode)
       m_atRestEncryptionEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(atRestEncryptionEnabledNode.GetText()).c_str()).c_str());
       m_atRestEncryptionEnabledHasBeenSet = true;
     }
+    XmlNode aRNNode = resultNode.FirstChild("ARN");
+    if(!aRNNode.IsNull())
+    {
+      m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
+      m_aRNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -446,6 +454,11 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
   }
 
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+
 }
 
 void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -579,6 +592,10 @@ void CacheCluster::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_atRestEncryptionEnabledHasBeenSet)
   {
       oStream << location << ".AtRestEncryptionEnabled=" << std::boolalpha << m_atRestEncryptionEnabled << "&";
+  }
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 }
 

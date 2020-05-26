@@ -34,7 +34,8 @@ EbsInfo::EbsInfo() :
     m_ebsOptimizedSupport(EbsOptimizedSupport::NOT_SET),
     m_ebsOptimizedSupportHasBeenSet(false),
     m_encryptionSupport(EbsEncryptionSupport::NOT_SET),
-    m_encryptionSupportHasBeenSet(false)
+    m_encryptionSupportHasBeenSet(false),
+    m_ebsOptimizedInfoHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ EbsInfo::EbsInfo(const XmlNode& xmlNode) :
     m_ebsOptimizedSupport(EbsOptimizedSupport::NOT_SET),
     m_ebsOptimizedSupportHasBeenSet(false),
     m_encryptionSupport(EbsEncryptionSupport::NOT_SET),
-    m_encryptionSupportHasBeenSet(false)
+    m_encryptionSupportHasBeenSet(false),
+    m_ebsOptimizedInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,6 +67,12 @@ EbsInfo& EbsInfo::operator =(const XmlNode& xmlNode)
       m_encryptionSupport = EbsEncryptionSupportMapper::GetEbsEncryptionSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionSupportNode.GetText()).c_str()).c_str());
       m_encryptionSupportHasBeenSet = true;
     }
+    XmlNode ebsOptimizedInfoNode = resultNode.FirstChild("ebsOptimizedInfo");
+    if(!ebsOptimizedInfoNode.IsNull())
+    {
+      m_ebsOptimizedInfo = ebsOptimizedInfoNode;
+      m_ebsOptimizedInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -82,6 +90,13 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".EncryptionSupport=" << EbsEncryptionSupportMapper::GetNameForEbsEncryptionSupport(m_encryptionSupport) << "&";
   }
 
+  if(m_ebsOptimizedInfoHasBeenSet)
+  {
+      Aws::StringStream ebsOptimizedInfoLocationAndMemberSs;
+      ebsOptimizedInfoLocationAndMemberSs << location << index << locationValue << ".EbsOptimizedInfo";
+      m_ebsOptimizedInfo.OutputToStream(oStream, ebsOptimizedInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -93,6 +108,12 @@ void EbsInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_encryptionSupportHasBeenSet)
   {
       oStream << location << ".EncryptionSupport=" << EbsEncryptionSupportMapper::GetNameForEbsEncryptionSupport(m_encryptionSupport) << "&";
+  }
+  if(m_ebsOptimizedInfoHasBeenSet)
+  {
+      Aws::String ebsOptimizedInfoLocationAndMember(location);
+      ebsOptimizedInfoLocationAndMember += ".EbsOptimizedInfo";
+      m_ebsOptimizedInfo.OutputToStream(oStream, ebsOptimizedInfoLocationAndMember.c_str());
   }
 }
 

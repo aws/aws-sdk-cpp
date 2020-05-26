@@ -1572,56 +1572,64 @@ namespace Model
     /**
      * <p>An elastic inference accelerator to associate with the instance. Elastic
      * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p>
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
      */
     inline const Aws::Vector<ElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const{ return m_elasticInferenceAccelerators; }
 
     /**
      * <p>An elastic inference accelerator to associate with the instance. Elastic
      * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p>
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
      */
     inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
 
     /**
      * <p>An elastic inference accelerator to associate with the instance. Elastic
      * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p>
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
      */
     inline void SetElasticInferenceAccelerators(const Aws::Vector<ElasticInferenceAccelerator>& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = value; }
 
     /**
      * <p>An elastic inference accelerator to associate with the instance. Elastic
      * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p>
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
      */
     inline void SetElasticInferenceAccelerators(Aws::Vector<ElasticInferenceAccelerator>&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::move(value); }
 
     /**
      * <p>An elastic inference accelerator to associate with the instance. Elastic
      * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p>
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
      */
     inline RunInstancesRequest& WithElasticInferenceAccelerators(const Aws::Vector<ElasticInferenceAccelerator>& value) { SetElasticInferenceAccelerators(value); return *this;}
 
     /**
      * <p>An elastic inference accelerator to associate with the instance. Elastic
      * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p>
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
      */
     inline RunInstancesRequest& WithElasticInferenceAccelerators(Aws::Vector<ElasticInferenceAccelerator>&& value) { SetElasticInferenceAccelerators(std::move(value)); return *this;}
 
     /**
      * <p>An elastic inference accelerator to associate with the instance. Elastic
      * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p>
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
      */
     inline RunInstancesRequest& AddElasticInferenceAccelerators(const ElasticInferenceAccelerator& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(value); return *this; }
 
     /**
      * <p>An elastic inference accelerator to associate with the instance. Elastic
      * inference accelerators are a resource you can attach to your Amazon EC2
-     * instances to accelerate your Deep Learning (DL) inference workloads.</p>
+     * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
+     * cannot specify accelerators from different generations in the same request.</p>
      */
     inline RunInstancesRequest& AddElasticInferenceAccelerators(ElasticInferenceAccelerator&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(std::move(value)); return *this; }
 

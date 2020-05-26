@@ -150,9 +150,23 @@ namespace Model
      * <code>false</code>)</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family. (<code>true</code> | <code>false</code>)</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance
-     * type is EBS-optimized. (<code>supported</code> | <code>unsupported</code> |
-     * <code>default</code>)</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
+     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
+     * </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
+     * baseline throughput performance for an EBS-optimized instance type, in MBps.</p>
+     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
+     * baseline input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+     * bandwidth performance for an EBS-optimized instance type, in Mbps.</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> -
+     * The maximum throughput performance for an EBS-optimized instance type, in
+     * MBps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.maximum-iops</code> -
+     * The maximum input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-support</code> -
+     * Indicates whether the instance type is EBS-optimized. (<code>supported</code> |
+     * <code>unsupported</code> | <code>default</code>)</p> </li> <li> <p>
      * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is
      * supported. (<code>supported</code> | <code>unsupported</code>)</p> </li> <li>
      * <p> <code>free-tier-eligible</code> - Indicates whether the instance type is
@@ -174,6 +188,9 @@ namespace Model
      * <p> <code>network-info.ena-support</code> - Indicates whether Elastic Network
      * Adapter (ENA) is supported or required. (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>)</p> </li> <li> <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type
+     * supports Elastic Fabric Adapter (EFA). (<code>true</code> |
+     * <code>false</code>)</p> </li> <li> <p>
      * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
      * private IPv4 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
@@ -205,9 +222,23 @@ namespace Model
      * <code>false</code>)</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family. (<code>true</code> | <code>false</code>)</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance
-     * type is EBS-optimized. (<code>supported</code> | <code>unsupported</code> |
-     * <code>default</code>)</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
+     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
+     * </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
+     * baseline throughput performance for an EBS-optimized instance type, in MBps.</p>
+     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
+     * baseline input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+     * bandwidth performance for an EBS-optimized instance type, in Mbps.</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> -
+     * The maximum throughput performance for an EBS-optimized instance type, in
+     * MBps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.maximum-iops</code> -
+     * The maximum input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-support</code> -
+     * Indicates whether the instance type is EBS-optimized. (<code>supported</code> |
+     * <code>unsupported</code> | <code>default</code>)</p> </li> <li> <p>
      * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is
      * supported. (<code>supported</code> | <code>unsupported</code>)</p> </li> <li>
      * <p> <code>free-tier-eligible</code> - Indicates whether the instance type is
@@ -229,6 +260,9 @@ namespace Model
      * <p> <code>network-info.ena-support</code> - Indicates whether Elastic Network
      * Adapter (ENA) is supported or required. (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>)</p> </li> <li> <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type
+     * supports Elastic Fabric Adapter (EFA). (<code>true</code> |
+     * <code>false</code>)</p> </li> <li> <p>
      * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
      * private IPv4 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
@@ -260,9 +294,23 @@ namespace Model
      * <code>false</code>)</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family. (<code>true</code> | <code>false</code>)</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance
-     * type is EBS-optimized. (<code>supported</code> | <code>unsupported</code> |
-     * <code>default</code>)</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
+     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
+     * </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
+     * baseline throughput performance for an EBS-optimized instance type, in MBps.</p>
+     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
+     * baseline input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+     * bandwidth performance for an EBS-optimized instance type, in Mbps.</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> -
+     * The maximum throughput performance for an EBS-optimized instance type, in
+     * MBps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.maximum-iops</code> -
+     * The maximum input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-support</code> -
+     * Indicates whether the instance type is EBS-optimized. (<code>supported</code> |
+     * <code>unsupported</code> | <code>default</code>)</p> </li> <li> <p>
      * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is
      * supported. (<code>supported</code> | <code>unsupported</code>)</p> </li> <li>
      * <p> <code>free-tier-eligible</code> - Indicates whether the instance type is
@@ -284,6 +332,9 @@ namespace Model
      * <p> <code>network-info.ena-support</code> - Indicates whether Elastic Network
      * Adapter (ENA) is supported or required. (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>)</p> </li> <li> <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type
+     * supports Elastic Fabric Adapter (EFA). (<code>true</code> |
+     * <code>false</code>)</p> </li> <li> <p>
      * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
      * private IPv4 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
@@ -315,9 +366,23 @@ namespace Model
      * <code>false</code>)</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family. (<code>true</code> | <code>false</code>)</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance
-     * type is EBS-optimized. (<code>supported</code> | <code>unsupported</code> |
-     * <code>default</code>)</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
+     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
+     * </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
+     * baseline throughput performance for an EBS-optimized instance type, in MBps.</p>
+     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
+     * baseline input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+     * bandwidth performance for an EBS-optimized instance type, in Mbps.</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> -
+     * The maximum throughput performance for an EBS-optimized instance type, in
+     * MBps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.maximum-iops</code> -
+     * The maximum input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-support</code> -
+     * Indicates whether the instance type is EBS-optimized. (<code>supported</code> |
+     * <code>unsupported</code> | <code>default</code>)</p> </li> <li> <p>
      * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is
      * supported. (<code>supported</code> | <code>unsupported</code>)</p> </li> <li>
      * <p> <code>free-tier-eligible</code> - Indicates whether the instance type is
@@ -339,6 +404,9 @@ namespace Model
      * <p> <code>network-info.ena-support</code> - Indicates whether Elastic Network
      * Adapter (ENA) is supported or required. (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>)</p> </li> <li> <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type
+     * supports Elastic Fabric Adapter (EFA). (<code>true</code> |
+     * <code>false</code>)</p> </li> <li> <p>
      * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
      * private IPv4 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
@@ -370,9 +438,23 @@ namespace Model
      * <code>false</code>)</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family. (<code>true</code> | <code>false</code>)</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance
-     * type is EBS-optimized. (<code>supported</code> | <code>unsupported</code> |
-     * <code>default</code>)</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
+     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
+     * </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
+     * baseline throughput performance for an EBS-optimized instance type, in MBps.</p>
+     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
+     * baseline input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+     * bandwidth performance for an EBS-optimized instance type, in Mbps.</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> -
+     * The maximum throughput performance for an EBS-optimized instance type, in
+     * MBps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.maximum-iops</code> -
+     * The maximum input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-support</code> -
+     * Indicates whether the instance type is EBS-optimized. (<code>supported</code> |
+     * <code>unsupported</code> | <code>default</code>)</p> </li> <li> <p>
      * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is
      * supported. (<code>supported</code> | <code>unsupported</code>)</p> </li> <li>
      * <p> <code>free-tier-eligible</code> - Indicates whether the instance type is
@@ -394,6 +476,9 @@ namespace Model
      * <p> <code>network-info.ena-support</code> - Indicates whether Elastic Network
      * Adapter (ENA) is supported or required. (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>)</p> </li> <li> <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type
+     * supports Elastic Fabric Adapter (EFA). (<code>true</code> |
+     * <code>false</code>)</p> </li> <li> <p>
      * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
      * private IPv4 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
@@ -425,9 +510,23 @@ namespace Model
      * <code>false</code>)</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family. (<code>true</code> | <code>false</code>)</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance
-     * type is EBS-optimized. (<code>supported</code> | <code>unsupported</code> |
-     * <code>default</code>)</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
+     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
+     * </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
+     * baseline throughput performance for an EBS-optimized instance type, in MBps.</p>
+     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
+     * baseline input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+     * bandwidth performance for an EBS-optimized instance type, in Mbps.</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> -
+     * The maximum throughput performance for an EBS-optimized instance type, in
+     * MBps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.maximum-iops</code> -
+     * The maximum input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-support</code> -
+     * Indicates whether the instance type is EBS-optimized. (<code>supported</code> |
+     * <code>unsupported</code> | <code>default</code>)</p> </li> <li> <p>
      * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is
      * supported. (<code>supported</code> | <code>unsupported</code>)</p> </li> <li>
      * <p> <code>free-tier-eligible</code> - Indicates whether the instance type is
@@ -449,6 +548,9 @@ namespace Model
      * <p> <code>network-info.ena-support</code> - Indicates whether Elastic Network
      * Adapter (ENA) is supported or required. (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>)</p> </li> <li> <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type
+     * supports Elastic Fabric Adapter (EFA). (<code>true</code> |
+     * <code>false</code>)</p> </li> <li> <p>
      * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
      * private IPv4 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
@@ -480,9 +582,23 @@ namespace Model
      * <code>false</code>)</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family. (<code>true</code> | <code>false</code>)</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance
-     * type is EBS-optimized. (<code>supported</code> | <code>unsupported</code> |
-     * <code>default</code>)</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
+     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
+     * </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
+     * baseline throughput performance for an EBS-optimized instance type, in MBps.</p>
+     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
+     * baseline input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+     * bandwidth performance for an EBS-optimized instance type, in Mbps.</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> -
+     * The maximum throughput performance for an EBS-optimized instance type, in
+     * MBps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.maximum-iops</code> -
+     * The maximum input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-support</code> -
+     * Indicates whether the instance type is EBS-optimized. (<code>supported</code> |
+     * <code>unsupported</code> | <code>default</code>)</p> </li> <li> <p>
      * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is
      * supported. (<code>supported</code> | <code>unsupported</code>)</p> </li> <li>
      * <p> <code>free-tier-eligible</code> - Indicates whether the instance type is
@@ -504,6 +620,9 @@ namespace Model
      * <p> <code>network-info.ena-support</code> - Indicates whether Elastic Network
      * Adapter (ENA) is supported or required. (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>)</p> </li> <li> <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type
+     * supports Elastic Fabric Adapter (EFA). (<code>true</code> |
+     * <code>false</code>)</p> </li> <li> <p>
      * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
      * private IPv4 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of
@@ -535,9 +654,23 @@ namespace Model
      * <code>false</code>)</p> </li> <li> <p> <code>current-generation</code> -
      * Indicates whether this instance type is the latest generation instance type of
      * an instance family. (<code>true</code> | <code>false</code>)</p> </li> <li> <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance
-     * type is EBS-optimized. (<code>supported</code> | <code>unsupported</code> |
-     * <code>default</code>)</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-bandwidth-in-mbps</code> - The
+     * baseline bandwidth performance for an EBS-optimized instance type, in Mbps.</p>
+     * </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The
+     * baseline throughput performance for an EBS-optimized instance type, in MBps.</p>
+     * </li> <li> <p> <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The
+     * baseline input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p>
+     * <code>ebs-info.ebs-optimized-info.maximum-bandwidth-in-mbps</code> - The maximum
+     * bandwidth performance for an EBS-optimized instance type, in Mbps.</p> </li>
+     * <li> <p> <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> -
+     * The maximum throughput performance for an EBS-optimized instance type, in
+     * MBps.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-info.maximum-iops</code> -
+     * The maximum input/output storage operations per second for an EBS-optimized
+     * instance type.</p> </li> <li> <p> <code>ebs-info.ebs-optimized-support</code> -
+     * Indicates whether the instance type is EBS-optimized. (<code>supported</code> |
+     * <code>unsupported</code> | <code>default</code>)</p> </li> <li> <p>
      * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is
      * supported. (<code>supported</code> | <code>unsupported</code>)</p> </li> <li>
      * <p> <code>free-tier-eligible</code> - Indicates whether the instance type is
@@ -559,6 +692,9 @@ namespace Model
      * <p> <code>network-info.ena-support</code> - Indicates whether Elastic Network
      * Adapter (ENA) is supported or required. (<code>required</code> |
      * <code>supported</code> | <code>unsupported</code>)</p> </li> <li> <p>
+     * <code>network-info.efa-supported</code> - Indicates whether the instance type
+     * supports Elastic Fabric Adapter (EFA). (<code>true</code> |
+     * <code>false</code>)</p> </li> <li> <p>
      * <code>network-info.ipv4-addresses-per-interface</code> - The maximum number of
      * private IPv4 addresses per network interface.</p> </li> <li> <p>
      * <code>network-info.ipv6-addresses-per-interface</code> - The maximum number of

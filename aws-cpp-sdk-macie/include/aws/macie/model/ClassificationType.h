@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>The classification type that Amazon Macie applies to the associated S3
-   * resources. </p><p><h3>See Also:</h3>   <a
+   * <p>The classification type that Amazon Macie Classic applies to the associated
+   * S3 resources. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie-2017-12-19/ClassificationType">AWS
    * API Reference</a></p>
    */
@@ -88,43 +88,43 @@ namespace Model
 
     /**
      * <p>A continuous classification of the objects that are added to a specified S3
-     * bucket. Amazon Macie begins performing continuous classification after a bucket
-     * is successfully associated with Amazon Macie. </p>
+     * bucket. Amazon Macie Classic begins performing continuous classification after a
+     * bucket is successfully associated with Amazon Macie Classic. </p>
      */
     inline const S3ContinuousClassificationType& GetContinuous() const{ return m_continuous; }
 
     /**
      * <p>A continuous classification of the objects that are added to a specified S3
-     * bucket. Amazon Macie begins performing continuous classification after a bucket
-     * is successfully associated with Amazon Macie. </p>
+     * bucket. Amazon Macie Classic begins performing continuous classification after a
+     * bucket is successfully associated with Amazon Macie Classic. </p>
      */
     inline bool ContinuousHasBeenSet() const { return m_continuousHasBeenSet; }
 
     /**
      * <p>A continuous classification of the objects that are added to a specified S3
-     * bucket. Amazon Macie begins performing continuous classification after a bucket
-     * is successfully associated with Amazon Macie. </p>
+     * bucket. Amazon Macie Classic begins performing continuous classification after a
+     * bucket is successfully associated with Amazon Macie Classic. </p>
      */
     inline void SetContinuous(const S3ContinuousClassificationType& value) { m_continuousHasBeenSet = true; m_continuous = value; }
 
     /**
      * <p>A continuous classification of the objects that are added to a specified S3
-     * bucket. Amazon Macie begins performing continuous classification after a bucket
-     * is successfully associated with Amazon Macie. </p>
+     * bucket. Amazon Macie Classic begins performing continuous classification after a
+     * bucket is successfully associated with Amazon Macie Classic. </p>
      */
     inline void SetContinuous(S3ContinuousClassificationType&& value) { m_continuousHasBeenSet = true; m_continuous = std::move(value); }
 
     /**
      * <p>A continuous classification of the objects that are added to a specified S3
-     * bucket. Amazon Macie begins performing continuous classification after a bucket
-     * is successfully associated with Amazon Macie. </p>
+     * bucket. Amazon Macie Classic begins performing continuous classification after a
+     * bucket is successfully associated with Amazon Macie Classic. </p>
      */
     inline ClassificationType& WithContinuous(const S3ContinuousClassificationType& value) { SetContinuous(value); return *this;}
 
     /**
      * <p>A continuous classification of the objects that are added to a specified S3
-     * bucket. Amazon Macie begins performing continuous classification after a bucket
-     * is successfully associated with Amazon Macie. </p>
+     * bucket. Amazon Macie Classic begins performing continuous classification after a
+     * bucket is successfully associated with Amazon Macie Classic. </p>
      */
     inline ClassificationType& WithContinuous(S3ContinuousClassificationType&& value) { SetContinuous(std::move(value)); return *this;}
 

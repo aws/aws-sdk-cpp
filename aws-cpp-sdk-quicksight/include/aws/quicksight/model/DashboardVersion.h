@@ -258,6 +258,61 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDataSetArns() const{ return m_dataSetArns; }
+
+    /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline bool DataSetArnsHasBeenSet() const { return m_dataSetArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline void SetDataSetArns(const Aws::Vector<Aws::String>& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns = value; }
+
+    /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline void SetDataSetArns(Aws::Vector<Aws::String>&& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline DashboardVersion& WithDataSetArns(const Aws::Vector<Aws::String>& value) { SetDataSetArns(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline DashboardVersion& WithDataSetArns(Aws::Vector<Aws::String>&& value) { SetDataSetArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline DashboardVersion& AddDataSetArns(const Aws::String& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline DashboardVersion& AddDataSetArns(Aws::String&& value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with
+     * a version of the dashboard.</p>
+     */
+    inline DashboardVersion& AddDataSetArns(const char* value) { m_dataSetArnsHasBeenSet = true; m_dataSetArns.push_back(value); return *this; }
+
+
+    /**
      * <p>Description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -316,6 +371,9 @@ namespace Model
 
     Aws::String m_sourceEntityArn;
     bool m_sourceEntityArnHasBeenSet;
+
+    Aws::Vector<Aws::String> m_dataSetArns;
+    bool m_dataSetArnsHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

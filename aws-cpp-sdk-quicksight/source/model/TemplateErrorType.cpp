@@ -30,6 +30,7 @@ namespace Aws
       namespace TemplateErrorTypeMapper
       {
 
+        static const int SOURCE_NOT_FOUND_HASH = HashingUtils::HashString("SOURCE_NOT_FOUND");
         static const int DATA_SET_NOT_FOUND_HASH = HashingUtils::HashString("DATA_SET_NOT_FOUND");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
 
@@ -37,7 +38,11 @@ namespace Aws
         TemplateErrorType GetTemplateErrorTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DATA_SET_NOT_FOUND_HASH)
+          if (hashCode == SOURCE_NOT_FOUND_HASH)
+          {
+            return TemplateErrorType::SOURCE_NOT_FOUND;
+          }
+          else if (hashCode == DATA_SET_NOT_FOUND_HASH)
           {
             return TemplateErrorType::DATA_SET_NOT_FOUND;
           }
@@ -59,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateErrorType::SOURCE_NOT_FOUND:
+            return "SOURCE_NOT_FOUND";
           case TemplateErrorType::DATA_SET_NOT_FOUND:
             return "DATA_SET_NOT_FOUND";
           case TemplateErrorType::INTERNAL_FAILURE:

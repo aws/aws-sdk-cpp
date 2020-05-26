@@ -39,6 +39,7 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_freeTierEligibleHasBeenSet(false),
     m_supportedUsageClassesHasBeenSet(false),
     m_supportedRootDeviceTypesHasBeenSet(false),
+    m_supportedVirtualizationTypesHasBeenSet(false),
     m_bareMetal(false),
     m_bareMetalHasBeenSet(false),
     m_hypervisor(InstanceTypeHypervisor::NOT_SET),
@@ -75,6 +76,7 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_freeTierEligibleHasBeenSet(false),
     m_supportedUsageClassesHasBeenSet(false),
     m_supportedRootDeviceTypesHasBeenSet(false),
+    m_supportedVirtualizationTypesHasBeenSet(false),
     m_bareMetal(false),
     m_bareMetalHasBeenSet(false),
     m_hypervisor(InstanceTypeHypervisor::NOT_SET),
@@ -150,6 +152,18 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       }
 
       m_supportedRootDeviceTypesHasBeenSet = true;
+    }
+    XmlNode supportedVirtualizationTypesNode = resultNode.FirstChild("supportedVirtualizationTypes");
+    if(!supportedVirtualizationTypesNode.IsNull())
+    {
+      XmlNode supportedVirtualizationTypesMember = supportedVirtualizationTypesNode.FirstChild("item");
+      while(!supportedVirtualizationTypesMember.IsNull())
+      {
+        m_supportedVirtualizationTypes.push_back(VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(supportedVirtualizationTypesMember.GetText().c_str())));
+        supportedVirtualizationTypesMember = supportedVirtualizationTypesMember.NextNode("item");
+      }
+
+      m_supportedVirtualizationTypesHasBeenSet = true;
     }
     XmlNode bareMetalNode = resultNode.FirstChild("bareMetal");
     if(!bareMetalNode.IsNull())
@@ -293,6 +307,15 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_supportedVirtualizationTypesHasBeenSet)
+  {
+      unsigned supportedVirtualizationTypesIdx = 1;
+      for(auto& item : m_supportedVirtualizationTypes)
+      {
+        oStream << location << index << locationValue << ".SupportedVirtualizationTypes." << supportedVirtualizationTypesIdx++ << "=" << VirtualizationTypeMapper::GetNameForVirtualizationType(item) << "&";
+      }
+  }
+
   if(m_bareMetalHasBeenSet)
   {
       oStream << location << index << locationValue << ".BareMetal=" << std::boolalpha << m_bareMetal << "&";
@@ -428,6 +451,14 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_supportedRootDeviceTypes)
       {
         oStream << location << ".SupportedRootDeviceTypes." << supportedRootDeviceTypesIdx++ << "=" << RootDeviceTypeMapper::GetNameForRootDeviceType(item) << "&";
+      }
+  }
+  if(m_supportedVirtualizationTypesHasBeenSet)
+  {
+      unsigned supportedVirtualizationTypesIdx = 1;
+      for(auto& item : m_supportedVirtualizationTypes)
+      {
+        oStream << location << ".SupportedVirtualizationTypes." << supportedVirtualizationTypesIdx++ << "=" << VirtualizationTypeMapper::GetNameForVirtualizationType(item) << "&";
       }
   }
   if(m_bareMetalHasBeenSet)

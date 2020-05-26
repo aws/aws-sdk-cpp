@@ -41,7 +41,9 @@ NetworkInfo::NetworkInfo() :
     m_ipv6Supported(false),
     m_ipv6SupportedHasBeenSet(false),
     m_enaSupport(EnaSupport::NOT_SET),
-    m_enaSupportHasBeenSet(false)
+    m_enaSupportHasBeenSet(false),
+    m_efaSupported(false),
+    m_efaSupportedHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ NetworkInfo::NetworkInfo(const XmlNode& xmlNode) :
     m_ipv6Supported(false),
     m_ipv6SupportedHasBeenSet(false),
     m_enaSupport(EnaSupport::NOT_SET),
-    m_enaSupportHasBeenSet(false)
+    m_enaSupportHasBeenSet(false),
+    m_efaSupported(false),
+    m_efaSupportedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -103,6 +107,12 @@ NetworkInfo& NetworkInfo::operator =(const XmlNode& xmlNode)
       m_enaSupport = EnaSupportMapper::GetEnaSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()).c_str());
       m_enaSupportHasBeenSet = true;
     }
+    XmlNode efaSupportedNode = resultNode.FirstChild("efaSupported");
+    if(!efaSupportedNode.IsNull())
+    {
+      m_efaSupported = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(efaSupportedNode.GetText()).c_str()).c_str());
+      m_efaSupportedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -140,6 +150,11 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".EnaSupport=" << EnaSupportMapper::GetNameForEnaSupport(m_enaSupport) << "&";
   }
 
+  if(m_efaSupportedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EfaSupported=" << std::boolalpha << m_efaSupported << "&";
+  }
+
 }
 
 void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -167,6 +182,10 @@ void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_enaSupportHasBeenSet)
   {
       oStream << location << ".EnaSupport=" << EnaSupportMapper::GetNameForEnaSupport(m_enaSupport) << "&";
+  }
+  if(m_efaSupportedHasBeenSet)
+  {
+      oStream << location << ".EfaSupported=" << std::boolalpha << m_efaSupported << "&";
   }
 }
 

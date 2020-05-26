@@ -206,6 +206,27 @@ namespace Model
      */
     inline NetworkInfo& WithEnaSupport(EnaSupport&& value) { SetEnaSupport(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether Elastic Fabric Adapter (EFA) is supported.</p>
+     */
+    inline bool GetEfaSupported() const{ return m_efaSupported; }
+
+    /**
+     * <p>Indicates whether Elastic Fabric Adapter (EFA) is supported.</p>
+     */
+    inline bool EfaSupportedHasBeenSet() const { return m_efaSupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Elastic Fabric Adapter (EFA) is supported.</p>
+     */
+    inline void SetEfaSupported(bool value) { m_efaSupportedHasBeenSet = true; m_efaSupported = value; }
+
+    /**
+     * <p>Indicates whether Elastic Fabric Adapter (EFA) is supported.</p>
+     */
+    inline NetworkInfo& WithEfaSupported(bool value) { SetEfaSupported(value); return *this;}
+
   private:
 
     Aws::String m_networkPerformance;
@@ -225,6 +246,9 @@ namespace Model
 
     EnaSupport m_enaSupport;
     bool m_enaSupportHasBeenSet;
+
+    bool m_efaSupported;
+    bool m_efaSupportedHasBeenSet;
   };
 
 } // namespace Model

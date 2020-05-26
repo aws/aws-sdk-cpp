@@ -142,37 +142,37 @@ namespace Model
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline const ClassificationTypeUpdate& GetClassificationTypeUpdate() const{ return m_classificationTypeUpdate; }
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline bool ClassificationTypeUpdateHasBeenSet() const { return m_classificationTypeUpdateHasBeenSet; }
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline void SetClassificationTypeUpdate(const ClassificationTypeUpdate& value) { m_classificationTypeUpdateHasBeenSet = true; m_classificationTypeUpdate = value; }
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline void SetClassificationTypeUpdate(ClassificationTypeUpdate&& value) { m_classificationTypeUpdateHasBeenSet = true; m_classificationTypeUpdate = std::move(value); }
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline S3ResourceClassificationUpdate& WithClassificationTypeUpdate(const ClassificationTypeUpdate& value) { SetClassificationTypeUpdate(value); return *this;}
 
     /**
      * <p>The classification type that you want to update for the resource associated
-     * with Amazon Macie. </p>
+     * with Amazon Macie Classic. </p>
      */
     inline S3ResourceClassificationUpdate& WithClassificationTypeUpdate(ClassificationTypeUpdate&& value) { SetClassificationTypeUpdate(std::move(value)); return *this;}
 

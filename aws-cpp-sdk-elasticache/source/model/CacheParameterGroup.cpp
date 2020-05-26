@@ -35,7 +35,8 @@ CacheParameterGroup::CacheParameterGroup() :
     m_cacheParameterGroupFamilyHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isGlobal(false),
-    m_isGlobalHasBeenSet(false)
+    m_isGlobalHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ CacheParameterGroup::CacheParameterGroup(const XmlNode& xmlNode) :
     m_cacheParameterGroupFamilyHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_isGlobal(false),
-    m_isGlobalHasBeenSet(false)
+    m_isGlobalHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +81,12 @@ CacheParameterGroup& CacheParameterGroup::operator =(const XmlNode& xmlNode)
       m_isGlobal = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isGlobalNode.GetText()).c_str()).c_str());
       m_isGlobalHasBeenSet = true;
     }
+    XmlNode aRNNode = resultNode.FirstChild("ARN");
+    if(!aRNNode.IsNull())
+    {
+      m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
+      m_aRNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -106,6 +114,11 @@ void CacheParameterGroup::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".IsGlobal=" << std::boolalpha << m_isGlobal << "&";
   }
 
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+
 }
 
 void CacheParameterGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -125,6 +138,10 @@ void CacheParameterGroup::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_isGlobalHasBeenSet)
   {
       oStream << location << ".IsGlobal=" << std::boolalpha << m_isGlobal << "&";
+  }
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 }
 

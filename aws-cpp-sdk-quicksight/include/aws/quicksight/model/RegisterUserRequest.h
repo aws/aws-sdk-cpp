@@ -275,7 +275,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline const Aws::String& GetSessionName() const{ return m_sessionName; }
@@ -287,7 +287,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline bool SessionNameHasBeenSet() const { return m_sessionNameHasBeenSet; }
@@ -299,7 +299,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(const Aws::String& value) { m_sessionNameHasBeenSet = true; m_sessionName = value; }
@@ -311,7 +311,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(Aws::String&& value) { m_sessionNameHasBeenSet = true; m_sessionName = std::move(value); }
@@ -323,7 +323,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(const char* value) { m_sessionNameHasBeenSet = true; m_sessionName.assign(value); }
@@ -335,7 +335,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(const Aws::String& value) { SetSessionName(value); return *this;}
@@ -347,7 +347,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(Aws::String&& value) { SetSessionName(std::move(value)); return *this;}
@@ -359,7 +359,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(const char* value) { SetSessionName(value); return *this;}

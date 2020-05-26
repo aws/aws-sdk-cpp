@@ -47,49 +47,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
      * classification types you want to update. </p>
      */
     inline const Aws::String& GetMemberAccountId() const{ return m_memberAccountId; }
 
     /**
-     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
      * classification types you want to update. </p>
      */
     inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
      * classification types you want to update. </p>
      */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**
-     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
      * classification types you want to update. </p>
      */
     inline void SetMemberAccountId(Aws::String&& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = std::move(value); }
 
     /**
-     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
      * classification types you want to update. </p>
      */
     inline void SetMemberAccountId(const char* value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId.assign(value); }
 
     /**
-     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
      * classification types you want to update. </p>
      */
     inline UpdateS3ResourcesRequest& WithMemberAccountId(const Aws::String& value) { SetMemberAccountId(value); return *this;}
 
     /**
-     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
      * classification types you want to update. </p>
      */
     inline UpdateS3ResourcesRequest& WithMemberAccountId(Aws::String&& value) { SetMemberAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS ID of the Amazon Macie member account whose S3 resources'
+     * <p>The AWS ID of the Amazon Macie Classic member account whose S3 resources'
      * classification types you want to update. </p>
      */
     inline UpdateS3ResourcesRequest& WithMemberAccountId(const char* value) { SetMemberAccountId(value); return *this;}

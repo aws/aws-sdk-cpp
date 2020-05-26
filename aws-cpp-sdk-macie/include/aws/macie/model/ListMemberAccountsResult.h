@@ -45,44 +45,44 @@ namespace Model
 
 
     /**
-     * <p>A list of the Amazon Macie member accounts returned by the action. The
-     * current master account is also included in this list. </p>
+     * <p>A list of the Amazon Macie Classic member accounts returned by the action.
+     * The current master account is also included in this list. </p>
      */
     inline const Aws::Vector<MemberAccount>& GetMemberAccounts() const{ return m_memberAccounts; }
 
     /**
-     * <p>A list of the Amazon Macie member accounts returned by the action. The
-     * current master account is also included in this list. </p>
+     * <p>A list of the Amazon Macie Classic member accounts returned by the action.
+     * The current master account is also included in this list. </p>
      */
     inline void SetMemberAccounts(const Aws::Vector<MemberAccount>& value) { m_memberAccounts = value; }
 
     /**
-     * <p>A list of the Amazon Macie member accounts returned by the action. The
-     * current master account is also included in this list. </p>
+     * <p>A list of the Amazon Macie Classic member accounts returned by the action.
+     * The current master account is also included in this list. </p>
      */
     inline void SetMemberAccounts(Aws::Vector<MemberAccount>&& value) { m_memberAccounts = std::move(value); }
 
     /**
-     * <p>A list of the Amazon Macie member accounts returned by the action. The
-     * current master account is also included in this list. </p>
+     * <p>A list of the Amazon Macie Classic member accounts returned by the action.
+     * The current master account is also included in this list. </p>
      */
     inline ListMemberAccountsResult& WithMemberAccounts(const Aws::Vector<MemberAccount>& value) { SetMemberAccounts(value); return *this;}
 
     /**
-     * <p>A list of the Amazon Macie member accounts returned by the action. The
-     * current master account is also included in this list. </p>
+     * <p>A list of the Amazon Macie Classic member accounts returned by the action.
+     * The current master account is also included in this list. </p>
      */
     inline ListMemberAccountsResult& WithMemberAccounts(Aws::Vector<MemberAccount>&& value) { SetMemberAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the Amazon Macie member accounts returned by the action. The
-     * current master account is also included in this list. </p>
+     * <p>A list of the Amazon Macie Classic member accounts returned by the action.
+     * The current master account is also included in this list. </p>
      */
     inline ListMemberAccountsResult& AddMemberAccounts(const MemberAccount& value) { m_memberAccounts.push_back(value); return *this; }
 
     /**
-     * <p>A list of the Amazon Macie member accounts returned by the action. The
-     * current master account is also included in this list. </p>
+     * <p>A list of the Amazon Macie Classic member accounts returned by the action.
+     * The current master account is also included in this list. </p>
      */
     inline ListMemberAccountsResult& AddMemberAccounts(MemberAccount&& value) { m_memberAccounts.push_back(std::move(value)); return *this; }
 

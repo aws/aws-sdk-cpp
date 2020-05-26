@@ -37,6 +37,7 @@ DashboardVersion::DashboardVersion() :
     m_statusHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_sourceEntityArnHasBeenSet(false),
+    m_dataSetArnsHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
 }
@@ -50,6 +51,7 @@ DashboardVersion::DashboardVersion(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_sourceEntityArnHasBeenSet(false),
+    m_dataSetArnsHasBeenSet(false),
     m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -102,6 +104,16 @@ DashboardVersion& DashboardVersion::operator =(JsonView jsonValue)
     m_sourceEntityArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataSetArns"))
+  {
+    Array<JsonView> dataSetArnsJsonList = jsonValue.GetArray("DataSetArns");
+    for(unsigned dataSetArnsIndex = 0; dataSetArnsIndex < dataSetArnsJsonList.GetLength(); ++dataSetArnsIndex)
+    {
+      m_dataSetArns.push_back(dataSetArnsJsonList[dataSetArnsIndex].AsString());
+    }
+    m_dataSetArnsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
@@ -152,6 +164,17 @@ JsonValue DashboardVersion::Jsonize() const
   if(m_sourceEntityArnHasBeenSet)
   {
    payload.WithString("SourceEntityArn", m_sourceEntityArn);
+
+  }
+
+  if(m_dataSetArnsHasBeenSet)
+  {
+   Array<JsonValue> dataSetArnsJsonList(m_dataSetArns.size());
+   for(unsigned dataSetArnsIndex = 0; dataSetArnsIndex < dataSetArnsJsonList.GetLength(); ++dataSetArnsIndex)
+   {
+     dataSetArnsJsonList[dataSetArnsIndex].AsString(m_dataSetArns[dataSetArnsIndex]);
+   }
+   payload.WithArray("DataSetArns", std::move(dataSetArnsJsonList));
 
   }
 

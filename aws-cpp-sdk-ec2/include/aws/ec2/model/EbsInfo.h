@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/EbsOptimizedSupport.h>
 #include <aws/ec2/model/EbsEncryptionSupport.h>
+#include <aws/ec2/model/EbsOptimizedInfo.h>
 #include <utility>
 
 namespace Aws
@@ -136,6 +137,37 @@ namespace Model
      */
     inline EbsInfo& WithEncryptionSupport(EbsEncryptionSupport&& value) { SetEncryptionSupport(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the optimized EBS performance for the instance type.</p>
+     */
+    inline const EbsOptimizedInfo& GetEbsOptimizedInfo() const{ return m_ebsOptimizedInfo; }
+
+    /**
+     * <p>Describes the optimized EBS performance for the instance type.</p>
+     */
+    inline bool EbsOptimizedInfoHasBeenSet() const { return m_ebsOptimizedInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the optimized EBS performance for the instance type.</p>
+     */
+    inline void SetEbsOptimizedInfo(const EbsOptimizedInfo& value) { m_ebsOptimizedInfoHasBeenSet = true; m_ebsOptimizedInfo = value; }
+
+    /**
+     * <p>Describes the optimized EBS performance for the instance type.</p>
+     */
+    inline void SetEbsOptimizedInfo(EbsOptimizedInfo&& value) { m_ebsOptimizedInfoHasBeenSet = true; m_ebsOptimizedInfo = std::move(value); }
+
+    /**
+     * <p>Describes the optimized EBS performance for the instance type.</p>
+     */
+    inline EbsInfo& WithEbsOptimizedInfo(const EbsOptimizedInfo& value) { SetEbsOptimizedInfo(value); return *this;}
+
+    /**
+     * <p>Describes the optimized EBS performance for the instance type.</p>
+     */
+    inline EbsInfo& WithEbsOptimizedInfo(EbsOptimizedInfo&& value) { SetEbsOptimizedInfo(std::move(value)); return *this;}
+
   private:
 
     EbsOptimizedSupport m_ebsOptimizedSupport;
@@ -143,6 +175,9 @@ namespace Model
 
     EbsEncryptionSupport m_encryptionSupport;
     bool m_encryptionSupportHasBeenSet;
+
+    EbsOptimizedInfo m_ebsOptimizedInfo;
+    bool m_ebsOptimizedInfoHasBeenSet;
   };
 
 } // namespace Model

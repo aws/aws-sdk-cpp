@@ -34,7 +34,8 @@ CacheSecurityGroup::CacheSecurityGroup() :
     m_ownerIdHasBeenSet(false),
     m_cacheSecurityGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false)
+    m_eC2SecurityGroupsHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ CacheSecurityGroup::CacheSecurityGroup(const XmlNode& xmlNode) :
     m_ownerIdHasBeenSet(false),
     m_cacheSecurityGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false)
+    m_eC2SecurityGroupsHasBeenSet(false),
+    m_aRNHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,6 +85,12 @@ CacheSecurityGroup& CacheSecurityGroup::operator =(const XmlNode& xmlNode)
 
       m_eC2SecurityGroupsHasBeenSet = true;
     }
+    XmlNode aRNNode = resultNode.FirstChild("ARN");
+    if(!aRNNode.IsNull())
+    {
+      m_aRN = Aws::Utils::Xml::DecodeEscapedXmlText(aRNNode.GetText());
+      m_aRNHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -116,6 +124,11 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
       }
   }
 
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
+  }
+
 }
 
 void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -141,6 +154,10 @@ void CacheSecurityGroup::OutputToStream(Aws::OStream& oStream, const char* locat
         eC2SecurityGroupsSs << location <<  ".EC2SecurityGroup." << eC2SecurityGroupsIdx++;
         item.OutputToStream(oStream, eC2SecurityGroupsSs.str().c_str());
       }
+  }
+  if(m_aRNHasBeenSet)
+  {
+      oStream << location << ".ARN=" << StringUtils::URLEncode(m_aRN.c_str()) << "&";
   }
 }
 
