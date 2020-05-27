@@ -39,7 +39,8 @@ Listener::Listener() :
     m_protocolHasBeenSet(false),
     m_certificatesHasBeenSet(false),
     m_sslPolicyHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false)
+    m_defaultActionsHasBeenSet(false),
+    m_alpnPolicyHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Listener::Listener(const XmlNode& xmlNode) :
     m_protocolHasBeenSet(false),
     m_certificatesHasBeenSet(false),
     m_sslPolicyHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false)
+    m_defaultActionsHasBeenSet(false),
+    m_alpnPolicyHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -117,6 +119,18 @@ Listener& Listener::operator =(const XmlNode& xmlNode)
 
       m_defaultActionsHasBeenSet = true;
     }
+    XmlNode alpnPolicyNode = resultNode.FirstChild("AlpnPolicy");
+    if(!alpnPolicyNode.IsNull())
+    {
+      XmlNode alpnPolicyMember = alpnPolicyNode.FirstChild("member");
+      while(!alpnPolicyMember.IsNull())
+      {
+        m_alpnPolicy.push_back(alpnPolicyMember.GetText());
+        alpnPolicyMember = alpnPolicyMember.NextNode("member");
+      }
+
+      m_alpnPolicyHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -171,6 +185,15 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_alpnPolicyHasBeenSet)
+  {
+      unsigned alpnPolicyIdx = 1;
+      for(auto& item : m_alpnPolicy)
+      {
+        oStream << location << index << locationValue << ".AlpnPolicy.member." << alpnPolicyIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -213,6 +236,14 @@ void Listener::OutputToStream(Aws::OStream& oStream, const char* location) const
         Aws::StringStream defaultActionsSs;
         defaultActionsSs << location <<  ".DefaultActions.member." << defaultActionsIdx++;
         item.OutputToStream(oStream, defaultActionsSs.str().c_str());
+      }
+  }
+  if(m_alpnPolicyHasBeenSet)
+  {
+      unsigned alpnPolicyIdx = 1;
+      for(auto& item : m_alpnPolicy)
+      {
+        oStream << location << ".AlpnPolicy.member." << alpnPolicyIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

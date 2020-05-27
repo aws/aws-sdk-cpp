@@ -35,6 +35,7 @@ static const int TOO_MANY_TARGETS_HASH = HashingUtils::HashString("TooManyTarget
 static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
 static const int TOO_MANY_RULES_HASH = HashingUtils::HashString("TooManyRules");
 static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
+static const int A_L_P_N_POLICY_NOT_SUPPORTED_HASH = HashingUtils::HashString("ALPNPolicyNotFound");
 static const int HEALTH_UNAVAILABLE_HASH = HashingUtils::HashString("HealthUnavailable");
 static const int TOO_MANY_UNIQUE_TARGET_GROUPS_PER_LOAD_BALANCER_HASH = HashingUtils::HashString("TooManyUniqueTargetGroupsPerLoadBalancer");
 static const int TOO_MANY_ACTIONS_HASH = HashingUtils::HashString("TooManyActions");
@@ -97,6 +98,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LISTENER_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::LISTENER_NOT_FOUND), false);
+  }
+  else if (hashCode == A_L_P_N_POLICY_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::A_L_P_N_POLICY_NOT_SUPPORTED), false);
   }
   else if (hashCode == HEALTH_UNAVAILABLE_HASH)
   {

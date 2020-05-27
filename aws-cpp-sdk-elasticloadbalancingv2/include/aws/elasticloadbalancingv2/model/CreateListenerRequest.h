@@ -531,6 +531,115 @@ namespace Model
      */
     inline CreateListenerRequest& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAlpnPolicy() const{ return m_alpnPolicy; }
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline bool AlpnPolicyHasBeenSet() const { return m_alpnPolicyHasBeenSet; }
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline void SetAlpnPolicy(const Aws::Vector<Aws::String>& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy = value; }
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline void SetAlpnPolicy(Aws::Vector<Aws::String>&& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy = std::move(value); }
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline CreateListenerRequest& WithAlpnPolicy(const Aws::Vector<Aws::String>& value) { SetAlpnPolicy(value); return *this;}
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline CreateListenerRequest& WithAlpnPolicy(Aws::Vector<Aws::String>&& value) { SetAlpnPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline CreateListenerRequest& AddAlpnPolicy(const Aws::String& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline CreateListenerRequest& AddAlpnPolicy(Aws::String&& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy. You can specify one policy name. The following are the possible
+     * values:</p> <ul> <li> <p> <code>HTTP1Only</code> </p> </li> <li> <p>
+     * <code>HTTP2Only</code> </p> </li> <li> <p> <code>HTTP2Optional</code> </p> </li>
+     * <li> <p> <code>HTTP2Preferred</code> </p> </li> <li> <p> <code>None</code> </p>
+     * </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN
+     * Policies</a> in the <i>Network Load Balancers Guide</i>.</p>
+     */
+    inline CreateListenerRequest& AddAlpnPolicy(const char* value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
+
   private:
 
     Aws::String m_loadBalancerArn;
@@ -550,6 +659,9 @@ namespace Model
 
     Aws::Vector<Action> m_defaultActions;
     bool m_defaultActionsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_alpnPolicy;
+    bool m_alpnPolicyHasBeenSet;
   };
 
 } // namespace Model

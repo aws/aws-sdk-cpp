@@ -28,7 +28,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_protocolHasBeenSet(false),
     m_sslPolicyHasBeenSet(false),
     m_certificatesHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false)
+    m_defaultActionsHasBeenSet(false),
+    m_alpnPolicyHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,17 @@ Aws::String ModifyListenerRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "DefaultActions.member.", defaultActionsCount, "");
       defaultActionsCount++;
+    }
+  }
+
+  if(m_alpnPolicyHasBeenSet)
+  {
+    unsigned alpnPolicyCount = 1;
+    for(auto& item : m_alpnPolicy)
+    {
+      ss << "AlpnPolicy.member." << alpnPolicyCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      alpnPolicyCount++;
     }
   }
 

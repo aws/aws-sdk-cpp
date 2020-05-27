@@ -317,6 +317,61 @@ namespace Model
      */
     inline Listener& AddDefaultActions(Action&& value) { m_defaultActionsHasBeenSet = true; m_defaultActions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAlpnPolicy() const{ return m_alpnPolicy; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline bool AlpnPolicyHasBeenSet() const { return m_alpnPolicyHasBeenSet; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline void SetAlpnPolicy(const Aws::Vector<Aws::String>& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy = value; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline void SetAlpnPolicy(Aws::Vector<Aws::String>&& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy = std::move(value); }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& WithAlpnPolicy(const Aws::Vector<Aws::String>& value) { SetAlpnPolicy(value); return *this;}
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& WithAlpnPolicy(Aws::Vector<Aws::String>&& value) { SetAlpnPolicy(std::move(value)); return *this;}
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& AddAlpnPolicy(const Aws::String& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& AddAlpnPolicy(Aws::String&& value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>[TLS listener] The name of the Application-Layer Protocol Negotiation (ALPN)
+     * policy.</p>
+     */
+    inline Listener& AddAlpnPolicy(const char* value) { m_alpnPolicyHasBeenSet = true; m_alpnPolicy.push_back(value); return *this; }
+
   private:
 
     Aws::String m_listenerArn;
@@ -339,6 +394,9 @@ namespace Model
 
     Aws::Vector<Action> m_defaultActions;
     bool m_defaultActionsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_alpnPolicy;
+    bool m_alpnPolicyHasBeenSet;
   };
 
 } // namespace Model
