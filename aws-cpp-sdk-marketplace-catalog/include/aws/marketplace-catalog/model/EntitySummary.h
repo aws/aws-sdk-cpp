@@ -51,49 +51,49 @@ namespace Model
 
     /**
      * <p>The name for the entity. This value is not unique. It is defined by the
-     * provider.</p>
+     * seller.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name for the entity. This value is not unique. It is defined by the
-     * provider.</p>
+     * seller.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name for the entity. This value is not unique. It is defined by the
-     * provider.</p>
+     * seller.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name for the entity. This value is not unique. It is defined by the
-     * provider.</p>
+     * seller.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name for the entity. This value is not unique. It is defined by the
-     * provider.</p>
+     * seller.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name for the entity. This value is not unique. It is defined by the
-     * provider.</p>
+     * seller.</p>
      */
     inline EntitySummary& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name for the entity. This value is not unique. It is defined by the
-     * provider.</p>
+     * seller.</p>
      */
     inline EntitySummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name for the entity. This value is not unique. It is defined by the
-     * provider.</p>
+     * seller.</p>
      */
     inline EntitySummary& WithName(const char* value) { SetName(value); return *this;}
 
@@ -271,74 +271,74 @@ namespace Model
 
 
     /**
-     * <p>The visibility status of the entity to subscribers. This value can be
+     * <p>The visibility status of the entity to buyers. This value can be
      * <code>Public</code> (everyone can view the entity), <code>Limited</code> (the
      * entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view
-     * it). </p>
+     * entity was published and then unpublished and only existing buyers can view it).
+     * </p>
      */
     inline const Aws::String& GetVisibility() const{ return m_visibility; }
 
     /**
-     * <p>The visibility status of the entity to subscribers. This value can be
+     * <p>The visibility status of the entity to buyers. This value can be
      * <code>Public</code> (everyone can view the entity), <code>Limited</code> (the
      * entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view
-     * it). </p>
+     * entity was published and then unpublished and only existing buyers can view it).
+     * </p>
      */
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
 
     /**
-     * <p>The visibility status of the entity to subscribers. This value can be
+     * <p>The visibility status of the entity to buyers. This value can be
      * <code>Public</code> (everyone can view the entity), <code>Limited</code> (the
      * entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view
-     * it). </p>
+     * entity was published and then unpublished and only existing buyers can view it).
+     * </p>
      */
     inline void SetVisibility(const Aws::String& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
 
     /**
-     * <p>The visibility status of the entity to subscribers. This value can be
+     * <p>The visibility status of the entity to buyers. This value can be
      * <code>Public</code> (everyone can view the entity), <code>Limited</code> (the
      * entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view
-     * it). </p>
+     * entity was published and then unpublished and only existing buyers can view it).
+     * </p>
      */
     inline void SetVisibility(Aws::String&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
 
     /**
-     * <p>The visibility status of the entity to subscribers. This value can be
+     * <p>The visibility status of the entity to buyers. This value can be
      * <code>Public</code> (everyone can view the entity), <code>Limited</code> (the
      * entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view
-     * it). </p>
+     * entity was published and then unpublished and only existing buyers can view it).
+     * </p>
      */
     inline void SetVisibility(const char* value) { m_visibilityHasBeenSet = true; m_visibility.assign(value); }
 
     /**
-     * <p>The visibility status of the entity to subscribers. This value can be
+     * <p>The visibility status of the entity to buyers. This value can be
      * <code>Public</code> (everyone can view the entity), <code>Limited</code> (the
      * entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view
-     * it). </p>
+     * entity was published and then unpublished and only existing buyers can view it).
+     * </p>
      */
     inline EntitySummary& WithVisibility(const Aws::String& value) { SetVisibility(value); return *this;}
 
     /**
-     * <p>The visibility status of the entity to subscribers. This value can be
+     * <p>The visibility status of the entity to buyers. This value can be
      * <code>Public</code> (everyone can view the entity), <code>Limited</code> (the
      * entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view
-     * it). </p>
+     * entity was published and then unpublished and only existing buyers can view it).
+     * </p>
      */
     inline EntitySummary& WithVisibility(Aws::String&& value) { SetVisibility(std::move(value)); return *this;}
 
     /**
-     * <p>The visibility status of the entity to subscribers. This value can be
+     * <p>The visibility status of the entity to buyers. This value can be
      * <code>Public</code> (everyone can view the entity), <code>Limited</code> (the
      * entity is visible to limited accounts only), or <code>Restricted</code> (the
-     * entity was published and then unpublished and only existing subscribers can view
-     * it). </p>
+     * entity was published and then unpublished and only existing buyers can view it).
+     * </p>
      */
     inline EntitySummary& WithVisibility(const char* value) { SetVisibility(value); return *this;}
 

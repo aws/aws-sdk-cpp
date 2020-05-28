@@ -19,6 +19,7 @@
 #include <aws/kafka/model/ConfigurationInfo.h>
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/OpenMonitoring.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafka/model/LoggingInfo.h>
 #include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 #include <utility>
@@ -290,6 +291,63 @@ namespace Model
     inline MutableClusterInfo& WithOpenMonitoring(OpenMonitoring&& value) { SetOpenMonitoring(std::move(value)); return *this;}
 
 
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline const Aws::String& GetKafkaVersion() const{ return m_kafkaVersion; }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline bool KafkaVersionHasBeenSet() const { return m_kafkaVersionHasBeenSet; }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline void SetKafkaVersion(const Aws::String& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = value; }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline void SetKafkaVersion(Aws::String&& value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion = std::move(value); }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline void SetKafkaVersion(const char* value) { m_kafkaVersionHasBeenSet = true; m_kafkaVersion.assign(value); }
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline MutableClusterInfo& WithKafkaVersion(const Aws::String& value) { SetKafkaVersion(value); return *this;}
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline MutableClusterInfo& WithKafkaVersion(Aws::String&& value) { SetKafkaVersion(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>The Kafka version.</p>
+            
+     */
+    inline MutableClusterInfo& WithKafkaVersion(const char* value) { SetKafkaVersion(value); return *this;}
+
+
     
     inline const LoggingInfo& GetLoggingInfo() const{ return m_loggingInfo; }
 
@@ -324,6 +382,9 @@ namespace Model
 
     OpenMonitoring m_openMonitoring;
     bool m_openMonitoringHasBeenSet;
+
+    Aws::String m_kafkaVersion;
+    bool m_kafkaVersionHasBeenSet;
 
     LoggingInfo m_loggingInfo;
     bool m_loggingInfoHasBeenSet;

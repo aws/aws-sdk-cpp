@@ -136,38 +136,38 @@ namespace Model
 
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline const Sort& GetSort() const{ return m_sort; }
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline void SetSort(const Sort& value) { m_sortHasBeenSet = true; m_sort = value; }
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline void SetSort(Sort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline ListChangeSetsRequest& WithSort(const Sort& value) { SetSort(value); return *this;}
 
     /**
-     * <p>An object that contains two attributes, <code>sortBy</code> and
-     * <code>sortOrder</code>.</p>
+     * <p>An object that contains two attributes, <code>SortBy</code> and
+     * <code>SortOrder</code>.</p>
      */
     inline ListChangeSetsRequest& WithSort(Sort&& value) { SetSort(std::move(value)); return *this;}
 

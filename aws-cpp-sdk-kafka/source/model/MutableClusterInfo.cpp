@@ -36,6 +36,7 @@ MutableClusterInfo::MutableClusterInfo() :
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
     m_openMonitoringHasBeenSet(false),
+    m_kafkaVersionHasBeenSet(false),
     m_loggingInfoHasBeenSet(false)
 {
 }
@@ -48,6 +49,7 @@ MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) :
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
     m_openMonitoringHasBeenSet(false),
+    m_kafkaVersionHasBeenSet(false),
     m_loggingInfoHasBeenSet(false)
 {
   *this = jsonValue;
@@ -91,6 +93,13 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_openMonitoring = jsonValue.GetObject("openMonitoring");
 
     m_openMonitoringHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kafkaVersion"))
+  {
+    m_kafkaVersion = jsonValue.GetString("kafkaVersion");
+
+    m_kafkaVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("loggingInfo"))
@@ -138,6 +147,12 @@ JsonValue MutableClusterInfo::Jsonize() const
   if(m_openMonitoringHasBeenSet)
   {
    payload.WithObject("openMonitoring", m_openMonitoring.Jsonize());
+
+  }
+
+  if(m_kafkaVersionHasBeenSet)
+  {
+   payload.WithString("kafkaVersion", m_kafkaVersion);
 
   }
 

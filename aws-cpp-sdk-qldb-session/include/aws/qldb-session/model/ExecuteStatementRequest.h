@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the transaction id of the request.</p>
+     * <p>Specifies the transaction ID of the request.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
-     * <p>Specifies the transaction id of the request.</p>
+     * <p>Specifies the transaction ID of the request.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
-     * <p>Specifies the transaction id of the request.</p>
+     * <p>Specifies the transaction ID of the request.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
-     * <p>Specifies the transaction id of the request.</p>
+     * <p>Specifies the transaction ID of the request.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
-     * <p>Specifies the transaction id of the request.</p>
+     * <p>Specifies the transaction ID of the request.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
-     * <p>Specifies the transaction id of the request.</p>
+     * <p>Specifies the transaction ID of the request.</p>
      */
     inline ExecuteStatementRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
-     * <p>Specifies the transaction id of the request.</p>
+     * <p>Specifies the transaction ID of the request.</p>
      */
     inline ExecuteStatementRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the transaction id of the request.</p>
+     * <p>Specifies the transaction ID of the request.</p>
      */
     inline ExecuteStatementRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 

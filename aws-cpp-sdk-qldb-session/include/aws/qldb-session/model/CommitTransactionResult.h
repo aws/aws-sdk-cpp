@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline CommitTransactionResult& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline CommitTransactionResult& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
-     * <p>The transaction id of the committed transaction.</p>
+     * <p>The transaction ID of the committed transaction.</p>
      */
     inline CommitTransactionResult& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 

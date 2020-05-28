@@ -38,6 +38,7 @@
 #include <aws/kafka/model/DescribeConfigurationRequest.h>
 #include <aws/kafka/model/DescribeConfigurationRevisionRequest.h>
 #include <aws/kafka/model/GetBootstrapBrokersRequest.h>
+#include <aws/kafka/model/GetCompatibleKafkaVersionsRequest.h>
 #include <aws/kafka/model/ListClusterOperationsRequest.h>
 #include <aws/kafka/model/ListClustersRequest.h>
 #include <aws/kafka/model/ListConfigurationRevisionsRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/kafka/model/UpdateBrokerCountRequest.h>
 #include <aws/kafka/model/UpdateBrokerStorageRequest.h>
 #include <aws/kafka/model/UpdateClusterConfigurationRequest.h>
+#include <aws/kafka/model/UpdateClusterKafkaVersionRequest.h>
 #include <aws/kafka/model/UpdateMonitoringRequest.h>
 
 using namespace Aws;
@@ -446,6 +448,41 @@ void KafkaClient::GetBootstrapBrokersAsync(const GetBootstrapBrokersRequest& req
 void KafkaClient::GetBootstrapBrokersAsyncHelper(const GetBootstrapBrokersRequest& request, const GetBootstrapBrokersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBootstrapBrokers(request), context);
+}
+
+GetCompatibleKafkaVersionsOutcome KafkaClient::GetCompatibleKafkaVersions(const GetCompatibleKafkaVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/compatible-kafka-versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCompatibleKafkaVersionsOutcome(GetCompatibleKafkaVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCompatibleKafkaVersionsOutcome(outcome.GetError());
+  }
+}
+
+GetCompatibleKafkaVersionsOutcomeCallable KafkaClient::GetCompatibleKafkaVersionsCallable(const GetCompatibleKafkaVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCompatibleKafkaVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCompatibleKafkaVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::GetCompatibleKafkaVersionsAsync(const GetCompatibleKafkaVersionsRequest& request, const GetCompatibleKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCompatibleKafkaVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::GetCompatibleKafkaVersionsAsyncHelper(const GetCompatibleKafkaVersionsRequest& request, const GetCompatibleKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCompatibleKafkaVersions(request), context);
 }
 
 ListClusterOperationsOutcome KafkaClient::ListClusterOperations(const ListClusterOperationsRequest& request) const
@@ -931,6 +968,48 @@ void KafkaClient::UpdateClusterConfigurationAsync(const UpdateClusterConfigurati
 void KafkaClient::UpdateClusterConfigurationAsyncHelper(const UpdateClusterConfigurationRequest& request, const UpdateClusterConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateClusterConfiguration(request), context);
+}
+
+UpdateClusterKafkaVersionOutcome KafkaClient::UpdateClusterKafkaVersion(const UpdateClusterKafkaVersionRequest& request) const
+{
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateClusterKafkaVersion", "Required field: ClusterArn, is not set");
+    return UpdateClusterKafkaVersionOutcome(Aws::Client::AWSError<KafkaErrors>(KafkaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/clusters/";
+  ss << request.GetClusterArn();
+  ss << "/version";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateClusterKafkaVersionOutcome(UpdateClusterKafkaVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateClusterKafkaVersionOutcome(outcome.GetError());
+  }
+}
+
+UpdateClusterKafkaVersionOutcomeCallable KafkaClient::UpdateClusterKafkaVersionCallable(const UpdateClusterKafkaVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateClusterKafkaVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateClusterKafkaVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::UpdateClusterKafkaVersionAsync(const UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateClusterKafkaVersionAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::UpdateClusterKafkaVersionAsyncHelper(const UpdateClusterKafkaVersionRequest& request, const UpdateClusterKafkaVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateClusterKafkaVersion(request), context);
 }
 
 UpdateMonitoringOutcome KafkaClient::UpdateMonitoring(const UpdateMonitoringRequest& request) const

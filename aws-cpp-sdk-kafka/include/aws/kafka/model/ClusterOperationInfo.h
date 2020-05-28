@@ -18,7 +18,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/kafka/model/ErrorInfo.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/model/MutableClusterInfo.h>
+#include <aws/kafka/model/ClusterOperationStep.h>
 #include <utility>
 
 namespace Aws
@@ -420,6 +422,63 @@ namespace Model
 
     /**
      * 
+            <p>Steps completed during the operation.</p>
+         
+     */
+    inline const Aws::Vector<ClusterOperationStep>& GetOperationSteps() const{ return m_operationSteps; }
+
+    /**
+     * 
+            <p>Steps completed during the operation.</p>
+         
+     */
+    inline bool OperationStepsHasBeenSet() const { return m_operationStepsHasBeenSet; }
+
+    /**
+     * 
+            <p>Steps completed during the operation.</p>
+         
+     */
+    inline void SetOperationSteps(const Aws::Vector<ClusterOperationStep>& value) { m_operationStepsHasBeenSet = true; m_operationSteps = value; }
+
+    /**
+     * 
+            <p>Steps completed during the operation.</p>
+         
+     */
+    inline void SetOperationSteps(Aws::Vector<ClusterOperationStep>&& value) { m_operationStepsHasBeenSet = true; m_operationSteps = std::move(value); }
+
+    /**
+     * 
+            <p>Steps completed during the operation.</p>
+         
+     */
+    inline ClusterOperationInfo& WithOperationSteps(const Aws::Vector<ClusterOperationStep>& value) { SetOperationSteps(value); return *this;}
+
+    /**
+     * 
+            <p>Steps completed during the operation.</p>
+         
+     */
+    inline ClusterOperationInfo& WithOperationSteps(Aws::Vector<ClusterOperationStep>&& value) { SetOperationSteps(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>Steps completed during the operation.</p>
+         
+     */
+    inline ClusterOperationInfo& AddOperationSteps(const ClusterOperationStep& value) { m_operationStepsHasBeenSet = true; m_operationSteps.push_back(value); return *this; }
+
+    /**
+     * 
+            <p>Steps completed during the operation.</p>
+         
+     */
+    inline ClusterOperationInfo& AddOperationSteps(ClusterOperationStep&& value) { m_operationStepsHasBeenSet = true; m_operationSteps.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * 
             <p>Type of the cluster operation.</p>
          
      */
@@ -594,6 +653,9 @@ namespace Model
 
     Aws::String m_operationState;
     bool m_operationStateHasBeenSet;
+
+    Aws::Vector<ClusterOperationStep> m_operationSteps;
+    bool m_operationStepsHasBeenSet;
 
     Aws::String m_operationType;
     bool m_operationTypeHasBeenSet;

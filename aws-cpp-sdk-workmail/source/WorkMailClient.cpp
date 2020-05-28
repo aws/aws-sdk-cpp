@@ -41,6 +41,7 @@
 #include <aws/workmail/model/DeleteGroupRequest.h>
 #include <aws/workmail/model/DeleteMailboxPermissionsRequest.h>
 #include <aws/workmail/model/DeleteResourceRequest.h>
+#include <aws/workmail/model/DeleteRetentionPolicyRequest.h>
 #include <aws/workmail/model/DeleteUserRequest.h>
 #include <aws/workmail/model/DeregisterFromWorkMailRequest.h>
 #include <aws/workmail/model/DescribeGroupRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/workmail/model/DisassociateDelegateFromResourceRequest.h>
 #include <aws/workmail/model/DisassociateMemberFromGroupRequest.h>
 #include <aws/workmail/model/GetAccessControlEffectRequest.h>
+#include <aws/workmail/model/GetDefaultRetentionPolicyRequest.h>
 #include <aws/workmail/model/GetMailboxDetailsRequest.h>
 #include <aws/workmail/model/ListAccessControlRulesRequest.h>
 #include <aws/workmail/model/ListAliasesRequest.h>
@@ -63,6 +65,7 @@
 #include <aws/workmail/model/ListUsersRequest.h>
 #include <aws/workmail/model/PutAccessControlRuleRequest.h>
 #include <aws/workmail/model/PutMailboxPermissionsRequest.h>
+#include <aws/workmail/model/PutRetentionPolicyRequest.h>
 #include <aws/workmail/model/RegisterToWorkMailRequest.h>
 #include <aws/workmail/model/ResetPasswordRequest.h>
 #include <aws/workmail/model/TagResourceRequest.h>
@@ -528,6 +531,41 @@ void WorkMailClient::DeleteResourceAsyncHelper(const DeleteResourceRequest& requ
   handler(this, request, DeleteResource(request), context);
 }
 
+DeleteRetentionPolicyOutcome WorkMailClient::DeleteRetentionPolicy(const DeleteRetentionPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRetentionPolicyOutcome(DeleteRetentionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRetentionPolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteRetentionPolicyOutcomeCallable WorkMailClient::DeleteRetentionPolicyCallable(const DeleteRetentionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRetentionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRetentionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::DeleteRetentionPolicyAsync(const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRetentionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::DeleteRetentionPolicyAsyncHelper(const DeleteRetentionPolicyRequest& request, const DeleteRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRetentionPolicy(request), context);
+}
+
 DeleteUserOutcome WorkMailClient::DeleteUser(const DeleteUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -841,6 +879,41 @@ void WorkMailClient::GetAccessControlEffectAsync(const GetAccessControlEffectReq
 void WorkMailClient::GetAccessControlEffectAsyncHelper(const GetAccessControlEffectRequest& request, const GetAccessControlEffectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAccessControlEffect(request), context);
+}
+
+GetDefaultRetentionPolicyOutcome WorkMailClient::GetDefaultRetentionPolicy(const GetDefaultRetentionPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDefaultRetentionPolicyOutcome(GetDefaultRetentionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDefaultRetentionPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetDefaultRetentionPolicyOutcomeCallable WorkMailClient::GetDefaultRetentionPolicyCallable(const GetDefaultRetentionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDefaultRetentionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDefaultRetentionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::GetDefaultRetentionPolicyAsync(const GetDefaultRetentionPolicyRequest& request, const GetDefaultRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDefaultRetentionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::GetDefaultRetentionPolicyAsyncHelper(const GetDefaultRetentionPolicyRequest& request, const GetDefaultRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDefaultRetentionPolicy(request), context);
 }
 
 GetMailboxDetailsOutcome WorkMailClient::GetMailboxDetails(const GetMailboxDetailsRequest& request) const
@@ -1296,6 +1369,41 @@ void WorkMailClient::PutMailboxPermissionsAsync(const PutMailboxPermissionsReque
 void WorkMailClient::PutMailboxPermissionsAsyncHelper(const PutMailboxPermissionsRequest& request, const PutMailboxPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutMailboxPermissions(request), context);
+}
+
+PutRetentionPolicyOutcome WorkMailClient::PutRetentionPolicy(const PutRetentionPolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutRetentionPolicyOutcome(PutRetentionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutRetentionPolicyOutcome(outcome.GetError());
+  }
+}
+
+PutRetentionPolicyOutcomeCallable WorkMailClient::PutRetentionPolicyCallable(const PutRetentionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRetentionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRetentionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkMailClient::PutRetentionPolicyAsync(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRetentionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void WorkMailClient::PutRetentionPolicyAsyncHelper(const PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRetentionPolicy(request), context);
 }
 
 RegisterToWorkMailOutcome WorkMailClient::RegisterToWorkMail(const RegisterToWorkMailRequest& request) const

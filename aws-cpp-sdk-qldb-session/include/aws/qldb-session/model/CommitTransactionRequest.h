@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the transaction id of the transaction to commit.</p>
+     * <p>Specifies the transaction ID of the transaction to commit.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
-     * <p>Specifies the transaction id of the transaction to commit.</p>
+     * <p>Specifies the transaction ID of the transaction to commit.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
-     * <p>Specifies the transaction id of the transaction to commit.</p>
+     * <p>Specifies the transaction ID of the transaction to commit.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
-     * <p>Specifies the transaction id of the transaction to commit.</p>
+     * <p>Specifies the transaction ID of the transaction to commit.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
-     * <p>Specifies the transaction id of the transaction to commit.</p>
+     * <p>Specifies the transaction ID of the transaction to commit.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
-     * <p>Specifies the transaction id of the transaction to commit.</p>
+     * <p>Specifies the transaction ID of the transaction to commit.</p>
      */
     inline CommitTransactionRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
-     * <p>Specifies the transaction id of the transaction to commit.</p>
+     * <p>Specifies the transaction ID of the transaction to commit.</p>
      */
     inline CommitTransactionRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the transaction id of the transaction to commit.</p>
+     * <p>Specifies the transaction ID of the transaction to commit.</p>
      */
     inline CommitTransactionRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 

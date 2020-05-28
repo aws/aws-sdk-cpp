@@ -125,6 +125,55 @@ namespace Model
 
 
     /**
+     * <p>This object contains details specific to the change type of the requested
+     * change.</p>
+     */
+    inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>This object contains details specific to the change type of the requested
+     * change.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p>This object contains details specific to the change type of the requested
+     * change.</p>
+     */
+    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
+
+    /**
+     * <p>This object contains details specific to the change type of the requested
+     * change.</p>
+     */
+    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
+
+    /**
+     * <p>This object contains details specific to the change type of the requested
+     * change.</p>
+     */
+    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
+
+    /**
+     * <p>This object contains details specific to the change type of the requested
+     * change.</p>
+     */
+    inline ChangeSummary& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
+
+    /**
+     * <p>This object contains details specific to the change type of the requested
+     * change.</p>
+     */
+    inline ChangeSummary& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>This object contains details specific to the change type of the requested
+     * change.</p>
+     */
+    inline ChangeSummary& WithDetails(const char* value) { SetDetails(value); return *this;}
+
+
+    /**
      * <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
      */
     inline const Aws::Vector<ErrorDetail>& GetErrorDetailList() const{ return m_errorDetailList; }
@@ -171,6 +220,9 @@ namespace Model
 
     Entity m_entity;
     bool m_entityHasBeenSet;
+
+    Aws::String m_details;
+    bool m_detailsHasBeenSet;
 
     Aws::Vector<ErrorDetail> m_errorDetailList;
     bool m_errorDetailListHasBeenSet;

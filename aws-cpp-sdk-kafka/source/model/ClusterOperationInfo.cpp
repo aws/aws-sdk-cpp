@@ -36,6 +36,7 @@ ClusterOperationInfo::ClusterOperationInfo() :
     m_errorInfoHasBeenSet(false),
     m_operationArnHasBeenSet(false),
     m_operationStateHasBeenSet(false),
+    m_operationStepsHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
     m_sourceClusterInfoHasBeenSet(false),
     m_targetClusterInfoHasBeenSet(false)
@@ -50,6 +51,7 @@ ClusterOperationInfo::ClusterOperationInfo(JsonView jsonValue) :
     m_errorInfoHasBeenSet(false),
     m_operationArnHasBeenSet(false),
     m_operationStateHasBeenSet(false),
+    m_operationStepsHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
     m_sourceClusterInfoHasBeenSet(false),
     m_targetClusterInfoHasBeenSet(false)
@@ -106,6 +108,16 @@ ClusterOperationInfo& ClusterOperationInfo::operator =(JsonView jsonValue)
     m_operationState = jsonValue.GetString("operationState");
 
     m_operationStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operationSteps"))
+  {
+    Array<JsonView> operationStepsJsonList = jsonValue.GetArray("operationSteps");
+    for(unsigned operationStepsIndex = 0; operationStepsIndex < operationStepsJsonList.GetLength(); ++operationStepsIndex)
+    {
+      m_operationSteps.push_back(operationStepsJsonList[operationStepsIndex].AsObject());
+    }
+    m_operationStepsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("operationType"))
@@ -173,6 +185,17 @@ JsonValue ClusterOperationInfo::Jsonize() const
   if(m_operationStateHasBeenSet)
   {
    payload.WithString("operationState", m_operationState);
+
+  }
+
+  if(m_operationStepsHasBeenSet)
+  {
+   Array<JsonValue> operationStepsJsonList(m_operationSteps.size());
+   for(unsigned operationStepsIndex = 0; operationStepsIndex < operationStepsJsonList.GetLength(); ++operationStepsIndex)
+   {
+     operationStepsJsonList[operationStepsIndex].AsObject(m_operationSteps[operationStepsIndex].Jsonize());
+   }
+   payload.WithArray("operationSteps", std::move(operationStepsJsonList));
 
   }
 

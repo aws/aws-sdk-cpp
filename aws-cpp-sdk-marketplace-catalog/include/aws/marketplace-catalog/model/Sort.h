@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>An object that contains two attributes, <code>sortBy</code> and
-   * <code>sortOrder</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>An object that contains two attributes, <code>SortBy</code> and
+   * <code>SortOrder</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/Sort">AWS
    * API Reference</a></p>
    */

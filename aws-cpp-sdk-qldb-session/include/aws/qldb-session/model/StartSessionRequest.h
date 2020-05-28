@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a request to start a a new session.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a request to start a new session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-session-2019-07-11/StartSessionRequest">AWS
    * API Reference</a></p>
    */
