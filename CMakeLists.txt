@@ -240,7 +240,7 @@ endif()
 set(THIRD_PARTY_LIBS "aws-c-event-stream;aws-checksums;aws-c-common")
 
 # build the sdk targets
-project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+project("aws-cpp-sdk-all" LANGUAGES CXX)
 
 # http client, encryption, zlib
 include(external_dependencies)
