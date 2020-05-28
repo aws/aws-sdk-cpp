@@ -777,8 +777,9 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestParseCredentials
 
     auto request = mockHttpClient->GetMostRecentHttpRequest();
     ASSERT_EQ("https://sts.us-west-2.amazonaws.com", request.GetURIString(false /*don't include querystring*/));
-    ASSERT_EQ("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request.GetURIString(true /*include query string*/));
-
+    Aws::StringStream ss;
+    ss << request.GetContentBody()->rdbuf();
+    ASSERT_EQ("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
     std::shared_ptr<HttpRequest> requestTmp = CreateHttpRequest(URI(request.GetURIString(true /*include querystring*/)), HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
     //Made up credentials from https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html
     Aws::String goodXml = "<AssumeRoleWithWebIdentityResult><Credentials><SessionToken>AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp+IEXAMPLE</SessionToken><SecretAccessKey>wJalrXUtnFEMI/K7MDENG/bPxRfiCYzEXAMPLEKEY</SecretAccessKey><Expiration>2226-10-24T23:00:23Z</Expiration><AccessKeyId>ASgeIAIOSFODNN7EXAMPLE</AccessKeyId></Credentials></AssumeRoleWithWebIdentityResult>";
@@ -827,10 +828,9 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     auto creds = provider.GetAWSCredentials();
     ASSERT_TRUE(creds.IsEmpty());
     auto request = mockHttpClient->GetMostRecentHttpRequest();
-    ASSERT_EQ("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request.GetURIString(true /*include query string*/));
-    // If loaded from config, query uri should be the following string
-    ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request.GetURIString(true /*include query string*/));
-
+    Aws::StringStream ss;
+    ss << request.GetContentBody()->rdbuf();
+    ASSERT_EQ("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
 
     // Role session name will be an random uuid
     Aws::Environment::UnSetEnv("AWS_ROLE_SESSION_NAME");
@@ -839,9 +839,9 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     auto creds1 = provider1.GetAWSCredentials();
     ASSERT_TRUE(creds1.IsEmpty());
     auto request1 = mockHttpClient->GetMostRecentHttpRequest();
-    ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request1.GetURIString(true /*include query string*/));
-    // If loaded from config, query uri should be the following string
-    ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request1.GetURIString(true /*include query string*/));
+    ss.str("");
+    ss << request1.GetContentBody()->rdbuf();
+    ASSERT_NE("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
 
     // Set session name back
     Aws::Environment::SetEnv("AWS_ROLE_SESSION_NAME", "sessionId_abcd_1234_xxxx", 1/*override*/);
@@ -852,9 +852,9 @@ TEST_F(STSAssumeRoleWithWebIdentityCredentialsProviderTest, TestInitializeFromEn
     auto creds2 = provider2.GetAWSCredentials();
     ASSERT_TRUE(creds2.IsEmpty());
     auto request2 = mockHttpClient->GetMostRecentHttpRequest();
-    ASSERT_NE("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_abcd_1234_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fenv&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request2.GetURIString(true /*include query string*/));
-    // Will load from config
-    ASSERT_EQ("https://sts.us-west-2.amazonaws.com?Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", request2.GetURIString(true /*include query string*/));
+    ss.str("");
+    ss << request2.GetContentBody()->rdbuf();
+    ASSERT_EQ("Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleSessionName=sessionId_1234_abcd_xxxx&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789012%3Arole%2Fdemo&WebIdentityToken=AQoDYXdzEE0a8ANXXXXXXXXNO1ewxE5TijQyp%2BIEXAMPLE", ss.str());
 
     Aws::FileSystem::RemoveFileIfExists(tokenFileName.c_str());
     Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());

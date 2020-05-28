@@ -77,6 +77,7 @@ namespace Aws
              * @return The response from the HTTP endpoint as a string, together with the http response code.
              */
             virtual AmazonWebServiceResult<Aws::String> GetResourceWithAWSWebServiceResult(const char *endpoint, const char *resourcePath, const char *authToken) const;
+
             /**
              * Above Function: Aws::String GetResource(const char* endpoint, const char* resourcePath, const char* authToken) const;
              * is limited to HTTP GET method and caller can't add wanted HTTP headers as well.

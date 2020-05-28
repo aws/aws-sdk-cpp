@@ -115,7 +115,11 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
 AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWebServiceResult(const char *endpoint, const char *resource, const char *authToken) const
 {
     Aws::StringStream ss;
-    ss << endpoint << resource;
+    ss << endpoint;
+    if (resource)
+    {
+        ss << resource;
+    }
     std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                                                            Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
 
@@ -395,13 +399,31 @@ STSCredentialsClient::STSAssumeRoleWithWebIdentityResult STSCredentialsClient::G
 {
     //Calculate query string
     Aws::StringStream ss;
-    ss << "/?Action=AssumeRoleWithWebIdentity"
+    ss << "Action=AssumeRoleWithWebIdentity"
         << "&Version=2011-06-15"
         << "&RoleSessionName=" << Aws::Utils::StringUtils::URLEncode(request.roleSessionName.c_str())
         << "&RoleArn=" << Aws::Utils::StringUtils::URLEncode(request.roleArn.c_str())
         << "&WebIdentityToken=" << Aws::Utils::StringUtils::URLEncode(request.webIdentityToken.c_str());
 
-    Aws::String credentialsStr = GetResource(m_endpoint.c_str(), ss.str().c_str()/*query string*/, nullptr/*no auth token needed*/);
+
+    std::shared_ptr<HttpRequest> httpRequest(CreateHttpRequest(m_endpoint, HttpMethod::HTTP_POST,
+                                                           Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+    httpRequest->SetUserAgent(ComputeUserAgentString());
+
+    std::shared_ptr<Aws::IOStream> body = Aws::MakeShared<Aws::StringStream>("STS_RESOURCE_CLIENT_LOG_TAG");
+    *body << ss.str();
+
+    httpRequest->AddContentBody(body);
+    body->seekg(0, body->end);
+    auto streamSize = body->tellg();
+    body->seekg(0, body->beg);
+    Aws::StringStream contentLength;
+    contentLength << streamSize;
+    httpRequest->SetContentLength(contentLength.str());
+    httpRequest->SetContentType("application/x-www-form-urlencoded");
+
+    Aws::String credentialsStr = GetResourceWithAWSWebServiceResult(httpRequest).GetPayload();
 
     //Parse credentials
     STSAssumeRoleWithWebIdentityResult result;

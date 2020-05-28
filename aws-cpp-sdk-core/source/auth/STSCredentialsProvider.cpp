@@ -151,6 +151,7 @@ void STSAssumeRoleWebIdentityCredentialsProvider::Reload()
     STSCredentialsClient::STSAssumeRoleWithWebIdentityRequest request {m_sessionName, m_roleArn, m_token};
 
     auto result = m_client->GetAssumeRoleWithWebIdentityCredentials(request);
+    AWS_LOGSTREAM_TRACE(STS_ASSUME_ROLE_WEB_IDENTITY_LOG_TAG, "Successfully retrieved credentials with AWS_ACCESS_KEY: " << result.creds.GetAWSAccessKeyId());
     m_credentials = result.creds;
 }
 
