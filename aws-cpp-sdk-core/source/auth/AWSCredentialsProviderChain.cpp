@@ -46,6 +46,7 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain() : AWSCr
 {
     AddProvider(Aws::MakeShared<EnvironmentAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
     AddProvider(Aws::MakeShared<ProfileConfigFileAWSCredentialsProvider>(DefaultCredentialsProviderChainTag));
+    AddProvider(Aws::MakeShared<ProcessCredentialsProvider>(DefaultCredentialsProviderChainTag));
     AddProvider(Aws::MakeShared<STSAssumeRoleWebIdentityCredentialsProvider>(DefaultCredentialsProviderChainTag));
     
     //ECS TaskRole Credentials only available when ENVIRONMENT VARIABLE is set
